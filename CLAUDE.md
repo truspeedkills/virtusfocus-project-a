@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-05
-**Session Notes:** Coaching Output Engine patched to v1.3 — Deep Dive boundary rule, JSON field routing, clinical language prohibition, length controls. Editorial Audit validated against Weeks 3 and 5 — both caught systemic clinical language leak in non-framework Deep Dive sections, confirming audit spec works. All 5 pipeline stages specified and validated.
+**Session Notes:** All 5 Grace Kindel Deep Dives regenerated under v1.3 rules — coach-facing sections removed, clinical terms eliminated, coach-directive language rewritten athlete-facing. Re-audit of Weeks 3 and 5 confirmed PASS. Full pipeline validated end-to-end.
 
 ---
 
@@ -158,7 +158,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - All 30 coaching outputs evaluated across 10 quality dimensions
 - 12 Editorial Audit criteria identified and tiered (Tier 1: must-pass, Tier 2: should-pass, Tier 3: quality checks)
 
-**Coaching Output — All 5 Weeks Complete under v1.2/V3 schema:**
+**Coaching Output — All 5 Weeks Complete (regenerated under v1.3 rules):**
 
 | Week | Period | Coaching Message | Deep Dive |
 |---|---|---|---|
@@ -228,14 +228,13 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 11. Built Editorial Audit Agent (Stage 5) specification — Master Prompt v1.0 + Project Instructions v1.0 with 12 tiered audit criteria, clinical language exclusion list, decision tree, auto-correction rules, and regeneration instruction format
 12. Ran live validation audits against Grace Kindel Weeks 3 and 5 — both REJECTED on Criterion 2 (clinical language in non-framework Deep Dive sections). Identical systemic pattern confirmed: Stage 3 producing coach-facing sections with clinical terms ("anxiety," "clinical") in the athlete-readable Deep Dive. Coaching Messages passed all 12 criteria in both weeks.
 13. Patched Coaching Output Instructions v1.2 → v1.3 — added Deep Dive section boundary rule (5 mandatory sections only), JSON field routing rule (coach_insights/risk_flags to Stage 4), clinical language prohibition with specific terms and replacements, coaching message length target (250-450 words), prior commitment bridge length rule (1-3 sentences). Also refined Audit Agent Criterion 4 sentence limit from 2 to 3.
+14. Regenerated all 5 Grace Kindel Deep Dives under v1.3 rules — removed coach-facing sections (Coach Reinforcement, Coach Avoidance, Risk and Compliance Note), fixed coach-directive language in mandatory sections to athlete-facing second person, eliminated clinical terms ("anxiety," "clinical"). Re-audited Weeks 3 and 5 — both PASS all 12 criteria.
 
 ---
 
 ## What's Next (Pending)
 
 ### Immediate — Pipeline Refinement
-- [ ] Regenerate Grace Kindel Weeks 1–5 Deep Dives under v1.3 rules (coach-facing sections removed, clinical terms eliminated)
-- [ ] Re-run Editorial Audit on regenerated Weeks 3 and 5 to confirm PASS
 - [ ] Address remaining comparative analysis gaps: micro-commitment design realism, static growth phase label
 
 ### Athlete Pipeline Work
@@ -250,6 +249,7 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 - [x] Editorial Audit Agent (Stage 5) — specification complete (Master Prompt v1.0 + Project Instructions v1.0)
 - [x] Live validation audits — Weeks 3 and 5 audited, systemic issue identified and confirmed
 - [x] Coaching Output Engine v1.3 patch — Deep Dive boundary, clinical compliance, length controls
+- [x] Deep Dive regeneration — all 5 weeks updated under v1.3 rules, Weeks 3 and 5 re-audited PASS
 
 ---
 
