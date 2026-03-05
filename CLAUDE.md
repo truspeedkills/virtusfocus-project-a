@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-05
-**Session Notes:** Coach Insights Engine (Stage 4) upgraded to v1.1. Added Composite Readiness Signal (Section 10), Weekly Team Snapshot aggregate output (T1-T7), Positional Group Breakdown rules, and Dashboard Metrics Reference (Pattern Stability, Response Recovery, Multi-Week Trends, Color Coding, Season Phase Overlay, Team Trend Over Time). All metrics compliance-safe across full staff hierarchy.
+**Session Notes:** Coach Insights Engine v1.1 validated and all 5 Grace Kindel Weekly Performance Insights generated. Composite Readiness "Not Applicable" recommitment patch applied. Full 5-week Coach Insights dataset on disk — first complete Stage 4 run.
 
 ---
 
@@ -261,14 +261,11 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 16. Applied growth phase progression thresholds to Grace Kindel Weeks 1-5. Week 5 advances to Consistent (Weeks 1-4 remain Developing — Week 3's Partially Aligned status blocks earlier advancement). Updated Week 5 JSON (growth_phase, growth_phase_movement), Coaching Message (identity thread names phase change), and Deep Dive (Mindset Summary leads with advancement criteria, Trendline shows Advancing). Also cleaned residual "trigger/triggered" clinical language from Weeks 2 and 5 Deep Dives.
 17. Built Coach Insights Engine (Stage 4) pipeline-aligned specification v1.0. Upgraded from pre-pipeline v3 to pipeline-aligned architecture. Initial design used two outputs (institutional dashboard + coach strategic brief), but compliance review confirmed all coach-visible content must be institutional-safe across full staff hierarchy (position coach → coordinator → head coach). Revised to single compliance-safe output: Weekly Performance Insight (9 sections). coach_insights subfields inform the output indirectly (Sections 1, 8, 9) but raw content never surfaced. risk_flags, narrative_arc, upcoming_context, longitudinal_metrics stay internal to pipeline. Updated JSON_logic_reference.txt with v9.3 field routing and inform-only rules.
 18. Expanded Coach Insights Engine to v1.1 with full dashboard metrics catalog. Added: Composite Readiness Signal (Section 10 — synthesizes Sections 1-6 into single ↑ Positive / → Steady / ↓ Attention indicator with Green/Yellow/Orange color band), Weekly Team Snapshot aggregate output (Sections T1-T7, 5+ athlete minimum, positional group variants), and Dashboard Metrics Reference document defining 6 app-layer metrics: Pattern Stability Indicator (cross-week predictability), Response Recovery Indicator (return-to-Growth speed), Multi-Week Trend Visualization (4-8 week sparklines), Color Coding System (Green/Yellow/Orange), Season Phase Overlay (competitive calendar context), Team Trend Over Time (multi-week aggregate movement). Updated VF_Tracking_Reporting_Metrics_Reference.txt with full v1.1 approved metric taxonomy. All metrics compliance-safe per VF_Coach_Insights_Compliance_Framework.txt.
+19. Validated Coach Insights Engine v1.1 against Grace Kindel Weeks 5 and 3. Week 5 exposed Composite Readiness "Not Applicable" recommitment bug — perfect execution (7/7 Wins, no adverse events) produced Yellow instead of Green because "Not Applicable" ≠ "Strong" under literal rules. Patched determination rules in JSON_logic_reference.txt and SOP_Coach_Insights_Project_Instructions_v1.1.txt to treat "Not Applicable" as equivalent to "Strong." Week 3 (HIGH emotional intensity) validated compliance boundaries — zero leakage of coach frustration, personal details, or risk flags. Generated all 5 Weekly Performance Insights for Grace Kindel (Weeks 1-5). First complete Stage 4 run.
 
 ---
 
 ## What's Next (Pending)
-
-### Pipeline Validation
-- [ ] Run Coach Insights Engine against Grace Kindel Week 5 JSON — validate Weekly Performance Insight (10 sections including Composite Readiness Signal)
-- [ ] Run Coach Insights Engine against Grace Kindel Week 3 JSON — validate HIGH emotional intensity handling
 
 ### Athlete Pipeline Work
 - [ ] Grace Kindel Week 6 (when recap arrives post-Florida trip)
@@ -287,6 +284,18 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 - [x] Growth phase progression applied — Week 5 Developing → Consistent, outputs updated, clinical language cleaned
 - [x] Coach Insights Engine (Stage 4) — specification upgraded to pipeline-aligned v1.0 (single compliance-safe output, all staff levels)
 - [x] Coach Insights Engine v1.1 — Composite Readiness Signal, Weekly Team Snapshot, Dashboard Metrics Reference with 6 app-layer metrics
+- [x] Coach Insights Engine v1.1 validation — Week 5 + Week 3 validated, Composite Readiness "Not Applicable" patch applied
+- [x] Grace Kindel Coach Insights Weeks 1-5 — all 5 Weekly Performance Insights generated and on disk
+
+**Grace Kindel Coach Insights — All 5 Weeks Complete:**
+
+| Week | Period | Stress | Composite Readiness | Key Signal |
+|---|---|---|---|---|
+| 1 | Jan 12–18 | Low | ↑ Positive (Green) | Reset Response Consistency |
+| 2 | Jan 19–25 | Low | ↑ Positive (Green) | Daily Structure Consistency |
+| 3 | Feb 9–15 | Elevated | → Steady (Yellow) | Controllable Focus Alignment |
+| 4 | Feb 16–22 | Moderate | ↑ Positive (Green) | Competition Readiness Execution |
+| 5 | Feb 23–Mar 1 | Low | ↑ Positive (Green) | Pre-Competition Preparation Quality |
 
 ---
 
