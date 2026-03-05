@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-05
-**Session Notes:** Three-system comparative analysis complete (Core Foundation vs Old Project A vs v1.2/V3). All 30 coaching outputs read and evaluated across 10 dimensions. 12 Editorial Audit criteria identified and tiered. Git version control initialized. Coaching Output (v1.2/V3) for Grace Kindel Weeks 1-4 now confirmed complete on disk.
+**Session Notes:** Editorial Audit Agent (Stage 5) specification complete — Master Prompt v1.0 and Project Instructions v1.0 written to disk. Three-system comparative analysis complete. Git version control initialized. All 5 pipeline stages now have specifications on disk.
 
 ---
 
@@ -21,7 +21,7 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 | 2 | Interpretation Engine | Built — Active schema: **v9.3** |
 | 3 | Coaching Output Engine | Built — Active schema: **v1.2 / V3** |
 | 4 | Coach Insights Engine | Built |
-| 5 | Editorial Audit | **Conceptual only — not yet built** |
+| 5 | Editorial Audit | **Specification complete — v1.0** |
 
 ---
 
@@ -46,6 +46,20 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 - Write Deep Dive to: `Coaching and Deep Dive\Deep Dive\`
 - Naming: `{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_CoachingMessage.txt`
 - Naming: `{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_DeepDive.txt`
+
+### As the Editorial Audit Agent (Stage 5):
+- Input: Interpretation JSON + Coaching Message + Deep Dive (all three required)
+- You are NOT a coach. You do NOT generate coaching content. You are a quality gate.
+- Run all 12 audit criteria in order. Do not skip any.
+- Three possible results: PASS / AUTO-CORRECTED PASS / REJECT AND REGENERATE
+- Tier 1 failures always reject. Tier 2 failures auto-correct if possible, else reject. Tier 3 failures auto-correct silently.
+- Never add new coaching content — only audit, correct, or reject
+- The JSON is truth. If output contradicts JSON, the JSON wins.
+- Write Audit Summary to: `Coaching and Deep Dive\Audit Summaries\`
+- Write Regeneration Instructions to: `Coaching and Deep Dive\Audit Summaries\`
+- Naming: `{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_AuditSummary.txt`
+- Naming: `{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_RegenerationInstruction.txt`
+- Corrected outputs overwrite original files
 
 ---
 
@@ -104,6 +118,13 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Coaching Message Framework: `Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt`
 - Deep Dive Framework: `Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt`
 - Reflection/Growth Model: `Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt`
+
+### Editorial Audit Agent (Stage 5)
+- Master Prompt: `Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.0.txt`
+- Project Instructions: `Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.0.txt`
+- Reference Files: Uses the same 9 source files as the Coaching Output Engine (brand_voice, brand_themes, content_style_guide, System Identity, Message Framework, Deep Dive Framework, Reflection/Growth Model, JSON-to-Message Map, JSON Rules)
+- Model: Opus (recommended for judgment-intensive audit criteria)
+- Mode: Fully autonomous — PASS / AUTO-CORRECTED PASS / REJECT AND REGENERATE (no human in the loop)
 
 ### Versioning Rules (established this session)
 - Prompts + Instructions = new versioned files (never edit in place)
@@ -204,15 +225,17 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 8. Ran full Coaching Output Engine (v1.2/V3) on Grace Kindel Weeks 1–4 (all 5 weeks now complete)
 9. Completed three-system comparative analysis (30 files, 10 dimensions, 12 audit criteria identified)
 10. Initialized Git version control — .gitignore protecting raw athlete data, first commit capturing full project state
+11. Built Editorial Audit Agent (Stage 5) specification — Master Prompt v1.0 + Project Instructions v1.0 with 12 tiered audit criteria, clinical language exclusion list, decision tree, auto-correction rules, and regeneration instruction format
 
 ---
 
 ## What's Next (Pending)
 
-### Immediate — Pipeline Refinement (informed by comparative analysis)
-- [ ] Address v1.2/V3 remaining gaps identified in analysis (Section 5) — particularly: micro-commitment design realism, coaching message length, static growth phase label, coach-facing language in Deep Dives
-- [ ] Editorial Audit Agent (Stage 5) — specification and build, using the 12 tiered audit criteria from the comparative analysis as the design foundation
-- [ ] Decide whether to patch Coaching Output Engine (v1.3 / V4) before or after building the Audit Agent
+### Immediate — Pipeline Refinement
+- [ ] Run the Editorial Audit Agent against Grace Kindel Week 3 (HIGH emotional intensity — hardest test case) as a live validation
+- [ ] Run the Editorial Audit Agent against Grace Kindel Week 5 (full longitudinal data — tests all criteria)
+- [ ] Based on audit results, decide whether to patch Coaching Output Engine (v1.3 / V4) or iterate on audit criteria
+- [ ] Address v1.2/V3 remaining gaps identified in comparative analysis (Section 5) — particularly: micro-commitment design realism, coaching message length, static growth phase label, coach-facing language in Deep Dives
 
 ### Athlete Pipeline Work
 - [ ] Grace Kindel Week 6 (when recap arrives post-Florida trip)
@@ -223,6 +246,7 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 - [x] Coaching Output (v1.2/V3) for Grace Kindel Weeks 1–5 — all on disk
 - [x] Three-system comparative analysis — complete
 - [x] Git version control — initialized
+- [x] Editorial Audit Agent (Stage 5) — specification complete (Master Prompt v1.0 + Project Instructions v1.0)
 
 ---
 
