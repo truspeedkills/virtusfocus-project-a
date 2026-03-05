@@ -1,0 +1,112 @@
+{
+  "athlete_name": "Tucker Lloyd",
+  "week_period": "2026-02-23 to 2026-03-01",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Developing into a better person and coach within the football environment",
+    "baseline_hinge_habit": "Consistent gym attendance and personal discipline routines",
+    "baseline_primary_derailer": "Pre-performance focus on what could go wrong",
+    "baseline_why_it_matters": "Strengthening habits and confidence supports both academic stability and long-term coaching development",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Tucker's weekly goal ('Become better') continues to reflect his baseline identity claim but represents the most vague goal statement of the program — declining from 3 specific goals (Week 1) to 1 specific goal (Week 2) to an unspecified aspiration (Week 3). Weekday execution pattern held with 3 Win days (Monday, Wednesday, Thursday), though Tuesday moved from Win to Neutral compared to Week 2. The hinge habit (gym attendance) improved to 2 sessions (Wednesday and Saturday), recovering from Week 2's single session. Sunday remained a Missed day for the second consecutive week — a repeating pattern that directly contradicts the stated development direction."
+  },
+
+  "athlete_state": "Third week of consistent Mixed-tier execution with the same weekday-strong, Sunday-Missed structural pattern. Gym attendance improved slightly (2 sessions vs. 1 in Week 2). Weekday Win count dropped from 4 to 3 (Tuesday moved from Win to Neutral). Sunday was Missed for the second consecutive week. Goal and achievement language became more vague and generic compared to prior weeks.",
+
+  "core_pattern": "Structural execution plateau. Tucker's pattern has crystallized across three weeks: Win on days with school and coaching structure, Neutral on transition days, Missed on the fully unstructured Sunday. The pattern is repeating without development — same strengths, same gaps, same distribution shape.",
+
+  "behavioral_root_cause": "Tucker has established a reliable weekday execution floor but has not developed self-directed structure for unstructured time. The Sunday Missed pattern is now documented across 2 consecutive weeks (Weeks 2 and 3), shifting from a single data point to a behavioral trend. The underlying mechanism remains unchanged: external structure produces Wins; absence of external structure produces drift or disengagement. Goal-setting quality decline ('Become better') suggests reduced intentional engagement with the planning process itself.",
+
+  "prior_commitment_result": {
+    "prior_action": "On Saturday night, write down one specific thing you will do on Sunday — one commitment in any domain (gym, school work, coaching study, or personal development) — and complete it before noon.",
+    "execution_status": "Not Attempted",
+    "execution_notes": "Sunday again recorded as 'Nothing' with a Missed score. No evidence of any pre-planned commitment or intentional Sunday activity. This is the second consecutive Missed Sunday with no indication the Saturday-night planning step was attempted.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Become better",
+    "achievement_statement": "A lot of school work and regular work.",
+    "key_phrase": "Become better",
+    "mindset_resonance": "The difference between good and great is execution."
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3",
+      "neutral_days": "3",
+      "missed_days": "1"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "insufficient data"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Low. Single controllable named — 'How well I perform in classes' — which is specific to academic effort but isolated. This represents a narrowing from Week 1 (four domains) and a shift in content from Week 2 (sleep). Tucker has not developed behavioral specificity in controllable identification across three weeks.",
+    "influence_quality": "Underdeveloped. 'My grades' as influence shows the same pattern as Week 2 — conflating controllable study effort with the partially-controllable grade outcome. No development in influence-ring understanding across the program.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "1",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "2",
+    "rolling_win_rate_4wk": "0.524",
+    "rolling_missed_rate_4wk": "0.095",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over three weeks, Tucker has established a consistent Mixed-tier execution pattern driven by external structure. Weekday engagement (school, coaching, homework) reliably produces Win days. Weekend and unstructured time reliably produces Neutral or Missed days. The pattern has crystallized rather than progressed — Win count held steady or declined (4, 4, 3), the Sunday gap went from Neutral (Week 1) to consecutive Missed days (Weeks 2-3), and goal-setting quality declined from three specific targets (Week 1) to a single vague aspiration (Week 3). The hinge habit (gym) has ranged from 2 to 1 to 2 sessions per week — not yet stabilized. Tucker resonates with self-improvement mindset concepts but has not converted them to behavioral change on unstructured days.",
+    "milestone_this_week": "First longitudinal comparison available. The repeating Sunday Missed pattern (Weeks 2-3) is now a confirmed trend rather than a single data point. Tucker's gym attendance recovered from 1 (Week 2) to 2 (Week 3) sessions, showing some hinge habit resilience. Goal-setting quality decline to 'Become better' is the first signal of potential reflective disengagement.",
+    "open_thread": "Tucker has now had 2 consecutive Missed Sundays with the same 'Nothing' entry. The prior commitment (Sunday planning) was Not Attempted. The core development question is whether Tucker can generate self-directed structure without external demand. Additionally, his reflection quality has held at 1 (Surface) for 2 consecutive weeks after starting at 2 (Basic awareness) — a declining engagement signal with the reflection format. If Sunday Missed continues and reflection quality does not improve, the structural execution gap will widen rather than close."
+  },
+
+  "most_important_controllable": "Sunday engagement — establishing one intentional, pre-committed action on the most unstructured day of the week. This is now a documented trend (2 consecutive Missed Sundays) rather than a single occurrence, making it the primary behavioral development target.",
+
+  "micro_commitment": {
+    "action": "Set a phone alarm for 9:00 AM on Sunday with a label naming one specific thing to complete before noon. Set the alarm on Saturday night before bed.",
+    "when": "Saturday night (set the alarm with the labeled commitment) and Sunday morning by noon (complete the action).",
+    "measurement": "Sunday should have at least one intentional activity logged in the recap rather than 'Nothing.' If Tucker completes the labeled action before noon, the commitment is fully executed. If Sunday again says 'Nothing,' the commitment was not attempted."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Continued dual-work schedule (coaching and plumbing) with academic demands. No competition or travel referenced. The primary structural stressor is the Sunday unstructured time pattern and the widening gap between aspiration-level goal language and behavioral execution specificity.",
+    "athlete_stated_next_goal": "Keep working and getter better"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "3/7 Win days — the lowest Win count of the program — with the same weekday-strong, Sunday-Missed pattern now documented across all three weeks. Gym attendance improved from 1 to 2 sessions (Wednesday and Saturday). Tuesday moved from Win (Weeks 1-2) to Neutral, reducing the reliable weekday execution base. Advising appointment on Wednesday shows continued academic engagement.",
+    "key_habit_signal": "The declining trajectory across three key metrics is the primary signal: Win count (4, 4, 3), goal specificity (three specific goals to one specific to 'Become better'), and reflection quality (2, 1, 1). Tucker's structural execution floor (weekday school and coaching) holds, but there is no upward development visible — the pattern is plateauing or declining on discretionary indicators. The gym returning to 2 sessions is a positive counter-signal within the overall trend.",
+    "coach_reinforcement_cue": "Anchor on the gym recovery (1 to 2 sessions) and the Wednesday stack (classes + homework + gym + advising + test) as evidence of Tucker's execution capacity when he chooses to engage. The question is not whether Tucker can execute — Wednesday proves he can — but whether he will choose to execute on days when no one requires it.",
+    "coach_avoidance_note": "Do not lecture about Sunday. Two consecutive Missed Sundays is a pattern, not a crisis. The coaching approach should be curiosity-based rather than corrective. Do not overweight the declining reflection quality as disengagement — Tucker may be a naturally sparse communicator. Focus on behavioral execution improvement rather than reflection depth."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Declining reflection quality and repeated Sunday Missed days represent a behavioral pattern within normal coaching scope. Recap sparseness and vague goal language are consistent with engagement style rather than distress signals. The 'Nothing' pattern on Sundays reflects unstructured time management, not withdrawal or isolation. Standard coaching scope maintained."
+  },
+
+  "next_week_focus_question": "You picked 'The difference between good and great is execution' as your mindset challenge — what is one thing you could execute on Sunday that would make next week different from this one?"
+}

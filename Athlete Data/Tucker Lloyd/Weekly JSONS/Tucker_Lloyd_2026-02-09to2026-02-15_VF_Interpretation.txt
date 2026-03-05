@@ -1,0 +1,112 @@
+{
+  "athlete_name": "Tucker Lloyd",
+  "week_period": "2026-02-09 to 2026-02-15",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Developing into a better person and coach within the football environment",
+    "baseline_hinge_habit": "Consistent gym attendance and personal discipline routines",
+    "baseline_primary_derailer": "Pre-performance focus on what could go wrong",
+    "baseline_why_it_matters": "Strengthening habits and confidence supports both academic stability and long-term coaching development",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Tucker's stated goals align with his baseline identity claim — 'hit the gym 3 times, not skip class, do good at work' maps directly to habit development and coaching development. He achieved 2 gym sessions (Monday chest, Wednesday upper lift) against a goal of 3 — partial execution of the hinge habit. Class attendance was consistent across all weekdays. Work engagement (football coaching and plumbing) was sustained. The gap between stated habit goals and actual gym execution represents the primary misalignment."
+  },
+
+  "athlete_state": "First week of program data. Tucker demonstrated sustained weekday engagement across school, coaching work, and training, with weekend transition to external work (plumbing) and reduced personal structure. Gym attendance (2 sessions) fell short of his stated 3-session goal, while class attendance and work consistency held throughout the week.",
+
+  "core_pattern": "Weekday structure-dependent execution. Tucker's Win days cluster Monday through Thursday when school and coaching work provide external scheduling. Neutral days occur when structure reduces (Friday class-only, Sunday school work-only). Saturday's plumbing work (10 hours) provided enough external structure for a Win despite being non-coaching work.",
+
+  "behavioral_root_cause": "Tucker's execution pattern tracks directly with external structure availability. Days with multiple scheduled commitments (class + coaching + gym) produce Wins; days with minimal or single-source scheduling produce Neutral outcomes. Self-directed structure on low-demand days is the primary gap between current execution and his stated development goals.",
+
+  "prior_commitment_result": {
+    "prior_action": "No Prior Week",
+    "execution_status": "No Prior Week",
+    "execution_notes": "First week of program. No prior micro_commitment exists.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Hit the gym 3 times, Not skip class, Do good at work",
+    "achievement_statement": "Getting a lot of work done. Got paid good money and got a lot of gear from work.",
+    "key_phrase": "Trying to be the best I can at work for football to standout to get a coaching role",
+    "mindset_resonance": "Grit is passion and perseverance for long-term goals"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "4",
+      "neutral_days": "3",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Tucker listed broad life categories ('God, Family, School, Work') as controllables rather than specific behavioral actions. The categorization is accurate — these are center-ring domains — but lacks behavioral specificity (e.g., 'my gym attendance' or 'my preparation quality each day').",
+    "influence_quality": "Emerging. Tucker identified 'What others think of me by through my actions' as an influence item, correctly placing perception-through-action in the influence ring. However, only a single item was named and the influence-control distinction was not developed further.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "0",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "insufficient data"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Self-directed daily structure on low-demand days — specifically establishing a routine for days without multiple external commitments (class and coaching) to prevent Neutral drift when external scheduling is absent.",
+
+  "micro_commitment": {
+    "action": "On Sunday evening, write down which three specific days this week you will go to the gym and what workout you will do each day. Also write down one intentional activity for Friday and one for Sunday beyond the minimum.",
+    "when": "Sunday evening before the new week begins.",
+    "measurement": "At the end of the week, Tucker should have completed all 3 planned gym sessions and recorded at least one intentional activity on both Friday and Sunday. If all 5 targets are met, the commitment is fully executed."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Balancing football coaching responsibilities with plumbing work and academic demands across a full 7-day week. Weekend plumbing shifts (8-10 hours) may limit gym and personal development time.",
+    "athlete_stated_next_goal": "Continue working and being the best version of myself."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "4/7 Win days with a clear weekday-strong, weekend-variable pattern. Gym attendance reached 2 of 3 targeted sessions (Monday chest, Wednesday upper lift). Class attendance was complete. Football coaching work and plumbing work provided external structure on all 7 days, but self-directed behaviors (gym, intentional engagement) tracked with scheduled demand rather than personal initiative.",
+    "key_habit_signal": "Tucker's hinge habit (gym consistency) was partially executed — 2/3 sessions is close but not habituated. The larger signal is that his execution correlates with external structure: he performs when others schedule his time and drifts when they do not. Self-directed structure is the development gap.",
+    "coach_reinforcement_cue": "Reinforce the 2 gym sessions as a positive base to build from, not a failure to reach 3. Emphasize that the goal is not just gym attendance but building the daily discipline of choosing structure when no one else requires it.",
+    "coach_avoidance_note": "Do not frame the plumbing work as competing with coaching identity development. Tucker is managing multiple roles, and the plumbing income supports his stated outcome goal (save money for next semester). Frame it as demonstrating work ethic across domains."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Tucker's recaps are task-oriented with positive affect language. No emotional distress, isolation, or identity crisis signals detected. Standard coaching scope."
+  },
+
+  "next_week_focus_question": "You said you want to hit the gym 3 times and be the best version of yourself — what would your best version do on the days when nothing is scheduled for you?"
+}

@@ -1,0 +1,112 @@
+{
+  "athlete_name": "Tucker Lloyd",
+  "week_period": "2026-02-16 to 2026-02-22",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Developing into a better person and coach within the football environment",
+    "baseline_hinge_habit": "Consistent gym attendance and personal discipline routines",
+    "baseline_primary_derailer": "Pre-performance focus on what could go wrong",
+    "baseline_why_it_matters": "Strengthening habits and confidence supports both academic stability and long-term coaching development",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Tucker's sole weekly goal ('Go to the gym 3 times') continues to track his baseline hinge habit, but execution again fell short — 1 gym session (Wednesday) vs. 3 targeted. The weekday structure remained strong with 4 consecutive Win days (Monday through Thursday), demonstrating sustained coaching work and academic engagement aligned with his identity claim. However, Sunday was his first Missed day in the program ('Nothing'), representing the most significant gap between stated intention and actual behavior to date."
+  },
+
+  "athlete_state": "Strong weekday execution (4 consecutive Win days Monday through Thursday) followed by progressive weekend decline culminating in Tucker's first Missed day of the program (Sunday: 'Nothing'). The weekday-weekend structural gap widened compared to Week 1, with gym attendance dropping from 2 to 1 session and Sunday moving from Neutral to Missed.",
+
+  "core_pattern": "Weekday structure dependence with weekend disengagement. The Monday-Thursday Win streak shows Tucker executes consistently when school, coaching, and homework provide external structure. The Friday-Sunday decline from Neutral to Missed indicates that removing external scheduling removes the execution anchor. Sunday's single-word entry ('Nothing') is the week's defining data point.",
+
+  "behavioral_root_cause": "Tucker's self-directed structure capacity appears limited to environments with external demand. The progression from Friday Neutral (plumbing work — externally structured) to Saturday Neutral (plumbing work — same) to Sunday Missed ('Nothing') confirms that when external demands stop entirely, Tucker does not self-generate structure. The gym goal (3 times) was reduced to 1 session, confirming that without scheduled accountability, the hinge habit is not self-sustaining.",
+
+  "prior_commitment_result": {
+    "prior_action": "On Sunday evening, write down which three specific days this week you will go to the gym and what workout you will do each day. Also write down one intentional activity for Friday and one for Sunday beyond the minimum.",
+    "execution_status": "Partial",
+    "execution_notes": "Tucker went to the gym once (Wednesday) against the 3-session target. He also added church on Wednesday, showing some initiative on a mid-week day. However, Friday and Sunday — the targeted low-demand days — showed no self-directed structure beyond work (Friday: plumbing 8 hours; Sunday: 'Nothing'). The gym target was 33% achieved; the low-demand day structure component was not executed.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Go to the gym 3 times.",
+    "achievement_statement": "Got paid.",
+    "key_phrase": "Nothing",
+    "mindset_resonance": "Leadership starts with self discipline"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "4",
+      "neutral_days": "2",
+      "missed_days": "1"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "insufficient data"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Low. Tucker named a single controllable — 'Get more sleep' — which is specific but isolated. No reference to effort, preparation, or routine behaviors. The breadth of controllable identification narrowed significantly from Week 1 (which listed four domains).",
+    "influence_quality": "Underdeveloped. 'Get better grades' was listed as influence, which conflates controllable academic effort with the partially-controllable outcome of grades. The distinction between controllable study behaviors and grade outcomes was not made.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "1",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "1",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "insufficient data"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Sunday structure — specifically establishing at least one intentional commitment on the fully unstructured day that produced Tucker's first Missed day. Sunday is the test case for self-directed behavior when no external demands exist.",
+
+  "micro_commitment": {
+    "action": "On Saturday night, write down one specific thing you will do on Sunday — one commitment in any domain (gym, school work, coaching study, or personal development) — and complete it before noon.",
+    "when": "Saturday night before bed (write the commitment) and Sunday by noon (complete the action).",
+    "measurement": "At the end of Sunday, Tucker should have one completed commitment logged. If the commitment was completed by noon, he executed. If he did not write it down Saturday night or did not complete it, the commitment was not executed."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Continued weekend plumbing work schedule (8-10 hour shifts) limiting gym access and personal development time on Fridays and Saturdays. Sunday remains the highest-risk day for disengagement following the first Missed day of the program.",
+    "athlete_stated_next_goal": "Go to the gym more."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "4/7 Win days with identical weekday-strong pattern to Week 1, but weekend execution degraded — Sunday moved from Neutral (Week 1) to Missed ('Nothing'). Gym attendance dropped from 2 sessions to 1 (Wednesday only). The weekday structure (class + coaching + homework) continues as the reliable execution anchor. Church attendance on Wednesday was a new self-initiated activity.",
+    "key_habit_signal": "Tucker's Sunday entry — 'Nothing' — is the most significant signal this week. Combined with selecting 'Leadership starts with self discipline' as his mindset resonance, the gap between aspiration and execution on unstructured days is the primary development marker. He resonates with the concept of self-discipline but has not translated it into Sunday behavior.",
+    "coach_reinforcement_cue": "Reinforce the 4-day Win streak (Monday through Thursday) as the proven execution foundation. Highlight Wednesday specifically — gym + church + classes + homework — as evidence that Tucker can stack multiple commitments when he chooses to. Use Wednesday as the model for what his best version looks like in action.",
+    "coach_avoidance_note": "Do not focus on Sunday as a failure or create shame around the 'Nothing' entry. The Missed day is a data point, not a character assessment. Frame Sunday as the development opportunity — the day where self-directed structure has the most room to grow."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Recap sparseness reflects engagement depth with the reflection format rather than emotional distress. Tucker's Sunday Missed day ('Nothing') is a behavioral pattern within normal coaching scope, not a distress signal. Standard coaching scope maintained."
+  },
+
+  "next_week_focus_question": "You chose 'Leadership starts with self discipline' as your mindset challenge this week — if you could add one act of self-discipline to your Sunday, what would it be?"
+}
