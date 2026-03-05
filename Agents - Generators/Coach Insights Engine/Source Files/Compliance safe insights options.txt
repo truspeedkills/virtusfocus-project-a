@@ -1,0 +1,133 @@
+Compliance determination: GREEN (low risk)
+Given these constraints:
+•	✅ Coaches see only aggregated insights & trends
+•	✅ No access to athlete-written content
+•	✅ No messaging or communication
+•	✅ No task assignment or monitoring
+•	✅ No usage visibility (time spent, completion pressure)
+•	✅ Athlete input is private by default
+👉 This does not create a countable athletically related activity and does not meaningfully interfere with voluntary status.
+Bottom line:
+This functions as a passive observational wellness / readiness signal, not a coaching activity.
+From a compliance lens, it is closer to:
+•	Wellness dashboards
+•	Sleep / recovery summaries
+•	Athlete services reports
+—not practice, instruction, or required participation.
+________________________________________
+Why this design holds up under D1 rules
+Here’s how compliance officers tend to think, and how your design answers each concern:
+A) “Is this required?”
+No.
+Nothing is assigned, enforced, or followed up on by coaches.
+Voluntary remains voluntary because there is no coach involvement in the activity itself.
+________________________________________
+B) “Does coach access turn it into CARA?”
+No.
+Because:
+•	Coaches are not present
+•	Coaches do not direct behavior
+•	Coaches do not monitor compliance or time
+•	Coaches do not interact with athletes via the system
+They are viewing outcomes, not participation.
+________________________________________
+C) “Does this add extra time obligations?”
+No.
+Even if an athlete uses the system daily, there is:
+•	No coach awareness of frequency
+•	No expectation tied to team consequences
+•	No reporting back to coaching staff
+This is critical. The lack of usage visibility is one of your strongest compliance protections.
+________________________________________
+D) “Could this influence playing time decisions?”
+This is where schools will be sensitive — and your design helps.
+Because coaches only see:
+•	Trend-level indicators
+•	No raw data
+•	No personal disclosures
+…it becomes a contextual awareness tool, not an evaluation mechanism.
+This should be explicitly stated in onboarding language:
+“Insights are informational only and may not be used as a basis for participation, selection, or discipline.”
+That sentence alone makes compliance departments breathe easier.
+________________________________________
+Compliance-safe metrics you can derive and show
+Below is a safe metric taxonomy designed specifically to avoid CARA issues, FERPA overreach, and “coach-directed” interpretation.
+🟢 Tier 1: Safest (Recommended defaults)
+These are aggregate, trend-based, non-actionable metrics.
+1) Mental Readiness Index (Trend)
+•	7-day rolling average
+•	Shown as ↑ ↓ → (not raw scores)
+•	No timestamps
+•	No daily values
+Why safe:
+It shows state, not behavior.
+________________________________________
+2) Consistency Signal (Non-usage-based)
+•	Derived from internal pattern stability
+•	Example labels:
+o	Stable
+o	Variable
+o	Improving
+Important:
+Do not label this as “engagement” or “completion.”
+Call it internal consistency, not participation.
+________________________________________
+3) Stress Load Indicator (Band-based)
+•	Low / Moderate / Elevated
+•	Based on athlete self-report patterns
+•	No source attribution (no “because of exams”)
+Why safe:
+Similar to wellness questionnaires already used in many programs.
+________________________________________
+4) Confidence Momentum
+•	Directional trend only
+•	No absolute numbers
+•	No comparison between athletes unless anonymized team averages
+________________________________________
+🟡 Tier 2: Safe with guardrails
+These are fine if framed correctly and never used for enforcement.
+5) Team-Level Averages (Anonymized)
+•	“Team Readiness This Week”
+•	Percentages only
+•	Minimum group size thresholds (e.g., no breakdowns under 5 athletes)
+________________________________________
+6) Volatility Index
+•	Measures emotional swings, not time spent
+•	Useful for sports psych staff
+•	Coaches see only high-level flags
+Frame as:
+“Stability indicator” — not “emotional control.”
+________________________________________
+🔴 Metrics to AVOID entirely
+These raise compliance or cultural red flags:
+•	❌ Time spent in app
+•	❌ Streaks or completion counts
+•	❌ Last login
+•	❌ Daily compliance scores
+•	❌ Rankings between athletes
+•	❌ “At-risk” labels tied to individuals
+•	❌ Any metric implying effort or discipline
+Even if technically legal, these invite misuse.
+________________________________________
+Language matters more than people think
+What you call things is as important as what they are.
+Use language like:
+•	“Indicators”
+•	“Signals”
+•	“Trends”
+•	“Context”
+•	“Informational only”
+Avoid language like:
+•	Accountability
+•	Compliance
+•	Adherence
+•	Tracking
+•	Monitoring
+________________________________________
+Final assessment
+Your current coach dashboard concept is:
+•	NCAA-compliant at the D1 level
+•	Low-risk from a CARA standpoint
+•	Well-insulated from “voluntary vs required” issues
+•	Aligned with how progressive athletic departments already think
+

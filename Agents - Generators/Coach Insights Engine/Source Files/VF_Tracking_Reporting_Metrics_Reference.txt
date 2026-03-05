@@ -16,6 +16,48 @@ Recommitment signal (response after missed day).
 Routine stability (range of category distribution).
 Controllable focus quality (Bullseye usage).
 
+Approved Metric Taxonomy (v1.1):
+
+1. Mental Readiness Indicator (Trend Only)
+   - Directional (↑ ↓ →)
+   - No raw daily values
+
+2. Consistency Signal
+   - Stable / Variable / Improving
+
+3. Stress Load Band
+   - Low / Moderate / Elevated
+   - No source attribution
+
+4. Confidence Momentum (Directional)
+   - ↑ Building / → Stable / ↓ Variable
+
+5. Focus Distribution (Bullseye Trend)
+   - Center-Dominant / Mixed Focus / Outer-Ring Drift Detected
+
+6. Recommitment Strength
+   - Strong / Moderate / Low
+
+7. Growth Phase Status
+   - Emerging / Developing / Consistent / Leadership
+
+8. Composite Readiness Signal
+   - ↑ Positive (Green) / → Steady (Yellow) / ↓ Attention (Orange)
+   - Synthesizes weekly tier, consistency, recommitment, focus,
+     and stress load into single directional indicator
+
+9. Pattern Stability Indicator (Longitudinal)
+   - Predictable / Transitional / Fluctuating
+   - Requires 4+ weeks of data
+   - Measures cross-week classification predictability
+
+10. Response Recovery Indicator (Longitudinal)
+    - Rapid / Moderate / Extended / No Recovery Data
+    - Requires 3+ weeks with at least one non-Growth week
+    - Measures return-to-Growth speed after Mixed/Reset
+
+All metrics must be trend-based, non-punitive, and informational.
+
 Compliance Reminder:
 All reporting must remain performance-based and non-clinical.
 Do not include psychological diagnoses or mental health language.

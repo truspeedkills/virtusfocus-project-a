@@ -1,6 +1,6 @@
 VF COACH INSIGHTS ENGINE
 JSON → INSIGHTS TRANSFORMATION LOGIC (FIELD-BY-FIELD)
-(Updated for v9.3 Schema + Output A/B Structure)
+(Updated for v9.3 Schema + v1.1 Metrics Expansion)
 
 INPUT SOURCE
 - Interpretation Engine JSON only (v9.3 schema).
@@ -8,9 +8,9 @@ INPUT SOURCE
 - If any field is missing or "insufficient data": keep the section, keep structure, and write a neutral sentence.
 
 OUTPUT SCOPE
-All sections (0-9) map to the single Weekly Performance Insight.
+All sections (0-10) map to the single Weekly Performance Insight.
 This output must be compliance-safe for all coaching staff levels.
-See SOP_Coach_Insights_Project_Instructions_v1.0.txt for
+See SOP_Coach_Insights_Project_Instructions_v1.1.txt for
 full output definitions.
 
 0) HEADER FIELDS
@@ -135,6 +135,45 @@ Prohibited phrasing:
 Allowed phrasing:
 - Reinforce..., Maintain emphasis on..., Monitor trend...
 
+10) COMPOSITE READINESS SIGNAL
+Purpose: Single at-a-glance indicator synthesizing Sections 1-6.
+
+Inputs: weekly_tier, consistency_profile, recommitment_signal,
+primary_focus_ring, emotional_intensity (via Stress Load result)
+
+Readiness Level + Color Band:
+- ↑ Positive (Green)
+- → Steady (Yellow)
+- ↓ Attention (Orange)
+
+DETERMINATION RULES:
+Step 1 — Base determination from weekly_tier + component metrics:
+- Growth + Stable/Improving consistency + Strong recommitment
+  + Control focus → ↑ Positive (Green)
+- Growth + any other combination → → Steady (Yellow)
+- Mixed + Moderate or better recommitment → → Steady (Yellow)
+- Mixed + Low recommitment OR Mixed + Variable consistency
+  with Low recommitment → ↓ Attention (Orange)
+- Reset → ↓ Attention (Orange)
+- insufficient data across multiple inputs → → Steady (Yellow)
+
+Step 2 — Stress Load modifier:
+- If Stress Load (Section 6) = Elevated → shift one level
+  toward Attention:
+  - Positive (Green) → Steady (Yellow)
+  - Steady (Yellow) → Attention (Orange)
+  - Attention (Orange) → remains Attention (Orange)
+
+Step 3 — Output:
+- State the Readiness Level with arrow and Color Band
+- One sentence linking readiness to routine stability and
+  controllable alignment
+- Do NOT reference emotional state, personal circumstances,
+  or specific stressors
+
+COMPLIANCE: This is a performance readiness signal, not a
+mental health indicator or wellness score. Label accordingly.
+
 ============================================================
 INFORM-ONLY FIELDS (NOT SURFACED IN OUTPUT)
 ============================================================
@@ -174,7 +213,7 @@ FIELDS NOT CONSUMED BY STAGE 4:
   developmental narrative.
 - longitudinal_metrics → Trend-level indicators derived from
   these metrics appear via trend_analysis fields in Sections
-  1, 5, and 7. Raw numbers are not surfaced.
+  1, 5, 7, and 10. Raw numbers are not surfaced.
 - prior_commitment_result → Stage 3 only.
 - athlete_voice → Stage 3 only.
 - micro_commitment → Stage 3 only.
