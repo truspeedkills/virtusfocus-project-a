@@ -8,8 +8,8 @@ INPUT SOURCE
 - If any field is missing or "insufficient data": keep the section, keep structure, and write a neutral sentence.
 
 OUTPUT SCOPE
-Sections 0-9 map to Output A (Weekly Performance Insight).
-Sections 10-14 map to Output B (Weekly Coach Strategic Brief).
+All sections (0-9) map to the single Weekly Performance Insight.
+This output must be compliance-safe for all coaching staff levels.
 See SOP_Coach_Insights_Project_Instructions_v1.0.txt for
 full output definitions.
 
@@ -136,94 +136,51 @@ Allowed phrasing:
 - Reinforce..., Maintain emphasis on..., Monitor trend...
 
 ============================================================
-OUTPUT B SECTIONS (WEEKLY COACH STRATEGIC BRIEF)
+INFORM-ONLY FIELDS (NOT SURFACED IN OUTPUT)
 ============================================================
 
-Sections 10-14 appear in Output B only. They are NOT governed
-by the institutional compliance framework's audience restrictions
-but ARE governed by the clinical language prohibition.
+The following JSON fields inform the Weekly Performance Insight
+but their raw content NEVER appears in the output. They help
+the engine select the right signals and frame the right
+reinforcement direction.
 
-10) ROUTINE & HABIT EXECUTION
-Sources: coach_insights.routine_execution_summary
-         coach_insights.key_habit_signal
+coach_insights.routine_execution_summary
+→ Informs Section 1 executive summary (behavioral stability
+  context). Use to understand the execution picture, but
+  translate into neutral trend language. Never reproduce raw.
 
-EXECUTION SUMMARY:
-- Present routine_execution_summary as provided by Stage 2
-- Describes behavioral execution pattern of the week
-- May reference specific practice/training details
+coach_insights.key_habit_signal
+→ Informs Section 8 key performance signal selection. Use to
+  identify the most important development marker. Never
+  reproduce raw — present as a compliance-safe signal label.
 
-KEY HABIT SIGNAL:
-- Present key_habit_signal as provided by Stage 2
-- Names the single most important behavioral data point
-- This is the development marker the mindset coach should
-  build coaching interactions around
+coach_insights.coach_reinforcement_cue
+→ Informs Section 9 coach context cue. Must be translated
+  into neutral, institutional reinforcement language. Never
+  reproduce raw — the raw content may contain athlete-specific
+  behavioral detail or personal language references.
 
-11) COACH REINFORCEMENT & AVOIDANCE
-Sources: coach_insights.coach_reinforcement_cue
-         coach_insights.coach_avoidance_note
+coach_insights.coach_avoidance_note
+→ Internal guardrail only. Tells you what NOT to include or
+  emphasize in the report. Content is never surfaced in any
+  form — it is a negative constraint, not positive content.
 
-REINFORCE:
-- Present coach_reinforcement_cue as provided by Stage 2
-- What to lean into in coaching interactions
-- May reference athlete language patterns or behavioral evidence
-
-AVOID:
-- Present coach_avoidance_note as provided by Stage 2
-- What NOT to emphasize, what to redirect away from
-- Strategic guardrails for the mindset coach's approach
-
-12) UPCOMING CONTEXT & RISK AWARENESS
-Sources: upcoming_context.scheduled_competition
-         upcoming_context.anticipated_stressor
-         upcoming_context.athlete_stated_next_goal
-         risk_flags.compliance_safe_note
-
-UPCOMING:
-- Competition: scheduled_competition (or "None scheduled")
-- Anticipated Stressor: anticipated_stressor (or "None identified")
-- Athlete's Stated Goal: athlete_stated_next_goal (or "None stated")
-- If all subfields = "insufficient data": "No upcoming context available."
-
-RISK AWARENESS:
-- Present compliance_safe_note as provided by Stage 2
-- Do not add clinical framing
-- Do not escalate language beyond Stage 2's assessment
-- Technical compliance language (e.g., "no clinical indicators
-  present") is acceptable in Output B only
-
-13) DEVELOPMENTAL ARC
-Sources: narrative_arc.arc_summary
-         narrative_arc.milestone_this_week
-         narrative_arc.open_thread
-         trend_analysis.growth_phase_movement
-
-If narrative_arc subfields are populated (not "insufficient data"):
-- ARC SUMMARY: Present arc_summary (longitudinal story)
-- THIS WEEK'S MILESTONE: Present milestone_this_week
-- OPEN THREAD: Present open_thread (what to watch)
-- GROWTH PHASE MOVEMENT: Present growth_phase_movement with context
-
-If narrative_arc = "insufficient data":
-"Narrative arc requires 2+ prior weeks of data. Not yet available."
-
-14) LONGITUDINAL METRICS
-Source: longitudinal_metrics (all fields)
-
-If longitudinal_metrics.weeks_available >= 2:
-Present as compact data block:
-  Weeks Available: [weeks_available]
-  Rolling Win Rate (4wk): [rolling_win_rate_4wk]
-  Rolling Missed Rate (4wk): [rolling_missed_rate_4wk]
-  Volatility Index: [volatility_index_4wk]
-  Recommitment Rate (4wk): [recommitment_rate_4wk]
-  Controllable Stability: [controllable_stability_4wk]
-  Fatigue Load: [fatigue_load_indicator]
-
-If insufficient data:
-"Longitudinal metrics require 2+ weeks. Not yet available."
-
-This metrics block is for mindset coach reference only.
-Raw longitudinal numbers NEVER appear in Output A.
+FIELDS NOT CONSUMED BY STAGE 4:
+- risk_flags → Internal to pipeline only. Never surfaced in
+  institutional output.
+- upcoming_context → Stage 3 only. May contain personal
+  emotional history not appropriate for institutional output.
+- narrative_arc → Stage 3 only. Contains detailed personal
+  developmental narrative.
+- longitudinal_metrics → Trend-level indicators derived from
+  these metrics appear via trend_analysis fields in Sections
+  1, 5, and 7. Raw numbers are not surfaced.
+- prior_commitment_result → Stage 3 only.
+- athlete_voice → Stage 3 only.
+- micro_commitment → Stage 3 only.
+- next_week_focus_question → Stage 3 only.
+- baseline_profile → Stage 3 only.
+- baseline_alignment → Stage 3 only.
 
 ============================================================
 COMPLIANCE FILTERS

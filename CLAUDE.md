@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-05
-**Session Notes:** Built Coach Insights Engine (Stage 4) pipeline-aligned specification v1.0. Two-output architecture: Weekly Performance Insight (institutional dashboard, Sections 1-9) + Weekly Coach Strategic Brief (coaching intelligence, Sections 10-14). Consumes all v9.3 fields including coach_insights (all 4 subfields), risk_flags, narrative_arc, upcoming_context, emotional_intensity, longitudinal_metrics, and growth_phase_movement. Updated JSON_logic_reference.txt with new field mappings.
+**Session Notes:** Built Coach Insights Engine (Stage 4) pipeline-aligned specification v1.0. Single compliance-safe output (Weekly Performance Insight, 9 sections) for all coaching staff levels. coach_insights subfields inform output but raw content never surfaced. risk_flags, narrative_arc, upcoming_context stay internal to pipeline. Revised from initial two-output design after compliance review confirmed all coach-visible content must be institutional-safe across full staff hierarchy.
 
 ---
 
@@ -50,14 +50,14 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 ### As the Coach Insights Engine (Stage 4):
 - Input: Interpretation JSON only (v9.3 schema)
 - You are NOT a coach. You do NOT generate athlete-facing content.
-- Produce TWO outputs per athlete per week:
-  - **Output A: Weekly Performance Insight** — institutional dashboard (Sections 1-9), compliance-safe, mandatory disclaimer
-  - **Output B: Weekly Coach Strategic Brief** — coaching intelligence (Sections 10-14), full coach_insights, risk_flags, narrative arc, upcoming context, longitudinal metrics
-- Clinical language prohibition applies to both outputs
-- risk_flags content appears in Output B only (never in Output A)
+- Produce ONE compliance-safe output per athlete per week:
+  - **Weekly Performance Insight** — institutional dashboard (Sections 1-9), compliance-safe, mandatory disclaimer
+- ALL content must be safe for coaching staff at every organizational level (position coach → coordinator → head coach)
+- coach_insights subfields INFORM the output but raw content is NEVER surfaced
+- risk_flags, narrative_arc, upcoming_context, longitudinal_metrics stay internal to the pipeline — not surfaced in institutional output
+- Clinical language prohibition applies
 - Write to: `Athlete Data\[Athlete]\Coach Insights\`
 - Naming: `{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_WeeklyInsight.txt`
-- Naming: `{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_CoachBrief.txt`
 
 ### As the Editorial Audit Agent (Stage 5):
 - Input: Interpretation JSON + Coaching Message + Deep Dive (all three required)
@@ -140,7 +140,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Monthly Summary Prompt: `Agents - Generators\Coach Insights Engine\(MASTER) Monthly_Institutional_Summary_Master_Prompt.txt`
 - Pre-pipeline versions (historical): `(MASTER) Coach_Insights_Project_Instructions_v2.txt`, `v3.txt`, `Weekly_Coach_Insights_Master_Prompt.txt`
 - Model: Opus (recommended for accurate field routing and compliance judgment)
-- Outputs: Weekly Performance Insight (institutional) + Weekly Coach Strategic Brief (mindset coach)
+- Output: Weekly Performance Insight (single compliance-safe institutional dashboard)
 
 ### Editorial Audit Agent (Stage 5)
 - Master Prompt: `Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.0.txt`
@@ -254,7 +254,7 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 14. Regenerated all 5 Grace Kindel Deep Dives under v1.3 rules — removed coach-facing sections (Coach Reinforcement, Coach Avoidance, Risk and Compliance Note), fixed coach-directive language in mandatory sections to athlete-facing second person, eliminated clinical terms ("anxiety," "clinical"). Re-audited Weeks 3 and 5 — both PASS all 12 criteria.
 15. Addressed remaining comparative analysis gaps — added Growth Phase Progression Thresholds (Section 4C) to VF_Interpretation_JSON_Rules.txt with deterministic criteria for Developing→Consistent and Consistent→Leadership advancement, regression rules, and 2-week minimum dwell time. Added Micro-Commitment Modality Adaptation Rule (Section 10) and Growth Phase Advancement Surfacing Rule (Section 11) to Coaching Output Instructions v1.4. Updated Reflection/Growth Phase Model with progression criteria summary. Promoted Audit Criterion 10 (Micro-Commitment Realism) from Tier 3 to Tier 2 with modality adaptation check logic.
 16. Applied growth phase progression thresholds to Grace Kindel Weeks 1-5. Week 5 advances to Consistent (Weeks 1-4 remain Developing — Week 3's Partially Aligned status blocks earlier advancement). Updated Week 5 JSON (growth_phase, growth_phase_movement), Coaching Message (identity thread names phase change), and Deep Dive (Mindset Summary leads with advancement criteria, Trendline shows Advancing). Also cleaned residual "trigger/triggered" clinical language from Weeks 2 and 5 Deep Dives.
-17. Built Coach Insights Engine (Stage 4) pipeline-aligned specification v1.0. Upgraded from pre-pipeline v3 to pipeline-aligned architecture with two-output design: Weekly Performance Insight (institutional dashboard, 9 sections) + Weekly Coach Strategic Brief (coaching intelligence, 5 sections). Consumes all v9.3 schema fields — coach_insights (all 4 subfields), risk_flags, emotional_intensity, narrative_arc, upcoming_context, longitudinal_metrics, growth_phase_movement. Updated JSON_logic_reference.txt with Output B section mappings and v9.3 field routing. Houses all coach-facing content removed from Deep Dives in v1.3.
+17. Built Coach Insights Engine (Stage 4) pipeline-aligned specification v1.0. Upgraded from pre-pipeline v3 to pipeline-aligned architecture. Initial design used two outputs (institutional dashboard + coach strategic brief), but compliance review confirmed all coach-visible content must be institutional-safe across full staff hierarchy (position coach → coordinator → head coach). Revised to single compliance-safe output: Weekly Performance Insight (9 sections). coach_insights subfields inform the output indirectly (Sections 1, 8, 9) but raw content never surfaced. risk_flags, narrative_arc, upcoming_context, longitudinal_metrics stay internal to pipeline. Updated JSON_logic_reference.txt with v9.3 field routing and inform-only rules.
 
 ---
 
@@ -279,7 +279,7 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 - [x] Deep Dive regeneration — all 5 weeks updated under v1.3 rules, Weeks 3 and 5 re-audited PASS
 - [x] Comparative analysis gaps addressed — micro-commitment modality adaptation + growth phase progression thresholds
 - [x] Growth phase progression applied — Week 5 Developing → Consistent, outputs updated, clinical language cleaned
-- [x] Coach Insights Engine (Stage 4) — specification upgraded to pipeline-aligned v1.0 (Master Prompt + Project Instructions + JSON Logic Reference updated)
+- [x] Coach Insights Engine (Stage 4) — specification upgraded to pipeline-aligned v1.0 (single compliance-safe output, all staff levels)
 
 ---
 
