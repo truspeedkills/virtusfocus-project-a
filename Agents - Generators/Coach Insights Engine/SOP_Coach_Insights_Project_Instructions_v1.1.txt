@@ -351,8 +351,10 @@ Color Band:
 - Orange (Attention)
 
 Determination rules:
-- Growth + Stable/Improving consistency + Strong recommitment
-  + Control focus → ↑ Positive (Green)
+- Growth + Stable/Improving consistency + Strong or Not Applicable
+  recommitment + Control focus → ↑ Positive (Green)
+  (Not Applicable recommitment = no adverse events requiring
+   recommitment, equivalent to Strong for readiness purposes)
 - Growth + any other combination → → Steady (Yellow)
 - Mixed + Moderate or better recommitment → → Steady (Yellow)
 - Mixed + Low recommitment OR Variable consistency with Low
