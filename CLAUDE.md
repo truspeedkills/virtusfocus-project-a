@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-05
-**Session Notes:** Editorial Audit Agent (Stage 5) specification complete — Master Prompt v1.0 and Project Instructions v1.0 written to disk. Three-system comparative analysis complete. Git version control initialized. All 5 pipeline stages now have specifications on disk.
+**Session Notes:** Coaching Output Engine patched to v1.3 — Deep Dive boundary rule, JSON field routing, clinical language prohibition, length controls. Editorial Audit validated against Weeks 3 and 5 — both caught systemic clinical language leak in non-framework Deep Dive sections, confirming audit spec works. All 5 pipeline stages specified and validated.
 
 ---
 
@@ -19,7 +19,7 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 |---|---|---|
 | 1 | Athlete Snapshot Generator | Built |
 | 2 | Interpretation Engine | Built — Active schema: **v9.3** |
-| 3 | Coaching Output Engine | Built — Active schema: **v1.2 / V3** |
+| 3 | Coaching Output Engine | Built — Active schema: **v1.3 / V3** |
 | 4 | Coach Insights Engine | Built |
 | 5 | Editorial Audit | **Specification complete — v1.0** |
 
@@ -109,7 +109,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 
 ### Coaching Output Engine
 - Master Prompt: `Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt`
-- Project Instructions: `Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.2.txt`
+- Project Instructions: `Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.3.txt`
 - Message Map: `Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt`
 - Brand Voice: `Agents - Generators\Coaching Output\Source FIles\brand_voice.txt`
 - Brand Themes: `Agents - Generators\Coaching Output\Source FIles\brand_themes.txt`
@@ -226,16 +226,17 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 9. Completed three-system comparative analysis (30 files, 10 dimensions, 12 audit criteria identified)
 10. Initialized Git version control — .gitignore protecting raw athlete data, first commit capturing full project state
 11. Built Editorial Audit Agent (Stage 5) specification — Master Prompt v1.0 + Project Instructions v1.0 with 12 tiered audit criteria, clinical language exclusion list, decision tree, auto-correction rules, and regeneration instruction format
+12. Ran live validation audits against Grace Kindel Weeks 3 and 5 — both REJECTED on Criterion 2 (clinical language in non-framework Deep Dive sections). Identical systemic pattern confirmed: Stage 3 producing coach-facing sections with clinical terms ("anxiety," "clinical") in the athlete-readable Deep Dive. Coaching Messages passed all 12 criteria in both weeks.
+13. Patched Coaching Output Instructions v1.2 → v1.3 — added Deep Dive section boundary rule (5 mandatory sections only), JSON field routing rule (coach_insights/risk_flags to Stage 4), clinical language prohibition with specific terms and replacements, coaching message length target (250-450 words), prior commitment bridge length rule (1-3 sentences). Also refined Audit Agent Criterion 4 sentence limit from 2 to 3.
 
 ---
 
 ## What's Next (Pending)
 
 ### Immediate — Pipeline Refinement
-- [ ] Run the Editorial Audit Agent against Grace Kindel Week 3 (HIGH emotional intensity — hardest test case) as a live validation
-- [ ] Run the Editorial Audit Agent against Grace Kindel Week 5 (full longitudinal data — tests all criteria)
-- [ ] Based on audit results, decide whether to patch Coaching Output Engine (v1.3 / V4) or iterate on audit criteria
-- [ ] Address v1.2/V3 remaining gaps identified in comparative analysis (Section 5) — particularly: micro-commitment design realism, coaching message length, static growth phase label, coach-facing language in Deep Dives
+- [ ] Regenerate Grace Kindel Weeks 1–5 Deep Dives under v1.3 rules (coach-facing sections removed, clinical terms eliminated)
+- [ ] Re-run Editorial Audit on regenerated Weeks 3 and 5 to confirm PASS
+- [ ] Address remaining comparative analysis gaps: micro-commitment design realism, static growth phase label
 
 ### Athlete Pipeline Work
 - [ ] Grace Kindel Week 6 (when recap arrives post-Florida trip)
@@ -247,6 +248,8 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 - [x] Three-system comparative analysis — complete
 - [x] Git version control — initialized
 - [x] Editorial Audit Agent (Stage 5) — specification complete (Master Prompt v1.0 + Project Instructions v1.0)
+- [x] Live validation audits — Weeks 3 and 5 audited, systemic issue identified and confirmed
+- [x] Coaching Output Engine v1.3 patch — Deep Dive boundary, clinical compliance, length controls
 
 ---
 

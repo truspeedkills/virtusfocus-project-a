@@ -265,12 +265,14 @@ Step 2: Apply the appropriate rule:
     says Unknown), that is a Data Fidelity violation
     (Criterion 3) in addition to this criterion failure.
 
-Step 3: Verify the acknowledgment does not exceed 2 sentences.
-        The mapping rule is "One sentence maximum" for the
-        prior commitment reference. Up to 2 sentences is
-        acceptable if the second sentence bridges to the new
-        commitment. More than 2 sentences means the message
-        is dwelling on the prior week rather than moving forward.
+Step 3: Verify the acknowledgment does not exceed 3 sentences.
+        The mapping rule targets 1 sentence for the prior
+        commitment reference. Up to 3 sentences is acceptable
+        if the additional sentences bridge to the new commitment
+        or provide a short transition (e.g., "That's the
+        standard. Carry it forward."). More than 3 sentences
+        means the message is dwelling on the prior week rather
+        than moving forward.
 
 Step 4: If carry_forward = "Yes", verify that the current
         week's micro_commitment reflects a continuation or
