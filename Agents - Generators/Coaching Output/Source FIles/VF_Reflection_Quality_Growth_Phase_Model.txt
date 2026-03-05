@@ -12,6 +12,24 @@ Developing – Inconsistent but building awareness.
 Consistent – Reliable routines and self-regulation.
 Leadership – Self-led, disciplined, and modeling standards for others.
 
+Growth Phase Progression Criteria:
+Growth phase is not static. It advances when sustained evidence
+supports the next level. See VF_Interpretation_JSON_Rules.txt
+Section 4C for deterministic threshold rules.
+
+Summary of progression triggers:
+- Developing → Consistent: 85%+ win rate, Stable Positive
+  consistency, RQS ≥ 3, Aligned status — all sustained 2+
+  weeks with 3+ weeks of data available.
+- Consistent → Leadership: All Consistent criteria sustained
+  3+ weeks after classification, RQS = 4 at least once,
+  documented influence-ring behavior in 2+ weeks.
+- Regression requires sustained decline (2+ weeks), not
+  single-week dips.
+- Minimum 2-week dwell time before advancing.
+
 Interpretation Usage:
 Use reflection depth and growth phase classification as performance-development markers.
 Do not frame growth phases as psychological assessments.
+When a phase change occurs, surface it as earned recognition
+based on the behavioral record — not as promotion or reward.

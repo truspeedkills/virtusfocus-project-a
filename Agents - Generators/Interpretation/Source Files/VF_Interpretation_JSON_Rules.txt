@@ -169,6 +169,94 @@ Leadership:
 If unclear → "insufficient data"
 
 ============================================================
+SECTION 4C – GROWTH PHASE PROGRESSION THRESHOLDS
+============================================================
+
+Growth phase is NOT a static label assigned once at baseline.
+It must be re-evaluated weekly using the criteria below.
+
+Advancement requires sustained evidence across multiple weeks.
+A single strong week does not trigger advancement.
+
+If fewer than 2 prior weeks exist: growth_phase defaults to
+the baseline classification from the athlete snapshot.
+
+------------------------------------------------------------
+4C-1) DEVELOPING → CONSISTENT
+------------------------------------------------------------
+
+Requires ALL of the following over 3+ weeks of data:
+
+- rolling_win_rate ≥ 0.85 across the available window
+- consistency_profile = Stable Positive for 2+ consecutive
+  weeks (current week included)
+- reflection_quality_score ≥ 3 for 2+ consecutive weeks
+  (current week included)
+- alignment_status = Aligned for 2+ consecutive weeks
+  (current week included)
+- If baseline_primary_derailer has been tested under adversity
+  at any point in program history: execution held at the
+  behavioral level (derailer may have activated, but daily
+  Win status was maintained)
+
+NOTE: If the derailer has NOT been tested yet (no adversity
+trigger in program history), advancement to Consistent may
+still occur if all other criteria are met for 4+ weeks.
+
+------------------------------------------------------------
+4C-2) CONSISTENT → LEADERSHIP
+------------------------------------------------------------
+
+Requires ALL of the following:
+
+- All Consistent criteria sustained for 3+ consecutive weeks
+  AFTER classification as Consistent
+- reflection_quality_score = 4 at least once in the window
+- Documented influence-ring behavior (teammate leadership,
+  proactive support, mentoring) in at least 2 separate weeks
+- Athlete language shows internal-standard motivation (naming
+  personal standards rather than seeking external validation)
+
+------------------------------------------------------------
+4C-3) REGRESSION RULES
+------------------------------------------------------------
+
+Consistent → Developing:
+- rolling_win_rate drops below 0.70 for 2+ consecutive weeks
+- AND consistency_profile shifts to Mixed Pattern or Volatile
+
+Leadership → Consistent:
+- Influence-ring behavior absent for 3+ consecutive weeks
+- AND reflection_quality_score drops below 3 for 2+
+  consecutive weeks
+
+Any phase → Emerging:
+- Only if weekly_tier = Reset for 2+ consecutive weeks
+
+------------------------------------------------------------
+4C-4) MINIMUM DWELL TIME
+------------------------------------------------------------
+
+An athlete must spend at least 2 weeks in a phase before
+advancing to the next phase. This prevents single-week
+spikes from triggering premature phase changes.
+
+The 2-week dwell clock starts from the week the phase
+was first assigned (including baseline assignment).
+
+------------------------------------------------------------
+4C-5) INTEGRATION WITH TREND ANALYSIS
+------------------------------------------------------------
+
+When growth_phase changes from one week to the next:
+- trend_analysis.growth_phase_movement = "Advancing" or
+  "Regressing" as appropriate
+
+Growth phase evaluation uses the same longitudinal window
+as trend_analysis. If fewer than 2 prior weeks exist,
+growth_phase_movement = "insufficient data".
+
+============================================================
 SECTION 4A – PRIOR COMMITMENT RESULT CLASSIFICATION RULES
 ============================================================
 

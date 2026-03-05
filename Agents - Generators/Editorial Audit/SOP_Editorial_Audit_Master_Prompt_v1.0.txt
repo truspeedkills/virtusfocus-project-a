@@ -175,13 +175,13 @@ TIER 2 — SHOULD PASS
    7. Upcoming Context Anchoring
    8. Narrative Arc Presence
    9. Message Length Constraint
+   10. Micro-Commitment Realism
 
 TIER 3 — QUALITY OPTIMIZATION
    Failures at this tier are auto-corrected silently. These
    criteria improve output polish and consistency but do not
    represent coaching errors if missed.
 
-   10. Micro-Commitment Realism
    11. Brand Voice Tonal Scan
    12. Outer-Ring Language Discipline
 

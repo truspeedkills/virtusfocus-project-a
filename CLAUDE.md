@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-05
-**Session Notes:** All 5 Grace Kindel Deep Dives regenerated under v1.3 rules — coach-facing sections removed, clinical terms eliminated, coach-directive language rewritten athlete-facing. Re-audit of Weeks 3 and 5 confirmed PASS. Full pipeline validated end-to-end.
+**Session Notes:** Addressed remaining comparative analysis gaps — micro-commitment modality adaptation rule and growth phase progression thresholds. Coaching Output Engine patched to v1.4. JSON Rules updated with deterministic phase advancement criteria. Audit Criterion 10 promoted from Tier 3 to Tier 2.
 
 ---
 
@@ -19,7 +19,7 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 |---|---|---|
 | 1 | Athlete Snapshot Generator | Built |
 | 2 | Interpretation Engine | Built — Active schema: **v9.3** |
-| 3 | Coaching Output Engine | Built — Active schema: **v1.3 / V3** |
+| 3 | Coaching Output Engine | Built — Active schema: **v1.4 / V3** |
 | 4 | Coach Insights Engine | Built |
 | 5 | Editorial Audit | **Specification complete — v1.0** |
 
@@ -109,7 +109,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 
 ### Coaching Output Engine
 - Master Prompt: `Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt`
-- Project Instructions: `Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.3.txt`
+- Project Instructions: `Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.4.txt`
 - Message Map: `Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt`
 - Brand Voice: `Agents - Generators\Coaching Output\Source FIles\brand_voice.txt`
 - Brand Themes: `Agents - Generators\Coaching Output\Source FIles\brand_themes.txt`
@@ -229,13 +229,15 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 12. Ran live validation audits against Grace Kindel Weeks 3 and 5 — both REJECTED on Criterion 2 (clinical language in non-framework Deep Dive sections). Identical systemic pattern confirmed: Stage 3 producing coach-facing sections with clinical terms ("anxiety," "clinical") in the athlete-readable Deep Dive. Coaching Messages passed all 12 criteria in both weeks.
 13. Patched Coaching Output Instructions v1.2 → v1.3 — added Deep Dive section boundary rule (5 mandatory sections only), JSON field routing rule (coach_insights/risk_flags to Stage 4), clinical language prohibition with specific terms and replacements, coaching message length target (250-450 words), prior commitment bridge length rule (1-3 sentences). Also refined Audit Agent Criterion 4 sentence limit from 2 to 3.
 14. Regenerated all 5 Grace Kindel Deep Dives under v1.3 rules — removed coach-facing sections (Coach Reinforcement, Coach Avoidance, Risk and Compliance Note), fixed coach-directive language in mandatory sections to athlete-facing second person, eliminated clinical terms ("anxiety," "clinical"). Re-audited Weeks 3 and 5 — both PASS all 12 criteria.
+15. Addressed remaining comparative analysis gaps — added Growth Phase Progression Thresholds (Section 4C) to VF_Interpretation_JSON_Rules.txt with deterministic criteria for Developing→Consistent and Consistent→Leadership advancement, regression rules, and 2-week minimum dwell time. Added Micro-Commitment Modality Adaptation Rule (Section 10) and Growth Phase Advancement Surfacing Rule (Section 11) to Coaching Output Instructions v1.4. Updated Reflection/Growth Phase Model with progression criteria summary. Promoted Audit Criterion 10 (Micro-Commitment Realism) from Tier 3 to Tier 2 with modality adaptation check logic.
 
 ---
 
 ## What's Next (Pending)
 
 ### Immediate — Pipeline Refinement
-- [ ] Address remaining comparative analysis gaps: micro-commitment design realism, static growth phase label
+- [ ] Re-run Interpretation Engine on Grace Kindel Weeks 3-5 with updated growth phase progression rules (Weeks 3-5 may now classify as Consistent instead of Developing)
+- [ ] Regenerate coaching outputs for any weeks where growth_phase changes
 
 ### Athlete Pipeline Work
 - [ ] Grace Kindel Week 6 (when recap arrives post-Florida trip)
@@ -250,6 +252,7 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 - [x] Live validation audits — Weeks 3 and 5 audited, systemic issue identified and confirmed
 - [x] Coaching Output Engine v1.3 patch — Deep Dive boundary, clinical compliance, length controls
 - [x] Deep Dive regeneration — all 5 weeks updated under v1.3 rules, Weeks 3 and 5 re-audited PASS
+- [x] Comparative analysis gaps addressed — micro-commitment modality adaptation + growth phase progression thresholds
 
 ---
 

@@ -567,50 +567,79 @@ FAIL: 551+ words — regenerate with instruction to target
 ============================================================
 SECTION 10 — CRITERION 10: MICRO-COMMITMENT REALISM
 ============================================================
-Tier: 3 — QUALITY OPTIMIZATION
-Applies to: Coaching Message AND Deep Dive
-Failure action: NOTE (logged but not auto-corrected)
+Tier: 2 — SHOULD PASS
+Applies to: Coaching Message
+Failure action: FLAG for revision (auto-correct if possible)
 
 PURPOSE:
 The micro-commitment should be realistically executable
-within the athlete's weekly routine. Commitments that are
-too ambitious or too vague reduce follow-through.
+within the athlete's weekly routine. Commitments that repeat
+a modality the athlete has not executed reduce follow-through
+and signal the pipeline is not adapting to the athlete's
+demonstrated patterns.
 
 CHECK LOGIC:
 
 Step 1: Read micro_commitment from the JSON.
 
-Step 2: Evaluate the commitment against realism markers:
+Step 2: MODALITY ADAPTATION CHECK.
+        Read the current week's AND the prior 2+ weeks'
+        prior_commitment_result entries.
 
-  REALISTIC markers:
-  - Single, specific behavior (not a compound action)
+        Classify each commitment's primary modality:
+        - WRITTEN: write, log, record, journal, checklist
+        - ORAL: say, state, tell yourself, repeat, aloud
+        - BEHAVIORAL: do, perform, complete, warmup, breathe
+
+        If 2+ consecutive prior weeks show execution_status
+        = "Partial" on the SAME modality, AND the current
+        week's micro-commitment uses the SAME modality:
+        → FAIL: "Modality adaptation required. Prior
+          commitment modality [WRITTEN/ORAL/BEHAVIORAL] has
+          shown Partial execution for [N] consecutive weeks.
+          The new commitment must shift modality."
+
+Step 3: STRUCTURAL SIMPLICITY CHECK.
+        Evaluate the commitment against simplicity markers:
+
+  PASS markers:
+  - Maximum 2 action steps
+  - Single trigger moment
+  - Binary measurement (yes/no)
   - Tied to a context the athlete already inhabits
     (practice, pre-game, post-game, daily routine)
-  - Measurable in simple terms (did it / did not do it)
-  - Does not require new resources or environments
 
-  QUESTIONABLE markers:
-  - Requires significant habit change in a single week
-  - Compound action (multiple distinct behaviors in one
-    commitment)
-  - Measurement is subjective ("feel more confident")
-  - Context is vague ("during high-pressure moments")
+  FAIL markers:
+  - More than 2 action steps in a single commitment
+  - Measurement requires logging, tallying, or tracking
+  - Volume targets (5+ resets, 6+ checkmarks)
+  - Multi-item checklists
 
-Step 3: Evaluate how the coaching output presents the
-        commitment. Even if the JSON commitment is
-        questionable, the coaching output may frame it in
-        a way that makes execution clearer — or may make
-        a realistic commitment sound vague.
+Step 4: Evaluate how the coaching output presents the
+        commitment in the Coaching Message. Even if the JSON
+        commitment is structurally sound, the coaching output
+        may add complexity in presentation (extra steps,
+        compound framing) or may simplify a complex
+        commitment effectively.
 
-NOTE: The Audit Agent does NOT rewrite micro-commitments.
-This is a JSON field produced by Stage 2 and passed through
-by Stage 3. If the commitment itself is unrealistic, log
-the concern as a NOTE in the Audit Summary for upstream
-review. If the coaching output makes a realistic commitment
-sound vague, that is an Action Specificity issue (Criterion 6).
+AUTO-CORRECTION RULES:
+- If the modality adaptation check fails: The Audit Agent
+  CANNOT rewrite the micro-commitment (it is a JSON field
+  from Stage 2). Issue a REJECT AND REGENERATE with a
+  Regeneration Instruction specifying the required modality
+  shift.
+- If the structural simplicity check fails on presentation
+  only (coaching output adds complexity the JSON doesn't
+  have): AUTO-CORRECT by simplifying the presentation to
+  match the JSON's action/when/measurement format.
+- If the structural simplicity check fails on the JSON
+  itself: Log as a NOTE for upstream Stage 2 review. Do not
+  reject on this basis alone.
 
-PASS: Commitment appears realistic and is presented clearly.
-NOTE: Concern logged about commitment realism for QA review.
+PASS: Modality adapts to prior execution patterns AND
+      commitment is structurally simple.
+FAIL: Modality repeats despite 2+ weeks of Partial
+      execution on the same modality → REJECT.
 
 
 ============================================================
