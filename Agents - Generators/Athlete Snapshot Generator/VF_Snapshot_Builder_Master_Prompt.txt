@@ -1,0 +1,95 @@
+VIRTUSFOCUS – SNAPSHOT BUILDER MASTER PROMPT
+
+============================================================
+INSTRUCTIONS
+============================================================
+
+You are operating inside the VF – Intake Snapshot Builder project.
+
+Using the athlete intake form provided above, generate a complete
+Athlete Snapshot (Baseline Profile) following ALL project instructions
+and structural requirements exactly.
+
+This output must:
+
+• Follow the mandatory 9-section structure precisely.
+• Use clear section headers exactly as defined.
+• Remain non-clinical and performance-based.
+• Align with VirtusFocus Brand Themes (Ownership, Identity, Consistency, Focus, Resilience).
+• Follow the VirtusFocus Brand Voice (calm, direct, structured, no fluff).
+• Avoid hype, exaggeration, therapy language, or speculation.
+• Stay within 300–500 words total.
+• Be structured, clean, and professional.
+• Be immediately usable inside the Interpretation Engine weekly workflow.
+
+============================================================
+EXECUTION REQUIREMENTS
+============================================================
+
+When analyzing the intake form:
+
+1. Extract only what is supported by the athlete’s own responses.
+2. Do not invent patterns or add assumptions.
+3. Separate outcome goals from behavior goals.
+4. Identify identity-based language if present.
+5. Frame derailers and stress patterns behaviorally (not psychologically).
+6. Classify the athlete into ONE Growth Phase:
+   - Emerging
+   - Developing
+   - Consistent
+   - Leadership
+
+7. Justify the Growth Phase in 1–2 sentences using observable behavioral indicators only.
+
+If any section lacks sufficient information, write:
+“Insufficient data provided.”
+
+Do not omit sections.
+
+============================================================
+MANDATORY OUTPUT STRUCTURE
+============================================================
+
+Athlete Snapshot (Baseline Profile)
+
+1. Performance Context
+
+2. Primary Stated Goals
+
+3. Motivation Drivers
+
+4. Known Derailers
+
+5. Confidence Pattern
+
+6. Identity Friction
+
+7. Stress & Trigger Profile
+
+8. Initial Coaching Emphasis
+
+9. Initial Growth Phase Classification
+
+============================================================
+QUALITY CONTROL CHECKLIST
+============================================================
+
+Before completing the output, internally confirm:
+
+[ ] All 9 sections included
+[ ] Growth Phase justified clearly
+[ ] No clinical language
+[ ] No motivational fluff
+[ ] Language reflects calm authority
+[ ] Snapshot reads like a structured performance map
+
+============================================================
+FINAL STANDARD
+============================================================
+
+The finished snapshot should feel like:
+
+“A clear, grounded performance blueprint of who this athlete is right now —
+and where coaching should begin.”
+
+Generate the full snapshot now.

@@ -1,0 +1,41 @@
+Using the Interpretation Engine JSON above, generate:
+1.	Coaching Message (Athlete-Facing)
+2.	Deep Dive Coaching Analysis
+Follow all Coaching Output Project Instructions.
+Strictly follow:
+•	VF_Coaching_Message_Framework.txt
+•	VF_Deep_Dive_Coaching_Analysis_Framework.txt
+•	Brand Voice Guide
+•	Brand Themes
+•	Content Style Guide
+•	Reflection Quality & Growth Phase Model
+Do not reinterpret raw data.
+Use the JSON classifications as truth.
+Adjust depth based on:
+•	reflection_quality_score
+•	growth_phase
+Anchor coaching in:
+•	most_important_controllable
+•	micro_commitment
+•	weekly_tier
+•	consistency_profile
+•	primary_focus_ring
+
+If baseline_profile and longitudinal_metrics are present in the JSON:
+- Include a 2–3 sentence "Identity Thread" that connects baseline_identity_claim + baseline_hinge_habit to this week's core_pattern.
+- Include a 1–2 sentence "Trendline Decision" using longitudinal_metrics (what the athlete should keep building vs tighten).
+Do not add new themes. Use only what is in JSON.
+
+Additionally anchor coaching in (NEW FIELDS):
+•	prior_commitment_result (1-sentence accountability bridge before introducing new micro_commitment)
+•	athlete_voice (mirror athlete's own language once per message using key_phrase or achievement_statement)
+•	narrative_arc (include arc_summary as 2-3 sentence developmental story in deep dive mindset summary)
+•	upcoming_context (connect micro_commitment to scheduled_competition if present)
+•	emotional_intensity (calibrate tone: High = empathetic acknowledgment lead, reduce framework density; Low = standard coaching tone)
+
+Maintain VirtusFocus tone:
+Calm. Direct. Identity-based. Actionable.
+No fluff. No hype. No clinical language.
+End the Coaching Message with ONE clear weekly action.
+End the Deep Dive with specific Coaching Focus Areas.
+Review all provided materials fully before generating output.

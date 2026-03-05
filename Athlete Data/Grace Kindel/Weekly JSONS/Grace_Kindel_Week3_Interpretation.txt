@@ -1,0 +1,68 @@
+{
+"athlete_name": "Grace Kindel",
+"week_period": "2026-02-16 to 2026-02-22",
+"baseline_profile": {
+"baseline_identity_claim": "Wants to stay confident in her ability during competition.",
+"baseline_hinge_habit": "Immediate reset and refocus after mistakes.",
+"baseline_primary_derailer": "Loss of confidence following errors or perceived failure.",
+"baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role.",
+"baseline_growth_phase": "Developing"
+},
+"baseline_alignment": {
+"alignment_status": "Partially Aligned",
+"alignment_notes": "Routine execution stayed intact (daily Win the Day), but the week included more outcome/travel frustration and one clear external blame reference, showing the reset-and-refocus habit held behaviorally while mindset language drifted at times."
+},
+"athlete_state": "High participation and routine follow-through while returning from travel/competition; managed a rough emotional week with continued daily execution.",
+"core_pattern": "Maintains daily structure and personal reset routines (time alone, workouts) to stabilize after a disappointing trip; occasional mental dip shows up in language but does not break the daily follow-through.",
+"behavioral_root_cause": "Post-trip outcome frustration increases noise attention (coach/experience), but confidence and steadiness return when she recenters on controllables (work input, habits, personal routine) and protects balance with school and recovery time.",
+"win_the_day": {
+"daily_distribution": {
+"win_days": "7",
+"neutral_days": "0",
+"missed_days": "0"
+},
+"weekly_tier": "Growth",
+"consistency_profile": "Stable Positive",
+"recommitment_signal": "Not Applicable"
+},
+"bullseye_analysis": {
+"control_quality": "Identifies controllables clearly (work put in, daily habits, keeping a personal routine) and follows through with actions across the week.",
+"influence_quality": "Names influence at the habit level but does not specify consistent influence actions beyond maintaining her own routine.",
+"noise_fixation_present": "No",
+"primary_focus_ring": "Control"
+},
+"reflection_quality_score": "2",
+"growth_phase": "Consistent",
+"trend_analysis": {
+"weekly_tier_trend": "Stable",
+"growth_phase_movement": "Stable",
+"consistency_trend": "Strengthening",
+"recommitment_trend": "Stable",
+"pattern_shift_detected": "Yes"
+},
+"longitudinal_metrics": {
+"weeks_available": "3",
+"rolling_win_rate_4wk": "1.00",
+"rolling_missed_rate_4wk": "0.00",
+"volatility_index_4wk": "Low",
+"recommitment_rate_4wk": "insufficient data",
+"controllable_stability_4wk": "Shifting",
+"fatigue_load_indicator": "Low"
+},
+"most_important_controllable": "Use a consistent daily recenter routine (Bullseye reset + personal recovery time) after travel/competition stress so attention stays on controllables instead of external frustration.",
+"micro_commitment": {
+"action": "Complete a 5-minute Bullseye reset: write 1 controllable action for tomorrow, 1 influence action, and 1 thing to release (cannot control).",
+"when": "Each night before bed, and immediately after any practice moment where frustration spikes.",
+"measurement": "Log 1 checkmark per completed reset; target 6+ checkmarks this week."
+},
+"coach_insights": {
+"routine_execution_summary": "Seven Win-the-Day completions despite travel/competition disappointment; routines held even when the week felt heavy.",
+"key_habit_signal": "When she protects her own routine (gym/time alone) she stays steady; when focus drifts to external factors, language becomes more reactive even if execution remains high.",
+"coach_reinforcement_cue": "Reinforce the controllable anchor: daily work + habits are the standard, and the Bullseye reset is the bridge back to confidence after a rough result.",
+"coach_avoidance_note": "Avoid engaging external blame narratives; redirect quickly to the next controllable action and the athlete-controlled routine that stabilizes her."
+},
+"risk_flags": {
+"compliance_safe_note": "Interpretation is limited to performance habits, controllable focus, and routine consistency within the VirtusFocus non-clinical mental performance framework."
+},
+"next_week_focus_question": "What is your repeatable Bullseye reset action you will use the moment frustration shows up so your next decision stays controllable and on-plan?"
+}

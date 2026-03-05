@@ -1,0 +1,68 @@
+{
+"athlete_name": "Grace Kindel",
+"week_period": "2026-01-19 to 2026-01-25",
+"baseline_profile": {
+"baseline_identity_claim": "Wants to stay confident in her ability during competition.",
+"baseline_hinge_habit": "Immediate reset and refocus after mistakes.",
+"baseline_primary_derailer": "Loss of confidence following errors or perceived failure.",
+"baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role.",
+"baseline_growth_phase": "Developing"
+},
+"baseline_alignment": {
+"alignment_status": "Aligned",
+"alignment_notes": "Weekly actions show consistent ownership of controllables (body care, practice adjustments, early communication with support staff) and steady follow-through, supporting preparation-based confidence rather than outcome reactivity."
+},
+"athlete_state": "High engagement with steady routine execution; managed physical load (arm) by speaking up early and adjusting training while maintaining daily commitments.",
+"core_pattern": "Controllable-first approach: prioritizes body care and recovery, makes conservative practice adjustments when needed, and pairs consistency with small leadership behaviors toward teammates.",
+"behavioral_root_cause": "Consistency holds when focus stays on controllables (recovery choices, communication, effort, and next-action decisions); potential derailers are reduced by acting early on physical signals instead of pushing through without a plan.",
+"win_the_day": {
+"daily_distribution": {
+"win_days": "7",
+"neutral_days": "0",
+"missed_days": "0"
+},
+"weekly_tier": "Growth",
+"consistency_profile": "Stable Positive",
+"recommitment_signal": "Not Applicable"
+},
+"bullseye_analysis": {
+"control_quality": "Clear, specific controllable ownership: body care plan, reporting issues to a trainer, adjusting throwing load, and making choices that protect readiness.",
+"influence_quality": "Uses influence through encouragement, practical help, and modeling standards (supporting teammates while maintaining her own recovery choices).",
+"noise_fixation_present": "No",
+"primary_focus_ring": "Control"
+},
+"reflection_quality_score": "3",
+"growth_phase": "Consistent",
+"trend_analysis": {
+"weekly_tier_trend": "insufficient data",
+"growth_phase_movement": "insufficient data",
+"consistency_trend": "insufficient data",
+"recommitment_trend": "insufficient data",
+"pattern_shift_detected": "insufficient data"
+},
+"longitudinal_metrics": {
+"weeks_available": "insufficient data",
+"rolling_win_rate_4wk": "insufficient data",
+"rolling_missed_rate_4wk": "insufficient data",
+"volatility_index_4wk": "insufficient data",
+"recommitment_rate_4wk": "insufficient data",
+"controllable_stability_4wk": "insufficient data",
+"fatigue_load_indicator": "insufficient data"
+},
+"most_important_controllable": "Proactively manage body care and training load (communicate early, adjust reps, and follow recovery habits) to protect consistency as school and season demands increase.",
+"micro_commitment": {
+"action": "Complete a 10-minute recovery block (stretch + targeted arm care) and log a one-sentence plan for the next practice load.",
+"when": "Immediately after each practice/lift session, before leaving the facility.",
+"measurement": "Log 1 checkmark per day completed; target 6+ checkmarks this week."
+},
+"coach_insights": {
+"routine_execution_summary": "Seven Win-the-Day entries with steady follow-through and visible readiness management; maintained momentum coming out of a heavy training period.",
+"key_habit_signal": "Early-reporting and adjustment behavior (trainer communication + lighter throwing) shows controllable ownership instead of pushing through and drifting from the plan.",
+"coach_reinforcement_cue": "Reinforce the standard: protect readiness by acting early on body signals and staying process-led (recovery choices + next-action plan).",
+"coach_avoidance_note": "Avoid turning the week into outcome talk; keep feedback anchored to repeatable recovery habits and controllable load decisions."
+},
+"risk_flags": {
+"compliance_safe_note": "Interpretation is limited to performance habits, controllable focus, and routine consistency within the VirtusFocus non-clinical mental performance framework."
+},
+"next_week_focus_question": "What is the one recovery-and-communication habit you will execute every practice day to keep your readiness stable as school and softball ramp up?"
+}

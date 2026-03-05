@@ -1,0 +1,68 @@
+{
+"athlete_name": "Grace Kindel",
+"week_period": "2026-01-12 to 2026-01-18",
+"baseline_profile": {
+"baseline_identity_claim": "Wants to stay confident in her ability during competition.",
+"baseline_hinge_habit": "Immediate reset and refocus after mistakes.",
+"baseline_primary_derailer": "Loss of confidence following errors or perceived failure.",
+"baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role.",
+"baseline_growth_phase": "Developing"
+},
+"baseline_alignment": {
+"alignment_status": "Aligned",
+"alignment_notes": "Weekly entries show consistent follow-through and explicit reset behavior (e.g., staying composed when reps weren’t as strong), matching the baseline hinge habit of resetting after mistakes and anchoring confidence to preparation."
+},
+"athlete_state": "High engagement and strong training readiness; confidence reinforced through consistent daily execution and preparation.",
+"core_pattern": "Preparation-driven confidence with consistent Win the Day habits; applies patience/slow reaction to manage daily friction and stays process-focused in practice adjustments.",
+"behavioral_root_cause": "Confidence stability increases when attention stays on controllables (effort, reset routine, body care); external comparison/teammate competition appears as a secondary distraction but is acknowledged and reframed.",
+"win_the_day": {
+"daily_distribution": {
+"win_days": "7",
+"neutral_days": "0",
+"missed_days": "0"
+},
+"weekly_tier": "Growth",
+"consistency_profile": "Stable Positive",
+"recommitment_signal": "Not Applicable"
+},
+"bullseye_analysis": {
+"control_quality": "Clear controllable ownership (mindset, daily reset, body health) with specific practice adjustment cues.",
+"influence_quality": "Acknowledges influencing perception through daily work without over-fixating on approval.",
+"noise_fixation_present": "No",
+"primary_focus_ring": "Control"
+},
+"reflection_quality_score": "3",
+"growth_phase": "Consistent",
+"trend_analysis": {
+"weekly_tier_trend": "insufficient data",
+"growth_phase_movement": "insufficient data",
+"consistency_trend": "insufficient data",
+"recommitment_trend": "insufficient data",
+"pattern_shift_detected": "insufficient data"
+},
+"longitudinal_metrics": {
+"weeks_available": "insufficient data",
+"rolling_win_rate_4wk": "insufficient data",
+"rolling_missed_rate_4wk": "insufficient data",
+"volatility_index_4wk": "insufficient data",
+"recommitment_rate_4wk": "insufficient data",
+"controllable_stability_4wk": "insufficient data",
+"fatigue_load_indicator": "insufficient data"
+},
+"most_important_controllable": "Execute a consistent reset-and-refocus routine after any imperfect rep to keep confidence anchored to preparation rather than outcomes.",
+"micro_commitment": {
+"action": "After any mistake or rep that doesn’t meet the standard, perform a 60-second reset (1 deep breath, posture check, and one technical cue) and re-enter the next rep with the cue.",
+"when": "Immediately after an error/imperfect rep in practice, then mark it during the post-practice recap the same day.",
+"measurement": "Log one checkmark per completed reset; target 5+ logged resets across the week."
+},
+"coach_insights": {
+"routine_execution_summary": "Full-week Win the Day completion with stable day-to-day execution and continued training engagement.",
+"key_habit_signal": "Shows composure after less-successful reps and stays oriented to small technical adjustments instead of frustration.",
+"coach_reinforcement_cue": "Reinforce preparation-anchored confidence: the standard is the reset routine + next rep focus, not the outcome of one drill.",
+"coach_avoidance_note": "Avoid feeding external comparison narratives; keep feedback anchored to controllables and repeatable reps."
+},
+"risk_flags": {
+"compliance_safe_note": "Interpretation is limited to performance habits, controllable focus, and routine consistency within the VirtusFocus non-clinical mental performance framework."
+},
+"next_week_focus_question": "What is your single repeatable reset cue you will use after any mistake to make the next rep your best controllable response?"
+}

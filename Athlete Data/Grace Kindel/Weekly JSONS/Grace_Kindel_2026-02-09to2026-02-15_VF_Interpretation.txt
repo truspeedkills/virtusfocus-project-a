@@ -1,0 +1,112 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-02-09 to 2026-02-15",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Grace's baseline primary derailer (confidence disruption following disappointing outcomes) activated this week following the NC competition trip. She described cracking mentally on Friday and wishing she could come home. However, her hinge habit is functioning at a structural level — she maintained daily self-directed routine (Planet Fitness, room workout, school balance) as a stabilizing anchor. The reframe to 'doing it for me at this point' shows self-leadership emerging under pressure, but the underlying confidence disruption from competition outcomes and coach friction is present and active."
+  },
+
+  "athlete_state": "High-execution week under the most significant emotional load of the program to date. Grace returned from a disappointing NC competition trip, maintained 7/7 Win days through explicit mental strain on Friday, ongoing coach frustration, and homesickness. Daily self-directed routine served as the structural stabilizer when competitive results and coaching dynamics failed to provide it.",
+
+  "core_pattern": "Routine-anchored execution under emotional pressure. When competitive outcomes and coach dynamics disappointed, Grace's self-directed daily routine (gym, room workout, school maintenance) became the primary controllable anchor. Execution held through structure rather than confidence — a meaningful shift from the preparation-driven confidence of Weeks 1 and 2.",
+
+  "behavioral_root_cause": "Competition outcomes and coach decisions (outer ring) generated emotional strain that exceeded Grace's typical processing threshold this week. Her daily routine contained the disruption at the execution level — she won all 7 days — but did not fully resolve the underlying frustration and confidence pressure. The 'doing it for me' motivation reframe signals an adaptive identity response under adversity.",
+
+  "prior_commitment_result": {
+    "prior_action": "Each morning, write down one academic commitment and one athletic or recovery commitment for the day — two items, no more — before practice or class begins.",
+    "execution_status": "Partial",
+    "execution_notes": "Behavioral outcomes of the commitment are present — daily self-care routine maintained, school balance noted positively ('school itself is going well'), and achievement framed as 'kept the routine for myself' — but no direct confirmation of the specific morning write-down practice in the recap.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "stay positive and in good mindset after the trip",
+    "achievement_statement": "Kept the routine for myself",
+    "key_phrase": "Honestly just doing it for me at this point.",
+    "mindset_resonance": "Wednesday- keep going even if I dont want to that day"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Grace correctly named 'the work I put in' as her controllable and executed on it. However, the competition section reveals significant outer-ring processing — NC trip outcomes, homesickness, and coach frustration competed with center-ring focus throughout the week.",
+    "influence_quality": "Underdeveloped this week. Grace listed 'I can influence my habits' as an influence-ring item, but habits are a center-ring controllable — not an influence. The influence ring (teammates, team culture) dropped out of her Bullseye framing this week, replaced by internal self-management language.",
+    "noise_fixation_present": "Yes",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "High",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "2",
+    "rolling_win_rate_4wk": "1.0",
+    "rolling_missed_rate_4wk": "0.0",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over three weeks, Grace progressed from high-confidence preseason execution anchored in preparation and belonging (Weeks 1-2) into her first significant adversity episode — a disappointing competition trip with recurring coach-athlete friction and explicit emotional strain (Week 3). Through all three weeks, her behavioral execution (7/7 Wins) has remained the constant. The shift this week is in the mechanism: execution in Weeks 1-2 was energized by confidence and belonging; execution in Week 3 was sustained by structure and internal redirection — 'doing it for me.'",
+    "milestone_this_week": "First documented activation of the baseline primary derailer under real competitive pressure. Grace 'cracked mentally' on Friday following the NC trip disappointment but completed the day and practice — the hinge habit (reset and continue) held at the execution level even when internal experience was strained. The motivation reframe to 'doing it for me' marks the first identity-level self-leadership statement under adversity.",
+    "open_thread": "Coach-athlete relationship frustration has appeared in the outer ring in at least two consecutive reporting periods ('I cant once again control that dumbass coach' — the word 'once again' indicates prior recurrence). This is a structural stressor, not an isolated event. With Francis Marion travel immediately ahead — the same competition travel environment that destabilized this week — the coach dynamic will likely reactivate."
+  },
+
+  "most_important_controllable": "Pre-competition mental process for the Francis Marion trip — specifically what Grace does in the moments before and between games to stay in her center ring rather than processing outcomes, playing time, or coach decisions in real time.",
+
+  "micro_commitment": {
+    "action": "Before each game at Francis Marion, state one specific controllable action aloud or in writing ('I will give full effort on every play I'm involved in') and commit to logging one thing she controlled well after each game — not the score or playing time, but one specific action of her own.",
+    "when": "Within 10 minutes before each game begins during the Francis Marion trip, and within 10 minutes after each game ends.",
+    "measurement": "At the end of the trip, she should have one pre-game commitment statement and one post-game controlled-action note for every game played. If she logs both for every game, she executed the commitment."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "leaving for Francis Marion on Friday",
+    "anticipated_stressor": "Second consecutive competition trip immediately following the disappointing NC experience; Grace explicitly named 'stay more out of my head' as her goal, signaling awareness that mental noise was the problem in NC. Coach-athlete tension is likely to persist in the same travel environment.",
+    "athlete_stated_next_goal": "Same thing but stay more out of my head"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days maintained through the most emotionally demanding week of the program — return from a disappointing NC trip, explicit Friday mental strain, recurring coach frustration, and homesickness. Daily self-directed routine (Planet Fitness Monday, room workout Sunday, school balance maintained) was the structural anchor that held execution together.",
+    "key_habit_signal": "The motivation reframe is the week's most significant behavioral signal: 'Honestly just doing it for me at this point.' Combined with 'Kept the routine for myself' as the achievement statement, the routine itself has become Grace's identity anchor. This is a durable form of motivation — internal and independent of coach decisions or playing time.",
+    "coach_reinforcement_cue": "Reinforce the internal motivation reframe directly: 'doing it for me' is self-leadership, not resignation. When playing time and coach decisions are unpredictable, the routine is what she controls — and she executed it all 7 days under real pressure. That is the identity she is building.",
+    "coach_avoidance_note": "Coach frustration ('dumbass coach,' 'once again') is an outer-ring pattern with documented recurrence. Do not dismiss or over-validate it — redirect to controllables. Coaching output must address the upcoming Francis Marion trip proactively, not reactively. The same competitive environment that destabilized this week is repeating immediately."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Athlete expressed homesickness ('I wish I could come home'), recurring coach frustration, and an explicit mental strain event Friday ('kind of cracked today mentally'). All framed in performance and behavioral context — no clinical indicators present. Coach awareness flagged: sustained coach-athlete tension and emotional isolation during competition travel should be monitored as the travel schedule continues. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "At Francis Marion, when you feel yourself getting in your head about playing time or the outcome, what is the one thing you will do — right in that moment — to come back to your center ring?"
+}

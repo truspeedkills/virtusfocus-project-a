@@ -1,0 +1,131 @@
+
+VIRTUSFOCUS – COACHING OUTPUT
+JSON → MESSAGE MAPPING LOGIC
+
+PURPOSE
+Standardizes how Interpretation JSON fields are translated into coaching outputs.
+
+------------------------------------------------------------
+COACHING MESSAGE (ATHLETE-FACING)
+------------------------------------------------------------
+
+Recognition:
+Pull from athlete_state + positive signals in coach_insights.
+
+Prior Commitment Check (NEW):
+If prior_commitment_result.execution_status exists and is not "No Prior Week":
+- Include 1 sentence acknowledging the prior commitment and its result.
+- If Completed: reinforce with brief recognition.
+- If Partial/Not Attempted: name it without judgment, then bridge
+  to the current week's micro_commitment.
+- Do not dwell. One sentence maximum.
+
+Strength Signals:
+Use weekly_tier + consistency_profile + control_quality.
+
+Drift Identification:
+Use core_pattern + bullseye primary_focus_ring + recommitment_signal.
+
+Identity Anchor:
+Use growth_phase to frame identity development.
+
+Weekly Action:
+Must directly equal micro_commitment.action + when + measurement.
+Do not modify action language.
+
+Identity Thread (2–3 sentences):
+If baseline_profile exists, connect:
+baseline_identity_claim + baseline_hinge_habit → core_pattern → most_important_controllable.
+
+Athlete Voice Mirror (NEW):
+If athlete_voice.key_phrase or athlete_voice.achievement_statement
+contains a significant statement:
+- Include 1 sentence that mirrors the athlete's own language back.
+- Use their exact words or a close paraphrase.
+- Connect it to the identity thread or the most_important_controllable.
+Do not use more than 1 athlete-voice mirror per message.
+
+Upcoming Context Anchor (NEW):
+If upcoming_context.scheduled_competition is not "insufficient data":
+- Include 1 sentence connecting the micro_commitment to the
+  specific upcoming event.
+- Frame as: "Here is your tool for [event]."
+
+Trendline Decision (1–2 sentences):
+If longitudinal_metrics exists, reference:
+rolling_win_rate_4wk + volatility_index_4wk + fatigue_load_indicator
+to frame: "keep building" vs "tighten guardrails".
+
+------------------------------------------------------------
+DEEP DIVE ANALYSIS
+------------------------------------------------------------
+
+Weekly Overview:
+Use weekly_tier + consistency_profile + recommitment_signal.
+
+Strength Sections:
+Draw from coach_insights.key_habit_signal + win_the_day signals + control_quality.
+
+Growth Sections:
+Use behavioral_root_cause + drift indicators + recommitment_signal.
+
+Mindset Summary:
+Use growth_phase + reflection_quality_score.
+
+Narrative Arc (NEW):
+If narrative_arc fields are populated (not "insufficient data"):
+- Include arc_summary as a 2-3 sentence developmental summary.
+- Name milestone_this_week as a specific callout.
+- Reference open_thread in coaching focus areas if relevant.
+
+Coaching Focus Areas:
+Must include most_important_controllable + micro_commitment.
+
+Upcoming Preparation (NEW):
+If upcoming_context.scheduled_competition is not "insufficient data":
+- Include one coaching focus area that specifically prepares
+  the athlete for the named upcoming event.
+- Connect the micro_commitment to the competition context.
+
+Emotional Calibration Rule (NEW):
+If emotional_intensity = "High":
+- Lead coaching message with empathetic acknowledgment.
+- Name the specific emotional experience from the recap.
+- Reduce framework language; increase human language.
+If emotional_intensity = "Low":
+- Standard coaching tone. No emotional preamble needed.
+
+Baseline vs Now:
+Use baseline_alignment.alignment_status + alignment_notes
+to explain whether this week matches the athlete's baseline standards.
+
+Trendline:
+Use longitudinal_metrics to describe:
+- pace (win rate)
+- stability (volatility + controllable stability)
+- load (fatigue indicator)
+Then prescribe focus areas already in JSON:
+most_important_controllable + micro_commitment.
+
+------------------------------------------------------------
+PARENT SUMMARY
+------------------------------------------------------------
+
+Pull only:
+- growth_phase
+- consistency trend (simplified)
+- one development signal
+
+Do NOT include:
+- weekly tier labels
+- technical classifications
+- scoring bands
+
+------------------------------------------------------------
+GLOBAL RULES
+------------------------------------------------------------
+
+- Do not reinterpret JSON classifications.
+- Do not introduce new themes not grounded in JSON.
+- Maintain brand voice (calm, direct, structured).
+- Reinforce controllables consistently.

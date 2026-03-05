@@ -1,0 +1,112 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-02-16 to 2026-02-22",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Week 4 is the most direct test of Grace's baseline primary derailer in the program — one at-bat, in a mercy-rule game, down 10-0, with two outs in the last inning. The derailer did not fire. She executed ('I hit a solid line drive'), derived confidence from the quality of the action rather than the result, and came out stating 'Im confident heading to Florida next week.' Bullseye framing corrected Week 3's confusion — confidence is now precisely and correctly placed in the center ring. This is the clearest alignment-to-baseline-identity-claim moment in four weeks."
+  },
+
+  "athlete_state": "Adversity-resilient confidence emerging. Grace converted the worst competitive circumstance of the program — one at-bat in a mercy-rule game — into a genuine confidence builder. Execution held through long travel, limited playing time, late return (3am Sunday), and physical fatigue, while emotional tone shifted markedly upward from Week 3. First week where confidence and execution held simultaneously under direct competition pressure.",
+
+  "core_pattern": "Adversity-resilient confidence. Grace demonstrated preparation-based confidence decoupled from outcomes and playing time for the first time under live competition conditions. The 'said f it' decision — releasing external validation and focusing solely on the controllable action when the moment came — produced both the execution and the confidence. Most precise Bullseye framing in the program: confidence as controllable, effort visibility as influence, coach decisions as uncontrollable.",
+
+  "behavioral_root_cause": "Grace released outcome and playing time expectations before her at-bat and focused on the one controllable action available. The result (line drive caught) was irrelevant to her confidence; the execution ('I hit a solid line drive') was what mattered. This is the first documented instance of preparation-based confidence functioning under competition conditions — a direct activation of the program's core target.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before each game at Francis Marion, state one specific controllable action aloud or in writing ('I will give full effort on every play I'm involved in') and commit to logging one thing she controlled well after each game — not the score or playing time, but one specific action of her own.",
+    "execution_status": "Partial",
+    "execution_notes": "Grace demonstrated the behavioral intent of the pre-game mental commitment — 'warming up, felt good' suggests positive pre-game state, and her post-game framing ('the one chance i got, i did something with') reflects exact controllable-action orientation — but no explicit evidence of the write-down or logging practice in the recap.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "stay in good mindset heading down to SC",
+    "achievement_statement": "Said f it and did what I had to do and proved it to myself as well",
+    "key_phrase": "the one chance i got, i did something with",
+    "mindset_resonance": "Friday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strongest of the four-week series. 'I can control my confidence' is precise, accurate, and behaviorally demonstrated this week — Grace named confidence itself as the controllable and then proved it under maximum competitive adversity. Corrects Week 3's center-ring confusion.",
+    "influence_quality": "Accurate and sophisticated. 'I can influence the effort they see and how they see me' is correctly placed in the influence ring — effort demonstration as a mechanism for affecting how coaching staff perceives her. More precise than any prior week.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "4",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Moderate",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "3",
+    "rolling_win_rate_4wk": "1.0",
+    "rolling_missed_rate_4wk": "0.0",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over four weeks, Grace progressed from preparation-driven confidence in preseason practice (Weeks 1-2) through her first significant adversity episode — competitive disappointment, coach frustration, and homesickness (Week 3) — to a breakthrough moment of adversity-resilient confidence in Week 4. When given one at-bat under the worst possible competitive circumstances (mercy-rule game, 2 outs, down 10-0), she executed and rebuilt confidence from the action rather than the result. Through all four weeks, behavioral execution (28/28 Win days) has been the constant — but the confidence mechanism has shifted from preparation-energized (Weeks 1-2) to structure-sustained (Week 3) to action-proven (Week 4).",
+    "milestone_this_week": "First clear demonstration of the baseline hinge habit under live competition pressure. Grace's single at-bat in adverse circumstances ('the one chance I got, I did something with') is the first moment in four weeks where confidence was rebuilt from a controllable action rather than from smooth results. Reflection quality also reached 4 for the first time — ownership plus forward behavioral adjustment both present.",
+    "open_thread": "Coach-athlete relationship frustration has shifted from high-charge emotional language (Week 3: 'dumbass coach') to composed outer-ring acknowledgment (Week 4: 'I cant control her decisions in the end'). The emotional charge is decreasing but the structural tension remains — limited playing time is likely to continue at Florida. The next trip will reveal whether Week 4's confidence momentum holds under a third consecutive travel-adversity situation."
+  },
+
+  "most_important_controllable": "Maintaining and entering Florida with the confidence mechanism that proved itself in SC — competing fully in every rep available, regardless of playing time or score, with confidence built from action quality rather than outcome.",
+
+  "micro_commitment": {
+    "action": "Before leaving for Florida, write one sentence defining what a successful performance means — anchored only to a controllable action, not to playing time, score, or coach decisions (e.g., 'I compete fully in every rep I get, no matter how many or when'). Carry that sentence through every game.",
+    "when": "Written before departure for Florida; reviewed silently before each game begins.",
+    "measurement": "After returning from Florida, identify one specific moment where she executed that definition regardless of the outcome. If she can name it, she executed the commitment."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Third consecutive competition trip — Florida — following two trips with limited playing time and emotional strain. Grace enters with elevated confidence from the SC at-bat, but the structural conditions (same coach, likely limited playing time) remain unchanged.",
+    "athlete_stated_next_goal": "Keep kicking ass"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days through the SC competition trip — long bus travel Thursday, one at-bat in adverse game circumstances Friday (well-executed line drive), rained out Saturday, arrived home 3am Sunday, gym Sunday morning, studied at a social event Sunday evening. Full execution through competition adversity and physical travel demands.",
+    "key_habit_signal": "Friday's single at-bat is the most significant behavioral signal in four weeks — Grace made the most of the worst competitive opportunity possible and derived confidence from the quality of the execution, not the result. This is the baseline hinge habit (reset and refocus, stay confident) functioning under live competition conditions for the first time.",
+    "coach_reinforcement_cue": "Reinforce Grace's exact language: 'the one chance I got, I did something with.' This is what the program has been building — confidence that comes from action quality, not playing time or results. Connect it directly to her Bullseye: she said confidence is her controllable, and then she proved it. That connection needs to be named explicitly.",
+    "coach_avoidance_note": "Avoid dwelling on the injustice of one at-bat or the coach's lineup decisions in the coaching output. Grace has already processed and moved past it — she's facing Florida with confidence, not grievance. Match her energy. Any coaching language that re-centers the coach's decisions risks pulling her back into the outer ring."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Coach-athlete tension continues but emotional charge has measurably decreased from Week 3 — no breakdown language, no homesickness, forward-looking confidence expressed. Athlete returning from third consecutive travel week; physical fatigue context noted (3am return Sunday). All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "At Florida, when you step into your moment — whether it's one rep or ten — what have you already decided about how you will compete?"
+}

@@ -1,0 +1,112 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-01-19 to 2026-01-25",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Grace extended her controllable focus from mental reset (Week 1) to physical body management (Week 2), proactively seeking trainer help for her arm rather than ignoring it or allowing it to disrupt execution. Baseline derailer (confidence loss after errors) was not triggered in a week described as smooth. Leadership instincts toward a struggling teammate are emerging, consistent with the baseline identity of being a reliable contributor to the team."
+  },
+
+  "athlete_state": "Second consecutive Growth week completing preseason. Grace navigated an emerging arm injury with proactive problem-solving, maintained 7/7 Win execution, and showed early leadership behavior toward a struggling freshman teammate. Week characterized by smooth, adaptive management rather than high-pressure challenge.",
+
+  "core_pattern": "Body-aware, preparation-focused execution. Same controllable orientation as Week 1 but applied to physical management rather than mental reset — sought trainer help, modified throwing load, kept practicing. Leadership instincts emerging: teammate encouragement and Saturday self-regulation (not drinking) both reflect values-driven behavior independent of external pressure.",
+
+  "behavioral_root_cause": "Physical challenge (arm) met with the same adaptive mechanism applied to mental challenges in Week 1: identify the issue, take a center-ring action, continue executing. 'Finally said something to a trainer and did something about it' reflects problem-solving rather than avoidance or reactivity.",
+
+  "prior_commitment_result": {
+    "prior_action": "Apply a defined reset cue — 3 breaths plus one silent controllable restatement ('my effort, my reset') — immediately after any practice error or below-standard rep, before the next play begins.",
+    "execution_status": "Unknown",
+    "execution_notes": "Week 2 recap describes the week as 'smooth and easy tbh' with no explicit practice error moments referenced; no direct evidence of reset cue application, but the week may not have produced the high-error situations the cue was designed for.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Finish stronger and make one less mistake/error each day",
+    "achievement_statement": "finished strong, got help, stretched a lot past two weeks",
+    "key_phrase": "one of our freshmen really struggles mentally so I always try to encourage her and say things that are hopefully helping that struggle",
+    "mindset_resonance": "wednesday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong. Grace correctly identified body care as her primary controllable this week — trainer consultation, modified throwing load, and sustained stretching are all center-ring responses to an emerging physical challenge.",
+    "influence_quality": "Expanding. Grace named teammate attitudes as an area of influence and demonstrated it actively — encouraging a freshman who struggles mentally. Leadership awareness growing from Week 1.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "1",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "insufficient data"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Daily structure for balancing school and softball commitments — the transition out of two weeks of preseason into the academic semester creates the highest risk of unstructured drift as external demands multiply.",
+
+  "micro_commitment": {
+    "action": "Each morning, write down one academic commitment and one athletic or recovery commitment for the day — two items, no more — before practice or class begins.",
+    "when": "Each morning during the first 5 minutes of the day, before any other commitment begins.",
+    "measurement": "End-of-day check: were both commitments completed? Track yes/no each day. Target: both completed on at least 5 of 7 days this week."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Academic semester beginning — Grace explicitly named school/softball balance as her next-week challenge after two weeks of preseason-only focus.",
+    "athlete_stated_next_goal": "get back to learning to balance school and softball"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days completing both hell weeks at full execution. Arm issue identified Tuesday, proactively addressed Wednesday via trainer consultation, throwing load modified Thursday. Week described as smoother than Week 1 with no execution disruptions.",
+    "key_habit_signal": "Wednesday arm management is the week's clearest behavioral signal: Grace identified a recurring physical challenge, resisted ignoring it, and sought help — 'finally said something to a trainer and did something about it.' This is the same center-ring adaptive mechanism as Week 1's reset habit, applied to a physical context rather than a mental one.",
+    "coach_reinforcement_cue": "Reinforce the proactive help-seeking decision using Grace's own Bullseye language: 'I can control how I take care of my body.' She executed this exactly. Connect body care as a controllable to her identity as a prepared, reliable competitor.",
+    "coach_avoidance_note": "Arm health is an active open thread requiring monitoring across upcoming weeks. Avoid micro-commitments that emphasize throwing volume until arm status clarifies. Keep all arm-related coaching language anchored in body-care controllable framing — not outcome or performance language."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Athlete self-reported arm issue and sought trainer consultation — appropriate behavioral response. No clinical language warranted. Arm health should be monitored in subsequent weeks as competition season approaches. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "As school starts and practice continues, what is the one daily anchor habit that will keep you from letting one demand crowd out the other?"
+}

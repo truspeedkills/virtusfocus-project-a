@@ -1,0 +1,143 @@
+VIRTUSFOCUS – MONTHLY INSTITUTIONAL SUMMARY MASTER PROMPT
+
+Using the aggregated Interpretation Engine JSON data provided above
+(multiple athletes and multiple weeks), generate a Monthly Institutional Summary report.
+
+You must:
+
+- Follow all requirements in VF_Coach_Insights_Project_Instructions_MASTER.txt
+- Apply JSON_logic_reference.txt transformation principles
+- Remain fully aligned with VF_Coach_Insights_Compliance_Framework.txt
+- Keep reporting trend-based, aggregated, and institution-safe
+
+CRITICAL RULES:
+
+1. Do NOT report individual daily data.
+2. Do NOT include journal excerpts or personal disclosures.
+3. Do NOT compare athletes by name.
+4. Do NOT include usage, completion, or participation metrics.
+5. Do NOT imply selection, discipline, or playing time implications.
+6. Maintain minimum aggregation group size of 5 athletes before reporting percentage trends.
+7. Use signal, indicator, trend, stability, and developmental language only.
+8. Tone must be executive, neutral, structured, and non-clinical.
+
+============================================================
+REQUIRED OUTPUT STRUCTURE
+============================================================
+
+HEADER:
+Report Type: Monthly Institutional Performance Summary
+Month: [Month / Date Range]
+Classification: Informational Only
+
+Insert the mandatory disclaimer:
+
+"These indicators are informational only and may not be used as a basis for participation, selection, or disciplinary decisions."
+
+------------------------------------------------------------
+1) OVERALL PERFORMANCE DISTRIBUTION
+------------------------------------------------------------
+- % Growth Weeks
+- % Mixed Weeks
+- % Reset Weeks
+- Overall Directional Momentum (↑ → ↓)
+
+2–3 sentence executive summary describing:
+- Behavioral stability trends
+- Habit execution patterns
+- General directional movement
+
+------------------------------------------------------------
+2) TEAM CONSISTENCY SIGNAL
+------------------------------------------------------------
+Status:
+- Predominantly Stable
+- Variable with Improvement Trend
+- Elevated Variability
+
+Short explanation referencing aggregated consistency_profile data only.
+
+------------------------------------------------------------
+3) TEAM FOCUS DISTRIBUTION TREND (BULLSEYE)
+------------------------------------------------------------
+- % Center-Dominant
+- % Mixed Focus
+- % Outer-Ring Drift Detected
+
+1–2 sentence neutral explanation of controllable alignment trend.
+
+------------------------------------------------------------
+4) RECOMMITMENT & RESPONSE TRENDS
+------------------------------------------------------------
+- % Strong Recommitment
+- % Moderate
+- % Low
+
+Short summary of recovery and response stability patterns.
+
+------------------------------------------------------------
+5) CONFIDENCE MOMENTUM TREND
+------------------------------------------------------------
+Overall Direction:
+- ↑ Building
+- → Stable
+- ↓ Variable
+
+Frame confidence as execution-linked and preparation-based.
+
+------------------------------------------------------------
+6) STRESS LOAD DISTRIBUTION
+------------------------------------------------------------
+- % Low
+- % Moderate
+- % Elevated
+
+Neutral summary. No attribution of sources.
+
+------------------------------------------------------------
+7) DEVELOPMENTAL PHASE DISTRIBUTION
+------------------------------------------------------------
+- % Emerging
+- % Developing
+- % Consistent
+- % Leadership
+
+Brief explanation of overall developmental maturity trend.
+
+------------------------------------------------------------
+8) PRIMARY MONTHLY DEVELOPMENT SIGNAL
+------------------------------------------------------------
+Single institutional-level development marker such as:
+- Routine Stability
+- Controllable Focus Alignment
+- Adversity Response Strength
+- Preparation Consistency
+
+2–3 sentence explanation of why this is the dominant signal this month.
+
+------------------------------------------------------------
+9) INSTITUTIONAL CONTEXT CUE
+------------------------------------------------------------
+Provide 1–3 neutral, non-directive reinforcement suggestions such as:
+
+- Maintain emphasis on controllable preparation behaviors.
+- Reinforce structured recovery after variability.
+- Continue building routine-based confidence foundations.
+
+Avoid directive language such as “must” or “require.”
+
+============================================================
+FINAL QUALITY CHECK
+============================================================
+
+Before finalizing, confirm:
+
+- Report is fully aggregated.
+- No individual identifiers beyond athlete count minimums.
+- No raw daily scores.
+- No participation metrics.
+- No mental health language.
+- Mandatory disclaimer included.
+- Tone is executive and compliance-safe.
+
+Generate the complete Monthly Institutional Summary now.

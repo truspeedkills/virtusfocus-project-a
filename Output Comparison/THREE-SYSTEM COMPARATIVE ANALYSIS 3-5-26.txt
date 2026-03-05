@@ -1,0 +1,258 @@
+---
+
+# THREE-SYSTEM COMPARATIVE ANALYSIS: Grace Kindel Coaching Outputs
+
+**Analyst:** Claude (Pipeline QA)
+**Date:** 2026-03-05
+**Files Reviewed:** 30 coaching outputs (10 per system) + 1 athlete baseline
+
+---
+
+## SECTION 1 — EXECUTIVE SUMMARY
+
+The three systems represent a clear improvement trajectory, but the gains are not uniform across dimensions and the original system retains advantages the new pipeline has not fully replicated. **System A (Core Foundation)** reads like a real coach wrote it — punchy, warm, emotionally intuitive — but operates week-to-week with almost no longitudinal memory, no accountability tracking, and actions that are directional rather than executable. **System B (Old Project A)** introduced structural rigor: numbered sections, explicit micro-commitments with measurement targets, and identity threading — but it also introduced mechanical artifacts (JSON source citations visible in athlete-facing messages, formulaic phrasing that repeats across weeks) that damaged the coaching voice and made the output feel more like a report than a message from a coach. **System C (New v1.2/V3)** is a genuine generational improvement: it is the only system that tracks prior commitments, uses the athlete's own language as coaching anchors, traces a developmental arc across weeks, calibrates tone to emotional intensity, and anchors actions to specific upcoming competition context. The five new schema fields are doing real work. The headline finding, however, is that **System C's quality gains come with a length and density cost that System A avoided naturally**, and the pipeline still has blind spots — particularly around micro-commitment design realism, coaching message brevity, and the static growth phase label — that the Editorial Audit Agent should catch.
+
+---
+
+## SECTION 2 — WEEK-BY-WEEK COMPARISON
+
+### Week 1 (Jan 12–18) — First Hell Week
+
+**System A Coaching Message:** Short, warm, coach-toned. Names the key lesson ("you proved it to yourself") and gives a direction ("shift from proving to refining"). Action is directional — "one focus each day, one controllable cue" — but not measurable. No measurement, no trigger moment. Deep Dive has good coaching intuition (names Thursday front toss as the key moment) but formatting is garbled and the analysis sections feel loosely organized.
+
+**System B Coaching Message:** More structured. Includes explicit identity threading ("your baseline identity is about staying confident in competition"). Action is specific and measurable: "60-second reset, target 5+ logged resets." But the message includes JSON source citations ("Grace_Kindel_Week1_Interpretati...") inline with the coaching text — this is a serious brand voice violation that makes the output feel like a machine-generated report. Deep Dive is well-structured (numbered sections, behavioral evidence + coach insight pairs) but reads more like a framework analysis than coaching.
+
+**System C Coaching Message:** Names Thursday front toss as the defining moment with behavioral specificity. Uses Grace's exact language: "Not only did I prove it to others but to myself." Connects this to her baseline identity claim. Action is specific: "3 breaths, then one silent statement: 'my effort, my reset.' Before the next play begins." Includes a focus question for the next week. Deep Dive is the most thorough — identifies that the reset habit is present but not yet formalized, catches that Grace's next-week goal is outcome-framed rather than process-framed, and includes a Baseline Alignment Note and Risk/Compliance Note.
+
+**Verdict:** System C wins on depth, specificity, and identity threading. System A wins on brevity and natural tone. System B's source citations are disqualifying for athlete-facing delivery.
+
+### Week 2 (Jan 19–25) — Second Hell Week, Arm Issue
+
+**System A:** Good coaching read — names the arm management as smart, not weak. "That's not backing off. That's leadership and longevity." Action is directional: "Keep protecting your body." No measurement. Deep Dive identifies leadership patterns and Bullseye diagnosis accurately.
+
+**System B:** References center-ring ownership and consistency but still carries the source citation problem. Action is the most measurable of the three: "10-minute recovery block + one-sentence plan, target 6+ checkmarks." Deep Dive includes clear Opportunities/Growth Areas with coaching cues.
+
+**System C:** Explicitly references the Week 1 reset cue and its status ("didn't get a clear test — you described it as smooth"). Names Grace's proactive trainer decision with her own words: "Finally said something to a trainer and did something about it." Notes freshman mentoring as leadership instinct. Action shifts to morning structure for the school transition — two items, tracked daily, target 5/7. Deep Dive includes Baseline Alignment Note tracking the continuity of the adaptive mechanism from Week 1 to Week 2.
+
+**Verdict:** System C's accountability bridge (referencing Week 1 cue) is the differentiator. System B's measurement specificity is strong. System A's voice is the most natural but lacks any cross-week reference.
+
+### Week 3 (Feb 9–15) — HIGH EMOTIONAL INTENSITY — The Critical Test
+
+This is the most important comparison point. Emotional_intensity=High. Grace returned from a disappointing NC trip, described cracking mentally on Friday, expressed homesickness, and was carrying active coach frustration. She won all seven days.
+
+**System A Coaching Message:** Opens well: "This was a tougher week than your scorecard shows — and that's exactly why I respect it." Acknowledges homesickness and emotional drain in the second paragraph. Reaches the most memorable line: "Respond. Don't react." Names the coach frustration directly ("The coach frustration is still pulling at you... That's outer ring energy. You already know that.") and lists center ring items. Action: "When you feel yourself getting in your head, pause and ask: 'What's one controllable action right now?'" Deep Dive identifies the Friday "mental crack" as the key insight and names the identity shift ("doing it for me") with appropriate emphasis.
+
+**System A's strength here:** The coaching message reads like a real coach who knows this athlete sat down and wrote her a note. Warm, direct, emotionally present. The weakness: no reference to prior weeks or prior commitments. No upcoming context anchoring (Francis Marion is not named). The action is general enough to apply to any athlete in any week.
+
+**System B Coaching Message:** "You handled a heavy week the right way." Structurally competent — names the 7/7 wins, references the Control ring. But the opening doesn't name the emotional content specifically. It moves to framework language ("Stable Positive consistency profile") within the second sentence. The action is: "5-minute Bullseye reset: write 1 controllable action for tomorrow, 1 influence action, and 1 thing to release." This is a good structure but it's not calibrated to the emotional weight of the week — it could be the same action for any Growth-tier week. Deep Dive has a similar issue: identifies the week's patterns accurately but doesn't lead with the emotional content the way the data demands.
+
+**System B's weakness here:** This is the week where the system should have demonstrated that it can handle a High emotional intensity moment differently than a Low one. It didn't. The tone is the same as Weeks 1 and 2.
+
+**System C Coaching Message:** Opens with: "That was a hard week. The NC trip was rough — the playing time, the coach situation, Friday cracking mentally, wanting to come home. That's real. It's worth saying before anything else." This is the strongest opening paragraph across all three systems for this week. It names every element of the emotional experience before moving to framework. Then it bridges to what held: "you won all seven days. Not because it was easy. Because you kept the routine when nothing else was holding." Uses Grace's own achievement statement: "Kept the routine for myself."
+
+The coaching message then names the prior commitment status: "The morning write-down showed up behaviorally even if it didn't make it to paper." It explicitly identifies the "doing it for me" reframe and explains why it matters: "the most durable form of motivation in this system. It doesn't need favorable conditions." It anchors forward to Francis Marion by name: "Francis Marion is the same environment as NC — same travel, same coach dynamic, same structural conditions."
+
+Action: "Before each game: state one specific controllable action — aloud or in writing. After each game: log one thing you controlled. Not the score, not playing time — one specific action of your own."
+
+Deep Dive is the most comprehensive analysis of any single week across all three systems — includes first narrative arc activation, longitudinal trendline, derailer tracking, explicit coach reinforcement and avoidance notes, and risk/compliance monitoring.
+
+**Verdict:** System C is meaningfully better than both A and B on Week 3. It is the only system that (a) leads with the emotional experience before framework, (b) references the prior commitment, (c) names the upcoming trip and connects it to the prior destabilization, and (d) uses Grace's own language as the coaching anchor. System A has the more natural voice but lacks the structural awareness. System B fails the emotional calibration test — it treats Week 3 the same as Weeks 1–2.
+
+### Week 4 (Feb 16–22) — Breakthrough At-Bat
+
+**System A:** Strong coaching message. "That At-Bat Was Bigger Than You Think" is an excellent title. Names the competitive context precisely. "Stay in your center ring. Confidence. Preparation. Body language. Effort." Action: "Stay centered. Stay ready." — directional, not measurable. Deep Dive accurately identifies the SC at-bat as identity-level growth and the coach tension shift.
+
+**System B:** Competent. References the at-bat and 7/7 execution. Identity threading present but formulaic ("your hinge habit is an immediate reset after mistakes"). Action: "2-minute Bullseye reset, target 4+ resets." Deep Dive is solid but doesn't name the SC at-bat chain as explicitly as the other systems.
+
+**System C:** Most thorough. Opens with the specific competitive context: "One at-bat. Mercy-rule game. Two outs, down ten." References the prior commitment status ("the written sentence before SC didn't make it to the page, but the behavioral intent was there in full"). Names Grace's exact language: "the one chance I got, I did something with." Traces the four-week identity progression. Connects the SC at-bat to the baseline identity claim directly: "Week 4 is the first time that confidence held under live competition pressure." Action anchored to Florida by name: "Before you leave: write one sentence defining what a successful performance looks like — anchored only to a controllable action."
+
+Deep Dive includes the full four-week narrative arc, first RQS=4 annotation, coach tension charge decrease tracking, and the longitudinal trendline. The Coach Avoidance Note ("do not re-center the coach's lineup decisions") is a sophisticated coaching instruction.
+
+**Verdict:** System C is the most complete. System A has the best title and the punchiest voice. System B is competent but forgettable.
+
+### Week 5 (Feb 23–Mar 1) — Full Longitudinal, Consolidation Week
+
+**System A:** Good coaching read. "Ready-Mode This Week — Not Waiting-Mode" is a strong reframe. Names the scrimmage result ("you got hits in every at-bat"). Gives a three-part action structure (warmup script, identity shift from "if" to "when," one influence action). Action: "Before every game, write one sentence: 'Today I control ______.' Then go do that." Deep Dive identifies the shift from "proving" to "readiness" and names the hidden travel risk. Strongest coaching intuition of any System A week.
+
+**System B:** Competent but flat. Opens with "this was a high-engagement, high-readiness week." Uses Grace's language ("warmup quality," "slow down, breathe, follow-through"). Action: "5-minute warmup checklist, target 6+ checkmarks." The output is structurally correct but doesn't feel like it knows where Grace has been. No reference to the five-week arc. The "Identity Thread" section is the same template as prior weeks with minor updates. Deep Dive follows the same structure as every other week — no special treatment for the most data-rich week of the program.
+
+**System C:** The most data-rich output in the entire comparison. Opens by naming the week's accomplishments with specificity ("Seven days of full execution through snow days, makeup lifts, a heavy academic week, and a dominant Friday scrimmage"). References the prior commitment directly: "Last week, the commitment was to write one sentence defining what a successful performance looks like before leaving for Florida... The written sentence didn't make it to the page, but your goal this week said it plainly: 'If I'm given a chance, use it well.'"
+
+Uses Grace's own Bullseye language: "I can control how well I warmup." Traces the full five-week confidence mechanism in the Deep Dive: "Outcome-reactive (baseline) → Preparation-energized (Wks 1–2) → Structure-sustained under pressure (Wk 3) → Action-proven (Wk 4) → Identity-embedded (Wk 5)."
+
+Action is the most competition-specific across all systems: "Before each game in NC and Florida, complete a deliberate warmup with full focus. Then say your own philosophy to yourself: 'If I'm given a chance, I use it well.' No evaluation of playing time or outcomes during the trip."
+
+Deep Dive includes: full narrative arc, longitudinal trendline, reflection quality comparison to Week 4, controllable language evolution tracked across all five weeks, NC environment monitoring note, post-trip reflection positioning for level-4 depth, and coach avoidance note.
+
+**Verdict:** System C is clearly superior on Week 5. The five-week arc, the athlete's own philosophy as the action anchor, and the upcoming context specificity are capabilities neither System A nor B can match. System A's "Ready-Mode" reframe is the only element where A offers something C doesn't.
+
+---
+
+## SECTION 3 — DIMENSION-BY-DIMENSION SCORECARD
+
+| # | Dimension | System A | System B | System C |
+|---|---|---|---|---|
+| 1 | Athlete Voice Preservation | **Partial** | **Partial** | **Strong** |
+| 2 | Longitudinal Awareness | **Weak** | **Partial** | **Strong** |
+| 3 | Accountability Continuity | **Weak** | **Partial** | **Strong** |
+| 4 | Emotional Calibration | **Strong** | **Weak** | **Strong** |
+| 5 | Specificity/Actionability | **Partial** | **Partial** | **Strong** |
+| 6 | Identity Threading | **Partial** | **Partial** | **Strong** |
+| 7 | Upcoming Context Anchoring | **Partial** | **Weak** | **Strong** |
+| 8 | Brand Voice Compliance | **Strong** | **Weak** | **Strong** |
+| 9 | Coaching Insight Depth | **Partial** | **Partial** | **Strong** |
+| 10 | Data Fidelity | **Partial** | **Partial** | **Strong** |
+
+### Evidence by Dimension:
+
+**1. Athlete Voice Preservation**
+System A paraphrases Grace loosely — captures the spirit but not the exact words. System B quotes Grace's language but pairs it with mechanical JSON citations that dilute the effect. System C uses Grace's exact phrases as coaching anchors: "Not only did I prove it to others but to myself" (Wk1), "Doing it for me" (Wk3), "The one chance I got, I did something with" (Wk4), "If I'm given a chance, use it well" (Wk5). The athlete_voice field is doing its job — the phrases aren't just quoted, they're embedded as the organizing principle for the coaching direction.
+
+**2. Longitudinal Awareness**
+System A treats each week in near-isolation. Week 4 references "earlier-season Grace" generally but doesn't cite specific prior weeks. System B includes some cross-referencing (Week 2 mentions Week 1 reset cue) and rolling metrics, but the references feel templated. System C explicitly connects each week to its predecessors: Week 2 references Thursday's front toss from Week 1, Week 3 references the morning anchor from Week 2, Week 4 traces a four-week arc, Week 5 traces the full five-week confidence evolution. The narrative_arc field is the primary driver of this improvement.
+
+**3. Accountability Continuity**
+System A never references a prior week's commitment. Each week starts fresh. System B mentions micro-commitments but doesn't explicitly track whether the prior one was completed. System C tracks every prior commitment: "didn't get a clear test" (Wk2), "showed up behaviorally even if it didn't make it to paper" (Wk3), "didn't make it to the page, but the behavioral intent was there in full" (Wk4), "The written sentence didn't make it to the page, but your goal this week said it plainly" (Wk5). The prior_commitment_result field creates a genuine through-line of accountability.
+
+**4. Emotional Calibration**
+System A's natural coaching voice calibrates tone intuitively — Week 3 opens with acknowledgment before framework. This is the one dimension where System A matches System C. System B fails this dimension: Week 3 uses the same structural template and tone as low-emotional-intensity weeks. The output doesn't lead with the emotional experience. System C's emotional_intensity=High flag explicitly drives structural changes: "This analysis leads with the emotional context before framework analysis." The Week 3 opening names every element of the emotional load before any framework language appears.
+
+**5. Specificity and Actionability**
+System A gives directions ("one controllable cue," "stay centered") rather than executable actions. No trigger moment, no measurement method. System B includes measurement targets (5+ checkmarks, 6+ checkmarks) but the actions are formulaic — every week is a timed Bullseye reset with a checkmark target. System C provides specific actions with trigger moments, athlete language, and context: "Before each game in NC and Florida, complete a deliberate warmup... Then say your own philosophy to yourself." The actions evolve week to week and match the athlete's developmental stage.
+
+**6. Identity Threading**
+System A makes identity statements ("That's confidence maturing. That's identity over outcome") but doesn't systematically connect them to the baseline. System B includes an "Identity Thread" template section that repeats baseline language with minor weekly updates — functional but formulaic. System C weaves the baseline identity claim into the coaching narrative organically: "You came into this program wanting to stay confident in your ability during competition." Then traces the evolution: Week 4 names it as the first time confidence held under live competition pressure. Week 5 traces the full mechanism across five weeks.
+
+**7. Upcoming Context Anchoring**
+System A mentions Florida and NC by name in Weeks 4–5 but doesn't connect them to prior experiences or specific challenges. System B barely names upcoming contexts — "travel/competition days" is as specific as it gets. System C names Francis Marion, NC, and Florida by name, connects NC to the Week 3 destabilization episode, and anchors actions to specific trip timing: "Before you leave... Before each game... After Florida." The upcoming_context field is the primary driver.
+
+**8. Brand Voice Compliance**
+System A reads like a real coach wrote it — warm, direct, no fluff, no clinical language. Occasional slight hype ("That's elite reframing" in a Deep Dive), but mostly clean. System B has a significant brand voice problem: JSON source citations appear inline in athlete-facing coaching messages ("Grace_Kindel_Week1_Interpretati..."). This is a fundamental delivery failure — the athlete sees the machine, not the coach. System C maintains clean brand voice with consistent formatting, "Coach Arron" signoff, and no citations in athlete-facing content. Occasional over-length (Week 5 coaching message is the longest across all systems).
+
+**9. Coaching Insight Depth**
+System A has good coaching intuition — "That At-Bat Was Bigger Than You Think" shows a coach who sees the pattern. But insights don't build on each other across weeks. System B provides structured analysis but insights tend toward generic maxims ("your confidence grows when your habits are predictable"). System C produces the deepest coaching reasoning: the Week 3 derailer analysis, the SC at-bat chain identification in Week 4, the five-week confidence mechanism trace in Week 5, and the explicit coach avoidance notes that prevent the output from making coaching errors.
+
+**10. Data Fidelity**
+System A occasionally generalizes beyond what the data supports ("That's elite decision-making"). Evaluative assertions aren't always grounded in specific evidence. System B is more data-faithful but the visible citation apparatus undermines the coaching format. System C is the most data-grounded: "One at-bat. Mercy-rule game. Two outs, down ten." Trendline metrics integrated into coaching language. Deep Dives include explicit alignment status tracking. The only fidelity concern in System C is density — occasionally the data saturation makes the coaching message feel more like an analysis than a conversation.
+
+---
+
+## SECTION 4 — WHAT THE NEW FIELDS ACTUALLY ADDED
+
+### 1. prior_commitment_result — HIGH VALUE
+
+This field produced the single most impactful structural improvement across all dimensions. System C is the only system that references what the athlete was asked to do last week, assesses whether she did it, and adjusts the new commitment accordingly. The accountability bridge is visible in every coaching message from Week 2 onward: "The reset cue from last week didn't get a clear test," "The morning write-down showed up behaviorally even if it didn't make it to paper," "The written sentence before SC didn't make it to the page, but the behavioral intent was there in full."
+
+The execution_status tracking revealed a real coaching issue: Grace's written/logged commitments consistently showed "Partial" execution — the behavioral intent was present but the explicit structure (writing, logging, checkmarks) was not transferring. This is a finding no other system surfaced. Used correctly and consistently across all weeks. Value proportional to complexity: the field is simple to populate and produces high-impact output improvement. **Verdict: Essential. Keep.**
+
+### 2. athlete_voice — HIGH VALUE
+
+This field changed how the coaching message relates to the athlete. System C uses Grace's exact phrases as coaching anchors rather than paraphrasing. In Week 5, Grace's own statement ("If I'm given a chance, use it well") becomes the philosophical anchor for the micro-commitment — the action literally asks her to say her own words before each game. In Week 3, "Honestly just doing it for me at this point" becomes the fulcrum of the coaching message's identity reframe.
+
+The field was used correctly and consistently. The key_phrase and achievement_statement subfields are the most impactful. The mindset_resonance subfield appears less consistently in the output. Value is proportional to complexity — small schema addition, large coaching quality improvement. **Verdict: Essential. Keep.**
+
+### 3. narrative_arc — VERY HIGH VALUE (with threshold delay)
+
+This is the field that produced the most sophisticated coaching artifact in the entire comparison: the five-week confidence mechanism trace ("Outcome-reactive → Preparation-energized → Structure-sustained → Action-proven → Identity-embedded"). No other system produced anything approaching this level of developmental synthesis.
+
+The 2-week threshold was applied correctly — Weeks 1 and 2 carry "insufficient data" and the arc activates in Week 3. From Week 3 onward, the arc summary, milestone_this_week, and open_thread subfields all produce meaningful coaching insight. The Week 4 Deep Dive narrative arc is particularly strong — it connects the SC at-bat to the full four-week progression and names the open thread heading into Florida.
+
+The only concern: the narrative_arc produces its value primarily in the Deep Dive. The coaching message uses the arc implicitly (connecting to prior weeks) but doesn't reproduce the arc summary directly. Whether the athlete sees the arc depends on whether they read the Deep Dive. **Verdict: Essential. Keep. Ensure the coaching message surfaces at least one explicit arc reference per week when data is available.**
+
+### 4. upcoming_context — MODERATE-TO-HIGH VALUE
+
+This field is the primary driver of Dimension 7 (Upcoming Context Anchoring) improvement. System C is the only system that names Francis Marion, NC, and Florida by name and connects the upcoming trip to the prior emotional experience. The Week 3 coaching message's statement — "Francis Marion is the same environment as NC" — is a coaching insight that neither System A nor B produced.
+
+The field was used correctly but its value is somewhat constrained by the fact that Grace's own next-week goal often already contains upcoming context information. The field adds the most value when it connects the upcoming context to prior experiences (e.g., NC = same location as Week 3 destabilization). When it simply names an upcoming trip without that connection, the value is lower.
+
+Complexity is low and the value, when present, is meaningful. **Verdict: Keep. Most valuable when combined with narrative_arc to connect upcoming context to prior episodes.**
+
+### 5. emotional_intensity — HIGH VALUE (especially for edge cases)
+
+This field's value is concentrated in Week 3 (HIGH) and its absence from Weeks 1, 2, 4, and 5 (LOW/MODERATE) validates that the system correctly distinguishes emotional load levels. The HIGH flag in Week 3 drove the most important structural change in any coaching output: leading with emotional acknowledgment before framework analysis.
+
+System B's failure on Week 3 — treating it with the same template as low-intensity weeks — is exactly the error this field prevents. The Deep Dive's explicit note ("This analysis leads with the emotional context before framework analysis") shows the field is being consumed correctly by the Coaching Output Engine.
+
+The field's value is binary in a useful way: LOW weeks run normally; HIGH weeks trigger a structural change. MODERATE weeks (Week 4) don't obviously change the output structure, which is appropriate — moderate emotional load doesn't require a different template.
+
+**Verdict: Essential. The field's value is highest at the extremes (HIGH), which is exactly where coaching errors are most costly.**
+
+---
+
+## SECTION 5 — REMAINING GAPS IN v1.2/V3
+
+### 1. Micro-Commitment Design Not Adapting to Execution Reality
+Across five weeks, Grace's explicit written/logged commitment structure consistently shows "Partial" execution — behavioral intent present, written practice absent. The pipeline tracks this correctly but does not adapt. Week 4 asks for a written sentence. Week 5 asks for a written sentence again. The prior_commitment_result field surfaces the pattern, but the Coaching Output Engine doesn't use the pattern to simplify the commitment design. If the athlete doesn't write things down, the commitment should adapt to an oral or behavioral format rather than repeatedly asking for the same structure that isn't transferring.
+
+### 2. Coaching Message Length
+System C coaching messages are consistently longer than System A's. Week 5 System C is approximately 450 words; Week 5 System A is approximately 300 words. In an app delivery context, the athlete reads this on a phone. Brevity is not a nice-to-have — it's a design constraint. System A's punchiness was actually a feature, not a limitation. The pipeline needs a length constraint or the Editorial Audit Agent needs to flag messages that exceed a threshold.
+
+### 3. Growth Phase Label is Static
+Grace is classified as "Developing" in all five weeks. The CLAUDE.md describes a Growth Phase progression: Emerging → Developing → Consistent → Leadership. Five weeks of 35/35 Win days, a clear identity-level shift, and RQS=4 in Week 4 all suggest forward movement within or beyond "Developing." The Deep Dives note the progression but the classification never changes. This creates a disconnect — the coaching output describes growth while the label stays fixed.
+
+### 4. Deep Dive Contains Coach-Facing Language the Athlete Shouldn't See
+"Risk and Compliance Note: No clinical indicators present" appears in every System C Deep Dive. If the athlete reads this, it signals clinical monitoring — exactly the framing VirtusFocus explicitly prohibits. Similarly, "Coach Avoidance Note" reads as internal pipeline instructions, not coaching analysis. The Deep Dive needs a clear separation between athlete-readable content and coach-facing operational notes, or the coach-facing notes need to be stripped before delivery.
+
+### 5. Bullseye Enumeration Missing from Coaching Message
+System A explicitly lists center-ring items in the coaching message ("Your preparation, your response, your posture, your effort"). System C coaching messages reference the Bullseye conceptually but don't enumerate the rings. The Deep Dive enumerates them. If the athlete only reads the coaching message, they miss the specific Bullseye breakdown for the week.
+
+### 6. Influence Ring Actions Remain Under-Specified
+System C's Week 3 Deep Dive identifies that the influence ring collapsed under emotional load and recommends "one influence action per day." The coaching message for Week 3 does not include a specific influence action. This pattern continues — the Deep Dive notes the gap, the coaching message doesn't fill it. The Coaching Output Engine should include at least one influence-ring action when the Deep Dive identifies a gap.
+
+### 7. No Explicit "What to Watch For" Forward-Look in Coaching Message
+System C's Deep Dives contain sophisticated monitoring notes (NC environment monitoring, derailer watch, controllable stability tracking) but these don't surface in the coaching message as a forward-looking "heads up." Grace doesn't know what the coaching system is watching for. A brief "What I'm watching heading into NC/Florida" section in the coaching message would increase the athlete's self-awareness without adding clinical framing.
+
+### 8. Week 4 RQS=4 → Week 5 RQS=3 Drop Unexplained to Athlete
+The Deep Dive notes the reflection quality score dropped from 4 to 3 and explains it as expected given a smooth week. The coaching message doesn't reference reflection quality at all. The athlete has no awareness that this dimension exists or that her Week 4 processing depth was exceptional. This is a missed reinforcement opportunity.
+
+---
+
+## SECTION 6 — EDITORIAL AUDIT AGENT DESIGN INPUTS
+
+Based on the full analysis, the following are prioritized audit criteria the Editorial Audit Agent should evaluate on every coaching output before delivery. Ordered by severity of the coaching error each criterion prevents.
+
+### TIER 1 — MUST PASS (block delivery if failed)
+
+**1. Emotional Intensity → Message Opening Match**
+When emotional_intensity = HIGH, the coaching message MUST acknowledge the emotional experience in the first two substantive paragraphs before any framework language, strength analysis, or Bullseye reference. Check: Does the first framework concept appear before or after the emotional content is named? If before → FAIL.
+
+**2. Clinical Language Scan**
+Scan all athlete-facing content (coaching message + Deep Dive) for clinical/therapeutic vocabulary: therapy, therapist, mental health, anxiety disorder, depression, clinical, diagnosis, treatment, intervention, pathology, disorder, symptom, coping mechanism (as opposed to behavioral language like "reset," "controllable," "center ring"). Also flag: "Risk and Compliance Note" or any language referencing clinical monitoring if present in athlete-facing sections. If any found → FAIL.
+
+**3. Data Fidelity — No Invented Themes**
+Every strength, opportunity, or behavioral pattern named in the coaching message or Deep Dive must have a corresponding field or evidence trail in the interpretation JSON. If a coaching insight references a behavioral event, emotional state, or developmental pattern not present in the JSON → FLAG for human review.
+
+**4. Prior Commitment Bridge Present**
+If prior_commitment_result exists in the interpretation JSON (i.e., this is not Week 1), the coaching message MUST reference the prior week's commitment by description and assess its status (completed, partial, carried forward). If the coaching message skips the prior commitment entirely → FAIL.
+
+### TIER 2 — SHOULD PASS (flag for revision if failed)
+
+**5. Athlete Voice Reflection**
+If athlete_voice.key_phrase or athlete_voice.achievement_statement exists in the interpretation JSON, at least one verbatim phrase from those fields must appear in the coaching message (in quotes or as a coaching anchor). If neither appears → FLAG.
+
+**6. Action Specificity — Three-Part Check**
+The weekly action/micro-commitment must include: (a) a trigger moment — when does the athlete do this? (b) a specific behavior — what exactly does she do? (c) a measurement — how does she know she did it? If any element is missing → FLAG with the missing element identified.
+
+**7. Upcoming Context Anchoring**
+If upcoming_context.scheduled_competition is populated in the interpretation JSON, the coaching message must reference the specific competition/trip by name AND the weekly action must be anchored to that context. If the action is generic when competition context exists → FLAG.
+
+**8. Narrative Arc Presence (Weeks 3+)**
+If narrative_arc is populated (not "insufficient data"), the coaching message must include at least one explicit reference connecting the current week to a prior week's pattern, event, or milestone. If the coaching message treats the week in complete isolation when arc data exists → FLAG.
+
+**9. Message Length Constraint**
+Coaching message should not exceed 500 words (approximately 2 minutes of reading). If exceeded → FLAG with word count. Note: this is a soft constraint — some HIGH emotional intensity weeks may warrant longer messages.
+
+### TIER 3 — QUALITY CHECKS (flag for optional improvement)
+
+**10. Micro-Commitment Realism Check**
+If the last 2+ prior_commitment_result entries show execution_status of "Partial" or lower, and the new micro-commitment is equal or greater in structural complexity (writing, logging, checkmarks), FLAG with: "Prior commitment pattern suggests written/logged structure is not transferring. Consider simplifying to oral or behavioral format."
+
+**11. Brand Voice Tonal Scan**
+Flag any of the following in athlete-facing content: (a) motivational hype language (crushed it, amazing, incredible, elite, phenomenal); (b) more than two exclamation marks in the coaching message; (c) JSON source citations or file references visible in athlete-facing text; (d) framework jargon used without behavioral grounding (e.g., "Stable Positive consistency profile" as stand-alone language to the athlete).
+
+**12. Outer-Ring Language Discipline**
+If the coaching message discusses coach decisions, playing time allocation, game outcomes, or teammate behavior for more than two consecutive sentences without an explicit redirect to a controllable action, FLAG with: "Extended outer-ring discussion without controllable redirect." Brief acknowledgment is appropriate; extended dwelling pulls the athlete's attention outward.
+
+---
+
+**Implementation Note for the Editorial Audit Agent:** Tier 1 criteria should block output delivery until resolved. Tier 2 criteria should generate revision flags that a human coach can override with reason documented. Tier 3 criteria should generate optional improvement suggestions that do not block delivery. All criteria should be checkable against the interpretation JSON and the coaching output text without requiring access to the raw weekly recap data.

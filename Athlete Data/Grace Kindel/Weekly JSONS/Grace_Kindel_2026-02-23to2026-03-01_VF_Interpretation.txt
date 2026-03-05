@@ -1,0 +1,112 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-02-23 to 2026-03-01",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Fifth consecutive aligned week. Friday scrimmage dominance (hits on all at-bats) provides the first high-volume competitive performance evidence of the program. The next-week goal — 'If I'm given a chance, use it well' — is a direct forward-projection of the Week 4 breakthrough, now operating as a stable behavioral identity statement rather than a reactive post-hoc reflection. Baseline primary derailer has not activated in two consecutive weeks. Coach-athlete frustration absent from Bullseye framing entirely for the first time in the program."
+  },
+
+  "athlete_state": "Composed competition readiness. Grace enters her most demanding week of travel (NC + Florida back-to-back) from a position of preparation-anchored confidence — dominant Friday scrimmage, precise Bullseye framing, and a forward-facing philosophy she named herself: 'If I'm given a chance, use it well.' Week characterized by structured academic and physical preparation without emotional strain.",
+
+  "core_pattern": "Competition-ready composure with preparation-anchored confidence. Dominant Friday scrimmage execution, specific pre-competition Bullseye framing (warmup as controllable, game outcomes as uncontrollable), and the internalization of the Week 4 lesson as a forward-facing identity principle. Self-regulation awareness actively applied Saturday (working on patience under the Emotion Control challenge). Pattern consolidates and deepens Week 4 rather than shifting.",
+
+  "behavioral_root_cause": "The 'one chance' principle from Week 4 has been absorbed as a stable behavioral identity — 'If I'm given a chance, use it well' appears as the next-week goal, no longer a reaction to adversity but a proactive standard. Friday scrimmage dominance provides preparation-based evidence that reinforces this confidence without requiring competition-game results.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before leaving for Florida, write one sentence defining what a successful performance means — anchored only to a controllable action, not to playing time, score, or coach decisions (e.g., 'I compete fully in every rep I get, no matter how many or when'). Carry that sentence through every game.",
+    "execution_status": "Partial",
+    "execution_notes": "Grace's next-week goal ('If I'm given a chance, use it well') is the behavioral equivalent of the commitment — defining success by controllable action quality, not outcomes or playing time — but no explicit evidence of the specific pre-departure written sentence in the recap.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "keep kicking ass",
+    "achievement_statement": "Staying up and with it",
+    "key_phrase": "If I'm given a chance, use it well",
+    "mindset_resonance": "Monday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong and specific. 'I can control how well I warmup' is the most competition-contextualized center-ring statement in five weeks — precise, actionable, and directly applicable to the NC and Florida games ahead. Represents clear growth from general controllables (Week 1: 'mindset and reset') to specific pre-competition execution anchors.",
+    "influence_quality": "Accurate. 'I can influence how my team performs and how I contribute' correctly places team contribution in the influence ring — effort and presence as mechanisms for team impact, without claiming control of team results.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "4",
+    "rolling_win_rate_4wk": "1.0",
+    "rolling_missed_rate_4wk": "0.0",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over five weeks, Grace progressed from preparation-driven confidence in preseason (Weeks 1-2) through her first significant adversity episode — coach frustration, homesickness, and emotional strain during competition travel (Week 3) — to a breakthrough moment converting limited-opportunity adversity into action-proven confidence (Week 4), and into composed competition readiness with that lesson fully internalized (Week 5). Behavioral execution has been perfect across all five weeks (35/35 Win days). The confidence mechanism has traced a clear arc: outcome-reactive at baseline → preparation-energized (Wks 1-2) → structure-sustained under pressure (Wk 3) → action-proven (Wk 4) → quietly embedded as identity (Wk 5: 'If I'm given a chance, use it well').",
+    "milestone_this_week": "First dominant competitive performance of the program — hits on all Friday scrimmage at-bats — following two consecutive trips with minimal playing time. Combined with the next-week goal statement ('If I'm given a chance, use it well'), this week marks the full internalization of the Week 4 lesson as a forward-facing behavioral standard rather than a retrospective reflection on adversity.",
+    "open_thread": "Coach-athlete frustration is absent from the Bullseye for the first time in three weeks — a positive signal. However, the upcoming NC trip is the same location as the Week 3 emotional strain episode, and Florida follows immediately after. The same structural conditions (coach decisions, limited playing time) remain unchanged. Whether the Week 4-5 confidence and composure hold across back-to-back trips in previously destabilizing environments is the defining test of the arc's trajectory."
+  },
+
+  "most_important_controllable": "Warmup quality and pre-game mental readiness for every competitive opportunity in NC and Florida — Grace named this precisely ('I can control how well I warmup') and it is the single lever she controls regardless of playing time, lineup decisions, or game outcomes.",
+
+  "micro_commitment": {
+    "action": "Before each game in NC and Florida, complete a deliberate warmup with full focus, then say Grace's own philosophy to herself: 'If I'm given a chance, I use it well.' No evaluation of playing time or outcomes during the trip — only two questions: Did I prepare well? Did I use my chance?",
+    "when": "During warmup before each game on the NC and Florida trips, and silently in the moment any competitive opportunity presents itself.",
+    "measurement": "After returning from the trip: (1) Did she complete a deliberate focused warmup before every game? (2) Did she use at least one opportunity that came her way? Yes or no on both — that is the full measurement."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Play in NC tomorrow, then go to Florida for the rest of the week",
+    "anticipated_stressor": "Back-to-back competition travel (NC + Florida) in the same environments as prior emotional adversity episodes. NC is the same location as the Week 3 high-strain trip. Playing time decisions under the same coach remain unpredictable. Third consecutive week involving competition travel.",
+    "athlete_stated_next_goal": "If I'm given a chance, use it well"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days through a structured preparation week — snow day Monday, focused practice Tuesday-Wednesday, makeup lift at Planet Fitness Wednesday, long academic Thursday, dominant Friday scrimmage (hits on all at-bats), patience-focused Saturday, travel Sunday. Full execution across academic demands and physical preparation.",
+    "key_habit_signal": "Friday scrimmage dominance ('I got hits on all at bats') is the week's most significant performance signal — the first dominant competitive result in five weeks of data, occurring immediately after two trips with limited playing time. Preparation-based confidence built through adversity is producing performance evidence.",
+    "coach_reinforcement_cue": "Connect Monday's Foresight challenge (planning tomorrow's priorities) directly to Friday's scrimmage result — she planned, she prepared, she performed. The warmup controllable she named is the mechanism that makes 'If I'm given a chance, use it well' executable. Name that chain explicitly.",
+    "coach_avoidance_note": "Grace's tone this week is composed and forward-moving. Do not add caution, weight, or concern the athlete hasn't expressed. She knows NC is the same environment as Week 3 and has stated her approach. Trust her framing and anchor to it — don't pre-load anxiety about the upcoming trip in the coaching output."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Coach-athlete frustration absent from Week 5 Bullseye — positive directional signal. NC trip (same location as Week 3 emotional strain episode) begins Monday March 2, followed immediately by Florida. Physical fatigue context noted for third consecutive competition travel week. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "In NC and Florida, when your moment comes — one play, one at-bat, one chance — what is the one thing you've already decided about how you will compete in it?"
+}

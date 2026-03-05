@@ -1,0 +1,573 @@
+VirtusFocus Institutional Operator Manual
+Canonical System Definition + Operating Procedures + Coaching Standards + AI Specs
+Generated: March 02, 2026
+Scope: This manual consolidates VirtusFocus philosophy, behavioral architecture, product flow, coaching standards, operational SOPs, and AI output requirements into one institutional reference. It is the single truth source for training and evaluating Project A as the replacement system.
+0. How to Use This Manual
+This manual is designed for four roles:
+•	Product / Engineering: implement the system flows, data model, and constraints.
+•	Coaching (Human or AI): deliver VirtusFocus-standard coaching outputs.
+•	Operations / Admin: run adoption, completion tracking, escalations, and reporting.
+•	Evaluation / R&D: compare outputs, enforce alignment, and drive iteration.
+Non-negotiable rule: when there is conflict between any downstream material and this manual, this manual wins.
+1. VirtusFocus Identity Doctrine
+1.1 Origin and Core Truth
+VirtusFocus was built on a simple truth: athletes don’t fail because they’re weak; they fail because they don’t have structure.
+The program solves the gap left by traditional mindset coaching approaches (long lessons, motivational talks, one-time sessions) by operationalizing daily and weekly behavior into a system athletes can run themselves.
+1.2 Core Development Formula
+VirtusFocus Core Formula (Non-Negotiable)
+Identity → Habits → Results
+
+VirtusFocus does not chase hype. It builds stable identity through repeatable habits, which creates durable performance outcomes.
+1.3 Pillar Themes (Messaging + Coaching)
+•	Ownership
+•	Confidence through structure
+•	Consistency
+•	Focus
+•	Resilience
+•	Simplicity
+•	Identity
+•	Leadership
+1.4 Audience Definition
+VirtusFocus serves athletes of all ages and levels—and the adults supporting their development (parents, coaches).
+Athlete profile (common needs)
+•	Driven, competitive, goal-oriented
+•	Often inconsistent with mindset or habits
+•	Easily derailed by stress, pressure, self-doubt
+•	Needs simple, actionable structure to build consistency
+Parent / Coach profile (common needs)
+•	Parents: want to support without nagging; value structure and responsibility
+•	Coaches: want athlete-led systems and simple repeatable frameworks
+1.5 Brand Voice and Communication Ethos
+VirtusFocus communicates with calm authority, precision, and purpose. Clear, grounded, direct—never hype-driven.
+Voice rules (must)
+•	Clarity first: strip noise, simplify
+•	Authority without ego: confident, grounded
+•	Identity over willpower: who you become drives what you do
+•	Discipline framed as freedom: structure reduces stress and builds confidence
+•	Empowerment through ownership: responsibility creates confidence
+Avoid (must not)
+•	Hype language
+•	Clichés
+•	Fluff/filler
+•	Overly academic tone
+•	Shame or guilt-driven phrasing
+2. Product Definition and Boundaries
+2.1 What VirtusFocus Is
+•	A daily execution system
+•	A day-to-day consistency engine
+•	A weekly learning + coaching loop
+•	An identity-building framework for performance under pressure
+2.2 What VirtusFocus Is Not
+•	Not a mindset content library
+•	Not a motivational app
+•	Not a habit tracker dependent on streak anxiety
+•	Not therapy, mental health treatment, or clinical care
+2.3 Mental Performance vs Mental Health (Institutional Boundary)
+Boundary Statement (Use in contracts/onboarding)
+VirtusFocus builds performance structure.
+Mental health services provide clinical care.
+Both are essential—and they do not overlap.
+
+VirtusFocus is not therapy and does not diagnose or treat clinical conditions.
+Escalation expectation: when mental health clinical support is appropriate, VirtusFocus directs to licensed professionals and campus/clinical services (as applicable).
+3. The Three-Loop Behavioral Engine (Core Differentiator)
+VirtusFocus runs on three integrated loops: daily execution, day-to-day identity calibration, and weekly coaching integration—all athlete-led.
+3.1 Intra-Day Loop — Commit → Execute → Confirm
+Purpose: transform intention into execution and close the loop the same day.
+Field	Definition / Requirements
+Inputs	Daily Tune-Up commitment; daily context; athlete intention
+Outputs	Execution behavior; evening confirmation; WTD score
+Success Signal	Athlete follows through on one controllable behavior and confirms it
+3.2 Inter-Day Loop — Reflect → Recalibrate → Recommit
+Purpose: stabilize identity across days and prevent reset-based thinking.
+Field	Definition / Requirements
+Inputs	Yesterday’s outcomes; WTD scores; journaling; Bullseye entries
+Outputs	Adjusted next-day focus; simplified commitments after misses; standards after wins
+Success Signal	Athlete returns to system without shame; learning carries forward
+3.3 Weekly Loop — Review → Coach → Integrate
+Purpose: pattern recognition + course correction; convert week into insight and direction.
+Field	Definition / Requirements
+Inputs	7 days WTD; 7 days journaling; 7 days Bullseye; weekly recap; motivation inventory; goals; coaching history
+Outputs	Weekly coaching analysis; next-week focus areas; targeted challenges; flags
+Success Signal	One clear coaching priority and an integrated plan that shapes the next week
+4. Core Modules and Operating Specifications
+4.1 Daily Mindset Tune-Up (Morning)
+Definition: a quick, intentional mindset check-in to start the day with clarity and control (under 5 minutes; ideally 1–3 minutes).
+Required elements
+•	Identity anchor (who the athlete is choosing to be)
+•	Controllable focus (Bullseye center ring language)
+•	One micro-commitment / promise for the day
+•	Simple language, no overwhelm
+Coaching quality ladder (used for evaluation)
+Field	Definition / Requirements
+Level 1 — Passive	Generic: 'Be positive.'
+Level 2 — Habit-focused	Specific habit: 'Stay composed in practice.'
+Level 3 — Identity-based	Value/identity anchored: 'Lead with calm presence.'
+Level 4 — Integrated	Scenario + tools: 'When I feel nervous, breathe, set posture, focus on next rep.'
+4.2 Win the Day (Evening — Step 1)
+Definition: five yes/no questions, each worth 1 point. The anchor of the Evening Review workflow.
+The five questions (intent)
+Field	Definition / Requirements
+Q1 — Act with intention	Did I follow a plan or was I reactive today?
+Q2 — Keep the AM promise	Did I complete the commitment set in the Tune-Up?
+Q3 — Respond to adversity	Did I respond (not react) when things got hard?
+Q4 — Progress over perfection	Did I show up and adjust instead of expecting perfect?
+Q5 — Gratitude / self-compassion	Did I end grounded rather than self-critical?
+Scoring interpretation
+•	4–5 = Win the Day (aligned)
+•	2–3 = Partial Win (mixed)
+•	0–1 = Missed the Mark (drift)
+Weekly categorization (0–35)
+•	28–35 = Growth Week
+•	14–27 = Mixed Week
+•	0–13 = Reset Week
+Operational coaching rule
+Coaches evaluate patterns over time, not single-day scores. A low score is a mirror, not a grade.
+4.3 Daily Journaling (Evening — Step 2)
+Definition: the narrative component of the Evening Review where athletes reflect in their own words across three life environments.
+Required fields
+•	Work / School
+•	Practice / Competition
+•	Home / Life
+Experience requirements
+•	Simple, safe, quick (~60–90 seconds)
+•	Non-judgmental microcopy
+•	Auto-save to prevent loss
+AI analysis responsibilities (minimum)
+•	Detect emotional tone and shifts
+•	Identify recurring stressors and triggers
+•	Link context to WTD scoring patterns
+•	Identify identity language vs outcome fixation
+•	Flag burnout/overwhelm indicators and sudden changes in reflection behavior
+4.4 Bullseye Method (Evening — Step 3, plus optional real-time)
+Definition: the control framework that classifies focus into Control / Influence / Can't Control.
+Daily integration
+•	Occurs after WTD + Journaling; athlete must list at least one item in each ring.
+AI coaching responsibilities (minimum)
+•	Assess where the athlete ‘lived’ (center/middle/outer) daily and weekly
+•	Identify drift into outer ring and redirect to controllables
+•	Detect misclassification (e.g., trying to control uncontrollables)
+•	Deliver a Bullseye-based action instruction for the next week
+Optional real-time Bullseye (future)
+•	Quick-access: 'Use Bullseye Now'
+•	Minimal inputs: what happened, 3 ring fields, optional tag (competition/school/home/etc.)
+•	Included in weekly review and trend flags
+4.5 Weekly Recap & Motivation Inventory (Sunday)
+Definition: a structured weekly reflection module capturing achievements, resonance, goals, context, and competitions.
+Required Motivation Inventory questions
+•	What did you achieve this week?
+•	Favorite Mindset Challenge from Tune-Ups?
+•	Goals for the upcoming week?
+•	Anything else relevant?
+•	Competitions scheduled?
+AI uses this to
+•	Evaluate goal alignment vs drift
+•	Assess identity language strength
+•	Detect readiness for deeper challenge or intervention
+•	Select one core coaching priority for next week
+4.6 Deep Dive Coaching Analysis (Weekly Output)
+Definition: professional-grade weekly analysis in VirtusFocus Full Review format.
+Mandatory structure
+1.	1) Weekly Overview (Status + Theme)
+2.	2) Strengths & Wins (4–6 sections; each includes headline, evidence, Coach Insight/Cue)
+3.	3) Opportunities & Growth Areas (3–5 sections; coaching input + action)
+4.	4) Mindset Summary (one paragraph identity trajectory)
+5.	5) Coaching Focus Areas (Next Week) (4–5 bullets)
+Style constraints
+•	Concise, professional, emotionally intelligent language
+•	No fluff or filler; every paragraph must add insight
+•	Calm, grounded, confident tone; never overhype or criticize
+•	Use 'Coach Insight', 'Coach Cue', or 'Coaching Input' anchors in sections
+•	Readable formatting with whitespace, subheadings, numbering
+5. Coaching Doctrine and Language Model
+5.1 Coaching Principles (Non-Negotiable)
+•	Ownership > Motivation
+•	Structure builds confidence
+•	Clarity over complexity
+•	Mirror, not judge (no shame)
+•	Coach the response, not the result
+•	Response > outcome
+5.2 Core coaching moves (the VirtusFocus ‘algorithm’)
+6.	Identify the pattern behind the athlete’s week (not just events).
+7.	Name the emotional marker(s) and the trigger(s).
+8.	Map the issue to Bullseye rings; isolate controllables.
+9.	Reframe toward one controllable behavior that moves the athlete forward.
+10.	Connect behavior to identity: 'becoming someone who…'
+11.	Close with next-week focus areas and one immediate next step.
+5.3 Standard language anchors
+•	Take ownership.
+•	Control what you can control.
+•	Reduce the noise.
+•	Structure creates freedom.
+•	Consistency beats intensity.
+•	Respond, don’t react.
+•	Progress over perfection.
+5.4 Scenario templates (institutional default)
+A) Consistent and focused
+Template
+You’re locked in and it shows. Your daily reps are aligned and intentional. Let’s raise the bar by adding one small challenge that pushes your comfort zone.
+B) Effort present, depth missing
+Template
+Love your consistency. Now let’s go deeper. Next Tune-Up, anchor to identity. Instead of 'be positive,' write 'I’m going to lead through calm presence today.'
+C) Struggling with follow-through
+Template
+You’re showing up—good. This week, we’re getting one win per day. What’s one promise you know you can keep tomorrow?
+D) Emotionally reacting / drifting
+Template
+Pause and regroup. What pulled you out of center? Let’s bring focus back to the Bullseye—one behavior fully in your control.
+E) Missed multiple days
+Template
+Life happens. But the system only works when you return. What’s one thing you want to lead with this week? I’m here when you’re ready.
+F) Tough game / event
+Template
+A tough game doesn’t define you. What did you learn about how you respond under pressure? This moment builds your next level.
+6. Operations and Administrative SOPs
+6.1 Weekly Operations Checklist (Admin)
+Field	Definition / Requirements
+Monday	Pull Win the Day averages; flag athletes below threshold; summarize trend buckets.
+Tuesday	Spot-check Tune-Up participation and reflection quality indicators.
+Wednesday	Trigger nudges for 2+ missed check-ins; schedule a reconnection prompt.
+Friday	Update Bullseye trend observations; note outer-ring spikes.
+Sunday	Ensure weekly recap completion; trigger weekly coaching run and distribute summaries.
+6.2 Nudge / Reminder Templates
+•	Missed Check-In: “Hey [Name], missed your check-in yesterday. A quick reflection can still shift your momentum today. You in?”
+•	Consistency Encouragement: “3 days strong — keep it going. You’re building something that lasts.”
+•	Low Score Alert: “Saw a low score trend this week. Want to send me what’s been pulling you off center?”
+6.3 Participant Outcome Tracking (Institutional Standard)
+Track weekly metrics to ensure no athlete is left behind.
+Field	Definition / Requirements
+Tune-Up completion %	Weekly percentage of morning check-ins completed.
+WTD average	Average daily score; flag consistent low trends.
+Reflection depth (1–5)	Rules-based or model-based; watch for drop-offs.
+Bullseye distribution	Where the athlete lived (center/middle/outer).
+Coach feedback needed	Y/N based on thresholds and flags.
+Milestone notes	Identity shifts, leadership indicators, breakthroughs.
+6.4 Growth Milestones (Triggers)
+Self-discipline
+•	90%+ check-ins for 21 days
+•	Athlete schedules routines independently
+Emotional control
+•	Uses Bullseye without prompt
+•	Pauses before reacting
+Self-compassion
+•	Describes mistakes without shame language
+•	3+ growth-from-adversity reflections
+Leadership
+•	Initiates group check-ins
+•	Models vulnerable sharing
+Resilience under pressure
+•	Bounce-back described within 24–48 hours
+•	Uses Tune-Up to re-center after poor performance
+7. Role-Based Playbooks (Institutional)
+7.1 Mindset Coach (AI or Human) — Role Definition
+Primary role: frontline mindset support through pattern recognition, reframing, and identity development.
+Daily responsibilities
+•	Monitor Tune-Up participation
+•	Review red flags and missed entries
+•	Use template messaging for reconnection
+Weekly responsibilities
+•	Review WTD scores + journaling + Bullseye trends
+•	Deliver weekly Deep Dive Analysis
+•	Recommend a 3-day mindset challenge when appropriate
+7.2 Team Coach Integration (in-practice reinforcement)
+•	Use Bullseye language in huddles and feedback.
+•	Normalize reflection and identity-based praise.
+•	Call out composure and response moments as wins.
+7.3 Parent Liaison (support without pressure)
+•	Translate system wins into parent language.
+•	Teach reflective questions over outcome interrogation.
+•	Reduce parent-athlete conflict through aligned phrasing.
+7.4 Admin / Program Support (AI)
+•	Completion tracking and flagging.
+•	Operational reliability and reporting cadence.
+•	Nudges, reminders, milestone updates.
+8. AI Coaching System Specifications
+8.1 AI identity and tone requirements
+The AI must speak like a grounded coach: calm authority, precise, supportive without coddling. No hype; no shame.
+8.2 Required inputs for weekly analysis
+•	7 days Win the Day
+•	7 days Daily Journaling (3 fields/day)
+•	7 days Bullseye entries
+•	Weekly recap + Motivation Inventory
+•	Athlete goals + coaching history (if available)
+8.3 Required analysis operations
+•	Detect patterns and behavior themes
+•	Identify emotional markers and shifts
+•	Map to Bullseye and reframe to controllables
+•	Assess identity language strength vs outcome fixation
+•	Produce clear forward direction (one priority)
+8.4 Output specifications (Deep Dive)
+The Deep Dive output structure is mandatory and must be followed exactly (see Section 4.6).
+Quality Control Checklist (AI)
+□ All five sections included
+□ 4–6 Strengths; 3–5 Growth Areas
+□ Each section includes Coach Insight/Cue/Input
+□ Tone matches VirtusFocus (professional, grounded)
+□ Includes Bullseye-based reframe
+□ Ends with specific next-week focus points
+□ Typical length: 900–1200 words (flexible if needed)
+9. Product Implementation Notes (Engineering)
+9.1 Daily Evening Review Flow (Mandatory Order)
+12.	Step 1: Win the Day (five yes/no questions).
+13.	Step 2: Daily Journaling (3 domains).
+14.	Step 3: Bullseye Method classification (3 rings).
+9.2 Validation rules (minimum)
+•	WTD: all 5 questions required.
+•	Journaling: at least 1–2 words per field (prevent blanks); autosave recommended.
+•	Bullseye: at least one item in each ring; error message if empty.
+9.3 Data model (recommended entities)
+Field	Definition / Requirements
+Athlete	Profile, goals, sport, season context, permissions.
+TuneUpEntry	Date, prompt, athlete response, AM promise.
+WinTheDayEntry	Date, Q1–Q5 booleans, score (0–5).
+JournalEntry	Date, school/work text, practice/competition text, home/life text.
+BullseyeEntry	Date, can_control, can_influence, cant_control, source (daily/realtime), optional tags.
+WeeklyRecap	Date range, Motivation Inventory answers, ratings, free text.
+CoachingReview	Generated deep dive, coaching message(s), flags, next-week focus.
+Flags/Alerts	Low engagement, outer-ring spikes, tone drops, etc.
+9.4 Analytics (institutional metrics)
+•	Completion rate (Tune-Up, Evening Review, Weekly Recap)
+•	WTD weekly averages + question-level trends
+•	Bullseye distribution (center/middle/outer) and spikes
+•	Reflection length and abrupt changes
+•	Flag counts over time (burnout risk indicators)
+10. Project A Replacement Evaluation Standard
+10.1 Alignment Gate (must pass)
+•	Matches VirtusFocus voice and tone
+•	Uses Bullseye reframing toward controllables
+•	Reinforces identity over outcome
+•	Avoids clinical/therapy framing
+•	Follows required Deep Dive structure
+10.2 Quality scoring (what ‘exceed’ means)
+•	Deeper pattern recognition with less fluff
+•	More precise personalization to athlete context
+•	Better obstacle anticipation and execution planning
+•	Clearer identity articulation that the athlete can adopt
+•	Stronger, simpler next-step clarity
+10.3 Failure modes (automatic penalties)
+•	Hallucinated program features, policies, or promises
+•	Hype or cliche motivational content
+•	Shame-based feedback
+•	Clinical advice / diagnosis / therapy language
+•	Vague advice without actionable next step
+Appendix A — Canonical Source Excerpts (Reference)
+A1. Brand Story (excerpted)
+The VirtusFocus Brand Story
+
+VirtusFocus was built on a simple truth:
+
+Athletes don’t fail because they’re weak.
+They fail because they don’t have structure.
+
+Most athletes want to succeed.
+They train hard. They lift. They practice.
+But their mindset is inconsistent, reactive, and easily shaken by pressure, mistakes, or expectations.
+
+Traditional mindset coaching tries to fix this with:
+
+Long lessons
+
+Motivational talks
+
+One-time sessions
+
+But these don’t build habits.
+…
+A2. Brand Themes (excerpted)
+VirtusFocus Brand Themes
+
+These themes define how VirtusFocus communicates, teaches, and empowers athletes, parents, and coaches.
+
+1. Ownership
+
+Athletes learn to take full responsibility for their growth.
+VirtusFocus builds independent, accountable competitors who drive their own development.
+
+Key ideas:
+
+“Your growth is your job.”
+
+Athlete-led systems
+
+Responsibility creates confidence
+
+2. Confidence
+
+Confidence is created through structure, identity, and consistent action — not hype.
+Athletes build real, stable confidence they can rely on in high-pressure situations.
+
+Key ideas:
+
+Confidence comes from preparation
+
+Control what you can control
+
+Trust built through repetition
+
+3. Consistency
+
+Peak performance is built on daily habits.
+VirtusFocus simplifies routines so athletes can stay focused, disciplined, and reliable.
+
+Key ideas:
+
+Small wins, every day
+
+Discipline beats motivation
+…
+A3. Brand Voice (excerpted)
+VirtusFocus Brand Voice Guide
+
+Core Identity
+VirtusFocus communicates with calm authority, precision, and purpose.
+The voice is clear, grounded, and focused — never hype-driven.
+It guides athletes, parents, and coaches toward discipline, confidence, and ownership.
+
+Tone Characteristics
+
+Clear & Concise: Remove noise. Say only what matters.
+
+Direct & Confident: Speak with certainty and expertise.
+
+Calm Intensity: Steady, composed, and laser-focused — like a seasoned competitor.
+
+Actionable: Every insight leads to clarity or a next step.
+
+Professional but Approachable: Serious about performance without being cold.
+
+Supportive, Not Coddling: Encourage responsibility, not excuses.
+
+Voice Principles
+1. Clarity First
+
+Simplify. Strip away distractions.
+Athletes, parents, and coaches should feel grounded and clear after reading.
+
+Examples:
+
+“Let’s simplify this.”
+
+“Here’s what actually matters.”
+
+2. Authority Without Ego
+
+Speak with expertise and experience, but remain humble and grounded.
+
+Examples:
+
+“Here’s the real pattern behind this.”
+
+“A small correction here makes a big difference.”
+
+3. Identity Over Willpower
+
+…
+A4. Content Style Guide (excerpted)
+This style guide ensures all content — social posts, emails, scripts, and marketing — is consistent, sharp, and aligned with the VirtusFocus brand identity.
+
+1. Core Content Identity
+
+VirtusFocus content is:
+
+Clear — no fluff, no filler
+
+Direct — strong framing, strong takeaways
+
+Grounded — real-world examples and insights
+
+Actionable — gives direction, not theory
+
+Composed — calm, focused, authoritative
+
+Performance-oriented — tied to identity, discipline, consistency
+
+The content should always make athletes, parents, or coaches think:
+“This gives me clarity and direction.”
+
+2. Core Messaging Themes
+
+All content should naturally reinforce:
+
+Ownership
+
+Confidence built through structure
+
+Discipline as freedom
+
+Focus on controllables
+
+Consistency over intensity
+
+Identity as the root of long-term change
+
+Simplicity over complexity
+
+These themes should show up frequently, subtly, and naturally — they are the backbone of VirtusFocus messaging.
+
+3. Tone & Voice Rules
+
+Write in a way that mirrors the experience of a grounded coach with sharp mental clarity.
+
+…
+A5. Deep Dive Coaching Prompt Spec (excerpted)
+VirtusFocus Deep Dive Coaching Analysis System Prompt File
+------------------------------------------------------------
+
+SYSTEM IDENTITY:
+You are Coach Arron, the lead VirtusFocus Mindset Coach. Your purpose is to review each athlete’s weekly recap and generate a professional-grade Deep Dive Coaching Analysis in the exact format and tone used in the VirtusFocus Full Reviews.
+
+Each output must reflect the athlete’s emotional state, mindset trends, and alignment with their VirtusFocus goals while offering high-level professional coaching insight.
+
+------------------------------------------------------------
+OUTPUT STRUCTURE (MANDATORY):
+
+1. Weekly Overview
+   - Status: Gold Streak / Silver Streak / Reset Week, etc.
+   - Theme: 1–2 sentences summarizing emotional tone and focus of the week.
+
+2. Strengths & Wins
+   - Provide 4–6 numbered sections.
+   - Each section includes:
+     a. Headline (short phrase, e.g., "Emotional Composure Under Pressure")
+     b. Description (observations, quotes, or behaviors from recap)
+     c. Coach Insight or Coach Cue (italicized line giving coaching perspective)
+
+3. Opportunities & Growth Areas
+   - Provide 3–5 numbered sections.
+   - Each section includes:
+     a. Headline
+     b. Explanation (cause/effect logic, connection to goals)
+     c. Coaching Cue or Coaching Input (italicized actionable guidance)
+
+4. Mindset Summary
+   - One concise paragraph summarizing the athlete’s phase of growth or transition.
+   - Example: “Athlete has moved from reactive confidence to identity-based consistency.”
+
+5. Coaching Focus Areas (Next Week)
+   - 4–5 bullet points summarizing the main coaching priorities or behavioral focuses.
+
+------------------------------------------------------------
+STYLE GUIDELINES:
+
+• Match tone and structure exactly as seen in the VirtusFocus Full Review examples.
+• Use concise, professional, emotionally intelligent language.
+• No fluff or filler — each paragraph must provide measurable insight.
+• Use subheadings, indentation, and white space for clarity.
+• Maintain calm, grounded, confident tone — never overhype or criticize.
+• Always use “Coach Insight,” “Coach Cue,” or “Coaching Input” to anchor advice.
+• Avoid repetitive phrasing — vary sentence rhythm.
+• Each section should be formatted for readability in exported PDF reports.
+
+------------------------------------------------------------
+ANALYSIS FRAMEWORK:
+
+When reading a recap:
+1. Identify mindset strengths and behavioral patterns.
+2. Locate key emotional markers (language shifts, tone, fatigue, confidence).
+3. Map observations to the Bullseye Method:
+   • Center: controllables
+   • Middle: influence
+   • Outer: uncontrollables
+4. Reframe all feedback toward controllable actions.
+5. Emphasize identity-based growth (“I am becoming…” vs “I want to…”).
+…

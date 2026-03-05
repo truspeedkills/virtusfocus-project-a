@@ -1,0 +1,112 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-01-12 to 2026-01-18",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Grace directly activated her baseline hinge habit this week. Thursday's front toss entry — below prior performance standard, no upset response, continued working — is direct behavioral evidence her reset pattern is functioning. Week-long framing anchored to preparation and effort rather than outcomes; no confidence disruption following a below-standard session."
+  },
+
+  "athlete_state": "High-execution opening week. Grace completed 7/7 Win days during first-week preseason (hell week), maintained composure after a below-standard Thursday hitting session, and demonstrated preparation-based confidence framing throughout — a direct positive departure from her baseline derailer pattern.",
+
+  "core_pattern": "Preparation-driven confidence. Performance anchored to daily effort, controlled reset, and body health rather than outcome results. Composure held during performance dip on Thursday. Sense of earned belonging emerging as identity reinforcer.",
+
+  "behavioral_root_cause": "Confidence this week was fueled by preparation quality and effort consistency rather than outcome results. No confidence disruption detected after Thursday's below-standard session. The framing 'I did all I could to be prepared and it was enough' signals early stabilization of preparation-based confidence rather than outcome-reactive confidence.",
+
+  "prior_commitment_result": {
+    "prior_action": "No prior week available",
+    "execution_status": "No Prior Week",
+    "execution_notes": "First week of program; no prior JSON exists.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "first week of softball back start strong",
+    "achievement_statement": "I started out strong, proved myself, and showed that I do belong here. Not only did i prove it to others but to myself.",
+    "key_phrase": "Not only did i prove it to others but to myself.",
+    "mindset_resonance": "Tuesday- slowing down and being slow to react and careful about choices"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong. Grace explicitly named controllables: mindset, daily reset, and body health. Narrative remained anchored to effort and preparation throughout the week with no fixation on results.",
+    "influence_quality": "Appropriate. Grace acknowledged she can influence how teammates perceive her through daily effort without fixating on or attempting to control their response.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "0",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "insufficient data"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Reset response after errors or below-standard reps during Week 2 hell week — this is the single habit that will determine whether preparation-based confidence holds under continued high-intensity preseason pressure.",
+
+  "micro_commitment": {
+    "action": "Apply a defined reset cue — 3 breaths plus one silent controllable restatement ('my effort, my reset') — immediately after any practice error or below-standard rep, before the next play begins.",
+    "when": "In practice, in the moment immediately following any error or below-standard execution.",
+    "measurement": "End-of-practice self-check: 'Did I use my reset cue after every error today?' Target: applied on every qualifying moment across all practice days this week."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Second consecutive week of high-intensity preseason training (hell week); Grace explicitly named it as demanding in Sunday's entry: 'resetting for one more week of hell week.'",
+    "athlete_stated_next_goal": "Finish stronger and make one less mistake/error each day"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days across first week of high-intensity preseason training. Consistent effort through conditioning, practice, and recovery. No execution breakdown detected despite physical and social demands of an opening hell week.",
+    "key_habit_signal": "Thursday front toss entry is the week's clearest behavioral signal: below prior performance standard, no upset, continued working. This is early activation of the baseline hinge habit and the most important data point of the week.",
+    "coach_reinforcement_cue": "Reinforce preparation-based confidence framing using Grace's own language: 'I did all I could to be prepared and it was enough.' Connect this directly to her identity claim — confidence built on preparation is durable; confidence built on results is fragile.",
+    "coach_avoidance_note": "Grace's next-week goal ('make one less mistake/error each day') is outcome-oriented. Redirect toward the reset process as the controllable. The goal of fewer mistakes is the result; the reset habit is the action."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. All content within performance and behavioral coaching scope. Standard monitoring."
+  },
+
+  "next_week_focus_question": "When you make an error at practice this week, what is the one thing you will do in that moment — before your next rep — to reset and stay in your center ring?"
+}

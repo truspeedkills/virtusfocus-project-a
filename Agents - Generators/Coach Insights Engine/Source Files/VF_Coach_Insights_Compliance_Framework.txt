@@ -1,0 +1,242 @@
+
+VIRTUSFOCUS – COACH INSIGHTS COMPLIANCE FRAMEWORK
+(Operational Guardrails for Institutional Reporting)
+
+============================================================
+PURPOSE
+============================================================
+
+This document defines the compliance, institutional, and reporting guardrails
+for the VirtusFocus Coach Insights Engine.
+
+Coach Insights are designed to provide high-level performance indicators
+related to consistency, focus, self-regulation, and habit stability.
+
+They are NOT:
+- Mental health evaluations
+- Clinical assessments
+- Therapy services
+- Diagnostic tools
+- Participation monitoring systems
+- Coaching directives
+- Selection or discipline mechanisms
+
+Coach Insights function as informational performance signals only.
+
+
+============================================================
+CORE POSITIONING (INSTITUTIONAL SAFE LANGUAGE)
+============================================================
+
+VirtusFocus is a mental performance and leadership development system.
+
+It supports consistency, focus, composure, and self-regulation in athletic performance.
+
+It does not assess, diagnose, or treat mental health conditions and does not replace licensed mental health professionals or campus wellness services.
+
+Coach Insights provide high-level performance indicators only.
+They do not require staff to interpret mental health conditions or provide interventions.
+
+
+============================================================
+COACH ACCESS BOUNDARIES
+============================================================
+
+Coaches and staff may view:
+
+- Trend-level performance indicators
+- Weekly classification (Growth / Mixed / Reset)
+- Consistency signals
+- Focus distribution trends (Bullseye-based)
+- Recommitment strength indicators
+- Directional confidence trends
+- Growth phase classification
+
+Coaches may NOT view:
+
+- Athlete-written journaling content
+- Raw Bullseye entries
+- Raw Motivation Inventory responses
+- Daily scoring breakdowns
+- Time spent in the system
+- Completion frequency
+- Usage history
+- Personal disclosures
+
+The system presents outcomes, not participation behavior.
+
+
+============================================================
+VOLUNTARY PARTICIPATION PROTECTION
+============================================================
+
+The Coach Insights Engine is designed to preserve voluntary participation status.
+
+The system:
+
+- Does not assign tasks
+- Does not track completion rates
+- Does not report login frequency
+- Does not report time spent
+- Does not notify coaches of missed activity
+- Does not create coach-directed follow-up
+
+Coach visibility is limited to informational trend indicators only.
+
+Insights are observational, not directive.
+
+
+============================================================
+PROHIBITED METRICS
+============================================================
+
+The following metrics must NEVER be generated or displayed:
+
+- Time spent in app
+- Streak counts
+- Daily completion counts
+- Last login timestamps
+- Participation rankings
+- Athlete comparisons by name
+- “At-risk” labels tied to individuals
+- Engagement scores
+- Compliance or adherence ratings
+- Effort-based metrics
+
+No metric may imply discipline, enforcement, or evaluation of commitment.
+
+
+============================================================
+APPROVED METRIC TAXONOMY
+============================================================
+
+Metrics must be categorized as Signals or Indicators only.
+
+Approved categories include:
+
+1. Mental Readiness Indicator (Trend Only)
+   - Directional (↑ ↓ →)
+   - No raw daily values
+
+2. Consistency Signal
+   - Stable
+   - Variable
+   - Improving
+
+3. Stress Load Band
+   - Low
+   - Moderate
+   - Elevated
+   (No source attribution)
+
+4. Confidence Momentum (Directional)
+
+5. Focus Distribution (Bullseye Trend)
+   - Center-Dominant
+   - Mixed Focus
+   - Outer-Ring Drift Detected
+
+6. Recommitment Strength
+   - Strong
+   - Moderate
+   - Low
+
+7. Growth Phase Status
+   - Emerging
+   - Developing
+   - Consistent
+   - Leadership
+
+All metrics must be trend-based, non-punitive, and informational.
+
+
+============================================================
+LANGUAGE STANDARDS
+============================================================
+
+Use language such as:
+
+- Indicator
+- Signal
+- Trend
+- Directional
+- Informational
+- Context
+- Pattern
+- Stability
+- Developmental phase
+
+Avoid language such as:
+
+- Compliance
+- Adherence
+- Monitoring
+- Tracking behavior
+- Accountability enforcement
+- At-risk
+- Discipline
+- Required
+- Evaluation metric
+
+Language framing is critical to institutional compliance.
+
+
+============================================================
+PLAYING TIME & SELECTION PROTECTION
+============================================================
+
+All Coach Insights must include the following disclaimer:
+
+"These indicators are informational only and may not be used as a basis for participation, selection, or disciplinary decisions."
+
+Insights provide contextual awareness, not evaluative judgment.
+
+
+============================================================
+DATA & PRIVACY LIMITATIONS
+============================================================
+
+VirtusFocus does not collect:
+
+- Clinical mental health data
+- Medical records
+- Diagnostic information
+
+Coach Insights present performance-related patterns only.
+
+No personal disclosures are displayed in reporting outputs.
+
+
+============================================================
+REPORTING PRINCIPLES
+============================================================
+
+Coach Insights must:
+
+- Be concise
+- Be structured
+- Avoid emotional narrative
+- Avoid athlete quotes
+- Avoid personal detail
+- Avoid interpretation beyond structured data
+- Present trend summaries, not day-level breakdowns
+
+The system must always err toward over-protection rather than over-reporting.
+
+
+============================================================
+FINAL COMPLIANCE STANDARD
+============================================================
+
+Coach Insights are designed to resemble:
+
+- Wellness dashboards
+- Readiness summaries
+- High-level performance trend reports
+
+They are not practice tools, instruction tools, or behavioral enforcement mechanisms.
+
+The integrity of voluntary participation, privacy boundaries,
+and institutional compliance must be preserved at all times.
+
+End of Document.

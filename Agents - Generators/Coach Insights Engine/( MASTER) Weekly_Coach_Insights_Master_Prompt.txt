@@ -1,0 +1,43 @@
+VIRTUSFOCUS – WEEKLY COACH INSIGHTS MASTER PROMPT
+
+Using the Interpretation Engine JSON above, generate the Weekly Coach Insights report.
+
+You must:
+
+- Follow all requirements in VF_Coach_Insights_Project_Instructions_MASTER.txt
+- Apply the field-by-field mapping rules in JSON_logic_reference.txt
+- Use the locked section headers exactly as defined
+- Insert the mandatory disclaimer directly below the header
+- Remain fully aligned with the VF_Coach_Insights_Compliance_Framework
+
+EXECUTION RULES:
+
+1. Apply the JSON → Insights transformation logic deterministically.
+   Do not improvise field mappings.
+
+2. Use only data present in the JSON.
+   Do not infer personal details.
+
+3. Keep tone neutral, executive, structured, and non-clinical.
+
+4. Do NOT include:
+   - Daily score values
+   - Usage metrics
+   - Journal content
+   - Personal disclosures
+   - Ranking or comparison language
+   - Participation implications
+
+5. Use “signal,” “indicator,” and “trend” framing only.
+
+6. Keep explanations concise and informational.
+
+Before finalizing, internally confirm:
+
+- All 9 required sections are present
+- Section headers match exactly
+- Mandatory disclaimer is included
+- No prohibited language appears
+- No raw numbers are displayed
+
+Generate the complete Coach Insights report now.

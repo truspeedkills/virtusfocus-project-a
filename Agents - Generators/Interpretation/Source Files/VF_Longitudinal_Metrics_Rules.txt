@@ -1,0 +1,138 @@
+VF_Longitudinal_Metrics_Rules.txt
+
+============================================================
+PURPOSE
+============================================================
+
+This document defines deterministic rules for calculating
+longitudinal performance indicators across 2–4 weeks of
+prior Interpretation JSON outputs.
+
+These rules are mandatory.
+No improvisation.
+No subjective interpretation.
+
+If sufficient historical data is not provided,
+all longitudinal_metrics fields must be set to:
+
+"insufficient data"
+
+============================================================
+DATA ELIGIBILITY
+============================================================
+
+Longitudinal metrics may only be computed if:
+
+- At least 2 prior weekly JSON outputs are supplied
+- Each prior week includes:
+  - win_days
+  - missed_days
+  - weekly_tier
+  - recommitment_signal
+  - most_important_controllable
+  - reflection_quality_score
+
+If fewer than 2 weeks exist:
+Set all longitudinal_metrics fields to "insufficient data".
+
+============================================================
+METRIC DEFINITIONS
+============================================================
+
+1) weeks_available
+--------------------------------
+Number of weeks included in computation (2–4 maximum).
+
+2) rolling_win_rate_4wk
+--------------------------------
+Formula:
+(sum of win_days across available weeks) /
+(7 × weeks_available)
+
+Return as decimal rounded to 2 places.
+
+3) rolling_missed_rate_4wk
+--------------------------------
+Formula:
+(sum of missed_days across available weeks) /
+(7 × weeks_available)
+
+Return as decimal rounded to 2 places.
+
+4) volatility_index_4wk
+--------------------------------
+
+Evaluate pattern stability across available weeks.
+
+High:
+- Multiple weeks labeled Mixed Pattern or Volatile
+OR
+- Large swings between high win_days and high missed_days
+
+Moderate:
+- Some oscillation
+- Directionally similar but inconsistent week-to-week
+
+Low:
+- Stable weekly tier
+- Similar win/missed distribution across weeks
+
+5) recommitment_rate_4wk
+--------------------------------
+
+Use ONLY weeks where:
+recommitment_signal ≠ "insufficient data"
+AND ≠ "Not Applicable"
+
+Formula:
+(# of weeks with recommitment_signal Strong or Moderate) /
+(# of evaluable weeks)
+
+Return as decimal rounded to 2 places.
+
+If no evaluable weeks:
+Set to "insufficient data".
+
+6) controllable_stability_4wk
+--------------------------------
+
+Stable:
+- most_important_controllable repeats in majority of weeks
+
+Shifting:
+- Changes frequently but remains within same theme (e.g., sleep → shutdown → wake time)
+
+Chaotic:
+- Changes every week with no thematic continuity
+
+7) fatigue_load_indicator
+--------------------------------
+
+High:
+- rolling_missed_rate elevated (≥ 0.30)
+AND
+- volatility_index_4wk = High
+AND
+- reflection_quality_score trending down OR weekly_tier_trend Declining
+
+Moderate:
+- Mixed signals across above variables
+
+Low:
+- rolling_missed_rate < 0.20
+AND
+- volatility_index_4wk = Low
+AND
+- weekly_tier_trend Stable or Improving
+
+============================================================
+COMPLIANCE RULES
+============================================================
+
+- All longitudinal_metrics must be computed BEFORE JSON construction.
+- No metric may be inferred without data.
+- No psychological assumptions allowed.
+- These are performance metrics only.
+- If uncertainty exists → "insufficient data".
+
+Return structured truth.

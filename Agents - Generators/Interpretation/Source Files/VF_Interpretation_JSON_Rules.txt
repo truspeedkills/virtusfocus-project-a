@@ -1,0 +1,329 @@
+VIRTUSFOCUS – INTERPRETATION ENGINE
+VF_Interpretation_JSON_Rules.txt
+(MASTER – LONGITUDINAL INTEGRATED + WEEKLY FORMAT RECOMMITMENT FIX)
+
+PURPOSE
+These rules standardize how weekly recap data is converted into structured JSON.
+They reduce classification drift, enforce deterministic logic, and ensure downstream consistency
+across weekly and longitudinal analysis.
+
+All field classifications must follow these rules exactly.
+If data does not support a classification, use "insufficient data".
+
+============================================================
+SECTION 1 – WIN THE DAY CLASSIFICATION RULES
+============================================================
+
+------------------------------------------------------------
+1A) Daily Category Mapping (Numeric Scores)
+------------------------------------------------------------
+
+4–5 points → Win
+2–3 points → Neutral
+0–1 point  → Missed
+
+Do not infer scores.
+If numeric data missing, use category labels if provided.
+If neither exists → "insufficient data".
+
+------------------------------------------------------------
+1B) Weekly Tier (Numeric Total)
+------------------------------------------------------------
+
+28–35 total → Growth
+14–27 total → Mixed
+0–13 total  → Reset
+
+------------------------------------------------------------
+1C) Weekly Tier (Category-Only Fallback)
+------------------------------------------------------------
+
+If only category labels provided:
+
+- 5+ Wins AND ≤1 Missed → Growth
+- 2–4 Wins → Mixed
+- 0–1 Wins → Reset
+
+If total days incomplete → "insufficient data"
+
+------------------------------------------------------------
+1D) Consistency Profile
+------------------------------------------------------------
+
+Stable Positive:
+- Majority Wins
+- ≤1 Missed
+- Low volatility across days
+
+Mixed Pattern:
+- Mixed distribution of Wins / Neutral / Missed
+- No extreme swings
+
+Volatile:
+- Frequent swings Win ↔ Missed
+- 2+ directional reversals across week
+
+Reset Pattern:
+- Majority Missed days
+- No sustained rebound
+
+------------------------------------------------------------
+1E) Recommitment Signal (WITHIN-WEEK ONLY)
+------------------------------------------------------------
+
+Weekly recaps contain only 7 days.
+There is no recorded day after Sunday.
+
+Recommitment is evaluated ONLY when a Missed day has at least one subsequent day
+inside the same weekly recap.
+
+If the ONLY Missed day occurs on the final day of the week
+(typically Sunday), and there is no earlier Missed day to evaluate recovery:
+→ recommitment_signal = "insufficient data"
+
+Deterministic Rules:
+
+Strong:
+- Any Missed day followed by a Win on the very next recorded day (within-week)
+- OR a Missed day followed by a Win within the next 2 recorded days (within-week)
+  AND the recap includes a clear corrective action statement
+
+Moderate:
+- Any Missed day followed by Neutral on the next recorded day (within-week)
+- OR a Missed day followed by a Win later in the same week (delayed rebound) without clear corrective action
+
+Low:
+- Any Missed day followed by another Missed on the next recorded day (within-week)
+- OR repeated Missed days with no rebound inside the week
+
+Not Applicable:
+- No Missed days in the recap
+
+If multiple Missed events occur:
+- If ANY event meets Strong → Strong
+- Else if ANY event meets Moderate → Moderate
+- Else if ANY event meets Low → Low
+- Else → "insufficient data"
+
+============================================================
+SECTION 2 – BULLSEYE CLASSIFICATION RULES
+============================================================
+
+Primary Focus Ring:
+
+Control:
+- Emphasis on effort, habits, response, preparation
+
+Influence:
+- Mix of controllables + external factors
+
+Cannot Control:
+- Outcome fixation, referee, opponent, weather, coach decisions
+
+Noise Fixation Present:
+
+Yes:
+- Repeated external attribution (3+ references)
+
+No:
+- Primary ownership language present
+
+If unclear → "insufficient data"
+
+============================================================
+SECTION 3 – REFLECTION QUALITY SCALE
+============================================================
+
+1 → Surface description only (what happened)
+2 → Basic awareness (no root cause linkage)
+3 → Clear pattern recognition
+4 → Ownership + forward behavioral adjustment
+
+If no written reflection → "insufficient data"
+
+============================================================
+SECTION 4 – GROWTH PHASE CLASSIFICATION
+============================================================
+
+Emerging:
+- Reactive patterns
+- Inconsistent ownership
+- Volatile execution
+
+Developing:
+- Increasing awareness
+- Partial routine stability
+- Inconsistent recommitment
+
+Consistent:
+- Stable execution
+- Strong Win distribution
+- Reliable corrective action
+
+Leadership:
+- Proactive regulation
+- Influences teammates
+- High ownership language
+- Stable Growth tier pattern
+
+If unclear → "insufficient data"
+
+============================================================
+SECTION 4A – PRIOR COMMITMENT RESULT CLASSIFICATION RULES
+============================================================
+
+Completed:
+- Recap contains specific behavioral evidence matching the prior action
+- AND measurement target appears met or exceeded
+
+Partial:
+- Some behavioral evidence present
+- BUT measurement target not fully met
+
+Not Attempted:
+- No behavioral evidence of the specific prior action in recap
+
+Unknown:
+- Recap data is ambiguous about this specific behavior
+- OR prior action cannot be clearly assessed from recap format
+
+No Prior Week:
+- First week of program; no prior JSON exists
+
+Do not infer execution from general behavior.
+The evidence must specifically match the prior micro_commitment.action.
+
+============================================================
+SECTION 4B – EMOTIONAL INTENSITY CLASSIFICATION RULES
+============================================================
+
+Low:
+- Task-oriented, neutral language throughout
+- No emotional references beyond routine satisfaction/frustration
+
+Moderate:
+- Athlete explicitly names friction, frustration, or strain
+- BUT execution was not disrupted
+- AND language remains largely composed
+
+High:
+- Significant emotional strain explicitly described
+- Examples: mental breakdown language, homesickness, strong anger,
+  identity-level crisis statements, desire to quit/leave
+- Execution may or may not have been disrupted
+
+If unclear from recap language: "insufficient data".
+
+This is a language signal, not a clinical assessment.
+
+============================================================
+SECTION 5 – LONGITUDINAL TREND CLASSIFICATION RULES
+============================================================
+
+Applies only if at least 2 weeks of prior data supplied.
+If fewer than 2 comparison points → "insufficient data"
+
+------------------------------------------------------------
+5A) Weekly Tier Trend
+------------------------------------------------------------
+
+Improving:
+- Movement Reset → Mixed
+- Mixed → Growth
+- Reset → Growth (2-level jump)
+
+Stable:
+- Same tier consecutive weeks
+
+Declining:
+- Growth → Mixed
+- Mixed → Reset
+- Growth → Reset (2-level drop)
+
+------------------------------------------------------------
+5B) Growth Phase Movement
+------------------------------------------------------------
+
+Advancing:
+- Emerging → Developing
+- Developing → Consistent
+- Consistent → Leadership
+
+Stable:
+- Same phase consecutive weeks
+
+Regressing:
+- Any downward phase movement
+
+If phase data missing → "insufficient data"
+
+------------------------------------------------------------
+5C) Consistency Trend
+------------------------------------------------------------
+
+Strengthening:
+- Movement toward Stable Positive
+- Reduction in volatility across weeks
+
+Volatile:
+- Shifting between Volatile / Mixed / Reset Pattern across weeks
+
+Stagnant:
+- Same non-Stable pattern across 3 weeks
+- No measurable stabilization
+
+------------------------------------------------------------
+5D) Recommitment Trend
+------------------------------------------------------------
+
+Escalating:
+- Low → Moderate → Strong progression
+- Visible faster recovery timing week over week (when within-week recovery data exists)
+
+Stable:
+- Same recommitment classification consecutive weeks
+
+Weakening:
+- Strong → Moderate → Low progression
+- Slower recovery timing (when within-week recovery data exists)
+
+If one or more weeks are "insufficient data" due to end-of-week Missed:
+- recommitment_trend may become "insufficient data" unless at least 2 comparable weeks exist
+
+------------------------------------------------------------
+5E) Pattern Shift Detection
+------------------------------------------------------------
+
+Yes:
+- core_pattern changes category
+- behavioral_root_cause changes classification
+- most_important_controllable materially shifts focus area
+
+No:
+- Pattern remains structurally consistent
+
+If insufficient historical anchor → "insufficient data"
+
+============================================================
+SECTION 6 – GLOBAL GUARDRAILS
+============================================================
+
+- No clinical terminology.
+- No psychological diagnosis.
+- No therapy language.
+- Interpret behavior only.
+- Do not speculate.
+- Use "insufficient data" when unsupported.
+
+============================================================
+SECTION 7 – FINAL RULE
+============================================================
+
+These rules override interpretive creativity.
+
+All JSON outputs must follow deterministic classification
+as defined in this document.
+
+If conflict occurs:
+Compliance rules override.
+This document governs all field-level classification logic.

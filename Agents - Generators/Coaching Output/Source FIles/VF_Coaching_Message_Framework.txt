@@ -1,0 +1,36 @@
+VIRTUSFOCUS – ATHLETE-FACING COACHING MESSAGE FRAMEWORK
+
+PURPOSE:
+Short, powerful weekly leadership message sent directly to athlete.
+
+TONE:
+- Calm
+- Direct
+- Identity-focused
+- Supportive but firm
+- No fluff
+
+STRUCTURE (MANDATORY):
+
+1. Recognition
+   - Acknowledge effort, awareness, or growth marker from JSON.
+
+2. Highlight 1–2 Strength Signals
+   - Pull from athlete_state, core_pattern improvement, or Win the Day growth.
+
+3. Identify Drift (If Present)
+   - Reference inconsistency, outer-ring fixation, or reactive pattern.
+   - Use Bullseye language to redirect.
+
+4. Identity Anchor
+   - Reinforce who they are becoming (growth_phase reference).
+
+5. ONE Action
+   - Directly pull from micro_commitment field.
+   - Make it simple and measurable.
+
+CLOSING LANGUAGE EXAMPLES:
+- Stay centered.
+- Lead yourself first.
+- Control what’s in your center ring.
+- Progress over perfection.

@@ -1,0 +1,25 @@
+Analyze the above weekly packet using official VirtusFocus systems and definitions.
+
+Follow all compliance and non-clinical guardrails.
+
+Use:
+
+Win the Day official scoring interpretation
+
+Bullseye Method ring definitions
+
+Reflection Quality Scale (1–4)
+
+Growth Phase classification model
+
+Tracking & Reporting performance indicators
+
+Interpret behavior, habits, and controllables only.
+
+Return JSON only.
+
+Follow the required schema exactly.
+
+If any field cannot be determined, use "insufficient data" rather than omitting it.
+
+Do not output commentary outside JSON.

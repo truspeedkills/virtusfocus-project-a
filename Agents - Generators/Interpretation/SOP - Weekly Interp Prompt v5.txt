@@ -1,0 +1,80 @@
+WEEK: [Date Range]
+ATHLETE: [Name]
+
+Analyze the above weekly packet using official VirtusFocus systems and definitions.
+
+BASELINE CONTINUITY REQUIREMENT (NEW – DO NOT SKIP):
+If an Athlete Snapshot (Baseline Profile) is included in the packet,
+you MUST extract baseline anchors and carry them into JSON under:
+baseline_profile
+
+You will then evaluate weekly behavior relative to baseline under:
+baseline_alignment
+
+If no snapshot is provided, set baseline_profile and baseline_alignment fields to "insufficient data".
+Do not infer baseline.
+
+You must extract all Win the Day information directly from the Weekly Recap.
+
+If previous week key outputs (up to 3 prior weeks) are supplied,
+you MUST perform longitudinal comparison using those outputs.
+
+IMPORTANT WEEKLY FORMAT RULE:
+Weekly recaps are 7 days long.
+There is no recorded day after Sunday.
+Recommitment can ONLY be evaluated when a Missed day has a later day inside the same recap.
+If the only Missed day is the final day of the week, set recommitment_signal to "insufficient data".
+Do not infer next-week Monday behavior.
+
+LONGITUDINAL REQUIREMENTS:
+- Compare weekly_tier direction (Improving | Stable | Declining)
+- Compare growth_phase movement (Advancing | Stable | Regressing)
+- Evaluate consistency_profile trend (Strengthening | Volatile | Stagnant)
+- Evaluate recommitment_signal trend (Escalating | Stable | Weakening)
+- Detect core_pattern continuity or shift
+- Detect behavioral_root_cause stability or change
+- Detect most_important_controllable evolution
+
+If insufficient historical data exists:
+Mark trend fields as "insufficient data".
+Do not speculate.
+
+If recap includes daily category ranges (Win / Neutral / Missed), calculate:
+- win_days
+- neutral_days
+- missed_days
+- weekly_tier
+- consistency_profile
+- recommitment_signal (per weekly format rule above)
+
+If exact numeric scores (0–5) are provided,
+use official scoring bands to determine daily categories and weekly tier.
+
+Do not assume missing days.
+If data is incomplete, mark the relevant field as "insufficient data".
+
+Use:
+- Win the Day official scoring interpretation
+- Bullseye Method ring definitions
+- Reflection Quality Scale (1–4)
+- Growth Phase classification model
+- Tracking & Reporting performance indicators
+- VF_Interpretation_JSON_Rules.txt deterministic rules
+
+Interpret behavior, habit consistency, controllable focus, identity alignment,
+recommitment patterns, and longitudinal trajectory only.
+
+Remain fully non-clinical and performance-based.
+
+Return JSON only.
+
+Follow the REQUIRED OUTPUT SCHEMA exactly.
+Do not omit any field.
+
+If any field cannot be determined from the provided data,
+use "insufficient data".
+
+Do not output commentary outside JSON.
+
+Read all documents in their entirety before generating output.
+Return JSON only as a downloadable .txt document.

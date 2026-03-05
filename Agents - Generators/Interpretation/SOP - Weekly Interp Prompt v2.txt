@@ -1,0 +1,55 @@
+WEEK: [Date Range]
+ATHLETE: [Name]
+
+Analyze the above weekly packet using official VirtusFocus systems and definitions.
+
+You must extract all Win the Day information directly from the Weekly Recap.
+
+If the recap includes daily category ranges (Win / Neutral / Missed), calculate:
+
+win_days
+
+neutral_days
+
+missed_days
+
+weekly_tier (Growth / Mixed / Reset)
+
+consistency_profile
+
+recommitment_signal
+
+If exact numeric scores (0–5) are provided, use official scoring bands to determine daily categories and weekly tier.
+
+Do not assume missing days.
+If data is incomplete, mark the relevant field as "insufficient data".
+
+Use:
+
+Win the Day official scoring interpretation
+
+Bullseye Method ring definitions
+
+Reflection Quality Scale (1–4)
+
+Growth Phase classification model
+
+Tracking & Reporting performance indicators
+
+Interpret behavior, habit consistency, controllable focus, identity alignment, and recommitment patterns only.
+
+Remain fully non-clinical and performance-based.
+
+Return JSON only.
+
+Follow the required schema exactly.
+
+Do not omit any field.
+
+If any field cannot be determined from the provided data, use "insufficient data".
+
+Do not output commentary outside JSON.
+
+Read all documents in their entirety before generating output. 
+
+Return JSON only as a downloadable .txt document 

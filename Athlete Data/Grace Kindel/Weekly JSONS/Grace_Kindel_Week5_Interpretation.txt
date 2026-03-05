@@ -1,0 +1,68 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-02-23 to 2026-03-01",
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition.",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes.",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure.",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role.",
+    "baseline_growth_phase": "Developing"
+  },
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Daily execution stayed consistent across school, practice, and travel prep; focus language stayed mostly preparation-anchored (warmup, slowing down, follow-through), supporting confidence stability without outcome chasing."
+  },
+  "athlete_state": "High engagement and steady readiness through academics, practice, and travel logistics; confidence reinforced by strong scrimmage execution and consistent daily follow-through.",
+  "core_pattern": "Stable Win-the-Day routines paired with simple process cues (slow down, breathe before reacting, complete one task at a time) to keep daily execution calm and controllable during a busy, travel-heavy week.",
+  "behavioral_root_cause": "Consistency holds when attention stays on controllables (warmup quality, one-skill precision, patience cues, and task completion); performance confidence is reinforced through preparation behaviors and next-action focus rather than game outcomes.",
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+  "bullseye_analysis": {
+    "control_quality": "Clear ownership of controllables with a specific anchor (warmup quality) and multiple daily execution cues (slow down, breathe, follow-through) that translate into practice and travel days.",
+    "influence_quality": "Acknowledges influence through contribution and team impact without relying on it as the primary focus driver.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+  "reflection_quality_score": "3",
+  "growth_phase": "Consistent",
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "Stable",
+    "pattern_shift_detected": "Yes"
+  },
+  "longitudinal_metrics": {
+    "weeks_available": "4",
+    "rolling_win_rate_4wk": "1.00",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+  "most_important_controllable": "Execute a consistent warmup and pre-performance process cue (slow down + breathe) on travel/competition days so confidence stays anchored to preparation and next-action execution.",
+  "micro_commitment": {
+    "action": "Run a 5-minute warmup checklist (movement + first rep focus) and choose one execution cue (\"slow down\" or \"breathe\") before practice/competition.",
+    "when": "Before each practice/competition session and immediately after arriving at the field on travel days.",
+    "measurement": "Log 1 checkmark per session completed and note the chosen cue; target 6+ checkmarks this week."
+  },
+  "coach_insights": {
+    "routine_execution_summary": "Seven Win-the-Day completions with steady follow-through across academics, practice, and travel; maintained structure even on a full travel day.",
+    "key_habit_signal": "Uses simple process cues (precision, patience, breathing, follow-through) that support controllable execution and reduce reaction during busy days.",
+    "coach_reinforcement_cue": "Reinforce the standard: warmup quality + one cue before reps is the controllable anchor that travels well and stabilizes confidence regardless of outcomes.",
+    "coach_avoidance_note": "Avoid expanding into outcome predictions; keep feedback anchored to repeatable warmup behaviors and the chosen execution cue."
+  },
+  "risk_flags": {
+    "compliance_safe_note": "Interpretation is limited to performance habits, controllable focus, routine consistency, and longitudinal indicators within the VirtusFocus non-clinical mental performance framework."
+  },
+  "next_week_focus_question": "What is your exact warmup checklist and single execution cue you will run before every rep on travel/competition days to keep confidence anchored to controllables?"
+}

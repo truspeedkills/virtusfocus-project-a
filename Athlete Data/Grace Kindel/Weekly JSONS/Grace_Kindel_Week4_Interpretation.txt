@@ -1,0 +1,68 @@
+{
+"athlete_name": "Grace Kindel",
+"week_period": "2026-02-23 to 2026-03-01",
+"baseline_profile": {
+"baseline_identity_claim": "Wants to stay confident in her ability during competition.",
+"baseline_hinge_habit": "Immediate reset and refocus after mistakes.",
+"baseline_primary_derailer": "Loss of confidence following errors or perceived failure.",
+"baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role.",
+"baseline_growth_phase": "Developing"
+},
+"baseline_alignment": {
+"alignment_status": "Partially Aligned",
+"alignment_notes": "Daily execution stayed high and confidence was reinforced through action in the one opportunity provided; however, competition notes included strong frustration toward coach decisions, showing some attention drift to non-controllables even while behavior stayed on-plan."
+},
+"athlete_state": "High engagement through travel and competition logistics; maintained daily follow-through and entered the next week with confidence after executing in a limited opportunity.",
+"core_pattern": "Keeps routine consistency during travel/uncertainty and uses confidence/effort as anchors; external frustration rises around lineup decisions but does not break daily execution.",
+"behavioral_root_cause": "When playing-time uncertainty and travel friction appear, attention can drift toward coach decisions (cannot control); confidence stabilizes when she recenters on controllables (preparation, effort shown, and response in the next opportunity).",
+"win_the_day": {
+"daily_distribution": {
+"win_days": "7",
+"neutral_days": "0",
+"missed_days": "0"
+},
+"weekly_tier": "Growth",
+"consistency_profile": "Stable Positive",
+"recommitment_signal": "Not Applicable"
+},
+"bullseye_analysis": {
+"control_quality": "Identified a clear controllable anchor (confidence) and paired it with execution behavior (preparing and taking advantage of the one hitting opportunity).",
+"influence_quality": "Named influence through visible effort and how she is perceived by staff, without relying solely on approval as the driver.",
+"noise_fixation_present": "No",
+"primary_focus_ring": "Control"
+},
+"reflection_quality_score": "3",
+"growth_phase": "Consistent",
+"trend_analysis": {
+"weekly_tier_trend": "Stable",
+"growth_phase_movement": "Stable",
+"consistency_trend": "Strengthening",
+"recommitment_trend": "Stable",
+"pattern_shift_detected": "No"
+},
+"longitudinal_metrics": {
+"weeks_available": "4",
+"rolling_win_rate_4wk": "1.00",
+"rolling_missed_rate_4wk": "0.00",
+"volatility_index_4wk": "Low",
+"recommitment_rate_4wk": "insufficient data",
+"controllable_stability_4wk": "Shifting",
+"fatigue_load_indicator": "Low"
+},
+"most_important_controllable": "Use a fast Bullseye recenter when playing-time or lineup decisions trigger frustration so confidence stays anchored to preparation and the next controllable action.",
+"micro_commitment": {
+"action": "Complete a 2-minute Bullseye reset (1 controllable action, 1 influence action, 1 release) and choose one execution cue for the next rep/opportunity.",
+"when": "Immediately after any lineup/role update or moment of frustration during travel or competition days.",
+"measurement": "Log 1 checkmark per reset; target 4+ resets across the week (and note the chosen execution cue each time)."
+},
+"coach_insights": {
+"routine_execution_summary": "Seven Win-the-Day completions during a travel week; habits held even with schedule disruption and limited competition opportunity.",
+"key_habit_signal": "Confidence was reinforced by doing something with the one chance provided; execution behavior stayed consistent despite strong external frustration language.",
+"coach_reinforcement_cue": "Reinforce the standard: the controllable win is the reset \u2192 preparation \u2192 next opportunity response, regardless of role decisions.",
+"coach_avoidance_note": "Avoid extended discussion of coach decision-making; redirect quickly to the next controllable action and the bullseye reset trigger."
+},
+"risk_flags": {
+"compliance_safe_note": "Interpretation is limited to performance habits, controllable focus, routine consistency, and longitudinal trends within the VirtusFocus non-clinical mental performance framework."
+},
+"next_week_focus_question": "What is the exact Bullseye reset you will run the moment playing-time uncertainty shows up so your next action stays controllable and confident?"
+}

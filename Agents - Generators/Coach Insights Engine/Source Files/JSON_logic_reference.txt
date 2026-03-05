@@ -1,0 +1,136 @@
+VF COACH INSIGHTS ENGINE
+JSON → INSIGHTS TRANSFORMATION LOGIC (FIELD-BY-FIELD)
+
+INPUT SOURCE
+- Interpretation Engine JSON only.
+- Do not use weekly recap or any raw athlete text.
+- If any field is missing or "insufficient data": keep the section, keep structure, and write a neutral sentence.
+
+0) HEADER FIELDS
+- Athlete Name: use athlete_name (if empty → "Insufficient data")
+- Week: use week_period (if empty → "Insufficient data")
+
+1) WEEKLY PERFORMANCE CLASSIFICATION
+- Weekly Tier: win_the_day.weekly_tier (Growth | Mixed | Reset | insufficient data)
+
+Trend Direction (↑ → ↓)
+Rule A (preferred): if prior-week JSON is provided in the same input:
+- Improved tier vs last week → ↑
+- Same tier → →
+- Worsened tier → ↓
+
+Rule B (single JSON only): infer direction from consistency + recommitment:
+- consistency_profile = Improving OR recommitment_signal = Strong with Mixed/Reset → ↑
+- consistency_profile = Stable Positive with Growth → → (stable excellence)
+- consistency_profile = Volatile/Reset Pattern AND recommitment_signal = Low → ↓
+- Else → →
+
+Executive Summary (2–3 sentences)
+Use: athlete_state, core_pattern, win_the_day.consistency_profile, win_the_day.recommitment_signal, bullseye_analysis.primary_focus_ring
+Style: neutral, trend-based; use words: indicator / signal / trend / stability. No emotional or evaluative language.
+
+2) CONSISTENCY SIGNAL
+Status mapping from win_the_day.consistency_profile:
+- Stable Positive → Stable
+- Mixed Pattern → Variable
+- Volatile → Variable
+- Reset Pattern → Variable
+- Improving → Improving
+- insufficient data → insufficient data
+
+Explanation: use distribution counts if present; otherwise describe based on consistency_profile.
+Never include daily breakdown. Never include raw numeric scores.
+
+3) FOCUS DISTRIBUTION (BULLSEYE TREND)
+Primary Focus Ring mapping from bullseye_analysis.primary_focus_ring:
+- Control → Center-Dominant
+- Influence → Mixed Focus
+- Cannot Control → Outer-Ring Drift Detected
+- insufficient data → insufficient data
+
+Noise fixation from bullseye_analysis.noise_fixation_present:
+- Yes → mention outer-ring drift indicators present
+- No → mention controllable alignment maintained
+- insufficient data → neutral statement only
+
+Explanation inputs: bullseye_analysis.control_quality, bullseye_analysis.influence_quality.
+No stressor attribution.
+
+4) RECOMMITMENT & RESPONSE SIGNAL
+Recommitment Strength: win_the_day.recommitment_signal (Strong | Moderate | Low | Not Applicable | insufficient data)
+
+Response Stability mapping:
+- Strong → Consistent Response Pattern
+- Moderate → Occasional Reactivity
+- Low → Elevated Reactivity
+- Not Applicable → insufficient data (or "Not Applicable" if needed)
+- insufficient data → insufficient data
+
+Override (only if clearly behavioral):
+- athlete_state indicates "reactive" → bump one level toward reactivity
+- athlete_state indicates "stable execution" → bump toward consistent response
+
+Summary sentence: recovery speed / response stability / recommitment indicators.
+Do not reference specific events.
+
+5) CONFIDENCE MOMENTUM (DIRECTIONAL ONLY)
+Confidence Trend rules (execution-linked, non-emotional):
+- Growth + Stable Positive + Control focus → ↑ Building
+- Mixed + Improving OR Strong recommitment → ↑ Building
+- Mixed + Variable + Mixed focus → → Stable
+- Reset + Volatile/Reset Pattern + Outer ring drift → ↓ Variable
+- insufficient data → insufficient data
+
+Sentence: confidence is linked to routine stability and controllable alignment.
+
+6) STRESS LOAD INDICATOR (BAND-BASED)
+Conservative inference only. Inputs: consistency_profile, recommitment_signal, noise_fixation_present, reflection_quality_score
+
+Band mapping:
+- Stable Positive + Control focus + reflection 3–4 → Low
+- Mixed Pattern OR Influence focus OR reflection 2–3 → Moderate
+- Volatile/Reset Pattern OR Outer ring drift + reflection 1–2 → Elevated
+- insufficient data → insufficient data
+
+Sentence must be neutral and not attribute sources.
+
+7) GROWTH PHASE STATUS
+Use growth_phase directly (Emerging | Developing | Consistent | Leadership | insufficient data)
+One sentence only. No psychological framing.
+
+8) KEY PERFORMANCE SIGNAL (WEEKLY PRIORITY)
+Selection priority:
+1) If primary_focus_ring = Cannot Control OR noise_fixation_present = Yes → Controllable Focus Alignment
+2) Else if consistency_profile = Volatile or Reset Pattern → Routine Stability
+3) Else if recommitment_signal = Low → Adversity Response
+4) Else if weekly_tier = Growth but athlete_state indicates reactive → Composure Under Pressure
+5) Else → derive from most_important_controllable as a short phrase (e.g., Preparation Consistency / Reset Routine / Response Discipline)
+
+Explanation: use most_important_controllable and micro_commitment.measurement as a measurable target (avoid raw numbers when possible).
+
+9) COACH CONTEXT CUE
+Primary source: coach_insights.coach_reinforcement_cue
+If missing: derive from most_important_controllable using neutral phrasing:
+- Reinforce consistent controllable execution and response routines.
+
+Prohibited phrasing:
+- "Coach should", "Must", "Require", "Discipline"
+Allowed phrasing:
+- Reinforce..., Maintain emphasis on..., Monitor trend...
+
+GLOBAL COMPLIANCE FILTER (APPLY TO ALL SECTIONS)
+Remove/avoid:
+- mental health terms (anxiety, depression, trauma, etc.)
+- "at-risk"
+- compliance/adherence language
+- usage/participation metrics
+- journal details or personal life context
+- ranking/comparison language
+- playing time implications
+
+OUTPUT CONSISTENCY RULES
+- Use exact locked section headers.
+- No daily breakdowns.
+- No raw score values.
+- Neutral, executive tone.
+- Short, structured paragraphs (no narrative storytelling).

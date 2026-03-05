@@ -1,0 +1,302 @@
+VIRTUSFOCUS – COACH INSIGHTS OUTPUT STRUCTURE (FINAL)
+HEADER
+
+Athlete: [Name]
+Week: [Date Range]
+Report Type: Weekly Performance Insight
+Classification: Informational Only
+
+Include disclaimer directly below header:
+
+These indicators are informational only and may not be used as a basis for participation, selection, or disciplinary decisions.
+
+This must appear on every report.
+
+1️⃣ WEEKLY PERFORMANCE CLASSIFICATION
+
+Weekly Tier: Growth | Mixed | Reset
+Trend Direction: ↑ Improving | → Stable | ↓ Declining
+
+Short 2–3 sentence executive summary:
+
+Overall behavioral stability
+
+Directional momentum
+
+Habit execution quality
+
+Self-regulation signal
+
+No emotional language.
+No narrative.
+No evaluation.
+
+Example framing:
+“This week reflects a Mixed classification with stable momentum. Habit consistency showed moderate variability with maintained recommitment signals.”
+
+2️⃣ CONSISTENCY SIGNAL
+
+Status:
+
+Stable
+
+Variable
+
+Improving
+
+Based on:
+
+Win the Day distribution
+
+Consistency profile from Interpretation JSON
+
+Add brief explanation:
+
+“Behavioral execution patterns showed [stable/variable] alignment across the week.”
+
+No daily breakdowns.
+No specific scores.
+
+3️⃣ FOCUS DISTRIBUTION (BULLSEYE TREND)
+
+Primary Focus Ring:
+
+Center-Dominant
+
+Mixed Focus
+
+Outer-Ring Drift Detected
+
+Add:
+
+1–2 sentence explanation of focus pattern
+
+Whether controllable alignment improved or drifted
+
+Example:
+“Primary focus remained centered on controllables with minimal outer-ring fixation.”
+
+No personal stressor references.
+
+4️⃣ RECOMMITMENT & RESPONSE SIGNAL
+
+Recommitment Strength:
+
+Strong
+
+Moderate
+
+Low
+
+Response Stability:
+
+Consistent Response Pattern
+
+Occasional Reactivity
+
+Elevated Reactivity
+
+Short summary:
+
+“Recommitment patterns suggest [moderate] recovery speed following variability.”
+
+Do not reference specific events.
+
+5️⃣ CONFIDENCE MOMENTUM (DIRECTIONAL ONLY)
+
+Trend:
+
+↑ Building
+
+→ Stable
+
+↓ Variable
+
+Frame confidence as preparation-linked, not emotional.
+
+Example:
+“Confidence momentum appears stable and tied to habit execution consistency.”
+
+No internal emotional content.
+
+6️⃣ STRESS LOAD INDICATOR (BAND-BASED)
+
+Band:
+
+Low
+
+Moderate
+
+Elevated
+
+One neutral sentence:
+
+“Overall stress load indicators remained within [moderate] range based on self-regulation signals.”
+
+No source attribution (no “school stress” etc.).
+
+7️⃣ GROWTH PHASE STATUS
+
+Current Phase:
+
+Emerging
+
+Developing
+
+Consistent
+
+Leadership
+
+One sentence only:
+
+“Athlete remains in the Developing phase, building routine stability and pattern awareness.”
+
+Do not interpret psychologically.
+
+8️⃣ KEY PERFORMANCE SIGNAL (WEEKLY PRIORITY)
+
+Single structured statement:
+
+“Primary Development Signal This Week: [Short phrase]”
+
+Examples:
+
+Routine Stability
+
+Adversity Response
+
+Controllable Focus Alignment
+
+Preparation Consistency
+
+1–2 sentence explanation.
+
+This is not a coaching directive.
+It is a development marker.
+
+9️⃣ COACH CONTEXT CUE (OPTIONAL BUT RECOMMENDED)
+
+One neutral reinforcement suggestion:
+
+“Coach Context Cue: Reinforce controllable preparation behaviors and consistent response patterns.”
+
+This must remain informational, not directive.
+
+Avoid:
+“Coach should…”
+Use:
+“Reinforce…”
+“Monitor trend…”
+“Maintain emphasis on…”
+
+10️⃣ TEAM AGGREGATE (SCALABLE SECTION – OPTIONAL)
+
+If multiple athletes are processed:
+
+Team Snapshot (Anonymized):
+
+% Growth Weeks
+
+% Mixed Weeks
+
+% Reset Weeks
+
+Overall Team Consistency Signal
+
+Team Focus Distribution Trend
+
+Minimum group size rule: ≥ 5 athletes.
+
+No individual comparison.
+No ranking.
+
+🛑 STRUCTURAL PROTECTIONS
+
+This report must NEVER include:
+
+Daily score numbers
+
+Completion counts
+
+Usage frequency
+
+Journal excerpts
+
+Personal disclosures
+
+Quotes
+
+Emotional diagnoses
+
+Rankings
+
+Participation implications
+
+Playing time references
+
+“At-risk” labeling
+
+🧠 DESIGN PHILOSOPHY
+
+This report should resemble:
+
+Wellness readiness summary
+
+Performance trend dashboard
+
+Behavioral stability overview
+
+It should NOT resemble:
+
+Evaluation form
+
+Discipline report
+
+Psychological assessment
+
+Participation tracker
+
+📊 SCALABILITY FEATURES
+
+This structure supports:
+
+Single athlete weekly reports
+
+Team aggregate reports
+
+Month-over-month summaries
+
+Season phase comparisons
+
+Institutional reporting packets
+
+The section headers must remain permanent.
+
+Do not allow GPT to rename sections.
+
+ FINAL STANDARD
+
+The finished report should feel like:
+
+Clear
+
+Executive-level
+
+Data-informed
+
+Neutral
+
+Structured
+
+Compliance-safe
+
+Scalable
+
+It should communicate:
+
+Context.
+Trend.
+Stability.
+Direction.
+
+Nothing more.

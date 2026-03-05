@@ -1,0 +1,50 @@
+VIRTUSFOCUS – DEEP DIVE COACHING ANALYSIS FRAMEWORK
+
+INPUT:
+Interpretation JSON.
+
+MANDATORY STRUCTURE:
+
+1) WEEKLY OVERVIEW
+   - Weekly Tier (Growth / Mixed / Reset)
+   - One paragraph theme summary (behavioral + identity based)
+
+2) STRENGTHS & WINS (4–6 Sections)
+   Each section must include:
+   - Headline
+   - Behavioral Evidence (from JSON)
+   - Coach Insight (italicized line)
+
+3) OPPORTUNITIES & GROWTH AREAS (3–5 Sections)
+   Each section must include:
+   - Headline
+   - Pattern Explanation
+   - Coaching Cue (italicized)
+
+4) MINDSET SUMMARY
+   - Growth phase statement
+   - Identity progression note
+
+5) COACHING FOCUS AREAS (NEXT WEEK)
+   - 4–5 bullet priorities
+   - Must include micro_commitment
+
+INTEGRATION REQUIREMENTS:
+
+Win the Day:
+- Reference weekly_tier
+- Mention consistency_profile
+- Connect recommitment_signal to adversity response
+
+Bullseye:
+- Identify primary_focus_ring
+- Redirect to Control ring when necessary
+
+Reflection Quality:
+- Adjust tone depth based on score (1–4)
+
+Growth Phase:
+- Tailor challenge level accordingly
+
+QUALITY RULE:
+Feels like high-level performance review, not generic encouragement.

@@ -1,0 +1,53 @@
+# ============================================================
+# VirtusFocus Project A — .gitignore
+# ============================================================
+# This file controls which files Git IGNORES (does not track).
+# Anything listed here will NOT appear in version history.
+# ============================================================
+
+# ----------------------------------------------------------
+# RAW ATHLETE DATA (PII — personal journal entries, intake forms)
+# ----------------------------------------------------------
+# Weekly Reviews contain raw athlete recaps with personal
+# emotional content, daily reflections, and identifiable data.
+# These must never be committed to version control.
+**/Weekly Reviews/
+
+# Intake PDFs contain original athlete intake forms with
+# personal information (name, school, contact, self-assessments).
+*-Softball.pdf
+*-Student-Coach.pdf
+
+# ----------------------------------------------------------
+# CLAUDE CODE LOCAL SETTINGS
+# ----------------------------------------------------------
+.claude/
+
+# ----------------------------------------------------------
+# OS AND EDITOR FILES
+# ----------------------------------------------------------
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*.swo
+*~
+~$*
+
+# ----------------------------------------------------------
+# TEMPORARY AND WORKING FILES
+# ----------------------------------------------------------
+*.tmp
+*.bak
+*.log
+
+# ----------------------------------------------------------
+# NOTE: The following ARE tracked (not ignored):
+# - Athlete snapshots (processed/structured pipeline data)
+# - Interpretation JSONs (pipeline output)
+# - Coaching Messages and Deep Dives (pipeline output)
+# - All agent prompts, instructions, and source files
+# - CLAUDE.md
+# - Output Comparison analysis documents
+# - VF Core Program Output (historical reference)
+# ----------------------------------------------------------
