@@ -1,0 +1,527 @@
+VIRTUSFOCUS — COACH FLAGS SPECIFICATION
+(Approved 2026-03-06 — Task 5 Complete)
+
+PURPOSE
+This document defines the complete coach_flags array specification
+for the execution_behavior_signals JSON block. Each flag is a
+deterministic warning derived from composite scores, raw execution
+metrics, or cross-week patterns.
+
+All triggers are threshold checks, band comparisons, or count-based
+rules. No interpretive judgment.
+
+Coach flags are execution-behavior-derived warnings. They are
+complementary to risk_flags (content-derived warnings from recap
+text) and never duplicative. Both flag types share the same
+pipeline routing: internal to the pipeline, never surfaced to
+coaching staff.
+
+Core Foundation athletes: coach_flags = [] (empty array) when
+input_source = "core_foundation". All flag logic below applies
+ONLY to App athletes.
+
+============================================================
+FLAG OBJECT STRUCTURE
+============================================================
+
+Each flag in the coach_flags array is an object with 5 fields:
+
+{
+  "flag_id": "string (snake_case unique identifier)",
+  "severity": "monitor | attention | action",
+  "label": "string (short human-readable label, internal only)",
+  "trigger_source": ["array of composite score names, raw metric paths, or flag_ids"],
+  "description": "string (1-sentence explanation, template variables populated by Interpretation Engine)"
+}
+
+FIELD DEFINITIONS:
+
+flag_id
+  Snake_case unique identifier. Used for cross-week flag
+  persistence checks and Stage 5 audit verification.
+
+severity
+  Three-tier classification:
+  - monitor: Low-urgency pattern worth tracking
+  - attention: Meaningful execution concern requiring direct address
+  - action: Critical pattern requiring coaching direction shift
+
+label
+  Short human-readable label for internal reference. Never
+  surfaced to coaching staff or athletes.
+
+trigger_source
+  Array of the composite score names, raw metric paths, or
+  flag_ids (for cross-week escalation flags) that inform the
+  trigger condition. Used by Stage 5 to verify flag correctness
+  by cross-referencing against actual score values and raw metrics.
+
+description
+  1-sentence explanation of what was detected. Contains template
+  variables (e.g., {score}, {contributing_components},
+  {persistent_flag_ids}) that the Interpretation Engine populates
+  dynamically at runtime.
+
+============================================================
+SEVERITY TIER DEFINITIONS
+============================================================
+
+MONITOR (4 flags)
+  Low-urgency patterns worth tracking. May indicate emerging
+  concerns or behavioral asymmetries that have not yet reached
+  actionable thresholds.
+  - Stage 3: Subtle tone adjustment only
+  - Stage 4: No impact
+  - Stage 5: Can verify trigger conditions
+
+ATTENTION (8 flags)
+  Meaningful execution concerns. A specific behavior pattern has
+  crossed a threshold that warrants direct coaching response.
+  - Stage 3: Directly addresses the behavior
+  - Stage 4: Uses for Key Performance Signal and Coach Context Cue
+  - Stage 5: Can verify trigger conditions
+
+ACTION (3 flags)
+  Critical patterns requiring coaching direction shift. Either
+  broad-based disengagement or persistent attention-level concerns
+  that have not resolved across weeks.
+  - Stage 3: Shifts primary coaching direction
+  - Stage 4: Uses as dominant weekly signal
+  - Stage 5: Can verify trigger conditions
+
+============================================================
+ORDERING RULE
+============================================================
+
+Flags in the coach_flags array are ordered by severity descending:
+  action → attention → monitor
+
+Within the same severity tier, flags are ordered by catalog
+sequence number (as defined in this document).
+
+============================================================
+FLAG CATALOG
+============================================================
+
+15 total flags. Distribution: 4 monitor, 8 attention, 3 action.
+
+------------------------------------------------------------
+ACTION FLAGS (3)
+------------------------------------------------------------
+
+FLAG 9: compound_disengagement
+  severity: action
+  category: Cross-score convergence
+  label: "Compound Disengagement"
+  trigger_source: ["ownership_index", "drift_score", "rhythm_score",
+                   "review_quality_score", "follow_through_score"]
+
+  TRIGGER CONDITION:
+  3+ of the following 5 scores are in their worst band
+  simultaneously:
+    - ownership_index.band == "Low"
+    - drift_score.band == "Active"
+    - rhythm_score.band == "Disrupted"
+    - review_quality_score.band == "Low"
+    - follow_through_score.band == "Weak"
+
+  EXCLUDED SCORES:
+  Recovery Score and Reactivity Risk Score are excluded from
+  this check.
+  - Recovery Score: Event-triggered (only calculated when WTD
+    disruption occurs). Absence of disruption does not indicate
+    disengagement.
+  - Reactivity Risk Score: Measures volatility, not
+    disengagement. An athlete can be highly reactive but fully
+    engaged, or disengaged but stable.
+
+  WORST BAND REFERENCE:
+  "Worst band" is relative to each score's directionality:
+  - Higher = better scores: worst = lowest band
+    (Ownership Low, Rhythm Disrupted, Review Quality Low,
+     Follow-Through Weak)
+  - Higher = worse scores: worst = highest band
+    (Drift Active)
+
+  description: "3+ of 5 disengagement-related scores in worst
+  band simultaneously ({contributing_components}) — broad-based
+  behavioral disengagement pattern."
+
+FLAG 14: persistent_attention_pattern
+  severity: action
+  category: Cross-week escalation
+  label: "Persistent Attention Pattern"
+  trigger_source: ["{persistent_flag_ids}"]
+    (dynamically populated with the flag_ids that persisted
+     across both weeks)
+
+  TRIGGER CONDITION:
+  Any attention-severity flag (flags 2-8: drift_active,
+  reactivity_elevated, recovery_failure, ownership_low,
+  follow_through_weak, rhythm_disrupted, review_quality_low,
+  sustained_drift) fires in BOTH the current week AND the
+  prior week.
+
+  One persistent_attention_pattern flag instance fires per week,
+  regardless of how many attention flags persisted. All
+  persistent flag_ids are listed in trigger_source.
+
+  CROSS-WEEK DATA REQUIREMENT:
+  Requires reading prior week JSON's coach_flags array to check
+  which attention-severity flags fired.
+
+  description: "Attention-severity flag(s) ({persistent_flag_ids})
+  fired in both current and prior week — recurring execution
+  concern requiring coaching direction shift."
+
+FLAG 15: sustained_compound_disengagement
+  severity: action
+  category: Cross-week escalation
+  label: "Sustained Compound Disengagement"
+  trigger_source: ["ownership_index", "drift_score", "rhythm_score",
+                   "review_quality_score", "follow_through_score"]
+
+  TRIGGER CONDITION:
+  compound_disengagement (Flag 9) fires in BOTH the current
+  week AND the prior week.
+
+  CROSS-WEEK DATA REQUIREMENT:
+  Requires reading prior week JSON's coach_flags array to check
+  whether compound_disengagement fired.
+
+  description: "Compound disengagement fired in both current and
+  prior week — broad-based behavioral disengagement persisting
+  across weeks."
+
+------------------------------------------------------------
+ATTENTION FLAGS (8)
+------------------------------------------------------------
+
+FLAG 2: drift_active
+  severity: attention
+  category: Score-band threshold
+  label: "Active Drift"
+  trigger_source: ["drift_score"]
+
+  TRIGGER CONDITION:
+  drift_score.band == "Active"
+
+  description: "Drift Score entered Active band ({score}/100) —
+  significant behavioral disengagement across multiple engagement
+  indicators."
+
+FLAG 3: reactivity_elevated
+  severity: attention
+  category: Score-band threshold
+  label: "Elevated Reactivity"
+  trigger_source: ["reactivity_risk_score"]
+
+  TRIGGER CONDITION:
+  reactivity_risk_score.band == "Elevated"
+
+  description: "Reactivity Risk Score entered Elevated band
+  ({score}/100) — volatile execution patterns detected across
+  multiple indicators."
+
+FLAG 4: recovery_failure
+  severity: attention
+  category: Score-band threshold
+  label: "Recovery Failure"
+  trigger_source: ["recovery_score"]
+
+  TRIGGER CONDITION:
+  recovery_score.band == "Low"
+  AND recovery_score.score is a calculated integer (not
+  "Pending Data" and not "insufficient data").
+
+  NOTE: "Pending Data" means measurement is deferred to the
+  next week (Sunday Missed scenario). "insufficient data" means
+  no data available. Neither condition indicates recovery
+  failure — only a calculated Low score does.
+
+  description: "Recovery Score entered Low band ({score}/100) —
+  slow or absent execution recovery following WTD disruption."
+
+FLAG 5: ownership_low
+  severity: attention
+  category: Score-band threshold
+  label: "Low Ownership"
+  trigger_source: ["ownership_index"]
+
+  TRIGGER CONDITION:
+  ownership_index.band == "Low"
+
+  description: "Ownership Index entered Low band ({score}/100) —
+  predominantly reminder-dependent or disengaged execution
+  pattern."
+
+FLAG 6: follow_through_weak
+  severity: attention
+  category: Score-band threshold
+  label: "Weak Follow-Through"
+  trigger_source: ["follow_through_score"]
+
+  TRIGGER CONDITION:
+  follow_through_score.band == "Weak"
+
+  description: "Follow-Through Score entered Weak band
+  ({score}/100) — Mindset Challenge acceptance or execution
+  significantly below threshold."
+
+FLAG 7: rhythm_disrupted
+  severity: attention
+  category: Score-band threshold
+  label: "Disrupted Rhythm"
+  trigger_source: ["rhythm_score"]
+
+  TRIGGER CONDITION:
+  rhythm_score.band == "Disrupted"
+
+  description: "Rhythm Score entered Disrupted band
+  ({score}/100) — significant timing volatility and broken
+  engagement sequence."
+
+FLAG 8: review_quality_low
+  severity: attention
+  category: Score-band threshold
+  label: "Low Review Quality"
+  trigger_source: ["review_quality_score"]
+
+  TRIGGER CONDITION:
+  review_quality_score.band == "Low"
+
+  description: "Review Quality Score entered Low band
+  ({score}/100) — incomplete, unbalanced, or mostly partial
+  Evening Review engagement."
+
+FLAG 13: sustained_drift
+  severity: attention
+  category: Cross-week escalation
+  label: "Sustained Drift"
+  trigger_source: ["drift_score"]
+
+  TRIGGER CONDITION:
+  drift_score.band != "None" in BOTH the current week AND
+  the prior week.
+
+  This means any combination of Early/Active in both weeks
+  qualifies. The drift does not need to be at the same level
+  or worsening — persistence at any non-None level is the
+  signal.
+
+  CROSS-WEEK DATA REQUIREMENT:
+  Requires reading prior week JSON's composite_scores.drift_score
+  to check band value.
+
+  description: "Drift Score band is not None in both current
+  ({current_band}) and prior week ({prior_band}) — engagement
+  erosion persisting across weeks."
+
+------------------------------------------------------------
+MONITOR FLAGS (4)
+------------------------------------------------------------
+
+FLAG 1: drift_early
+  severity: monitor
+  category: Score-band threshold
+  label: "Early Drift Detected"
+  trigger_source: ["drift_score"]
+
+  TRIGGER CONDITION:
+  drift_score.band == "Early"
+
+  description: "Drift Score entered Early band ({score}/100) —
+  emerging engagement compression worth monitoring."
+
+FLAG 10: surface_engagement
+  severity: monitor
+  category: Cross-score convergence
+  label: "Surface Engagement"
+  trigger_source: ["evening_review.completion_rate",
+                   "review_quality_score",
+                   "journaling_behavior.depth_profile",
+                   "follow_through_score"]
+
+  TRIGGER CONDITION:
+  evening_review.completion_rate >= 0.71
+  AND 2+ of the following 3 quality signals are degraded:
+    1. review_quality_score.band == "Low" OR "Moderate"
+    2. journaling_behavior.depth_profile == "Compressed" OR "Minimal"
+    3. follow_through_score.band == "Weak" OR "Moderate"
+
+  NOTE: This flag detects "going through the motions" — the
+  athlete maintains high completion but quality indicators
+  reveal shallow engagement. The 0.71 threshold (5/7 days)
+  ensures the athlete is genuinely completing most days before
+  the quality gap becomes meaningful.
+
+  description: "High completion rate but degraded quality signals
+  ({contributing_components}) — athlete completing tasks without
+  meaningful depth."
+
+FLAG 11: component_avoidance
+  severity: monitor
+  category: Raw metric pattern
+  label: "Component Avoidance"
+  trigger_source: ["evening_review.component_completion"]
+
+  TRIGGER CONDITION:
+  Any single evening_review.component_completion field
+  (wtd_completed_count, journaling_completed_count, or
+  bullseye_completed_count) == 0
+  AND at least one other component_completion field >= 3.
+
+  NOTE: The >= 3 threshold ensures the athlete is actively
+  engaging with other components (not simply disengaged from
+  everything, which is Drift's domain). A 0-vs-3+ split
+  indicates selective avoidance of a specific component.
+
+  description: "Systematic avoidance of {avoided_component}
+  (0 completions) while other components maintained — selective
+  engagement pattern."
+
+FLAG 12: morning_disengagement
+  severity: monitor
+  category: Raw metric pattern
+  label: "Morning Disengagement"
+  trigger_source: ["morning_tune_up.completion_rate",
+                   "evening_review.completion_rate"]
+
+  TRIGGER CONDITION:
+  morning_tune_up.completion_rate <= 0.29
+  AND evening_review.completion_rate >= 0.57
+
+  NOTE: The asymmetric thresholds (morning <= 0.29 = at most
+  2/7 days, evening >= 0.57 = at least 4/7 days) ensure this
+  only fires when there is a clear behavioral split between
+  morning and evening engagement. The athlete is not generally
+  disengaged — they are selectively skipping the morning
+  touchpoint.
+
+  description: "Morning Tune-Up completion at or below 0.29
+  while Evening Review maintained at or above 0.57 — selective
+  disengagement from morning touchpoint."
+
+============================================================
+FLAG INDEPENDENCE RULE
+============================================================
+
+Individual worst-band flags (flags 1-8) fire independently
+even when compound or cross-week flags (flags 9-15) also fire.
+Compound and cross-week flags are ADDITIVE, not replacing.
+
+Example: If drift_active, ownership_low, and rhythm_disrupted
+all fire (triggering compound_disengagement), all four flags
+appear in the coach_flags array:
+  [compound_disengagement, drift_active, ownership_low,
+   rhythm_disrupted]
+
+This gives downstream stages both the individual signals AND
+the convergence signal. Stage 3 can address each behavior
+specifically while also recognizing the broader pattern.
+
+============================================================
+CROSS-WEEK DATA REQUIREMENTS
+============================================================
+
+Flags 13, 14, and 15 require reading the prior week's JSON.
+
+Required prior-week fields:
+- Flag 13 (sustained_drift):
+  composite_scores.drift_score.band
+- Flag 14 (persistent_attention_pattern):
+  coach_flags array (check for attention-severity flag_ids)
+- Flag 15 (sustained_compound_disengagement):
+  coach_flags array (check for compound_disengagement flag_id)
+
+This follows the same cross-week read pattern already used by:
+- trend_analysis (reads prior week tiers, profiles, phases)
+- cross_week_recovery (reads prior week recovery_speed_days)
+
+If no prior week JSON exists (first week of program):
+- All cross-week flags = do not fire
+- Only single-week flags (1-12) are evaluated
+
+============================================================
+CORE FOUNDATION FALLBACK
+============================================================
+
+When input_source = "core_foundation":
+  coach_flags = [] (empty array)
+
+Core Foundation athletes have no execution behavior data.
+No flags can fire. The empty array is the only valid state.
+
+============================================================
+COMPLIANCE BOUNDARY
+============================================================
+
+coach_flags are execution-behavior-derived warnings produced
+by Stage 2 (Interpretation Engine).
+
+risk_flags are content-derived warnings produced by Stage 2
+from weekly recap text analysis.
+
+These two flag systems are complementary:
+- coach_flags detect BEHAVIORAL patterns (how the athlete
+  uses the system — timing, completion, sequence, consistency)
+- risk_flags detect CONTENT patterns (what the athlete wrote
+  — emotional escalation, derailer language, stressor themes)
+
+They are never duplicative. A single athlete event may trigger
+both a risk_flag (content signal) and a coach_flag (behavioral
+signal) — this is expected and correct.
+
+ROUTING:
+- Neither coach_flags nor risk_flags are surfaced to coaching
+  staff in any form
+- coach_flags follow the same inform-only routing as all
+  execution_behavior_signals fields
+- risk_flags follow the existing inform-only routing defined
+  in JSON_logic_reference.txt
+- Raw flag content (flag_ids, descriptions, trigger_sources)
+  never appears in Stage 4 output
+- Stage 3 uses flags to calibrate coaching tone and direction
+- Stage 4 uses flag severity to inform Key Performance Signal
+  and Coach Context Cue (but never surfaces the flags)
+- Stage 5 uses flags for audit verification (cross-references
+  trigger_source against actual composite_scores and raw
+  metrics to verify flags fired correctly)
+
+============================================================
+DOWNSTREAM ROUTING SUMMARY
+============================================================
+
+STAGE 3 (Coaching Output Engine):
+  monitor flags: Subtle tone adjustment. The coaching message
+    acknowledges the pattern indirectly without naming the flag
+    or its metrics.
+  attention flags: Directly addresses the behavior. The
+    coaching message names the behavioral pattern (in
+    athlete-appropriate language) and the micro-commitment
+    targets the flagged area.
+  action flags: Shifts primary coaching direction. The
+    coaching message leads with the flagged pattern as the
+    week's dominant theme.
+
+STAGE 4 (Coach Insights Engine):
+  monitor flags: No impact on Weekly Performance Insight.
+  attention flags: Informs Key Performance Signal (Section 8)
+    and Coach Context Cue (Section 9). Flag content is
+    translated into compliance-safe institutional language.
+    Raw flag data never surfaced.
+  action flags: Used as dominant weekly signal. Composite
+    Readiness (Section 10) may reflect the severity. Flag
+    content translated, never surfaced.
+
+STAGE 5 (Editorial Audit):
+  All severity levels: Can verify flags fired correctly by:
+    1. Reading trigger_source array
+    2. Cross-referencing against composite_scores values and
+       raw metric values in the same JSON
+    3. Confirming the trigger condition was met
+  This is an audit check, not a content generation step.
+
+============================================================
+END OF DOCUMENT
+============================================================

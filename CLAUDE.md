@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-06
-**Session Notes:** Execution Signal Schema Design — Tasks 1, 3, and 4 COMPLETE. All 7 composite score calculation rules approved and locked down. Cross-week recovery extension approved. Continuing through remaining design tasks.
+**Session Notes:** Execution Signal Schema Design — Tasks 1, 3, 4, and 5 complete. Task 5 (coach_flags array) saved to VF_Coach_Flags_Specification.txt.
 
 ---
 
@@ -122,6 +122,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Project Instructions: `Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.3.txt`
 - JSON Rules: `Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt`
 - Composite Score Rules: `Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt`
+- Coach Flags Specification: `Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt`
 
 ### Coaching Output Engine
 - Master Prompt: `Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt`
@@ -387,6 +388,8 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 22. Execution Signal Strategy review and assessment. Reviewed 7 strategy and source material documents covering the transition from Core Foundation (weekly recap only) to App ecosystem (daily granular data + weekly recap). Assessed integration with current v9.3 Interpretation schema, v1.4 Coaching Output rules, v1.1 Coach Insights specification. Identified 8 risks, resolved all with confirmed design constraints: dual-mode operation mandatory, execution signal is additive enrichment (not replacing), Morning Tune-Up is new input stream, all signals at app launch, 5 overlap resolutions decided (keep/rename/complementary), execution timing data is backend-only (never surfaced to coaches), Core Foundation athletes protected from degradation. Captured all decisions in CLAUDE.md Execution Signal Strategy section. No schema files changed — design-phase only.
 23. Execution Signal Schema Design — Task 1 complete: Defined and approved the `execution_behavior_signals` JSON block structure. 6 sub-blocks (morning_tune_up, evening_review, wtd_question_patterns, journaling_behavior, bullseye_behavior, composite_scores) plus coach_flags array and execution_pattern_summary. 50+ fields total. Key decisions: composite scores use numeric 0-100 with categorical bands (not enum-only) for precision in Stage 3 tone calibration and longitudinal sensitivity; streaks included at JSON level for quantitative coaching output; journaling depth_profile added as behavioral execution quality metric (distinct from RQS content quality); bullseye ring_balance expanded with granular center/outer dominant rates and asymmetric thresholds; recovery_speed_days kept at weekly JSON level. Core Foundation fallback rules fully defined. Task 3 (fallback rules) also completed within Task 1 documentation.
 24. Execution Signal Schema Design — Task 4 complete: Designed and approved deterministic calculation rules for all 7 composite scores. Batched in three rounds: (1) Ownership Index + Drift Score + Follow-Through Score, (2) Rhythm Score + Review Quality Score, (3) Recovery Score + Reactivity Risk Score. All formulas are weighted multi-component with custom band thresholds per score. Key design decisions: Ownership uses 7-day denominator for all components; Drift uses asymmetric thresholds (Early at 21, not 33) for early detection; Follow-Through renamed "set" to "accept" (athlete accepts presented challenges, field rename mindset_challenge_set_count → mindset_challenge_accepted_count pending for Tasks 6-7); Rhythm uses completed-sessions denominator (not 7) to measure timing quality of actual engagement; Review Quality includes component balance (min/max ratio) to catch cherry-picking; Recovery is event-triggered with 4 states (calculated/no disruption=85/Pending Data/insufficient data); Reactivity uses partial-to-full completion ratio as unique reactivity signal. Cross-week recovery extension approved: new `cross_week_recovery` sub-object in `wtd_question_patterns` resolves Sunday Missed blind spot. New `"Pending Data"` enum value added to `recovery_speed_days` (distinct from "insufficient data" — deferred measurement, not absent data). Rules document saved to `VF_Execution_Signal_Composite_Score_Rules.txt`.
+25. Execution Signal Schema Design — Task 5 designed and approved (pending save to disk): Designed the `coach_flags` array — 15 execution-behavior-derived warning flags across 4 batches. Flag object structure: 5 fields (flag_id, severity, label, trigger_source, description). Three severity tiers: monitor (4 flags), attention (8 flags), action (3 flags). Four flag categories: score-band threshold (8 flags: drift_early, drift_active, reactivity_elevated, recovery_failure, ownership_low, follow_through_weak, rhythm_disrupted, review_quality_low), cross-score convergence (2 flags: compound_disengagement, surface_engagement), raw metric pattern (2 flags: component_avoidance, morning_disengagement), cross-week escalation (3 flags: sustained_drift, persistent_attention_pattern, sustained_compound_disengagement). All triggers deterministic. Core Foundation fallback = empty array. coach_flags (execution-behavior-derived) complementary to risk_flags (content-derived), never duplicative. Specification document pending save to `VF_Coach_Flags_Specification.txt`.
+26. Execution Signal Schema Design — Task 5 saved to disk: Wrote `VF_Coach_Flags_Specification.txt` to `Agents - Generators\Interpretation\Source Files\`. Complete specification document modeled after `VF_Execution_Signal_Composite_Score_Rules.txt` style — includes flag object structure definition, severity tier definitions with downstream routing, all 15 flag specifications with deterministic trigger conditions and description templates, flag independence rule, cross-week data requirements, Core Foundation fallback, compliance boundary statement (coach_flags vs risk_flags), and downstream routing summary (Stage 3 tone calibration, Stage 4 inform-only, Stage 5 audit verification). Updated CLAUDE.md coach_flags JSON reference and all Task 5 completion markers.
 
 ---
 
@@ -538,7 +541,7 @@ Approved 2026-03-06. Full JSON block with all subfield names, types, enum values
     "drift_score": { "score": "integer 0-100", "band": "None | Early | Active | insufficient data" }
   },
 
-  "coach_flags": "[] (array of flag objects — structure TBD in Task 5)",
+  "coach_flags": "[] (array of flag objects — see VF_Coach_Flags_Specification.txt)",
 
   "execution_pattern_summary": "string (1-2 sentence behavioral execution summary)"
 }
@@ -584,13 +587,47 @@ Full deterministic calculation rules saved to: `Agents - Generators\Interpretati
 - `"Pending Data"` enum added to `recovery_speed_days` and Recovery Score (deferred measurement, not absent data).
 - `recommitment_signal` retains "insufficient data" for same case — alignment flagged for future v9.4.
 
+### Coach Flags — 15-Flag Catalog APPROVED (Task 5 Complete)
+
+Full specification saved to: `Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt`
+
+Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_source, description). Description templates contain dynamic variables populated by the Interpretation Engine at runtime.
+
+| # | flag_id | Severity | Category | Trigger |
+|---|---|---|---|---|
+| 9 | **compound_disengagement** | action | Cross-score | 3+ of 5 scores in worst band |
+| 14 | **persistent_attention_pattern** | action | Cross-week | Any attention flag fires in both current + prior week |
+| 15 | **sustained_compound_disengagement** | action | Cross-week | compound_disengagement fires in both current + prior week |
+| 2 | **drift_active** | attention | Score-band | drift_score.band == "Active" |
+| 3 | **reactivity_elevated** | attention | Score-band | reactivity_risk_score.band == "Elevated" |
+| 4 | **recovery_failure** | attention | Score-band | recovery_score.band == "Low" (calculated only) |
+| 5 | **ownership_low** | attention | Score-band | ownership_index.band == "Low" |
+| 6 | **follow_through_weak** | attention | Score-band | follow_through_score.band == "Weak" |
+| 7 | **rhythm_disrupted** | attention | Score-band | rhythm_score.band == "Disrupted" |
+| 8 | **review_quality_low** | attention | Score-band | review_quality_score.band == "Low" |
+| 13 | **sustained_drift** | attention | Cross-week | drift_score.band != "None" in both current + prior week |
+| 1 | **drift_early** | monitor | Score-band | drift_score.band == "Early" |
+| 10 | **surface_engagement** | monitor | Cross-score | completion ≥ 0.71 + 2/3 quality signals degraded |
+| 11 | **component_avoidance** | monitor | Raw metric | Any component at 0 while another ≥ 3 |
+| 12 | **morning_disengagement** | monitor | Raw metric | morning ≤ 0.29 + evening ≥ 0.57 |
+
+**Key Task 5 Decisions:**
+- Flags ordered by severity descending (action → attention → monitor) in the array.
+- Individual worst-band flags fire independently when compound/cross-week flags also fire — additive, not replacing.
+- compound_disengagement uses 5 of 7 scores (excludes Recovery and Reactivity).
+- persistent_attention_pattern is one generic flag covering all attention-level persistence — trigger_source dynamically populated with persistent flag_ids.
+- Cross-week flags (13-15) require prior week JSON read — same pattern as trend_analysis and cross_week_recovery.
+- coach_flags (execution-behavior-derived) complementary to risk_flags (content-derived), never duplicative. Neither surfaced to coaching staff.
+- Core Foundation fallback: coach_flags = [] (empty array).
+- Downstream: monitor → Stage 3 subtle tone. attention → Stage 3 direct address + Stage 4 KPS/CCCue. action → Stage 3 direction shift + Stage 4 dominant signal. Stage 5 → audit verification.
+
 ### Design Task Queue
 
 1. ~~Define the `execution_behavior_signals` JSON block — all subfield names, types, enum values, and nesting structure~~ **COMPLETE — approved 2026-03-06**
 2. Define the app input format — what daily data looks like when it arrives at Stage 2
 3. ~~Define Core Foundation fallback rules — exact neutral-state values for every subfield~~ **COMPLETE — documented in approved block above**
 4. ~~Collaboratively design deterministic calculation rules for all 7 composite scores (numeric 0-100 + categorical bands)~~ **COMPLETE — approved 2026-03-06. Rules saved to VF_Execution_Signal_Composite_Score_Rules.txt**
-5. Define the `coach_flags` array — flag types, trigger conditions, severity levels
+5. ~~Define the `coach_flags` array — flag types, trigger conditions, severity levels~~ **COMPLETE — 15 flags, 3 severity tiers, 4 categories. Saved to VF_Coach_Flags_Specification.txt**
 6. Update `VF_Interpretation_JSON_Rules.txt` with new classification sections
 7. Update `SOP_Interpretation_Engine_Project_Instructions` to new version with dual-input processing
 8. Update `VF_Coaching_Output_JSON_to_Message_Map.txt` with execution signal routing
@@ -609,7 +646,7 @@ Full deterministic calculation rules saved to: `Agents - Generators\Interpretati
 - [ ] Define app input format (what daily data looks like arriving at Stage 2)
 - [x] Define Core Foundation fallback rules (neutral-state values) — **documented in approved block**
 - [x] Collaboratively design deterministic calculation rules for all 7 composite scores — **APPROVED 2026-03-06. Rules in VF_Execution_Signal_Composite_Score_Rules.txt**
-- [ ] Define `coach_flags` array (flag types, trigger conditions, severity)
+- [x] Define `coach_flags` array (flag types, trigger conditions, severity) — **COMPLETE. 15 flags saved to VF_Coach_Flags_Specification.txt**
 - [ ] Update Interpretation Engine files (JSON Rules, Project Instructions) to new versions
 - [ ] Update Coaching Output files (Message Map, Instructions) to new versions
 - [ ] Update Coach Insights files (JSON Logic Reference, Project Instructions) to new versions
@@ -639,6 +676,7 @@ Full deterministic calculation rules saved to: `Agents - Generators\Interpretati
 - [x] Execution Signal Strategy review and assessment — 7 documents reviewed, 8 risks identified and resolved, all design constraints confirmed, CLAUDE.md updated with decisions
 - [x] Execution Signal Schema Design Task 1 — `execution_behavior_signals` JSON block structure approved (50+ fields, 6 sub-blocks, numeric 0-100 composite scores with categorical bands, Core Foundation fallback rules defined)
 - [x] Execution Signal Schema Design Task 4 — All 7 composite score calculation rules approved (weighted formulas, custom band thresholds, edge cases). Cross-week recovery extension approved. "Pending Data" enum added. Field rename: set→accepted. Rules saved to VF_Execution_Signal_Composite_Score_Rules.txt.
+- [x] Execution Signal Schema Design Task 5 — coach_flags array complete (15 flags, 3 severity tiers, 4 categories). Saved to VF_Coach_Flags_Specification.txt.
 
 **Grace Kindel Coach Insights — All 5 Weeks Complete:**
 
