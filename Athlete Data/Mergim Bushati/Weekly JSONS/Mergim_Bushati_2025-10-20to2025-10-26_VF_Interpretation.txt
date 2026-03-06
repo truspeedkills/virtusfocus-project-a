@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "October 20 – October 26, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Peak alignment week. Derailer tested in live Saturday practice against coach (national-level): athlete scored multiple times from different setups against someone who knows his patterns. The approach-framed execution from Week 3 is now reinforced under higher pressure. Sunday voluntary 5K — only wrestler who ran — demonstrates self-directed commitment beyond external requirements."
+  },
+
+  "athlete_state": "Peak execution across all domains — training, competition simulation, self-directed conditioning, and approach-framed scoring",
+  "core_pattern": "Self-directed excellence — executing at high volume with specific goals, voluntarily exceeding requirements, and applying approach-framed scoring against elevated competition",
+  "behavioral_root_cause": "Internalized self-talk loop ('if I want to achieve my goals would stopping right now help with that') now reliably overrides quit impulses across multiple contexts: conditioning, live wrestling, and voluntary training",
+
+  "prior_commitment_result": {
+    "prior_action": "After each practice, write down one specific thing you got better at today and one thing you want to work on tomorrow",
+    "execution_status": "Partial",
+    "execution_notes": "No evidence of written post-practice reflections. However, Saturday's pre-set scoring goal (score from different setups against coach) and Thursday's campus run completion show continued goal-setting behavior. The specificity of training focus improved this week (scoring against different defenses, first 5K) even without documented daily reflections.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get better. Sharpen my mind. Keep wrestling hard. Keep letting it fly. Get to my positions. Get better.",
+    "achievement_statement": "Got better. Got mentally stronger. Got in better shape. Became a better wrestler. Got closer to the wrestler I want to be. Got better.",
+    "key_phrase": "If I want to achieve my goals would stopping right now help with that",
+    "mindset_resonance": "Write down one clear outcome you want before practice begins"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7 (Monday through Saturday — explicit scores; Sunday — behaviorally classified: voluntary 5K run, only wrestler who ran, kept pushing through pain, extraordinary self-directed effort)",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My effort.' Distilled to purest controllable.",
+    "influence_quality": "Outcome-linked: results from work, day attitude. Consistent pattern.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "7",
+    "rolling_win_rate_4wk": "0.75",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery attendance (Wk1) → Push-through conditioning (Wk2) → Derailer override (Wk3) → Training discipline (Wk4) → Weekend dip (Wk5) → Full immersion (Wk6) → Peak execution with live scoring and voluntary conditioning (Wk7). The athlete has reached the highest performance level since program entry: 7/7 Win days, scored against national-level coach, ran a voluntary 5K. The push-through self-talk ('would stopping help my goals') is now a reliable, self-sustaining behavioral pattern.",
+    "milestone_this_week": "Two landmark moments: (1) Saturday scored multiple takedowns against national-level coach using different setups — approach-framed execution under elevated resistance. (2) Sunday voluntary 5K — only wrestler who ran — demonstrates self-directed commitment beyond any external requirement.",
+    "open_thread": "Reflection language remains generic ('Got better' repeated 6 times in achievement statement). Training volume is at maximum sustainable level. The self-talk override pattern is reliable but the approach-framed scoring has only been tested in practice, not competition."
+  },
+
+  "most_important_controllable": "Transferring approach-framed execution from controlled practice to higher-pressure live situations",
+
+  "micro_commitment": {
+    "action": "During live wrestling this week, set a specific first-attack goal for each go: pick one setup and commit to executing it within the first 30 seconds without waiting for the 'right moment'",
+    "when": "Every live wrestling go this week",
+    "measurement": "Initiated chosen attack within 30 seconds on at least 3 of 5 live goes"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice",
+    "anticipated_stressor": "Sustained peak training volume may lead to fatigue accumulation. The athlete has now been at very high volume for 3 consecutive weeks with no rest week.",
+    "athlete_stated_next_goal": "Get better. Become a better wrestler. Get in better shape. Get mentally stronger. Just get better."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days — first perfect week in the program. All days included practice with extra work. Thursday: first 2-mile campus run, completed without stopping despite exhaustion. Saturday: went live against coach (national level), scored multiple takedowns from different setups. Sunday: voluntarily ran 5K — only wrestler who ran — despite not being required to.",
+    "key_habit_signal": "Sunday voluntary 5K is the strongest self-directed behavior observed in this program. No external requirement, no teammate participation, no coach direction. The athlete chose the harder path independently and completed it using the same self-talk pattern from prior weeks.",
+    "coach_reinforcement_cue": "Saturday's scoring against the coach who 'knows how I wrestle' is significant because the athlete had to adapt — find new setups and shots. This problem-solving under pressure is exactly the skill needed for competition. Name this adaptability explicitly.",
+    "coach_avoidance_note": "Do not create expectation that 7/7 Win and voluntary 5Ks should be the new baseline. Peak weeks are unsustainable — the goal is reliable execution on standard weeks, not permanent peak performance. Monitor for signs of overtraining."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Training volume at unsustainable peak: 7 consecutive high-intensity days including first-ever 5K. Three consecutive weeks of very high volume. Physical recovery monitoring essential. Shoulder brace compliance should be verified."
+  },
+
+  "next_week_focus_question": "You scored on a national-level coach using new setups — what did you learn about yourself in those moments that you didn't know before?"
+}

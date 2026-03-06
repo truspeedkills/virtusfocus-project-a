@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "September 22 – September 28, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Derailer directly tested and overridden during Saturday practice: athlete recognized he 'always overthinks and waits for the right time to score' and deliberately chose to 'just go.' Scored from positions of comfort. This is the first behavioral evidence of approach-framed execution replacing avoidance-framed pre-performance thinking."
+  },
+
+  "athlete_state": "Breakthrough execution — first competitive practice overriding baseline derailer pattern",
+  "core_pattern": "Approach-framed action replacing avoidance — when in scoring position, chose to execute immediately rather than overthink timing. Maintained push-through conditioning pattern from Week 2.",
+  "behavioral_root_cause": "Setting pre-practice execution goals ('whenever I was in a position to score I just went') created a behavioral anchor that bypassed the overthinking loop",
+
+  "prior_commitment_result": {
+    "prior_action": "When you feel the urge to stop during conditioning, say out loud or to yourself: 'U20s — keep moving' and complete the remaining distance",
+    "execution_status": "Completed",
+    "execution_notes": "Multiple push-through moments this week: Monday ran a mile and pushed through leg/back pain by keeping goals in mind. Wednesday 2-mile uphill run — wanted to stop and quit but completed without stopping. Friday 2-mile treadmill run completed. Pattern of using goal visualization to override stop impulses is now consistent.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Show up to practice on time every day. Do what I have to even if I'm not required to do so. Make the most of each day.",
+    "achievement_statement": "Had a full practice and felt amazing. Ran two 2-mile runs in the week.",
+    "key_phrase": "In wrestling there never is a right time you just have to go",
+    "mindset_resonance": "Write down 3 things you did well and 1 thing you'll improve"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5 (Monday explicit; Wednesday, Thursday, Friday, Saturday — behaviorally classified: significant training effort, push-through moments, medical clearance milestone, first full practice with scoring)",
+      "neutral_days": "2 (Tuesday explicit; Sunday — behaviorally classified: relaxed day preparing mentally for next week)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular and identity-anchored: 'My killer mindset.' Represents a shift from listing external controllables (Week 1) to claiming internal state as the primary controllable.",
+    "influence_quality": "Positivity-focused: how positive my mind is during the day, having as many positive outcomes as possible. Shows optimism bias.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Improving",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "3",
+    "rolling_win_rate_4wk": "0.52",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery-compliant attendance (Week 1) → Push-through conditioning execution (Week 2) → First competitive practice with derailer override (Week 3). The athlete progressed from passive team presence during rehabilitation to active execution in practice, culminating in a direct confrontation with his baseline derailer (overthinking before scoring) that he overcame through pre-set execution goals.",
+    "milestone_this_week": "Saturday practice: first time deliberately choosing to 'just go' instead of overthinking the right moment to score. This is the behavioral inverse of the baseline derailer pattern.",
+    "open_thread": "Saturday's approach-framed execution occurred in a controlled practice setting. Whether this pattern transfers to higher-pressure live situations (and eventually competition) is the next test."
+  },
+
+  "most_important_controllable": "Pre-practice execution goal setting — deciding what you will do before the moment arrives so overthinking has no entry point",
+
+  "micro_commitment": {
+    "action": "Before each practice, write down one specific scoring situation and what you will do when you get there — then execute it in practice without hesitation",
+    "when": "Before every practice session this week",
+    "measurement": "At least 3 practices with a pre-set scoring goal attempted"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice. Starting to wrestle at practice more this week.",
+    "anticipated_stressor": "Increasing wrestling intensity as drilling becomes regular. Physical conditioning demands continuing to escalate alongside wrestling volume.",
+    "athlete_stated_next_goal": "Keep my mindset up at practice where I just go and don't think. Keep scoring when I'm wrestling. Get another 2-mile run in this week. Keep getting healthier and stronger. Keep watching wrestling and keep learning."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Medical clearance to drill obtained Thursday (shoulder brace). Saturday first real practice since April — drilled with scoring intent and multiple push-through conditioning moments throughout the week. Got job at Planet Fitness. Academic structure maintained.",
+    "key_habit_signal": "Pre-practice goal setting leading to execution: Saturday's scoring approach was deliberately planned before practice began. This cognitive pre-commitment pattern is the primary mechanism for overriding the overthinking derailer.",
+    "coach_reinforcement_cue": "Saturday's self-observation — 'I always overthink and wait for the right time to score but in wrestling there never is a right time you just have to go' — shows advanced self-awareness. This is Mergim coaching himself through his derailer in real time.",
+    "coach_avoidance_note": "Do not frame this as 'fixed' — the derailer was overridden in a single practice setting. The pattern needs reinforcement across multiple weeks and escalating pressure before it becomes reliable. Avoid creating outcome expectations around scoring."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Physical load increasing rapidly: 2-mile uphill runs, full drilling, newly cleared for contact. Monitor for overuse and shoulder integrity with brace. No behavioral concerns."
+  },
+
+  "next_week_focus_question": "You told yourself to just go and score — and it worked. What's stopping you from doing that every single practice?"
+}

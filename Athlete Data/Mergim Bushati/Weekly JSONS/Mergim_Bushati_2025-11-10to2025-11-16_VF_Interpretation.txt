@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "November 10 – November 16, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Strong alignment week. Extra workouts scheduled with teammates and coaches. Multiple external validations received (partner, coach compliments) and acknowledged without inflating — 'I acknowledged it and kept doing my thing.' This response to praise shows developing internal standard rather than external validation dependence."
+  },
+
+  "athlete_state": "Externally validated and internally grounded — receiving consistent praise while maintaining focus on process rather than outcomes",
+  "core_pattern": "Process-locked with external validation — coach and partner compliments across multiple days, each acknowledged and redirected to continued effort. Scheduling extra workouts beyond practice shows initiative deepening.",
+  "behavioral_root_cause": "Internal standard development: response to praise is 'acknowledged it and kept doing my thing' rather than seeking more or changing behavior. This indicates the identity transformation is moving from aspiration to habit.",
+
+  "prior_commitment_result": {
+    "prior_action": "Get in one specific hand-fighting drill session and one specific shot-finishing drill session this week — separate from regular practice",
+    "execution_status": "Completed",
+    "execution_notes": "Thursday: scheduled extra workout with teammate at 8 AM specifically for wrestling — 'felt smooth wrestling on my feet.' This was a self-directed session focused on technique. Multiple days of extra hour work. While not explicitly documented as hand-fight vs shot-finish, the technical specificity of the extra sessions fulfills the spirit of the commitment.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get better at finishing my shots. Keep working on getting to my underhook. Keep getting comfortable with my hand fight. Keep feeling confident in the process. Keep getting my mind stronger. Keep getting in wrestling shape.",
+    "achievement_statement": "I got better as a wrestler. I got in better shape. I got better mentally and spiritually. Everyday I believe more and more in the process. I keep falling in love with the grind daily and going to practice to get better.",
+    "key_phrase": "I keep falling in love with the grind daily",
+    "mindset_resonance": "Push one rep, round, or assignment longer than is comfortable today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "6 (Monday, Tuesday — explicit scores; Wednesday through Saturday — behaviorally classified: daily practice + lifting + extra work + partner compliments + coach compliments + scheduled extra workouts)",
+      "neutral_days": "1 (Sunday — behaviorally classified: chores, relaxed body, work — intentional rest day)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My attitude.' Internal state focus. Consistent.",
+    "influence_quality": "Results and people: results from hard work, like-minded people. Stable.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Improving",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "10",
+    "rolling_win_rate_4wk": "0.71",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Discipline cycle (Wk4-6) → Peak execution (Wk7) → Oscillation (Wk8-9) → External validation + internal grounding (Wk10). New developmental layer: athlete receiving consistent praise from multiple sources (coach, partners) and responding with process focus rather than outcome attachment. Competition clearance imminent.",
+    "milestone_this_week": "Thursday scheduled extra workout independently — first time proactively organizing additional training with a specific partner and coach for technique work. This is self-directed structure creation, not just responding to team schedule. Also: 'I keep falling in love with the grind' represents identity integration with the process.",
+    "open_thread": "Competition clearance expected soon ('Getting cleared for live and competitions'). The derailer — overthinking under competitive pressure — has been overridden in practice settings but never tested in actual competition. This will be the defining test of the developmental arc."
+  },
+
+  "most_important_controllable": "Scheduling and completing self-directed technical work sessions outside of regular practice",
+
+  "micro_commitment": {
+    "action": "Schedule two extra wrestling workouts this week with a partner or coach, each with a specific technical focus written down beforehand",
+    "when": "Schedule both by Monday evening",
+    "measurement": "Both sessions completed with the pre-planned technical focus"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice. Getting cleared for live and competitions this week.",
+    "anticipated_stressor": "Clearance for live wrestling and competition. First live wrestling will be the highest-pressure situation since program entry. Pre-performance overthinking pattern will be directly tested.",
+    "athlete_stated_next_goal": "Get better at finishing shots. Keep working on underhook. Keep getting comfortable with hand fight. Keep feeling confident in the process. Get mind stronger. Get in wrestling shape. Put aside only worrying about weight and wrestling shape and only worry about getting better day by day."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Growth-tier week with extra workout scheduling initiative. Monday through Saturday active training with extra hours. Thursday self-organized extra session at 8 AM with partner and coach — technique specific. Multiple praise moments from coach and partners handled with process focus.",
+    "key_habit_signal": "Response to external validation: 'I acknowledged it and kept doing my thing' repeated across multiple days and sources. This is a developing internal standard — the athlete is not inflating from praise or seeking more. This response pattern is characteristic of Consistent-phase behavior.",
+    "coach_reinforcement_cue": "The self-organized Thursday session is the most significant initiative behavior yet. Reinforce the planning-execution loop: scheduling a specific session, completing it, and registering growth. This is the type of behavior that supports eventual competition preparation.",
+    "coach_avoidance_note": "Competition clearance approaching — do not create performance expectations. The first live and competition experiences should be framed as learning opportunities, not performance tests. The athlete's derailer (pre-performance overthinking) will be most vulnerable at the moment of first competition."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Competition clearance imminent. Transition from drilling-only to live wrestling represents a significant psychological shift. Pre-competition mental preparation should be addressed before first match. Shoulder monitoring continues."
+  },
+
+  "next_week_focus_question": "You said you keep falling in love with the grind — what happens to that feeling when the scoreboard turns on?"
+}

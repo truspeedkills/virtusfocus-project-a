@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "October 27 – November 2, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Hinge habit maintained on available training days. Wrestle-offs disrupted normal schedule (Wednesday wrestle-offs, Thursday off). Athlete attended wrestle-offs to support team despite inability to compete. Monday push-through moment maintained pattern: 'had no motivation to do the extra work but I kept telling myself my goals.'"
+  },
+
+  "athlete_state": "Structure-maintained under schedule disruption — training intensity held on practice days, adapted to wrestle-off week format",
+  "core_pattern": "Routine-dependent consistency with adaptation — when normal practice schedule disrupted (wrestle-offs, days off), engagement drops to maintenance level rather than self-directed training",
+  "behavioral_root_cause": "Training motivation anchored to team practice schedule. Self-directed training on off days defaults to passive activities (watching wrestling, relaxing) rather than active alternatives",
+
+  "prior_commitment_result": {
+    "prior_action": "During live wrestling, set a specific first-attack goal for each go: pick one setup and commit to executing it within the first 30 seconds without waiting for the 'right moment'",
+    "execution_status": "Unknown",
+    "execution_notes": "Wrestle-off week — no standard live wrestling sessions for the athlete. Monday drilling and Friday/Saturday practice occurred but no specific evidence of first-attack goal execution in live situations. Cannot assess this commitment due to schedule disruption.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get better. Become a better wrestler. Get in better shape. Get mentally stronger. Just get better.",
+    "achievement_statement": "Got better at wrestling. Got in better shape. Got sharper mentally and physically.",
+    "key_phrase": "I had no motivation to do the extra work but I kept telling myself my goals",
+    "mindset_resonance": "Write down one ambitious goal you want to chase — and one action to start today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3 (Monday, Tuesday — explicit scores; Friday — behaviorally classified: rehab + workout + hard practice + drilling)",
+      "neutral_days": "4 (Wednesday — explicit Neutral; Thursday — behaviorally classified: day off, relaxed, watched wrestling; Saturday — behaviorally classified: practice + lift + work; Sunday — behaviorally classified: work, watched wrestling, rehabbed)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My attitude.' Consistent with internal focus pattern.",
+    "influence_quality": "Outcome-linked: hard work outcomes, speed of getting into wrestling shape.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Declining",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Volatile",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "8",
+    "rolling_win_rate_4wk": "0.75",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Training discipline (Wk4) → Weekend dip (Wk5) → Full immersion (Wk6) → Peak execution (Wk7) → Schedule-disrupted dip (Wk8). Pattern confirmed: athlete executes at high level when team practice structure is present, but engagement drops when schedule shifts. This is the second Mixed week and both (Wk5 family weekend, Wk8 wrestle-offs) share the same root cause: reduced external structure.",
+    "milestone_this_week": "Monday push-through despite zero motivation — using goal self-talk to override lack of motivation is the same mechanism used for physical fatigue in prior weeks, now applied to motivational fatigue. Shows mechanism generalization.",
+    "open_thread": "Oscillation between Growth and Mixed tier weeks (Growth-Mixed-Growth-Growth-Mixed) suggests the athlete needs to develop self-directed structure for non-standard weeks. Not cleared for competition yet — inability to compete in wrestle-offs is a potential identity friction point."
+  },
+
+  "most_important_controllable": "Creating self-directed training structure on days when normal practice schedule is disrupted",
+
+  "micro_commitment": {
+    "action": "On any day without a team practice, complete a self-designed 45-minute training session: 15 minutes conditioning + 15 minutes technique visualization + 15 minutes film study. Do every move with high intensity as if it's a match.",
+    "when": "Every day without scheduled team practice",
+    "measurement": "Complete session on every off day this week"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice. Athlete still not cleared to compete.",
+    "anticipated_stressor": "Return to normal practice schedule after wrestle-off disruption. Continued inability to compete while teammates wrestle in matches.",
+    "athlete_stated_next_goal": "Get better. Become an overall better wrestler. Get in shape continuously. Get stronger. Stay focused during whole week in practice. Do every move with high intensity as if it's a match."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Disrupted week due to wrestle-offs (Wed) and day off (Thu). Training days showed continued effort: Monday extra hour despite no motivation, Friday hard practice. Weekend lower engagement (practice + work, rest). Volume down significantly from peak Week 7.",
+    "key_habit_signal": "Monday's 'no motivation but kept telling myself my goals' represents mechanism generalization — the self-talk override now works for motivational fatigue, not just physical fatigue. This is a developmental advance.",
+    "coach_reinforcement_cue": "The Monday moment is significant because it's the first time the athlete applied the goal self-talk to internal resistance rather than physical resistance. Name this as growth: the same tool works in more situations now.",
+    "coach_avoidance_note": "Do not frame Mixed weeks as failure. The pattern of Growth-dip-Growth shows resilience. Focus on building the off-day training habit rather than critiquing the dip."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Reduced training volume this week provides natural recovery from 3 prior weeks of very high volume. No physical concerns. Inability to compete in wrestle-offs may create frustration — monitor for signs of identity friction."
+  },
+
+  "next_week_focus_question": "You said you want to do every move with high intensity as if it's a match — what does that look like on a Thursday when practice is cancelled?"
+}

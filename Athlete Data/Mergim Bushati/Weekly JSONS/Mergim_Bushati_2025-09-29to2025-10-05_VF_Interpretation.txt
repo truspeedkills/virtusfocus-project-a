@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "September 29 – October 5, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Hinge habit fully active: maintained training intensity across all 7 days including weekends. Multiple push-through moments with explicit self-correction language. Set and achieved specific sub-goals for Tuesday/Thursday. No derailer activation — no competitive pressure this week, but training discipline is the strongest yet."
+  },
+
+  "athlete_state": "Training-locked — executing daily structure with specific sub-goals and consistent push-through behavior",
+  "core_pattern": "Goal-anchored persistence — setting specific daily training targets and completing them despite physical discomfort, using future-self visualization to override fatigue",
+  "behavioral_root_cause": "Connecting daily training effort to identity goals ('if I want to achieve my goals would stopping right now help with that') creates a reliable override mechanism for quit impulses",
+
+  "prior_commitment_result": {
+    "prior_action": "Before each practice, write down one specific scoring situation and what you will do when you get there — then execute it in practice without hesitation",
+    "execution_status": "Partial",
+    "execution_notes": "No evidence of written pre-practice scoring goals. However, the athlete did set and execute specific training goals: Tuesday/Thursday lifting + running targets achieved, Friday skier machine intensity targets met. The goal-setting behavior is present but applied to conditioning rather than scoring situations.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Keep my mindset up at practice where I just go and don't think. Keep scoring when I'm wrestling. Get another 2-mile run in this week.",
+    "achievement_statement": "Getting in better shape. Got stronger. Got stronger mentally. Achieved my goals that I set for myself for Tuesday and Thursday.",
+    "key_phrase": "I didn't let myself off the hook",
+    "mindset_resonance": "Do one thing today — even if it's small — with full consistency"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5 (Monday through Friday — explicit scores)",
+      "neutral_days": "2 (Saturday explicit; Sunday — behaviorally classified: work, cooking, homework, bed)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular and present-tense: 'How my mentality is now.' Continued shift from external controllable lists to internal state ownership.",
+    "influence_quality": "Outcome-linked: decisions and making sure days are positive. Emerging agency language.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "4",
+    "rolling_win_rate_4wk": "0.57",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery attendance (Wk1) → Push-through conditioning (Wk2) → Derailer override in practice (Wk3) → Sustained training discipline with specific sub-goals (Wk4). The athlete has established a reliable push-through pattern using goal visualization as the override mechanism. Training structure is now self-directed and internally motivated rather than externally required.",
+    "milestone_this_week": "First time setting AND achieving specific sub-goals within a week (Tuesday/Thursday lifting + running targets). Moving from general 'keep going' to targeted daily planning.",
+    "open_thread": "Saturday's scoring goal-setting from Week 3 was not carried forward into this week. Conditioning push-through is reliable but the competitive execution pattern (scoring without overthinking) needs continued reinforcement."
+  },
+
+  "most_important_controllable": "Setting specific daily training targets and holding yourself accountable to them — not letting yourself off the hook",
+
+  "micro_commitment": {
+    "action": "Set one specific scoring goal before Saturday practice and one specific conditioning goal before one weekday practice — write both down before practice begins",
+    "when": "Before Saturday practice and before one weekday practice",
+    "measurement": "Both goals written and both attempted in practice"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice",
+    "anticipated_stressor": "Continued physical load escalation. Athlete is 3 weeks into return-to-activity with rapidly increasing volume. Weekend days remain lower-engagement.",
+    "athlete_stated_next_goal": "Keep getting in shape. Keep getting stronger mentally and physically. Keep reviewing goals. Keep trying to be a good person on and off the mat. Wrestle again this week."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Strongest training week yet: 5 consecutive Win days with explicit push-through moments on Tuesday (hill run, didn't stop), Thursday (run completion + passed teammates), and Friday (skier machine 5 sets above 200 watts). Set specific sub-goals for Tu/Thu and achieved them. Saturday laid-back practice, Sunday routine.",
+    "key_habit_signal": "Self-accountability language escalating: 'I didn't let myself off the hook' is a significant shift from early recovery attendance. Athlete is now holding himself to internal standards rather than external requirements.",
+    "coach_reinforcement_cue": "The Tu/Thu goal-setting and achievement cycle is the most replicable pattern yet. Reinforce the planning-execution-reflection loop rather than just the push-through moments.",
+    "coach_avoidance_note": "Weekend engagement remains lower — Saturday and Sunday are consistently Neutral. This is not a problem at this stage but could become one if competitive scheduling increases weekend demands."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Training volume continues to increase. Passed teammates on conditioning runs despite recent injury return — monitor for competitive overexertion. Shoulder brace usage should be confirmed with athletic training."
+  },
+
+  "next_week_focus_question": "You achieved your Tuesday and Thursday goals — what if you set that same kind of specific target for every practice this week?"
+}

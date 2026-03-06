@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "September 15 – September 21, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Athlete demonstrated hinge habit execution across multiple high-demand moments: completed first practice in 4 months despite exhaustion, finished 12-minute jog despite vomiting at minute 8, woke at 4 AM to cheer on teammates. Derailer not tested in competitive context but physical push-through moments show execution-over-feeling pattern."
+  },
+
+  "athlete_state": "Actively returning to full participation; executing through physical discomfort and building competitive conditioning",
+  "core_pattern": "Push-through execution under physical strain — completing demanding tasks despite strong urges to stop, anchored in outcome goal visualization",
+  "behavioral_root_cause": "Connecting daily effort directly to long-term competitive goal (U20 nationals) creates sufficient motivation to override physical discomfort signals",
+
+  "prior_commitment_result": {
+    "prior_action": "Write down three specific things you will do each day beyond showing up to practice — one for school, one for recovery, one for wrestling knowledge",
+    "execution_status": "Partial",
+    "execution_notes": "Athlete maintained school attendance and practice involvement consistently. Recovery activities present (treatment, rehab). Wrestling knowledge activity (watching wrestling) present on Sunday only. No evidence of written daily planning. Overall structure maintained but specific written commitment format not evidenced.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Show up to practice on time every day. Do what I have to even if I'm not required to do so. Make the most of each day.",
+    "achievement_statement": "I started lifting again, started doing some conditioning, and got to wrestle the first time since May",
+    "key_phrase": "If I wanted to win U20s this summer I couldn't just stop",
+    "mindset_resonance": "Find a moment today to laugh or enjoy what you're doing"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "4 (Monday, Tuesday, Thursday, Friday — explicit scores)",
+      "neutral_days": "3 (Wednesday, Saturday — explicit scores; Sunday — behaviorally classified from activity descriptions: relaxed personal day, chores, homework preparation)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Narrowed to three core items: attitude, will to win, drive to succeed. Less specific than Week 1 but more identity-anchored.",
+    "influence_quality": "Results-oriented: how things turn out, when things happen. Shows emerging understanding of effort-to-outcome connection.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "2",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "insufficient data"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Completing physically demanding conditioning sessions through discomfort rather than stopping",
+
+  "micro_commitment": {
+    "action": "When you feel the urge to stop during conditioning, say out loud or to yourself: 'U20s — keep moving' and complete the remaining distance",
+    "when": "During every conditioning session this week",
+    "measurement": "Zero early stops across all conditioning sessions"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice",
+    "anticipated_stressor": "Increasing physical demands as return-to-activity progresses. Body fatigue from first full week of lifting, conditioning, and wrestling combined.",
+    "athlete_stated_next_goal": "Keep getting healthier. Keep getting in shape. Keep lifting. Wrestle again this week. Watch wrestling to learn more. Prepare my mind for the great things coming. Accept that the work I put in will cause good things to come to me."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Significant physical milestone week: first practice in 4 months (Tuesday), first lower body lifting (Monday), completed 12-minute jog despite vomiting at minute 8 (Friday). Maintained school attendance and daily structure throughout. Thursday 4 AM wake-up to cheer teammates shows team investment beyond personal training.",
+    "key_habit_signal": "Push-through execution under physical duress — two explicit moments where athlete wanted to stop but connected the effort to U20 goal and completed the task. This is the behavioral pattern that counters the baseline derailer (overthinking/stopping).",
+    "coach_reinforcement_cue": "The Friday jog completion despite throwing up is a landmark moment. The self-talk connecting effort to U20s is exactly the approach-framed thinking that replaces the baseline avoidance framing. Name this pattern explicitly.",
+    "coach_avoidance_note": "Do not over-celebrate physical suffering. The point is the completion and the mental framework, not the discomfort itself. Monitor for signs of overtraining as conditioning volume increases rapidly."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Rapid return-to-activity progression: first practice Tuesday, vomiting during conditioning Friday. Athletic training staff should monitor volume and recovery. No behavioral concerns — athlete is highly motivated and may push beyond safe recovery pace."
+  },
+
+  "next_week_focus_question": "You pushed through every hard moment this week — what's the one thing you want to feel confident about by the end of next week?"
+}

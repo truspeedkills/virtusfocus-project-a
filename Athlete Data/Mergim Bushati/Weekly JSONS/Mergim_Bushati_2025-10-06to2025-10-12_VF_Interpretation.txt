@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "October 6 – October 12, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Hinge habit maintained through Monday-Wednesday training. Weekend shifted to family-based activities (wedding), but athlete deliberately framed rest as intentional recovery: 'rested my body and mind and just refocused on my goals.' Structure maintained within available context."
+  },
+
+  "athlete_state": "Drilling progression with reduced weekend engagement due to family commitments",
+  "core_pattern": "Weekday training consistency with intentional weekend rest — drilling intensity increasing (first full-length practice completed Wednesday) but weekend structure drops when external demands shift to family",
+  "behavioral_root_cause": "Training routine is anchored to team/practice schedule. When external structure shifts (home weekend, family events), engagement defaults to rest/recovery rather than self-directed training",
+
+  "prior_commitment_result": {
+    "prior_action": "Set one specific scoring goal before Saturday practice and one specific conditioning goal before one weekday practice — write both down before practice begins",
+    "execution_status": "Partial",
+    "execution_notes": "Tuesday: set and completed specific conditioning goal (4x100 sprints with uphill finish). Wednesday: completed full practice non-stop — had a drilling intensity goal. No Saturday practice goal documented — athlete went home for family weekend. Conditioning goal achieved; scoring goal not attempted due to family travel.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Keep getting in shape. Keep getting stronger mentally and physically. Keep reviewing goals. Wrestle again this week. Keep doing the right things that are going to elevate me to that next level.",
+    "achievement_statement": "Got back into drilling full time. Getting back into better and better wrestling shape. Mentally getting where I need to be to be an elite athlete. Feeling smoother every time I do something.",
+    "key_phrase": "Feeling smoother every time I do something",
+    "mindset_resonance": "Visualize and rehearse a high-pressure moment before you train today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3 (Monday, Tuesday — explicit scores; Wednesday — behaviorally classified: completed full practice, intense non-stop drilling, work)",
+      "neutral_days": "4 (Thursday through Sunday — behaviorally classified: Thursday lifting/watching/work, Friday class/rehab/home travel/brother's game, Saturday wedding/family, Sunday family day with intentional rest)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'How much extra work I put in.' Effort-quantity focused rather than effort-quality focused.",
+    "influence_quality": "Outcome-based: decisions and results from hard work.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Declining",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Volatile",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "5",
+    "rolling_win_rate_4wk": "0.61",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery attendance (Wk1) → Push-through conditioning (Wk2) → Derailer override in practice (Wk3) → Sustained training discipline (Wk4) → Drilling milestone but weekend disengagement (Wk5). First non-Growth week since Week 3 advancement. The dip is context-driven (family weekend) rather than behavioral regression — training intensity on available days was the strongest yet (first full practice completion).",
+    "milestone_this_week": "Completed full-length practice for the first time since injury return (Wednesday). Non-stop drilling with intensity maintained throughout. This physical capacity milestone had been building across 4 weeks.",
+    "open_thread": "Weekend disengagement pattern: when external structure shifts away from team/school schedule, engagement drops. This is the same pattern that could limit competition-week preparation when travel removes normal routines."
+  },
+
+  "most_important_controllable": "Maintaining training structure on days without external accountability — especially weekends and travel days",
+
+  "micro_commitment": {
+    "action": "On any day you are away from the team, complete one specific wrestling-related activity (film study session of at least 20 minutes, visualization of 3 specific scoring sequences, or a conditioning circuit)",
+    "when": "Each day away from campus this week",
+    "measurement": "At least one wrestling-related activity completed on every non-practice day"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice",
+    "anticipated_stressor": "Return from family weekend to full practice schedule. Visualization mindset challenge aligns with existing approach-framed pre-practice goal setting.",
+    "athlete_stated_next_goal": "Keep getting in better shape. Keep getting physically and mentally stronger. Keep evaluating my goals. Keep visualizing achieving goals. Keep saying goals out loud — speaking it into existence. Keep wrestling. Keep my edge."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Split week: Mon-Wed strong training (drilling, full practice completion, 4x100 sprints). Thu-Sun lower engagement (home for family wedding). Training days showed continued intensity progression. Weekend showed intentional rest framing rather than disengagement.",
+    "key_habit_signal": "Wednesday full practice completion is a conditioning milestone. Tuesday 4x100 sprints with uphill finish maintained the push-through pattern. However, weekend drop to zero training raises the question of self-directed structure.",
+    "coach_reinforcement_cue": "The athlete's reframe of the weekend as intentional ('rested my body and mind and just refocused on my goals') shows awareness. Reinforce that rest is part of training when intentional, but establish expectations for non-practice days.",
+    "coach_avoidance_note": "Do not punish or critique the family weekend — family involvement is a baseline support structure. Focus on building self-directed alternatives for non-practice days rather than demanding training through family events."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No concerns. Weekend rest may actually benefit physical recovery given the rapid return-to-activity progression over the past 4 weeks."
+  },
+
+  "next_week_focus_question": "You said you want to speak your goals into existence — what does that look like on a day when there's no practice and no one is watching?"
+}

@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "November 3 – November 9, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Hinge habit maintained through weekday training. Coach interaction Wednesday — 'needing to be perfect with effort' — and athlete responded by finishing first in suicides. Leadership behavior emerging: 'other kids in the room look up to me.' Weekend shifted to home/family but Sunday wrestling at brother's workout maintained training continuity."
+  },
+
+  "athlete_state": "Conditioning-focused with emerging leadership awareness and external validation from coaching staff",
+  "core_pattern": "Effort-driven improvement with growing external recognition — coach feedback about leadership responsibility and conditioning effort being watched by teammates. Weekend engagement improving (Sunday wrestling at brother's).",
+  "behavioral_root_cause": "Coach feedback about being a role model created a new motivation layer: performance effort now serves both personal goals AND team leadership responsibility",
+
+  "prior_commitment_result": {
+    "prior_action": "On any day without team practice, complete a self-designed 45-minute training session: 15 min conditioning + 15 min technique visualization + 15 min film study",
+    "execution_status": "Partial",
+    "execution_notes": "Friday home with family — attended brother's football game but no self-directed training session. Saturday relaxed, watched wrestling with brother (partial: film study component). Sunday wrestled at brother's workout (active training on non-team day). 2 of 3 non-practice days had wrestling-related activity but not the full structured session.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get better conditionally. Get faster on finishing my shots when I get on a leg. Keep getting my hand fighting better from really good to elite. Keep getting better mentally. Get better as a wrestler overall.",
+    "achievement_statement": "I got better conditionally. Better mentally. Stronger physically. Better wrestler and athlete overall.",
+    "key_phrase": "Other kids in the room look up to me and will do what I am doing",
+    "mindset_resonance": "Before practice or training today, write 3 reasons you're prepared to succeed"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "4 (Monday, Tuesday — explicit scores; Wednesday — behaviorally classified: extra workout, drilled hard, finished first in suicides; Thursday — behaviorally classified: practice, drilled hard, extra hour)",
+      "neutral_days": "3 (Friday — behaviorally classified: home, job orientation, family evening; Saturday — behaviorally classified: relaxed, watched wrestling; Sunday — behaviorally classified: wrestled at brother's workout, dinner with family)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'The work I am putting in.' Effort-focused, consistent.",
+    "influence_quality": "Results and people: results from hard work, like-minded people. Stable pattern.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "9",
+    "rolling_win_rate_4wk": "0.71",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Training discipline (Wk4) → Weekend dip (Wk5) → Full immersion (Wk6) → Peak (Wk7) → Schedule dip (Wk8) → Mixed with leadership emergence (Wk9). Third Mixed week — all three share weekend/off-day disengagement. New element: coach explicitly naming athlete's leadership influence. Goal specificity improved ('finishing shots on a leg,' 'hand fighting from good to elite').",
+    "milestone_this_week": "Coach conversation about leadership responsibility: 'other kids in the room look up to me.' This is the first time the athlete has been positioned as an influence-ring agent rather than solely a self-improvement agent. Also: goal specificity jumped significantly — first time naming specific wrestling techniques as targets.",
+    "open_thread": "Three Mixed weeks out of 9 (Wk5, 8, 9) all driven by weekend/home disengagement. The pattern is structural, not motivational. Leadership awareness is new but untested — does it motivate Saturday/Sunday engagement?"
+  },
+
+  "most_important_controllable": "Weekend and home-day training consistency — maintaining wrestling-specific activity even when away from the team",
+
+  "micro_commitment": {
+    "action": "Get in one specific hand-fighting drill session and one specific shot-finishing drill session this week — separate from regular practice",
+    "when": "Schedule both sessions before Wednesday",
+    "measurement": "Both drill sessions completed by end of week with specific technique focus documented"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice. Getting cleared for live and competitions mentioned as upcoming.",
+    "anticipated_stressor": "Potential clearance for live wrestling and competition approaching. Transition from drilling-only to live competition will test the derailer (overthinking under competitive pressure) in a new way.",
+    "athlete_stated_next_goal": "Get better at finishing shots. Keep working on underhook. Keep getting comfortable with hand fight. Keep feeling confident in the process. Keep getting mind stronger. Keep getting in wrestling shape. Just become an overall better wrestler inside and out."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Mon-Thu strong training with extra work. Wednesday coach talk about effort and leadership responsibility. Friday-Sunday home weekend with reduced but present wrestling activity (Sunday brother's workout). Goal specificity improved significantly for the first time.",
+    "key_habit_signal": "Goal specificity jump: 'finishing shots when I get on a leg' and 'hand fighting from really good to elite' are the most specific technical goals in the program. Previous goals were generic ('get better'). This indicates growing self-assessment capability.",
+    "coach_reinforcement_cue": "The specific goals deserve explicit reinforcement — this is exactly the kind of self-directed improvement planning that distinguishes Developing from Consistent. Also reinforce the Sunday wrestling at brother's workout as evidence of self-directed training.",
+    "coach_avoidance_note": "Avoid over-emphasizing the leadership role at this stage. The athlete is still in Developing phase focused on personal consistency. Leadership responsibility should supplement, not replace, the self-improvement focus."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No concerns. Training volume normalized after peak weeks. Competition clearance approaching — transition plan should include mental preparation for live situations."
+  },
+
+  "next_week_focus_question": "Your coach said the room is watching your effort — what does your effort look like on the days when no one is watching?"
+}

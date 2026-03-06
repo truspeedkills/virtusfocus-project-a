@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "September 8 – September 14, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Athlete is maintaining daily structure and team involvement during shoulder surgery recovery. Attending every practice despite inability to participate demonstrates baseline hinge habit. No competitive moments to test derailer this week."
+  },
+
+  "athlete_state": "Rehabilitation-engaged; maintaining team presence and daily structure despite inability to practice",
+  "core_pattern": "Structure-adherent with voluntary involvement — attending all practices, completing daily responsibilities, and finding controllable actions within recovery constraints",
+  "behavioral_root_cause": "Identity maintenance through team presence and routine discipline during extended recovery period",
+
+  "prior_commitment_result": {
+    "prior_action": "No Prior Week",
+    "execution_status": "No Prior Week",
+    "execution_notes": "First week of program. No prior micro_commitment exists.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get healthier day by day and watch more and more wrestling to learn more",
+    "achievement_statement": "I showed up to every practice on time even when I didn't have to",
+    "key_phrase": "Even if I can't do anything",
+    "mindset_resonance": "Clear goals create clear outcomes"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "2 (Tuesday, Wednesday — explicit scores)",
+      "neutral_days": "5 (Monday explicit; Thursday, Friday, Saturday, Sunday — behaviorally classified from activity descriptions: routine attendance and personal activities without push-through effort)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong identification of controllables: attitude, work ethic, homework completion, procrastination management, showing up on time, doing the right thing. Six specific controllable items named.",
+    "influence_quality": "Basic: people I surround myself with, decisions that are made. Limited specificity.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "1",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "insufficient data"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Maintaining daily structure and voluntary team involvement during recovery",
+
+  "micro_commitment": {
+    "action": "Write down three specific things you will do each day beyond showing up to practice — one for school, one for recovery, one for wrestling knowledge",
+    "when": "Sunday evening before the week begins",
+    "measurement": "End-of-week count: at least 5 of 7 days with all three completed"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice. Athlete is 4 months post-shoulder surgery, starting return to jog/run program.",
+    "anticipated_stressor": "Continued inability to participate fully in practice while teammates compete. Physical limitation as potential identity friction point.",
+    "athlete_stated_next_goal": "Show up to practice on time every day. Do what I have to even if I'm not required to do so. Make the most of each day."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Athlete maintained daily structure across all 7 days despite inability to participate in wrestling practice. Attended every session voluntarily, completed academic responsibilities, managed personal life with discipline (cleaned before bed despite 3 AM return).",
+    "key_habit_signal": "Voluntary practice attendance during recovery — showing up 'even if I can't do anything' repeated across multiple days. This mirrors the baseline hinge habit of maintaining routines regardless of circumstances.",
+    "coach_reinforcement_cue": "The phrase 'even if I can't do anything' appears 4 times this week. Reinforce that showing up IS doing something — it builds the habit foundation that will carry into full return.",
+    "coach_avoidance_note": "Do not push for wrestling-specific performance targets while in rehabilitation. Current controllable focus on attendance and structure is appropriate. Avoid comparisons to teammates who are competing."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Athlete is in active rehabilitation from shoulder surgery (4 months post-op). Starting return-to-jog program. All activity progression should be coordinated with athletic training staff. No behavioral concerns."
+  },
+
+  "next_week_focus_question": "What does your best day look like when you can't wrestle — and how do you make sure that day still counts?"
+}

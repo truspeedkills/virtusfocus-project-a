@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "October 13 – October 19, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "First full week back in wrestling. Hinge habit maximally expressed: stayed an extra hour every single practice day. Volume and consistency are the highest since program entry. No derailer activation — drilling only, no live competition situations."
+  },
+
+  "athlete_state": "Full immersion — first complete week of daily wrestling with voluntary extra work every session",
+  "core_pattern": "Volume-driven consistency — every practice followed by an extra hour of work. Daily entries are structurally identical, indicating a locked-in routine with minimal variation.",
+  "behavioral_root_cause": "Identity alignment between daily effort and long-term goal creates self-sustaining motivation: 'that extra hour will stack up and help me reach my goal'",
+
+  "prior_commitment_result": {
+    "prior_action": "On any day away from the team, complete one specific wrestling-related activity (film study, visualization, or conditioning circuit)",
+    "execution_status": "Unknown",
+    "execution_notes": "Athlete was with the team every day this week (Mon-Sat practice, Sun rest). No days away from team to evaluate the commitment. Sunday included stretching, relaxing, and watching wrestling — which partially fulfills the spirit of the commitment.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Keep getting in better shape. Keep getting physically and mentally stronger. Keep evaluating my goals. Keep visualizing me achieving my goals. Keep saying my goals out loud. Keep wrestling. Keep my edge that I've built when wrestling.",
+    "achievement_statement": "Drilled really hard this was my first week back completely and I keep telling myself the goals I have for myself and what I need to do to achieve them so that's why everyday I'm staying an extra hour after everyone because that extra hour will stack up and help me reach my goal.",
+    "key_phrase": "That extra hour will stack up and help me reach my goal",
+    "mindset_resonance": "Skip one distraction today to make space for what matters most"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "6 (Monday, Tuesday — explicit scores; Wednesday through Saturday — behaviorally classified: daily practice + drilling hard + extra hour every day)",
+      "neutral_days": "1 (Sunday — behaviorally classified: rest day with stretching, relaxing, watching wrestling)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'How hard I work.' Consistent with effort-quantity focus.",
+    "influence_quality": "Results-based: results from work put in, like-minded people. Consistent pattern.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Improving",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "6",
+    "rolling_win_rate_4wk": "0.68",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery attendance (Wk1) → Push-through conditioning (Wk2) → Derailer override (Wk3) → Training discipline (Wk4) → Weekend dip (Wk5) → Full immersion with daily extra work (Wk6). The athlete has established a locked-in daily routine: practice + extra hour + work/school. This is the most consistent week since program entry and the first full week of wrestling participation.",
+    "milestone_this_week": "First full week back in wrestling — 6 consecutive practice days with an extra hour each session. Daily routine is now self-sustaining rather than requiring push-through motivation.",
+    "open_thread": "Reflection quality has dropped to surface-level (daily entries repetitive: 'Drilled hard Stayed an extra hour Got better'). Volume is high but self-awareness about what specifically improved or needs improvement is declining. Generic goal language increasing."
+  },
+
+  "most_important_controllable": "Specificity in daily training focus — identifying what exactly you are working on rather than just accumulating hours",
+
+  "micro_commitment": {
+    "action": "After each practice, write down one specific thing you got better at today and one thing you want to work on tomorrow",
+    "when": "After practice each day",
+    "measurement": "At least 5 of 7 days with a specific improvement and specific next-day focus identified"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice",
+    "anticipated_stressor": "Sustained high-volume training may lead to physical fatigue. Repetitive daily routine may lead to engagement plateau if specificity doesn't increase.",
+    "athlete_stated_next_goal": "Get better. Sharpen my mind. Keep wrestling hard. Keep letting it fly. Get to my positions. Get better."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Peak volume week: 6 practice days, extra hour every session. First full week of wrestling since injury. Daily structure locked in. Woke up 4 AM Monday for early practice. Sunday rest day with wrestling film study.",
+    "key_habit_signal": "The extra hour after every practice has become automatic — no longer requiring push-through motivation. This is habitual behavior, not effortful behavior. The hinge habit is expressing at maximum capacity.",
+    "coach_reinforcement_cue": "Acknowledge the consistency but redirect toward training quality and specificity. The 'extra hour' is valuable but 'Got better' repeated 7 times without specificity suggests the athlete may be confusing volume with improvement.",
+    "coach_avoidance_note": "Do not discourage the extra work. But introduce the concept that targeted practice (20 minutes on a specific technique) can be more valuable than unfocused extra time. Reflection quality needs support."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Very high training volume for an athlete 5 weeks into return-from-injury. Extra hour daily on top of full practice represents significant physical load. Monitor for overuse symptoms, especially shoulder."
+  },
+
+  "next_week_focus_question": "You're putting in the extra hour every day — but if I asked you what specifically you got better at on Thursday, could you tell me?"
+}
