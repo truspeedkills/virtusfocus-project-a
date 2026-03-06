@@ -1,0 +1,196 @@
+AUDIT SUMMARY
+Athlete: Mergim Bushati
+Week: January 5 – January 11, 2026 (Week 18)
+Audit Date: 2026-03-06
+Result: PASS
+
+STRUCTURAL CHECKS:
+Coaching Message Structure: PASS — All 5 mandatory sections
+present (Recognition, Strength Signals, Drift Identification,
+Identity Anchor, ONE Action).
+Deep Dive Structure: PASS — All 5 mandatory sections present
+(Weekly Overview, Strengths & Wins [4 sections], Opportunities
+& Growth Areas [3 sections], Mindset Summary, Coaching Focus
+Areas [5 priorities]).
+
+============================================================
+TIER 1 RESULTS
+============================================================
+
+1. Emotional Intensity Calibration: PASS
+   emotional_intensity = "High"
+   First paragraph: "Saturday you competed for the first time
+   in nearly a year. You made weight. You warmed up right. You
+   showed up ready." — Sets emotional context without framework
+   language.
+   Second paragraph: "Match 1 — you blanked out. 'Completely
+   forgot everything...'" — Names the specific emotional
+   experience (derailer activation in tournament). No framework
+   terms ("center ring," "Bullseye," "Win the Day," etc.) in
+   first two paragraphs. Framework language ("Growth level")
+   appears only in the final substantive paragraph. Emotional
+   acknowledgment is specific, not generic. PASS.
+
+2. Clinical Language Compliance: PASS
+   Full scan of both documents. No prohibited terms found.
+   "Derailer" and "derailer activation" are VirtusFocus
+   framework language (acceptable per exclusion list note).
+   "Overthinking pattern" uses "overthinking" (not on exclusion
+   list). "Avoidance" used once in Coaching Message ("The
+   avoidance was gone") — shorthand for the baseline derailer
+   pattern, not the prohibited compound "avoidance behavior."
+   NOTE: Deep Dive uses "cognitive reframe" and "cognitive
+   maturity" — "cognitive" alone is not on the exclusion list,
+   and "reframing" is standard coaching language. However,
+   future outputs should prefer "mental reframe" or "mindset
+   shift" to maintain clearer distance from clinical framing.
+   No clinical framing patterns detected ("symptoms of,"
+   "consistent with," "presents as," "assessment indicates").
+   PASS.
+
+3. Data Fidelity: PASS
+   All factual claims verified against JSON:
+   - "competed for the first time in nearly a year" ✓
+     (JSON: first competition, narrative_arc)
+   - "You made weight" ✓ (JSON: coach_insights)
+   - "blanked out" / "Completely forgot everything" ✓
+     (JSON: athlete_voice, behavioral_root_cause)
+   - "I just wanted to wrestle and see how I did" ✓
+     (JSON: core_pattern)
+   - "1-1 with a minute left" ✓ (JSON: core_pattern)
+   - "shoulder gave out" ✓ (JSON: core_pattern)
+   - "Six Win days" ✓ (JSON: win_days = 6)
+   - "Growth level" ✓ (JSON: weekly_tier = Growth)
+   - "All of this is a process" ✓ (JSON: key_phrase)
+   - "0-2" ✓ (JSON: narrative_arc.open_thread)
+   Deep Dive claims also verified: match details, timeline,
+   strengths, growth areas all traceable to JSON fields.
+   No fabrication, contradiction, or invention detected. PASS.
+
+4. Prior Commitment Bridge: PASS
+   execution_status = "Partial"
+   Coaching Message acknowledges: "The pre-match commitment
+   carried — partially. Match 1 the self-talk was overwhelmed.
+   Match 2 you found the approach frame on your own. That
+   carries forward." — Names prior commitment (pre-match
+   self-talk), acknowledges partial execution without judgment,
+   bridges to continuation. Appears BEFORE the new micro-
+   commitment. Length: 3 sentences (within limit).
+   carry_forward = "Yes" — current commitment (write down
+   match 2 positives) evolves from prior (pre-match self-talk)
+   by shifting the confidence anchor from D1 qualifier memory
+   to actual tournament evidence. PASS.
+
+============================================================
+TIER 2 RESULTS
+============================================================
+
+5. Athlete Voice Reflection: PASS
+   key_phrase: "All of this is a process"
+   Coaching Message mirrors: "'All of this is a process.' You
+   said that after going 0-2 with a shoulder injury at your
+   first tournament back. That's not a phrase — that's a man
+   processing a hard day and choosing to keep going." Connected
+   to identity thread and developmental arc. One mirror
+   instance. PASS.
+
+6. Action Specificity (Three-Part Check): PASS
+   ACTION: "Write down three specific things you did well in
+   match 2 at Fairmont State Open. Keep that list visible
+   during every practice this week." ✓ Matches JSON.
+   WHEN: "Monday evening" ✓ Matches JSON.
+   MEASUREMENT: "referenced at least once during each practice
+   session" ✓ Matches JSON.
+   All three elements present. PASS.
+
+7. Upcoming Context Anchoring: PASS (N/A)
+   scheduled_competition = "None — just practice. Shoulder
+   issues limiting live wrestling." No upcoming event to anchor.
+   Auto-pass.
+
+8. Narrative Arc Presence: PASS
+   narrative_arc populated (18 weeks of data).
+   arc_summary reflected in Mindset Summary: "The 18-week
+   pattern is clear: the derailer is environmental (tournament-
+   specific), not dispositional (always present)." ✓
+   milestone_this_week reflected in Strengths: Within-Tournament
+   Approach Recovery section names match 2 recovery as the
+   milestone. ✓
+   open_thread reflected in Coaching Focus Areas: shoulder
+   evaluation, competing narratives, training structure all
+   address the open developmental threads. ✓ PASS.
+
+9. Message Length: PASS — approximately 360 words (within
+   250-450 range).
+
+10. Micro-Commitment Realism: PASS
+    Modality adaptation check: Prior commitment (Week 17) was
+    ORAL ("say to yourself"), executed Partial. Current
+    commitment is WRITTEN ("write down"). Modality shifted from
+    ORAL to WRITTEN after partial execution. Adaptation
+    appropriate. ✓
+    Structural simplicity check: 2 action steps (write list +
+    keep visible). Single trigger (Monday evening). Binary
+    measurement (list written/referenced yes/no). Tied to
+    existing practice context. ✓ PASS.
+
+============================================================
+TIER 3 RESULTS
+============================================================
+
+11. Brand Voice Tonal Scan: PASS
+    Coaching Message: Calm, direct, identity-based throughout.
+    No hype language, no clichés, no coddling, no guilt-driven
+    tone, no preachy language. Zero exclamation marks.
+    Deep Dive: Second person throughout. No coach-facing
+    technical language. No third-person references to the
+    athlete. Analytical sections maintain VirtusFocus voice.
+    PASS.
+
+12. Outer-Ring Language Discipline: PASS
+    Coaching Message: Competition results (0-2) used as context,
+    not dwelling. Shoulder injury referenced as context,
+    immediately redirected to center-ring evidence (match 2
+    approach recovery). Every outer-ring reference followed by
+    center-ring redirect.
+    Deep Dive: "Shoulder Re-Injury" growth area redirects to
+    controllable behavior (medical evaluation). Tournament
+    results used as context throughout, always redirected to
+    center-ring approach recovery and processing evidence. "Two
+    Competing Narratives" section balances outer-ring events
+    with center-ring actionables. PASS.
+
+============================================================
+CORRECTIONS APPLIED: None
+============================================================
+
+NOTES:
+1. Deep Dive uses "cognitive reframe" (2x) and "cognitive
+   maturity" (1x). While "cognitive" is not on the clinical
+   language exclusion list, future outputs should prefer
+   "mental reframe" or "mindset shift" to maintain clearer
+   distance from clinical framing. This is a style observation,
+   not a criterion failure.
+
+2. This is the most complex audit case in the Mergim Bushati
+   dataset: High emotional intensity, Partially Aligned
+   baseline, first competition with derailer activation,
+   shoulder re-injury, and prior commitment Partial execution.
+   Both outputs handle all complexity correctly. The Coaching
+   Message leads with emotional acknowledgment before any
+   framework language. The Deep Dive maintains structural
+   integrity with 4 strengths and 3 growth areas appropriate
+   to the week's profile.
+
+3. The modality shift from ORAL (Week 17) to WRITTEN (Week 18)
+   micro-commitment is appropriate given the Partial execution
+   of the oral commitment under competition pressure. This
+   demonstrates correct pipeline adaptation per the Micro-
+   Commitment Modality Adaptation Rule.
+
+DECISION TREE PATH:
+Step 1: Structural checks — PASS → Step 2
+Step 2: Any Tier 1 failures? — NO → Step 3
+Step 3: Any Tier 2 failures (not correctable)? — NO → Step 4
+Step 4: Any corrections applied? — NO → Step 5
+Step 5: All criteria passed without correction → RESULT A: PASS
