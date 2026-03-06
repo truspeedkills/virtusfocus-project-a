@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "December 29, 2025 – January 4, 2026",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "BREAKTHROUGH RETURN WEEK. Took down D1 national qualifier multiple times in live goes. Coach praised shot as 'very clean and crisp' and said 'if I can take him down I can take down anyone.' Maintained lift + run on every day including Christmas. Training plan executed with precision. Pre-competition mental preparation initiated: 'perform without fear and with fun.'"
+  },
+
+  "athlete_state": "Full competitive return with peak live performance — took down highest-level opponent in program history, maintained daily conditioning, and initiated approach-framed pre-competition mindset",
+  "core_pattern": "Return-to-form execution with evidence-based confidence: D1 national qualifier takedowns provide objective proof of competitive capability. Daily discipline (including Christmas Day training) shows hinge habit at maximum. Pre-competition framing shifts from avoidance ('don't mess up') to approach ('just go out and score').",
+  "behavioral_root_cause": "Concrete evidence of capability (taking down D1 qualifier) creates an experiential anchor for confidence that is resistant to the baseline self-doubt pattern. The athlete now has proof — not just belief — that his preparation translates to high-level results.",
+
+  "prior_commitment_result": {
+    "prior_action": "Maintain daily conditioning (lift + run) and add one hamstring-specific rehab exercise to every session",
+    "execution_status": "Completed",
+    "execution_notes": "Daily conditioning maintained across all 7 days including Christmas. Run + lift completed every day. Hamstring allowed return to live wrestling (Monday, Wednesday, Friday, Sunday). Conditioning was supplemented by wrestling multiple times per week. Saturday drill + circuit for active recovery. Full commitment execution.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Keep getting stronger. Keep getting in good shape. Keep getting sharper mentally. Keep getting healthier. Get back on the mat wrestling again. Get better.",
+    "achievement_statement": "I got back onto the wrestling mat. I got stronger. I got faster. I got sharper mentally. I took down a D1 national qualifier multiple times in live goes. I improved on so many little things for my wrestling. My conditioning got better. I locked back in everyday with my daily affirmations. I just became overall better this week. I leveled up.",
+    "key_phrase": "I leveled up",
+    "mindset_resonance": "Do one drill or set with total attention — zero distractions"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7 (Monday through Saturday — explicit scores; Sunday — behaviorally classified: intense drilling, 10 min live session, coach praised technique as 'slicker and smoother,' completed with jump rope)",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My work ethic.' Returned to effort-focused controllable after conditioning focus during injury.",
+    "influence_quality": "Expanded: time invested in specific things, kind of people around me. More intentional resource allocation language.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "4",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Moderate",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Improving",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "17",
+    "rolling_win_rate_4wk": "0.57",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Peak discipline (Wk4-13) → Hamstring injury (Wk14) → Recovery period (Wk15-16) → Breakthrough return with evidence-based confidence (Wk17). The arc mirrors the program start (shoulder recovery → return) but at a fundamentally higher level. The D1 qualifier takedowns provide the objective evidence that the self-doubt pattern has been countered with tangible proof. 'I leveled up' is the athlete's own assessment of a qualitative shift.",
+    "milestone_this_week": "D1 national qualifier takedowns: Wednesday took him down 3 of 6 live goes. He said 'if I can take him down I can take down anyone.' First RQS=4 (reflection quality): achievement statement shows specific details, self-assessment, and forward commitment. Also: pre-competition mental frame established ('perform without fear and with fun').",
+    "open_thread": "Fairmont State Open Saturday — first competition in nearly a year. The approach-framed mindset is set ('I don't care about winning or losing I'm just gonna go out there and score as many points as possible'). But the derailer has only been overridden in practice. Competition is the definitive test. Emotional context: friend passed away this week — dedicating tournament to him."
+  },
+
+  "most_important_controllable": "Maintaining the approach-framed competitive mindset — scoring as many points as possible rather than worrying about winning or losing",
+
+  "micro_commitment": {
+    "action": "Before each match at Fairmont State Open, say to yourself: 'I took down a D1 qualifier — just go score.' Then execute your first attack within 30 seconds.",
+    "when": "Before every match Saturday",
+    "measurement": "First attack initiated within 30 seconds in every match"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Fairmont State Open — Saturday. First tournament of the year. Dedicating it to a close friend who passed away this week.",
+    "anticipated_stressor": "First competition in nearly a year. Pre-performance overthinking is the primary derailer risk. Friend's death adds emotional weight. Shoulder has been managed but competition intensity is untested. Tournament format (multiple matches) creates sustained pressure.",
+    "athlete_stated_next_goal": "Keep leveling up. Keep getting stronger, faster, sharper mentally. Keep getting in great shape. Perform on Saturday without fear and with fun. Mindset: don't care about winning or losing, just go out and score as many points as possible."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days — third perfect week. Mon: live with D1 qualifier (got on his legs, nearly scored). Wed: 2 matches (won both), then 6 live goes with D1 qualifier — 3 takedowns. Thu: Christmas, still trained (gym + run). Fri: wrestling + extra 20 min with coach on technique details. Sat: drill + circuit + sister's basketball game. Sun: intense drilling + live + jump rope. Daily affirmations resumed.",
+    "key_habit_signal": "The D1 qualifier takedowns convert abstract confidence goals into evidence-based confidence. 'If I can take him down I can take down anyone' is no longer aspiration — it's conclusion from experience. This is the strongest confidence signal in the program.",
+    "coach_reinforcement_cue": "Three things for competition prep: (1) D1 qualifier takedowns are proof — name them before each match. (2) Pre-competition frame is excellent ('just go score') — reinforce it. (3) Dedicating to his friend provides emotional purpose beyond results — this is psychologically healthy motivation.",
+    "coach_avoidance_note": "Do not create results expectations. The approach frame ('score as many points as possible and the rest will take care of itself') is exactly right — do not undermine it with win/loss targets. Friend's death may create unexpected emotional moments during competition — have support available."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Friend's death this week — emotional state needs monitoring. First competition in ~1 year with two recent injuries (shoulder, hamstring). Competition intensity untested since return. Approach-framed mindset established but derailer (pre-performance overthinking) has never been tested in tournament format."
+  },
+
+  "next_week_focus_question": "You said you leveled up — Saturday is where you get to prove it to yourself. What does your best version look like when that whistle blows?"
+}

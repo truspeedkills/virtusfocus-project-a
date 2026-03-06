@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "January 12 – January 18, 2026",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Season-ending decision made collaboratively with coach — both agreed shoulder requires rehabilitation before continuing to compete. Athlete shifted immediately to rehab-focused training plan. Drilled as hard as possible despite shoulder limitation Mon-Tue and Fri. Wed-Thu rehabbed when no practice. Saturday met with coach and VirtusFocus coordinator to plan offseason. Sunday rehab + conditioning. The decision to stop wrestling is a mature alignment with long-term identity goals (national champion requires a healthy shoulder) rather than a retreat from competition."
+  },
+
+  "athlete_state": "Season-ending transition with collaborative decision and immediate shift to offseason rehabilitation planning — processing competitive season conclusion while maintaining training structure",
+  "core_pattern": "Adaptive closure — athlete and coach jointly decided to end competitive season for shoulder rehabilitation. Immediate behavioral shift to rehab-focused plan rather than emotional withdrawal. Maintained drilling intensity despite limitation. Proactively planned offseason with coaching staff.",
+  "behavioral_root_cause": "The decision to stop competing is framed as forward-looking ('get my shoulder stronger for next season') rather than defeat-based. This is the mature application of the Week 18 reframe ('all of this is a process'). The athlete is applying the long-term perspective the program has been building: short-term competitive sacrifice for long-term championship readiness.",
+
+  "prior_commitment_result": {
+    "prior_action": "Write down three specific things you did well in match 2 at Fairmont State Open. Keep that list visible during every practice this week.",
+    "execution_status": "Unknown",
+    "execution_notes": "Recap does not reference the written list or match 2 specific positives. The athlete's focus shifted to shoulder management and season-ending decision. While the competition reframe from Week 18 is maintained ('clear improvement from last year'), the specific written list commitment cannot be verified from recap content.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get healthy. Keep getting stronger. Keep getting in great shape. Keep reflecting my goals and working towards them. Keep getting better even if I'm limited.",
+    "achievement_statement": "Got my shoulder stronger. Figured out a plan for the future.",
+    "key_phrase": "Figured out a plan for the future",
+    "mindset_resonance": "Choose the harder option once today — especially when tired"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3 (Monday, Tuesday, Friday — explicit scores: drilled as hard as possible despite shoulder, lifted)",
+      "neutral_days": "4 (Wednesday through Thursday — behaviorally classified: no practice, rehabbed shoulder; Saturday — behaviorally classified: season-ending conversation with coach + offseason planning with Arron; Sunday — behaviorally classified: rehabbed, strengthened, cardio during practice, relaxed)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My mindset.' Shift from physical controllable (work ethic, conditioning) back to internal state. Significant: first time 'mindset' appears as the primary controllable since early weeks.",
+    "influence_quality": "Dual: people I surround myself with, the work I put into things. Stable influence framing with slight language refinement.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Declining",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "19",
+    "rolling_win_rate_4wk": "0.64",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "High",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override in practice (Wk3) → Peak discipline (Wk4-13) → Hamstring injury (Wk14) → Recovery (Wk15-16) → Breakthrough return (Wk17) → Competition: derailer activation + within-tournament recovery + shoulder re-injury (Wk18) → Season-ending decision with forward-looking reframe (Wk19). FULL 19-WEEK ARC COMPLETE. The athlete entered the program recovering from shoulder surgery with a 5/10 mental game self-rating, avoidance-framed thinking, and no evidence base for competitive confidence. He exits with: (a) a demonstrated practice-level derailer override, (b) evidence of within-tournament approach recovery, (c) a forward-looking offseason plan, (d) a collaborative coaching relationship, and (e) the cognitive framework ('it's a process') to contextualize setbacks. The derailer was exposed but not resolved in competition — this is the primary development target for next season.",
+    "milestone_this_week": "Collaborative season-ending decision: athlete and coach jointly agreed to prioritize shoulder rehabilitation over continued competition. This is developmentally significant — the athlete is choosing long-term championship readiness over short-term competitive participation. Also: 'figured out a plan for the future' indicates forward orientation rather than defeat processing. Saturday planning session with VirtusFocus coordinator establishes offseason structure.",
+    "open_thread": "SEASON COMPLETE. Three open developmental threads for offseason: (1) Practice-to-competition transfer — the derailer was overridden in practice repeatedly but activated in tournament match 1. Match 2 showed mid-tournament recovery is possible. Competition-specific mental preparation is the primary offseason development target. (2) Shoulder rehabilitation — must be fully resolved before next competitive season. (3) Reflection quality regression (RQS dropped from 4 to 2) — may reflect emotional protection after competition disappointment. Monitor whether the Week 17 depth returns as processing continues."
+  },
+
+  "most_important_controllable": "Committing fully to the offseason rehabilitation and strength plan — treating the offseason as the foundation for next season's competitive readiness",
+
+  "micro_commitment": {
+    "action": "Complete every scheduled shoulder rehab session this week and add 10 minutes of mindset journaling after each session — write one thing you're building toward.",
+    "when": "After every rehab session",
+    "measurement": "Zero missed rehab sessions and journal entry completed each time"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None. Season ended. Offseason rehabilitation and strength building.",
+    "anticipated_stressor": "Processing end of competitive season. Watching teammates compete while unable to participate. Maintaining motivation during extended rehabilitation period. Potential identity challenge: 'am I still a competitor if I'm not competing?'",
+    "athlete_stated_next_goal": "Get stronger. Rehab. Get my shoulder better."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Mixed-tier week with season-ending transition. Mon-Tue-Fri: drilled as hard as possible despite shoulder limitation + lifted. Wed-Thu: no practice, shoulder rehab. Sat: season-ending conversation with coach (mutual decision) + offseason planning session with VirtusFocus coordinator. Sun: rehab + conditioning + relaxation.",
+    "key_habit_signal": "The collaborative nature of the season-ending decision is the key signal. The athlete did not withdraw or disengage — he participated in the decision, met with his coach, then immediately planned the offseason with his VirtusFocus coordinator. This is the behavior of an athlete who has internalized process-over-outcome thinking. Also significant: achievement statement focuses on 'figured out a plan for the future' rather than dwelling on what was lost.",
+    "coach_reinforcement_cue": "Three offseason priorities to establish: (1) Frame this season as developmental data, not a results story — 19 weeks of documented growth. (2) The shoulder is the #1 priority — every rehab session completed is competitive preparation for next season. (3) The Fairmont State experience provided two critical pieces of data: the derailer activates in competition (match 1 lesson) AND the athlete can recover mid-tournament (match 2 lesson). Both are actionable for next season's competition preparation.",
+    "coach_avoidance_note": "Do not let the 0-2 record define the narrative. The athlete's own language ('clear improvement from last year') and the collaborative season-ending decision show healthy processing. The reflection quality drop (RQS 4→2) may indicate emotional guardedness — do not push for deeper reflection immediately. Let the athlete process on his own timeline. Watch for withdrawal signs during rehabilitation period."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Season ended due to shoulder injury. Shoulder 'gave out and popped' during last competition. Extended rehabilitation period ahead. Monitor for motivation decline during non-competitive offseason. Reflection quality dropped from 4 to 2 — may indicate emotional protection or processing fatigue. Goals reduced to three items (lowest specificity in program)."
+  },
+
+  "next_week_focus_question": "You figured out a plan for the future — when you picture yourself stepping on the mat next season with a healthy shoulder, what's different about the way you wrestle?"
+}

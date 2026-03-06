@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "January 5 – January 11, 2026",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "FIRST COMPETITION WEEK — derailer activated in tournament. Training preparation was strong (Mon-Fri all disciplined, shoulder pushed through). Saturday: first match derailer fully activated ('completely blanked out and forgot everything I wrestled like nothing like how I do in the wrestling room'). Second match approach-framed execution returned ('wrestling very well, 1-1 with a minute left') before shoulder gave out. Post-competition emotional processing shows eventual reframe ('all of this is a process'). Alignment is partial because the derailer directly impacted competitive performance — the core identity goal (competing with self-belief) was disrupted in match 1."
+  },
+
+  "athlete_state": "First competition in nearly a year exposed the full derailer pattern in tournament format — blanked out in match 1, recovered approach in match 2 before shoulder failure — followed by emotional processing and cognitive reframe",
+  "core_pattern": "Derailer activation under competitive pressure confirmed: practice-level performance does not automatically transfer to tournament format. Match 1 was a complete derailer event — overthinking replaced all trained execution. Match 2 showed rapid within-tournament recovery (approach-framed, competitive at 1-1). Shoulder injury interrupted the recovery test. Post-competition processing moved from devastation to perspective within hours.",
+  "behavioral_root_cause": "The practice-to-competition transfer gap is the fundamental issue. Evidence-based confidence from D1 qualifier takedowns (Week 17) was insufficient to override the derailer in tournament format. The environmental shift (crowd, referee, opponent uncertainty, stakes) activated avoidance-framed thinking that bypassed all practice-built approach patterns. Critically, match 2 shows the override IS accessible even within the same tournament — the derailer is not permanent, just powerful on first activation.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before each match at Fairmont State Open, say to yourself: 'I took down a D1 qualifier — just go score.' Then execute your first attack within 30 seconds.",
+    "execution_status": "Partial",
+    "execution_notes": "Match 1: derailer activation suggests the pre-match self-talk was either not executed or was overridden by the competition environment — 'completely blanked out and forgot everything.' Match 2: approach-framed execution returned ('just wanted to wrestle and see how I did') — closer to the intended mindset. The commitment was partially executed with match 2 showing the intended approach, but match 1 was a clear miss.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Keep leveling up. Keep getting stronger. Keep getting faster. Keep getting sharper mentally. Keep getting in great shape. Perform on Saturday without fear and with fun and with the mindset that I don't care about winning or losing I'm just gonna go out there and score as many points as possible and the rest will take care of itself.",
+    "achievement_statement": "Was able to see what I needed to work on in the practice room. Was also able to see what I have improved on from last year.",
+    "key_phrase": "All of this is a process",
+    "mindset_resonance": "Take five minutes today to reset your goals and recommit to one standard"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "6 (Monday through Saturday — explicit scores: Mon-Tue gym/lift/run, Wed hard drill + matches, Thu extra wrestling + technique work, Fri hard practice + weight management, Sat competition day with full preparation and emotional processing)",
+      "neutral_days": "1 (Sunday — behaviorally classified: practice attendance but couldn't go live due to shoulder, maintained side work and sweat)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My work ethic.' Maintained from last week. Consistent effort-focused controllable.",
+    "influence_quality": "Dual: kind of people around me, results from what I do outside of the room. Stable influence framing.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "High",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "18",
+    "rolling_win_rate_4wk": "0.61",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "High",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "High"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override in practice (Wk3) → Peak discipline (Wk4-13) → Hamstring injury (Wk14) → Recovery (Wk15-16) → Breakthrough return with evidence-based confidence (Wk17) → FIRST COMPETITION: derailer activation confirmed, within-tournament recovery demonstrated, shoulder re-injury (Wk18). The 18-week arc reaches its definitive test point. The derailer — overridden repeatedly in practice — activated fully in match 1 of the first tournament. But match 2 showed rapid recovery to approach-framed execution before the shoulder interrupted. The pattern is clear: the derailer is environmental (tournament-specific), not dispositional (always present). Post-competition reframe shows developmental maturity.",
+    "milestone_this_week": "Three critical data points: (1) Match 1: full derailer activation in competition — 'completely blanked out and forgot everything.' This is the first definitive evidence of the practice-to-competition transfer gap. (2) Match 2: within-tournament approach recovery — 'just wanted to wrestle and see how I did,' competitive at 1-1 before shoulder failure. This proves the derailer can be overridden mid-tournament. (3) Post-competition reframe: 'all of this is a process... No one is going to care how I do my redshirt season.' Cognitive reprocessing within hours rather than days.",
+    "open_thread": "Shoulder re-injury during competition. 0-2 tournament result. Two competing narratives: (a) the derailer won match 1 — practice confidence didn't transfer; (b) the athlete recovered by match 2 and was winning before the shoulder failed. How the athlete and coaching staff frame this week will shape the remaining developmental trajectory. Goals shifted to 'get healthy' and 'keep getting better even if I'm limited' — injury management overtaking competitive preparation."
+  },
+
+  "most_important_controllable": "Processing the competition experience accurately — recognizing match 2 improvement as evidence of within-tournament growth, not just match 1 as evidence of failure",
+
+  "micro_commitment": {
+    "action": "Write down three specific things you did well in match 2 at Fairmont State Open. Keep that list visible during every practice this week.",
+    "when": "Write the list by Monday evening",
+    "measurement": "List written and referenced at least once during each practice session"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — just practice. Shoulder issues limiting live wrestling.",
+    "anticipated_stressor": "Shoulder pain continuing from competition. Emotional aftermath of 0-2 tournament result. Risk of regression into avoidance-framed thinking after derailer activation. Balancing competitive ambition with physical limitation.",
+    "athlete_stated_next_goal": "Get healthy. Keep getting stronger. Keep getting in great shape. Keep reflecting my goals and working towards them. Keep getting better even if I'm limited."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Growth-tier week despite competition adversity. Mon-Tue: gym/lift/run (no wrestling available). Wed: hard practice, won match 1, competitive loss to best guy in room. Thu: extra wrestling + technique details + last hard run. Fri: hard practice, pushed through shoulder soreness, weight management. Sat: COMPETITION — made weight (first battle won), good warm-up, match 1 derailer activation (blanked out), match 2 approach recovery (1-1 before shoulder gave out). Sun: practice with shoulder limitation, maintained side work.",
+    "key_habit_signal": "The post-competition cognitive reframe happened within HOURS, not days. Week 14 (hamstring injury) took a full day to process. This competition — with a worse emotional load (0-2, shoulder, friend's death dedication) — was processed faster. The reframe quality is also higher: 'no one is going to care how I do my redshirt season' shows perspective development. Also: the athlete's own assessment mentions 'clear improvement from last year to this year' — he can hold both disappointment and progress simultaneously.",
+    "coach_reinforcement_cue": "Three priority reinforcements: (1) Match 2 is the real data — he recovered approach-framed execution WITHIN the tournament. Name this explicitly. (2) Making weight was the first win — reinforce the preparation discipline. (3) The reframe ('it's a process') is exactly right — this is not a failure week, it's a learning week. The derailer was exposed in its natural environment, which is the prerequisite for addressing it.",
+    "coach_avoidance_note": "Do NOT minimize match 1. The athlete needs to acknowledge the blanking out happened AND that he recovered. Pretending it didn't happen undermines the learning. Also: shoulder status is concerning — popping during competition is a medical issue, not a coaching one. Ensure medical evaluation before any return to live wrestling."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Shoulder 'gave out and popped' during match 2. Post-competition shoulder issues continued through Sunday. Medical evaluation needed before return to live. Emotional load: 0-2 tournament, shoulder re-injury, friend's death dedication, first competition in ~1 year. High emotional intensity week with physical injury component."
+  },
+
+  "next_week_focus_question": "You said it's all a process — what did match 2 teach you about who you are when the nerves are gone and you just wrestle?"
+}

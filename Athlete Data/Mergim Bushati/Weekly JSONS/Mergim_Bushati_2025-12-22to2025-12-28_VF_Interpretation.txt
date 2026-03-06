@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "December 22 – December 28, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Unexpected return to wrestling Monday (AT cleared), completed practice despite soreness. Maintained lifting + running schedule through Christmas break. Sunday hamstring flare-up managed with rest rather than pushing through — appropriate self-regulation. Hinge habit maintained across the full week even during holiday break."
+  },
+
+  "athlete_state": "Gradual return-to-wrestling during holiday break with maintained conditioning — managing hamstring recovery while preserving training momentum",
+  "core_pattern": "Cautious return with conditioning maintenance — wrestling Mon-Tue then shifting to lift+run supplementation Wed-Sat when away from team. Sunday rest when hamstring flared. Balancing recovery with readiness.",
+  "behavioral_root_cause": "The Christmas break self-directed training pattern mirrors Week 13 (Thanksgiving break) but with injury management added. Athlete has internalized the self-directed structure but is now moderating intensity to protect the hamstring — showing improved body awareness.",
+
+  "prior_commitment_result": {
+    "prior_action": "Complete every prescribed rehab session AND maintain lifting schedule with hamstring-safe modifications",
+    "execution_status": "Completed",
+    "execution_notes": "Mon-Tue: wrestling + lifting at school before break. Wed-Sat: daily gym sessions with lifting + running maintained on schedule. Sunday: hamstring flare-up led to rest — appropriate modification rather than ignoring the signal. Rehab maintained through the week. Lifting schedule followed consistently.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Keep getting healthy. Get back on the mat. Keep watching and learning. Keep getting stronger. Keep getting in great shape. Keep getting better.",
+    "achievement_statement": "Got healthier. Got stronger. Got in better shape. Got sharper mentally. Enjoying the little things more.",
+    "key_phrase": "Enjoying the little things more",
+    "mindset_resonance": "Stay composed and steady during a tough moment"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "2 (Monday, Tuesday — explicit scores: unexpected wrestling return, practice completion, lifting)",
+      "neutral_days": "5 (Wednesday through Sunday — behaviorally classified: drove home, daily gym/lift/run routine, Christmas break, hamstring flare-up Sunday rest)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My conditioning.' Physical preparation focus continued from last week.",
+    "influence_quality": "Expanded: people I surround myself with, how I react after different highs and lows. New: emotional reaction management as an influence factor.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "16",
+    "rolling_win_rate_4wk": "0.43",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Peak discipline cycle (Wk4-13) → Hamstring injury (Wk14) → Adaptive recovery (Wk15-16). Third consecutive Mixed week during injury period. The athlete is maintaining behavioral engagement (daily training, conditioning, film study) but physical limitation caps the tier. Key development: 'enjoying the little things more' and emotional reaction management in Bullseye suggest a deepening of non-competitive self-awareness.",
+    "milestone_this_week": "Unexpected wrestling return Monday (AT-cleared). Completed practice despite hamstring soreness. This was psychologically important: the athlete proved he can still wrestle with the injury, even if cautiously. Also: Sunday self-regulation — choosing rest over push-through when hamstring flared — shows improved body awareness.",
+    "open_thread": "Three consecutive Mixed weeks (Wk14-16). Rolling win rate dropped to 0.43 (from 0.86 at Wk13 peak). The athlete needs the return to full wrestling to rebuild Growth trajectory. Whether the hamstring allows full return in January is the physical limiter."
+  },
+
+  "most_important_controllable": "Balancing return-to-wrestling urgency with hamstring recovery — training hard enough to maintain readiness without re-aggravating the injury",
+
+  "micro_commitment": {
+    "action": "Maintain daily conditioning (lift + run) and add one hamstring-specific rehab exercise to every session",
+    "when": "Every training day",
+    "measurement": "At least 5 days with conditioning + rehab exercise completed"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None confirmed. January return-to-competition timeline per doctor.",
+    "anticipated_stressor": "Return from holiday break to team practice. Hamstring recovery progress will determine competition readiness. Transition from self-directed holiday training to team structure.",
+    "athlete_stated_next_goal": "Keep getting stronger. Keep getting in good shape. Keep getting sharper mentally. Keep getting healthier. Get back on the mat wrestling again. Get better."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Mon-Tue: unexpected wrestling return (AT cleared), completed practice + lifting. Wed-Sat: Christmas break, maintained daily gym routine (lift + run). Sunday: hamstring flare-up, chose rest. 'Enjoying the little things more' suggests gratitude development during injury period.",
+    "key_habit_signal": "Sunday self-regulation: choosing rest when hamstring flared rather than pushing through. In earlier weeks (Wk2-7), pushing through was the dominant pattern. Now the athlete is distinguishing between productive discomfort and injury risk — this is a maturation signal.",
+    "coach_reinforcement_cue": "Reinforce the Sunday rest decision as strength, not weakness. Also: 'enjoying the little things more' is the first time gratitude/appreciation language has appeared organically. This broadening of value beyond wrestling performance is psychologically healthy.",
+    "coach_avoidance_note": "Do not create urgency around competition return. The hamstring flare-up Sunday indicates the injury is not fully resolved. Let the medical team drive return-to-competition timeline."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Hamstring flare-up Sunday despite managed activity. Injury recovery slower than expected. Holiday isolation from team medical staff. Monitor for premature return-to-competition pressure."
+  },
+
+  "next_week_focus_question": "You said you're enjoying the little things more — what's one little thing from this week that you want to carry into every week, whether you're wrestling or not?"
+}
