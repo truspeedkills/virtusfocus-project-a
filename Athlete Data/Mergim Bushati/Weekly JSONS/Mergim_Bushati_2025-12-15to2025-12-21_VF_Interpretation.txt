@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "December 15 – December 21, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Hinge habit active under injury constraints: maintained daily structure (finals, rehab, lifting during practice, watching/learning). Wednesday attempted practice despite discomfort — pushed through but appropriately managed. Thursday doctor confirmed moderate tear with January return timeline. Maintained diet discipline and learning engagement throughout."
+  },
+
+  "athlete_state": "Injury management with maintained engagement — structured rehab, academic performance, and adapted training despite inability to wrestle",
+  "core_pattern": "Adaptive persistence — finding controllable activities within injury constraints (lifting during practice, watching film, maintaining diet, passing finals) while managing frustration about inability to participate fully",
+  "behavioral_root_cause": "The Week 1 pattern of 'showing up even if I can't do anything' has evolved into a more structured adaptation: lifting during practice, attending to learn, maintaining physical preparation for return. The behavior is more intentional than Week 1 but the context is emotionally harder.",
+
+  "prior_commitment_result": {
+    "prior_action": "Watch at least 20 minutes of wrestling film each day with a specific focus: identify one technique or position you want to implement when you return",
+    "execution_status": "Completed",
+    "execution_notes": "Multiple references to watching wrestling throughout the week: 'Watched wrestling Tried to learn' appears across Wed-Sun entries. 'Watched everything and tried to learn' repeated during practice attendance. Film study was consistent even on rest days. The commitment to learning through observation was fully maintained.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get healthy. Watch as much wrestling as possible even if I can't compete in it. Continue to be grateful.",
+    "achievement_statement": "I got healthier. I got stronger. I learned more from watching wrestling. My mind got stronger.",
+    "key_phrase": "It isn't serious and that it is only a moderate tear but I do need to continue rehabbing",
+    "mindset_resonance": "Slow one skill down and practice it with full concentration"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "2 (Monday, Tuesday — explicit scores: finals, rehab, lifting during practice, watching/learning)",
+      "neutral_days": "5 (Wednesday through Sunday — behaviorally classified: finals, rehab, attempted practice with discomfort, doctor visit confirmed moderate tear, team away for tournament, lifting, diet maintenance, rest day)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My conditioning.' Shifted from effort/attitude to physical preparation focus — appropriate given injury recovery context.",
+    "influence_quality": "Dual: how hard I am working, my mentality. Unusual placement of mentality in influence ring rather than control.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "15",
+    "rolling_win_rate_4wk": "0.61",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Discipline cycle (Wk4-13) → Injury disruption (Wk14) → Adaptive persistence under injury (Wk15). The narrative has shifted from building competitive readiness to managing injury with maintained engagement. The athlete is replicating the Week 1 pattern at a higher developmental level — more structured, more intentional, more emotionally regulated. Doctor confirmation of moderate tear with January return timeline provides a concrete recovery target.",
+    "milestone_this_week": "Doctor confirmation: moderate tear, not serious, will compete in January. This replaces uncertainty with a concrete timeline. Athlete's response was regulated — no emotional spike, immediate shift to rehabilitation compliance. Also: passed all finals while managing injury.",
+    "open_thread": "Two consecutive Mixed weeks post-injury. The January return timeline creates a new preparation cycle. Whether the athlete can maintain developmental gains (self-directed training, approach-framed execution, derailer management) through 3-4 weeks of limited participation is the recovery arc question."
+  },
+
+  "most_important_controllable": "Rehabilitation compliance and physical preparation maintenance — keeping conditioning and strength up so return to mat is seamless",
+
+  "micro_commitment": {
+    "action": "Complete every prescribed rehab session this week AND maintain lifting schedule with hamstring-safe modifications",
+    "when": "Daily",
+    "measurement": "Zero missed rehab sessions and at least 4 lifting sessions completed"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None. Doctor indicated January return to competition timeline.",
+    "anticipated_stressor": "Christmas break approaching — self-directed training required again. Team traveling for tournament without athlete. Isolation from competitive environment during holiday.",
+    "athlete_stated_next_goal": "Keep getting healthy. Get back on the mat. Keep watching and learning. Keep getting stronger. Keep getting in great shape. Keep getting better."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Finals week + hamstring recovery. Mon-Tue: finals passed, rehab, lifting during practice. Wed: attempted practice with discomfort — appropriately managed. Thu: doctor confirmed moderate tear (January return). Fri-Sun: team away for tournament, athlete maintained lifting, diet, and film study independently.",
+    "key_habit_signal": "Emotional regulation: doctor's diagnosis received with measured response — immediate shift to rehabilitation compliance rather than emotional spiral. This contrasts with Friday's (Wk14) initial devastation. The 1-week processing time has stabilized the emotional response.",
+    "coach_reinforcement_cue": "Academic performance maintained (passed all finals) alongside injury management. Reinforce the multi-domain discipline: grades, rehab, lifting, film study all maintained simultaneously. This is the kind of comprehensive structure that supports long-term development.",
+    "coach_avoidance_note": "Do not push return-to-mat timeline. Doctor said January — let the medical team lead. Support the rehab compliance commitment rather than training intensity. Christmas break may isolate the athlete from team support — check in proactively."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Moderate hamstring tear confirmed. January return timeline. Wednesday attempted practice despite discomfort — appropriate coaching intervention prevented over-exertion. Christmas break isolation from team support is a monitoring point."
+  },
+
+  "next_week_focus_question": "The doctor said January — what's the one thing you can do every single day between now and then that you're 100% in control of?"
+}

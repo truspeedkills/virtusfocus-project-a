@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "December 8 – December 14, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "HAMSTRING INJURY Thursday — possible tear. Hinge habit tested under adversity: athlete maintained training structure Mon-Wed at peak level but injury disrupted participation Thu-Sun. Friday emotional response was significant: 'My heart sank... I was so upset I just got back fully and then I get injured again.' Recovery reframe by end of Friday using external quote. Weekend shifted to rehab and wrestling film study — maintaining involvement despite inability to participate."
+  },
+
+  "athlete_state": "Injury-disrupted with significant emotional response followed by cognitive reframe within 24 hours",
+  "core_pattern": "Peak training → injury → emotional devastation → cognitive reframe → adapted engagement. The pattern from Week 1 (showing up despite inability to participate) re-emerged, but this time with higher emotional stakes because the athlete was performing at peak level when injured.",
+  "behavioral_root_cause": "Second major injury (shoulder April, hamstring December) during peak performance period creates compounding identity friction: the aspirational self (national champion) is repeatedly blocked by the physical self (injury-prone body). The reframe ('whatever happened to you was the best possible thing') is cognitively adaptive but untested against sustained frustration.",
+
+  "prior_commitment_result": {
+    "prior_action": "Create a written daily training plan for the full week: specify morning and evening sessions with exact activity for each",
+    "execution_status": "Partial",
+    "execution_notes": "Mon-Wed: training plan appeared to be executed at high level (lifts before practice, drilling hard, live wrestling). Thu: injury disrupted plan. Fri-Sun: no evidence of written adapted plan, but athlete shifted to rehab and film study. Plan executed 3 of 7 days before injury intervention.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Keep getting in better shape. Keep sharpening my mind. Keep doing mental reps. Keep getting better. Keep getting closer to my goals. Get stronger. Keep getting better at wrestling.",
+    "achievement_statement": "Got better the days I wrestled. Got stronger. Got faster. Got in better shape. Got stronger mentally. Got better overall.",
+    "key_phrase": "My heart sank right there I was so upset I just got back fully and then I get injured again",
+    "mindset_resonance": "Send one genuine message of appreciation to a teammate, coach, or family member today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3 (Monday, Tuesday — explicit scores; Wednesday — behaviorally classified: classes, lifted, practiced hard, drilled hard, live wrestling, coaching praise)",
+      "neutral_days": "4 (Thursday — behaviorally classified: practiced but felt slower, got hurt, didn't continue; Friday — behaviorally classified: trainers evaluation, emotionally devastated, took day to self, cognitive reframe; Saturday — behaviorally classified: rehab, watched wrestling; Sunday — behaviorally classified: rehab, watched wrestling)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My attitude.' Simplified under stress — appropriate coping response.",
+    "influence_quality": "Knowledge-focused: how much I am learning, who I surround myself with. Shifted from effort to learning given inability to train.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "High",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Declining",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Volatile",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "14",
+    "rolling_win_rate_4wk": "0.75",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Discipline cycle (Wk4-10) → Live wrestling + derailer management (Wk11-12) → Self-directed peak (Wk13) → Second major injury disruption (Wk14). The developmental arc was at its highest point entering this week — 4 consecutive Growth weeks, rolling win rate at 0.86, self-directed training resolved. Hamstring injury resets the physical trajectory while the mental and behavioral gains remain intact. This mirrors the shoulder injury that preceded program entry.",
+    "milestone_this_week": "Thursday injury emotional processing: 'My heart sank... I was so upset I just got back fully.' Friday cognitive reframe using external quote: 'whatever happened to you was the best possible thing that could have happened at that time.' The speed of reframe (devastation Friday morning → philosophical acceptance Friday evening) shows emotional regulation capacity has developed during the program.",
+    "open_thread": "Second major injury creates a repeated narrative: build momentum → get injured → restart. Whether this pattern creates learned helplessness ('my body keeps betraying me') or resilient adaptation ('I've rebuilt before and I'll rebuild again') is the defining question for the remaining program weeks."
+  },
+
+  "most_important_controllable": "Maintaining mental and knowledge-based development during physical limitation — watching wrestling, learning, staying connected to the sport while body heals",
+
+  "micro_commitment": {
+    "action": "Watch at least 20 minutes of wrestling film each day with a specific focus: identify one technique or position you want to implement when you return to the mat",
+    "when": "Every day this week",
+    "measurement": "At least 5 days with documented technique observation"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None. Competition timeline uncertain pending hamstring evaluation.",
+    "anticipated_stressor": "Medical evaluation for hamstring — possible tear diagnosis. Extended time away from wrestling during peak competitive season. Watching teammates compete while injured. Potential compounding frustration from second major injury.",
+    "athlete_stated_next_goal": "Get healthy. Watch as much wrestling as possible even if I can't compete in it. Continue to be grateful."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Mon-Wed peak training with coaching praise. Thursday: hamstring injury during live (leg over-extended with pops). Friday: emotional devastation → trainers evaluation (possible hamstring tear) → cognitive reframe by end of day. Sat-Sun: rehab and wrestling film study. The split week pattern is injury-driven, not behavioral.",
+    "key_habit_signal": "Friday's emotional processing speed: devastation in morning → external quote reframe → acceptance by evening. In Week 1, the athlete accepted injury limitations quietly. Now after 13 weeks, the emotional investment is higher (because he has more to lose) but the recovery mechanism is also more developed.",
+    "coach_reinforcement_cue": "The shift to 'continue to be grateful' in goals represents emotional maturity under adversity. Also reinforce that Mon-Wed performance was at the highest level of the program — the injury doesn't erase that progress. The wrestling film study commitment shows continued engagement.",
+    "coach_avoidance_note": "Do not minimize the emotional impact of the second injury. 'You'll come back stronger' is premature until the athlete has processed the frustration. Support the emotional processing before pushing return-to-activity planning. Monitor for withdrawal or motivation loss in coming weeks."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Possible hamstring tear — medical evaluation required. Second major injury in 8 months (shoulder April, hamstring December). Physical rehabilitation plan needed. Monitor emotional state: 'I was so upset' indicates high emotional investment. Gratitude language may mask deeper frustration."
+  },
+
+  "next_week_focus_question": "You said everything happens for a good reason and it will all come full circle — what does 'full circle' look like for you right now?"
+}

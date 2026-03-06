@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "November 17 – November 23, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "CLEARED FOR COMPETITION. First live wrestling this week. Derailer tested under live conditions: Friday shot worked in live for the first time, Saturday experienced mental block during live (overthinking activated), Sunday bounced back with strong practice after dad conversation. Full derailer cycle observed: approach-framed execution → derailer activation → recovery within 24 hours."
+  },
+
+  "athlete_state": "First live competition week — derailer activated during Saturday live wrestling but recovered Sunday through external support and deliberate effort",
+  "core_pattern": "Approach-framed execution in live situations with same-week derailer activation and recovery. Friday: new shot hit in live for first time. Saturday: mental block activated during live — 'started overthinking when I was going live.' Sunday: deliberate recovery through dad conversation and focused practice.",
+  "behavioral_root_cause": "Live wrestling creates higher cognitive load than drilling. When competition-level stakes appear (Saturday practice intensity), the overthinking pattern re-emerges. Recovery mechanism (external support + next-day focused effort) is functional but reactive.",
+
+  "prior_commitment_result": {
+    "prior_action": "Schedule two extra wrestling workouts this week with a partner or coach, each with a specific technical focus written down beforehand",
+    "execution_status": "Completed",
+    "execution_notes": "Multiple extra workouts completed: Tuesday extra workout with partner, Wednesday extra workout with partner and coach focusing on fine-tuning details. Both had specific technical focus (fine details, finishing positions). Additionally completed extra conditioning before/after practice multiple days.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get better at finishing shots. Keep working on underhook. Keep getting comfortable with hand fight. Keep feeling confident in the process.",
+    "achievement_statement": "Got cleared for wrestling. Got a lot better in the neutral position. Feeling really strong on my feet. Finished on a lot of crispy shots and set ups. Became a better wrestler overall.",
+    "key_phrase": "I need to be able to break through this mental block and be able to compete hard 6 practices compared to just 5",
+    "mindset_resonance": "Do one thing today that challenges your current limits"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "6 (Monday through Saturday — all explicit scores)",
+      "neutral_days": "1 (Sunday — behaviorally classified: practice with recovery focus after Saturday setback, then work)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My work ethic / how hard I work.' Consistent effort focus.",
+    "influence_quality": "Improvement-linked: how much better I am improving, mindsets of people around me.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Moderate",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "11",
+    "rolling_win_rate_4wk": "0.75",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override in drilling (Wk3) → Discipline cycle (Wk4-10) → First live wrestling with derailer activation and same-week recovery (Wk11). The fundamental arc test arrived: live competition. Friday proved the approach-framed scoring transfers to live (shot worked). Saturday proved the derailer is still active under higher pressure (mental block during live). Sunday proved the recovery mechanism works (dad conversation → focused practice). The derailer is not eliminated — it is being managed.",
+    "milestone_this_week": "Three-part milestone: (1) Cleared for competition. (2) Friday: shot worked in live for the first time — 'what I'm working on in practice is working.' (3) Saturday: derailer activation identified in real-time by athlete — 'I even started overthinking when I was going live.' The self-awareness of the derailer activating is itself a developmental advance.",
+    "open_thread": "Saturday's mental block on the 6th practice day is a specific pattern: 'I never compete as well on Saturdays compared to the week and I am not sure why.' This is a contextual derailer — fatigue or end-of-week conditions create vulnerability. First competition (Lock Haven Open Nov 30) approaching."
+  },
+
+  "most_important_controllable": "Pre-live mental preparation — establishing an approach-framed execution plan before live wrestling begins, especially on Saturday practices",
+
+  "micro_commitment": {
+    "action": "Before Saturday practice, write down your execution plan for live: one specific scoring setup you will attempt in the first 30 seconds of each go, regardless of how you feel",
+    "when": "Saturday morning before practice",
+    "measurement": "Written plan completed AND first-attack attempted in at least 3 of 5 live goes"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Lock Haven Open — November 30. First competition back in 7 months.",
+    "anticipated_stressor": "First competition in 7 months. Derailer will be maximally tested. Pre-performance overthinking pattern ('don't mess up') is the primary concern. Saturday mental block pattern may amplify under tournament pressure.",
+    "athlete_stated_next_goal": "Get in better shape. Keep getting stronger. Keep working my mind. Keep getting better in positions. Not only get 1000 shot reps but get a 1000 mental reps of positive thoughts / affirmations."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Cleared for competition Tuesday. Six consecutive Win days Mon-Sat. Shoulder tweaked Thursday but managed. Friday landmark: shot worked in live for first time. Saturday: self-identified mental block during live wrestling. Sunday: recovered through dad conversation and focused practice.",
+    "key_habit_signal": "Saturday self-identification of the mental block is the most important signal this week. The athlete named it in real time: 'I struggle with Saturday practices... I even started overthinking when I was going live.' This awareness is the prerequisite for developing a pre-emptive countermeasure.",
+    "coach_reinforcement_cue": "Three things to reinforce: (1) Friday shot working in live proves practice transfers. (2) Saturday self-awareness of the mental block is growth, not failure. (3) Sunday recovery after talking to dad shows the athlete has a functional support system.",
+    "coach_avoidance_note": "Do not create performance expectations for Lock Haven Open. First competition in 7 months after two injuries should be framed as a learning and execution opportunity, not a results event. The derailer will be strongest in the first match."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Shoulder tweaked Thursday — did not continue practice. Managed appropriately with coaching staff. Lock Haven Open in 1 week — first competition in 7 months. Pre-competition mental preparation should be prioritized."
+  },
+
+  "next_week_focus_question": "Saturday you named your mental block out loud — that's the first step to beating it. What's your plan for when that same feeling shows up at Lock Haven?"
+}

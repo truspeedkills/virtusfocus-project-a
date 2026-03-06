@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "December 1 – December 7, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Hinge habit expressed at maximum level during break: self-directed training plan executed daily while teammates rested. Wrestling at 5:30 AM, runs, lifting at night — all without team structure. Sunday return proved investment: outperformed teammates who were 'getting over Thanksgiving break.' The self-directed structure gap (Wk5, 8, 9) appears resolved."
+  },
+
+  "athlete_state": "Self-directed peak training during break — executing a structured plan independently while teammates rest",
+  "core_pattern": "Autonomous training execution — created and followed a self-directed daily plan (morning wrestling, afternoon wrestling, evening lifting) without team structure or external accountability for the first time",
+  "behavioral_root_cause": "Competitive urgency from Lock Haven preparation (even though cancelled) sustained momentum. The training plan was built for competition preparation and continued by inertia. 'All the extra work did pay off' — tangible evidence validated the self-directed approach.",
+
+  "prior_commitment_result": {
+    "prior_action": "In every live go, commit to scoring in the last 30 seconds regardless of score situation",
+    "execution_status": "Unknown",
+    "execution_notes": "Break week — no standard live wrestling sessions with team. Athlete was training independently with various partners. Cannot assess last-30-seconds commitment from break training format.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get in better shape. Keep getting stronger. Keep working my mind. Keep getting better. Keep getting closer to my goals.",
+    "achievement_statement": "Got in better wrestling shape. Sharpened my mind. Got better at wrestling. Got stronger. Got closer and closer to my goals. Got better.",
+    "key_phrase": "Everyone was getting over Thanksgiving break and not doing much while I was the opposite and my words came back to me all the extra work did pay off",
+    "mindset_resonance": "Take one bold step today in pursuit of your goal"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5 (Monday, Tuesday — explicit scores; Wednesday — behaviorally classified: double wrestling sessions + run + lift; Thursday — behaviorally classified: wrestled, ran, lifted on holiday; Sunday — behaviorally classified: hard team practice, in better shape than teammates)",
+      "neutral_days": "2 (Friday — behaviorally classified: no wrestling, run + lift + film; Saturday — behaviorally classified: rest day, Lock Haven cancelled, emotional processing)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My attitude to working hard.' Effort + attitude combined.",
+    "influence_quality": "Consistent: results from hard work, people I surround myself with.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "13",
+    "rolling_win_rate_4wk": "0.86",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Discipline cycle with weekend gaps (Wk4-10) → Live wrestling + derailer management (Wk11-12) → Self-directed break training resolving weekend gap pattern (Wk13). The most significant structural change: the athlete independently created and executed a multi-session daily training plan during break with no external accountability. This directly addresses the recurring weekend/off-day disengagement pattern from Weeks 5, 8, and 9.",
+    "milestone_this_week": "First fully self-directed training week: 5 AM wrestling sessions, two-a-day practices, evening lifts, maintained through holiday. Sunday tangible proof: outperformed teammates who rested during break. The gap between self-directed and team-directed structure has narrowed significantly.",
+    "open_thread": "Lock Haven cancellation processed. No competition on calendar. The athlete is training at competition-preparation intensity without a competition target. Whether this intensity is sustainable without a competition goal, or whether the next competition opportunity creates re-emergence of the pre-performance derailer, remains the defining arc question."
+  },
+
+  "most_important_controllable": "Sustaining self-directed training intensity when no competition is scheduled — training for growth rather than for a specific event",
+
+  "micro_commitment": {
+    "action": "Create a written daily training plan for the full week: specify morning and evening sessions with the exact activity for each. Follow the plan regardless of what teammates are doing.",
+    "when": "Sunday evening before the week begins",
+    "measurement": "Written plan completed AND at least 5 of 7 days executed as planned"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None currently scheduled. Lock Haven was cancelled.",
+    "anticipated_stressor": "Return from break to normal team schedule. Sustaining self-directed intensity within team structure. No competition target on horizon may reduce urgency.",
+    "athlete_stated_next_goal": "Keep getting in better shape. Keep sharpening my mind. Keep doing mental reps. Keep getting better. Keep getting closer to my goals. Get stronger. Keep getting better at wrestling."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Break week executed as self-directed training camp: Mon 5 AM workout + home lift, Tue-Thu double wrestling sessions + runs + lifts (including Thanksgiving), Fri limited but active, Sat rest/emotional processing (Lock Haven cancelled), Sun team practice — outperformed teammates. Lock Haven cancellation reframed maturely.",
+    "key_habit_signal": "Self-directed training execution resolves the biggest structural gap in the program: weekend/off-day disengagement. The athlete created and followed a multi-session daily plan without external accountability for an entire week. This is the strongest evidence of developing internal motivation structure.",
+    "coach_reinforcement_cue": "Sunday's tangible validation ('my words came back to me all the extra work did pay off') is powerful because it's self-generated evidence. Reinforce that the training plan itself — not just the results — is the skill. Planning IS the competitive advantage.",
+    "coach_avoidance_note": "The intensity of break training (double wrestling sessions, 5 AM starts, evening lifts daily) is competition-preparation level. Without a competition target, this intensity may not be sustainable. Support transition to a maintainable training rhythm."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Extremely high training volume during break: double sessions multiple days, training through holiday. Physical recovery monitoring essential. Shoulder brace compliance should be verified for break training. No behavioral concerns."
+  },
+
+  "next_week_focus_question": "You proved to yourself that the extra work pays off — how do you keep that energy when it's just another regular practice week?"
+}

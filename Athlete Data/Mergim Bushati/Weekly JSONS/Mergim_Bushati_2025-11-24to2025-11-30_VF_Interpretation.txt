@@ -1,0 +1,109 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "November 24 – November 30, 2025",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Strongest week of the program. Seven consecutive days of high engagement including push-through under physical fatigue (Wednesday back-to-back practices without shoulder brace), competitive live scoring (Friday takedown in last 10 seconds), and emotional resilience (Saturday bad practice → Sunday recovery). Lock Haven Open cancelled by family/club coach, processed with mature reframe."
+  },
+
+  "athlete_state": "Peak program engagement with competitive resilience demonstrated across multiple high-demand situations",
+  "core_pattern": "Full-spectrum execution — training intensity, competitive scoring, push-through under fatigue, emotional recovery from bad practices, and external disappointment processing (Lock Haven cancellation) all handled within the same week",
+  "behavioral_root_cause": "Approach-framed execution is becoming default mode: Friday's last-10-seconds takedown shows competitive instinct overriding defensive/avoidance impulses even in win-protection situations",
+
+  "prior_commitment_result": {
+    "prior_action": "Before Saturday practice, write down execution plan for live: one specific scoring setup to attempt in first 30 seconds of each go",
+    "execution_status": "Partial",
+    "execution_notes": "Friday: explicit evidence of approach-framed execution in live — last go, up on points, chose to score rather than defensively down-block. This shows competitive instinct but the specific Saturday pre-written plan is not evidenced. Saturday had a self-identified poor practice. Sunday recovered with dad's support.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get multiple wrestling workouts. Get a strong hard lift before or after practice. Make sure I am really focusing on the fine details of finishing my shots. Get a better cardio tank.",
+    "achievement_statement": "Got better overall with everything. Got stronger. Got in better shape. Got mentally stronger. Had a bad practice but I bounced back the next day and had a good day of practice.",
+    "key_phrase": "May have not started out great but I finished by completing a goal",
+    "mindset_resonance": "Do one thing today to the absolute best of your ability"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7 (Monday through Saturday — explicit scores; Sunday — behaviorally classified: deliberate recovery from Saturday, focused practice after dad conversation, work)",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Dual: 'My work ethic / attitude to getting better.' Combines effort and growth mindset.",
+    "influence_quality": "Consistent: people I surround myself with, results from hard work.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Moderate",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "12",
+    "rolling_win_rate_4wk": "0.82",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Recovery (Wk1-2) → Derailer override (Wk3) → Discipline cycle (Wk4-10) → First live with derailer activation (Wk11) → Peak engagement with competitive instinct and emotional resilience (Wk12). The athlete reached the highest sustained performance level: 7/7 Win days, competitive scoring in live situations, push-through under fatigue, and recovery from a bad practice within 24 hours. The Lock Haven cancellation was processed with maturity: 'all this hard work will pay off.'",
+    "milestone_this_week": "Friday last-go takedown: up on points with 10 seconds left, athlete chose to score rather than play defense. This is the behavioral inverse of the baseline avoidance framing ('don't mess up'). He chose to attack when the safe option was available. Also: Lock Haven cancellation handled with future-oriented reframe rather than reactive frustration.",
+    "open_thread": "Lock Haven cancelled — competition debut delayed. The athlete was emotionally prepared to compete. Whether this delay builds anticipation constructively or creates frustration/pressure accumulation for the next competition opportunity is the key question."
+  },
+
+  "most_important_controllable": "Maintaining competitive execution intensity even when outcomes are already secured — choosing to score rather than protect a lead",
+
+  "micro_commitment": {
+    "action": "In every live go this week, commit to scoring in the last 30 seconds regardless of the score situation — treat every ending as a chance to attack, not protect",
+    "when": "Every live wrestling session",
+    "measurement": "Attempted a scoring action in the final 30 seconds of at least 4 live goes"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Lock Haven Open November 30 was planned but cancelled — dad and club coach determined it was too early. No rescheduled competition yet.",
+    "anticipated_stressor": "Emotional processing of Lock Haven cancellation. Competition debut further delayed. Training volume at sustained peak — physical recovery needs.",
+    "athlete_stated_next_goal": "Get in better shape. Keep getting stronger. Keep working my mind. Keep getting better in positions. Get 1000 shot reps AND 1000 mental reps of positive thoughts / affirmations."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days — second perfect week (matching Wk7). Mon-Sat all scored Win. Extra workouts, lifts before/after practice daily. Wednesday pushed through back-to-back practices without shoulder brace. Friday: competitive live takedown in last 10 seconds. Saturday: bad practice with identified mental block. Sunday: dad-supported recovery with strong focused practice.",
+    "key_habit_signal": "Friday's last-go attacking behavior is the single most important competitive signal in the program. When the athlete could have played it safe, he chose to score. This is approach-framed execution under competitive conditions — the direct behavioral counter to the baseline 'don't mess up' framing.",
+    "coach_reinforcement_cue": "The Lock Haven cancellation response: 'I was upset at first but came to the realization that all this hard work will pay off' shows emotional regulation development. Reinforce both the Friday competitive instinct AND the Lock Haven reframe as evidence of mental growth.",
+    "coach_avoidance_note": "Do not push for a new competition date immediately. Let the athlete continue building in practice. The competition debut should be athlete-initiated or naturally timed, not pressure-created. Saturday mental block persists despite Friday breakthrough — this inconsistency is normal for Developing phase."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Wednesday practiced without shoulder brace — monitor for over-confidence in shoulder integrity. Training volume at sustained peak for 4+ weeks. Lock Haven cancellation may create delayed emotional impact. No immediate behavioral concerns."
+  },
+
+  "next_week_focus_question": "Lock Haven didn't happen — but the work you put in to prepare for it is still inside you. How do you keep building on that without a tournament on the calendar?"
+}
