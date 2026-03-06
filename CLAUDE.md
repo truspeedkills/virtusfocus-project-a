@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-06
-**Session Notes:** Mergim Bushati processed through full 5-stage pipeline (Stages 2-5). 19-week program — longest dataset in pipeline. Full arc: recovery → peak discipline → injury → breakthrough return → first competition → season-ending decision. All 12 audit criteria PASS (Week 18 validated — highest-complexity case).
+**Session Notes:** Execution Signal Strategy review and assessment complete. All design constraints confirmed. Ready for collaborative schema design in next session.
 
 ---
 
@@ -153,6 +153,15 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Reference Files: Uses the same 9 source files as the Coaching Output Engine (brand_voice, brand_themes, content_style_guide, System Identity, Message Framework, Deep Dive Framework, Reflection/Growth Model, JSON-to-Message Map, JSON Rules)
 - Model: Opus (recommended for judgment-intensive audit criteria)
 - Mode: Fully autonomous — PASS / AUTO-CORRECTED PASS / REJECT AND REGENERATE (no human in the loop)
+
+### Execution Signal Strategy Documents (External — Google Shared Drive)
+- Strategy: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\VirtusFocus_Execution_Signal_Strategy.md`
+- Pillar Signals: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\Pillar Based Coaching Signals.md`
+- WTD Signal Improvement: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\Win The Day App Signal Improvement.md`
+- Source Material — WTD: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\Source Material - Win the Day System in the Mindset Operating System.md`
+- Source Material — Bullseye: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\Source Material - Bullseye Method in the Mindset Operating System.md`
+- Source Material — Journaling: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\Source Material - Daily Journaling in the Mindset Operating System.md`
+- Source Material — Motivation Inventory: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\Source Material - Weekly Motivation Inventory in the Mindset Operating System.md`
 
 ### Versioning Rules (established this session)
 - Prompts + Instructions = new versioned files (never edit in place)
@@ -374,10 +383,121 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 19. Validated Coach Insights Engine v1.1 against Grace Kindel Weeks 5 and 3. Week 5 exposed Composite Readiness "Not Applicable" recommitment bug — perfect execution (7/7 Wins, no adverse events) produced Yellow instead of Green because "Not Applicable" ≠ "Strong" under literal rules. Patched determination rules in JSON_logic_reference.txt and SOP_Coach_Insights_Project_Instructions_v1.1.txt to treat "Not Applicable" as equivalent to "Strong." Week 3 (HIGH emotional intensity) validated compliance boundaries — zero leakage of coach frustration, personal details, or risk flags. Generated all 5 Weekly Performance Insights for Grace Kindel (Weeks 1-5). First complete Stage 4 run.
 20. Processed Tucker Lloyd through full 5-stage pipeline (Stages 2-5). First cross-athlete validation. Generated 3 v9.3 Interpretation JSONs, 3 Coaching Messages (v1.4), 3 Deep Dives (v1.4), and 3 Weekly Performance Insights (v1.1). Tucker is a fundamentally different athlete profile from Grace Kindel: Mixed tier (not Growth), structure-dependent execution (weekday Win / weekend Neutral-Missed), 2 consecutive Missed Sundays, declining goal specificity, stagnant consistency trend. Pipeline handled all differences correctly: Mixed tier → Steady (Yellow) Composite Readiness, Variable consistency signal, micro-commitment modality shift from Written to Behavioral after 2 non-executions. Editorial Audit PASS on all 12 criteria (Week 3 validated).
 21. Processed Mergim Bushati through full 5-stage pipeline (Stages 2-5). Longest dataset in pipeline: 19 weeks. Generated 19 v9.3 Interpretation JSONs, 19 Coaching Messages (v1.4), 19 Deep Dives (v1.4), and 19 Weekly Performance Insights (v1.1). Mergim is the third athlete profile validated: Wrestling, 184 lbs, Seton Hill, Developing phase throughout, Growth/Mixed oscillation pattern, two injury events (hamstring Wk14, shoulder re-injury Wk18), first competition with full derailer activation + within-tournament recovery, season-ending decision. Pipeline handled all 19-week complexity correctly including: 2 High EI weeks (Wk14 hamstring, Wk18 competition), only ↓ Attention (Orange) readiness signal in entire pipeline (Wk14), Elevated stress modifier shifting Green→Yellow (Wk18), micro-commitment modality adaptation (ORAL→WRITTEN after Partial execution). Editorial Audit PASS on all 12 criteria (Week 18 validated — highest-complexity case).
+22. Execution Signal Strategy review and assessment. Reviewed 7 strategy and source material documents covering the transition from Core Foundation (weekly recap only) to App ecosystem (daily granular data + weekly recap). Assessed integration with current v9.3 Interpretation schema, v1.4 Coaching Output rules, v1.1 Coach Insights specification. Identified 8 risks, resolved all with confirmed design constraints: dual-mode operation mandatory, execution signal is additive enrichment (not replacing), Morning Tune-Up is new input stream, all signals at app launch, 5 overlap resolutions decided (keep/rename/complementary), execution timing data is backend-only (never surfaced to coaches), Core Foundation athletes protected from degradation. Captured all decisions in CLAUDE.md Execution Signal Strategy section. No schema files changed — design-phase only.
+
+---
+
+## Execution Signal Strategy — Design Decisions (Confirmed 2026-03-06)
+
+### Context
+VirtusFocus is transitioning from the Core Foundation Program (single weekly check-in via PDF recap) to an App ecosystem (multiple daily inputs, real-time data collection, plus the weekly check-in). The Execution Signal Strategy adds a third signal category — execution-behavior signal — alongside the existing score signal and text signal. This measures *how the athlete uses the system* (timing, completion, sequence, consistency) rather than just *what they scored or wrote*.
+
+### Source Documents
+All strategy and source material documents are located at:
+`G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\`
+
+Files reviewed:
+- `VirtusFocus_Execution_Signal_Strategy.md` — Formal strategy document
+- `Pillar Based Coaching Signals.md` — Comprehensive signal design across all pillars
+- `Win The Day App Signal Improvement.md` — WTD-specific signal enhancement
+- `Source Material - Win the Day System in the Mindset Operating System.md`
+- `Source Material - Bullseye Method in the Mindset Operating System.md`
+- `Source Material - Daily Journaling in the Mindset Operating System.md`
+- `Source Material - Weekly Motivation Inventory in the Mindset Operating System.md`
+
+### Confirmed Design Constraints
+
+**1. Dual-Mode Operation (MANDATORY)**
+The pipeline must handle both Core Foundation athletes (weekly recap only) and App athletes (daily granular data + weekly recap) simultaneously. The `execution_behavior_signals` JSON block will include an `input_source` indicator (`"core_foundation"` vs `"app"`). When source is Core Foundation, all execution subfields populate with `"not available — weekly recap input only"` and all composite scores = `"insufficient data"`. Core Foundation athletes receive identical quality output to what they receive today — execution signal is additive enrichment, never a scoring dependency. No existing field calculation, growth phase threshold, consistency classification, or coaching output routing changes based on whether execution data is present.
+
+**2. Execution Signal Is Additive, Not Replacing**
+All existing v9.3 schema fields remain valid and unchanged. The `execution_behavior_signals` block sits alongside existing fields. The 5-stage pipeline architecture is unchanged. WTD scoring, Bullseye classification, RQS, growth phase progression, and all existing deterministic rules remain as-is.
+
+**3. Morning Tune-Up Is a New Input Stream**
+The Morning Mindset Tune-Up transitions from passive (email-only, non-interactive) in Core Foundation to interactive and trackable in the App. This requires: (a) a new input format definition, (b) new Interpretation Engine processing steps, (c) new JSON fields. The current pipeline has no Tune-Up data source.
+
+**4. All Execution Signals Available at App Launch**
+No phased rollout. No `"available": true/false` gating per signal. The full execution signal set ships with the app. (Earlier V1/V1.5/V2 phasing references in source docs are superseded.)
+
+### Overlap Resolutions (All Five Decided)
+
+| Existing Field | New Signal | Resolution |
+|---|---|---|
+| `reflection_quality_score` (RQS 1-4, content quality) | Review quality metric (behavioral execution quality) | **Keep both. Rename new one → `review_quality_score`.** RQS measures journaling content depth. `review_quality_score` measures behavioral execution quality (completeness, timing, Bullseye engagement). |
+| `recommitment_signal` (Strong/Moderate/Low) | Recovery Score | **Complementary. Both exist. Used in tandem** for deeper recovery understanding. `recommitment_signal` measures within-week post-Missed-day rebound. Recovery Score measures broader execution recovery patterns. |
+| `risk_flags` (content-derived warnings) | Coach Flags (execution-behavior-derived warnings) | **Clear boundary.** `risk_flags` = content-derived warnings from recap text. `coach_flags` = execution-behavior-derived warnings from app usage patterns. |
+| `consistency_signal` + `trend_analysis` (declining pattern detection) | Drift Score | **Complementary scope.** Existing fields detect score-based declining patterns. Drift Score adds execution-behavior dimension (timing decay, completion drop-off, engagement compression) for more nuanced detection. |
+| `emotional_intensity` + `noise_fixation_present` | Reactivity Risk Score | **Complementary scope.** Existing fields measure language-based and Bullseye-based reactivity. Reactivity Risk Score adds execution-behavior dimension (timing patterns, completion volatility). |
+
+### Compliance Ruling — Execution Data Is Backend Only (CRITICAL)
+
+**Execution timing data CANNOT be surfaced to coaching staff.** This is the single most important compliance decision.
+
+The pipeline collects and processes execution behavior data internally to produce *better* compliance-safe output, but raw execution data (completion rates, timing, backfill counts, reminder dependence, late submission counts) NEVER reaches coaching staff in any form.
+
+This follows the same "inform-only" routing pattern already established for `coach_insights` subfields in Stage 4. The `execution_behavior_signals` block will be classified as inform-only for Stage 4, identical to how `coach_insights.routine_execution_summary` currently informs Section 1 but is never reproduced.
+
+This ruling aligns with `VF_Coach_Insights_Compliance_Framework.txt` which already prohibits:
+- Time spent in app
+- Daily completion counts
+- Last login timestamps
+- Engagement scores
+- Compliance or adherence ratings
+- Streak counts
+
+### How Execution Signal Flows Through the Pipeline
+
+**Stage 2 (Interpretation Engine):** Processes both weekly recap AND daily app data. Produces the existing v9.3 fields *plus* a new `execution_behavior_signals` block with composite scores and coach flags. Core Foundation athletes get neutral fallback values.
+
+**Stage 3 (Coaching Output Engine):** Consumes `execution_behavior_signals` to *sharpen* existing coaching sections — same structure, same word targets (250-450 words), same 5 Deep Dive sections. Execution data makes recognition more behaviorally specific, drift identification more mechanistic, micro-commitments more targeted, and identity threads more behaviorally grounded. Execution signal does NOT expand the output — it sharpens it.
+
+**Stage 4 (Coach Insights Engine):** `execution_behavior_signals` is an inform-only block. Raw execution data never surfaces. The engine uses it internally to produce better compliance-safe sections (sharper Key Performance Signal, more accurate Composite Readiness, better Coach Context Cue). Completion rates, timing data, and backfill counts never appear in any report.
+
+**Stage 5 (Editorial Audit):** Gets new audit criteria to verify: (a) execution signal language doesn't leak raw metrics into Coaching Output, (b) execution data doesn't leak into Coach Insights, (c) no clinical or surveillance-style framing introduced.
+
+### Composite Scores — To Be Designed
+
+Seven composite scores are proposed. All require deterministic calculation rules (thresholds, formulas, enum outputs) before implementation. These will be collaboratively designed:
+
+1. **Ownership Index** — measures self-initiated engagement vs. reminder-dependent behavior
+2. **Rhythm Score** — measures consistency of daily engagement timing and sequence
+3. **Follow-Through Score** — measures Mindset Challenge acceptance-to-execution rate
+4. **Review Quality Score** (`review_quality_score`) — measures behavioral execution quality of Evening Review (completeness, timing, Bullseye engagement). Complementary to existing RQS which measures content depth.
+5. **Recovery Score** — measures execution recovery patterns after disruption. Complementary to existing `recommitment_signal` which measures within-week score rebound.
+6. **Reactivity Risk Score** — measures execution-behavior-based reactivity indicators. Complementary to existing `emotional_intensity` and `noise_fixation_present`.
+7. **Drift Score** — measures execution-behavior-based declining engagement patterns. Complementary to existing `consistency_signal` and `trend_analysis`.
+
+### Design Task Queue (Next Session)
+
+1. Define the `execution_behavior_signals` JSON block — all subfield names, types, enum values, and nesting structure
+2. Define the app input format — what daily data looks like when it arrives at Stage 2
+3. Define Core Foundation fallback rules — exact neutral-state values for every subfield
+4. Collaboratively design deterministic calculation rules for all 7 composite scores
+5. Define the `coach_flags` array — flag types, trigger conditions, severity levels
+6. Update `VF_Interpretation_JSON_Rules.txt` with new classification sections
+7. Update `SOP_Interpretation_Engine_Project_Instructions` to new version with dual-input processing
+8. Update `VF_Coaching_Output_JSON_to_Message_Map.txt` with execution signal routing
+9. Update `SOP_Coaching_Output_Instructions` to new version with execution signal usage rules
+10. Update `JSON_logic_reference.txt` with inform-only routing for execution signals
+11. Update `SOP_Coach_Insights_Project_Instructions` to new version
+12. Define new Editorial Audit criteria for execution signal leakage
+13. Validate against existing athlete data (Grace Kindel, Tucker Lloyd, Mergim Bushati) to confirm no degradation
 
 ---
 
 ## What's Next (Pending)
+
+### Execution Signal Schema Design (ACTIVE — Next Session)
+- [ ] Define `execution_behavior_signals` JSON block structure (subfields, types, enums)
+- [ ] Define app input format (what daily data looks like arriving at Stage 2)
+- [ ] Define Core Foundation fallback rules (neutral-state values)
+- [ ] Collaboratively design deterministic calculation rules for all 7 composite scores
+- [ ] Define `coach_flags` array (flag types, trigger conditions, severity)
+- [ ] Update Interpretation Engine files (JSON Rules, Project Instructions) to new versions
+- [ ] Update Coaching Output files (Message Map, Instructions) to new versions
+- [ ] Update Coach Insights files (JSON Logic Reference, Project Instructions) to new versions
+- [ ] Define new Editorial Audit criteria for execution signal leakage
+- [ ] Validate against existing athlete data to confirm no degradation
 
 ### Athlete Pipeline Work
 - [ ] Grace Kindel Week 6 (when recap arrives post-Florida trip)
@@ -399,6 +519,7 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 - [x] Grace Kindel Coach Insights Weeks 1-5 — all 5 Weekly Performance Insights generated and on disk
 - [x] Tucker Lloyd full pipeline (Stages 2-5) — 3 weeks processed, first cross-athlete validation, all 12 audit criteria PASS
 - [x] Mergim Bushati full pipeline (Stages 2-5) — 19 weeks processed, longest dataset, all 12 audit criteria PASS (Week 18)
+- [x] Execution Signal Strategy review and assessment — 7 documents reviewed, 8 risks identified and resolved, all design constraints confirmed, CLAUDE.md updated with decisions
 
 **Grace Kindel Coach Insights — All 5 Weeks Complete:**
 
