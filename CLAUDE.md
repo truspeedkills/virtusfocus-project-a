@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-06
-**Session Notes:** Execution Signal Schema Design in progress. Task 1 (execution_behavior_signals JSON block structure) APPROVED. Composite score format decided: numeric 0-100 with categorical bands. Currently working through remaining design tasks collaboratively.
+**Session Notes:** Execution Signal Schema Design — Tasks 1, 3, and 4 COMPLETE. All 7 composite score calculation rules approved and locked down. Cross-week recovery extension approved. Continuing through remaining design tasks.
 
 ---
 
@@ -121,6 +121,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Master Prompt: `Agents - Generators\Interpretation\SOP - Weekly Interp Prompt v7.3.txt`
 - Project Instructions: `Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.3.txt`
 - JSON Rules: `Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt`
+- Composite Score Rules: `Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt`
 
 ### Coaching Output Engine
 - Master Prompt: `Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt`
@@ -385,6 +386,7 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 21. Processed Mergim Bushati through full 5-stage pipeline (Stages 2-5). Longest dataset in pipeline: 19 weeks. Generated 19 v9.3 Interpretation JSONs, 19 Coaching Messages (v1.4), 19 Deep Dives (v1.4), and 19 Weekly Performance Insights (v1.1). Mergim is the third athlete profile validated: Wrestling, 184 lbs, Seton Hill, Developing phase throughout, Growth/Mixed oscillation pattern, two injury events (hamstring Wk14, shoulder re-injury Wk18), first competition with full derailer activation + within-tournament recovery, season-ending decision. Pipeline handled all 19-week complexity correctly including: 2 High EI weeks (Wk14 hamstring, Wk18 competition), only ↓ Attention (Orange) readiness signal in entire pipeline (Wk14), Elevated stress modifier shifting Green→Yellow (Wk18), micro-commitment modality adaptation (ORAL→WRITTEN after Partial execution). Editorial Audit PASS on all 12 criteria (Week 18 validated — highest-complexity case).
 22. Execution Signal Strategy review and assessment. Reviewed 7 strategy and source material documents covering the transition from Core Foundation (weekly recap only) to App ecosystem (daily granular data + weekly recap). Assessed integration with current v9.3 Interpretation schema, v1.4 Coaching Output rules, v1.1 Coach Insights specification. Identified 8 risks, resolved all with confirmed design constraints: dual-mode operation mandatory, execution signal is additive enrichment (not replacing), Morning Tune-Up is new input stream, all signals at app launch, 5 overlap resolutions decided (keep/rename/complementary), execution timing data is backend-only (never surfaced to coaches), Core Foundation athletes protected from degradation. Captured all decisions in CLAUDE.md Execution Signal Strategy section. No schema files changed — design-phase only.
 23. Execution Signal Schema Design — Task 1 complete: Defined and approved the `execution_behavior_signals` JSON block structure. 6 sub-blocks (morning_tune_up, evening_review, wtd_question_patterns, journaling_behavior, bullseye_behavior, composite_scores) plus coach_flags array and execution_pattern_summary. 50+ fields total. Key decisions: composite scores use numeric 0-100 with categorical bands (not enum-only) for precision in Stage 3 tone calibration and longitudinal sensitivity; streaks included at JSON level for quantitative coaching output; journaling depth_profile added as behavioral execution quality metric (distinct from RQS content quality); bullseye ring_balance expanded with granular center/outer dominant rates and asymmetric thresholds; recovery_speed_days kept at weekly JSON level. Core Foundation fallback rules fully defined. Task 3 (fallback rules) also completed within Task 1 documentation.
+24. Execution Signal Schema Design — Task 4 complete: Designed and approved deterministic calculation rules for all 7 composite scores. Batched in three rounds: (1) Ownership Index + Drift Score + Follow-Through Score, (2) Rhythm Score + Review Quality Score, (3) Recovery Score + Reactivity Risk Score. All formulas are weighted multi-component with custom band thresholds per score. Key design decisions: Ownership uses 7-day denominator for all components; Drift uses asymmetric thresholds (Early at 21, not 33) for early detection; Follow-Through renamed "set" to "accept" (athlete accepts presented challenges, field rename mindset_challenge_set_count → mindset_challenge_accepted_count pending for Tasks 6-7); Rhythm uses completed-sessions denominator (not 7) to measure timing quality of actual engagement; Review Quality includes component balance (min/max ratio) to catch cherry-picking; Recovery is event-triggered with 4 states (calculated/no disruption=85/Pending Data/insufficient data); Reactivity uses partial-to-full completion ratio as unique reactivity signal. Cross-week recovery extension approved: new `cross_week_recovery` sub-object in `wtd_question_patterns` resolves Sunday Missed blind spot. New `"Pending Data"` enum value added to `recovery_speed_days` (distinct from "insufficient data" — deferred measurement, not absent data). Rules document saved to `VF_Execution_Signal_Composite_Score_Rules.txt`.
 
 ---
 
@@ -471,7 +473,7 @@ Approved 2026-03-06. Full JSON block with all subfield names, types, enum values
     "on_time_count": "integer 0-7",
     "late_count": "integer 0-7",
     "timeliness_profile": "Proactive | Delayed | Reactive | insufficient data",
-    "mindset_challenge_set_count": "integer 0-7",
+    "mindset_challenge_accepted_count": "integer 0-7 (renamed from mindset_challenge_set_count)",
     "mindset_challenge_completed_count": "integer 0-7",
     "mindset_challenge_follow_through_rate": "decimal 0.00-1.00",
     "current_streak": "integer (longitudinal — computed from prior weeks)",
@@ -505,7 +507,11 @@ Approved 2026-03-06. Full JSON block with all subfield names, types, enum values
     "weakest_question": "Q1 | Q2 | Q3 | Q4 | Q5 | none | insufficient data",
     "strongest_question": "Q1 | Q2 | Q3 | Q4 | Q5 | none | insufficient data",
     "intraweek_volatility": "Low | Moderate | High | insufficient data",
-    "recovery_speed_days": "integer 1-7 | not applicable | did not recover | insufficient data"
+    "recovery_speed_days": "integer 1-7 | not applicable | did not recover | Pending Data | insufficient data",
+    "cross_week_recovery": {
+      "prior_week_unresolved_miss": "Yes | No",
+      "recovery_days": "integer 1-7 | did not recover | not applicable"
+    }
   },
 
   "journaling_behavior": {
@@ -527,7 +533,7 @@ Approved 2026-03-06. Full JSON block with all subfield names, types, enum values
     "rhythm_score": { "score": "integer 0-100", "band": "Stable | Variable | Disrupted | insufficient data" },
     "follow_through_score": { "score": "integer 0-100", "band": "Strong | Moderate | Weak | insufficient data" },
     "review_quality_score": { "score": "integer 0-100", "band": "High | Moderate | Low | insufficient data" },
-    "recovery_score": { "score": "integer 0-100", "band": "Strong | Moderate | Low | insufficient data" },
+    "recovery_score": { "score": "integer 0-100", "band": "Strong | Moderate | Low | Pending Data | insufficient data" },
     "reactivity_risk_score": { "score": "integer 0-100", "band": "Low | Moderate | Elevated | insufficient data" },
     "drift_score": { "score": "integer 0-100", "band": "None | Early | Active | insufficient data" }
   },
@@ -556,24 +562,34 @@ Approved 2026-03-06. Full JSON block with all subfield names, types, enum values
 - coach_flags → `[]` (empty array)
 - execution_pattern_summary → `"Core Foundation input — execution behavior signals not available"`
 
-### Composite Scores — Format Decided, Calculation Rules Pending
+### Composite Scores — All 7 Calculation Rules APPROVED (Task 4 Complete)
 
-Seven composite scores approved with numeric (0-100) + categorical band format. All require deterministic calculation rules (weighted formulas, input mappings, band thresholds) to be collaboratively designed in Task 4:
+Full deterministic calculation rules saved to: `Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt`
 
-1. **Ownership Index** — measures self-initiated engagement vs. reminder-dependent behavior
-2. **Rhythm Score** — measures consistency of daily engagement timing and sequence
-3. **Follow-Through Score** — measures Mindset Challenge acceptance-to-execution rate
-4. **Review Quality Score** (`review_quality_score`) — measures behavioral execution quality of Evening Review (completeness, timing, Bullseye engagement). Complementary to existing RQS which measures content depth.
-5. **Recovery Score** — measures execution recovery patterns after disruption. Complementary to existing `recommitment_signal` which measures within-week score rebound.
-6. **Reactivity Risk Score** — measures execution-behavior-based reactivity indicators. Complementary to existing `emotional_intensity` and `noise_fixation_present`.
-7. **Drift Score** — measures execution-behavior-based declining engagement patterns. Complementary to existing `consistency_signal` and `trend_analysis`.
+| # | Score | Measures | Formula | Bands |
+|---|---|---|---|---|
+| 1 | **Ownership Index** | Self-initiation vs. reminder dependency | 3-comp (50/30/20) | High 70+ / Mod 40-69 / Low 0-39 |
+| 2 | **Drift Score** | Engagement erosion (higher=worse) | 5-comp (25/20/20/20/15) | None 0-20 / Early 21-45 / Active 46+ |
+| 3 | **Follow-Through Score** | Mindset Challenge accept-to-execute | 2-comp (70/30) | Strong 75+ / Mod 40-74 / Weak 0-39 |
+| 4 | **Rhythm Score** | Timing consistency + sequence | 4-comp (25/25/30/20) | Stable 75+ / Variable 40-74 / Disrupted 0-39 |
+| 5 | **Review Quality Score** | Evening Review behavioral depth | 3-comp (40/35/25) | High 70+ / Mod 40-69 / Low 0-39 |
+| 6 | **Recovery Score** | Post-disruption execution recovery | 3-comp (60/25/15), event-triggered | Strong 70+ / Mod 40-69 / Low 0-39 |
+| 7 | **Reactivity Risk Score** | Volatile execution (higher=worse) | 4-comp (30/25/20/25) | Low 0-25 / Mod 26-50 / Elevated 51+ |
+
+**Key Task 4 Decisions:**
+- Follow-Through: "set" renamed to "accept" (athlete accepts presented Mindset Challenge). No sample-size cap.
+- Drift: Asymmetric thresholds (Early at 21) for early detection.
+- Recovery: Event-triggered with 4 states (calculated / no disruption=85 fixed / Pending Data / insufficient data).
+- Cross-week recovery extension added to `wtd_question_patterns` — resolves Sunday Missed blind spot.
+- `"Pending Data"` enum added to `recovery_speed_days` and Recovery Score (deferred measurement, not absent data).
+- `recommitment_signal` retains "insufficient data" for same case — alignment flagged for future v9.4.
 
 ### Design Task Queue
 
 1. ~~Define the `execution_behavior_signals` JSON block — all subfield names, types, enum values, and nesting structure~~ **COMPLETE — approved 2026-03-06**
 2. Define the app input format — what daily data looks like when it arrives at Stage 2
 3. ~~Define Core Foundation fallback rules — exact neutral-state values for every subfield~~ **COMPLETE — documented in approved block above**
-4. Collaboratively design deterministic calculation rules for all 7 composite scores (numeric 0-100 + categorical bands)
+4. ~~Collaboratively design deterministic calculation rules for all 7 composite scores (numeric 0-100 + categorical bands)~~ **COMPLETE — approved 2026-03-06. Rules saved to VF_Execution_Signal_Composite_Score_Rules.txt**
 5. Define the `coach_flags` array — flag types, trigger conditions, severity levels
 6. Update `VF_Interpretation_JSON_Rules.txt` with new classification sections
 7. Update `SOP_Interpretation_Engine_Project_Instructions` to new version with dual-input processing
@@ -592,7 +608,7 @@ Seven composite scores approved with numeric (0-100) + categorical band format. 
 - [x] Define `execution_behavior_signals` JSON block structure (subfields, types, enums) — **APPROVED 2026-03-06**
 - [ ] Define app input format (what daily data looks like arriving at Stage 2)
 - [x] Define Core Foundation fallback rules (neutral-state values) — **documented in approved block**
-- [ ] Collaboratively design deterministic calculation rules for all 7 composite scores (numeric 0-100 + bands)
+- [x] Collaboratively design deterministic calculation rules for all 7 composite scores — **APPROVED 2026-03-06. Rules in VF_Execution_Signal_Composite_Score_Rules.txt**
 - [ ] Define `coach_flags` array (flag types, trigger conditions, severity)
 - [ ] Update Interpretation Engine files (JSON Rules, Project Instructions) to new versions
 - [ ] Update Coaching Output files (Message Map, Instructions) to new versions
@@ -622,6 +638,7 @@ Seven composite scores approved with numeric (0-100) + categorical band format. 
 - [x] Mergim Bushati full pipeline (Stages 2-5) — 19 weeks processed, longest dataset, all 12 audit criteria PASS (Week 18)
 - [x] Execution Signal Strategy review and assessment — 7 documents reviewed, 8 risks identified and resolved, all design constraints confirmed, CLAUDE.md updated with decisions
 - [x] Execution Signal Schema Design Task 1 — `execution_behavior_signals` JSON block structure approved (50+ fields, 6 sub-blocks, numeric 0-100 composite scores with categorical bands, Core Foundation fallback rules defined)
+- [x] Execution Signal Schema Design Task 4 — All 7 composite score calculation rules approved (weighted formulas, custom band thresholds, edge cases). Cross-week recovery extension approved. "Pending Data" enum added. Field rename: set→accepted. Rules saved to VF_Execution_Signal_Composite_Score_Rules.txt.
 
 **Grace Kindel Coach Insights — All 5 Weeks Complete:**
 
