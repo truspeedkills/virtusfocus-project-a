@@ -1,0 +1,945 @@
+VIRTUSFOCUS — APP INPUT FORMAT SPECIFICATION
+(Approved 2026-03-07 — Task 2 Complete)
+
+PURPOSE
+This document defines the raw data structure that the app backend
+sends to Stage 2 (Interpretation Engine) each week. It is the API
+contract between the app and the pipeline.
+
+The app captures raw events with timestamps and content. Stage 2
+performs all classification, aggregation, and composite score
+computation. The app does not make coaching-relevant determinations.
+
+Core Foundation athletes continue to receive the weekly recap text
+as their only input. The input_source field in the Interpretation
+JSON distinguishes the two modes.
+
+============================================================
+ARCHITECTURE: HOW DATA ARRIVES AT STAGE 2
+============================================================
+
+The pipeline's weekly cadence is unchanged. The app backend collects
+daily events throughout the week and delivers one consolidated
+Weekly Input Object to Stage 2 at the end of each weekly period.
+
+For App athletes, Stage 2 receives:
+- Daily event data (7 records) — populates execution_behavior_signals
+- Weekly check-in data (1 record) — populates existing v9.3 fields
+
+Both arrive in the same input object. Stage 2 processes both to
+produce a single Interpretation JSON.
+
+Core Foundation athletes receive the weekly recap text only. Stage 2
+processes this exactly as it does today and sets all
+execution_behavior_signals fields to their Core Foundation fallback
+values.
+
+============================================================
+A. WEEKLY INPUT WRAPPER
+============================================================
+
+APP ATHLETES:
+
+{
+  "input_source": "app",
+  "athlete_id": "string (system identifier)",
+  "athlete_name": "string",
+  "week_period": "YYYY-MM-DD to YYYY-MM-DD",
+  "daily_events": [ /* 7 objects — see Section B */ ],
+  "weekly_check_in": { /* 1 object — see Section C */ }
+}
+
+CORE FOUNDATION ATHLETES:
+
+{
+  "input_source": "core_foundation",
+  "athlete_id": "string",
+  "athlete_name": "string",
+  "week_period": "YYYY-MM-DD to YYYY-MM-DD",
+  "weekly_recap_text": "string (existing recap text)"
+}
+
+No daily_events. No weekly_check_in. Stage 2 processes the recap
+text as it does today.
+
+============================================================
+B. DAILY EVENT RECORD (7 PER WEEK)
+============================================================
+
+One object per day. Days with zero engagement still appear in the
+array with all fields set to false/null as appropriate.
+
+{
+  "date": "YYYY-MM-DD",
+  "day_of_week": "Monday | Tuesday | Wednesday | Thursday
+                 | Friday | Saturday | Sunday",
+
+  "morning_tune_up": { /* see B.1 */ },
+  "evening_review": { /* see B.2 */ }
+}
+
+------------------------------------------------------------
+B.1 MORNING TUNE-UP EVENT
+------------------------------------------------------------
+
+The Morning Mindset Tune-Up is the day's opening touchpoint. In
+the app, it transitions from passive (email-only in Core
+Foundation) to interactive.
+
+V1 Morning Tune-Up contains 7 screen elements:
+  1. Mindset Statement (passive — no interaction, no data)
+  2. Focus Word + Quote (passive — Focus Word captured)
+  3. Mindset Challenge (active — checkbox, required to proceed)
+  4. Quick Wins (active — 3 checkboxes, all required)
+  5. Closing Statement (passive — no interaction, no data)
+  6. Finish Tune-Up Button (enabled when 3+4 complete)
+  7. Completion State (auto-return confirmation)
+
+V1 RULE: The Mindset Challenge checkbox and all 3 Quick Win
+checkboxes are REQUIRED to complete the Tune-Up. The athlete
+cannot finish without accepting the challenge and acknowledging
+all Quick Wins. Therefore mindset_challenge_accepted is always
+true when completed is true. When the Tune-Up is skipped,
+mindset_challenge_accepted is null (the athlete did not
+encounter the challenge).
+
+FIELDS:
+
+{
+  "completed": "boolean",
+  "completion_timestamp": "ISO-8601 datetime or null",
+  "trigger_method": "self_initiated | reminder | null",
+  "mindset_challenge_accepted": "boolean or null",
+  "mindset_challenge_text": "string or null",
+  "focus_word": "string or null",
+  "quick_win_items": ["string array (3 items) or null"]
+}
+
+FIELD DEFINITIONS:
+
+completed
+  Whether the athlete opened and completed the Tune-Up
+  (accepted the Mindset Challenge, acknowledged all Quick
+  Wins, tapped Finish). Boolean.
+
+completion_timestamp
+  ISO-8601 datetime when the Tune-Up was completed. Null if
+  not completed. Used for on-time/late classification (see
+  Time Boundaries, Section D).
+
+trigger_method
+  How the athlete arrived: "self_initiated" (opened app
+  proactively) or "reminder" (tapped reminder notification).
+  Null if not completed. Tagged by the app at point of entry.
+  Stage 2 trusts this tag.
+
+mindset_challenge_accepted
+  Whether the athlete accepted the presented Mindset Challenge.
+  In V1, always true when completed is true (acceptance is
+  required to complete the Tune-Up). Null when the Tune-Up
+  is skipped (the athlete did not encounter the challenge).
+  Future versions may make acceptance optional, which is why
+  this field is retained in the input format.
+
+mindset_challenge_text
+  The text of the system-generated Mindset Challenge presented
+  to the athlete. Needed by Stage 2 for follow-through context
+  and WTD Q2 interpretation. Null if Tune-Up not completed.
+
+focus_word
+  The system-assigned daily mental filter (e.g., "STALWART").
+  Stage 2 can cross-reference with evening journaling for
+  alignment analysis. Null if Tune-Up not completed.
+
+quick_win_items
+  Array of 3 system-generated micro-agreement texts. All 3
+  must be acknowledged to complete the Tune-Up. No follow-
+  through tracking for Quick Wins — they are acknowledgments,
+  not tasks. Stage 2 has this context available for content
+  analysis. Null if Tune-Up not completed.
+
+FIELDS NOT INCLUDED:
+
+mindset_challenge_presented
+  Not included in V1. The Mindset Challenge is always presented
+  as a fixed part of the Tune-Up flow. If a future version
+  changes this, the field can be added then.
+
+Mindset Statement text, Focus Quote text, Closing Statement text
+  Not included. These are passive display elements with no
+  athlete interaction. They stay internal to the app's content
+  system.
+
+STAGE 2 DERIVES FROM MORNING TUNE-UP:
+- days_completed: count(completed == true) across 7 days
+- days_missed: 7 - days_completed
+- completion_rate: days_completed / 7
+- on_time_count: count(timestamp < morning cutoff)
+- late_count: count(timestamp >= morning cutoff AND completed)
+- timeliness_profile: classified from pattern (Task 6)
+- mindset_challenge_accepted_count: count(accepted == true)
+- mindset_challenge_completed_count: count(evening_review.
+  mindset_challenge_completed == true) across 7 days
+- mindset_challenge_follow_through_rate: completed_count /
+  max(accepted_count, 1)
+- current_streak: longitudinal from prior week JSONs
+- longest_streak: longitudinal max across program history
+
+------------------------------------------------------------
+B.2 EVENING REVIEW EVENT
+------------------------------------------------------------
+
+The Evening Review is the day's primary engagement touchpoint.
+It contains three mandatory components completed in the designed
+sequence: WTD -> Journaling -> Bullseye.
+
+HARD-OUT RULE:
+If the Evening Review is not submitted by the time the next
+day's Morning Tune-Up is released (hard-out time, default
+6:00 AM local time, configurable per program), the review is
+categorized as Missed. The app locks the previous day's review
+at hard-out time.
+
+PARTIAL DATA PRESERVATION:
+If the athlete started the Evening Review but did not submit
+before the hard-out, any entered component data is preserved
+in the daily event record. The review-level fields show
+submitted = false and completion_timestamp = null. Individual
+component fields reflect whatever was completed. The entered
+data should be respected and evaluated — the missing elements
+and timestamp of the completed elements tell the story about
+the event. Stage 2 treats the review as Missed for timing
+classification but CAN access the partial component data for
+content analysis.
+
+FIELDS:
+
+{
+  "submitted": "boolean",
+  "completion_timestamp": "ISO-8601 datetime or null",
+  "trigger_method": "self_initiated | reminder | null",
+
+  "wtd": { /* see B.2a */ },
+  "journaling": { /* see B.2b */ },
+  "bullseye": { /* see B.2c */ },
+
+  "mindset_challenge_completed": "boolean or null",
+  "component_sequence": ["array or null"]
+}
+
+FIELD DEFINITIONS:
+
+submitted
+  Whether the complete Evening Review was submitted (athlete
+  tapped final submit). False if not submitted or if locked
+  out by hard-out. Boolean.
+
+completion_timestamp
+  ISO-8601 datetime when the review was submitted. Null if not
+  submitted. Used for on-time/late/backfill/missed classification
+  (see Time Boundaries, Section D).
+
+trigger_method
+  How the athlete arrived: "self_initiated" or "reminder".
+  Null if no part of the review was started. Tagged by the app
+  at point of entry. Stage 2 trusts this tag.
+
+STAGE 2 DERIVES FROM REVIEW-LEVEL FIELDS:
+- full_completion_count: days where all 3 components completed
+  AND submitted = true
+- partial_completion_count: days where submitted but not all 3
+  components, OR not submitted but at least 1 component entered
+- missed_count: days where no components completed
+- on_time_count, late_submission_count, backfill_count: from
+  completion_timestamp vs evening cutoffs (see Section D)
+- self_initiated_count: count(trigger_method == "self_initiated")
+- reminder_dependent_count: count(trigger_method == "reminder")
+- completion_rate: full_completion_count / 7
+
+------------------------------------------------------------
+B.2a WTD COMPONENT
+------------------------------------------------------------
+
+Win the Day scoring: 5 yes/no questions answered daily.
+
+DAILY CATEGORY TERMINOLOGY:
+  4-5 = Win the Day (aligned + intentional)
+  2-3 = Partial Win (inconsistent but effort shown)
+  0-1 = Missed the Mark (reactive / disconnected)
+
+"Partial Win" is the approved pipeline terminology. It replaces
+any prior use of "Neutral" for the 2-3 daily score range. This
+aligns with the VirtusFocus positive self-speak model.
+
+FIELDS:
+
+{
+  "completed": "boolean",
+  "q1_intention": "boolean or null",
+  "q2_challenge": "boolean or null",
+  "q3_adversity": "boolean or null",
+  "q4_progress": "boolean or null",
+  "q5_gratitude": "boolean or null"
+}
+
+QUESTION TEXT REFERENCE:
+  Q1: "Did I act with intention today, or was I reactive?"
+  Q2: "Did I complete the Mindset Challenge I accepted
+       this morning?"
+  Q3: "Did I respond to adversity in a way that aligns
+       with my goals?"
+  Q4: "Did I pursue progress over perfection?"
+  Q5: "Did I end the day with gratitude or self-compassion?"
+
+FIELD DEFINITIONS:
+
+completed
+  Whether the athlete answered all 5 WTD questions. Boolean.
+
+q1_intention through q5_gratitude
+  Individual yes/no answers. True = yes (1 point), false = no
+  (0 points). Null if WTD not completed.
+
+STAGE 2 DERIVES FROM THIS:
+- Daily score: sum of true answers (0-5)
+- Daily category: Win the Day / Partial Win / Missed the Mark
+- Weekly total (0-35), weekly tier (Growth / Mixed / Reset)
+- q1-q5 yes rates: count(true) / count(wtd.completed) per Q
+- weakest_question, strongest_question
+- intraweek_volatility: from daily score pattern (Task 6)
+- recovery_speed_days: from daily score sequence
+
+------------------------------------------------------------
+B.2b JOURNALING COMPONENT
+------------------------------------------------------------
+
+Three structured text fields by domain. The app has separate
+input areas for each domain, giving direct domain coverage
+visibility without text analysis.
+
+FIELDS:
+
+{
+  "completed": "boolean",
+  "school_work_entry": "string or null",
+  "sport_entry": "string or null",
+  "home_life_entry": "string or null"
+}
+
+FIELD DEFINITIONS:
+
+completed
+  Whether the athlete entered text in at least one domain
+  field. Any text in any field = completed. Boolean.
+
+school_work_entry
+  Athlete reflection on school/work domain. Free text.
+  Prompt: "How did school or work go today?"
+  Null if no text entered in this field.
+
+sport_entry
+  Athlete reflection on practice/competition/training domain.
+  Free text.
+  Prompt: "How did practice, training, or competition go today?"
+  Null if no text entered.
+
+home_life_entry
+  Athlete reflection on home life/personal domain. Free text.
+  Prompt: "How was your evening, home life, or personal
+  environment today?"
+  Null if no text entered.
+
+STAGE 2 DERIVES FROM THIS:
+- journaling_completed_count: across 7 days
+- depth_profile: from word counts (computed by Stage 2 from
+  entry text), domain coverage, specificity (Task 6)
+- compression_detected: from depth metrics vs prior weeks
+  (Task 6)
+- domain_omission_pattern: from which domain fields are
+  consistently null or minimal across the week (Task 6)
+- Existing v9.3 fields: reflection_quality_score, athlete_state,
+  core_pattern, emotional_intensity — Stage 2 analyzes the
+  journal TEXT for content signals
+
+------------------------------------------------------------
+B.2c BULLSEYE COMPONENT
+------------------------------------------------------------
+
+Three rings. Each ring's items are delivered as an array of
+strings for deterministic item counting.
+
+FIELDS:
+
+{
+  "completed": "boolean",
+  "center_ring_items": ["string array or null"],
+  "influence_ring_items": ["string array or null"],
+  "outer_ring_items": ["string array or null"]
+}
+
+FIELD DEFINITIONS:
+
+completed
+  Whether the athlete filled in all three rings (minimum 1
+  item each per app validation rules). Boolean.
+
+center_ring_items
+  Items the athlete placed in the Control ring ("What I Could
+  Control": attitude, effort, preparation, response, routine).
+  Array of strings. Null if Bullseye not completed.
+
+influence_ring_items
+  Items placed in the Influence ring ("What I Could Influence":
+  communication, leadership, team culture, body language).
+  Array of strings. Null if not completed.
+
+outer_ring_items
+  Items placed in the Cannot Control ring ("What I Couldn't
+  Control": others' decisions, weather, referees, the past).
+  Array of strings. Null if not completed.
+
+ARRAY FORMAT RATIONALE:
+Array.length gives deterministic item counts per ring (needed
+for center_ring_dominant_rate, outer_ring_dominant_rate,
+ring_balance). Avoids Stage 2 needing to parse comma-separated
+or line-separated text. The app UI can use free-text fields
+but parses into individual items on submission.
+
+STAGE 2 DERIVES FROM THIS:
+- bullseye_completed_count: across 7 days
+- completion_reliability: from completion pattern (Task 6)
+- center_ring_dominant_rate: days where center_ring_items.length
+  > max(influence, outer) / bullseye_completed_days
+- outer_ring_dominant_rate: same for outer ring
+- ring_balance: classified from rates (Task 6)
+- contradiction_detected: cross-reference WTD answers with
+  Bullseye ring placements (Task 6)
+- Existing v9.3 fields: primary_focus_ring, noise_fixation_
+  present, control_quality, influence_quality — Stage 2
+  analyzes item CONTENT for classification
+
+------------------------------------------------------------
+B.2d MINDSET CHALLENGE FOLLOW-THROUGH
+------------------------------------------------------------
+
+FIELD:
+
+  "mindset_challenge_completed": "boolean or null"
+
+Did the athlete complete the Mindset Challenge they accepted
+that morning? Null if no challenge was accepted (morning_
+tune_up.mindset_challenge_accepted = null).
+
+Sits at the evening_review level because follow-through is
+assessed at end of day. Pairs with WTD Q2 ("Did I complete
+the Mindset Challenge?"). Stage 2 cross-references this
+boolean with the Q2 answer for consistency validation.
+
+------------------------------------------------------------
+B.2e COMPONENT SEQUENCE
+------------------------------------------------------------
+
+FIELD:
+
+  "component_sequence": ["array of component names or null"]
+
+Ordered array of component names as the athlete completed
+them. Example: ["wtd", "journaling", "bullseye"] for the
+designed order. Null if no components completed.
+
+DESIGNED SEQUENCE (from source materials):
+  WTD -> Journaling -> Bullseye
+
+STAGE 2 DERIVES FROM THIS:
+- sequence_integrity: comparing actual sequence against
+  designed order across the week (Task 6)
+  Values: Intact | Partial | Broken | insufficient data
+
+============================================================
+C. WEEKLY CHECK-IN RECORD
+============================================================
+
+Submitted once per week (typically Sunday). This is the
+structured equivalent of the current Core Foundation weekly
+recap. It provides the narrative and forward-looking data
+that feeds existing v9.3 fields.
+
+FIELDS:
+
+{
+  "submitted": "boolean",
+  "submission_timestamp": "ISO-8601 datetime or null",
+
+  "motivation_inventory": {
+    "q1_achievements": "string or null",
+    "q2_favorite_challenge": "string or null",
+    "q3_upcoming_goals": "string or null",
+    "q4_additional_context": "string or null",
+    "q5_competition_schedule": "string or null"
+  },
+
+  "self_ratings": {
+    "confidence_level": "integer 1-10 or null",
+    "habit_consistency_level": "integer 1-10 or null"
+  }
+}
+
+FIELD DEFINITIONS:
+
+submitted
+  Whether the weekly check-in was submitted. Boolean.
+
+submission_timestamp
+  ISO-8601 datetime when submitted. Null if not submitted.
+
+MOTIVATION INVENTORY:
+
+  q1_achievements — "What did you achieve this week?"
+    Free text. Informs athlete_state, core_pattern,
+    narrative_arc.milestone_this_week.
+
+  q2_favorite_challenge — "What was your favorite Mindset
+    Challenge from this week's Tune-Ups?"
+    Free text. Informs athlete_voice.mindset_resonance,
+    coaching output recognition.
+
+  q3_upcoming_goals — "What are your goals for the upcoming
+    week?"
+    Free text. Informs upcoming_context.athlete_stated_
+    next_goal, micro_commitment framing.
+
+  q4_additional_context — "Tell me anything else that may be
+    relevant this week."
+    Free text. Optional field. Informs upcoming_context.
+    anticipated_stressor, emotional_intensity.
+
+  q5_competition_schedule — "List any competitions scheduled
+    for the coming week."
+    Free text. Optional field. Informs upcoming_context.
+    scheduled_competition.
+
+SELF-RATINGS:
+
+  confidence_level — Athlete self-reported confidence on a
+    1-10 scale. Provides a perception-reality comparison
+    dimension. Stage 2 compares against composite scores
+    (Ownership, Follow-Through, Recovery) to detect:
+    - Conflated self-view: high self-rating + low execution
+    - Undervalued self-view: low self-rating + high execution
+    - Aligned self-view: rating matches execution pattern
+    Classification thresholds defined in Task 6.
+
+    Coaching value: "You think this vs. this is how you
+    interact with the system." An athlete's self-view may
+    be conflated ("I'm doing everything amazing" when they
+    are not) or undervalued (they think they are low-achieving
+    when their app performance tells a different story). Each
+    situation is a coaching opportunity.
+
+  habit_consistency_level — Athlete self-reported habit
+    consistency on a 1-10 scale. Stage 2 compares against
+    Rhythm Score and completion rates for the same
+    perception-reality alignment analysis.
+
+============================================================
+D. TIME BOUNDARY DEFINITIONS
+============================================================
+
+Stage 2 classifies each completion event by comparing the
+completion_timestamp against fixed cutoffs. These cutoffs
+define what the timestamps MEAN for the timing classification
+fields in execution_behavior_signals.
+
+------------------------------------------------------------
+D.1 MORNING TUNE-UP TIME BOUNDARIES
+------------------------------------------------------------
+
+  On-time: completed before 12:00 PM (noon) local time
+  Late:    completed at or after 12:00 PM local time
+
+  The Tune-Up's purpose is to set up the day. By noon, its
+  preparatory value is significantly reduced. Completing after
+  noon is functionally a checkbox — the athlete did not lead
+  the day with intention.
+
+  Not completed: morning_tune_up.completed = false
+
+------------------------------------------------------------
+D.2 EVENING REVIEW TIME BOUNDARIES
+------------------------------------------------------------
+
+Four-category timing model with hard-out rule.
+
+CATEGORIES:
+
+  Category     Window                    Behavioral Meaning
+  ----------   -----------------------   ----------------------
+  On-time      Before 10:00 PM           Evening routine engagement
+  Late         10:00 PM to backfill      Same-night, after intended
+               boundary                  window
+  Backfill     2 hours before hard-out   Next-morning retroactive
+               to hard-out time          catch-up before lockout
+  Missed       After hard-out            Locked out — genuine
+                                         disengagement
+
+HARD-OUT TIME:
+  The time at which the app locks the previous day's Evening
+  Review and releases the next day's Morning Tune-Up.
+  Default: 6:00 AM local time next day.
+  Configurable per program.
+
+BACKFILL WINDOW:
+  Fixed 2-hour constant preceding the hard-out time. Not
+  configurable. The backfill window captures "morning catch-up
+  before lockout" behavior regardless of hard-out setting.
+
+BACKFILL BOUNDARY:
+  hard-out time minus 2 hours. This is the transition between
+  Late and Backfill categories.
+
+DEFAULT TIME WINDOWS (with 6:00 AM hard-out):
+
+  On-time:   before 10:00 PM
+  Late:      10:00 PM to 4:00 AM
+  Backfill:  4:00 AM to 6:00 AM
+  Missed:    after 6:00 AM (locked out)
+
+CONFIGURABLE EXAMPLES:
+
+  Hard-out 7:00 AM:
+    Late = 10:00 PM to 5:00 AM
+    Backfill = 5:00 AM to 7:00 AM
+
+  Hard-out 5:00 AM:
+    Late = 10:00 PM to 3:00 AM
+    Backfill = 3:00 AM to 5:00 AM
+
+BEHAVIORAL DISTINCTION:
+  Late = "I stayed up to finish" — still same-night engagement,
+  just after the intended window.
+  Backfill = "I woke up and tried to catch up" — next-morning
+  retroactive completion. This is the behavior that Ownership
+  Index C3 (Backfill Absence) and Rhythm Score C4
+  (Non-Backfill Rate) are designed to detect.
+
+APP BEHAVIOR AT HARD-OUT:
+  The app locks the previous day's Evening Review at hard-out.
+  The athlete cannot submit after this time. Any component data
+  entered before lockout is preserved in the daily event record
+  (submitted = false, completion_timestamp = null, individual
+  component fields reflect whatever was completed). Stage 2
+  treats the review as Missed for timing classification but
+  CAN access partial component data for content analysis.
+
+CONSEQUENCE GRADIENT:
+  On-time  -> No timing concern
+  Late     -> Mild timing signal
+  Backfill -> Ownership concern (retroactive catch-up)
+  Missed   -> Full consequence (locked out)
+
+  The composite scores and coach flags create escalating
+  consequences as late/backfill/missed days accumulate through
+  Drift Score, Ownership Index, Rhythm Score, and associated
+  flag triggers.
+
+============================================================
+E. CORE FOUNDATION INPUT FORMAT
+============================================================
+
+Core Foundation athletes receive the weekly recap text as
+their only input.
+
+{
+  "input_source": "core_foundation",
+  "athlete_id": "string",
+  "athlete_name": "string",
+  "week_period": "YYYY-MM-DD to YYYY-MM-DD",
+  "weekly_recap_text": "string"
+}
+
+No daily_events. No weekly_check_in. Stage 2 processes the
+recap text exactly as it does today. All execution_behavior_
+signals fields are set to their Core Foundation fallback values
+(defined in the approved execution_behavior_signals block
+specification).
+
+============================================================
+F. DERIVATION BOUNDARY
+============================================================
+
+The input format contains RAW EVENTS. Stage 2 performs all
+of the following:
+
+1. COUNTING — tallying daily booleans into weekly counts
+
+2. TIMESTAMP CLASSIFICATION — comparing timestamps against
+   cutoffs to determine on-time/late/backfill/missed
+
+3. SCORE COMPUTATION — daily WTD scores from question answers,
+   weekly totals, daily categories
+
+4. RATE COMPUTATION — question yes-rates, completion rates,
+   ring dominance rates, follow-through rate
+
+5. ENUM CLASSIFICATION — mapping raw metrics to categorical
+   values (timeliness_profile, depth_profile, sequence_
+   integrity, ring_balance, completion_reliability,
+   intraweek_volatility, etc.) — defined in Task 6
+
+6. COMPOSITE SCORE COMPUTATION — weighted formulas from
+   VF_Execution_Signal_Composite_Score_Rules.txt
+
+7. COACH FLAG EVALUATION — threshold checks from
+   VF_Coach_Flags_Specification.txt
+
+8. CONTENT ANALYSIS — journaling text and Bullseye item text
+   for existing v9.3 fields (athlete_state, core_pattern,
+   emotional_intensity, reflection_quality_score,
+   bullseye_analysis, etc.)
+
+9. LONGITUDINAL COMPUTATION — streaks, cross-week recovery,
+   trend analysis from prior week JSONs
+
+10. PATTERN SUMMARY — generating execution_pattern_summary
+
+11. PERCEPTION-REALITY ALIGNMENT — comparing self_ratings
+    against composite scores for conflated/undervalued/aligned
+    classification
+
+The app sends raw data. Stage 2 does ALL the analysis.
+
+============================================================
+G. COMPLETENESS TRACE
+============================================================
+
+Every execution_behavior_signals output field must be derivable
+from this input format.
+
+------------------------------------------------------------
+MORNING_TUNE_UP OUTPUT -> INPUT FIELDS
+------------------------------------------------------------
+
+  days_completed
+    count(morning_tune_up.completed == true) across 7 days
+
+  days_missed
+    7 - days_completed
+
+  completion_rate
+    days_completed / 7
+
+  on_time_count
+    count(completion_timestamp < 12:00 PM)
+
+  late_count
+    count(completion_timestamp >= 12:00 PM AND completed)
+
+  timeliness_profile
+    Classified from on_time/late/total pattern (Task 6)
+
+  mindset_challenge_accepted_count
+    count(mindset_challenge_accepted == true)
+    In V1: equals days_completed (acceptance is mandatory)
+
+  mindset_challenge_completed_count
+    count(evening_review.mindset_challenge_completed == true)
+
+  mindset_challenge_follow_through_rate
+    completed_count / max(accepted_count, 1)
+
+  current_streak
+    Longitudinal: consecutive completed days backward from
+    current day across prior week JSONs
+
+  longest_streak
+    Longitudinal: max streak across all program history
+
+------------------------------------------------------------
+EVENING_REVIEW OUTPUT -> INPUT FIELDS
+------------------------------------------------------------
+
+  full_completion_count
+    count(days where wtd.completed AND journaling.completed
+    AND bullseye.completed AND submitted = true)
+
+  partial_completion_count
+    count(days where at least 1 component completed but NOT
+    full completion, including submitted=false with partial
+    component data preserved from hard-out lockout)
+
+  missed_count
+    count(days where no components completed)
+
+  completion_rate
+    full_completion_count / 7
+
+  on_time_count
+    count(completion_timestamp before 10:00 PM)
+
+  late_submission_count
+    count(completion_timestamp between 10:00 PM and backfill
+    boundary)
+
+  backfill_count
+    count(completion_timestamp between backfill boundary and
+    hard-out time)
+
+  self_initiated_count
+    count(trigger_method == "self_initiated")
+
+  reminder_dependent_count
+    count(trigger_method == "reminder")
+
+  sequence_integrity
+    Classified from component_sequence arrays across week
+    (Task 6)
+
+  component_completion.wtd_completed_count
+    count(wtd.completed == true)
+
+  component_completion.journaling_completed_count
+    count(journaling.completed == true)
+
+  component_completion.bullseye_completed_count
+    count(bullseye.completed == true)
+
+------------------------------------------------------------
+WTD_QUESTION_PATTERNS OUTPUT -> INPUT FIELDS
+------------------------------------------------------------
+
+  q1-q5 yes rates
+    count(q_n == true) / count(wtd.completed) for each Q
+
+  weakest_question
+    Question with lowest yes rate
+
+  strongest_question
+    Question with highest yes rate
+
+  intraweek_volatility
+    Classified from daily score (0-5) sequence pattern (Task 6)
+
+  recovery_speed_days
+    Days from Missed the Mark day (score 0-1) to next Win the
+    Day (score 4-5). Uses fastest recovery instance when
+    multiple Missed days occur.
+
+  cross_week_recovery
+    From prior week JSON's recovery_speed_days + current week's
+    daily scores
+
+------------------------------------------------------------
+JOURNALING_BEHAVIOR OUTPUT -> INPUT FIELDS
+------------------------------------------------------------
+
+  depth_profile
+    Classified from per-day word counts (computed by Stage 2
+    from entry text), domain coverage, entry specificity
+    across week (Task 6)
+
+  compression_detected
+    Classified from depth metrics vs prior weeks or within-week
+    pattern (Task 6)
+
+  domain_omission_pattern
+    From which domain fields (school_work_entry, sport_entry,
+    home_life_entry) are consistently null or minimal across
+    the week (Task 6)
+
+------------------------------------------------------------
+BULLSEYE_BEHAVIOR OUTPUT -> INPUT FIELDS
+------------------------------------------------------------
+
+  completion_reliability
+    Classified from daily bullseye.completed pattern across
+    week (Task 6)
+
+  center_ring_dominant_rate
+    count(days where center_ring_items.length > max(influence,
+    outer)) / bullseye_completed_days
+
+  outer_ring_dominant_rate
+    count(days where outer_ring_items.length > max(center,
+    influence)) / bullseye_completed_days
+
+  ring_balance
+    Classified from rates using thresholds: center >= 0.60
+    -> Center-Weighted, outer >= 0.40 -> Outer-Weighted,
+    else Balanced (Task 6)
+
+  contradiction_detected
+    Stage 2 cross-references WTD answers with Bullseye ring
+    placements (Task 6)
+
+------------------------------------------------------------
+COMPOSITE SCORES, COACH FLAGS, SUMMARY
+------------------------------------------------------------
+
+  composite_scores
+    All 7 scores derived by Stage 2 from the aggregated fields
+    above using formulas in:
+    VF_Execution_Signal_Composite_Score_Rules.txt
+
+  coach_flags
+    All 15 flags derived by Stage 2 from composite scores and
+    aggregated fields using rules in:
+    VF_Coach_Flags_Specification.txt
+
+  execution_pattern_summary
+    Stage 2 generates 1-2 sentence behavioral execution summary
+    from all signals
+
+============================================================
+H. TERMINOLOGY REFERENCE
+============================================================
+
+WTD DAILY CATEGORIES:
+  4-5 = Win the Day (aligned + intentional)
+  2-3 = Partial Win (inconsistent but effort shown)
+  0-1 = Missed the Mark (reactive / disconnected)
+
+"Partial Win" is the approved pipeline terminology. It replaces
+any prior use of "Neutral" for the 2-3 daily score range. This
+aligns with the VirtusFocus positive self-speak model.
+
+WTD WEEKLY TIERS:
+  28-35 = Growth Week
+  14-27 = Mixed Week
+  0-13  = Reset Week
+
+Unchanged from existing pipeline rules.
+
+============================================================
+I. DOWNSTREAM IMPLICATIONS FOR TASKS 6-7
+============================================================
+
+The following items emerge from confirmed Task 2 decisions and
+require attention when Interpretation Engine files are updated:
+
+1. WTD TERMINOLOGY: "Partial Win" replaces "Neutral" in WTD
+   day classifications across all pipeline stages.
+
+2. MINDSET_CHALLENGE_ACCEPTED IN V1: Acceptance is mandatory
+   to complete the Tune-Up. accepted_count = days_completed.
+   Follow-Through Score C2 (Challenge Acceptance Rate) is
+   always 100% when Tune-Ups are completed. Document this
+   behavior in updated formulas; consider whether weight
+   redistribution is needed.
+
+3. SELF-RATINGS CLASSIFICATION: New perception-reality
+   alignment classification rules needed. Define thresholds
+   for aligned / conflated / undervalued by comparing
+   self_ratings against composite scores.
+
+4. HARD-OUT TIME PARAMETER: Stage 2 needs to know the hard-out
+   time per program to classify evening timestamps. Default
+   6:00 AM. Backfill boundary = hard-out minus 2 hours (fixed).
+
+5. PARTIAL DATA FROM MISSED REVIEWS: Classification rules
+   needed for whether component_completion counts include data
+   from Missed-review days (submitted = false but component
+   data present from hard-out lockout).
+
+============================================================
+END OF DOCUMENT
+============================================================
