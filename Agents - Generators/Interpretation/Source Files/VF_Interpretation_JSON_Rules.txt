@@ -26,6 +26,12 @@ Do not infer scores.
 If numeric data missing, use category labels if provided.
 If neither exists → "insufficient data".
 
+APP TERMINOLOGY NOTE:
+The app uses "Partial Win" as the athlete-facing label for the 2-3
+range. "Neutral" remains the classification value in the
+Interpretation JSON and all internal pipeline processing. Both map
+to the same numeric range (2-3 points).
+
 ------------------------------------------------------------
 1B) Weekly Tier (Numeric Total)
 ------------------------------------------------------------
@@ -393,7 +399,1028 @@ No:
 If insufficient historical anchor → "insufficient data"
 
 ============================================================
-SECTION 6 – GLOBAL GUARDRAILS
+SECTION 6 – EXECUTION BEHAVIOR SIGNAL — INPUT SOURCE CLASSIFICATION
+============================================================
+
+The execution_behavior_signals block is produced for every
+Interpretation JSON. The input_source field determines how
+all execution subfields are populated.
+
+------------------------------------------------------------
+6A) Input Source Determination
+------------------------------------------------------------
+
+app:
+- Weekly Input Object contains daily_events array (7 records)
+  AND weekly_check_in record
+- All execution subfields computed from app data
+
+core_foundation:
+- Weekly Input Object contains weekly_recap_text only
+- No daily_events. No weekly_check_in.
+- All execution subfields use Core Foundation fallback values
+
+If input format is ambiguous → default to "core_foundation".
+
+------------------------------------------------------------
+6B) Core Foundation Fallback Values
+------------------------------------------------------------
+
+When input_source = "core_foundation":
+
+morning_tune_up:
+  All fields → "not available — weekly recap input only"
+
+evening_review:
+  All fields → "not available — weekly recap input only"
+
+wtd_question_patterns:
+  All fields → "not available — weekly recap input only"
+
+journaling_behavior:
+  All fields → "not available — weekly recap input only"
+
+bullseye_behavior:
+  All fields → "not available — weekly recap input only"
+
+composite_scores:
+  All 7 scores →
+    { "score": "insufficient data", "band": "insufficient data" }
+
+coach_flags:
+  [] (empty array)
+
+execution_pattern_summary:
+  "Core Foundation input — execution behavior signals not available"
+
+self_ratings_alignment:
+  All fields → "not available — weekly recap input only"
+
+------------------------------------------------------------
+6C) No Degradation Rule
+------------------------------------------------------------
+
+No existing v9.3 field calculation, growth phase threshold,
+consistency classification, or coaching output routing changes
+based on whether input_source is "app" or "core_foundation".
+
+Execution signal is additive enrichment. Core Foundation athletes
+receive identical quality output to what they receive today.
+
+============================================================
+SECTION 7 – MORNING TUNE-UP CLASSIFICATION RULES
+============================================================
+
+All rules in this section apply ONLY when input_source = "app".
+
+------------------------------------------------------------
+7A) Counting Rules
+------------------------------------------------------------
+
+days_completed:
+  count(morning_tune_up.completed == true) across 7 daily events
+
+days_missed:
+  7 - days_completed
+
+completion_rate:
+  days_completed / 7
+
+------------------------------------------------------------
+7B) Morning Timing Classification
+------------------------------------------------------------
+
+Stage 2 classifies each completed Morning Tune-Up by comparing
+completion_timestamp against the morning cutoff.
+
+Morning cutoff: 12:00 PM (noon) local time.
+
+on_time:
+  completion_timestamp before 12:00 PM local time
+
+late:
+  completion_timestamp at or after 12:00 PM local time
+  AND completed = true
+
+on_time_count:
+  count(on-time completions) across 7 days
+
+late_count:
+  count(late completions) across 7 days
+
+Not completed (completed = false): excluded from both counts.
+on_time_count + late_count = days_completed.
+
+------------------------------------------------------------
+7C) Timeliness Profile
+------------------------------------------------------------
+
+on_time_rate = on_time_count / days_completed
+
+Proactive:
+- on_time_rate >= 0.71
+- Majority of completed Tune-Ups before noon
+
+Delayed:
+- on_time_rate >= 0.30 AND < 0.71
+- Mix of on-time and late completions
+
+Reactive:
+- on_time_rate < 0.30
+- Majority of completed Tune-Ups after noon
+
+If days_completed == 0 → "insufficient data"
+
+------------------------------------------------------------
+7D) Mindset Challenge Metrics
+------------------------------------------------------------
+
+mindset_challenge_accepted_count:
+  count(morning_tune_up.mindset_challenge_accepted == true)
+  across 7 daily events
+
+V1 MANDATORY ACCEPTANCE RULE:
+In V1, the Mindset Challenge checkbox is required to complete
+the Tune-Up. Therefore:
+- mindset_challenge_accepted = true when completed = true
+- mindset_challenge_accepted = null when completed = false
+  (athlete did not encounter the challenge)
+- mindset_challenge_accepted_count = days_completed in V1
+
+mindset_challenge_completed_count:
+  count(evening_review.mindset_challenge_completed == true)
+  across 7 daily events
+
+mindset_challenge_follow_through_rate:
+  mindset_challenge_completed_count /
+    max(mindset_challenge_accepted_count, 1)
+
+If mindset_challenge_accepted_count == 0 AND
+days_completed == 0 → "insufficient data"
+
+V1 DOWNSTREAM IMPACT ON FOLLOW-THROUGH SCORE:
+Because V1 acceptance is mandatory, Follow-Through Score C2
+(Challenge Acceptance Rate = accepted_count / days_completed)
+is always 1.00 for completed Tune-Ups. The C2 weight (30%)
+effectively rewards Tune-Up completion itself. This is
+acceptable in V1. If future versions make acceptance optional,
+C2 will differentiate between athletes who accept challenges
+and those who decline.
+
+------------------------------------------------------------
+7E) Longitudinal Streak Rules
+------------------------------------------------------------
+
+current_streak:
+  Count consecutive completed Morning Tune-Up days backward
+  from the most recent day (Sunday of current week), crossing
+  week boundaries via prior week JSONs.
+  - completed = true continues the streak
+  - completed = false breaks the streak
+  - Count stops at the first uncompleted day
+  If no prior week JSON exists: computed from current week
+  only (maximum 7).
+
+longest_streak:
+  Maximum current_streak value across all prior week JSONs
+  plus current week.
+  If no prior week JSON exists: longest_streak = current_streak.
+
+Both fields follow the same longitudinal computation pattern
+as rolling_win_rate_4wk (reads prior week JSONs).
+
+============================================================
+SECTION 8 – EVENING REVIEW CLASSIFICATION RULES
+============================================================
+
+All rules in this section apply ONLY when input_source = "app".
+
+------------------------------------------------------------
+8A) Review Completion Counting
+------------------------------------------------------------
+
+Full Completion:
+- All 3 components completed (wtd.completed AND
+  journaling.completed AND bullseye.completed)
+- AND evening_review.submitted = true
+
+Partial Completion:
+- At least 1 component completed but NOT full completion
+- Includes submitted reviews with incomplete components
+- Includes non-submitted reviews (submitted = false) where
+  at least 1 component has data (hard-out lockout scenario)
+
+Missed:
+- No components completed (all 3 component completed = false)
+- AND no partial data present
+
+full_completion_count:
+  count(full completion days) across 7 days
+
+partial_completion_count:
+  count(partial completion days) across 7 days
+
+missed_count:
+  count(missed days) across 7 days
+
+full_completion_count + partial_completion_count +
+missed_count = 7
+
+completion_rate:
+  full_completion_count / 7
+  (FULL completions only in numerator)
+
+------------------------------------------------------------
+8B) Evening Timing Classification
+------------------------------------------------------------
+
+Four-category timing model. Stage 2 classifies each submitted
+Evening Review by comparing completion_timestamp against
+cutoffs.
+
+HARD-OUT TIME PARAMETER:
+Stage 2 receives the hard-out time as a program-level
+configuration parameter.
+Default: 6:00 AM local time (next day).
+Configurable per program.
+The hard-out time is when the app locks the previous day's
+Evening Review and releases the next day's Morning Tune-Up.
+
+BACKFILL BOUNDARY:
+hard-out time minus 2 hours.
+Fixed constant. Not configurable.
+
+CATEGORIES:
+
+On-time:
+  completion_timestamp before 10:00 PM local time
+  Same-evening routine engagement
+
+Late:
+  completion_timestamp at or after 10:00 PM AND before
+  backfill boundary
+  Same-night, after intended window
+
+Backfill:
+  completion_timestamp at or after backfill boundary AND
+  before hard-out time
+  Next-morning retroactive catch-up before lockout
+
+Missed (timing):
+  Evening Review not submitted by hard-out time
+  submitted = false. No completion_timestamp.
+
+DEFAULT CUTOFFS (6:00 AM hard-out):
+  On-time:  before 10:00 PM
+  Late:     10:00 PM to 4:00 AM
+  Backfill: 4:00 AM to 6:00 AM
+  Missed:   after 6:00 AM (locked out)
+
+on_time_count:
+  count(on-time submissions) across 7 days
+
+late_submission_count:
+  count(late submissions) across 7 days
+
+backfill_count:
+  count(backfill submissions) across 7 days
+
+Only submitted reviews (submitted = true) are classified into
+timing categories. Non-submitted days are excluded from all
+three timing counts.
+
+on_time_count + late_submission_count + backfill_count =
+  count(submitted reviews)
+
+------------------------------------------------------------
+8C) Trigger Method Classification
+------------------------------------------------------------
+
+self_initiated_count:
+  count(evening_review.trigger_method == "self_initiated")
+  across 7 days
+
+reminder_dependent_count:
+  count(evening_review.trigger_method == "reminder")
+  across 7 days
+
+trigger_method is tagged by the app at point of entry.
+Stage 2 trusts this tag without re-derivation.
+
+Days with trigger_method = null (no engagement started):
+excluded from both counts.
+
+------------------------------------------------------------
+8D) Sequence Integrity Classification
+------------------------------------------------------------
+
+Designed sequence: WTD → Journaling → Bullseye
+
+For each day with 2+ components completed (component_sequence
+contains 2+ entries), compare actual component_sequence against
+designed order.
+
+multi_component_days:
+  count(days with 2+ entries in component_sequence array)
+
+designed_order_days:
+  count(multi_component_days where component_sequence matches
+  designed order exactly or is a subsequence of designed order)
+
+adherence_rate = designed_order_days / multi_component_days
+
+Intact:
+- adherence_rate >= 0.86
+- At most 1 deviation from designed sequence
+
+Partial:
+- adherence_rate >= 0.43 AND < 0.86
+- Some deviations but designed order followed in plurality
+
+Broken:
+- adherence_rate < 0.43
+- Majority of multi-component reviews deviated
+
+If multi_component_days < 2 → "insufficient data"
+
+Days with only 1 component completed are excluded from
+sequence evaluation (sequence requires 2+ components).
+
+------------------------------------------------------------
+8E) Component Completion Counting
+------------------------------------------------------------
+
+component_completion.wtd_completed_count:
+  count(wtd.completed == true
+    AND evening_review.submitted == true)
+
+component_completion.journaling_completed_count:
+  count(journaling.completed == true
+    AND evening_review.submitted == true)
+
+component_completion.bullseye_completed_count:
+  count(bullseye.completed == true
+    AND evening_review.submitted == true)
+
+SUBMITTED-ONLY RULE: Component completion counts include ONLY
+days where evening_review.submitted = true. Non-submitted
+reviews (hard-out lockout, submitted = false) are excluded
+from component counts even if partial component data exists.
+
+------------------------------------------------------------
+8F) Partial Data from Hard-Out Lockout
+------------------------------------------------------------
+
+When the hard-out locks an incomplete Evening Review:
+- submitted = false
+- completion_timestamp = null
+- Component data entered before lockout is preserved in the
+  daily event record
+- The day counts as PARTIAL in partial_completion_count
+  (athlete engaged with at least 1 component)
+- The day has no timing classification (excluded from
+  on_time, late, backfill counts)
+- Component data does NOT count toward component_completion
+  fields (wtd_completed_count, journaling_completed_count,
+  bullseye_completed_count) — SUBMITTED-ONLY RULE applies
+- Component TEXT data IS available for content analysis by
+  existing v9.3 fields (athlete_state, core_pattern,
+  emotional_intensity, reflection_quality_score,
+  bullseye_analysis)
+
+Partial data informs WHAT the athlete thought/felt (v9.3
+content signals). It does NOT credit HOW the athlete used the
+system (execution behavior metrics).
+
+============================================================
+SECTION 9 – WTD QUESTION PATTERN CLASSIFICATION RULES
+============================================================
+
+All rules in this section apply ONLY when input_source = "app".
+
+------------------------------------------------------------
+9A) Per-Question Yes Rates
+------------------------------------------------------------
+
+wtd_completed_days = count(days where wtd.completed == true)
+
+For each question (q1 through q5):
+  yes_rate = count(q_n == true) / wtd_completed_days
+
+Rates are decimal 0.00-1.00. Only days with WTD completed
+are included in the denominator.
+
+If wtd_completed_days == 0 → all yes rates = "insufficient data"
+
+------------------------------------------------------------
+9B) Weakest and Strongest Question
+------------------------------------------------------------
+
+weakest_question:
+  The question (Q1-Q5) with the lowest yes_rate.
+
+strongest_question:
+  The question (Q1-Q5) with the highest yes_rate.
+
+Tie rules:
+- If 2+ questions share the lowest yes_rate →
+  weakest_question = "none"
+- If 2+ questions share the highest yes_rate →
+  strongest_question = "none"
+- If all 5 rates are equal → both = "none"
+
+If wtd_completed_days < 3 → both = "insufficient data"
+
+------------------------------------------------------------
+9C) Intraweek Volatility
+------------------------------------------------------------
+
+Computed from the sequence of WTD daily categories across
+consecutive completed days within the week.
+
+Daily categories (from Section 1A):
+  4-5 = Win, 2-3 = Neutral, 0-1 = Missed
+
+category_changes:
+  Count of transitions between DIFFERENT WTD daily categories
+  across consecutive completed days (chronological order).
+  Each transition where the category differs from the previous
+  completed day = 1 change. Same category = no change.
+
+Low:
+- category_changes <= 1
+- Scores stay within the same or adjacent categories
+
+Moderate:
+- category_changes = 2 or 3
+- Some bouncing between categories
+
+High:
+- category_changes >= 4
+- Frequent swings between categories across the week
+
+If wtd_completed_days < 3 → "insufficient data"
+
+------------------------------------------------------------
+9D) Recovery Speed Days
+------------------------------------------------------------
+
+Measures days from a Missed day (WTD daily score 0-1) to the
+next Win day (WTD daily score 4-5) within the same week.
+
+Counting:
+- Start day = Missed day (score 0-1)
+- End day = next Win day (score 4-5), chronological order
+- recovery_speed_days = calendar days between start and end
+  (inclusive of end, exclusive of start)
+  Monday Missed → Tuesday Win = 1 day
+  Monday Missed → Wednesday Win = 2 days
+  Monday Missed → Sunday Win = 6 days
+
+Multiple Missed events:
+  Use the FASTEST recovery instance (lowest count).
+  Consistent with recommitment_signal logic (Section 1E).
+
+Values:
+  integer 1-7: recovery occurred within-week
+  "not applicable": no Missed days in the week
+  "did not recover": Missed day occurred but no subsequent
+    Win day within the week (excluding last-day-only Missed)
+  "Pending Data": the ONLY or LAST Missed day occurs on the
+    final day of the week with no subsequent day. Recovery
+    deferred to next week via cross_week_recovery.
+  "insufficient data": WTD data unavailable
+
+"Pending Data" is distinct from "insufficient data":
+  "Pending Data" = measurement deferred, data WILL arrive
+  "insufficient data" = data genuinely absent
+
+------------------------------------------------------------
+9E) Cross-Week Recovery
+------------------------------------------------------------
+
+Resolves the blind spot created by end-of-week Missed days.
+
+prior_week_unresolved_miss:
+  "Yes" → prior week JSON recovery_speed_days = "Pending Data"
+  "No" → prior week recovery_speed_days != "Pending Data"
+  Requires reading prior week JSON.
+
+recovery_days (cross-week):
+  When prior_week_unresolved_miss = "Yes":
+    Count days from Monday of current week until first Win
+    day (score 4-5):
+      Monday Win    = 1
+      Tuesday Win   = 2
+      Wednesday Win = 3
+      Thursday Win  = 4
+      Friday Win    = 5
+      Saturday Win  = 6
+      Sunday Win    = 7
+      No Win all week = "did not recover"
+
+  When prior_week_unresolved_miss = "No":
+    recovery_days = "not applicable"
+
+If no prior week JSON (first week of program):
+  prior_week_unresolved_miss = "No"
+  recovery_days = "not applicable"
+
+Core Foundation fallback:
+  prior_week_unresolved_miss =
+    "not available — weekly recap input only"
+  recovery_days =
+    "not available — weekly recap input only"
+
+The prior week JSON is NEVER modified. Forward-only data flow.
+
+============================================================
+SECTION 10 – JOURNALING BEHAVIOR CLASSIFICATION RULES
+============================================================
+
+All rules in this section apply ONLY when input_source = "app".
+
+These rules classify BEHAVIORAL execution quality of journaling
+— length and domain coverage. This is distinct from
+reflection_quality_score (Section 3), which measures CONTENT
+quality (depth of insight and pattern recognition).
+
+An athlete can have high RQS + Compressed depth_profile
+(insightful but rushed) or low RQS + Thorough depth_profile
+(lengthy but surface-level).
+
+------------------------------------------------------------
+10A) Depth Profile
+------------------------------------------------------------
+
+avg_daily_word_count:
+  total words across ALL journal entries for the week
+  / journaling_completed_days
+
+Stage 2 computes word counts from journaling entry text fields
+(school_work_entry, sport_entry, home_life_entry).
+
+journaling_completed_days:
+  count(days where journaling.completed == true AND
+  evening_review.submitted == true)
+
+Thorough:
+- avg_daily_word_count >= 75
+- Substantial engagement across completed days
+
+Adequate:
+- avg_daily_word_count >= 30 AND < 75
+- Meaningful entries but not extensive
+
+Compressed:
+- avg_daily_word_count >= 10 AND < 30
+- Brief entries suggesting rushed engagement
+
+Minimal:
+- avg_daily_word_count < 10
+- Negligible text volume
+
+If journaling_completed_days == 0 → "insufficient data"
+
+------------------------------------------------------------
+10B) Compression Detected
+------------------------------------------------------------
+
+Compression is a longitudinal signal: the athlete's journaling
+depth has declined relative to their own prior baseline.
+
+prior_2wk_avg = average of avg_daily_word_count from the
+  2 most recent prior week JSONs with journaling data
+
+Yes:
+- avg_daily_word_count < (prior_2wk_avg x 0.70)
+- Current week at least 30% below 2-week prior average
+
+No:
+- avg_daily_word_count >= (prior_2wk_avg x 0.70)
+- No meaningful decline from prior baseline
+
+If fewer than 2 prior weeks with journaling data →
+  "insufficient data"
+
+------------------------------------------------------------
+10C) Domain Omission Pattern
+------------------------------------------------------------
+
+For each domain (school_work, sport, home_life), compute
+total weekly word count across all journaling-completed days.
+
+A domain is "omitted" if its total weekly word count < 10
+words across all completed journaling days.
+
+none:
+- No domain omitted (all 3 domains have >= 10 words total)
+
+school_work:
+- school_work domain omitted, other domains active
+
+sport:
+- sport domain omitted, other domains active
+
+home_life:
+- home_life domain omitted, other domains active
+
+multiple:
+- 2+ domains omitted
+
+If journaling_completed_days < 3 → "insufficient data"
+
+============================================================
+SECTION 11 – BULLSEYE BEHAVIOR CLASSIFICATION RULES
+============================================================
+
+All rules in this section apply ONLY when input_source = "app".
+
+------------------------------------------------------------
+11A) Completion Reliability
+------------------------------------------------------------
+
+bullseye_completed_count:
+  count(bullseye.completed == true AND
+  evening_review.submitted == true) across 7 days
+
+Consistent:
+- bullseye_completed_count >= 6
+
+Partial:
+- bullseye_completed_count >= 3 AND <= 5
+
+Inconsistent:
+- bullseye_completed_count <= 2
+
+If no evening engagement days (full_completion_count +
+partial_completion_count == 0) → "insufficient data"
+
+------------------------------------------------------------
+11B) Ring Dominance Rates
+------------------------------------------------------------
+
+For each day where Bullseye was completed AND submitted:
+
+center_ring_dominant day:
+  center_ring_items.length > influence_ring_items.length
+  AND center_ring_items.length > outer_ring_items.length
+
+outer_ring_dominant day:
+  outer_ring_items.length > center_ring_items.length
+  AND outer_ring_items.length > influence_ring_items.length
+
+bullseye_completed_days:
+  count(days with bullseye.completed == true AND
+  evening_review.submitted == true)
+
+center_ring_dominant_rate:
+  count(center_ring_dominant days) / bullseye_completed_days
+
+outer_ring_dominant_rate:
+  count(outer_ring_dominant days) / bullseye_completed_days
+
+Both rates are decimal 0.00-1.00.
+
+If bullseye_completed_days == 0 → both = "insufficient data"
+
+Ties (no single ring has strictly more items than both
+others): that day is neither center-dominant nor
+outer-dominant.
+
+------------------------------------------------------------
+11C) Ring Balance
+------------------------------------------------------------
+
+Center-Weighted:
+- center_ring_dominant_rate >= 0.60
+- Center ring dominates on 60%+ of Bullseye days
+
+Outer-Weighted:
+- outer_ring_dominant_rate >= 0.40
+- Outer ring dominates on 40%+ of Bullseye days
+- ASYMMETRIC THRESHOLD: Outer-ring dominance at 0.40 is
+  already a coaching signal (athlete focusing on
+  uncontrollables nearly half the time)
+
+Balanced:
+- Neither Center-Weighted nor Outer-Weighted threshold met
+
+Both thresholds cannot be met simultaneously (a day has at
+most one dominant ring, so rates cannot sum above 1.00).
+
+If bullseye_completed_days == 0 → "insufficient data"
+
+------------------------------------------------------------
+11D) Contradiction Detected
+------------------------------------------------------------
+
+Cross-references WTD daily category with Bullseye ring
+dominance on the same day.
+
+A contradictory day occurs when:
+
+Category A: WTD daily category = Win (4-5 score)
+  AND outer_ring_items is the largest ring
+  (more items than BOTH center and influence)
+  — athlete claims a winning day but focused on
+  uncontrollables
+
+Category B: WTD daily category = Missed (0-1 score)
+  AND center_ring_items is the largest ring
+  (more items than BOTH outer and influence)
+  — athlete claims a missed day but says everything
+  was in their control
+
+contradiction_days = count(days with Category A or B)
+
+Yes:
+- contradiction_days >= 2
+
+No:
+- contradiction_days < 2
+
+If fewer than 3 days with both WTD completed AND Bullseye
+completed (and submitted) → "insufficient data"
+
+============================================================
+SECTION 12 – SELF-RATINGS PERCEPTION-REALITY ALIGNMENT RULES
+============================================================
+
+All rules in this section apply ONLY when input_source = "app".
+
+Self-ratings (confidence_level, habit_consistency_level) arrive
+in the weekly check-in on a 1-10 scale. Stage 2 compares these
+against composite scores to classify perception-reality
+alignment.
+
+Output fields (inside execution_behavior_signals):
+  self_ratings_alignment.confidence_alignment
+  self_ratings_alignment.habit_consistency_alignment
+
+------------------------------------------------------------
+12A) Self-Perception Tier Mapping
+------------------------------------------------------------
+
+For each self-rating (integer 1-10):
+
+High:     rating >= 8
+Moderate: rating >= 4 AND <= 7
+Low:      rating <= 3
+
+------------------------------------------------------------
+12B) Confidence Alignment
+------------------------------------------------------------
+
+Confidence compares against Ownership Index and Follow-Through
+Score — the two scores most aligned with self-perceived
+engagement confidence.
+
+confidence_execution_tier:
+  Count top-band scores:
+    ownership_index.band == "High" → +1 top
+    follow_through_score.band == "Strong" → +1 top
+
+  Count bottom-band scores:
+    ownership_index.band == "Low" → +1 bottom
+    follow_through_score.band == "Weak" → +1 bottom
+
+  High: top count == 2
+  Low: bottom count == 2
+  Moderate: all other combinations
+
+confidence_perception_tier:
+  From confidence_level using 12A rules
+
+Aligned:
+- confidence_perception_tier == confidence_execution_tier
+
+Conflated:
+- confidence_perception_tier > confidence_execution_tier
+- Athlete self-rates higher than execution supports
+
+Undervalued:
+- confidence_perception_tier < confidence_execution_tier
+- Execution exceeds athlete's self-assessment
+
+If confidence_level = null → "insufficient data"
+If either composite score band = "insufficient data" →
+  "insufficient data"
+
+------------------------------------------------------------
+12C) Habit Consistency Alignment
+------------------------------------------------------------
+
+Habit consistency compares against Rhythm Score — the score
+most aligned with self-perceived routine consistency.
+
+habit_execution_tier:
+  rhythm_score.band mapped:
+    Stable    → High
+    Variable  → Moderate
+    Disrupted → Low
+
+habit_perception_tier:
+  From habit_consistency_level using 12A rules
+
+Aligned:
+- habit_perception_tier == habit_execution_tier
+
+Conflated:
+- habit_perception_tier > habit_execution_tier
+
+Undervalued:
+- habit_perception_tier < habit_execution_tier
+
+If habit_consistency_level = null → "insufficient data"
+If rhythm_score.band = "insufficient data" →
+  "insufficient data"
+
+============================================================
+SECTION 13 – COMPOSITE SCORE CLASSIFICATION RULES
+============================================================
+
+Full calculation formulas, weighted components, and edge cases
+are defined in:
+  VF_Execution_Signal_Composite_Score_Rules.txt
+
+The Interpretation Engine reads BOTH this document AND the
+Composite Score Rules document. This section provides band
+classification thresholds for quick reference.
+
+All rules apply ONLY when input_source = "app".
+Core Foundation: all scores →
+  { "score": "insufficient data", "band": "insufficient data" }
+
+------------------------------------------------------------
+13A) Band Threshold Summary
+------------------------------------------------------------
+
+SCORE                  DIRECTION       BANDS
+-----                  ---------       -----
+Ownership Index        Higher=better   High 70+ | Mod 40-69 | Low 0-39
+Drift Score            Higher=worse    None 0-20 | Early 21-45 | Active 46+
+Follow-Through Score   Higher=better   Strong 75+ | Mod 40-74 | Weak 0-39
+Rhythm Score           Higher=better   Stable 75+ | Var 40-74 | Disrupted 0-39
+Review Quality Score   Higher=better   High 70+ | Mod 40-69 | Low 0-39
+Recovery Score         Higher=better   Strong 70+ | Mod 40-69 | Low 0-39
+Reactivity Risk Score  Higher=worse    Low 0-25 | Mod 26-50 | Elevated 51+
+
+------------------------------------------------------------
+13B) Special Score States
+------------------------------------------------------------
+
+Recovery Score has 5 possible states:
+  1. Calculated (integer 0-100 with band): disruption occurred,
+     recovery measured
+  2. Fixed 85 / Strong: no disruption (athlete not tested)
+  3. "Pending Data" / "Pending Data": last-day Missed, deferred
+     to next week via cross_week_recovery
+  4. "insufficient data" / "insufficient data": cannot measure
+  5. Core Foundation: "insufficient data" / "insufficient data"
+
+"Pending Data" applies ONLY to recovery_speed_days and Recovery
+Score. No other fields use this value.
+
+------------------------------------------------------------
+13C) Composite Score Format
+------------------------------------------------------------
+
+Each composite score is a nested object:
+  { "score": integer 0-100, "band": categorical enum }
+
+Numeric score: resolution for Stage 3 tone calibration and
+longitudinal sensitivity.
+Categorical band: deterministic classification for Stage 4
+compliance-safe routing and coach flag triggers.
+
+============================================================
+SECTION 14 – COACH FLAGS CLASSIFICATION RULES
+============================================================
+
+Full flag specifications, trigger conditions, and description
+templates are defined in:
+  VF_Coach_Flags_Specification.txt
+
+The Interpretation Engine reads BOTH this document AND the
+Coach Flags Specification document. This section provides the
+summary table and structural rules.
+
+All rules apply ONLY when input_source = "app".
+Core Foundation: coach_flags = [] (empty array).
+
+------------------------------------------------------------
+14A) Flag Object Structure
+------------------------------------------------------------
+
+Each flag in the coach_flags array:
+{
+  "flag_id": "snake_case unique identifier",
+  "severity": "monitor | attention | action",
+  "label": "short internal-only label",
+  "trigger_source": ["array of score names or metric paths"],
+  "description": "1-sentence explanation with template variables"
+}
+
+------------------------------------------------------------
+14B) Flag Catalog Summary (15 flags)
+------------------------------------------------------------
+
+SEV     FLAG_ID                           TRIGGER
+------  --------------------------------  -------------------
+action  compound_disengagement            3+ of 5 scores worst band
+action  persistent_attention_pattern      Any attn flag current + prior wk
+action  sustained_compound_disengagement  compound_diseng current + prior wk
+attn    drift_active                      drift_score.band == Active
+attn    reactivity_elevated               reactivity.band == Elevated
+attn    recovery_failure                  recovery.band == Low (calc only)
+attn    ownership_low                     ownership.band == Low
+attn    follow_through_weak               follow_through.band == Weak
+attn    rhythm_disrupted                  rhythm.band == Disrupted
+attn    review_quality_low                review_quality.band == Low
+attn    sustained_drift                   drift != None current + prior wk
+mon     drift_early                       drift_score.band == Early
+mon     surface_engagement                completion >= 0.71 + 2/3 degraded
+mon     component_avoidance               Any comp 0 + another >= 3
+mon     morning_disengagement             morning <= 0.29 + evening >= 0.57
+
+------------------------------------------------------------
+14C) Ordering Rule
+------------------------------------------------------------
+
+Flags are ordered in the array by severity descending:
+  action → attention → monitor
+
+Within the same severity tier, flags follow catalog sequence.
+
+------------------------------------------------------------
+14D) Flag Independence Rule
+------------------------------------------------------------
+
+Individual worst-band flags fire independently even when
+compound or cross-week flags also fire. All applicable flags
+appear in the array. Compound and cross-week flags are
+additive, not replacing.
+
+------------------------------------------------------------
+14E) Cross-Week Data Requirements
+------------------------------------------------------------
+
+Flags 13-15 (sustained_drift, persistent_attention_pattern,
+sustained_compound_disengagement) require reading the prior
+week JSON.
+
+If no prior week JSON (first week of program):
+  Cross-week flags do not fire.
+  Only single-week flags (catalog 1-12) are evaluated.
+
+============================================================
+SECTION 15 – EXECUTION PATTERN SUMMARY RULES
+============================================================
+
+execution_pattern_summary is a 1-2 sentence behavioral
+execution summary generated by Stage 2 after all other
+execution_behavior_signals fields are computed.
+
+All rules apply ONLY when input_source = "app".
+Core Foundation fallback:
+  "Core Foundation input — execution behavior signals
+  not available"
+
+------------------------------------------------------------
+15A) Content Rules
+------------------------------------------------------------
+
+The summary SHOULD capture:
+- Dominant execution pattern this week (timing consistency,
+  component engagement, self-initiation level)
+- Highest-severity coach_flag behavioral pattern if any fired
+- Notable composite score pattern (e.g., high ownership but
+  disrupted rhythm)
+
+The summary SHOULD NOT include:
+- Raw numeric metrics (completion rates, scores, counts,
+  timestamps, streaks)
+- Clinical or surveillance-style language
+- Speculative interpretation
+- Coaching recommendations (Stage 3 domain)
+
+The summary uses behavioral language only. It describes
+WHAT the athlete did, not WHY or what it means.
+
+------------------------------------------------------------
+15B) Generation Rule
+------------------------------------------------------------
+
+Deterministic synthesis: the summary must be derivable from
+the computed fields in the same JSON. No new interpretation
+beyond what the fields already classify.
+
+If all composite scores = "insufficient data" →
+  "Insufficient execution data for pattern summary."
+
+============================================================
+SECTION 16 – GLOBAL GUARDRAILS
 ============================================================
 
 - No clinical terminology.
@@ -402,9 +1429,14 @@ SECTION 6 – GLOBAL GUARDRAILS
 - Interpret behavior only.
 - Do not speculate.
 - Use "insufficient data" when unsupported.
+- Execution timing data (completion rates, submission
+  timestamps, backfill counts, reminder dependency rates,
+  late counts, streak counts) is backend-only. It is NEVER
+  surfaced to coaching staff in any form. This data informs
+  better coaching output but is not itself coaching content.
 
 ============================================================
-SECTION 7 – FINAL RULE
+SECTION 17 – FINAL RULE
 ============================================================
 
 These rules override interpretive creativity.
