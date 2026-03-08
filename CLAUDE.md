@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-07
-**Session Notes:** Execution Signal Schema Design — Tasks 1-6 complete. Task 6 (JSON Rules update) applied to VF_Interpretation_JSON_Rules.txt (417 → 1449 lines, 10 new sections).
+**Session Notes:** Execution Signal Schema Design — Tasks 1-7 complete. Task 7 (Project Instructions update) created SOP_Interpretation_Engine_Project_Instructions_v9.4.txt (294 → 480 lines, 5 new sections, dual-input processing workflow).
 
 ---
 
@@ -18,7 +18,7 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 | Stage | Agent | Status |
 |---|---|---|
 | 1 | Athlete Snapshot Generator | Built |
-| 2 | Interpretation Engine | Built — Active schema: **v9.3** |
+| 2 | Interpretation Engine | Built — Active schema: **v9.4** |
 | 3 | Coaching Output Engine | Built — Active schema: **v1.4 / V3** |
 | 4 | Coach Insights Engine | **Specification upgraded — v1.1** |
 | 5 | Editorial Audit | **Specification complete — v1.0** |
@@ -30,7 +30,7 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 ### As the Interpretation Engine (Stage 2):
 - Read the athlete's baseline snapshot from disk
 - Read ALL prior week JSONs from disk (do not ask the user to re-paste)
-- Apply all v9.3 schema fields including all 5 new fields (see Schema section)
+- Apply all v9.4 schema fields including all 5 new fields and execution_behavior_signals block (see Schema section)
 - Write output to: `Athlete Data\[Athlete]\Weekly JSONS\`
 - Naming: `{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_Interpretation.txt`
 - Do NOT reinterpret or override JSON classifications downstream
@@ -48,7 +48,7 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 - Naming: `{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_DeepDive.txt`
 
 ### As the Coach Insights Engine (Stage 4):
-- Input: Interpretation JSON only (v9.3 schema)
+- Input: Interpretation JSON only (v9.4 schema)
 - You are NOT a coach. You do NOT generate athlete-facing content.
 - Produce up to TWO compliance-safe outputs per run:
   - **Weekly Performance Insight** — individual athlete dashboard (Sections 1-10), compliance-safe, mandatory disclaimer
@@ -78,7 +78,7 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 
 ---
 
-## Active Schema — Interpretation Engine v9.3
+## Active Schema — Interpretation Engine v9.4
 
 ### 5 New Fields Added (Pipeline Schema Upgrade — implemented this session)
 
@@ -119,7 +119,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 
 ### Interpretation Engine
 - Master Prompt: `Agents - Generators\Interpretation\SOP - Weekly Interp Prompt v7.3.txt`
-- Project Instructions: `Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.3.txt`
+- Project Instructions: `Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt`
 - JSON Rules: `Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt`
 - Composite Score Rules: `Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt`
 - Coach Flags Specification: `Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt`
@@ -331,8 +331,8 @@ Three developmental threads: (1) Practice-to-competition transfer gap — derail
 
 ---
 
-### Other Athletes (not yet processed under v9.3 schema)
-- **John Tastinger** — data exists, no v9.3 JSONs generated
+### Other Athletes (not yet processed under v9.4 schema)
+- **John Tastinger** — data exists, no v9.4 JSONs generated
 
 ---
 
@@ -393,6 +393,7 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 26. Execution Signal Schema Design — Task 5 saved to disk: Wrote `VF_Coach_Flags_Specification.txt` to `Agents - Generators\Interpretation\Source Files\`. Complete specification document modeled after `VF_Execution_Signal_Composite_Score_Rules.txt` style — includes flag object structure definition, severity tier definitions with downstream routing, all 15 flag specifications with deterministic trigger conditions and description templates, flag independence rule, cross-week data requirements, Core Foundation fallback, compliance boundary statement (coach_flags vs risk_flags), and downstream routing summary (Stage 3 tone calibration, Stage 4 inform-only, Stage 5 audit verification). Updated CLAUDE.md coach_flags JSON reference and all Task 5 completion markers.
 27. Execution Signal Schema Design — Task 2 complete: Defined and approved the app daily input format — the API contract between the app backend and Stage 2 (Interpretation Engine). Weekly Input Object contains 7 daily event records + 1 weekly check-in record. Daily events capture Morning Tune-Up (7 fields including mindset_challenge_accepted, focus_word, quick_win_items) and Evening Review (WTD 5 questions, Journaling 3 domain fields, Bullseye 3 ring arrays, Mindset Challenge follow-through, component sequence). Weekly check-in captures Motivation Inventory (5 questions) and self_ratings (confidence_level and habit_consistency_level, both 1-10 scale — enables perception-reality alignment analysis: conflated/undervalued/aligned self-view vs. execution data). Key design decisions: WTD daily category terminology updated ("Partial Win" replaces "Neutral" for 2-3 range, aligns with positive self-speak model); 4-category evening timing model with hard-out rule (on-time before 10 PM / late 10 PM to backfill boundary / backfill 2 hours before hard-out / missed after hard-out lockout); hard-out time = Morning Tune-Up release (default 6 AM, configurable per program); backfill window = fixed 2-hour constant before hard-out (not configurable); Morning Tune-Up V1 acceptance is mandatory (required to complete — mindset_challenge_accepted retained for future-proofing, null when Tune-Up skipped); Bullseye items as arrays (not free text) for deterministic counting; app tags trigger_method at point of entry; partial data preserved on hard-out lockout (submitted=false but component data available). Core Foundation input format confirmed (recap text only). Specification saved to `VF_App_Input_Format_Specification.txt`. 5 downstream implications flagged for Tasks 6-7.
 28. Execution Signal Schema Design — Task 6 complete: First IMPLEMENTATION task. Updated `VF_Interpretation_JSON_Rules.txt` with 10 new classification sections (Sections 6-15) covering all execution_behavior_signals subfields. File expanded from 417 to 1449 lines. New sections: Input Source Classification (dual-mode + Core Foundation fallback), Morning Tune-Up (timeliness_profile thresholds, V1 mandatory acceptance derivation, longitudinal streaks), Evening Review (4-category timing model with hard-out parameter, submitted-only rule for component counts, partial data from hard-out lockout), WTD Question Patterns (yes rates, weakest/strongest question, intraweek volatility, recovery speed days, cross-week recovery), Journaling Behavior (depth_profile word count thresholds, compression detection, domain omission), Bullseye Behavior (completion reliability, ring dominance rates, asymmetric ring balance thresholds, contradiction detection), Self-Ratings Perception-Reality Alignment (tier-based comparison: confidence vs Ownership+Follow-Through, habit consistency vs Rhythm Score — Aligned/Conflated/Undervalued), Composite Score summary table with band thresholds, Coach Flags summary table with structural rules, Execution Pattern Summary generation rules. All 5 downstream implications from Task 2 incorporated: "Partial Win" note added to Section 1A, V1 mandatory acceptance documented, self-ratings classification defined, hard-out time parameter consumption documented, partial data counting rules specified. Old Section 6 (Global Guardrails) renumbered to 16 with execution timing backend-only guardrail added. Old Section 7 (Final Rule) renumbered to 17. self_ratings_alignment sub-block added to execution_behavior_signals (extends approved block per Task 2 deferral).
+29. Execution Signal Schema Design — Task 7 complete: Second Stage 2 IMPLEMENTATION task. Created `SOP_Interpretation_Engine_Project_Instructions_v9.4.txt` — new versioned Project Instructions file with dual-input processing workflow. File expanded from 294 to 480 lines, cleanly renumbered to 17 sections + final rule. 5 new sections added: Input Source Detection (Section 3 — app vs core_foundation determination with ambiguous-defaults-to-CF rule), Core Foundation Fallback Rules (Section 6 — skip Steps 12-17, populate fallback values), Cross-Week Data Access (Section 7 — streaks, cross-week recovery, coach flags 13-15, compression detection), No Degradation Rule (Section 8 — Steps 1-11 identical regardless of input_source), Execution Timing Backend-Only Rule (Section 9 — compliance across all pipeline stages). Core Interpretation Process (Section 4) expanded with: Data Source Mapping for App athletes (motivation_inventory → athlete_voice/upcoming_context field routing, daily journaling/Bullseye → content analysis), data source notes at Steps 3/4/5 distinguishing content analysis (v9.3 fields) from metric extraction (execution signals), and new Steps 12-17 for execution behavior signal processing (raw metric extraction, subfield classification, composite score computation, coach flag evaluation, self-ratings alignment, execution pattern summary). Production Schema Validation (Section 11) expanded with 4 new checks for execution_behavior_signals (app-mode completeness, CF-mode fallback verification). Canonical Output Schema (Section 17) expanded with full execution_behavior_signals block including self_ratings_alignment. Authoritative Sources (Section 2) updated with 3 new source files in authority hierarchy. Export filename updated to match established naming convention (_VF_Interpretation.txt). v9.3 file preserved on disk per versioning rules.
 
 ---
 
@@ -632,7 +633,7 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 4. ~~Collaboratively design deterministic calculation rules for all 7 composite scores (numeric 0-100 + categorical bands)~~ **COMPLETE — approved 2026-03-06. Rules saved to VF_Execution_Signal_Composite_Score_Rules.txt**
 5. ~~Define the `coach_flags` array — flag types, trigger conditions, severity levels~~ **COMPLETE — 15 flags, 3 severity tiers, 4 categories. Saved to VF_Coach_Flags_Specification.txt**
 6. ~~Update `VF_Interpretation_JSON_Rules.txt` with new classification sections~~ **COMPLETE — 10 new sections (6-15), old 6→16 with execution timing guardrail, old 7→17. 417→1449 lines. All execution subfield classification rules, self_ratings_alignment sub-block added.**
-7. Update `SOP_Interpretation_Engine_Project_Instructions` to new version with dual-input processing
+7. ~~Update `SOP_Interpretation_Engine_Project_Instructions` to new version with dual-input processing~~ **COMPLETE — v9.4 created. 17 sections + final rule. Dual-input workflow (Steps 0-17), data source mapping for App athletes, 5 new sections (Input Source Detection, Core Foundation Fallback, Cross-Week Data Access, No Degradation Rule, Execution Timing Backend-Only Rule). 294→480 lines.**
 8. Update `VF_Coaching_Output_JSON_to_Message_Map.txt` with execution signal routing
 9. Update `SOP_Coaching_Output_Instructions` to new version with execution signal usage rules
 10. Update `JSON_logic_reference.txt` with inform-only routing for execution signals
@@ -651,7 +652,7 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 - [x] Collaboratively design deterministic calculation rules for all 7 composite scores — **APPROVED 2026-03-06. Rules in VF_Execution_Signal_Composite_Score_Rules.txt**
 - [x] Define `coach_flags` array (flag types, trigger conditions, severity) — **COMPLETE. 15 flags saved to VF_Coach_Flags_Specification.txt**
 - [x] Update Interpretation Engine JSON Rules — **COMPLETE (Task 6). VF_Interpretation_JSON_Rules.txt updated with 10 new sections.**
-- [ ] Update Interpretation Engine Project Instructions to new version
+- [x] Update Interpretation Engine Project Instructions to new version — **COMPLETE (Task 7). SOP_Interpretation_Engine_Project_Instructions_v9.4.txt created.**
 - [ ] Update Coaching Output files (Message Map, Instructions) to new versions
 - [ ] Update Coach Insights files (JSON Logic Reference, Project Instructions) to new versions
 - [ ] Define new Editorial Audit criteria for execution signal leakage
@@ -659,7 +660,7 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 
 ### Athlete Pipeline Work
 - [ ] Grace Kindel Week 6 (when recap arrives post-Florida trip)
-- [ ] John Tastinger — process through v9.3 Interpretation Engine
+- [ ] John Tastinger — process through v9.4 Interpretation Engine
 
 ### Completed
 - [x] Coaching Output (v1.2/V3) for Grace Kindel Weeks 1–5 — all on disk
@@ -683,6 +684,7 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 - [x] Execution Signal Schema Design Task 5 — coach_flags array complete (15 flags, 3 severity tiers, 4 categories). Saved to VF_Coach_Flags_Specification.txt.
 - [x] Execution Signal Schema Design Task 2 — App input format specification complete. Weekly Input Object (daily_events[7] + weekly_check_in), 4-category evening timing (on-time/late/backfill/missed with hard-out), "Partial Win" terminology, self-ratings (confidence + habit consistency 1-10), V1 Morning Tune-Up (3 active elements), mindset_challenge_accepted retained. Saved to VF_App_Input_Format_Specification.txt.
 - [x] Execution Signal Schema Design Task 6 — VF_Interpretation_JSON_Rules.txt updated with 10 new sections (6-15). 417→1449 lines. All execution subfield classification rules defined. 5 downstream implications from Task 2 incorporated. self_ratings_alignment sub-block added. Old Sections 6-7 renumbered to 16-17.
+- [x] Execution Signal Schema Design Task 7 — SOP_Interpretation_Engine_Project_Instructions_v9.4.txt created. 294→480 lines. 17 sections + final rule. Dual-input workflow (Steps 0-17), data source mapping for App athletes, 5 new sections (Input Source Detection, Core Foundation Fallback, Cross-Week Data Access, No Degradation Rule, Execution Timing Backend-Only Rule). Canonical schema expanded with full execution_behavior_signals block.
 
 **Grace Kindel Coach Insights — All 5 Weeks Complete:**
 
