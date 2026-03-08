@@ -4,6 +4,7 @@ JSON → MESSAGE MAPPING LOGIC
 
 PURPOSE
 Standardizes how Interpretation JSON fields are translated into coaching outputs.
+Covers both v9.3 fields and execution_behavior_signals routing.
 
 ------------------------------------------------------------
 COACHING MESSAGE (ATHLETE-FACING)
@@ -11,8 +12,13 @@ COACHING MESSAGE (ATHLETE-FACING)
 
 Recognition:
 Pull from athlete_state + positive signals in coach_insights.
+Execution enrichment (App athletes):
+If ownership_index.band = High → recognize self-driven engagement.
+If follow_through_score.band = Strong → recognize challenge execution.
+If recovery_score.band = Strong (calculated, not fixed) → recognize
+  post-disruption resilience.
 
-Prior Commitment Check (NEW):
+Prior Commitment Check:
 If prior_commitment_result.execution_status exists and is not "No Prior Week":
 - Include 1 sentence acknowledging the prior commitment and its result.
 - If Completed: reinforce with brief recognition.
@@ -22,22 +28,45 @@ If prior_commitment_result.execution_status exists and is not "No Prior Week":
 
 Strength Signals:
 Use weekly_tier + consistency_profile + control_quality.
+Execution enrichment (App athletes):
+ownership_index (High) → self-initiated engagement evidence.
+follow_through_score (Strong) → Mindset Challenge execution evidence.
+rhythm_score (Stable) → consistent daily engagement timing.
+review_quality_score (High) → thorough, balanced review engagement.
+recovery_score (Strong, calculated) → post-disruption execution resilience.
 
 Drift Identification:
 Use core_pattern + bullseye primary_focus_ring + recommitment_signal.
+Execution enrichment (App athletes):
+drift_score (Early) → name emerging engagement compression. Subtle, not direct.
+drift_score (Active) → directly address behavioral disengagement.
+reactivity_risk_score (Moderate) → note volatile execution subtly.
+reactivity_risk_score (Elevated) → directly address event-driven disruption.
+recovery_score (Low, calculated) → address post-disruption execution gap.
+recovery_score (Pending Data) → name the open thread from end-of-week disruption.
+self_ratings_alignment (Conflated) → gently ground self-perception
+  against execution evidence.
 
 Identity Anchor:
 Use growth_phase to frame identity development.
+Execution enrichment (App athletes):
+self_ratings_alignment (Undervalued) → elevate identity with execution evidence.
+Positive execution bands → ground identity in behavioral evidence.
 
 Weekly Action:
 Must directly equal micro_commitment.action + when + measurement.
 Do not modify action language.
+Coach flag impact: attention/action flags may redirect micro_commitment
+  targeting (see Coach Flag Routing in Execution Signal Routing Rules).
 
 Identity Thread (2–3 sentences):
 If baseline_profile exists, connect:
 baseline_identity_claim + baseline_hinge_habit → core_pattern → most_important_controllable.
+Execution enrichment (App athletes):
+When positive execution bands reinforce the identity thread, ground
+  the baseline → current week connection in execution evidence.
 
-Athlete Voice Mirror (NEW):
+Athlete Voice Mirror:
 If athlete_voice.key_phrase or athlete_voice.achievement_statement
 contains a significant statement:
 - Include 1 sentence that mirrors the athlete's own language back.
@@ -45,7 +74,7 @@ contains a significant statement:
 - Connect it to the identity thread or the most_important_controllable.
 Do not use more than 1 athlete-voice mirror per message.
 
-Upcoming Context Anchor (NEW):
+Upcoming Context Anchor:
 If upcoming_context.scheduled_competition is not "insufficient data":
 - Include 1 sentence connecting the micro_commitment to the
   specific upcoming event.
@@ -62,17 +91,45 @@ DEEP DIVE ANALYSIS
 
 Weekly Overview:
 Use weekly_tier + consistency_profile + recommitment_signal.
+Execution enrichment (App athletes):
+Include execution_pattern_summary as behavioral context in the
+  weekly theme paragraph.
+If drift_score.band != None → frame engagement quality alongside
+  consistency_profile.
 
 Strength Sections:
 Draw from coach_insights.key_habit_signal + win_the_day signals + control_quality.
+Execution enrichment (App athletes):
+ownership_index (High) → self-driven engagement subsection.
+follow_through_score (Strong) → challenge execution subsection.
+rhythm_score (Stable) → daily timing consistency subsection.
+review_quality_score (High) → thorough engagement subsection.
+recovery_score (Strong, calculated) → post-disruption resilience subsection.
+Use composite score bands as behavioral evidence. Do not cite numeric scores.
 
 Growth Sections:
 Use behavioral_root_cause + drift indicators + recommitment_signal.
+Execution enrichment (App athletes):
+drift_score (Early/Active) → engagement erosion pattern.
+rhythm_score (Variable/Disrupted) → timing inconsistency pattern.
+reactivity_risk_score (Moderate/Elevated) → volatile execution pattern.
+review_quality_score (Low/Moderate) → review engagement gap.
+follow_through_score (Weak/Moderate) → challenge execution gap.
+ownership_index (Low/Moderate) → self-initiation gap.
+recovery_score (Low, calculated) → post-disruption execution gap.
+Use composite score bands as coaching cue evidence. Do not cite numeric scores.
 
 Mindset Summary:
 Use growth_phase + reflection_quality_score.
+Execution enrichment (App athletes):
+self_ratings_alignment:
+  Conflated → perception-reality assessment. Ground self-view
+    against execution evidence. No clinical language.
+  Undervalued → perception-reality assessment. Elevate self-view
+    with execution evidence.
+  Aligned → no special treatment.
 
-Narrative Arc (NEW):
+Narrative Arc:
 If narrative_arc fields are populated (not "insufficient data"):
 - Include arc_summary as a 2-3 sentence developmental summary.
 - Name milestone_this_week as a specific callout.
@@ -80,14 +137,23 @@ If narrative_arc fields are populated (not "insufficient data"):
 
 Coaching Focus Areas:
 Must include most_important_controllable + micro_commitment.
+Execution enrichment (App athletes):
+coach_flags (attention severity) → micro_commitment targets the
+  flagged behavioral area.
+coach_flags (action severity) → coaching focus areas lead with the
+  flagged pattern as dominant priority.
+If drift_score = Active or reactivity_risk_score = Elevated →
+  include as specific coaching focus priority.
+If recovery_score = Pending Data → include the open thread from
+  end-of-week disruption as a forward-looking focus.
 
-Upcoming Preparation (NEW):
+Upcoming Preparation:
 If upcoming_context.scheduled_competition is not "insufficient data":
 - Include one coaching focus area that specifically prepares
   the athlete for the named upcoming event.
 - Connect the micro_commitment to the competition context.
 
-Emotional Calibration Rule (NEW):
+Emotional Calibration Rule:
 If emotional_intensity = "High":
 - Lead coaching message with empathetic acknowledgment.
 - Name the specific emotional experience from the recap.
@@ -120,6 +186,95 @@ Do NOT include:
 - weekly tier labels
 - technical classifications
 - scoring bands
+- execution behavior data
+
+------------------------------------------------------------
+EXECUTION SIGNAL ROUTING RULES
+------------------------------------------------------------
+
+Core Foundation Athlete Rule:
+When execution_behavior_signals.input_source = "core_foundation":
+All execution signal routing is skipped. Use v9.3 fields only.
+Output is identical to pre-v9.4 behavior.
+
+Raw Metric Exclusion Rule:
+Raw execution metrics NEVER appear in coaching output:
+- Completion rates (decimal or percentage)
+- Timing data (on-time counts, late counts)
+- Backfill counts, reminder dependency counts
+- Streak counts (current_streak, longest_streak)
+- Component completion counts
+- Question-level yes rates (q1-q5)
+- Self-initiated vs. reminder-dependent counts
+Only the following may inform coaching output:
+- Composite score BANDS (categorical only, never numeric scores)
+- Coach flag-driven behavioral patterns
+- Self-ratings alignment classifications
+- Execution pattern summary language
+
+Coach Flag Routing:
+
+  monitor flags:
+    Coaching Message: Subtle tone adjustment in Drift Identification
+      or Strength Signals. No flag naming. No metric citation.
+    Deep Dive: Subtle framing adjustment in Growth Sections.
+      No dedicated subsection. No flag naming.
+    No impact on micro_commitment targeting.
+
+  attention flags:
+    Coaching Message: Directly address the behavioral pattern in
+      Drift Identification. Name the pattern in athlete-appropriate
+      language (not the flag_id or label).
+    Deep Dive: Dedicated Growth subsection addressing the behavior.
+    Coaching Focus Areas: micro_commitment targets the flagged area.
+    If multiple attention flags fire, prioritize by relevance to
+      core_pattern.
+
+  action flags:
+    Coaching Message: Leads with the flagged pattern as the
+      dominant theme. Recognition pivots to acknowledge the
+      pattern before moving to strengths. Drift Identification
+      becomes the central section.
+    Deep Dive: Weekly Overview leads with the flagged pattern.
+      Growth Sections organized around the action flag.
+      Coaching Focus Areas dominated by the flagged pattern.
+    micro_commitment directly targets the action-flag behavior.
+    If compound_disengagement fires: address the broad behavioral
+      shift, not each individual score.
+
+Self-Ratings Alignment Routing:
+  Aligned: No special routing.
+  Conflated:
+    Coaching Message: Drift Identification gently grounds
+      self-perception.
+    Deep Dive: Mindset Summary includes perception-reality
+      assessment.
+    Language: "Let's look at what the week actually showed" or
+      "Your sense of where you are doesn't quite match what
+      the execution shows."
+    Do NOT use: "overestimate," "inflated," "unrealistic."
+  Undervalued:
+    Coaching Message: Recognition and Identity Anchor elevate
+      with execution evidence.
+    Deep Dive: Mindset Summary includes perception-reality
+      assessment.
+    Language: "You're further along than you think" or
+      "The execution tells a stronger story than you gave
+      yourself credit for."
+
+Execution Pattern Summary Routing:
+  Routes to: Deep Dive Weekly Overview only.
+  Use as behavioral context in the weekly theme paragraph.
+  Do NOT use in Coaching Message (summary tone does not match
+    direct coaching voice).
+
+Moderate-Band Routing Heuristic:
+  For higher-is-better scores (Ownership, Follow-Through, Rhythm,
+  Review Quality) when band = Moderate:
+    weekly_tier = Growth → route as Strength evidence.
+    weekly_tier = Mixed or Reset → route as Growth evidence.
+  For higher-is-worse scores (Drift, Reactivity):
+    Moderate bands always route to Drift Identification / Growth.
 
 ------------------------------------------------------------
 GLOBAL RULES
@@ -129,3 +284,5 @@ GLOBAL RULES
 - Do not introduce new themes not grounded in JSON.
 - Maintain brand voice (calm, direct, structured).
 - Reinforce controllables consistently.
+- Execution signal sharpens existing sections. It does not add
+  new sections or expand word targets.
