@@ -1,17 +1,28 @@
 VF COACH INSIGHTS ENGINE
 JSON → INSIGHTS TRANSFORMATION LOGIC (FIELD-BY-FIELD)
-(Updated for v9.3 Schema + v1.1 Metrics Expansion)
+(Updated for v9.4 Schema + v1.1 Metrics Expansion)
 
 INPUT SOURCE
-- Interpretation Engine JSON only (v9.3 schema).
+- Interpretation Engine JSON only (v9.4 schema).
 - Do not use weekly recap or any raw athlete text.
-- If any field is missing or "insufficient data": keep the section, keep structure, and write a neutral sentence.
+- If any field is missing or "insufficient data": keep the
+  section, keep structure, and write a neutral sentence.
+
+DUAL-MODE AWARENESS:
+- App athletes (input_source = "app"): v9.3 fields + populated
+  execution_behavior_signals block. Execution fields are
+  INFORM-ONLY — they sharpen section content internally but
+  raw data never appears in output.
+- Core Foundation athletes (input_source = "core_foundation"):
+  v9.3 fields only. execution_behavior_signals contains fallback
+  values. All execution signal routing is skipped. Output is
+  identical to pre-v9.4 behavior.
 
 OUTPUT SCOPE
 All sections (0-10) map to the single Weekly Performance Insight.
 This output must be compliance-safe for all coaching staff levels.
-See SOP_Coach_Insights_Project_Instructions_v1.1.txt for
-full output definitions.
+See SOP_Coach_Insights_Project_Instructions for full output
+definitions.
 
 0) HEADER FIELDS
 - Athlete Name: use athlete_name (if empty → "Insufficient data")
@@ -37,6 +48,16 @@ Executive Summary (2–3 sentences)
 Use: athlete_state, core_pattern, win_the_day.consistency_profile, win_the_day.recommitment_signal, bullseye_analysis.primary_focus_ring
 Style: neutral, trend-based; use words: indicator / signal / trend / stability. No emotional or evaluative language.
 
+EXECUTION ENRICHMENT (App athletes only):
+- execution_pattern_summary → Informs executive summary as
+  behavioral context. Translate into neutral trend language.
+  Never reproduce raw summary text.
+- If action-severity coach flags fire → summary framing
+  reflects the dominant execution concern (translated to
+  institutional language). Never name the flag or its metrics.
+- If 3+ composite score bands are in concern range → note
+  behavioral stability indicators in the summary.
+
 2) CONSISTENCY SIGNAL
 Status mapping from win_the_day.consistency_profile:
 - Stable Positive → Stable
@@ -48,6 +69,18 @@ Status mapping from win_the_day.consistency_profile:
 
 Explanation: use distribution counts if present; otherwise describe based on consistency_profile.
 Never include daily breakdown. Never include raw numeric scores.
+
+EXECUTION ENRICHMENT (App athletes only):
+- rhythm_score.band → Informs consistency assessment as a
+  secondary behavioral dimension.
+  - Stable band + Variable consistency_profile → note that
+    behavioral execution timing remained consistent despite
+    score variability.
+  - Disrupted band + Stable consistency_profile → note that
+    behavioral execution patterns showed variability despite
+    stable scores.
+  - Translate to trend language only. Never name "Rhythm Score"
+    or cite the band label.
 
 3) FOCUS DISTRIBUTION (BULLSEYE TREND)
 Primary Focus Ring mapping from bullseye_analysis.primary_focus_ring:
@@ -63,6 +96,10 @@ Noise fixation from bullseye_analysis.noise_fixation_present:
 
 Explanation inputs: bullseye_analysis.control_quality, bullseye_analysis.influence_quality.
 No stressor attribution.
+
+No execution signal routing for this section. Bullseye raw
+metrics (ring_balance, contradiction_detected, etc.) are not
+consumed by Stage 4.
 
 4) RECOMMITMENT & RESPONSE SIGNAL
 Recommitment Strength: win_the_day.recommitment_signal (Strong | Moderate | Low | Not Applicable | insufficient data)
@@ -81,8 +118,22 @@ Override (only if clearly behavioral):
 Summary sentence: recovery speed / response stability / recommitment indicators.
 Do not reference specific events.
 
+EXECUTION ENRICHMENT (App athletes only):
+- recovery_score.band → Informs response assessment as a
+  secondary behavioral dimension.
+  - Strong (calculated, not fixed-85) → strengthens response
+    stability signal.
+  - Moderate or Low (calculated) → note behavioral execution
+    recovery showed variability.
+  - Pending Data → treated as insufficient data for this section.
+  - No disruption (fixed 85) → no additional context (no
+    recovery event to assess).
+  - Translate to trend language only. Never name "Recovery Score"
+    or cite the band label or numeric value.
+
 5) CONFIDENCE MOMENTUM (DIRECTIONAL ONLY)
-Confidence Trend rules (execution-linked, non-emotional):
+
+Step 1 — Base Confidence Trend (v9.3 rules, unchanged):
 - Growth + Stable Positive + Control focus → ↑ Building
 - Mixed + Improving OR Strong recommitment → ↑ Building
 - Mixed + Variable + Mixed focus → → Stable
@@ -90,6 +141,18 @@ Confidence Trend rules (execution-linked, non-emotional):
 - insufficient data → insufficient data
 
 Sentence: confidence is linked to routine stability and controllable alignment.
+
+Step 2 — Self-Ratings Confidence Adjustment (App athletes only):
+If self_ratings_alignment.confidence_alignment is populated:
+- Conflated → shift one level toward Variable:
+  ↑ Building → → Stable; → Stable → ↓ Variable
+- Undervalued → shift one level toward Building:
+  ↓ Variable → → Stable; → Stable → ↑ Building
+- Aligned → no adjustment
+- insufficient data → no adjustment
+Maximum one shift from self-ratings.
+Never name "Conflated," "Undervalued," or "self-ratings" in
+the output sentence.
 
 6) STRESS LOAD INDICATOR (BAND-BASED)
 PRIMARY INPUT (v9.3): emotional_intensity
@@ -106,6 +169,9 @@ SECONDARY VALIDATION (fallback): consistency_profile, recommitment_signal, noise
 
 Sentence must be neutral and not attribute sources.
 
+No execution signal routing for this section. Stress Load
+measures emotional weight, not execution volatility.
+
 7) GROWTH PHASE STATUS
 Current Phase: growth_phase (Emerging | Developing | Consistent | Leadership | insufficient data)
 Movement: trend_analysis.growth_phase_movement
@@ -115,13 +181,45 @@ Movement: trend_analysis.growth_phase_movement
 - insufficient data → omit movement line
 One sentence only. No psychological framing.
 
+No execution signal routing for this section. Growth phase
+progression uses v9.3 thresholds only.
+
 8) KEY PERFORMANCE SIGNAL (WEEKLY PRIORITY)
 Selection priority:
+
+0) APP ATHLETES ONLY: If action-severity coach flag fires →
+   derive KPS from the flag's behavioral pattern:
+   - compound_disengagement → "Broad Engagement Shift"
+   - persistent_attention_pattern → derive from the persistent
+     flag's behavioral domain
+   - sustained_compound_disengagement → "Sustained Engagement
+     Shift"
+   Never name the flag_id, label, or severity tier.
+
 1) If primary_focus_ring = Cannot Control OR noise_fixation_present = Yes → Controllable Focus Alignment
+
+1.5) APP ATHLETES ONLY: If attention-severity coach flag fires →
+   derive KPS from the flag's behavioral pattern:
+   - drift_active → "Engagement Pattern Drift"
+   - reactivity_elevated → "Execution Pattern Variability"
+   - recovery_failure → "Response Recovery Pattern"
+   - ownership_low → "Self-Directed Engagement Pattern"
+   - follow_through_weak → "Commitment Execution Pattern"
+   - rhythm_disrupted → "Engagement Timing Pattern"
+   - review_quality_low → "Review Engagement Depth"
+   - sustained_drift → "Persistent Engagement Pattern"
+   If multiple attention flags fire, select the one most
+   relevant to core_pattern. Never name the flag_id, label,
+   or severity tier.
+
 2) Else if consistency_profile = Volatile or Reset Pattern → Routine Stability
 3) Else if recommitment_signal = Low → Adversity Response
 4) Else if weekly_tier = Growth but athlete_state indicates reactive → Composure Under Pressure
 5) Else → derive from most_important_controllable as a short phrase (e.g., Preparation Consistency / Reset Routine / Response Discipline)
+
+KPS may also be informed by coach_insights.key_habit_signal
+for development marker selection, but must NOT reproduce raw
+content or reference specific athlete behaviors.
 
 Explanation: use most_important_controllable and micro_commitment.measurement as a measurable target (avoid raw numbers when possible).
 
@@ -129,6 +227,15 @@ Explanation: use most_important_controllable and micro_commitment.measurement as
 Primary source: coach_insights.coach_reinforcement_cue
 If missing: derive from most_important_controllable using neutral phrasing:
 - Reinforce consistent controllable execution and response routines.
+
+EXECUTION ENRICHMENT (App athletes only):
+- If attention-severity coach flags fire → reinforcement
+  direction reflects the flagged behavioral area. Translate
+  flag direction into "Reinforce..." / "Monitor trend..."
+  language.
+- If action-severity coach flags fire → reinforcement direction
+  prioritizes the dominant execution concern.
+- Never name flag_id, label, severity tier, or metrics.
 
 Prohibited phrasing:
 - "Coach should", "Must", "Require", "Discipline"
@@ -166,12 +273,34 @@ Step 2 — Stress Load modifier:
   - Steady (Yellow) → Attention (Orange)
   - Attention (Orange) → remains Attention (Orange)
 
+Step 2.5 — Execution Signal modifier (App athletes only):
+- If any action-severity coach flag fires → shift one level
+  toward Attention.
+- ELSE if 3+ of the following 5 composite score bands are in
+  their concern range simultaneously:
+    ownership_index.band == "Low"
+    drift_score.band == "Active"
+    rhythm_score.band == "Disrupted"
+    review_quality_score.band == "Low"
+    follow_through_score.band == "Weak"
+  → shift one level toward Attention.
+- These two conditions are NOT cumulative with each other
+  (maximum one shift from execution signals).
+- This modifier IS cumulative with Stress Load modifier
+  (an athlete could shift twice: once from stress in Step 2,
+  once from execution in Step 2.5).
+- Recovery Score "Pending Data" → treated as insufficient data
+  (no impact on readiness).
+- Core Foundation athletes: this step is skipped entirely.
+
 Step 3 — Output:
 - State the Readiness Level with arrow and Color Band
 - One sentence linking readiness to routine stability and
   controllable alignment
 - Do NOT reference emotional state, personal circumstances,
   or specific stressors
+- Do NOT name composite scores, coach flags, or execution
+  metrics in the output sentence
 
 COMPLIANCE: This is a performance readiness signal, not a
 mental health indicator or wellness score. Label accordingly.
@@ -206,6 +335,30 @@ coach_insights.coach_avoidance_note
   emphasize in the report. Content is never surfaced in any
   form — it is a negative constraint, not positive content.
 
+execution_behavior_signals.composite_scores (App athletes only)
+→ Band values inform Sections 1, 2, 4, 5, 8, 10. Composite
+  score bands are translated into institutional trend language.
+  Never name any score (Ownership Index, Drift Score, etc.),
+  cite numeric values, or use band labels (High, Active, etc.)
+  in any output section.
+
+execution_behavior_signals.coach_flags (App athletes only)
+→ Severity and behavioral pattern direction inform Sections
+  8, 9, 10. Flag patterns are translated into compliance-safe
+  signal labels and reinforcement language. Never name flag_ids,
+  labels, severity tiers, or trigger_sources. Never reference
+  "flags" or "warnings" in output.
+
+execution_behavior_signals.self_ratings_alignment (App athletes only)
+→ confidence_alignment informs Section 5 confidence trend
+  adjustment. Alignment classifications (Conflated, Undervalued,
+  Aligned) are translated into neutral trend adjustments. Never
+  name the classification labels in output.
+
+execution_behavior_signals.execution_pattern_summary (App athletes only)
+→ Informs Section 1 executive summary (behavioral context).
+  Translate into neutral trend language. Never reproduce raw.
+
 FIELDS NOT CONSUMED BY STAGE 4:
 - risk_flags → Internal to pipeline only. Never surfaced in
   institutional output.
@@ -223,6 +376,24 @@ FIELDS NOT CONSUMED BY STAGE 4:
 - baseline_profile → Stage 3 only.
 - baseline_alignment → Stage 3 only.
 
+EXECUTION SIGNAL RAW METRICS — NOT CONSUMED:
+The following execution_behavior_signals subfields are NOT
+consumed by Stage 4. Raw execution data never reaches coaching
+staff in any form:
+- morning_tune_up (all subfields) → Not consumed.
+- evening_review (all subfields) → Not consumed.
+- wtd_question_patterns (all subfields) → Not consumed.
+  Composite scores derived from these metrics inform sections
+  via band values only.
+- journaling_behavior (all subfields) → Not consumed.
+- bullseye_behavior (all subfields) → Not consumed.
+- composite_scores.*.score (numeric 0-100 values) → Not
+  consumed directly. Only band values inform sections.
+- coach_flags raw content (flag_id, severity, label,
+  trigger_source, description) → Not consumed. Only the
+  behavioral pattern direction and severity tier inform
+  section selection logic internally.
+
 ============================================================
 COMPLIANCE FILTERS
 ============================================================
@@ -237,9 +408,42 @@ Remove/avoid:
 - ranking/comparison language
 - playing time implications
 
+EXECUTION SIGNAL COMPLIANCE FILTER (APPLY TO ALL SECTIONS)
+The following execution data categories must NEVER appear in
+any Stage 4 output, in any form:
+- Completion rates (decimal or percentage)
+- Timing data (on-time counts, late counts, timeliness profiles)
+- Backfill counts, reminder dependency counts
+- Streak counts (current_streak, longest_streak)
+- Component completion counts
+- Question-level yes rates (q1-q5 rates)
+- Self-initiated vs. reminder-dependent counts
+- Composite score names (Ownership Index, Drift Score, etc.)
+- Composite score numeric values (0-100)
+- Composite score band labels (High, Active, Disrupted, etc.)
+- Coach flag IDs, labels, or severity tier names
+- Self-ratings alignment classification labels (Conflated,
+  Undervalued, Aligned)
+Raw execution metrics are internal pipeline data. They inform
+better output through composite score band routing and coach
+flag severity routing, but are NEVER surfaced to coaching staff.
+
 OUTPUT CONSISTENCY RULES
 - Use exact locked section headers.
 - No daily breakdowns.
 - No raw score values.
 - Neutral, executive tone.
 - Short, structured paragraphs (no narrative storytelling).
+
+============================================================
+CORE FOUNDATION HANDLING
+============================================================
+
+When execution_behavior_signals.input_source = "core_foundation":
+- ALL execution signal routing in Sections 1-10 is skipped.
+- Sections use v9.3 fields only.
+- Output is identical to pre-v9.4 behavior.
+- No execution-related language appears in any section.
+- KPS priorities 0 and 1.5 are skipped (no coach flags exist).
+- Composite Readiness Step 2.5 is skipped.
+- Confidence Momentum Step 2 is skipped.
