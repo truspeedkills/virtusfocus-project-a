@@ -1255,8 +1255,6 @@ EXECUTION SIGNAL PROHIBITIONS [NEW IN V1.2]:
 - Coach flag severity tier names (monitor, attention, action)
 - Self-ratings alignment classification labels (Conflated,
   Undervalued, Aligned)
-- Self-ratings numeric values (1-10 confidence_level,
-  habit_consistency_level)
 - Raw execution metrics:
   - Completion rates (decimal or percentage)
   - Timing data (on-time counts, late counts, timeliness
@@ -1571,7 +1569,6 @@ from Stage 4 output:
   11. Coach flag IDs, labels, or severity tier names
   12. Self-ratings alignment classification labels
       (Conflated, Undervalued, Aligned)
-  13. Self-ratings numeric values (1-10 scale)
 
 ------------------------------------------------------------
 WHAT IS PERMITTED:
