@@ -1,0 +1,459 @@
+============================================================
+VIRTUSFOCUS PIPELINE IMPROVEMENT DESIGN — HANDOFF PROMPT
+============================================================
+Created: 2026-03-09
+Purpose: Brief a new Claude session on 4 pipeline improvement ideas
+         for collaborative investigation and design.
+============================================================
+
+YOU ARE STARTING A FRESH SESSION.
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+This file is the single source of truth for the entire project —
+architecture, completed work, file locations, design decisions,
+and schema state. Read it completely before proceeding.
+
+============================================================
+PROJECT CONTEXT — WHAT THIS IS
+============================================================
+
+VirtusFocus is a non-clinical athlete mental performance coaching
+company. This project has built a 5-stage stacked AI pipeline to
+replace a manual coaching process. The pipeline is NOT a chatbot —
+it is a structured data pipeline where each stage reads structured
+input, applies deterministic rules, and writes structured output.
+
+The pipeline is SPECIFICATION-COMPLETE at v9.4 across all 5 stages.
+81 athlete output files have been generated across 3 athletes (27
+athlete-weeks). The Execution Signal Schema Design (13 tasks) is
+complete — the pipeline is ready for app-era execution signal
+processing.
+
+Read CLAUDE.md for the full architecture, schema details, compliance
+framework, athlete data status, and all design decisions.
+
+============================================================
+YOUR TASK
+============================================================
+
+The user has identified 4 areas of the pipeline to improve or
+expand. Your job is to:
+
+1. Read ALL reference files listed below to develop full
+   understanding of the current pipeline
+2. Read the IDEA-SPECIFIC DOCUMENTS listed under each idea
+3. Assess dependencies and interactions between all 4 ideas
+4. Confirm or refine the suggested sequencing
+5. Build a task queue (similar to the 13-task Execution Signal
+   Schema Design queue documented in CLAUDE.md)
+6. Begin collaborative design on the first idea
+
+This is a COLLABORATIVE DESIGN SESSION — not a solo build. The user
+(Coach Arron, VirtusFocus founder) will be actively involved in
+every design decision. Present options, explain trade-offs, and wait
+for approval before locking anything.
+
+============================================================
+THE 4 IDEAS — OVERVIEW AND SEQUENCING
+============================================================
+
+These 4 ideas were discussed and dependency-mapped in the prior
+session. The suggested sequence (approved by the user) is:
+
+  1. Intake Form Improvements (foundational — changes input layer)
+  2. Daily Coaching Snippet (new daily output for athletes)
+  3. Daily Coaching Insights (new daily output for coaches)
+  4. Parent-Facing Output Expansion + Parent Insights Dashboard
+
+Ideas 2 and 3 are architecturally coupled (both introduce daily
+processing into a currently weekly-only pipeline) and should be
+designed together or in immediate sequence.
+
+Idea 4 is relatively independent but benefits from knowing the
+final intake form structure and daily output design.
+
+============================================================
+IDEA 1: ATHLETE INTAKE FORM IMPROVEMENTS
+============================================================
+
+Priority: FIRST (foundational — changes to the input layer
+constrain everything downstream)
+
+What it is:
+-----------
+Expand the athlete intake form to capture more structured data
+that produces better baseline profiles and ultimately improves
+all downstream pipeline output.
+
+CRITICAL CONSTRAINT: This is ADDITIVE, not replacing.
+The 4 core baseline fields are LOCKED and do not change:
+  - baseline_identity_claim
+  - baseline_hinge_habit
+  - baseline_primary_derailer
+  - baseline_growth_phase
+
+The improvement adds new intake questions that either:
+  (a) Create NEW baseline fields alongside the existing 4
+  (b) Enrich existing baseline fields with structured data
+      that sits alongside the current free-text answers
+
+The key insight: the current intake form relies heavily on
+athletes typing written explanations. Many athletes (especially
+younger ones) struggle to articulate complex mental performance
+concepts in free text. Structured selections (preset options,
+scales of 1-10, multiple choice) can capture the same information
+more reliably while still allowing free-text where it adds value.
+
+This mirrors the self_ratings_alignment pattern already in the
+pipeline — where structured numeric self-assessment (1-10 scales)
+gets compared against behavioral execution data to produce
+classifications (Aligned/Conflated/Undervalued).
+
+Pipeline touchpoints:
+- Stage 1 (Snapshot Generator — new/enriched baseline fields)
+- Stage 2 (Interpretation Engine — if new baseline fields feed
+  into interpretation logic, alignment checks, or trend analysis)
+- Potentially all downstream stages that reference baseline fields
+- Same additive design principle as the Execution Signal upgrade:
+  new data makes output better without changing what already works
+
+Documents to read:
+- D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Suggested Redesigned VirtusFocus Intake Form.txt
+  → Contains: 7-section redesigned form (19 questions), Primary
+    Problem Detector (PPD) with deterministic scoring logic (8
+    problem buckets, selection weights + amplifiers + tie-breakers),
+    and Athlete Baseline Index (ABI) with 4 pillar scores (0-10
+    each, 0-40 total) derived from 8 quick scale questions
+
+- D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\High-Value Intake Additions.txt
+  → Contains: 15 high-value intake questions across 4 categories
+    (Ownership & Accountability, Pressure & Composure, Identity
+    & Leadership, Ecosystem Alignment), Mental Reset Speed as a
+    recommended longitudinal metric (1-5 scale), Current
+    Performance Routine assessment, and prioritized "Top 5"
+    minimal-addition list
+
+Current Stage 1 specification (read for baseline understanding):
+- D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+  → Current 9-section snapshot structure, 300-500 word target,
+    compliance guardrails
+
+Key design questions for collaborative discussion:
+- Which new questions add the most signal per unit of athlete friction?
+- How do PPD scores and ABI scores integrate into the existing
+  baseline snapshot structure vs. becoming new standalone fields?
+- Do PPD/ABI scores become fields the Interpretation Engine reads
+  weekly (for comparison against execution data), or are they
+  intake-only baseline anchors?
+- How does ecosystem alignment data (parent pressure patterns)
+  feed into Idea 4 (Parent Output)?
+- What is the right form length? (Current proposal: 19 questions,
+  ~5 minutes. Is that too much for younger athletes?)
+
+============================================================
+IDEA 2: DAILY COACHING SNIPPET
+============================================================
+
+Priority: SECOND (architecturally coupled with Idea 3 — both
+introduce daily processing)
+
+What it is:
+-----------
+A short daily coaching message delivered to the athlete each
+morning, separate from the Morning Tune-Up but delivered at
+similar times. Quick, actionable, personalized.
+
+This is ARCHITECTURALLY NEW. The entire pipeline currently
+operates on a weekly batch cycle. This introduces daily output
+for the first time.
+
+No detailed specification document exists yet — this is
+exploratory. The user wants to investigate:
+
+- Should it be based on yesterday's WTD scores?
+- Should it be based on yesterday's journal entries?
+- Should it reference the current week's micro-commitment?
+- How does it differ from the Morning Tune-Up content?
+- What is the right length? (Likely very short — 2-4 sentences)
+- Does it need its own pipeline stage, or is it a sub-process
+  of Stage 3?
+- What data does it consume? (Daily app data, not the weekly
+  Interpretation JSON — the JSON doesn't exist yet mid-week)
+- How does it maintain Coach Arron's voice at daily scale?
+- Does it need audit criteria? (Probably lighter than full
+  Stage 5, but clinical language rules still apply)
+
+Pipeline touchpoints:
+- New output channel (daily, not weekly)
+- Consumes daily app data directly (yesterday's events)
+- Must reference baseline snapshot (identity claim, derailer)
+- Must maintain non-clinical compliance
+- Persona: Coach Arron (same as Stage 3)
+- Needs to know the current micro-commitment (from last weekly
+  Interpretation JSON) to reinforce it
+- Interacts with Morning Tune-Up (must not duplicate it)
+- If Idea 1 adds ABI pillar scores, the daily snippet could
+  target the athlete's weakest pillar
+
+Key architectural questions:
+- Does this require a "daily interpretation" step, or can it
+  operate directly on raw daily data + baseline + last weekly JSON?
+- How does daily coaching quality stay consistent without the
+  full interpretation layer that weekly output benefits from?
+- What is the compliance boundary? (Same clinical language rules,
+  but does it need the same audit rigor?)
+- Can daily snippets be template-driven with variable insertion,
+  or do they need full generative output?
+
+============================================================
+IDEA 3: DAILY COACHING INSIGHTS
+============================================================
+
+Priority: SECOND (design alongside Idea 2 — shared daily
+processing architecture)
+
+What it is:
+-----------
+Currently all Coach Insights (Stage 4) update weekly. The user
+wants to explore having select key analytics update daily for
+coaching staff, with the full 10-section Weekly Performance
+Insight remaining on the weekly schedule.
+
+No detailed specification document exists yet — this is
+exploratory. Questions to investigate:
+
+- Which of the 10 Weekly Performance Insight sections (or which
+  metrics) are meaningful at daily granularity?
+- What daily data points are useful to coaches WITHOUT violating
+  the compliance framework? (NCAA rules still apply — no raw
+  execution data, no completion rates, no timing data)
+- Is this a subset of existing sections that refresh daily, or
+  entirely new daily-specific metrics?
+- How do daily insights relate to the weekly full report?
+  (Do they roll up? Does the weekly report supersede them?)
+
+Likely candidates for daily refresh:
+- Win the Day score (yesterday's 0-5) — simple, already
+  compliance-safe
+- Day classification (Win/Neutral/Missed) — simple
+- Running weekly tier projection — coaches could see mid-week
+  trajectory
+- Engagement indicator (completed/not completed yesterday) —
+  but this borders on compliance territory
+
+Pipeline touchpoints:
+- Stage 4 (Coach Insights Engine — currently weekly-only)
+- Same compliance constraints as current Coach Insights
+  (NCAA-safe, no raw execution data surfaced to coaches)
+- Requires daily data consumption — same infrastructure as Idea 2
+- The compliance framework (VF_Coach_Insights_Compliance_Framework.txt)
+  must be consulted carefully — daily analytics could easily
+  cross into participation monitoring
+
+Key architectural questions:
+- Does this share the same daily data processing path as Idea 2?
+- What is the minimum viable daily insight that is genuinely
+  useful to a coach and genuinely compliance-safe?
+- Does the daily insight need its own audit criteria?
+- How does this interact with the Composite Readiness Signal?
+  (Currently weekly — could a daily version exist?)
+
+============================================================
+IDEA 4: PARENT-FACING OUTPUT EXPANSION + PARENT INSIGHTS
+============================================================
+
+Priority: LAST (benefits from knowing final intake form +
+daily output design)
+
+What it is:
+-----------
+Two components:
+
+(A) EXPANDED PARENT COACHING MESSAGE
+Currently, a lightweight parent-facing message exists alongside
+the Coaching Message and Deep Dive. It only includes:
+  - growth_phase
+  - consistency trend (simplified)
+  - one development signal
+
+It does NOT include weekly tier labels, technical classifications,
+scoring bands, or execution behavior data.
+
+The user wants to expand this into something more substantial —
+real coaching advice for parents on how to support their athlete's
+mental performance growth at home. Not to make the parent the
+coach, but to give them structured support guidance.
+
+(B) PARENT INSIGHTS DASHBOARD
+A dashboard view of insights and indicators similar to Stage 4
+Coach Insights, but with a CRITICAL DIFFERENCE: parents are NOT
+subject to NCAA compliance restrictions. Therefore parents CAN
+see:
+  - Direct app usage data
+  - Trends and streaks
+  - Completion patterns
+  - Engagement metrics
+  - Participation consistency
+
+This is the INVERSE of the current compliance model — the data
+that is most heavily protected from coaching staff (execution
+behavior metrics) is exactly what parents are allowed to see.
+
+HOWEVER, one boundary remains absolute: the athlete's private
+journaling content and personal written reflections are NEVER
+shown to parents. Honest reflection requires psychological
+safety — if athletes believe parents see everything they write,
+reflection quality drops.
+
+Document to read:
+- D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Parents Insight Engine\D2C Parent App Insights and add ons.txt
+  → Contains: Full Parent App overview — purpose, D2C model
+    ($5/month add-on), 3 core functions (visibility, context,
+    guidance), what parents see vs don't see, how parent
+    visibility differs from coach visibility, support guidance
+    philosophy ("support increases ownership, not replaces it"),
+    example support scenarios, product value summary
+
+Pipeline touchpoints:
+- Stage 3 (expanded parent coaching message — new output
+  alongside Coaching Message + Deep Dive)
+- New output stream for Parent Insights Dashboard (reads from
+  Interpretation JSON like Stage 4, but different compliance
+  rules — parent-specific compliance framework needed)
+- Stage 5 (Editorial Audit needs criteria for parent-facing
+  content — different rules than athlete-facing or coach-facing)
+- If Idea 1 adds ecosystem alignment data (parent involvement
+  level, home conversation patterns), that data directly informs
+  how the parent message is calibrated
+- If Idea 2 adds daily coaching snippets, parents might want
+  visibility into what their child is working on daily
+
+Key design questions:
+- Does the parent coaching message come from Stage 3 (same agent
+  as athlete coaching) or a separate stage/sub-stage?
+- What is the parent insights compliance framework? (Not NCAA,
+  but still needs boundaries — what execution data is appropriate
+  to show parents? All of it? A curated subset?)
+- How does the parent message maintain the VirtusFocus voice
+  while shifting audience from athlete to parent?
+- Does the parent dashboard need its own audit criteria in
+  Stage 5?
+- How does parent visibility interact with athlete trust?
+  (The document addresses this: journal content stays private)
+- What is the right update cadence for parent insights?
+  (Weekly like Coach Insights? More frequent?)
+
+============================================================
+INTERACTION MAP — HOW THE 4 IDEAS CONNECT
+============================================================
+
+IDEA 1 → IDEA 2:
+If intake captures ABI pillar scores (Ownership, Composure,
+Focus, Structure), daily coaching snippets can target the
+athlete's weakest pillar. New baseline fields give the daily
+snippet more to work with.
+
+IDEA 1 → IDEA 4:
+If intake captures ecosystem alignment data (parent involvement
+level, home conversation patterns), parent coaching messages
+can be calibrated from day one. The Primary Problem Detector
+output could inform parent support guidance.
+
+IDEA 2 ↔ IDEA 3:
+Both introduce daily processing. Must share daily data
+consumption infrastructure. The daily coaching snippet
+(athlete-facing) and daily coaching insights (coach-facing)
+are different outputs from the same daily data stream.
+
+IDEA 2 → IDEA 4:
+If daily coaching snippets exist, parents might want visibility
+into what their child is working on today. The parent dashboard
+could surface the daily coaching focus area.
+
+IDEA 3 → IDEA 4:
+Daily coaching insights (coach-facing, compliance-restricted)
+and parent insights (parent-facing, less restricted) are
+parallel dashboard concepts with different compliance rules.
+Design patterns may be shared.
+
+ALL IDEAS:
+All 4 ideas produce new output. All must maintain non-clinical
+language compliance. All must be auditable (Stage 5 scope
+expansion). All read from the Interpretation JSON or daily
+app data. The versioning rules apply: new specification files
+for new capabilities, source reference files edited in place.
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+ESSENTIAL (read first):
+1. D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+IDEA-SPECIFIC DOCUMENTS (read before designing each idea):
+2. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Suggested Redesigned VirtusFocus Intake Form.txt
+3. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\High-Value Intake Additions.txt
+4. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+5. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Parents Insight Engine\D2C Parent App Insights and add ons.txt
+
+STAGE SPECIFICATIONS (read current versions for context):
+6. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+7. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.5.txt
+8. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.2.txt
+9. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.1.txt
+
+KEY SOURCE FILES (read for deeper understanding):
+10. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+11. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+12. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+13. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+14. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+15. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt
+16. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_App_Input_Format_Specification.txt
+
+SAMPLE ATHLETE OUTPUT (read 1-2 for output quality context):
+17. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+18. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+
+EXISTING SNAPSHOT EXAMPLES (read to understand current baseline format):
+19. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+20. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+21. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Mergim Bushati\mergim_bushati_snapshot.txt
+
+============================================================
+HOW TO APPROACH THIS SESSION
+============================================================
+
+1. Read CLAUDE.md and all reference files listed above
+2. Read the 4 idea-specific documents
+3. Present your understanding of all 4 ideas back to the user
+4. Confirm the dependency map and sequencing
+5. Build a task queue for all 4 ideas (high-level, similar to
+   the 13-task Execution Signal queue — task names and sequence,
+   not full specifications yet)
+6. Begin collaborative design on Idea 1 (Intake Form)
+
+DESIGN PROCESS (follow the pattern established in this project):
+- Present options with trade-offs
+- Wait for user approval before locking decisions
+- Document decisions as you go
+- When a design is approved, write the specification to disk
+- Follow versioning rules (new files for new specs, edit in
+  place for source reference files)
+- Commit after meaningful milestones
+
+WHAT NOT TO DO:
+- Do NOT start writing specifications before the user approves
+  the design
+- Do NOT modify existing pipeline specifications (v9.4, v1.5,
+  v1.2, v1.1) until the new design is approved and interaction
+  with existing specs is understood
+- Do NOT process any athlete data through the pipeline
+- Do NOT skip the dependency analysis — the user specifically
+  chose to present all 4 ideas together so that design decisions
+  account for interactions
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
