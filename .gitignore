@@ -15,8 +15,8 @@
 
 # Intake PDFs contain original athlete intake forms with
 # personal information (name, school, contact, self-assessments).
-*-Softball.pdf
-*-Student-Coach.pdf
+# Pattern covers all athlete intake PDFs across all sport types.
+Athlete Data/**/*.pdf
 
 # ----------------------------------------------------------
 # CLAUDE CODE LOCAL SETTINGS

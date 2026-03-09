@@ -1,0 +1,663 @@
+Redesigned VirtusFocus Intake Form Structure
+
+Goal: Maximum insight with minimal friction
+Target: 10–15 questions total
+Time to complete: 4–6 minutes
+
+This aligns with VirtusFocus principles:
+
+Simple → Repeatable → Reliable
+
+SECTION 1 — Performance Context
+
+Purpose: Understand the athlete’s environment and demands.
+
+These questions provide context for the Snapshot's Performance Context section.
+
+Questions
+
+Primary sport
+
+Position / event
+
+Current level
+
+Options:
+
+Youth
+
+Middle School
+
+High School
+
+College
+
+Professional
+
+Years competing
+
+Current season phase
+
+Options:
+
+Preseason
+
+In season
+
+Offseason
+
+Returning from injury
+
+SECTION 2 — Performance Identity
+
+Purpose: Understand how the athlete sees themselves.
+
+VirtusFocus is identity-driven, so this section reveals their current internal narrative.
+
+Questions
+
+1. Complete this sentence:
+
+"At my best, I compete like someone who..."
+
+Examples athletes might write:
+
+stays calm
+
+attacks aggressively
+
+trusts preparation
+
+stays focused
+
+Why this matters
+
+This becomes the Identity Claim anchor in the Athlete Snapshot.
+
+2. What kind of competitor do you want to become?
+
+Short answer.
+
+This reveals identity aspiration.
+
+SECTION 3 — Performance Friction
+
+Purpose: Identify the primary problem VirtusFocus must solve.
+
+This section is the most important.
+
+Question
+
+What usually gets in the way of your best performance?
+
+Select up to 3:
+
+Overthinking
+
+Losing confidence after mistakes
+
+Inconsistent focus
+
+Pressure in big moments
+
+Motivation / discipline
+
+Distractions
+
+Confidence
+
+Nerves
+
+Lack of routine
+
+These map directly to VirtusFocus problem areas.
+
+Follow-Up Question
+
+What situation triggers this the most?
+
+Examples:
+
+big competitions
+
+after mistakes
+
+coach watching
+
+important moments
+
+Now you have the trigger pattern.
+
+SECTION 4 — Pressure Response
+
+Purpose: Measure composure and resilience.
+
+VirtusFocus teaches Response > Reaction.
+
+This section quantifies that.
+
+1. Before a big moment, what thought shows up most often?
+
+Examples:
+
+"Don't mess this up"
+
+"Let's go"
+
+"I need to prove myself"
+
+This reveals pressure narrative.
+
+2. After a mistake, how long does it usually take you to mentally reset?
+
+Options:
+
+Immediately
+
+Within the next play/rep
+
+A few minutes
+
+It sticks with me for a while
+
+This becomes a resilience metric.
+
+SECTION 5 — Ownership & Habits
+
+Purpose: Identify the athlete's current discipline structure.
+
+VirtusFocus builds ownership-driven habits.
+
+1. Who currently drives your development the most?
+
+Options:
+
+Me
+
+My coach
+
+My parents
+
+A mix
+
+This reveals ownership level.
+
+2. Do you currently have a mental routine before competitions?
+
+Options:
+
+No routine
+
+Somewhat
+
+Yes — consistent routine
+
+This identifies structure gaps.
+
+3. How often do you review your own performance after games or practices?
+
+Options:
+
+Never
+
+Sometimes
+
+Often
+
+Every time
+
+This reveals reflection habits.
+
+SECTION 6 — Ecosystem Alignment
+
+Purpose: Understand parent / coach dynamics.
+
+VirtusFocus is designed for athlete + parent + coach alignment.
+
+1. How involved are your parents in your athletic journey?
+
+Options:
+
+Very involved
+
+Somewhat involved
+
+Not very involved
+
+2. After games or competitions, conversations at home are usually:
+
+Options:
+
+Mostly supportive
+
+Analytical / advice-heavy
+
+Pressure to perform
+
+We don't talk much about it
+
+This identifies parent pressure patterns.
+
+SECTION 7 — Commitment & Goals
+
+Purpose: Capture motivation and seriousness.
+
+1. On a scale of 1–10, how would you rate your current mental game?
+
+2. What does success look like for you in the next 6 months?
+
+Outcome goals.
+
+3. How committed are you to improving your mindset?
+
+Options:
+
+Curious
+
+Committed
+
+All in
+
+Final Structure Summary
+Section 1 — Performance Context
+
+5 questions
+
+Section 2 — Performance Identity
+
+2 questions
+
+Section 3 — Performance Friction
+
+2 questions
+
+Section 4 — Pressure Response
+
+2 questions
+
+Section 5 — Ownership & Habits
+
+3 questions
+
+Section 6 — Ecosystem Alignment
+
+2 questions
+
+Section 7 — Commitment & Goals
+
+3 questions
+
+Total: 19 questions → ~5 minutes
+
+What This Structure Unlocks
+
+This form allows VirtusFocus to identify:
+
+1️⃣ Identity
+
+Who the athlete believes they are.
+
+2️⃣ Primary Problem
+
+What consistently disrupts performance.
+
+3️⃣ Pressure Pattern
+
+How they behave under stress.
+
+4️⃣ Ownership Level
+
+How self-led they are.
+
+5️⃣ Habit Structure
+
+Whether discipline systems exist.
+
+6️⃣ Ecosystem Friction
+
+Parent or environment issues.
+
+The Key Insight
+
+Most intake forms ask:
+
+“What are your goals?”
+
+That tells you almost nothing about coaching.
+
+VirtusFocus should diagnose:
+
+“What loop breaks your performance?”
+
+Example:
+
+Trigger
+Big competition
+
+Reaction
+Overthinking
+
+Recovery
+Takes several minutes
+
+Identity
+Wants to be confident competitor
+
+Now coaching becomes precise.
+
+Example Athlete Diagnosis (from intake alone)
+
+Primary Problem
+Overthinking under pressure
+
+Trigger
+Big competitions
+
+Recovery Speed
+Slow
+
+Identity Goal
+Confident competitor
+
+Coaching Emphasis
+
+Bullseye focus routine
+
+Mistake reset training
+
+Confidence through preparation
+
+---------------------------------
+
+1) VirtusFocus Primary Problem Detector (PPD)
+
+Purpose: Automatically identify an athlete’s Top 3 “Primary Problems” VirtusFocus should solve first.
+
+Inputs (from redesigned intake)
+
+Use these 5 inputs (minimal, high signal):
+
+Performance Friction (Select up to 3)
+Options:
+
+Overthinking
+
+Low confidence
+
+Mistake recovery
+
+Focus/distractions
+
+Pressure in big moments
+
+Motivation/discipline
+
+Lack of routine/structure
+
+Coach/parent pressure (ecosystem)
+
+Trigger Context (select 1–2)
+
+Big moments / high stakes
+
+After mistakes
+
+When being evaluated (coach/scouts)
+
+When fatigued / busy life weeks
+
+When expectations are high
+
+Reset Speed after mistake
+
+Immediate
+
+Next rep/play
+
+Few minutes
+
+Sticks most of game
+
+Pressure Thought (short text)
+(Used for classification, not “scored” heavily.)
+
+Routine Presence
+
+None
+
+Somewhat
+
+Consistent
+
+Problem Buckets (what PPD outputs)
+
+PPD outputs a ranked list of these 8 Primary Problems:
+
+Overthinking Loop
+
+Confidence Volatility (confidence tied to outcomes)
+
+Mistake Recovery Lag
+
+Focus Drift / Distraction
+
+Pressure Reactivity (stakes change behavior)
+
+Discipline Gap (motivation-based, inconsistent habits)
+
+Structure Gap (no routine; unclear prep)
+
+Ecosystem Friction (parent/coach stress affecting mindset)
+
+Scoring Logic (simple + explainable)
+A) Start with “Selection Weight” (high signal)
+
+For each option the athlete selects in Performance Friction:
+
+Selected = +3 to the matching bucket
+(If athlete selects 3 items, those 3 buckets each start at +3.)
+
+B) Add “Amplifiers” (small boosts that sharpen ranking)
+
+Reset Speed Amplifier (Mistake Recovery Lag bucket)
+
+Immediate = +0
+
+Next rep/play = +1
+
+Few minutes = +2
+
+Sticks most of game = +3
+
+Routine Amplifier (Structure Gap bucket)
+
+Consistent = +0
+
+Somewhat = +1
+
+None = +3
+
+Trigger Amplifier (context increases specificity)
+
+After mistakes → +2 to Mistake Recovery Lag, +1 to Confidence Volatility
+
+Big moments → +2 to Pressure Reactivity, +1 to Overthinking Loop
+
+Being evaluated → +2 to Overthinking Loop, +1 to Confidence Volatility
+
+Fatigued/busy weeks → +2 to Discipline Gap, +1 to Focus Drift
+
+Expectations high → +2 to Pressure Reactivity, +1 to Confidence Volatility
+
+Ecosystem Amplifier
+If athlete indicates home conversations are advice-heavy/pressure:
+
++3 to Ecosystem Friction
+
+C) Tie-breaker (when scores tie)
+
+Use the Pressure Thought text to tag the loop:
+
+“Don’t mess up / what if I fail / I have to…” → Overthinking Loop +1, Pressure Reactivity +1
+
+“I need to prove…” → Confidence Volatility +1
+
+“I can’t let them down…” → Pressure Reactivity +1, Ecosystem Friction +1
+
+PPD Output Format (what the system returns)
+
+Top 3 Primary Problems with:
+
+Rank
+
+Score
+
+Trigger context
+
+1-line coaching implication (for Tune-Ups / Weekly)
+
+Example output:
+
+1) Mistake Recovery Lag (9) — Trigger: after mistakes — Tune-Ups: reset reps + “next-play” language; Weekly: track reset speed.
+2) Overthinking Loop (7) — Trigger: big moments — Tune-Ups: 1-controllable Bullseye target; Weekly: reduce thought clutter.
+3) Structure Gap (6) — Trigger: busy weeks — Tune-Ups: 3-step pre-performance routine; Weekly: routine adherence.
+
+Why this works for VirtusFocus
+
+Uses only self-report but produces a real diagnosis.
+
+Stays simple → repeatable → reliable (no complex psych labeling).
+
+Drives immediate personalization of:
+
+Daily prompts
+
+Weekly reflection focus
+
+Snapshot “Known Derailers” + “Initial Coaching Emphasis”
+
+---------------------------------
+
+2) Athlete Baseline Index (ABI)
+
+Purpose: A fast baseline score across four pillars so you can:
+
+anchor the Athlete Snapshot baseline
+
+track change over weeks/months
+
+personalize coaching emphasis immediately
+
+ABI Dimensions (4)
+
+Each scored 0–10, total out of 40.
+
+Ownership
+
+Composure (pressure + reset)
+
+Focus
+
+Structure
+
+ABI Inputs (minimal additions to intake)
+
+Add these quick scales (1–5 each):
+
+Ownership
+
+“Who drives your development?”
+Me (5) / Mix (3) / Coach-parent led (1)
+
+“How often do you review your performance?”
+Every time (5) → Never (1)
+
+Composure
+
+Reset Speed after mistake
+Immediate (5) → Sticks all game (1)
+
+“How much do big moments change your decision-making?”
+Not at all (5) → A lot (1)
+
+Focus
+
+“During performance, how often do you lose your focus to thoughts/externals?”
+Rarely (5) → Constantly (1)
+
+“Do distractions (phone/social/life stress) affect training consistency?”
+Rarely (5) → Often (1)
+
+Structure
+
+“Do you have a pre-performance routine?”
+Consistent (5) → None (1)
+
+“How consistent is your weekly training + recovery rhythm?”
+Consistent (5) → Inconsistent (1)
+
+Each dimension = average of its two items (1–5), then multiply by 2 to convert to 0–10.
+
+ABI Scoring
+
+For each dimension:
+
+Dimension Score (0–10) = round( (Q1 + Q2) / 2 * 2 )
+
+Total ABI = sum of 4 dimensions (0–40)
+
+ABI Bands (optional, useful for Growth Phase support)
+
+0–16: Needs foundation (high variance, low structure)
+
+17–28: Developing (some strengths, inconsistent execution)
+
+29–36: Consistent (reliable habits, stable mindset)
+
+37–40: Leadership (self-led + composed + consistent)
+
+(These bands should support, not replace, the Snapshot Growth Phase classification.)
+
+ABI Output Format (Snapshot-ready)
+
+Return:
+
+Ownership: X/10
+
+Composure: X/10
+
+Focus: X/10
+
+Structure: X/10
+
+Total: X/40
+
+Primary Emphasis: lowest 1–2 dimensions
+
+Coaching Strategy: 1 line per emphasis
+
+Example:
+
+Ownership 6 | Composure 4 | Focus 7 | Structure 3 | Total 20/40
+Primary Emphasis: Structure + Composure
+Coaching Strategy:
+
+Structure: build a 3-step routine + daily “Win the Day” minimums
+
+Composure: reset language + Bullseye single target under pressure
+
+How ABI improves Daily Tune-Ups + Weekly Check-Ins
+
+Daily Tune-Ups can be dimension-targeted:
+
+Low composure → reset prompt + controllable target
+
+Low structure → micro-routine + streak reinforcement
+
+Weekly Check-Ins can track movement:
+
+“Reset speed improved from 2 → 4”
+
+“Routine consistency improved from 1 → 3”
+
+Snapshot becomes measurable, not just descriptive.
