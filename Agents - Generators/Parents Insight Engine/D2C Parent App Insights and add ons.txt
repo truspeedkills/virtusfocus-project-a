@@ -1,0 +1,209 @@
+# VirtusFocus Parent App Overview
+
+## Purpose
+
+The VirtusFocus Parent App is an optional add-on within the direct-to-consumer VirtusFocus ecosystem.
+
+Its purpose is simple:
+
+Give parents structured, useful visibility into their athlete's mental performance development without violating the athlete's private space.
+
+The core VirtusFocus experience remains athlete-led. The athlete uses the main VirtusFocus app independently to build confidence, focus, consistency, resilience, and ownership through daily and weekly mindset work. The Parent App adds a second layer for families who want more support, alignment, and insight at home.
+
+This is not designed to make the parent the coach. It is designed to help the parent become a better supporter of the athlete's growth.
+
+## How the Parent App Fits Into the D2C Model
+
+In the standard direct-to-consumer VirtusFocus subscription, the athlete experience operates as a one-sided system on the athlete's phone. The athlete receives the full high-level VirtusFocus mental performance coaching experience directly through the app.
+
+For families who want parent involvement, there is an optional **\$5.00/month Parent App add-on**.
+
+This add-on gives parents their own app experience on their own phone, connected to their child's VirtusFocus development in a structured and appropriate way.
+
+The Parent App expands the VirtusFocus ecosystem from an athlete-only experience into a supported athlete-parent system.
+
+## Core Role of the Parent App
+
+The Parent App is built to do three things:
+
+- **Provide visibility** into meaningful mental performance progress.
+- **Provide context** around what the athlete is working on.
+- **Provide guidance** so parents know how to support growth at home.
+
+This creates better alignment between the athlete's internal development and the home environment around them.
+
+## What Parents Receive
+
+Parents who subscribe to the add-on will have access to a parent-facing app experience that includes the following:
+
+### 1\. Parent-Facing Coaching Messages
+
+Parents receive the parent-facing message generated during the coaching output process.
+
+These messages are designed to help parents understand:
+
+- what their athlete is currently working on
+- where progress is happening
+- where support may be needed
+- how to respond in a helpful, constructive way
+
+This gives parents clear language and direction instead of guesswork, emotion, or overreaction.
+
+### 2\. Enhanced Dashboard With Metrics and Insights
+
+Parents receive an enhanced dashboard that gives them a deeper look into their athlete's mental performance growth.
+
+This dashboard is intended to surface useful trends and indicators such as:
+
+- app participation and consistency
+- completion patterns
+- engagement with mindset tools
+- progress over time
+- key mental performance themes
+- growth indicators tied to confidence, focus, resilience, ownership, and consistency
+
+The goal is not to overload parents with data. The goal is to show the right signals clearly so they can understand momentum, struggles, and progress.
+
+### 3\. Parent Access to Athlete Progress Signals
+
+Parents get access to meaningful insights into the athlete's mindset development, behavior patterns, and growth over time.
+
+This may include signals related to:
+
+- consistency of engagement
+- shifts in mindset patterns
+- improvement areas
+- areas where support at home could help reinforce growth
+- general progress in mental performance development
+
+This gives parents a more practical view of development rather than forcing them to rely only on visible game performance or emotion-driven interpretation.
+
+## What Parents Will Not See
+
+A core boundary of the VirtusFocus system is that the athlete's private journaling and personal input remain private.
+
+That means parents **will not** have access to:
+
+- private journal entries
+- exact personal reflections entered by the athlete
+- private written responses intended only for the athlete's coaching process
+- raw confidential athlete input
+
+This boundary matters because honest reflection requires psychological safety. If athletes believe everything they write will be visible to a parent, the quality and truthfulness of their reflection will drop.
+
+VirtusFocus protects the athlete's private space while still giving parents meaningful insight.
+
+## How Parent Visibility Differs From Coach Visibility
+
+The Parent App shares some similarities with the coach insights model used on the institutional side of VirtusFocus, but it is not identical.
+
+Coaches operate within stricter limitations around what can be surfaced, especially in institutional environments where governing rules and NCAA compliance standards may shape access.
+
+Parents are different.
+
+Because the family environment is more personal and direct, the Parent App can provide a deeper level of insight than coach-facing dashboards in certain areas. This may include more robust visibility into:
+
+- participation
+- consistency
+- usage behavior
+- progress patterns
+- mindset development signals
+- suggested support actions at home
+
+Even with this deeper visibility, the athlete's private input and journaling remains protected.
+
+So the Parent App goes deeper than coach insights in some areas, while still respecting the athlete's need for privacy.
+
+## Why This Matters
+
+Many parents want to help, but they do not know how to support mindset development without:
+
+- adding pressure
+- over-coaching
+- nagging
+- reacting emotionally
+- making the athlete shut down
+
+The Parent App solves that problem.
+
+It gives parents structure. It gives them shared language. It gives them clearer signals. It gives them practical next steps.
+
+Instead of guessing what their athlete needs, parents can respond with more confidence, calm, and consistency.
+
+## Parent Support Guidance at Home
+
+One of the most valuable parts of the Parent App is that it does not stop at reporting. It also helps parents take better action.
+
+Based on the athlete's patterns, progress, and areas of growth, parents will receive helpful support suggestions they can apply at home.
+
+These suggestions may include guidance around:
+
+- helping the athlete improve the depth of journaling
+- reinforcing reflection habits
+- supporting consistency and accountability
+- helping the athlete anchor mindset concepts into real-life situations
+- supporting how the athlete uses the Bullseye Method under pressure
+- improving communication around setbacks, confidence, and composure
+- creating a home environment that supports ownership rather than dependency
+
+This makes the Parent App more than an information tool. It becomes a support tool.
+
+## Example of How Support Guidance Works
+
+If the athlete's recent patterns suggest they are engaging with the app but staying surface-level in their reflection, the Parent App may guide the parent to ask better questions, create more space for reflection, or reinforce why deeper journaling matters.
+
+If the athlete is learning the Bullseye Method but not applying it outside of sport, the Parent App may help the parent reinforce the concept in everyday situations so the athlete begins to internalize it more naturally.
+
+If the athlete is showing progress in focus or resilience, the Parent App may help the parent recognize and reinforce that growth in a calm, productive way.
+
+This creates stronger carryover from the app into real life.
+
+## The Philosophy Behind the Parent App
+
+The Parent App is built on a simple principle:
+
+**Support should increase ownership, not replace it.**
+
+VirtusFocus is an athlete-led system. The athlete remains the primary driver of development.
+
+The parent's role is not to control the process. The parent's role is to strengthen the environment around the process.
+
+That means the Parent App helps parents become:
+
+- more informed
+- more aligned
+- more constructive
+- more supportive
+- less reactive
+- less intrusive
+
+This protects the athlete's independence while improving the quality of support around them.
+
+## Product Value Summary
+
+The Parent App add-on creates additional value in the D2C VirtusFocus model by giving families a way to extend mindset development beyond the athlete's phone.
+
+For **\$5.00/month**, parents gain:
+
+- their own connected app experience
+- parent-facing coaching messages
+- an enhanced dashboard with metrics and insights
+- deeper visibility into participation, usage, and growth patterns
+- practical support guidance tied to the athlete's development
+- a better framework for helping at home without overstepping
+
+The athlete keeps their private reflective space. The parent gains clarity, structure, and direction. The home environment becomes more aligned with the athlete's mental performance growth.
+
+## Closing Summary
+
+The VirtusFocus Parent App is an optional support layer for families who want to be meaningfully involved in an athlete's mental performance journey.
+
+It is designed to give parents better visibility, better guidance, and better ways to support growth at home.
+
+It does this without violating the athlete's privacy and without turning the parent into the coach.
+
+At its best, the Parent App helps create a stronger performance environment around the athlete.
+
+More clarity. More alignment. More constructive support.
+
+That is the goal of the parent side of the VirtusFocus direct-to-consumer app.

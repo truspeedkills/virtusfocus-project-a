@@ -1,0 +1,390 @@
+PIPELINE OVERVIEW HANDOFF PROMPT — COMPREHENSIVE PROJECT BRIEFING
+============================================================
+YOU ARE STARTING A FRESH SESSION.
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+This file is the single source of truth for the entire project — architecture, completed work, file locations, design decisions, and schema state. Read it completely before proceeding.
+============================================================
+YOUR TASK
+============================================================
+The user wants a comprehensive explanation of the VirtusFocus AI Coaching Pipeline project. Walk them through the entire system in detail — what it is, why it exists, how it works, what's been built, and where it stands today. This is a briefing, not a task. Your goal is to bring someone fully up to speed on this project so they understand every layer of the pipeline, every design decision, and every constraint.
+
+After reading CLAUDE.md, read the files listed in the REFERENCE FILES section below to develop a thorough understanding. Then present the briefing to the user.
+============================================================
+PROJECT CONTEXT — WHAT THIS IS
+============================================================
+VirtusFocus is a non-clinical athlete mental performance coaching company founded by Coach Arron. The company provides structured mindset coaching to athletes — currently serving high school and college athletes across sports like softball, football, and wrestling.
+
+The current system ("Core Foundation Program") runs manually:
+- Athletes complete a weekly recap (PDF) covering their daily mindset work
+- Coach Arron manually reviews each recap
+- Coach Arron uses a custom ChatGPT prompt to generate coaching output
+- Coach Arron manually reviews and sends coaching messages
+
+This manual process does NOT scale. It works for a handful of athletes but cannot support an app deployment serving hundreds or thousands of athletes.
+
+THIS PROJECT is building a 5-stage stacked AI pipeline to replace the manual process with a deterministic, compliance-safe, automated coaching system. The pipeline is NOT a chatbot — it is a structured data pipeline where each stage reads structured input, applies deterministic rules, and writes structured output. Claude operates as a specialized agent at each stage.
+============================================================
+THE 5-STAGE PIPELINE — HOW IT WORKS
+============================================================
+The pipeline processes one athlete per week through 5 sequential stages:
+
+STAGE 1: ATHLETE SNAPSHOT GENERATOR
+------------------------------------
+Purpose: Create the athlete's baseline profile from their intake data
+Input: Athlete intake form (PDF) — personal info, sport, goals, mental performance history
+Output: Baseline snapshot file (plain text)
+
+The snapshot captures 4 foundational fields that anchor ALL downstream coaching:
+- baseline_identity_claim: What the athlete wants to become (their stated identity goal)
+- baseline_hinge_habit: The one behavior most connected to their mental performance
+- baseline_primary_derailer: The pattern that most reliably disrupts their performance
+- baseline_growth_phase: Starting developmental level (Emerging → Developing → Consistent → Leadership)
+
+This snapshot is written ONCE and referenced by every subsequent pipeline run. It is the athlete's "north star" — all coaching output connects back to these baseline fields.
+
+Status: Built. Currently used for all processed athletes.
+
+STAGE 2: INTERPRETATION ENGINE (v9.4 schema)
+----------------------------------------------
+Purpose: Transform raw weekly data into a structured interpretation JSON
+Agent Identity: "You are the VirtusFocus Core Foundations Interpretation Engine"
+Input: Weekly recap data + baseline snapshot + all prior week JSONs
+Output: Single JSON file per week (the "Interpretation JSON")
+
+This is the analytical backbone of the pipeline. The engine reads the athlete's weekly recap (what they did each day, how they scored on Win the Day, what they wrote in their journal, how they filled their Bullseye) plus their baseline snapshot plus ALL prior weeks' JSONs, and produces a comprehensive structured interpretation.
+
+The v9.4 JSON schema contains 50+ fields organized into:
+
+CORE FIELDS (v9.3 — established):
+- athlete_name, sport, week_dates, weekly_tier (Growth/Mixed/Reset)
+- day_by_day_results (7 days: Win/Neutral/Missed classification per day)
+- win_the_day scores and patterns
+- bullseye_method analysis (Center/Middle/Outer ring item classification)
+- reflection_quality_score (RQS 1-4 scale measuring journaling depth)
+- consistency_signal, consistency_profile, volatility
+- alignment_status (Aligned/Partially Aligned/Not Aligned — identity claim vs. behavior)
+- core_pattern, most_important_controllable
+- athlete_voice (verbatim language preserved from recap)
+- narrative_arc (longitudinal developmental story — requires 2+ prior weeks)
+- emotional_intensity (Low/Moderate/High — language-based tone calibration)
+- micro_commitment (specific, measurable next-week action)
+- coach_insights (internal coaching intelligence — NOT surfaced to athlete)
+- risk_flags (content-derived warnings — NOT surfaced to athlete)
+- growth_phase + growth_phase_movement (developmental tracking)
+- prior_commitment_result (did they execute last week's commitment?)
+- upcoming_context (competition/stressor awareness)
+- trend_analysis + longitudinal_metrics (cross-week patterns)
+
+EXECUTION BEHAVIOR SIGNALS (v9.4 — new, specification-complete):
+- input_source: "app" or "core_foundation" (determines data availability)
+- morning_tune_up: completion, timing, challenge follow-through, streaks
+- evening_review: completion, timing, sequence integrity, component counts
+- wtd_question_patterns: per-question yes rates, volatility, recovery speed
+- journaling_behavior: depth profile, compression detection, domain omission
+- bullseye_behavior: completion reliability, ring balance, contradiction detection
+- self_ratings_alignment: perception-reality alignment (Aligned/Conflated/Undervalued)
+- composite_scores: 7 numeric scores (0-100) with categorical bands
+- coach_flags: 15 execution-behavior-derived warning flags (3 severity tiers)
+- execution_pattern_summary: 1-2 sentence behavioral execution summary
+
+KEY DESIGN PRINCIPLE: The Interpretation JSON is TRUTH. All downstream stages read from it and trust it absolutely. No downstream stage reinterprets raw data or overrides JSON classifications. If Stage 3 or 4 disagrees with the JSON, the JSON wins.
+
+Status: Built and validated. v9.4 specification complete (execution signals designed but not yet processed with live app data — all current athletes are Core Foundation).
+
+STAGE 3: COACHING OUTPUT ENGINE (v1.5)
+----------------------------------------
+Purpose: Transform the Interpretation JSON into athlete-facing coaching content
+Agent Identity: "You are Coach Arron, head mindset coach of VirtusFocus"
+Input: Interpretation JSON ONLY (does not read raw recap data)
+Output: Two documents per week:
+  1. Coaching Message (250-450 words) — the weekly letter to the athlete
+  2. Deep Dive (5 sections) — detailed coaching analysis
+
+The Coaching Message is what the athlete reads. It is written in Coach Arron's voice — calm, direct, identity-based, actionable. No fluff, no hype, no clinical language. It follows a specific structure:
+- Recognition of what went well (grounded in JSON evidence)
+- Drift identification (what shifted or needs attention)
+- Identity thread (connecting behavior back to baseline_identity_claim)
+- Micro-commitment (specific next-week action from the JSON)
+
+The Deep Dive is a 5-section analytical document:
+1. Mindset Summary — executive overview of the week
+2. Strength Signals — what the athlete did well
+3. Growth Areas — what needs development
+4. Trendline Summary — longitudinal patterns
+5. Coaching Focus Areas — priorities for next week
+
+CRITICAL CONSTRAINT: No clinical language. VirtusFocus is a non-clinical coaching service. Terms like "anxiety," "depression," "therapy," "cognitive," "coping mechanism" are prohibited. Use performance and behavioral language only: "pressure," "challenge," "mental reset," "preparation," "composure."
+
+Status: Built and validated. 27 Coaching Messages + 27 Deep Dives generated across 3 athletes.
+
+STAGE 4: COACH INSIGHTS ENGINE (v1.2)
+---------------------------------------
+Purpose: Transform the Interpretation JSON into compliance-safe institutional dashboards for coaching staff
+Agent Identity: "You are the Coach Insights Engine — Stage 4"
+Input: Interpretation JSON ONLY
+Output: Up to two documents per run:
+  1. Weekly Performance Insight (individual athlete, 10 sections) — always generated
+  2. Weekly Team Snapshot (aggregate, 7 sections) — requires 5+ athletes
+
+CRITICAL IDENTITY: This agent is NOT a coach. It does NOT generate athlete-facing content. It produces institutional reports for coaching staff at ALL organizational levels (position coach → coordinator → head coach). Every word must be safe for any staff member to read.
+
+The Weekly Performance Insight (10 sections):
+1. Performance Classification — weekly tier + executive summary
+2. Consistency Signal — behavioral pattern stability
+3. Motivation Assessment — motivation inventory analysis
+4. Recommitment Signal — post-adversity recovery
+5. Confidence Momentum — confidence trajectory
+6. Engagement Quality — reflection quality trends
+7. Areas of Influence — Bullseye outer-ring awareness
+8. Key Performance Signal (KPS) — single most important coaching signal this week
+9. Coach Context Cue — reinforcement direction for staff
+10. Composite Readiness Signal — synthesized readiness indicator (Green/Yellow/Orange)
+
+The Composite Readiness Signal is the dashboard headline metric:
+- Green (Positive): Growth tier + strong indicators
+- Yellow (Steady): Mixed signals or moderate indicators
+- Orange (Attention): Concerns requiring staff awareness
+
+INFORM-ONLY RULE: Several JSON fields (coach_insights, risk_flags, narrative_arc, upcoming_context, longitudinal_metrics, execution_behavior_signals) INFORM the output but are NEVER reproduced raw. The engine uses them internally to produce better compliance-safe sections, but raw content never reaches coaching staff.
+
+Status: Built and validated. 27 Weekly Performance Insights generated across 3 athletes.
+
+STAGE 5: EDITORIAL AUDIT AGENT (v1.1)
+---------------------------------------
+Purpose: Quality gate between Stage 3 output and the athlete
+Agent Identity: "You are the Editorial Audit Agent — Stage 5"
+Input: Interpretation JSON + Coaching Message + Deep Dive (all three required)
+Output: One of three results:
+  1. PASS — output is compliant, deliver to athlete
+  2. AUTO-CORRECTED PASS — minor issues fixed, deliver corrected version
+  3. REJECT AND REGENERATE — major issues, output must be regenerated
+
+The agent runs 13 audit criteria across 3 tiers:
+
+TIER 1 — MUST PASS (failures always reject):
+1. Emotional Intensity Calibration — does tone match the EI level?
+2. Clinical Language Compliance — zero tolerance for clinical terminology
+3. Data Fidelity — does output match JSON truth?
+4. Prior Commitment Bridge — is last week's commitment addressed?
+13. Execution Signal Leakage Compliance — zero tolerance for raw execution data surfacing
+
+TIER 2 — SHOULD PASS (auto-correct if possible, else reject):
+5. Athlete Voice Reflection — is the athlete's own language used?
+6. Action Specificity — are recommendations specific enough?
+7. Upcoming Context Anchoring — is forward-looking context used?
+8. Narrative Arc Presence — is the developmental story present?
+9. Message Length Constraint — within 250-450 word target?
+10. Micro-Commitment Realism — is the commitment achievable?
+
+TIER 3 — QUALITY OPTIMIZATION (auto-correct silently):
+11. Brand Voice Tonal Scan — does it match VirtusFocus voice?
+12. Outer-Ring Language Discipline — are outer-ring items framed correctly?
+
+The audit agent is FULLY AUTONOMOUS — no human in the loop. It reads, evaluates, and decides. The JSON is truth: if the coaching output contradicts the JSON, the JSON wins and the output is rejected.
+
+Status: Built and validated. Specification upgraded to v1.1 with Criterion 13 (Execution Signal Leakage Compliance).
+
+============================================================
+THE VIRTUSFOCUS BEHAVIORAL SYSTEM
+============================================================
+The pipeline is built on the VirtusFocus Mindset Operating System, which has 3 behavioral loops:
+
+INTRA-DAY LOOP:
+1. Morning Mindset Tune-Up — daily morning check-in (focus word, quick wins, mindset challenge)
+2. Win the Day Scoring — 5 yes/no questions scored daily (0-5 points)
+3. Bullseye Method — categorize daily items into 3 rings
+
+INTER-DAY LOOP:
+4. Daily Journaling — reflection across 3 domains (sport, school/work, home life)
+
+WEEKLY LOOP:
+5. Weekly Recap — comprehensive weekly check-in
+6. Motivation Inventory — 5-question motivation assessment
+
+WIN THE DAY SCORING:
+- 5 yes/no questions per day, 0-5 points
+- Day classification: 4-5 = Win, 2-3 = Neutral (Partial Win in app), 0-1 = Missed
+- Week classification: 28-35 = Growth, 14-27 = Mixed, 0-13 = Reset
+
+BULLSEYE METHOD (3 rings):
+- Center Ring: CONTROL — effort, preparation, response, routine
+- Middle Ring: INFLUENCE — teammates, team culture, body language
+- Outer Ring: CANNOT CONTROL — lineup decisions, scores, coach behavior
+
+GROWTH PHASES:
+Emerging → Developing → Consistent → Leadership
+Advancement requires deterministic threshold criteria (consecutive Growth weeks, RQS≥3, Aligned status, etc.)
+
+REFLECTION QUALITY SCALE (RQS):
+1 = Surface (generic, no self-awareness)
+2 = Emerging (some pattern recognition)
+3 = Clear (specific behavioral insights, cause-and-effect)
+4 = Advanced Self-Leadership (transferable principles, metacognitive)
+
+============================================================
+COMPLIANCE FRAMEWORK — NON-NEGOTIABLE RULES
+============================================================
+1. NON-CLINICAL: VirtusFocus is a coaching service, not therapy. All output uses performance and behavioral language. No clinical, therapeutic, or mental health framing. No exceptions.
+
+2. EXECUTION DATA IS BACKEND-ONLY: Raw execution metrics (completion rates, timing data, streak counts, reminder dependency, etc.) NEVER reach coaching staff or athletes. The pipeline uses this data internally to produce BETTER coaching output, not SURVEILLANCE output.
+
+3. JSON IS TRUTH: No downstream stage reinterprets raw data or overrides JSON classifications.
+
+4. INFORM-ONLY FIELDS: coach_insights, risk_flags, narrative_arc, upcoming_context, execution_behavior_signals inform Stage 4 output but are never reproduced raw.
+
+5. CORE FOUNDATION NO-DEGRADATION: Athletes on the Core Foundation program (weekly recap only, no app data) receive identical quality output. Execution signal is additive enrichment for App athletes, never a scoring dependency.
+
+============================================================
+CURRENT STATE — WHAT'S BEEN BUILT AND VALIDATED
+============================================================
+PIPELINE SPECIFICATION STATUS:
+- Stage 1 (Snapshot Generator): Built
+- Stage 2 (Interpretation Engine): v9.4 — specification complete
+- Stage 3 (Coaching Output Engine): v1.5 — specification complete
+- Stage 4 (Coach Insights Engine): v1.2 — specification complete
+- Stage 5 (Editorial Audit): v1.1 — specification complete
+- Execution Signal Schema Design: ALL 13 TASKS COMPLETE (specification-complete)
+
+ATHLETE DATA PROCESSED:
+
+Grace Kindel — Softball, 5 weeks (Jan 12 - Mar 1, 2026):
+- 5 Interpretation JSONs + 5 Coaching Messages + 5 Deep Dives + 5 Coach Insights
+- Arc: Outcome-reactive → Preparation-energized → Structure-sustained under pressure → Action-proven → Identity-embedded
+- Growth phase advanced: Developing → Consistent (Week 5)
+- 35/35 Win days
+
+Tucker Lloyd — Football (Student Coach), 3 weeks (Feb 9 - Mar 1, 2026):
+- 3 Interpretation JSONs + 3 Coaching Messages + 3 Deep Dives + 3 Coach Insights
+- Arc: Structure-dependent → Weekday-strong with Sunday gap → Pattern crystallized
+- Consistently Mixed tier, 11/21 Win days
+- Micro-commitment modality adapted: Written → Behavioral
+
+Mergim Bushati — Wrestling, 19 weeks (Sep 8, 2025 - Jan 18, 2026):
+- 19 Interpretation JSONs + 19 Coaching Messages + 19 Deep Dives + 19 Coach Insights
+- Arc: Recovery entry → Derailer override → Peak discipline cycle → Injury → Breakthrough → Competition → Season-ending decision
+- Longest dataset in pipeline, zero Missed days across 133 program days
+- Two High EI weeks (hamstring injury, first competition)
+
+John Tastinger — data exists but not yet processed through v9.4
+Aidan Burkardt, Angelo Allen, Jasmine Jones — baseline snapshots prepared, awaiting weekly data
+
+VALIDATION COMPLETED:
+- Three-system comparative analysis (30 files, 10 dimensions, 12 audit criteria)
+- Live editorial audits on Grace Kindel Weeks 3/5, Tucker Lloyd Week 3, Mergim Bushati Week 18
+- Task 13 no-degradation validation (54 files, 4 layers, all pass)
+
+============================================================
+KEY ARCHITECTURAL DECISIONS
+============================================================
+1. STACKED PIPELINE, NOT CHATBOT: Each stage has a single-purpose agent with constrained input/output. No free-form conversation. Deterministic rules, not improvised responses.
+
+2. JSON AS TRUTH SOURCE: The Interpretation JSON is the canonical representation of the athlete's week. All downstream stages read from it without reinterpretation.
+
+3. VERSIONED SPECIFICATIONS: Master Prompts and Project Instructions are versioned files (new version = new file, old version preserved on disk). Source reference files (JSON Rules, Message Map) are edited in place.
+
+4. DUAL-MODE OPERATION: The pipeline handles both Core Foundation athletes (weekly recap only) and App athletes (daily granular data + weekly recap) simultaneously, with input_source field gating all execution signal processing.
+
+5. COMPOSITE SCORES AS TRANSLATION LAYER: Raw execution metrics (completion rates, timing, counts) are never surfaced. They are compressed into 7 composite scores (0-100 with categorical bands) which are then translated into behavioral language for coaching output and institutional language for coach insights.
+
+6. COMPLIANCE-SAFE BY DESIGN: The compliance framework is baked into every stage, not bolted on. Clinical language exclusion, execution data backend-only rule, inform-only field routing — all are structural rules, not post-hoc filters.
+
+7. THREE-TIER AUDIT: The Editorial Audit Agent uses a 3-tier system where Tier 1 failures (compliance violations) always reject, Tier 2 failures (quality issues) auto-correct if possible, and Tier 3 failures (style preferences) auto-correct silently.
+
+============================================================
+FILE SYSTEM ORGANIZATION
+============================================================
+Root: D:\OneDrive\Documents\(TEST) Project A\
+
+Agents - Generators\          — Pipeline stage specifications
+  Athlete Snapshot Generator\  — Stage 1 prompts
+  Interpretation\              — Stage 2 prompts + source files (JSON Rules, Composite Score Rules, Coach Flags Spec, App Input Format)
+  Coaching Output\             — Stage 3 prompts + source files (Message Map, Brand Voice, Style Guide, Frameworks)
+  Coach Insights Engine\       — Stage 4 prompts + source files (JSON Logic Reference, Compliance Framework, Dashboard Metrics)
+  Editorial Audit\             — Stage 5 prompts (references Stage 3 + Stage 2 source files)
+  Parents Insight Engine\      — Planned future stage
+
+Athlete Data\                  — Per-athlete folders
+  [Athlete Name]\
+    [athlete]_snapshot.txt     — Baseline profile (Stage 1 output)
+    Weekly JSONS\              — Interpretation JSONs (Stage 2 output)
+    Coaching and Deep Dive\
+      Coaching Message\        — Coaching Messages (Stage 3 output)
+      Deep Dive\               — Deep Dives (Stage 3 output)
+      Audit Summaries\         — Audit results (Stage 5 output)
+    Coach Insights\            — Weekly Performance Insights (Stage 4 output)
+    Weekly Reviews\            — Raw athlete recap PDFs (gitignored)
+
+Output Comparison\             — Comparative analysis documents
+Validation Reports\            — Quality assurance reports
+CLAUDE.md                      — Master project instructions
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+Read these files to develop full understanding before presenting the briefing:
+
+ESSENTIAL (read fully):
+1. D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+STAGE SPECIFICATIONS (read the current version of each):
+2. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP - Weekly Interp Prompt v7.3.txt
+3. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+4. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt
+5. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.5.txt
+6. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.1.txt
+7. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.2.txt
+8. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.1.txt
+9. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.1.txt
+
+KEY SOURCE FILES (read for deeper understanding):
+10. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+11. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+12. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+13. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+14. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+15. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+16. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt
+17. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+
+SAMPLE ATHLETE OUTPUT (read 1-2 examples to understand output quality):
+18. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt (Week 5 JSON — most complete)
+19. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt (Week 5 Coaching Message)
+20. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Coaching and Deep Dive\Deep Dive\Grace_Kindel_2026-02-23to2026-03-01_VF_DeepDive.txt (Week 5 Deep Dive)
+21. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Coach Insights\Grace_Kindel_2026-02-23to2026-03-01_VF_WeeklyInsight.txt (Week 5 Coach Insight — if exists)
+
+COMPARATIVE ANALYSIS (optional but valuable for understanding quality evolution):
+22. D:\OneDrive\Documents\(TEST) Project A\Output Comparison\THREE-SYSTEM COMPARATIVE ANALYSIS 3-5-26.txt
+
+VALIDATION REPORT (optional — confirms no degradation):
+23. D:\OneDrive\Documents\(TEST) Project A\Validation Reports\Task_13_Execution_Signal_No_Degradation_Validation.txt
+
+============================================================
+WHAT THE USER EXPECTS
+============================================================
+The user wants you to EXPLAIN the project, not to DO work on it. This is a briefing session. Present the information clearly and thoroughly. Be prepared to:
+
+1. Walk through each pipeline stage in detail
+2. Explain the VirtusFocus behavioral system (WTD, Bullseye, Growth Phases, RQS)
+3. Describe the compliance framework and why each constraint exists
+4. Explain the execution signal upgrade and what it adds
+5. Show how data flows from athlete recap → JSON → coaching output → coach insights → audit
+6. Explain the dual-mode operation (Core Foundation vs. App)
+7. Describe the version history and how the pipeline evolved
+8. Summarize each athlete's arc and what their data demonstrates about the pipeline
+9. Answer any follow-up questions about architecture, design decisions, or specific files
+
+The user is the project owner (Coach Arron / VirtusFocus founder). He knows his coaching system deeply but may want a technical walkthrough of how the AI pipeline implements it, or he may be briefing someone else and needs a comprehensive explanation he can reference.
+
+Organize your explanation in a logical flow — start with the big picture (what and why), then walk through each stage, then cover the behavioral system, compliance rules, execution signals, athlete data, and current state. Use the CLAUDE.md session history and design task queue to show the project's evolution.
+============================================================
+WHAT NOT TO DO
+============================================================
+- Do NOT start any pipeline processing (no new JSONs, no coaching output, no audits)
+- Do NOT modify any specification files
+- Do NOT propose changes or improvements unless asked
+- Do NOT skip the file reading — your explanation should be grounded in actual file contents, not just CLAUDE.md summaries
+- Do NOT rush — this is a comprehensive briefing, take the space needed to explain thoroughly
+============================================================
+END OF HANDOFF PROMPT
+============================================================
