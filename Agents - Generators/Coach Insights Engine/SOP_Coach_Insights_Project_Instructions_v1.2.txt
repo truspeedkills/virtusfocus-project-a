@@ -1549,7 +1549,7 @@ the Monthly Institutional Summary.
 PROHIBITED METRIC CATEGORIES:
 ------------------------------------------------------------
 
-The following 13 categories of execution data are PROHIBITED
+The following 12 categories of execution data are PROHIBITED
 from Stage 4 output:
 
   1. Completion rates (decimal or percentage values)

@@ -1,0 +1,335 @@
+============================================================
+VALIDATION REPORT
+Task: 13 — Execution Signal No-Degradation Validation
+Date: 2026-03-08
+Result: PASS WITH NOTES
+============================================================
+
+EXECUTIVE SUMMARY
+============================================================
+
+All 4 validation layers PASS. The v9.4/v1.5/v1.2/v1.1
+pipeline upgrades introduce zero degradation to existing
+athlete coaching output. One minor documentation count error
+was found and fixed in v1.2 Section 17. All existing
+coaching output retroactively passes the new Criterion 13
+(Execution Signal Leakage Compliance). Core Foundation skip
+rules are consistent across all 4 pipeline stages.
+Cross-stage prohibited/permitted category lists are aligned.
+
+============================================================
+LAYER 1: CRITERION 13 RETROACTIVE AUDIT
+============================================================
+
+All existing athletes are Core Foundation (no app data).
+Per Criterion 13 Step 2: ANY execution-signal-derived
+language in a Core Foundation athlete's output = FAIL.
+
+6 samples audited (12 documents total):
+
+| # | Athlete         | Week | Period          | CM     | DD     |
+|---|-----------------|------|-----------------|--------|--------|
+| 1 | Grace Kindel    | 3    | Feb 9-15        | PASS   | PASS   |
+| 2 | Grace Kindel    | 5    | Feb 23-Mar 1    | PASS   | PASS   |
+| 3 | Tucker Lloyd    | 3    | Feb 23-Mar 1    | PASS   | PASS   |
+| 4 | Mergim Bushati  | 14   | Dec 8-14        | PASS   | PASS   |
+| 5 | Mergim Bushati  | 17   | Dec 29-Jan 4    | PASS   | PASS   |
+| 6 | Mergim Bushati  | 18   | Jan 5-11        | PASS   | PASS   |
+
+CM = Coaching Message, DD = Deep Dive
+
+Sample selection rationale:
+- Grace Wk3: HIGH emotional intensity, most complex coaching
+  language, derailer activation
+- Grace Wk5: Growth phase advancement, most developmental
+  language, longitudinal trendlines
+- Tucker Wk3: Mixed tier, micro-commitment modality adaptation,
+  lowest-performing athlete in pipeline
+- Mergim Wk14: HIGH EI, hamstring injury, acute crisis language
+- Mergim Wk17: Breakthrough return, "I leveled up", RQS=4,
+  identity-level language
+- Mergim Wk18: HIGH EI, first competition, derailer activation
+  + within-tournament recovery, highest-complexity case
+
+BORDERLINE LANGUAGE INVENTORY (all PERMITTED):
+
+1. "Adaptive Engagement" (Mergim Wk14 Deep Dive) — natural
+   English meaning "stayed involved." Not app engagement
+   metrics. Passes reasonable reader test.
+
+2. "in the system" (Mergim Wk17 Deep Dive) — "RQS=4 is the
+   highest reflection score in the system." Refers to
+   VirtusFocus program, not execution behavior system.
+   Style note: prefer "in the program" for App athletes.
+
+3. "Stable Positive" (Mergim Wk18 Deep Dive header) — v9.3
+   consistency_signal classification, not Rhythm Score "Stable"
+   band. Context unambiguous.
+
+4. "The morning write-down showed up behaviorally" (Grace Wk3
+   CM) — References prior micro-commitment (morning writing
+   practice), not Morning Tune-Up engagement metrics.
+
+5. "signal" used as natural English (multiple files) — "the
+   most significant behavioral signal," "a resilience signal."
+   No surrounding execution signal context. Permitted.
+
+6. "execution" used as natural English (multiple files) —
+   "full execution," "weekday execution." Refers to
+   performing/doing, not execution_behavior_signals.
+
+7. Win Rate/Missed Rate fractions (Tucker Wk3 DD) — "11
+   Wins out of 21 days." v9.3 longitudinal_metrics, not E5
+   component completion counts. WTD scoring math.
+
+============================================================
+LAYER 2: CATEGORY E TERM SCAN
+============================================================
+
+All 54 coaching output files scanned (27 Coaching Messages +
+27 Deep Dives across 3 athletes).
+
+| Subcategory | Terms Searched | Matches | Status |
+|-------------|---------------|---------|--------|
+| E1 (Score names)    | 7  | 0 | CLEAN |
+| E2 (Band labels)    | 13 | 0 | CLEAN |
+| E3 (Flag IDs)       | 18 | 0 | CLEAN |
+| E4 (Alignment)      | 4  | 0 | CLEAN |
+| E5 (Raw metrics)    | 15 | 0 | CLEAN |
+| E6 (Surveillance)   | 10 | 0 | CLEAN |
+| E7 (Pipeline terms) | 7  | 0 | CLEAN |
+
+TOTAL: 74 search terms, 0 violations across 54 files.
+
+Broader pattern analysis (edge cases):
+- "completion" (12 matches): All legitimate — task completion,
+  arc completion, homework completion, practice completion.
+  None reference app completion rates.
+- "engagement" (~45 matches): All legitimate — weekend
+  engagement gap, academic engagement, coaching engagement,
+  adaptive engagement during injury. None are surveillance
+  framing.
+- "streak" (7 matches): All legitimate — Win streak, Growth
+  streak. None reference morning_tune_up streaks.
+- "score" (60+ matches): All legitimate — Win score, athletic
+  scoring, reflection_quality_score (v9.3 field). None
+  reference composite score names.
+- "Aligned/Partially Aligned" (30+ matches): All v9.3
+  alignment_status field references. Not E4 self-ratings
+  alignment labels.
+- "drift/ownership/rhythm" (12 matches): All natural English
+  coaching usage. No composite score formal names.
+
+ONE STYLE NOTE:
+- Tucker Lloyd Week 3 Deep Dive line 86: "The data shows
+  increasing awareness..." — Not an E6 violation ("behavioral
+  data shows" is the prohibited term), but "the data shows"
+  is surveillance-adjacent. In App-mode output, prefer "This
+  week showed..." or "What emerged this week..." instead of
+  data-referencing phrasing.
+
+============================================================
+LAYER 3: CORE FOUNDATION SKIP RULE VERIFICATION
+============================================================
+
+Cross-stage verification of CF detection, skip behavior,
+fallback values, and no-degradation guarantee.
+
+a) DETECTION METHOD: CONSISTENT
+   All 4 stages check execution_behavior_signals.input_source:
+   - Stage 2 (v9.4 Section 3): input_source field detection
+   - Stage 3 (v1.5 Section 3): input_source field detection
+   - Stage 4 (v1.2 Section 16): input_source field detection
+   - Stage 5 (v1.1 Section 13 Step 1): input_source field read
+   Ambiguous input defaults to "core_foundation" (Stage 2
+   Section 3).
+
+b) IDENTICAL OUTPUT GUARANTEE: CONSISTENT
+   All 4 stages explicitly state output is identical to
+   pre-upgrade version for CF athletes:
+   - Stage 2: "Steps 1-11 produce identical results"
+   - Stage 3: "identical in structure and quality to v1.4"
+   - Stage 4: "identical in structure and quality to v1.1"
+   - Stage 5: "identical output to pre-v9.4 behavior"
+
+c) NO UNGUARDED REFERENCES: CONSISTENT
+   All stages check input_source before processing execution
+   signal data:
+   - Stage 2: Section 3 gates Steps 12-17
+   - Stage 3: Section 16 is binary check at start of output
+   - Stage 4: Section 16 is binary check at start of output
+   - Stage 5: Step 1-2 checks before Steps 3-5
+
+d) FALLBACK VALUES: CORRECT AND COMPLETE
+   Stage 2 (v9.4 Section 6) defines:
+   - Raw metrics: "not available — weekly recap input only"
+   - Composite scores: { "score": "insufficient data",
+     "band": "insufficient data" }
+   - coach_flags: [] (empty array)
+   - execution_pattern_summary: "Core Foundation input —
+     execution behavior signals not available"
+   - self_ratings_alignment: "not available — weekly recap
+     input only"
+   All downstream stages (3, 4, 5) reference these values
+   and skip processing when encountered.
+
+LAYER 3 RESULT: PASS — No gaps or inconsistencies.
+
+============================================================
+LAYER 4: CROSS-STAGE CONSISTENCY CHECK
+============================================================
+
+A) PROHIBITED CATEGORIES: CONSISTENT
+
+   Stage 3 (v1.5 Section 17): 7 categories (raw metrics only)
+   Stage 4 (v1.2 Section 17): 12 categories (raw metrics +
+     score names/values/bands + flag IDs/labels/tiers +
+     alignment labels)
+   Stage 4 JSON_logic_reference.txt: 12 categories (matches
+     v1.2 Section 17)
+   Stage 5 (v1.1 Category E): 7 subcategories covering all
+     Stage 3 + Stage 4 prohibitions plus surveillance framing
+     (E6) and pipeline terminology (E7)
+
+   Relationship is correct:
+   - Stage 3 < Stage 4 (Stage 3 uses bands internally;
+     Stage 4 cannot even name them)
+   - Stage 5 ⊇ Stage 3 (Stage 5 audits Stage 3, covers
+     everything Stage 3 could leak)
+   - Stage 5 and Stage 4 independently defined (Stage 5
+     does not audit Stage 4; Stage 4 self-enforces)
+
+   ONE FIX APPLIED: v1.2 Section 17 line 1552 said
+   "13 categories" but listed 12. Residual from session 34
+   phantom category removal. Changed to "12 categories."
+
+B) PERMITTED CATEGORIES: CONSISTENT
+
+   All stages agree on 4 permitted categories:
+   1. Composite score bands → behavioral/institutional language
+   2. Coach flag patterns → athlete/compliance-safe language
+   3. Self-ratings alignment → translated effects
+   4. Execution pattern summary → translated language
+
+   Stage 5 Step 6 permits the same translations Stage 3
+   approves as examples. Translation standards differ
+   appropriately: Stage 3 = "behavioral language" (athlete-
+   facing), Stage 4 = "institutional trend language" (staff-
+   facing). Intentional, not inconsistent.
+
+C) COMPOSITE SCORE BAND ROUTING: CONSISTENT
+
+   Positive and concern bands are directionally aligned:
+   - What Stage 3 routes to Recognition/Strength, Stage 4
+     treats as positive trend
+   - What Stage 3 routes to Drift/Growth, Stage 4 treats as
+     Composite Readiness concern
+   - Same 5 scores in compound_disengagement and Composite
+     Readiness Step 2.5 (ownership, drift, rhythm,
+     review_quality, follow_through)
+   - Same 2 scores excluded (Recovery, Reactivity)
+   - Recovery special states handled identically: Pending
+     Data = insufficient data, fixed-85 = no special mention
+
+D) COACH FLAG ROUTING: CONSISTENT
+
+   All 15 flags handled at every stage:
+   - 3 action flags: Stage 3 direction shift, Stage 4
+     KPS priority 0 with signal labels
+   - 8 attention flags: Stage 3 direct address, Stage 4
+     KPS priority 1.5 with signal labels
+   - 4 monitor flags: Stage 3 subtle tone, Stage 4 no impact
+   Coach Flags Spec downstream routing summary matches actual
+   Stage 3/4/5 implementations.
+   compound_disengagement = "broad behavioral shift" in both
+   stages.
+
+E) SELF-RATINGS ALIGNMENT: CONSISTENT
+
+   Directional effects aligned:
+   - Conflated: Stage 3 grounds (pulls down), Stage 4 shifts
+     toward Variable (lowers). Same direction.
+   - Undervalued: Stage 3 elevates (pushes up), Stage 4
+     shifts toward Building (raises). Same direction.
+   - Aligned: no special integration in either stage.
+   - insufficient data: no integration in either stage.
+
+   Intentional scope difference: Stage 3 uses both dimensions
+   (confidence + habit_consistency), Stage 4 uses confidence
+   only. Correct — Stage 4 has no natural routing for
+   habit_consistency in institutional sections.
+
+   Stage 5 Step 6e permits the same phrases Stage 3 Section
+   15 uses as approved examples ("You're further along than
+   you think" for Undervalued, "Let's look at what the week
+   actually showed" for Conflated).
+
+LAYER 4 RESULT: PASS — One documentation count error fixed.
+No functional inconsistencies.
+
+============================================================
+ISSUES FOUND
+============================================================
+
+1. DOCUMENTATION COUNT ERROR (FIXED)
+   File: SOP_Coach_Insights_Project_Instructions_v1.2.txt
+   Line 1552: "The following 13 categories" → changed to
+   "The following 12 categories"
+   Root cause: Session 34 removed phantom category 13
+   ("Self-ratings numeric values") but did not update the
+   introductory count text.
+   Impact: None — the actual prohibited list (12 items) was
+   correct. Only the summary count was stale.
+   Fix: Applied in this validation session.
+
+============================================================
+STYLE NOTES (NOT ISSUES — FUTURE AWARENESS)
+============================================================
+
+1. "The data shows..." (Tucker Wk3 DD) — surveillance-adjacent
+   phrasing. Not a current violation. For future App outputs,
+   prefer "This week showed..." framing.
+
+2. "Adaptive Engagement" (Mergim Wk14 DD) — natural English
+   but shares vocabulary with app engagement concepts.
+   Context resolves ambiguity for Core Foundation athletes.
+
+3. "in the system" (Mergim Wk17 DD) — refers to VirtusFocus
+   program. For App outputs, prefer "in the program."
+
+============================================================
+RECOMMENDATIONS
+============================================================
+
+None — validation complete.
+
+The one documentation count error has been fixed. All
+functional specifications are consistent. The Execution
+Signal Schema Design (Tasks 1-13) is specification-complete.
+
+============================================================
+VALIDATION CONCLUSION
+============================================================
+
+Task 13 PASSES WITH NOTES.
+
+"With Notes" because one minor documentation count error was
+found and fixed (v1.2 Section 17 count "13" → "12"). This
+was a residual text artifact from a prior session correction,
+not a functional inconsistency. The actual prohibited
+category list was already correct at 12 items.
+
+All success criteria met:
+[x] All sampled coaching output passes Criterion 13
+[x] Category E term scan finds zero concerning matches
+[x] Core Foundation skip rules consistent across all 4 stages
+[x] Cross-stage prohibited/permitted category lists aligned
+[x] All inconsistencies found have been fixed (1 found, 1 fixed)
+
+The Execution Signal Schema Design task queue (Tasks 1-13)
+is COMPLETE. The v9.4 pipeline is specification-complete for
+the execution signal upgrade.
+
+============================================================
+END OF VALIDATION REPORT
+============================================================
