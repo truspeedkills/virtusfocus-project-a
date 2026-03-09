@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-08
-**Session Notes:** Execution Signal Schema Design — Tasks 1-11 complete. Task 11 (Coach Insights Project Instructions v1.2) created new versioned file with execution signal integration guidance for Stage 4 (729 → 1709 lines). Team Snapshot design decision resolved: Option B (execution enrichment in T1, T2, T7 for all-App teams). Core Foundation confirmed as transitional (<20 athletes, phasing out). All execution routing consistent with JSON_logic_reference.txt (Task 10).
+**Session Notes:** Execution Signal Schema Design — Tasks 1-12 complete. Task 12 (Editorial Audit v1.1) added Criterion 13: Execution Signal Leakage Compliance as Tier 1 criterion. New versioned files created (Master Prompt v1.1 + Project Instructions v1.1). Clinical Language Exclusion List expanded with Category E (Execution Signal Terminology — 7 subcategories). Stage 3 only scope (Stage 4 self-enforces via v1.2 rules). All existing criteria (1-12) preserved unchanged.
 
 ---
 
@@ -21,7 +21,7 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 | 2 | Interpretation Engine | Built — Active schema: **v9.4** |
 | 3 | Coaching Output Engine | Built — Active schema: **v1.5 / V3** |
 | 4 | Coach Insights Engine | **Specification upgraded — v1.2** |
-| 5 | Editorial Audit | **Specification complete — v1.0** |
+| 5 | Editorial Audit | **Specification upgraded — v1.1** |
 
 ---
 
@@ -151,11 +151,12 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Outputs: Weekly Performance Insight (individual, 10 sections) + Weekly Team Snapshot (aggregate, 7 sections, 5+ athletes)
 
 ### Editorial Audit Agent (Stage 5)
-- Master Prompt: `Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.0.txt`
-- Project Instructions: `Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.0.txt`
-- Reference Files: Uses the same 9 source files as the Coaching Output Engine (brand_voice, brand_themes, content_style_guide, System Identity, Message Framework, Deep Dive Framework, Reflection/Growth Model, JSON-to-Message Map, JSON Rules)
+- Master Prompt: `Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.1.txt`
+- Project Instructions: `Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.1.txt`
+- Reference Files: Uses the same 9 source files as the Coaching Output Engine + VF_Execution_Signal_Composite_Score_Rules.txt + VF_Coach_Flags_Specification.txt (11 total)
 - Model: Opus (recommended for judgment-intensive audit criteria)
 - Mode: Fully autonomous — PASS / AUTO-CORRECTED PASS / REJECT AND REGENERATE (no human in the loop)
+- Criteria: 13 audit criteria across 3 tiers (Tier 1: 1-4 + 13, Tier 2: 5-10, Tier 3: 11-12)
 
 ### Execution Signal Strategy Documents (External — Google Shared Drive)
 - Strategy: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\VirtusFocus_Execution_Signal_Strategy.md`
@@ -402,6 +403,8 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 
 34. Post-Task 11 accuracy correction: Removed phantom prohibited category from v1.2 — "Self-ratings numeric values (1-10 scale)" was listed as prohibited category 13 in both Section 12 and Section 17 of SOP_Coach_Insights_Project_Instructions_v1.2.txt. This was inaccurate: self_ratings numeric values (confidence_level, habit_consistency_level) are raw app input consumed by Stage 2 to produce alignment classifications. The raw 1-10 values do not appear in the Interpretation JSON that Stage 4 reads — Stage 4 only sees the processed classifications (Aligned/Conflated/Undervalued), already prohibited under category 12. Prohibiting data Stage 4 cannot access violates the accuracy standard for a national launch pipeline. Removed from both v1.2 locations. Corrected all CLAUDE.md references from "13 prohibited categories" to "12 prohibited categories" (session history items 31 and 33, completed section Task 10 entry). Task 12 Handoff Prompt created for fresh-session handoff.
 
+35. Execution Signal Schema Design — Task 12 complete: Editorial Audit criteria for execution signal leakage. Created SOP_Editorial_Audit_Master_Prompt_v1.1.txt and SOP_Editorial_Audit_Project_Instructions_v1.1.txt — new versioned files adding Criterion 13: Execution Signal Leakage Compliance (Tier 1 — MUST PASS). Three design decisions resolved: (1) Scope = Stage 3 output only (Stage 4 self-enforces via v1.2 rules, audit agent identity remains athlete-facing content gate), (2) Tier placement = Tier 1 (raw execution data surfacing is a compliance violation, same severity as clinical language, never auto-corrected), (3) Versioning = new versioned files v1.1 (preserves v1.0 on disk). Criterion 13 has 6-step check logic: Step 1 reads input_source, Step 2 Core Foundation check (any execution-signal-derived language = FAIL because no execution data exists), Steps 3-5 App athlete scans (raw metric scan, composite score/flag/alignment scan, surveillance framing scan), Step 6 context-dependent judgment (permitted behavioral translations). Clinical Language Exclusion List (now Section 15) expanded with Category E: Execution Signal Terminology — 7 subcategories: E1 composite score names (7 names), E2 band labels (as named classifications), E3 coach flag identifiers (15 flag_ids + flag terminology), E4 self-ratings alignment labels, E5 raw execution metrics (completion rates, timing data, reminder dependency, streak counts, component counts, question-level rates, sequence integrity labels), E6 surveillance framing patterns (10 prohibited patterns), E7 internal pipeline terminology. 12 WRONG/CORRECT examples covering all leakage vectors. 4 new edge cases added: Core Foundation strictness, insufficient data apps, natural language coincidences, Criterion 2+13 independence. All existing criteria (1-12) preserved unchanged. Non-criteria sections renumbered 14-21. Decision tree updated for 13 criteria. Auto-correction rules updated with Criterion 13 non-auto-correctable note. Regeneration instruction format updated with execution signal leakage example.
+
 ---
 
 ## Execution Signal Strategy — Design Decisions (Confirmed 2026-03-06)
@@ -645,7 +648,7 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 9. ~~Update `SOP_Coaching_Output_Instructions` to new version with execution signal usage rules~~ **COMPLETE — v1.5 created. 414→~700 lines. 12→18 sections. 4 existing sections expanded (2, 3, 4, 6, 10), 6 new sections added (Execution Signal Integration Rule, Composite Score Tone Calibration, Coach Flag Integration, Self-Ratings Alignment Integration, Core Foundation Execution Skip, Raw Metric Exclusion). EI + action flag priority defined. Micro-commitment flag interaction rule added.**
 10. ~~Update `JSON_logic_reference.txt` with inform-only routing for execution signals~~ **COMPLETE — 246→449 lines. Dual-mode awareness, per-section execution enrichment routing (Sections 1, 2, 4, 5, 8, 9, 10), Composite Readiness Step 2.5 execution modifier, KPS priorities 0/1.5 for coach flags, self-ratings confidence adjustment, inform-only fields expanded, raw metrics not-consumed list, execution signal compliance filter, Core Foundation handling section.**
 11. ~~Update `SOP_Coach_Insights_Project_Instructions` to new version~~ **COMPLETE — v1.2 created. 729→1709 lines. 15→18 sections. Dual-mode awareness, per-section execution enrichment guidance (Sections 1, 2, 4, 5, 8, 9, 10 with WRONG/CORRECT examples), Team Snapshot execution enrichment (T1, T2, T7 — Option B), expanded prohibited content, 3 new sections (Execution Signal Integration Master Rule, Core Foundation Execution Skip Rule, Raw Metric Exclusion Rule).**
-12. Define new Editorial Audit criteria for execution signal leakage
+12. ~~Define new Editorial Audit criteria for execution signal leakage~~ **COMPLETE — v1.1 created (Master Prompt + Project Instructions). New Criterion 13: Execution Signal Leakage Compliance (Tier 1 — MUST PASS). Stage 3 output only (Stage 4 self-enforces via v1.2 rules). Clinical Language Exclusion List expanded with Category E (Execution Signal Terminology — 7 subcategories: E1 composite score names, E2 band labels, E3 coach flag identifiers, E4 self-ratings alignment labels, E5 raw execution metrics, E6 surveillance framing patterns, E7 internal pipeline terminology). 12 WRONG/CORRECT examples. Core Foundation check (any execution-signal-derived language = FAIL). Sections renumbered 13-21 (old 13-20 shifted by +1). All existing criteria (1-12) preserved unchanged.**
 13. Validate against existing athlete data (Grace Kindel, Tucker Lloyd, Mergim Bushati) to confirm no degradation
 
 ---
@@ -664,7 +667,7 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 - [x] Update Coaching Output Instructions to new version — **COMPLETE (Task 9). SOP_Coaching_Output_Instructions_v1.5.txt created.**
 - [x] Update Coach Insights JSON Logic Reference — **COMPLETE (Task 10). JSON_logic_reference.txt updated with execution signal inform-only routing.**
 - [x] Update Coach Insights Project Instructions to new version (Task 11) — **COMPLETE. SOP_Coach_Insights_Project_Instructions_v1.2.txt created. 729→1709 lines, 15→18 sections.**
-- [ ] Define new Editorial Audit criteria for execution signal leakage
+- [x] Define new Editorial Audit criteria for execution signal leakage — **COMPLETE (Task 12). Editorial Audit v1.1 created. Criterion 13: Execution Signal Leakage Compliance (Tier 1). Category E exclusion list (7 subcategories). Stage 3 only scope.**
 - [ ] Validate against existing athlete data to confirm no degradation
 
 ### Athlete Pipeline Work
@@ -698,6 +701,7 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 - [x] Execution Signal Schema Design Task 9 — SOP_Coaching_Output_Instructions_v1.5.txt created. 414→~700 lines, 12→18 sections. 4 existing sections expanded (2, 3, 4, 6, 10), 6 new sections (Execution Signal Integration Rule, Composite Score Tone Calibration with per-score behavioral translations, Coach Flag Integration with per-severity-tier coaching approach + EI priority, Self-Ratings Alignment Integration with dual-dimension handling, Core Foundation Execution Skip, Raw Metric Exclusion compliance rule with WRONG/CORRECT examples). Micro-commitment flag interaction rule added to Section 10.
 - [x] Execution Signal Schema Design Task 10 — JSON_logic_reference.txt updated in place. 246→449 lines. Dual-mode awareness (App vs Core Foundation), per-section execution enrichment routing (Sections 1, 2, 4, 5, 8, 9, 10), Composite Readiness Step 2.5 execution modifier (action flags or 3+ concern bands → shift toward Attention), KPS priorities 0/1.5 for coach flags with 11 compliance-safe signal label translations, self-ratings confidence adjustment (Conflated→Variable shift, Undervalued→Building shift), Stress Load unchanged (no Reactivity Risk integration). Inform-only fields expanded (composite_scores, coach_flags, self_ratings_alignment, execution_pattern_summary). Raw metrics not-consumed list. Execution signal compliance filter (12 prohibited categories). Core Foundation handling section. Team Snapshot deferred to Task 11.
 - [x] Execution Signal Schema Design Task 11 — SOP_Coach_Insights_Project_Instructions_v1.2.txt created. 729→1709 lines, 15→18 sections. 4 existing sections expanded (1, 3, 4, 6, 7, 8, 12), 3 new sections added (Execution Signal Integration Master Rule, Core Foundation Execution Skip Rule, Raw Metric Exclusion Rule). Per-section execution enrichment HOW-TO guidance for Sections 1, 2, 4, 5, 8, 9, 10 with WRONG/CORRECT examples. Team Snapshot execution enrichment (Option B: T1, T2, T7 — all team athletes are App). Core Foundation confirmed transitional (<20 athletes, phasing out). Verified consistent with JSON_logic_reference.txt across all routing, determination rules, compliance filters, and inform-only fields.
+- [x] Execution Signal Schema Design Task 12 — Editorial Audit v1.1 created (Master Prompt + Project Instructions). New Criterion 13: Execution Signal Leakage Compliance (Tier 1 — MUST PASS, reject on failure, never auto-corrected). Scope: Stage 3 output only (Stage 4 self-enforces via v1.2 rules). Clinical Language Exclusion List expanded with Category E: Execution Signal Terminology (7 subcategories — E1 composite score names, E2 band labels, E3 coach flag identifiers, E4 self-ratings alignment labels, E5 raw execution metrics, E6 surveillance framing patterns, E7 internal pipeline terminology). 6-step check logic: Core Foundation check (any execution-derived language = FAIL), Raw Metric Scan, Composite Score/Flag/Alignment Scan, Surveillance Framing Scan, Context-Dependent Judgment (permitted behavioral translations). 12 WRONG/CORRECT examples. 4 new edge cases (Core Foundation strictness, insufficient data apps, natural language coincidences, Criterion 2+13 independence). Sections renumbered 13-21 (old 13-20 shifted by +1). All existing criteria (1-12) preserved unchanged. v1.0 preserved on disk.
 
 **Grace Kindel Coach Insights — All 5 Weeks Complete:**
 
