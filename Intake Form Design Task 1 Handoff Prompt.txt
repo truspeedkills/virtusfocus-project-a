@@ -1,0 +1,382 @@
+============================================================
+VIRTUSFOCUS PIPELINE IMPROVEMENT — TASK 1
+UNIFIED INTAKE FORM DESIGN
+============================================================
+Created: 2026-03-09
+Purpose: Design the unified App intake form question set with
+         derived PPD + ABI + expanded Athlete Snapshot.
+============================================================
+
+YOU ARE STARTING A FRESH SESSION.
+
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+This file is the single source of truth for the entire project.
+Pay particular attention to:
+- "Pipeline Improvement Design — Confirmed Design Decisions"
+  section (all 5 decisions are LOCKED — do not re-debate them)
+- "Pipeline Improvement Task Queue" (21 tasks, you are on Task 1)
+- The full session history (items 1-39)
+
+============================================================
+WHAT HAS ALREADY BEEN DECIDED (DO NOT RE-OPEN)
+============================================================
+
+These decisions were made collaboratively and confirmed by the
+user in the prior session. They are constraints, not options.
+
+1. UNIFIED INTAKE FORM — One question set. The athlete answers
+   once. The system derives three outputs from the same answers:
+   (a) Athlete Snapshot (narrative baseline)
+   (b) PPD Top 3 (deterministic problem ranking)
+   (c) ABI 4-Pillar Scores (quantitative developmental baseline)
+   No separate question sets. Shared inputs routed to multiple
+   systems.
+
+2. FORM LENGTH STRATEGY — Optimize for maximum signal per minute
+   of athlete time, NOT minimum question count. Many structured
+   questions (1-5 scales, multi-select) + few strategic free-text
+   questions. Total 20-25 questions acceptable. Structured formats
+   keep completion time fast despite higher question count.
+
+3. PPD AS INTAKE + LONGITUDINAL — Self-report PPD computed at
+   intake. Longitudinal PPD from execution data is a FUTURE Stage 2
+   enhancement (out of scope for Task 1). BUT: the PPD output
+   format must be designed NOW to support future comparison.
+
+4. DUAL-USE ARCHITECTURE — All improvements are App-athlete only.
+   Core Foundation athletes keep existing intake + baseline. The
+   Snapshot Builder needs dual-mode detection. Same additive
+   pattern as the Execution Signal upgrade.
+
+5. 4 LOCKED BASELINE FIELDS — These exist and do not change:
+   - baseline_identity_claim
+   - baseline_hinge_habit
+   - baseline_primary_derailer
+   - baseline_growth_phase
+   New fields sit ALONGSIDE these, never replacing them.
+
+============================================================
+YOUR TASK
+============================================================
+
+Design the unified App intake form question set.
+
+Deliverable: An approved, complete question list with:
+- Every question numbered and worded
+- Response format for each (1-5 scale, multi-select, free-text,
+  single-select)
+- Multi-system routing tags (which systems each question feeds:
+  Snapshot / PPD / ABI / Ecosystem / Longitudinal)
+- Pipeline field mapping (what field name each answer produces)
+- Clear distinction between questions that are NEW (not in Core
+  Foundation form) and questions that are UPGRADED from Core
+  Foundation (same intent, better format)
+
+This is a COLLABORATIVE DESIGN SESSION. The user (Coach Arron,
+VirtusFocus founder) will be actively involved. Present options,
+explain trade-offs, and wait for approval before locking.
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read these files IN ORDER before beginning design work:
+
+ESSENTIAL CONTEXT (read first):
+1. D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+   → Full project context, all design decisions, task queue
+
+CURRENT STATE — What exists today:
+2. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+   → Current Snapshot Builder spec (9 sections, 300-500 words)
+3. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Core Foundation Intake Form.txt
+   → Current 22-question intake form (the questions CF athletes answer today)
+
+EXISTING ATHLETE SNAPSHOTS (read to understand current output quality):
+4. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+5. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+6. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Mergim Bushati\mergim_bushati_athlete_snapshot.txt
+
+IDEA-SPECIFIC SOURCE DOCUMENTS (the raw material for the design):
+7. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Suggested Redesigned VirtusFocus Intake Form.txt
+   → 7-section redesigned form (19 Qs), PPD scoring logic (8 buckets,
+     selection weights + amplifiers + tie-breakers), ABI scoring
+     (4 pillars, 8 scale questions, 0-40 total)
+8. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\High-Value Intake Additions.txt
+   → 15 high-value questions, Mental Reset Speed metric, Current
+     Performance Routine, Top 5 minimal-addition list
+
+PIPELINE CONTEXT (read for downstream awareness):
+9. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+   → How Stage 2 reads baseline fields (understand what the
+     Interpretation Engine expects from the snapshot)
+10. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.5.txt
+    → How Stage 3 uses baseline fields in coaching output
+11. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+    → Compliance rules (what can/cannot be surfaced to coaches)
+12. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Parents Insight Engine\D2C Parent App Insights and add ons.txt
+    → Parent App overview (ecosystem alignment feeds Idea 4)
+
+SAMPLE PIPELINE OUTPUT (read 1 for output quality context):
+13. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+    → Week 5 Interpretation JSON showing how baseline_profile
+      fields are consumed and referenced throughout
+
+============================================================
+THE CURRENT CORE FOUNDATION INTAKE FORM
+============================================================
+
+22 questions. Here is the full breakdown:
+
+ADMINISTRATIVE (5 questions — keep in App, not coaching-relevant):
+  Q1: Name (First, Last)
+  Q2: Birth Date
+  Q3: Address
+  Q4: Phone Number
+  Q5: Email
+
+RETIRED (2 questions — remove from App):
+  Q6: Did a VirtusFocus athlete/coach refer you? (no longer used)
+  Q19: Do you have a current mindset coach? (no longer used)
+
+PERFORMANCE CONTEXT (5 questions):
+  Q7: Primary sport (free text)
+  Q8: Position (free text)
+  Q9: Current team/club (free text)
+  Q10: Years competing (free text — noted: should upgrade to selectable)
+  Q11: Mental game self-rating (1-10 selectable scale)
+
+MENTAL STRUGGLES (1 multi-select):
+  Q12: Biggest mental struggles when performing
+       Options: Confidence, Focus, Pressure, Fear of failure,
+       Pre-game nerves, Handling mistakes, Staying consistent,
+       Letting go of bad outcomes, Motivation, Other
+
+FREE-TEXT QUESTIONS (6):
+  Q13: What goes through your mind before a big moment?
+  Q14: Thoughts/habits holding you back from best performance?
+  Q15: What does success look like in 6 months?
+  Q16: 2-3 mindset goals for this program?
+  Q17: What are you hoping to learn from VirtusFocus?
+  Q22: Anything else you'd like us to know?
+
+STRUCTURED (3 questions):
+  Q18: How committed are you? (Just curious / Pretty serious / All-in)
+  Q20: Parent involvement level (Very / Somewhat / Not / Prefer not to say)
+  Q21: Include parents in coaching? (Yes/No + parent email)
+
+KEY GAPS (what the new App form must add):
+- No 1-5 scale questions (zero ABI data captured)
+- No reset speed (composure baseline missing)
+- No routine assessment (structure baseline missing)
+- No development driver (ownership baseline missing)
+- No home conversation pattern (ecosystem detail missing)
+- No identity sentence completion (identity anchor missing)
+- No trigger context specificity (only general struggles)
+- Heavy goal redundancy (Q15/16/17 overlap significantly)
+
+============================================================
+THE TWO SOURCE DOCUMENTS — KEY CONTENT SUMMARY
+============================================================
+
+SUGGESTED REDESIGNED INTAKE FORM:
+- 7 sections, 19 questions
+- Introduces: identity sentence completion, performance friction
+  multi-select (8 options remapped to PPD buckets), trigger
+  follow-up, pressure thought, reset speed (4-option),
+  development driver (4-option), routine presence (3-option),
+  performance review frequency (4-option), ecosystem alignment
+  (parent involvement + home conversation pattern), commitment
+  level, mental game self-rating, 6-month success vision
+
+PPD SCORING LOGIC (fully specified):
+- 8 problem buckets: Overthinking Loop, Confidence Volatility,
+  Mistake Recovery Lag, Focus Drift/Distraction, Pressure
+  Reactivity, Discipline Gap, Structure Gap, Ecosystem Friction
+- Scoring: Selection Weight (+3 per friction selection) +
+  Amplifiers (reset speed, routine, trigger context, ecosystem) +
+  Tie-breakers (pressure thought classification)
+- Output: Top 3 ranked problems with score, trigger, coaching line
+
+ABI SCORING LOGIC (fully specified):
+- 4 pillars: Ownership (0-10), Composure (0-10), Focus (0-10),
+  Structure (0-10). Total: 0-40.
+- 8 quick 1-5 scale questions (2 per pillar)
+- Formula: pillar = round((Q_a + Q_b) / 2 * 2)
+- Bands: 0-16 Needs Foundation / 17-28 Developing / 29-36
+  Consistent / 37-40 Leadership
+- Primary Emphasis = lowest 1-2 dimensions
+
+HIGH-VALUE INTAKE ADDITIONS:
+- 15 questions across 4 categories (Ownership & Accountability,
+  Pressure & Composure, Identity & Leadership, Ecosystem)
+- Top 5 minimal-addition list: reset speed, overthink trigger,
+  development driver, identity sentence, performance review
+- Mental Reset Speed (1-5 longitudinal metric)
+- Current Performance Routine assessment
+- Additional questions not in redesigned form: "When something
+  goes wrong, what do you usually do first?" (response vs
+  reaction), "After a bad performance, how describe yourself?"
+  (identity under adversity), "Do you see yourself as a leader?"
+  (leadership stage), "How clear are coach expectations?" (role
+  clarity), "When you struggle, who do you talk to?" (support
+  network)
+
+SIGNIFICANT OVERLAP between documents:
+- Identity sentence, development driver, reset speed, routine
+  presence, performance review, home conversation, pressure
+  thought, commitment level — all appear in both documents
+- Resolution: unified form uses each question ONCE, tagged with
+  all systems it feeds
+
+============================================================
+DESIGN APPROACH
+============================================================
+
+Recommended workflow for this session:
+
+STEP 1: MAP EVERY QUESTION
+Create a master table of all unique questions across both source
+documents + the existing CF form. For each question, tag:
+- Source (CF form / Redesigned / High-Value / New)
+- Response format (free-text / multi-select / 1-5 scale / single-select)
+- System routing (Snapshot / PPD / ABI / Ecosystem / Longitudinal)
+- Priority (Essential / High / Nice-to-have)
+
+STEP 2: RESOLVE OVERLAPS
+Where the same question appears in multiple sources with different
+formats, select the optimal format based on the routing needs.
+Rule: 1-5 scale for ABI-feeding questions (granularity needed for
+pillar math, maps to PPD amplifiers). Multi-select for categorical
+PPD bucket assignments.
+
+STEP 3: CONSOLIDATE REDUNDANCY
+The CF form has Q15/16/17 all asking goal variants. Consolidate.
+The High-Value doc has questions not in the redesigned form —
+evaluate each for signal value and decide include/exclude.
+
+STEP 4: SEQUENCE THE FORM
+Order questions for optimal athlete experience:
+- Start easy (context, demographics — low cognitive load)
+- Build to self-assessment (scales — moderate load, fast)
+- Peak with identity + friction (most important coaching data)
+- End with goals + commitment (forward-looking, energizing)
+
+STEP 5: TAG MULTI-SYSTEM ROUTING
+For each question in the final list, document exactly which
+systems consume it and how (field name, calculation role, or
+narrative input).
+
+STEP 6: PRESENT FOR APPROVAL
+Show the complete form with all tags to the user for review.
+Get approval before moving to Task 2 (PPD logic) and Task 3
+(ABI logic).
+
+============================================================
+DESIGN QUESTIONS FOR COLLABORATIVE DISCUSSION
+============================================================
+
+These are open questions that need the user's input:
+
+1. QUESTION FORMAT DECISIONS:
+   - Q12 (mental struggles) in the CF form has 10 options.
+     The redesigned form remaps to 8 PPD-aligned options.
+     Which option set do we use? Do we need "Nerves" separate
+     from "Pressure"? Does "Other" with free-text belong?
+   - How many friction items can athletes select? CF form has
+     no limit. Redesigned form says "up to 3." PPD works with
+     up to 3 selections (+3 weight each). Is 3 the right cap?
+
+2. GOAL QUESTION CONSOLIDATION:
+   - CF Q15 (6-month success), Q16 (mindset goals), Q17 (VF hopes)
+     are three overlapping goal questions. Options:
+     (A) Keep one: "What does success look like in 6 months?"
+     (B) Split two: one outcome goal + one behavior goal
+     (C) Replace all three with a structured goal-setting Q
+   - Which approach?
+
+3. HIGH-VALUE ADDITIONS TO INCLUDE/EXCLUDE:
+   - "When something goes wrong, what do you usually do first?"
+     (4 options: blame / frustration / adjust / reset+refocus)
+     → Feeds Snapshot derailer + potentially ABI Composure
+   - "After a bad performance, how describe yourself?"
+     (4 options: question ability / frustrated+move on / analyze / stay confident)
+     → Feeds Snapshot identity friction + identity resilience
+   - "Do you see yourself as a leader?"
+     (4 options: not yet / sometimes / yes / main leader)
+     → Feeds growth phase + leadership development
+   - "How clear are expectations from your coach?"
+     (4 options: very unclear → very clear)
+     → Feeds ecosystem + Snapshot stress profile
+   - "When you struggle, who do you talk to first?"
+     (5 options: no one / teammate / coach / parent / mentor)
+     → Feeds ecosystem + support network
+   - Each adds ~5 seconds. Signal value vs. form length?
+
+4. FREE-TEXT RETENTION:
+   - The 3 essential free-text Qs are confirmed:
+     (a) Identity sentence ("At my best, I compete like...")
+     (b) Pressure thought ("Before a big moment, what thought...")
+     (c) Competitor aspiration ("What kind of competitor do you
+         want to become?")
+   - Should Q22 ("Anything else?") be retained as an optional
+     catch-all? It's low-signal for most athletes but occasionally
+     surfaces important context.
+
+5. ECOSYSTEM QUESTIONS FOR IDEA 4:
+   - Parent involvement level (already in CF form)
+   - Home conversation pattern (new: supportive / analytical /
+     pressure / don't discuss)
+   - Include parents in coaching (already in CF form + email)
+   - Are these sufficient for parent coaching message calibration
+     (Idea 4), or do we need additional ecosystem questions?
+
+6. SEASON PHASE / CURRENT LEVEL:
+   - The redesigned form adds "Current level" (Youth / MS / HS /
+     College / Professional) and "Current season phase" (Preseason /
+     In-season / Offseason / Returning from injury).
+   - These don't feed PPD or ABI but provide important context for
+     the Snapshot and for the Interpretation Engine's upcoming_context
+     field. Include?
+
+============================================================
+WHAT NOT TO DO
+============================================================
+
+- Do NOT finalize PPD scoring weights or ABI pillar calculations
+  in this task — that is Tasks 2 and 3. Task 1 produces the
+  QUESTION SET. Tasks 2-3 produce the MATH.
+- Do NOT modify any existing pipeline specifications (v9.4, v1.5,
+  v1.2, v1.1). Those are downstream tasks (6-7).
+- Do NOT process any athlete data through the pipeline.
+- Do NOT write the new Snapshot Builder specification — that is
+  Task 5. Task 1 produces the intake form design only.
+- Do NOT skip the user approval step. Every design decision
+  needs the user's sign-off.
+
+============================================================
+OUTPUT FORMAT
+============================================================
+
+When the design is approved, save the final intake form
+specification to:
+D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+
+This is a NEW file (new capability, not editing existing).
+
+The file should contain:
+- Complete numbered question list with exact wording
+- Response format for each question
+- Multi-system routing table (Snapshot / PPD / ABI / Ecosystem / Longitudinal)
+- Pipeline field mapping
+- Notes on Core Foundation compatibility (which CF questions map
+  to which new questions, what CF athletes retain)
+- Form sequencing rationale
+
+Commit after saving.
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================

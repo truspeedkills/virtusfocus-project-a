@@ -1,0 +1,97 @@
+1- Name
+First Name
+Last Name
+
+2- Birth Date
+mm/dd/yyyy
+
+3- Address
+Street Address
+City
+State / Province
+Postal / Zip Code
+Country
+
+4- Phone Number
+(###) ###-####
+
+5 - Email
+example@example.com
+
+
+6 - Did a VirtusFocus Athlete or Coach Refer You? (this question will no longer be used)
+YES
+NO
+
+7- Primary Sport
+Free Form text Box
+
+8- Position (If Applicable)
+Free Form text Box
+
+9- Current Team/Club (If Applicable)
+Free Form text Box
+
+10 - How many years have you been competing?
+Free Form text Box (should upgrade to selectable numbers)
+
+11- On a scale of 1–10, how would you rate your current mental game?
+selectable numbers
+
+12- What are your biggest mental struggles when you need to perform?
+
+Confidence
+Focus
+Pressure
+Fear of failure
+Pre-game nerves
+Handling mistakes
+Staying consistent
+Letting go of bad outcomes
+Motivation
+Other
+
+13- What usually goes through your mind before a big moment?
+Free Form text Box
+
+14- What thoughts or habits do you think are holding you back from performing your best?
+Free Form text Box
+
+15- What does success look like for you over the next 6 months?
+Free Form text Box
+
+16- What are 2–3 mindset goals you’d love to achieve in this program?
+Free Form text Box
+
+17- What are you hoping to learn or gain from VirtusFocus?
+Free Form text Box
+
+18- How committed are you to working on your mental game?
+Just curious
+Pretty serious
+All-in — let’s go
+
+19- Do you currently have a coach, mentor, or trainer working with you on mindset? (this question will no longer be used)
+YES
+NO
+
+20- How involved are your parents/guardians in your performance journey?
+Very involved
+Somewhat involved
+Not involved
+Prefer not to say
+
+21- Do you want to include your parents/guardians in your mindset coaching?
+(All of your personal coaching and input is private and not shared with anyone other than you! Your parent/guardian will receive weekly updates on how they can support you and help with you mindset growth!)
+
+YES
+NO
+
+|
+|-> Enter your parent/guardian email so they can be involved.
+	example@example.com
+
+
+22- Is there anything else you’d like us to know about you, your goals, or your challenges?
+Free Form text Box
+

@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-09
-**Session Notes:** Briefing session + pipeline improvement planning. Comprehensive pipeline walkthrough from all 23 reference documents. Working hours analysis: ~30 hours estimated across 42 git commits + 9 pre-git sessions. Signal count analysis: 191 raw inputs/week, 137 derived signals, 7 composite scores, 15 coach flags, 50 output sections. Identified 4 pipeline improvement ideas, mapped dependencies, approved sequencing, and built Pipeline Improvement Design Handoff Prompt for next session. No specification changes. No pipeline processing.
+**Session Notes:** Pipeline Improvement Design session — collaborative design kickoff. Presented all 4 improvement ideas, confirmed dependency map and sequencing (1→2+3→4). Built 21-task queue. Confirmed 5 key design decisions: unified intake form (one question set → derived PPD + ABI + Snapshot), form length strategy (optimize signal/minute, structured > free-text), PPD as intake + longitudinal, dual-use architecture (App-only, CF unchanged), and current CF intake form documented. Task 1 Handoff Prompt written for fresh session. No specification changes. No pipeline processing.
 
 ---
 
@@ -167,9 +167,19 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Source Material — Journaling: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\Source Material - Daily Journaling in the Mindset Operating System.md`
 - Source Material — Motivation Inventory: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\Source Material - Weekly Motivation Inventory in the Mindset Operating System.md`
 
+### Athlete Snapshot Generator (Stage 1)
+- Project Instructions: `Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt`
+- Core Foundation Intake Form: `Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Core Foundation Intake Form.txt`
+- Suggested Redesigned Intake Form: `Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Suggested Redesigned VirtusFocus Intake Form.txt`
+- High-Value Intake Additions: `Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\High-Value Intake Additions.txt`
+
+### Parent Insights Engine (Future — Idea 4)
+- D2C Parent App Overview: `Agents - Generators\Parents Insight Engine\D2C Parent App Insights and add ons.txt`
+
 ### Handoff Prompts
 - Pipeline Overview Briefing: `Pipeline Overview Handoff Prompt.txt` — comprehensive briefing prompt that instructs a fresh session to read all 23 reference documents and present a full project walkthrough
 - Pipeline Improvement Design: `Pipeline Improvement Design Handoff Prompt.txt` — handoff for collaborative design session covering 4 improvement ideas (intake form, daily coaching snippet, daily coach insights, parent output/insights), includes dependency map, sequencing, design questions, and 21 reference files
+- Intake Form Design (Task 1): `Intake Form Design Task 1 Handoff Prompt.txt` — handoff for fresh session to design the unified App intake form with derived PPD + ABI
 - Task-specific handoff prompts: `Agents - Generators\Interpretation\Source Files\` (Tasks 8-13)
 
 ### Versioning Rules (established this session)
@@ -415,6 +425,8 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 37. Briefing session — comprehensive project walkthrough. Read all 23 reference documents (stage specifications, source files, sample athlete outputs, comparative analysis, validation report) and produced a full pipeline briefing covering: 5-stage architecture, VirtusFocus behavioral system, compliance framework, execution signal upgrade, dual-mode operation, all 3 athlete arcs, version history, and architectural decisions. Performed working hours analysis from git commit history: 42 commits across 9 tracked sessions spanning March 5-8, estimated ~30 total working hours including pre-git sessions 1-9. Pipeline Overview Handoff Prompt saved to disk for future briefing sessions. No specification changes. No pipeline processing. No files modified except CLAUDE.md.
 
 38. Pipeline improvement planning session. Produced signal count analysis for institutional marketing: 191 raw inputs/week, 137 derived signals, 7 composite scores (25 weighted components), 15 coach flags, 50 output sections/criteria across 4 deliverables. Identified 4 pipeline improvement ideas from post-briefing review: (1) Athlete Intake Form Improvements — additive structured fields (PPD scoring, ABI pillar scores, ecosystem alignment), existing 4 baseline fields locked, (2) Daily Coaching Snippet — new daily athlete-facing coaching message, first daily output in pipeline, (3) Daily Coaching Insights — select daily analytics for coaches alongside existing weekly reports, (4) Parent-Facing Output Expansion + Parent Insights Dashboard — expanded parent coaching message with home support guidance + parent dashboard with direct app usage visibility (no NCAA compliance restriction for parents, but journal content stays private). Dependency-mapped all 4 ideas: Idea 1 is foundational (changes input layer), Ideas 2+3 are architecturally coupled (both introduce daily processing), Idea 4 benefits from final intake + daily design. Approved sequencing: 1→2+3→4. Built Pipeline Improvement Design Handoff Prompt with full idea descriptions, interaction map, design questions, and 21 reference files for next session. Read all 3 idea-specific documents (D2C Parent App overview, Suggested Redesigned Intake Form with PPD/ABI, High-Value Intake Additions). No specification changes. No pipeline processing.
+
+39. Pipeline Improvement Design session — collaborative design kickoff. Read all 21 reference files from the Pipeline Improvement Design Handoff Prompt plus the Core Foundation Intake Form (22 questions — now documented on disk). Presented understanding of all 4 pipeline improvement ideas to the user. Confirmed dependency map (Idea 1 → 2+3 → 4) and sequencing. Built 21-task queue across all 4 ideas (Tasks 1-7: Intake Form, Tasks 8-11: Daily Coaching Snippet, Tasks 12-15: Daily Coach Insights, Tasks 16-21: Parent Output). 5 key design decisions confirmed: (1) Unified Intake Form — one question set, system derives PPD + ABI + Snapshot from same answers, no separate question sets, each question asked ONCE with multi-system routing, (2) Form Length Strategy — optimize for maximum signal per minute of athlete time, many structured questions (1-5 scales, multi-select) + few strategic free-text questions (3 essential: identity sentence, pressure thought, competitor aspiration), total 20-25 questions acceptable, (3) PPD as Intake + Longitudinal — self-report PPD at intake captures athlete perception, execution-derived longitudinal PPD as future Stage 2 enhancement captures reality, gap between them produces PPD Alignment Signal (Problem Awareness Aligned/Gap/Blind Spot), output format designed now to support future comparison, (4) Dual-Use Architecture — all 4 improvements are App-athlete features only, Core Foundation athletes keep existing intake + baseline, Snapshot Builder gets dual-mode detection, same additive pattern as Execution Signal upgrade, (5) Current Core Foundation Intake Form documented — 22 questions total (5 admin, 2 retired, 5 context, 1 multi-select, 6 free-text, 3 structured), key gaps identified (no scale questions, no reset speed, no routine assessment, no development driver, heavy goal redundancy). Task 1 Handoff Prompt written for fresh session. No specification changes. No pipeline processing.
 
 ---
 
@@ -664,9 +676,89 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 
 ---
 
+## Pipeline Improvement Design — Confirmed Design Decisions (2026-03-09)
+
+### Dual-Use Architecture (MANDATORY)
+All 4 pipeline improvements are App-athlete features only. Core Foundation athletes keep their existing intake form, baseline data, and snapshot format. The Snapshot Builder will need dual-mode detection (new App intake vs. old Core Foundation intake). Same additive pattern as the Execution Signal upgrade: App athletes get enriched capabilities, Core Foundation athletes experience zero degradation.
+
+### Unified Intake Form with Derived PPD + ABI
+One question set. The athlete answers once. The system derives three outputs from the same answers:
+- **Athlete Snapshot** (narrative baseline — expanded 9-section structure with new fields)
+- **PPD Top 3** (deterministic ranking of primary problems from 8 buckets)
+- **ABI 4-Pillar Scores** (quantitative 0-10 for Ownership, Composure, Focus, Structure; total 0-40)
+
+No separate question sets for PPD and ABI. Shared inputs mapped to multiple systems simultaneously. Each question tagged with its routing destinations (Snapshot / PPD / ABI / Ecosystem / Longitudinal).
+
+Format strategy:
+- 1-5 scales preferred for ABI-feeding questions (granularity for pillar math, maps cleanly to PPD amplifiers)
+- Multi-select for categorical questions (Performance Friction → PPD bucket selection, Trigger Context → PPD amplifier)
+- Free-text limited to 3 essential questions: identity sentence, pressure thought, competitor aspiration
+
+### PPD Longitudinal Design
+- **Intake PPD (Self-Report):** Computed once at intake from form answers. Captures what the athlete THINKS their problems are. Stored as baseline fields.
+- **Longitudinal PPD (Execution-Derived):** Future enhancement — computed periodically from accumulated execution data after sufficient weeks. Captures what the data SHOWS their actual problems are.
+- **PPD Alignment Signal:** Gap between self-report and execution-derived PPD (Problem Awareness Aligned / Problem Awareness Gap / Blind Spot). Mirrors the self_ratings_alignment pattern at the problem-identification level.
+- **Scope:** Intake PPD = Idea 1 (current). Longitudinal PPD = future Stage 2 enhancement. PPD output format designed now to support future comparison.
+
+### Current Core Foundation Intake Form (Documented)
+22 questions total. File: `Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Core Foundation Intake Form.txt`
+- 5 administrative (name, DOB, address, phone, email)
+- 2 retired (referral Q6, current mindset coach Q19)
+- 5 performance context (sport, position, team, years, mental game self-rating 1-10)
+- 1 multi-select (mental struggles — 10 options: Confidence, Focus, Pressure, Fear of failure, Pre-game nerves, Handling mistakes, Staying consistent, Letting go of bad outcomes, Motivation, Other)
+- 6 free-text (pre-moment thoughts Q13, holding-back habits Q14, 6-month success Q15, mindset goals Q16, VF hopes Q17, anything else Q22)
+- 3 structured (commitment level Q18, parent involvement Q20, parent inclusion + email Q21)
+
+Key gaps vs. new App form: no scale questions, no reset speed, no routine assessment, no development driver, no home conversation pattern, no identity sentence completion, heavy goal redundancy (Q15/16/17 all ask variants of "what do you want?").
+
+### Pipeline Improvement Task Queue (21 Tasks)
+
+**Idea 1: Athlete Intake Form (Tasks 1-7)**
+
+| # | Task | Deliverable |
+|---|---|---|
+| 1 | Reconcile + design unified intake form question set | Approved question list with response formats and multi-system routing |
+| 2 | Design PPD scoring logic | Approved PPD specification (8 buckets, weights, amplifiers, output format) |
+| 3 | Design ABI scoring logic | Approved ABI specification (4 pillars, calculation, bands) |
+| 4 | Define new Athlete Snapshot fields | Approved field list (PPD, ABI, ecosystem alongside locked 4) |
+| 5 | Update Snapshot Builder Instructions | New versioned specification |
+| 6 | Assess Interpretation Engine impact | Design decision (how PPD/ABI fields feed Stage 2) |
+| 7 | Assess downstream stage impact | Design decision + any spec updates for Stages 3-5 |
+
+**Idea 2: Daily Coaching Snippet (Tasks 8-11)**
+
+| # | Task | Deliverable |
+|---|---|---|
+| 8 | Design daily processing architecture | Approved architecture (data flow, daily interpretation question) |
+| 9 | Design daily snippet content model | Approved content framework (length, voice, differentiation from Tune-Up) |
+| 10 | Write Daily Coaching Snippet specification | New spec files (Master Prompt + Instructions) |
+| 11 | Define daily snippet audit criteria | Audit criteria addition |
+
+**Idea 3: Daily Coaching Insights (Tasks 12-15)**
+
+| # | Task | Deliverable |
+|---|---|---|
+| 12 | Design daily coach insight metric set | Approved metric list (compliance-safe daily metrics) |
+| 13 | Design daily-to-weekly relationship | Approved relationship model (roll-up, supersession, or separate) |
+| 14 | Write Daily Coach Insights specification | New spec files |
+| 15 | Define daily coach insight audit criteria | Audit criteria addition |
+
+**Idea 4: Parent Output + Dashboard (Tasks 16-21)**
+
+| # | Task | Deliverable |
+|---|---|---|
+| 16 | Design Parent Compliance Framework | New compliance document |
+| 17 | Design expanded Parent Coaching Message | Approved content framework |
+| 18 | Design Parent Insights Dashboard | Approved dashboard design |
+| 19 | Write Parent Coaching Message specification | New spec files |
+| 20 | Write Parent Insights Dashboard specification | New engine spec |
+| 21 | Update Editorial Audit for parent-facing content | Audit spec update |
+
+---
+
 ## What's Next (Pending)
 
-### Execution Signal Schema Design (ACTIVE)
+### Execution Signal Schema Design (SPECIFICATION COMPLETE)
 - [x] Define `execution_behavior_signals` JSON block structure (subfields, types, enums) — **APPROVED 2026-03-06**
 - [x] Define app input format (what daily data looks like arriving at Stage 2) — **APPROVED 2026-03-07. Spec in VF_App_Input_Format_Specification.txt**
 - [x] Define Core Foundation fallback rules (neutral-state values) — **documented in approved block**
@@ -684,12 +776,16 @@ Flag object structure: 5 fields per flag (flag_id, severity, label, trigger_sour
 ### Execution Signal Schema Design — SPECIFICATION COMPLETE
 All 13 tasks in the Execution Signal Schema Design queue are complete. The v9.4 pipeline is fully specified across all 5 stages. Next phase: LIVE VALIDATION (processing new athlete data through the v9.4 pipeline end-to-end).
 
-### Pipeline Improvement Design (NEXT — handoff prompt ready)
-4 ideas identified, dependency-mapped, and sequenced. Handoff prompt: `Pipeline Improvement Design Handoff Prompt.txt`
-- [ ] Idea 1: Athlete Intake Form Improvements — additive structured fields (PPD, ABI, ecosystem alignment). Foundational — design first.
-- [ ] Idea 2: Daily Coaching Snippet — new daily athlete-facing output. Architecturally coupled with Idea 3.
-- [ ] Idea 3: Daily Coaching Insights — select daily analytics for coaches. Design alongside Idea 2.
-- [ ] Idea 4: Parent-Facing Output Expansion + Parent Insights Dashboard — expanded parent coaching + usage-visible dashboard. Design last.
+### Pipeline Improvement Design (ACTIVE — Task 1 handoff ready)
+4 ideas identified, dependency-mapped, and sequenced. 21-task queue defined. 5 design decisions confirmed.
+Handoff prompts: `Pipeline Improvement Design Handoff Prompt.txt` (overview), `Intake Form Design Task 1 Handoff Prompt.txt` (Task 1 specific)
+- [ ] **Task 1: Design unified intake form question set** — NEXT. Fresh session handoff prompt written.
+- [ ] Tasks 2-3: PPD + ABI scoring logic design
+- [ ] Tasks 4-5: New snapshot fields + updated Snapshot Builder spec
+- [ ] Tasks 6-7: Interpretation Engine + downstream stage impact assessment
+- [ ] Tasks 8-11: Daily Coaching Snippet (architecture, content model, spec, audit)
+- [ ] Tasks 12-15: Daily Coach Insights (metric set, daily-weekly relationship, spec, audit)
+- [ ] Tasks 16-21: Parent Output + Dashboard (compliance framework, message expansion, dashboard, specs, audit)
 
 ### Athlete Pipeline Work
 - [ ] Grace Kindel Week 6 (when recap arrives post-Florida trip)
@@ -726,6 +822,7 @@ All 13 tasks in the Execution Signal Schema Design queue are complete. The v9.4 
 - [x] Execution Signal Schema Design Task 13 (FINAL) — No-Degradation Validation. PASS WITH NOTES. 4-layer validation: Criterion 13 retroactive audit (6 samples, 12 documents, all PASS), Category E term scan (54 files, 74 terms, zero violations), Core Foundation skip rule verification (4 stages consistent), cross-stage consistency check (prohibited/permitted categories aligned, band routing consistent, all 15 flags handled, self-ratings alignment directionally consistent). One doc count error fixed in v1.2 Section 17 ("13"→"12"). Validation report saved. MILESTONE: Execution Signal Schema Design specification-complete (Tasks 1-13 all done).
 - [x] Comprehensive pipeline briefing session — full project walkthrough from 23 reference documents, working hours analysis (~30 hrs estimated), Pipeline Overview Handoff Prompt created
 - [x] Pipeline improvement planning — signal count analysis (191 inputs, 137 signals, 50 outputs), 4 improvement ideas identified and dependency-mapped, sequencing approved (Intake→Daily Snippet+Insights→Parent), Pipeline Improvement Design Handoff Prompt created
+- [x] Pipeline Improvement Design kickoff — all 4 ideas presented and confirmed, 21-task queue built, 5 design decisions locked (unified form, form length, PPD longitudinal, dual-use, CF intake documented), Task 1 Handoff Prompt written
 
 **Grace Kindel Coach Insights — All 5 Weeks Complete:**
 
