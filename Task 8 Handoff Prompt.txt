@@ -1,0 +1,88 @@
+SESSION OBJECTIVE — Design Task 8: Update Coaching Output JSON-to-Message Map
+
+Complete Design Task 8 from the Execution Signal Schema Design queue: Update VF_Coaching_Output_JSON_to_Message_Map.txt with execution signal routing rules.
+
+This is the first of two Stage 3 (Coaching Output Engine) implementation tasks:
+* Task 8 (THIS TASK) updates the Message Map — the source reference file that tells Stage 3 which JSON fields map to which sections of the Coaching Message and Deep Dive. Edited in place per versioning rules.
+* Task 9 (NEXT TASK, not this session) creates a new versioned Coaching Output Instructions file with execution signal usage rules.
+
+CONTEXT — What Happened Before This Session:
+
+The Interpretation Engine (Stage 2) now produces a v9.4 JSON that contains two major blocks:
+1. V9.3 fields (athlete_name through next_week_focus_question) — existing, unchanged
+2. execution_behavior_signals block — NEW, added via Tasks 1-7
+
+The execution_behavior_signals block contains:
+- 6 sub-blocks of raw execution metrics (morning_tune_up, evening_review, wtd_question_patterns, journaling_behavior, bullseye_behavior, self_ratings_alignment)
+- 7 composite scores (Ownership Index, Drift Score, Follow-Through Score, Rhythm Score, Review Quality Score, Recovery Score, Reactivity Risk Score) — each with score (0-100) and band (categorical enum)
+- coach_flags array (15 possible flags at 3 severity tiers: monitor, attention, action)
+- execution_pattern_summary (1-2 sentence behavioral summary)
+
+The CRITICAL design constraint: execution signal SHARPENS existing coaching output — it does NOT expand it. Same Coaching Message structure, same 5 Deep Dive sections, same word targets (250-450 words for messages). The execution data makes recognition more behaviorally specific, drift identification more mechanistic, micro-commitments more targeted, and identity threads more behaviorally grounded.
+
+WHAT THE MESSAGE MAP UPDATE MUST COVER:
+
+The current Message Map (131 lines) maps v9.3 JSON fields to Coaching Message sections (Recognition, Prior Commitment Check, Strength Signals, Drift Identification, Identity Anchor, Weekly Action, Identity Thread, Athlete Voice Mirror, Upcoming Context Anchor, Trendline Decision) and Deep Dive sections (Weekly Overview, Strength Sections, Growth Sections, Mindset Summary, Narrative Arc, Coaching Focus Areas, Upcoming Preparation, Emotional Calibration Rule, Baseline vs Now, Trendline).
+
+Task 8 must add execution signal routing to these EXISTING sections. Specifically:
+
+1. COMPOSITE SCORE ROUTING — Which scores inform which existing sections?
+   - Ownership Index, Follow-Through Score → Recognition, Strength Signals (when High/Strong)
+   - Drift Score → Drift Identification (when Early or Active)
+   - Rhythm Score → Strength Signals (when Stable) or Growth Sections (when Variable/Disrupted)
+   - Review Quality Score → Strength/Growth depending on band
+   - Recovery Score → Drift Identification or Strength depending on band
+   - Reactivity Risk Score → Growth Sections (when Moderate/Elevated)
+   These are starting suggestions — review the actual section purposes and adjust routing based on what makes coaching sense.
+
+2. COACH FLAG ROUTING — How flags map to coaching tone:
+   - monitor flags: Subtle tone adjustment only. No direct naming.
+   - attention flags: Directly address the behavioral pattern. Micro-commitment targets the flagged area.
+   - action flags: Shift primary coaching direction. Message leads with the flagged pattern.
+   This routing is already approved in VF_Coach_Flags_Specification.txt (Downstream Routing Summary). The Message Map needs to specify WHERE in the Coaching Message and Deep Dive each severity tier routes.
+
+3. EXECUTION PATTERN SUMMARY ROUTING — Where does the summary text appear?
+
+4. SELF-RATINGS ALIGNMENT ROUTING — How Conflated/Undervalued/Aligned classifications inform coaching:
+   - Conflated: coaching gently grounds the athlete's self-perception against execution reality
+   - Undervalued: coaching elevates the athlete's self-perception with execution evidence
+   - Aligned: no special routing needed
+
+5. RAW METRIC EXCLUSION RULE — The Message Map must explicitly state that raw execution metrics (completion rates, timing data, backfill counts, streak counts, reminder dependency rates) are NEVER referenced in coaching output. Only composite score bands, flag-driven behavioral patterns, and execution_pattern_summary language may inform the output.
+
+6. CORE FOUNDATION ATHLETE RULE — When execution_behavior_signals.input_source = "core_foundation", all execution routing is skipped. Output uses v9.3 fields only (identical to current behavior).
+
+Files to Read Before Starting:
+
+1. CLAUDE.md — full project context, approved JSON block structure, all design decisions, coach flag downstream routing rules
+2. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt — CURRENT file you are updating (131 lines)
+3. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.4.txt — current Coaching Output rules (context for how the engine currently works)
+4. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt — master prompt (context for section structure)
+5. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt — Coaching Message section definitions
+6. Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt — Deep Dive section definitions
+7. Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt — what each composite score measures (needed to route correctly)
+8. Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt — flag severity tiers and approved downstream routing
+9. Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt — v9.4 schema including canonical output template with all execution fields
+
+Process:
+
+1. Read all 9 files listed above
+2. Draft the updated Message Map — present the proposed execution signal routing for review before finalizing. Key decisions to surface:
+   - Which composite scores route to which Coaching Message sections
+   - Which composite scores route to which Deep Dive sections
+   - Where coach_flags routing instructions go (per-section or as a global rule?)
+   - Where self_ratings_alignment routing goes
+   - How execution_pattern_summary is used
+3. After approval, write the updated file to disk (edit in place — this is a source reference file, not a prompt/instructions file)
+4. Update CLAUDE.md (session notes, task queue, session history, completed section)
+5. Git commit
+
+Constraints:
+
+* DO NOT re-litigate any design decisions from Tasks 1-7. All specifications are approved and locked.
+* DO NOT modify any Stage 2 files (JSON Rules, Composite Score Rules, Coach Flags Spec, Project Instructions, App Input Format Spec).
+* DO NOT create a new versioned file — the Message Map is edited in place per versioning rules.
+* DO NOT start Task 9.
+* DO NOT expand the coaching output structure — same sections, same word targets. Execution signal sharpens, not expands.
+* Raw execution metrics (completion rates, timestamps, counts) NEVER appear in coaching output.
+* Match the tone and conciseness of the existing Message Map (terse, directive, field-reference style).

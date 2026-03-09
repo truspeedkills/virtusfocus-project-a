@@ -1,0 +1,301 @@
+TASK 12 HANDOFF PROMPT — EXECUTION SIGNAL EDITORIAL AUDIT CRITERIA
+============================================================
+
+YOU ARE CONTINUING AN IN-PROGRESS PROJECT.
+
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+This file is the single source of truth for the entire project — architecture, completed work, file locations, design decisions, and schema state. Read it completely before proceeding.
+
+============================================================
+PROJECT CONTEXT
+============================================================
+
+VirtusFocus is a non-clinical athlete mental performance coaching company building a 5-stage AI pipeline:
+
+Stage 1: Athlete Snapshot Generator → baseline profile
+Stage 2: Interpretation Engine → weekly interpretation JSON (v9.4)
+Stage 3: Coaching Output Engine → Coaching Message + Deep Dive (v1.5)
+Stage 4: Coach Insights Engine → Weekly Performance Insight + Team Snapshot (v1.2)
+Stage 5: Editorial Audit Agent → quality gate (v1.0 — THIS IS WHAT YOU ARE UPGRADING)
+
+We are in the middle of the "Execution Signal Schema Design" task queue. Tasks 1-11 are complete. You are doing Task 12.
+
+The execution signal upgrade (v9.4 schema) added a new data category: execution_behavior_signals. This block contains raw app usage metrics (completion rates, timing data, streak counts, question-level rates, etc.), composite scores (7 numeric 0-100 scores with categorical bands), coach flags (15 flags across 3 severity tiers), self-ratings alignment (Aligned/Conflated/Undervalued), and an execution pattern summary.
+
+The CRITICAL compliance rule: raw execution data is BACKEND-ONLY. It is consumed internally by the pipeline to produce BETTER output, but raw metrics NEVER reach coaching staff or athletes in any form. Stages 3 and 4 have already been upgraded with Raw Metric Exclusion Rules enforcing this. Stage 5 (Editorial Audit) has NOT been upgraded yet — that is Task 12.
+
+============================================================
+YOUR TASK: DESIGN TASK 12
+============================================================
+
+Define new Editorial Audit criteria for execution signal leakage.
+
+The current Editorial Audit specification (v1.0) has 12 audit criteria across 3 tiers. It was written BEFORE the execution signal upgrade. It does not know about:
+- execution_behavior_signals fields
+- Composite scores (names, numeric values, band labels)
+- Coach flags (flag_ids, severity tiers, labels)
+- Self-ratings alignment classifications
+- Raw execution metrics (completion rates, timing data, etc.)
+- Core Foundation skip rules
+- The inform-only routing principle for execution data
+- The surveillance vs. coaching framing distinction
+
+The audit agent needs new criteria to catch execution signal leakage — situations where Stage 3 (Coaching Output) or Stage 4 (Coach Insights) accidentally surfaces raw execution data, names composite scores, cites band labels, references flag IDs, or uses surveillance-style language.
+
+============================================================
+WHAT "EXECUTION SIGNAL LEAKAGE" MEANS
+============================================================
+
+Leakage is any appearance of execution_behavior_signals raw data in athlete-facing (Stage 3) or coach-facing (Stage 4) output. This includes:
+
+STAGE 3 LEAKAGE (Coaching Message + Deep Dive — athlete-facing):
+1. Raw metrics cited: "You completed 5 out of 7 Morning Tune-Ups"
+2. Completion rates: "Your evening review completion rate was 0.71"
+3. Timing data: "3 on-time, 2 late submissions"
+4. Streak counts: "You're on a 14-day streak"
+5. Question-level rates: "Your adversity question yes rate dropped"
+6. Composite score names: "Your Ownership Index shows..."
+7. Composite score values: "scored 73/100"
+8. Band labels as labels: "entered the Active band"
+9. Coach flag references: "The drift_active flag..."
+10. Severity tier names: "attention-level concern"
+11. Self-ratings labels: "Your confidence alignment is Conflated"
+12. Surveillance framing: "Your engagement metrics show..." / "Based on your app usage data..."
+
+STAGE 4 LEAKAGE (Weekly Performance Insight + Team Snapshot — coach-facing):
+All of the above, PLUS:
+13. Score names in institutional context: "Rhythm Score band was Disrupted"
+14. Flag IDs in institutional context: "compound_disengagement fired"
+15. Internal mechanics exposed: "shifted from Building to Stable due to Conflated alignment"
+16. Modifier sources named: "Readiness shifted due to action-severity coach flag"
+17. Band percentages on team snapshots: "55% of athletes had Disrupted Rhythm Score bands"
+
+WHAT IS NOT LEAKAGE (permitted):
+- Composite score BAND values translated into behavioral language (the entire point of the translation layer)
+- Coach flag PATTERNS translated into compliance-safe KPS labels
+- Self-ratings EFFECT on trend direction (without naming the classification)
+- Execution pattern summary LANGUAGE translated into neutral observations
+- "Your consistency was volatile" (behavioral observation) vs. "Your Rhythm Score was Disrupted" (leakage)
+
+============================================================
+FILES YOU MUST READ
+============================================================
+
+Read ALL of these files before designing the new criteria. Do not start writing until you have read every one.
+
+1. CLAUDE.md (already instructed above)
+   D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+2. Editorial Audit Master Prompt v1.0 (the file you are upgrading)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.0.txt
+
+3. Editorial Audit Project Instructions v1.0 (the file you are upgrading)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.0.txt
+
+4. Coaching Output Instructions v1.5 (Stage 3 execution signal rules — PATTERN REFERENCE)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.5.txt
+   Focus on: Section 6 (field routing), Section 12 (integration rule), Section 17 (Raw Metric Exclusion Rule with WRONG/CORRECT examples)
+
+5. Coach Insights Project Instructions v1.2 (Stage 4 execution signal rules — PATTERN REFERENCE)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.2.txt
+   Focus on: Section 6 (per-section enrichment with WRONG/CORRECT examples), Section 12 (prohibited content), Section 15 (integration master rule), Section 17 (Raw Metric Exclusion Rule)
+
+6. JSON Logic Reference (Stage 4 execution routing — WHERE fields route)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+   Focus on: Execution Signal Compliance Filter (12 prohibited categories), Inform-Only Fields, Raw Metrics Not Consumed
+
+7. Coaching Output JSON-to-Message Map (Stage 3 execution routing — WHERE fields route)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+   Focus on: Execution Signal Routing Rules section, Raw Metric Exclusion Rule, Core Foundation Athlete Rule
+
+8. Composite Score Rules (what the 7 scores are and how they work)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+
+9. Coach Flags Specification (what the 15 flags are and how they work)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt
+
+10. Compliance Framework (what is always prohibited in Stage 4 output)
+    D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+
+============================================================
+DESIGN CONSTRAINTS
+============================================================
+
+1. THE AUDIT AGENT AUDITS STAGE 3 OUTPUT ONLY (NOT STAGE 4)
+   The Editorial Audit Agent (Stage 5) currently audits Coaching Messages and Deep Dives produced by Stage 3. It does NOT audit Stage 4 (Coach Insights) output. The v1.0 specification is clear: inputs are Interpretation JSON + Coaching Message + Deep Dive.
+
+   DESIGN DECISION REQUIRED: Should new execution signal leakage criteria ALSO cover Stage 4 output? Options:
+   A) Stage 3 only (current scope) — add criteria for execution leakage in Coaching Messages and Deep Dives. Stage 4 compliance is self-enforced by v1.2 rules.
+   B) Expand to include Stage 4 — add Stage 4 output (Weekly Performance Insight) as a fourth input document for execution signal leakage checks only. This would be the first expansion of the audit agent's scope.
+   C) Create a separate Stage 4 audit — a new audit specification specifically for Coach Insights output, rather than expanding Stage 5.
+
+   SURFACE THIS DECISION TO THE USER BEFORE PROCEEDING. Do not choose unilaterally.
+
+2. TIER PLACEMENT MATTERS
+   - Tier 1 (must pass, reject on failure) = compliance violations that cannot be fixed by editing
+   - Tier 2 (should pass, auto-correct if possible) = content issues fixable by editing
+   - Tier 3 (quality optimization, auto-correct silently) = polish issues
+
+   Execution signal leakage is a COMPLIANCE violation (same classification as clinical language). Raw execution data surfacing is not a style issue — it is a business rule violation. Consider whether this warrants Tier 1 placement.
+
+3. RELATIONSHIP TO EXISTING CRITERION 2 (CLINICAL LANGUAGE COMPLIANCE)
+   Criterion 2 already catches clinical language. Execution signal leakage is a DIFFERENT compliance category — it's about surveillance/engagement data, not clinical terminology. The new criteria must be distinct from Criterion 2, not duplicative.
+
+4. CORE FOUNDATION AWARENESS
+   The audit must know that Core Foundation athletes should have NO execution signal language in their output at all. If a Core Foundation athlete's Coaching Message references "daily engagement patterns" or "behavioral execution consistency," that is leakage — because there is no execution data to derive those observations from.
+
+5. ACCURACY STANDARD
+   Every rule in this pipeline is written for national app launch. Do not add phantom prohibitions (rules against things that cannot happen given the data flow). Do not add redundant criteria. Every criterion must address a real, possible failure mode. If a leakage vector is already covered by an existing criterion, note that rather than creating a duplicate.
+
+6. VERSIONING RULES
+   - The Master Prompt and Project Instructions are VERSIONED files. If structural changes are needed, create NEW versioned files (v1.1). Preserve v1.0 on disk.
+   - If the changes are additive (new criteria sections added without restructuring existing content), editing v1.0 in place is acceptable IF the changes are clearly marked with version annotations.
+   - Surface this decision to the user: new version vs. in-place edit.
+
+============================================================
+EXPECTED DELIVERABLES
+============================================================
+
+1. DESIGN DISCUSSION — Surface the design decisions above to the user and get approval before writing anything.
+
+2. NEW OR UPDATED AUDIT CRITERIA — The actual criterion/criteria definitions with:
+   - Tier placement (1, 2, or 3) with justification
+   - Check logic (step-by-step, deterministic)
+   - Pass/fail definitions
+   - Auto-correction rules (if applicable)
+   - WRONG/CORRECT examples showing leakage vs. compliant language
+   - Specific lists of prohibited terms/patterns for the audit scan
+
+3. UPDATED CLINICAL LANGUAGE EXCLUSION LIST — Section 14 may need expansion to include execution signal terminology as a new category (Category E or separate list).
+
+4. UPDATED DECISION TREE — Section 15 may need modification if new criteria change the flow.
+
+5. UPDATED AUDIT SUMMARY FORMAT — Section in Master Prompt showing how new criteria appear in audit output.
+
+6. UPDATED CLAUDE.md — Task 12 completion recorded across all tracking sections.
+
+7. GIT COMMIT — Stage and commit all changes.
+
+============================================================
+WHAT NOT TO DO
+============================================================
+
+- Do NOT start Task 13 (validation against existing athlete data). That is a separate task.
+- Do NOT modify Stage 3 or Stage 4 files. You are only modifying Stage 5 (Editorial Audit) files.
+- Do NOT add criteria that prohibit things the pipeline cannot produce (phantom prohibitions). Every criterion must address a real failure mode.
+- Do NOT duplicate existing criteria. If execution signal leakage is already partially covered by Criterion 2 (Clinical Language) or Criterion 3 (Data Fidelity), note the boundary rather than creating overlap.
+- Do NOT restructure the existing 12 criteria. They are tested and validated. Add to them, don't reorganize them.
+
+============================================================
+REFERENCE: CURRENT AUDIT CRITERIA (v1.0)
+============================================================
+
+TIER 1 — MUST PASS (reject on failure):
+1. Emotional Intensity Calibration
+2. Clinical Language Compliance
+3. Data Fidelity
+4. Prior Commitment Bridge
+
+TIER 2 — SHOULD PASS (auto-correct or reject):
+5. Athlete Voice Reflection
+6. Action Specificity (Three-Part Check)
+7. Upcoming Context Anchoring
+8. Narrative Arc Presence
+9. Message Length Constraint
+10. Micro-Commitment Realism
+
+TIER 3 — QUALITY OPTIMIZATION (auto-correct silently):
+11. Brand Voice Tonal Scan
+12. Outer-Ring Language Discipline
+
+============================================================
+REFERENCE: STAGE 3 PROHIBITED EXECUTION DATA (from v1.5 Section 17)
+============================================================
+
+7 prohibited categories in Stage 3:
+1. Raw metric subfields (morning_tune_up, evening_review, wtd_question_patterns, journaling_behavior, bullseye_behavior — all subfields)
+2. Composite score numeric values (0-100)
+3. Composite score names (Ownership Index, Drift Score, etc.)
+4. Composite score band labels used as labels
+5. Coach flag raw content (flag_id, severity, label, trigger_source, description)
+6. Self-ratings alignment classification labels (Conflated, Undervalued, Aligned)
+7. Execution_pattern_summary reproduced verbatim (translation into coaching language is required)
+
+4 categories PERMITTED in Stage 3:
+1. Composite score BAND VALUES translated into behavioral coaching language
+2. Coach flag PATTERNS translated into coaching approach adjustments
+3. Self-ratings alignment EFFECT on coaching framing (without naming classification)
+4. Execution pattern summary LANGUAGE (translated, Deep Dive Weekly Overview only)
+
+============================================================
+REFERENCE: STAGE 4 PROHIBITED EXECUTION DATA (from v1.2 Section 17)
+============================================================
+
+12 prohibited categories in Stage 4:
+1. Completion rates (decimal or percentage)
+2. Timing data (on-time counts, late counts, timeliness profiles)
+3. Backfill counts, reminder dependency counts
+4. Streak counts (current_streak, longest_streak)
+5. Component completion counts
+6. Question-level yes rates (q1-q5 rates)
+7. Self-initiated vs. reminder-dependent counts
+8. Composite score names (Ownership Index, Drift Score, etc.)
+9. Composite score numeric values (0-100)
+10. Composite score band labels used as labels
+11. Coach flag IDs, labels, or severity tier names
+12. Self-ratings alignment classification labels (Conflated, Undervalued, Aligned)
+
+4 categories PERMITTED in Stage 4:
+1. Composite score BAND VALUES translated into neutral institutional trend language
+2. Coach flag SEVERITY translated into compliance-safe KPS signal labels and reinforcement direction
+3. Self-ratings alignment EFFECT on confidence trend adjustment (neutral language)
+4. Execution pattern summary LANGUAGE translated into neutral trend language
+
+============================================================
+REFERENCE: EXISTING WRONG/CORRECT EXAMPLES FROM STAGES 3 AND 4
+============================================================
+
+These examples from v1.5 and v1.2 show the exact boundary between leakage and compliance. The audit criteria you design must be able to catch the WRONG examples and approve the CORRECT examples.
+
+STAGE 3 EXAMPLES (athlete-facing):
+
+WRONG: "You completed your Morning Tune-Up 5 out of 7 days this week, with 3 on-time and 2 late."
+CORRECT: "You showed up consistently in the mornings — that's the kind of rhythm that builds over time."
+
+WRONG: "Your evening review completion rate was 0.71 with a self-initiated rate of 0.57."
+CORRECT: "You drove your own engagement this week rather than waiting for reminders."
+
+WRONG: "You're on a 14-day Morning Tune-Up streak."
+CORRECT: "You've built a consistent morning routine — that kind of daily discipline compounds."
+
+WRONG: "Your adversity question yes rate dropped to 0.29 this week."
+CORRECT: No mention. Question-level patterns inform composite scores and coach flags. They do not appear as standalone coaching observations.
+
+WRONG: "You needed reminders 4 out of 7 days."
+CORRECT: "Something shifted in how you're initiating this week."
+
+STAGE 4 EXAMPLES (coach-facing):
+
+WRONG: "Three composite scores entered concern bands this week, indicating compound behavioral disengagement."
+CORRECT: "This week reflects a Mixed classification with declining momentum. Behavioral execution indicators suggest emerging variability across daily preparation patterns."
+
+WRONG: "Rhythm Score band was Disrupted despite Stable consistency profile."
+CORRECT: "Consistency indicators remained stable this week. Behavioral execution timing patterns showed some variability, suggesting the daily routine is worth monitoring."
+
+WRONG: "Recovery Score entered Low band at 32/100."
+CORRECT: "Recommitment strength indicators were Moderate. Behavioral execution recovery patterns showed extended variability following the disruption."
+
+WRONG: "The drift_active attention flag fired this week."
+CORRECT: "Primary Development Signal This Week: Engagement Pattern Drift."
+
+WRONG: "Self-ratings alignment showed Conflated confidence, shifting momentum from Building to Stable."
+CORRECT: "Confidence momentum appears stable, with execution indicators suggesting room for continued calibration."
+
+WRONG: "Readiness shifted from Positive to Steady due to action-severity coach flag firing."
+CORRECT: "→ Steady (Yellow) — Performance readiness indicators suggest monitoring behavioral execution consistency alongside routine stability this week."
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================

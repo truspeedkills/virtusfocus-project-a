@@ -1,0 +1,248 @@
+SESSION OBJECTIVE — Design Task 10: Update JSON Logic Reference with Execution Signal Inform-Only Routing
+
+Complete Design Task 10 from the Execution Signal Schema Design queue: Update JSON_logic_reference.txt with execution signal routing for Stage 4 (Coach Insights Engine).
+
+This is the first of two Stage 4 (Coach Insights Engine) implementation tasks:
+* Task 10 (THIS TASK) updates the JSON Logic Reference — the source reference file that tells Stage 4 WHICH JSON fields map to which output sections, including inform-only routing rules for execution_behavior_signals. Edited in place per versioning rules (source reference file, not versioned).
+* Task 11 (NEXT TASK, not this session) creates a new versioned Project Instructions file (v1.2) with execution signal integration guidance for Stage 4 — HOW to use execution data to sharpen compliance-safe output.
+
+The relationship: The JSON Logic Reference says "composite_scores inform Section 10 Composite Readiness as an additional modifier." The Instructions say "When an action-severity coach flag fires, Composite Readiness shifts one level toward Attention for App athletes, and the executive summary references the dominant execution concern."
+
+This parallels the Stage 3 pair:
+* Task 8 updated the Message Map (WHERE execution signals route — source reference, edited in place)
+* Task 9 created Instructions v1.5 (HOW to use execution signals — new versioned file)
+
+CONTEXT — What Happened Before This Session:
+
+The Interpretation Engine (Stage 2) now produces a v9.4 JSON that contains two major blocks:
+1. V9.3 fields (athlete_name through next_week_focus_question) — existing, unchanged
+2. execution_behavior_signals block — NEW, added via Tasks 1-7
+
+The execution_behavior_signals block contains:
+- 6 sub-blocks of raw execution metrics (morning_tune_up, evening_review, wtd_question_patterns, journaling_behavior, bullseye_behavior, self_ratings_alignment)
+- 7 composite scores (Ownership Index, Drift Score, Follow-Through Score, Rhythm Score, Review Quality Score, Recovery Score, Reactivity Risk Score) — each with score (0-100) and band (categorical enum)
+- coach_flags array (15 possible flags at 3 severity tiers: monitor, attention, action)
+- execution_pattern_summary (1-2 sentence behavioral summary)
+
+Stage 3 (Coaching Output Engine) integration is complete:
+* Task 8 updated the Message Map with execution signal routing (composite score bands, coach flag severity tiers, self-ratings alignment, execution_pattern_summary — all routing to existing Coaching Message and Deep Dive sections)
+* Task 9 created Instructions v1.5 with tone calibration, flag integration per severity tier, self-ratings alignment integration, raw metric exclusion compliance rule, Core Foundation skip rule, and EI + action flag priority
+
+THE CRITICAL STAGE 4 CONSTRAINT: execution_behavior_signals is INFORM-ONLY for Stage 4.
+
+This is the established design principle from the Execution Signal Strategy (confirmed 2026-03-06):
+- Raw execution data (completion rates, timing, backfill counts, reminder dependency, streak counts, component counts, question-level yes rates) NEVER reaches coaching staff in any form
+- Composite scores and coach flags are consumed INTERNALLY by the engine to produce better compliance-safe sections — sharper Key Performance Signal, more accurate Composite Readiness, better Coach Context Cue
+- The inform-only routing pattern is identical to how coach_insights subfields already work: they inform the output but their raw content is never reproduced
+- This aligns with VF_Coach_Insights_Compliance_Framework.txt which prohibits: time spent in app, daily completion counts, last login timestamps, engagement scores, compliance or adherence ratings, streak counts
+
+WHAT IS ALREADY APPROVED FOR STAGE 4 (from Coach Flags Specification — locked):
+
+Coach flag downstream routing for Stage 4:
+  monitor flags: No impact on Weekly Performance Insight.
+  attention flags: Informs Key Performance Signal (Section 8) and Coach Context Cue (Section 9). Flag content is translated into compliance-safe institutional language. Raw flag data never surfaced.
+  action flags: Used as dominant weekly signal. Composite Readiness (Section 10) may reflect the severity. Flag content translated, never surfaced.
+
+From Composite Score Rules (locked):
+  Composite scores inform Stage 4 (Composite Readiness, Key Performance Signal) but raw scores are not surfaced.
+
+From Execution Signal Strategy (locked):
+  Stage 4 uses execution signals internally to produce better compliance-safe sections (sharper Key Performance Signal, more accurate Composite Readiness, better Coach Context Cue).
+
+WHAT THE JSON_logic_reference.txt UPDATE MUST COVER:
+
+The current file (246 lines) maps v9.3 JSON fields to Stage 4 output sections (Sections 0-10 for Weekly Performance Insight). It contains: Input Source rules, per-section field mappings with transformation logic, Inform-Only Fields section, Fields Not Consumed section, and Compliance Filters.
+
+Task 10 must update this file to integrate execution_behavior_signals routing. Specifically:
+
+1. INPUT SOURCE UPDATE:
+   - Update "v9.3 schema" references to "v9.4 schema"
+   - Add dual-mode awareness: App athletes have populated execution fields, Core Foundation athletes have fallback values
+   - Note that execution_behavior_signals fields are inform-only — they sharpen section content but raw data never appears in output
+
+2. SECTION-BY-SECTION ROUTING ADDITIONS — Which execution signal fields inform which sections:
+
+   The following routing destinations are SUGGESTED based on the approved downstream routing in the Coach Flags Spec and Composite Score Rules. Review the actual section purposes and adjust based on what makes institutional-reporting sense:
+
+   Section 1 (Weekly Performance Classification):
+   - Executive summary could be informed by composite score band patterns (e.g., multiple concern bands add context to the behavioral stability assessment)
+   - Action-severity coach flags could influence the summary framing
+   - All inform-only: translate into neutral trend language, never cite scores or flags
+
+   Section 2 (Consistency Signal):
+   - Rhythm Score band could enrich consistency assessment for App athletes
+   - Inform-only: Rhythm Score provides behavioral execution consistency data that complements the v9.3 consistency_profile (which is score-based)
+
+   Section 4 (Recommitment & Response Signal):
+   - Recovery Score band could enrich recovery/response assessment
+   - Reactivity Risk Score band could inform Response Stability mapping
+   - Inform-only: adds execution-behavior dimension to the existing score-based recommitment signal
+
+   Section 5 (Confidence Momentum):
+   - self_ratings_alignment.confidence_alignment could directly inform confidence trend
+   - Conflated confidence → could adjust momentum downward (self-view exceeds execution evidence)
+   - Undervalued confidence → could adjust momentum upward (execution exceeds self-view)
+   - This is a DESIGN QUESTION — see below
+
+   Section 6 (Stress Load Indicator):
+   - Currently uses emotional_intensity (v9.3 field). This is unchanged.
+   - Reactivity Risk Score could serve as secondary validation alongside v9.3 fields
+   - DESIGN QUESTION: Should Reactivity Risk Score (Elevated) function as a secondary stress load signal? Or is this scope creep?
+
+   Section 8 (Key Performance Signal):
+   - Coach flags (attention/action) should inform KPS selection — approved in Coach Flags Spec
+   - Composite score concern bands could inform KPS derivation
+   - DESIGN QUESTION: Where do coach flags slot into the existing 5-level KPS priority list?
+   - Suggested: action flags at priority 0 (highest), attention flags at priority 1.5 (between primary_focus_ring and consistency_profile checks)
+
+   Section 9 (Coach Context Cue):
+   - Coach flags (attention/action) inform the reinforcement direction — approved in Coach Flags Spec
+   - When flags fire, the coach context cue should reflect the flagged behavioral area
+   - Inform-only: translate flag direction into "Reinforce..." / "Monitor trend..." language
+
+   Section 10 (Composite Readiness Signal):
+   - Composite scores and coach flags could provide an additional modifier step — approved in Coach Flags Spec ("Composite Readiness may reflect the severity")
+   - DESIGN QUESTION: How do composite scores affect the Composite Readiness determination? See below.
+
+3. INFORM-ONLY FIELDS EXPANSION:
+   Add execution_behavior_signals fields to the existing Inform-Only Fields section:
+   - composite_scores → Informs Sections 1, 2, 4, 5, 8, 10 (band values only, translated to institutional language)
+   - coach_flags → Informs Sections 8, 9, 10 (severity and behavioral pattern only, translated to compliance-safe language)
+   - self_ratings_alignment → Informs Section 5 (confidence trend adjustment)
+   - execution_pattern_summary → Informs Section 1 executive summary (behavioral context)
+
+4. FIELDS NOT CONSUMED BY STAGE 4 — EXPANSION:
+   Add ALL raw execution metrics to the "not consumed" list:
+   - morning_tune_up (all subfields) → Not consumed. Raw data never surfaced.
+   - evening_review (all subfields) → Not consumed. Raw data never surfaced.
+   - wtd_question_patterns (all subfields except through composite scores) → Not consumed.
+   - journaling_behavior (all subfields) → Not consumed.
+   - bullseye_behavior (all subfields) → Not consumed.
+   - composite_scores.*.score (numeric values) → Not consumed directly. Only band values inform sections.
+   - coach_flags raw content (flag_id, severity, label, trigger_source, description) → Not consumed. Only the behavioral pattern direction informs sections.
+
+5. COMPLIANCE FILTERS UPDATE:
+   Add execution metric prohibitions to the existing compliance filter section:
+   - Completion rates (decimal or percentage)
+   - Timing data (on-time counts, late counts)
+   - Backfill counts, reminder dependency counts
+   - Streak counts
+   - Component completion counts
+   - Question-level yes rates
+   - Self-initiated vs. reminder-dependent counts
+   - Score names, numeric score values, band labels
+   - Flag IDs, flag labels, severity tier names
+   These mirror the 7 prohibited categories from Stage 3's Raw Metric Exclusion Rule (Section 17 of Instructions v1.5) plus score/flag metadata.
+
+6. CORE FOUNDATION HANDLING:
+   When execution_behavior_signals.input_source = "core_foundation":
+   - All execution signal routing is skipped
+   - Sections use v9.3 fields only (identical to current v1.1 behavior)
+   - No execution references in any section
+
+7. WEEKLY TEAM SNAPSHOT ROUTING:
+   The current Team Snapshot (Sections T1-T7) aggregates v9.3 fields. DESIGN QUESTION: Should composite score bands or coach flag distributions be aggregated in team snapshots for App athlete teams? Options:
+   - A) No team snapshot changes — execution signals inform individual reports only (simplest, avoid compliance risk)
+   - B) Add aggregate execution signal distributions (e.g., "% of athletes with Composite Readiness enriched by execution data")
+   - C) Defer to Task 11
+
+   RECOMMENDATION: Option A or C. Team snapshot changes are more appropriate for Task 11 (instructions) rather than Task 10 (routing). The JSON Logic Reference should define individual athlete routing; team aggregation logic belongs in the instructions.
+
+KEY DESIGN QUESTIONS REQUIRING USER INPUT:
+
+DECISION 1 — COMPOSITE READINESS ENRICHMENT:
+Currently Section 10 uses v9.3 fields only (weekly_tier, consistency_profile, recommitment_signal, primary_focus_ring, emotional_intensity via Stress Load). For App athletes, composite scores and coach flags could provide additional readiness data.
+
+Options:
+A) Additional modifier step (like Stress Load modifier): After the base determination (v9.3 fields) and Stress Load modifier, add a Step 2.5 "Execution Signal modifier" that can shift the readiness level for App athletes based on composite score patterns and coach flag severity.
+B) Integrated into base determination: Composite score bands feed directly into the Step 1 determination rules alongside v9.3 fields.
+C) Context-only: Composite scores and flags inform the readiness sentence but do not change the readiness level.
+
+Suggested approach: Option A (additional modifier). This preserves the v9.3 base determination (no degradation for CF athletes), adds execution enrichment for App athletes, and keeps the modification logic clean and auditable. The modifier rules would be:
+- If action-severity coach flags fire → shift one level toward Attention
+- If 3+ composite scores in concern bands (same logic as compound_disengagement) → shift one level toward Attention
+- Modifiers are NOT cumulative with each other (maximum one shift from execution signals)
+- Modifiers ARE cumulative with Stress Load modifier (an athlete could shift twice: once from stress, once from execution)
+
+DECISION 2 — KPS PRIORITY INTEGRATION:
+Currently Section 8 has a 5-level priority list (outer-ring focus → consistency volatility → low recommitment → reactive despite Growth → derive from most_important_controllable). For App athletes, coach flags could be more urgent signals.
+
+Options:
+A) Prepend to priority list: Action flags at priority 0 (highest), attention flags between current priorities 1 and 2
+B) Override: When action flags fire, they override the v9.3 priority list entirely
+C) Inform only: Coach flags sharpen the KPS explanation but don't change priority selection
+
+Suggested approach: Option A. This gives execution signals appropriate priority without discarding the v9.3 logic. Proposed updated priority:
+0) action-severity coach flag fires → KPS derived from the flag's behavioral pattern (e.g., compound_disengagement → "Broad Engagement Shift")
+1) primary_focus_ring = Cannot Control OR noise_fixation = Yes → Controllable Focus Alignment
+1.5) attention-severity coach flag fires → KPS derived from the flag's behavioral pattern (e.g., drift_active → "Engagement Pattern Drift")
+2) consistency_profile = Volatile or Reset Pattern → Routine Stability
+3) recommitment_signal = Low → Adversity Response
+4) Growth + reactive athlete_state → Composure Under Pressure
+5) Derive from most_important_controllable
+
+DECISION 3 — SELF-RATINGS ALIGNMENT IN CONFIDENCE MOMENTUM:
+Currently Section 5 derives confidence trend from v9.3 fields (weekly_tier + consistency_profile + recommitment_signal + focus_ring). For App athletes, self_ratings_alignment.confidence_alignment provides a direct self-vs-execution comparison.
+
+Options:
+A) Confidence alignment as adjustment: Conflated → bump trend one level toward Variable; Undervalued → bump one level toward Building
+B) Confidence alignment as override: When confidence is Conflated or Undervalued, it replaces the v9.3-derived trend
+C) Context-only: Confidence alignment informs the section sentence but doesn't change the trend classification
+
+Suggested approach: Option A. Conflated self-view (athlete rates confidence higher than execution supports) should temper the confidence trend. Undervalued self-view (execution exceeds self-rating) should boost it.
+
+DECISION 4 — REACTIVITY RISK IN STRESS LOAD:
+Section 6 uses emotional_intensity as primary input with a v9.3 secondary validation. For App athletes, Reactivity Risk Score provides execution-behavior-based reactivity data.
+
+Options:
+A) Reactivity Risk as additional secondary validation: If emotional_intensity = insufficient data AND v9.3 secondary validation = insufficient data, use Reactivity Risk Score band (Elevated → Elevated stress)
+B) Reactivity Risk as tertiary validation (after v9.3 secondary)
+C) No integration — emotional_intensity and the v9.3 validation are sufficient
+
+Suggested approach: Option A or C. Reactivity Risk is conceptually related to stress load but measures execution volatility, not emotional load. If integrated, it should only serve as a final fallback, not a primary or secondary input.
+
+Files to Read Before Starting:
+
+1. CLAUDE.md — full project context, all design decisions, approved routing from Tasks 1-9
+2. Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt — CURRENT file you are updating (246 lines, edited in place)
+3. Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.1.txt — current instructions (729 lines, 15 sections — NOT being modified in this task, but needed for context on how sections work)
+4. Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt — compliance rules governing all Stage 4 output
+5. Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt — output section definitions
+6. Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt — what each composite score measures, band thresholds
+7. Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt — flag severity tiers, trigger conditions, approved Stage 4 downstream routing
+8. Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt — v9.4 schema including canonical output template with all execution fields
+9. Agents - Generators\Coach Insights Engine\Source Files\VF_Tracking_Reporting_Metrics_Reference.txt — metric taxonomy (to ensure any new execution-informed metrics follow approved naming)
+
+Optional reference (Stage 3 pattern — how execution signal integration was done for Stage 3, useful as a template):
+10. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt — Stage 3 Message Map with execution routing (288 lines — Task 8 output)
+11. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.5.txt — Stage 3 Instructions with execution integration rules (Task 9 output)
+
+Process:
+
+1. Read all required files (1-9 mandatory, 10-11 optional)
+2. Surface the 4 design decisions above for user review. Present proposed routing for each section with clear options. Do NOT start writing the file until the design decisions are resolved.
+3. After approval of all design decisions, update JSON_logic_reference.txt in place. The update should:
+   - Preserve all existing v9.3 routing (additive, not rewriting)
+   - Add execution signal routing per approved decisions
+   - Expand Inform-Only Fields section
+   - Expand Fields Not Consumed section
+   - Expand Compliance Filters section
+   - Add Core Foundation handling
+   - Update schema version references (v9.3 → v9.4)
+4. Update CLAUDE.md (session notes, task queue, session history, completed section)
+5. Git commit
+
+Constraints:
+
+* DO NOT re-litigate any design decisions from Tasks 1-9. All specifications, routing decisions, and integration rules for Stages 2 and 3 are approved and locked.
+* DO NOT modify any Stage 2 files (JSON Rules, Composite Score Rules, Coach Flags Spec, Project Instructions, App Input Format Spec).
+* DO NOT modify any Stage 3 files (Message Map, Instructions v1.5, Master Prompt, Source Files).
+* DO NOT create a new versioned file for JSON_logic_reference.txt — edit in place (source reference file per versioning rules).
+* DO NOT start Task 11 (new versioned Coach Insights Instructions). Task 10 defines WHERE execution signals route. Task 11 defines HOW to use them.
+* DO NOT start Tasks 12-13.
+* Raw execution metrics NEVER appear in Stage 4 output. This is the fundamental constraint.
+* Composite scores, coach flags, and self-ratings alignment are INFORM-ONLY — they sharpen section content internally but their raw data (score names, numeric values, band labels, flag IDs, severity names) never appears in output.
+* Core Foundation athletes receive identical output to current v1.1 behavior. Execution signal routing is additive enrichment for App athletes only.
+* Match the tone and style of the existing JSON_logic_reference.txt (compact, rule-oriented, with transformation logic per section and clear field-to-output mappings).
+* The JSON Logic Reference defines field routing and transformation rules. The Project Instructions (Task 11) define integration guidance, examples, and detailed behavioral. Don't over-expand the JSON Logic Reference with content that belongs in the Instructions.
+* All execution signal additions must comply with VF_Coach_Insights_Compliance_Framework.txt. If any proposed routing creates compliance risk, flag it and adjust.

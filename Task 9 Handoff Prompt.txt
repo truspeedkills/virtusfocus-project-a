@@ -1,0 +1,131 @@
+SESSION OBJECTIVE — Design Task 9: Create New Versioned Coaching Output Instructions with Execution Signal Usage Rules
+
+Complete Design Task 9 from the Execution Signal Schema Design queue: Create SOP_Coaching_Output_Instructions_v1.5.txt with execution signal integration rules.
+
+This is the second of two Stage 3 (Coaching Output Engine) implementation tasks:
+* Task 8 (COMPLETED) updated the Message Map — the source reference file that tells Stage 3 WHERE each execution signal field routes (which sections of the Coaching Message and Deep Dive). Edited in place.
+* Task 9 (THIS TASK) creates a new versioned Instructions file that tells Stage 3 HOW to use execution signals — integration techniques, language transformation, tone calibration, priority ordering, coaching voice guidance. New versioned file per versioning rules.
+
+The relationship: The Message Map says "Drift Score (Active) routes to Drift Identification." The Instructions say "When Drift Score is Active, translate this into coaching language by naming the behavioral pattern without citing completion rates, using phrases like 'the way you've been showing up shifted this week' rather than 'your engagement dropped.'"
+
+CONTEXT — What Happened Before This Session:
+
+The Interpretation Engine (Stage 2) now produces a v9.4 JSON that contains two major blocks:
+1. V9.3 fields (athlete_name through next_week_focus_question) — existing, unchanged
+2. execution_behavior_signals block — NEW, added via Tasks 1-7
+
+The execution_behavior_signals block contains:
+- 6 sub-blocks of raw execution metrics (morning_tune_up, evening_review, wtd_question_patterns, journaling_behavior, bullseye_behavior, self_ratings_alignment)
+- 7 composite scores (Ownership Index, Drift Score, Follow-Through Score, Rhythm Score, Review Quality Score, Recovery Score, Reactivity Risk Score) — each with score (0-100) and band (categorical enum)
+- coach_flags array (15 possible flags at 3 severity tiers: monitor, attention, action)
+- execution_pattern_summary (1-2 sentence behavioral summary)
+
+The CRITICAL design constraint: execution signal SHARPENS existing coaching output — it does NOT expand it. Same Coaching Message structure, same 5 Deep Dive sections, same word targets (250-450 words for messages). The execution data makes recognition more behaviorally specific, drift identification more mechanistic, micro-commitments more targeted, and identity threads more behaviorally grounded.
+
+WHAT TASK 8 ALREADY DECIDED (Message Map — locked, do not re-litigate):
+
+The updated Message Map (now 288 lines) defines all routing destinations:
+- Composite score positive bands (High/Strong/Stable) → Recognition, Strength Signals/Sections
+- Composite score concern bands → Drift Identification, Growth Sections
+- Recovery Score Pending Data → name the open thread in Coaching Focus Areas
+- Recovery Score no-disruption (fixed 85) → no special routing
+- Moderate-band heuristic: weekly_tier = Growth → route as Strength; Mixed/Reset → route as Growth
+- Coach flag routing (global rule): monitor → subtle tone in Drift/Growth, no naming; attention → direct address in Drift/Growth + micro_commitment targets flagged area; action → message leads with flagged pattern, coaching focus areas dominated
+- Self-ratings alignment: Conflated → Drift Identification + Mindset Summary; Undervalued → Recognition + Identity Anchor + Mindset Summary
+- Execution pattern summary → Deep Dive Weekly Overview only (not Coaching Message)
+- Raw metric exclusion: 7 metric categories prohibited from output
+- Core Foundation athlete rule: skip all execution routing when input_source = "core_foundation"
+- Parent Summary: execution behavior data excluded
+
+WHAT TASK 9 MUST COVER:
+
+The current Instructions file is v1.4 (12 sections, 414 lines). Task 9 creates v1.5 — a new versioned file that preserves all v1.4 content while adding execution signal integration rules. The new file must cover:
+
+1. SECTION UPDATES TO EXISTING V1.4 CONTENT:
+
+   a. Section 2 (Authoritative Sources) — Add VF_Execution_Signal_Composite_Score_Rules.txt and VF_Coach_Flags_Specification.txt to the authority list. These are now referenced by the Message Map and the engine needs to understand what each composite score measures.
+
+   b. Section 3 (Input Requirements) — Acknowledge that input is now a v9.4 Interpretation JSON that may contain execution_behavior_signals. Note dual-mode: App athletes have populated execution fields, Core Foundation athletes have fallback values.
+
+   c. Section 4 (Execution Control Rule) — Add execution signal field usage rules to the "NEW FIELD USAGE RULES" block. These should parallel the existing v9.3 field rules (prior_commitment_result, athlete_voice, narrative_arc, upcoming_context, emotional_intensity) but for execution signal fields.
+
+   d. Section 6 (JSON Field Routing Rule) — Expand the three routing categories (Coaching Message, Deep Dive, Deep Dive Indirect) with execution_behavior_signals fields. Add a fourth category: "FIELDS THAT DO NOT APPEAR IN COACHING OUTPUT" for raw execution metrics (completion rates, timing data, backfill counts, etc.).
+
+2. NEW SECTIONS TO ADD:
+
+   a. EXECUTION SIGNAL INTEGRATION RULE — The master rule for how execution signals are used. Key principles:
+      - Execution signal sharpens existing sections; it does not add new sections or expand word targets
+      - Only composite score BANDS, coach flag-driven behavioral patterns, self-ratings alignment classifications, and execution_pattern_summary language may inform output
+      - Raw execution metrics (7 prohibited categories) NEVER appear
+      - Core Foundation athletes: all execution integration skipped, output identical to v1.4 behavior
+      - When execution signals and v9.3 fields converge on the same pattern, strengthen the coaching point (don't double-count). When they diverge, note the divergence as a coaching insight.
+
+   b. COMPOSITE SCORE TONE CALIBRATION RULE — How each score's band value translates into coaching language. This is the HOW companion to the Message Map's WHERE. Key content:
+      - For each of the 7 scores: what the band means in coaching terms (not technical terms), example language for positive bands, example language for concern bands
+      - Score directionality awareness: higher-is-better (Ownership, Follow-Through, Rhythm, Review Quality, Recovery) vs higher-is-worse (Drift, Reactivity Risk)
+      - Language transformation principle: translate band classifications into behavioral observations the athlete can recognize. "High Ownership" becomes "You're showing up on your own terms." "Active Drift" becomes "The way you've been engaging shifted this week."
+      - NEVER reference the score name, numeric value, or band label in coaching output. Only the behavioral translation.
+
+   c. COACH FLAG INTEGRATION RULE — How each severity tier changes the coaching approach. Key content:
+      - monitor: Tone adjustment only. The coaching message acknowledges the pattern indirectly. Examples of subtle integration vs. examples of what NOT to do (naming the flag, citing metrics).
+      - attention: Direct behavioral address. Name the pattern in athlete-appropriate language. The micro_commitment targets the flagged area. Priority rule when multiple attention flags fire (prioritize by relevance to core_pattern).
+      - action: Primary direction shift. The coaching message leads with the flagged pattern. Recognition section pivots. Drift Identification becomes the central section. Coaching Focus Areas dominated. If compound_disengagement fires, address the broad shift ("the way you've been showing up changed"), not each individual score.
+      - Flag-to-coaching-language translation examples for the most common flags (drift_active, ownership_low, follow_through_weak, compound_disengagement).
+      - Interaction with emotional_intensity: when EI = High AND action flags fire, the empathetic acknowledgment lead (from Emotional Calibration Rule) takes priority over the flag-driven direction shift. Weave the flag pattern into the empathetic frame rather than leading with the flag.
+
+   d. SELF-RATINGS ALIGNMENT INTEGRATION RULE — How Conflated/Undervalued/Aligned classifications become coaching language. Key content:
+      - Aligned: no special integration needed.
+      - Conflated: gently ground self-perception. Coaching language must NOT use "overestimate," "inflated," "unrealistic," or any language that invalidates the athlete's self-view. Instead use grounding language: "Let's look at what the week actually showed," "Your sense of where you are doesn't quite match what the execution shows." Place in Drift Identification (Coaching Message) and Mindset Summary (Deep Dive).
+      - Undervalued: elevate with execution evidence. Language: "You're further along than you think," "The execution tells a stronger story than you gave yourself credit for." Place in Recognition + Identity Anchor (Coaching Message) and Mindset Summary (Deep Dive).
+      - Distinction between confidence_alignment and habit_consistency_alignment — these are two separate self-ratings comparisons. An athlete can be Conflated on confidence but Aligned on habit consistency (or vice versa). Address each independently if both are non-Aligned.
+
+   e. CORE FOUNDATION EXECUTION SKIP RULE — When execution_behavior_signals.input_source = "core_foundation", skip ALL execution signal integration. Output uses v9.3 fields only. Identical to v1.4 behavior. No execution references of any kind.
+
+   f. RAW METRIC EXCLUSION RULE (COMPLIANCE) — Explicit prohibition with examples. List the 7 prohibited metric categories. Provide examples of WRONG output (citing completion rates, naming streak counts) and CORRECT output (behavioral observation language). This is a compliance rule, not a style preference — same framing as the clinical language prohibition in Section 7.
+
+3. POTENTIAL SECTION INTERACTIONS TO RESOLVE:
+
+   a. Section 10 (Micro-Commitment Modality Adaptation Rule) — When attention/action coach flags fire, they redirect micro_commitment targeting to the flagged area. This may interact with the modality adaptation rule. Clarify priority: if an attention flag targets a specific area (e.g., follow_through_weak), the micro_commitment addresses that area. If the modality adaptation rule also applies (same modality failed 2+ weeks), the modality shifts AND the topic targets the flag. Both rules apply simultaneously.
+
+   b. Section 11 (Growth Phase Advancement Surfacing Rule) — No change needed. Growth phase advancement is a v9.3 field (trend_analysis.growth_phase_movement) and is independent of execution signals.
+
+   c. Emotional Calibration Rule (Section in Message Map) — When emotional_intensity = High AND execution signals show concern bands or action flags, define the priority ordering. Emotional acknowledgment leads; execution concerns are woven into the empathetic frame, not presented as separate analytical points.
+
+Files to Read Before Starting:
+
+1. CLAUDE.md — full project context, all design decisions, approved routing from Task 8
+2. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.4.txt — CURRENT file you are versioning from (414 lines, 12 sections)
+3. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt — UPDATED Message Map from Task 8 (288 lines — contains all routing decisions that are now locked)
+4. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt — master prompt (context for what the engine sees)
+5. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt — Coaching Message section definitions
+6. Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt — Deep Dive section definitions
+7. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt — persona and voice rules
+8. Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt — what each composite score measures (needed for tone calibration language)
+9. Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt — flag severity tiers and approved downstream routing
+10. Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt — v9.4 schema including canonical output template with all execution fields
+
+Process:
+
+1. Read all 10 files listed above
+2. Draft the new Instructions file structure — present the proposed section outline and key content for review before writing the full file. Key decisions to surface:
+   - How many new sections vs. expansions of existing sections?
+   - What tone calibration examples to include for each composite score?
+   - How to handle the emotional_intensity + action flag priority interaction?
+   - How detailed should the flag-to-language translation examples be?
+   - Should execution integration rules be concentrated in a few new sections or distributed across existing sections?
+3. After approval, write the new v1.5 file to disk (new versioned file — v1.4 preserved on disk per versioning rules)
+4. Update CLAUDE.md (session notes, task queue, session history, completed section, Key File Locations for new version reference)
+5. Git commit
+
+Constraints:
+
+* DO NOT re-litigate any design decisions from Tasks 1-8. All specifications and routing decisions are approved and locked.
+* DO NOT modify any Stage 2 files (JSON Rules, Composite Score Rules, Coach Flags Spec, Project Instructions, App Input Format Spec).
+* DO NOT modify the Message Map (Task 8 output is locked).
+* DO NOT edit v1.4 in place — create a new versioned file SOP_Coaching_Output_Instructions_v1.5.txt per versioning rules.
+* DO NOT start Tasks 10-13.
+* DO NOT expand the coaching output structure — same sections, same word targets. Execution signal sharpens, not expands.
+* Raw execution metrics (completion rates, timestamps, counts) NEVER appear in coaching output.
+* All v1.4 content must be preserved in v1.5 (additive update, not rewrite). Existing sections may be expanded but not removed or restructured unless necessary for clean integration.
+* Match the tone and style of the existing Instructions file (section-based, rule-oriented, with explicit examples and "WHY THIS RULE EXISTS" explanations where appropriate).
+* The Instructions file is prescriptive — it tells the engine what to do. The Message Map is declarative — it defines field-to-section mappings. Don't duplicate routing logic that already exists in the Message Map; reference it instead.

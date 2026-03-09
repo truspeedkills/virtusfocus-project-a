@@ -1,0 +1,335 @@
+SESSION OBJECTIVE — Design Task 11: Create SOP_Coach_Insights_Project_Instructions_v1.2.txt
+
+Complete Design Task 11 from the Execution Signal Schema Design queue: Create a new versioned Project Instructions file for Stage 4 (Coach Insights Engine) with execution signal integration guidance.
+
+This is the second of two Stage 4 (Coach Insights Engine) implementation tasks:
+* Task 10 (COMPLETED) updated the JSON Logic Reference — the source reference file that tells Stage 4 WHICH JSON fields map to which output sections, including inform-only routing rules for execution_behavior_signals. Edited in place (246 → 449 lines).
+* Task 11 (THIS TASK) creates a new versioned Project Instructions file (v1.2) — defines HOW to use execution data to sharpen compliance-safe output. New versioned file per versioning rules.
+
+The relationship: The JSON Logic Reference (Task 10) says "composite_scores.band values inform Sections 1, 2, 4, 5, 8, 10" and "coach_flags severity and behavioral pattern direction inform Sections 8, 9, 10." The Project Instructions (Task 11) says "When an action-severity coach flag fires, the executive summary reflects the dominant execution concern in neutral trend language" and "When self_ratings_alignment.confidence_alignment = Conflated, the Confidence Momentum trend shifts one level toward Variable."
+
+This parallels the Stage 3 pair:
+* Task 8 updated the Message Map (WHERE execution signals route — source reference, edited in place)
+* Task 9 created Instructions v1.5 (HOW to use execution signals — new versioned file)
+
+And the Stage 2 pair:
+* Task 6 updated the JSON Rules (WHERE/WHAT execution signals classify — source reference, edited in place)
+* Task 7 created Instructions v9.4 (HOW to process execution signals — new versioned file)
+
+---
+
+CONTEXT — What Has Been Done:
+
+The full execution_behavior_signals integration is now complete for Stages 2 and 3:
+
+Stage 2 (Interpretation Engine):
+- Task 6: VF_Interpretation_JSON_Rules.txt — 10 new classification sections for all execution subfields (417 → 1449 lines)
+- Task 7: SOP_Interpretation_Engine_Project_Instructions_v9.4.txt — dual-input processing workflow (294 → 480 lines)
+
+Stage 3 (Coaching Output Engine):
+- Task 8: VF_Coaching_Output_JSON_to_Message_Map.txt — execution signal routing to all Coaching Message and Deep Dive sections (131 → 288 lines)
+- Task 9: SOP_Coaching_Output_Instructions_v1.5.txt — tone calibration, flag integration, self-ratings alignment, raw metric exclusion (414 → ~700 lines)
+
+Stage 4 (Coach Insights Engine) — first task done:
+- Task 10: JSON_logic_reference.txt — inform-only routing for all applicable sections (246 → 449 lines)
+
+Task 10 established the following APPROVED routing decisions (these are LOCKED — do not re-litigate):
+
+DECISION 1 — COMPOSITE READINESS ENRICHMENT (Section 10):
+Option A — Additional modifier step (Step 2.5) after Stress Load modifier:
+- If any action-severity coach flag fires → shift one level toward Attention
+- ELSE if 3+ of 5 composite score bands are in concern range (same logic as compound_disengagement: ownership_index=Low, drift_score=Active, rhythm_score=Disrupted, review_quality_score=Low, follow_through_score=Weak) → shift one level toward Attention
+- Not cumulative with each other (max one shift from execution signals)
+- IS cumulative with Stress Load modifier (athlete could shift twice)
+- Recovery Score "Pending Data" → treated as insufficient data
+- Core Foundation athletes: step skipped entirely
+
+DECISION 2 — KPS PRIORITY INTEGRATION (Section 8):
+Option A — Prepend coach flags to KPS priority list:
+Priority 0: action-severity coach flag → derive KPS from flag's behavioral pattern (compound_disengagement→"Broad Engagement Shift", persistent_attention_pattern→derive from persistent flag's domain, sustained_compound_disengagement→"Sustained Engagement Shift")
+Priority 1: primary_focus_ring = Cannot Control OR noise_fixation = Yes → Controllable Focus Alignment
+Priority 1.5: attention-severity coach flag → derive KPS from flag's behavioral pattern (drift_active→"Engagement Pattern Drift", reactivity_elevated→"Execution Pattern Variability", recovery_failure→"Response Recovery Pattern", ownership_low→"Self-Directed Engagement Pattern", follow_through_weak→"Commitment Execution Pattern", rhythm_disrupted→"Engagement Timing Pattern", review_quality_low→"Review Engagement Depth", sustained_drift→"Persistent Engagement Pattern")
+Priority 2-5: unchanged v9.3 priorities
+Core Foundation: priorities 0 and 1.5 skipped
+
+DECISION 3 — SELF-RATINGS ALIGNMENT IN CONFIDENCE MOMENTUM (Section 5):
+Option A — Confidence alignment as adjustment (Step 2 after v9.3 base):
+- Conflated → shift one level toward Variable (Building→Stable, Stable→Variable)
+- Undervalued → shift one level toward Building (Variable→Stable, Stable→Building)
+- Aligned / insufficient data → no adjustment
+- Max one shift from self-ratings
+- Never name "Conflated," "Undervalued," or "self-ratings" in output
+
+DECISION 4 — REACTIVITY RISK IN STRESS LOAD (Section 6):
+Option C — No integration. Stress Load measures emotional weight, not execution volatility. Reactivity Risk routes through KPS (priority 1.5 via reactivity_elevated flag) and Composite Readiness (via execution modifier) instead.
+
+TEAM SNAPSHOT: Deferred to THIS task (Task 11). The JSON Logic Reference defines individual athlete routing only. Team aggregation logic for execution signals belongs in the Instructions.
+
+---
+
+THE CRITICAL STAGE 4 CONSTRAINT (unchanged from Task 10):
+
+execution_behavior_signals is INFORM-ONLY for Stage 4.
+
+- Raw execution data (completion rates, timing, backfill counts, reminder dependency, streak counts, component counts, question-level yes rates) NEVER reaches coaching staff in any form
+- Composite scores and coach flags are consumed INTERNALLY by the engine to produce better compliance-safe sections
+- The inform-only routing pattern is identical to how coach_insights subfields already work
+- This aligns with VF_Coach_Insights_Compliance_Framework.txt prohibited metrics
+
+Additionally, the following execution data categories must NEVER appear in any Stage 4 output (from the Execution Signal Compliance Filter in Task 10):
+- Completion rates (decimal or percentage)
+- Timing data (on-time counts, late counts, timeliness profiles)
+- Backfill counts, reminder dependency counts
+- Streak counts (current_streak, longest_streak)
+- Component completion counts
+- Question-level yes rates (q1-q5 rates)
+- Self-initiated vs. reminder-dependent counts
+- Composite score names (Ownership Index, Drift Score, etc.)
+- Composite score numeric values (0-100)
+- Composite score band labels (High, Active, Disrupted, etc.)
+- Coach flag IDs, labels, or severity tier names
+- Self-ratings alignment classification labels (Conflated, Undervalued, Aligned)
+
+---
+
+WHAT THE NEW v1.2 FILE MUST COVER:
+
+The current SOP_Coach_Insights_Project_Instructions_v1.1.txt is 729 lines with 15 sections. The new v1.2 file should expand this with execution signal integration guidance. Use the same structure and style. Per versioning rules, create a NEW versioned file (v1.2) — do NOT edit v1.1 in place. The v1.1 file stays on disk for audit trail.
+
+1. LINEAGE NOTE (top of file):
+   State that v1.2 upgrades from v1.1. Note what was added: execution signal integration for App athletes, dual-mode awareness, and Weekly Team Snapshot execution enrichment.
+
+2. SECTION 1 — PROJECT ROLE:
+   Update to reference v9.4 schema (not v9.3). Add awareness that execution_behavior_signals exists as an inform-only block.
+
+3. SECTION 3 — AUTHORITATIVE SOURCE MATERIALS:
+   Add new source files to the authority list:
+   - VF_Execution_Signal_Composite_Score_Rules.txt
+   - VF_Coach_Flags_Specification.txt
+   - VF_App_Input_Format_Specification.txt
+   These join the existing 8 authoritative sources.
+
+4. SECTION 4 — INPUT REQUIREMENTS:
+   Update schema reference from v9.3 to v9.4. Add dual-mode awareness:
+   - App athletes: v9.3 fields + execution_behavior_signals (populated)
+   - Core Foundation athletes: v9.3 fields + execution_behavior_signals (fallback values)
+   Add to the "Do NOT request or reference" list:
+   - Completion rates, timing data, backfill counts, streak counts, component counts, question-level rates, self-initiated counts
+   - Composite score names, numeric values, or band labels
+   - Coach flag IDs, labels, or severity tier names
+
+5. SECTION 6 — WEEKLY PERFORMANCE INSIGHT (SECTIONS 1-10):
+   This is the core section that needs execution signal integration guidance. For EACH section that has execution enrichment (Sections 1, 2, 4, 5, 8, 9, 10), add HOW-TO guidance explaining:
+   - What the execution data tells the engine internally
+   - How to translate that internal knowledge into compliance-safe output language
+   - Example phrasings showing WRONG (raw metric leakage) vs. CORRECT (institutional language)
+   - Core Foundation handling (skip execution enrichment)
+
+   Specific guidance needed per section:
+
+   SECTION 1 (Weekly Performance Classification):
+   - How to use execution_pattern_summary in the executive summary — translate behavioral context into neutral trend language
+   - How action-severity coach flags affect summary framing — the executive summary should reflect the dominant concern without naming the flag
+   - How 3+ concern-band composite scores affect stability assessment language
+   - WRONG: "Three composite scores entered concern bands this week"
+   - CORRECT: "Behavioral execution indicators suggest emerging variability alongside the Mixed classification"
+
+   SECTION 2 (Consistency Signal):
+   - How rhythm_score.band enriches consistency assessment — it adds an execution-timing dimension to the score-based consistency_profile
+   - When Rhythm and consistency_profile diverge, what that means and how to express it
+   - WRONG: "Rhythm Score band was Disrupted despite Stable consistency"
+   - CORRECT: "Behavioral execution timing patterns showed variability despite stable performance scoring"
+
+   SECTION 4 (Recommitment & Response Signal):
+   - How recovery_score.band enriches response assessment — adds execution-behavior dimension to score-based recommitment_signal
+   - Handling of Pending Data (treat as insufficient data — no additional context)
+   - Handling of fixed-85 no-disruption (no additional context — no recovery event to assess)
+   - Only calculated Recovery Score in Strong/Moderate/Low bands adds context
+   - WRONG: "Recovery Score entered Low band"
+   - CORRECT: "Behavioral execution recovery indicators showed extended variability following the disruption"
+
+   SECTION 5 (Confidence Momentum):
+   - Step 1 is the v9.3 base determination (unchanged)
+   - Step 2 is the self-ratings confidence adjustment (App athletes only)
+   - How to express the adjustment without naming Conflated/Undervalued/self-ratings
+   - Conflated: the confidence trend is tempered because execution evidence suggests the athlete's self-assessment may exceed current execution patterns
+   - Undervalued: the confidence trend is elevated because execution evidence suggests stronger patterns than the athlete's self-assessment reflects
+   - WRONG: "Confidence alignment is Conflated — athlete overestimates their execution"
+   - CORRECT: "Confidence momentum appears stable, with execution indicators suggesting room for continued calibration between self-assessment and behavioral patterns"
+
+   SECTION 8 (Key Performance Signal):
+   - How priorities 0 and 1.5 work — action flags get highest priority, attention flags slot between outer-ring and consistency checks
+   - The 11 compliance-safe signal label translations (these are LOCKED from Task 10 — reproduce them here for reference)
+   - How to select among multiple attention flags (prioritize by relevance to core_pattern)
+   - How to write the KPS explanation when it's flag-derived vs. v9.3-derived
+   - WRONG: "Primary Development Signal: drift_active flag fired with Elevated severity"
+   - CORRECT: "Primary Development Signal This Week: Engagement Pattern Drift"
+   - The KPS explanation should describe the behavioral pattern in institutional language without referencing the flag source
+
+   SECTION 9 (Coach Context Cue):
+   - How coach flags redirect the reinforcement direction
+   - When attention flags fire: reinforce the behavioral area identified by the flag
+   - When action flags fire: reinforcement prioritizes the dominant execution concern
+   - WRONG: "Monitor the compound_disengagement action flag"
+   - CORRECT: "Reinforce broad engagement consistency across daily preparation activities"
+
+   SECTION 10 (Composite Readiness Signal):
+   - Step 2.5 Execution Signal modifier — full determination logic (from Task 10, reproduced here with HOW-TO guidance)
+   - How to write the readiness sentence when execution modifier shifted the level
+   - The sentence should still link readiness to routine stability and controllable alignment — execution modifier doesn't change the framing, just the level
+   - WRONG: "Readiness shifted from Positive to Steady due to action-severity coach flag"
+   - CORRECT: "→ Steady (Yellow) — Performance readiness indicators suggest monitoring behavioral execution consistency alongside routine stability"
+
+   Sections 3, 6, 7: Explicitly note that these sections have NO execution signal routing and operate identically to v1.1.
+
+6. SECTION 7 — WEEKLY TEAM SNAPSHOT:
+   This is where the DEFERRED team snapshot decision from Task 10 gets resolved. The question: Should composite score bands or coach flag distributions be aggregated in team snapshots for App athlete teams?
+
+   DESIGN DECISION FOR USER INPUT:
+   Options:
+   A) No team snapshot changes — execution signals inform individual reports only. Team Snapshot remains v9.3 fields only (Sections T1-T7 unchanged). Simplest, avoids compliance risk. Mixed teams (some App, some CF) handled cleanly.
+   B) Add aggregate execution context to team snapshot — for teams where ALL athletes are App athletes, add execution-informed context to existing sections:
+      - T1 (Performance Distribution): executive summary may reference broad execution stability patterns
+      - T2 (Team Consistency Signal): Rhythm Score distribution could enrich team consistency assessment
+      - T7 (Team Developmental Distribution): could include % of team at each Composite Readiness level
+      All aggregation uses percentage distributions only — no individual attribution. Mixed teams (any CF athletes) skip all execution enrichment.
+   C) Add a new Section T8 (Execution Stability Overview) — for all-App teams only, a new section showing:
+      - % of athletes with 1+ attention-severity flags
+      - % of athletes with action-severity flags
+      - Team-level Composite Readiness distribution (% Green / Yellow / Orange)
+      All compliance-safe, percentage-based, no individual attribution.
+
+   RECOMMENDATION: Option A for v1.2. Team snapshot execution enrichment is valuable but introduces compliance risk with mixed teams. Better to validate individual execution routing first (Tasks 12-13) before expanding to aggregate. Can be added in a future version.
+
+   If user approves Option A: Simply note in the Team Snapshot section that execution signals are not aggregated in the team snapshot. Individual Weekly Performance Insights contain all execution-informed analysis. Team Snapshot uses v9.3 fields only, identical to v1.1.
+
+7. SECTION 8 — v9.4 FIELD ROUTING RULES:
+   Update the field routing section to reference v9.4 instead of v9.3. Add:
+   - FIELDS CONSUMED section: add execution_behavior_signals routing references (which sections each inform-only field routes to)
+   - FIELDS THAT INFORM BUT DO NOT APPEAR: add execution_behavior_signals entries (composite_scores, coach_flags, self_ratings_alignment, execution_pattern_summary) with section destinations
+   - FIELDS NOT CONSUMED: add raw execution metrics list
+   This section should be consistent with JSON_logic_reference.txt (Task 10 output) — the Instructions provide the same routing in a different format with more context.
+
+8. SECTION 12 — PROHIBITED CONTENT:
+   Expand the prohibited content list with execution signal items:
+   - Composite score names (Ownership Index, Drift Score, Follow-Through Score, Rhythm Score, Review Quality Score, Recovery Score, Reactivity Risk Score)
+   - Composite score numeric values (0-100)
+   - Composite score band labels (High, Moderate, Low, Strong, Weak, Stable, Variable, Disrupted, None, Early, Active, Elevated, Pending Data)
+   - Coach flag IDs (drift_early, drift_active, compound_disengagement, etc.)
+   - Coach flag labels (Early Drift Detected, Active Drift, Compound Disengagement, etc.)
+   - Coach flag severity tier names (monitor, attention, action)
+   - Self-ratings alignment labels (Conflated, Undervalued, Aligned)
+   - Raw execution metrics (completion rates, timing data, backfill counts, streak counts, component counts, question-level rates, self-initiated counts)
+   These join the existing prohibited items (daily score values, usage frequency, completion rates, streaks, etc.).
+
+9. NEW SECTION — EXECUTION SIGNAL INTEGRATION MASTER RULE:
+   Add a new section (similar to Stage 3's Section 12 in v1.5) establishing the master rule for execution signal integration in Stage 4:
+   - Execution signals SHARPEN existing sections. They do not add new sections, expand word counts, or change section headers.
+   - v9.3 fields remain the FOUNDATION for all sections. Execution signals provide additional internal context that improves section accuracy.
+   - For App athletes: execution data makes the Composite Readiness more accurate, the KPS more targeted, the Coach Context Cue more specific, and the executive summary more informative.
+   - For Core Foundation athletes: output is identical to v1.1. No degradation.
+   - When v9.3 fields and execution signals CONVERGE (both point the same direction): execution data reinforces the existing signal. Output confidence is higher but language doesn't change.
+   - When v9.3 fields and execution signals DIVERGE (score-based signals say one thing, execution-behavior signals say another): note the divergence in neutral terms. Do not privilege one over the other. Let the divergence itself be the signal.
+
+10. NEW SECTION — CORE FOUNDATION EXECUTION SKIP RULE:
+    Add a dedicated section (similar to Stage 3's Section 16 in v1.5):
+    - Binary check: if input_source = "core_foundation" → skip all execution signal integration
+    - All sections operate using v9.3 fields only
+    - Output is identical to v1.1
+    - No execution-related language appears in any section
+    - KPS priorities 0 and 1.5 skipped
+    - Composite Readiness Step 2.5 skipped
+    - Confidence Momentum Step 2 skipped
+    - All execution enrichment subsections skipped
+
+11. NEW SECTION — RAW METRIC EXCLUSION RULE:
+    Add a compliance section (similar to Stage 3's Section 17 in v1.5):
+    - List the 13 prohibited categories (from Execution Signal Compliance Filter)
+    - Include WRONG vs. CORRECT examples for each major category
+    - State that violations of this rule are classified the same as clinical language violations — they are compliance failures, not style preferences
+    - The Stage 5 Editorial Audit will check for execution metric leakage
+
+---
+
+Files to Read Before Starting:
+
+1. CLAUDE.md — full project context, all design decisions, approved routing from Tasks 1-10
+2. Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.1.txt — CURRENT file you are versioning from (729 lines, 15 sections)
+3. Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt — Task 10 output (449 lines — defines WHERE execution signals route, this task defines HOW)
+4. Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt — compliance rules governing all Stage 4 output
+5. Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt — output section definitions
+6. Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt — what each composite score measures, band thresholds
+7. Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt — flag severity tiers, trigger conditions, downstream routing
+8. Agents - Generators\Coach Insights Engine\Source Files\VF_Tracking_Reporting_Metrics_Reference.txt — metric taxonomy
+
+Stage 3 pattern references (how execution signal integration was done for Stage 3 Instructions — useful as a structural template):
+9. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.5.txt — Stage 3 Instructions with execution integration rules (Task 9 output — ~700 lines, 18 sections). Use this as the primary structural template for how to organize execution signal integration sections.
+10. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt — Stage 3 Message Map with execution routing (288 lines — Task 8 output)
+
+---
+
+Process:
+
+1. Read all required files (1-8 mandatory, 9-10 recommended for pattern reference)
+2. Surface the TEAM SNAPSHOT design decision for user review (Options A, B, C above). Present recommendation (Option A). Do NOT start writing the file until this is resolved.
+3. After approval, create SOP_Coach_Insights_Project_Instructions_v1.2.txt as a new versioned file. The file should:
+   - Preserve ALL existing v1.1 content (additive, not rewriting)
+   - Add execution signal integration guidance per the sections outlined above
+   - Include WRONG vs. CORRECT examples for all major integration points
+   - Add new sections for Execution Signal Integration Master Rule, Core Foundation Skip Rule, Raw Metric Exclusion Rule
+   - Update schema version references (v9.3 → v9.4) throughout
+   - Resolve the Team Snapshot execution enrichment question
+4. Verify the file is consistent with JSON_logic_reference.txt (Task 10) — no contradictions in routing, field lists, or compliance rules
+5. Update CLAUDE.md:
+   - Session notes
+   - Design Task Queue: mark Task 11 complete with summary
+   - Session history: add item for Task 11
+   - What's Next checklist: mark Task 11 complete
+   - Completed section: add Task 11 entry
+   - Key File Locations: update Coach Insights Project Instructions path from v1.1 to v1.2
+   - Pipeline table: update Stage 4 status
+6. Git commit
+
+---
+
+Constraints:
+
+* DO NOT re-litigate any design decisions from Tasks 1-10. All specifications, routing decisions, and integration rules are approved and locked.
+* DO NOT modify any Stage 2 files (JSON Rules, Composite Score Rules, Coach Flags Spec, App Input Format Spec, Project Instructions v9.4).
+* DO NOT modify any Stage 3 files (Message Map, Instructions v1.5, Master Prompt, Source Files).
+* DO NOT modify JSON_logic_reference.txt (Task 10 output). Task 11 must be CONSISTENT with Task 10 routing — if any discrepancy is found, flag it but do not change the JSON Logic Reference.
+* DO NOT edit SOP_Coach_Insights_Project_Instructions_v1.1.txt in place. CREATE a new v1.2 file. The v1.1 file stays on disk per versioning rules.
+* DO NOT start Tasks 12-13 (Editorial Audit criteria, validation).
+* Raw execution metrics NEVER appear in Stage 4 output. This is the fundamental constraint.
+* Composite scores, coach flags, and self-ratings alignment are INFORM-ONLY — they sharpen section content internally but their raw data never appears in output.
+* Core Foundation athletes receive identical output to current v1.1 behavior. Execution signal routing is additive enrichment for App athletes only.
+* Match the tone and style of SOP_Coach_Insights_Project_Instructions_v1.1.txt — structured, section-numbered, rule-oriented, with clear routing and transformation logic.
+* The Instructions file is the HOW document. It should contain integration guidance, behavioral translations, example phrasings, and WRONG/CORRECT examples. The JSON Logic Reference (Task 10) is the WHERE document. Avoid duplicating routing tables — reference the JSON Logic Reference for field-to-section mapping and focus on integration guidance here.
+* All execution signal additions must comply with VF_Coach_Insights_Compliance_Framework.txt. If any proposed content creates compliance risk, flag it and adjust.
+* The new file should be comprehensive but not bloated. Stage 3's v1.5 expanded from 414 to ~700 lines (a ~70% increase). A similar proportional expansion for Stage 4 (729 lines → ~1100-1200 lines) is reasonable. Do not pad with unnecessary repetition.
+
+---
+
+EXPECTED OUTPUT STRUCTURE (approximate):
+
+SOP_Coach_Insights_Project_Instructions_v1.2.txt should contain approximately:
+
+- Lineage note (v1.1 → v1.2)
+- Section 1: Project Role (updated for v9.4)
+- Section 2: Pipeline Position (unchanged)
+- Section 3: Authoritative Source Materials (3 new sources added)
+- Section 4: Input Requirements (v9.4 + dual-mode + expanded prohibited list)
+- Section 5: Output Structure Overview (unchanged)
+- Section 6: Weekly Performance Insight Sections 1-10 (expanded with per-section execution enrichment guidance, WRONG/CORRECT examples)
+- Section 7: Weekly Team Snapshot (with resolved Team Snapshot decision)
+- Section 8: v9.4 Field Routing Rules (expanded with execution signal routing)
+- Section 9: Clinical Language Prohibition (unchanged)
+- Section 10: Output Naming and Export (unchanged)
+- Section 11: Monthly Institutional Summary (unchanged)
+- Section 12: Prohibited Content (expanded with execution signal items)
+- Section 13: Language and Tone (unchanged)
+- Section 14: Dashboard Metrics Reference (unchanged)
+- NEW Section 15: Execution Signal Integration Master Rule
+- NEW Section 16: Core Foundation Execution Skip Rule
+- NEW Section 17: Raw Metric Exclusion Rule
+- Section 18: Final System Rule (renumbered from 15, unchanged content)

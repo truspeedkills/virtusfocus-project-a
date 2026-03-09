@@ -1,0 +1,357 @@
+TASK 13 HANDOFF PROMPT — EXECUTION SIGNAL NO-DEGRADATION VALIDATION
+============================================================
+
+YOU ARE CONTINUING AN IN-PROGRESS PROJECT.
+
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+This file is the single source of truth for the entire project — architecture, completed work, file locations, design decisions, and schema state. Read it completely before proceeding.
+
+============================================================
+PROJECT CONTEXT
+============================================================
+
+VirtusFocus is a non-clinical athlete mental performance coaching company building a 5-stage AI pipeline:
+
+Stage 1: Athlete Snapshot Generator → baseline profile
+Stage 2: Interpretation Engine → weekly interpretation JSON (v9.4)
+Stage 3: Coaching Output Engine → Coaching Message + Deep Dive (v1.5)
+Stage 4: Coach Insights Engine → Weekly Performance Insight + Team Snapshot (v1.2)
+Stage 5: Editorial Audit Agent → quality gate (v1.1 — updated in Task 12)
+
+We are completing the "Execution Signal Schema Design" task queue. Tasks 1-12 are complete. You are doing Task 13 — the FINAL task in the queue.
+
+Tasks 1-12 upgraded the pipeline from v9.3/v1.4/v1.1 to v9.4/v1.5/v1.2 by adding execution_behavior_signals — a new data category measuring HOW athletes use the app (timing, completion, sequence, consistency). Every pipeline stage was upgraded with rules for consuming, translating, or auditing execution signal data.
+
+The CRITICAL design constraint across ALL upgrades: Core Foundation athletes (weekly recap only, no app data) must receive IDENTICAL quality output to what they received before the upgrade. Execution signal is ADDITIVE enrichment for App athletes, NEVER a scoring dependency.
+
+============================================================
+YOUR TASK: VALIDATION TASK 13
+============================================================
+
+Validate against existing athlete data (Grace Kindel, Tucker Lloyd, Mergim Bushati) to confirm no degradation.
+
+This is the final quality gate before the Execution Signal Schema Design is considered COMPLETE. You are verifying that:
+
+1. All existing coaching output (produced under v9.3/v1.4/v1.1 rules) would PASS the upgraded audit criteria (v1.1 with Criterion 13)
+2. All Core Foundation skip rules are correctly specified — no phantom execution signal language can leak into output for athletes without execution data
+3. The No Degradation Rule is sound — v9.4 processing of Core Foundation athletes produces identical v9.3 fields
+4. No accidental execution signal terminology exists in any current coaching output
+
+============================================================
+VALIDATION SCOPE — 4 VERIFICATION LAYERS
+============================================================
+
+LAYER 1: CRITERION 13 RETROACTIVE AUDIT
+-----------------------------------------
+Run the new Criterion 13 (Execution Signal Leakage Compliance) check logic against a representative sample of existing coaching output. These files were produced BEFORE execution signals existed, so they should all PASS.
+
+The check logic (from Editorial Audit Project Instructions v1.1, Section 13) is:
+Step 1: Read input_source from the Interpretation JSON
+Step 2: Core Foundation check — ANY execution-signal-derived language = FAIL
+Step 3: Raw metric scan
+Step 4: Composite score/flag/alignment scan
+Step 5: Surveillance framing scan
+Step 6: Context-dependent judgment
+
+RECOMMENDED SAMPLE (minimum — expand if issues found):
+- Grace Kindel Week 3 (HIGH emotional intensity — most complex coaching language)
+- Grace Kindel Week 5 (growth phase advancement — most developmental language)
+- Tucker Lloyd Week 3 (Mixed tier, micro-commitment modality adaptation)
+- Mergim Bushati Week 14 (HIGH EI, hamstring injury — most acute crisis language)
+- Mergim Bushati Week 17 (breakthrough return — most identity-level language)
+- Mergim Bushati Week 18 (HIGH EI, first competition — previously audited, highest complexity)
+
+For each sample, read both the Coaching Message AND Deep Dive. Scan against the Category E exclusion list (Section 15 of v1.1 Project Instructions). Document pass/fail for each.
+
+FILES TO READ FOR EACH SAMPLE:
+- Interpretation JSON: Athlete Data\[Athlete]\Weekly JSONS\{name}_{dates}_VF_Interpretation.txt
+- Coaching Message: Athlete Data\[Athlete]\Coaching and Deep Dive\Coaching Message\{name}_{dates}_VF_CoachingMessage.txt
+- Deep Dive: Athlete Data\[Athlete]\Coaching and Deep Dive\Deep Dive\{name}_{dates}_VF_DeepDive.txt
+
+LAYER 2: CATEGORY E TERM SCAN ACROSS ALL FILES
+------------------------------------------------
+Scan ALL 54 coaching output files (27 Coaching Messages + 27 Deep Dives) for any terms from the Category E exclusion list. This is a bulk text search, not a full audit — you are looking for accidental matches.
+
+Category E subcategories to scan for (from v1.1 Section 15):
+
+E1 — Composite score names:
+"Ownership Index", "Drift Score", "Follow-Through Score", "Rhythm Score",
+"Review Quality Score", "Recovery Score", "Reactivity Risk Score"
+
+E2 — Band labels used as named classifications:
+"High band", "Moderate band", "Low band", "Strong band", "Weak band",
+"Stable band", "Variable band", "Disrupted band", "Active band", "Early band",
+"Elevated band", "None band", "Pending Data band"
+
+E3 — Coach flag identifiers:
+"drift_early", "drift_active", "reactivity_elevated", "recovery_failure",
+"ownership_low", "follow_through_weak", "rhythm_disrupted", "review_quality_low",
+"compound_disengagement", "surface_engagement", "component_avoidance",
+"morning_disengagement", "sustained_drift", "persistent_attention_pattern",
+"sustained_compound_disengagement", "coach flag", "flag fired", "flag triggered"
+
+E4 — Self-ratings alignment labels:
+"Conflated" (as classification), "Undervalued" (as classification),
+"self-ratings alignment", "perception-reality alignment"
+
+E5 — Raw execution metrics:
+"completion rate", "on-time count", "late count", "backfill count",
+"reminder dependent", "self-initiated count", "sequence integrity",
+"component completion", "yes rate", "timeliness profile",
+"depth_profile", "compression_detected", "ring_balance",
+"completion_reliability", "contradiction_detected"
+
+E6 — Surveillance framing:
+"engagement metrics", "app usage", "usage data", "usage patterns",
+"completion data", "behavioral data shows", "engagement data",
+"system engagement", "platform engagement", "tracked behavior"
+
+E7 — Internal pipeline terminology:
+"inform-only", "composite scores", "coach flags" (as internal term),
+"execution_behavior_signals", "backend", "Stage 2", "Stage 3",
+"Stage 4", "Stage 5", "pipeline"
+
+NOTE: Some terms have legitimate coaching uses (e.g., "recovery" in athletic context, "consistent" as general English). Use judgment — flag only terms that would constitute execution signal leakage if they appeared in v9.4-era output. For pre-v9.4 output, this scan is a BASELINE confirming no accidental overlap exists.
+
+Use grep/search tools to scan efficiently. Do NOT read all 54 files manually.
+
+LAYER 3: CORE FOUNDATION SKIP RULE VERIFICATION
+-------------------------------------------------
+Verify that the Core Foundation skip rules across all upgraded stages are correctly specified and consistent. This is a specification review, not a code review.
+
+Read and cross-reference these sections:
+
+Stage 2 — SOP_Interpretation_Engine_Project_Instructions_v9.4.txt:
+  - Section 3 (Input Source Detection)
+  - Section 6 (Core Foundation Fallback Rules)
+  - Section 8 (No Degradation Rule)
+
+Stage 3 — SOP_Coaching_Output_Instructions_v1.5.txt:
+  - Section 3 (v9.4 dual-mode awareness)
+  - Section 16 (Core Foundation Execution Skip Rule)
+
+Stage 4 — SOP_Coach_Insights_Project_Instructions_v1.2.txt:
+  - Section 16 (Core Foundation Execution Skip Rule)
+
+Stage 5 — SOP_Editorial_Audit_Project_Instructions_v1.1.txt:
+  - Section 13, Step 2 (Core Foundation check)
+  - Section 19, Edge Case #8 (Core Foundation strictness)
+
+Verify:
+a) All four stages use the same Core Foundation detection method (input_source field)
+b) All four stages produce identical output to their pre-upgrade versions when input_source = "core_foundation"
+c) No stage references execution signal data without first checking input_source
+d) The fallback values in Stage 2 are correct and complete (all raw metrics → "not available — weekly recap input only", all composite scores → "insufficient data", coach_flags → [], execution_pattern_summary → standard CF message)
+
+LAYER 4: CROSS-STAGE CONSISTENCY CHECK
+----------------------------------------
+Verify that the execution signal rules are CONSISTENT across all upgraded files. Specifically:
+
+a) PROHIBITED CATEGORIES ALIGNMENT:
+   - Stage 3 v1.5 Section 17: 7 prohibited categories
+   - Stage 4 v1.2 Section 17: 12 prohibited categories
+   - Stage 5 v1.1 Section 15 Category E: 7 subcategories
+   - JSON_logic_reference.txt: 12 prohibited categories
+   Verify these lists are consistent (Stage 4 has more categories because it has access to more granular data than Stage 3).
+
+b) PERMITTED CATEGORIES ALIGNMENT:
+   - Stage 3 v1.5 Section 17: 4 permitted categories
+   - Stage 4 v1.2 Section 17: 4 permitted categories
+   - Stage 5 v1.1 Section 13 Step 6: context-dependent judgment (permitted translations)
+   Verify these lists are consistent and the audit criteria can correctly distinguish prohibited from permitted.
+
+c) COMPOSITE SCORE BAND ROUTING CONSISTENCY:
+   - VF_Coaching_Output_JSON_to_Message_Map.txt (Stage 3 routing)
+   - JSON_logic_reference.txt (Stage 4 routing)
+   Verify the same bands route to the same conceptual destinations.
+
+d) COACH FLAG ROUTING CONSISTENCY:
+   - VF_Coaching_Output_JSON_to_Message_Map.txt (Stage 3 flag routing by severity)
+   - JSON_logic_reference.txt (Stage 4 KPS priorities and signal labels)
+   - VF_Coach_Flags_Specification.txt (canonical flag definitions)
+   Verify all 15 flags are consistently handled across stages.
+
+e) SELF-RATINGS ALIGNMENT CONSISTENCY:
+   - SOP_Coaching_Output_Instructions_v1.5.txt Section 15
+   - SOP_Coach_Insights_Project_Instructions_v1.2.txt Section 6
+   - JSON_logic_reference.txt Section 5
+   Verify Conflated and Undervalued produce consistent effects across stages.
+
+============================================================
+FILES YOU MUST READ
+============================================================
+
+Read ALL of these before starting validation work:
+
+1. CLAUDE.md (already instructed above)
+   D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+2. Editorial Audit Master Prompt v1.1 (the new Criterion 13 identity)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.1.txt
+
+3. Editorial Audit Project Instructions v1.1 (the new Criterion 13 specification — THIS IS WHAT YOU ARE VALIDATING)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.1.txt
+
+4. Interpretation Engine Project Instructions v9.4 (Core Foundation detection + fallback rules)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+
+5. Coaching Output Instructions v1.5 (Stage 3 execution signal rules + CF skip)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.5.txt
+
+6. Coach Insights Project Instructions v1.2 (Stage 4 execution signal rules + CF skip)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.2.txt
+
+7. JSON Logic Reference (Stage 4 execution routing)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+
+8. Coaching Output JSON-to-Message Map (Stage 3 execution routing)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+
+9. Composite Score Rules (canonical score definitions)
+   D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+
+10. Coach Flags Specification (canonical flag definitions)
+    D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt
+
+11. Interpretation JSON Rules (execution signal classification rules)
+    D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+
+PLUS the athlete coaching output files listed in the validation scope above.
+
+============================================================
+EXPECTED DELIVERABLES
+============================================================
+
+1. VALIDATION REPORT — A structured document summarizing results across all 4 layers:
+
+   VALIDATION REPORT
+   Task: 13 — Execution Signal No-Degradation Validation
+   Date: [date]
+   Result: PASS / PASS WITH NOTES / FAIL
+
+   LAYER 1: CRITERION 13 RETROACTIVE AUDIT
+   [Per-sample results: athlete, week, coaching message result, deep dive result, notes]
+
+   LAYER 2: CATEGORY E TERM SCAN
+   [Summary of grep/search results across all 54 files]
+   [Any matches found with context explaining whether they are legitimate or concerning]
+
+   LAYER 3: CORE FOUNDATION SKIP RULE VERIFICATION
+   [Cross-stage consistency findings]
+   [Any gaps or inconsistencies identified]
+
+   LAYER 4: CROSS-STAGE CONSISTENCY CHECK
+   [Prohibited/permitted category alignment results]
+   [Any misalignments found]
+
+   ISSUES FOUND: [list of any issues, or "None"]
+   RECOMMENDATIONS: [any suggestions for improvement, or "None — validation complete"]
+
+2. ISSUE FIXES (if any) — If validation reveals inconsistencies, fix them:
+   - Specification inconsistencies → edit the affected file(s) and note the change
+   - Accidental execution signal terminology in existing output → note for awareness (do NOT retroactively edit coaching output — it was produced under correct rules at the time)
+
+3. UPDATED CLAUDE.md — Task 13 completion recorded:
+   - Session notes updated
+   - Design task queue item 13 marked complete with summary
+   - What's Next checkbox checked
+   - Completed section entry added
+   - Session history item added (item 36)
+   - If this completes the entire Execution Signal Schema Design queue (Tasks 1-13), note that milestone
+
+4. GIT COMMIT — Stage and commit all changes (validation report, CLAUDE.md updates, any fixes)
+
+============================================================
+WHAT NOT TO DO
+============================================================
+
+- Do NOT regenerate any coaching output. Existing output was produced under correct rules at the time (v1.4). You are validating that v1.5/v1.2/v1.1 upgrades don't break anything, not re-running the pipeline.
+- Do NOT modify the audit criteria (v1.1). You are validating them, not redesigning them. If you find an issue, note it and recommend a fix — do not unilaterally change Criterion 13.
+- Do NOT start any new design tasks or athlete pipeline work. Task 13 is the scope.
+- Do NOT read all 54 coaching output files manually. Use grep/search tools for the bulk term scan (Layer 2) and read only the sample files for the full audit (Layer 1).
+- Do NOT skip Layer 3 or Layer 4. The cross-stage consistency checks are as important as the file-level scans. A specification inconsistency is a real degradation risk.
+
+============================================================
+CONTEXT ON EXISTING ATHLETE DATA
+============================================================
+
+All existing athlete data was produced under v9.3/v1.4/v1.1 rules (BEFORE execution signal upgrade). All athletes are Core Foundation (weekly recap only — no app data exists yet).
+
+GRACE KINDEL — Softball, 5 weeks (Jan 12 – Mar 1, 2026)
+- Weeks 1-2: Low EI, Growth tier, no prior week data
+- Week 3: HIGH EI, Partially Aligned, derailer activation (most complex coaching language)
+- Week 4: Moderate EI, RQS=4, breakthrough SC at-bat
+- Week 5: Low EI, growth phase advancement Developing→Consistent
+- All coaching output regenerated under v1.3 rules (Deep Dive boundary fix)
+- Previous editorial audits: Weeks 3 and 5 PASS (12 criteria)
+
+TUCKER LLOYD — Football, 3 weeks (Feb 9 – Mar 1, 2026)
+- All weeks: Low EI, Mixed tier, Developing phase
+- Key pattern: weekday Win / weekend Neutral-Missed, Sunday gap
+- Week 3: micro-commitment modality adaptation (Written→Behavioral)
+- Previous editorial audit: Week 3 PASS (12 criteria)
+
+MERGIM BUSHATI — Wrestling, 19 weeks (Sep 8, 2025 – Jan 18, 2026)
+- Longest dataset in pipeline
+- 2 HIGH EI weeks: Week 14 (hamstring injury), Week 18 (first competition)
+- Growth/Mixed oscillation pattern, zero Missed days across 133 program days
+- Previous editorial audit: Week 18 PASS (12 criteria, highest-complexity case)
+
+FILE LOCATIONS:
+- Coaching Messages: Athlete Data\[Athlete]\Coaching and Deep Dive\Coaching Message\
+- Deep Dives: Athlete Data\[Athlete]\Coaching and Deep Dive\Deep Dive\
+- Interpretation JSONs: Athlete Data\[Athlete]\Weekly JSONS\
+- Coach Insights: Athlete Data\[Athlete]\Coach Insights\
+- Audit Summaries: Athlete Data\[Athlete]\Coaching and Deep Dive\Audit Summaries\
+
+FILE COUNTS:
+- Grace Kindel: 5 Coaching Messages + 5 Deep Dives + 5 JSONs + 5 Coach Insights
+- Tucker Lloyd: 3 Coaching Messages + 3 Deep Dives + 3 JSONs + 3 Coach Insights
+- Mergim Bushati: 19 Coaching Messages + 19 Deep Dives + 19 JSONs + 19 Coach Insights
+- Total coaching output to scan: 27 Coaching Messages + 27 Deep Dives = 54 files
+
+============================================================
+SUCCESS CRITERIA
+============================================================
+
+Task 13 PASSES if:
+1. All sampled coaching output passes Criterion 13 retroactively
+2. Category E term scan finds zero concerning matches across all 54 files
+3. Core Foundation skip rules are consistent across all 4 upgraded stages
+4. Cross-stage prohibited/permitted category lists are aligned
+5. No specification inconsistencies found (or all found inconsistencies are fixed)
+
+Task 13 PASSES WITH NOTES if:
+- Minor inconsistencies found and fixed (e.g., a wording difference that doesn't affect behavior)
+- Legitimate English words match Category E terms but are clearly not leakage (e.g., "recovery" in athletic injury context)
+
+Task 13 FAILS if:
+- Any coaching output contains actual execution signal leakage
+- Core Foundation skip rules are inconsistent across stages
+- Prohibited category lists have material misalignments
+- The audit criteria (Criterion 13) cannot correctly distinguish compliant from non-compliant output
+
+If Task 13 FAILS, document the failures and recommend specific fixes. Do NOT proceed to mark the Execution Signal Schema Design as complete.
+
+============================================================
+MILESTONE NOTE
+============================================================
+
+If Task 13 passes, the entire Execution Signal Schema Design task queue (Tasks 1-13) is COMPLETE. This means:
+
+- The v9.4 schema is fully specified across all 5 pipeline stages
+- All source reference files are updated
+- All versioned instruction files are created
+- All composite scores, coach flags, and execution signal routing is defined
+- All compliance rules (prohibited/permitted categories) are in place
+- All Core Foundation fallback and skip rules are defined
+- All audit criteria (including the new Criterion 13) are specified
+- Validation confirms no degradation for existing athlete data
+
+The pipeline is specification-complete for the execution signal upgrade. The next phase would be LIVE VALIDATION — processing new athlete data through the v9.4 pipeline end-to-end (likely starting with a synthetic App athlete or when the first real App data arrives).
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
