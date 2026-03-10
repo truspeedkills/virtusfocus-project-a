@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-10
-**Session Notes:** Intake Form Design session — Task 1 of Pipeline Improvement Design COMPLETE. Designed and approved the unified App intake form (29 questions, 7 sections, ~5-6 min). All 7 design decisions confirmed: Q4+Q6 context included, 8 PPD-aligned friction options (no "Other"), up to 3 selections, Q21 adversity self-description included, Q25 support network included, Q22-Q25 ecosystem sufficient, Q29 optional catch-all retained. Specification saved to VF_App_Intake_Form_Specification.txt. No pipeline processing.
+**Session Notes:** Intake Form Design session — Task 1 of Pipeline Improvement Design COMPLETE. Designed and approved the unified App intake form (29 questions, 7 sections, ~5-6 min). All 7 design decisions confirmed. Specification saved to VF_App_Intake_Form_Specification.txt. Task 2-3 Handoff Prompt written for fresh session (PPD + ABI scoring logic). No pipeline processing.
 
 ---
 
@@ -181,6 +181,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Pipeline Overview Briefing: `Pipeline Overview Handoff Prompt.txt` — comprehensive briefing prompt that instructs a fresh session to read all 23 reference documents and present a full project walkthrough
 - Pipeline Improvement Design: `Pipeline Improvement Design Handoff Prompt.txt` — handoff for collaborative design session covering 4 improvement ideas (intake form, daily coaching snippet, daily coach insights, parent output/insights), includes dependency map, sequencing, design questions, and 21 reference files
 - Intake Form Design (Task 1): `Intake Form Design Task 1 Handoff Prompt.txt` — handoff for fresh session to design the unified App intake form with derived PPD + ABI
+- PPD + ABI Scoring Logic (Tasks 2-3): `PPD ABI Scoring Logic Task 2-3 Handoff Prompt.txt` — handoff for fresh session to design PPD scoring formula and ABI pillar calculations
 - Task-specific handoff prompts: `Agents - Generators\Interpretation\Source Files\` (Tasks 8-13)
 
 ### Versioning Rules (established this session)
@@ -781,7 +782,7 @@ All 13 tasks in the Execution Signal Schema Design queue are complete. The v9.4 
 
 ### Pipeline Improvement Design (ACTIVE — Task 1 handoff ready)
 4 ideas identified, dependency-mapped, and sequenced. 21-task queue defined. 5 design decisions confirmed.
-Handoff prompts: `Pipeline Improvement Design Handoff Prompt.txt` (overview), `Intake Form Design Task 1 Handoff Prompt.txt` (Task 1 specific)
+Handoff prompts: `Pipeline Improvement Design Handoff Prompt.txt` (overview), `Intake Form Design Task 1 Handoff Prompt.txt` (Task 1 specific), `PPD ABI Scoring Logic Task 2-3 Handoff Prompt.txt` (Tasks 2-3 specific)
 - [x] **Task 1: Design unified intake form question set** — COMPLETE. 29 questions, 7 sections, ~5-6 min. Spec saved to VF_App_Intake_Form_Specification.txt.
 - [ ] **Tasks 2-3: PPD + ABI scoring logic design** — NEXT. Intake form spec (Task 1) provides all inputs.
 - [ ] Tasks 4-5: New snapshot fields + updated Snapshot Builder spec

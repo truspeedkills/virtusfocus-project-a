@@ -1,0 +1,458 @@
+============================================================
+VIRTUSFOCUS PIPELINE IMPROVEMENT — TASKS 2-3
+PPD SCORING LOGIC + ABI SCORING LOGIC
+============================================================
+Created: 2026-03-10
+Purpose: Design the deterministic scoring formulas for the
+         Primary Problem Detector (PPD) and the Athlete
+         Baseline Index (ABI), using the approved intake form
+         question set from Task 1.
+============================================================
+
+YOU ARE STARTING A FRESH SESSION.
+
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+This file is the single source of truth for the entire project.
+Pay particular attention to:
+- "Pipeline Improvement Design — Confirmed Design Decisions"
+  section (all 5 decisions are LOCKED — do not re-debate them)
+- "Pipeline Improvement Task Queue" (21 tasks, you are on Tasks 2-3)
+- Session history item 40 (Task 1 completion summary)
+
+============================================================
+WHAT HAS ALREADY BEEN DECIDED (DO NOT RE-OPEN)
+============================================================
+
+These decisions were made collaboratively and confirmed by the
+user. They are constraints, not options.
+
+1. UNIFIED INTAKE FORM — 29 questions, 7 sections, ~5-6 min.
+   The question set is LOCKED. Do not add, remove, or reword
+   any questions. The full specification is at:
+   VF_App_Intake_Form_Specification.txt
+
+2. 8 PPD BUCKETS — These are LOCKED:
+   1. Overthinking Loop
+   2. Confidence Volatility
+   3. Mistake Recovery Lag
+   4. Focus Drift / Distraction
+   5. Pressure Reactivity
+   6. Discipline Gap
+   7. Structure Gap
+   8. Ecosystem Friction
+
+3. 4 ABI PILLARS — These are LOCKED:
+   1. Ownership (0-10)
+   2. Composure (0-10)
+   3. Focus (0-10)
+   4. Structure (0-10)
+   Total: 0-40
+
+4. PPD LONGITUDINAL — Self-report PPD at intake (this task).
+   Execution-derived PPD is a future Stage 2 enhancement.
+   The PPD output format must be designed NOW to support
+   future comparison (PPD Alignment Signal).
+
+5. ABI BANDS SUPPORT GROWTH PHASE — ABI bands should support,
+   not replace, the Snapshot Builder's Growth Phase classification.
+   Growth Phase is determined behaviorally, not by ABI score alone.
+
+============================================================
+YOUR TASKS
+============================================================
+
+TASK 2: PPD SCORING LOGIC
+  Deliverable: A complete, deterministic PPD specification with:
+  - Exact scoring formula (selection weights + amplifiers + tie-breaker)
+  - Amplifier mapping from 1-5 scale values (Q9, Q13) to bucket weights
+  - Trigger amplifier weights confirmed
+  - Ecosystem amplifier rules
+  - Pressure thought tie-breaker classification logic
+  - Edge case handling (ties, zero-selection, all-tied)
+  - Complete PPD output format (what gets stored in the Snapshot)
+  - Worked examples using existing athlete data
+
+TASK 3: ABI SCORING LOGIC
+  Deliverable: A complete, deterministic ABI specification with:
+  - Pillar calculation formula confirmed/refined
+  - Band thresholds confirmed/refined
+  - Primary Emphasis determination rules (ties, multiple low pillars)
+  - ABI output format (what gets stored in the Snapshot)
+  - Relationship between ABI bands and Growth Phase classification
+  - Worked examples using existing athlete data
+
+These are COLLABORATIVE DESIGN SESSIONS. The user (Coach Arron)
+will be actively involved. Present options, explain trade-offs,
+and wait for approval before locking.
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read these files IN ORDER before beginning design work:
+
+ESSENTIAL CONTEXT (read first):
+1. D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+   -> Full project context, all design decisions, task queue
+
+THE TASK 1 OUTPUT (your primary input):
+2. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+   -> The APPROVED intake form specification. Contains every question,
+      response format, routing tags, field names, and PPD/ABI input
+      summaries. This is the single source of truth for what
+      questions exist and how they route.
+
+THE SOURCE MATERIAL (starting-point logic, not final):
+3. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Suggested Redesigned VirtusFocus Intake Form.txt
+   -> Contains the ORIGINAL PPD scoring logic (section after line 370)
+      and ORIGINAL ABI scoring logic (section after line 540).
+      IMPORTANT: This is a starting point. The intake form has
+      changed from what this document assumed. Specifically:
+      - Reset speed is now a 1-5 scale (not 4 categorical options)
+      - Routine presence is now a 1-5 scale (not 3 categorical options)
+      - Trigger context options have slightly different wording
+      - Ecosystem amplifier keys off Q23 (home_conversation_pattern)
+      - ABI scale questions use 1-5 anchored scales (confirmed in spec)
+      You must ADAPT the scoring logic to the actual approved inputs.
+
+EXISTING ATHLETE SNAPSHOTS (for worked examples):
+4. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+5. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+6. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Mergim Bushati\mergim_bushati_athlete_snapshot.txt
+   -> Use these to construct hypothetical intake form answers and
+      validate that PPD + ABI produce sensible results for known
+      athletes. You know their profiles deeply from the pipeline work.
+
+PIPELINE CONTEXT (understand how PPD + ABI will be consumed):
+7. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+   -> Current Snapshot Builder spec (will be updated in Task 5
+      to consume PPD + ABI outputs)
+
+8. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+   -> How Stage 2 reads baseline fields. The Interpretation Engine
+      will need to read PPD + ABI data from the expanded Snapshot.
+      Understanding this helps design the output format.
+
+EXECUTION SIGNAL COMPOSITE SCORE RULES (architectural precedent):
+9. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+   -> This document defines the 7 execution signal composite scores.
+      It is an excellent TEMPLATE for how VirtusFocus designs
+      deterministic scoring systems: weighted multi-component
+      formulas, custom band thresholds, edge case handling, and
+      clear documentation style. Use this as the structural model
+      for both PPD and ABI specification documents.
+
+============================================================
+PPD SCORING LOGIC — STARTING POINT AND DESIGN QUESTIONS
+============================================================
+
+The redesigned form document contains a PPD scoring proposal.
+Here is what it proposes vs. what needs to change:
+
+CONFIRMED FROM SOURCE (likely keep as-is):
+- Selection Weight: +3 per friction selection (Q15) to matching bucket
+- Trigger Amplifier weights: +2 primary / +1 secondary per trigger
+- Tie-breaker: pressure thought text classification
+- Output: Top 3 ranked problems
+
+NEEDS ADAPTATION (inputs changed from source assumptions):
+
+1. RESET SPEED AMPLIFIER — Source used 4 categorical options:
+     Immediate = +0 / Next rep = +1 / Few minutes = +2 / Sticks = +3
+   Now Q9 is a 1-5 scale (1 = sticks with me, 5 = reset immediately).
+   Need to map 1-5 scale to amplifier weight for Mistake Recovery Lag.
+
+   Suggested mapping (invert scale since low = slow reset):
+     Q9 = 5 (immediate)    -> +0 amplifier
+     Q9 = 4 (next rep)     -> +1 amplifier
+     Q9 = 3 (moderate)     -> +2 amplifier
+     Q9 = 2 (few minutes)  -> +2 amplifier
+     Q9 = 1 (sticks)       -> +3 amplifier
+
+   [DESIGN DECISION]: Confirm this mapping. Should 2 and 3 both
+   be +2, or should there be 5 distinct values (+0/+1/+1/+2/+3)?
+
+2. ROUTINE AMPLIFIER — Source used 3 categorical options:
+     Consistent = +0 / Somewhat = +1 / None = +3
+   Now Q13 is a 1-5 scale (1 = no routine, 5 = very consistent).
+   Need to map 1-5 scale to amplifier weight for Structure Gap.
+
+   Suggested mapping (invert scale since low = no routine):
+     Q13 = 5 (very consistent) -> +0 amplifier
+     Q13 = 4 (consistent)      -> +0 amplifier
+     Q13 = 3 (somewhat)        -> +1 amplifier
+     Q13 = 2 (minimal)         -> +2 amplifier
+     Q13 = 1 (none)            -> +3 amplifier
+
+   [DESIGN DECISION]: Confirm this mapping. Should 4 and 5 both
+   be +0, or should 4 get +1?
+
+3. ECOSYSTEM AMPLIFIER — Source said "if home conversations are
+   advice-heavy/pressure: +3 to Ecosystem Friction."
+   Now Q23 has 4 options. Need amplifier per option:
+     "Mostly supportive"             -> +0 (no friction)
+     "A lot of analysis or advice"   -> ? (mild friction)
+     "Pressure to perform"           -> +3 (clear friction)
+     "We don't discuss performance"  -> ? (disengagement signal)
+
+   [DESIGN DECISION]: What weight for "analysis/advice" and
+   "don't discuss"? Source only distinguished friction vs no-friction.
+   The new form adds nuance. Options:
+   (A) Binary: supportive = +0, all others = +3
+   (B) Graduated: supportive = +0, advice = +2, pressure = +3, don't discuss = +1
+   (C) Two-tier: supportive/don't discuss = +0, advice/pressure = +3
+
+4. PRESSURE THOUGHT TIE-BREAKER — Source classifies free text
+   into 3 categories:
+     Avoidance ("Don't mess up") -> +1 Overthinking, +1 Pressure Reactivity
+     Proving ("I need to prove")  -> +1 Confidence Volatility
+     Obligation ("Can't let them down") -> +1 Pressure Reactivity, +1 Ecosystem
+   Q18 is free text. The Snapshot Builder (or PPD computation
+   system) must classify the text.
+
+   [DESIGN DECISION]: Should this classification be:
+   (A) Done by the Snapshot Builder agent (Claude classifies the text
+       using the 3 categories above + an "Approach" category for
+       positive framings like "Let's go")
+   (B) Expanded to more categories
+   (C) Made more deterministic with keyword matching rules
+
+5. ADDITIONAL AMPLIFIER CANDIDATES — Two ABI scale questions
+   could serve as PPD amplifiers beyond what the source document
+   proposed:
+   - Q10 (big-moment composure, 1-5) could amplify Pressure Reactivity
+   - Q7 (development driver, 1-5) could amplify Discipline Gap
+
+   [DESIGN DECISION]: Add these as amplifiers, or keep PPD inputs
+   to the 6 already defined (Q9, Q13, Q15, Q16, Q18, Q23)?
+   Adding more amplifiers increases scoring precision but also
+   complexity. The source document intentionally kept it simple.
+
+6. OUTPUT FORMAT — Source proposed:
+     "1) Mistake Recovery Lag (9) — Trigger: after mistakes —
+      Coaching: reset reps + next-play language"
+   For pipeline consumption, we need a structured format:
+     ppd_top_3: [
+       { rank: 1, bucket: "Mistake Recovery Lag", score: 9,
+         trigger: "After making a mistake",
+         coaching_line: "..." },
+       ...
+     ]
+   Plus supporting fields:
+     ppd_all_scores: { bucket: score } (all 8 buckets for
+                     longitudinal comparison)
+     ppd_primary_problem: "Mistake Recovery Lag" (shorthand for
+                          baseline_primary_derailer derivation)
+
+   [DESIGN DECISION]: Confirm output format. Should all 8 bucket
+   scores be stored (for future longitudinal PPD comparison), or
+   only the Top 3?
+
+7. EDGE CASES:
+   - What if an athlete selects 0 friction items? (Q15 says "up to 3"
+     — is 0 valid? Probably not — should be 1 minimum)
+   - What if all 8 buckets score 0 after amplifiers? (Only possible
+     if 0 selected AND no amplifiers fire — impossible if minimum 1)
+   - What if 4+ buckets tie for Top 3? (Need deterministic
+     tie-breaking beyond pressure thought)
+   - What if an athlete's friction selection and ABI scale answers
+     contradict? (e.g., selects "Lack of routine" but Q13 = 5)
+
+   [DESIGN DECISION]: Define minimum selection count for Q15 and
+   tie-breaking rules for multi-way ties.
+
+============================================================
+ABI SCORING LOGIC — STARTING POINT AND DESIGN QUESTIONS
+============================================================
+
+The redesigned form document contains an ABI scoring proposal.
+Here is what it proposes vs. what needs refinement:
+
+CONFIRMED FROM SOURCE (likely keep as-is):
+- Formula: pillar_score = round((Q_a + Q_b) / 2 * 2)
+  This maps 1-5 paired averages to 0-10 scale:
+    Both 1s → round(1/2*2) = round(1.0) = 1/10 (minimum non-zero)
+    Both 3s → round(3/2*2) = round(3.0) = 3 -> wait...
+  Actually let me recalculate:
+    Q_a=1, Q_b=1: round((1+1)/2 * 2) = round(2/2 * 2) = round(2) = 2
+    Q_a=3, Q_b=3: round((3+3)/2 * 2) = round(6/2 * 2) = round(6) = 6
+    Q_a=5, Q_b=5: round((5+5)/2 * 2) = round(10/2 * 2) = round(10) = 10
+    Q_a=1, Q_b=5: round((1+5)/2 * 2) = round(6/2 * 2) = round(6) = 6
+    Q_a=2, Q_b=3: round((2+3)/2 * 2) = round(5/2 * 2) = round(5) = 5
+  Range: 2-10 (not 0-10; minimum is 2 when both answers are 1)
+
+  [DESIGN DECISION]: The formula produces a range of 2-10, not
+  0-10 as stated. Options:
+  (A) Accept 2-10 range (practical — no one scores 0 or 1)
+  (B) Adjust formula to produce true 0-10: pillar = round(((Q_a-1)+(Q_b-1))/2 * 2.5)
+      This maps (1,1)=0, (3,3)=5, (5,5)=10
+  (C) Keep the formula, relabel range as 2-10
+  Recommendation: Option A is simplest and the bands already
+  accommodate it (0-16 total is still "Needs Foundation" even
+  though minimum total is 8).
+
+- Total ABI: Sum of 4 pillar scores (range 8-40 with current formula)
+- Bands: 0-16 Needs Foundation / 17-28 Developing /
+         29-36 Consistent / 37-40 Leadership
+
+  [DESIGN DECISION]: With actual range 8-40, the "Needs Foundation"
+  band (0-16) can only be reached when average pillar is 4 or below
+  (out of 10). Should bands be adjusted for the real range?
+
+NEEDS DESIGN:
+
+1. PRIMARY EMPHASIS RULES
+   Source says: "Primary Emphasis = lowest 1-2 dimensions."
+   Need precise rules:
+   - Always identify the single lowest pillar?
+   - Identify TWO lowest if they're within X points of each other?
+   - What threshold separates "one emphasis" from "two"?
+   - What if all 4 pillars are equal?
+   - What if 3 pillars tie for lowest?
+
+   [DESIGN DECISION]: Define deterministic Primary Emphasis rules.
+
+2. ABI ↔ GROWTH PHASE RELATIONSHIP
+   Source says bands "support, not replace" Growth Phase.
+   The Snapshot Builder assigns Growth Phase from behavioral
+   assessment. ABI is a quantitative input that may:
+   (A) Inform the Growth Phase decision (soft input)
+   (B) Set a floor/ceiling (hard constraint — e.g., ABI < 17
+       cannot be classified higher than Developing)
+   (C) Be completely independent (Growth Phase from narrative
+       only, ABI separate metric)
+
+   [DESIGN DECISION]: What is the relationship? Previous pipeline
+   design chose deterministic Growth Phase thresholds based on
+   weekly data (see VF_Interpretation_JSON_Rules.txt Section 4C).
+   ABI is a one-time intake score, not weekly. Should it set an
+   initial constraint that weekly data can then advance?
+
+3. ABI ↔ PPD INTERACTION
+   - Low ABI pillar scores correlate with certain PPD buckets:
+     Low Composure ↔ Mistake Recovery Lag, Pressure Reactivity
+     Low Structure ↔ Structure Gap, Discipline Gap
+     Low Ownership ↔ Discipline Gap
+     Low Focus ↔ Focus Drift
+   - Should PPD and ABI cross-validate? (e.g., if ABI Composure
+     is low but athlete didn't select composure-related friction,
+     should that flag a gap in self-awareness?)
+   - Or should they be independent assessments that happen to
+     share some inputs?
+
+   [DESIGN DECISION]: Independent or cross-validating?
+   Recommendation: Independent at intake. The future PPD Alignment
+   Signal (intake PPD vs execution-derived PPD) handles the
+   self-awareness gap detection longitudinally.
+
+4. ABI OUTPUT FORMAT
+   For pipeline consumption:
+     abi_scores: {
+       ownership: 6,
+       composure: 4,
+       focus: 7,
+       structure: 3,
+       total: 20,
+       band: "Developing",
+       primary_emphasis: ["Structure", "Composure"],
+       coaching_strategy: {
+         "Structure": "Build a 3-step routine...",
+         "Composure": "Reset language + Bullseye..."
+       }
+     }
+
+   [DESIGN DECISION]: Confirm output format. Should coaching_strategy
+   lines be included in the ABI output, or deferred to the
+   Snapshot Builder (which synthesizes coaching emphasis from
+   all data)?
+
+5. WORKED EXAMPLES
+   After the scoring logic is finalized, validate by constructing
+   hypothetical intake answers for all 3 existing athletes and
+   checking that PPD + ABI produce results consistent with what
+   we know about them from 27 weeks of pipeline data:
+
+   GRACE KINDEL (expected profile):
+   - PPD Top 1 should be: Confidence Volatility or Mistake Recovery Lag
+   - ABI lowest pillar should be: Composure
+   - Overall: moderate ABI, Developing band
+
+   TUCKER LLOYD (expected profile):
+   - PPD Top 1 should be: Discipline Gap or Structure Gap
+   - ABI lowest pillar should be: Structure
+   - Overall: moderate-low ABI, Developing band
+
+   MERGIM BUSHATI (expected profile):
+   - PPD Top 1 should be: Overthinking Loop or Pressure Reactivity
+   - ABI lowest pillar should be: Composure
+   - Overall: low-moderate ABI, Developing band
+
+   If the scoring system produces results that DON'T match these
+   known profiles, the formula needs adjustment.
+
+============================================================
+DESIGN APPROACH
+============================================================
+
+Recommended workflow for this session:
+
+TASK 2 (PPD) FIRST:
+
+STEP 1: Present the adapted scoring formula with all amplifier
+        mappings from 1-5 scales.
+STEP 2: Walk through design decisions 1-7 above.
+STEP 3: Run worked examples for all 3 athletes.
+STEP 4: Get user approval on the complete PPD specification.
+
+TASK 3 (ABI) SECOND:
+
+STEP 5: Present the ABI formula with band thresholds.
+STEP 6: Walk through design decisions 1-4 above.
+STEP 7: Run the same 3 athlete worked examples.
+STEP 8: Get user approval on the complete ABI specification.
+
+CROSS-VALIDATION:
+
+STEP 9: Verify PPD and ABI produce consistent results for each
+        athlete. Flag any contradictions.
+STEP 10: Get final approval on both specifications together.
+
+============================================================
+OUTPUT FORMAT
+============================================================
+
+When both designs are approved, save the specifications to:
+
+PPD Specification:
+D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_PPD_Scoring_Logic.txt
+
+ABI Specification:
+D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_ABI_Scoring_Logic.txt
+
+These are NEW files (new capabilities, not editing existing).
+
+Each file should follow the documentation style of:
+VF_Execution_Signal_Composite_Score_Rules.txt
+— which uses: purpose, inputs, formula with component weights,
+band thresholds, edge cases, output format, worked examples.
+
+Commit after saving both files. Update CLAUDE.md with session
+history, task completion markers, and new file locations.
+
+============================================================
+WHAT NOT TO DO
+============================================================
+
+- Do NOT modify the intake form specification (Task 1 is LOCKED).
+- Do NOT define new Athlete Snapshot fields — that is Task 4.
+- Do NOT update the Snapshot Builder specification — that is Task 5.
+- Do NOT modify any pipeline specifications (v9.4, v1.5, v1.2, v1.1).
+- Do NOT process any athlete data through the pipeline.
+- Do NOT finalize PPD or ABI without user approval.
+- Do NOT add questions to the intake form.
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
