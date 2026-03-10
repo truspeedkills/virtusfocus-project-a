@@ -1,0 +1,756 @@
+VIRTUSFOCUS — PRIMARY PROBLEM DETECTOR (PPD) SCORING LOGIC
+(Approved 2026-03-10 — Pipeline Improvement Task 2 Complete)
+
+PURPOSE
+These rules define the deterministic scoring logic for the
+Primary Problem Detector (PPD). The PPD identifies an athlete's
+Top 3 self-reported performance friction areas from 8 predefined
+buckets using a 4-layer scoring system: selection weight,
+amplifiers, tie-breaker classification, and final ranking.
+
+All scoring layers are fully deterministic except the tie-breaker
+(Layer 3), which requires agent classification of free-text input.
+Tie-breaker classification follows explicit categorical rules with
+dual classification allowed.
+
+The PPD is computed ONCE at intake from the App intake form. It
+captures what the athlete THINKS their primary problems are.
+A future execution-derived Longitudinal PPD (computed periodically
+from accumulated pipeline data) will capture what the DATA SHOWS
+their actual problems are. The gap between these two produces the
+PPD Alignment Signal (Problem Awareness Aligned / Problem Awareness
+Gap / Blind Spot). The output format below is designed to support
+this future comparison.
+
+Core Foundation athletes: PPD is an App-athlete feature only.
+Core Foundation athletes do not complete the App intake form and
+have no PPD output. The Snapshot Builder uses narrative-only
+derailer identification for Core Foundation athletes (unchanged).
+
+============================================================
+PPD BUCKET DEFINITIONS
+============================================================
+
+8 buckets, fixed order (this order is also the tie-breaking
+priority — lower number wins ties):
+
+1. Overthinking Loop
+   Excessive mental rehearsal of negative scenarios before or
+   during performance. Rumination that displaces execution focus.
+
+2. Confidence Volatility
+   Confidence tied to outcomes rather than preparation. Rises
+   after success, drops after failure. Unstable self-belief.
+
+3. Mistake Recovery Lag
+   Slow or incomplete mental reset after errors. Mistakes carry
+   forward and compound across subsequent performance moments.
+
+4. Focus Drift / Distraction
+   Attention pulled away from controllables during performance
+   or training. External distractions (phone, social media,
+   life stress) disrupt engagement quality.
+
+5. Pressure Reactivity
+   Behavioral or mental performance changes under high-stakes
+   conditions. Big moments, evaluation, or external expectations
+   alter execution patterns.
+
+6. Discipline Gap
+   Inconsistent motivation or effort. Habits fluctuate based on
+   mood, outcomes, or life circumstances. Commitment without
+   consistent follow-through.
+
+7. Structure Gap
+   Absence or inconsistency of pre-performance routines, daily
+   rhythms, or training structure. No systematic mental
+   preparation framework.
+
+8. Ecosystem Friction
+   External pressure from coaches, parents, or environment that
+   destabilizes the athlete's mental performance. Obligation-
+   driven stress from relationships within the performance
+   ecosystem.
+
+============================================================
+INPUTS (6 QUESTIONS)
+============================================================
+
+1. Q15 — performance_friction_selections (multi-select, 1-3)
+   Role: Selection Weight (primary PPD input)
+   8 options, one per bucket. Each selection = +3 to matching bucket.
+
+2. Q16 — trigger_context_selections (multi-select, up to 2)
+   Role: Trigger Amplifier
+   5 options. Each adds +2 to a primary bucket and +1 to a
+   secondary bucket.
+
+3. Q9 — abi_composure_q1 (1-5 scale)
+   Role: Reset Speed Amplifier (Mistake Recovery Lag bucket only)
+   "After a mistake, how quickly do you mentally reset?"
+   1 = sticks with me, 5 = reset almost immediately
+
+4. Q13 — abi_structure_q1 (1-5 scale)
+   Role: Routine Amplifier (Structure Gap bucket only)
+   "How consistent is your pre-performance mental routine?"
+   1 = no routine, 5 = very consistent
+
+5. Q18 — pressure_thought_text (free text)
+   Role: Tie-breaker classification
+   "Before a big moment, what thought shows up most often?"
+
+6. Q23 — home_conversation_pattern (single-select, 4 options)
+   Role: Ecosystem Amplifier (Ecosystem Friction bucket only)
+   "After games or competitions, conversations at home are usually:"
+
+============================================================
+LAYER 1: SELECTION WEIGHT (Q15)
+============================================================
+
+Each friction selection adds +3 to the corresponding bucket.
+Minimum 1 selection required. Maximum 3 selections allowed.
+The app UI must enforce the 1-3 constraint.
+
+Mapping:
+  "Overthinking"                         -> +3 Overthinking Loop
+  "Confidence going up and down"         -> +3 Confidence Volatility
+  "Hard time letting go of mistakes"     -> +3 Mistake Recovery Lag
+  "Losing focus or getting distracted"   -> +3 Focus Drift / Distraction
+  "Pressure in big moments"             -> +3 Pressure Reactivity
+  "Staying motivated or disciplined"     -> +3 Discipline Gap
+  "Lack of routine or structure"         -> +3 Structure Gap
+  "Pressure from coaches or parents"     -> +3 Ecosystem Friction
+
+There is no "Other" option. The 8 options map 1-to-1 with the
+8 PPD buckets. This constraint ensures deterministic scoring.
+
+============================================================
+LAYER 2: AMPLIFIERS (Q9, Q13, Q16, Q23)
+============================================================
+
+Amplifiers add small weights that sharpen the ranking beyond
+the selection weight. Each amplifier targets specific bucket(s).
+
+------------------------------------------------------------
+2A. RESET SPEED AMPLIFIER (Q9 -> Mistake Recovery Lag)
+------------------------------------------------------------
+
+Q9 measures reset speed on a 1-5 scale. Low values = slow reset
+= higher amplification of the Mistake Recovery Lag bucket.
+Scale is inverted for amplifier mapping.
+
+  Q9 = 5 (reset almost immediately)  -> +0
+  Q9 = 4 (reset quickly)             -> +1
+  Q9 = 3 (moderate reset)            -> +1
+  Q9 = 2 (takes a while)             -> +2
+  Q9 = 1 (sticks with me)            -> +3
+
+Design note: Q9=3 and Q9=4 both produce +1. The behavioral
+difference between "moderate" and "quick" is smaller than the
+difference between "sticks with me" and "takes a while." The
+largest penalty applies at the extreme low end.
+
+This amplifier fires regardless of whether the athlete selected
+"Hard time letting go of mistakes" in Q15. If they did NOT
+select it (bucket base = 0), the amplifier still adds its value.
+This means an athlete who doesn't self-identify mistake recovery
+as a friction area but rates reset speed as 1 still receives
++3 to the Mistake Recovery Lag bucket from the amplifier alone.
+
+------------------------------------------------------------
+2B. ROUTINE AMPLIFIER (Q13 -> Structure Gap)
+------------------------------------------------------------
+
+Q13 measures routine consistency on a 1-5 scale. Low values =
+no routine = higher amplification of the Structure Gap bucket.
+Scale is inverted for amplifier mapping.
+
+  Q13 = 5 (very consistent)  -> +0
+  Q13 = 4 (consistent)       -> +0
+  Q13 = 3 (somewhat)         -> +1
+  Q13 = 2 (minimal)          -> +2
+  Q13 = 1 (no routine)       -> +3
+
+Design note: Q13=4 and Q13=5 both produce +0. An athlete who
+rates their routine as "consistent" or "very consistent" has a
+functional routine — no Structure Gap amplification is warranted.
+The meaningful behavioral break is between "somewhat" (3) and
+"consistent" (4).
+
+Same independence rule as 2A: fires regardless of Q15 selection.
+
+------------------------------------------------------------
+2C. TRIGGER AMPLIFIER (Q16 -> multiple buckets)
+------------------------------------------------------------
+
+Q16 allows up to 2 trigger context selections. Each trigger
+adds +2 to a primary bucket and +1 to a secondary bucket.
+If the athlete selects 0 triggers, no amplification occurs.
+
+  "Big competitions or high-stakes moments"
+      -> +2 Pressure Reactivity, +1 Overthinking Loop
+
+  "After making a mistake"
+      -> +2 Mistake Recovery Lag, +1 Confidence Volatility
+
+  "When being evaluated (coach, scouts, recruiters)"
+      -> +2 Overthinking Loop, +1 Confidence Volatility
+
+  "During busy or stressful life weeks"
+      -> +2 Discipline Gap, +1 Focus Drift / Distraction
+
+  "When expectations from others are high"
+      -> +2 Pressure Reactivity, +1 Confidence Volatility
+
+When 2 triggers are selected, all bucket adjustments from both
+triggers are summed. A single bucket can receive amplification
+from multiple triggers if both route to it. For example, if the
+athlete selects both "Big competitions" and "Expectations high,"
+Pressure Reactivity receives +2 + +2 = +4 from triggers alone.
+
+Trigger context is also stored in the PPD output to provide
+coaching specificity (see Output Format section).
+
+------------------------------------------------------------
+2D. ECOSYSTEM AMPLIFIER (Q23 -> Ecosystem Friction)
+------------------------------------------------------------
+
+Q23 is a single-select with 4 options describing the home
+conversation pattern after competitions.
+
+  "Mostly supportive"                   -> +0
+  "A lot of analysis or advice"         -> +2
+  "Pressure to perform"                 -> +3
+  "We don't discuss performance much"   -> +1
+
+Design rationale:
+- "Mostly supportive" = no friction signal.
+- "Analysis or advice" = real friction source (well-meaning parents
+  who over-analyze create performance pressure) but less acute than
+  direct pressure. +2 captures this intermediate signal.
+- "Pressure to perform" = clear ecosystem friction. Full +3.
+- "Don't discuss" = disengagement signal, not friction signal. The
+  athlete isn't experiencing pressure from home but lacks the
+  support channel. +1 gives a small signal without equating
+  disengagement to active pressure.
+
+Same independence rule: fires regardless of Q15 selection.
+
+============================================================
+LAYER 3: TIE-BREAKER (Q18)
+============================================================
+
+Q18 is free text: "Before a big moment, what thought shows up
+most often?" The Snapshot Builder agent classifies the text into
+one of 4 categories. Each category adds small (+1) adjustments
+to specific buckets.
+
+CATEGORIES:
+
+  Avoidance
+    Pattern: Negative-outcome-focused, fear-driven, loss-aversion
+    Examples: "Don't mess up," "What if I fail," "I hope I don't
+    choke," "What if it goes wrong"
+    Adjustments: +1 Overthinking Loop, +1 Pressure Reactivity
+
+  Proving
+    Pattern: External-validation-seeking, outcome-dependent worth
+    Examples: "I need to prove myself," "Show them what I can do,"
+    "I have to be the best out there"
+    Adjustments: +1 Confidence Volatility
+
+  Obligation
+    Pattern: Others-focused pressure, responsibility burden
+    Examples: "I can't let them down," "Everyone is counting on
+    me," "I have to do it for my family/team"
+    Adjustments: +1 Pressure Reactivity, +1 Ecosystem Friction
+
+  Approach
+    Pattern: Process-focused, controllable-oriented, positive
+    Examples: "Let's go," "Trust the process," "One play at a
+    time," "Execute the game plan"
+    Adjustments: No bucket adjustment (positive indicator)
+
+CLASSIFICATION RULES:
+
+1. The Snapshot Builder agent reads the full pressure thought
+   text and classifies the dominant framing.
+
+2. DUAL CLASSIFICATION is allowed when the text clearly contains
+   two distinct framings. Example: "Don't mess up or let anyone
+   down" contains Avoidance ("Don't mess up") AND Obligation
+   ("let anyone down"). Both classifications apply, and ALL
+   bucket adjustments from both categories are summed.
+
+3. Maximum 2 classifications per pressure thought. If the text
+   contains elements of 3+ categories, classify the 2 most
+   dominant framings only.
+
+4. The classification is stored in the PPD output as
+   ppd_tie_breaker_classification for audit trail purposes.
+   Format: single category name, or "Category1+Category2" for
+   dual classifications (e.g., "Avoidance+Obligation").
+
+5. If the pressure thought text is empty, illegible, or cannot
+   be classified, no tie-breaker adjustment is applied. The
+   classification is stored as "Unclassified."
+
+============================================================
+LAYER 4: FINAL RANKING
+============================================================
+
+After all 4 layers are applied:
+
+1. Sum all bucket scores (selection weight + amplifiers +
+   tie-breaker adjustments).
+
+2. Sort all 8 buckets by score in descending order.
+
+3. Take the Top 3 buckets as the PPD result.
+
+4. TIE-BREAKING: When two or more buckets have the same score,
+   the bucket with the lower position number wins. This is a
+   deterministic priority order:
+
+   Priority 1: Overthinking Loop
+   Priority 2: Confidence Volatility
+   Priority 3: Mistake Recovery Lag
+   Priority 4: Focus Drift / Distraction
+   Priority 5: Pressure Reactivity
+   Priority 6: Discipline Gap
+   Priority 7: Structure Gap
+   Priority 8: Ecosystem Friction
+
+   Rationale: Internal/cognitive friction buckets (1-5) are
+   prioritized over structural/external buckets (6-8) because
+   when all else is equal, internal friction is typically the
+   higher-leverage coaching target.
+
+5. The #1 ranked bucket is stored as ppd_primary_problem.
+
+============================================================
+THEORETICAL MAXIMUM PER BUCKET
+============================================================
+
+Each bucket has a different maximum possible score based on
+how many scoring pathways reach it:
+
+  Pressure Reactivity:     9  (selection + 2 trigger primaries + dual tie-breaker)
+  Mistake Recovery Lag:    8  (selection + Q9 max amplifier + trigger primary)
+  Overthinking Loop:       7  (selection + trigger primary + trigger secondary + tie-breaker)
+  Ecosystem Friction:      7  (selection + Q23 max amplifier + tie-breaker)
+  Confidence Volatility:   6  (selection + 2 trigger secondaries + tie-breaker)
+  Structure Gap:           6  (selection + Q13 max amplifier)
+  Discipline Gap:          5  (selection + trigger primary)
+  Focus Drift / Distraction: 4  (selection + trigger secondary)
+
+This asymmetry is structural and intentional. Buckets that
+represent convergence points (like Pressure Reactivity, which
+can be fed by multiple trigger types and tie-breaker categories)
+have more input pathways. This reflects the reality that some
+friction areas are influenced by more situational factors than
+others.
+
+============================================================
+EDGE CASES
+============================================================
+
+1. MINIMUM SELECTION (Q15):
+   The app must enforce a minimum of 1 selection and maximum of
+   3 selections for Q15. If the form submission somehow arrives
+   with 0 selections, the PPD computation flags an error and the
+   Snapshot Builder must prompt for re-entry. PPD cannot be
+   computed with 0 friction selections.
+
+2. MULTI-WAY TIE FOR TOP 3:
+   When 4+ buckets tie for positions within the Top 3 (e.g.,
+   four buckets all score 5), the deterministic bucket priority
+   order (1-8) resolves all ties. No ties are left unresolved.
+
+3. FRICTION-AMPLIFIER CONTRADICTION:
+   When an athlete's Q15 selection and scale answer contradict
+   (e.g., selects "Lack of routine or structure" in Q15 but
+   rates Q13=5, very consistent routine), the PPD scores as-is.
+   The +3 selection weight fires, the +0 amplifier fires. Total
+   for Structure Gap = 3. The Snapshot Builder may note the
+   contradiction narratively in the athlete snapshot. The future
+   PPD Alignment Signal will detect these self-perception gaps
+   longitudinally.
+
+4. ALL BUCKETS AT ZERO (impossible with constraints):
+   With the minimum 1 selection enforced, at least one bucket
+   will always have a minimum score of +3. Additionally, Q9 and
+   Q13 amplifiers fire independently of Q15 selections, so
+   Mistake Recovery Lag and Structure Gap can have non-zero
+   scores even without Q15 selection.
+
+5. MAXIMUM SCORING SCENARIO:
+   Athlete selects 3 frictions including Pressure Reactivity,
+   selects both "Big competitions" and "Expectations high" as
+   triggers, pressure thought classified as Avoidance+Obligation:
+   Pressure Reactivity = 3 + 2 + 2 + 1 + 1 = 9 (theoretical max)
+
+6. ZERO TRIGGER SELECTIONS (Q16):
+   Q16 allows "up to 2" selections. If the athlete selects 0
+   triggers, Layer 2C produces no adjustments. This is valid —
+   some athletes may not identify situational triggers. The PPD
+   result will be driven by selection weight + scale amplifiers +
+   tie-breaker only.
+
+7. APPROACH-FRAMED PRESSURE THOUGHT:
+   If Q18 is classified as Approach, no tie-breaker adjustments
+   are made. The tie-breaker layer is skipped. Any existing ties
+   are resolved by bucket priority order. This is intentional —
+   an approach-framed athlete's ranking should be determined
+   entirely by their friction selections, triggers, and scale
+   answers, not nudged by their pressure thought.
+
+============================================================
+OUTPUT FORMAT
+============================================================
+
+The PPD produces 4 output fields stored in the athlete snapshot:
+
+------------------------------------------------------------
+ppd_top_3 (array of 3 objects)
+------------------------------------------------------------
+
+  [
+    {
+      "rank": 1,
+      "bucket": "Overthinking Loop",
+      "score": 7,
+      "trigger_context": "Big competitions or high-stakes moments",
+      "coaching_implication": "Controllable-focus cues + single Bullseye target under pressure"
+    },
+    {
+      "rank": 2,
+      "bucket": "Pressure Reactivity",
+      "score": 7,
+      "trigger_context": ["Big competitions or high-stakes moments", "When being evaluated (coach, scouts, recruiters)"],
+      "coaching_implication": "Controllable-focus under pressure + approach-framed self-talk"
+    },
+    {
+      "rank": 3,
+      "bucket": "Confidence Volatility",
+      "score": 4,
+      "trigger_context": "When being evaluated (coach, scouts, recruiters)",
+      "coaching_implication": "Preparation-based confidence anchoring + evidence collection"
+    }
+  ]
+
+Field definitions:
+- rank: Integer 1-3. Position in the Top 3 ranking.
+- bucket: String. The PPD bucket name.
+- score: Integer. The total score after all 4 layers.
+- trigger_context: String, array of strings, or null.
+    - null: No trigger from Q16 added points to this bucket.
+    - String: One trigger added points to this bucket.
+    - Array: Two triggers both added points to this bucket.
+    Includes ALL triggers that contributed to this bucket (both
+    primary +2 and secondary +1 contributions qualify).
+- coaching_implication: String. Static per-bucket coaching line
+    (see table below). This is a starting-point recommendation;
+    the Snapshot Builder synthesizes the full coaching emphasis
+    from PPD + ABI + narrative data.
+
+STATIC COACHING IMPLICATION LINES:
+
+  Overthinking Loop:
+    "Controllable-focus cues + single Bullseye target under pressure"
+
+  Confidence Volatility:
+    "Preparation-based confidence anchoring + evidence collection"
+
+  Mistake Recovery Lag:
+    "Reset reps + next-play language"
+
+  Focus Drift / Distraction:
+    "Focus cue routines + distraction boundaries"
+
+  Pressure Reactivity:
+    "Controllable-focus under pressure + approach-framed self-talk"
+
+  Discipline Gap:
+    "Win the Day minimums + habit stacking"
+
+  Structure Gap:
+    "Build pre-performance routine + daily rhythm anchors"
+
+  Ecosystem Friction:
+    "Communication boundaries + support system clarification"
+
+------------------------------------------------------------
+ppd_all_scores (object, 8 key-value pairs)
+------------------------------------------------------------
+
+  {
+    "overthinking_loop": 7,
+    "confidence_volatility": 4,
+    "mistake_recovery_lag": 2,
+    "focus_drift": 0,
+    "pressure_reactivity": 7,
+    "discipline_gap": 0,
+    "structure_gap": 1,
+    "ecosystem_friction": 3
+  }
+
+All 8 bucket scores are stored, including zeros. This supports:
+- Future longitudinal PPD comparison (execution-derived vs intake)
+- PPD Alignment Signal computation (requires all 8 buckets to
+  detect Blind Spots — buckets scoring low at intake but high
+  in execution data)
+- Historical reference for coaching trajectory analysis
+
+------------------------------------------------------------
+ppd_primary_problem (string)
+------------------------------------------------------------
+
+The bucket name of the rank-1 entry in ppd_top_3. Shorthand
+for downstream pipeline consumption.
+
+  "Overthinking Loop"
+
+This field feeds the baseline_primary_derailer derivation in
+the Snapshot Builder. The Snapshot Builder uses ppd_primary_problem
+as a structured input alongside the narrative derailer analysis
+to produce the final baseline_primary_derailer text.
+
+------------------------------------------------------------
+ppd_tie_breaker_classification (string)
+------------------------------------------------------------
+
+The agent's classification of Q18 pressure thought text. Stored
+for audit trail and future analysis.
+
+Valid values:
+  "Avoidance"
+  "Proving"
+  "Obligation"
+  "Approach"
+  "Avoidance+Proving"
+  "Avoidance+Obligation"
+  "Proving+Obligation"
+  "Unclassified"
+
+Note: "Avoidance+Approach" and other Approach combinations are
+not valid — Approach framing is definitionally incompatible with
+Avoidance/Proving/Obligation framings. If the text contains both
+approach and non-approach elements, classify the non-approach
+framing(s) only.
+
+============================================================
+WORKED EXAMPLES
+============================================================
+
+------------------------------------------------------------
+EXAMPLE 1: GRACE KINDEL
+------------------------------------------------------------
+
+Profile: Softball, Outfield, Kutztown. Confidence is outcome-
+reactive. Primary derailer = loss of confidence following errors.
+Hinge habit = immediate reset and refocus after mistakes.
+Pressure thought = "I need to make sure I succeed and if I
+don't I will let myself and the team down."
+
+Hypothetical intake answers:
+  Q9  = 3 (moderate reset)
+  Q13 = 3 (somewhat consistent routine)
+  Q15 = [Confidence going up and down, Hard time letting go of
+         mistakes, Pressure in big moments]
+  Q16 = [After making a mistake, Big competitions or high-stakes
+         moments]
+  Q18 = "I need to make sure I succeed and if I don't I will let
+         myself and the team down" -> Obligation
+  Q23 = "Mostly supportive"
+
+Calculation:
+
+  Overthinking Loop:      0 + 0 + 0 + 1(Q16 big moments sec) + 0 + 0 = 1
+  Confidence Volatility:  3 + 0 + 0 + 1(Q16 after mistake sec) + 0 + 0 = 4
+  Mistake Recovery Lag:   3 + 1(Q9=3) + 0 + 2(Q16 after mistake pri) + 0 + 0 = 6
+  Focus Drift:            0 + 0 + 0 + 0 + 0 + 0 = 0
+  Pressure Reactivity:    3 + 0 + 0 + 2(Q16 big moments pri) + 1(Q18 oblig) + 0 = 6
+  Discipline Gap:         0 + 0 + 0 + 0 + 0 + 0 = 0
+  Structure Gap:          0 + 0 + 1(Q13=3) + 0 + 0 + 0 = 1
+  Ecosystem Friction:     0 + 0 + 0 + 0 + 1(Q18 oblig) + 0 = 1
+
+  Top 3 (tie at 6 broken by bucket priority: MRL #3 > PR #5):
+  1. Mistake Recovery Lag (6) — trigger: "After making a mistake"
+  2. Pressure Reactivity (6) — trigger: "Big competitions or high-stakes moments"
+  3. Confidence Volatility (4) — trigger: "After making a mistake"
+
+  ppd_primary_problem = "Mistake Recovery Lag"
+  ppd_tie_breaker_classification = "Obligation"
+
+Validation: MATCH. Grace's baseline_primary_derailer is "Loss of
+confidence following errors or perceived failure" — the compound
+of Mistake Recovery Lag + Confidence Volatility. Both appear in
+her Top 3. Pressure Reactivity captures big-moment sensitivity
+(Week 3 NC trip). Obligation framing correctly nudges Ecosystem
+Friction (+1) without over-ranking it.
+
+------------------------------------------------------------
+EXAMPLE 2: TUCKER LLOYD
+------------------------------------------------------------
+
+Profile: Football, WVU, Student/Coach role. Primary derailer =
+pre-performance focus on what could go wrong. Hinge habit =
+consistent gym attendance. 8/10 mental game self-rating despite
+clear struggles. Pipeline data: missed Sundays, stagnant
+consistency, declining goal specificity.
+
+Hypothetical intake answers:
+  Q9  = 3 (moderate reset)
+  Q13 = 2 (minimal routine)
+  Q15 = [Overthinking, Confidence going up and down, Staying
+         motivated or disciplined]
+  Q16 = [Big competitions or high-stakes moments, During busy
+         or stressful life weeks]
+  Q18 = "Anything that can go wrong" -> Avoidance
+  Q23 = "Mostly supportive"
+
+Calculation:
+
+  Overthinking Loop:      3 + 0 + 0 + 1(Q16 big moments sec) + 1(Q18 avoid) + 0 = 5
+  Confidence Volatility:  3 + 0 + 0 + 0 + 0 + 0 = 3
+  Mistake Recovery Lag:   0 + 1(Q9=3) + 0 + 0 + 0 + 0 = 1
+  Focus Drift:            0 + 0 + 0 + 1(Q16 busy weeks sec) + 0 + 0 = 1
+  Pressure Reactivity:    0 + 0 + 0 + 2(Q16 big moments pri) + 1(Q18 avoid) + 0 = 3
+  Discipline Gap:         3 + 0 + 0 + 2(Q16 busy weeks pri) + 0 + 0 = 5
+  Structure Gap:          0 + 0 + 2(Q13=2) + 0 + 0 + 0 = 2
+  Ecosystem Friction:     0 + 0 + 0 + 0 + 0 + 0 = 0
+
+  Top 3 (tie at 5 broken by bucket priority: OL #1 > DG #6):
+  1. Overthinking Loop (5) — trigger: "Big competitions or high-stakes moments"
+  2. Discipline Gap (5) — trigger: "During busy or stressful life weeks"
+  3. Confidence Volatility (3) — trigger: null (no trigger hit CV; CV secondary from
+     "after mistake" was not selected, and CV secondary from "expectations high" was
+     not selected)
+
+  Wait — let me recheck. Tucker's Q16 selections are "Big competitions" and "Busy weeks."
+  "Big competitions" secondaries: +1 Overthinking Loop. Does not hit CV.
+  "Busy weeks" secondaries: +1 Focus Drift. Does not hit CV.
+  Neither of Tucker's triggers hits Confidence Volatility.
+  Tie at 3: CV #2 > PR #5 by bucket priority.
+
+  ppd_primary_problem = "Overthinking Loop"
+  ppd_tie_breaker_classification = "Avoidance"
+
+Validation: MATCH WITH INSIGHT. The handoff expected Discipline Gap
+or Structure Gap at #1 based on pipeline behavioral data (missed
+Sundays, stagnant consistency). The PPD correctly captures Tucker's
+SELF-PERCEPTION: he identifies overthinking ("Anything that can go
+wrong") as his primary friction, not discipline. His 8/10 self-
+rating confirms he over-estimates his own structural habits.
+
+Structure Gap scores only 2 (from Q13 amplifier alone — Tucker
+didn't select "Lack of routine or structure" because he thinks
+his structure is adequate). This gap between intake PPD and future
+execution-derived PPD is a textbook "Blind Spot" that the PPD
+Alignment Signal will surface longitudinally.
+
+------------------------------------------------------------
+EXAMPLE 3: MERGIM BUSHATI
+------------------------------------------------------------
+
+Profile: Wrestling, 184 lbs, Seton Hill. Primary derailer =
+overthinking and self-doubt before/during competitive moments.
+Hinge habit = consistent training routines. 5/10 mental game
+self-rating. 9 out of available struggle categories identified.
+Very involved parents. Pre-performance thought = "Don't mess up
+or let anyone down."
+
+Hypothetical intake answers:
+  Q9  = 2 (takes a while to reset)
+  Q13 = 3 (somewhat consistent — strong training routines but
+         mental prep routine is inconsistent)
+  Q15 = [Overthinking, Confidence going up and down, Pressure
+         in big moments]
+  Q16 = [Big competitions or high-stakes moments, When being
+         evaluated (coach, scouts, recruiters)]
+  Q18 = "Don't mess up or let anyone down"
+         -> Dual: Avoidance + Obligation
+  Q23 = "A lot of analysis or advice"
+
+Calculation:
+
+  Overthinking Loop:      3 + 0 + 0 + 1(Q16 big moments sec) + 2(Q16 eval pri) + 1(Q18 avoid) + 0 = 7
+  Confidence Volatility:  3 + 0 + 0 + 1(Q16 eval sec) + 0 + 0 = 4
+  Mistake Recovery Lag:   0 + 2(Q9=2) + 0 + 0 + 0 + 0 = 2
+  Focus Drift:            0 + 0 + 0 + 0 + 0 + 0 = 0
+  Pressure Reactivity:    3 + 0 + 0 + 2(Q16 big moments pri) + 1(Q18 avoid) + 1(Q18 oblig) + 0 = 7
+  Discipline Gap:         0 + 0 + 0 + 0 + 0 + 0 = 0
+  Structure Gap:          0 + 0 + 1(Q13=3) + 0 + 0 + 0 = 1
+  Ecosystem Friction:     0 + 0 + 0 + 0 + 1(Q18 oblig) + 2(Q23) = 3
+
+  Top 3 (tie at 7 broken by bucket priority: OL #1 > PR #5):
+  1. Overthinking Loop (7) — trigger: ["Big competitions or high-stakes moments", "When being evaluated (coach, scouts, recruiters)"]
+  2. Pressure Reactivity (7) — trigger: "Big competitions or high-stakes moments"
+  3. Confidence Volatility (4) — trigger: "When being evaluated (coach, scouts, recruiters)"
+
+  ppd_primary_problem = "Overthinking Loop"
+  ppd_tie_breaker_classification = "Avoidance+Obligation"
+
+Validation: STRONG MATCH. Mergim's baseline_primary_derailer is
+"Overthinking and self-doubt before and during competitive
+moments, anchored in avoidance-framed pre-performance thinking."
+The PPD produces Overthinking Loop at #1 — exact alignment.
+
+Dual classification of "Don't mess up or let anyone down"
+correctly distributes weight: avoidance feeds overthinking/
+pressure loops, obligation feeds ecosystem awareness. Ecosystem
+Friction at 3 captures the very-involved-parents dynamic without
+over-ranking it.
+
+Mistake Recovery Lag at 2 (Q9 amplifier only — not selected in
+Q15) is an under-report. Pipeline data from Week 18 (first
+competition: derailer activation in match 1) confirms MRL is a
+real issue. Another PPD Alignment Signal candidate.
+
+============================================================
+CROSS-ATHLETE SUMMARY
+============================================================
+
+  Grace Kindel:   1. Mistake Recovery Lag (6)  2. Pressure Reactivity (6)  3. Confidence Volatility (4)
+  Tucker Lloyd:   1. Overthinking Loop (5)     2. Discipline Gap (5)       3. Confidence Volatility (3)
+  Mergim Bushati: 1. Overthinking Loop (7)     2. Pressure Reactivity (7)  3. Confidence Volatility (4)
+
+All three produce results consistent with known athlete profiles.
+Tucker's result validates the PPD Alignment Signal design — intake
+PPD captures self-perception, longitudinal PPD will capture reality.
+
+============================================================
+DOWNSTREAM CONSUMPTION
+============================================================
+
+The PPD output is consumed by:
+
+1. SNAPSHOT BUILDER (Stage 1):
+   - ppd_primary_problem informs baseline_primary_derailer
+   - ppd_top_3 coaching implications inform Initial Coaching
+     Emphasis section
+   - ppd_tie_breaker_classification enriches the Stress & Trigger
+     Profile section
+
+2. INTERPRETATION ENGINE (Stage 2):
+   - ppd_top_3 stored as baseline reference fields
+   - Enables future PPD Alignment Signal computation when
+     execution-derived PPD is implemented
+
+3. COACHING OUTPUT ENGINE (Stage 3):
+   - ppd_top_3 informs coaching emphasis and language selection
+   - coaching_implication lines provide starting-point coaching
+     themes for personalization
+
+4. FUTURE — PPD ALIGNMENT SIGNAL:
+   - ppd_all_scores enables bucket-by-bucket comparison against
+     execution-derived PPD scores
+   - Signal classifications: Problem Awareness Aligned (intake
+     and execution agree), Problem Awareness Gap (intake identifies
+     problems execution doesn't confirm), Blind Spot (execution
+     reveals problems intake didn't identify)
+
+============================================================
+END OF SPECIFICATION
+============================================================
