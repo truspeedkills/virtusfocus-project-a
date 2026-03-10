@@ -1,0 +1,773 @@
+VIRTUSFOCUS — ATHLETE BASELINE INDEX (ABI) SCORING LOGIC
+(Approved 2026-03-10 — Pipeline Improvement Task 3 Complete)
+
+PURPOSE
+These rules define the deterministic scoring logic for the
+Athlete Baseline Index (ABI). The ABI produces a quantitative
+developmental baseline across 4 pillars from the App intake
+form, giving the pipeline an immediate structured measure of
+where the athlete stands at entry.
+
+The ABI is computed ONCE at intake from 8 self-assessment
+questions (Q7-Q14, Section 2 of the App intake form). It
+captures the athlete's SELF-ASSESSED capability across 4
+dimensions. It is complementary to the PPD (Primary Problem
+Detector), which captures self-reported FRICTION. An athlete
+can report high friction in an area (PPD) while self-assessing
+moderate capability there (ABI), or vice versa. The two systems
+together produce a richer intake profile than either alone.
+
+Core Foundation athletes: ABI is an App-athlete feature only.
+Core Foundation athletes do not complete the App intake form
+and have no ABI output. The Snapshot Builder uses narrative-
+only Growth Phase classification for Core Foundation athletes
+(unchanged).
+
+============================================================
+PILLAR DEFINITIONS
+============================================================
+
+4 pillars. Each measures a distinct developmental dimension.
+
+1. OWNERSHIP
+   Degree to which the athlete self-directs their development
+   and engages in reflective performance habits. Measures
+   internal locus of control over growth.
+
+2. COMPOSURE
+   Ability to maintain mental stability under pressure and
+   recover from mistakes during performance. Measures
+   emotional regulation in competitive contexts.
+
+3. FOCUS
+   Ability to sustain attention during performance and resist
+   external distractions that disrupt training quality.
+   Measures attentional control and distraction resistance.
+
+4. STRUCTURE
+   Consistency of pre-performance routines and weekly training
+   rhythms. Measures the presence and reliability of systematic
+   mental preparation frameworks.
+
+============================================================
+INPUTS (8 QUESTIONS — Q7-Q14)
+============================================================
+
+All inputs are 1-5 scales from Section 2 of the App intake
+form (VF_App_Intake_Form_Specification.txt). All scales run
+1 (low/negative) to 5 (high/positive).
+
+--- OWNERSHIP ---
+
+Q7: "How much of your development do you currently drive
+     yourself?"
+     Anchors: 1 = Others drive most of it /
+              5 = I drive almost all of it
+     Field: abi_ownership_q1
+
+Q8: "How often do you review your own performance after
+     practices or games?"
+     Anchors: 1 = Never / 5 = Every time
+     Field: abi_ownership_q2
+
+--- COMPOSURE ---
+
+Q9: "After a mistake, how quickly do you mentally reset?"
+     Anchors: 1 = It sticks with me for a while /
+              5 = I reset almost immediately
+     Field: abi_composure_q1
+     Note: Also serves as PPD Reset Speed Amplifier
+           (Mistake Recovery Lag bucket). See
+           VF_PPD_Scoring_Logic.txt Layer 2A.
+
+Q10: "How well do you keep your composure during big moments?"
+     Anchors: 1 = I struggle a lot /
+              5 = I stay very composed
+     Field: abi_composure_q2
+
+--- FOCUS ---
+
+Q11: "During performance, how well do you maintain your focus?"
+     Anchors: 1 = I lose focus very often /
+              5 = I rarely lose focus
+     Field: abi_focus_q1
+
+Q12: "How much do outside distractions (phone, social media,
+      life stress) affect your training?"
+     Anchors: 1 = They affect me a lot /
+              5 = They rarely affect me
+     Field: abi_focus_q2
+
+--- STRUCTURE ---
+
+Q13: "How consistent is your pre-performance mental routine?"
+     Anchors: 1 = I don't have one /
+              5 = Very consistent
+     Field: abi_structure_q1
+     Note: Also serves as PPD Routine Amplifier (Structure
+           Gap bucket). See VF_PPD_Scoring_Logic.txt Layer 2B.
+
+Q14: "How consistent is your weekly training and recovery
+      rhythm?"
+     Anchors: 1 = Very inconsistent /
+              5 = Very consistent
+     Field: abi_structure_q2
+
+============================================================
+FORMULA
+============================================================
+
+Step 1: Compute each pillar score.
+
+  pillar_score = round((Q_a + Q_b) / 2 * 2)
+
+  Where Q_a and Q_b are the two 1-5 scale inputs for that
+  pillar.
+
+Step 2: Sum all 4 pillar scores for total ABI.
+
+  total_abi = ownership + composure + focus + structure
+
+RANGE:
+  Per-pillar: 2-10 (integer, no rounding ambiguity)
+  Total: 8-40
+
+The formula averages the two questions, then multiplies by 2
+to scale to a 2-10 range. Every possible input combination
+produces a clean integer:
+
+  (1+1)/2*2 = 2    (1+2)/2*2 = 3    (2+2)/2*2 = 4
+  (2+3)/2*2 = 5    (3+3)/2*2 = 6    (3+4)/2*2 = 7
+  (4+4)/2*2 = 8    (4+5)/2*2 = 9    (5+5)/2*2 = 10
+
+Note: The range is 2-10, not 0-10. The formula cannot produce
+values below 2 because the minimum input value is 1 (not 0).
+This is by design — the 1-5 scale captures meaningful
+differentiation across the full athlete population, and the
+2-10 output range accurately reflects the possible input space.
+
+============================================================
+TOTAL ABI BAND THRESHOLDS
+============================================================
+
+  8-16:   Needs Foundation
+          High variance, low structure, limited self-direction.
+          Most pillars in Low band.
+
+  17-28:  Developing
+          Some strengths, inconsistent execution. Most intake
+          athletes land here. Wide range is intentional — this
+          is the developmental band where coaching has the
+          highest marginal impact.
+
+  29-36:  Consistent
+          Reliable habits, stable mindset. Most pillars in
+          Moderate-High range. Strong self-assessment across
+          dimensions.
+
+  37-40:  Leadership
+          Self-led, composed, focused, structured. Near-max
+          across all pillars. Very rare at intake.
+
+============================================================
+INDIVIDUAL PILLAR BAND THRESHOLDS
+============================================================
+
+Each pillar has its own band label in addition to the total
+ABI band.
+
+  2-4:   Low
+         Both questions at 1-2, or one at 1 and one at 3.
+         Significant developmental gap in this dimension.
+
+  5-7:   Moderate
+         Average self-assessment. Developing capability with
+         room for growth. Most common band at intake.
+
+  8-10:  High
+         Both questions at 4-5. Strong self-assessed capability
+         in this dimension.
+
+Individual pillar bands support:
+- Primary Emphasis determination (band context alongside score)
+- Dashboard visualization (color-coded per pillar)
+- Downstream coaching personalization (Stage 3 tone calibration)
+- Longitudinal tracking (pillar band movement over time)
+
+============================================================
+PRIMARY EMPHASIS DETERMINATION RULES
+============================================================
+
+Primary Emphasis identifies the 1-2 pillars where coaching
+should focus first. It is a deterministic output derived from
+pillar scores.
+
+RULES:
+
+1. Rank all 4 pillars by score in ascending order.
+
+2. The lowest-scoring pillar is ALWAYS Primary Emphasis #1.
+
+3. If the 2nd-lowest pillar is within 2 points of the lowest,
+   it becomes Primary Emphasis #2.
+
+4. MAXIMUM 2 emphases. Never 3 or 4, regardless of score
+   distribution.
+
+5. When 3 or more pillars tie for lowest, take the first 2 by
+   PILLAR PRIORITY ORDER:
+
+   Priority 1: Ownership
+   Priority 2: Composure
+   Priority 3: Focus
+   Priority 4: Structure
+
+   Rationale: Internal capabilities (ownership, composure) are
+   higher-leverage coaching targets than structural dimensions
+   (focus, structure) when all else is equal. This matches the
+   PPD bucket priority logic (internal/cognitive before
+   structural/external).
+
+6. If all 4 pillars are exactly equal:
+   primary_emphasis = ["Balanced"]
+
+   "Balanced" indicates no specific pillar needs emphasis —
+   the athlete's self-assessment is uniformly distributed. The
+   total ABI band still tells the coaching story (all at 3 =
+   total 12 = Needs Foundation across the board; all at 6 =
+   total 24 = Developing uniformly). The Snapshot Builder
+   interprets "Balanced" accordingly.
+
+EXAMPLES:
+
+  Scores: Own=6, Com=5, Foc=8, Str=7
+  Lowest: Composure (5). 2nd: Ownership (6), gap=1. <=2.
+  Result: ["Composure", "Ownership"]
+
+  Scores: Own=5, Com=6, Foc=6, Str=4
+  Lowest: Structure (4). 2nd: Ownership (5), gap=1. <=2.
+  Result: ["Structure", "Ownership"]
+
+  Scores: Own=7, Com=4, Foc=6, Str=7
+  Lowest: Composure (4). 2nd: Focus (6), gap=2. <=2.
+  Result: ["Composure", "Focus"]
+
+  Scores: Own=8, Com=4, Foc=8, Str=9
+  Lowest: Composure (4). 2nd: Own/Foc tied at 8, gap=4. >2.
+  Result: ["Composure"]
+
+  Scores: Own=6, Com=6, Foc=6, Str=6
+  All equal.
+  Result: ["Balanced"]
+
+  Scores: Own=4, Com=4, Foc=4, Str=8
+  Three-way tie at 4. Pillar priority: Own > Com > Foc.
+  Result: ["Ownership", "Composure"]
+
+============================================================
+ABI-GROWTH PHASE RELATIONSHIP
+============================================================
+
+RULE: Soft Input.
+
+The ABI band INFORMS the Snapshot Builder's Growth Phase
+classification but does NOT constrain it.
+
+The Snapshot Builder should reference the ABI band when
+justifying its Growth Phase classification, but is not bound
+by it. The agent can classify an athlete as Consistent even
+with a Developing ABI band if the narrative evidence warrants
+it (and vice versa).
+
+RATIONALE:
+- Growth Phase is fundamentally behavioral (demonstrated
+  execution patterns over time), not self-assessment-based.
+- ABI is a one-time self-report snapshot. Athletes regularly
+  over-rate or under-rate themselves (e.g., Tucker Lloyd's
+  8/10 mental game self-rating despite clear structural gaps).
+- The existing pipeline uses deterministic behavioral
+  thresholds for Growth Phase progression (VF_Interpretation_
+  JSON_Rules.txt Section 4C). Weekly data overrides intake
+  classification within the first 2+ weeks.
+- Consistency with pipeline philosophy: intake captures
+  perception, execution data captures reality.
+
+EXAMPLE USAGE:
+
+  ABI band = Needs Foundation, but athlete has Approach-framed
+  pressure thought, high commitment ("All-in"), and strong
+  narrative self-awareness.
+  -> Snapshot Builder may classify as Developing, noting the
+     ABI band in the justification: "Despite a Needs Foundation
+     ABI score, the athlete's commitment level and self-
+     awareness position them at the Developing threshold."
+
+  ABI band = Consistent, but narrative shows significant
+  identity friction, avoidance-framed pressure thought, and
+  limited self-direction.
+  -> Snapshot Builder may classify as Developing, noting the
+     ABI band divergence: "The athlete's Consistent ABI score
+     reflects self-assessed capability that is not yet matched
+     by demonstrated behavioral patterns."
+
+============================================================
+OUTPUT FORMAT
+============================================================
+
+The ABI produces 2 output objects stored in the athlete
+snapshot:
+
+------------------------------------------------------------
+abi_scores (primary output)
+------------------------------------------------------------
+
+  {
+    "ownership": 6,
+    "composure": 5,
+    "focus": 8,
+    "structure": 7,
+    "total": 26,
+    "band": "Developing",
+    "primary_emphasis": ["Composure", "Ownership"],
+    "pillar_bands": {
+      "ownership": "Moderate",
+      "composure": "Moderate",
+      "focus": "High",
+      "structure": "Moderate"
+    }
+  }
+
+Field definitions:
+- ownership / composure / focus / structure: Integer 2-10.
+  Individual pillar scores.
+- total: Integer 8-40. Sum of 4 pillar scores.
+- band: String. Total ABI band classification.
+  Valid values: "Needs Foundation" | "Developing" |
+                "Consistent" | "Leadership"
+- primary_emphasis: Array of 1-2 strings (pillar names),
+  or ["Balanced"] if all 4 pillars are equal.
+  Valid pillar values: "Ownership" | "Composure" | "Focus" |
+                       "Structure"
+- pillar_bands: Object with 4 keys. Individual pillar band
+  classifications.
+  Valid values per pillar: "Low" | "Moderate" | "High"
+
+------------------------------------------------------------
+abi_raw_inputs (audit trail)
+------------------------------------------------------------
+
+  {
+    "ownership_q1": 3,
+    "ownership_q2": 3,
+    "composure_q1": 3,
+    "composure_q2": 2,
+    "focus_q1": 4,
+    "focus_q2": 4,
+    "structure_q1": 3,
+    "structure_q2": 4
+  }
+
+All values are integers 1-5, stored exactly as the athlete
+answered them on the intake form.
+
+Purpose:
+- Re-administration comparison (longitudinal ABI tracking —
+  compare intake answers to future re-assessment)
+- Audit trail (verify pillar score computation)
+- PPD cross-reference (composure_q1 = Q9 Reset Speed
+  Amplifier; structure_q1 = Q13 Routine Amplifier)
+
+------------------------------------------------------------
+Coaching strategy lines
+------------------------------------------------------------
+
+Coaching strategy lines are NOT part of the ABI output. The
+ABI produces clean data (scores, bands, emphasis). The
+Snapshot Builder (Task 5) synthesizes coaching emphasis from
+PPD + ABI + narrative data — that is where strategy lines
+belong.
+
+============================================================
+EDGE CASES
+============================================================
+
+1. ALL PILLARS EQUAL:
+   If all 4 pillar scores are identical, primary_emphasis =
+   ["Balanced"]. The total ABI band still communicates the
+   developmental level. Example: all 4 at 3 = total 12 =
+   Needs Foundation; all 4 at 6 = total 24 = Developing.
+
+2. THREE-WAY TIE FOR LOWEST:
+   When 3 pillars tie for lowest, take the first 2 by pillar
+   priority order (Ownership > Composure > Focus > Structure).
+   Example: Own=4, Com=4, Foc=4, Str=8 -> emphasis =
+   ["Ownership", "Composure"].
+
+3. BOUNDARY-EXACT 2ND EMPHASIS:
+   When the 2nd-lowest pillar is exactly 2 points above the
+   lowest, it IS included. The threshold is "within 2 points"
+   inclusive. Example: lowest=4, 2nd=6 -> included.
+
+4. MAXIMUM EMPHASIS CAP:
+   Even if 3+ pillars are within 2 points of the lowest, only
+   2 emphases are generated. The 2 lowest-scoring pillars are
+   selected; ties broken by pillar priority order.
+
+5. ALL QUESTIONS MINIMUM (1,1,1,1,1,1,1,1):
+   Every pillar = round((1+1)/2*2) = 2. Total = 8.
+   Band = Needs Foundation. Emphasis = ["Balanced"].
+   Pillar bands = all Low.
+
+6. ALL QUESTIONS MAXIMUM (5,5,5,5,5,5,5,5):
+   Every pillar = round((5+5)/2*2) = 10. Total = 40.
+   Band = Leadership. Emphasis = ["Balanced"].
+   Pillar bands = all High.
+
+7. EXTREME ASYMMETRY:
+   Athlete answers 5,5 on one pillar and 1,1 on another.
+   Example: Own=10, Com=2, Foc=10, Str=2. Total = 24 =
+   Developing. But the profile is highly polarized. Primary
+   Emphasis = ["Composure", "Structure"] (both at 2, first 2
+   by pillar priority: Composure > Structure). The Snapshot
+   Builder should note the asymmetry narratively.
+
+8. PPD-ABI CONTRADICTION:
+   When PPD and ABI produce seemingly contradictory results
+   (e.g., PPD shows no Overthinking but ABI Composure is Low),
+   both are stored as-is. The contradiction itself is
+   informative — it reveals a gap between perceived friction
+   (what gets in the way) and self-assessed capability (how
+   strong is this skill). The Snapshot Builder may note the
+   divergence narratively. The future PPD Alignment Signal will
+   surface these gaps systematically.
+
+9. FORM VALIDATION:
+   All 8 questions (Q7-Q14) are required fields. The app must
+   enforce 1-5 integer responses for all. If the form
+   submission somehow arrives with missing or out-of-range
+   values, the ABI computation flags an error and the Snapshot
+   Builder must prompt for re-entry. ABI cannot be computed
+   with incomplete inputs.
+
+============================================================
+WORKED EXAMPLES
+============================================================
+
+------------------------------------------------------------
+EXAMPLE 1: GRACE KINDEL
+------------------------------------------------------------
+
+Profile: Softball, Outfield, Kutztown. Confidence is outcome-
+reactive. Primary derailer = loss of confidence following
+errors. Hinge habit = immediate reset and refocus after
+mistakes. 6/10 mental game self-rating.
+
+Hypothetical intake answers:
+  Q7  = 3 (moderate self-drive — committed but development
+         partly coach-directed)
+  Q8  = 3 (notices outcomes but no systematic self-review)
+  Q9  = 3 (locked from PPD — moderate reset)
+  Q10 = 2 (struggles in big moments — primary derailer fires
+         under pressure, Week 3 High EI)
+  Q11 = 4 (focus not a primary issue — 35/35 Win days)
+  Q12 = 4 (external distractions not identified as an issue)
+  Q13 = 3 (locked from PPD — somewhat consistent routine)
+  Q14 = 4 (35/35 Win days, very consistent weekly engagement)
+
+Computation:
+
+  Ownership:  round((3+3)/2 * 2) = round(6)  = 6  Moderate
+  Composure:  round((3+2)/2 * 2) = round(5)  = 5  Moderate
+  Focus:      round((4+4)/2 * 2) = round(8)  = 8  High
+  Structure:  round((3+4)/2 * 2) = round(7)  = 7  Moderate
+
+  Total: 6 + 5 + 8 + 7 = 26 -> Developing
+
+Primary Emphasis:
+  Lowest: Composure (5)
+  2nd lowest: Ownership (6), gap = 1, within 2 -> included
+  primary_emphasis = ["Composure", "Ownership"]
+
+Output:
+
+  abi_scores: {
+    ownership: 6,
+    composure: 5,
+    focus: 8,
+    structure: 7,
+    total: 26,
+    band: "Developing",
+    primary_emphasis: ["Composure", "Ownership"],
+    pillar_bands: {
+      ownership: "Moderate",
+      composure: "Moderate",
+      focus: "High",
+      structure: "Moderate"
+    }
+  }
+
+  abi_raw_inputs: {
+    ownership_q1: 3,
+    ownership_q2: 3,
+    composure_q1: 3,
+    composure_q2: 2,
+    focus_q1: 4,
+    focus_q2: 4,
+    structure_q1: 3,
+    structure_q2: 4
+  }
+
+Cross-Validation with PPD (MRL 6, PR 6, CV 4):
+  PPD top problems are Mistake Recovery Lag and Pressure
+  Reactivity — both composure-related. ABI confirms Composure
+  is the lowest pillar. Confidence Volatility at PPD #3
+  reinforces the composure signal. Ownership as 2nd ABI
+  emphasis adds information PPD does not capture — Grace is
+  not yet fully self-directing her development. Focus is High
+  in ABI and Focus Drift scored 0 in PPD — consistent
+  agreement across both systems.
+
+------------------------------------------------------------
+EXAMPLE 2: TUCKER LLOYD
+------------------------------------------------------------
+
+Profile: Football, WVU, Student/Coach role. Primary derailer =
+pre-performance focus on what could go wrong. Hinge habit =
+consistent gym attendance. 8/10 mental game self-rating
+despite clear structural gaps. Pipeline data: missed Sundays,
+stagnant consistency, declining goal specificity.
+
+Hypothetical intake answers:
+  Q7  = 3 (mixed self/environment driven — aspires to become
+         better coach but has structural gaps)
+  Q8  = 2 (declining goal specificity, inconsistent gym, no
+         evidence of systematic performance review)
+  Q9  = 3 (locked from PPD — moderate reset)
+  Q10 = 3 (anticipates negative outcomes but does not collapse
+         — anxious-anticipatory rather than crumbling)
+  Q11 = 3 (not primary issue but busy/stressful weeks as
+         trigger suggests focus wavers under life load)
+  Q12 = 3 (student/coach role with academic demands, life
+         stress affects training consistency)
+  Q13 = 2 (locked from PPD — minimal routine, pipeline
+         confirms missed Sundays, stagnant consistency)
+  Q14 = 2 (2 consecutive missed Sundays, stagnant consistency
+         trend, inconsistent gym attendance)
+
+Computation:
+
+  Ownership:  round((3+2)/2 * 2) = round(5)  = 5  Moderate
+  Composure:  round((3+3)/2 * 2) = round(6)  = 6  Moderate
+  Focus:      round((3+3)/2 * 2) = round(6)  = 6  Moderate
+  Structure:  round((2+2)/2 * 2) = round(4)  = 4  Low
+
+  Total: 5 + 6 + 6 + 4 = 21 -> Developing
+
+Primary Emphasis:
+  Lowest: Structure (4)
+  2nd lowest: Ownership (5), gap = 1, within 2 -> included
+  primary_emphasis = ["Structure", "Ownership"]
+
+Output:
+
+  abi_scores: {
+    ownership: 5,
+    composure: 6,
+    focus: 6,
+    structure: 4,
+    total: 21,
+    band: "Developing",
+    primary_emphasis: ["Structure", "Ownership"],
+    pillar_bands: {
+      ownership: "Moderate",
+      composure: "Moderate",
+      focus: "Moderate",
+      structure: "Low"
+    }
+  }
+
+  abi_raw_inputs: {
+    ownership_q1: 3,
+    ownership_q2: 2,
+    composure_q1: 3,
+    composure_q2: 3,
+    focus_q1: 3,
+    focus_q2: 3,
+    structure_q1: 2,
+    structure_q2: 2
+  }
+
+Cross-Validation with PPD (OL 5, DG 5, CV 3):
+  Divergence is meaningful and expected. PPD captured Tucker's
+  self-perception — he thinks overthinking and discipline are
+  his top problems. ABI captured his self-assessed capability
+  — his actual weakest areas are structure (no routine, missed
+  Sundays) and ownership (low self-review). Tucker ranked
+  Structure Gap at only 2 in PPD (did not select "Lack of
+  routine or structure" in Q15) — classic self-perception
+  blind spot. ABI exposes it: Structure is his only Low-band
+  pillar. His 8/10 mental game self-rating further confirms
+  the over-estimation pattern. This validates the system
+  design: PPD captures "what do you think gets in the way,"
+  ABI captures "how do you rate your actual capabilities."
+  The gap between them is the future PPD Alignment Signal.
+
+------------------------------------------------------------
+EXAMPLE 3: MERGIM BUSHATI
+------------------------------------------------------------
+
+Profile: Wrestling, 184 lbs, Seton Hill. Primary derailer =
+overthinking and self-doubt before/during competitive moments.
+Hinge habit = consistent training routines. 5/10 mental game
+self-rating. 9 out of available struggle categories identified.
+"All-in" commitment. Zero Missed days across 133 program days.
+
+Hypothetical intake answers:
+  Q7  = 4 ("All-in" commitment, identified 9 struggles
+         proactively, zero Missed days, drives own development)
+  Q8  = 3 (reflective and self-aware, RQS reaches 4 at peak
+         but varies, reviews frequently not every time)
+  Q9  = 2 (locked from PPD — difficulty releasing negative
+         outcomes, overthinks during competition)
+  Q10 = 2 (first competition: full derailer activation match 1,
+         pre-performance thought is avoidance-framed, struggles
+         significantly in big moments)
+  Q11 = 3 (focus listed as one of 9 struggles, overthinking
+         disrupts competitive focus, but zero Missed days shows
+         strong training focus)
+  Q12 = 3 (distractions are internal — overthinking, self-doubt
+         — not external, training consistency suggests external
+         distractions manageable)
+  Q13 = 3 (locked from PPD — strong training routines but
+         mental prep routine inconsistent)
+  Q14 = 4 (zero Missed days across 133 program days, consistent
+         training even through two injury events)
+
+Computation:
+
+  Ownership:  round((4+3)/2 * 2) = round(7)  = 7  Moderate
+  Composure:  round((2+2)/2 * 2) = round(4)  = 4  Low
+  Focus:      round((3+3)/2 * 2) = round(6)  = 6  Moderate
+  Structure:  round((3+4)/2 * 2) = round(7)  = 7  Moderate
+
+  Total: 7 + 4 + 6 + 7 = 24 -> Developing
+
+Primary Emphasis:
+  Lowest: Composure (4)
+  2nd lowest: Focus (6), gap = 2, within 2 -> included
+  primary_emphasis = ["Composure", "Focus"]
+
+Output:
+
+  abi_scores: {
+    ownership: 7,
+    composure: 4,
+    focus: 6,
+    structure: 7,
+    total: 24,
+    band: "Developing",
+    primary_emphasis: ["Composure", "Focus"],
+    pillar_bands: {
+      ownership: "Moderate",
+      composure: "Low",
+      focus: "Moderate",
+      structure: "Moderate"
+    }
+  }
+
+  abi_raw_inputs: {
+    ownership_q1: 4,
+    ownership_q2: 3,
+    composure_q1: 2,
+    composure_q2: 2,
+    focus_q1: 3,
+    focus_q2: 3,
+    structure_q1: 3,
+    structure_q2: 4
+  }
+
+Cross-Validation with PPD (OL 7, PR 7, CV 4):
+  PPD top problems are Overthinking Loop and Pressure
+  Reactivity — both composure-related. ABI confirms Composure
+  is the only Low-band pillar. Ownership is the highest ABI
+  pillar (7), consistent with Mergim's all-in commitment,
+  self-awareness, and zero Missed days. Focus as 2nd emphasis
+  adds value: Mergim listed focus as one of his 9 struggles
+  and overthinking disrupts competitive focus, but he did not
+  select "Losing focus or getting distracted" in Q15 (PPD
+  Focus Drift = 0). ABI captures what PPD missed. Structure
+  (7, Moderate) is relatively strong despite Q13=3, because
+  Q14=4 (training rhythm) pulls it up — consistent with zero
+  Missed days. Focus is at the exact boundary of the 2-point
+  threshold (Composure 4, Focus 6), which appropriately
+  reflects that Mergim's competitive focus issues are real
+  but secondary to his composure deficit.
+
+============================================================
+CROSS-ATHLETE SUMMARY
+============================================================
+
+  Athlete          Own  Com  Foc  Str  Total  Band         Primary Emphasis
+  Grace Kindel      6    5    8    7    26    Developing   Composure, Ownership
+  Tucker Lloyd      5    6    6    4    21    Developing   Structure, Ownership
+  Mergim Bushati    7    4    6    7    24    Developing   Composure, Focus
+
+PPD + ABI Consistency:
+
+  Grace:  PPD #1 = Mistake Recovery Lag -> ABI lowest = Composure
+          Consistent. MRL is a composure problem.
+
+  Tucker: PPD #1 = Overthinking Loop -> ABI lowest = Structure
+          Expected divergence. PPD = perceived friction,
+          ABI = self-assessed capability. Tucker thinks
+          overthinking gets in the way but his actual capability
+          gap is structural (Low band). Future PPD Alignment
+          Signal will surface this as a Blind Spot.
+
+  Mergim: PPD #1 = Overthinking Loop -> ABI lowest = Composure
+          Consistent. OL is a composure problem. Ownership
+          highest ABI pillar matches strong self-direction.
+
+All three athletes produce results consistent with known
+profiles and with their PPD results.
+
+============================================================
+DOWNSTREAM CONSUMPTION
+============================================================
+
+The ABI output is consumed by:
+
+1. SNAPSHOT BUILDER (Stage 1):
+   - abi_scores informs Growth Phase classification (soft
+     input — informs but does not constrain)
+   - primary_emphasis identifies initial coaching focus areas
+   - pillar_bands provide structured context for coaching
+     priority narratives
+   - abi_raw_inputs stored for longitudinal comparison
+
+2. INTERPRETATION ENGINE (Stage 2):
+   - abi_scores stored as baseline reference fields in the
+     athlete's first weekly JSON
+   - Enables future longitudinal ABI comparison when re-
+     assessment is implemented
+   - Pillar bands inform baseline context for coaching output
+     personalization
+
+3. COACHING OUTPUT ENGINE (Stage 3):
+   - primary_emphasis informs coaching language selection and
+     thematic emphasis
+   - pillar_bands inform tone calibration (Low band pillar =
+     more foundational coaching language; High band pillar =
+     reinforcement language)
+
+4. FUTURE — LONGITUDINAL ABI:
+   - abi_raw_inputs enables re-administration comparison
+     (same 8 questions re-administered periodically)
+   - Pillar score movement over time becomes a developmental
+     tracking metric
+   - Combined with PPD Alignment Signal for comprehensive
+     perception-vs-reality analysis
+
+============================================================
+END OF SPECIFICATION
+============================================================
