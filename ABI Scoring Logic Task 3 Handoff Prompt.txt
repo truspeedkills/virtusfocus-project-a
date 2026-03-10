@@ -1,0 +1,357 @@
+============================================================
+VIRTUSFOCUS PIPELINE IMPROVEMENT — TASK 3
+ABI SCORING LOGIC (Athlete Baseline Index)
+============================================================
+Created: 2026-03-10
+Purpose: Design the deterministic scoring formula for the
+         Athlete Baseline Index (ABI), using the approved
+         intake form question set from Task 1 and the
+         completed PPD specification from Task 2.
+============================================================
+YOU ARE STARTING A FRESH SESSION.
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+This file is the single source of truth for the entire project.
+Pay particular attention to:
+- "Pipeline Improvement Design — Confirmed Design Decisions"
+  section (all 5 decisions are LOCKED — do not re-debate them)
+- "Pipeline Improvement Task Queue" (21 tasks, you are on Task 3)
+- Session history item 41 (Task 2 completion summary — PPD)
+- Session history item 40 (Task 1 completion summary — Intake Form)
+============================================================
+WHAT HAS ALREADY BEEN DECIDED (DO NOT RE-OPEN)
+============================================================
+These decisions were made collaboratively and confirmed by the
+user. They are constraints, not options.
+
+1. UNIFIED INTAKE FORM — 29 questions, 7 sections, ~5-6 min.
+   The question set is LOCKED. Full spec at:
+   VF_App_Intake_Form_Specification.txt
+
+2. PPD SCORING LOGIC — Task 2 is COMPLETE. Full spec at:
+   VF_PPD_Scoring_Logic.txt
+   - 4-layer deterministic scoring (selection weight, amplifiers,
+     tie-breaker, ranking)
+   - 8 buckets, 6 inputs, 7 design decisions confirmed
+   - 3 worked examples validated (Grace, Tucker, Mergim)
+
+3. 4 ABI PILLARS — These are LOCKED:
+   1. Ownership (0-10)
+   2. Composure (0-10)
+   3. Focus (0-10)
+   4. Structure (0-10)
+   Total: 0-40
+
+4. ABI FORMULA (pre-approved in intake form spec):
+   pillar_score = round((Q_a + Q_b) / 2 * 2)
+   Total ABI = sum of 4 pillar scores
+
+5. ABI BANDS (pre-approved in intake form spec):
+   0-16: Needs Foundation
+   17-28: Developing
+   29-36: Consistent
+   37-40: Leadership
+
+6. PPD AND ABI ARE INDEPENDENT AT INTAKE.
+   Decided in Task 2 (Decision 5): No cross-validation between
+   PPD and ABI at intake. The future PPD Alignment Signal handles
+   self-awareness gap detection longitudinally.
+
+7. ABI BANDS SUPPORT GROWTH PHASE — ABI bands should support,
+   not replace, the Snapshot Builder's Growth Phase classification.
+   Growth Phase is determined behaviorally, not by ABI score alone.
+
+============================================================
+YOUR TASK
+============================================================
+TASK 3: ABI SCORING LOGIC
+
+Deliverable: A complete, deterministic ABI specification with:
+- Pillar calculation formula CONFIRMED (verify the pre-approved
+  formula produces correct range and behavior)
+- Band thresholds CONFIRMED or ADJUSTED for actual score range
+- Primary Emphasis determination rules (ties, multiple low
+  pillars, all-equal, threshold for 1 vs 2 emphases)
+- ABI output format (what gets stored in the Snapshot)
+- Relationship between ABI bands and Growth Phase classification
+- Worked examples using existing athlete data
+- Edge cases
+
+This is a COLLABORATIVE DESIGN SESSION. The user (Coach Arron)
+will be actively involved. Present options, explain trade-offs,
+and wait for approval before locking.
+============================================================
+REFERENCE FILES TO READ
+============================================================
+Read these files IN ORDER before beginning design work:
+
+ESSENTIAL CONTEXT (read first):
+1. D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+   -> Full project context, all design decisions, task queue
+
+THE COMPLETED PPD SPECIFICATION (read for consistency):
+2. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_PPD_Scoring_Logic.txt
+   -> The APPROVED PPD specification. Contains the 3 worked
+      examples with hypothetical athlete intake answers.
+      YOUR ABI WORKED EXAMPLES MUST USE THE SAME HYPOTHETICAL
+      INTAKE ANSWERS for each athlete to ensure cross-validation
+      consistency. The PPD spec documents the hypothetical Q9
+      and Q13 values for each athlete — these are also ABI
+      inputs (Composure Q1 and Structure Q1 respectively).
+
+THE TASK 1 OUTPUT (intake form specification):
+3. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+   -> Every question, response format, routing tags, field names.
+      ABI inputs are Q7-Q14 (Section 2 — Self-Assessment Scales).
+
+THE SOURCE MATERIAL (starting-point logic, not final):
+4. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Suggested Redesigned VirtusFocus Intake Form.txt
+   -> Contains the ORIGINAL ABI scoring logic proposal (after
+      line 540). The formula, bands, and Primary Emphasis concept
+      come from here. Adapt to the actual approved inputs.
+
+EXISTING ATHLETE SNAPSHOTS (for worked examples):
+5. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+6. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+7. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Mergim Bushati\mergim_bushati_athlete_snapshot.txt
+   -> Use these to construct hypothetical intake form answers.
+      CRITICAL: Reuse the Q9 and Q13 values from the PPD worked
+      examples (see PPD spec). Then estimate Q7, Q8, Q10, Q11,
+      Q12, Q14 based on each athlete's known profile.
+
+PIPELINE CONTEXT:
+8. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+   -> Current Snapshot Builder spec — how Growth Phase is
+      currently assigned (narrative/behavioral, not score-based)
+
+DOCUMENTATION TEMPLATE:
+9. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+   -> Documentation style template. The ABI specification should
+      follow this style: purpose, inputs, formula, band thresholds,
+      edge cases, output format, worked examples.
+
+============================================================
+HYPOTHETICAL ATHLETE ANSWERS FROM PPD (Task 2)
+============================================================
+These Q9 and Q13 values were used in the PPD worked examples
+and are LOCKED for ABI consistency:
+
+GRACE KINDEL:
+  Q9  = 3 (moderate reset — claims immediate reset but
+           confidence impact lingers)
+  Q13 = 3 (somewhat consistent routine)
+
+TUCKER LLOYD:
+  Q9  = 3 (moderate — derailer is pre-performance anticipation)
+  Q13 = 2 (minimal routine — pipeline data shows missed Sundays,
+           stagnant consistency)
+
+MERGIM BUSHATI:
+  Q9  = 2 (takes a while — difficulty releasing negative outcomes,
+           overthinks during competition)
+  Q13 = 3 (somewhat — strong training routines but mental prep
+           routine is inconsistent)
+
+For the ABI worked examples, you need to ALSO estimate:
+  Q7  (development driver, Ownership Q1)
+  Q8  (performance review frequency, Ownership Q2)
+  Q10 (big-moment composure, Composure Q2)
+  Q11 (focus maintenance, Focus Q1)
+  Q12 (distraction resistance, Focus Q2)
+  Q14 (training rhythm consistency, Structure Q2)
+
+Base estimates on the detailed athlete profiles in the snapshots
+and the pipeline behavioral data documented in CLAUDE.md.
+============================================================
+ABI DESIGN DECISIONS TO RESOLVE
+============================================================
+The following decisions need to be presented, discussed, and
+confirmed with the user during this session:
+
+1. FORMULA RANGE VERIFICATION
+   The pre-approved formula pillar_score = round((Q_a + Q_b) / 2 * 2)
+   produces a range of 2-10 per pillar (not 0-10):
+     Both 1s: round((1+1)/2 * 2) = round(2) = 2
+     Both 5s: round((5+5)/2 * 2) = round(10) = 10
+   Total range: 8-40 (not 0-40).
+
+   Options:
+   (A) Accept 2-10 range, keep the formula as-is (simplest)
+   (B) Adjust formula to produce true 0-10:
+       pillar = round(((Q_a-1) + (Q_b-1)) / 2 * 2.5)
+       This maps (1,1)=0, (3,3)=5, (5,5)=10
+   (C) Keep the formula, relabel documented range as 2-10
+
+   Note: Option A means the "0-16 Needs Foundation" band can
+   only be reached at total 8-16, so the band effectively
+   starts at 8. This may or may not matter.
+
+2. BAND THRESHOLD ADJUSTMENT
+   With actual range 8-40 (if Option A above), should bands
+   be adjusted?
+   Current bands: 0-16 / 17-28 / 29-36 / 37-40
+   Possible adjusted bands: 8-16 / 17-28 / 29-36 / 37-40
+
+   The question is whether "Needs Foundation" should be 8-16
+   (documenting the real minimum) or if the band definitions
+   work fine as-is since 0-7 is impossible anyway.
+
+3. PRIMARY EMPHASIS RULES
+   "Primary Emphasis = lowest 1-2 dimensions." Needs precision:
+   - Always identify the single lowest pillar?
+   - When do you identify TWO lowest vs ONE?
+   - What point-gap threshold separates 1 emphasis from 2?
+   - What if all 4 pillars are equal?
+   - What if 3 pillars tie for lowest?
+
+   Options for the threshold:
+   (A) Fixed gap: if the 2nd-lowest is within 2 points of the
+       lowest, include both. Otherwise just the lowest.
+   (B) Fixed gap: within 1 point
+   (C) Always identify exactly the 1 lowest, plus any tied
+   (D) Always identify the 2 lowest regardless of gap
+
+4. ABI-GROWTH PHASE RELATIONSHIP
+   How do ABI bands relate to Growth Phase at intake?
+
+   (A) Soft input — ABI band informs the Snapshot Builder's
+       Growth Phase judgment but doesn't constrain it. The
+       agent can classify an athlete as Consistent even with a
+       Developing ABI band if the narrative warrants it.
+   (B) Floor constraint — ABI band sets a ceiling on Growth
+       Phase at intake (e.g., ABI band = "Needs Foundation"
+       caps Growth Phase at Developing). Weekly pipeline data
+       can advance beyond this floor.
+   (C) Independent — Growth Phase purely from narrative, ABI
+       is a separate metric. No interaction.
+
+   Note: The existing pipeline uses deterministic Growth Phase
+   thresholds based on weekly data (VF_Interpretation_JSON_Rules
+   Section 4C). ABI is a one-time intake score, not weekly. The
+   Snapshot Builder assigns initial Growth Phase; Stage 2 then
+   tracks it longitudinally.
+
+5. ABI OUTPUT FORMAT
+   Proposed:
+   abi_scores: {
+     ownership: N,
+     composure: N,
+     focus: N,
+     structure: N,
+     total: N,
+     band: "...",
+     primary_emphasis: ["..."] or ["...", "..."]
+   }
+
+   Questions:
+   - Should coaching_strategy lines be in the ABI output or
+     deferred to the Snapshot Builder?
+   - Should the raw Q values (Q7-Q14) be stored alongside the
+     computed pillar scores for audit trail?
+   - Should individual pillar bands be computed (e.g., Ownership
+     is "Low"/"Moderate"/"High") or just the total ABI band?
+
+6. INDIVIDUAL PILLAR BANDS
+   Should each pillar (0-10 or 2-10) have its own band labels
+   in addition to the total ABI band?
+
+   (A) No individual bands — only total ABI has a band
+   (B) Individual bands: e.g., 2-4 Low / 5-7 Moderate / 8-10 High
+   (C) Individual bands with descriptive labels per pillar
+
+   Individual pillar bands would support: Primary Emphasis
+   determination (lowest band, not just lowest score), dashboard
+   visualization, and downstream coaching personalization.
+
+============================================================
+DESIGN APPROACH
+============================================================
+Recommended workflow:
+
+STEP 1: Present the ABI formula with verification of range
+        and behavior across all possible input combinations.
+STEP 2: Walk through design decisions 1-6 above, one at a time.
+STEP 3: Run worked examples for all 3 athletes using
+        hypothetical Q7-Q14 answers (reusing Q9/Q13 from PPD).
+STEP 4: Cross-validate PPD and ABI results for each athlete —
+        verify they tell a consistent story.
+STEP 5: Get user approval on the complete ABI specification.
+
+============================================================
+CROSS-VALIDATION EXPECTATIONS
+============================================================
+After computing ABI for all 3 athletes, verify:
+
+GRACE KINDEL:
+  PPD Top 3: MRL (6), PR (6), CV (4)
+  Expected ABI: Composure should be lowest pillar (consistent
+  with MRL + PR dominance in PPD). Overall Developing band.
+
+TUCKER LLOYD:
+  PPD Top 3: OL (5), DG (5), CV (3)
+  Expected ABI: Structure should be lowest pillar (consistent
+  with pipeline behavioral data — missed Sundays, inconsistent
+  routines). PPD captured self-perception (Overthinking first);
+  ABI should capture structural gaps that PPD missed (Tucker's
+  self-report PPD ranked Structure Gap at only 2).
+
+MERGIM BUSHATI:
+  PPD Top 3: OL (7), PR (7), CV (4)
+  Expected ABI: Composure should be lowest pillar (consistent
+  with OL + PR dominance). Ownership should be relatively high
+  (strong self-awareness, all-in commitment, consistent training).
+
+If PPD and ABI produce contradictory results for any athlete,
+flag it for discussion. Some divergence is expected (PPD is
+self-reported friction, ABI is self-assessed capability — an
+athlete can report friction in an area where their capability
+is actually moderate). But extreme contradictions (e.g., PPD
+shows no Overthinking but ABI Composure is very low) suggest
+the scoring system needs adjustment.
+
+============================================================
+OUTPUT FORMAT
+============================================================
+When the ABI design is approved, save the specification to:
+
+D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_ABI_Scoring_Logic.txt
+
+This is a NEW file. Follow the documentation style of
+VF_Execution_Signal_Composite_Score_Rules.txt and
+VF_PPD_Scoring_Logic.txt.
+
+Structure should include:
+- Purpose
+- Pillar definitions (what each measures)
+- Inputs (Q7-Q14 with question text and scale anchors)
+- Formula (with step-by-step computation)
+- Band thresholds (total ABI + individual pillar if approved)
+- Primary Emphasis determination rules
+- Growth Phase relationship rules
+- Output format
+- Edge cases
+- Worked examples (all 3 athletes with full computation tables)
+- Cross-validation summary (PPD + ABI consistency check)
+- Downstream consumption (how Snapshot Builder, Stage 2, etc.
+  use ABI data)
+
+After saving, commit the file. Update CLAUDE.md with:
+- Session history item 42
+- Task 3 completion marker in task queue
+- New file location in Key File Locations
+- Updated "What's Next" section
+
+============================================================
+WHAT NOT TO DO
+============================================================
+- Do NOT modify the intake form specification (Task 1 is LOCKED)
+- Do NOT modify the PPD specification (Task 2 is LOCKED)
+- Do NOT define new Athlete Snapshot fields — that is Task 4
+- Do NOT update the Snapshot Builder specification — that is Task 5
+- Do NOT modify any pipeline specifications (v9.4, v1.5, v1.2, v1.1)
+- Do NOT process any athlete data through the pipeline
+- Do NOT finalize ABI without user approval
+- Do NOT re-debate PPD design decisions (all 7 are locked)
+============================================================
+END OF HANDOFF PROMPT
+============================================================
