@@ -1,0 +1,490 @@
+============================================================
+VIRTUSFOCUS PIPELINE IMPROVEMENT — TASK 4
+NEW ATHLETE SNAPSHOT FIELDS
+============================================================
+Created: 2026-03-10
+Purpose: Define the expanded Athlete Snapshot field structure
+         for App athletes, incorporating PPD, ABI, ecosystem,
+         and longitudinal data from the approved intake form.
+============================================================
+
+YOU ARE STARTING A FRESH SESSION.
+
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+This file is the single source of truth for the entire project.
+Pay particular attention to:
+- "Pipeline Improvement Design — Confirmed Design Decisions"
+  section (all 5 decisions are LOCKED — do not re-debate them)
+- "Pipeline Improvement Task Queue" (21 tasks, you are on Task 4)
+- Session history items 40-42 (Tasks 1-3 completion summaries)
+- Key File Locations → Athlete Snapshot Generator section
+
+============================================================
+WHAT HAS ALREADY BEEN DECIDED (DO NOT RE-OPEN)
+============================================================
+
+These decisions were made collaboratively and confirmed by the
+user. They are constraints, not options.
+
+1. UNIFIED INTAKE FORM — 29 questions, 7 sections, ~5-6 min.
+   The question set is LOCKED. Full spec at:
+   VF_App_Intake_Form_Specification.txt
+
+2. PPD SCORING LOGIC — Task 2 is COMPLETE. Full spec at:
+   VF_PPD_Scoring_Logic.txt
+   - 4-layer deterministic scoring (selection weight, amplifiers,
+     tie-breaker, ranking)
+   - 8 buckets, 6 inputs, 7 design decisions confirmed
+   - Output: ppd_top_3, ppd_all_scores, ppd_primary_problem,
+     ppd_tie_breaker_classification
+
+3. ABI SCORING LOGIC — Task 3 is COMPLETE. Full spec at:
+   VF_ABI_Scoring_Logic.txt
+   - 4 pillars (Ownership, Composure, Focus, Structure)
+   - Formula: pillar_score = round((Q_a + Q_b) / 2 * 2)
+   - Range: 2-10 per pillar, 8-40 total
+   - Individual pillar bands: Low 2-4 / Moderate 5-7 / High 8-10
+   - Total ABI bands: 8-16 Needs Foundation / 17-28 Developing /
+     29-36 Consistent / 37-40 Leadership
+   - Primary Emphasis: within 2 points of lowest, max 2,
+     pillar priority (Own > Com > Foc > Str), all-equal = "Balanced"
+   - Growth Phase relationship: SOFT INPUT (informs but does not
+     constrain)
+   - Output: abi_scores + abi_raw_inputs
+   - 6 design decisions confirmed
+
+4. LOCKED BASELINE FIELDS — These 4 fields exist in the current
+   pipeline and do NOT change. New fields sit ALONGSIDE them:
+   - baseline_identity_claim
+   - baseline_hinge_habit
+   - baseline_primary_derailer
+   - baseline_growth_phase
+
+5. DUAL-USE ARCHITECTURE — App athletes get expanded snapshot.
+   Core Foundation athletes keep their existing snapshot format.
+   The Snapshot Builder detects which form was submitted and
+   routes accordingly. Zero degradation for CF athletes.
+
+============================================================
+YOUR TASK
+============================================================
+
+TASK 4: DEFINE NEW ATHLETE SNAPSHOT FIELDS
+
+Deliverable: A complete, approved field list defining WHAT gets
+stored in the expanded Athlete Snapshot for App athletes.
+
+This task defines the DATA STRUCTURE — what fields exist, what
+types they are, where they come from, and how they relate to
+each other. It does NOT write the Snapshot Builder instructions
+(that is Task 5).
+
+Specifically:
+
+A) EXPANDED SECTION STRUCTURE
+   The current snapshot has 9 narrative sections + a structured
+   header block + 5 Baseline Anchors. For App athletes, what
+   does the expanded structure look like? Options include:
+   - Add new sections to the existing 9
+   - Expand existing sections with new sub-sections
+   - Add a structured data block (separate from narrative)
+   - Some combination
+
+B) PPD INTEGRATION
+   The PPD produces 4 output fields (ppd_top_3, ppd_all_scores,
+   ppd_primary_problem, ppd_tie_breaker_classification). How do
+   these integrate into the snapshot? Options:
+   - Stored as structured data in a dedicated PPD section
+   - Woven into narrative sections (e.g., ppd_primary_problem
+     informs Section 4 Known Derailers)
+   - Both: structured data block + narrative integration
+
+C) ABI INTEGRATION
+   The ABI produces 2 output objects (abi_scores, abi_raw_inputs).
+   How do these integrate? Same options as PPD.
+
+D) ECOSYSTEM FIELDS
+   Q22-Q25 produce ecosystem data (parent_involvement_level,
+   home_conversation_pattern, parent_inclusion + parent_email,
+   support_network_primary). Where do these live? Do they
+   become a new section?
+
+E) LONGITUDINAL BASELINE FIELDS
+   4 questions are tagged "Longitudinal" in the routing table
+   (Q6 season_phase, Q9 abi_composure_q1/reset_speed, Q19
+   competitor_aspiration_text, Q27 mental_game_self_rating).
+   These are re-administrable — future comparison with execution
+   data or periodic re-assessment. How are these stored?
+
+F) NEW BEHAVIORAL PATTERN FIELDS
+   Q20 (adversity_response_pattern) and Q21 (adversity_self_
+   description) produce structured behavioral data. Where do
+   these integrate?
+
+G) BASELINE ANCHOR DERIVATION RULES
+   The 4 locked baseline fields must be DERIVED from the new
+   App intake form inputs. Define the derivation logic:
+   - baseline_identity_claim ← Q17 (identity sentence) + Q19
+     (competitor aspiration)
+   - baseline_hinge_habit ← Q7-Q14 scales + Q20 (adversity
+     response) + overall behavioral profile
+   - baseline_primary_derailer ← Q15 (friction selections) +
+     Q16 (trigger context) + Q18 (pressure thought) +
+     ppd_primary_problem
+   - baseline_growth_phase ← behavioral classification from
+     full profile (ABI band as soft input, not deterministic)
+
+============================================================
+CURRENT SNAPSHOT STRUCTURE (FOR REFERENCE)
+============================================================
+
+The current snapshot has two components:
+
+--- STRUCTURED HEADER ---
+VF_PIPELINE_SNAPSHOT
+SNAPSHOT_TYPE: Baseline
+ATHLETE_NAME: [name]
+SPORT: [sport]
+POSITION: [position]
+TEAM: [team]
+YEARS_COMPETING: [years]
+INTAKE_DATE: [date]
+MENTAL_GAME_SELF_RATING: [N]/10
+
+--- 9 NARRATIVE SECTIONS ---
+SECTION 1: Performance Context
+  Sport, position, season phase, competitive level, environment
+SECTION 2: Primary Stated Goals
+  Outcome goals, behavior goals
+SECTION 3: Motivation Drivers
+  Internal drivers, external drivers, identity language
+SECTION 4: Known Derailers
+  Primary derailers, derailer context
+SECTION 5: Confidence Pattern
+  Confidence type, description
+SECTION 6: Identity Friction
+  Friction points between current behavior and desired identity
+SECTION 7: Stress & Trigger Profile
+  Competitive pressure, primary trigger, behavioral response,
+  external stressors
+SECTION 8: Initial Coaching Emphasis
+  Coaching priorities + 5 Baseline Anchors:
+    ANCHOR_IDENTITY_CLAIM
+    ANCHOR_HINGE_HABIT
+    ANCHOR_PRIMARY_DERAILER
+    ANCHOR_WHY_IT_MATTERS
+    ANCHOR_EXACT_PHRASE
+SECTION 9: Initial Growth Phase Classification
+  Growth phase + justification
+
+--- STYLE ---
+300-500 words total. Non-clinical. Performance-based.
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read these files IN ORDER before beginning design work:
+
+ESSENTIAL CONTEXT (read first):
+1. D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+   -> Full project context, all locked decisions, task queue
+
+THE 3 COMPLETED TASK SPECIFICATIONS:
+2. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+   -> Every question, response format, routing tags, field names.
+      The MULTI-SYSTEM ROUTING TABLE (line ~547) and PIPELINE
+      FIELD MAPPING (line ~601) sections are critical — they
+      define exactly what raw data is available for each field.
+
+3. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_PPD_Scoring_Logic.txt
+   -> PPD output format (4 fields), downstream consumption,
+      coaching implication lines per bucket.
+
+4. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_ABI_Scoring_Logic.txt
+   -> ABI output format (abi_scores + abi_raw_inputs), pillar
+      definitions, bands, primary emphasis rules, downstream
+      consumption, Growth Phase soft-input relationship.
+
+CURRENT SNAPSHOT BUILDER:
+5. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+   -> Current 9-section structure, style requirements (300-500
+      words), compliance guardrails, baseline anchor format.
+
+EXISTING ATHLETE SNAPSHOTS (see actual output format):
+6. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+7. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+8. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Mergim Bushati\mergim_bushati_athlete_snapshot.txt
+   -> These show how the current 9-section structure is actually
+      used. Note differences in formatting between Grace (uses
+      structured field labels like CONFIDENCE_TYPE, ANCHOR_*)
+      and Tucker/Mergim (more narrative). The expanded structure
+      should standardize the format.
+
+ORIGINAL IDEAS (starting point, not final):
+9. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Suggested Redesigned VirtusFocus Intake Form.txt
+   -> The original ABI output format proposal includes coaching
+      strategy lines and a structured output format. Some of
+      this was deferred to the Snapshot Builder (Task 5), but
+      the format ideas are useful reference.
+
+10. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\High-Value Intake Additions.txt
+    -> Contains original ideas for adversity response and
+       support network questions that are now in the approved
+       intake form (Q20, Q21, Q25).
+
+DOWNSTREAM CONSUMERS (understand what reads the snapshot):
+11. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+    -> The Interpretation Engine reads the snapshot as baseline
+       reference. See Section 1 (baseline fields) and Section 5
+       (growth phase thresholds) for how existing snapshot data
+       feeds into weekly interpretation.
+
+12. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+    -> Stage 2 reads baseline_identity_claim, baseline_hinge_habit,
+       baseline_primary_derailer, baseline_growth_phase from the
+       snapshot. Any new fields need to be accessible to Stage 2.
+
+============================================================
+DATA AVAILABLE FROM THE INTAKE FORM
+============================================================
+
+The App intake form produces 29 raw field values. These are
+grouped by routing destination:
+
+--- SNAPSHOT-ONLY FIELDS (28 of 29 questions) ---
+All questions except Q24 (parent inclusion) route to Snapshot.
+
+--- PPD-DERIVED FIELDS (computed from 6 questions) ---
+ppd_top_3:                   array of 3 ranked bucket objects
+ppd_all_scores:              8 bucket scores (including zeros)
+ppd_primary_problem:         string (bucket name of #1)
+ppd_tie_breaker_classification: string (pressure thought category)
+
+--- ABI-DERIVED FIELDS (computed from 8 questions) ---
+abi_scores: {
+  ownership: 2-10,
+  composure: 2-10,
+  focus: 2-10,
+  structure: 2-10,
+  total: 8-40,
+  band: "Needs Foundation | Developing | Consistent | Leadership",
+  primary_emphasis: ["pillar1"] or ["pillar1", "pillar2"] or ["Balanced"],
+  pillar_bands: {
+    ownership: "Low | Moderate | High",
+    composure: "Low | Moderate | High",
+    focus: "Low | Moderate | High",
+    structure: "Low | Moderate | High"
+  }
+}
+abi_raw_inputs: {
+  ownership_q1: 1-5,  ownership_q2: 1-5,
+  composure_q1: 1-5,  composure_q2: 1-5,
+  focus_q1: 1-5,      focus_q2: 1-5,
+  structure_q1: 1-5,  structure_q2: 1-5
+}
+
+--- ECOSYSTEM FIELDS (from 4 questions) ---
+parent_involvement_level:    enum (4 values)
+home_conversation_pattern:   enum (4 values)
+parent_inclusion:            boolean
+parent_email:                string (conditional)
+support_network_primary:     enum (5 values)
+
+--- LONGITUDINAL FIELDS (re-administrable baselines) ---
+season_phase:                enum (4 values)    [Q6]
+abi_composure_q1:            integer 1-5        [Q9 — reset speed]
+competitor_aspiration_text:  string             [Q19]
+mental_game_self_rating:     integer 1-10       [Q27]
+
+--- BEHAVIORAL PATTERN FIELDS ---
+adversity_response_pattern:     enum (4 values)  [Q20]
+adversity_self_description:     enum (4 values)  [Q21]
+
+--- IDENTITY & NARRATIVE FIELDS ---
+identity_sentence_completion:   string           [Q17]
+pressure_thought_text:          string           [Q18]
+competitor_aspiration_text:     string           [Q19]
+success_vision_text:            string           [Q26]
+additional_context_text:        string (optional) [Q29]
+
+--- CONTEXT FIELDS ---
+sport:                string   [Q1]
+position:             string   [Q2]
+team:                 string   [Q3]
+competitive_level:    enum     [Q4]
+years_competing:      enum     [Q5]
+season_phase:         enum     [Q6]
+commitment_level:     enum     [Q28]
+
+============================================================
+KEY DESIGN QUESTIONS TO RESOLVE
+============================================================
+
+1. STRUCTURED DATA vs NARRATIVE vs BOTH?
+   The current snapshot is primarily narrative (9 sections of
+   prose text). PPD and ABI are structured data objects (JSON-
+   like). Should the expanded snapshot:
+   (A) Keep everything narrative — PPD and ABI are woven into
+       prose sections only (human-readable, loses structured
+       data fidelity)
+   (B) Add a structured data block alongside narrative — PPD
+       and ABI are stored as structured objects, plus
+       narrative sections reference them (both machine-readable
+       and human-readable)
+   (C) Hybrid — some fields stored as structured data (PPD
+       scores, ABI scores), others woven into narrative
+       (coaching emphasis, identity friction)
+
+   CONTEXT: Stage 2 (Interpretation Engine) needs to READ
+   the snapshot fields. Currently it reads the 4 baseline
+   anchors as structured fields from the snapshot text file.
+   PPD and ABI are data objects — storing them as narrative
+   only would require Stage 2 to parse prose, which goes
+   against the pipeline's deterministic architecture.
+
+2. SECTION COUNT AND STRUCTURE
+   Current: 9 sections in 300-500 words.
+   The App intake form produces significantly more structured
+   data. How should the section structure expand?
+   Consider:
+   - Word count may need to increase (300-500 was designed for
+     the old CF form with limited structured data)
+   - New sections could be added (PPD Summary, ABI Summary,
+     Ecosystem Profile)
+   - Existing sections could be enriched (Section 7 Stress &
+     Trigger Profile now has structured adversity data)
+   - Structured data blocks don't count toward narrative word
+     count
+
+3. BASELINE ANCHOR DERIVATION
+   The 4 locked baseline fields currently come from agent
+   synthesis of free-text intake answers. With the App form,
+   they have much richer inputs:
+   - baseline_identity_claim: Q17 + Q19 (was: agent-inferred
+     from free-text goals/struggles)
+   - baseline_hinge_habit: Q7-Q14 + Q20 + ABI (was: agent-
+     inferred from narrative)
+   - baseline_primary_derailer: PPD #1 + Q15 + Q16 + Q18
+     (was: agent-inferred from struggles/thoughts)
+   - baseline_growth_phase: Full profile + ABI soft input
+     (was: agent-inferred from narrative)
+
+   Should the derivation rules be deterministic or agent-
+   synthesized? The PPD and ABI are deterministic, but the
+   baseline anchors are narrative fields that require
+   synthesis (e.g., identity_claim is a sentence, not a
+   score).
+
+4. ECOSYSTEM SECTION
+   4 ecosystem questions (Q22-Q25) produce structured data
+   about the family/support environment. This data feeds
+   Idea 4 (Parent Output + Dashboard, Tasks 16-21). Should
+   this be:
+   (A) A new dedicated section (Section 10: Ecosystem Profile)
+   (B) Woven into existing Section 7 (Stress & Trigger
+       Profile) since ecosystem is a stress/support context
+   (C) Both: structured data block for pipeline consumption +
+       narrative integration in Section 7
+
+5. SNAPSHOT FORMAT STANDARDIZATION
+   Grace's snapshot uses structured field labels (e.g.,
+   CONFIDENCE_TYPE:, ANCHOR_IDENTITY_CLAIM:) while Tucker's
+   and Mergim's use more narrative prose. The expanded
+   snapshot should standardize. Which format?
+   (A) Grace-style structured labels (more machine-parseable)
+   (B) Prose narrative (more human-readable)
+   (C) Structured header/data blocks + narrative sections
+       (machine-parseable data + human-readable context)
+
+============================================================
+DESIGN CONSTRAINTS
+============================================================
+
+1. The 4 baseline fields are LOCKED. They exist in the same
+   format as today. New fields sit alongside them.
+
+2. Core Foundation athletes keep their existing 9-section
+   snapshot. The expanded structure is App-athlete only.
+
+3. The snapshot must be readable by Stage 2 (Interpretation
+   Engine). Any structured data fields must be parseable from
+   the snapshot text file format.
+
+4. PPD and ABI scoring logic are LOCKED. Task 4 defines where
+   the outputs LIVE in the snapshot, not how they're computed.
+
+5. Compliance guardrails apply. No clinical language, no
+   therapeutic framing, no mental health diagnoses.
+
+6. The snapshot is a BASELINE document. It captures the
+   athlete at intake. It is not updated weekly (weekly data
+   is tracked in Interpretation JSONs by Stage 2).
+
+============================================================
+DESIGN APPROACH
+============================================================
+
+Recommended workflow:
+
+STEP 1: Present the proposed expanded section structure for
+        App athletes (how many sections, what each contains).
+
+STEP 2: Walk through each new or expanded section, defining
+        the fields, their types, and their sources.
+
+STEP 3: Define the structured data block format (if approved)
+        for PPD and ABI integration.
+
+STEP 4: Define baseline anchor derivation rules.
+
+STEP 5: Address ecosystem, longitudinal, and behavioral
+        pattern field placement.
+
+STEP 6: Get user approval on the complete field list.
+
+This is a COLLABORATIVE DESIGN SESSION. The user (Coach Arron)
+will be actively involved. Present options, explain trade-offs,
+and wait for approval before locking.
+
+============================================================
+OUTPUT FORMAT
+============================================================
+
+When the field design is approved, the deliverable is:
+- An approved field list document (could be a section added to
+  CLAUDE.md, or a standalone reference file)
+- Updated CLAUDE.md with Task 4 completion
+
+This task does NOT produce a new versioned Snapshot Builder
+specification — that is Task 5. Task 4 defines WHAT fields
+exist. Task 5 defines HOW the Snapshot Builder produces them.
+
+After completing Task 4, update CLAUDE.md with:
+- Session history item (next number)
+- Task 4 completion marker in task queue
+- Any new file locations
+- Updated "What's Next" section
+
+Commit all changes before closing.
+
+============================================================
+WHAT NOT TO DO
+============================================================
+
+- Do NOT modify the intake form specification (Task 1 is LOCKED)
+- Do NOT modify the PPD specification (Task 2 is LOCKED)
+- Do NOT modify the ABI specification (Task 3 is LOCKED)
+- Do NOT write the updated Snapshot Builder instructions — that
+  is Task 5
+- Do NOT modify any pipeline specifications (v9.4, v1.5, v1.2,
+  v1.1)
+- Do NOT process any athlete data through the pipeline
+- Do NOT re-debate any locked design decisions from Tasks 1-3
+- Do NOT finalize the field list without user approval
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================

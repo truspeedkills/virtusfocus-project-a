@@ -185,6 +185,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Intake Form Design (Task 1): `Intake Form Design Task 1 Handoff Prompt.txt` — handoff for fresh session to design the unified App intake form with derived PPD + ABI
 - PPD + ABI Scoring Logic (Tasks 2-3): `PPD ABI Scoring Logic Task 2-3 Handoff Prompt.txt` — handoff for fresh session to design PPD scoring formula and ABI pillar calculations
 - ABI Scoring Logic (Task 3): `ABI Scoring Logic Task 3 Handoff Prompt.txt` — handoff for fresh session to design ABI pillar calculations, with PPD cross-validation, locked Q9/Q13 values from PPD worked examples, and 6 design decisions to resolve
+- Snapshot Fields (Task 4): `Snapshot Fields Task 4 Handoff Prompt.txt` — handoff for fresh session to define expanded Athlete Snapshot field structure for App athletes, integrating PPD, ABI, ecosystem, longitudinal, and behavioral pattern data alongside locked baseline fields
 - Task-specific handoff prompts: `Agents - Generators\Interpretation\Source Files\` (Tasks 8-13)
 
 ### Versioning Rules (established this session)
