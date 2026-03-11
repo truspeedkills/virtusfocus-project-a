@@ -1,0 +1,916 @@
+============================================================
+VIRTUSFOCUS — APP ATHLETE SNAPSHOT FIELD SPECIFICATION
+============================================================
+Version: 1.0
+Created: 2026-03-11
+Status: APPROVED
+Task: Pipeline Improvement Design — Task 4
+Dependencies: Task 1 (Intake Form), Task 2 (PPD), Task 3 (ABI)
+Next: Task 5 (Snapshot Builder Instructions)
+============================================================
+
+PURPOSE
+-------
+This document defines the complete field structure for the
+expanded Athlete Snapshot produced for App athletes. It
+specifies WHAT fields exist, their types, sources, and
+relationships. It does NOT define HOW the Snapshot Builder
+produces them (that is Task 5).
+
+The expanded snapshot uses a HYBRID format:
+- Structured Data Block: machine-parseable fields for
+  pipeline consumption (PPD, ABI, ecosystem, behavioral
+  patterns, longitudinal baselines)
+- Narrative Sections: agent-synthesized coaching context
+  (10 sections, 400-650 words total)
+- Baseline Anchors: locked format (5 fields)
+
+============================================================
+DUAL-MODE ARCHITECTURE
+============================================================
+
+INPUT_SOURCE: app
+  → Expanded snapshot (this specification)
+  → Structured header + structured data block + 10 narrative
+    sections + 5 baseline anchors
+  → 400-650 word narrative target
+
+INPUT_SOURCE: core_foundation
+  → Existing snapshot format (unchanged)
+  → Structured header + 9 narrative sections + 5 baseline
+    anchors
+  → 300-500 word narrative target
+  → No structured data block
+  → No PPD, ABI, ecosystem, behavioral pattern, or
+    longitudinal baseline fields
+
+Stage 2 reads INPUT_SOURCE to determine which fields are
+available. Core Foundation athletes receive identical quality
+output to what they receive today. Zero degradation.
+
+============================================================
+SECTION 1: STRUCTURED HEADER
+============================================================
+
+Format: Key-value pairs, one per line. Machine-parseable.
+
+VF_PIPELINE_SNAPSHOT
+SNAPSHOT_TYPE: Baseline
+INPUT_SOURCE: app | core_foundation
+ATHLETE_NAME: [string]
+SPORT: [string]                         ← Q1
+POSITION: [string]                      ← Q2
+TEAM: [string]                          ← Q3
+COMPETITIVE_LEVEL: [enum]               ← Q4 (NEW)
+  Values: Middle School | High School | Club/Travel |
+          College | Professional/Semi-Pro | Other
+YEARS_COMPETING: [enum]                 ← Q5
+  Values: Less than 1 year | 1-3 years | 4-6 years |
+          7-10 years | More than 10 years
+SEASON_PHASE: [enum]                    ← Q6 (NEW)
+  Values: Off-Season | Pre-Season | In-Season | Post-Season
+INTAKE_DATE: [YYYY-MM-DD]
+MENTAL_GAME_SELF_RATING: [integer 1-10] ← Q27
+COMMITMENT_LEVEL: [enum]                ← Q28 (NEW)
+  Values: All in | Willing to try | Curious but unsure |
+          Someone suggested I do this
+
+Fields marked (NEW) are App-athlete only. Core Foundation
+snapshots retain the existing header format.
+
+============================================================
+SECTION 2: STRUCTURED DATA BLOCK
+============================================================
+
+App athletes only. Core Foundation snapshots do not include
+this block. Stage 2 checks INPUT_SOURCE before attempting
+to read these fields.
+
+Format: Labeled nested objects with consistent indentation.
+All field names use snake_case.
+
+--------------------------------------------------------------
+2A. PPD_SCORES
+--------------------------------------------------------------
+
+Source: Computed by PPD scoring logic (Task 2 specification)
+        from Q9, Q13, Q15, Q16, Q18, Q23.
+
+PPD_SCORES:
+  ppd_primary_problem: [string]
+    Type: Bucket name (one of 8)
+    Values: Overthinking Loop | Confidence Volatility |
+            Mistake Recovery Lag | Focus Drift |
+            Pressure Reactivity | Discipline Gap |
+            Structure Gap | Ecosystem Friction
+    Source: Rank 1 bucket from ppd_top_3
+
+  ppd_tie_breaker_classification: [string]
+    Type: Pressure thought category
+    Values: Avoidance | Proving | Obligation | Approach |
+            [dual combinations, e.g., "Avoidance+Obligation"]
+    Source: Agent-classified from Q18 pressure_thought_text
+
+  ppd_top_3: [array of 3 objects]
+    Each object:
+      rank: [integer 1-3]
+      bucket: [string — bucket name]
+      score: [integer — total after all 4 scoring layers]
+      trigger_context: [string | array of strings | null]
+        Source: Q16 trigger_context_selections
+      coaching_implication: [string — static per-bucket line]
+        Source: VF_PPD_Scoring_Logic.txt coaching implication
+                lines (one per bucket, deterministic)
+
+  ppd_all_scores: [object with 8 key-value pairs]
+    overthinking_loop: [integer >= 0]
+    confidence_volatility: [integer >= 0]
+    mistake_recovery_lag: [integer >= 0]
+    focus_drift: [integer >= 0]
+    pressure_reactivity: [integer >= 0]
+    discipline_gap: [integer >= 0]
+    structure_gap: [integer >= 0]
+    ecosystem_friction: [integer >= 0]
+    Source: All 8 bucket final scores (including zeros)
+    Purpose: Future longitudinal PPD Alignment Signal
+             comparison. Stored at intake for baseline.
+
+--------------------------------------------------------------
+2B. ABI_SCORES
+--------------------------------------------------------------
+
+Source: Computed by ABI scoring logic (Task 3 specification)
+        from Q7-Q14.
+
+ABI_SCORES:
+  ownership: [integer 2-10]
+  composure: [integer 2-10]
+  focus: [integer 2-10]
+  structure: [integer 2-10]
+  total: [integer 8-40]
+  band: [enum]
+    Values: Needs Foundation (8-16) | Developing (17-28) |
+            Consistent (29-36) | Leadership (37-40)
+  primary_emphasis: [array of strings]
+    Values: 1-2 pillar names, or ["Balanced"]
+    Rules: Within 2 points of lowest pillar, max 2,
+           priority order Ownership > Composure > Focus >
+           Structure. All equal = ["Balanced"].
+  pillar_bands: [object]
+    ownership: [enum] Low (2-4) | Moderate (5-7) | High (8-10)
+    composure: [enum] Low (2-4) | Moderate (5-7) | High (8-10)
+    focus: [enum] Low (2-4) | Moderate (5-7) | High (8-10)
+    structure: [enum] Low (2-4) | Moderate (5-7) | High (8-10)
+
+--------------------------------------------------------------
+2C. ABI_RAW_INPUTS
+--------------------------------------------------------------
+
+Source: Raw 1-5 scale responses from Q7-Q14.
+Purpose: Audit trail and future longitudinal re-administration
+         comparison.
+
+ABI_RAW_INPUTS:
+  ownership_q1: [integer 1-5]       ← Q7
+  ownership_q2: [integer 1-5]       ← Q8
+  composure_q1: [integer 1-5]       ← Q9 (also PPD amplifier)
+  composure_q2: [integer 1-5]       ← Q10
+  focus_q1: [integer 1-5]           ← Q11
+  focus_q2: [integer 1-5]           ← Q12
+  structure_q1: [integer 1-5]       ← Q13 (also PPD amplifier)
+  structure_q2: [integer 1-5]       ← Q14
+
+--------------------------------------------------------------
+2D. ECOSYSTEM
+--------------------------------------------------------------
+
+Source: Q22-Q25.
+
+ECOSYSTEM:
+  parent_involvement_level: [enum]   ← Q22
+    Values: Very involved | Supportive and involved |
+            Aware but hands-off | Not involved
+  home_conversation_pattern: [enum]  ← Q23
+    Values: Supportive listening | Analysis and advice
+            after games | Pressure to perform |
+            We don't discuss sports performance at home
+  support_network_primary: [enum]    ← Q25
+    Values: Parents | Coaches | Teammates | Friends
+            outside sport | I handle things on my own
+  parent_inclusion: [boolean]        ← Q24
+  parent_email: [string | null]      ← Q24 (conditional)
+    Present only when parent_inclusion = true.
+
+--------------------------------------------------------------
+2E. BEHAVIORAL_PATTERNS
+--------------------------------------------------------------
+
+Source: Q20-Q21.
+
+BEHAVIORAL_PATTERNS:
+  adversity_response_pattern: [enum]    ← Q20
+    Values: Push harder | Pull back and protect |
+            Freeze and overthink | Reset and refocus
+  adversity_self_description: [enum]    ← Q21
+    Values: I get frustrated but keep going |
+            I shut down for a while |
+            I talk myself through it |
+            I look to others for support
+
+--------------------------------------------------------------
+2F. LONGITUDINAL_BASELINES
+--------------------------------------------------------------
+
+Source: Intake-time values from re-administrable questions.
+Purpose: Baseline reference for future comparison against
+         execution data or periodic re-assessment.
+
+LONGITUDINAL_BASELINES:
+  season_phase: [enum]                  ← Q6
+    Values: Off-Season | Pre-Season | In-Season | Post-Season
+  reset_speed_baseline: [integer 1-5]  ← Q9
+    Note: Q9 raw value. Also stored in ABI_RAW_INPUTS as
+    composure_q1 and used as PPD amplifier. Stored here
+    separately as the explicit longitudinal baseline for
+    reset speed tracking.
+  competitor_aspiration_text: [string]  ← Q19
+    Verbatim response. Also used in narrative Section 6
+    and ANCHOR_EXACT_PHRASE candidate pool.
+  mental_game_self_rating: [integer 1-10] ← Q27
+    Note: Also in structured header. Stored here as the
+    explicit longitudinal baseline for self-rating tracking.
+
+============================================================
+SECTION 3: NARRATIVE SECTIONS
+============================================================
+
+10 sections. App athletes only — Core Foundation athletes
+retain existing 9-section structure.
+
+Total narrative word target: 400-650 words.
+Structured data block does NOT count toward word target.
+Compliance: Non-clinical, performance-based language only.
+
+--------------------------------------------------------------
+3.1  SECTION 1: Performance Context
+--------------------------------------------------------------
+Word target: 20-30
+Purpose: Contextual framing of the athlete's competitive
+         environment.
+Sources: Q1-Q6, Q5 (years competing)
+Content: Synthesized sentence(s) framing sport, level, season
+         phase, and developmental context. Lean — the
+         structured header carries the raw data values.
+         Section 1 provides the narrative "who is this athlete
+         in context" framing.
+Enrichment from App form: competitive_level (Q4) and
+         season_phase (Q6) are now explicit structured inputs
+         rather than agent-inferred from free text.
+
+--------------------------------------------------------------
+3.2  SECTION 2: Primary Stated Goals
+--------------------------------------------------------------
+Word target: 30-50
+Purpose: Outcome goals and behavior goals.
+Sources: Q26 success_vision_text, Q17 identity_sentence_
+         completion, Q19 competitor_aspiration_text,
+         Q28 commitment_level
+Content: Synthesized outcome vs. behavior goal separation.
+         Q26 provides the outcome goal. Q17 provides the
+         behavioral/identity goal. Q28 calibrates goal-to-
+         commitment alignment (high commitment + ambitious
+         goals = aligned; low commitment + ambitious goals =
+         flag for coaching).
+Enrichment: Richer inputs produce more specific goal
+         synthesis. Commitment alignment is new signal.
+
+--------------------------------------------------------------
+3.3  SECTION 3: Motivation Drivers
+--------------------------------------------------------------
+Word target: 40-60
+Purpose: Internal drivers, external drivers, identity
+         language, motivation framing.
+Sources: Q17 identity_sentence_completion, Q19 competitor_
+         aspiration_text, ppd_tie_breaker_classification,
+         Q26 success_vision_text
+Content: Approach vs. avoidance motivation framing informed
+         by ppd_tie_breaker_classification. Identity language
+         from Q17 verbatim. The PPD classification (Avoidance/
+         Proving/Obligation/Approach) directly informs whether
+         the athlete's motivation is approach-framed or
+         avoidance-framed. Referenced, not reproduced — the
+         narrative synthesizes what it means for coaching.
+Enrichment: PPD tie-breaker classification provides
+         deterministic motivation framing that was previously
+         agent-inferred.
+
+--------------------------------------------------------------
+3.4  SECTION 4: Known Derailers
+--------------------------------------------------------------
+Word target: 70-100
+Purpose: Primary derailer identification with trigger context
+         and behavioral pattern.
+Sources: ppd_primary_problem, ppd_top_3 (coaching
+         implications), Q15 performance_friction_selections,
+         Q16 trigger_context_selections, Q18 pressure_thought_
+         text, ppd_tie_breaker_classification,
+         adversity_response_pattern (Q20)
+Content: HIGHEST-IMPACT narrative section. Synthesizes the
+         PPD-backed derailer hierarchy into a coaching story.
+         Names ppd_primary_problem as the top derailer.
+         Connects trigger context (Q16) to pressure thought
+         (Q18) to behavioral response (Q20). PPD #2 and #3
+         provide secondary/tertiary derailer context. Coaching
+         implications from PPD spec inform the framing.
+         PPD scores themselves live in the structured block —
+         Section 4 tells the coaching story of what the
+         derailer pattern looks like in this athlete's life.
+Enrichment: PPD-backed deterministic derailer ranking
+         replaces agent-inferred derailer identification.
+         This is the single largest quality improvement —
+         eliminates the highest-risk inference point.
+
+--------------------------------------------------------------
+3.5  SECTION 5: Confidence Pattern
+--------------------------------------------------------------
+Word target: 20-40
+Purpose: Confidence type and behavioral description.
+Sources: Q27 mental_game_self_rating, ABI composure pillar
+         score + band, Q9 reset_speed_baseline, Q10
+         (composure Q2 — confidence after setbacks)
+Content: Connects self-assessed confidence (Q27) to
+         composure behavioral indicators (ABI composure
+         pillar, reset speed). Identifies confidence type:
+         stable, outcome-reactive, preparation-based, or
+         recovery-dependent. The structured block carries the
+         scores — Section 5 synthesizes the confidence pattern.
+Enrichment: ABI composure score and reset speed provide
+         structured backing for confidence classification.
+
+--------------------------------------------------------------
+3.6  SECTION 6: Identity & Pressure Profile
+--------------------------------------------------------------
+Word target: 60-90
+Purpose: Identity-pressure gap analysis. Who the athlete
+         wants to be vs. who they become under pressure.
+Sources: Q17 identity_sentence_completion, Q18 pressure_
+         thought_text, Q19 competitor_aspiration_text,
+         Q21 adversity_self_description, ppd_tie_breaker_
+         classification
+Content: HIGH-IMPACT synthesis section. Q17 = aspirational
+         identity ("I want to be an athlete who..."). Q18 =
+         pressure self ("What goes through your mind before
+         a big moment?"). Q21 = adversity self-description.
+         The gap between Q17 and Q18 is the identity-pressure
+         gap — the distance between who they want to be and
+         who they default to under stress. ppd_tie_breaker
+         classification contextualizes the pressure
+         orientation (Avoidance/Proving/Obligation/Approach).
+         This section cannot be captured structurally — it
+         requires narrative synthesis of the gap.
+Enrichment: Q17, Q18, Q21 are new App-only questions that
+         produce identity and pressure data the CF form
+         never collected. This section is entirely new
+         coaching intelligence.
+
+--------------------------------------------------------------
+3.7  SECTION 7: Stress & Trigger Profile
+--------------------------------------------------------------
+Word target: 25-40
+Purpose: Competitive pressure sources, trigger situations,
+         and behavioral response patterns.
+Sources: Q16 trigger_context_selections, Q20 adversity_
+         response_pattern, Q9 reset_speed_baseline,
+         ppd_top_3 trigger_context fields
+Content: Structured trigger situations (Q16) connected to
+         behavioral response (Q20) and recovery speed (Q9).
+         The structured block carries the enum values —
+         Section 7 synthesizes the trigger-response-recovery
+         sequence for this athlete.
+Enrichment: Structured trigger and response enums replace
+         agent-inferred patterns. Recovery speed is now a
+         1-5 scale baseline.
+
+--------------------------------------------------------------
+3.8  SECTION 8: Ecosystem Profile (NEW)
+--------------------------------------------------------------
+Word target: 20-35
+Purpose: Family and support environment as coaching context.
+Sources: Q22 parent_involvement_level, Q23 home_conversation_
+         pattern, Q25 support_network_primary
+Content: Factual, non-judgmental description of the athlete's
+         support ecosystem. Who surrounds the athlete, how
+         performance is discussed at home, who the athlete
+         turns to. This section describes, not evaluates.
+         Feeds Idea 4 (Parent Output + Dashboard) directly.
+Compliance: No clinical framing of family dynamics. No
+         judgment of parenting styles. Performance context
+         only. "The home environment centers on supportive
+         listening" not "The parent relationship is healthy."
+Enrichment: Entirely new section. CF form collected parent
+         involvement (Q20/Q21) but did not produce a
+         dedicated ecosystem profile.
+
+--------------------------------------------------------------
+3.9  SECTION 9: Initial Coaching Emphasis
+--------------------------------------------------------------
+Word target: 70-100
+Purpose: Prioritized coaching direction integrating PPD +
+         ABI + full profile. Plus 5 Baseline Anchors.
+Sources: ppd_top_3 (coaching implications), ABI primary_
+         emphasis, ABI pillar_bands, adversity_response_
+         pattern (Q20), full profile synthesis
+Content: HIGH-IMPACT synthesis section. This is where PPD
+         and ABI converge into actionable coaching direction.
+         PPD top 3 coaching implications inform derailer-
+         first priorities. ABI primary_emphasis identifies
+         skill-building focus areas. The Snapshot Builder
+         synthesizes: derailer priorities (what to address) +
+         pillar priorities (where to build capacity) +
+         behavioral approach (how to coach this athlete based
+         on adversity response and motivation framing).
+
+         Followed by 5 Baseline Anchors (locked format):
+         ANCHOR_IDENTITY_CLAIM: [sentence]
+         ANCHOR_HINGE_HABIT: [sentence]
+         ANCHOR_PRIMARY_DERAILER: [sentence]
+         ANCHOR_WHY_IT_MATTERS: [sentence]
+         ANCHOR_EXACT_PHRASE: [verbatim quote]
+
+         See Section 5 of this document for anchor derivation
+         rules.
+Enrichment: PPD + ABI provide deterministic backing for
+         coaching emphasis. Currently agent-inferred from
+         narrative. Quality increase in coaching accuracy
+         from Week 1.
+
+--------------------------------------------------------------
+3.10 SECTION 10: Initial Growth Phase Classification
+--------------------------------------------------------------
+Word target: 20-30
+Purpose: Growth phase assignment with justification.
+Sources: Full behavioral profile, ABI band (soft input),
+         ABI total, commitment_level (Q28)
+Content: One phase classification (Emerging / Developing /
+         Consistent / Leadership) + brief justification.
+         ABI band is referenced as supporting context, not
+         as deterministic input. Justification explicitly
+         acknowledges ABI alignment or divergence.
+Enrichment: ABI band as soft input provides quantitative
+         reference point. Divergence rule (see Section 5
+         of this document) ensures transparency when ABI
+         band and growth phase classification don't align.
+
+============================================================
+SECTION 4: BASELINE ANCHORS (Locked Format)
+============================================================
+
+5 fields. Identical format for App and Core Foundation
+athletes. The fields themselves are locked — derivation
+inputs change (richer for App), but the output format and
+field names do not.
+
+ANCHOR_IDENTITY_CLAIM: [one sentence]
+ANCHOR_HINGE_HABIT: [one sentence]
+ANCHOR_PRIMARY_DERAILER: [one sentence]
+ANCHOR_WHY_IT_MATTERS: [one sentence]
+ANCHOR_EXACT_PHRASE: [verbatim athlete quote]
+
+============================================================
+SECTION 5: BASELINE ANCHOR DERIVATION RULES (App Athletes)
+============================================================
+
+For App athletes, the baseline anchors are agent-synthesized
+with structured guardrails. The PPD and ABI do the
+deterministic heavy lifting; the agent synthesizes narrative
+anchors that must be CONSISTENT with those deterministic
+outputs. The agent cannot override PPD/ABI rankings.
+
+Core Foundation athletes: anchors derived from free-text
+intake answers (existing behavior, unchanged).
+
+--------------------------------------------------------------
+5A. ANCHOR_IDENTITY_CLAIM
+--------------------------------------------------------------
+What: One sentence capturing who the athlete is trying to
+      become.
+
+Inputs (priority order):
+  1. Q17 identity_sentence_completion (PRIMARY)
+     — Verbatim identity language. This IS the identity claim.
+  2. Q19 competitor_aspiration_text (SECONDARY)
+     — Aspirational framing context.
+  3. Q26 success_vision_text (TERTIARY)
+     — Outcome context if Q17 is vague.
+
+Derivation rule:
+  The Snapshot Builder synthesizes a single sentence from Q17
+  as the primary source. Q17 is the athlete's own words
+  completing "I want to be an athlete who..." The agent's
+  job is to clean it into a clear, coachable sentence while
+  preserving the athlete's language. Q19 and Q26 provide
+  framing context if Q17 is vague or incomplete.
+
+Guardrail:
+  The anchor MUST contain language traceable to Q17. The agent
+  cannot invent an identity claim the athlete did not express.
+
+Example:
+  Q17: "stays confident no matter what happens in a game"
+  Q19: "I want to compete without second-guessing myself"
+  → ANCHOR_IDENTITY_CLAIM: "Wants to be an athlete who stays
+    confident regardless of in-game outcomes"
+
+--------------------------------------------------------------
+5B. ANCHOR_HINGE_HABIT
+--------------------------------------------------------------
+What: One sentence naming the single behavioral habit most
+      likely to sustain or derail progress.
+
+Inputs (priority order):
+  1. ABI primary_emphasis (PRIMARY)
+     — Identifies weakest pillar area.
+  2. ABI pillar_bands (CONTEXT)
+     — Shows relative strength/weakness across all 4 pillars.
+  3. Q20 adversity_response_pattern (SECONDARY)
+     — Behavioral tendency under stress.
+  4. Q7-Q14 raw scale responses (TERTIARY)
+     — Specific behavioral indicators within pillars.
+
+Derivation rule:
+  The Snapshot Builder identifies the hinge habit from the
+  intersection of ABI emphasis (where the athlete is weakest)
+  and adversity response (what they do under stress). The
+  hinge habit is the behavioral pattern that, if strengthened,
+  would most improve the athlete's weakest area. The agent
+  connects the quantitative signal (ABI emphasis) to the
+  behavioral signal (adversity response) to name a specific
+  habit.
+
+Guardrail:
+  The hinge habit MUST relate to the ABI primary_emphasis
+  pillar(s). If emphasis is Composure, the hinge habit must
+  be a composure-related behavior. The agent cannot name a
+  hinge habit in a pillar where the athlete is already High.
+
+Example:
+  ABI emphasis: ["Composure", "Ownership"]
+  Q20 adversity response: "Push harder"
+  Q9 reset speed: 2 (slow reset)
+  → ANCHOR_HINGE_HABIT: "Immediate reset and refocus after
+    mistakes rather than pushing through with escalating
+    intensity"
+
+--------------------------------------------------------------
+5C. ANCHOR_PRIMARY_DERAILER
+--------------------------------------------------------------
+What: One sentence naming the primary pattern that disrupts
+      performance.
+
+Inputs (priority order):
+  1. ppd_primary_problem (PRIMARY)
+     — Deterministic top derailer from PPD scoring.
+  2. PPD #1 coaching_implication (CONTEXT)
+     — Coaching framing for the derailer.
+  3. Q18 pressure_thought_text (SECONDARY)
+     — Verbatim pressure language.
+  4. Q16 trigger_context_selections (TERTIARY)
+     — Where the derailer activates.
+  5. ppd_tie_breaker_classification (CONTEXT)
+     — Pressure orientation.
+
+Derivation rule:
+  The Snapshot Builder names the derailer using
+  ppd_primary_problem as the anchor concept, enriched with
+  Q18 pressure language and Q16 trigger context. The PPD has
+  already done the deterministic ranking — the agent's job is
+  to translate the bucket label + trigger + pressure thought
+  into a coachable sentence.
+
+Guardrail:
+  The anchor MUST name a pattern consistent with
+  ppd_primary_problem. If PPD says "Mistake Recovery Lag,"
+  the derailer cannot be about focus drift or discipline.
+  The agent translates the bucket into natural coaching
+  language but cannot override the PPD ranking.
+
+Example:
+  ppd_primary_problem: "Mistake Recovery Lag"
+  Q18: "What if I mess up again?"
+  Q16: "During competition"
+  → ANCHOR_PRIMARY_DERAILER: "Loss of confidence following
+    errors or perceived failure, most activated during
+    competition"
+
+--------------------------------------------------------------
+5D. ANCHOR_WHY_IT_MATTERS
+--------------------------------------------------------------
+What: One sentence explaining why the primary derailer
+      matters for this specific athlete.
+
+Inputs (priority order):
+  1. ANCHOR_PRIMARY_DERAILER (PRIMARY)
+     — The derailer itself.
+  2. ANCHOR_IDENTITY_CLAIM (CONTEXT)
+     — What the derailer threatens.
+  3. PPD #1 coaching_implication (CONTEXT)
+     — Coaching relevance.
+
+Derivation rule:
+  The agent connects the derailer to the identity claim —
+  explaining why this specific derailer threatens this
+  specific athlete's stated identity. "This matters because
+  [derailer] directly undermines [identity claim]."
+
+Guardrail:
+  Must reference the relationship between derailer and
+  identity. Cannot introduce new concerns not grounded in
+  the intake data.
+
+Example:
+  → ANCHOR_WHY_IT_MATTERS: "Post-error confidence loss
+    directly undermines her stated goal of staying confident
+    regardless of outcomes — the derailer attacks the exact
+    identity she is building"
+
+--------------------------------------------------------------
+5E. ANCHOR_EXACT_PHRASE
+--------------------------------------------------------------
+What: One verbatim quote from the athlete's intake responses.
+
+Inputs (priority order):
+  1. Q17 identity_sentence_completion (PRIMARY candidate)
+  2. Q18 pressure_thought_text (SECONDARY candidate)
+  3. Q19 competitor_aspiration_text (TERTIARY candidate)
+  4. Q26 success_vision_text (QUATERNARY candidate)
+
+Derivation rule:
+  The Snapshot Builder selects the single most coaching-
+  relevant verbatim phrase from the athlete's free-text
+  responses. Priority: identity language (Q17) > pressure
+  language (Q18) > aspiration language (Q19) > vision
+  language (Q26). The selected phrase must be reproduced
+  exactly as written — no editing, no paraphrasing.
+
+Guardrail:
+  MUST be verbatim. No agent modification. Priority order
+  is a guideline, not deterministic — if Q18 contains more
+  coaching-relevant language than Q17, the agent can select
+  Q18, but must document the override reason in an inline
+  note.
+
+Example:
+  Q17: "stays confident no matter what"
+  Q18: "What if I mess up and can't recover?"
+  → ANCHOR_EXACT_PHRASE: "stays confident no matter what"
+    (Q17 selected — directly captures identity aspiration)
+
+--------------------------------------------------------------
+5F. BASELINE_GROWTH_PHASE
+--------------------------------------------------------------
+What: One of 4 phases.
+Values: Emerging | Developing | Consistent | Leadership
+
+Inputs:
+  1. ABI band (SOFT INPUT — informs, does not determine)
+  2. ABI total score (CONTEXT)
+  3. Full behavioral profile (Q7-Q14 scales, Q20, Q21)
+  4. commitment_level (Q28)
+  5. Overall intake narrative assessment
+
+Derivation rule:
+  The Snapshot Builder classifies the growth phase from the
+  full profile. ABI band is a soft input — an athlete in ABI
+  "Needs Foundation" band is very unlikely to be Consistent
+  or Leadership, but it is not deterministically impossible.
+  Growth phase measures behavioral execution readiness, not
+  self-assessed capability.
+
+Divergence rule:
+  If ABI band and growth phase classification diverge by more
+  than one level, the Snapshot Builder must include an
+  explicit justification note in Section 10.
+
+  Aligned (no note needed):
+    ABI Developing + Growth Phase Developing
+    ABI Consistent + Growth Phase Consistent
+
+  One-level divergence (brief note):
+    ABI Consistent + Growth Phase Developing
+      → "ABI self-assessment at Consistent level; Growth
+         Phase classified Developing pending execution
+         demonstration"
+    ABI Developing + Growth Phase Emerging
+      → Brief note on why lower classification is warranted
+
+  Two-level divergence (explicit justification required):
+    ABI Needs Foundation + Growth Phase Consistent
+      → Rare. Requires detailed justification.
+
+  Expected default:
+    Most intake athletes will be classified as Developing.
+    This is expected and correct.
+
+============================================================
+SECTION 6: DOWNSTREAM CONSUMPTION REFERENCE
+============================================================
+
+How each pipeline stage reads the expanded snapshot:
+
+--------------------------------------------------------------
+6A. Stage 2 — Interpretation Engine (v9.4)
+--------------------------------------------------------------
+
+Reads from STRUCTURED HEADER:
+  - ATHLETE_NAME, SPORT, POSITION, TEAM
+  - COMPETITIVE_LEVEL, YEARS_COMPETING, SEASON_PHASE
+  - MENTAL_GAME_SELF_RATING
+  - INPUT_SOURCE (dual-mode detection)
+
+Reads from STRUCTURED DATA BLOCK (App athletes only):
+  - PPD_SCORES: ppd_primary_problem, ppd_top_3, ppd_all_scores
+    → Stored as baseline reference for alignment checks
+    → ppd_primary_problem informs derailer activation detection
+    → ppd_all_scores stored for future longitudinal PPD
+      Alignment Signal comparison
+  - ABI_SCORES: full object
+    → Stored as baseline reference for longitudinal comparison
+    → primary_emphasis informs coaching personalization
+  - ABI_RAW_INPUTS: full object
+    → Stored for future re-administration comparison
+  - ECOSYSTEM: parent_involvement_level, home_conversation_
+    pattern, support_network_primary
+    → Context for ecosystem-related interpretation
+  - BEHAVIORAL_PATTERNS: adversity_response_pattern,
+    adversity_self_description
+    → Context for behavioral pattern recognition
+  - LONGITUDINAL_BASELINES: all 4 fields
+    → Baseline values for future comparison
+
+Reads from BASELINE ANCHORS (all athletes):
+  - ANCHOR_IDENTITY_CLAIM → alignment_status checks
+  - ANCHOR_HINGE_HABIT → hinge habit reinforcement tracking
+  - ANCHOR_PRIMARY_DERAILER → derailer activation detection
+  - ANCHOR_WHY_IT_MATTERS → coaching context
+  - ANCHOR_EXACT_PHRASE → athlete voice reference
+
+Reads from NARRATIVE SECTIONS:
+  - Full narrative as contextual reference for weekly
+    interpretation (same as today, enriched content)
+
+--------------------------------------------------------------
+6B. Stage 3 — Coaching Output Engine (v1.5)
+--------------------------------------------------------------
+
+Does NOT read the snapshot directly. Reads the Interpretation
+JSON, which carries baseline_profile fields from the snapshot.
+
+Indirect consumption via Stage 2 baseline_profile:
+  - baseline_identity_claim → identity threading in coaching
+  - baseline_hinge_habit → micro-commitment grounding
+  - baseline_primary_derailer → derailer address in coaching
+  - ppd_top_3 coaching implications → coaching theme selection
+  - ABI primary_emphasis → pillar-based coaching calibration
+
+--------------------------------------------------------------
+6C. Stage 4 — Coach Insights Engine (v1.2)
+--------------------------------------------------------------
+
+Does NOT read the snapshot directly. Reads the Interpretation
+JSON.
+
+Indirect consumption via Stage 2 baseline_profile:
+  - ABI primary_emphasis → coaching staff context
+  - Ecosystem fields → parent messaging calibration (Idea 4)
+  - Growth phase → developmental context for coach reports
+
+--------------------------------------------------------------
+6D. Stage 5 — Editorial Audit (v1.1)
+--------------------------------------------------------------
+
+Reads the Interpretation JSON + Coaching Output. Does not
+read the snapshot directly.
+
+Indirect consumption:
+  - Verifies coaching output consistency with baseline anchors
+    carried in the Interpretation JSON
+
+============================================================
+SECTION 7: COMPLETE FIELD INVENTORY
+============================================================
+
+Total field count for App athlete snapshot:
+
+STRUCTURED HEADER: 12 fields (4 new for App)
+  VF_PIPELINE_SNAPSHOT, SNAPSHOT_TYPE, INPUT_SOURCE,
+  ATHLETE_NAME, SPORT, POSITION, TEAM, COMPETITIVE_LEVEL,
+  YEARS_COMPETING, SEASON_PHASE, INTAKE_DATE,
+  MENTAL_GAME_SELF_RATING, COMMITMENT_LEVEL
+
+STRUCTURED DATA BLOCK: 6 sub-blocks, 40+ fields
+  PPD_SCORES: 4 top-level fields (ppd_primary_problem,
+    ppd_tie_breaker_classification, ppd_top_3, ppd_all_scores)
+    ppd_top_3 contains 3 objects × 5 fields = 15 sub-fields
+    ppd_all_scores contains 8 key-value pairs
+  ABI_SCORES: 8 top-level fields (4 pillars, total, band,
+    primary_emphasis, pillar_bands with 4 sub-fields)
+  ABI_RAW_INPUTS: 8 fields
+  ECOSYSTEM: 5 fields
+  BEHAVIORAL_PATTERNS: 2 fields
+  LONGITUDINAL_BASELINES: 4 fields
+
+NARRATIVE SECTIONS: 10 sections (400-650 words total)
+
+BASELINE ANCHORS: 5 fields (locked format)
+
+============================================================
+SECTION 8: FORMAT STANDARDIZATION
+============================================================
+
+The expanded snapshot standardizes on Option C from Design
+Question 5: Structured header/data blocks + narrative
+sections.
+
+Formatting rules:
+1. STRUCTURED HEADER: ALL_CAPS key names, colon-separated,
+   one per line. Values as specified enum or type.
+   Example: COMPETITIVE_LEVEL: College
+
+2. STRUCTURED DATA BLOCK: Block name in ALL_CAPS, sub-fields
+   indented 2 spaces, nested objects indented 4 spaces.
+   Example:
+     ABI_SCORES:
+       ownership: 6
+       composure: 5
+       pillar_bands:
+         ownership: Moderate
+         composure: Moderate
+
+3. NARRATIVE SECTIONS: "SECTION N: Title" header, followed
+   by prose paragraphs. No inline field labels within prose.
+   The narrative synthesizes — it does not list field values.
+
+4. BASELINE ANCHORS: ANCHOR_[NAME]: prefix, followed by
+   one sentence or verbatim quote. Same format as Grace
+   Kindel's existing snapshot.
+
+5. SECTION SEPARATORS: Single blank line between sections.
+   No decorative separators within the snapshot.
+
+6. All snapshots use this standardized format. Historical
+   snapshots (Grace, Tucker, Mergim) are Core Foundation
+   format and are not retroactively updated.
+
+============================================================
+SECTION 9: DESIGN DECISIONS LOG
+============================================================
+
+Decisions confirmed during Task 4 collaborative design:
+
+1. HYBRID FORMAT — Structured data block (machine-parseable)
+   + narrative sections (human-readable synthesis). Structured
+   data does not count toward narrative word target.
+
+2. 10 NARRATIVE SECTIONS — Existing Sections 1-5, 7 retained
+   and enriched. Section 6 renamed "Identity & Pressure
+   Profile." Section 8 "Ecosystem Profile" is new. Old
+   Sections 8-9 shift to 9-10.
+
+3. WORD TARGET 400-650 — Increased from 300-500 to
+   accommodate richer synthesis from 29-question intake form.
+   Redistributed to concentrate depth on high-impact sections
+   (4: Known Derailers, 6: Identity & Pressure, 9: Coaching
+   Emphasis) where narrative synthesis drives downstream
+   quality.
+
+4. STRUCTURED DATA BLOCK INCLUDES ppd_all_scores — All 8
+   bucket scores stored (including zeros) for future
+   longitudinal PPD Alignment Signal comparison. Compact and
+   avoids fragmenting data into separate audit files.
+
+5. ECOSYSTEM AS STANDALONE SECTION — Section 8 dedicated to
+   ecosystem profile rather than folding into Section 7
+   (Stress & Trigger). Distinct data category, clean routing
+   for Idea 4 (Parent Output).
+
+6. AGENT-SYNTHESIZED ANCHORS WITH STRUCTURED GUARDRAILS —
+   Baseline anchors are narrative sentences requiring agent
+   synthesis, but constrained by deterministic PPD/ABI
+   outputs. Agent cannot override PPD ranking for derailer,
+   must relate hinge habit to ABI emphasis pillar, must
+   ground identity claim in Q17 language.
+
+7. DUAL-MODE DETECTION via INPUT_SOURCE — App vs Core
+   Foundation. Same pattern as Execution Signal upgrade.
+   Core Foundation snapshots unchanged. Zero degradation.
+
+8. WORD BUDGET REDISTRIBUTION — High-impact synthesis
+   sections (4, 6, 9) get 60-100 words each. Data-
+   reformatting sections (1, 5, 7, 8, 10) get 20-40 words
+   each. Quality increase concentrated where narrative
+   synthesis adds downstream value beyond the structured
+   data block.
+
+============================================================
+END OF SPECIFICATION
+============================================================
