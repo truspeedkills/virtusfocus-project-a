@@ -1,0 +1,524 @@
+============================================================
+VIRTUSFOCUS PIPELINE IMPROVEMENT — TASK 5
+UPDATED SNAPSHOT BUILDER INSTRUCTIONS
+============================================================
+Created: 2026-03-11
+Purpose: Write the updated Snapshot Builder specification
+         that produces the expanded App athlete snapshot
+         defined in Task 4.
+============================================================
+YOU ARE STARTING A FRESH SESSION.
+Before doing ANYTHING, read the CLAUDE.md file at:
+D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+This file is the single source of truth for the entire project.
+Pay particular attention to:
+- "Pipeline Improvement Design — Confirmed Design Decisions"
+  section (all decisions are LOCKED — do not re-debate them)
+- "Pipeline Improvement Task Queue" (21 tasks, you are on Task 5)
+- Session history items 40-43 (Tasks 1-4 completion summaries)
+- Key File Locations → Athlete Snapshot Generator section
+============================================================
+WHAT HAS ALREADY BEEN DECIDED (DO NOT RE-OPEN)
+============================================================
+These decisions were made collaboratively and confirmed by the
+user. They are constraints, not options.
+
+1. UNIFIED INTAKE FORM — 29 questions, 7 sections, ~5-6 min.
+   The question set is LOCKED. Full spec at:
+   Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+
+2. PPD SCORING LOGIC — Task 2 is COMPLETE. Full spec at:
+   Agents - Generators\Athlete Snapshot Generator\VF_PPD_Scoring_Logic.txt
+   - 4-layer deterministic scoring (selection weight, amplifiers,
+     tie-breaker, ranking)
+   - 8 buckets, 6 inputs, 7 design decisions confirmed
+   - Output: ppd_top_3, ppd_all_scores, ppd_primary_problem,
+     ppd_tie_breaker_classification
+
+3. ABI SCORING LOGIC — Task 3 is COMPLETE. Full spec at:
+   Agents - Generators\Athlete Snapshot Generator\VF_ABI_Scoring_Logic.txt
+   - 4 pillars (Ownership, Composure, Focus, Structure)
+   - Formula: pillar_score = round((Q_a + Q_b) / 2 * 2)
+   - Range: 2-10 per pillar, 8-40 total
+   - Individual pillar bands: Low 2-4 / Moderate 5-7 / High 8-10
+   - Total ABI bands: 8-16 Needs Foundation / 17-28 Developing /
+     29-36 Consistent / 37-40 Leadership
+   - Primary Emphasis: within 2 points of lowest, max 2,
+     pillar priority (Own > Com > Foc > Str), all-equal = "Balanced"
+   - Growth Phase relationship: SOFT INPUT
+   - Output: abi_scores + abi_raw_inputs
+
+4. EXPANDED SNAPSHOT FIELDS — Task 4 is COMPLETE. Full spec at:
+   Agents - Generators\Athlete Snapshot Generator\VF_App_Athlete_Snapshot_Fields.txt
+   This is the PRIMARY INPUT for Task 5. It defines:
+   - Hybrid format: structured data block + 10 narrative sections
+   - Structured header (12 fields, 4 new for App)
+   - Structured data block (6 sub-blocks, 40+ fields):
+     PPD_SCORES, ABI_SCORES, ABI_RAW_INPUTS, ECOSYSTEM,
+     BEHAVIORAL_PATTERNS, LONGITUDINAL_BASELINES
+   - 10 narrative sections with word budget:
+     Sec 1: Performance Context (20-30 words)
+     Sec 2: Primary Stated Goals (30-50)
+     Sec 3: Motivation Drivers (40-60)
+     Sec 4: Known Derailers (70-100) — HIGH IMPACT
+     Sec 5: Confidence Pattern (20-40)
+     Sec 6: Identity & Pressure Profile (60-90) — HIGH IMPACT
+     Sec 7: Stress & Trigger Profile (25-40)
+     Sec 8: Ecosystem Profile (20-35) — NEW SECTION
+     Sec 9: Initial Coaching Emphasis (70-100) — HIGH IMPACT
+     Sec 10: Initial Growth Phase (20-30)
+     Total: 400-650 words
+   - 5 baseline anchors (locked format) with derivation rules
+   - Dual-mode: INPUT_SOURCE app vs core_foundation
+   - Downstream consumption reference for all 4 pipeline stages
+
+5. LOCKED BASELINE FIELDS — These 5 anchor fields exist in the
+   same format as today. New fields sit ALONGSIDE them:
+   - ANCHOR_IDENTITY_CLAIM
+   - ANCHOR_HINGE_HABIT
+   - ANCHOR_PRIMARY_DERAILER
+   - ANCHOR_WHY_IT_MATTERS
+   - ANCHOR_EXACT_PHRASE
+
+6. DUAL-USE ARCHITECTURE — App athletes get expanded snapshot.
+   Core Foundation athletes keep their existing snapshot format.
+   The Snapshot Builder detects which form was submitted and
+   routes accordingly. Zero degradation for CF athletes.
+
+============================================================
+YOUR TASK
+============================================================
+TASK 5: WRITE UPDATED SNAPSHOT BUILDER INSTRUCTIONS
+
+Deliverable: A new versioned file:
+  SOP_Snapshot_Builder_Project_Instructions_v2.0.txt
+
+This is an IMPLEMENTATION task, not a design task. The field
+structure (Task 4), scoring logic (Tasks 2-3), and intake form
+(Task 1) are all locked. Task 5 writes the production
+specification that tells the Snapshot Builder agent HOW to
+produce the expanded snapshot.
+
+Specifically, the new spec must cover:
+
+--------------------------------------------------------------
+A) DUAL-MODE DETECTION
+--------------------------------------------------------------
+The Snapshot Builder must detect whether it received:
+- App intake form data (29 questions, structured + free-text)
+- Core Foundation intake form data (22 questions, mostly
+  free-text)
+
+Detection method: The App intake form includes structured
+fields that the CF form does not (e.g., ABI scale responses
+Q7-Q14, performance_friction_selections Q15, ecosystem
+enums Q22-Q25). If these fields are present, INPUT_SOURCE =
+"app". If absent, INPUT_SOURCE = "core_foundation".
+
+When INPUT_SOURCE = "core_foundation":
+- Produce the existing 9-section snapshot (current spec)
+- No structured data block
+- No PPD/ABI computation
+- Identical quality to current output
+- Skip all App-specific processing steps
+
+When INPUT_SOURCE = "app":
+- Produce the expanded snapshot (Task 4 spec)
+- Compute PPD scores (Task 2 logic)
+- Compute ABI scores (Task 3 logic)
+- Populate structured data block
+- Write 10 narrative sections
+- Derive baseline anchors using structured guardrails
+
+--------------------------------------------------------------
+B) PPD COMPUTATION STEPS
+--------------------------------------------------------------
+The Snapshot Builder must execute the PPD scoring logic as
+defined in VF_PPD_Scoring_Logic.txt. This includes:
+
+Step 1: Selection Weight — +3 per Q15 friction selection
+        (1-3 selections)
+Step 2: Amplifiers — Apply Q9, Q13, Q16, Q23 amplifiers
+        to their mapped buckets per the amplifier tables
+Step 3: Tie-Breaker — Classify Q18 pressure_thought_text
+        into Avoidance/Proving/Obligation/Approach (agent
+        judgment, dual classification allowed)
+Step 4: Final Ranking — Sort by score descending, apply
+        deterministic bucket priority (1-8) for ties
+
+Output: ppd_top_3 (with coaching implications from spec),
+        ppd_all_scores, ppd_primary_problem,
+        ppd_tie_breaker_classification
+
+The spec must include the complete amplifier mapping tables
+from VF_PPD_Scoring_Logic.txt so the agent has them inline.
+
+--------------------------------------------------------------
+C) ABI COMPUTATION STEPS
+--------------------------------------------------------------
+The Snapshot Builder must execute the ABI scoring logic as
+defined in VF_ABI_Scoring_Logic.txt. This includes:
+
+Step 1: Per-pillar calculation
+        pillar_score = round((Q_a + Q_b) / 2 * 2)
+Step 2: Total ABI = sum of 4 pillar scores
+Step 3: Band classification (8-16/17-28/29-36/37-40)
+Step 4: Individual pillar bands (2-4/5-7/8-10)
+Step 5: Primary Emphasis determination (within 2 points of
+        lowest, max 2, pillar priority order)
+
+Output: abi_scores object, abi_raw_inputs object
+
+--------------------------------------------------------------
+D) STRUCTURED DATA BLOCK POPULATION
+--------------------------------------------------------------
+After PPD and ABI computation, populate all 6 sub-blocks of
+the structured data block:
+
+1. PPD_SCORES — from PPD computation output
+2. ABI_SCORES — from ABI computation output
+3. ABI_RAW_INPUTS — direct from Q7-Q14 raw responses
+4. ECOSYSTEM — direct from Q22-Q25 responses
+5. BEHAVIORAL_PATTERNS — direct from Q20-Q21 responses
+6. LONGITUDINAL_BASELINES — from Q6, Q9, Q19, Q27
+
+The spec must define the exact formatting rules (indentation,
+key naming, value representation) per the format
+standardization rules in VF_App_Athlete_Snapshot_Fields.txt
+Section 8.
+
+--------------------------------------------------------------
+E) NARRATIVE SECTION WRITING RULES
+--------------------------------------------------------------
+For each of the 10 narrative sections, the spec must define:
+
+1. What inputs feed the section (from raw form data +
+   computed PPD/ABI + structured data block)
+2. What the section must contain (required content elements)
+3. What the section must NOT contain (prohibited content,
+   compliance guardrails)
+4. Word target for the section
+5. Quality standard (what "good" looks like for this section)
+
+Pay special attention to the 3 HIGH-IMPACT sections:
+- Section 4 (Known Derailers): PPD synthesis — this is where
+  the PPD ranking becomes a coaching story
+- Section 6 (Identity & Pressure Profile): Identity-pressure
+  gap analysis — synthesis that can't be captured structurally
+- Section 9 (Initial Coaching Emphasis): PPD + ABI convergence
+  into actionable coaching direction
+
+The spec should include brief examples or templates for each
+section to guide the agent, similar to how the current
+Snapshot Builder spec provides format guidance.
+
+--------------------------------------------------------------
+F) BASELINE ANCHOR DERIVATION
+--------------------------------------------------------------
+The spec must include the complete derivation rules from
+VF_App_Athlete_Snapshot_Fields.txt Section 5:
+
+- ANCHOR_IDENTITY_CLAIM: Q17-sourced, guardrail on traceable
+  language
+- ANCHOR_HINGE_HABIT: ABI emphasis-constrained, adversity
+  response intersection
+- ANCHOR_PRIMARY_DERAILER: PPD-backed, agent cannot override
+  ranking
+- ANCHOR_WHY_IT_MATTERS: Derailer-to-identity connection
+- ANCHOR_EXACT_PHRASE: Verbatim from Q17/Q18/Q19/Q26,
+  priority order
+- BASELINE_GROWTH_PHASE: Full profile synthesis, ABI soft
+  input, divergence rule
+
+Each derivation rule includes: inputs (priority order),
+derivation logic, guardrails, and example.
+
+--------------------------------------------------------------
+G) STRUCTURED HEADER POPULATION
+--------------------------------------------------------------
+Define how each header field is populated:
+- Which fields come directly from form responses
+- Which fields are computed (INPUT_SOURCE detection)
+- Which fields are static (SNAPSHOT_TYPE: Baseline)
+- Formatting rules (enum values exactly as specified)
+
+--------------------------------------------------------------
+H) COMPLIANCE GUARDRAILS
+--------------------------------------------------------------
+Carry forward all existing compliance rules from the current
+Snapshot Builder spec, plus:
+- No clinical language (same prohibition as all pipeline stages)
+- No therapeutic framing
+- Ecosystem section: factual, non-judgmental (describe, don't
+  evaluate family dynamics)
+- PPD/ABI scores in structured block only — narrative sections
+  synthesize the coaching meaning, not the numbers
+- Raw scale values (1-5) never appear in narrative sections
+- Bucket names (e.g., "Mistake Recovery Lag") may appear in
+  Section 4 and Section 9 as coaching context, but are
+  translated into natural coaching language
+
+--------------------------------------------------------------
+I) VALIDATION CHECKS
+--------------------------------------------------------------
+Define a validation checklist the agent runs before finalizing
+the snapshot:
+
+1. INPUT_SOURCE matches form data (App fields present → app)
+2. PPD computation verified (scores sum correctly, ranking
+   matches scores, coaching implications match buckets)
+3. ABI computation verified (pillar scores match formula,
+   total matches sum, bands match thresholds, emphasis
+   matches rules)
+4. All structured data block fields populated (no missing
+   fields for App athletes)
+5. All 10 narrative sections present with content
+6. Word count within 400-650 target
+7. All 5 baseline anchors present
+8. ANCHOR_PRIMARY_DERAILER consistent with ppd_primary_problem
+9. ANCHOR_HINGE_HABIT relates to ABI primary_emphasis pillar
+10. ANCHOR_IDENTITY_CLAIM contains Q17-traceable language
+11. No clinical language in any section
+12. Growth phase divergence note included if ABI band differs
+    by 2+ levels
+
+--------------------------------------------------------------
+J) OUTPUT FILE FORMAT AND NAMING
+--------------------------------------------------------------
+Define the complete output file structure:
+- File naming convention
+- File location: Athlete Data\[Athlete Name]\
+- Complete section ordering (header → data block → narrative
+  sections → anchors)
+- Section separator formatting
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+Read these files IN ORDER before beginning the spec:
+
+PRIMARY INPUT (Task 4 — defines WHAT the spec must produce):
+1. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_App_Athlete_Snapshot_Fields.txt
+   -> Complete field structure, all 6 data sub-blocks, 10
+      narrative sections with word targets, baseline anchor
+      derivation rules, format standardization, downstream
+      consumption reference. THIS IS THE BLUEPRINT.
+
+SCORING LOGIC (must be embedded in the spec):
+2. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_PPD_Scoring_Logic.txt
+   -> Complete PPD computation steps, amplifier tables, bucket
+      definitions, coaching implications, edge cases, worked
+      examples. The spec must include enough detail for the
+      agent to execute PPD scoring without consulting this file.
+
+3. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_ABI_Scoring_Logic.txt
+   -> Complete ABI computation steps, pillar definitions, band
+      thresholds, emphasis rules, worked examples. Same
+      requirement — spec must be self-contained.
+
+INTAKE FORM (defines the raw input):
+4. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+   -> All 29 questions, response formats, field names, routing
+      tags. The Multi-System Routing Table and Pipeline Field
+      Mapping sections map every question to its destinations.
+
+CURRENT SPEC (baseline to expand from):
+5. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+   -> Current 9-section spec. The new spec should preserve the
+      structure and style of this document where applicable.
+      Core Foundation processing path should remain identical
+      to this spec. Compliance guardrails carry forward.
+
+EXISTING SNAPSHOTS (see actual output format):
+6. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+7. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+8. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Mergim Bushati\mergim_bushati_athlete_snapshot.txt
+   -> These are Core Foundation snapshots. They show the
+      current quality standard and format. The App snapshot
+      should match or exceed this quality level while adding
+      the structured data block and expanded sections.
+
+DOWNSTREAM CONSUMERS (understand what reads the snapshot):
+9. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+   -> Stage 2 reads baseline fields from the snapshot. Section
+      1 (baseline fields) and Section 5 (growth phase) show
+      how snapshot data feeds weekly interpretation. New
+      structured data block fields must be accessible.
+
+10. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+    -> Stage 2 v9.4 reads baseline_identity_claim, baseline_
+       hinge_habit, baseline_primary_derailer, baseline_
+       growth_phase. Also will read PPD/ABI structured fields
+       from expanded snapshots.
+
+ORIGINAL IDEAS (reference for coaching strategy lines):
+11. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\Potential Additions and Improvements\Suggested Redesigned VirtusFocus Intake Form.txt
+    -> Contains original ABI coaching strategy line format.
+       Task 3 deferred strategy lines to the Snapshot Builder
+       — Section 9 (Initial Coaching Emphasis) is where
+       PPD + ABI converge into coaching strategy. This file
+       shows the original vision for how that looks.
+
+============================================================
+DESIGN CONSTRAINTS
+============================================================
+
+1. The field structure is LOCKED (Task 4). Do not modify field
+   names, types, section structure, or word targets. Task 5
+   implements what Task 4 defined.
+
+2. PPD and ABI scoring logic are LOCKED (Tasks 2-3). Embed the
+   computation steps in the spec but do not modify the formulas,
+   thresholds, or rules.
+
+3. The intake form is LOCKED (Task 1). Do not modify question
+   numbers, field names, or response formats.
+
+4. Core Foundation athletes must receive IDENTICAL output to
+   what they receive today. The CF processing path in the new
+   spec must match the current spec exactly.
+
+5. Compliance guardrails are NON-NEGOTIABLE. No clinical
+   language, no therapeutic framing, no mental health
+   diagnoses. Performance and behavioral language only.
+
+6. The spec must be SELF-CONTAINED. The Snapshot Builder agent
+   should be able to produce a complete snapshot from this
+   single document + the raw intake form data. It should not
+   need to consult VF_PPD_Scoring_Logic.txt or
+   VF_ABI_Scoring_Logic.txt separately — all necessary
+   computation rules are embedded in the spec.
+
+7. Follow the project's VERSIONING RULES: new versioned file
+   (SOP_Snapshot_Builder_Project_Instructions_v2.0.txt),
+   current version preserved on disk for audit trail.
+
+============================================================
+SPEC STRUCTURE RECOMMENDATION
+============================================================
+
+Suggested outline for the new spec document:
+
+SECTION 1: Purpose and Scope
+SECTION 2: Authoritative Sources (hierarchy)
+SECTION 3: Input Detection (dual-mode: App vs CF)
+SECTION 4: Core Foundation Processing Path
+  (identical to current spec — preserved for CF athletes)
+SECTION 5: App Processing Path — Overview
+  (step-by-step workflow for App athletes)
+SECTION 6: PPD Scoring Logic
+  (complete computation rules, amplifier tables, tie-breaker
+  classification, output format, edge cases)
+SECTION 7: ABI Scoring Logic
+  (complete computation rules, pillar definitions, band
+  thresholds, emphasis rules, output format)
+SECTION 8: Structured Header Population
+  (field-by-field mapping from form responses)
+SECTION 9: Structured Data Block Population
+  (6 sub-blocks, formatting rules, field sources)
+SECTION 10: Narrative Section Writing Rules
+  (per-section: inputs, required content, prohibited content,
+  word target, quality standard, brief example)
+SECTION 11: Baseline Anchor Derivation
+  (complete rules with inputs, logic, guardrails, examples)
+SECTION 12: Compliance Guardrails
+  (clinical language prohibition, ecosystem section rules,
+  structured data vs narrative boundary rules)
+SECTION 13: Validation Checklist
+  (12-point verification before finalization)
+SECTION 14: Output Format and Naming
+  (file structure, naming convention, section separators)
+SECTION 15: Worked Example
+  (optional but recommended — one complete App snapshot
+  using hypothetical intake data to demonstrate the full
+  output format)
+
+============================================================
+WORKED EXAMPLE GUIDANCE
+============================================================
+
+If you include a worked example (recommended), use one of
+the 3 existing athletes with their HYPOTHETICAL App intake
+answers from the PPD and ABI worked examples:
+
+Grace Kindel (PPD Task 2 + ABI Task 3 worked examples):
+- PPD Top 3: MRL (6), PR (6), CV (4)
+- ABI: Own 6, Com 5, Foc 8, Str 7, total 26, Developing
+- Emphasis: Composure + Ownership
+- Tie-breaker: Avoidance (hypothetical)
+- Known baseline: softball, Kutztown, outfield
+
+The hypothetical raw intake answers used in the PPD and ABI
+worked examples are documented in those spec files. Use them
+for consistency.
+
+NOTE: This would be a HYPOTHETICAL example showing what
+Grace's snapshot WOULD look like if she had taken the App
+intake form instead of the CF form. Her actual snapshot on
+disk is a CF snapshot and should not be modified.
+
+============================================================
+WHAT NOT TO DO
+============================================================
+
+- Do NOT modify VF_App_Athlete_Snapshot_Fields.txt (Task 4)
+- Do NOT modify VF_PPD_Scoring_Logic.txt (Task 2)
+- Do NOT modify VF_ABI_Scoring_Logic.txt (Task 3)
+- Do NOT modify VF_App_Intake_Form_Specification.txt (Task 1)
+- Do NOT modify any pipeline specifications (v9.4, v1.5,
+  v1.2, v1.1)
+- Do NOT modify existing athlete snapshots on disk
+- Do NOT process any athlete data through the pipeline
+- Do NOT re-debate any locked design decisions from Tasks 1-4
+- Do NOT delete the current Snapshot Builder spec — preserve
+  it on disk per versioning rules
+
+============================================================
+COLLABORATION APPROACH
+============================================================
+
+This is primarily an IMPLEMENTATION task, not a design task.
+The field structure is locked. However, there are areas where
+collaborative review is valuable:
+
+1. NARRATIVE SECTION EXAMPLES — The quality standard for each
+   section's prose synthesis. Present examples for the 3
+   high-impact sections (4, 6, 9) for user review.
+
+2. PPD/ABI EMBEDDING — How much computation detail to include
+   inline vs. reference. The spec should be self-contained,
+   but there's a balance between completeness and readability.
+
+3. VALIDATION CHECKLIST — Whether the 12-point checklist is
+   sufficient or needs additions.
+
+4. WORKED EXAMPLE — If included, present for user review to
+   verify it meets quality expectations.
+
+Present the spec in sections, get approval on key sections
+(especially narrative writing rules and the worked example),
+then compile the final document.
+
+============================================================
+OUTPUT
+============================================================
+
+When the spec is approved:
+
+1. Save as: Agents - Generators\Athlete Snapshot Generator\
+   SOP_Snapshot_Builder_Project_Instructions_v2.0.txt
+
+2. Update CLAUDE.md with:
+   - Session history item (next number)
+   - Task 5 completion marker in task queue
+   - New file location in Key File Locations
+   - Updated "What's Next" section
+
+3. Commit all changes.
+
+4. If time permits, write a Task 6 handoff prompt for the
+   next session (Interpretation Engine impact assessment).
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
