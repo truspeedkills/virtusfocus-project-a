@@ -329,12 +329,12 @@ pillar"), exposing the internal scoring system.
 CORRECT: "Your ability to stay composed under pressure — that's
 where the next level of growth lives for you."
 
-WRONG: "Your adversity response pattern is Withdraw and Reset,
-which means you tend to pull back when things get hard."
+WRONG: "Your adversity response pattern is Get frustrated,
+which means you react emotionally when things get hard."
 WHY: Named adversity classification used as a pipeline label.
-CORRECT: "When things get tough, your instinct is to step back
-and regroup — and then you come back. That reset instinct is
-something we can build on."
+CORRECT: "When things get tough, your first reaction is to feel
+the frustration — and that's real. The work is channeling that
+energy into your next move."
 
 WRONG: "Your PPD tie-breaker classification indicates Avoidance,
 so we need to address avoidance-framed pressure thinking."

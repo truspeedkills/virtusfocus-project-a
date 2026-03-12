@@ -331,10 +331,10 @@ adversity_response_pattern:
   Routes to: Drift Identification + Growth Areas.
   Use: Derailer-activation weeks ONLY. Informs per-pattern
     coaching language:
-    "Push harder" → coach toward measured response.
-    "Pull back and protect" → coach toward re-engagement.
-    "Freeze and overthink" → coach toward action.
-    "Reset and refocus" → reinforce existing pattern.
+    "Blame the situation" → coach toward ownership.
+    "Get frustrated" → coach toward channeling emotion into action.
+    "Try to adjust right away" → reinforce adaptive problem-solving.
+    "Reset and refocus" → reinforce existing reset pattern.
   Adversity response descriptions ARE permitted in coaching
     language (athlete-selected natural language).
   Named classifications ARE NOT permitted.

@@ -731,7 +731,7 @@ removals, or renames.
       }
     ],
     "abi_primary_emphasis": "array of 1-2 pillar names|['Balanced']|not available — core foundation intake",
-    "adversity_response_pattern": "Push harder|Pull back and protect|Freeze and overthink|Reset and refocus|not available — core foundation intake"
+    "adversity_response_pattern": "Blame the situation|Get frustrated|Try to adjust right away|Reset and refocus|not available — core foundation intake"
   },
 
   "baseline_alignment": {

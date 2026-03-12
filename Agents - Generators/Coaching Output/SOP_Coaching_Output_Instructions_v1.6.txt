@@ -1891,26 +1891,30 @@ WEEKS ONLY.
 
 PER-PATTERN COACHING LANGUAGE:
 
-  "Push harder":
-    The athlete's instinct under adversity is to increase effort
-    and force outcomes. Coach toward measured response.
-    "Your instinct when things get hard is to push harder. That
-    drive is an asset — but this week, the push needs to be
-    targeted, not just louder."
+  "Blame the situation":
+    The athlete's instinct under adversity is to externalize —
+    looking outward for explanations before looking inward.
+    Coach toward ownership.
+    "When things went wrong, your instinct was to look at what
+    happened around you. That's a natural starting point — but
+    the next step is asking what YOU can control in that moment."
 
-  "Pull back and protect":
-    The athlete's instinct under adversity is to withdraw and
-    protect. Coach toward re-engagement.
-    "When things got hard, your instinct was to pull back. That's
-    a protection move — and it makes sense. The work now is
-    re-engaging on your terms."
+  "Get frustrated":
+    The athlete's instinct under adversity is emotional reaction.
+    They feel the impact before processing it. Coach toward
+    channeling emotion into action.
+    "When things got hard, your first reaction was frustration.
+    That emotion is real — and it shows you care. The work now
+    is channeling that energy into your next action rather than
+    letting it sit."
 
-  "Freeze and overthink":
-    The athlete's instinct under adversity is to freeze and
-    overanalyze. Coach toward action.
-    "When things got hard, your instinct was to freeze and
-    overthink. Action breaks that loop. One controllable action
-    — that's the way through."
+  "Try to adjust right away":
+    The athlete's instinct under adversity is immediate
+    adaptation. They problem-solve in the moment. Reinforce
+    this adaptive pattern.
+    "When things got hard, your instinct was to adjust right
+    away. You didn't freeze, you didn't pull back — you moved.
+    That's an action-oriented response to build on."
 
   "Reset and refocus":
     The athlete already has an adaptive adversity response.

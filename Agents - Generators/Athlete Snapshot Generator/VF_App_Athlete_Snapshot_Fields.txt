@@ -209,8 +209,8 @@ Source: Q20-Q21.
 
 BEHAVIORAL_PATTERNS:
   adversity_response_pattern: [enum]    ← Q20
-    Values: Push harder | Pull back and protect |
-            Freeze and overthink | Reset and refocus
+    Values: Blame the situation | Get frustrated |
+            Try to adjust right away | Reset and refocus
   adversity_self_description: [enum]    ← Q21
     Values: I get frustrated but keep going |
             I shut down for a while |
@@ -555,11 +555,10 @@ Guardrail:
 
 Example:
   ABI emphasis: ["Composure", "Ownership"]
-  Q20 adversity response: "Push harder"
+  Q20 adversity response: "Blame the situation"
   Q9 reset speed: 2 (slow reset)
   → ANCHOR_HINGE_HABIT: "Immediate reset and refocus after
-    mistakes rather than pushing through with escalating
-    intensity"
+    mistakes rather than externalizing what went wrong"
 
 --------------------------------------------------------------
 5C. ANCHOR_PRIMARY_DERAILER

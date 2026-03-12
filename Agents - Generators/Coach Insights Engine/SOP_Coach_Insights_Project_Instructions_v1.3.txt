@@ -288,9 +288,9 @@ a development area."
 (ABI pillar name as score label and numeric value prohibited.
 Behavioral translation permitted.)
 
-WRONG: "Adversity response pattern: Withdraw and Reset."
-CORRECT: "Tends to need processing time before re-engaging after
-setbacks."
+WRONG: "Adversity response pattern: Get frustrated."
+CORRECT: "May need space to process emotional reaction before
+re-engaging."
 (Named pipeline classification prohibited. Behavioral
 translation permitted.)
 
@@ -819,15 +819,18 @@ populated AND the athlete is in a derailer-activation or
 Partially Aligned week, the context cue MAY include a
 behavioral translation of the athlete's adversity response:
 
-  "Withdraw and Reset" → "Athlete may need space before
-    re-engaging. Monitor for extended withdrawal patterns."
-  "Push Through" → "Athlete tends to maintain activity level
-    through difficulty. Monitor for unsustainable escalation."
-  "Seek Support" → "Athlete likely to benefit from direct
-    check-in. Reinforce available support structures."
-  "Internalize and Process" → "Athlete may not surface
-    concerns proactively. Monitor for extended processing
-    delays."
+  "Blame the situation" → "Athlete may initially externalize
+    setbacks before processing. Monitor for sustained external
+    attribution patterns."
+  "Get frustrated" → "Athlete may need space to process
+    emotional reaction before re-engaging. Monitor for
+    extended frustration periods."
+  "Try to adjust right away" → "Athlete tends to problem-solve
+    immediately through difficulty. Monitor for unsustainable
+    over-correction."
+  "Reset and refocus" → "Athlete tends to regroup and
+    re-engage after setbacks. Reinforce existing adaptive
+    response."
 
 These translations are INFORM-ONLY behavioral observations.
 Never name "adversity_response_pattern" as a field. Never
@@ -838,13 +841,13 @@ When adversity_response_pattern = "not available" (CF
 athletes) or when the week does not involve derailer
 activation: No adversity enrichment. Standard context cue.
 
-WRONG: "Adversity response pattern: Withdraw and Reset.
+WRONG: "Adversity response pattern: Get frustrated.
 Coach should allow space."
 (Names field, uses prohibited phrasing.)
 
 CORRECT: "Reinforce re-engagement routines. Athlete's
-typical response to adversity involves a processing period
-before resuming full engagement."
+typical response to adversity involves an emotional
+processing period before resuming full engagement."
 (Behavioral translation in approved phrasing.)
 
 EXECUTION ENRICHMENT (App athletes only):
@@ -1528,7 +1531,7 @@ INTAKE PROFILE PROHIBITIONS [NEW IN V1.3]:
 - "primary emphasis" as a named pipeline classification
 - "adversity_response_pattern" as a named field reference
 - Adversity enum values used as named pipeline classifications
-  ("adversity pattern is Push Through")
+  ("adversity pattern is Get frustrated")
 - "baseline_intake_profile" as a named block reference
 - "intake profile" as a named pipeline data structure
 - "baseline_season_phase" as a named field (and the value
@@ -2048,13 +2051,13 @@ self-directed engagement are key developmental areas."
 
 ----
 
-WRONG: "Adversity response pattern: Internalize and Process.
+WRONG: "Adversity response pattern: Get frustrated.
 Athlete baseline_season_phase is Pre-Season."
 (Named field references, enum as classification, stale data —
 prohibited categories 16, 17.)
 
-CORRECT: "Athlete may not surface concerns proactively during
-challenging periods."
+CORRECT: "Athlete may need processing time before re-engaging
+during challenging periods."
 (Behavioral translation of adversity pattern, no field names,
 no stale season data.)
 

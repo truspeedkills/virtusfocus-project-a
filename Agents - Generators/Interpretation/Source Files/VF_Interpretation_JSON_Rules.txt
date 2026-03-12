@@ -1474,8 +1474,8 @@ to the baseline_intake_profile block in the output JSON:
   adversity_response_pattern:
     Read from snapshot BEHAVIORAL_PATTERNS sub-block field
     adversity_response_pattern.
-    Valid values: Push harder | Pull back and protect |
-    Freeze and overthink | Reset and refocus
+    Valid values: Blame the situation | Get frustrated |
+    Try to adjust right away | Reset and refocus
 
 No classification rules apply. This is pure extraction.
 

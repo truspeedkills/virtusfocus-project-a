@@ -1086,9 +1086,9 @@ Step 4: COMPOSITE SCORE, FLAG, ALIGNMENT, AND INTAKE
            - "adversity response pattern" as named pipeline
              field
            - Enum values used as NAMED CLASSIFICATIONS:
-             "Your adversity pattern is Push harder" is
-             prohibited. "When things get hard, your instinct
-             is to push harder" is permitted coaching
+             "Your adversity pattern is Get frustrated" is
+             prohibited. "When things got hard, your first
+             reaction was frustration" is permitted coaching
              language.
            NOTE: The adversity response descriptions are
            athlete-selected natural language. They are
@@ -1686,14 +1686,16 @@ CATEGORY F — INTAKE PROFILE TERMINOLOGY:
     "adversity_response_pattern" (field name)
     "adversity response pattern" as named pipeline field
     Enum values used as NAMED CLASSIFICATIONS: "Your
-      adversity pattern is Push harder" is prohibited.
-      "When things get hard, your instinct is to push
-      harder" is permitted coaching language.
-    "Withdraw and Reset" (as a named classification)
-    "Push Through" (as a named classification — "push
-      through" in natural coaching context is permitted)
-    "Seek Support" (as a named classification)
-    "Internalize and Process" (as a named classification)
+      adversity pattern is Get frustrated" is prohibited.
+      "When things got hard, your first reaction was
+      frustration" is permitted coaching language.
+    "Blame the situation" (as a named classification)
+    "Get frustrated" (as a named classification —
+      "frustrated" in natural coaching context is permitted)
+    "Try to adjust right away" (as a named classification)
+    "Reset and refocus" (as a named classification —
+      "reset and refocus" in natural coaching context is
+      permitted as it is common coaching language)
     NOTE: The adversity response descriptions are athlete-
     selected natural language. They are PERMITTED when
     reflected in coaching context (athlete-facing output).
@@ -1725,7 +1727,7 @@ CATEGORY F — INTAKE PROFILE TERMINOLOGY:
   PROHIBITED (pipeline labels):
     "Your Ownership pillar is Moderate"
     "Mistake Recovery Lag activated"
-    "Adversity response pattern: Freeze and overthink"
+    "Adversity response pattern: Get frustrated"
     "PPD primary problem: Confidence Volatility"
     "ABI emphasis: Composure and Focus"
     "Your Motivation and Resilience Loss score suggests..."
@@ -2065,14 +2067,15 @@ SECTION 19 — EDGE CASES AND JUDGMENT CALLS
 14. ADVERSITY RESPONSE LANGUAGE
     Adversity response pattern values are athlete-selected
     natural language descriptions. The distinction:
-    - "stepping back to regroup" → natural coaching
-      language reflecting the athlete's style. PERMITTED.
-    - "Withdraw and Reset" → named pipeline classification
-      label. PROHIBITED.
-    - "you tend to push harder when things go wrong" →
-      natural coaching observation. PERMITTED.
-    - "Your adversity response is Push Through" → named
-      classification reference. PROHIBITED.
+    - "your first reaction was frustration" → natural
+      coaching language reflecting the athlete's style.
+      PERMITTED.
+    - "Get frustrated" (as a named classification) →
+      named pipeline classification label. PROHIBITED.
+    - "you tend to adjust right away when things go wrong"
+      → natural coaching observation. PERMITTED.
+    - "Your adversity response is Try to adjust right away"
+      → named classification reference. PROHIBITED.
     The values become prohibited only when framed as
     formal classifications rather than as behavioral
     descriptions in coaching context.

@@ -269,17 +269,15 @@ INTAKE PROFILE ENRICHMENT (App athletes only):
 - adversity_response_pattern → During derailer-activation or
   Partially Aligned weeks, informs the context cue with
   behavioral translations of the athlete's adversity response:
-    "Withdraw and Reset" → "may need space before re-engaging"
-    "Push Through" → "tends to maintain activity level through
-      difficulty"
-    "Seek Support" → "likely to benefit from direct check-in"
-    "Internalize and Process" → "may not surface concerns
-      proactively"
-  NOTE: The assessment document uses intake form Q20 labels
-  ("Push harder," "Pull back and protect," "Freeze and
-  overthink," "Reset and refocus"). The pipeline field uses
-  normalized enum values as listed above. Apply the translation
-  that matches the athlete's adversity_response_pattern value.
+    "Blame the situation" → "may initially externalize setbacks
+      before processing"
+    "Get frustrated" → "may need space to process emotional
+      reaction before re-engaging"
+    "Try to adjust right away" → "tends to problem-solve
+      immediately through difficulty"
+    "Reset and refocus" → "tends to regroup and re-engage
+      after setbacks"
+  These enum values match Q20 of the App Intake Form.
   These translations are INFORM-ONLY. Never surface
   "adversity_response_pattern" as a named field. Never present
   the enum value as a named classification. Frame as a neutral
@@ -558,7 +556,7 @@ in any Stage 4 output, in any form:
   pipeline classification
 - "adversity_response_pattern" as a named field reference
 - Adversity enum values used as named classifications ("adversity
-  pattern is Push Through" is prohibited)
+  pattern is Get frustrated" is prohibited)
 - "baseline_intake_profile" as a named block
 - "baseline_season_phase" as a named field (and the value itself,
   since it may be stale)
