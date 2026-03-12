@@ -1,0 +1,747 @@
+============================================================
+INTERPRETATION ENGINE — SNAPSHOT INTEGRATION ASSESSMENT
+Task 6 of 21: Pipeline Improvement Design
+============================================================
+Date: 2026-03-12
+Author: Pipeline Design Session
+Status: APPROVED
+Scope: How expanded App athlete snapshot (v2.0) fields integrate with Stage 2 (Interpretation Engine v9.4)
+Previous: Task 5 (Snapshot Builder v2.0) — COMPLETE
+Next: Task 7 (Downstream Stage Impact Assessment — Stages 3-5)
+============================================================
+
+============================================================
+SECTION 1: CURRENT STATE SUMMARY
+============================================================
+
+1.1 WHAT STAGE 2 READS FROM THE SNAPSHOT TODAY
+
+The Interpretation Engine (v9.4) reads exactly 5 fields from the baseline snapshot at Step 0-1 of the Core Interpretation Process:
+
+    baseline_profile:
+      baseline_identity_claim    (prose sentence)
+      baseline_hinge_habit       (prose sentence)
+      baseline_primary_derailer  (prose sentence)
+      baseline_why_it_matters    (prose sentence)
+      baseline_growth_phase      (enum: Emerging|Developing|Consistent|Leadership)
+
+These 5 fields are:
+- Read from the snapshot file on disk
+- Written unchanged to the weekly Interpretation JSON (baseline_profile block)
+- Consumed by all downstream stages (3, 4, 5) FROM THE JSON, not from the snapshot
+- Used internally by Stage 2 for:
+  - baseline_alignment assessment (Step 8.5 — compares weekly patterns against baseline anchors)
+  - Growth phase progression evaluation (Section 4C — checks derailer testing for Developing->Consistent)
+  - Narrative arc generation (uses identity claim and derailer as longitudinal reference points)
+
+1.2 HOW DOWNSTREAM STAGES CONSUME BASELINE DATA
+
+All downstream stages read the Interpretation JSON. None read the snapshot directly.
+
+Stage 3 (Coaching Output Engine v1.5):
+- baseline_identity_claim -> identity threading in coaching messages
+- baseline_hinge_habit -> micro-commitment grounding
+- baseline_primary_derailer -> derailer address in coaching
+- baseline_growth_phase -> growth phase-appropriate tone
+
+Stage 4 (Coach Insights Engine v1.2):
+- baseline_profile -> contextual reference for developmental framing
+- baseline_growth_phase -> developmental context for institutional output
+- baseline_alignment -> informs Section 2 (Weekly Performance Context)
+
+Stage 5 (Editorial Audit v1.1):
+- baseline_profile -> verifies coaching output consistency with baseline anchors
+- baseline_alignment -> checks alignment_status matches coaching narrative
+
+1.3 THE INTEGRATION GAP
+
+The v2.0 App athlete snapshot introduces 40+ new structured fields across 6 data sub-blocks that have NO LANDING ZONE in the current weekly JSON schema:
+
+GROUP A — New Header Fields: COMPETITIVE_LEVEL, SEASON_PHASE, COMMITMENT_LEVEL
+GROUP B — PPD_SCORES: ppd_primary_problem, ppd_top_3, ppd_all_scores, ppd_tie_breaker_classification
+GROUP C — ABI_SCORES: pillar scores, total, band, primary_emphasis, pillar_bands
+GROUP D — ECOSYSTEM: parent_involvement_level, home_conversation_pattern, support_network_primary, parent_inclusion, parent_email
+GROUP E — BEHAVIORAL_PATTERNS: adversity_response_pattern, adversity_self_description
+GROUP F — LONGITUDINAL_BASELINES: season_phase, reset_speed_baseline, competitor_aspiration_text, mental_game_self_rating
+
+None of these fields appear in the v9.4 canonical output schema. None have classification rules. None have processing steps. The entire PPD/ABI/ecosystem/behavioral/longitudinal layer from the expanded snapshot currently has no path into the weekly JSON and therefore no path to downstream stages.
+
+
+============================================================
+SECTION 2: FIELD-BY-FIELD ASSESSMENT
+============================================================
+
+Assessment categories:
+- ACTIVE USE: Stage 2 reads the field and uses it in a classification rule or computation. Gets its own JSON field with a derivation rule.
+- PASS-THROUGH: Stage 2 reads the field from the snapshot and copies it into the weekly JSON unchanged. No classification rule needed. Downstream stages consume it from the JSON.
+- NO ACTION: Field stays in the snapshot only. Stage 2 does not read it. Not carried in the weekly JSON.
+
+------------------------------------------------------------
+GROUP A — New Header Fields
+------------------------------------------------------------
+
+COMPETITIVE_LEVEL
+  Source: Q4 (Youth / Middle School / High School / College / Professional)
+  Recommendation: PASS-THROUGH
+  Rationale: Stage 3 coaching calibration input. Competitive level determines coaching
+  tone, vocabulary complexity, directness level, and accountability framing intensity.
+  A middle school athlete and a college athlete with identical data patterns require
+  fundamentally different coaching voices. This is a scalability-critical field — the app
+  must serve athletes across all competitive levels with appropriately calibrated output.
+  Stage 3 must implement a formal Competitive Level Calibration Rule (flagged for Task 7).
+  Stage 4 may use it for contextual framing in institutional output.
+  CF fallback: "not available — core foundation intake"
+
+SEASON_PHASE (intake value)
+  Source: Q6 (Off-Season / Pre-Season / In-Season / Post-Season / Year-Round Training)
+  Recommendation: PASS-THROUGH as "baseline_season_phase" (RENAMED)
+  Rationale: This is POINT-IN-TIME INTAKE DATA, not a live indicator. An athlete who
+  fills out their intake during Pre-Season may be 6 weeks into In-Season by the time
+  weekly JSONs are being processed. The snapshot value is useful as a baseline marker
+  ("where did this athlete start?") but UNRELIABLE as a current-state indicator.
+  Renamed to "baseline_season_phase" to prevent confusion with a future live field.
+  CF fallback: "not available — core foundation intake"
+
+  *** PRE-LAUNCH BLOCKER: LIVE SEASON PHASE ***
+  A live current_season_phase field is required before app v1 launch.
+  Proposed solution: Add a season_phase question to the weekly check-in submission
+  (Off-Season / Pre-Season / In-Season / Post-Season). Stage 2 populates
+  current_season_phase from the weekly input each week — always current, always accurate.
+  This is a SEPARATE field from baseline_season_phase.
+  Downstream consumers:
+  - Stage 4 Season Phase Overlay dashboard metric (needs live data)
+  - Stage 2 upcoming_context classification (could use live season context)
+  - Stage 3 coaching tone (in-season vs off-season framing)
+  This blocker must be resolved before v1 app launch. Design deferred to the weekly
+  check-in input format specification (future task), but flagged here as a dependency.
+
+COMMITMENT_LEVEL
+  Source: Q28 (All-in / Ready to work / Willing to try / Not sure yet)
+  Recommendation: NO ACTION
+  Rationale: Static intake response with low downstream value. The athlete's actual
+  commitment is revealed weekly through execution data (Win days, completion rates,
+  engagement patterns). A "Willing to try" athlete who produces 7/7 Win weeks is
+  functionally "All-in" regardless of what they checked at intake. Execution data
+  supersedes self-reported commitment. Not worth the JSON payload.
+
+------------------------------------------------------------
+GROUP B — PPD_SCORES
+------------------------------------------------------------
+
+ppd_primary_problem
+  Source: Snapshot PPD_SCORES sub-block (deterministic bucket name, e.g., "Mistake Recovery Lag")
+  Recommendation: PASS-THROUGH
+  Rationale: This is the deterministic, machine-derived version of what
+  baseline_primary_derailer says in prose. Having both gives Stage 2 a dual anchor:
+  the prose sentence for narrative matching ("Loss of confidence following errors" maps
+  to weekly behavioral evidence) and the bucket name for unambiguous categorical
+  reference. Stage 3 can use the bucket name for coaching theme routing. Stage 2's
+  Section 4C growth phase progression check continues to use the prose
+  baseline_primary_derailer for adversity testing — the bucket name sits alongside
+  but does NOT replace the prose anchor.
+  CF fallback: "not available — core foundation intake"
+
+ppd_top_3
+  Source: Snapshot PPD_SCORES sub-block (3 ranked objects, each with: rank, bucket, score, trigger_context, coaching_implication)
+  Recommendation: PASS-THROUGH
+  Rationale: The coaching_implication field in each rank is directly actionable by
+  Stage 3 for coaching theme selection. Example: rank_1 coaching_implication =
+  "Reset reps + next-play language" tells Stage 3 exactly what coaching direction
+  to take when the derailer activates. Currently Stage 3 must infer coaching themes
+  from the prose baseline_primary_derailer — ppd_top_3 provides deterministic
+  coaching direction. The full ranked list (not just rank 1) lets Stage 3 address
+  secondary and tertiary patterns when relevant.
+  CF fallback: "not available — core foundation intake"
+
+ppd_all_scores
+  Source: Snapshot PPD_SCORES sub-block (8 integer scores, one per bucket)
+  Recommendation: NO ACTION
+  Rationale: Explicitly stored for future longitudinal PPD Alignment Signal
+  (comparing intake self-report PPD against execution-derived PPD). No current
+  downstream consumer exists. Carrying 8 integer scores in every weekly JSON adds
+  payload for zero current value. The comparison feature is a future enhancement —
+  adding the field now would lock a schema structure before the consumption pattern
+  is defined. When longitudinal PPD is designed, Stage 2 can start carrying it
+  with zero disruption to existing fields.
+
+ppd_tie_breaker_classification
+  Source: Snapshot PPD_SCORES sub-block (Avoidance / Proving / Obligation / Approach, or dual classification)
+  Recommendation: PASS-THROUGH
+  Rationale: Informs Stage 3 coaching tone calibration. An Avoidance-framed athlete
+  ("I don't want to fail") needs different coaching language than a Proving-framed
+  athlete ("I need to show them"). Lightweight field (single enum or dual-enum value).
+  Stage 3 can use it alongside emotional_intensity for nuanced tone selection.
+  CF fallback: "not available — core foundation intake"
+
+------------------------------------------------------------
+GROUP C — ABI_SCORES
+------------------------------------------------------------
+
+abi_primary_emphasis
+  Source: Snapshot ABI_SCORES sub-block (array of 1-2 pillar names, or "Balanced")
+  Recommendation: PASS-THROUGH
+  Rationale: Highest-value ABI field for downstream stages. Stage 3 needs it for
+  pillar-based coaching calibration — knowing an athlete's emphasis is
+  [Composure, Ownership] tells the coaching engine to weight reset/composure
+  language and accountability framing. The Snapshot Fields spec (Section 6B)
+  explicitly lists this as an indirect consumption target for Stage 3. The emphasis
+  direction is the actionable signal; raw pillar scores are not needed downstream.
+  CF fallback: "not available — core foundation intake"
+
+Individual pillar scores (ownership, composure, focus, structure — integers 2-10)
+  Source: Snapshot ABI_SCORES sub-block
+  Recommendation: NO ACTION
+  Rationale: Stage 3 does not need raw numbers — primary_emphasis carries the
+  actionable direction. Stage 4 compliance framework prohibits surfacing ABI pillar
+  scores to coaching staff (same inform-only pattern as execution signals). Raw
+  scores stay in the snapshot for audit trail and future re-administration comparison.
+
+ABI total + band (e.g., 26, "Developing")
+  Source: Snapshot ABI_SCORES sub-block
+  Recommendation: NO ACTION
+  Rationale: ABI band has overlap with baseline_growth_phase but measures different
+  things (ABI band = intake self-assessment aggregation, growth phase = weekly
+  behavioral classification). Low downstream value — no stage currently uses ABI
+  band for routing. ABI is a soft input to growth phase, not a direct determinant.
+
+pillar_bands (per-pillar Low / Moderate / High)
+  Source: Snapshot ABI_SCORES sub-block
+  Recommendation: NO ACTION
+  Rationale: Redundant with primary_emphasis for coaching purposes. If emphasis =
+  [Composure, Ownership], those are the lower pillars by definition. Pillar bands
+  add granularity that no downstream stage currently consumes.
+
+------------------------------------------------------------
+GROUP D — ECOSYSTEM
+------------------------------------------------------------
+
+parent_involvement_level
+  Source: Snapshot ECOSYSTEM sub-block (from Q22)
+  Recommendation: NO ACTION
+  Rationale: Primary consumer is the Parent Output engine (Idea 4, Tasks 16-21),
+  which has not been designed. No current stage uses ecosystem fields for routing
+  or classification. The architectural decision of whether ecosystem flows through
+  Stage 2 or whether the Parent engine reads the snapshot directly should be made
+  during Idea 4 design, not pre-committed now.
+
+home_conversation_pattern
+  Source: Snapshot ECOSYSTEM sub-block (from Q23)
+  Recommendation: NO ACTION
+  Rationale: Same as parent_involvement_level. Deferred to Idea 4.
+
+support_network_primary
+  Source: Snapshot ECOSYSTEM sub-block (from Q25)
+  Recommendation: NO ACTION
+  Rationale: Same as parent_involvement_level. Deferred to Idea 4.
+
+parent_inclusion + parent_email
+  Source: Snapshot ECOSYSTEM sub-block (from Q26-Q27)
+  Recommendation: NO ACTION
+  Rationale: Administrative/delivery fields. These should never enter the
+  interpretation pipeline. They are routing metadata for the Parent Output
+  delivery system, not analytical data for Stage 2.
+
+------------------------------------------------------------
+GROUP E — BEHAVIORAL_PATTERNS
+------------------------------------------------------------
+
+adversity_response_pattern
+  Source: Snapshot BEHAVIORAL_PATTERNS sub-block (enum: Push harder / Pull back and protect / Freeze and overthink / Reset and refocus)
+  Recommendation: PASS-THROUGH
+  Rationale: Self-reported adversity response style complements
+  baseline_primary_derailer. The derailer says WHAT disrupts the athlete; the
+  adversity pattern says HOW they respond. Stage 3 can use this for tone
+  calibration: a "Freeze and overthink" athlete needs different coaching language
+  than a "Push harder" athlete when their derailer activates. Lightweight enum.
+  CF fallback: "not available — core foundation intake"
+
+adversity_self_description
+  Source: Snapshot BEHAVIORAL_PATTERNS sub-block (verbatim text from Q21)
+  Recommendation: NO ACTION
+  Rationale: Could inform Stage 3 athlete voice mirroring, but
+  athlete_voice.key_phrase already captures the most psychologically significant
+  statement each week. Adding a static intake statement alongside weekly voice
+  data provides low incremental value. The adversity_response_pattern enum
+  carries the actionable signal.
+
+------------------------------------------------------------
+GROUP F — LONGITUDINAL_BASELINES
+------------------------------------------------------------
+
+season_phase (intake value)
+  Source: Snapshot LONGITUDINAL_BASELINES sub-block (from Q6)
+  Recommendation: PASS-THROUGH as "baseline_season_phase"
+  Rationale: Same field as GROUP A SEASON_PHASE — duplicated in snapshot structure.
+  Carried once in the JSON as baseline_season_phase. See GROUP A for full rationale
+  and pre-launch blocker note.
+  NOTE: This is POINT-IN-TIME DATA from intake. NOT a live indicator.
+  CF fallback: "not available — core foundation intake"
+
+reset_speed_baseline
+  Source: Snapshot LONGITUDINAL_BASELINES sub-block (integer 1-5, from Q9)
+  Recommendation: NO ACTION
+  Rationale: Self-reported reset speed at intake. Could be compared longitudinally
+  against execution-derived recovery patterns (Recovery Score, recommitment_signal).
+  Same future-comparison pattern as ppd_all_scores — no current consumer exists.
+  Stays in snapshot for future longitudinal feature.
+
+competitor_aspiration_text
+  Source: Snapshot LONGITUDINAL_BASELINES sub-block (verbatim from Q19)
+  Recommendation: NO ACTION
+  Rationale: Stage 3 already threads baseline_identity_claim and weekly
+  athlete_voice.key_phrase. A third static text field provides diminishing returns.
+  Stays in snapshot.
+
+mental_game_self_rating
+  Source: Snapshot header (integer 1-10, from Q5)
+  Recommendation: NO ACTION
+  Rationale: Perception-vs-reality comparison target (same pattern as self_ratings
+  in execution signals). No current consumer. Already stored in snapshot header.
+  Future longitudinal comparison feature.
+
+
+============================================================
+SECTION 3: PROPOSED SCHEMA CHANGES
+============================================================
+
+3.1 NEW JSON BLOCK: baseline_intake_profile
+
+A new top-level block in the weekly Interpretation JSON, sitting alongside the
+existing baseline_profile block. Separate block (not expanding baseline_profile)
+because:
+
+(a) The existing 5 baseline_profile fields are locked and consumed by established
+    downstream rules. Modifying that block risks breaking existing Stage 3/4/5
+    consumption patterns.
+(b) The new fields are all intake-derived structured data with a fundamentally
+    different character than the prose anchors in baseline_profile. Prose anchors
+    are narrative sentences used for pattern matching. Intake profile fields are
+    deterministic enums and structured objects used for routing and calibration.
+(c) Clean CF fallback boundary: when input_source = "core_foundation", the entire
+    baseline_intake_profile block populates with fallback values. Downstream stages
+    can check input_source once and skip the block entirely.
+
+Proposed schema:
+
+"baseline_intake_profile": {
+  "input_source": "app | core_foundation",
+  "competitive_level": "Youth | Middle School | High School | College | Professional | not available — core foundation intake",
+  "baseline_season_phase": "Off-Season | Pre-Season | In-Season | Post-Season | Year-Round Training | not available — core foundation intake",
+  "ppd_primary_problem": "string (bucket name) | not available — core foundation intake",
+  "ppd_tie_breaker_classification": "Avoidance | Proving | Obligation | Approach | [dual] | not available — core foundation intake",
+  "ppd_top_3": [
+    {
+      "rank": "integer 1-3",
+      "bucket": "string (bucket name)",
+      "score": "integer",
+      "trigger_context": "string | null",
+      "coaching_implication": "string"
+    }
+  ],
+  "abi_primary_emphasis": "array of 1-2 pillar names | ['Balanced'] | not available — core foundation intake",
+  "adversity_response_pattern": "Push harder | Pull back and protect | Freeze and overthink | Reset and refocus | not available — core foundation intake"
+}
+
+3.2 CORE FOUNDATION FALLBACK VALUES
+
+When input_source = "core_foundation":
+
+"baseline_intake_profile": {
+  "input_source": "core_foundation",
+  "competitive_level": "not available — core foundation intake",
+  "baseline_season_phase": "not available — core foundation intake",
+  "ppd_primary_problem": "not available — core foundation intake",
+  "ppd_tie_breaker_classification": "not available — core foundation intake",
+  "ppd_top_3": "not available — core foundation intake",
+  "abi_primary_emphasis": "not available — core foundation intake",
+  "adversity_response_pattern": "not available — core foundation intake"
+}
+
+3.3 FIELD PLACEMENT RATIONALE
+
+Why baseline_intake_profile and NOT expanding baseline_profile:
+
+The existing baseline_profile block contains 5 prose anchors that are:
+- Written by the Snapshot Builder agent (human-quality narrative sentences)
+- Consumed by Stage 2 for alignment assessment and growth phase progression
+- Consumed by Stage 3 for identity threading, micro-commitment grounding, and derailer address
+- Consumed by Stage 4 for developmental context
+- Consumed by Stage 5 for output verification
+
+The new baseline_intake_profile block contains deterministic structured data that is:
+- Computed by the Snapshot Builder from intake form responses (PPD scoring, ABI formula)
+- Passed through Stage 2 unchanged (no classification or derivation)
+- Consumed by Stage 3 for coaching calibration (competitive level, PPD coaching implications, ABI emphasis, adversity pattern, tie-breaker framing)
+- Consumed by Stage 4 for contextual enrichment (competitive level, baseline season phase)
+- Audited by Stage 5 for leakage compliance (PPD bucket names, ABI pillar names must not appear in coaching output)
+
+These are fundamentally different data types with different provenance, different consumption patterns, and different compliance requirements. Separating them into distinct blocks preserves the integrity of the established baseline_profile contract while cleanly adding the new intake-derived data layer.
+
+3.4 input_source FIELD NOTE
+
+The baseline_intake_profile block includes its own input_source field. This mirrors
+the execution_behavior_signals block which also has input_source. The duplication is
+intentional: each block is self-describing, so downstream stages can check the block's
+input_source without cross-referencing another block. The values will always be
+identical (both read from the same snapshot), but each block carries its own for
+independent consumption.
+
+
+============================================================
+SECTION 4: PROPOSED RULE CHANGES
+============================================================
+
+4.1 INTERPRETATION ENGINE PROJECT INSTRUCTIONS (v9.4 -> next version)
+
+NEW PROCESSING STEP — Snapshot Intake Profile Extraction
+
+After Step 1 (Carry baseline continuity) and before Step 2 (daily distribution):
+
+  Step 1.5: Extract baseline intake profile (App athletes only)
+  - Read input_source from snapshot header (INPUT_SOURCE field)
+  - If input_source = "app":
+    - Read COMPETITIVE_LEVEL from snapshot header
+    - Read SEASON_PHASE from snapshot header -> write as baseline_season_phase
+    - Read ppd_primary_problem from PPD_SCORES sub-block
+    - Read ppd_tie_breaker_classification from PPD_SCORES sub-block
+    - Read ppd_top_3 from PPD_SCORES sub-block (3 ranked objects, copy unchanged)
+    - Read abi_primary_emphasis from ABI_SCORES sub-block (array, copy unchanged)
+    - Read adversity_response_pattern from BEHAVIORAL_PATTERNS sub-block
+    - Write all to baseline_intake_profile block in output JSON
+  - If input_source = "core_foundation":
+    - Write Core Foundation fallback values to baseline_intake_profile block
+
+This step is READ-ONLY from the snapshot perspective. No classification, no
+derivation, no computation. Pure extraction and pass-through.
+
+AFFECTED SECTIONS:
+- Section 3 (Input Source Detection): Already handles app vs core_foundation detection.
+  No changes needed — the detection mechanism is in place.
+- Section 4 (Core Interpretation Process): Add Step 1.5 between Step 1 and Step 2.
+  All subsequent step numbers unchanged (Step 1.5 is an insertion, not a renumber).
+- Section 6 (Core Foundation Fallback Rules): Add baseline_intake_profile fallback
+  values to the fallback list. Same pattern as execution_behavior_signals fallback.
+- Section 11 (Production Schema Validation): Add validation check —
+  baseline_intake_profile block present and complete. App mode: all 7 fields
+  populated with valid values. CF mode: all fields = fallback values.
+- Section 17 (Canonical Output Schema): Add baseline_intake_profile block to the
+  canonical schema definition.
+
+4.2 INTERPRETATION ENGINE JSON RULES
+
+NO CHANGES NEEDED. The JSON Rules file defines CLASSIFICATION rules — how Stage 2
+transforms raw data into classified fields (WTD scoring, Bullseye analysis, RQS,
+emotional intensity, etc.). The baseline_intake_profile fields are PASS-THROUGH —
+they are copied unchanged from the snapshot with no classification logic. No new
+sections needed in the JSON Rules file.
+
+4.3 NO CHANGES TO EXISTING RULES
+
+All existing classification rules remain unchanged:
+- Section 4C (Growth Phase Progression): Continues to use baseline_primary_derailer
+  (prose) for adversity testing. ppd_primary_problem (bucket name) sits alongside
+  in baseline_intake_profile but does NOT replace or modify the Section 4C check.
+- All WTD, Bullseye, RQS, consistency, emotional intensity, narrative arc, execution
+  behavior signal rules: Completely unaffected. Zero interaction with intake profile fields.
+- baseline_profile block: Unchanged. Same 5 fields, same provenance, same downstream contract.
+
+
+============================================================
+SECTION 5: DOWNSTREAM ROUTING IMPLICATIONS
+============================================================
+
+5.1 STAGE 3 — COACHING OUTPUT ENGINE
+
+What Stage 3 can now do that it couldn't before:
+
+(a) COMPETITIVE LEVEL CALIBRATION (NEW CAPABILITY)
+    Stage 3 can read competitive_level and apply a formal Competitive Level
+    Calibration Rule to adjust:
+    - Vocabulary complexity (simpler for Youth/Middle School, sophisticated for College/Professional)
+    - Directness level (more encouraging for younger athletes, more accountability-forward for older)
+    - Accountability framing intensity (developmental for Youth, performance-standard for Professional)
+    - Concept naming (age-appropriate language for mental performance concepts)
+    This is a FORMAL RULE requiring a new section in Coaching Output Instructions.
+    Flagged as Task 7 deliverable.
+
+(b) PPD-DRIVEN COACHING THEMES (NEW CAPABILITY)
+    Stage 3 can read ppd_top_3.coaching_implication for deterministic coaching
+    direction when the derailer activates. Currently Stage 3 infers coaching themes
+    from the prose baseline_primary_derailer. With ppd_top_3, the coaching implications
+    are pre-computed and unambiguous.
+    Example: rank_1 bucket = "Mistake Recovery Lag", coaching_implication = "Reset reps +
+    next-play language" -> Stage 3 knows exactly what to reinforce.
+
+(c) TIE-BREAKER FRAMING (NEW CAPABILITY)
+    Stage 3 can read ppd_tie_breaker_classification to adjust coaching tone based on
+    the athlete's pressure framing:
+    - Avoidance-framed: "I don't want to fail" -> coaching reframes toward approach
+    - Proving-framed: "I need to show them" -> coaching channels competitive energy productively
+    - Obligation-framed: "I can't let them down" -> coaching separates performance from worth
+    - Approach-framed: "I want to compete" -> coaching reinforces and deepens existing framing
+
+(d) ABI EMPHASIS COACHING (NEW CAPABILITY)
+    Stage 3 can read abi_primary_emphasis to weight coaching language toward the
+    athlete's emphasis pillars. If emphasis = [Composure, Ownership], coaching
+    naturally weights reset/composure language and accountability framing.
+
+(e) ADVERSITY PATTERN CALIBRATION (NEW CAPABILITY)
+    Stage 3 can read adversity_response_pattern to calibrate coaching during
+    derailer activation weeks:
+    - "Freeze and overthink" -> action-oriented coaching, break the freeze loop
+    - "Push harder" -> modulation coaching, channel energy productively
+    - "Pull back and protect" -> re-engagement coaching, safe re-entry framing
+    - "Reset and refocus" -> reinforcement coaching, strengthen existing pattern
+
+    Combined with emotional_intensity and competitive_level, this creates a
+    three-dimensional coaching calibration matrix.
+
+5.2 STAGE 4 — COACH INSIGHTS ENGINE
+
+What Stage 4 can now do:
+
+(a) COMPETITIVE LEVEL CONTEXT
+    Stage 4 can include competitive level in the Weekly Performance Insight for
+    contextual framing. Compliance-safe — competitive level is public information.
+    Not a routing change but enriches institutional output.
+
+(b) BASELINE SEASON PHASE REFERENCE
+    Stage 4 can reference baseline_season_phase as a starting point. However, the
+    Season Phase Overlay dashboard metric requires LIVE season phase data (see
+    pre-launch blocker in Section 2). baseline_season_phase alone is insufficient
+    for this metric.
+
+(c) PPD/ABI FIELDS — INFORM-ONLY (COMPLIANCE BOUNDARY)
+    PPD bucket names, ABI pillar names, and all intake-derived structured data
+    follow the same inform-only pattern as execution signals. Stage 4 may use
+    these fields internally to sharpen compliance-safe output, but:
+    - PPD bucket names NEVER appear in institutional output
+    - ABI pillar names/scores NEVER appear in institutional output
+    - Adversity response pattern enum values NEVER appear in institutional output
+    - Coaching implications are Stage 3 content, not Stage 4 content
+    Stage 4 compliance framework already prohibits surfacing internal pipeline
+    data to coaching staff. The new fields fall under the existing prohibition.
+
+5.3 STAGE 5 — EDITORIAL AUDIT
+
+What Stage 5 needs to audit:
+
+(a) PPD/ABI LEAKAGE CHECK (NEW AUDIT CONCERN)
+    Stage 5 must verify that PPD bucket names (e.g., "Mistake Recovery Lag",
+    "Overload Fatigue") and ABI pillar names (as scoring labels, not as natural
+    English words) do not appear in coaching output. This is analogous to the
+    existing Criterion 13 (Execution Signal Leakage) — internal pipeline
+    terminology must not leak into athlete-facing content.
+
+    IMPORTANT: Words like "ownership," "composure," "focus," and "structure" are
+    legitimate coaching vocabulary. The audit concern is their use AS PILLAR SCORE
+    LABELS (e.g., "your Ownership score is low") not as natural coaching language
+    (e.g., "take ownership of your preparation"). Same reasonable-reader test as
+    Criterion 13.
+
+    SCOPE DECISION: This concern can likely be folded into Criterion 13's existing
+    framework (Category E expansion) rather than requiring a new criterion. Task 7
+    will make the final determination.
+
+(b) COMPETITIVE LEVEL CONSISTENCY CHECK
+    Stage 5 should verify that coaching tone is consistent with the competitive_level
+    field. A coaching message using sophisticated performance-psychology vocabulary
+    for a Middle School athlete would be an audit flag. This is a new audit dimension
+    that doesn't exist today.
+
+    SCOPE DECISION: Whether this becomes a formal audit criterion or a quality note
+    depends on how rigorous the Competitive Level Calibration Rule is in Stage 3.
+    Task 7 will determine.
+
+
+============================================================
+SECTION 6: SCOPE BOUNDARY
+============================================================
+
+6.1 IN SCOPE — IMMEDIATE IMPLEMENTATION
+
+The following changes are in scope for the next Interpretation Engine version update:
+
+(a) New baseline_intake_profile JSON block (7 fields + CF fallback)
+(b) New Step 1.5 in Core Interpretation Process (snapshot intake profile extraction)
+(c) Updated Core Foundation Fallback Rules (add baseline_intake_profile fallback)
+(d) Updated Production Schema Validation (add baseline_intake_profile checks)
+(e) Updated Canonical Output Schema (add baseline_intake_profile block)
+
+These changes are:
+- Pure pass-through (no new classification rules)
+- Additive (no existing fields modified)
+- Dual-mode safe (CF fallback defined)
+- Low-risk (read from snapshot, write to JSON, no computation)
+
+6.2 DEFERRED — FUTURE PHASES
+
+The following are explicitly OUT OF SCOPE for this implementation:
+
+(a) LIVE SEASON PHASE (PRE-LAUNCH BLOCKER)
+    Requires: New question in weekly check-in input format, new Stage 2 field
+    (current_season_phase), new processing step to extract from weekly input.
+    Deferred to: Weekly check-in input format design (future task). Must be
+    resolved before app v1 launch. Flagged as dependency.
+
+(b) LONGITUDINAL PPD ALIGNMENT SIGNAL
+    Requires: Execution-derived PPD computation, ppd_all_scores comparison logic,
+    new alignment classification (Problem Awareness Aligned / Gap / Blind Spot).
+    Deferred to: Future Stage 2 enhancement after sufficient execution data
+    accumulated. ppd_all_scores stays in snapshot only until this feature is designed.
+
+(c) PARENT OUTPUT ECOSYSTEM ROUTING
+    Requires: Idea 4 design (Tasks 16-21) to determine whether ecosystem fields
+    flow through Stage 2 or whether the Parent engine reads the snapshot directly.
+    Deferred to: Tasks 16-21. No ecosystem fields in the weekly JSON until then.
+
+(d) PERCEPTION-REALITY COMPARISONS
+    Requires: Design of comparison logic for mental_game_self_rating vs execution
+    data, reset_speed_baseline vs Recovery Score. Same pattern as PPD Alignment.
+    Deferred to: Future longitudinal feature design.
+
+(e) COMPETITIVE LEVEL CALIBRATION RULE (STAGE 3)
+    Requires: New section in Coaching Output Instructions defining tone, vocabulary,
+    directness, and accountability framing per competitive level.
+    Deferred to: Task 7 (downstream stage impact assessment). Stage 2 passes the
+    field through; Stage 3 implementation is Task 7 scope.
+
+(f) STAGE 5 AUDIT CRITERIA FOR INTAKE PROFILE LEAKAGE
+    Requires: Assessment of whether Criterion 13 expansion or new criterion needed.
+    Deferred to: Task 7 (downstream stage impact assessment).
+
+6.3 WHY THE BOUNDARY IS HERE
+
+The boundary separates PASS-THROUGH (immediate) from CONSUMPTION RULES (downstream):
+
+- Stage 2's job is to get the data into the JSON so downstream stages can use it.
+  That's pass-through — low risk, well-understood pattern, already proven with
+  execution_behavior_signals.
+
+- How Stage 3 uses competitive_level for tone calibration, how Stage 4 handles
+  PPD/ABI compliance, and how Stage 5 audits for leakage are all DOWNSTREAM
+  CONSUMPTION decisions. Those belong in Task 7 (Stages 3-5 impact assessment),
+  not in the Stage 2 assessment.
+
+- The live season phase, longitudinal PPD, and Parent Output features are all
+  FUTURE CAPABILITIES that require their own design cycles. Including them now
+  would bloat the implementation scope and risk delaying the core integration.
+
+
+============================================================
+SECTION 7: IMPLEMENTATION TASK LIST
+============================================================
+
+Stage 2 implementation (next Interpretation Engine version):
+
+TASK A: Update Canonical Output Schema
+  File: SOP_Interpretation_Engine_Project_Instructions (new version)
+  Change: Add baseline_intake_profile block to Section 17
+  Scope: ~20 lines of schema definition
+  Dependencies: None
+
+TASK B: Add Step 1.5 to Core Interpretation Process
+  File: SOP_Interpretation_Engine_Project_Instructions (new version)
+  Change: Insert Step 1.5 (Snapshot Intake Profile Extraction) between Step 1 and Step 2
+  Scope: ~15-20 lines of processing instructions
+  Dependencies: Schema defined (Task A)
+
+TASK C: Update Core Foundation Fallback Rules
+  File: SOP_Interpretation_Engine_Project_Instructions (new version)
+  Change: Add baseline_intake_profile fallback values to Section 6
+  Scope: ~10 lines
+  Dependencies: Schema defined (Task A)
+
+TASK D: Update Production Schema Validation
+  File: SOP_Interpretation_Engine_Project_Instructions (new version)
+  Change: Add baseline_intake_profile validation checks to Section 11
+  Scope: ~5-8 lines (app-mode completeness check + CF-mode fallback verification)
+  Dependencies: Schema defined (Task A)
+
+TASK E: Update Authoritative Sources
+  File: SOP_Interpretation_Engine_Project_Instructions (new version)
+  Change: Add VF_App_Athlete_Snapshot_Fields.txt and VF_PPD_Scoring_Logic.txt to Section 2 source hierarchy
+  Scope: ~3-4 lines
+  Dependencies: None
+
+NOTE: Tasks A-E are all changes to a single file (new versioned Project Instructions).
+They can be implemented together in a single file update. Estimated total scope:
+~50-60 lines of additions to a ~480-line file. No changes to VF_Interpretation_JSON_Rules.txt.
+
+Downstream implementation (Task 7 scope, not this task):
+
+TASK F: Competitive Level Calibration Rule for Stage 3
+  File: SOP_Coaching_Output_Instructions (new version)
+  Change: New section defining tone/vocabulary/directness calibration per competitive level
+  Scope: Significant — formal rule with per-level definitions and examples
+
+TASK G: PPD/ABI Field Routing for Stage 3
+  File: VF_Coaching_Output_JSON_to_Message_Map.txt
+  Change: Add routing rules for ppd_top_3 coaching implications, tie-breaker classification, ABI emphasis, adversity pattern
+  Scope: Moderate — new routing entries in existing structure
+
+TASK H: Stage 4 Compliance Classification for Intake Profile Fields
+  File: SOP_Coach_Insights_Project_Instructions (new version) + JSON_logic_reference.txt
+  Change: Classify baseline_intake_profile fields as inform-only, add to prohibited content list
+  Scope: Moderate — follows established pattern from execution signal integration
+
+TASK I: Stage 5 Audit Criteria for Intake Profile Leakage
+  File: SOP_Editorial_Audit_Master_Prompt + Project_Instructions (new version)
+  Change: Expand Criterion 13 or add new criterion for PPD/ABI leakage
+  Scope: Moderate — follows established Category E expansion pattern
+
+TASK J: Live Season Phase Design (PRE-LAUNCH BLOCKER)
+  File: Multiple — weekly check-in format, Stage 2 instructions, downstream stages
+  Change: New question in weekly check-in, new current_season_phase field, processing step
+  Scope: Significant — crosses multiple specification files
+  Priority: Must be resolved before app v1 launch
+
+
+============================================================
+SECTION 8: SUMMARY
+============================================================
+
+PASS-THROUGH FIELDS (7):
+  1. competitive_level — Stage 3 formal coaching calibration input
+  2. baseline_season_phase — Point-in-time baseline marker (renamed from season_phase)
+  3. ppd_primary_problem — Deterministic derailer anchor
+  4. ppd_top_3 — Coaching implications for Stage 3
+  5. ppd_tie_breaker_classification — Pressure framing for tone calibration
+  6. abi_primary_emphasis — Pillar-based coaching direction
+  7. adversity_response_pattern — Adversity response style for tone calibration
+
+NO ACTION FIELDS (9):
+  1. commitment_level — Superseded by execution data
+  2. ppd_all_scores — Future longitudinal PPD, no current consumer
+  3. Individual ABI pillar scores — primary_emphasis carries the signal
+  4. ABI total + band — Low downstream value
+  5. ABI pillar_bands — Redundant with primary_emphasis
+  6. All 5 ecosystem fields — Deferred to Idea 4
+  7. adversity_self_description — Redundant with weekly athlete_voice
+  8. reset_speed_baseline — Future longitudinal comparison
+  9. competitor_aspiration_text — Diminishing returns
+  10. mental_game_self_rating — Future perception-reality comparison
+
+ACTIVE USE FIELDS: 0
+  No new classification rules needed at Stage 2.
+
+PRE-LAUNCH BLOCKER: 1
+  Live current_season_phase via weekly check-in question.
+  Design deferred but REQUIRED before app v1 launch.
+
+NEW JSON BLOCK: baseline_intake_profile
+  7 data fields + input_source indicator
+  Sits alongside baseline_profile (separate block, does not expand existing)
+  Full CF fallback defined
+
+DOWNSTREAM DELIVERABLES (Task 7):
+  - Stage 3: Competitive Level Calibration Rule (formal, new section)
+  - Stage 3: PPD/ABI/adversity field routing (Message Map update)
+  - Stage 4: Intake profile compliance classification
+  - Stage 5: Intake profile leakage audit criteria
+  - Cross-stage: Live season phase design (pre-launch blocker)
+
+
+============================================================
+END OF ASSESSMENT
+============================================================
