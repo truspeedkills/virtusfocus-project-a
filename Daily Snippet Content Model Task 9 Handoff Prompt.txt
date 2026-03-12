@@ -1,0 +1,323 @@
+VIRTUSFOCUS — IDEA 2, TASK 9: DAILY SNIPPET CONTENT MODEL
+DESIGN SESSION HANDOFF
+============================================================
+
+SESSION MODE: COLLABORATIVE DESIGN
+============================================================
+
+This session designs the content model for the Daily Coaching
+Snippet — the athlete-facing output of Stage 6 (Daily
+Coaching Engine). Task 8 defined the data architecture (Daily
+Mini-JSON, tiered product model, generation timing). This
+session defines WHAT the snippet says, HOW it sounds, and
+how it adapts across scenarios.
+
+The deliverable is an approved content model document that
+Task 10 will consume to write the formal Stage 6 specification
+(Master Prompt + Project Instructions).
+
+============================================================
+WHAT TASK 8 ESTABLISHED (DO NOT REDESIGN)
+============================================================
+
+These decisions are LOCKED from the Task 8 session:
+
+1. STAGE 6 is an independent daily stage running on Sonnet
+   (not embedded in Stage 3).
+
+2. DAILY MINI-JSON is the sole daily data input. Produced
+   deterministically by the app backend. Zero LLM. Contains:
+   - meta (athlete_id, name, date, day_of_week,
+     program_day_number, week_period, days_into_week)
+   - morning_tune_up (completed, focus_word,
+     mindset_challenge_text, quick_win_items)
+   - evening_review (status: completed|partial|missed, wtd
+     sub-block with 5 questions + scores, journaling sub-block
+     with domain entries, bullseye sub-block with ring items,
+     mindset_challenge_completed)
+   - running_week_summary (days_completed, win_days,
+     partial_win_days, missed_days, current_win_streak,
+     morning_completions, evening_completions,
+     challenge_follow_throughs)
+
+3. TIERED PRODUCT MODEL:
+   - Base tier: 7 snippets/week (Mon-Sun), standalone
+     product, NO weekly Interpretation JSON available.
+   - Premium tier: 6 snippets/week (Tue-Sun), enriched by
+     last week's Interpretation JSON + Athlete Snapshot.
+     Monday skipped because full Coaching Message + Deep
+     Dive are delivered that day.
+
+4. PREVIOUS SNIPPET as input: Each day includes the prior
+   day's snippet (~50-100 tokens) for cohesion and
+   repetition avoidance. Weekly reset: first snippet day
+   has PREVIOUS_SNIPPET: none.
+
+5. COMPLIANCE-BY-CONSTRUCTION: The mini-JSON deliberately
+   excludes execution timing data, trigger methods, rates,
+   and percentages. Stage 6 cannot leak what it cannot see.
+
+6. GENERATION TIMING: Snippet produced 1-2 hours before
+   hard-out time (default: 4-5 AM for 6 AM hard-out).
+   Delivered as evening/night coaching moment bridging
+   yesterday to today.
+
+7. SNIPPET FUNCTION: Micro-recognition + micro-connection.
+   Moment reinforcement, not interpretation. Bridges
+   yesterday to today. Distinct from:
+   - Morning Tune-Up (athlete sets own day — interactive,
+     athlete-driven, BEFORE the day)
+   - Weekly Coaching Message (full pattern synthesis —
+     comprehensive, retrospective, AFTER the week)
+
+8. COACH ARRON PERSONA: Same voice as weekly outputs.
+   Calm, direct, identity-focused, supportive but firm.
+
+============================================================
+WHAT THIS SESSION MUST DESIGN
+============================================================
+
+The content model must define:
+
+A. SNIPPET LENGTH AND FORMAT
+   - Exact sentence count or word count target
+   - Task 8 conclusion: 2-3 sentences is the sweet spot
+   - Does format vary by scenario (full engagement vs missed)?
+   - Any structural template (e.g., always recognition +
+     forward bridge)? Or freeform within length constraint?
+
+B. VOICE CALIBRATION
+   - How does Coach Arron sound in 2-3 sentences vs. 250-450
+     word Coaching Messages? Same vocabulary? Tighter?
+   - Evening delivery timing → warm but grounded? Day-closing
+     calm? Forward-looking energy?
+   - How does tone shift across:
+     * Win day (4-5 WTD) → recognition + reinforcement
+     * Partial Win day (2-3 WTD) → grounded acknowledgment
+     * Missed day (0-1 WTD) → non-judgmental reconnection
+     * Missed review (no data) → generic baseline encouragement
+
+C. CONTENT DIFFERENTIATION FROM MORNING TUNE-UP
+   - Tune-Up is morning, interactive, athlete-driven
+     (focus word, challenge, quick wins)
+   - Snippet is evening, passive, coach-driven
+     (recognition, connection, bridge)
+   - How do they complement without overlapping?
+   - Can the snippet reference the morning's focus word or
+     challenge? Should it?
+
+D. CONTENT DIFFERENTIATION FROM WEEKLY COACHING MESSAGE
+   - Weekly CM synthesizes full-week patterns (250-450 words,
+     5 mandatory sections: Recognition, Strength Signals,
+     Drift, Identity Anchor, ONE Action)
+   - Daily snippet must NOT attempt mini-interpretation
+   - Where is the boundary between "recognizing today" and
+     "interpreting a pattern"?
+   - Rule: snippet never names a pattern, trend, or
+     classification
+
+E. BASE TIER VS PREMIUM TIER CONTENT
+   - Base tier: mini-JSON + snapshot only. No weekly JSON.
+     What can the snippet say without weekly context?
+   - Premium tier: mini-JSON + snapshot + last weekly JSON +
+     previous snippet. How does weekly context enrich?
+   - Must base tier snippets feel complete (not "missing"
+     something)? Yes — standalone product.
+   - What weekly JSON fields should Premium snippets draw on?
+     (micro_commitment, growth_phase, derailer references,
+     identity claim, prior week patterns?)
+
+F. EARLY PROGRAM VS MATURE PROGRAM
+   - program_day_number is available in meta block
+   - Day 1-7: athlete is brand new. No prior data. Snippet
+     should be... welcoming? Habit-building? Identity-seeding?
+   - Day 8-30: building familiarity. Beginning to reference
+     their patterns.
+   - Day 30+: mature. Full coaching voice, expectation of
+     engagement, deeper identity connections.
+   - What are the thresholds and tone shifts?
+
+G. DAY-TO-DAY COHESION STRATEGY
+   - Previous snippet prevents repetition, but how should
+     the snippet actively build week-long narrative?
+   - running_week_summary provides cumulative context
+     (win streak, total wins, days into week)
+   - End-of-week snippets (Day 6-7): should they preview
+     the upcoming weekly Coaching Message? Or stay in the
+     daily moment?
+   - What happens when a win streak breaks? When it extends?
+
+H. COMPETITIVE LEVEL ADAPTATION
+   - Competitive Level Calibration Rule exists in Stage 3
+     (v1.6, Section 19) with 5 levels × 5 parameters
+   - Does Stage 6 apply the same calibration? Simplified
+     version? Or none (uniform voice)?
+   - At 2-3 sentences, does competitive level matter as
+     much as in 250-450 word messages?
+
+I. SCENARIO COVERAGE
+   The content model must provide guidance (or examples) for
+   at least these scenarios:
+   1. Full engagement day (Tune-Up done, full review, Win)
+   2. Full engagement day, Partial Win (2-3 WTD)
+   3. Tune-Up done, but missed evening review
+   4. No Tune-Up, but completed evening review
+   5. Complete miss (nothing done all day)
+   6. Strong Bullseye (center-ring dominant) day
+   7. Outer-ring heavy Bullseye day
+   8. Mindset Challenge followed through
+   9. Mindset Challenge NOT followed through
+   10. Running win streak (3+ consecutive Wins)
+   11. Streak broken (Win → Missed)
+   12. Recovery day (Missed → Win)
+   13. Saturday/Sunday (weekend patterns)
+   14. Day 1 of program (first-ever snippet)
+   15. Base tier, no weekly context
+   16. Premium tier, with weekly context enrichment
+
+   The content model does NOT need to script every scenario —
+   but it must provide enough guidance and examples that Task
+   10 can write deterministic rules for Stage 6.
+
+J. PROHIBITED CONTENT
+   What the snippet must NEVER do:
+   - Name patterns, trends, or classifications
+   - Reference execution signal data (already excluded from
+     mini-JSON, but reinforce in content rules)
+   - Use clinical language (same prohibition as all stages)
+   - Attempt to interpret or diagnose
+   - Reference other athletes
+   - Assign guilt or shame for missed days
+   - Use hype or motivational clichés
+
+============================================================
+REFERENCE FILES TO READ (IN THIS ORDER)
+============================================================
+
+Read these files at the start of the session to calibrate
+your understanding of voice, data, and architectural context:
+
+1. CLAUDE.md (project instructions — read fully)
+   Path: D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+2. VF_Daily_Mini_JSON_Specification.txt (Task 8 deliverable)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Mini_JSON_Specification.txt
+   — This is the data contract. Read fully. Understand every
+   field, every exclusion, and all three fallback examples.
+
+3. brand_voice.txt (Coach Arron voice guide)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+
+4. content_style_guide.txt (writing style rules)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+
+5. VF_Coaching_Message_Framework.txt (weekly CM structure)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+   — Read to understand what the WEEKLY message does so you
+   can clearly differentiate the daily snippet.
+
+6. VF_Coaching_Output_System_Identity.txt (Coach Arron role)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+
+7. Grace Kindel Week 5 Coaching Message (voice example)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+   — Read to hear Coach Arron's actual weekly voice. The daily
+   snippet must be recognizably the same coach — just in micro
+   form.
+
+8. Grace Kindel Athlete Snapshot (baseline reference)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+   — NOTE: double space in filename before "V2"
+
+9. Tucker Lloyd Week 3 Coaching Message (second voice sample)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Coaching Message\Tucker_Lloyd_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+   — Different athlete profile (Mixed tier, structure gaps).
+   Shows how Coach Arron adapts voice to athlete state.
+
+10. SOP_Coaching_Output_Instructions_v1.6.txt (Section 19:
+    Competitive Level Calibration Rule)
+    Path: D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.6.txt
+    — Read Section 19 only. Understand the 5×5 calibration
+    table for competitive level adaptation.
+
+11. VF_App_Input_Format_Specification.txt (raw daily data)
+    Path: D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_App_Input_Format_Specification.txt
+    — Skim Section 3 (Daily Event Record) to understand what
+    raw data the mini-JSON is derived from. Helps you see
+    what was EXCLUDED and why.
+
+12. VF_Reflection_Quality_Growth_Phase_Model.txt
+    Path: D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
+    — Growth phase definitions. Premium tier snippets may
+    reference growth_phase from last weekly JSON.
+
+============================================================
+DESIGN CONSTRAINTS
+============================================================
+
+1. The snippet is 2-3 sentences. Not a paragraph. Not a
+   message. A micro-moment of coaching presence.
+
+2. Coach Arron persona. Same brand voice as weekly outputs.
+   The athlete should feel it's the same coach — just
+   checking in briefly between full weekly sessions.
+
+3. Compliance: no clinical language, no execution signal
+   data (already excluded from mini-JSON), no pattern naming,
+   no trend interpretation, no guilt/shame framing.
+
+4. Base tier must feel COMPLETE. Not "missing" the weekly
+   pipeline. A standalone product that delivers value on
+   its own.
+
+5. The content model is a DESIGN DOCUMENT — not the
+   specification itself. It defines the rules and examples
+   that Task 10 will formalize into the Stage 6 Master
+   Prompt and Project Instructions.
+
+6. VirtusFocus behavioral language only: controllables,
+   identity, discipline, consistency, ownership, composure,
+   focus, structure. No clinical, therapeutic, or mental
+   health framing.
+
+============================================================
+DELIVERABLE
+============================================================
+
+An approved content model document covering all items A-J
+above. Format: clear sections with rules, examples, and
+rationale. Include at minimum 8-10 example snippets across
+the scenario list (item I) to calibrate voice and length.
+
+Save as: D:\OneDrive\Documents\(TEST) Project A\Agents -
+Generators\Daily Coaching Engine\Source Files\
+VF_Daily_Snippet_Content_Model.txt
+
+============================================================
+SESSION WORKFLOW
+============================================================
+
+1. Read all 12 reference files
+2. Present your understanding of the content model design
+   space — what you see as the key tensions and decisions
+3. Collaborate with the user on each section (A-J)
+4. Draft the content model with example snippets
+5. Review and approve with user
+6. Save to disk
+7. Update CLAUDE.md (session history + task queue)
+8. Commit
+9. Pause before Task 10 — user will plan path forward
+
+============================================================
+TASK QUEUE CONTEXT
+============================================================
+
+Idea 2: Daily Coaching Snippet
+  [x] Task 8: Daily processing architecture (COMPLETE)
+  [ ] Task 9: Daily snippet content model ← THIS SESSION
+  [ ] Task 10: Write Stage 6 specification (Master Prompt +
+      Project Instructions)
+  [ ] Task 11: Define daily snippet audit criteria
+
+Idea 3: Daily Coach Insights (Tasks 12-15) — not this session
+Idea 4: Parent Output + Dashboard (Tasks 16-21) — not this session
