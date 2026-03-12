@@ -1,0 +1,1354 @@
+VIRTUSFOCUS — DAILY MINI-JSON SPECIFICATION
+(Task 8 Deliverable — Idea 2: Daily Coaching Snippet)
+============================================================
+
+PURPOSE
+============================================================
+
+This document defines the structured daily data object that the
+app backend produces each night for consumption by the daily
+pipeline stages (Stage 6: Daily Coaching Engine, Stage 7: Daily
+Coach Insights Engine).
+
+The Daily Mini-JSON is the data contract between the app backend
+and all daily pipeline stages. It is computed deterministically
+from the previous day's raw daily event record. No LLM
+involvement. No coaching-relevant determinations. The app
+extracts, counts, and copies fields — Stage 6 and Stage 7
+perform all coaching interpretation.
+
+This document is intended as a handoff to the app development
+team. All field names, types, enum values, computation rules,
+and fallback states are defined here.
+
+============================================================
+ARCHITECTURE: HOW THE DAILY MINI-JSON FITS
+============================================================
+
+The VirtusFocus pipeline operates on two cadences:
+
+WEEKLY PIPELINE (existing, unchanged):
+  App backend collects 7 daily events + 1 weekly check-in
+    → Delivers Weekly Input Object to Stage 2
+    → Stage 2 produces Interpretation JSON
+    → Stages 3, 4, 5 consume JSON sequentially
+  Cadence: Once per week (Monday delivery)
+
+DAILY PIPELINE (new):
+  App backend computes Daily Mini-JSON from yesterday's data
+    → Stage 6 (Daily Coaching Engine) produces athlete snippet
+    → Stage 7 (Daily Coach Insights Engine) produces coach insight
+  Cadence: Nightly (delivery before next morning)
+
+The Daily Mini-JSON is a SUBSET of the data that eventually
+flows into the Weekly Input Object. It represents a single
+day's structured extraction — not a replacement for the weekly
+input. At end of week, all 7 daily event records still flow
+to Stage 2 via the Weekly Input Object as defined in
+VF_App_Input_Format_Specification.txt.
+
+============================================================
+GENERATION RULES
+============================================================
+
+WHEN TO GENERATE:
+  The app backend generates the Daily Mini-JSON at [hard-out
+  time minus 2 hours] for every active App athlete.
+
+  Default hard-out: 6:00 AM local time.
+  Default generation time: 4:00 AM local time.
+  Both are configurable per program.
+
+  At generation time, the athlete's Evening Review is in one
+  of three states:
+    - Submitted (completed before generation time)
+    - Started but not submitted (partial data available)
+    - Not started (no data available)
+
+  The mini-JSON is generated regardless of Evening Review state.
+  The evening_review.status field reflects the state. Downstream
+  stages handle all three cases.
+
+WHO GENERATES:
+  The app backend. This is a deterministic extraction — no AI,
+  no LLM, no classification logic. The backend reads the raw
+  daily event record and populates the mini-JSON fields using
+  the derivation rules in Section D.
+
+WHO CONSUMES:
+  Stage 6: Daily Coaching Engine (athlete-facing snippet)
+  Stage 7: Daily Coach Insights Engine (coach-facing insight)
+  Both stages receive the same mini-JSON. Each has its own
+  specification governing how the data is used.
+
+GENERATION FREQUENCY:
+  One mini-JSON per athlete per day. Generated nightly.
+
+RETENTION:
+  Daily Mini-JSONs should be retained for the duration of the
+  current week (7 days minimum) to support the running_week_
+  summary computation and previous-snippet chain. Longer
+  retention at the app team's discretion for debugging and
+  analytics.
+
+============================================================
+A. DAILY MINI-JSON SCHEMA
+============================================================
+
+{
+  "meta": {
+    "athlete_id": "string",
+    "athlete_name": "string",
+    "date": "YYYY-MM-DD",
+    "day_of_week": "string",
+    "program_day_number": "integer",
+    "week_period": "YYYY-MM-DD to YYYY-MM-DD",
+    "days_into_week": "integer 1-7"
+  },
+
+  "morning_tune_up": {
+    "completed": "boolean",
+    "focus_word": "string or null",
+    "mindset_challenge_text": "string or null",
+    "quick_win_items": ["string array (3 items) or null"]
+  },
+
+  "evening_review": {
+    "status": "completed | partial | missed",
+
+    "wtd": {
+      "completed": "boolean",
+      "daily_score": "integer 0-5 or null",
+      "day_category": "Win the Day | Partial Win | Missed the Mark | null",
+      "q1_intention": "boolean or null",
+      "q2_challenge": "boolean or null",
+      "q3_adversity": "boolean or null",
+      "q4_progress": "boolean or null",
+      "q5_gratitude": "boolean or null",
+      "missed_questions": ["array of Q labels or empty array"]
+    },
+
+    "journaling": {
+      "completed": "boolean",
+      "domains_completed": ["array of domain names or empty array"],
+      "domains_omitted": ["array of domain names or empty array"],
+      "sport_entry": "string or null",
+      "school_work_entry": "string or null",
+      "home_life_entry": "string or null"
+    },
+
+    "bullseye": {
+      "completed": "boolean",
+      "center_ring_items": ["string array or null"],
+      "influence_ring_items": ["string array or null"],
+      "outer_ring_items": ["string array or null"],
+      "center_count": "integer or null",
+      "influence_count": "integer or null",
+      "outer_count": "integer or null"
+    },
+
+    "mindset_challenge_completed": "boolean or null"
+  },
+
+  "running_week_summary": {
+    "days_completed": "integer 0-7",
+    "win_days": "integer",
+    "partial_win_days": "integer",
+    "missed_days": "integer",
+    "current_win_streak": "integer",
+    "morning_completions": "integer",
+    "evening_completions": "integer",
+    "challenge_follow_throughs": "integer"
+  }
+}
+
+============================================================
+B. FIELD DEFINITIONS
+============================================================
+
+------------------------------------------------------------
+B.1 META BLOCK
+------------------------------------------------------------
+
+athlete_id
+  System identifier for the athlete. String. Must match the
+  athlete_id used in the Weekly Input Object and Athlete
+  Snapshot.
+
+athlete_name
+  Athlete's display name. String.
+
+date
+  The date of the day being summarized. YYYY-MM-DD format.
+  This is YESTERDAY's date relative to when the mini-JSON
+  is generated. If generation runs at 4:00 AM on March 4,
+  the date field is "2026-03-03".
+
+day_of_week
+  Full day name: "Monday" | "Tuesday" | "Wednesday" |
+  "Thursday" | "Friday" | "Saturday" | "Sunday".
+  Derived from the date field.
+
+program_day_number
+  Integer counting consecutive program enrollment days,
+  starting at 1 on the athlete's first active day. Used by
+  Stage 6 for early-program tone adjustment (e.g., Day 3
+  messages differ from Day 45 messages). The app backend
+  tracks this from the athlete's enrollment date.
+
+week_period
+  The current weekly period in "YYYY-MM-DD to YYYY-MM-DD"
+  format. Must match the week_period that will appear in the
+  Weekly Input Object for this week. Enables Stage 6 to know
+  which weekly JSON to reference (the PREVIOUS week's JSON,
+  not the current week — the current week's JSON does not
+  exist yet).
+
+days_into_week
+  Integer 1-7 indicating how many days of the current week
+  have elapsed (including today). Day 1 = first day of the
+  weekly period. Used by Stage 6 for intra-week awareness
+  (e.g., "You're 5 days into the week with 4 Wins — strong
+  foundation heading into the weekend").
+
+------------------------------------------------------------
+B.2 MORNING TUNE-UP BLOCK
+------------------------------------------------------------
+
+completed
+  Whether the athlete opened and completed yesterday's
+  Morning Tune-Up. Boolean. True = completed (Mindset
+  Challenge accepted, all Quick Wins acknowledged, Finish
+  tapped). False = skipped or not opened.
+
+focus_word
+  The system-assigned daily mental filter word (e.g.,
+  "Compete", "Clarity", "Stalwart"). String. Null if
+  Tune-Up not completed.
+
+  Stage 6 may reference the focus word to bridge morning
+  intention to evening execution: "Your focus word was
+  [X] — your Bullseye reflects that."
+
+mindset_challenge_text
+  The full text of the system-generated Mindset Challenge
+  presented to the athlete. String. Null if Tune-Up not
+  completed.
+
+  Stage 6 may reference the specific challenge to recognize
+  follow-through or connect to WTD Q2.
+
+quick_win_items
+  Array of 3 system-generated micro-agreement texts. All 3
+  were acknowledged by the athlete to complete the Tune-Up.
+  Array of strings. Null if Tune-Up not completed.
+
+  Stage 6 may reference specific Quick Win items when they
+  connect to evening execution patterns.
+
+FIELDS DELIBERATELY EXCLUDED FROM MORNING TUNE-UP:
+
+  completion_timestamp
+    Execution timing data. Backend-only. Stage 6 does not
+    need to know WHEN the Tune-Up was completed — only
+    WHETHER it was completed.
+
+  trigger_method (self_initiated | reminder)
+    Execution signal data. Backend-only. Whether the athlete
+    opened the app proactively or via reminder is an execution
+    metric, not coaching content.
+
+  mindset_challenge_accepted
+    In V1, acceptance is mandatory to complete. Therefore
+    completed = true implies accepted = true. Redundant for
+    Stage 6 purposes. Retained in the raw daily event record
+    for Stage 2 weekly processing.
+
+------------------------------------------------------------
+B.3 EVENING REVIEW BLOCK
+------------------------------------------------------------
+
+status
+  Three-state enum summarizing the Evening Review's
+  completion state:
+
+  "completed" — Full review submitted. All component data
+    available.
+
+  "partial" — Review started but not submitted before
+    generation time. Some component data available (whatever
+    the athlete entered before the review was computed into
+    the mini-JSON). This includes cases where the athlete
+    started components but did not tap final submit.
+
+  "missed" — No part of the review was started. All
+    component fields are null/false/empty. Stage 6 generates
+    a generic baseline snippet (see Section H).
+
+  DETERMINATION RULES:
+    If evening_review.submitted = true in raw daily event
+      → status = "completed"
+    If evening_review.submitted = false AND at least one
+      component has completed = true in raw daily event
+      → status = "partial"
+    If evening_review.submitted = false AND no components
+      have completed = true
+      → status = "missed"
+
+------------------------------------------------------------
+B.3a WTD SUB-BLOCK
+------------------------------------------------------------
+
+completed
+  Whether all 5 WTD questions were answered. Boolean.
+  Can be true even when evening_review.status = "partial"
+  (athlete completed WTD but not other components).
+
+daily_score
+  Sum of true answers across Q1-Q5. Integer 0-5.
+  Null if WTD not completed.
+
+day_category
+  Categorical classification of the daily score:
+    4-5 = "Win the Day"
+    2-3 = "Partial Win"
+    0-1 = "Missed the Mark"
+  Null if WTD not completed.
+
+  NOTE: "Partial Win" is the approved pipeline terminology.
+  It replaces any prior use of "Neutral" for the 2-3 range.
+  See VF_App_Input_Format_Specification.txt Section H.
+
+q1_intention through q5_gratitude
+  Individual yes/no answers. Boolean. Null if WTD not
+  completed.
+
+  QUESTION TEXT REFERENCE:
+    Q1: "Did I act with intention today, or was I reactive?"
+    Q2: "Did I complete the Mindset Challenge I accepted
+         this morning?"
+    Q3: "Did I respond to adversity in a way that aligns
+         with my goals?"
+    Q4: "Did I pursue progress over perfection?"
+    Q5: "Did I end the day with gratitude or self-compassion?"
+
+missed_questions
+  Array of Q labels where the athlete answered "no" (false).
+  E.g., ["Q2", "Q5"]. Empty array if all questions answered
+  yes or if WTD not completed.
+
+  Stage 6 uses this for targeted coaching: "You said no to
+  the Challenge question — what got in the way?" This is
+  coaching language, not a data metric.
+
+  DERIVATION: For each Q1-Q5, if value = false, add the
+  label ("Q1", "Q2", etc.) to the array. If value = null
+  (WTD not completed), array is empty (not null).
+
+------------------------------------------------------------
+B.3b JOURNALING SUB-BLOCK
+------------------------------------------------------------
+
+completed
+  Whether the athlete entered text in at least one domain
+  field. Boolean. Any text in any field = true.
+
+domains_completed
+  Array of domain names where the athlete entered text.
+  Possible values: "sport", "school_work", "home_life".
+  E.g., ["sport", "school_work"]. Empty array if no
+  entries.
+
+domains_omitted
+  Array of domain names where no text was entered.
+  E.g., ["home_life"]. Empty array if all domains
+  completed. Complementary to domains_completed (the
+  union always equals all 3 domains when journaling is
+  completed).
+
+sport_entry
+  Full text of the athlete's sport/training/competition
+  journal entry. String. Null if no text entered.
+
+  Stage 6 reads the actual journal text to reference
+  specific athlete language in the snippet. This is the
+  primary personalization vector — the athlete's own
+  words about their day.
+
+school_work_entry
+  Full text of the school/work domain entry. String.
+  Null if no text entered.
+
+home_life_entry
+  Full text of the home life/personal domain entry.
+  String. Null if no text entered.
+
+NOTE ON JOURNAL TEXT SIZE:
+  Journal entries are typically 30-150 words per domain.
+  Total journal text in the mini-JSON is typically
+  100-400 words (130-530 tokens). This is an acceptable
+  token cost for the personalization value it provides
+  to Stage 6.
+
+------------------------------------------------------------
+B.3c BULLSEYE SUB-BLOCK
+------------------------------------------------------------
+
+completed
+  Whether the athlete filled in all three rings (minimum
+  1 item per ring per app validation rules). Boolean.
+
+center_ring_items
+  Array of text strings the athlete placed in the Control
+  ring. Null if Bullseye not completed.
+
+  Stage 6 may reference specific center-ring items as
+  coaching recognition: "You named [item] as a
+  controllable — that's the kind of specificity that
+  builds real confidence."
+
+influence_ring_items
+  Array of text strings from the Influence ring. Null if
+  not completed.
+
+outer_ring_items
+  Array of text strings from the Cannot Control ring. Null
+  if not completed.
+
+center_count
+  Integer count of center_ring_items.length. Null if
+  Bullseye not completed. Provided as a convenience —
+  the app already has the array, so the count is trivial.
+
+influence_count
+  Integer count of influence_ring_items.length. Null if
+  not completed.
+
+outer_count
+  Integer count of outer_ring_items.length. Null if not
+  completed.
+
+------------------------------------------------------------
+B.3d MINDSET CHALLENGE FOLLOW-THROUGH
+------------------------------------------------------------
+
+mindset_challenge_completed
+  Whether the athlete completed the Mindset Challenge
+  they accepted that morning. Boolean. Null if no
+  challenge was accepted (morning_tune_up.completed =
+  false).
+
+  Sits at the evening_review level because follow-through
+  is assessed at end of day. Stage 6 may reference this
+  for recognition ("You accepted the challenge and
+  followed through — that's ownership in action") or
+  gentle redirection ("The challenge was there today.
+  Tomorrow's a new chance to follow through").
+
+------------------------------------------------------------
+B.4 RUNNING WEEK SUMMARY BLOCK
+------------------------------------------------------------
+
+This block provides intra-week context — how the current
+week is going so far. All values are cumulative counts
+from the first day of the current weekly period through
+the date being summarized.
+
+days_completed
+  Total days with at least a submitted Evening Review in
+  the current week so far. Integer 0-7.
+
+win_days
+  Count of days with WTD daily_score 4-5 in the current
+  week so far. Integer.
+
+partial_win_days
+  Count of days with WTD daily_score 2-3 in the current
+  week so far. Integer.
+
+missed_days
+  Count of days with WTD daily_score 0-1 OR no Evening
+  Review submitted in the current week so far. Integer.
+
+  NOTE: A day where the Evening Review was missed entirely
+  counts as a missed_day (score effectively 0). A day
+  where the Evening Review was partial but WTD was
+  completed uses the actual WTD score for categorization.
+
+current_win_streak
+  Count of consecutive Win the Day days (score 4-5) ending
+  on the current date. Integer. Resets to 0 on any non-Win
+  day. Cross-week: if the previous week ended with Win days
+  and the current week started with Win days, the streak
+  spans both weeks.
+
+  Stage 6 uses this for streak recognition: "Three Win days
+  in a row — that's not luck, that's your system working."
+
+morning_completions
+  Count of Morning Tune-Ups completed in the current week
+  so far. Integer 0-7.
+
+evening_completions
+  Count of Evening Reviews with status = "completed" in
+  the current week so far. Integer 0-7.
+
+challenge_follow_throughs
+  Count of days where mindset_challenge_completed = true
+  in the current week so far. Integer.
+
+RUNNING WEEK SUMMARY COMPUTATION:
+  The app backend maintains these running tallies by
+  reading all daily event records from the current week
+  period up to and including the date being summarized.
+  On Day 1 of the week, all values reflect that single
+  day. By Day 7, they reflect the full week.
+
+  The current_win_streak requires reading backwards from
+  the current date and, if the streak extends to Day 1,
+  checking the previous week's daily data for continuation.
+
+============================================================
+C. FIELDS DELIBERATELY EXCLUDED
+============================================================
+
+The following fields exist in the raw daily event record
+(VF_App_Input_Format_Specification.txt) but are EXCLUDED
+from the Daily Mini-JSON by design. These are execution
+signal metrics that must remain backend-only per the
+pipeline's compliance framework.
+
+TIMING DATA:
+  - completion_timestamp (morning and evening)
+  - On-time / late / backfill timing category
+  - Hard-out time parameter
+
+  WHY EXCLUDED: Execution timing data is classified as
+  backend-only across all pipeline stages. If Stage 6 had
+  access to timestamps, it could potentially generate
+  language like "You submitted late last night" — which
+  violates the surveillance framing prohibition.
+
+TRIGGER METHOD:
+  - trigger_method (self_initiated | reminder)
+
+  WHY EXCLUDED: Whether the athlete opened the app
+  proactively or via reminder is an execution behavior
+  metric that feeds Ownership Index computation. It is
+  not coaching content. Stage 6 does not need to know
+  HOW the athlete arrived — only WHAT they did.
+
+COMPONENT SEQUENCE:
+  - component_sequence array
+
+  WHY EXCLUDED: The order in which the athlete completed
+  WTD, Journaling, and Bullseye is a sequence integrity
+  metric for Stage 2's weekly processing. Stage 6 has no
+  use for this — it references what the athlete produced,
+  not the order they produced it in.
+
+RATES AND PERCENTAGES:
+  - completion_rate (any)
+  - yes_rate (any)
+  - follow_through_rate
+
+  WHY EXCLUDED: Rates and percentages are execution signal
+  metrics computed by Stage 2 from weekly aggregated data.
+  The Daily Mini-JSON provides raw counts (running_week_
+  summary) which athletes already implicitly know. Rates
+  are a derived analytical layer that belongs in Stage 2.
+
+COMPLIANCE NOTE:
+  This exclusion list aligns with the pipeline data leakage
+  compliance rules defined in:
+  - SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+    (Criterion 13, Categories E and F)
+  - SOP_Coaching_Output_Instructions_v1.6.txt
+    (Section 21, Raw Metric Exclusion Rule)
+  - VF_Coach_Insights_Compliance_Framework.txt
+
+  By excluding these fields at the data layer, Stage 6
+  cannot accidentally leak execution signal data — it
+  cannot reference what it does not receive. This is
+  compliance-by-construction.
+
+============================================================
+D. FIELD DERIVATION TRACE
+============================================================
+
+This section maps each Daily Mini-JSON field to its source
+in the raw daily event record (as defined in
+VF_App_Input_Format_Specification.txt). This is the
+implementation guide for the app development team.
+
+------------------------------------------------------------
+D.1 META BLOCK DERIVATION
+------------------------------------------------------------
+
+  athlete_id
+    SOURCE: System athlete record
+    RULE: Direct copy
+
+  athlete_name
+    SOURCE: System athlete record
+    RULE: Direct copy
+
+  date
+    SOURCE: daily_event.date
+    RULE: Direct copy. This is the date of the daily event
+    being summarized (yesterday relative to generation time).
+
+  day_of_week
+    SOURCE: daily_event.day_of_week
+    RULE: Direct copy
+
+  program_day_number
+    SOURCE: System athlete record (enrollment_date)
+    RULE: Count calendar days from enrollment_date to date
+    (inclusive). Integer starting at 1.
+
+  week_period
+    SOURCE: System configuration (weekly period boundaries)
+    RULE: The weekly period that contains the date field.
+    Must match the week_period that will be used in this
+    week's Weekly Input Object.
+
+  days_into_week
+    SOURCE: Computed from date and week_period
+    RULE: Count calendar days from start of week_period to
+    date (inclusive). Integer 1-7.
+
+------------------------------------------------------------
+D.2 MORNING TUNE-UP DERIVATION
+------------------------------------------------------------
+
+  completed
+    SOURCE: daily_event.morning_tune_up.completed
+    RULE: Direct copy
+
+  focus_word
+    SOURCE: daily_event.morning_tune_up.focus_word
+    RULE: Direct copy. Null if completed = false.
+
+  mindset_challenge_text
+    SOURCE: daily_event.morning_tune_up.mindset_challenge_text
+    RULE: Direct copy. Null if completed = false.
+
+  quick_win_items
+    SOURCE: daily_event.morning_tune_up.quick_win_items
+    RULE: Direct copy. Null if completed = false.
+
+------------------------------------------------------------
+D.3 EVENING REVIEW DERIVATION
+------------------------------------------------------------
+
+  status
+    SOURCE: daily_event.evening_review (multiple fields)
+    RULE:
+      If daily_event.evening_review.submitted = true
+        → "completed"
+      If daily_event.evening_review.submitted = false
+        AND (daily_event.evening_review.wtd.completed = true
+             OR daily_event.evening_review.journaling.completed = true
+             OR daily_event.evening_review.bullseye.completed = true)
+        → "partial"
+      If daily_event.evening_review.submitted = false
+        AND all component completed fields = false
+        → "missed"
+
+  wtd.completed
+    SOURCE: daily_event.evening_review.wtd.completed
+    RULE: Direct copy
+
+  wtd.daily_score
+    SOURCE: Computed from daily_event.evening_review.wtd.q1-q5
+    RULE: Count of true values across q1_intention through
+    q5_gratitude. Integer 0-5. Null if wtd.completed = false.
+
+  wtd.day_category
+    SOURCE: Computed from daily_score
+    RULE:
+      4-5 → "Win the Day"
+      2-3 → "Partial Win"
+      0-1 → "Missed the Mark"
+      Null if daily_score is null.
+
+  wtd.q1_intention through wtd.q5_gratitude
+    SOURCE: daily_event.evening_review.wtd.[field]
+    RULE: Direct copy. Null if wtd.completed = false.
+
+  wtd.missed_questions
+    SOURCE: Computed from q1-q5 values
+    RULE: For each question, if value = false, add the label
+    to the array. Labels: "Q1", "Q2", "Q3", "Q4", "Q5".
+    If wtd.completed = false, array is empty [].
+    If all questions = true, array is empty [].
+
+  journaling.completed
+    SOURCE: daily_event.evening_review.journaling.completed
+    RULE: Direct copy
+
+  journaling.domains_completed
+    SOURCE: Computed from journal entry fields
+    RULE: For each domain, if entry is non-null and non-empty
+    string, add domain name to array.
+      sport_entry present → "sport"
+      school_work_entry present → "school_work"
+      home_life_entry present → "home_life"
+    Empty array if no entries.
+
+  journaling.domains_omitted
+    SOURCE: Computed from journal entry fields
+    RULE: Complement of domains_completed. For each domain
+    NOT in domains_completed, add to this array.
+    Empty array if all domains completed.
+
+  journaling.sport_entry
+    SOURCE: daily_event.evening_review.journaling.sport_entry
+    RULE: Direct copy. Null if no text entered.
+
+  journaling.school_work_entry
+    SOURCE: daily_event.evening_review.journaling.school_work_entry
+    RULE: Direct copy. Null if no text entered.
+
+  journaling.home_life_entry
+    SOURCE: daily_event.evening_review.journaling.home_life_entry
+    RULE: Direct copy. Null if no text entered.
+
+  bullseye.completed
+    SOURCE: daily_event.evening_review.bullseye.completed
+    RULE: Direct copy
+
+  bullseye.center_ring_items
+    SOURCE: daily_event.evening_review.bullseye.center_ring_items
+    RULE: Direct copy. Null if bullseye.completed = false.
+
+  bullseye.influence_ring_items
+    SOURCE: daily_event.evening_review.bullseye.influence_ring_items
+    RULE: Direct copy. Null if bullseye.completed = false.
+
+  bullseye.outer_ring_items
+    SOURCE: daily_event.evening_review.bullseye.outer_ring_items
+    RULE: Direct copy. Null if bullseye.completed = false.
+
+  bullseye.center_count
+    SOURCE: Computed from center_ring_items
+    RULE: center_ring_items.length. Null if bullseye not
+    completed. Integer.
+
+  bullseye.influence_count
+    SOURCE: Computed from influence_ring_items
+    RULE: influence_ring_items.length. Null if not completed.
+
+  bullseye.outer_count
+    SOURCE: Computed from outer_ring_items
+    RULE: outer_ring_items.length. Null if not completed.
+
+  mindset_challenge_completed
+    SOURCE: daily_event.evening_review.mindset_challenge_completed
+    RULE: Direct copy. Null if morning_tune_up.completed =
+    false (no challenge was accepted).
+
+------------------------------------------------------------
+D.4 RUNNING WEEK SUMMARY DERIVATION
+------------------------------------------------------------
+
+All fields in this block require reading ALL daily event
+records from the current week_period up to and including the
+date being summarized. On Day 1, this is 1 record. On Day 7,
+this is 7 records.
+
+  days_completed
+    SOURCE: All daily events in current week through date
+    RULE: Count of days where evening_review.submitted = true
+
+  win_days
+    SOURCE: All daily WTD scores in current week through date
+    RULE: Count of days with daily_score 4-5
+
+  partial_win_days
+    SOURCE: All daily WTD scores in current week through date
+    RULE: Count of days with daily_score 2-3
+
+  missed_days
+    SOURCE: All daily events in current week through date
+    RULE: Count of days with daily_score 0-1 OR
+    evening_review.status = "missed" (no WTD completed).
+    A missed evening review counts as a missed day regardless
+    of whether partial component data exists.
+
+  current_win_streak
+    SOURCE: Daily WTD scores, reading backwards from date
+    RULE: Count consecutive days with daily_score 4-5,
+    starting from the current date and counting backwards.
+    Resets to 0 on any day that is not a Win.
+
+    CROSS-WEEK RULE: If the streak extends back to Day 1 of
+    the current week AND the previous week's final days were
+    also Win days, the streak includes those prior days.
+    The backend reads the previous week's daily data to
+    extend the count if needed.
+
+    Example: Previous week ended Fri=Win, Sat=Win, Sun=Win.
+    Current week Mon=Win, Tue=Win. current_win_streak = 5.
+
+  morning_completions
+    SOURCE: All daily events in current week through date
+    RULE: Count of days where morning_tune_up.completed = true
+
+  evening_completions
+    SOURCE: All daily events in current week through date
+    RULE: Count of days where evening_review.status =
+    "completed"
+
+  challenge_follow_throughs
+    SOURCE: All daily events in current week through date
+    RULE: Count of days where evening_review.mindset_challenge_
+    completed = true
+
+============================================================
+E. EVENING REVIEW STATUS RULES (DETAILED)
+============================================================
+
+The evening_review.status field is the primary branching
+signal for Stage 6. This section provides detailed rules for
+all scenarios.
+
+------------------------------------------------------------
+E.1 STATUS = "COMPLETED"
+------------------------------------------------------------
+
+Condition: evening_review.submitted = true in raw daily event
+
+All component fields are populated. Stage 6 has full data
+for personalized snippet generation.
+
+Expected state:
+  - wtd: all fields populated
+  - journaling: at least 1 domain completed (app requires
+    minimum to submit)
+  - bullseye: all 3 rings populated (app requires minimum
+    1 item per ring to submit)
+  - mindset_challenge_completed: boolean (true/false, not
+    null, if morning Tune-Up was completed)
+
+------------------------------------------------------------
+E.2 STATUS = "PARTIAL"
+------------------------------------------------------------
+
+Condition: evening_review.submitted = false AND at least one
+component has completed = true
+
+The athlete started the review but did not finish. This can
+happen when:
+  - Athlete completed some components but abandoned before
+    submitting
+  - Hard-out lockout occurred before submission (partial
+    data preserved per App Input Format Spec, Section B.2)
+
+Available data varies. Stage 6 should reference whatever
+components are available.
+
+Examples:
+  - WTD completed but journaling and bullseye not started
+    → wtd fields populated, journaling/bullseye fields null
+  - WTD and journaling completed, bullseye not started
+    → wtd and journaling populated, bullseye null
+  - All components completed but submit not tapped
+    → All fields populated (treat as functionally complete
+    for snippet purposes)
+
+Stage 6 rule: Use available component data. Do not reference
+missing components negatively (e.g., do NOT say "You didn't
+finish your review"). Acknowledge what was done.
+
+------------------------------------------------------------
+E.3 STATUS = "MISSED"
+------------------------------------------------------------
+
+Condition: No components started. All component fields are
+false/null/empty.
+
+Stage 6 generates a generic baseline snippet that does not
+reference yesterday's Evening Review content (there is none).
+The snippet draws from:
+  - Athlete baseline context (identity claim, hinge habit,
+    primary derailer, growth phase)
+  - Previous snippet (if available)
+  - Running week summary (if days_into_week > 1)
+  - Last weekly JSON context (Premium tier only)
+
+Generic snippet examples:
+  "New day, clean slate. Your standard is [hinge_habit].
+   Bring that into whatever today holds."
+  "Every day you show up is a choice to build. Focus on
+   what you can control today."
+
+------------------------------------------------------------
+E.4 MORNING TUNE-UP INTERACTION
+------------------------------------------------------------
+
+The Morning Tune-Up and Evening Review are independent
+events. All combinations are possible:
+
+  Tune-Up completed + Review completed
+    → Full data. Stage 6 can bridge morning intention to
+      evening execution.
+
+  Tune-Up completed + Review partial/missed
+    → Tune-Up data available but no/limited evening data.
+      Stage 6 can reference the morning focus word or
+      challenge without evening follow-through context.
+
+  Tune-Up missed + Review completed
+    → Evening data available but no morning context.
+      Stage 6 references evening content only. Does not
+      mention the missed Tune-Up negatively.
+
+  Tune-Up missed + Review missed
+    → Minimal data. Status = "missed". Generic baseline
+      snippet.
+
+============================================================
+F. TIERED OPERATION MODEL
+============================================================
+
+The Daily Mini-JSON is consumed by Stage 6 in one of two
+product tier modes. The mini-JSON itself is IDENTICAL in
+both tiers. The tier determines what ADDITIONAL context
+Stage 6 receives alongside the mini-JSON.
+
+------------------------------------------------------------
+F.1 BASE TIER (Snippet Only Product)
+------------------------------------------------------------
+
+Stage 6 receives:
+  1. Daily Mini-JSON (this document)
+  2. Athlete Baseline Context (extracted from snapshot)
+  3. Previous Snippet (yesterday's Stage 6 output)
+
+The athlete does NOT have access to the weekly pipeline.
+No weekly Interpretation JSON exists. No Coaching Message,
+no Deep Dive, no Coach Insights.
+
+Snippet cadence: 7 days per week (Monday through Sunday).
+There is no Monday skip because there is no weekly Coaching
+Message to defer to.
+
+Snippet depth: Baseline-anchored reinforcement. The snippet
+references the athlete's identity claim, hinge habit,
+primary derailer, PPD emphasis, ABI emphasis, and growth
+phase from the static baseline snapshot. It connects
+yesterday's data to these baseline anchors.
+
+------------------------------------------------------------
+F.2 PREMIUM TIER (Full Pipeline + Snippet)
+------------------------------------------------------------
+
+Stage 6 receives:
+  1. Daily Mini-JSON (this document)
+  2. Athlete Baseline Context (extracted from snapshot)
+  3. Previous Snippet (yesterday's Stage 6 output)
+  4. Last Weekly JSON Context (extracted from most recent
+     Stage 2 Interpretation JSON)
+
+The athlete has the full weekly pipeline. A weekly
+Interpretation JSON, Coaching Message, and Deep Dive are
+produced each week.
+
+Snippet cadence: 6 days per week (Tuesday through Sunday).
+Monday is the weekly delivery day — the athlete receives the
+full Coaching Message + Deep Dive, and no snippet is
+generated.
+
+Tuesday is the first snippet day of each week. Tuesday's
+snippet uses "PREVIOUS_SNIPPET: none" (no prior snippet
+exists for the current snippet week). Tuesday's snippet
+draws from the Daily Mini-JSON (Monday's data) + baseline +
+weekly JSON context.
+
+Snippet depth: Coaching-thread-aware reinforcement. In
+addition to baseline anchors, the snippet can reference:
+  - micro_commitment (the active behavioral commitment)
+  - growth_phase (current, may differ from baseline)
+  - upcoming_context (what's coming up)
+  - narrative_arc.open_thread (what the pipeline is tracking)
+  - coach_avoidance_note (what NOT to say)
+  - emotional_intensity (last week's — may be stale by
+    late in the week, but provides recent context)
+
+------------------------------------------------------------
+F.3 TIER DETECTION
+------------------------------------------------------------
+
+Stage 6's specification handles tier detection via input
+presence:
+
+  If weekly_json_context is present in the input
+    → Premium tier rules apply
+  If weekly_json_context is absent
+    → Base tier rules apply
+
+The same specification file governs both tiers. The
+difference is only in what context is available and how
+the snippet references it.
+
+This mirrors the pipeline's existing dual-mode pattern:
+  - Core Foundation / App (input_source field)
+  - Base / Premium (weekly_json_context presence)
+
+============================================================
+G. GENERATION TIMING AND BATCHING
+============================================================
+
+------------------------------------------------------------
+G.1 NIGHTLY GENERATION SEQUENCE
+------------------------------------------------------------
+
+1. [hard-out - 2h] (default 4:00 AM local)
+   App backend triggers daily mini-JSON generation for all
+   active App athletes.
+
+2. Backend computes each athlete's mini-JSON from their raw
+   daily event record. Deterministic. No LLM.
+
+3. Backend submits Stage 6 batch request containing all
+   athletes' mini-JSONs + their additional context (baseline,
+   weekly JSON if Premium, previous snippet).
+
+4. Backend submits Stage 7 batch request containing the same
+   mini-JSONs + Stage 7-specific additional context.
+
+5. [hard-out - 2h] to [hard-out] (default 4:00-6:00 AM)
+   Batch API processes and returns results.
+
+6. [hard-out] (default 6:00 AM)
+   Morning Tune-Up releases. Previous day's Evening Review
+   locks. Snippets are available in the app.
+
+7. Athlete wakes up, sees snippet (push notification or
+   in-app card), then opens Tune-Up.
+
+------------------------------------------------------------
+G.2 BATCH COMPOSITION
+------------------------------------------------------------
+
+Stage 6 batch:
+  - All athletes whose snippets need generation for today
+  - Premium tier athletes: Tue-Sun (skip Monday)
+  - Base tier athletes: Mon-Sun (every day)
+  - Each request in the batch is independent (one athlete's
+    snippet does not depend on another's)
+
+Stage 7 batch:
+  - Same athlete set as Stage 6
+  - Submitted as a separate batch (different model config,
+    different output spec)
+  - Can run concurrently with Stage 6 batch
+
+------------------------------------------------------------
+G.3 FAILURE HANDLING
+------------------------------------------------------------
+
+Snippet generation is NON-BLOCKING. If a snippet fails to
+generate for any athlete, the athlete's morning continues
+normally. The Morning Tune-Up is the essential morning
+touchpoint; the snippet is supplementary.
+
+Failure scenarios:
+  - Batch API timeout: No snippet delivered. Log error.
+    Athlete sees Tune-Up only.
+  - Individual request failure within batch: Other athletes'
+    snippets are unaffected. Failed athlete gets no snippet.
+  - Mini-JSON generation failure (backend): No Stage 6
+    request submitted for that athlete. Log error.
+
+No retry logic required. Tomorrow's snippet will generate
+normally. One missed snippet day has no downstream impact
+(the snippet chain resumes; the "previous snippet" input
+will be "none" for the next day, same as Day 1 behavior).
+
+============================================================
+H. FALLBACK STATE EXAMPLES
+============================================================
+
+These examples show the complete mini-JSON for edge-case
+states, for the development team's implementation reference.
+
+------------------------------------------------------------
+H.1 FULL ENGAGEMENT DAY
+------------------------------------------------------------
+
+{
+  "meta": {
+    "athlete_id": "gk-001",
+    "athlete_name": "Grace Kindel",
+    "date": "2026-03-03",
+    "day_of_week": "Monday",
+    "program_day_number": 37,
+    "week_period": "2026-03-02 to 2026-03-08",
+    "days_into_week": 2
+  },
+  "morning_tune_up": {
+    "completed": true,
+    "focus_word": "Compete",
+    "mindset_challenge_text": "Choose one moment today to lead by example without being asked.",
+    "quick_win_items": [
+      "Hydrate before training",
+      "Set one intention for practice",
+      "Encourage a teammate"
+    ]
+  },
+  "evening_review": {
+    "status": "completed",
+    "wtd": {
+      "completed": true,
+      "daily_score": 4,
+      "day_category": "Win the Day",
+      "q1_intention": true,
+      "q2_challenge": false,
+      "q3_adversity": true,
+      "q4_progress": true,
+      "q5_gratitude": true,
+      "missed_questions": ["Q2"]
+    },
+    "journaling": {
+      "completed": true,
+      "domains_completed": ["sport", "school_work"],
+      "domains_omitted": ["home_life"],
+      "sport_entry": "Had a great practice today. Focused on my first step and staying aggressive at the plate. Coach had us do live ABs and I felt locked in.",
+      "school_work_entry": "Busy day with two exams but got through them fine. Stayed focused.",
+      "home_life_entry": null
+    },
+    "bullseye": {
+      "completed": true,
+      "center_ring_items": ["first-step quickness", "plate discipline"],
+      "influence_ring_items": ["dugout energy"],
+      "outer_ring_items": ["batting order position"],
+      "center_count": 2,
+      "influence_count": 1,
+      "outer_count": 1
+    },
+    "mindset_challenge_completed": false
+  },
+  "running_week_summary": {
+    "days_completed": 2,
+    "win_days": 2,
+    "partial_win_days": 0,
+    "missed_days": 0,
+    "current_win_streak": 9,
+    "morning_completions": 2,
+    "evening_completions": 2,
+    "challenge_follow_throughs": 1
+  }
+}
+
+------------------------------------------------------------
+H.2 MISSED EVENING REVIEW
+------------------------------------------------------------
+
+{
+  "meta": {
+    "athlete_id": "tl-002",
+    "athlete_name": "Tucker Lloyd",
+    "date": "2026-03-02",
+    "day_of_week": "Sunday",
+    "program_day_number": 22,
+    "week_period": "2026-02-23 to 2026-03-01",
+    "days_into_week": 7
+  },
+  "morning_tune_up": {
+    "completed": false,
+    "focus_word": null,
+    "mindset_challenge_text": null,
+    "quick_win_items": null
+  },
+  "evening_review": {
+    "status": "missed",
+    "wtd": {
+      "completed": false,
+      "daily_score": null,
+      "day_category": null,
+      "q1_intention": null,
+      "q2_challenge": null,
+      "q3_adversity": null,
+      "q4_progress": null,
+      "q5_gratitude": null,
+      "missed_questions": []
+    },
+    "journaling": {
+      "completed": false,
+      "domains_completed": [],
+      "domains_omitted": [],
+      "sport_entry": null,
+      "school_work_entry": null,
+      "home_life_entry": null
+    },
+    "bullseye": {
+      "completed": false,
+      "center_ring_items": null,
+      "influence_ring_items": null,
+      "outer_ring_items": null,
+      "center_count": null,
+      "influence_count": null,
+      "outer_count": null
+    },
+    "mindset_challenge_completed": null
+  },
+  "running_week_summary": {
+    "days_completed": 5,
+    "win_days": 4,
+    "partial_win_days": 1,
+    "missed_days": 2,
+    "current_win_streak": 0,
+    "morning_completions": 5,
+    "evening_completions": 5,
+    "challenge_follow_throughs": 3
+  }
+}
+
+NOTE: Tucker Lloyd's Sunday disengagement pattern is a known
+behavioral signal in his pipeline data. This example reflects
+a realistic missed-Sunday scenario. Stage 6 would generate a
+generic baseline snippet for this day.
+
+------------------------------------------------------------
+H.3 PARTIAL EVENING REVIEW
+------------------------------------------------------------
+
+{
+  "meta": {
+    "athlete_id": "mb-003",
+    "athlete_name": "Mergim Bushati",
+    "date": "2026-01-10",
+    "day_of_week": "Saturday",
+    "program_day_number": 125,
+    "week_period": "2026-01-05 to 2026-01-11",
+    "days_into_week": 6
+  },
+  "morning_tune_up": {
+    "completed": true,
+    "focus_word": "Discipline",
+    "mindset_challenge_text": "Before your first drill today, take 3 focused breaths and set your intention.",
+    "quick_win_items": [
+      "Stretch for 10 minutes before leaving",
+      "Review today's training goals",
+      "Eat a full meal before practice"
+    ]
+  },
+  "evening_review": {
+    "status": "partial",
+    "wtd": {
+      "completed": true,
+      "daily_score": 3,
+      "day_category": "Partial Win",
+      "q1_intention": true,
+      "q2_challenge": true,
+      "q3_adversity": false,
+      "q4_progress": true,
+      "q5_gratitude": false,
+      "missed_questions": ["Q3", "Q5"]
+    },
+    "journaling": {
+      "completed": true,
+      "domains_completed": ["sport"],
+      "domains_omitted": ["school_work", "home_life"],
+      "sport_entry": "Tough practice. Shoulder was bothering me again but pushed through the technique work. Need to be smarter about recovery.",
+      "school_work_entry": null,
+      "home_life_entry": null
+    },
+    "bullseye": {
+      "completed": false,
+      "center_ring_items": null,
+      "influence_ring_items": null,
+      "outer_ring_items": null,
+      "center_count": null,
+      "influence_count": null,
+      "outer_count": null
+    },
+    "mindset_challenge_completed": true
+  },
+  "running_week_summary": {
+    "days_completed": 5,
+    "win_days": 3,
+    "partial_win_days": 2,
+    "missed_days": 1,
+    "current_win_streak": 0,
+    "morning_completions": 6,
+    "evening_completions": 5,
+    "challenge_follow_throughs": 4
+  }
+}
+
+NOTE: WTD and Journaling completed, but Bullseye not started
+before hard-out lockout. Stage 6 references available data
+(WTD score, journal entry about shoulder) without mentioning
+the incomplete Bullseye.
+
+============================================================
+I. DOWNSTREAM CONSUMERS
+============================================================
+
+------------------------------------------------------------
+I.1 STAGE 6: DAILY COACHING ENGINE
+------------------------------------------------------------
+
+Reads: Entire Daily Mini-JSON
+Purpose: Generate 2-3 sentence personalized coaching snippet
+Key fields:
+  - evening_review.status (determines full/partial/fallback)
+  - journaling entries (athlete voice for personalization)
+  - bullseye items (controllable recognition)
+  - wtd.missed_questions (targeted coaching)
+  - mindset_challenge_completed (follow-through recognition)
+  - running_week_summary (intra-week context)
+  - morning_tune_up content (bridge morning → evening)
+
+Specification: To be defined in Task 10
+  (SOP_Daily_Coaching_Engine_Master_Prompt.txt +
+   SOP_Daily_Coaching_Engine_Instructions.txt)
+
+------------------------------------------------------------
+I.2 STAGE 7: DAILY COACH INSIGHTS ENGINE
+------------------------------------------------------------
+
+Reads: Entire Daily Mini-JSON
+Purpose: Generate structured daily coach insight
+Key fields:
+  - wtd.daily_score and day_category (daily performance)
+  - running_week_summary (trending context for coaches)
+  - domains_completed/omitted (engagement pattern)
+  - bullseye ring distribution (focus quality)
+  - mindset_challenge_completed (follow-through signal)
+
+Specification: To be defined in Idea 3, Tasks 12-15
+
+NOTE: Stage 7 operates under DIFFERENT compliance rules than
+Stage 6. Stage 6 is athlete-facing (clinical language
+prohibition, data leakage criterion 13). Stage 7 is
+coach-facing (NCAA-safe institutional language, VF_Coach_
+Insights_Compliance_Framework.txt). Both consume the same
+Daily Mini-JSON but produce outputs governed by different
+compliance frameworks.
+
+============================================================
+J. VERSIONING AND MAINTENANCE
+============================================================
+
+This document is a source reference file. Per project
+versioning rules, source reference files are edited in place
+(not versioned as new files). Changes should be documented
+in CLAUDE.md session history.
+
+If the app development team requires changes to the Daily
+Mini-JSON schema (adding fields, changing types, modifying
+computation rules), those changes must be:
+  1. Documented in this specification first
+  2. Verified against Stage 6 and Stage 7 specifications
+     for downstream impact
+  3. Checked against compliance exclusion list (Section C)
+     to ensure no execution signal data is introduced
+
+============================================================
+END OF DOCUMENT
+============================================================

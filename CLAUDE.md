@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-12
-**Session Notes:** Idea 1 Implementation + cross-stage verification session. Implemented all 9 specification file changes across 4 stages, then ran 4-agent cross-stage consistency verification. Found and fixed adversity_response_pattern enum mismatch — Task 7 assessment used wrong Q20 values ("Push harder" etc.), implementation agents invented a third set ("Withdraw and Reset" etc.), neither matched Task 1 Intake Form Spec authoritative values ("Blame the situation / Get frustrated / Try to adjust right away / Reset and refocus"). Fixed across 9 production files. Idea 1 COMPLETE. Idea 2 handoff prompt written for next session (collaborative analysis before design).
+**Session Notes:** Idea 2 collaborative analysis + Task 8 design session. Analyzed 8 architectural questions for introducing the first daily output to the weekly pipeline. Resolved token efficiency concern (daily pipeline adds ~10% cost with caching+batching, not 7x). Key decisions: Stage 6 (Daily Coaching Engine) as independent daily stage on Sonnet, Stage 7 (Daily Coach Insights Engine) shares same daily data infrastructure, app backend produces deterministic Daily Mini-JSON (zero LLM), tiered product model (Base = 7 snippets/week standalone, Premium = 6 snippets/week + weekly pipeline), compliance-by-construction (excluded fields can't leak). Task 8 COMPLETE — VF_Daily_Mini_JSON_Specification.txt written. Task 9 handoff prompt written for next session.
 
 ---
 
@@ -13,15 +13,17 @@ VirtusFocus is a non-clinical athlete mental performance coaching company. This 
 
 ---
 
-## The 5-Stage Pipeline
+## The Pipeline
 
-| Stage | Agent | Status |
-|---|---|---|
-| 1 | Athlete Snapshot Generator | Built |
-| 2 | Interpretation Engine | Built — Active schema: **v9.5** |
-| 3 | Coaching Output Engine | Built — Active schema: **v1.6 / V3** |
-| 4 | Coach Insights Engine | **Specification upgraded — v1.3** |
-| 5 | Editorial Audit | **Specification upgraded — v1.2** |
+| Stage | Agent | Cadence | Status |
+|---|---|---|---|
+| 1 | Athlete Snapshot Generator | One-time | Built |
+| 2 | Interpretation Engine | Weekly | Built — Active schema: **v9.5** |
+| 3 | Coaching Output Engine | Weekly | Built — Active schema: **v1.6 / V3** |
+| 4 | Coach Insights Engine | Weekly | **Specification upgraded — v1.3** |
+| 5 | Editorial Audit | Weekly | **Specification upgraded — v1.2** |
+| 6 | Daily Coaching Engine | Daily (Tue-Sun Premium, Mon-Sun Base) | **Task 8 complete — architecture + data spec written** |
+| 7 | Daily Coach Insights Engine | Daily (Tue-Sun Premium, Mon-Sun Base) | Planned — Idea 3, Tasks 12-15 |
 
 ---
 
@@ -157,6 +159,21 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - Model: Opus (recommended for judgment-intensive audit criteria)
 - Mode: Fully autonomous — PASS / AUTO-CORRECTED PASS / REJECT AND REGENERATE (no human in the loop)
 - Criteria: 13 audit criteria across 3 tiers (Tier 1: 1-4 + 13, Tier 2: 5-10, Tier 3: 11-12)
+
+### Daily Coaching Engine (Stage 6)
+- Daily Mini-JSON Specification: `Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Mini_JSON_Specification.txt`
+- Master Prompt: `Agents - Generators\Daily Coaching Engine\` (Task 10 — pending)
+- Project Instructions: `Agents - Generators\Daily Coaching Engine\` (Task 10 — pending)
+- Shared Source Files: Uses brand_voice.txt, content_style_guide.txt, VF_Coaching_Output_System_Identity.txt from Coaching Output Engine
+- Model: Sonnet (recommended for constrained short-form generation — 2-3 sentence output with focused rules)
+- Output: Daily Coaching Snippet (2-3 sentences, Coach Arron voice, athlete-facing)
+- Compliance: Constrained generation (clinical language + data leakage rules embedded in spec), lighter audit criteria (Task 11 — pending)
+
+### Daily Coach Insights Engine (Stage 7 — Planned)
+- Shares Daily Mini-JSON Specification with Stage 6
+- Model: Sonnet (recommended)
+- Output: Daily Coach Insight (structured, coach-facing, compliance-safe)
+- Specification: Idea 3, Tasks 12-15
 
 ### Execution Signal Strategy Documents (External — Google Shared Drive)
 - Strategy: `G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\VirtusFocus_Execution_Signal_Strategy.md`
@@ -458,6 +475,8 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 47. Idea 1 Implementation session — ALL 9 specification file changes from Tasks 6-7 assessment documents implemented across 4 pipeline stages in 4 rounds. Round 1 (Stage 2): (1) VF_App_Input_Format_Specification.txt updated with season_context sub-block in weekly_check_in (current_season_phase field, 5 options, weekly cadence), (2) VF_Interpretation_JSON_Rules.txt expanded with Section 16 (Baseline Intake Profile Extraction — 7-field App extraction + CF fallback) and Section 17 (Current Season Phase Extraction — weekly check-in source, first-week default, CF fallback, enum validation), old Sections 16-17 renumbered to 18-19, (3) SOP_Interpretation_Engine_Project_Instructions_v9.5.txt created — Step 0 current_season_phase extraction, new Step 1.5 baseline_intake_profile pass-through, Section 6 CF fallback expanded, Section 11 validation items 15-20, Section 17 canonical schema expanded. Round 2 (Stage 3): (4) VF_Coaching_Output_JSON_to_Message_Map.txt updated with baseline intake profile routing (~102 lines — 7-field routing destinations, 3-tier priority, CF skip rule), (5) SOP_Coaching_Output_Instructions_v1.6.txt created (~781 lines added — Section 19 Competitive Level Calibration Rule with 5×5 table + interaction rules, Section 20 Intake Profile Field Integration Rule with PPD 3-tier priority + ABI pillar translations + adversity routing + season phase framing, Section 21 Intake Profile Raw Data Exclusion Rule). Round 3 (Stage 4): (6) JSON_logic_reference.txt updated (+154 lines — dual-mode awareness expansion, Section 1 competitive_level framing, KPS tie-breaker using abi_primary_emphasis, Section 9 adversity enrichment translations, Section 10 Season Phase Overlay, intake profile compliance filter, expanded inform-only fields, CF intake skip rules), (7) SOP_Coach_Insights_Project_Instructions_v1.3.txt created (+538 lines — Section 18 Intake Profile Integration Master Rule, per-section enrichment guidance, expanded prohibited content with WRONG/CORRECT examples, CF skip rules). Round 4 (Stage 5): (8) SOP_Editorial_Audit_Master_Prompt_v1.2.txt created (+131 lines — Criterion 13 renamed to "Pipeline Data Leakage Compliance", Category F with WRONG/CORRECT examples, competitive level quality note, expanded reasonable reader test), (9) SOP_Editorial_Audit_Project_Instructions_v1.2.txt created (+502 lines — Category F subcategories F1-F5, Steps 2/4/5/6 expanded, 3 new edge cases, decision tree updated). All previous version files preserved on disk. Idea 1 (Athlete Intake Form Improvements) design+implementation COMPLETE. No pipeline processing.
 
 48. Cross-stage consistency verification + adversity enum fix. Ran 4-agent parallel verification checking all 9 implementation files across Stages 2-5 for internal consistency and cross-stage alignment. Results: Stage 2 internal PASS, Stage 3 internal PASS, Stage 4 internal PASS, Stage 5 internal PASS. One critical data accuracy issue found: adversity_response_pattern enum values mismatched across the pipeline. Three different value sets existed: (1) Task 1 Intake Form Spec Q20 authoritative values: "Blame the situation | Get frustrated | Try to adjust right away | Reset and refocus", (2) Task 7 assessment blueprint values: "Push harder | Pull back and protect | Freeze and overthink | Reset and refocus", (3) Agent-generated "normalized" values: "Withdraw and Reset | Push Through | Seek Support | Internalize and Process". Root cause: Task 7 assessment session used different Q20 options than Task 1 had finalized, then implementation agents either followed the wrong blueprint or invented new values. Fixed across 9 production files: v9.5 canonical schema, JSON Rules Section 16, Message Map, v1.6 Section 20 (full coaching translations rewritten for correct enum semantics), JSON Logic Reference (behavioral translations rewritten), v1.3 (behavioral translations + WRONG/CORRECT examples), Editorial Audit Master Prompt v1.2, Editorial Audit Instructions v1.2 (Category F4 + edge cases + WRONG/CORRECT examples), Snapshot Fields. Two assessment documents (Task 6, Task 7) left unchanged as historical design records. PPD bucket names verified correct (Task 2 authoritative names used consistently). PPD architectural note documented: PPD data present in JSON but prohibited from Stage 4 use is by design (single JSON, instruction-based walling, same pattern as risk_flags/coach_insights). Idea 2 handoff prompt written for collaborative analysis session.
+
+49. Idea 2 collaborative analysis + Task 8 design session. Analyzed 8 architectural questions for introducing the first daily output to the weekly-only pipeline. Phase 1 (collaborative analysis): Resolved token efficiency concern — daily pipeline adds ~10% cost with prompt caching (90% discount on cached system prompts) + Batches API (50% discount), not 7x. Full optimized cost: $0.66/athlete/week ($2.66/month) for entire pipeline including daily outputs. Base tier standalone (7 snippets/week only, no weekly pipeline): $0.06/athlete/week. Key architectural decisions: (1) Stage 6 (Daily Coaching Engine) as independent daily stage on Sonnet — not embedded in Stage 3, (2) Stage 7 (Daily Coach Insights Engine) shares same daily data infrastructure — planned for Idea 3 Tasks 12-15, (3) App backend produces deterministic Daily Mini-JSON (zero LLM tokens) — structured data extraction from raw daily events, (4) Tiered product model: Base = 7 snippets/week (Mon-Sun, standalone, no weekly JSON needed), Premium = 6 snippets/week (Tue-Sun, enriched by weekly pipeline, Monday skipped because full CM+DD delivered), (5) Compliance-by-construction — mini-JSON excludes execution timing data, trigger methods, rates at the data layer so Stage 6 cannot accidentally leak, (6) Previous snippet as input (~50-100 tokens) for day-to-day cohesion and repetition avoidance, weekly reset on first snippet day, (7) Snippet function: micro-recognition + micro-connection (moment reinforcement, not interpretation), bridges yesterday to today, distinct from Morning Tune-Up (athlete sets own day) and weekly CM (full pattern synthesis), (8) Generation timing: 1-2 hours before hard-out time, enables evening delivery as day-closing coaching moment. Phase 2 (Task 8): Wrote VF_Daily_Mini_JSON_Specification.txt (~800 lines) — formal data contract between app backend and daily pipeline stages. 10 sections: JSON schema (A), field definitions for meta/morning_tune_up/evening_review/running_week_summary (B), deliberately excluded fields with compliance rationale (C), field derivation trace as app dev implementation guide (D), evening review status rules (E), tiered operation model Base vs Premium (F), generation timing and batching (G), three complete fallback state examples using real athletes (H), downstream consumer summary (I), versioning rules (J). Directory created: Agents - Generators/Daily Coaching Engine/Source Files/. Task 9 handoff prompt written for next session.
 
 ---
 
@@ -819,7 +838,10 @@ Handoff prompts: `Pipeline Improvement Design Handoff Prompt.txt` (overview), `I
 - [x] **Task 6: Interpretation Engine impact assessment** — COMPLETE. 7 pass-through fields into new baseline_intake_profile JSON block (competitive_level, baseline_season_phase, ppd_primary_problem, ppd_tie_breaker_classification, ppd_top_3, abi_primary_emphasis, adversity_response_pattern). 0 active use, 9 no action. Pre-launch blocker: live current_season_phase via weekly check-in. competitive_level = Stage 3 formal calibration rule. Assessment saved to VF_Interpretation_Engine_Snapshot_Integration_Assessment.txt.
 - [x] **Task 7: Downstream stage impact assessment** — COMPLETE. Competitive Level Calibration Rule (modifier-based, 5 levels × 5 parameters with EI/flag/self-ratings interactions). PPD 3-tier priority routing. ABI emphasis pillar-to-behavior translations. Adversity response coaching language. Criterion 13 → "Pipeline Data Leakage" with Category F (F1-F5). Live season phase design (weekly check-in → current_season_phase). 9 implementation changes across 4 stages. Assessment saved to VF_Downstream_Stage_Impact_Assessment.txt.
 - [x] **Idea 1 Implementation: Implement Tasks 6-7 specification changes** — COMPLETE. 9 file changes across 4 stages: (1) App Input Format updated with season_context, (2) JSON Rules expanded with Sections 16-17, (3) Interpretation Engine v9.5 created, (4) Message Map updated with intake profile routing, (5) Coaching Output v1.6 created, (6) JSON Logic Reference updated, (7) Coach Insights v1.3 created, (8) Editorial Audit Master Prompt v1.2 created, (9) Editorial Audit Instructions v1.2 created. All previous versions preserved on disk.
-- [ ] Tasks 8-11: Daily Coaching Snippet (architecture, content model, spec, audit)
+- [x] **Task 8: Design daily processing architecture** — COMPLETE. Independent Stage 6 (Daily Coaching Engine) on Sonnet. App backend produces deterministic Daily Mini-JSON (zero LLM). Tiered product model (Base 7/week standalone, Premium 6/week + weekly pipeline). Compliance-by-construction (excluded fields). Token cost: $0.66/athlete/week fully optimized. Spec saved to VF_Daily_Mini_JSON_Specification.txt.
+- [ ] Task 9: Design daily snippet content model (voice, length, differentiation, example snippets)
+- [ ] Task 10: Write Daily Coaching Snippet specification (Master Prompt + Instructions)
+- [ ] Task 11: Define daily snippet audit criteria
 - [ ] Tasks 12-15: Daily Coach Insights (metric set, daily-weekly relationship, spec, audit)
 - [ ] Tasks 16-21: Parent Output + Dashboard (compliance framework, message expansion, dashboard, specs, audit)
 
@@ -868,6 +890,7 @@ Handoff prompts: `Pipeline Improvement Design Handoff Prompt.txt` (overview), `I
 - [x] Downstream Stage Impact Assessment Task 7 — Impact of baseline_intake_profile on Stages 3-5. Stage 3: Competitive Level Calibration Rule (modifier-based, 5 levels × 5 parameters, interaction rules with EI/flags/self-ratings, College default), PPD 3-tier routing priority (weekly > baseline > default), ABI pillar-to-behavior translations, adversity response coaching per pattern, +400 lines to v1.6. Stage 4: competitive_level/abi_emphasis/adversity = inform-only, PPD bucket names/scores = prohibited, KPS tie-breaker, Coach Context Cue translations, +250 lines to v1.3. Stage 5: Criterion 13 expanded to "Pipeline Data Leakage" with Category F (F1-F5), reasonable reader test expanded, competitive level = quality note only, +200 lines. Live season phase: weekly check-in question → current_season_phase JSON field → Season Phase Overlay + contextual framing, CF = "not available". 5 design questions resolved. 9 implementation changes mapped. Assessment saved to VF_Downstream_Stage_Impact_Assessment.txt.
 - [x] Idea 1 Implementation — ALL 9 specification file changes implemented across 4 stages. Stage 2: App Input Format (season_context), JSON Rules (Sections 16-17), Interpretation Engine v9.5. Stage 3: Message Map (intake profile routing), Coaching Output v1.6 (Competitive Level Calibration + Intake Profile Integration + Raw Data Exclusion). Stage 4: JSON Logic Reference (inform-only routing + KPS tie-breaker + adversity enrichment + Season Phase Overlay), Coach Insights v1.3 (Intake Profile Integration Master Rule + expanded prohibited content). Stage 5: Editorial Audit v1.2 Master Prompt + Instructions (Criterion 13 → "Pipeline Data Leakage Compliance", Category F F1-F5, competitive level quality note). All previous versions preserved. Idea 1 COMPLETE.
 - [x] Cross-stage consistency verification + adversity enum fix — 4-agent parallel verification, all stages PASS internally. adversity_response_pattern enum mismatch found and fixed across 9 production files (aligned to Task 1 Intake Form Spec Q20 values). PPD bucket names verified correct. Idea 2 handoff prompt written.
+- [x] Idea 2 Task 8: Daily processing architecture — collaborative analysis resolved 8 architectural questions (token efficiency, stage placement, compliance, tiering, timing, previous snippet chain). Daily Mini-JSON specification written (~800 lines, 10 sections). Stage 6 (Daily Coaching Engine) defined as independent Sonnet stage. Tiered product model (Base standalone, Premium weekly-enriched). Compliance-by-construction (excluded fields). Token cost $0.66/athlete/week fully optimized. Directory created: Daily Coaching Engine/Source Files/. Task 9 handoff prompt written.
 
 **Grace Kindel Coach Insights — All 5 Weeks Complete:**
 
