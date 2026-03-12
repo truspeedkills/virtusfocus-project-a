@@ -1,6 +1,12 @@
 COACH INSIGHTS ENGINE — PROJECT INSTRUCTIONS v1.2
 (EXECUTION SIGNAL INTEGRATION)
 
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
 Lineage: Upgrades SOP_Coach_Insights_Project_Instructions_v1.1.txt.
 Adds execution signal integration for App athletes, dual-mode
 awareness (App vs Core Foundation), per-section execution

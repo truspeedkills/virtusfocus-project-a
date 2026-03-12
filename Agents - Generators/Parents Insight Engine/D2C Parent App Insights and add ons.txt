@@ -1,5 +1,11 @@
 # VirtusFocus Parent App Overview
 
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
 ## Purpose
 
 The VirtusFocus Parent App is an optional add-on within the direct-to-consumer VirtusFocus ecosystem.

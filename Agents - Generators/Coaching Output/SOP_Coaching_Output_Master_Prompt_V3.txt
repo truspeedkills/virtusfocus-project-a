@@ -1,3 +1,10 @@
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
+
 Using the Interpretation Engine JSON above, generate:
 1.	Coaching Message (Athlete-Facing)
 2.	Deep Dive Coaching Analysis

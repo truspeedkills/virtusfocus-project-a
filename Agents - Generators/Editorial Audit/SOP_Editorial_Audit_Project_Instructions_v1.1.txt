@@ -1,6 +1,12 @@
 EDITORIAL AUDIT AGENT — PROJECT INSTRUCTIONS v1.1
 (EXECUTION SIGNAL LEAKAGE COMPLIANCE)
 
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
 Lineage: Upgrades SOP_Editorial_Audit_Project_Instructions_v1.0.txt.
 Adds Criterion 13 (Execution Signal Leakage Compliance) as a new
 Tier 1 criterion. Expands Clinical Language Exclusion List with

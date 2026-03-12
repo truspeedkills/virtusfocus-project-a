@@ -1,6 +1,12 @@
 COACHING OUTPUT PROJECT INSTRUCTIONS V1.5
 (EXECUTION SIGNAL INTEGRATION)
 
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
 Change Log from v1.4:
 - Section 2 expanded: Added VF_Execution_Signal_Composite_Score_Rules.txt
   and VF_Coach_Flags_Specification.txt to authoritative sources

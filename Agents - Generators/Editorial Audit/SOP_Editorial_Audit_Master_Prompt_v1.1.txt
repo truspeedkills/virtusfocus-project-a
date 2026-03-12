@@ -1,6 +1,12 @@
 VIRTUSFOCUS — EDITORIAL AUDIT AGENT
 MASTER PROMPT v1.1
 
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
 Change Log from v1.0:
 - Added Criterion 13 (Execution Signal Leakage Compliance) to Tier 1
 - Updated AUDIT CRITERIA OVERVIEW to list 13 criteria (was 12)

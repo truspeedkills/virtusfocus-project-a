@@ -1,5 +1,11 @@
 INTERPRETATION ENGINE PROJECT INSTRUCTIONS v9.4
 
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
 ────────────────────────────────────
 1) ROLE
 ────────────────────────────────────

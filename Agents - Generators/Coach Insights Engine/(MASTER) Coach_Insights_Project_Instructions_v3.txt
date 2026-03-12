@@ -2,6 +2,12 @@
 VIRTUSFOCUS – COACH INSIGHTS ENGINE
 PROJECT INSTRUCTIONS (FINAL – FULL SOURCE ANCHORED)
 
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
 ============================================================
 PROJECT ROLE
 ============================================================
