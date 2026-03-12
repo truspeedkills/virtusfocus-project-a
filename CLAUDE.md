@@ -189,6 +189,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - ABI Scoring Logic (Task 3): `ABI Scoring Logic Task 3 Handoff Prompt.txt` — handoff for fresh session to design ABI pillar calculations, with PPD cross-validation, locked Q9/Q13 values from PPD worked examples, and 6 design decisions to resolve
 - Snapshot Fields (Task 4): `Snapshot Fields Task 4 Handoff Prompt.txt` — handoff for fresh session to define expanded Athlete Snapshot field structure for App athletes, integrating PPD, ABI, ecosystem, longitudinal, and behavioral pattern data alongside locked baseline fields
 - Snapshot Builder (Task 5): `Snapshot Builder Task 5 Handoff Prompt.txt` — handoff for fresh session to write updated Snapshot Builder specification (v2.0) implementing the expanded App athlete snapshot structure, with dual-mode detection, embedded PPD/ABI computation, narrative section writing rules, baseline anchor derivation, and validation checklist
+- Interpretation Engine Impact (Task 6): `Interpretation Engine Impact Task 6 Handoff Prompt.txt` — handoff for fresh session to assess how new PPD/ABI/ecosystem snapshot fields feed into Stage 2, design schema additions (Active Use / Pass-Through / No Action per field group), propose JSON schema and rule changes, map downstream routing implications, define scope boundary (immediate vs. deferred)
 - Task-specific handoff prompts: `Agents - Generators\Interpretation\Source Files\` (Tasks 8-13)
 
 ### Versioning Rules (established this session)

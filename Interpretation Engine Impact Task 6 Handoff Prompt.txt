@@ -1,0 +1,284 @@
+============================================================
+TASK 6 HANDOFF PROMPT — INTERPRETATION ENGINE IMPACT ASSESSMENT
+============================================================
+Pipeline Improvement Design — Task 6 of 21
+Date: 2026-03-12
+Previous: Task 5 (Snapshot Builder v2.0) — COMPLETE
+Next: Task 7 (Downstream Stage Impact Assessment — Stages 3-5)
+============================================================
+
+YOU ARE CONTINUING WORK ON THE VIRTUSFOCUS AI COACHING PIPELINE.
+
+This is Task 6 of 21 in the Pipeline Improvement Design phase. Your job is to ASSESS the impact of the expanded App athlete snapshot (v2.0) on Stage 2 (Interpretation Engine) and DESIGN any schema or rule changes needed.
+
+This is a DESIGN task, not an implementation task. You will produce a design document with recommendations and specific change proposals. No specification files are modified in this task.
+
+============================================================
+BEFORE DOING ANYTHING
+============================================================
+
+1. Read the CLAUDE.md file FIRST — it is the single source of truth for this project. It contains the full pipeline architecture, session history, file locations, design decisions, and current task queue.
+
+2. Read all reference files listed in the REFERENCE FILES section below.
+
+3. Present your understanding of the current state before proposing changes.
+
+============================================================
+CONTEXT — WHAT HAPPENED IN TASKS 1-5
+============================================================
+
+Tasks 1-5 designed and specified the expanded App athlete intake system:
+
+- Task 1: Unified App intake form (29 questions, 7 sections)
+- Task 2: PPD scoring logic (8 buckets, 4-layer deterministic scoring)
+- Task 3: ABI scoring logic (4 pillars, formula range 2-10/8-40)
+- Task 4: Expanded snapshot field structure (hybrid format: structured data block + 10 narrative sections + 5 anchors)
+- Task 5: Snapshot Builder v2.0 specification (self-contained production document)
+
+The expanded App athlete snapshot now contains significantly more structured data than the Core Foundation snapshot:
+- 12-field structured header (vs. ~5 for CF)
+- 6 structured data sub-blocks: PPD_SCORES, ABI_SCORES, ABI_RAW_INPUTS, ECOSYSTEM, BEHAVIORAL_PATTERNS, LONGITUDINAL_BASELINES
+- 10 narrative sections (vs. 9 for CF)
+- Same 5 locked baseline anchors + growth phase
+
+============================================================
+THE PROBLEM — THE INTEGRATION GAP
+============================================================
+
+The current Interpretation Engine (v9.4) reads exactly 5 fields from the baseline snapshot:
+
+    baseline_profile:
+      baseline_identity_claim
+      baseline_hinge_habit
+      baseline_primary_derailer
+      baseline_why_it_matters
+      baseline_growth_phase
+
+These 5 fields are populated in Step 0-1 of the Core Interpretation Process and carried in every weekly JSON. All downstream stages (3, 4, 5) read these fields FROM THE JSON, not from the snapshot.
+
+The entire PPD/ABI/ecosystem/behavioral pattern/longitudinal baseline layer from the v2.0 snapshot has NO LANDING ZONE in the current weekly JSON schema and NO CLASSIFICATION RULES in the current engine instructions. Specifically:
+
+GROUP A — New Header Fields (no JSON field, no rule):
+  COMPETITIVE_LEVEL, SEASON_PHASE, COMMITMENT_LEVEL
+
+GROUP B — PPD_SCORES (no JSON field, no rule):
+  ppd_primary_problem, ppd_top_3, ppd_all_scores, ppd_tie_breaker_classification
+
+GROUP C — ABI_SCORES (no JSON field, no rule):
+  ownership/composure/focus/structure scores, total, band, primary_emphasis, pillar_bands
+
+GROUP D — ECOSYSTEM (no JSON field, no rule):
+  parent_involvement_level, home_conversation_pattern, support_network_primary
+
+GROUP E — BEHAVIORAL_PATTERNS (no JSON field, no rule):
+  adversity_response_pattern, adversity_self_description
+
+GROUP F — LONGITUDINAL_BASELINES (no JSON field, no rule):
+  season_phase, reset_speed_baseline, competitor_aspiration_text, mental_game_self_rating
+
+============================================================
+WHAT TASK 6 MUST DECIDE
+============================================================
+
+For each group of new snapshot fields (A-F), answer THREE questions:
+
+1. DOES STAGE 2 NEED THIS FIELD?
+   - Does this field inform any weekly classification, scoring, or signal?
+   - Or is it pass-through data that downstream stages need?
+   - Or is it stored for future use only (e.g., longitudinal PPD Alignment Signal)?
+
+2. HOW SHOULD IT ENTER THE WEEKLY JSON?
+   Three options per field:
+   (a) ACTIVE USE — Stage 2 reads the field and uses it in a classification rule or computation. It gets its own JSON field with a derivation rule.
+   (b) PASS-THROUGH — Stage 2 reads the field from the snapshot and copies it into the weekly JSON unchanged, so downstream stages can consume it. No classification rule needed.
+   (c) NO ACTION — The field stays in the snapshot only. Stage 2 does not read it. Downstream stages that need it read the snapshot directly (architecture change) or wait for a future enhancement.
+
+3. WHAT CHANGES ARE NEEDED?
+   - JSON schema additions (new fields in the weekly output)
+   - JSON Rules additions (new classification sections)
+   - Project Instructions additions (new processing steps)
+   - Downstream routing implications (what Stage 3/4/5 can now do)
+
+============================================================
+KEY DESIGN CONSTRAINTS
+============================================================
+
+1. DUAL-MODE MANDATORY: Any schema additions must have Core Foundation fallback values. Same pattern as execution_behavior_signals: App athletes get enriched data, CF athletes get neutral/null/"not available" values. Zero degradation.
+
+2. NO DEGRADATION TO EXISTING FIELDS: The 5 baseline_profile fields are locked. All existing classification rules (WTD, Bullseye, RQS, consistency, emotional intensity, narrative arc, growth phase progression, execution behavior signals) remain unchanged.
+
+3. ADDITIVE ONLY: New fields sit alongside existing ones. No existing field is renamed, moved, or retyped.
+
+4. COMPLIANCE: PPD bucket names, ABI pillar scores, and raw intake data NEVER reach coaching staff. Same inform-only/backend-only pattern as execution signals. Stage 4 and Stage 5 compliance rules already prohibit this — but any new JSON fields must be classified correctly (inform-only vs. surface-safe).
+
+5. SCOPE CONTROL: Not everything in the v2.0 snapshot needs to flow through Stage 2. Some fields may be snapshot-only references. The assessment should be honest about what adds value NOW vs. what is future-state.
+
+6. DOWNSTREAM AWARENESS: Stage 3 (v1.5) already references ppd_top_3 coaching implications and ABI primary_emphasis in its field routing rules (VF_Coaching_Output_JSON_to_Message_Map.txt). Stage 4 (v1.2) references ecosystem data for future Parent Output routing. These downstream expectations should inform what Stage 2 passes through.
+
+============================================================
+SPECIFIC INTEGRATION POINTS TO ASSESS
+============================================================
+
+These are the highest-value integration questions:
+
+A. ppd_primary_problem + baseline_primary_derailer
+   The JSON Rules Section 4C uses baseline_primary_derailer (a prose sentence) for the Developing→Consistent advancement criterion. Should ppd_primary_problem (a bucket name) replace, augment, or sit alongside this check? The bucket name is more deterministic; the sentence is more descriptive.
+
+B. ABI primary_emphasis + coaching personalization
+   Stage 3 v1.5 references ABI emphasis for coaching direction. But Stage 3 reads the JSON, not the snapshot. Should primary_emphasis be a pass-through field in the weekly JSON? Or should Stage 2 derive something from it (e.g., a "pillar_focus" field that adapts over time as the athlete develops)?
+
+C. Ecosystem fields + Stage 4 Parent Output
+   The Parent Output engine (Idea 4, Tasks 16-21) needs ecosystem data. Should Stage 2 pass these through now, or should the Parent engine read the snapshot directly when it's built?
+
+D. ppd_all_scores + future longitudinal PPD
+   ppd_all_scores is explicitly stored "for future longitudinal PPD Alignment Signal." Should Stage 2 carry baseline PPD scores in the weekly JSON now (for eventual comparison with execution-derived PPD), or defer until the longitudinal PPD feature is designed?
+
+E. baseline_profile expansion
+   Should baseline_profile in the weekly JSON expand from 5 fields to include PPD/ABI summary data? Or should a separate baseline_intake_data block be created?
+
+F. Season phase + competitive level
+   These contextual fields could inform Stage 2's upcoming_context classification or Stage 4's Season Phase Overlay metric. Should they be pass-through fields?
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read these files in this order:
+
+1. CLAUDE.md
+   Single source of truth. Read FIRST.
+
+2. SOP_Snapshot_Builder_Project_Instructions_v2.0.txt
+   Location: Agents - Generators\Athlete Snapshot Generator\
+   The v2.0 snapshot spec — what the expanded snapshot contains.
+
+3. VF_App_Athlete_Snapshot_Fields.txt
+   Location: Agents - Generators\Athlete Snapshot Generator\
+   Section 6: Downstream Consumption Reference — what each stage is expected to read.
+
+4. SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+   Location: Agents - Generators\Interpretation\
+   Current Stage 2 instructions. Focus on: Step 0-1 (snapshot reading), Section 4 (Core Interpretation Process), Section 11 (Production Schema Validation), Section 17 (Canonical Output Schema).
+
+5. VF_Interpretation_JSON_Rules.txt
+   Location: Agents - Generators\Interpretation\Source Files\
+   Current classification rules. Focus on: Section 4C (Growth Phase Progression — baseline_primary_derailer usage), Section 16 (Global Guardrails).
+
+6. VF_Coaching_Output_JSON_to_Message_Map.txt
+   Location: Agents - Generators\Coaching Output\Source FIles\
+   Stage 3 field routing — shows what Stage 3 expects to find in the JSON. Search for any references to PPD, ABI, ecosystem, or baseline fields.
+
+7. SOP_Coaching_Output_Instructions_v1.5.txt
+   Location: Agents - Generators\Coaching Output\
+   Stage 3 instructions. Search for baseline_profile consumption, any PPD/ABI routing expectations.
+
+8. SOP_Coach_Insights_Project_Instructions_v1.2.txt
+   Location: Agents - Generators\Coach Insights Engine\
+   Stage 4 instructions. Search for baseline snapshot references, ecosystem routing, Season Phase Overlay.
+
+9. JSON_logic_reference.txt
+   Location: Agents - Generators\Coach Insights Engine\Source Files\
+   Stage 4 determination logic. Search for baseline_profile consumption.
+
+10. VF_PPD_Scoring_Logic.txt
+    Location: Agents - Generators\Athlete Snapshot Generator\
+    PPD spec — for understanding what ppd fields contain.
+
+11. VF_ABI_Scoring_Logic.txt
+    Location: Agents - Generators\Athlete Snapshot Generator\
+    ABI spec — for understanding what ABI fields contain.
+
+12. VF_App_Intake_Form_Specification.txt
+    Location: Agents - Generators\Athlete Snapshot Generator\
+    Intake form spec — for understanding field sources.
+
+13. One athlete snapshot (any):
+    - Athlete Data\Mergim Bushati\mergim_bushati_athlete_snapshot.txt (CF example)
+    OR read the Grace Kindel worked example in Section 15 of the v2.0 spec (App example)
+
+14. One weekly JSON (any):
+    - Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt (Week 5, most complete)
+    To see the current baseline_profile footprint in the actual JSON output.
+
+============================================================
+OUTPUT — WHAT TO PRODUCE
+============================================================
+
+Produce a design document titled: VF_Interpretation_Engine_Snapshot_Integration_Assessment.txt
+
+Structure:
+
+1. CURRENT STATE SUMMARY
+   - What Stage 2 reads now (5 fields)
+   - How downstream stages consume baseline data
+   - The integration gap (what's new and has no landing zone)
+
+2. FIELD-BY-FIELD ASSESSMENT (Groups A-F)
+   For each field: Active Use / Pass-Through / No Action recommendation with rationale
+
+3. PROPOSED SCHEMA CHANGES
+   - New JSON fields (if any) with types, enums, fallback values
+   - Where they sit in the output schema (baseline_profile expansion vs. new block)
+   - CF fallback values for each
+
+4. PROPOSED RULE CHANGES
+   - Any new classification rules for JSON Rules file
+   - Any new processing steps for Project Instructions
+   - Affected sections identified by number
+
+5. DOWNSTREAM ROUTING IMPLICATIONS
+   - What Stage 3 can now do that it couldn't before
+   - What Stage 4 can now do
+   - What Stage 5 needs to audit
+
+6. SCOPE BOUNDARY
+   - What is IN scope for immediate implementation (v9.5 or whatever version)
+   - What is DEFERRED to future phases (longitudinal PPD, Parent Output, etc.)
+   - Why the boundary is where it is
+
+7. IMPLEMENTATION TASK LIST
+   - Specific file changes needed, in order
+   - Estimated scope per change
+
+============================================================
+WHAT NOT TO DO
+============================================================
+
+- Do NOT modify any specification files. This is an assessment task.
+- Do NOT design the longitudinal PPD Alignment Signal — that is a future enhancement.
+- Do NOT design the Parent Output engine — that is Tasks 16-21.
+- Do NOT redesign existing classification rules — the current v9.4 rules are locked.
+- Do NOT add fields just because they exist in the snapshot — justify every addition with a downstream consumption need.
+- Do NOT break the dual-mode pattern — every new field must have a CF fallback.
+
+============================================================
+COLLABORATION APPROACH
+============================================================
+
+1. Read all reference files.
+2. Present your current-state understanding for confirmation.
+3. Walk through each field group (A-F) with your recommendation.
+4. Get approval on the overall approach before writing the assessment document.
+5. Write the document.
+6. Update CLAUDE.md with session history, Task 6 completion marker, and file location.
+
+============================================================
+WHEN COMPLETE
+============================================================
+
+1. Save the assessment document to:
+   Agents - Generators\Athlete Snapshot Generator\VF_Interpretation_Engine_Snapshot_Integration_Assessment.txt
+
+2. Update CLAUDE.md with:
+   - Session history item (item 45)
+   - Task 6 completion marker in the task queue
+   - New file location in Key File Locations (under Athlete Snapshot Generator)
+   - Updated "What's Next" section
+
+3. Commit with a descriptive message.
+
+4. Write a Task 7 handoff prompt if time permits (Task 7 = downstream stage impact assessment for Stages 3-5, informed by Task 6 decisions).
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
