@@ -1,0 +1,373 @@
+VIRTUSFOCUS — IDEA 2: DAILY COACHING SNIPPET
+COLLABORATIVE ANALYSIS + DESIGN SESSION HANDOFF
+============================================================
+
+SESSION MODE: COLLABORATIVE ANALYSIS FIRST, THEN DESIGN
+============================================================
+
+IMPORTANT: The user wants to analyze concerns and open
+questions about Idea 2 BEFORE starting any formal design
+work. This session should begin with a collaborative
+discussion — presenting what you learn from the reference
+files, surfacing architectural tensions, and working through
+the user's concerns together. Only move to formal design
+tasks (Task 8-11) once the user explicitly signals readiness.
+
+============================================================
+WHAT THIS SESSION COVERS
+============================================================
+
+Idea 2 introduces the FIRST DAILY OUTPUT in the VirtusFocus
+pipeline. The entire pipeline currently operates on a weekly
+batch cycle. A daily coaching snippet adds a new cadence,
+new data consumption patterns, and new architectural
+questions that don't exist in the current system.
+
+The Daily Coaching Snippet is a short, personalized coaching
+message delivered to the athlete daily — separate from and
+complementary to the Morning Mindset Tune-Up.
+
+Ideas 2 and 3 (Daily Coaching Snippet + Daily Coach Insights)
+are architecturally coupled: both introduce daily processing
+and should share daily data consumption infrastructure.
+They can be designed in sequence but architectural decisions
+in Idea 2 will constrain Idea 3.
+
+============================================================
+WHAT IDEA 1 ACCOMPLISHED (CONTEXT FOR THIS SESSION)
+============================================================
+
+Idea 1 (Athlete Intake Form Improvements) is FULLY DESIGNED
+AND IMPLEMENTED across 7 design tasks and 9 specification
+file changes. Key additions now in the pipeline:
+
+- 29-question App intake form (VF_App_Intake_Form_Specification.txt)
+- PPD scoring logic — 8 buckets, 4-layer deterministic scoring
+  (VF_PPD_Scoring_Logic.txt)
+- ABI scoring logic — 4 pillars (Ownership, Composure, Focus,
+  Structure), 2-10 per pillar, 8-40 total
+  (VF_ABI_Scoring_Logic.txt)
+- Expanded Athlete Snapshot v2.0 — hybrid format with structured
+  data block + 10 narrative sections
+  (SOP_Snapshot_Builder_Project_Instructions_v2.0.txt)
+- baseline_intake_profile JSON block in weekly interpretation
+  output — 7 fields passed through all stages
+- current_season_phase — live weekly field from check-in question
+- Competitive Level Calibration Rule (Stage 3) — vocabulary and
+  directness adjusted per competitive level
+- Pipeline Data Leakage Compliance — Criterion 13 expanded with
+  Category F (intake profile terminology)
+
+Active pipeline versions:
+- Stage 1: Snapshot Builder v2.0
+- Stage 2: Interpretation Engine v9.5
+- Stage 3: Coaching Output v1.6
+- Stage 4: Coach Insights v1.3
+- Stage 5: Editorial Audit v1.2
+
+============================================================
+KEY ARCHITECTURAL QUESTIONS TO ANALYZE
+============================================================
+
+These are the open questions that need collaborative analysis
+before formal design begins. Present your understanding of
+each and discuss with the user.
+
+1. DAILY DATA SOURCE — WHAT DOES THE SNIPPET CONSUME?
+
+   The weekly pipeline operates on interpreted data: Stage 2
+   produces a comprehensive JSON, and Stages 3-5 consume it.
+   A daily snippet can't wait for the weekly JSON — it needs
+   to operate on whatever data exists TODAY.
+
+   Options to analyze:
+   a. Yesterday's raw app data only (Evening Review scores,
+      journal entries, Bullseye, WTD answers)
+   b. Yesterday's raw data + athlete baseline snapshot
+   c. Yesterday's raw data + baseline + last weekly JSON
+      (carries forward micro_commitment, growth_phase, etc.)
+   d. A lightweight "daily interpretation" that produces a
+      mini-JSON each day
+
+   Tension: Option (a) has minimal context. Option (d) adds
+   a new processing stage. Options (b) and (c) use existing
+   artifacts but skip the interpretation layer's deterministic
+   classifications.
+
+2. RELATIONSHIP TO MORNING TUNE-UP
+
+   The Morning Mindset Tune-Up is delivered each morning and
+   includes: mindset challenge, focus word, quick win items.
+   The daily coaching snippet would also be delivered daily.
+
+   Questions:
+   - Is the snippet delivered AT the same time as Tune-Up?
+     Before? After? Evening?
+   - Does the snippet reference the Tune-Up content?
+     ("Your focus word today is [X] — here's how to use it
+     when [situation from baseline_primary_derailer]")
+   - Or is the snippet based on YESTERDAY's data, making it
+     a reflective message rather than a forward-looking one?
+   - Could the snippet BE the Tune-Up (replacing the current
+     static format with a personalized daily coaching message)?
+   - Risk of message fatigue: athlete gets Tune-Up + snippet
+     + weekly coaching message. Too much?
+
+3. PIPELINE STAGE PLACEMENT
+
+   Where does the daily snippet live architecturally?
+
+   Options:
+   a. Sub-process of Stage 3 (Coaching Output Engine) — same
+      persona (Coach Arron), same voice, lighter format
+   b. New Stage 3B — separate from weekly Stage 3 but sharing
+      source files (brand voice, style guide, message framework)
+   c. Independent daily engine — fully separate specification
+   d. Part of the app layer — not a pipeline stage at all,
+      generated by app-side logic with pipeline data as context
+
+   Tension: Option (a) keeps things simple but the Coaching
+   Output Engine is designed for weekly data. Option (b) adds
+   a new stage. Option (d) moves coaching generation outside
+   the pipeline's quality control boundary.
+
+4. COACHING QUALITY WITHOUT INTERPRETATION
+
+   The weekly coaching message benefits from the full
+   interpretation layer: composite scores, trend analysis,
+   emotional intensity classification, narrative arc, coach
+   flags, consistency signals. A daily snippet operating on
+   raw data doesn't have ANY of this context.
+
+   Questions:
+   - Can a 2-4 sentence coaching snippet be meaningful without
+     interpretation?
+   - Does it need to be "coaching" at all, or is it more like
+     a personalized reinforcement/reminder?
+   - What is the minimum interpretation context needed for a
+     coaching-quality daily message?
+   - Does the daily snippet need access to execution behavior
+     signals? (Those are computed weekly, not daily)
+
+5. COMPLIANCE AND AUDIT
+
+   The weekly pipeline has a full 5-stage compliance chain
+   including Editorial Audit with 13 criteria. Daily output
+   at scale (7 messages/week × N athletes) creates a much
+   higher volume of content to quality-check.
+
+   Questions:
+   - Does each daily snippet need Stage 5 audit? (Cost and
+     latency implications at scale)
+   - Or is compliance handled by constrained templates +
+     lighter audit rules?
+   - Clinical language prohibition still applies — how is
+     this enforced at daily cadence?
+   - Competitive Level Calibration — does it apply daily?
+
+6. IDEA 2 ↔ IDEA 3 COUPLING
+
+   Both ideas introduce daily processing. Design decisions
+   here constrain Idea 3 (Daily Coach Insights):
+
+   - If Idea 2 creates a "daily interpretation" step, Idea 3
+     can consume it too
+   - If Idea 2 operates on raw data only, Idea 3 faces the
+     same "no interpretation" problem
+   - The daily data consumption path should be designed once
+     and shared
+
+7. CONTENT DIFFERENTIATION
+
+   The athlete currently receives (or will receive):
+   - Morning Tune-Up (daily, forward-looking)
+   - Weekly Coaching Message (weekly, reflective + directive)
+   - Weekly Deep Dive (weekly, analytical)
+   - [NEW] Daily Coaching Snippet
+
+   Each must occupy a distinct content niche. If the snippet
+   overlaps with Tune-Up or duplicates the weekly message in
+   shorter form, it adds noise, not value.
+
+8. SCALE AND TIMING
+
+   At app launch with potentially hundreds of athletes:
+   - Daily snippet generation must be fast (morning delivery)
+   - Each snippet must be personalized (not generic)
+   - Generation failures can't block the athlete's morning
+   - How does this interact with the hard-out time model
+     from the App Input Format Specification?
+
+============================================================
+IDEA 2 TASK QUEUE (FOR REFERENCE — DO NOT START UNTIL
+USER SIGNALS READINESS)
+============================================================
+
+Task 8:  Design daily processing architecture
+         Deliverable: Approved architecture (data flow,
+         daily interpretation question)
+
+Task 9:  Design daily snippet content model
+         Deliverable: Approved content framework (length,
+         voice, differentiation from Tune-Up)
+
+Task 10: Write Daily Coaching Snippet specification
+         Deliverable: New spec files (Master Prompt +
+         Instructions)
+
+Task 11: Define daily snippet audit criteria
+         Deliverable: Audit criteria addition
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read these files to build full context before the
+collaborative analysis discussion. Read in this order:
+
+--- PIPELINE ARCHITECTURE (current state) ---
+
+1.  D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+    → Full project state, all version numbers, design
+      decisions, session history
+
+--- STAGE 2: INTERPRETATION ENGINE (weekly data model) ---
+
+2.  D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.5.txt
+    → Current weekly interpretation workflow, dual-mode
+      processing, canonical JSON schema (Section 17)
+
+3.  D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+    → All classification rules, execution signal sections,
+      baseline_intake_profile extraction
+
+--- STAGE 3: COACHING OUTPUT (weekly coaching model) ---
+
+4.  D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.6.txt
+    → Current weekly coaching output rules, tone calibration,
+      competitive level adjustment, Coach Arron persona
+
+5.  D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+    → Field-to-section routing for weekly output
+
+6.  D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+    → Coaching Message structure and voice
+
+7.  D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+    → Coach Arron brand voice specification
+
+8.  D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+    → Writing style rules
+
+--- APP INPUT (daily data format) ---
+
+9.  D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_App_Input_Format_Specification.txt
+    → Daily event format (Morning Tune-Up fields, Evening
+      Review with WTD/Journaling/Bullseye, timing model,
+      hard-out rules). THIS IS THE RAW DAILY DATA the
+      snippet would consume.
+
+--- ATHLETE BASELINE (what the snippet can reference) ---
+
+10. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Athlete Snapshot Generator\SOP_Snapshot_Builder_Project_Instructions_v2.0.txt
+    → Athlete snapshot structure including PPD, ABI,
+      baseline anchors. The snippet needs baseline context.
+
+--- EXECUTION SIGNALS (currently weekly-only) ---
+
+11. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+    → 7 composite score calculation rules. Currently
+      computed weekly. Relevant to whether daily computation
+      is feasible or desirable.
+
+--- COMPLIANCE ---
+
+12. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+    → Compliance rules that also apply to athlete-facing
+      content (clinical language prohibition, non-clinical
+      framing)
+
+--- EDITORIAL AUDIT (current audit model) ---
+
+13. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+    → Current 13-criterion audit model. Relevant to
+      designing lighter daily audit criteria.
+
+--- STAGE 3 SOURCE FILES (voice and identity) ---
+
+14. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+    → Coach Arron system identity
+
+15. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+    → Deep Dive framework (for understanding content
+      differentiation — the snippet should NOT be this)
+
+--- EXISTING ATHLETE DATA (for calibration) ---
+
+16. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+    → Grace Kindel baseline snapshot
+
+17. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+    → Grace Kindel Week 5 Coaching Message (for
+      calibrating daily snippet voice against weekly output)
+
+18. D:\OneDrive\Documents\(TEST) Project A\Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+    → Grace Kindel Week 5 JSON (for understanding what
+      weekly data is available vs. what daily data would be)
+
+--- IDEA 2 ↔ IDEA 3 COUPLING ---
+
+19. D:\OneDrive\Documents\(TEST) Project A\Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.3.txt
+    → Current weekly Coach Insights specification.
+      Relevant for understanding Idea 3 constraints that
+      Idea 2 architecture decisions will create.
+
+--- ORIGINAL DESIGN CONTEXT ---
+
+20. D:\OneDrive\Documents\(TEST) Project A\Pipeline Improvement Design Handoff Prompt.txt
+    → Original Idea 2 description, interaction map,
+      architectural questions
+
+--- EXECUTION SIGNAL STRATEGY (daily data vision) ---
+
+21. G:\Shared drives\Mindset Coaching\Mindset OS App\Future Docs\Interp to Coaching Signal Improvement\VirtusFocus_Execution_Signal_Strategy.md
+    → Execution signal strategy including daily data
+      processing vision. Read for architectural context
+      on how daily data was envisioned to flow.
+
+============================================================
+SESSION WORKFLOW
+============================================================
+
+1. Read all 21 reference files above
+2. Present your understanding of the current pipeline
+   architecture and where daily processing fits (or doesn't)
+3. Walk through each of the 8 architectural questions above,
+   presenting what you've learned and potential approaches
+4. Engage in collaborative analysis with the user — the user
+   has specific concerns they want to discuss
+5. ONLY after the user signals readiness, proceed to formal
+   Task 8 design work
+
+============================================================
+CONSTRAINTS
+============================================================
+
+- Do NOT start formal design (Tasks 8-11) until the user
+  explicitly says to proceed
+- Do NOT write specification files in this session unless
+  the design tasks are approved
+- The daily snippet is App-athlete only. Core Foundation
+  athletes do not receive daily snippets (no daily data).
+- Clinical language prohibition applies to ALL athlete-facing
+  content, including daily snippets
+- Coach Arron persona must be maintained in daily output
+- The daily snippet must not duplicate the Morning Tune-Up
+- All design decisions must be consistent with the v9.5
+  pipeline architecture and Idea 1 additions
+- Ideas 2 and 3 share daily processing infrastructure —
+  architectural decisions here constrain Idea 3
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
