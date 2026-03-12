@@ -1,0 +1,1560 @@
+============================================================
+VIRTUSFOCUS — DOWNSTREAM STAGE IMPACT ASSESSMENT
+Pipeline Improvement Design — Task 7 of 21
+Date: 2026-03-12
+Author: Pipeline Design Session
+Depends On: Task 6 (Interpretation Engine Snapshot Integration Assessment)
+============================================================
+
+TABLE OF CONTENTS
+1. Task 6 Decisions Summary
+2. Stage 3 Impact Assessment (Coaching Output Engine)
+3. Stage 4 Impact Assessment (Coach Insights Engine)
+4. Stage 5 Impact Assessment (Editorial Audit)
+5. Live Season Phase Design (Pre-Launch Blocker)
+6. Design Question Resolutions
+7. Implementation Task List
+
+============================================================
+1. TASK 6 DECISIONS SUMMARY
+============================================================
+
+Task 6 assessed how 40+ new App athlete snapshot (v2.0) fields
+integrate with Stage 2 (Interpretation Engine v9.4). The approved
+outcome is a new top-level JSON block in every weekly Interpretation
+JSON:
+
+NEW JSON BLOCK — baseline_intake_profile
+
+  "baseline_intake_profile": {
+    "input_source": "app | core_foundation",
+    "competitive_level": "Youth | Middle School | High School |
+                          College | Professional",
+    "baseline_season_phase": "Off-Season | Pre-Season | In-Season |
+                              Post-Season | Year-Round Training",
+    "ppd_primary_problem": "string (bucket name)",
+    "ppd_tie_breaker_classification": "Avoidance | Proving |
+                                       Obligation | Approach | [dual]",
+    "ppd_top_3": [
+      {
+        "rank": "integer 1-3",
+        "bucket": "string",
+        "score": "integer",
+        "trigger_context": "string | null",
+        "coaching_implication": "string"
+      }
+    ],
+    "abi_primary_emphasis": "array of 1-2 pillar names | ['Balanced']",
+    "adversity_response_pattern": "Push harder | Pull back and protect |
+                                   Freeze and overthink |
+                                   Reset and refocus"
+  }
+
+This block sits ALONGSIDE the existing baseline_profile block. It does
+not expand or modify baseline_profile. The existing 5 baseline_profile
+fields remain unchanged and authoritative for their current consumers.
+
+CORE FOUNDATION FALLBACK:
+When input_source = "core_foundation", all baseline_intake_profile
+fields = "not available — core foundation intake"
+
+THE 7 FIELDS AND THEIR DOWNSTREAM INTENT:
+
+  competitive_level — Stage 3 formal coaching calibration rule.
+    Determines vocabulary complexity, directness level, accountability
+    framing, and concept naming per competitive level. Scalability-
+    critical for Youth through Professional.
+
+  baseline_season_phase — Point-in-time intake context. NOT a live
+    indicator. Renamed from season_phase to prevent confusion. Stale
+    after athlete progresses through seasons.
+
+  ppd_primary_problem — The #1 ranked PPD bucket name. Backs the
+    baseline_primary_derailer in baseline_profile. Informs Stage 3
+    coaching theme selection by naming the specific friction pattern.
+
+  ppd_tie_breaker_classification — Avoidance/Proving/Obligation/
+    Approach (or dual). Informs Stage 3 tone calibration: how the
+    athlete frames pressure internally.
+
+  ppd_top_3 — Array of top 3 PPD buckets with scores, trigger
+    contexts, and static coaching implication lines. Coaching
+    implications inform Stage 3 coaching direction as baseline
+    recommendations.
+
+  abi_primary_emphasis — The 1-2 ABI pillars scoring lowest (or
+    "Balanced"). Informs Stage 3 pillar-based coaching calibration:
+    which behavioral domains need the most coaching attention.
+
+  adversity_response_pattern — Self-reported adversity style from
+    intake Q20. Complements baseline_primary_derailer for tone
+    calibration during derailer-activation weeks.
+
+
+============================================================
+2. STAGE 3 IMPACT ASSESSMENT — COACHING OUTPUT ENGINE
+============================================================
+
+Stage 3 is the largest scope in this assessment. It receives four
+significant new capabilities from baseline_intake_profile:
+
+  (A) Competitive Level Calibration — new formal section
+  (B) PPD/ABI field routing — new coaching theme integration
+  (C) Adversity Response Pattern — derailer-week tone enhancement
+  (D) Core Foundation handling expansion
+
+Currently: SOP_Coaching_Output_Instructions_v1.5.txt (18 sections)
+           VF_Coaching_Output_JSON_to_Message_Map.txt
+
+------------------------------------------------------------
+2A. COMPETITIVE LEVEL CALIBRATION RULE (NEW SECTION)
+------------------------------------------------------------
+
+DESIGN DECISION (Q1): Modifier-based system. A base calibration table
+defines per-level tone parameters. These parameters interact with
+existing contextual modifiers (emotional_intensity, coach flags,
+self-ratings alignment) to produce nuanced calibration. This is Option
+(c) from the design questions — it creates the most athlete-appropriate
+output because the same data pattern requires different coaching for a
+Youth athlete versus a Professional.
+
+RULE STRUCTURE:
+
+The Competitive Level Calibration Rule is a MODIFIER applied to all
+coaching output sections. It does not add new sections or change the
+mandatory structure. It adjusts HOW content is expressed within
+existing sections.
+
+The rule has two components:
+  (1) Base Calibration Table — 5 parameters per competitive level
+  (2) Interaction Rules — how competitive level modifies existing
+      contextual rules (emotional intensity, coach flags, self-ratings)
+
+COMPONENT 1: BASE CALIBRATION TABLE
+
+┌─────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+│ Parameter    │ Youth        │ Middle School│ High School  │ College      │ Professional │
+├─────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Vocabulary   │ Simple,      │ Clear,       │ Direct,      │ Direct,      │ Precise,     │
+│ Complexity   │ concrete     │ accessible   │ sport-aware  │ performance- │ industry-    │
+│              │              │              │              │ literate     │ fluent       │
+├─────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Directness   │ Encouraging  │ Encouraging  │ Balanced     │ Direct       │ Candid       │
+│ Level        │ first,       │ with gentle  │ (encourage + │ (name it,    │ (state the   │
+│              │ then guide   │ challenge    │ challenge    │ challenge    │ pattern,     │
+│              │              │              │ equally)     │ directly)    │ expect       │
+│              │              │              │              │              │ action)      │
+├─────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Account-     │ Low.         │ Moderate.    │ Moderate-    │ High.        │ Full.        │
+│ ability      │ Celebrate    │ Name the     │ High.        │ Name drift   │ State        │
+│ Framing      │ effort.      │ gap gently.  │ Name drift,  │ directly,    │ expectation, │
+│              │ Reframe      │ Bridge to    │ connect to   │ connect to   │ name the     │
+│              │ gaps as      │ controllable │ stated goals │ competitive  │ gap, frame   │
+│              │ learning     │ action       │              │ standard     │ consequence  │
+├─────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Concept      │ Action-      │ Action +     │ Concept      │ Named        │ Professional │
+│ Naming       │ only.        │ simple       │ naming       │ frameworks   │ shorthand.   │
+│              │ Describe     │ labels.      │ acceptable.  │ acceptable.  │ Framework    │
+│              │ behaviors,   │ "Your reset" │ "Center      │ "Bullseye    │ language is  │
+│              │ don't name   │ "Your        │ ring,"       │ center ring,"│ expected.    │
+│              │ frameworks   │ routine"     │ "Win the     │ "preparation-│ "Pre-        │
+│              │              │              │ Day"         │ based        │ performance  │
+│              │              │              │              │ confidence"  │ protocol"    │
+├─────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Sentence     │ Short.       │ Short-       │ Medium.      │ Medium-      │ Variable.    │
+│ Complexity   │ One idea     │ medium.      │ Compound     │ long.        │ Complex      │
+│              │ per sentence │ Some         │ sentences    │ Multi-clause │ sentences    │
+│              │              │ compound     │ acceptable   │ acceptable   │ acceptable   │
+│              │              │ sentences    │              │              │              │
+└─────────────┴──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
+
+CURRENT DEFAULT: College. All existing athlete output (Grace Kindel,
+Tucker Lloyd, Mergim Bushati) was produced at the College calibration
+level. This is the implicit baseline the pipeline has operated at. The
+College row represents the CURRENT state — no change needed for
+existing athletes.
+
+EXAMPLE PHRASES — SAME COACHING POINT ACROSS LEVELS:
+
+Coaching point: Athlete showed drift in daily execution this week.
+
+  Youth:
+    "You had some days this week where you didn't bring your best
+    effort. That happens. What matters is what you do tomorrow.
+    Pick one thing you can do better and go do it."
+
+  Middle School:
+    "Your effort shifted this week — some days were strong, others
+    slipped. That's a pattern worth noticing. Tomorrow, bring the
+    same focus you had on your best day this week."
+
+  High School:
+    "Execution dipped midweek. Your Win the Day consistency dropped
+    from where it was. The gap isn't about ability — it's about
+    showing up the same way every day. Close it this week."
+
+  College:
+    "The way you showed up shifted this week. Not one off day —
+    engagement pulled back across the board. Your preparation
+    standard is higher than what the week delivered. Address it
+    directly."
+
+  Professional:
+    "Execution pattern compressed this week. You know your standard.
+    The week didn't meet it. Identify what shifted and correct it
+    before it becomes a trend."
+
+COMPONENT 2: INTERACTION RULES
+
+Competitive level modifies HOW existing contextual rules are applied.
+It does not override them.
+
+EMOTIONAL INTENSITY + COMPETITIVE LEVEL:
+
+  When emotional_intensity = "High":
+    Youth/Middle School: Lead with WARMTH. Extended empathetic
+      acknowledgment (2-3 sentences). Reduce all framework language
+      to zero. Use only concrete behavioral descriptions. Do not
+      name the emotion clinically — describe it in the athlete's
+      own language or simple terms ("that was a hard week").
+    High School: Lead with EMPATHY. Standard empathetic lead
+      (1-2 sentences) per existing rule. Light framework language
+      acceptable after the empathetic lead.
+    College: Lead with ACKNOWLEDGMENT. Current rule (1-2 sentences).
+      Framework language reduced but not eliminated.
+    Professional: Lead with BRIEF ACKNOWLEDGMENT. One sentence.
+      Then address the pattern directly. Professionals expect
+      honesty quickly. Extended empathy reads as patronizing.
+
+  When emotional_intensity = "Low":
+    All levels: Standard tone per base calibration table.
+    No emotional preamble at any level.
+
+COACH FLAGS + COMPETITIVE LEVEL:
+
+  Action-severity flags:
+    Youth: Frame as "something shifted" — name the behavioral
+      change without alarm. Micro-commitment stays simple and
+      concrete. Do not use language suggesting the athlete is
+      failing ("your engagement collapsed").
+    Middle School: Frame as "a pattern worth addressing" —
+      slightly more direct than Youth but still encouraging.
+    High School: Current rule applies. Direct address, clear
+      naming of the pattern.
+    College: Current rule applies. Pattern leads the message.
+    Professional: Most direct framing. "This is a trend. Here's
+      what needs to change." Expectation of self-correction.
+
+  Attention-severity flags:
+    Youth: Weave into encouragement. "You did great on X. Now
+      let's build Y too."
+    Middle School: Name the gap gently alongside the strength.
+    High School/College/Professional: Current rules apply with
+      increasing directness per base table.
+
+  Monitor-severity flags:
+    All levels: Subtle integration per current rule. No level-
+    specific modification needed — monitor flags are already
+    designed as subtle tone adjustments.
+
+SELF-RATINGS ALIGNMENT + COMPETITIVE LEVEL:
+
+  Conflated (athlete rates self higher than execution shows):
+    Youth: Do NOT address directly. Youth athletes rating
+      themselves highly is developmentally normal. Gently redirect
+      to specific controllable actions without naming the gap.
+      "Here's what to focus on this week" (not "your week didn't
+      match what you thought").
+    Middle School: Very gentle bridge. "You're feeling good about
+      where you are — and there's room to make the execution match
+      that feeling."
+    High School: Standard grounding language per existing rule.
+    College: Standard grounding language per existing rule.
+    Professional: More direct. "Self-assessment ran ahead of
+      execution this week. Close the gap."
+
+  Undervalued (athlete rates self lower than execution shows):
+    All levels: Current elevation language works across all levels.
+    Youth may benefit from even simpler framing: "You did better
+    than you think you did this week. Look at what you actually
+    did." No level-specific override needed.
+
+CORE FOUNDATION HANDLING:
+When baseline_intake_profile.input_source = "core_foundation",
+competitive_level = "not available — core foundation intake."
+Stage 3 defaults to College calibration (current behavior). All
+existing Core Foundation athletes receive identical output to
+current v1.5. Zero degradation.
+
+DEFAULT WHEN COMPETITIVE LEVEL IS MISSING:
+If competitive_level = "not available" for ANY reason, default to
+College calibration. This is the safest default — it matches current
+pipeline behavior and avoids accidentally patronizing an older athlete
+or overwhelming a younger one.
+
+------------------------------------------------------------
+2B. PPD / ABI / ADVERSITY FIELD ROUTING
+------------------------------------------------------------
+
+PPD COACHING IMPLICATIONS — MESSAGE MAP ADDITIONS:
+
+DESIGN DECISION (Q2): Weekly data takes priority over PPD baseline.
+PPD coaching implications are PERSISTENT BASELINE GUIDANCE — they
+represent what the intake data says the athlete's friction patterns
+are. But weekly signals reflect the athlete's CURRENT STATE, which
+may diverge from baseline patterns.
+
+THREE-TIER ROUTING PRIORITY:
+
+  Priority 1: WEEKLY SIGNALS
+    Weekly tier, core_pattern, behavioral_root_cause, emotional_
+    intensity, coach flags, composite score bands. These reflect
+    what actually happened THIS WEEK.
+
+  Priority 2: PPD COACHING IMPLICATIONS
+    ppd_top_3.coaching_implication lines. These are baseline
+    recommendations that apply when weekly signals are CONSISTENT
+    with the baseline pattern or when weekly signals are neutral
+    (no strong directional signal).
+
+  Priority 3: DEFAULT COACHING APPROACH
+    Standard coaching approach based on growth_phase, consistency_
+    profile, and existing v9.3 field routing.
+
+WHEN PPD IMPLICATIONS ACTIVATE (Priority 2):
+  - Weekly data shows derailer activation or Partially Aligned status
+    AND the derailer pattern matches the PPD primary problem
+  - Weekly data is neutral (no strong positive or negative signal)
+    and PPD implications provide useful baseline direction
+  - Coaching Focus Areas in Deep Dive — PPD implications can
+    always inform focus area selection as background context
+
+WHEN PPD IMPLICATIONS ARE OVERRIDDEN (Priority 1 takes over):
+  - Athlete had a breakthrough week with no derailer activation —
+    coaching leads with recognition, not baseline friction patterns
+  - Weekly signals point to a DIFFERENT pattern than PPD predicted
+    (e.g., PPD says Overthinking Loop but this week shows Discipline
+    Gap behavior) — coach to the current week, not the baseline
+  - Emotional intensity is High — empathy leads, and PPD coaching
+    implications are secondary to emotional acknowledgment
+
+PPD FIELD ROUTING TO COACHING MESSAGE:
+
+  ppd_primary_problem →
+    Does NOT appear as named text. Informs the coach's internal
+    understanding of the athlete's primary friction pattern.
+    Routes to: Drift Identification (when derailer activates,
+    the coaching language addresses the specific friction pattern
+    rather than generic drift language)
+
+  ppd_top_3.coaching_implication →
+    Routes to: Coaching Focus Areas subsection targets
+    Example: If coaching_implication = "Reset reps + next-play
+    language" and the week shows derailer activation, the micro-
+    commitment targets reset-based behavioral actions.
+    Does NOT appear as quoted text. Informs coaching direction.
+
+  ppd_tie_breaker_classification →
+    Routes to: Tone calibration across entire message
+    Avoidance-framed athlete: Coaching emphasizes safety of
+      controllables. "This is something you can control" framing.
+      Reduce high-stakes language. Frame forward actions as
+      low-risk, high-return.
+    Proving-framed athlete: Coaching separates worth from outcomes.
+      "Your value isn't determined by this result" framing. Anchor
+      identity in preparation quality, not external validation.
+    Obligation-framed athlete: Coaching redirects from others'
+      expectations to self-defined standards. "What do YOU want
+      from this?" framing. Reduce references to coaches, parents,
+      team expectations.
+    Approach-framed athlete: Standard coaching tone. Athlete
+      already frames pressure productively. No special calibration
+      needed — reinforce existing approach framing.
+    Dual classification: Apply both calibrations. When they
+      conflict (e.g., Avoidance + Proving), prioritize the
+      classification matching the current week's behavioral
+      pattern.
+
+PPD FIELD ROUTING TO DEEP DIVE:
+
+  ppd_primary_problem →
+    Routes to: Growth Areas — when derailer activates, the growth
+    section can reference the specific friction type without
+    naming the PPD bucket. Example: instead of "Mistake Recovery
+    Lag was activated," write "The pattern of compounding errors
+    appeared again this week."
+
+  ppd_top_3 (all three) →
+    Routes to: Coaching Focus Areas — all three PPD coaching
+    implications are available as background context for focus
+    area selection. The #1 implication has highest priority for
+    derailer-activation weeks. #2 and #3 may inform secondary
+    focus areas.
+
+  ppd_tie_breaker_classification →
+    Routes to: Mindset Summary — the athlete's pressure framing
+    (Avoidance/Proving/Obligation/Approach) contextualizes the
+    growth phase narrative. Example: "Grace's pressure framing
+    has shifted from avoidance-oriented to approach-oriented over
+    five weeks" would be expressed as: "The way Grace frames
+    pressure has shifted — from protecting against failure to
+    preparing for opportunity."
+
+ABI PRIMARY EMPHASIS — ROUTING:
+
+  abi_primary_emphasis →
+    Routes to: Strength Signals + Drift Identification +
+    Coaching Focus Areas
+
+    When abi_primary_emphasis pillars ALIGN with current week's
+    strength signals: Reinforce. "Your [pillar behavior] this
+    week was exactly the kind of [pillar concept] that builds
+    consistency."
+
+    When abi_primary_emphasis pillars ALIGN with current week's
+    drift pattern: Name directly. "The area where you have the
+    most room to grow — [pillar behavior description] — is
+    exactly where this week's drift showed up."
+
+    When abi_primary_emphasis pillars are UNRELATED to current
+    week's data: Background context only. Do not force a pillar-
+    based coaching point that doesn't connect to the week's data.
+
+    Pillar-to-behavior translations (NEVER use pillar names):
+      Ownership → self-directed action, driving your own process,
+        initiating without being told
+      Composure → staying steady under pressure, recovering from
+        setbacks, keeping your response consistent
+      Focus → staying locked in during performance, filtering out
+        distractions, maintaining attention
+      Structure → building routines, maintaining daily rhythms,
+        following preparation patterns
+
+    Example: abi_primary_emphasis = ["Composure", "Ownership"]
+      WRONG: "Your ABI shows Composure and Ownership as emphasis
+      areas."
+      CORRECT: "The two areas where you have the most room to
+      grow — how you respond under pressure and how much you
+      drive your own process — both showed up this week."
+
+ADVERSITY RESPONSE PATTERN — ROUTING:
+
+DESIGN DECISION (Q5): Adversity response pattern descriptions ARE
+permitted in coaching language. Unlike PPD bucket names (pipeline
+jargon), these are athlete-selected natural language from intake Q20.
+The athlete chose "Freeze and overthink" or "Reset and refocus" as
+their own self-description. Reflecting this language back is coaching,
+not leakage.
+
+  adversity_response_pattern →
+    Routes to: Drift Identification + Growth Areas (ONLY during
+    derailer-activation weeks or Partially Aligned status)
+
+    NOT routed during non-derailer weeks. The adversity response
+    pattern is relevant only when adversity is present.
+
+    Routing logic:
+      "Push harder" →
+        When derailer activates: Coach toward measured response.
+        "Your instinct when things get hard is to push harder —
+        and sometimes that works. But this week, pushing harder
+        without adjusting direction burned energy without changing
+        the result. Channel that intensity into your controllables."
+
+      "Pull back and protect" →
+        When derailer activates: Coach toward re-engagement.
+        "When things got tough, you pulled back. That's a
+        protection instinct — it makes sense. But pulling back
+        means you're not in the game anymore. The goal isn't to
+        fight harder. It's to stay present."
+
+      "Freeze and overthink" →
+        When derailer activates: Coach toward action.
+        "When things got hard, your instinct was to freeze and
+        overthink — replay it, analyze it, try to figure it out
+        before acting. This week, the goal is to move first and
+        process second. Action breaks the loop."
+
+      "Reset and refocus" →
+        When derailer activates: Reinforce existing pattern.
+        "Your instinct is to reset and refocus — and this week
+        that's exactly what showed up. Even under pressure, you
+        came back to your controllables."
+
+    When adversity_response_pattern is "not available" (CF):
+      No routing. Standard derailer coaching language per v1.5.
+
+------------------------------------------------------------
+2C. CORE FOUNDATION SKIP RULE EXPANSION
+------------------------------------------------------------
+
+The existing Core Foundation Execution Skip Rule (v1.5 Section 16)
+already skips execution signal integration for CF athletes. The
+intake profile fields follow the same pattern:
+
+When baseline_intake_profile.input_source = "core_foundation":
+  - ALL baseline_intake_profile fields = "not available"
+  - SKIP Competitive Level Calibration Rule (default to College)
+  - SKIP PPD coaching implication routing
+  - SKIP ABI primary emphasis routing
+  - SKIP adversity response pattern routing
+  - SKIP baseline_season_phase context
+  - Use existing baseline_profile fields ONLY
+  - Output identical in structure and quality to current v1.5
+
+This extends the existing Section 16 pattern. It does NOT replace
+Section 16 — both skip rules apply independently (one for execution
+signals, one for intake profile fields).
+
+------------------------------------------------------------
+2D. AFFECTED SECTIONS AND ESTIMATED SCOPE
+------------------------------------------------------------
+
+VF_Coaching_Output_JSON_to_Message_Map.txt:
+  - Add baseline_intake_profile routing block (new section)
+  - Add ppd_top_3, ppd_tie_breaker, abi_primary_emphasis,
+    adversity_response_pattern routing to existing CM and DD sections
+  - Add competitive_level modifier note (references Instructions)
+  - Estimated: +60-80 lines
+
+SOP_Coaching_Output_Instructions (next version — v1.6):
+  - NEW Section: Competitive Level Calibration Rule (largest addition,
+    ~150-200 lines including table, interaction rules, examples)
+  - NEW Section: Intake Profile Field Integration Rule (~80-100 lines
+    covering PPD/ABI/adversity routing with priority tiers)
+  - EXPAND Section 3: Add baseline_intake_profile awareness
+  - EXPAND Section 4: Add new field usage rules for all 7 intake
+    profile fields
+  - EXPAND Section 6: Add baseline_intake_profile to routing
+    categories (new 5th category: "FIELDS THAT PROVIDE BASELINE
+    COACHING CONTEXT" — distinct from direct-use and inform-only)
+  - EXPAND Section 16 (CF Skip): Add intake profile skip rules
+  - Estimated total expansion: ~350-400 lines (v1.5 ~700 → v1.6 ~1100)
+
+
+============================================================
+3. STAGE 4 IMPACT ASSESSMENT — COACH INSIGHTS ENGINE
+============================================================
+
+Stage 4 scope is moderate. baseline_intake_profile fields are
+primarily inform-only, following the same pattern as execution signals.
+The key addition is compliance classification of PPD/ABI terminology.
+
+Currently: SOP_Coach_Insights_Project_Instructions_v1.2.txt (18 sections)
+           JSON_logic_reference.txt
+
+------------------------------------------------------------
+3A. FIELD CLASSIFICATION
+------------------------------------------------------------
+
+INFORM-ONLY FIELDS (raw content never reproduced, but informs
+better institutional output):
+
+  competitive_level →
+    Informs Section 1 (Weekly Performance Classification) as
+    contextual enrichment. Example: "This classification reflects
+    performance patterns at the collegiate competitive level."
+    Does NOT change any determination logic or thresholds.
+
+  abi_primary_emphasis →
+    Informs Section 8 (Key Performance Signal) and Section 9
+    (Coach Context Cue). When KPS selection is ambiguous between
+    two equally strong signals, abi_primary_emphasis breaks the
+    tie toward the pillar-aligned signal.
+    Does NOT appear as "ABI Primary Emphasis is Composure."
+    Appears as: "Self-directed preparation consistency" (when
+    Ownership is emphasis), "Pressure response stability" (when
+    Composure is emphasis), etc.
+
+  adversity_response_pattern →
+    Informs Section 9 (Coach Context Cue) during derailer-
+    activation or Partially Aligned weeks. Helps the coach
+    context cue name the athlete's likely response pattern
+    without exposing the pipeline classification.
+    Example: "Athlete's typical adversity response involves
+    increased effort intensity rather than strategic adjustment"
+    (translates "Push harder" without naming it)
+
+PROHIBITED FIELDS (NEVER surface in institutional output in any
+form, even translated):
+
+  ppd_primary_problem — PPD bucket names are pipeline-internal
+    classification labels. They are not coaching vocabulary. The
+    baseline_primary_derailer in baseline_profile already carries
+    the athlete-facing version of this information.
+    PROHIBITED: "Primary problem: Mistake Recovery Lag"
+    PROHIBITED: "PPD indicates overthinking patterns"
+    REASON: Coaching staff should not see named problem
+    classifications. The Weekly Performance Insight already
+    addresses behavioral patterns through compliance-safe language.
+
+  ppd_tie_breaker_classification — Internal scoring methodology
+    artifact. "Avoidance-framed" or "Proving-framed" are pipeline
+    labels applied to athlete pressure language by the scoring
+    agent. Not appropriate for institutional output.
+    PROHIBITED: "Athlete's pressure framing is Avoidance-type"
+    REASON: This is a clinical-adjacent classification that
+    could influence how coaching staff perceive the athlete.
+
+  ppd_top_3 — The full array including bucket names, scores, and
+    coaching implications. Scores are internal pipeline data.
+    Bucket names are pipeline classifications. Coaching
+    implications are Stage 3 routing directives, not institutional
+    content.
+    PROHIBITED: "PPD top 3: Pressure Reactivity (7), Overthinking
+    Loop (6), Confidence Volatility (4)"
+    REASON: Named problem rankings with numeric scores would
+    fundamentally alter how coaching staff perceive the athlete.
+
+  baseline_season_phase — Point-in-time intake data that goes
+    stale. Surfacing it would present potentially outdated season
+    information to coaching staff. The live current_season_phase
+    (once implemented) is the appropriate source for Stage 4
+    Season Phase Overlay.
+    PROHIBITED: "Baseline season phase: Pre-Season"
+    REASON: Stale data presented as current context creates
+    misinformed coaching decisions.
+
+CONTEXT-ONLY FIELD (used for internal routing, never surfaced):
+
+  input_source — Used for dual-mode detection (App vs CF). Never
+    mentioned in output. Same status as execution_behavior_signals.
+    input_source.
+
+------------------------------------------------------------
+3B. PER-SECTION ROUTING UPDATES
+------------------------------------------------------------
+
+Section 1 (Weekly Performance Classification):
+  competitive_level provides contextual framing. When populated,
+  the executive summary sentence may include competitive level
+  context: "This week reflects a Growth classification with
+  stable preparation patterns at the collegiate level."
+  This is OPTIONAL enrichment, not mandatory.
+
+Section 2 (Consistency Signal):
+  No baseline_intake_profile routing. Consistency is determined
+  entirely by weekly execution data.
+
+Section 3 (WTD + Bullseye):
+  No baseline_intake_profile routing. These are weekly behavioral
+  metrics unaffected by intake data.
+
+Section 4 (Recommitment & Response Signal):
+  No baseline_intake_profile routing. Recommitment is event-
+  triggered from weekly data.
+
+Section 5 (Confidence Momentum):
+  No baseline_intake_profile routing. Confidence determined by
+  weekly signals and self-ratings alignment.
+
+Section 6 (Stress Load):
+  No baseline_intake_profile routing. Stress Load is weekly
+  contextual assessment.
+
+Section 7 (Growth Phase):
+  No baseline_intake_profile routing. Growth Phase is
+  longitudinal behavioral classification.
+
+Section 8 (Key Performance Signal):
+  abi_primary_emphasis MAY serve as KPS tie-breaker when two
+  signals are equally strong. Priority: existing KPS selection
+  logic > abi_primary_emphasis tie-break > default selection.
+  The tie-break translates pillar emphasis into compliance-safe
+  signal labels:
+    Ownership emphasis → "Self-Directed Engagement Consistency"
+    Composure emphasis → "Pressure Response Stability"
+    Focus emphasis → "Sustained Attention Quality"
+    Structure emphasis → "Daily Preparation Rhythm"
+  This is NOT a new KPS priority level. It is a disambiguation
+  rule when existing priorities produce a tie.
+
+Section 9 (Coach Context Cue):
+  adversity_response_pattern MAY inform the context cue during
+  derailer-activation or Partially Aligned weeks. The cue
+  translates the pattern into coaching-staff language:
+    "Push harder" → "Athlete's typical response to adversity
+      involves increased effort intensity. Monitor for
+      unsustainable escalation patterns."
+    "Pull back and protect" → "Athlete's typical response to
+      adversity involves reduced engagement. Monitor for
+      extended withdrawal patterns."
+    "Freeze and overthink" → "Athlete's typical response to
+      adversity involves processing delay before action.
+      Monitor for extended hesitation patterns."
+    "Reset and refocus" → "Athlete's typical response to
+      adversity involves intentional reset. Reinforce existing
+      adaptive response."
+  These translations are inform-only. They never appear as named
+  classifications. They never include "adversity response pattern."
+
+Section 10 (Composite Readiness Signal):
+  No baseline_intake_profile routing. Composite Readiness is
+  determined by weekly signals + stress load + execution modifier.
+  Intake profile fields do not affect readiness determination.
+
+TEAM SNAPSHOT ROUTING:
+  competitive_level MAY enrich Section T1 (Executive Summary) with
+  team competitive level context (e.g., "Division II collegiate
+  roster"). This is contextual framing, not a new data element.
+  No other Team Snapshot sections affected.
+
+------------------------------------------------------------
+3C. COMPLIANCE LIST EXPANSION
+------------------------------------------------------------
+
+The following terms must be added to the existing prohibited content
+list (v1.2 Section 12):
+
+PPD TERMINOLOGY:
+  - PPD bucket names: Overthinking Loop, Confidence Volatility,
+    Mistake Recovery Lag, Focus Drift / Distraction, Pressure
+    Reactivity, Discipline Gap, Structure Gap, Ecosystem Friction
+  - "PPD" as a label or abbreviation
+  - "Primary Problem Detector"
+  - PPD numeric scores (as score values)
+  - "ppd_top_3" or "ppd_primary_problem" (field names)
+  - "coaching_implication" (as field reference)
+  - Tie-breaker classification labels: "Avoidance-framed,"
+    "Proving-framed," "Obligation-framed," "Approach-framed"
+    (as named pipeline classifications)
+
+ABI TERMINOLOGY:
+  - "ABI" as a label or abbreviation
+  - "Athlete Baseline Index"
+  - "abi_primary_emphasis" (field name)
+  - ABI pillar score labels used as named scores: "Ownership
+    pillar score," "Composure score is 5," "Focus: Moderate"
+  - ABI total score or band as named classifications: "ABI total
+    26," "ABI band: Developing"
+  - "primary emphasis" as a named pipeline classification
+  - NOTE: Pillar NAMES (Ownership, Composure, Focus, Structure)
+    used as natural coaching concepts are PERMITTED. "Building
+    composure under pressure" is coaching language. "Composure
+    pillar is Low" is a leakage violation.
+
+ADVERSITY RESPONSE PATTERN TERMINOLOGY:
+  - "adversity response pattern" as a named field reference
+  - The enum values used as named pipeline classifications:
+    "adversity pattern is Push harder" is prohibited
+  - NOTE: The natural-language descriptions used as coaching
+    language are PERMITTED in Stage 3 (athlete-facing). In Stage 4
+    (institutional), the translations listed in Section 3B above
+    replace the raw descriptions. "Athlete's typical response
+    involves increased effort intensity" is permitted. "Adversity
+    response pattern: Push harder" is prohibited.
+
+BASELINE INTAKE PROFILE TERMINOLOGY:
+  - "baseline_intake_profile" (block name)
+  - "intake profile" as a named pipeline data structure
+  - "baseline_season_phase" (field name — and the value itself,
+    since it may be stale)
+
+------------------------------------------------------------
+3D. CORE FOUNDATION HANDLING
+------------------------------------------------------------
+
+When baseline_intake_profile.input_source = "core_foundation":
+  - ALL baseline_intake_profile fields = "not available"
+  - ALL per-section routing from 3B is skipped
+  - KPS tie-breaker from abi_primary_emphasis is skipped
+  - Coach Context Cue adversity enrichment is skipped
+  - competitive_level contextual framing is skipped
+  - Output identical to v1.2 behavior
+  - Core Foundation confirmed transitional (<20 athletes)
+
+This extends the existing Section 16 pattern. Same binary detection
+(input_source field), same skip behavior, same zero-degradation
+guarantee.
+
+------------------------------------------------------------
+3E. AFFECTED SECTIONS AND ESTIMATED SCOPE
+------------------------------------------------------------
+
+JSON_logic_reference.txt:
+  - Add baseline_intake_profile awareness to dual-mode section
+  - Add KPS tie-breaker rule using abi_primary_emphasis
+  - Add Coach Context Cue adversity enrichment rule
+  - Add competitive_level contextual framing for Section 1
+  - Expand inform-only fields list
+  - Expand prohibited content categories
+  - Add intake profile CF skip rules
+  - Estimated: +80-100 lines
+
+SOP_Coach_Insights_Project_Instructions (next version — v1.3):
+  - EXPAND Section 4: Add baseline_intake_profile prohibited items
+  - EXPAND Section 6: Add per-section intake profile enrichment
+    guidance with WRONG/CORRECT examples for Sections 1, 8, 9
+  - EXPAND Section 8: Add baseline_intake_profile to field routing
+    classification
+  - EXPAND Section 12: Add PPD/ABI/adversity prohibited terms
+  - NEW Section or EXPAND Section 15: Add Intake Profile Integration
+    Master Rule (parallel to Execution Signal Integration Master Rule)
+  - EXPAND Section 16: Add intake profile CF skip rules
+  - EXPAND Section 17: Add PPD/ABI/adversity to raw metric exclusion
+  - Estimated total expansion: ~200-250 lines (v1.2 ~1709 → v1.3 ~1950)
+
+
+============================================================
+4. STAGE 5 IMPACT ASSESSMENT — EDITORIAL AUDIT
+============================================================
+
+Currently: SOP_Editorial_Audit_Master_Prompt_v1.1.txt
+           SOP_Editorial_Audit_Project_Instructions_v1.1.txt
+
+------------------------------------------------------------
+4A. LEAKAGE AUDIT CRITERIA DESIGN
+------------------------------------------------------------
+
+DESIGN DECISION (Q3): EXPAND Criterion 13 from "Execution Signal
+Leakage Compliance" to "Pipeline Data Leakage Compliance." Do NOT
+create a new Criterion 14.
+
+RATIONALE:
+  - Criterion 13's core question is: "Does athlete-facing output
+    contain internal pipeline data that should not be surfaced?"
+  - PPD/ABI/intake profile data is the same category of concern
+    as execution signal data — internal pipeline classifications
+    appearing in coaching output
+  - The 6-step check logic structure accommodates expansion
+  - Adding a Category F (Intake Profile Terminology) alongside
+    existing Category E (Execution Signal Terminology) keeps the
+    audit taxonomy clean
+  - Two near-identical "leakage" criteria would create audit
+    redundancy and confusion about which criterion catches which
+    violation
+
+CRITERION 13 — EXPANDED SCOPE:
+
+Current title: "Execution Signal Leakage Compliance"
+New title: "Pipeline Data Leakage Compliance"
+
+Current scope: Execution behavior signals only
+New scope: Execution behavior signals + baseline intake profile data
+
+The 6-step check logic expands as follows:
+
+  Step 1: Read input_source (unchanged)
+
+  Step 2: Core Foundation check (EXPANDED)
+    Current: Scan for execution-signal-derived language
+    Added: Also scan for intake-profile-derived language.
+    Core Foundation athletes have no PPD/ABI computed data.
+    Any reference to PPD-style friction patterns, ABI-style
+    pillar assessments, or adversity response classifications
+    is leakage because there is no intake profile data to
+    derive it from.
+    NOTE: Existing baseline_profile fields (identity claim,
+    hinge habit, primary derailer) are NOT affected — these
+    exist for CF athletes and are properly routed.
+
+  Step 3: Raw Metric Scan (unchanged — Category E5-E6)
+
+  Step 4: Composite Score/Flag/Alignment Scan (EXPANDED)
+    Current: Scan for Category E1-E4, E7
+    Added: Also scan for Category F1-F5 (see 4C below)
+
+  Step 5: Surveillance Framing Scan (EXPANDED)
+    Current: 10 surveillance framing patterns
+    Added: Pipeline classification framing patterns:
+      "Your primary problem is..."
+      "Based on your intake assessment..."
+      "Your baseline index shows..."
+      "According to your intake profile..."
+      "Your pillar scores indicate..."
+      "Your friction pattern suggests..."
+    These expose the athlete to the existence of internal
+    classification systems.
+
+  Step 6: Context-Dependent Judgment (EXPANDED)
+    Added to PERMITTED list:
+      a) Pillar concepts used as coaching language:
+        "Take ownership of your routine" (coaching)
+        "Build composure under pressure" (coaching)
+        "Sharpen your focus" (coaching)
+        "Create more structure" (coaching)
+      b) Adversity response descriptions reflected in coaching:
+        "When things got hard, your instinct was to freeze and
+        overthink" (athlete's own language from intake)
+        "You tend to push harder when things go wrong" (coaching
+        observation grounded in athlete's self-report)
+      c) PPD-related coaching themes expressed naturally:
+        "The pattern of compounding errors" (not "Mistake
+        Recovery Lag")
+        "Confidence tied to outcomes" (not "Confidence
+        Volatility")
+    Added to PROHIBITED list:
+      a) Named PPD bucket references:
+        "Your Mistake Recovery Lag pattern activated"
+        "Overthinking Loop was present"
+      b) Named ABI references:
+        "Your Composure pillar is your weakest area"
+        "Ownership Index is Moderate"
+      c) Named classification references:
+        "Your adversity response pattern is Freeze and overthink"
+        (as a named pipeline classification, not coaching language)
+        "Your tie-breaker classification is Avoidance"
+
+    Reasonable reader test (expanded):
+      Current: "Could a reasonable reader identify that the
+      observation is derived from quantified app usage data?"
+      Added: "Could a reasonable reader identify that the
+      observation is derived from a formal intake assessment
+      scoring system?"
+      If yes on either → leakage. If no on both → permitted.
+
+------------------------------------------------------------
+4B. COMPETITIVE LEVEL CONSISTENCY AUDIT
+------------------------------------------------------------
+
+DESIGN DECISION: NOT a formal numbered audit criterion. Quality
+note only.
+
+RATIONALE:
+  - Competitive level calibration is a TONE parameter, not a
+    compliance boundary. Output at the "wrong" competitive level
+    is suboptimal but not a compliance violation.
+  - A Youth athlete receiving College-level directness is a
+    quality issue. A coaching message containing "Ownership Index"
+    is a compliance violation. These are different categories.
+  - Making competitive level a formal criterion would require
+    the audit agent to independently assess vocabulary complexity,
+    directness level, and accountability framing — subjective
+    judgments that don't fit the deterministic audit model.
+
+QUALITY NOTE (added to audit instructions, not numbered criteria):
+
+  "When baseline_intake_profile.competitive_level is populated,
+  verify that coaching tone is broadly appropriate to the stated
+  level. Youth athletes should not receive highly direct,
+  accountability-heavy language. Professional athletes should not
+  receive overly encouraging, simplified language. Flag obvious
+  mismatches as a style note in the audit summary, but do not
+  reject on competitive level mismatch alone."
+
+------------------------------------------------------------
+4C. CLINICAL LANGUAGE EXCLUSION LIST EXPANSION
+------------------------------------------------------------
+
+ADD Category F: Intake Profile Terminology
+
+  F1 — PPD BUCKET NAMES (never used as named problem classifications):
+    - Overthinking Loop
+    - Confidence Volatility
+    - Mistake Recovery Lag
+    - Focus Drift / Distraction (as named bucket — "focus drift"
+      in natural coaching context is permitted)
+    - Pressure Reactivity (as named bucket — "pressure reactivity"
+      in natural coaching context is permitted)
+    - Discipline Gap
+    - Structure Gap
+    - Ecosystem Friction
+    - "PPD" / "Primary Problem Detector"
+    - "ppd_top_3" / "ppd_primary_problem" / "ppd_all_scores"
+    NOTE: Natural descriptions of the same patterns ARE permitted
+    when expressed in coaching language. "The pattern of mistakes
+    compounding" is coaching. "Mistake Recovery Lag" is a named
+    pipeline bucket.
+
+  F2 — PPD SCORING ARTIFACTS (never cited):
+    - PPD numeric scores ("score of 7," "PPD score")
+    - Trigger context as named field ("trigger_context")
+    - Coaching implication as named field ("coaching_implication")
+    - Tie-breaker classification labels used as named
+      classifications ("Avoidance-framed," "Proving-framed,"
+      "Obligation-framed," "Approach-framed")
+    NOTE: "Your pressure thought" is natural language permitted
+    in coaching. "Tie-breaker classification: Avoidance" is
+    prohibited pipeline terminology.
+
+  F3 — ABI TERMINOLOGY (never used as named scoring labels):
+    - "ABI" / "Athlete Baseline Index"
+    - "abi_primary_emphasis" / "abi_scores" / "abi_raw_inputs"
+    - Pillar names used AS SCORE LABELS: "Ownership score is 6,"
+      "Composure pillar: Low," "Focus: Moderate band"
+    - ABI total score or band: "ABI total 26," "ABI band:
+      Developing," "Needs Foundation"
+    - "primary emphasis" as named pipeline classification
+    NOTE: Pillar names used as natural coaching concepts are
+    PERMITTED. "Take ownership" is coaching. "Your Ownership
+    pillar" is a named score. "Build composure" is coaching.
+    "Composure is Low" is a band label. Apply context judgment.
+
+  F4 — ADVERSITY RESPONSE PATTERN AS NAMED CLASSIFICATION:
+    - "adversity_response_pattern" (field name)
+    - "adversity response pattern" as named pipeline field
+    - Enum values used as NAMED CLASSIFICATIONS: "Your adversity
+      pattern is Push harder" is prohibited. "When things get
+      hard, your instinct is to push harder" is permitted
+      coaching language.
+    NOTE: The adversity response descriptions are athlete-
+    selected natural language. They are PERMITTED when reflected
+    in coaching context (Stage 3 athlete-facing output). They are
+    PROHIBITED when framed as named pipeline classifications.
+
+  F5 — BASELINE INTAKE PROFILE BLOCK TERMINOLOGY:
+    - "baseline_intake_profile" (block name)
+    - "intake profile" as named pipeline data structure
+    - "input_source" (field name — in any coaching context)
+    - "baseline_season_phase" (field name — and the value itself
+      when potentially stale)
+    - "competitive_level" (as named field — "college-level
+      athlete" in natural context is permitted, "competitive_
+      level: College" is prohibited)
+
+CONTEXT-DEPENDENT JUDGMENT FOR CATEGORY F:
+
+The key distinction is COACHING LANGUAGE vs PIPELINE LABELS:
+
+  PERMITTED (coaching language):
+    "Take ownership of your process"
+    "Build composure when things get hard"
+    "When pressure showed up, you froze — but then you reset"
+    "The pattern of mistakes compounding was present this week"
+    "Your confidence tends to follow your results"
+
+  PROHIBITED (pipeline labels):
+    "Your Ownership pillar is Moderate"
+    "Mistake Recovery Lag activated"
+    "Adversity response pattern: Freeze and overthink"
+    "PPD primary problem: Confidence Volatility"
+    "ABI emphasis: Composure and Focus"
+
+  TEST: Does the language name a formal classification system,
+  or does it describe a behavioral observation? The former is
+  leakage. The latter is coaching.
+
+------------------------------------------------------------
+4D. AFFECTED SECTIONS AND ESTIMATED SCOPE
+------------------------------------------------------------
+
+SOP_Editorial_Audit_Master_Prompt (next version — v1.2):
+  - Rename Criterion 13 to "Pipeline Data Leakage Compliance"
+  - Add Category F to Clinical Language Exclusion List
+  - Add competitive level quality note
+  - Add intake profile WRONG/CORRECT examples alongside existing
+    execution signal examples
+  - Estimated: +80-100 lines
+
+SOP_Editorial_Audit_Project_Instructions (next version — v1.2):
+  - Expand Criterion 13 check logic (Steps 2, 4, 5, 6)
+  - Add Category F to exclusion list with subcategories F1-F5
+  - Add edge cases for PPD/ABI natural language coincidences
+  - Add competitive level quality note
+  - Update decision tree for expanded Criterion 13
+  - Estimated: +100-120 lines
+
+
+============================================================
+5. LIVE SEASON PHASE DESIGN (PRE-LAUNCH BLOCKER)
+============================================================
+
+This is a CROSS-STAGE design. It affects Stage 2 input format,
+Stage 2 processing, and downstream consumption at Stages 3, 4.
+
+------------------------------------------------------------
+5A. WEEKLY CHECK-IN QUESTION DESIGN
+------------------------------------------------------------
+
+QUESTION WORDING:
+  "What phase of your competitive season are you in right now?"
+
+RESPONSE OPTIONS (must match intake form Q6 for consistency):
+  - Pre-Season
+  - In-Season
+  - Off-Season
+  - Post-Season
+  - Year-Round Training
+
+NOTE: Q6 of the intake form uses "Preseason" (one word) and
+"Offseason" (one word). For consistency across the pipeline, all
+season phase references should use the hyphenated form used in
+baseline_intake_profile: "Pre-Season," "In-Season," "Off-Season,"
+"Post-Season," "Year-Round Training." The intake form specification
+should be aligned to this format in a future cleanup pass (no
+functional impact — the Snapshot Builder can normalize either form).
+
+PLACEMENT IN WEEKLY CHECK-IN:
+  This question belongs in the weekly_check_in record of the
+  Weekly Input Object (defined in VF_App_Input_Format_Specification.
+  txt). Currently, the weekly_check_in contains:
+    - motivation_inventory (5 questions)
+    - self_ratings (confidence_level, habit_consistency_level)
+
+  The season_phase question adds a third sub-block:
+    "weekly_check_in": {
+      "motivation_inventory": { ... },
+      "self_ratings": { ... },
+      "season_context": {
+        "current_season_phase": "Pre-Season | In-Season |
+          Off-Season | Post-Season | Year-Round Training"
+      }
+    }
+
+  This is a SINGLE-SELECT question with 5 fixed options. It takes
+  <5 seconds to answer. Minimal burden on the athlete's weekly
+  check-in experience.
+
+  FREQUENCY: Every weekly check-in submission. Season phases can
+  change mid-program (athlete fills out intake during Pre-Season,
+  transitions to In-Season 3 weeks later). Weekly cadence ensures
+  the pipeline always has current data.
+
+------------------------------------------------------------
+5B. STAGE 2 PROCESSING RULES
+------------------------------------------------------------
+
+NEW FIELD: current_season_phase
+
+EXTRACTION: Stage 2 reads current_season_phase from the weekly
+check-in record and writes it directly to the weekly Interpretation
+JSON. Pure pass-through — no classification or derivation.
+
+PROCESSING STEP: This is part of the existing weekly input
+extraction (Step 0 in SOP_Interpretation_Engine_Project_Instructions_
+v9.4.txt). The season_context sub-block is read alongside
+motivation_inventory and self_ratings.
+
+JSON PLACEMENT: New field at the top level of the weekly JSON,
+alongside existing top-level fields:
+
+  "current_season_phase": "In-Season | Pre-Season | Off-Season |
+    Post-Season | Year-Round Training | not available"
+
+This sits at the same level as weekly_tier, emotional_intensity,
+growth_phase, etc. It is NOT inside baseline_intake_profile (which
+is point-in-time intake data). It is NOT inside execution_behavior_
+signals (which is daily app behavior data). It is its own weekly
+contextual field.
+
+CORE FOUNDATION FALLBACK:
+DESIGN DECISION (Q4): CF athletes get current_season_phase =
+"not available"
+
+CF athletes do not have the weekly check-in app. Their weekly input
+is a PDF recap that does not include a structured season phase
+question. Consistent with all other app-only fields:
+  - execution_behavior_signals.input_source = "core_foundation"
+    → all execution fields = fallback values
+  - baseline_intake_profile.input_source = "core_foundation"
+    → all intake fields = "not available"
+  - current_season_phase = "not available" for CF athletes
+
+No inference from recap content. No coach-provided setting. Clean,
+consistent, zero-ambiguity.
+
+FIRST-WEEK HANDLING:
+If the athlete has not yet submitted a weekly check-in (first week
+in the program), current_season_phase = baseline_season_phase from
+the intake snapshot. This provides a sensible default until the
+first weekly check-in arrives.
+
+SCHEMA VALIDATION:
+  - current_season_phase must be one of: "Pre-Season", "In-Season",
+    "Off-Season", "Post-Season", "Year-Round Training", "not available"
+  - NULL or missing → "not available"
+  - Unrecognized value → "not available" with validation warning
+
+------------------------------------------------------------
+5C. JSON SCHEMA ADDITION
+------------------------------------------------------------
+
+The weekly Interpretation JSON gains one new top-level field:
+
+  "current_season_phase": "In-Season"
+
+Full JSON structure context (showing placement):
+
+  {
+    "athlete_name": "...",
+    "week_period": "...",
+
+    "baseline_profile": { ... },
+    "baseline_intake_profile": { ... },
+    "current_season_phase": "In-Season",
+
+    "athlete_state": "...",
+    "core_pattern": "...",
+    ...
+    "execution_behavior_signals": { ... }
+  }
+
+------------------------------------------------------------
+5D. DOWNSTREAM CONSUMPTION
+------------------------------------------------------------
+
+STAGE 3 — COACHING OUTPUT ENGINE:
+
+  current_season_phase provides CONTEXTUAL FRAMING for coaching
+  output, not routing logic:
+
+  In-Season:
+    Coaching emphasis on competition-ready controllables. Micro-
+    commitments oriented toward game preparation and performance
+    execution. "You're in your competitive window" framing.
+
+  Pre-Season:
+    Coaching emphasis on habit-building and preparation quality.
+    Micro-commitments oriented toward routine establishment.
+    "Building the foundation for your season" framing.
+
+  Off-Season:
+    Coaching emphasis on skill development and self-directed
+    growth. Micro-commitments oriented toward personal development
+    goals. "This is where the real work happens" framing.
+
+  Post-Season:
+    Coaching emphasis on reflection and forward-looking goals.
+    Micro-commitments oriented toward processing the season and
+    setting next-phase direction. "What did you learn and what's
+    next" framing.
+
+  Year-Round Training:
+    Standard coaching with no seasonal contextualization.
+
+  "not available" (CF):
+    No seasonal framing. Standard coaching per existing rules.
+
+  NOTE: This is a SOFT contextual modifier. It does NOT change
+  the mandatory coaching message structure, field routing, or
+  word targets. It adjusts framing language within existing
+  sections. The coach (Stage 3 agent) uses it to make coaching
+  feel seasonally relevant.
+
+STAGE 4 — COACH INSIGHTS ENGINE:
+
+  current_season_phase enables the SEASON PHASE OVERLAY dashboard
+  metric (defined in VF_Tracking_Reporting_Metrics_Reference.txt
+  and VF_Coach_Insights_Dashboard_Metrics_Reference.txt).
+
+  This is the primary consumer. The Season Phase Overlay:
+    - Contextualizes all other dashboard metrics
+    - Enables seasonal baseline comparisons (this week's In-Season
+      performance vs. historical In-Season performance)
+    - Frames Composite Readiness interpretation (a Yellow during
+      In-Season competition has different weight than Yellow during
+      Off-Season training)
+
+  Section 1 (Weekly Performance Classification):
+    current_season_phase enriches the executive summary with
+    seasonal context. "Growth classification during In-Season
+    competitive window" vs. "Growth classification during Off-
+    Season development block."
+
+  Section 6 (Stress Load):
+    current_season_phase = "In-Season" is one indicator of
+    elevated contextual stress load. It does not automatically
+    set Stress Load to Elevated, but it provides context for
+    the stress assessment.
+
+  Team Snapshot:
+    Section T1 may reference team-wide season phase if all
+    athletes report the same phase. Phase diversity (some
+    athletes In-Season, others Post-Season) is worth noting.
+
+  "not available" (CF):
+    Season Phase Overlay metric = "Not Available" for CF athletes.
+    No seasonal contextual framing.
+
+STAGE 2 — INTERPRETATION ENGINE:
+
+  current_season_phase MAY enrich upcoming_context classification.
+  When current_season_phase = "In-Season" and the weekly recap
+  mentions upcoming games, upcoming_context.scheduled_competition
+  classification is reinforced. When current_season_phase = "Off-
+  Season" and the recap mentions a game, this is a notable context
+  shift worth flagging.
+
+  This is a MINOR enrichment. No new classification rules needed.
+  The Interpretation Engine can use current_season_phase as one
+  input to upcoming_context classification alongside recap content.
+
+------------------------------------------------------------
+5E. CORE FOUNDATION HANDLING
+------------------------------------------------------------
+
+  current_season_phase = "not available"
+  Season Phase Overlay = "Not Available"
+  No seasonal framing in Stage 3 output
+  No seasonal context in Stage 4 output
+  Zero degradation — CF athletes receive identical output to
+  current versions
+
+  NOTE: If the pipeline later wants season phase data for CF
+  athletes, the cleanest path is a coach-provided program-level
+  setting (not per-athlete, but "this program is currently in
+  In-Season"). This is a future enhancement decision, not a
+  Task 7 deliverable.
+
+
+============================================================
+6. DESIGN QUESTION RESOLUTIONS
+============================================================
+
+Q1: COMPETITIVE LEVEL CALIBRATION — RULE STRUCTURE
+
+  ANSWER: Option (c) — Modifier-based system.
+
+  A base calibration table defines 5 parameters (vocabulary
+  complexity, directness level, accountability framing, concept
+  naming, sentence complexity) across 5 competitive levels (Youth
+  through Professional). These parameters interact with existing
+  contextual modifiers (emotional_intensity, coach flags, self-
+  ratings alignment) to produce nuanced calibration.
+
+  RATIONALE: A High EI + Youth athlete needs warm empathy with
+  simple language. A High EI + Professional athlete needs brief
+  acknowledgment with direct pattern-naming. A simple lookup table
+  cannot capture these interactions. The modifier approach reuses
+  existing interaction infrastructure (the emotional_intensity,
+  coach flag, and self-ratings alignment rules already define
+  behavioral patterns — competitive level adjusts HOW those
+  patterns are expressed).
+
+  DEFAULT: College (matches all current athlete output).
+  CF FALLBACK: College (zero degradation).
+
+  See Section 2A for full design.
+
+------------------------------------------------------------
+
+Q2: PPD COACHING IMPLICATIONS — ROUTING PRIORITY
+
+  ANSWER: Weekly data takes priority.
+
+  Three-tier priority system:
+    Priority 1: Weekly signals (what happened THIS WEEK)
+    Priority 2: PPD coaching implications (baseline guidance)
+    Priority 3: Default coaching approach (standard rules)
+
+  PPD coaching implications activate when weekly signals are
+  consistent with baseline patterns or when weekly signals are
+  neutral. They are overridden when the athlete had a breakthrough
+  week, when weekly signals point to a different pattern, or when
+  emotional intensity requires empathy-first coaching.
+
+  RATIONALE: PPD represents what the athlete THOUGHT their
+  problems were at intake. Weekly data represents what ACTUALLY
+  happened. An athlete whose PPD says "Mistake Recovery Lag" but
+  who had a perfect week with no errors should receive recognition
+  coaching, not mistake-recovery coaching. The baseline is a
+  starting point, not a permanent label.
+
+  See Section 2B for full routing design.
+
+------------------------------------------------------------
+
+Q3: CRITERION 13 EXPANSION VS NEW CRITERION 14
+
+  ANSWER: Expand Criterion 13. No new criterion.
+
+  Criterion 13 title changes from "Execution Signal Leakage
+  Compliance" to "Pipeline Data Leakage Compliance." Category F
+  (Intake Profile Terminology) added alongside Category E
+  (Execution Signal Terminology).
+
+  RATIONALE: The core question is identical — "does internal
+  pipeline data appear in athlete-facing output?" PPD/ABI leakage
+  and execution signal leakage are the same category of compliance
+  concern. Two near-identical criteria create audit redundancy.
+  Category F integrates cleanly into the existing 6-step check
+  logic with minimal structural change.
+
+  See Section 4A for full design.
+
+------------------------------------------------------------
+
+Q4: LIVE SEASON PHASE — CF ATHLETE HANDLING
+
+  ANSWER: Option (a) — "not available"
+
+  Consistent with all other app-only fields. CF athletes do not
+  have structured weekly check-in data. No inference from recap
+  content (adds classification complexity for a transitional
+  population). No coach-provided setting (adds non-athlete data
+  source complexity).
+
+  RATIONALE: Consistency. Every other app-only field uses the
+  same "not available" pattern for CF athletes. Adding a special
+  case for season phase would break the clean dual-mode
+  architecture. CF is transitional (<20 athletes, phasing out).
+
+  See Section 5E for full handling.
+
+------------------------------------------------------------
+
+Q5: ADVERSITY RESPONSE PATTERN — COACHING LANGUAGE
+
+  ANSWER: Adversity response descriptions ARE permitted in
+  coaching language.
+
+  Unlike PPD bucket names (pipeline jargon like "Mistake Recovery
+  Lag"), adversity response descriptions are athlete-selected
+  natural language from intake Q20. The athlete chose "Freeze and
+  overthink" or "Reset and refocus" as their own self-description.
+  Reflecting this language is coaching, not leakage.
+
+  BOUNDARY: Using the description AS coaching language ("When
+  things get hard, your instinct is to freeze and overthink")
+  is permitted. Using it AS a named pipeline classification
+  ("Your adversity response pattern is Freeze and overthink")
+  is prohibited. The distinction is framing: coaching observation
+  vs. named classification.
+
+  This applies to Stage 3 (athlete-facing) only. In Stage 4
+  (institutional), the raw descriptions are replaced with
+  compliance-safe translations per Section 3B.
+
+  See Sections 2B (Stage 3 routing) and 4C (Category F4 exclusion
+  rules) for implementation details.
+
+
+============================================================
+7. IMPLEMENTATION TASK LIST
+============================================================
+
+The following file changes are needed to implement this design.
+Listed in suggested implementation order (dependencies noted).
+
+------------------------------------------------------------
+7A. STAGE 2 — INTERPRETATION ENGINE
+------------------------------------------------------------
+
+CHANGE 1: Update VF_App_Input_Format_Specification.txt
+  Add season_context sub-block to weekly_check_in record.
+  Dependency: None
+  Scope: ~20 lines added
+
+CHANGE 2: Update VF_Interpretation_JSON_Rules.txt
+  Add current_season_phase classification section (pass-through
+  from weekly check-in). Add first-week default rule (use
+  baseline_season_phase).
+  Dependency: Change 1
+  Scope: ~30 lines added
+
+CHANGE 3: Create SOP_Interpretation_Engine_Project_Instructions_v9.5.txt
+  Add current_season_phase extraction to Step 0. Add field to
+  canonical output schema. Add to schema validation. Add CF
+  fallback rule.
+  Dependency: Changes 1-2
+  Scope: ~40 lines changed/added across existing sections
+
+  NOTE: v9.5 is suggested because this adds a new JSON field.
+  Alternatively, this could be bundled with the baseline_intake_
+  profile implementation (also a v9.5 change) since Task 6
+  already approved that schema change. Recommend bundling both
+  Stage 2 changes into a single v9.5 release.
+
+------------------------------------------------------------
+7B. STAGE 3 — COACHING OUTPUT ENGINE
+------------------------------------------------------------
+
+CHANGE 4: Update VF_Coaching_Output_JSON_to_Message_Map.txt
+  Add baseline_intake_profile routing block. Add ppd_top_3,
+  ppd_tie_breaker, abi_primary_emphasis, adversity_response_
+  pattern, competitive_level, current_season_phase routing to
+  existing CM and DD sections.
+  Dependency: None (design reference file, not versioned)
+  Scope: ~80 lines added
+
+CHANGE 5: Create SOP_Coaching_Output_Instructions_v1.6.txt
+  Add Competitive Level Calibration Rule (new section). Add
+  Intake Profile Field Integration Rule (new section). Expand
+  Sections 3, 4, 6, 16 with baseline_intake_profile awareness.
+  Add current_season_phase contextual framing rule.
+  Dependency: Change 4
+  Scope: ~400 lines added (v1.5 ~700 → v1.6 ~1100)
+
+------------------------------------------------------------
+7C. STAGE 4 — COACH INSIGHTS ENGINE
+------------------------------------------------------------
+
+CHANGE 6: Update JSON_logic_reference.txt
+  Add baseline_intake_profile dual-mode awareness. Add KPS tie-
+  breaker using abi_primary_emphasis. Add Coach Context Cue
+  adversity enrichment. Add competitive_level Section 1 framing.
+  Expand prohibited content and inform-only field lists. Add
+  current_season_phase routing for Season Phase Overlay.
+  Dependency: None (design reference file, not versioned)
+  Scope: ~100 lines added
+
+CHANGE 7: Create SOP_Coach_Insights_Project_Instructions_v1.3.txt
+  Expand Sections 4, 6, 8, 12 with intake profile guidance.
+  Add Intake Profile Integration subsection. Expand CF skip rule.
+  Expand raw metric exclusion. Add current_season_phase routing.
+  Dependency: Change 6
+  Scope: ~250 lines added (v1.2 ~1709 → v1.3 ~1950)
+
+------------------------------------------------------------
+7D. STAGE 5 — EDITORIAL AUDIT
+------------------------------------------------------------
+
+CHANGE 8: Create SOP_Editorial_Audit_Master_Prompt_v1.2.txt
+  Rename Criterion 13. Add Category F to exclusion list. Add
+  competitive level quality note. Add WRONG/CORRECT examples.
+  Dependency: None
+  Scope: ~100 lines added
+
+CHANGE 9: Create SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+  Expand Criterion 13 check logic. Add Category F subcategories
+  F1-F5. Add edge cases. Update decision tree.
+  Dependency: Change 8
+  Scope: ~120 lines added
+
+------------------------------------------------------------
+7E. DEPENDENCY MAP
+------------------------------------------------------------
+
+  Change 1 (App Input Format) → Change 2 (JSON Rules) → Change 3 (v9.5)
+                                                           ↓
+  Change 4 (Message Map) → Change 5 (v1.6)          All Stage 2 changes
+  Change 6 (JSON Logic) → Change 7 (v1.3)           must complete before
+  Change 8 (Audit Master) → Change 9 (Audit Instr)  Stage 3-5 implement
+
+  Changes 4-5, 6-7, and 8-9 are INDEPENDENT of each other.
+  They can be implemented in parallel once Stage 2 changes are
+  designed.
+
+  However: Changes 4-9 are all DESIGN REFERENCE implementations.
+  They implement THIS assessment document. They can proceed in
+  any order because they reference the approved design, not each
+  other's file contents.
+
+  RECOMMENDED ORDER:
+    Round 1: Changes 1-3 (Stage 2 — schema foundation)
+    Round 2: Changes 4-5 (Stage 3 — largest scope, highest impact)
+    Round 3: Changes 6-7 (Stage 4 — moderate scope)
+    Round 4: Changes 8-9 (Stage 5 — audit criteria)
+
+------------------------------------------------------------
+7F. ESTIMATED TOTAL SCOPE
+------------------------------------------------------------
+
+  New versioned files: 4 (v9.5, v1.6, v1.3, v1.2×2)
+  In-place updates: 3 (App Input Format, Message Map, JSON Logic)
+  Total new/changed lines: ~1,100-1,200 across all files
+  Largest single change: SOP_Coaching_Output_Instructions_v1.6.txt
+    (~400 lines added — Competitive Level Calibration Rule is the
+    most significant deliverable)
+
+  NOTE: These changes are SEPARATE from the baseline_intake_profile
+  implementation in Stage 2 (Task 6 approved design). Task 6's
+  Stage 2 changes (new Step 1.5, CF fallback, schema validation,
+  canonical schema) would be bundled with Change 3 above into a
+  single v9.5 release.
+
+  NOTE: These changes are also SEPARATE from Tasks 8-21 (Daily
+  Coaching Snippet, Daily Coach Insights, Parent Output). Those
+  tasks introduce new pipeline capabilities. This task ensures
+  existing pipeline stages correctly consume the new intake
+  profile data.
+
+
+============================================================
+END OF ASSESSMENT
+============================================================
+Document: VF_Downstream_Stage_Impact_Assessment.txt
+Task: 7 of 21 (Pipeline Improvement Design)
+Status: COMPLETE
+Next: Task 8 (Daily Coaching Snippet Architecture)
+============================================================
