@@ -1,0 +1,550 @@
+============================================================
+IDEA 1 IMPLEMENTATION HANDOFF PROMPT
+Pipeline Improvement Design — Intake Form Specification Implementation
+Date: 2026-03-12
+Previous: Task 7 (Downstream Stage Impact Assessment) — COMPLETE
+Next: Task 8 (Daily Coaching Snippet Architecture — Idea 2)
+============================================================
+
+YOU ARE CONTINUING WORK ON THE VIRTUSFOCUS AI COACHING PIPELINE.
+
+This is an IMPLEMENTATION session. Tasks 1-7 of Idea 1 (Intake Form
+Improvements) produced design documents and specifications. This
+session implements the specification file changes described in the
+Task 6 and Task 7 assessment documents.
+
+This session modifies production specification files. Precision is
+critical. Every field name, routing rule, section number, and
+WRONG/CORRECT example must be exact.
+
+============================================================
+BEFORE DOING ANYTHING
+============================================================
+
+1. Read the CLAUDE.md file FIRST — it is the single source of truth.
+2. Read the TWO assessment documents that serve as your implementation
+   blueprints:
+
+   BLUEPRINT 1 — Stage 2 changes:
+   File: Agents - Generators\Athlete Snapshot Generator\VF_Interpretation_Engine_Snapshot_Integration_Assessment.txt
+   Contains: baseline_intake_profile JSON block design, Stage 2
+   processing rules, CF fallback, schema validation additions.
+
+   BLUEPRINT 2 — Stages 3-5 changes:
+   File: Agents - Generators\Athlete Snapshot Generator\VF_Downstream_Stage_Impact_Assessment.txt
+   Contains: All downstream stage changes including Competitive Level
+   Calibration Rule, PPD/ABI/adversity routing, Criterion 13 expansion,
+   live season phase design, and the full 9-change implementation list.
+
+3. Read each file being modified BEFORE modifying it. Never edit a
+   file you haven't read in full.
+
+============================================================
+WHAT THIS SESSION MUST PRODUCE
+============================================================
+
+9 file changes across 4 pipeline stages, plus the live season phase
+cross-stage addition. Listed in recommended implementation order
+(dependencies noted).
+
+------------------------------------------------------------
+ROUND 1: STAGE 2 — INTERPRETATION ENGINE (Foundation)
+------------------------------------------------------------
+
+These changes establish the JSON schema that all downstream stages
+consume. Must complete before Rounds 2-4.
+
+CHANGE 1: Update VF_App_Input_Format_Specification.txt (in-place)
+  Location: Agents - Generators\Interpretation\Source Files\
+  Action: Add season_context sub-block to the weekly_check_in record
+  Details:
+    - Add "season_context" as third sub-block alongside
+      motivation_inventory and self_ratings
+    - Contains: current_season_phase (single-select, 5 options:
+      Pre-Season | In-Season | Off-Season | Post-Season |
+      Year-Round Training)
+    - Document question wording: "What phase of your competitive
+      season are you in right now?"
+    - Note: weekly cadence, <5 seconds to answer
+  Blueprint reference: Task 7 assessment, Section 5A
+  Scope: ~20 lines added
+
+CHANGE 2: Update VF_Interpretation_JSON_Rules.txt (in-place)
+  Location: Agents - Generators\Interpretation\Source Files\
+  Action: Add two new classification sections
+  Details:
+    NEW SECTION — Baseline Intake Profile Extraction:
+    - Pure pass-through from snapshot to weekly JSON
+    - 7 fields: competitive_level, baseline_season_phase,
+      ppd_primary_problem, ppd_tie_breaker_classification,
+      ppd_top_3 (array), abi_primary_emphasis, adversity_response_pattern
+    - input_source copied from execution_behavior_signals.input_source
+    - CF fallback: all fields = "not available — core foundation intake"
+    - No classification rules — pure extraction
+
+    NEW SECTION — Current Season Phase Extraction:
+    - Pass-through from weekly_check_in.season_context
+    - First-week default: use baseline_season_phase from snapshot
+    - CF fallback: "not available"
+    - Validation: must be one of 5 enum values or "not available"
+  Blueprint reference: Task 6 assessment (Section: Implementation)
+    + Task 7 assessment (Section 5B)
+  Scope: ~50 lines added
+
+CHANGE 3: Create SOP_Interpretation_Engine_Project_Instructions_v9.5.txt
+  Location: Agents - Generators\Interpretation\
+  Action: New versioned file (copy v9.4, add changes)
+  Details:
+    - Add baseline_intake_profile extraction to processing workflow
+      (new Step 1.5: Snapshot Intake Profile Extraction — after
+      reading baseline_profile, before weekly data processing)
+    - Add current_season_phase extraction to Step 0 (weekly input
+      extraction, alongside motivation_inventory and self_ratings)
+    - Add first-week default rule for current_season_phase
+    - Update Core Foundation Fallback Rules section with:
+      * baseline_intake_profile fallback values
+      * current_season_phase = "not available"
+    - Update Production Schema Validation with new checks:
+      * baseline_intake_profile completeness (app mode)
+      * baseline_intake_profile fallback verification (CF mode)
+      * current_season_phase enum validation
+    - Update Canonical Output Schema with:
+      * Full baseline_intake_profile block
+      * current_season_phase field
+    - Update Authoritative Sources with:
+      * VF_PPD_Scoring_Logic.txt
+      * VF_ABI_Scoring_Logic.txt
+      * VF_App_Intake_Form_Specification.txt
+    - Preserve v9.4 on disk per versioning rules
+  Blueprint reference: Task 6 assessment (full Implementation section)
+    + Task 7 assessment (Section 5B-5C)
+  Scope: ~60 lines added to v9.4 base (~480 → ~540)
+
+------------------------------------------------------------
+ROUND 2: STAGE 3 — COACHING OUTPUT ENGINE (Largest scope)
+------------------------------------------------------------
+
+CHANGE 4: Update VF_Coaching_Output_JSON_to_Message_Map.txt (in-place)
+  Location: Agents - Generators\Coaching Output\Source FIles\
+  Action: Add baseline_intake_profile and current_season_phase routing
+  Details:
+    NEW SECTION — Baseline Intake Profile Routing:
+    - ppd_primary_problem → Drift Identification (when derailer
+      activates, informs specific friction pattern language)
+    - ppd_top_3.coaching_implication → Coaching Focus Areas
+      (baseline direction, overridden by weekly signals per
+      3-tier priority)
+    - ppd_tie_breaker_classification → Tone calibration across
+      entire message (Avoidance/Proving/Obligation/Approach framing)
+    - abi_primary_emphasis → Strength Signals + Drift Identification
+      + Coaching Focus Areas (pillar-to-behavior translations, never
+      pillar names as labels)
+    - adversity_response_pattern → Drift Identification + Growth
+      Areas (derailer-activation weeks ONLY, per-pattern coaching)
+    - competitive_level → References Competitive Level Calibration
+      Rule in Instructions (modifier applied to all sections)
+    - current_season_phase → Contextual framing (In-Season/Pre-Season/
+      Off-Season/Post-Season/Year-Round)
+
+    ROUTING RULES:
+    - 3-tier priority: weekly signals > PPD baseline > default
+    - PPD fields are NEVER quoted as text — they inform direction
+    - ABI pillar names NEVER appear as labels — behavior translations
+    - Adversity response descriptions ARE permitted in coaching
+      language (athlete-selected natural language)
+    - CF skip: when input_source = "core_foundation", skip all
+      baseline_intake_profile and current_season_phase routing
+
+    Add to existing FIELDS THAT DO NOT APPEAR list:
+    - ppd_top_3.score (numeric values)
+    - ppd_all_scores (not in JSON — stays in snapshot)
+    - baseline_intake_profile.input_source (routing field only)
+    - baseline_season_phase (stale — use current_season_phase)
+  Blueprint reference: Task 7 assessment, Sections 2B + 5D (Stage 3)
+  Scope: ~80 lines added
+
+CHANGE 5: Create SOP_Coaching_Output_Instructions_v1.6.txt
+  Location: Agents - Generators\Coaching Output\
+  Action: New versioned file (copy v1.5, add changes)
+  Details:
+    THIS IS THE LARGEST CHANGE. ~400 lines added.
+
+    NEW SECTION — Competitive Level Calibration Rule:
+    - Base Calibration Table: 5 parameters × 5 levels
+      (vocabulary complexity, directness level, accountability
+      framing, concept naming, sentence complexity)
+    - Youth / Middle School / High School / College / Professional
+    - Example phrases showing same coaching point across all levels
+    - Interaction rules:
+      * Emotional Intensity + Competitive Level (Youth: warmth leads,
+        Professional: brief acknowledgment)
+      * Coach Flags + Competitive Level (Youth: encouraging frame,
+        Professional: direct correction)
+      * Self-Ratings Alignment + Competitive Level (Youth: do not
+        address Conflated directly, Professional: direct gap-naming)
+    - Default: College (matches all current athlete output)
+    - CF fallback: College (zero degradation)
+
+    NEW SECTION — Intake Profile Field Integration Rule:
+    - PPD routing with 3-tier priority system
+    - PPD tie-breaker tone calibration per classification
+      (Avoidance/Proving/Obligation/Approach with per-type framing)
+    - ABI primary emphasis routing with pillar-to-behavior translations
+      (Ownership → self-directed action, Composure → steady under
+      pressure, Focus → sustained attention, Structure → routines)
+    - Adversity response pattern routing for derailer-activation weeks
+      (per-pattern coaching language for all 4 options)
+    - current_season_phase contextual framing (In-Season → competition
+      focus, Pre-Season → habit building, Off-Season → development,
+      Post-Season → reflection)
+
+    EXPAND Section 3 (Input Requirements):
+    - Add baseline_intake_profile block awareness
+    - Add current_season_phase awareness
+    - Add dual-mode detection for intake profile fields
+
+    EXPAND Section 4 (Field Usage Rules):
+    - Add field usage rules for all 7 baseline_intake_profile fields
+    - Add current_season_phase usage rule
+    - Add competitive_level calibration reference
+    - CRITICAL: PPD bucket names, ABI pillar score labels, and
+      tie-breaker classifications NEVER appear in output
+
+    EXPAND Section 6 (Field Routing):
+    - Add new 5th category: "FIELDS THAT PROVIDE BASELINE COACHING
+      CONTEXT" for baseline_intake_profile fields
+    - Add current_season_phase to contextual fields
+    - Add PPD/ABI raw data to "DO NOT APPEAR" category
+
+    EXPAND Section 16 (CF Skip Rule):
+    - Add intake profile skip rules alongside execution signal skip
+    - When baseline_intake_profile = all "not available":
+      skip Competitive Level Calibration (default College),
+      skip PPD routing, skip ABI routing, skip adversity routing,
+      skip season phase framing
+
+    - Preserve v1.5 on disk per versioning rules
+  Blueprint reference: Task 7 assessment, Sections 2A-2D
+  Scope: ~400 lines added to v1.5 base (~700 → ~1100)
+
+------------------------------------------------------------
+ROUND 3: STAGE 4 — COACH INSIGHTS ENGINE
+------------------------------------------------------------
+
+CHANGE 6: Update JSON_logic_reference.txt (in-place)
+  Location: Agents - Generators\Coach Insights Engine\Source Files\
+  Action: Add baseline_intake_profile and current_season_phase routing
+  Details:
+    - Add baseline_intake_profile to dual-mode awareness section
+    - Add competitive_level contextual framing for Section 1
+    - Add KPS tie-breaker rule using abi_primary_emphasis
+      (Ownership → "Self-Directed Engagement Consistency",
+      Composure → "Pressure Response Stability",
+      Focus → "Sustained Attention Quality",
+      Structure → "Daily Preparation Rhythm")
+    - Add Coach Context Cue adversity enrichment for Section 9
+      (per-pattern translations for institutional output)
+    - Add current_season_phase routing:
+      * Section 1: seasonal context enrichment
+      * Section 6: In-Season as stress context indicator
+      * Season Phase Overlay: primary consumer
+    - Expand inform-only fields list with intake profile fields
+    - Expand prohibited content with PPD/ABI/adversity terms
+    - Add intake profile CF skip rules
+  Blueprint reference: Task 7 assessment, Sections 3A-3D
+  Scope: ~100 lines added
+
+CHANGE 7: Create SOP_Coach_Insights_Project_Instructions_v1.3.txt
+  Location: Agents - Generators\Coach Insights Engine\
+  Action: New versioned file (copy v1.2, add changes)
+  Details:
+    EXPAND Section 4 (Input Requirements):
+    - Add baseline_intake_profile to prohibited data list
+    - Add PPD bucket names, PPD numeric scores, tie-breaker labels,
+      ABI pillar score labels, ABI total/band labels, "PPD,"
+      "ABI," adversity pattern as named classification, baseline_
+      intake_profile block name, baseline_season_phase field/value
+
+    EXPAND Section 6 (Per-Section Routing):
+    - Section 1: competitive_level contextual enrichment + current_
+      season_phase seasonal context (with WRONG/CORRECT examples)
+    - Section 8: abi_primary_emphasis KPS tie-breaker rule
+      (with WRONG/CORRECT examples)
+    - Section 9: adversity_response_pattern Coach Context Cue
+      translations for derailer-activation weeks
+      (with WRONG/CORRECT examples)
+    - Sections 2-7, 10: explicitly note "no baseline_intake_profile
+      routing"
+    - Team Snapshot T1: competitive_level team context
+
+    EXPAND Section 8 (Field Routing Classification):
+    - Add baseline_intake_profile fields to classification:
+      * competitive_level: inform-only (Section 1 contextual)
+      * abi_primary_emphasis: inform-only (Section 8 KPS tie-break)
+      * adversity_response_pattern: inform-only (Section 9)
+      * ppd_primary_problem: PROHIBITED
+      * ppd_tie_breaker_classification: PROHIBITED
+      * ppd_top_3: PROHIBITED
+      * baseline_season_phase: PROHIBITED (stale)
+      * current_season_phase: inform-only (Season Phase Overlay)
+
+    EXPAND Section 12 (Prohibited Content):
+    - Add full PPD/ABI/adversity prohibited terms list per Task 7
+      assessment Section 3C
+
+    NEW SECTION or EXPAND Section 15:
+    - Add Intake Profile Integration Master Rule (parallel to
+      Execution Signal Integration Master Rule):
+      * Sharpens, does not expand
+      * Intake profile fields provide baseline context
+      * Weekly signals remain foundation
+      * Convergence/divergence handling
+
+    EXPAND Section 16 (CF Skip Rule):
+    - Add intake profile skip rules
+    - Add current_season_phase skip
+    - Team Snapshot: note that CF athletes are never in team snapshots
+
+    EXPAND Section 17 (Raw Metric Exclusion):
+    - Add PPD/ABI/adversity terms to prohibited categories
+    - Add WRONG/CORRECT examples for intake profile leakage
+
+    - Preserve v1.2 on disk per versioning rules
+  Blueprint reference: Task 7 assessment, Sections 3A-3E
+  Scope: ~250 lines added to v1.2 base (~1709 → ~1950)
+
+------------------------------------------------------------
+ROUND 4: STAGE 5 — EDITORIAL AUDIT
+------------------------------------------------------------
+
+CHANGE 8: Create SOP_Editorial_Audit_Master_Prompt_v1.2.txt
+  Location: Agents - Generators\Editorial Audit\
+  Action: New versioned file (copy v1.1, add changes)
+  Details:
+    - Rename Criterion 13 from "Execution Signal Leakage Compliance"
+      to "Pipeline Data Leakage Compliance"
+    - Expand Criterion 13 scope description to include intake profile
+    - Add Category F (Intake Profile Terminology) to Clinical Language
+      Exclusion List:
+      * F1: PPD bucket names (8 names + abbreviations)
+      * F2: PPD scoring artifacts (numeric scores, trigger_context,
+        coaching_implication, tie-breaker labels as named classifications)
+      * F3: ABI terminology (abbreviation, pillar names AS score labels,
+        total score/band, primary emphasis as classification)
+      * F4: Adversity response pattern as named classification
+        (field name prohibited; natural-language descriptions
+        PERMITTED in coaching context)
+      * F5: Baseline intake profile block terminology (block name,
+        field names, input_source, baseline_season_phase)
+    - Add context-dependent judgment notes for Category F:
+      * Pillar names as coaching concepts = permitted
+      * Adversity descriptions reflected in coaching = permitted
+      * PPD-related themes in natural language = permitted
+      * Named bucket/score/classification references = prohibited
+    - Add competitive level quality note (NOT a numbered criterion):
+      "Verify coaching tone is broadly appropriate to competitive_level.
+      Flag obvious mismatches as style note. Do not reject on
+      competitive level mismatch alone."
+    - Add WRONG/CORRECT examples for intake profile leakage
+      (6-8 examples covering PPD, ABI, adversity, classifications)
+    - Preserve v1.1 on disk per versioning rules
+  Blueprint reference: Task 7 assessment, Sections 4A-4C
+  Scope: ~100 lines added
+
+CHANGE 9: Create SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+  Location: Agents - Generators\Editorial Audit\
+  Action: New versioned file (copy v1.1, add changes)
+  Details:
+    EXPAND Criterion 13 Check Logic:
+    - Step 2 (CF Check): Add intake-profile-derived language scan.
+      CF athletes have no PPD/ABI data. Any reference to PPD-style
+      friction patterns, ABI-style pillar assessments, or adversity
+      response classifications = FAIL.
+    - Step 4 (Composite/Flag/Alignment Scan): Add Category F scan
+      alongside Category E scan. Scan for PPD bucket names, ABI
+      terminology, adversity classifications, intake profile block
+      terms.
+    - Step 5 (Surveillance Framing): Add pipeline classification
+      framing patterns: "Your primary problem is...",
+      "Based on your intake assessment...", "Your baseline index
+      shows...", "According to your intake profile...",
+      "Your pillar scores indicate...", "Your friction pattern
+      suggests..."
+    - Step 6 (Context Judgment): Expand permitted and prohibited
+      lists per Task 7 assessment Section 4A. Expand reasonable
+      reader test: "Could a reasonable reader identify that the
+      observation is derived from a formal intake assessment
+      scoring system?"
+
+    ADD Category F subcategories (F1-F5) with full detail:
+    - Mirror the structure of existing Category E subcategories
+    - Include NOTE callouts for permitted natural language usage
+
+    ADD Edge Cases:
+    - PPD/ABI natural language coincidences: "ownership" as coaching
+      word vs "Ownership" as pillar label, "structure" as coaching
+      concept vs "Structure Gap" as bucket name
+    - Adversity response in coaching context: "freeze and overthink"
+      as coaching observation vs "adversity response pattern:
+      Freeze and overthink" as named classification
+    - Criterion 2 + 13 independence: a single output can fail both
+      (different exclusion categories, different fix requirements)
+    - CF strictness: any intake-profile-derived language in CF
+      output = automatic FAIL (no data to derive it from)
+
+    ADD Competitive Level Quality Note (not numbered criterion)
+
+    UPDATE Decision Tree: Criterion 13 now covers execution signals
+    AND intake profile data
+
+    UPDATE Auto-Correction Rules: Note that intake profile leakage,
+    like execution signal leakage, is NEVER auto-corrected
+
+    - Preserve v1.1 on disk per versioning rules
+  Blueprint reference: Task 7 assessment, Sections 4A-4D
+  Scope: ~120 lines added
+
+============================================================
+ACCEPTANCE CRITERIA PER CHANGE
+============================================================
+
+For EACH change, verify:
+
+1. DUAL-MODE: Every new rule has a CF path. When intake profile
+   fields are "not available" or current_season_phase is "not
+   available," output is identical to the previous version.
+
+2. COMPLIANCE: PPD bucket names, ABI pillar score labels, tie-breaker
+   classifications, and adversity response pattern enum values NEVER
+   appear in athlete-facing or coach-facing output as named pipeline
+   constructs. Natural English usage is permitted.
+
+3. ADDITIVE: No existing rules are modified. New sections are added.
+   Existing field routing is unchanged. Previous version behavior
+   is preserved for all existing athletes.
+
+4. CONSISTENCY: Follow the same patterns established by the Execution
+   Signal integration (Tasks 8-13 of the Execution Signal Schema
+   Design): inform-only classification, prohibited content lists,
+   WRONG/CORRECT examples, CF skip rules, raw metric exclusion rules.
+
+5. SECTION NUMBERING: When adding new sections to versioned files,
+   maintain clean sequential numbering. If inserting between existing
+   sections, renumber subsequent sections.
+
+6. VERSION PRESERVATION: Previous version files (v9.4, v1.5, v1.2,
+   v1.1) remain on disk. New versions are separate files.
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read in this order:
+
+1. CLAUDE.md — Single source of truth. Read FIRST.
+
+2. VF_Downstream_Stage_Impact_Assessment.txt
+   Location: Agents - Generators\Athlete Snapshot Generator\
+   PRIMARY BLUEPRINT for Stages 3-5 changes.
+
+3. VF_Interpretation_Engine_Snapshot_Integration_Assessment.txt
+   Location: Agents - Generators\Athlete Snapshot Generator\
+   PRIMARY BLUEPRINT for Stage 2 changes.
+
+Then read each file BEFORE modifying it:
+
+ROUND 1 (Stage 2):
+4. VF_App_Input_Format_Specification.txt
+   Location: Agents - Generators\Interpretation\Source Files\
+5. VF_Interpretation_JSON_Rules.txt
+   Location: Agents - Generators\Interpretation\Source Files\
+6. SOP_Interpretation_Engine_Project_Instructions_v9.4.txt
+   Location: Agents - Generators\Interpretation\
+
+ROUND 2 (Stage 3):
+7. VF_Coaching_Output_JSON_to_Message_Map.txt
+   Location: Agents - Generators\Coaching Output\Source FIles\
+8. SOP_Coaching_Output_Instructions_v1.5.txt
+   Location: Agents - Generators\Coaching Output\
+
+ROUND 3 (Stage 4):
+9. JSON_logic_reference.txt
+   Location: Agents - Generators\Coach Insights Engine\Source Files\
+10. SOP_Coach_Insights_Project_Instructions_v1.2.txt
+    Location: Agents - Generators\Coach Insights Engine\
+
+ROUND 4 (Stage 5):
+11. SOP_Editorial_Audit_Master_Prompt_v1.1.txt
+    Location: Agents - Generators\Editorial Audit\
+12. SOP_Editorial_Audit_Project_Instructions_v1.1.txt
+    Location: Agents - Generators\Editorial Audit\
+
+SUPPORTING REFERENCE (read as needed for field names and terminology):
+13. VF_PPD_Scoring_Logic.txt
+    Location: Agents - Generators\Athlete Snapshot Generator\
+14. VF_ABI_Scoring_Logic.txt
+    Location: Agents - Generators\Athlete Snapshot Generator\
+15. VF_App_Intake_Form_Specification.txt
+    Location: Agents - Generators\Athlete Snapshot Generator\
+16. VF_Coaching_Output_System_Identity.txt
+    Location: Agents - Generators\Coaching Output\Source FIles\
+
+============================================================
+WORKFLOW
+============================================================
+
+1. Read CLAUDE.md + both assessment documents
+2. Implement Round 1 (Stage 2) — all 3 changes
+3. Verify Round 1 acceptance criteria
+4. Implement Round 2 (Stage 3) — both changes
+   NOTE: Change 5 (v1.6) is the largest single change. Take care
+   with the Competitive Level Calibration Rule — it must include
+   the full base calibration table, all interaction rules, and
+   example phrases across all 5 levels.
+5. Verify Round 2 acceptance criteria
+6. Implement Round 3 (Stage 4) — both changes
+7. Verify Round 3 acceptance criteria
+8. Implement Round 4 (Stage 5) — both changes
+9. Verify Round 4 acceptance criteria
+10. Update CLAUDE.md with:
+    - Session history item (item 47)
+    - Idea 1 Implementation completion marker
+    - Updated file locations for all new versioned files
+    - Updated stage version numbers in pipeline table
+11. Commit all changes with descriptive message
+
+============================================================
+WHAT NOT TO DO
+============================================================
+
+- Do NOT redesign any rules. The assessment documents are the
+  approved blueprints. Implement them as specified.
+- Do NOT modify Tasks 1-5 deliverables (PPD/ABI specs, Snapshot
+  Builder v2.0, intake form spec). Those are complete.
+- Do NOT design Idea 2-4 features. This is Idea 1 implementation only.
+- Do NOT process any athlete data. This is specification work only.
+- Do NOT change existing field routing or classification rules.
+  All changes are additive.
+- Do NOT skip reading a file before modifying it.
+
+============================================================
+WHEN COMPLETE
+============================================================
+
+After all 9 changes are implemented and verified:
+
+1. Update CLAUDE.md comprehensively
+2. Commit with message format:
+   "Idea 1 Implementation COMPLETE: [summary of changes].
+   [What this enables]."
+3. Verify git status is clean
+4. The pipeline will be at:
+   - Stage 2: v9.5 (baseline_intake_profile + current_season_phase)
+   - Stage 3: v1.6 (Competitive Level Calibration + intake routing)
+   - Stage 4: v1.3 (intake profile compliance + season phase overlay)
+   - Stage 5: v1.2 (Pipeline Data Leakage + Category F)
+5. Ready for Task 8 handoff (Daily Coaching Snippet — Idea 2)
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
