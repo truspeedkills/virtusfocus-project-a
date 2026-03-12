@@ -1420,7 +1420,146 @@ If all composite scores = "insufficient data" →
   "Insufficient execution data for pattern summary."
 
 ============================================================
-SECTION 16 – GLOBAL GUARDRAILS
+SECTION 16 – BASELINE INTAKE PROFILE EXTRACTION RULES
+============================================================
+
+The baseline_intake_profile block is a PASS-THROUGH extraction
+from the athlete snapshot. No classification or derivation
+logic is applied. Stage 2 reads these fields from the snapshot
+and writes them unchanged to the weekly Interpretation JSON.
+
+------------------------------------------------------------
+16A) App Athletes — Field Extraction
+------------------------------------------------------------
+
+Read the following fields from the athlete snapshot and write
+to the baseline_intake_profile block in the output JSON:
+
+  input_source:
+    Copy from execution_behavior_signals.input_source (always
+    identical — both derived from the same snapshot).
+
+  competitive_level:
+    Read from snapshot header field COMPETITIVE_LEVEL.
+    Valid values: Youth | Middle School | High School |
+    College | Professional
+
+  baseline_season_phase:
+    Read from snapshot header field SEASON_PHASE.
+    Write as "baseline_season_phase" (renamed to distinguish
+    from live current_season_phase).
+    Valid values: Off-Season | Pre-Season | In-Season |
+    Post-Season | Year-Round Training
+
+  ppd_primary_problem:
+    Read from snapshot PPD_SCORES sub-block field
+    ppd_primary_problem. String (bucket name).
+
+  ppd_tie_breaker_classification:
+    Read from snapshot PPD_SCORES sub-block field
+    ppd_tie_breaker_classification.
+    Valid values: Avoidance | Proving | Obligation | Approach
+    (or dual classification, e.g., "Avoidance, Proving")
+
+  ppd_top_3:
+    Read from snapshot PPD_SCORES sub-block field ppd_top_3.
+    Array of 3 objects, each with: rank, bucket, score,
+    trigger_context, coaching_implication. Copy unchanged.
+
+  abi_primary_emphasis:
+    Read from snapshot ABI_SCORES sub-block field
+    abi_primary_emphasis. Array of 1-2 pillar names, or
+    ["Balanced"]. Copy unchanged.
+
+  adversity_response_pattern:
+    Read from snapshot BEHAVIORAL_PATTERNS sub-block field
+    adversity_response_pattern.
+    Valid values: Push harder | Pull back and protect |
+    Freeze and overthink | Reset and refocus
+
+No classification rules apply. This is pure extraction.
+
+------------------------------------------------------------
+16B) Core Foundation Athletes — Fallback Values
+------------------------------------------------------------
+
+When input_source = "core_foundation", ALL baseline_intake_
+profile fields use fallback values:
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  }
+
+
+============================================================
+SECTION 17 – CURRENT SEASON PHASE EXTRACTION RULES
+============================================================
+
+The current_season_phase field is a PASS-THROUGH extraction
+from the weekly check-in. No classification logic is applied.
+
+------------------------------------------------------------
+17A) App Athletes — Extraction
+------------------------------------------------------------
+
+Read current_season_phase from:
+  weekly_check_in.season_context.current_season_phase
+
+Write to the output JSON as a top-level field:
+  "current_season_phase": "In-Season"
+
+Valid values:
+  Pre-Season | In-Season | Off-Season | Post-Season |
+  Year-Round Training | not available
+
+No derivation. No classification. Pure pass-through.
+
+------------------------------------------------------------
+17B) First-Week Default Rule
+------------------------------------------------------------
+
+If the athlete has not yet submitted a weekly check-in
+(first week in the program), or if the season_context
+sub-block is missing from the weekly check-in:
+
+  current_season_phase = baseline_intake_profile.baseline_season_phase
+
+This uses the intake snapshot value as a sensible default
+until the first weekly check-in arrives.
+
+If baseline_season_phase is also "not available":
+  current_season_phase = "not available"
+
+------------------------------------------------------------
+17C) Core Foundation Athletes — Fallback
+------------------------------------------------------------
+
+  current_season_phase = "not available"
+
+Core Foundation athletes do not submit structured weekly
+check-ins. No inference from recap content.
+
+------------------------------------------------------------
+17D) Validation
+------------------------------------------------------------
+
+current_season_phase must be one of:
+  "Pre-Season", "In-Season", "Off-Season", "Post-Season",
+  "Year-Round Training", "not available"
+
+NULL or missing → "not available"
+Unrecognized value → "not available" with validation warning
+
+
+============================================================
+SECTION 18 – GLOBAL GUARDRAILS
 ============================================================
 
 - No clinical terminology.
@@ -1436,7 +1575,7 @@ SECTION 16 – GLOBAL GUARDRAILS
   better coaching output but is not itself coaching content.
 
 ============================================================
-SECTION 17 – FINAL RULE
+SECTION 19 – FINAL RULE
 ============================================================
 
 These rules override interpretive creativity.

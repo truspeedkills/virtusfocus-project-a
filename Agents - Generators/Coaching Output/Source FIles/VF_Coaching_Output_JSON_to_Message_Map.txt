@@ -277,6 +277,107 @@ Moderate-Band Routing Heuristic:
     Moderate bands always route to Drift Identification / Growth.
 
 ------------------------------------------------------------
+BASELINE INTAKE PROFILE ROUTING
+------------------------------------------------------------
+
+The baseline_intake_profile block contains 7 fields extracted
+from the athlete's intake snapshot plus 1 live seasonal field.
+These provide baseline coaching context that informs — but does
+not override — weekly signal-driven coaching.
+
+ppd_primary_problem:
+  Routes to: Drift Identification (when derailer activates,
+    informs specific friction pattern language).
+  Use: When baseline_alignment.alignment_status = "Partially
+    Aligned" or "Not Aligned" AND the week's core_pattern
+    connects to the PPD primary problem, sharpen derailer
+    language with intake-informed friction framing.
+  Do NOT quote as text. Do NOT name bucket. Inform direction only.
+
+ppd_top_3.coaching_implication:
+  Routes to: Coaching Focus Areas (baseline coaching direction,
+    overridden by weekly signals per 3-tier priority).
+  Use: When weekly signals do not point to a clear coaching
+    direction, use coaching implications from PPD top 3 as
+    baseline guidance. When weekly signals are clear, PPD
+    implications serve as background context only.
+  Do NOT surface bucket names, scores, or "coaching_implication"
+    as a field reference.
+
+ppd_tie_breaker_classification:
+  Routes to: Tone calibration across entire message.
+  Use: Avoidance-framed = emphasize controllables and safety.
+    Proving-framed = separate worth from outcomes.
+    Obligation-framed = redirect from external expectations.
+    Approach-framed = standard coaching tone.
+  Applied globally — not to a specific section. Informs how
+    coaching points are framed, not what they contain.
+  Do NOT name classification in output.
+
+abi_primary_emphasis:
+  Routes to: Strength Signals + Drift Identification + Coaching
+    Focus Areas.
+  Use: Translate pillar emphasis to behavioral descriptions.
+    Ownership → self-directed action language.
+    Composure → staying steady under pressure language.
+    Focus → maintaining attention language.
+    Structure → building routines language.
+  When emphasis aligns with strength signals: reinforce.
+  When emphasis aligns with drift: name directly.
+  When unrelated to current week: background context only.
+  NEVER surface pillar names as labels.
+
+adversity_response_pattern:
+  Routes to: Drift Identification + Growth Areas.
+  Use: Derailer-activation weeks ONLY. Informs per-pattern
+    coaching language:
+    "Push harder" → coach toward measured response.
+    "Pull back and protect" → coach toward re-engagement.
+    "Freeze and overthink" → coach toward action.
+    "Reset and refocus" → reinforce existing pattern.
+  Adversity response descriptions ARE permitted in coaching
+    language (athlete-selected natural language).
+  Named classifications ARE NOT permitted.
+  When no derailer activation: no routing. Background only.
+
+competitive_level:
+  Routes to: All sections (modifier applied globally).
+  Use: References Competitive Level Calibration Rule in
+    Instructions (Section 19). Adjusts vocabulary complexity,
+    directness, accountability framing, concept naming, and
+    sentence complexity per competitive level.
+  Default: College. CF fallback: College.
+
+current_season_phase:
+  Routes to: Contextual framing across all coaching sections.
+  Use: Provides seasonal context:
+    In-Season → competition-ready controllables.
+    Pre-Season → preparation quality, habit building.
+    Off-Season → skill development, self-directed growth.
+    Post-Season → reflection, forward-looking goals.
+    Year-Round Training → no seasonal contextualization.
+    "not available" (CF) → no seasonal framing.
+
+ROUTING RULES:
+  - 3-tier priority: weekly signals > PPD baseline > default
+    coaching direction.
+  - PPD fields NEVER quoted as text — they inform direction.
+  - ABI pillar names NEVER appear as labels — behavior
+    translations only.
+  - Adversity response descriptions ARE permitted in coaching
+    language (athlete-selected natural language). Named
+    classifications ARE NOT.
+  - CF skip: when input_source = "core_foundation", skip ALL
+    baseline_intake_profile and current_season_phase routing.
+
+FIELDS THAT DO NOT APPEAR (intake profile):
+  - ppd_top_3.score (numeric values)
+  - ppd_all_scores (not in JSON — stays in snapshot)
+  - baseline_intake_profile.input_source (routing field only)
+  - baseline_season_phase (stale data — use current_season_phase)
+
+
+------------------------------------------------------------
 GLOBAL RULES
 ------------------------------------------------------------
 
@@ -286,3 +387,5 @@ GLOBAL RULES
 - Reinforce controllables consistently.
 - Execution signal sharpens existing sections. It does not add
   new sections or expand word targets.
+- Baseline intake profile informs coaching direction. It does
+  not add new sections or override weekly signals.

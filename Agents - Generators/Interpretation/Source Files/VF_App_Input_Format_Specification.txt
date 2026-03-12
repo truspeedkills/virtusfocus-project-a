@@ -481,6 +481,11 @@ FIELDS:
   "self_ratings": {
     "confidence_level": "integer 1-10 or null",
     "habit_consistency_level": "integer 1-10 or null"
+  },
+
+  "season_context": {
+    "current_season_phase": "Pre-Season | In-Season | Off-Season |
+                             Post-Season | Year-Round Training"
   }
 }
 
@@ -540,6 +545,32 @@ SELF-RATINGS:
     consistency on a 1-10 scale. Stage 2 compares against
     Rhythm Score and completion rates for the same
     perception-reality alignment analysis.
+
+SEASON CONTEXT:
+
+  current_season_phase — "What phase of your competitive
+    season are you in right now?"
+    Single-select with 5 options:
+      - Pre-Season
+      - In-Season
+      - Off-Season
+      - Post-Season
+      - Year-Round Training
+
+    Asked every weekly check-in submission. Season phases can
+    change mid-program (athlete fills out intake during Pre-
+    Season, transitions to In-Season 3 weeks later). Weekly
+    cadence ensures the pipeline always has current data.
+
+    This is a <5 second question. Minimal burden on the
+    athlete's weekly check-in experience.
+
+    Stage 2 reads this value and writes it directly to the
+    weekly Interpretation JSON as a top-level field. Pure
+    pass-through — no classification or derivation.
+
+    Core Foundation athletes do not submit weekly check-ins.
+    current_season_phase = "not available" for CF athletes.
 
 ============================================================
 D. TIME BOUNDARY DEFINITIONS

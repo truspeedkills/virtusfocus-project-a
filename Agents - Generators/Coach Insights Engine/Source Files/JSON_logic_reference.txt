@@ -10,13 +10,20 @@ INPUT SOURCE
 
 DUAL-MODE AWARENESS:
 - App athletes (input_source = "app"): v9.3 fields + populated
-  execution_behavior_signals block. Execution fields are
-  INFORM-ONLY — they sharpen section content internally but
-  raw data never appears in output.
+  execution_behavior_signals block + populated
+  baseline_intake_profile block + current_season_phase field.
+  Execution fields are INFORM-ONLY — they sharpen section content
+  internally but raw data never appears in output.
+  Intake profile fields are INFORM-ONLY — they provide baseline
+  behavioral context that sharpens section content internally but
+  raw classifications, field names, and scoring labels never
+  appear in output.
 - Core Foundation athletes (input_source = "core_foundation"):
   v9.3 fields only. execution_behavior_signals contains fallback
-  values. All execution signal routing is skipped. Output is
-  identical to pre-v9.4 behavior.
+  values. baseline_intake_profile fields = "not available —
+  core foundation intake". current_season_phase = "not available".
+  All execution signal routing is skipped. All intake profile
+  enrichment is skipped. Output is identical to pre-v9.4 behavior.
 
 OUTPUT SCOPE
 All sections (0-10) map to the single Weekly Performance Insight.
@@ -47,6 +54,15 @@ FALLBACK (if trend_analysis not populated): infer from consistency + recommitmen
 Executive Summary (2–3 sentences)
 Use: athlete_state, core_pattern, win_the_day.consistency_profile, win_the_day.recommitment_signal, bullseye_analysis.primary_focus_ring
 Style: neutral, trend-based; use words: indicator / signal / trend / stability. No emotional or evaluative language.
+
+INTAKE PROFILE ENRICHMENT (App athletes only):
+- competitive_level → May frame executive summary with
+  competitive level context (e.g., "at the collegiate
+  competitive level"). This is OPTIONAL contextual enrichment.
+  Never use "competitive_level" as a named field label. Natural
+  phrasing only: "collegiate athlete," "high school level,"
+  "professional-level competitor." Never surface the field name
+  or present competitive level as a classification label.
 
 EXECUTION ENRICHMENT (App athletes only):
 - execution_pattern_summary → Informs executive summary as
@@ -217,6 +233,27 @@ Selection priority:
 4) Else if weekly_tier = Growth but athlete_state indicates reactive → Composure Under Pressure
 5) Else → derive from most_important_controllable as a short phrase (e.g., Preparation Consistency / Reset Routine / Response Discipline)
 
+KPS TIE-BREAKER USING ABI PRIMARY EMPHASIS (App athletes only):
+When two Key Performance Signals tie in priority scoring (same
+priority level, equally relevant to core_pattern), and
+baseline_intake_profile.abi_primary_emphasis is populated:
+- The signal more aligned with the athlete's emphasis pillar wins.
+- Pillar-to-signal alignment translations:
+    Ownership emphasis → favor signals related to self-directed
+      engagement, initiative, independent preparation
+    Composure emphasis → favor signals related to pressure response,
+      recovery patterns, response stability
+    Focus emphasis → favor signals related to sustained attention,
+      controllable alignment, distraction management
+    Structure emphasis → favor signals related to daily preparation
+      rhythm, routine consistency, engagement timing
+- This is NOT a new priority level. It is a disambiguation rule
+  when existing priorities produce a tie.
+- When abi_primary_emphasis = "Balanced" or "not available":
+  No tie-breaker available. Use default selection.
+- Never name "ABI," "primary emphasis," or pillar names as
+  scoring labels in the KPS output.
+
 KPS may also be informed by coach_insights.key_habit_signal
 for development marker selection, but must NOT reproduce raw
 content or reference specific athlete behaviors.
@@ -227,6 +264,28 @@ Explanation: use most_important_controllable and micro_commitment.measurement as
 Primary source: coach_insights.coach_reinforcement_cue
 If missing: derive from most_important_controllable using neutral phrasing:
 - Reinforce consistent controllable execution and response routines.
+
+INTAKE PROFILE ENRICHMENT (App athletes only):
+- adversity_response_pattern → During derailer-activation or
+  Partially Aligned weeks, informs the context cue with
+  behavioral translations of the athlete's adversity response:
+    "Withdraw and Reset" → "may need space before re-engaging"
+    "Push Through" → "tends to maintain activity level through
+      difficulty"
+    "Seek Support" → "likely to benefit from direct check-in"
+    "Internalize and Process" → "may not surface concerns
+      proactively"
+  NOTE: The assessment document uses intake form Q20 labels
+  ("Push harder," "Pull back and protect," "Freeze and
+  overthink," "Reset and refocus"). The pipeline field uses
+  normalized enum values as listed above. Apply the translation
+  that matches the athlete's adversity_response_pattern value.
+  These translations are INFORM-ONLY. Never surface
+  "adversity_response_pattern" as a named field. Never present
+  the enum value as a named classification. Frame as a neutral
+  behavioral observation for coaching staff.
+- When adversity_response_pattern = "not available" (CF): No
+  adversity enrichment. Standard coach context cue only.
 
 EXECUTION ENRICHMENT (App athletes only):
 - If attention-severity coach flags fire → reinforcement
@@ -302,6 +361,24 @@ Step 3 — Output:
 - Do NOT name composite scores, coach flags, or execution
   metrics in the output sentence
 
+SEASON PHASE OVERLAY (App athletes only):
+When current_season_phase is populated (not "not available"):
+- The season phase provides contextual framing for interpreting
+  readiness signals. A Steady (Yellow) during In-Season
+  competitive weeks carries different weight than Steady during
+  Off-Season training blocks.
+- Section 1 executive summary MAY include seasonal context:
+  "Growth classification during In-Season competitive window"
+  vs. "Growth classification during Off-Season development block."
+- The Season Phase Overlay is contextual framing only. It does
+  NOT change readiness determination rules (Steps 1-3). It does
+  NOT add a new modifier step. It enriches the output sentence
+  and dashboard display with seasonal context.
+- When current_season_phase = "not available" (CF athletes):
+  Season Phase Overlay is skipped entirely. No seasonal framing.
+- Never surface "current_season_phase" or "baseline_season_phase"
+  as named field labels in any output.
+
 COMPLIANCE: This is a performance readiness signal, not a
 mental health indicator or wellness score. Label accordingly.
 
@@ -359,6 +436,29 @@ execution_behavior_signals.execution_pattern_summary (App athletes only)
 → Informs Section 1 executive summary (behavioral context).
   Translate into neutral trend language. Never reproduce raw.
 
+baseline_intake_profile.competitive_level (App athletes only)
+→ Informs Section 1 executive summary (contextual framing)
+  and Team Snapshot Section T1. Natural competitive level
+  references only ("collegiate athlete," "high school level").
+  Never name the field or present as a classification label.
+
+baseline_intake_profile.abi_primary_emphasis (App athletes only)
+→ Informs Section 8 KPS tie-breaker and Section 4 pillar
+  emphasis context. Pillar emphasis translated into behavioral
+  development areas. Never name "ABI," "primary emphasis,"
+  or pillar names as scoring labels.
+
+baseline_intake_profile.adversity_response_pattern (App athletes only)
+→ Informs Section 9 Coach Context Cue during derailer-
+  activation or Partially Aligned weeks. Behavioral translations
+  only. Never name the field or present enum values as named
+  classifications.
+
+current_season_phase (App athletes only)
+→ Enables Season Phase Overlay in Section 10 (Composite
+  Readiness) and enriches Section 1 executive summary with
+  seasonal context. Never name the field label in output.
+
 FIELDS NOT CONSUMED BY STAGE 4:
 - risk_flags → Internal to pipeline only. Never surfaced in
   institutional output.
@@ -375,6 +475,16 @@ FIELDS NOT CONSUMED BY STAGE 4:
 - next_week_focus_question → Stage 3 only.
 - baseline_profile → Stage 3 only.
 - baseline_alignment → Stage 3 only.
+- baseline_intake_profile.ppd_primary_problem → PROHIBITED.
+  PPD bucket names are pipeline-internal classification labels.
+- baseline_intake_profile.ppd_tie_breaker_classification →
+  PROHIBITED. Internal scoring methodology artifact.
+- baseline_intake_profile.ppd_top_3 → PROHIBITED. Contains
+  bucket names, scores, and coaching implications (Stage 3
+  routing directives, not Stage 4 content).
+- baseline_intake_profile.baseline_season_phase → PROHIBITED.
+  Point-in-time intake data that goes stale. Surfacing it
+  presents potentially outdated season information.
 
 EXECUTION SIGNAL RAW METRICS — NOT CONSUMED:
 The following execution_behavior_signals subfields are NOT
@@ -428,6 +538,38 @@ Raw execution metrics are internal pipeline data. They inform
 better output through composite score band routing and coach
 flag severity routing, but are NEVER surfaced to coaching staff.
 
+INTAKE PROFILE COMPLIANCE FILTER (APPLY TO ALL SECTIONS)
+The following intake profile data categories must NEVER appear
+in any Stage 4 output, in any form:
+- PPD bucket names (Overthinking Loop, Confidence Volatility,
+  Mistake Recovery Lag, Focus Drift / Distraction, Pressure
+  Reactivity, Discipline Gap, Structure Gap, Ecosystem Friction)
+- "PPD," "Primary Problem Detector," "ppd_primary_problem,"
+  "ppd_top_3," "ppd_all_scores" (field names or abbreviations)
+- PPD numeric scores (as score values or ranking positions)
+- PPD tie-breaker classification labels (Avoidance-framed,
+  Proving-framed, Obligation-framed, Approach-framed as named
+  pipeline classifications)
+- "ABI," "Athlete Baseline Index," "abi_primary_emphasis"
+  (field names or abbreviations)
+- ABI pillar names used as score labels ("Ownership score is 6,"
+  "Composure pillar: Low," "Focus: Moderate band")
+- ABI total score, band labels, or "Primary Emphasis" as a named
+  pipeline classification
+- "adversity_response_pattern" as a named field reference
+- Adversity enum values used as named classifications ("adversity
+  pattern is Push Through" is prohibited)
+- "baseline_intake_profile" as a named block
+- "baseline_season_phase" as a named field (and the value itself,
+  since it may be stale)
+- "current_season_phase" as a named field label
+- "competitive_level" as a named field label ("competitive_level:
+  College" is prohibited; "collegiate athlete" is permitted)
+NOTE: Pillar NAMES (Ownership, Composure, Focus, Structure)
+used as natural coaching concepts are PERMITTED. "Building
+composure under pressure" is institutional language. "Composure
+pillar is Low" is a leakage violation. Apply context judgment.
+
 OUTPUT CONSISTENCY RULES
 - Use exact locked section headers.
 - No daily breakdowns.
@@ -447,3 +589,16 @@ When execution_behavior_signals.input_source = "core_foundation":
 - KPS priorities 0 and 1.5 are skipped (no coach flags exist).
 - Composite Readiness Step 2.5 is skipped.
 - Confidence Momentum Step 2 is skipped.
+
+When baseline_intake_profile.input_source = "core_foundation":
+- ALL intake profile enrichment in Sections 1-10 is skipped.
+- competitive_level contextual framing is skipped.
+- KPS tie-breaker from abi_primary_emphasis is skipped.
+- Coach Context Cue adversity enrichment is skipped.
+- Season Phase Overlay uses "not available" default (skipped).
+- No intake-profile-derived language appears in any section.
+- Output remains identical to v1.2 behavior for CF athletes.
+
+Both skip rules apply independently. An athlete with
+input_source = "core_foundation" in both blocks has ALL
+execution and ALL intake profile enrichment skipped.
