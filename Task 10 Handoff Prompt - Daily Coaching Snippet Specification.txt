@@ -1,0 +1,424 @@
+VIRTUSFOCUS — IDEA 2, TASK 10: DAILY COACHING SNIPPET SPECIFICATION
+WRITE STAGE 6 MASTER PROMPT + PROJECT INSTRUCTIONS
+============================================================
+SESSION MODE: SPECIFICATION WRITING (NOT DESIGN)
+============================================================
+
+This session writes the formal Stage 6 specification — the
+Master Prompt and Project Instructions that a fresh Claude
+session (on Sonnet) will use to generate Daily Coaching
+Snippets for athletes.
+
+All design decisions are LOCKED. Task 8 defined the data
+architecture. Task 9 defined the content model. This session
+formalizes both into production-ready specification documents.
+
+============================================================
+WHAT TASK 8 ESTABLISHED (DATA ARCHITECTURE — LOCKED)
+============================================================
+
+1. Stage 6 is an independent daily stage running on Sonnet.
+2. Daily Mini-JSON is the sole daily data input. Produced
+   deterministically by the app backend. Zero LLM.
+3. Tiered product model:
+   - Base tier: 7 snippets/week (Mon-Sun), standalone product.
+     Inputs: Daily Mini-JSON + Athlete Snapshot + Previous Snippet.
+   - Premium tier: 6 snippets/week (Tue-Sun), enriched by last
+     week's Interpretation JSON + Athlete Snapshot.
+     Monday skipped (full CM + Deep Dive delivered that day).
+     Inputs: Daily Mini-JSON + Athlete Snapshot + Previous Snippet
+     + Last Week's Interpretation JSON.
+4. Previous snippet as input (~50-100 tokens) for cohesion and
+   repetition avoidance. Weekly reset on first snippet day:
+   PREVIOUS_SNIPPET: none.
+5. Compliance-by-construction: Mini-JSON excludes execution
+   timing data, trigger methods, rates, percentages.
+6. Generation timing: Snippet produced 1-2 hours before
+   hard-out time. Delivered to athlete in the MORNING
+   alongside/before the Morning Tune-Up.
+7. Snippet function: Micro-recognition + micro-connection.
+   Moment reinforcement, not interpretation.
+
+============================================================
+WHAT TASK 9 ESTABLISHED (CONTENT MODEL — LOCKED)
+============================================================
+
+The full content model is in VF_Daily_Snippet_Content_Model.txt
+(~650 lines, 10 sections A-J). Here is the summary of every
+locked decision:
+
+A. LENGTH AND FORMAT:
+   - 2-3 sentences, 30-60 words
+   - Close → bridge structure (close yesterday, bridge to today)
+   - 3-sentence hard cap
+   - Format does NOT vary by scenario
+   - No headers, no sections, no formatting — plain text
+   - Signed "— Coach Arron"
+   - NO QUESTIONS — no exceptions
+
+B. VOICE CALIBRATION:
+   - Same coach, compressed form (Coach Arron)
+   - Morning grounding tone — steady confidence
+   - Tone shifts by day outcome:
+     * Win (4-5 WTD): earned recognition + reinforcement
+     * Partial Win (2-3 WTD): grounded acknowledgment
+     * Missed (0-1 WTD): forward grounding — never name the miss
+     * No Data (missed review): baseline presence — never name
+       the absence
+   - Missed days NEVER named directly at ANY competitive level
+     ("clean day ahead" not "no review came in")
+   - Prohibited tone markers: no exclamation points, no
+     questions, no coddling, no guilt, no clichés
+
+C. TUNE-UP DIFFERENTIATION (CLOSE → OPEN HANDOFF):
+   - Snippet closes yesterday's loop
+   - Tune-Up opens today's loop
+   - Snippet MAY reference today's focus word when natural
+     connection to yesterday exists (secondary, not default)
+   - Snippet NEVER sets goals, focus, challenges (Tune-Up's job)
+   - Snippet NEVER asks the athlete to do something
+   - Snippet NEVER duplicates Tune-Up content
+
+D. WEEKLY CM DIFFERENTIATION:
+   - Snippet describes. CM interprets.
+   - Snippet sees ONE day. CM sees the full week.
+   - NEVER say "pattern," "trend," "consistently," "trajectory,"
+     "arc," "this week you've been..."
+   - NEVER reference growth_phase by name
+   - NEVER reference weekly_tier
+   - NEVER name the derailer explicitly
+   - NEVER prescribe behavior change (CM's micro_commitment)
+   - Premium CAN reference last week's micro_commitment (with
+     completeness guardrail — remove enrichment and Base must
+     still be a complete coaching moment)
+   - Premium CAN use identity_claim to anchor recognition
+   - Premium CAN use growth_phase to inform tone (never name it)
+
+E. BASE VS PREMIUM:
+   - Base = complete foundation. Premium = Base + depth layer.
+   - Design Base first. Premium adds enrichment, not quality.
+   - Completeness rule: remove Premium enrichment and the
+     remaining Base content must still be a complete, coherent
+     coaching moment. Premium thread is never load-bearing.
+   - Three Premium enrichment channels:
+     1. Micro-commitment thread (reference only, never evaluate
+        progress, one sentence max)
+     2. Identity anchoring (athlete's own language, never
+        interpret development)
+     3. Growth-phase tone calibration (never named, tone only)
+
+F. COMPETITIVE LEVEL CALIBRATION:
+   - Simplified 2-parameter calibration (vocabulary complexity
+     + accountability framing)
+   - 5 levels: Youth, Middle School, High School, College,
+     Professional
+   - Missed day language rule: never name the miss at ANY level
+   - Stage 6 does NOT have emotional_intensity from mini-JSON
+   - Premium EI warmth modifier (from last week's JSON):
+     * Only applies when last week's EI = High
+     * Active for first 3 snippet days of new week only
+     * Adjusts tone, not content
+     * Never named or referenced
+     * Accountability drops one level from competitive default
+     * Stacks with competitive level
+
+G. PROGRAM MATURITY BANDS:
+   - Early (Days 1-7): welcoming, habit-building, low expectation
+   - Building (Days 8-30): familiarity, specific recognition,
+     "your routine" language permitted
+   - Established (Day 31+): full Coach Arron voice, full
+     accountability per competitive level
+   - Day 1 special rule: no prior data, welcome + identity seed
+   - Band transitions are not announced to the athlete
+
+H. DAY-TO-DAY COHESION:
+   - Previous snippet = negative constraint (avoid repetition)
+   - Running week summary = tone calibration (not content)
+   - Vary behavioral focus across the week
+   - End-of-week stays in daily moment (no CM preview)
+   - Win streak informs tone, never counted explicitly
+   - Streak broken = forward grounding without naming
+   - Recovery Win (Missed → Win) = explicit recognition
+     (sole exception to no-prior-day-reference rule)
+   - Weekly reset on first snippet day
+
+I. SCENARIO COVERAGE:
+   16+ example snippets in the content model covering all major
+   cases with competitive level and EI variants. The
+   specification must provide enough deterministic guidance
+   for Sonnet to handle all scenarios without needing examples
+   for every possible combination.
+
+J. PROHIBITED CONTENT (12 rules):
+   1. No pattern/trend naming
+   2. No execution signal data
+   3. No clinical language
+   4. No interpretation/diagnosis
+   5. No other athletes
+   6. No guilt/shame for misses
+   7. No hype/clichés
+   8. No questions (no exceptions)
+   9. No goals/actions/commitments
+   10. No pipeline classifications
+   11. No surveillance framing
+   12. No exceeding 3 sentences
+
+============================================================
+DELIVERABLES — TWO FILES
+============================================================
+
+1. MASTER PROMPT:
+   File: Agents - Generators\Daily Coaching Engine\
+         SOP_Daily_Coaching_Engine_Master_Prompt_v1.0.txt
+
+   This is the system prompt that Stage 6 receives at the
+   start of every generation call. It should be CONCISE —
+   modeled after SOP_Coaching_Output_Master_Prompt_V3.txt
+   (49 lines) or SOP_Coach_Insights_Master_Prompt_v1.1.txt
+   (198 lines). It defines:
+   - System identity (you are Coach Arron, generating daily
+     coaching snippets)
+   - Pipeline position (Stage 6 in a 7-stage pipeline)
+   - Input specification (what the engine receives each run)
+   - Output specification (what the engine produces)
+   - Core execution rules (the essential behavioral rules
+     that must be in the system prompt, not just instructions)
+   - Validation checklist (pre-output confirmation)
+   - Output format and naming convention
+
+   The Master Prompt should be self-contained enough that
+   Sonnet understands its role, but should reference the
+   Project Instructions for detailed rules.
+
+2. PROJECT INSTRUCTIONS:
+   File: Agents - Generators\Daily Coaching Engine\
+         SOP_Daily_Coaching_Engine_Project_Instructions_v1.0.txt
+
+   This is the detailed operational specification. It contains
+   ALL rules from the content model formalized as deterministic
+   instructions. Modeled after the structure of
+   SOP_Coaching_Output_Instructions_v1.6.txt (numbered sections,
+   rule-based, with examples). It should cover:
+
+   - Project role
+   - Authoritative source materials
+   - Input requirements (dual-tier, all input objects defined)
+   - Snippet format rules (length, structure, signing)
+   - Voice calibration rules (tone shifts by day outcome)
+   - Competitive level calibration (2-parameter table with
+     5 levels, missed day language rule)
+   - Program maturity bands (3 bands + Day 1 rule)
+   - Close → open handoff rule (Tune-Up differentiation)
+   - Snippet vs CM boundary rule (scope, prohibitions)
+   - Base tier generation rules
+   - Premium tier enrichment rules (3 channels + completeness
+     guardrail)
+   - Premium EI warmth modifier rules (High only, 3 days,
+     tone not content)
+   - Day-to-day cohesion rules (previous snippet, running
+     summary, focus variation, streak handling, recovery,
+     weekly reset)
+   - Prohibited content (12 rules — full specification with
+     WRONG/CORRECT examples where helpful)
+   - Core Foundation skip rule (not applicable — daily snippets
+     are app-only, but document this explicitly)
+   - Output format specification
+   - Final rule
+
+============================================================
+REFERENCE FILES TO READ (IN THIS ORDER)
+============================================================
+
+Read these files at the start of the session:
+
+1. CLAUDE.md (project instructions — read fully)
+   Path: D:\OneDrive\Documents\(TEST) Project A\CLAUDE.md
+
+2. VF_Daily_Snippet_Content_Model.txt (Task 9 deliverable —
+   THIS IS YOUR PRIMARY INPUT — read fully, every section)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents -
+   Generators\Daily Coaching Engine\Source Files\
+   VF_Daily_Snippet_Content_Model.txt
+
+3. VF_Daily_Mini_JSON_Specification.txt (Task 8 deliverable —
+   the data contract, read fully)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents -
+   Generators\Daily Coaching Engine\Source Files\
+   VF_Daily_Mini_JSON_Specification.txt
+
+4. SOP_Coaching_Output_Master_Prompt_V3.txt (structural
+   template for Master Prompt — Stage 3's master prompt)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents -
+   Generators\Coaching Output\
+   SOP_Coaching_Output_Master_Prompt_V3.txt
+
+5. SOP_Coach_Insights_Master_Prompt_v1.1.txt (second
+   structural template — Stage 4's master prompt, longer
+   format with validation checklist)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents -
+   Generators\Coach Insights Engine\
+   SOP_Coach_Insights_Master_Prompt_v1.1.txt
+
+6. SOP_Coaching_Output_Instructions_v1.6.txt (structural
+   template for Project Instructions — Stage 3's instructions,
+   shows section-based rule format with examples)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents -
+   Generators\Coaching Output\
+   SOP_Coaching_Output_Instructions_v1.6.txt
+
+7. brand_voice.txt (Coach Arron voice guide — shared source)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents -
+   Generators\Coaching Output\Source FIles\brand_voice.txt
+
+8. content_style_guide.txt (writing style rules — shared source)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents -
+   Generators\Coaching Output\Source FIles\
+   content_style_guide.txt
+
+9. VF_Coaching_Output_System_Identity.txt (Coach Arron role
+   definition — shared source)
+   Path: D:\OneDrive\Documents\(TEST) Project A\Agents -
+   Generators\Coaching Output\Source FIles\
+   VF_Coaching_Output_System_Identity.txt
+
+10. Grace Kindel Athlete Snapshot (baseline reference — to
+    understand what snapshot fields are available for Base tier)
+    Path: D:\OneDrive\Documents\(TEST) Project A\Athlete Data\
+    Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+
+11. Grace Kindel Week 5 Coaching Message (voice calibration —
+    hear what Coach Arron sounds like in weekly form)
+    Path: D:\OneDrive\Documents\(TEST) Project A\Athlete Data\
+    Grace Kindel\Coaching and Deep Dive\Coaching Message\
+    Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+
+============================================================
+DESIGN CONSTRAINTS
+============================================================
+
+1. ALL design decisions from Tasks 8 and 9 are LOCKED. Do not
+   re-litigate any decision from the content model or the
+   daily mini-JSON specification. Formalize them as-is.
+
+2. The Master Prompt and Project Instructions must be
+   SELF-CONTAINED production documents. A fresh Sonnet session
+   receiving these files plus the shared source files (brand
+   voice, content style guide, system identity) must be able
+   to generate correct Daily Coaching Snippets without any
+   additional context.
+
+3. The specification must be written FOR SONNET, not Opus.
+   Sonnet needs:
+   - Explicit, deterministic rules (not nuanced judgment calls)
+   - Clear priority ordering when rules could conflict
+   - Concrete examples for edge cases
+   - Simple conditional logic (if X then Y)
+   - Rules stated once, not distributed across multiple sections
+
+4. Do NOT modify any existing specification files. This session
+   creates two NEW files only.
+
+5. Do NOT modify the Daily Mini-JSON Specification or the
+   Daily Snippet Content Model. Those are locked inputs.
+
+6. The Project Instructions should reference (not duplicate)
+   shared source files. For example, reference brand_voice.txt
+   for voice guidance rather than restating its contents.
+
+7. Include the copyright header on both files:
+   Copyright © 2026 NBAP Development LLC
+   All Rights Reserved.
+
+8. VirtusFocus behavioral language only. No clinical,
+   therapeutic, or mental health framing.
+
+============================================================
+KEY DECISIONS ALREADY MADE (DO NOT RE-DECIDE)
+============================================================
+
+These are the most important locked decisions that the
+specification must faithfully encode:
+
+- Snippet is MORNING delivery (close yesterday → bridge today)
+- Close → open handoff with Tune-Up
+- Missed days NEVER named directly at any competitive level
+- NO QUESTIONS — no exceptions, no edge cases
+- Snippet describes, CM interprets — absolute boundary
+- Base = complete foundation, Premium = Base + depth
+- Completeness guardrail on Premium enrichment
+- 2-parameter competitive level calibration (vocabulary +
+  accountability)
+- Premium EI warmth modifier (High only, first 3 days, tone
+  not content, stacks with competitive level, accountability
+  drops one level)
+- 3 maturity bands (Early 1-7, Building 8-30, Established 31+)
+- Day 1 special welcome rule
+- Previous snippet = negative constraint only
+- Running week summary = tone calibration only
+- Win streaks inform tone, never counted
+- Recovery Win = explicit recognition (sole exception)
+- 12 prohibited content rules
+
+============================================================
+SESSION WORKFLOW
+============================================================
+
+1. Read all 11 reference files
+2. Present proposed section outline for both files —
+   Master Prompt sections and Project Instructions sections.
+   Surface any ambiguities or gaps in the content model that
+   need resolution before writing.
+3. After user approval of outline, write the Master Prompt
+4. After user approval, write the Project Instructions
+5. Review both files with user
+6. Save both files to disk
+7. Update CLAUDE.md:
+   - Session notes
+   - Pipeline table (Stage 6 status)
+   - Key File Locations (Master Prompt + Instructions paths)
+   - Session history (entry #51)
+   - Task queue (Task 10 marked complete)
+   - Completed section
+8. Git commit
+9. Write Task 11 handoff prompt (daily snippet audit criteria)
+
+============================================================
+QUALITY STANDARDS
+============================================================
+
+The specification will be evaluated on:
+
+1. COMPLETENESS — Every rule from the content model (Sections
+   A-J) must be formalized in the specification. No design
+   decision left unspecified.
+
+2. DETERMINISM — Sonnet should be able to follow these rules
+   without ambiguity. Where judgment is required (e.g., "when
+   natural connection exists"), provide decision criteria.
+
+3. CONSISTENCY — Rules must not contradict each other. Priority
+   ordering must be explicit when rules could conflict (e.g.,
+   EI modifier + competitive level + maturity band all applying
+   to the same snippet).
+
+4. PRODUCTION READINESS — A fresh Sonnet session should
+   generate correct, on-brand snippets from these specs on
+   the first attempt. No implicit knowledge required.
+
+5. APPROPRIATE LENGTH — The Master Prompt should be concise
+   (50-200 lines). The Project Instructions should be thorough
+   but not bloated — every line earns its place. Estimated
+   range: 400-700 lines for Instructions.
+
+============================================================
+TASK QUEUE CONTEXT
+============================================================
+
+Idea 2: Daily Coaching Snippet
+  [x] Task 8: Daily processing architecture (COMPLETE)
+  [x] Task 9: Daily snippet content model (COMPLETE)
+  [ ] Task 10: Write Stage 6 specification ← THIS SESSION
+  [ ] Task 11: Define daily snippet audit criteria
+
+Idea 3: Daily Coach Insights (Tasks 12-15) — not this session
+Idea 4: Parent Output + Dashboard (Tasks 16-21) — not this session
