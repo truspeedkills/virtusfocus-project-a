@@ -1,0 +1,178 @@
+VIRTUSFOCUS — IDEA 2, TASK 11: DAILY SNIPPET AUDIT CRITERIA
+DEFINE AUDIT RULES FOR STAGE 6 OUTPUT
+============================================================
+SESSION MODE: COLLABORATIVE DESIGN
+============================================================
+
+This session designs audit criteria for Daily Coaching Snippets
+produced by Stage 6 (Daily Coaching Engine). The output of this
+session will be either:
+
+  (a) An extension to the existing Editorial Audit Agent (Stage 5)
+      — adding daily snippet criteria alongside the existing 13
+      weekly output criteria, OR
+
+  (b) A lightweight standalone audit specification embedded in
+      the Stage 6 pipeline call (self-validation) — because the
+      snippet is 2-3 sentences and may not warrant a full separate
+      Stage 5 audit pass.
+
+The session should evaluate both options and recommend the
+right approach. Cost, latency, and proportionality matter —
+a 30-60 word snippet should not require a 2000-token audit.
+
+============================================================
+WHAT TASK 10 ESTABLISHED (SPECIFICATION — LOCKED)
+============================================================
+
+Stage 6 specification is complete:
+- Master Prompt: SOP_Daily_Coaching_Engine_Master_Prompt_v1.0.txt
+  (196 lines — system identity, inputs, output, 12 core rules,
+  validation checklist, 5 reference snippets)
+- Project Instructions: SOP_Daily_Coaching_Engine_Project_Instructions_v1.0.txt
+  (1258 lines, 19 sections — all generation rules formalized)
+
+The Master Prompt already contains a VALIDATION CHECKLIST that
+the generating Sonnet instance runs before finalizing output:
+- Sentence count: 2 or 3
+- Word count: 30-60
+- No questions anywhere
+- No exclamation points
+- Close → bridge structure present
+- Missed day language rule followed
+- Competitive level calibration applied
+- Program maturity band applied
+- Previous snippet language not repeated
+- No prohibited content (all 12 categories)
+- Premium completeness guardrail met (if Premium)
+- Signed "— Coach Arron"
+
+============================================================
+WHAT NEEDS AUDIT CRITERIA
+============================================================
+
+The existing Editorial Audit Agent (Stage 5) audits Stage 3
+output (Coaching Messages + Deep Dives) using 13 criteria
+across 3 tiers. Key question: does Stage 6 need equivalent
+external audit, or is the built-in validation checklist
+sufficient given the constrained output format?
+
+Arguments FOR external audit:
+- The 12 prohibited content rules need independent verification
+  (same reason Stage 3 has Criterion 2 for clinical language —
+  the generator shouldn't grade its own compliance)
+- Pipeline data leakage (Criterion 13 equivalent) needs checking
+- Missed day language rule violation is high-stakes (naming a
+  miss is one of the worst possible athlete experiences)
+
+Arguments FOR self-validation only:
+- Output is 2-3 sentences / 30-60 words — many audit criteria
+  are trivially verifiable (sentence count, word count, question
+  mark presence, exclamation point presence)
+- An external audit pass doubles the LLM cost per snippet
+  (currently ~$0.01/snippet, would become ~$0.02)
+- The validation checklist already covers the same ground
+- Stage 3 needs external audit because it produces 250-450 word
+  Coaching Messages and multi-section Deep Dives where subtle
+  clinical language and data leakage can hide in long prose.
+  A 30-60 word snippet has nowhere to hide.
+
+DESIGN QUESTIONS TO RESOLVE:
+
+1. Architecture: External Stage 5 audit, self-validation only,
+   or hybrid (self-validation + periodic sampling audit)?
+
+2. If external audit: Which of the existing 13 criteria apply
+   as-is, which need adaptation, and which are not applicable?
+
+3. If external audit: Same Opus model as weekly audit, or can
+   Haiku handle snippet-length compliance checking?
+
+4. If self-validation only: What quality monitoring mechanism
+   catches systematic drift (e.g., the generator consistently
+   producing borderline-clinical language that individually
+   passes but collectively shows a pattern)?
+
+5. Batch audit option: Could snippets be audited in weekly
+   batches (7 at once) rather than individually, reducing cost
+   while still catching systematic issues?
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read these files in this order:
+
+1. CLAUDE.md (project context — read first)
+
+2. Stage 6 specification (the output being audited):
+   - Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.0.txt
+   - Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Project_Instructions_v1.0.txt
+
+3. Stage 6 design inputs (for understanding what rules exist):
+   - Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Snippet_Content_Model.txt
+   - Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Mini_JSON_Specification.txt
+
+4. Existing Editorial Audit specification (the comparison point):
+   - Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.2.txt
+   - Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+
+5. Brand and compliance references:
+   - Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+   - Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+   - Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+
+Total: 9 reference files + CLAUDE.md
+
+============================================================
+KEY CONSTRAINTS
+============================================================
+
+1. Whatever audit mechanism is chosen, it must catch:
+   - Clinical language in the snippet
+   - Pipeline data leakage (execution signal terminology,
+     composite score names, flag IDs, etc.)
+   - Named misses (the most athlete-harmful violation)
+   - Questions (the most common generation drift)
+   - Surveillance framing
+
+2. The audit mechanism must be proportional to the output size.
+   A 30-60 word snippet should not cost more to audit than to
+   generate.
+
+3. If extending Stage 5, the existing 13 weekly criteria must
+   remain completely unchanged. Daily criteria are additive.
+
+4. The Daily Coach Insights Engine (Stage 7, planned for Tasks
+   12-15) will also produce daily output. Whatever audit
+   architecture is chosen here should be extensible to Stage 7.
+
+============================================================
+DELIVERABLE
+============================================================
+
+One of the following:
+
+(a) If external audit: New audit criteria document (extension
+    to Editorial Audit or standalone) with criteria definitions,
+    tier assignments, pass/fail logic, and cost analysis.
+
+(b) If self-validation: Enhanced validation specification to be
+    added to Stage 6 Instructions, with monitoring/sampling
+    protocol for quality assurance.
+
+(c) If hybrid: Both components with clear scope boundaries.
+
+============================================================
+WORKFLOW
+============================================================
+
+1. Read all reference files
+2. Present analysis of the three architecture options with
+   cost/quality/latency trade-offs
+3. Recommend an approach — discuss with user
+4. Design the chosen approach collaboratively
+5. Write the specification
+6. Save to disk
+7. Update CLAUDE.md
+8. Git commit
