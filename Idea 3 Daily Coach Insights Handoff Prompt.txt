@@ -1,0 +1,381 @@
+VIRTUSFOCUS — IDEA 3: DAILY COACH INSIGHTS
+COLLABORATIVE DESIGN SESSION HANDOFF
+============================================================
+
+SESSION MODE: COLLABORATIVE DESIGN
+============================================================
+
+This session designs the Daily Coach Insights Engine — Stage 7
+of the VirtusFocus AI Coaching Pipeline. Stage 7 is the daily
+equivalent of Stage 4 (weekly Coach Insights Engine). It
+produces brief, compliance-safe, coach-facing insights
+delivered daily alongside the athlete's Daily Coaching Snippet.
+
+Ideas 2 and 3 are architecturally coupled: both consume the
+same Daily Mini-JSON data contract. Stage 6 (Idea 2) is fully
+specified — Master Prompt v1.1, Project Instructions v1.1,
+QA Monitoring Protocol v1.0. All architectural decisions from
+Idea 2 are locked and constrain this session.
+
+============================================================
+TASK QUEUE
+============================================================
+
+| # | Task | Deliverable |
+|---|---|---|
+| 12 | Design daily coach insight metric set | Approved metric list (compliance-safe daily metrics) |
+| 13 | Design daily-to-weekly relationship | Approved relationship model (roll-up, supersession, or separate) |
+| 14 | Write Daily Coach Insights specification | New spec files (Master Prompt + Project Instructions) |
+| 15 | Define daily coach insight audit criteria | Audit criteria addition (likely same self-validation architecture as Stage 6) |
+
+Work through tasks sequentially. Each task builds on the
+previous. Present designs for collaborative review before
+writing to disk.
+
+============================================================
+WHAT IDEA 2 ESTABLISHED (LOCKED ARCHITECTURE)
+============================================================
+
+These decisions from Idea 2 are LOCKED and apply to Idea 3:
+
+1. DAILY MINI-JSON SPECIFICATION
+   Stage 7 shares the same data contract as Stage 6. The Daily
+   Mini-JSON is produced by the app backend (zero LLM cost) and
+   contains: meta block (athlete_id, date, program_day_number,
+   days_into_week), morning_tune_up block (completed, focus_word,
+   mindset_challenge_text, quick_win_items), evening_review block
+   (status, wtd with 5 questions + day_category, journaling with
+   3 domain entries, bullseye with ring items/counts, mindset
+   challenge follow-through), running_week_summary block (win/
+   partial/missed counts, current_win_streak, morning/evening
+   completions, challenge follow-throughs).
+
+   Full spec: VF_Daily_Mini_JSON_Specification.txt
+
+2. TIERED PRODUCT MODEL
+   - Base tier: 7 outputs/week (Mon-Sun), standalone product,
+     no weekly Interpretation JSON available
+   - Premium tier: 6 outputs/week (Tue-Sun), enriched by last
+     week's Interpretation JSON + Athlete Snapshot, Monday
+     skipped (full weekly Coach Insights report delivered)
+   NOTE: Verify whether this same tiering applies to Stage 7
+   or whether daily coach insights follow a different cadence.
+   Coach insights are institutional — coaches may want daily
+   visibility regardless of athlete tier. This is a design
+   question for Task 12.
+
+3. COMPLIANCE-BY-CONSTRUCTION
+   The Daily Mini-JSON deliberately EXCLUDES: timing data
+   (timestamps, on-time/late/backfill), trigger method (self-
+   initiated vs reminder), component sequence, rates and
+   percentages. These are excluded at the data layer so daily
+   stages cannot accidentally leak them. Stage 7 inherits
+   this protection.
+
+4. GENERATION TIMING
+   Daily outputs generated overnight, 1-2 hours before hard-out
+   time. Delivered in morning. Stage 7 output would be delivered
+   to coaching staff dashboard alongside the athlete's snippet
+   delivery notification.
+
+5. SELF-VALIDATION ARCHITECTURE (from Task 11)
+   Stage 6 uses an embedded Compliance Scan Protocol (3-layer
+   self-validation in the same API call as generation) instead
+   of an external audit. The QA Monitoring Protocol is designed
+   to be extensible to Stage 7 (see Section 9 of the QA
+   Protocol). Task 15 should determine whether Stage 7 uses
+   the same self-validation architecture or requires
+   modifications.
+
+============================================================
+WHAT THE WEEKLY COACH INSIGHTS ENGINE DOES (STAGE 4)
+============================================================
+
+Stage 4 produces two compliance-safe outputs per week:
+
+1. WEEKLY PERFORMANCE INSIGHT (individual athlete, 10 sections):
+   Section 1: Weekly Readiness Summary
+   Section 2: Win the Day Execution Analysis
+   Section 3: Behavioral Momentum Signal
+   Section 4: Reflection Quality Assessment
+   Section 5: Confidence & Consistency Signal
+   Section 6: Key Areas of Attention
+   Section 7: Key Performance Signal (KPS)
+   Section 8: Developmental Arc Summary
+   Section 9: Coach Context Cue
+   Section 10: Composite Readiness Signal (Green/Yellow/Orange)
+
+2. WEEKLY TEAM SNAPSHOT (aggregate, 7 sections, 5+ athletes):
+   Section T1: Executive Summary
+   Section T2: Readiness Distribution
+   Section T3: Key Performance Signals — Team View
+   Section T4: Attention Cases
+   Section T5: Positive Momentum Cases
+   Section T6: Team Patterns
+   Section T7: Composite Readiness Distribution
+
+KEY COMPLIANCE RULES (from VF_Coach_Insights_Compliance_Framework):
+- ALL content must be safe for coaching staff at every level
+  (position coach → coordinator → head coach → AD)
+- Raw execution data NEVER surfaced (completion rates, timing,
+  backfill counts, reminder dependence, streak counts)
+- Composite score names/values/bands NEVER surfaced
+- Coach flag IDs/severity tiers NEVER surfaced
+- Self-ratings alignment labels NEVER surfaced
+- PPD bucket names/ABI pillar names as scored labels NEVER surfaced
+- coach_insights subfields INFORM the output but are NEVER
+  reproduced directly
+- risk_flags, narrative_arc stay internal to the pipeline
+- Clinical language prohibition applies
+- Surveillance framing prohibition applies
+
+Stage 7 must follow ALL of these compliance rules. The daily
+output is a compressed version of the weekly insight, not
+a separate compliance standard.
+
+============================================================
+KEY DESIGN QUESTIONS FOR THIS SESSION
+============================================================
+
+TASK 12: DAILY COACH INSIGHT METRIC SET
+
+Q1. What does a daily coach insight actually look like?
+    Stage 4 produces 10 sections for a weekly report. A daily
+    insight can't be 10 sections — that would be a daily
+    report, not an insight. What is the right output format?
+    Options:
+    (a) Single paragraph (2-4 sentences) — compressed daily
+        signal, similar to snippet brevity
+    (b) 3-5 short structured sections — mini-dashboard
+    (c) Key-value pairs — machine-readable daily metrics
+        for app dashboard rendering
+    (d) Hybrid — brief narrative + 2-3 key metrics
+
+Q2. What metrics are available daily?
+    From the Daily Mini-JSON:
+    - WTD daily score (0-5) and day category
+    - Component completion (which of WTD/journaling/bullseye
+      were done)
+    - Morning Tune-Up completion
+    - Mindset challenge follow-through
+    - Running week summary (cumulative counts)
+    - Journaling domain coverage
+    - Bullseye ring distribution
+    Premium only:
+    - Last week's micro-commitment (thread tracking)
+    - Growth phase (tone calibration)
+    - Emotional intensity (sensitivity calibration)
+
+Q3. Tiering for coach insights:
+    Does Base/Premium tiering apply to coach-facing output?
+    Coaches pay for the platform — do they get daily insights
+    for ALL athletes, or only Premium athletes? If a coach
+    has 50 athletes (30 Base, 20 Premium), do they see daily
+    insights for all 50 or only 20?
+
+Q4. What information does a coach actually need daily?
+    The weekly report gives synthesis. A daily insight should
+    give what the coach needs between weekly reports:
+    - Did the athlete engage today? (simple yes/no/partial)
+    - Was there anything notable? (domain omission, outer-ring
+      dominant Bullseye, mindset challenge follow-through/miss)
+    - Is there an emerging pattern this week? (3 missed days
+      in a row, win streak, declining engagement)
+    - Does anything require attention before the weekly report?
+
+TASK 13: DAILY-TO-WEEKLY RELATIONSHIP
+
+Q5. How do daily insights relate to the weekly report?
+    Three models:
+    (a) Roll-up: Daily insights aggregate into the weekly
+        report. The weekly report is a synthesis of 7 daily
+        insights. This means Stage 4 could potentially
+        consume Stage 7 output.
+    (b) Supersession: The weekly report replaces and supersedes
+        the daily insights for that week. Daily insights are
+        standalone and the weekly report is independently
+        generated from the weekly JSON.
+    (c) Complementary: Daily insights and weekly reports serve
+        different purposes with no formal relationship. Daily
+        = "what happened today." Weekly = "what does the week
+        mean." No data flows between them.
+
+Q6. On the day the weekly report is delivered (Monday for
+    Premium), is a daily insight also generated?
+    Stage 6 skips Monday for Premium (full CM+DD delivered).
+    Does Stage 7 also skip Monday (full weekly Coach Insights
+    delivered), or does the coach get both?
+
+Q7. Can the daily insight reference the weekly report's
+    content (e.g., "this week's KPS is...")? Or is the daily
+    insight strictly derived from daily data only?
+
+TASK 14: SPECIFICATION WRITING
+(No design questions — this is implementation of Tasks 12-13
+decisions into Master Prompt + Project Instructions)
+
+TASK 15: AUDIT CRITERIA
+
+Q8. Does Stage 7 use the same self-validation architecture
+    as Stage 6 (embedded Compliance Scan Protocol), or does
+    it need modifications?
+    Considerations:
+    - Stage 7 output is coach-facing, not athlete-facing.
+      The compliance boundary is different — no clinical
+      language still applies, but the "named miss" rule
+      doesn't apply (coaches SHOULD see engagement status).
+    - Pipeline data leakage rules are STRICTER for coach
+      insights — raw execution metrics, score names, flag
+      IDs all prohibited even though the output is for
+      coaches (institutional safety across all staff levels).
+    - The QA Monitoring Protocol already has Stage 7
+      extensibility designed in (Section 9).
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read these files in this order:
+
+1. CLAUDE.md (project context — read first, the full file)
+
+2. Daily data contract (shared with Stage 6):
+   Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Mini_JSON_Specification.txt
+
+3. Stage 6 specification (the paired daily athlete-facing output):
+   Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.1.txt
+   Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Project_Instructions_v1.1.txt
+
+4. Stage 6 QA Monitoring Protocol (extensible to Stage 7):
+   Agents - Generators\Daily Coaching Engine\VF_Daily_Snippet_QA_Monitoring_Protocol.txt
+
+5. Stage 4 specification (the weekly coach-facing equivalent):
+   Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.1.txt
+   Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.3.txt
+
+6. Stage 4 source files (compliance and metrics):
+   Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+   Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+   Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+   Agents - Generators\Coach Insights Engine\Source Files\VF_Tracking_Reporting_Metrics_Reference.txt
+
+7. Stage 4 output structure:
+   Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
+
+8. Interpretation Engine (for understanding what weekly data
+   Premium tier has access to):
+   Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.5.txt
+
+9. App Input Format (for understanding raw daily data structure):
+   Agents - Generators\Interpretation\Source Files\VF_App_Input_Format_Specification.txt
+
+Total: 13 reference files + CLAUDE.md
+
+============================================================
+KEY CONSTRAINTS
+============================================================
+
+1. COMPLIANCE IS NON-NEGOTIABLE
+   All Stage 4 compliance rules apply to Stage 7. The daily
+   coach insight must be safe for coaching staff at every
+   organizational level. No raw execution metrics, no score
+   names, no flag IDs, no clinical language, no surveillance
+   framing.
+
+2. STAGE 7 IS COACH-FACING, NOT ATHLETE-FACING
+   Unlike Stage 6 (athlete reads the snippet), Stage 7 output
+   is read by coaching staff. This changes some rules:
+   - "Named miss" language IS appropriate (coaches need to
+     know engagement status)
+   - Behavioral metrics CAN be described in institutional
+     terms (not raw numbers, but compliance-safe descriptions)
+   - The output does not need Coach Arron's voice — it needs
+     institutional reporting voice
+   - The output IS NOT delivered to the athlete under any
+     circumstances
+
+3. DAILY MINI-JSON IS THE ONLY DAILY DATA SOURCE
+   Stage 7 reads the same Daily Mini-JSON as Stage 6. It does
+   NOT read raw app event data, execution timing, or any data
+   excluded from the Mini-JSON by compliance-by-construction.
+
+4. STAGE 7 EXTENSIBILITY WAS DESIGNED IN
+   The QA Monitoring Protocol v1.0 already includes Stage 7
+   extensibility (Section 9). The Daily Mini-JSON Specification
+   already lists Stage 7 as a downstream consumer (Section I).
+   Honor these existing design decisions.
+
+5. PROPORTIONALITY
+   A daily coach insight should be proportional to its data
+   source (one day of athlete data). It should NOT attempt to
+   replicate the weekly Coach Insights report at a daily
+   cadence. The weekly report does synthesis. The daily insight
+   does signal.
+
+6. MODEL RECOMMENDATION
+   Sonnet is recommended for Stage 7 (same as Stage 6). The
+   output is constrained short-form with compliance rules that
+   can be embedded in generation instructions. Opus is reserved
+   for judgment-intensive tasks (Stage 4 weekly synthesis,
+   Stage 5 editorial audit).
+
+============================================================
+WHAT IDEA 1 AND IDEA 2 ACCOMPLISHED (CONTEXT)
+============================================================
+
+IDEA 1 (Athlete Intake Form Improvements) — COMPLETE:
+- Tasks 1-7 designed, all 9 implementation files written
+- Active pipeline: v9.5 / v1.6 / v1.3 / v1.2
+- New capabilities: PPD/ABI scoring, baseline_intake_profile,
+  current_season_phase, Competitive Level Calibration Rule,
+  Pipeline Data Leakage Compliance with Categories E+F
+
+IDEA 2 (Daily Coaching Snippet) — COMPLETE:
+- Tasks 8-11 designed and specified
+- Stage 6: Master Prompt v1.1 + Instructions v1.1 (1774 lines,
+  20 sections including Compliance Scan Protocol)
+- QA Monitoring Protocol v1.0 (10 sections)
+- Architecture: Single-step generation + self-validation.
+  No external audit for daily output.
+- Key decisions: Base 7/week + Premium 6/week, Sonnet model,
+  compliance-by-construction via Mini-JSON exclusions,
+  generic fallback snippets for edge cases
+
+============================================================
+DELIVERABLES
+============================================================
+
+Task 12: Approved daily coach insight metric set + output
+  format — saved to a design document in the Daily Coach
+  Insights Engine directory
+
+Task 13: Approved daily-to-weekly relationship model — can
+  be incorporated into the Task 12 document or standalone
+
+Task 14: Stage 7 specification files:
+  - SOP_Daily_Coach_Insights_Master_Prompt_v1.0.txt
+  - SOP_Daily_Coach_Insights_Project_Instructions_v1.0.txt
+  Directory: Agents - Generators\Daily Coach Insights Engine\
+
+Task 15: Audit criteria — either embedded self-validation
+  (same architecture as Stage 6) or documented alternative.
+  QA Monitoring Protocol updated to v1.1 with Stage 7
+  dimensions.
+
+All deliverables saved to disk, CLAUDE.md updated, git
+committed before session ends.
+
+============================================================
+WORKFLOW
+============================================================
+
+1. Read all 13 reference files + CLAUDE.md
+2. Present understanding of what Stage 7 needs to accomplish
+3. Work through Task 12 design questions collaboratively
+4. Work through Task 13 design questions collaboratively
+5. Write Task 12/13 design documents
+6. Write Task 14 specification files (Master Prompt + Instructions)
+7. Design Task 15 audit criteria
+8. Update QA Monitoring Protocol if needed
+9. Update CLAUDE.md
+10. Git commit
