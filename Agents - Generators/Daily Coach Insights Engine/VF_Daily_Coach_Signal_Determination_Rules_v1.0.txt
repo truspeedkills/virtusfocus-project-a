@@ -905,5 +905,111 @@ Effective date: 2026-03-15
 Companion design document: VF_Daily_Coach_Signal_Design.txt
 
 ================================================================
+15. PARENT SIGNAL LABEL MAPPING
+================================================================
+
+The Daily Athlete Signal is also rendered on the D2C parent
+app for Premium subscribers with parent_inclusion = true.
+
+The parent signal uses the SAME underlying computation as the
+coach signal. No new rules, no new thresholds, no additional
+AI cost. The parent adaptation is a LABEL MAPPING at the
+presentation layer — the app renders parent-friendly labels
+instead of institutional labels.
+
+------------------------------------------------------------
+15.1 TRAFFIC LIGHT PARENT LABELS
+------------------------------------------------------------
+
+  Coach Label     Parent Label        Color
+  -----------     ----------------    -----
+  GREEN           Good Day            Green
+  YELLOW          Building Day        Yellow
+  ORANGE          Reset Day           Orange
+  GRAY            No Update Today     Gray
+
+The color is identical. Only the text label changes.
+
+"No Update Today" (Gray) is neutral. It does NOT mean the
+athlete had a bad day — it means no performance data was
+submitted. Parents must not interpret Gray as negative.
+
+------------------------------------------------------------
+15.2 CONTRIBUTING SIGNALS — HIDDEN FROM PARENTS
+------------------------------------------------------------
+
+The following contributing signals are NOT displayed to
+parents. They are hidden at the app presentation layer:
+
+  - Day Outcome (Aligned / Building / Reset Day)
+  - Focus Alignment (Centered / Mixed / Drifting)
+  - Follow-Through (Demonstrated / Gap)
+  - Weekly Trajectory (Building Week / Steady Week /
+    Cooling Week)
+
+Parents see ONLY the traffic light color + parent label.
+
+Rationale: Contributing signals provide coaching granularity
+that could enable monitoring behavior in parents. The traffic
+light alone provides meaningful signal without exposing
+behavioral detail.
+
+------------------------------------------------------------
+15.3 TEAM/POSITION AGGREGATION — NOT SHOWN TO PARENTS
+------------------------------------------------------------
+
+Team and position group aggregation tiers are coach-facing
+only. Parents do not see team-level signals.
+
+Parents see only their own athlete's daily signal.
+
+------------------------------------------------------------
+15.4 INTERNAL DATA — NEVER EXPOSED
+------------------------------------------------------------
+
+The _internal block (point scores, calibration details,
+thresholds) is NEVER exposed to parents. Same rule as
+coaches — backend-only data.
+
+------------------------------------------------------------
+15.5 DISCLAIMER — NOT APPLICABLE
+------------------------------------------------------------
+
+The institutional disclaimer ("These indicators are
+informational only and may not be used as a basis for
+participation, selection, or disciplinary decisions.") does
+NOT appear on the parent app. This disclaimer is designed
+for coaching staff in institutional contexts. Parents are
+not in a participation-decision role.
+
+------------------------------------------------------------
+15.6 IMPLEMENTATION NOTE
+------------------------------------------------------------
+
+This label mapping is a presentation-layer concern. The app
+backend computes the Daily Athlete Signal identically for
+all consumers. The API response includes the traffic_light
+field (GREEN/YELLOW/ORANGE/GRAY). The parent app frontend
+renders the parent label based on the traffic_light value.
+
+No changes to the computation logic in Sections 1-14 are
+required for parent signal display.
+
+------------------------------------------------------------
+15.7 PARENT SIGNAL WARM PLACEHOLDERS
+------------------------------------------------------------
+
+When a parent opens the app for the first time (no signal
+data yet), the daily signal widget should display:
+
+  Label: "Getting Started"
+  Color: Gray
+  Subtext: "Daily updates begin once [athlete first name]
+  starts the program."
+
+After Day 1 with data, the normal traffic light + parent
+label displays.
+
+================================================================
 END OF DOCUMENT
 ================================================================

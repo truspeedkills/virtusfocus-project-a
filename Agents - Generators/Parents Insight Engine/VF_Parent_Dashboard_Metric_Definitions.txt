@@ -1,0 +1,369 @@
+VIRTUSFOCUS — PARENT DASHBOARD METRIC DEFINITIONS
+App Development Specification
+============================================================
+
+This document defines the dashboard elements displayed to D2C
+Premium parent app subscribers. The dashboard is a PRESENTATION
+LAYER — it renders data produced by Stage 4 (Coach Insights
+Engine) and Stage 7 (Daily Coach Insights Engine). No new
+computation occurs at the dashboard level.
+
+Audience: App development team
+Purpose: Define data sources, display formats, update cadence,
+         and warm placeholders for each dashboard element
+
+============================================================
+1. DASHBOARD OVERVIEW
+============================================================
+
+The parent dashboard displays 5 metrics:
+
+1. Overall Signal — weekly aggregate readiness (color + label)
+2. Growth Phase — developmental stage (text + indicator)
+3. Weekly Theme — what stood out this week (short phrase)
+4. Confidence Direction — confidence trend (arrow + label)
+5. Daily Signal — daily traffic light (color + parent label)
+
+All metrics are CATEGORICAL. No raw numbers, no percentages,
+no scores appear on the parent dashboard.
+
+The dashboard also provides access to:
+- Parent Coaching Message (Stage 3 output, push delivery)
+- Parent Weekly Insight (Stage 4 output, on-demand sections)
+
+============================================================
+2. METRIC DEFINITIONS
+============================================================
+
+------------------------------------------------------------
+2.1 OVERALL SIGNAL
+------------------------------------------------------------
+
+SOURCE: Stage 4 Composite Readiness Signal (Section 10)
+        → Parent Section 10 (Overall Signal)
+
+DISPLAY FORMAT:
+  - Large color circle or badge (Green / Yellow / Orange)
+  - Parent-friendly label below the color:
+    Green  → "Looking Strong"
+    Yellow → "Steady"
+    Orange → "Needs Extra Support"
+  - No numeric value. No percentage. No component breakdown.
+
+UPDATE CADENCE: Weekly (when Stage 4 runs, typically Monday)
+
+DATA FLOW:
+  Stage 2 JSON → Stage 4 Composite Readiness determination →
+  Parent Insight Section 10 → Dashboard renders color + label
+
+COLOR SPECIFICATION:
+  Green:  Indicates positive signals across performance,
+          consistency, and behavioral dimensions.
+  Yellow: Indicates a steady foundation with mixed or
+          neutral signals. Normal state for many athletes.
+  Orange: Indicates a week that may benefit from extra
+          support. NOT alarming — framed as "part of growth."
+
+NOTE: Orange is NOT a warning. The app should never render
+Orange in a way that triggers alarm (no red tones, no warning
+icons, no exclamation marks). Frame as "a tougher week" or
+"building through a challenge."
+
+------------------------------------------------------------
+2.2 GROWTH PHASE
+------------------------------------------------------------
+
+SOURCE: Interpretation JSON growth_phase field
+        → Parent Insight Section 9 (Growth Over Time)
+
+DISPLAY FORMAT:
+  - Text label in accessible language:
+    Emerging   → "Getting Started"
+    Developing → "Building Skills"
+    Consistent → "Showing Consistency"
+    Leadership → "Leading the Way"
+  - Simple progress indicator (e.g., 4-step bar or dots
+    showing position in journey — NOT a score or percentage)
+  - Phase movement indicator (optional):
+    Advancing  → small upward arrow or "Growing" badge
+    Stable     → no indicator (steady is the default)
+    Regressing → no indicator (do not alarm parent —
+                 regression context lives in Section 9)
+
+UPDATE CADENCE: Weekly (when Stage 2 runs)
+
+DATA FLOW:
+  Stage 2 JSON growth_phase + growth_phase_movement →
+  Parent Insight Section 9 → Dashboard renders label + bar
+
+NOTE: Growth Phase names (Emerging, Developing, Consistent,
+Leadership) do NOT appear as labels. The parent sees the
+accessible translations above. The 4-step progress indicator
+shows position without naming the phases.
+
+NOTE: Regression is NOT visually flagged on the dashboard.
+The narrative in Parent Insight Section 9 handles regression
+with warm, contextualizing language. The dashboard stays
+positive or neutral.
+
+------------------------------------------------------------
+2.3 WEEKLY THEME
+------------------------------------------------------------
+
+SOURCE: Stage 4 Key Performance Signal (Section 8)
+        → Parent Insight Section 2 (What Stood Out This Week)
+
+DISPLAY FORMAT:
+  - One short phrase (5-10 words max)
+  - Examples:
+    "Preparation quality before competition"
+    "Consistent daily routine"
+    "Bouncing back after a tough day"
+    "Focusing on what she can control"
+  - No technical terminology. No pipeline language.
+  - Derived from the KPS but translated to parent language.
+
+UPDATE CADENCE: Weekly (when Stage 4 runs)
+
+DATA FLOW:
+  Stage 2 JSON → Stage 4 KPS determination →
+  Parent Insight Section 2 → Dashboard renders short phrase
+
+NOTE: The Weekly Theme is a SUMMARY of Section 2, not a
+separate computation. The app extracts or truncates the
+key behavioral theme from the Parent Insight Section 2
+content for dashboard display.
+
+------------------------------------------------------------
+2.4 CONFIDENCE DIRECTION
+------------------------------------------------------------
+
+SOURCE: Stage 4 Confidence Momentum (Section 5)
+        → Parent Insight Section 5 (Confidence Check)
+
+DISPLAY FORMAT:
+  - Directional label:
+    Building → "Confidence Building" (with subtle up arrow)
+    Stable   → "Confidence Steady" (with level indicator)
+    Variable → "Confidence Adjusting" (with subtle wave)
+  - No arrows from coach notation (↑ → ↓)
+  - "Adjusting" instead of "Variable" — parent-friendlier,
+    implies active process rather than instability
+
+UPDATE CADENCE: Weekly (when Stage 4 runs)
+
+DATA FLOW:
+  Stage 2 JSON → Stage 4 Confidence Momentum (including
+  self-ratings adjustment for App athletes) →
+  Parent Insight Section 5 → Dashboard renders label
+
+NOTE: "Variable" is renamed to "Adjusting" for parent
+dashboard. The Section 5 content provides depth; the
+dashboard provides the at-a-glance signal.
+
+------------------------------------------------------------
+2.5 DAILY SIGNAL
+------------------------------------------------------------
+
+SOURCE: Stage 7 Daily Athlete Signal (traffic light)
+        → Parent label mapping (Determination Rules Section 15)
+
+DISPLAY FORMAT:
+  - Color circle or badge matching the traffic light
+  - Parent label:
+    GREEN  → "Good Day"
+    YELLOW → "Building Day"
+    ORANGE → "Reset Day"
+    GRAY   → "No Update Today"
+  - Updates daily (most recent day displayed prominently)
+  - Optional: last 3-5 days displayed as small color dots
+    for recent context (NO day labels, NO dates — just
+    colors for visual pattern)
+
+UPDATE CADENCE: Daily (when Stage 7 computes, before
+morning delivery)
+
+DATA FLOW:
+  App daily events → Daily Mini-JSON → Stage 7 computation →
+  Dashboard renders color + parent label
+
+CONTRIBUTING SIGNALS — HIDDEN:
+  Day Outcome, Focus Alignment, Follow-Through, and Weekly
+  Trajectory are NOT displayed to parents. Parents see only
+  the traffic light color + label.
+
+GRAY HANDLING:
+  "No Update Today" is displayed with a neutral gray tone.
+  No negative connotation. No follow-up prompt. No "your
+  athlete didn't complete today" messaging. The absence of
+  data is simply the absence of data.
+
+============================================================
+3. WARM PLACEHOLDERS — EARLY WEEKS
+============================================================
+
+Per Task 18 design decision: parents never see a blank screen.
+When data is not yet available for a metric, warm placeholder
+content appears instead.
+
+------------------------------------------------------------
+3.1 FIRST APP OPEN (PRE-PROGRAM OR DAY 1)
+------------------------------------------------------------
+
+When the parent opens the app for the first time and no
+pipeline data has been generated yet:
+
+OVERALL SIGNAL:
+  Color: Gray
+  Label: "Building Baseline"
+  Subtext: "[Athlete name] is just getting started. The
+  first weekly update arrives after the first full week."
+
+GROWTH PHASE:
+  Label: "Getting Started"
+  Progress indicator: Position 1 of 4 (leftmost)
+  No movement indicator
+
+WEEKLY THEME:
+  Label: "First week in progress"
+  Subtext: "We'll highlight what stands out after the first
+  full week."
+
+CONFIDENCE DIRECTION:
+  Label: "Building Picture"
+  Subtext: "Confidence trends emerge after a few weeks of
+  data."
+
+DAILY SIGNAL:
+  If Day 1 data exists: render normally (color + label)
+  If no data yet:
+    Color: Gray
+    Label: "Getting Started"
+    Subtext: "Daily updates begin once [athlete name]
+    starts the program."
+
+------------------------------------------------------------
+3.2 WEEK 1 (FIRST WEEKLY UPDATE)
+------------------------------------------------------------
+
+After the first weekly pipeline runs (typically Monday of
+Week 2, processing Week 1 data):
+
+OVERALL SIGNAL: Populated normally (Composite Readiness
+computes from Week 1 data)
+
+GROWTH PHASE: Populated normally (growth_phase assigned at
+intake, confirmed by Week 1 data)
+
+WEEKLY THEME: Populated normally (KPS available from Week 1)
+
+CONFIDENCE DIRECTION:
+  If confidence momentum is determinable: display normally
+  If "insufficient data": "Still building picture"
+
+DAILY SIGNAL: Populated normally (has been running all week)
+
+------------------------------------------------------------
+3.3 WEEKS 2-3 (EMERGING LONGITUDINAL DATA)
+------------------------------------------------------------
+
+Most metrics fully populated. Longitudinal metrics (pattern
+stability, response recovery from Dashboard Metrics Reference)
+begin emerging.
+
+Confidence Direction: Should be fully populated by Week 2.
+
+Any remaining "insufficient data" fields: use warm language
+("Emerging" or "Building picture") rather than technical
+labels.
+
+------------------------------------------------------------
+3.4 WEEK 4+ (FULLY POPULATED)
+------------------------------------------------------------
+
+All dashboard metrics fully populated. No placeholders needed.
+All longitudinal fields active.
+
+============================================================
+4. DASHBOARD LAYOUT PRINCIPLES
+============================================================
+
+These are guidance for app development, not rigid requirements:
+
+1. OVERALL SIGNAL is the hero metric — largest, most prominent
+   position on the dashboard. This is what the parent sees
+   first.
+
+2. DAILY SIGNAL is secondary prominence — it updates daily,
+   keeping the parent engaged between weekly updates.
+
+3. GROWTH PHASE, WEEKLY THEME, and CONFIDENCE DIRECTION are
+   supporting context — they enrich the parent's understanding
+   of the two primary signals.
+
+4. PARENT COACHING MESSAGE is accessible from the dashboard
+   (linked or embedded) — it's the "what to do" companion to
+   the dashboard's "how things are going."
+
+5. PARENT WEEKLY INSIGHT sections are accessible by tapping
+   into any dashboard metric — each metric expands to show
+   the full corresponding Parent Insight section text.
+
+6. NO raw numbers anywhere on the dashboard. No percentages,
+   no scores, no counts. Everything is categorical.
+
+7. NO negative visual design for Orange. Use warm orange tones,
+   not red-adjacent colors. No warning icons. The app should
+   feel supportive, not alerting.
+
+8. GRAY is always neutral. No visual treatment that suggests
+   Gray is bad. No prompts to "check in" or "follow up."
+
+============================================================
+5. DATA REFRESH AND TIMING
+============================================================
+
+| Metric               | Source Stage | Refresh Cadence | Typical Timing              |
+|----------------------|-------------|-----------------|------------------------------|
+| Overall Signal       | Stage 4     | Weekly          | Monday (after pipeline runs)  |
+| Growth Phase         | Stage 2     | Weekly          | Monday                        |
+| Weekly Theme         | Stage 4     | Weekly          | Monday                        |
+| Confidence Direction | Stage 4     | Weekly          | Monday                        |
+| Daily Signal         | Stage 7     | Daily           | Before morning Tune-Up        |
+
+The parent app should display the most recent data for each
+metric. When a weekly metric hasn't updated yet (e.g., it's
+Wednesday and the Monday pipeline ran), the previous week's
+data remains displayed until the new week processes.
+
+The Daily Signal is the only metric that refreshes daily,
+keeping the parent app feeling "alive" between weekly updates.
+
+============================================================
+6. COMPLIANCE NOTES FOR APP DEVELOPMENT
+============================================================
+
+1. NO engagement metrics (login counts, time spent, streak
+   counts) are ever displayed to parents.
+
+2. NO completion data (how many check-ins completed, how many
+   missed) is ever displayed to parents.
+
+3. NO comparison data (how this athlete compares to others)
+   is ever displayed.
+
+4. NO journal content or personal reflections are ever
+   accessible to parents.
+
+5. The dashboard NEVER prompts parents to follow up with
+   their athlete about specific behavioral data. The app
+   supports — it does not enable monitoring.
+
+6. All text displayed on the dashboard must pass the same
+   compliance framework as Stage 3 and Stage 4 output:
+   no clinical language, no pipeline terminology, no
+   surveillance framing.
+
+============================================================
+END OF DOCUMENT
+============================================================
