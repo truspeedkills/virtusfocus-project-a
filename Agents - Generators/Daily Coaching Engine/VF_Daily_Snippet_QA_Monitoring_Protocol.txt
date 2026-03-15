@@ -1,0 +1,484 @@
+VIRTUSFOCUS — DAILY SNIPPET QA MONITORING PROTOCOL V1.0
+
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
+============================================================
+SECTION 1 — PURPOSE
+============================================================
+
+This document defines the post-delivery quality monitoring
+protocol for Daily Coaching Snippets produced by Stage 6
+(Daily Coaching Engine).
+
+This protocol is NOT a delivery gate. Every snippet passes
+through the embedded Compliance Scan Protocol (Stage 6
+Project Instructions Section 19) before reaching the athlete.
+The Compliance Scan Protocol is the pre-delivery quality gate.
+
+This QA Monitoring Protocol serves a different purpose: it
+catches SYSTEMATIC patterns that individual snippet-level
+self-validation cannot detect. A single snippet may pass all
+compliance scans but still be part of a quality problem when
+viewed alongside the week's other snippets.
+
+Examples of patterns this protocol catches:
+- Same behavioral focus 4 of 7 days (compliant but monotonous)
+- Same bridge language structure repeated across the week
+- Borderline clinical language that individually passes the
+  scan but collectively reveals a prompt tendency
+- Competitive level miscalibration that appears only when
+  multiple snippets are reviewed together
+- Generic fallback snippets appearing more than expected
+
+This protocol is a system engineering tool for prompt tuning
+and quality assurance. It is not part of the athlete-facing
+pipeline. Findings from this review inform adjustments to the
+Stage 6 Master Prompt and Project Instructions — not to
+individual snippets that have already been delivered.
+
+============================================================
+SECTION 2 — SCOPE
+============================================================
+
+Primary scope: Stage 6 Daily Coaching Snippets.
+
+Extensible to: Stage 7 Daily Coach Insights (when built,
+Tasks 12-15). The same review cadence, quality dimensions,
+escalation criteria, and log format apply to Stage 7 output
+with additional dimensions for coach-facing compliance
+(institutional safety, no raw execution data surfacing to
+coaching staff).
+
+Out of scope: Weekly pipeline output (Stages 2-5). Weekly
+output has its own audit mechanism — the Editorial Audit
+Agent (Stage 5).
+
+============================================================
+SECTION 3 — REVIEW CADENCE
+============================================================
+
+FREQUENCY: Weekly, after all snippets for the week period
+have been generated and delivered.
+
+TIMING: Run the QA review after the last snippet of the week
+is delivered (Sunday for Base tier, Sunday for Premium tier).
+The review covers the complete week of snippets for each
+reviewed athlete.
+
+METHOD: The review can be:
+  (a) Automated — pattern detection scripts that scan the
+      week's snippets against the quality dimensions defined
+      in Section 5. Preferred at scale (100+ athletes).
+  (b) Manual — human reviewer reads the week's snippets
+      and evaluates quality dimensions. Required during
+      initial launch and whenever automated detection flags
+      an issue that needs human judgment.
+  (c) Hybrid — automated scan flags potential issues, human
+      reviewer evaluates flagged cases. Recommended for
+      steady-state operations.
+
+============================================================
+SECTION 4 — SAMPLE SELECTION
+============================================================
+
+SAMPLE SIZE: Full week of snippets per athlete reviewed.
+  - Base tier: 7 snippets per week
+  - Premium tier: 6 snippets per week (Monday skipped)
+
+ATHLETE SELECTION:
+
+  LAUNCH PHASE (first 4 weeks of production):
+    Review ALL athletes. Every snippet from every athlete
+    is reviewed weekly. This phase establishes baseline
+    quality expectations and identifies any systematic
+    prompt issues before scale.
+
+  STABILIZATION PHASE (weeks 5-12):
+    Review 50% of athletes per week. Alternate cohorts so
+    every athlete is reviewed at least biweekly. Any athlete
+    with a prior [COMPLIANCE_FLAG] event is automatically
+    included in every review cycle during this phase.
+
+  STEADY-STATE (week 13+):
+    Review 20% of athletes per week on rotation. All athletes
+    reviewed at least monthly. Exceptions:
+    - Any athlete with a [COMPLIANCE_FLAG] event in the
+      current week is automatically reviewed
+    - Any athlete transitioning between maturity bands
+      (Day 7→8 or Day 30→31) is reviewed for that week
+    - Any athlete whose competitive level changes is
+      reviewed for that week
+    - Random selection fills the remaining slots
+
+============================================================
+SECTION 5 — QUALITY DIMENSIONS
+============================================================
+
+Seven dimensions evaluated in each review. Each dimension
+has a detection method and a threshold for flagging.
+
+------------------------------------------------------------
+5.1 CROSS-DAY REPETITION
+------------------------------------------------------------
+
+WHAT: Same behavioral focus recognized in consecutive snippets.
+
+DETECTION: Identify the primary behavioral focus of each
+snippet (WTD, journaling, Bullseye, mindset challenge,
+morning Tune-Up, or overall execution). Flag if the same
+focus appears 3+ consecutive days.
+
+THRESHOLD: 3 consecutive days with the same behavioral focus.
+
+ROOT CAUSE: The generation prompt's behavioral focus
+selection (Section 10 Step 6) may not be varying enough,
+or the previous snippet negative constraint (Section 13.1)
+may not be functioning effectively.
+
+ACTION: Review Section 10 Step 6 and Section 13.1 for
+clarity. Consider adding explicit rotation guidance.
+
+------------------------------------------------------------
+5.2 TONAL MONOTONY
+------------------------------------------------------------
+
+WHAT: Same sentence structure, bridge language, or
+recognition phrasing repeated across multiple snippets
+in the same week.
+
+DETECTION: Compare sentence structures across the week's
+snippets. Flag if:
+  - The same opening construction appears 3+ times (e.g.,
+    "Full execution yesterday" on 3+ Win days)
+  - The same bridge phrase appears 3+ times (e.g., "Carry
+    it forward" or "Build from here")
+  - The same identity connection appears 2+ times
+
+THRESHOLD: 3 instances of the same construction or phrase.
+
+ROOT CAUSE: The model may be falling into template patterns.
+The reference snippets in Section 15 may be anchoring the
+model too strongly to specific phrasings.
+
+ACTION: Review reference snippets for over-anchoring. Add
+explicit variety guidance. Consider expanding the reference
+snippet set to include more diverse constructions.
+
+------------------------------------------------------------
+5.3 COMPLIANCE DRIFT
+------------------------------------------------------------
+
+WHAT: Borderline language that individually passes the
+Compliance Scan Protocol but collectively reveals a prompt
+tendency toward a prohibited category.
+
+DETECTION: Scan the week's snippets for:
+  - Near-clinical language (e.g., "mental reset" passes but
+    "mental" appears in 4 of 7 snippets)
+  - Near-surveillance framing (e.g., "you brought" passes
+    but "I saw" or "what came through" appears repeatedly)
+  - Near-pattern-naming (e.g., "another strong day" passes
+    individually but 3 consecutive uses implies trend naming)
+  - Near-miss-naming (e.g., "fresh start" passes but
+    multiple uses on non-miss days dilutes its meaning for
+    actual miss days)
+
+THRESHOLD: Same borderline construction appears 3+ times
+in a week, OR 2 different borderline constructions from the
+same prohibited category appear in the same week.
+
+ROOT CAUSE: The generation prompt may not be providing
+enough alternative phrasings, or the compliance scan
+prohibited term lists may have gaps.
+
+ACTION: Add the borderline construction to the compliance
+scan watch list. If the construction is genuinely
+problematic, add it to the prohibited term list in Section
+19.3. If it is acceptable individually, add variety
+guidance to prevent clustering.
+
+------------------------------------------------------------
+5.4 COMPETITIVE LEVEL CONSISTENCY
+------------------------------------------------------------
+
+WHAT: Vocabulary and accountability framing appropriate to
+the athlete's stated competitive level across the full week.
+
+DETECTION: Read all snippets for the week. Verify that:
+  - Youth athletes receive concrete, simple language (no
+    abstract performance concepts)
+  - Professional athletes receive precise, brief language
+    (no over-explanation)
+  - Accountability framing matches the level (Youth =
+    encouraging, College = direct, Professional = candid)
+
+THRESHOLD: 2+ snippets in a week with vocabulary or
+accountability clearly mismatched to the stated competitive
+level.
+
+ROOT CAUSE: The competitive level calibration table
+(Section 6) may not be specific enough for the model to
+differentiate levels consistently.
+
+ACTION: Review Section 6 calibration table. Add more
+level-specific examples or tighter constraints for the
+problematic level pair (e.g., if College snippets read as
+High School, strengthen the College directness guidance).
+
+------------------------------------------------------------
+5.5 MATURITY BAND PROGRESSION
+------------------------------------------------------------
+
+WHAT: Tone shifting appropriately as program_day_number
+advances, especially around band transitions (Day 7→8 and
+Day 30→31).
+
+DETECTION: For athletes crossing a band boundary during
+the review week:
+  - Day 7→8 (Early → Building): Verify shift from
+    welcoming/low-expectation to familiarity/reinforcement.
+    "Your routine" language should begin appearing. Specific
+    behavioral recognition should increase.
+  - Day 30→31 (Building → Established): Verify shift to
+    full coaching voice. Directness matches competitive
+    level without softening for newness.
+
+THRESHOLD: No discernible tone shift at a band boundary.
+
+ROOT CAUSE: The maturity band rules (Section 7) may not
+be specific enough about the transition, or the model may
+be anchoring to tone from previous snippets rather than
+adjusting to the new band.
+
+ACTION: Review Section 7 band transition guidance. Consider
+adding explicit transition examples.
+
+------------------------------------------------------------
+5.6 PREMIUM COMPLETENESS
+------------------------------------------------------------
+
+WHAT: Premium enrichment becoming load-bearing in multiple
+snippets across the week.
+
+DETECTION: For each Premium snippet, mentally remove the
+enrichment content (micro-commitment thread, identity
+anchoring from weekly JSON, growth-phase tone shift). Is
+the remaining Base content a complete, standalone coaching
+moment?
+
+THRESHOLD: 2+ snippets in a week where removing enrichment
+leaves an incomplete or incoherent snippet.
+
+ROOT CAUSE: The completeness guardrail (Section 11.4) may
+not be constraining the model sufficiently. The model may
+be over-relying on weekly JSON data for content rather than
+using it as enrichment.
+
+ACTION: Strengthen the completeness guardrail language.
+Add explicit WRONG/CORRECT examples showing load-bearing
+vs. additive enrichment.
+
+------------------------------------------------------------
+5.7 MISSED DAY HANDLING CONSISTENCY
+------------------------------------------------------------
+
+WHAT: All missed/no-data day snippets across the week
+follow forward-focused grounding without naming the gap.
+
+DETECTION: Identify all missed/no-data day snippets in the
+week. Verify each one:
+  - Does not name the miss in any form
+  - Provides forward-focused grounding
+  - Maintains the same format (2-3 sentences) as non-miss
+    days — the athlete should not feel like they got "less
+    coaching" on quiet days
+  - Does not use the exact same missed-day language as
+    another missed day in the same week (variety matters
+    even for generic grounding)
+
+THRESHOLD: Any miss-naming language that escaped the
+Compliance Scan Protocol is an immediate escalation.
+Same missed-day phrasing appearing 2+ times in a week
+is a quality flag.
+
+ROOT CAUSE: If miss-naming escaped the scan, the
+prohibited term list (Section 19.3 Scan C1) has a gap.
+If missed-day phrasing repeats, the variety guidance
+needs strengthening.
+
+ACTION: For scan escapes — add the term to Section 19.3
+C1 immediately. For variety — add missed-day phrasing
+alternatives to the reference snippets (Section 15).
+
+============================================================
+SECTION 6 — COMPLIANCE FLAG ESCALATION
+============================================================
+
+When a [COMPLIANCE_FLAG] event occurs (the Compliance Scan
+Protocol exhausted all regeneration attempts and delivered
+a generic fallback snippet):
+
+IMMEDIATE (within 24 hours of the flag):
+1. Retrieve the flagged generation request (input data)
+2. Identify which compliance scan(s) failed
+3. Identify why 2 regeneration attempts could not resolve
+   the violation
+4. Determine if the failure is:
+   (a) Input-driven — unusual athlete data that creates
+       an edge case the prompt does not handle
+   (b) Prompt-driven — a gap in the generation instructions
+       that the model cannot resolve within the current rules
+   (c) Model-driven — the model lacks the capability to
+       reliably self-validate for this specific violation type
+
+FOR INPUT-DRIVEN FAILURES:
+  - Document the edge case
+  - Add handling guidance to the relevant Section of the
+    Project Instructions
+  - Verify the fix by re-running the same input through
+    the updated prompt
+
+FOR PROMPT-DRIVEN FAILURES:
+  - Identify the instruction gap
+  - Update the relevant Section of the Project Instructions
+  - If the gap is in the compliance scan itself, update the
+    prohibited term list in Section 19.3
+  - Verify the fix by re-running the same input through
+    the updated prompt
+
+FOR MODEL-DRIVEN FAILURES:
+  - If this is the first occurrence: document and monitor
+  - If this is the 3rd occurrence of the same violation type
+    passing self-validation: evaluate model escalation
+    (Sonnet → Opus) per Section 19.8 of the Project
+    Instructions
+  - If model escalation is triggered: update the model
+    recommendation in CLAUDE.md and the Project Instructions
+
+============================================================
+SECTION 7 — ESCALATION CRITERIA SUMMARY
+============================================================
+
+The following conditions trigger specific escalation actions:
+
+IMMEDIATE ESCALATION (investigate within 24 hours):
+  - Any [COMPLIANCE_FLAG] event → Section 6 process
+  - Any compliance violation that escaped the scan and
+    reached the athlete (discovered in QA review) →
+    investigate scan gap, update prohibited term list,
+    document in review log
+
+PROMPT REVIEW (address before next review cycle):
+  - Same quality dimension flagged across 3+ athletes in a
+    single review cycle → systemic prompt issue
+  - [COMPLIANCE_FLAG] frequency exceeding 0.1% of snippets
+    in a review cycle → generation prompt needs adjustment
+  - Same borderline construction appearing in 5+ athletes'
+    snippets → add to compliance scan watch list or
+    prohibited term list
+
+MODEL ESCALATION EVALUATION:
+  - 3+ compliance violations of the same type passing self-
+    validation within a single review cycle → evaluate
+    Sonnet → Opus per Project Instructions Section 19.8
+  - [COMPLIANCE_FLAG] frequency exceeding 1% of snippets →
+    evaluate model escalation regardless of violation type
+
+============================================================
+SECTION 8 — REVIEW LOG FORMAT
+============================================================
+
+Every QA review produces a log entry in this format:
+
+  QA REVIEW LOG
+  Week Period: [YYYY-MM-DD to YYYY-MM-DD]
+  Review Date: [YYYY-MM-DD]
+  Review Phase: [Launch / Stabilization / Steady-State]
+  Athletes Reviewed: [count] of [total]
+  Snippets Reviewed: [count]
+  Compliance Flags This Week: [count]
+
+  QUALITY DIMENSION FINDINGS:
+
+  5.1 Cross-Day Repetition:
+    [PASS / FLAG — detail]
+
+  5.2 Tonal Monotony:
+    [PASS / FLAG — detail]
+
+  5.3 Compliance Drift:
+    [PASS / FLAG — detail]
+
+  5.4 Competitive Level Consistency:
+    [PASS / FLAG — detail]
+
+  5.5 Maturity Band Progression:
+    [PASS / FLAG — detail or N/A if no transitions]
+
+  5.6 Premium Completeness:
+    [PASS / FLAG — detail or N/A if no Premium athletes]
+
+  5.7 Missed Day Handling:
+    [PASS / FLAG — detail]
+
+  COMPLIANCE FLAG EVENTS:
+  [List each flag event with athlete, date, scan that failed,
+   root cause classification (input/prompt/model), and
+   resolution status]
+
+  ACTIONS TAKEN:
+  [None / Prompt adjustment (detail) / Instructions update
+   (section, change) / Model escalation evaluation / Escalated
+   to team lead]
+
+  NOTES:
+  [Any additional observations, positive quality signals worth
+   preserving, or emerging patterns to watch]
+
+============================================================
+SECTION 9 — EXTENSIBILITY TO STAGE 7
+============================================================
+
+When Stage 7 (Daily Coach Insights Engine) launches, this QA
+Monitoring Protocol extends to cover Stage 7 output with the
+following additions:
+
+ADDITIONAL QUALITY DIMENSIONS FOR STAGE 7:
+  - Institutional compliance: Coach-facing output safe for all
+    organizational levels (position coach → coordinator →
+    head coach)
+  - Raw execution data exclusion: No completion rates, timing
+    data, or other raw execution metrics surfacing in daily
+    coach insights
+  - Daily-to-weekly consistency: Daily insights do not
+    contradict or pre-empt the weekly Coach Insights report
+
+REVIEW LOG: Add Stage 7 section to the log format. Same
+cadence, same escalation criteria, same log structure.
+
+The QA Monitoring Protocol document will be versioned (v1.1)
+when Stage 7 dimensions are added.
+
+============================================================
+SECTION 10 — DOCUMENT MAINTENANCE
+============================================================
+
+This document is a living operational specification. It is
+updated when:
+  - New quality dimensions are identified through production
+    monitoring
+  - Escalation thresholds are adjusted based on production
+    data
+  - Sample selection percentages change based on athlete
+    volume
+  - Stage 7 launches and new dimensions are added
+  - The compliance scan protocol (Project Instructions
+    Section 19) is updated, requiring corresponding QA
+    monitoring updates
+
+Version history:
+  v1.0 — Initial protocol (2026-03-15)
