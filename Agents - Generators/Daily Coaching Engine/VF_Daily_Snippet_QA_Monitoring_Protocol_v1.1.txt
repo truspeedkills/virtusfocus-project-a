@@ -1,0 +1,812 @@
+VIRTUSFOCUS — DAILY SNIPPET & SIGNAL QA MONITORING PROTOCOL V1.1
+
+Copyright © 2026 NBAP Development LLC
+All Rights Reserved.
+
+Confidential and proprietary source code of NBAP Development LLC.
+Unauthorized copying or distribution prohibited.
+
+============================================================
+SECTION 1 — PURPOSE
+============================================================
+
+This document defines the post-delivery quality monitoring
+protocol for two daily pipeline outputs:
+
+  Stage 6: Daily Coaching Snippets (LLM-generated, athlete-facing)
+  Stage 7: Daily Athlete Signals (deterministic, coach-facing)
+
+For Stage 6, this protocol catches SYSTEMATIC patterns that
+individual snippet-level self-validation cannot detect. A
+single snippet may pass all compliance scans but still be part
+of a quality problem when viewed alongside the week's other
+snippets.
+
+For Stage 7, this protocol monitors the DETERMINISTIC rules
+engine for threshold calibration issues, distribution anomalies,
+and daily-to-weekly divergence patterns. Since Stage 7 output
+is pre-approved categorical labels (not generated language),
+there is no generation-time compliance scan. Instead, QA
+monitoring ensures the rules produce reasonable, useful signals.
+
+Examples of patterns this protocol catches:
+
+Stage 6 patterns:
+- Same behavioral focus 4 of 7 days (compliant but monotonous)
+- Same bridge language structure repeated across the week
+- Borderline clinical language that individually passes the
+  scan but collectively reveals a prompt tendency
+- Competitive level miscalibration visible only across multiple
+  snippets
+- Generic fallback snippets appearing more than expected
+
+Stage 7 patterns:
+- All athletes showing Green for an entire week (thresholds
+  too lenient — signals lose coaching value)
+- A position group oscillating between Tier 1 and Tier 4
+  daily (tier system too sensitive)
+- Systematic divergence between daily Green and weekly Orange
+  (threshold calibration mismatch)
+- High Gray rates across a team (engagement concern — system-
+  level, NOT surfaced to coaches)
+
+This protocol is a system engineering tool for prompt tuning
+(Stage 6) and threshold calibration (Stage 7). It is not part
+of the athlete-facing or coach-facing pipeline. Findings from
+this review inform adjustments to specifications — not to
+output that has already been delivered.
+
+============================================================
+SECTION 2 — SCOPE
+============================================================
+
+Primary scope:
+  Stage 6: Daily Coaching Snippets (LLM-generated)
+  Stage 7: Daily Athlete Signals (deterministic rules engine)
+
+Out of scope: Weekly pipeline output (Stages 2-5). Weekly
+output has its own audit mechanism — the Editorial Audit
+Agent (Stage 5).
+
+KEY DISTINCTION — Stage 6 vs Stage 7 QA:
+
+  Stage 6 (LLM): QA monitors for generation quality issues
+  (repetition, monotony, compliance drift, calibration
+  consistency). Generation-level compliance is handled by the
+  embedded Compliance Scan Protocol before delivery.
+
+  Stage 7 (Deterministic): QA monitors for rules engine
+  calibration issues (threshold sensitivity, distribution
+  reasonableness, tier stability, daily-to-weekly coherence).
+  There is NO generation-level compliance scan — the output
+  is fixed categorical labels. Compliance violations in Stage
+  7 would require a rules specification error, not a model
+  failure.
+
+============================================================
+SECTION 3 — REVIEW CADENCE
+============================================================
+
+FREQUENCY: Weekly, after all daily outputs for the week period
+have been generated and delivered.
+
+TIMING: Run the QA review after the last daily signal of the
+week is computed (Sunday). The review covers the complete week
+of snippets AND signals for each reviewed athlete.
+
+METHOD: The review can be:
+  (a) Automated — pattern detection scripts that scan the
+      week's outputs against the quality dimensions defined
+      in Sections 5 and 5A. Preferred at scale (100+ athletes).
+  (b) Manual — human reviewer evaluates quality dimensions.
+      Required during initial launch and whenever automated
+      detection flags an issue needing human judgment.
+  (c) Hybrid — automated scan flags potential issues, human
+      reviewer evaluates flagged cases. Recommended for
+      steady-state operations.
+
+Stage 7 outputs are structured data (not free text), making
+automated QA particularly effective for Section 5A dimensions.
+
+============================================================
+SECTION 4 — SAMPLE SELECTION
+============================================================
+
+SAMPLE SIZE: Full week of outputs per athlete reviewed.
+  - Snippets: 7 per week (Base) or 6 per week (Premium/
+    institutional Monday skip per Stage 6 rules)
+  - Signals: 7 per week (all athletes, no skip days)
+
+ATHLETE SELECTION:
+
+  LAUNCH PHASE (first 4 weeks of production):
+    Review ALL athletes. Every snippet AND signal from every
+    athlete is reviewed weekly. This phase establishes baseline
+    quality expectations, validates Stage 7 thresholds against
+    real data, and identifies systematic prompt or calibration
+    issues before scale.
+
+  STABILIZATION PHASE (weeks 5-12):
+    Review 50% of athletes per week. Alternate cohorts so
+    every athlete is reviewed at least biweekly. Any athlete
+    with a prior [COMPLIANCE_FLAG] event (Stage 6) is
+    automatically included in every review cycle during this
+    phase. Stage 7 signals for all athletes are still
+    accessible for automated distribution checks even when
+    the athlete is not in the review sample.
+
+  STEADY-STATE (week 13+):
+    Review 20% of athletes per week on rotation. All athletes
+    reviewed at least monthly. Exceptions:
+    - Any athlete with a [COMPLIANCE_FLAG] event in the
+      current week is automatically reviewed
+    - Any athlete transitioning between maturity bands
+      (Day 7→8 or Day 30→31) is reviewed for that week
+    - Any athlete whose competitive level changes is
+      reviewed for that week
+    - Any athlete whose weekly calibration modifier changed
+      (e.g., emotional_intensity shifted to High) is reviewed
+      for that week
+    - Random selection fills the remaining slots
+
+    Stage 7 distribution checks (5A.1, 5A.4) run across ALL
+    athletes regardless of sample selection.
+
+============================================================
+SECTION 5 — QUALITY DIMENSIONS (STAGE 6 — SNIPPETS)
+============================================================
+
+Seven dimensions evaluated for Daily Coaching Snippets. Each
+dimension has a detection method and threshold for flagging.
+
+------------------------------------------------------------
+5.1 CROSS-DAY REPETITION
+------------------------------------------------------------
+
+WHAT: Same behavioral focus recognized in consecutive snippets.
+
+DETECTION: Identify the primary behavioral focus of each
+snippet (WTD, journaling, Bullseye, mindset challenge,
+morning Tune-Up, or overall execution). Flag if the same
+focus appears 3+ consecutive days.
+
+THRESHOLD: 3 consecutive days with the same behavioral focus.
+
+ROOT CAUSE: The generation prompt's behavioral focus
+selection (Section 10 Step 6) may not be varying enough,
+or the previous snippet negative constraint (Section 13.1)
+may not be functioning effectively.
+
+ACTION: Review Section 10 Step 6 and Section 13.1 for
+clarity. Consider adding explicit rotation guidance.
+
+------------------------------------------------------------
+5.2 TONAL MONOTONY
+------------------------------------------------------------
+
+WHAT: Same sentence structure, bridge language, or
+recognition phrasing repeated across multiple snippets
+in the same week.
+
+DETECTION: Compare sentence structures across the week's
+snippets. Flag if:
+  - The same opening construction appears 3+ times (e.g.,
+    "Full execution yesterday" on 3+ Win days)
+  - The same bridge phrase appears 3+ times (e.g., "Carry
+    it forward" or "Build from here")
+  - The same identity connection appears 2+ times
+
+THRESHOLD: 3 instances of the same construction or phrase.
+
+ROOT CAUSE: The model may be falling into template patterns.
+The reference snippets in Section 15 may be anchoring the
+model too strongly to specific phrasings.
+
+ACTION: Review reference snippets for over-anchoring. Add
+explicit variety guidance. Consider expanding the reference
+snippet set to include more diverse constructions.
+
+------------------------------------------------------------
+5.3 COMPLIANCE DRIFT
+------------------------------------------------------------
+
+WHAT: Borderline language that individually passes the
+Compliance Scan Protocol but collectively reveals a prompt
+tendency toward a prohibited category.
+
+DETECTION: Scan the week's snippets for:
+  - Near-clinical language (e.g., "mental reset" passes but
+    "mental" appears in 4 of 7 snippets)
+  - Near-surveillance framing (e.g., "you brought" passes
+    but "I saw" or "what came through" appears repeatedly)
+  - Near-pattern-naming (e.g., "another strong day" passes
+    individually but 3 consecutive uses implies trend naming)
+  - Near-miss-naming (e.g., "fresh start" passes but
+    multiple uses on non-miss days dilutes its meaning for
+    actual miss days)
+
+THRESHOLD: Same borderline construction appears 3+ times
+in a week, OR 2 different borderline constructions from the
+same prohibited category appear in the same week.
+
+ROOT CAUSE: The generation prompt may not be providing
+enough alternative phrasings, or the compliance scan
+prohibited term lists may have gaps.
+
+ACTION: Add the borderline construction to the compliance
+scan watch list. If the construction is genuinely
+problematic, add it to the prohibited term list in Section
+19.3. If it is acceptable individually, add variety
+guidance to prevent clustering.
+
+------------------------------------------------------------
+5.4 COMPETITIVE LEVEL CONSISTENCY
+------------------------------------------------------------
+
+WHAT: Vocabulary and accountability framing appropriate to
+the athlete's stated competitive level across the full week.
+
+DETECTION: Read all snippets for the week. Verify that:
+  - Youth athletes receive concrete, simple language (no
+    abstract performance concepts)
+  - Professional athletes receive precise, brief language
+    (no over-explanation)
+  - Accountability framing matches the level (Youth =
+    encouraging, College = direct, Professional = candid)
+
+THRESHOLD: 2+ snippets in a week with vocabulary or
+accountability clearly mismatched to the stated competitive
+level.
+
+ROOT CAUSE: The competitive level calibration table
+(Section 6) may not be specific enough for the model to
+differentiate levels consistently.
+
+ACTION: Review Section 6 calibration table. Add more
+level-specific examples or tighter constraints for the
+problematic level pair (e.g., if College snippets read as
+High School, strengthen the College directness guidance).
+
+------------------------------------------------------------
+5.5 MATURITY BAND PROGRESSION
+------------------------------------------------------------
+
+WHAT: Tone shifting appropriately as program_day_number
+advances, especially around band transitions (Day 7→8 and
+Day 30→31).
+
+DETECTION: For athletes crossing a band boundary during
+the review week:
+  - Day 7→8 (Early → Building): Verify shift from
+    welcoming/low-expectation to familiarity/reinforcement.
+    "Your routine" language should begin appearing. Specific
+    behavioral recognition should increase.
+  - Day 30→31 (Building → Established): Verify shift to
+    full coaching voice. Directness matches competitive
+    level without softening for newness.
+
+THRESHOLD: No discernible tone shift at a band boundary.
+
+ROOT CAUSE: The maturity band rules (Section 7) may not
+be specific enough about the transition, or the model may
+be anchoring to tone from previous snippets rather than
+adjusting to the new band.
+
+ACTION: Review Section 7 band transition guidance. Consider
+adding explicit transition examples.
+
+------------------------------------------------------------
+5.6 PREMIUM COMPLETENESS
+------------------------------------------------------------
+
+WHAT: Premium enrichment becoming load-bearing in multiple
+snippets across the week.
+
+DETECTION: For each Premium snippet, mentally remove the
+enrichment content (micro-commitment thread, identity
+anchoring from weekly JSON, growth-phase tone shift). Is
+the remaining Base content a complete, standalone coaching
+moment?
+
+THRESHOLD: 2+ snippets in a week where removing enrichment
+leaves an incomplete or incoherent snippet.
+
+ROOT CAUSE: The completeness guardrail (Section 11.4) may
+not be constraining the model sufficiently. The model may
+be over-relying on weekly JSON data for content rather than
+using it as enrichment.
+
+ACTION: Strengthen the completeness guardrail language.
+Add explicit WRONG/CORRECT examples showing load-bearing
+vs. additive enrichment.
+
+------------------------------------------------------------
+5.7 MISSED DAY HANDLING CONSISTENCY
+------------------------------------------------------------
+
+WHAT: All missed/no-data day snippets across the week
+follow forward-focused grounding without naming the gap.
+
+DETECTION: Identify all missed/no-data day snippets in the
+week. Verify each one:
+  - Does not name the miss in any form
+  - Provides forward-focused grounding
+  - Maintains the same format (2-3 sentences) as non-miss
+    days — the athlete should not feel like they got "less
+    coaching" on quiet days
+  - Does not use the exact same missed-day language as
+    another missed day in the same week (variety matters
+    even for generic grounding)
+
+THRESHOLD: Any miss-naming language that escaped the
+Compliance Scan Protocol is an immediate escalation.
+Same missed-day phrasing appearing 2+ times in a week
+is a quality flag.
+
+ROOT CAUSE: If miss-naming escaped the scan, the
+prohibited term list (Section 19.3 Scan C1) has a gap.
+If missed-day phrasing repeats, the variety guidance
+needs strengthening.
+
+ACTION: For scan escapes — add the term to Section 19.3
+C1 immediately. For variety — add missed-day phrasing
+alternatives to the reference snippets (Section 15).
+
+============================================================
+SECTION 5A — QUALITY DIMENSIONS (STAGE 7 — SIGNALS)
+============================================================
+
+Five dimensions evaluated for Daily Athlete Signals. Since
+Stage 7 output is deterministic (not generated), these
+dimensions focus on rules engine calibration and output
+usefulness rather than language quality.
+
+------------------------------------------------------------
+5A.1 TRAFFIC LIGHT DISTRIBUTION
+------------------------------------------------------------
+
+WHAT: The distribution of Green/Yellow/Orange/Gray signals
+across all athletes for the week is reasonable and useful.
+
+DETECTION: Across ALL athletes (not just review sample),
+compute the weekly distribution of traffic light colors.
+
+FLAG CONDITIONS:
+  - >80% Green across all athlete-days → thresholds too
+    lenient (signals lose coaching value — everything looks
+    fine)
+  - >40% Orange across all athlete-days → thresholds too
+    strict (signals create alarm fatigue — too many athletes
+    flagged)
+  - <10% Yellow across all athlete-days → middle band too
+    narrow (signals are binary Green/Orange with no nuance)
+  - >50% Gray across all athlete-days → systemic engagement
+    issue (system-level concern, NOT surfaced to coaches)
+
+THRESHOLD: Any flag condition sustained for 2+ consecutive
+review weeks.
+
+ROOT CAUSE:
+  - Leniency: Point scoring weights may over-reward common
+    behaviors. Threshold boundaries may be too low.
+  - Strictness: Point scoring may over-penalize partial
+    completion. Threshold boundaries may be too high.
+  - Narrow Yellow: Green-to-Yellow and Yellow-to-Orange
+    boundaries may be too close together.
+  - High Gray: Not a rules engine issue — may indicate
+    athlete engagement patterns or app delivery timing issues.
+
+ACTION:
+  - For distribution skew: Adjust threshold boundaries in
+    VF_Daily_Coach_Signal_Determination_Rules (versioned
+    update). Review point scoring weights.
+  - For high Gray: Investigate app delivery pipeline. Report
+    to product team (NOT to coaching staff).
+
+------------------------------------------------------------
+5A.2 CALIBRATION MODIFIER EFFECTIVENESS
+------------------------------------------------------------
+
+WHAT: The weekly calibration modifiers (emotional_intensity,
+growth_phase) are producing appropriate threshold shifts.
+
+DETECTION: Compare signal distributions for calibrated vs.
+uncalibrated athletes:
+  - High EI athletes (Days 1-3): Are they receiving
+    appropriately forgiving thresholds? A High EI athlete
+    showing Orange on a "Building" day with "Mixed" focus
+    suggests the modifier is not shifting enough.
+  - Consistent/Leadership athletes: Are they receiving
+    appropriately strict thresholds? A Consistent athlete
+    showing Green on a day with "Building" outcome and
+    "Drifting" focus suggests the modifier is not strict
+    enough.
+  - Emerging/Regressing athletes: Are they receiving
+    appropriately forgiving thresholds?
+
+FLAG CONDITIONS:
+  - High EI athlete shows Orange in first 3 days on a day
+    that would be Yellow under standard thresholds (modifier
+    arithmetic error or insufficient shift)
+  - Consistent athlete shows Green on a day that would be
+    Yellow under standard thresholds AND has no positive
+    hidden signals to justify it (modifier not strict enough)
+  - Calibration modifier produces a 2-color shift (e.g.,
+    Orange → Green, not just Orange → Yellow) — should never
+    happen with +/- 1 shift, but verify
+
+THRESHOLD: Any flag condition in 2+ athletes in the same
+review week.
+
+ROOT CAUSE: Calibration threshold shift values may need
+adjustment. The +1/-1 shift model may be insufficient for
+extreme cases.
+
+ACTION: Review calibration modifier rules in Determination
+Rules Section 5.4. If threshold shifts need adjustment,
+create versioned update.
+
+------------------------------------------------------------
+5A.3 DAILY-TO-WEEKLY DIVERGENCE
+------------------------------------------------------------
+
+WHAT: Patterns where daily signals and weekly reports create
+potentially confusing signals for coaches.
+
+DETECTION: After the weekly pipeline runs, compare:
+  - An athlete's daily traffic lights for the week (7 signals)
+    against their weekly Composite Readiness from Stage 4
+  - Flag systematic divergence patterns:
+
+    Pattern A — Daily consistently Green, weekly Orange:
+      All 7 daily signals are Green or Yellow (no Orange),
+      but weekly Composite Readiness = "Attention (Orange)".
+      The coach sees strong daily signals all week, then gets
+      an Orange weekly report. This could erode confidence in
+      either system.
+
+    Pattern B — Daily consistently Orange, weekly Green:
+      3+ daily signals are Orange in the week, but weekly
+      Composite Readiness = "Positive (Green)". The coach
+      sees concerning daily signals, then gets a positive
+      weekly report.
+
+THRESHOLD: Pattern A or B occurs for 2+ athletes in the
+same review week, OR for the same athlete in 2 consecutive
+weeks.
+
+ROOT CAUSE: Daily and weekly signals use different data
+sources and different calculation methods. Some divergence
+is expected (Section E.4 of VF_Daily_Coach_Signal_Design).
+Systematic divergence suggests threshold misalignment
+between the daily point system and the weekly Composite
+Readiness determination.
+
+ACTION: Analyze the divergent cases to determine which
+system is producing the more accurate coaching signal. If
+daily thresholds need adjustment, update Determination
+Rules. If the divergence is legitimate (different data,
+different conclusions), document the pattern and consider
+adding coach guidance about how daily and weekly signals
+relate.
+
+NOTE: This dimension is monitoring-only. Some divergence is
+by design — daily and weekly signals are different zoom
+levels (Section E of VF_Daily_Coach_Signal_Design). This
+dimension flags SYSTEMATIC divergence that may indicate
+calibration problems, not individual-case divergence.
+
+------------------------------------------------------------
+5A.4 GROUP TIER STABILITY
+------------------------------------------------------------
+
+WHAT: Position group and team tier labels are stable enough
+to be useful (not oscillating wildly day to day).
+
+DETECTION: Track each position group's tier assignment
+across the 7 days of the week. Flag if:
+  - A group changes tier 4+ times in a single week
+    (daily oscillation)
+  - A group swings from Tier 1 to Tier 4 (or vice versa)
+    within a 2-day span (extreme volatility)
+
+THRESHOLD:
+  - 4+ tier changes in a week for any single group
+  - Tier 1 ↔ Tier 4 swing within 2 consecutive days
+
+ROOT CAUSE:
+  - Small group size: Groups near the minimum (3 athletes)
+    are inherently volatile — one athlete changing color
+    can shift the entire tier.
+  - Threshold sensitivity: The percentage boundaries between
+    tiers may be too close together, causing small changes
+    in athlete distribution to flip the tier.
+
+ACTION:
+  - For small groups: Consider adding a "sticky" rule — a
+    group must meet the new tier's criteria for 2 consecutive
+    days before the displayed tier changes (hysteresis).
+    Document the trade-off: stability vs. responsiveness.
+  - For threshold sensitivity: Review tier percentage
+    boundaries in Determination Rules Section 6.4.
+
+------------------------------------------------------------
+5A.5 GRAY SIGNAL FREQUENCY
+------------------------------------------------------------
+
+WHAT: The frequency of Gray signals (no evening review data)
+across the athlete population.
+
+DETECTION: Track per-athlete and per-team Gray signal rates.
+Flag if:
+  - Any individual athlete has 4+ Gray days in a single week
+  - A team has >30% Gray athlete-days in a single week
+  - A position group consistently shows "Insufficient Data"
+    due to small group size + Gray signals
+
+THRESHOLD: Any flag condition sustained for 2+ consecutive
+review weeks.
+
+ROOT CAUSE: Gray signals are the absence of data. High rates
+may indicate:
+  - App delivery timing issues (Morning Tune-Up/Evening
+    Review not reaching athletes)
+  - Athlete engagement patterns (normal for certain periods —
+    e.g., exam week, break)
+  - Position group scheduling conflicts (e.g., game day
+    patterns)
+
+ACTION: Report to product team for investigation. This is
+a SYSTEM-LEVEL insight about app engagement patterns. It
+is NEVER surfaced to coaching staff and NEVER framed as an
+athlete compliance or participation issue.
+
+COMPLIANCE NOTE: High Gray rates are explicitly NOT a
+coaching concern. They are an operational metric for the
+product team. The coach dashboard shows Gray as "no data
+available" and nothing more. The QA protocol tracks this
+to ensure the app is delivering value (signals are being
+generated), not to monitor athlete behavior.
+
+============================================================
+SECTION 6 — COMPLIANCE FLAG ESCALATION (STAGE 6 ONLY)
+============================================================
+
+When a [COMPLIANCE_FLAG] event occurs (the Compliance Scan
+Protocol exhausted all regeneration attempts and delivered
+a generic fallback snippet):
+
+IMMEDIATE (within 24 hours of the flag):
+1. Retrieve the flagged generation request (input data)
+2. Identify which compliance scan(s) failed
+3. Identify why 2 regeneration attempts could not resolve
+   the violation
+4. Determine if the failure is:
+   (a) Input-driven — unusual athlete data that creates
+       an edge case the prompt does not handle
+   (b) Prompt-driven — a gap in the generation instructions
+       that the model cannot resolve within the current rules
+   (c) Model-driven — the model lacks the capability to
+       reliably self-validate for this specific violation type
+
+FOR INPUT-DRIVEN FAILURES:
+  - Document the edge case
+  - Add handling guidance to the relevant Section of the
+    Project Instructions
+  - Verify the fix by re-running the same input through
+    the updated prompt
+
+FOR PROMPT-DRIVEN FAILURES:
+  - Identify the instruction gap
+  - Update the relevant Section of the Project Instructions
+  - If the gap is in the compliance scan itself, update the
+    prohibited term list in Section 19.3
+  - Verify the fix by re-running the same input through
+    the updated prompt
+
+FOR MODEL-DRIVEN FAILURES:
+  - If this is the first occurrence: document and monitor
+  - If this is the 3rd occurrence of the same violation type
+    passing self-validation: evaluate model escalation
+    (Sonnet → Opus) per Section 19.8 of the Project
+    Instructions
+  - If model escalation is triggered: update the model
+    recommendation in CLAUDE.md and the Project Instructions
+
+NOTE: Stage 7 does not have a Compliance Flag mechanism.
+Stage 7 output is deterministic categorical labels — if
+a compliance issue exists, it is a specification error in
+the Determination Rules, not a generation failure. Stage 7
+specification errors are handled through the versioned
+update process (Determination Rules v1.x).
+
+============================================================
+SECTION 7 — ESCALATION CRITERIA SUMMARY
+============================================================
+
+The following conditions trigger specific escalation actions:
+
+IMMEDIATE ESCALATION (investigate within 24 hours):
+  - Any [COMPLIANCE_FLAG] event (Stage 6) → Section 6 process
+  - Any compliance violation that escaped the scan and
+    reached the athlete (Stage 6, discovered in QA review) →
+    investigate scan gap, update prohibited term list,
+    document in review log
+  - Any Stage 7 output containing data that should be
+    prohibited (e.g., raw counts appearing in API response) →
+    investigate backend implementation, fix immediately
+
+PROMPT REVIEW (address before next review cycle):
+  - Same Stage 6 quality dimension flagged across 3+ athletes
+    in a single review cycle → systemic prompt issue
+  - [COMPLIANCE_FLAG] frequency exceeding 0.1% of snippets
+    in a review cycle → generation prompt needs adjustment
+  - Same borderline construction appearing in 5+ athletes'
+    snippets → add to compliance scan watch list or
+    prohibited term list
+
+THRESHOLD REVIEW (address before next review cycle):
+  - Any Stage 7 distribution flag (5A.1) sustained 2+ weeks
+    → threshold recalibration needed
+  - Daily-to-weekly divergence (5A.3) flagged for 2+ athletes
+    → investigate threshold alignment
+  - Group tier instability (5A.4) flagged → evaluate sticky
+    tier rules or threshold adjustment
+
+MODEL ESCALATION EVALUATION:
+  - 3+ compliance violations of the same type passing self-
+    validation within a single review cycle (Stage 6) →
+    evaluate Sonnet → Opus per Project Instructions
+    Section 19.8
+  - [COMPLIANCE_FLAG] frequency exceeding 1% of snippets →
+    evaluate model escalation regardless of violation type
+
+============================================================
+SECTION 8 — REVIEW LOG FORMAT
+============================================================
+
+Every QA review produces a log entry in this format:
+
+  QA REVIEW LOG
+  Week Period: [YYYY-MM-DD to YYYY-MM-DD]
+  Review Date: [YYYY-MM-DD]
+  Review Phase: [Launch / Stabilization / Steady-State]
+  Athletes Reviewed: [count] of [total]
+  Snippets Reviewed: [count]
+  Signals Reviewed: [count]
+  Compliance Flags This Week: [count] (Stage 6 only)
+
+  === STAGE 6 — SNIPPET QUALITY ===
+
+  5.1 Cross-Day Repetition:
+    [PASS / FLAG — detail]
+
+  5.2 Tonal Monotony:
+    [PASS / FLAG — detail]
+
+  5.3 Compliance Drift:
+    [PASS / FLAG — detail]
+
+  5.4 Competitive Level Consistency:
+    [PASS / FLAG — detail]
+
+  5.5 Maturity Band Progression:
+    [PASS / FLAG — detail or N/A if no transitions]
+
+  5.6 Premium Completeness:
+    [PASS / FLAG — detail or N/A if no Premium athletes]
+
+  5.7 Missed Day Handling:
+    [PASS / FLAG — detail]
+
+  === STAGE 7 — SIGNAL QUALITY ===
+
+  5A.1 Traffic Light Distribution:
+    Green: [X]% | Yellow: [X]% | Orange: [X]% | Gray: [X]%
+    [PASS / FLAG — detail]
+
+  5A.2 Calibration Modifier Effectiveness:
+    [PASS / FLAG — detail or N/A if no calibrated athletes]
+
+  5A.3 Daily-to-Weekly Divergence:
+    [PASS / FLAG — detail or N/A if weekly pipeline not yet run]
+
+  5A.4 Group Tier Stability:
+    [PASS / FLAG — detail or N/A if <3 position groups]
+
+  5A.5 Gray Signal Frequency:
+    Athlete Gray rate: [X]% | Team Gray rate: [X]%
+    [PASS / FLAG — detail]
+
+  === COMPLIANCE FLAG EVENTS (STAGE 6) ===
+  [List each flag event with athlete, date, scan that failed,
+   root cause classification (input/prompt/model), and
+   resolution status]
+
+  === ACTIONS TAKEN ===
+  [None / Prompt adjustment (detail) / Instructions update
+   (section, change) / Threshold adjustment (detail) /
+   Determination Rules update (version, change) /
+   Model escalation evaluation / Escalated to team lead]
+
+  === NOTES ===
+  [Any additional observations, positive quality signals worth
+   preserving, or emerging patterns to watch]
+
+============================================================
+SECTION 9 — CROSS-STAGE QUALITY INTERACTIONS
+============================================================
+
+Stage 6 and Stage 7 share the same data source (Daily
+Mini-JSON) and the same athlete population. The QA review
+should watch for cross-stage quality interactions:
+
+9.1 SNIPPET-SIGNAL COHERENCE:
+
+  When a Stage 6 snippet describes a day positively ("Full
+  execution yesterday. That kind of consistency builds") but
+  the Stage 7 signal is Orange, the coach receives mixed
+  messages. This is not necessarily wrong — the snippet
+  describes a specific behavioral moment while the signal
+  synthesizes the full day — but systematic incoherence
+  erodes trust.
+
+  DETECTION: For reviewed athletes, compare the snippet tone
+  (positive/neutral/grounding) with the traffic light color
+  for the same day. Flag if:
+    - Positive snippet tone + Orange signal: 3+ occurrences
+      across reviewed athletes in the same week
+    - Grounding snippet tone + Green signal: 3+ occurrences
+
+  ROOT CAUSE: The snippet uses different data (personalization
+  from Step 6a focuses on one behavioral detail) than the
+  signal (which synthesizes all 5 inputs). This is expected
+  for occasional cases. Systematic patterns suggest either
+  the snippet is under-representing the day, or the signal
+  thresholds are miscalibrated.
+
+  ACTION: Investigate case by case. Adjust snippet generation
+  guidance or signal thresholds depending on which output is
+  producing the more accurate read of the day.
+
+9.2 GRAY DAY SNIPPET ALIGNMENT:
+
+  When a Stage 7 signal is Gray (no evening review data), the
+  Stage 6 snippet should be using "no data" pathway (missed/
+  no-data day handling per Project Instructions Section 5.3).
+
+  DETECTION: For Gray signal days, verify the corresponding
+  snippet:
+    - Uses forward-focused grounding language
+    - Does not reference specific daily data (which should
+      not exist)
+    - Does not name the absence of data
+
+  This should always be true by construction (both Stage 6
+  and Stage 7 read the same Mini-JSON), but verify during
+  Launch and Stabilization phases.
+
+============================================================
+SECTION 10 — DOCUMENT MAINTENANCE
+============================================================
+
+This document is a living operational specification. It is
+updated when:
+  - New quality dimensions are identified through production
+    monitoring (either stage)
+  - Escalation thresholds are adjusted based on production
+    data
+  - Sample selection percentages change based on athlete
+    volume
+  - VF_Daily_Coach_Signal_Determination_Rules is versioned
+    (corresponding QA thresholds may need adjustment)
+  - Stage 6 Compliance Scan Protocol (Project Instructions
+    Section 19) is updated, requiring corresponding QA
+    monitoring updates
+
+Version history:
+  v1.0 — Initial protocol, Stage 6 only (2026-03-15)
+  v1.1 — Added Stage 7 quality dimensions (Section 5A),
+         cross-stage quality interactions (Section 9),
+         updated scope, sample selection, review log format,
+         and escalation criteria (2026-03-15)

@@ -1,0 +1,819 @@
+VIRTUSFOCUS — DAILY COACH SIGNAL DESIGN
+(Task 12 + Task 13 Deliverable — Idea 3: Daily Coach Insights)
+============================================================
+
+PURPOSE
+============================================================
+
+This document defines the Daily Athlete Signal — a structured,
+deterministic, coach-facing daily performance indicator produced
+for every athlete on the institutional platform.
+
+The Daily Athlete Signal is Stage 7 of the VirtusFocus AI
+Coaching Pipeline. Unlike Stages 2-6 (which use LLM agents),
+Stage 7 is a deterministic rules engine computed by the app
+backend from the Daily Mini-JSON. No LLM involvement.
+
+The Daily Athlete Signal answers one question for the coach:
+
+  "If I have 30 seconds with this athlete today, what's the
+   most useful thing I could reinforce or ask about?"
+
+============================================================
+ARCHITECTURE
+============================================================
+
+STAGE 7 POSITION IN THE PIPELINE:
+
+  Stage 1: Athlete Snapshot Generator → baseline profile
+  Stage 2: Interpretation Engine → weekly interpretation JSON
+  Stage 3: Coaching Output Engine → Coaching Message + Deep Dive
+  Stage 4: Coach Insights Engine → weekly institutional dashboards
+  Stage 5: Editorial Audit Agent → quality gate
+  Stage 6: Daily Coaching Engine → Daily Coaching Snippet (LLM)
+  >> Stage 7: Daily Coach Insights Engine → YOU ARE HERE <<
+
+IMPLEMENTATION: Deterministic rules engine (app backend).
+No LLM. No AI cost. No generation latency.
+
+INPUT: Daily Mini-JSON (same data contract as Stage 6).
+See VF_Daily_Mini_JSON_Specification.txt.
+
+CALIBRATION INPUT: Last week's Interpretation JSON provides
+stable weekly context (emotional_intensity, growth_phase) as
+invisible calibration parameters for traffic light sensitivity.
+This is NOT a data dependency — the daily signal generates
+without it, but produces more nuanced signals when available.
+
+OUTPUT: Daily Athlete Signal (structured categorical data for
+app dashboard rendering).
+
+CADENCE: 7 days per week (Monday through Sunday) for ALL
+athletes on the institutional platform. No day is skipped.
+
+INSTITUTIONAL MODEL: All athletes on the institutional side
+are full-featured. There are no tiers (Base/Premium) in the
+institutional setting. Coach-facing metrics and insights are
+not a D2C feature. Every athlete generates the same daily
+signal format with the same data depth.
+
+============================================================
+A. DAILY ATHLETE SIGNAL FORMAT
+============================================================
+
+The Daily Athlete Signal contains 5 elements:
+
+  1. Traffic Light Signal (Green / Yellow / Orange)
+  2. Day Outcome (Aligned / Building / Reset Day)
+  3. Focus Alignment (Centered / Mixed / Drifting)
+  4. Follow-Through (Demonstrated / Gap)
+  5. Weekly Trajectory (Building Week / Steady Week / Cooling Week)
+
+Plus a no-data state when no signal is available.
+
+DISPLAY FORMAT (app dashboard):
+
+  [ATHLETE NAME]
+  [Date] — Day [X] of 7
+
+  [TRAFFIC LIGHT: GREEN / YELLOW / ORANGE / GRAY]
+
+  Day Outcome:       [Aligned / Building / Reset Day / —]
+  Focus Alignment:   [Centered / Mixed / Drifting / —]
+  Follow-Through:    [Demonstrated / Gap / —]
+  Weekly Trajectory:  [Building Week / Steady Week / Cooling Week / —]
+
+  Disclaimer: These indicators are informational only and may
+  not be used as a basis for participation, selection, or
+  disciplinary decisions.
+
+The traffic light is the primary scannable element. The 4
+signals below it explain what drove the color. A coach
+scanning 50 athletes reads the traffic lights first, then
+checks contributing signals only for Yellow/Orange athletes.
+
+============================================================
+B. CONTRIBUTING SIGNAL DEFINITIONS
+============================================================
+
+------------------------------------------------------------
+B.1 DAY OUTCOME
+------------------------------------------------------------
+
+SOURCE: evening_review.wtd.day_category (Daily Mini-JSON)
+
+DETERMINATION:
+
+  Mini-JSON Value          Coach-Facing Label
+  -----------------------  ------------------
+  "Win the Day" (4-5)      Aligned
+  "Partial Win" (2-3)      Building
+  "Missed the Mark" (0-1)  Reset Day
+  WTD not completed        —  (no data)
+  Evening Review missed    —  (no data)
+
+WHAT IT TELLS THE COACH:
+  Aligned — The athlete's self-assessment shows intentional
+    execution. Their answers indicate they acted with
+    intention, responded to adversity well, pursued progress,
+    and practiced gratitude. Reinforce what's working.
+  Building — Mixed self-assessment. The athlete had some
+    strong moments and some that slipped. Normal day — the
+    athlete is working through it.
+  Reset Day — Disconnected self-assessment. The athlete's
+    answers indicate a reactive or disengaged day. A brief
+    grounding conversation could help.
+
+COMPLIANCE NOTE: The coach sees "Aligned," "Building," or
+"Reset Day" — never the WTD score (0-5), never "Win the Day"
+or "Missed the Mark" (internal pipeline categories), never
+the individual Q1-Q5 answers. The label describes coaching
+readiness, not athlete performance data.
+
+------------------------------------------------------------
+B.2 FOCUS ALIGNMENT
+------------------------------------------------------------
+
+SOURCE: evening_review.bullseye (Daily Mini-JSON)
+  center_count, influence_count, outer_count
+
+DETERMINATION:
+
+  Condition                             Coach-Facing Label
+  ------------------------------------  ------------------
+  center_count > outer_count            Centered
+  center_count == outer_count           Mixed
+    OR influence_count >= both others
+  outer_count > center_count            Drifting
+  Bullseye not completed                —  (no data)
+
+WHAT IT TELLS THE COACH:
+  Centered — The athlete is focused on what they control
+    (effort, preparation, response, routine). Controllable
+    alignment is strong.
+  Mixed — Focus is distributed across all rings. Neither
+    strong controllable focus nor outer-ring fixation.
+  Drifting — The athlete placed more items in the Cannot
+    Control ring than the Control ring. Focus is shifting
+    toward factors outside their control (lineup decisions,
+    scores, other people's actions).
+
+COMPLIANCE NOTE: The coach sees "Centered," "Mixed," or
+"Drifting" — never ring item counts, never the actual items
+the athlete wrote in each ring. The label describes focus
+quality, not Bullseye completion data.
+
+------------------------------------------------------------
+B.3 FOLLOW-THROUGH
+------------------------------------------------------------
+
+SOURCE: evening_review.mindset_challenge_completed +
+  morning_tune_up.completed (Daily Mini-JSON)
+
+DETERMINATION:
+
+  Condition                              Coach-Facing Label
+  -------------------------------------  ------------------
+  Morning Tune-Up completed AND          Demonstrated
+    mindset_challenge_completed = true
+  Morning Tune-Up completed AND          Gap
+    mindset_challenge_completed = false
+  Morning Tune-Up NOT completed          —  (no data)
+    (no challenge was accepted)
+  Evening Review missed                  —  (no data)
+
+WHAT IT TELLS THE COACH:
+  Demonstrated — The athlete accepted a morning challenge and
+    followed through on it by end of day. Intention matched
+    action.
+  Gap — The athlete accepted a morning challenge but did not
+    complete it. There is an intention-to-action gap. This is
+    a specific coaching opportunity — the desire is there, the
+    execution isn't.
+
+COMPLIANCE NOTE: The coach sees "Demonstrated" or "Gap" —
+never the specific challenge text, never whether the Tune-Up
+was completed. When the athlete didn't do the Tune-Up at all,
+the signal is "—" (no data), not "Failed" or "Not Attempted."
+The absence of a challenge is not a negative signal — it's
+simply no data.
+
+------------------------------------------------------------
+B.4 WEEKLY TRAJECTORY
+------------------------------------------------------------
+
+SOURCE: running_week_summary (Daily Mini-JSON)
+  win_days, partial_win_days, missed_days, days_completed
+
+DETERMINATION:
+
+  This signal describes the DIRECTION of the week so far. It
+  does NOT reveal counts, distributions, or day-level data.
+
+  Condition                              Coach-Facing Label
+  -------------------------------------  ------------------
+  win_days > missed_days AND             Building Week
+    win_days >= 50% of days_completed
+  win_days approximately equal to        Steady Week
+    (partial_win_days + missed_days)
+    OR no clear directional trend
+  missed_days > win_days OR              Cooling Week
+    missed_days >= 50% of days_completed
+  days_into_week == 1                    —  (too early)
+
+  DETAILED RULES:
+
+  Days 1-2: Weekly Trajectory = "—" (too early for trajectory).
+  Insufficient data to determine direction.
+
+  Day 3+:
+    Building Week:
+      win_days / days_completed >= 0.50 AND
+      missed_days / days_completed <= 0.25
+    Cooling Week:
+      missed_days / days_completed >= 0.50 OR
+      (missed_days > win_days AND partial_win_days <= 1)
+    Steady Week:
+      Everything else (mixed signals, no clear direction)
+
+WHAT IT TELLS THE COACH:
+  Building Week — The week is trending positive. The athlete
+    is building momentum through consistent execution.
+  Steady Week — Normal week. Mixed signals with no strong
+    directional trend. Standard coaching rhythm applies.
+  Cooling Week — The week is trending downward. Multiple days
+    of disconnected execution. The athlete may benefit from a
+    coaching check-in about what's happening.
+
+COMPLIANCE NOTE: The coach sees "Building Week," "Steady
+Week," or "Cooling Week" — never the win/partial/missed
+counts, never the daily breakdown. "Cooling Week" does not
+imply the athlete is failing to participate — it means the
+self-assessment trend is declining. The coach cannot
+reconstruct which specific days were Wins or Misses.
+
+============================================================
+C. TRAFFIC LIGHT DETERMINATION
+============================================================
+
+The traffic light synthesizes the 3 contributing signals (Day
+Outcome, Focus Alignment, Follow-Through) plus hidden internal
+inputs into a single scannable color.
+
+------------------------------------------------------------
+C.1 INTERNAL INPUTS (NOT SURFACED TO COACH)
+------------------------------------------------------------
+
+These inputs inform the traffic light but are NOT displayed
+as labeled signals:
+
+1. REFLECTION BREADTH
+   Source: evening_review.journaling.domains_completed
+   Internal value:
+     3 domains completed → Broad (positive input)
+     1-2 domains completed → Narrow (neutral input)
+     0 domains / not completed → None (negative input)
+
+2. MORNING ENGAGEMENT
+   Source: morning_tune_up.completed
+   Internal value:
+     Completed → Yes (positive input)
+     Not completed → No (neutral input — NOT negative)
+
+3. WEEKLY CALIBRATION (from last week's Interpretation JSON)
+   Source: emotional_intensity, growth_phase
+   See Section C.3 for calibration rules.
+
+------------------------------------------------------------
+C.2 BASE TRAFFIC LIGHT DETERMINATION
+------------------------------------------------------------
+
+The traffic light uses a point system computed internally.
+Points are never displayed to the coach.
+
+SIGNAL SCORING:
+
+  Day Outcome:
+    Aligned     → +2
+    Building    → +1
+    Reset Day   → -1
+    No data     →  0
+
+  Focus Alignment:
+    Centered    → +1
+    Mixed       →  0
+    Drifting    → -1
+    No data     →  0
+
+  Follow-Through:
+    Demonstrated → +1
+    Gap          → -1
+    No data      →  0
+
+  Reflection Breadth (hidden):
+    Broad       → +1
+    Narrow      →  0
+    None        → -1
+
+  Morning Engagement (hidden):
+    Yes         → +1
+    No          →  0
+
+MAXIMUM POSSIBLE: +6 (Aligned + Centered + Demonstrated +
+  Broad + Morning = all positive)
+MINIMUM POSSIBLE: -4 (Reset Day + Drifting + Gap + None +
+  No Morning = all negative)
+
+TRAFFIC LIGHT THRESHOLDS:
+
+  Score        Color     Label
+  ----------   -------   -----
+  +4 to +6     GREEN     Positive signals
+  +1 to +3     YELLOW    Mixed signals
+  -4 to  0     ORANGE    Attention signals
+
+GRAY STATE:
+
+  If evening_review.status = "missed" (no Evening Review data):
+    Traffic Light = GRAY
+    All contributing signals = "—"
+    Weekly Trajectory still displays if Day 3+
+
+  Gray means "no performance data available for this date."
+  It is NOT a negative signal. It is NOT notification of
+  missed activity. It is absence of data.
+
+------------------------------------------------------------
+C.3 WEEKLY CALIBRATION MODIFIER
+------------------------------------------------------------
+
+When the last week's Interpretation JSON is available, two
+fields provide invisible calibration:
+
+EMOTIONAL INTENSITY CALIBRATION:
+
+  If emotional_intensity = "High":
+    Shift thresholds +1 toward GREEN (more forgiving):
+      GREEN: +3 to +6
+      YELLOW: 0 to +2
+      ORANGE: -4 to -1
+
+    Rationale: An athlete coming off a High emotional
+    intensity week is in a sensitive period. Minor mixed
+    signals should not trigger Orange — the coach should not
+    over-respond. A "Building" day with mixed focus is normal
+    recovery behavior, not an attention signal.
+
+    Duration: Apply for the first 3 days of the new week
+    (matches Stage 6's EI warmth modifier duration). After
+    Day 3, revert to standard thresholds.
+
+GROWTH PHASE CALIBRATION:
+
+  If growth_phase = "Emerging" OR growth_phase_movement =
+  "Regressing":
+    Shift thresholds +1 toward GREEN (more forgiving):
+      GREEN: +3 to +6
+      YELLOW: 0 to +2
+      ORANGE: -4 to -1
+
+    Rationale: An athlete in the Emerging phase or actively
+    regressing is building (or rebuilding) habits. A "Building"
+    day is expected and normal. The traffic light should not
+    show Orange for what is actually on-track development
+    behavior.
+
+  If growth_phase = "Consistent" OR growth_phase =
+  "Leadership":
+    Shift thresholds -1 toward ORANGE (higher standard):
+      GREEN: +5 to +6
+      YELLOW: +2 to +4
+      ORANGE: -4 to +1
+
+    Rationale: An established athlete with proven consistency
+    should show Green on strong days and Yellow on mixed days
+    rather than defaulting to Green. The coach should be
+    aware when a high-performing athlete has an off day.
+
+MODIFIER STACKING:
+
+  Emotional intensity and growth phase modifiers DO NOT stack.
+  If both apply, emotional intensity takes priority (the
+  athlete's recent emotional state is a more immediate
+  calibration factor than their long-term growth phase).
+
+  If neither applies, standard thresholds are used.
+
+WHEN WEEKLY JSON IS UNAVAILABLE:
+
+  If no Interpretation JSON exists (first week of program,
+  or data not yet processed):
+    Use standard thresholds. No calibration applied.
+
+============================================================
+D. TEAM / POSITION GROUP AGGREGATION
+============================================================
+
+Individual Daily Athlete Signals aggregate into team and
+position group tiers. The aggregation HIDES the individual
+signal distribution behind a single tier label.
+
+------------------------------------------------------------
+D.1 FOUR-TIER SYSTEM
+------------------------------------------------------------
+
+  Tier    Label               Rule
+  ------  ------------------  ---------------------------------
+  Tier 1  Strong Alignment    >=75% Green AND 0% Orange
+  Tier 2  Positive Trend      >=50% Green AND <=15% Orange
+  Tier 3  Mixed Signals       25-49% Green OR 15-30% Orange
+  Tier 4  Needs Attention     <25% Green OR >30% Orange
+
+EVALUATION ORDER: Check Tier 1 first. If met, assign Tier 1.
+If not, check Tier 2. Continue through Tier 4. The first tier
+whose conditions are met is assigned.
+
+GRAY SIGNAL HANDLING:
+  Gray signals (no data) are EXCLUDED from the percentage
+  calculation. Only athletes with Green, Yellow, or Orange
+  signals count toward the tier determination.
+
+  Example: 12-person position group. 8 have data (5 Green,
+  2 Yellow, 1 Orange), 4 have Gray. Calculation uses 8
+  athletes: 62.5% Green, 12.5% Orange → Tier 2.
+
+MINIMUM GROUP SIZE:
+  Minimum 3 athletes with non-Gray signals required to
+  display a tier. If fewer than 3 athletes have data, display
+  "Insufficient Data" instead of a tier.
+
+  This prevents identification. In a 4-person group with 1
+  Orange, the coach could identify who — minimum 3 prevents
+  this.
+
+------------------------------------------------------------
+D.2 COACH DASHBOARD DISPLAY
+------------------------------------------------------------
+
+POSITION GROUP VIEW:
+
+  POSITION GROUP SIGNALS — [Date]
+
+  Offensive Line ........ Tier 2 — Positive Trend
+  Wide Receivers ........ Tier 1 — Strong Alignment
+  Defensive Backs ....... Tier 3 — Mixed Signals
+  Linebackers ........... Tier 1 — Strong Alignment
+  Quarterbacks .......... Insufficient Data
+
+TEAM-LEVEL VIEW:
+
+  The team-level tier uses the same 4-tier system applied to
+  ALL athletes with data (not aggregated from position group
+  tiers).
+
+  TEAM SIGNAL — [Date]
+
+  [Team Name] ........... Tier 2 — Positive Trend
+
+  Minimum 5 athletes with non-Gray signals required for
+  team-level tier display. This matches the minimum athlete
+  count for the weekly Team Snapshot (Stage 4).
+
+------------------------------------------------------------
+D.3 COMPLIANCE RULES FOR AGGREGATION
+------------------------------------------------------------
+
+- No individual athlete names appear in team or position views
+- No color distribution is shown (no "8 Green, 3 Yellow, 1
+  Orange")
+- No percentages are shown
+- The coach cannot reverse-engineer individual signals from
+  the tier label
+- "Needs Attention" does NOT identify which athletes need
+  attention — the coach must check individual signals
+- Gray signals are not counted — the absence of data does not
+  penalize the group
+- Tier labels are informational indicators, not evaluative
+  judgments
+
+============================================================
+E. DAILY-TO-WEEKLY RELATIONSHIP (TASK 13)
+============================================================
+
+------------------------------------------------------------
+E.1 RELATIONSHIP MODEL: COMPLEMENTARY
+------------------------------------------------------------
+
+The Daily Athlete Signal (Stage 7) and the Weekly Coach
+Insights report (Stage 4) serve different purposes with NO
+formal data relationship.
+
+  DAILY SIGNAL: "What happened yesterday? Where is the week
+  trending? Does this athlete need coaching time today?"
+
+  WEEKLY REPORT: "What does the full week mean? How does it
+  connect to the last 4 weeks? What's the developmental
+  trajectory? What should the coaching emphasis be?"
+
+They are different zoom levels on the same athlete. Daily is
+a point. Weekly is a pattern. Neither invalidates or replaces
+the other.
+
+DATA INDEPENDENCE:
+- Stage 7 reads the Daily Mini-JSON only
+- Stage 4 reads the weekly Interpretation JSON only
+- No data flows from Stage 7 to Stage 4
+- No data flows from Stage 4 to Stage 7
+- The weekly JSON provides CALIBRATION context (Section C.3)
+  but is never consumed as content
+
+------------------------------------------------------------
+E.2 MONDAY GENERATION
+------------------------------------------------------------
+
+Monday is not skipped. The daily signal is generated 7 days
+per week for all athletes.
+
+On Monday, the coach sees:
+  1. Weekly Coach Insights report (Stage 4) — full week
+     synthesis from the prior week
+  2. Daily Athlete Signal (Stage 7) — Sunday's daily signal
+  3. Daily Coaching Snippet (Stage 6) — what the athlete
+     received this morning (if Premium) or both snippet +
+     Coaching Message (if institutional Monday delivery)
+
+Each serves a distinct purpose. No duplication. No gaps.
+
+------------------------------------------------------------
+E.3 NO WEEKLY CONTENT REFERENCES
+------------------------------------------------------------
+
+The Daily Athlete Signal NEVER references, reproduces, or
+depends on weekly report content:
+
+- Never says "this week's KPS is..."
+- Never surfaces Composite Readiness from Stage 4
+- Never references micro_commitment, narrative_arc, or
+  coach_insights subfields
+- Never reproduces weekly section content in daily format
+
+The daily signal is derived from the Daily Mini-JSON and
+deterministic rules. The coach sees both outputs and draws
+their own connections.
+
+------------------------------------------------------------
+E.4 CONSISTENCY AND DIVERGENCE
+------------------------------------------------------------
+
+Daily signals and weekly reports may diverge. This is expected
+and not a contradiction.
+
+DAILY GREEN, WEEKLY ORANGE:
+  An athlete may show Green daily signals all week but receive
+  an Orange weekly Composite Readiness. The weekly report has
+  access to longitudinal context, composite scores, and
+  cross-week patterns that daily signals cannot see. A week
+  of good days can still show concerning longitudinal trends.
+
+DAILY ORANGE, WEEKLY GREEN:
+  An athlete may show Orange on one bad day but receive a
+  Green weekly Composite Readiness because the week as a
+  whole was strong. The daily signal caught a rough day; the
+  weekly report sees it in context.
+
+COACHING INTERPRETATION:
+  Both views are valid. The coach uses daily signals for
+  real-time awareness and weekly reports for developmental
+  synthesis. When they diverge, the coach applies their own
+  coaching judgment — this is exactly the kind of situation
+  where the daily data enhances coaching effectiveness.
+
+QA MONITORING:
+  The QA Monitoring Protocol monitors for patterns where daily
+  and weekly signals create false confidence — for example, if
+  daily signals show Green all week for an athlete the weekly
+  report classifies as Orange, the system may need threshold
+  recalibration. See QA Monitoring Protocol Section 9.
+
+============================================================
+F. COMPLIANCE FRAMEWORK
+============================================================
+
+The Daily Athlete Signal follows the same institutional
+compliance framework as all VirtusFocus coach-facing output.
+
+------------------------------------------------------------
+F.1 CORE COMPLIANCE RULES
+------------------------------------------------------------
+
+1. ALL content safe for coaching staff at every organizational
+   level (position coach → coordinator → head coach → AD)
+
+2. Signals are INFORMATIONAL ONLY — they aid coaching
+   effectiveness, they do not evaluate athletes or enforce
+   participation
+
+3. VirtusFocus is an athlete-led, optional component. Athletes
+   WANT to do it. The daily signal exists to help coaches use
+   their time with athletes more effectively, not to monitor
+   whether athletes are using the app.
+
+4. The data is framed to be useful for coaching conversations,
+   not useful for participation, selection, or disciplinary
+   decisions
+
+------------------------------------------------------------
+F.2 WHAT THE COACH SEES (PERMITTED)
+------------------------------------------------------------
+
+- Traffic light color (Green / Yellow / Orange / Gray)
+- Day Outcome label (Aligned / Building / Reset Day)
+- Focus Alignment label (Centered / Mixed / Drifting)
+- Follow-Through label (Demonstrated / Gap)
+- Weekly Trajectory label (Building Week / Steady Week /
+  Cooling Week)
+- Position group tier label (Tier 1-4)
+- Team tier label (Tier 1-4)
+- Informational disclaimer
+
+------------------------------------------------------------
+F.3 WHAT THE COACH NEVER SEES (PROHIBITED)
+------------------------------------------------------------
+
+- WTD daily scores (0-5) or score ranges
+- WTD question labels or individual Q1-Q5 answers
+- "Win the Day" / "Partial Win" / "Missed the Mark"
+  (internal pipeline categories)
+- Bullseye ring item counts or actual items written
+- Journaling domain coverage (which domains completed)
+- Mindset Challenge text or completion status as raw data
+- Running week summary counts (wins, partials, misses)
+- Morning Tune-Up completion as raw data
+- Internal point scores used for traffic light calculation
+- Calibration modifier values or rationale
+- Traffic light threshold values or point scoring
+- Individual athlete signals within team/position views
+- Color distribution percentages within groups
+- Completion rates, timing data, streak counts
+- Any raw data from the Daily Mini-JSON
+- Any execution signal data from the weekly pipeline
+- Clinical, therapeutic, or mental health language
+- Surveillance or monitoring framing
+- "At-risk," "compliance," "adherence," or evaluative labels
+
+------------------------------------------------------------
+F.4 GRAY SIGNAL COMPLIANCE
+------------------------------------------------------------
+
+A Gray signal means "no performance data available for this
+date." It is explicitly NOT:
+
+- A notification that the athlete missed activity
+- A negative signal
+- A prompt for the coach to follow up about non-participation
+- An indicator of disengagement
+
+Gray is the ABSENCE of signal, not the presence of a negative
+signal. It provides no coaching intelligence and requires no
+coaching action. The coach moves on.
+
+In team/position aggregation, Gray signals are excluded from
+the calculation entirely. They do not penalize the group.
+
+============================================================
+G. IMPLEMENTATION NOTES
+============================================================
+
+------------------------------------------------------------
+G.1 NO LLM REQUIRED
+------------------------------------------------------------
+
+All Daily Athlete Signal outputs are deterministic:
+
+- Contributing signals: direct categorical mapping from
+  Mini-JSON fields
+- Traffic light: point-based scoring system with fixed
+  thresholds
+- Weekly calibration: conditional threshold shifts from
+  cached weekly JSON fields
+- Team aggregation: percentage-based tier assignment
+
+The app backend computes the Daily Athlete Signal directly.
+No Sonnet or Opus API calls. No Batch API submission for
+Stage 7. Zero AI cost per daily signal.
+
+This is compliance-by-construction extended: not only does
+the Mini-JSON exclude dangerous data (Stage 6 protection),
+the OUTPUT is pre-approved categorical labels that cannot
+contain clinical language, surveillance framing, or pipeline
+data leakage because no language is generated.
+
+------------------------------------------------------------
+G.2 COMPUTATION TIMING
+------------------------------------------------------------
+
+The Daily Athlete Signal is computed AFTER the Daily Mini-JSON
+is generated and BEFORE the Morning Tune-Up releases.
+
+Sequence (from VF_Daily_Mini_JSON_Specification.txt Section G):
+
+  1. [hard-out - 2h] Backend generates Mini-JSON for all
+     athletes
+  2. Backend computes Daily Athlete Signal for all athletes
+     (deterministic — milliseconds per athlete)
+  3. Backend submits Stage 6 batch request (LLM — snippets)
+  4. [hard-out] Morning Tune-Up releases. Snippets available.
+     Daily Athlete Signals available on coach dashboard.
+
+Stage 7 computation is effectively instant. It does not
+compete with Stage 6 for batch processing time.
+
+------------------------------------------------------------
+G.3 WEEKLY CALIBRATION DATA CACHING
+------------------------------------------------------------
+
+The weekly calibration inputs (emotional_intensity,
+growth_phase, growth_phase_movement) are extracted from the
+most recent Interpretation JSON and cached per athlete.
+
+Cache rules:
+- Updated when a new Interpretation JSON is produced (Monday)
+- Cached values persist for the full week (7 daily signals)
+- emotional_intensity calibration expires after Day 3 of the
+  new week (per Section C.3)
+- growth_phase calibration persists all week
+- If no Interpretation JSON exists (first week), no
+  calibration is applied
+
+This is a simple key-value cache per athlete. No complex data
+pipeline required.
+
+------------------------------------------------------------
+G.4 STAGE 7 IN THE QA MONITORING PROTOCOL
+------------------------------------------------------------
+
+The QA Monitoring Protocol v1.0 (Section 9) already defines
+Stage 7 extensibility. When the protocol is updated to v1.1:
+
+Additional Quality Dimensions for Stage 7:
+- Institutional compliance: Signals safe for all staff levels
+- Traffic light calibration: Thresholds producing reasonable
+  distributions (not all Green, not all Orange)
+- Daily-to-weekly consistency: Divergence patterns monitored
+  (see Section E.4)
+- Group tier stability: Position group tiers not oscillating
+  wildly day-to-day (would reduce coach confidence)
+- Gray signal frequency: High Gray rates across a team may
+  indicate an engagement concern — but this is a system-level
+  QA insight, NOT surfaced to coaches
+
+============================================================
+H. DESIGN DECISIONS LOG
+============================================================
+
+Decisions made during collaborative design (2026-03-15):
+
+1. COLOR SYSTEM: Green/Yellow/Orange (matches weekly Composite
+   Readiness Signal — no Red, consistent coach experience)
+
+2. DAY OUTCOME LABELS: Aligned/Building/Reset Day (coaching-
+   action framing, not athlete performance categories)
+
+3. VISIBLE CONTRIBUTING SIGNALS: 3 (Day Outcome, Focus
+   Alignment, Follow-Through). Reflection Engagement folded
+   into internal traffic light computation — too close to
+   monitoring journaling behavior as a visible label.
+
+4. WEEKLY TRAJECTORY: Building Week/Steady Week/Cooling Week
+   (directional, no counts exposed)
+
+5. NO COACHING NOTE: Signals and presentation tell the story.
+   Coach acts on the story using their own coaching skills.
+   Eliminates LLM requirement entirely.
+
+6. NO LLM: Stage 7 is a deterministic rules engine. Zero AI
+   cost. Compliance-by-construction for output.
+
+7. INSTITUTIONAL = FULL FEATURED: All athletes on institutional
+   side have full data. No Base/Premium distinction for coach-
+   facing output.
+
+8. TEAM AGGREGATION: 4-tier system (Strong Alignment / Positive
+   Trend / Mixed Signals / Needs Attention). Distribution
+   hidden. Minimum 3 athletes per group, 5 per team.
+
+9. DAILY-TO-WEEKLY: Model C (Complementary). No data flows
+   between daily and weekly. Different zoom levels.
+
+10. MONDAY GENERATION: Yes. Daily signal covers Sunday data.
+    Coach sees both weekly report and daily signal on Monday.
+
+11. WEEKLY CALIBRATION: emotional_intensity and growth_phase
+    from last week's JSON inform traffic light sensitivity.
+    Invisible to coach. EI calibration expires after Day 3.
+
+12. 4 TIERS (not 5) for team/position aggregation.
+
+============================================================
+END OF DOCUMENT
+============================================================
