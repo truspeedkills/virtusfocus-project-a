@@ -1,0 +1,302 @@
+VIRTUSFOCUS — IDEA 4: PARENT OUTPUT
+TASK 17 + TASK 18 DESIGN DECISIONS
+============================================================
+Document Type: Design Decision Record
+Created: 2026-03-15
+Session: Idea 4 Collaborative Design (Session 2 of 3)
+Status: Task 17 LOCKED, Task 18 LOCKED
+Prerequisites: Architecture A1-A5 LOCKED, Task 16 LOCKED
+  (see VF_Parent_Output_Architecture_Decisions.txt)
+============================================================
+
+OVERVIEW
+============================================================
+
+This document records all design decisions for the Parent
+Coaching Message (Task 17) and the Parent Insights Dashboard
+(Task 18), made in the second collaborative design session.
+
+Design principle established this session: Every element of
+the parent experience exists to help the parent support the
+athlete's mental performance growth. No surveillance. No
+monitoring. No reporting on behavior. The parent is the
+audience, but the athlete's development is the purpose.
+
+============================================================
+SECTION 1: TASK 17 — PARENT COACHING MESSAGE
+============================================================
+
+Q7. SECTION STRUCTURE — 4 SECTIONS
+-----------------------------------
+Decision: The Parent Coaching Message has 4 sections.
+
+  1. Weekly Context
+     Purpose: What the athlete is building this week.
+     High-level theme, tier-level framing without naming
+     the tier. Oriented toward helping the parent understand
+     what's happening in the athlete's development.
+     Source: weekly_tier, core_pattern, consistency_profile
+
+  2. What Stood Out
+     Purpose: One specific strength or development signal
+     the parent can recognize and reinforce at home.
+     Behavioral, not technical.
+     Source: coach_insights.key_habit_signal, control_quality,
+     athlete_voice (if natural fit)
+
+  3. What's Ahead
+     Purpose: Forward-looking context so the parent can
+     create the right environment. Not a preview of coaching
+     strategy. Not the micro_commitment itself.
+     Source: upcoming_context, micro_commitment.action
+     (thematic reference only), narrative_arc.open_thread
+
+  4. How You Can Support
+     Purpose: One concrete, actionable support suggestion
+     for the parent. Drawn from the week's data, not generic.
+     This is the anchor section — the differentiator that
+     makes the Parent CM more than information delivery.
+     Source: Ecosystem fields (Q22-Q25), growth_phase,
+     emotional_intensity, core_pattern
+
+DESIGN PRINCIPLE: Every section helps the parent support
+the athlete's mental performance growth. No section tracks,
+monitors, or reports on the athlete's behavior.
+
+WHAT IS NOT IN THE PARENT CM:
+- No prior_commitment_result bridge (parent doesn't know
+  the micro-commitment)
+- No drift identification section (coach handles that)
+- No Trendline Decision (too technical)
+- No Weekly Action section (athlete-facing only)
+- No Identity Thread (identity development is the athlete's
+  private journey; parents see progress, not identity
+  construction)
+- No micro-commitment assignment to the parent
+- No accountability language directed at the parent
+
+Q8. LENGTH — 150-250 WORDS
+----------------------------
+Decision: 150-250 words.
+
+Rationale:
+- Each section gets 35-65 words — enough for a substantive
+  thought, not just a label
+- "How You Can Support" can be genuinely useful rather than
+  just a tagline
+- Quick phone read (~90 seconds)
+- Clean separation from the Athlete CM (250-450 words) —
+  parent message is shorter, lighter, support-oriented
+
+Q9. CM REFERENCE — THEMATICALLY ALIGNED, NEVER DIRECTLY
+---------------------------------------------------------
+Decision: Thematically aligned, never directly references
+the Athlete CM.
+
+Rationale:
+- Both outputs draw from the same JSON, so themes naturally
+  align through shared data
+- Parent CM never says "In your athlete's coaching message
+  this week..." or references the micro-commitment by name
+- Generation order (Athlete CM -> DD -> Parent CM) ensures
+  natural thematic coherence
+- Parent gets the WHAT HAPPENED and HOW TO SUPPORT — not
+  the coaching strategy
+
+Q10. PARENT DEEP DIVE — NO
+----------------------------
+Decision: No Parent Deep Dive.
+
+Rationale:
+- The Parent Insights on the dashboard serves the "deeper
+  look" function
+- A Parent Deep Dive would be redundant with Parent Insights
+- Parent CM + Parent Insights covers both quick-read and
+  deep-read use cases
+- Keeps the Stage 3 Parent expansion lightweight (one
+  additional output, not two)
+
+VOICE CALIBRATION (from Task 16, confirmed):
+  Dimension          | Athlete CM              | Parent CM
+  Person             | Second ("You showed")   | Third ("Grace showed")
+  Action orientation | Athlete acts            | Parent supports
+  Micro-commitment   | Directed at athlete     | NOT included
+  Accountability     | Direct (per comp level) | Absent
+  Recognition        | Behavioral              | Contextual
+  Tone               | Coaching (challenge +   | Informational +
+                     |   support)              |   guidance
+
+============================================================
+SECTION 2: TASK 18 — PARENT INSIGHTS DASHBOARD
+============================================================
+
+Q11. FORMAT — ALL LIVE APP + DASHBOARD
+---------------------------------------
+Decision: Everything lives in the live app and dashboard.
+No separate weekly document.
+
+Parent experience:
+  1. Parent Coaching Message — delivered directly to the
+     parent's app weekly (push delivery)
+  2. Parent Weekly Insight — lives on dashboard, accessible
+     anytime via app or web browser
+  3. Daily Signal — lives on both app and dashboard, updates
+     daily
+
+App and browser dashboard show the same data in different
+presentation formats. No content is exclusive to one
+presentation layer. Same pattern as institutional coach
+dashboard.
+
+Q12. DASHBOARD METRICS — CATEGORICAL SIGNALS ONLY
+--------------------------------------------------
+Decision: Dashboard displays compliance-safe categorical
+signals. No numbers, no rates, no scores.
+
+  Element              | Source                | Display                          | Cadence
+  Overall Signal       | Stage 4 Composite     | Color (Green/Yellow/Orange)      | Weekly
+                       | Readiness             | + parent-friendly label          |
+  Growth Phase         | Interpretation JSON   | Phase name + simple progress     | Weekly
+  Weekly Theme         | Stage 4 KPS           | One short phrase                 | Weekly
+  Confidence Direction | Stage 4 Confidence    | Arrow (Building/Stable/Variable) | Weekly
+  Daily Signal         | Stage 7 traffic light | Color + parent-friendly label    | Daily
+
+EXCLUDED from dashboard metrics:
+- No completion rates, streak counts, participation metrics
+- No consistency signal (too close to monitoring engagement)
+- No stress load as standalone metric (handled in narrative
+  sections only — see Stress Load decision below)
+- No individual WTD scores or Bullseye breakdowns
+- No numerical values of any kind
+- No Week-at-a-Glance display (too close to attendance
+  tracker — see below)
+
+Q13. DASHBOARD DATA SOURCE — PRESENTATION LAYER ONLY
+------------------------------------------------------
+Decision: Dashboard is a display/presentation layer only.
+It renders data from Stage 4 output and Stage 7 signals.
+App and browser dashboard show the same data.
+
+No separate data pipeline or compliance filter needed at
+the dashboard level because data is already compliance-safe
+when it arrives from Stage 4 / Stage 7.
+
+Q14. DAILY SIGNAL LABELS — PARENT-FRIENDLY
+--------------------------------------------
+Decision: Parent-friendly labels for the traffic light.
+Contributing signals (Day Outcome, Focus Alignment,
+Follow-Through, Weekly Trajectory) are NOT shown to parents.
+Parents see only the traffic light color + label.
+
+  Coach Label | Parent Label     | Rationale
+  Green       | Good Day         | Simple, positive, no jargon
+  Yellow      | Building Day     | Reframes neutral as constructive
+  Orange      | Reset Day        | Honest without alarm, aligns
+              |                  | with VirtusFocus vocabulary
+  Gray        | No Update Today  | Avoids "missing data" framing
+
+Contributing signals hidden because:
+- They are coaching intelligence for 30-second coach
+  interactions — parents don't have that coaching role
+- "Drifting focus" or "Gap in follow-through" on a parent
+  screen is surveillance territory
+- The traffic light gives parents the right level of
+  information
+
+Q15. INSUFFICIENT DATA / EARLY WEEKS
+--------------------------------------
+Decision: Parents never see a blank screen.
+
+Week 1:
+- Parent CM: Generated (welcome tone, introduces what the
+  parent will receive, light support suggestion)
+- Parent Insights: "Week 1 — Building Baseline" header.
+  Most sections show warm placeholder messaging. Sections 1
+  (Weekly Overview) and 7 (How You Can Support) populated
+  from available data.
+- Dashboard: Growth Phase shows. Overall Signal shows if
+  enough data. Daily signal populates as each day completes.
+
+Weeks 2-3:
+- Sections needing 2+ prior weeks show "building" messaging
+- Dashboard elements needing longitudinal data show
+  "Emerging" or equivalent
+- Parent CM fully functional from Week 1
+
+Week 4+:
+- Full dashboard, full insights, all sections populated
+
+Principle: Every element either has data or has a warm,
+explanatory placeholder that makes the parent feel the
+system is working and their patience is part of the process.
+
+ADDITIONAL DECISIONS
+--------------------
+
+WEEK-AT-A-GLANCE DISPLAY: CUT.
+A 7-dot row showing daily traffic lights across the week
+was proposed and rejected. Too close to an attendance
+tracker. Parents see today's daily signal only — not a
+week-long visual history.
+
+STRESS LOAD: EXCLUDED FROM DASHBOARD METRICS.
+Stress Load does NOT appear as a standalone dashboard
+metric. When emotional weight is elevated, it is handled
+through:
+  1. Parent CM Section 4 ("How You Can Support") — Coach
+     Arron adjusts the support suggestion to reflect what
+     the athlete needs without labeling stress
+  2. Parent Insights narrative (Section 4: "Emotional
+     Weight This Week") — framed in Coach Arron's voice
+     with context, not as a bare indicator
+
+Rationale: A stress indicator on a dashboard is a reactivity
+trigger. Parents are more likely to react emotionally to
+"Elevated Stress" than coaches with professional context.
+The Parent App's stated goal is to help parents become
+"less reactive, less intrusive." The narrative framing
+gives parents the guidance they need without a bare label.
+
+SECTION REBRAND MAPPING (from Session 1, confirmed):
+
+  Stage 4 Coach Section         | Parent Rebrand
+  1. Weekly Summary             | Weekly Overview
+  2. Key Performance Signal     | What Stood Out This Week
+  3. Self-Assessment Alignment  | How They See Themselves
+  4. Stress Load Indicator      | Emotional Weight This Week
+  5. Confidence Signal          | Confidence Check
+  6. Behavioral Pattern of Note | Pattern to Notice
+  7. Coach Context Cue          | How You Can Support
+  8. Risk Indicator             | Something to Be Aware Of
+  9. Development Tracking       | Growth Over Time
+  10. Composite Readiness       | Overall Signal
+
+============================================================
+SECTION 3: REMAINING TASKS
+============================================================
+
+Task 19: Write Parent Coaching Message specification
+  - Stage 3 expansion (v1.7 or addendum)
+  - Master Prompt expansion
+  - Message Map parent section expansion
+  - Voice calibration rules
+  - Section-by-section content guidance
+  - Ecosystem field (Q22-Q25) calibration rules
+  - Emotional intensity handling for parent context
+
+Task 20: Write Parent Insights Dashboard specification
+  - Stage 4 parent-mode instructions (v1.4 or addendum)
+  - Section rebrand mapping with content guidance
+  - Section 7 reframe (Coach Context Cue -> How You Can Support)
+  - Stage 7 parent signal adaptation (label mapping)
+  - Deterministic dashboard metric definitions
+  - Insufficient data / early weeks handling
+
+Task 21: Update Editorial Audit for parent-facing content
+  - Confirm existing criteria cover parent output
+  - Stage 5 now audits 3 Stage 3 outputs (CM + DD + Parent CM)
+  - Document any parent-specific audit notes
+
+============================================================
+END OF DOCUMENT
+============================================================

@@ -1,0 +1,381 @@
+VIRTUSFOCUS — IDEA 4: PARENT OUTPUT (SESSION 3)
+TASK 19: PARENT COACHING MESSAGE SPECIFICATION
+============================================================
+SESSION MODE: SPECIFICATION WRITING
+============================================================
+This is Session 3 of the Idea 4 design work. Sessions 1-2
+locked all architecture decisions (A1-A5), Task 16 (Parent
+Compliance Framework), Task 17 (Parent CM design), and
+Task 18 (Parent Insights Dashboard design). This session
+writes the specification for the Parent Coaching Message.
+============================================================
+WHAT SESSIONS 1-2 DECIDED (ALL LOCKED)
+============================================================
+
+ARCHITECTURE (5 decisions — Session 1):
+A1. Parent CM = Stage 3 third output (alongside Athlete CM
+    + Deep Dive). Generation order: Athlete CM -> DD ->
+    Parent CM. Thematic coherence guaranteed by same-stage
+    generation. Zero incremental JSON read cost.
+A2. Parent Insights = Mirror Stage 4 Coach Insights.
+    Rebrand 10 sections for parent audience. Same data
+    restrictions. Stage 4 runs for D2C parent-app athletes.
+A3. No parent-specific Stage 5 expansion. Existing audit
+    criteria sufficient. Same data boundary = same audit.
+A4. Daily parent signal = Stage 7 traffic light adaptation.
+    Deterministic, zero AI cost. Parent-friendly labels.
+A5. Premium D2C only. No Base tier parents. No tiering.
+
+TASK 16 — PARENT COMPLIANCE (Session 1):
+- Same data boundary as coaches (all 12 prohibited
+  categories apply identically)
+- Same JSON field restrictions (inform-only routing)
+- Same clinical language rules (VirtusFocus-wide)
+- Coach Arron third-person register
+- Athlete's first name (not "your athlete")
+- NOT a new compliance framework — it IS the coach-facing
+  framework with voice/framing adjustments only
+
+TASK 17 — PARENT CM DESIGN (Session 2):
+
+  SECTION STRUCTURE (4 sections):
+  1. Weekly Context
+     What the athlete is building this week. High-level
+     theme, tier-level framing without naming the tier.
+     Source: weekly_tier, core_pattern, consistency_profile
+
+  2. What Stood Out
+     One specific strength or development signal the parent
+     can recognize and reinforce at home. Behavioral, not
+     technical.
+     Source: coach_insights.key_habit_signal, control_quality,
+     athlete_voice (if natural fit)
+
+  3. What's Ahead
+     Forward-looking context so the parent can create the
+     right environment. Not the micro_commitment itself
+     (that is athlete-facing). The theme of next week's work.
+     Source: upcoming_context, micro_commitment.action
+     (thematic reference only), narrative_arc.open_thread
+
+  4. How You Can Support
+     One concrete, actionable support suggestion for the
+     parent. Drawn from the week's data, not generic. This
+     is the anchor section and differentiator.
+     Source: Ecosystem fields (Q22-Q25), growth_phase,
+     emotional_intensity, core_pattern
+
+  DESIGN PRINCIPLE: Every section helps the parent support
+  the athlete's mental performance growth. No surveillance.
+  No monitoring. No reporting on behavior.
+
+  LENGTH: 150-250 words
+
+  CM REFERENCE: Thematically aligned, never directly
+  references the Athlete CM. Parent never knows what's in
+  the athlete's coaching message.
+
+  PARENT DEEP DIVE: No. Parent Insights serves that function.
+
+  VOICE: Coach Arron third-person register. Informational +
+  support guidance. Does NOT coach the parent. Updates and
+  suggests how to support.
+
+  Voice calibration:
+    Dimension          | Athlete CM              | Parent CM
+    Person             | Second ("You showed")   | Third ("Grace showed")
+    Action orientation | Athlete acts            | Parent supports
+    Micro-commitment   | Directed at athlete     | NOT included
+    Accountability     | Direct (per comp level) | Absent
+    Recognition        | Behavioral              | Contextual
+    Tone               | Coaching (challenge +   | Informational +
+                       |   support)              |   guidance
+
+  WHAT IS NOT IN THE PARENT CM:
+  - No prior_commitment_result bridge
+  - No drift identification section
+  - No Trendline Decision
+  - No Weekly Action section
+  - No Identity Thread
+  - No micro-commitment assignment to the parent
+  - No accountability language directed at the parent
+
+TASK 18 — DASHBOARD DESIGN (Session 2):
+- All live app + browser dashboard (same data, different
+  presentation)
+- Dashboard metrics: Overall Signal (color), Growth Phase,
+  Weekly Theme, Confidence Direction, Daily Signal
+- Stress load excluded from dashboard (narrative only)
+- Week-at-a-glance cut (attendance tracker risk)
+- Contributing signals hidden from parents (traffic light
+  color + label only)
+- Daily signal labels: Green=Good Day, Yellow=Building Day,
+  Orange=Reset Day, Gray=No Update Today
+- Parents never see blank screen
+- Dashboard is presentation layer (renders Stage 4 + Stage 7)
+
+Section rebrand mapping (confirmed):
+  Stage 4 Coach Section         -> Parent Rebrand
+  1. Weekly Summary             -> Weekly Overview
+  2. Key Performance Signal     -> What Stood Out This Week
+  3. Self-Assessment Alignment  -> How They See Themselves
+  4. Stress Load Indicator      -> Emotional Weight This Week
+  5. Confidence Signal          -> Confidence Check
+  6. Behavioral Pattern of Note -> Pattern to Notice
+  7. Coach Context Cue          -> How You Can Support
+  8. Risk Indicator             -> Something to Be Aware Of
+  9. Development Tracking       -> Growth Over Time
+  10. Composite Readiness       -> Overall Signal
+
+============================================================
+WHAT THIS SESSION NEEDS TO DO
+============================================================
+
+TASK 19: Write Parent Coaching Message specification
+
+This task expands Stage 3 to produce the Parent CM as its
+third output. The deliverables are:
+
+1. STAGE 3 MASTER PROMPT EXPANSION (v4 or addendum)
+   - Add Parent CM as third output in the system identity
+   - Define generation order: Athlete CM -> DD -> Parent CM
+   - Specify parent-mode activation after athlete outputs
+   - Add parent voice calibration rules
+   - Add parent output format specification
+
+2. STAGE 3 INSTRUCTIONS EXPANSION (v1.7)
+   - New versioned file (preserve v1.6 on disk)
+   - Add Parent CM generation section with:
+     * 4-section content guidance (per-section source fields,
+       content rules, length targets, tone guidance)
+     * Voice calibration rules (third person, no accountability,
+       no micro-commitment, support orientation)
+     * Ecosystem field calibration (Q22-Q25 intake data
+       informing "How You Can Support" section — home
+       conversation pattern, parent involvement style,
+       support network structure)
+     * Emotional intensity handling for parent context
+       (High EI = warmer support suggestion, Low EI =
+       standard informational tone)
+     * Competitive level calibration for parent voice
+       (vocabulary complexity and concept depth adjust per
+       level, but no accountability framing adjustment
+       since parent CM has no accountability)
+     * Growth phase framing rules (how each phase affects
+       what the parent sees and the support suggestion)
+     * Execution signal routing for parent context (same
+       prohibited categories — composite scores, flags,
+       raw metrics never surface in parent output)
+     * Baseline intake profile routing for parent context
+       (same prohibited categories — PPD bucket names,
+       ABI pillar names, adversity classifications never
+       surface)
+     * Core Foundation skip rule for parent output (when
+       input_source = "core_foundation", skip all execution
+       and intake profile routing in parent sections)
+     * Insufficient data / early weeks handling (Week 1
+       welcome tone, warm placeholders)
+     * Parent CM validation checklist
+   - Add WRONG/CORRECT examples for parent voice
+   - Add reference Parent CM examples (at least 3 scenarios:
+     normal Growth week, High EI week, Mixed week with
+     upcoming competition)
+
+3. MESSAGE MAP EXPANSION
+   - Expand the existing PARENT SUMMARY section in
+     VF_Coaching_Output_JSON_to_Message_Map.txt
+   - Define per-section field routing for all 4 Parent CM
+     sections
+   - Define what fields route to which section
+   - Define what is excluded (same prohibited list as
+     coach-facing output)
+   - Add ecosystem field routing (Q22-Q25 calibration for
+     "How You Can Support")
+
+4. OUTPUT FORMAT + NAMING
+   - Define Parent CM file format (header, sections, sign-off)
+   - Define file naming convention:
+     {FirstName_LastName}_{date}_VF_ParentMessage.txt
+   - Define output directory:
+     Athlete Data\[Athlete]\Parent Output\
+   - Stage 5 audit scope: Parent CM is included in Stage 5
+     audit input (3 documents: CM + DD + Parent CM)
+
+5. STAGE 5 AUDIT SCOPE NOTE
+   - Confirm Stage 5 now audits 3 Stage 3 outputs
+   - Document what parent-specific audit checks apply
+     (likely minimal — same compliance rules)
+   - Note in v1.2 instructions or as addendum
+
+============================================================
+DESIGN QUESTIONS TO RESOLVE DURING SPECIFICATION
+============================================================
+
+DQ1. Ecosystem Field Calibration Depth
+  The intake form captures 4 ecosystem fields (Q22-Q25):
+  Q22: Who do you live with during your season?
+  Q23: How do people at home talk about your sport?
+  Q24: Who is your main support person outside of coaching?
+  Q25: Does your support person know about VirtusFocus?
+
+  These directly inform the "How You Can Support" section.
+  Question: How detailed should the calibration be? Options:
+  (a) Simple: Q23 value determines general tone (Supportive
+      → reinforce, Pressure → buffer, Don't discuss → open
+      door). Q22/Q24/Q25 provide context but no formal rules.
+  (b) Detailed: Per-combination rules for Q22+Q23+Q24+Q25
+      producing specific support suggestion templates.
+  (c) Moderate: Q23 as primary calibration with Q25 as
+      secondary modifier (aware vs. not aware of VirtusFocus
+      changes what you can reference).
+
+DQ2. Emotional Intensity Handling
+  When emotional_intensity = High in the JSON:
+  - Athlete CM leads with empathetic acknowledgment
+  - Should Parent CM also shift? Options:
+  (a) Yes: "How You Can Support" becomes warmer and more
+      protective. "What Stood Out" may acknowledge the
+      emotional weight without naming it.
+  (b) Light touch: Only "How You Can Support" adjusts.
+      Other sections stay informational.
+  (c) No change: Parent CM stays informational regardless.
+      The Parent Insights narrative handles emotional context.
+
+DQ3. Derailer-Activation Weeks
+  When the athlete's primary derailer activates (baseline_
+  alignment.alignment_status = "Partially Aligned" or
+  "Not Aligned"):
+  - Athlete CM addresses drift directly
+  - Should Parent CM acknowledge this? Options:
+  (a) Yes, indirectly: "What's Ahead" notes the athlete is
+      working on something specific. "How You Can Support"
+      adjusts to provide space/stability.
+  (b) No: Parent CM stays positive/neutral. Parent Insights
+      Section 8 ("Something to Be Aware Of") handles this.
+
+DQ4. Growth Phase Advancement
+  When growth_phase advances (e.g., Developing -> Consistent):
+  - Athlete CM celebrates the milestone
+  - Should Parent CM also celebrate? Options:
+  (a) Yes: "Weekly Context" or "What Stood Out" names the
+      advancement in parent-appropriate language.
+  (b) Subtle: Phase name not used, but tone reflects the
+      milestone ("Grace has reached a new level of
+      consistency in her routine").
+
+DQ5. Reference Examples
+  How many reference Parent CM examples should be embedded
+  in the specification? Minimum 3 proposed:
+  (a) Growth week, Low EI, no competition upcoming
+  (b) Mixed week, High EI, derailer activated
+  (c) Growth week, upcoming competition, phase advancement
+  More examples improve consistency. Fewer keep the spec
+  lighter. The Athlete CM spec has 5 reference snippets in
+  the Master Prompt.
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+PRIORITY 1 — Design decisions (read first):
+1. CLAUDE.md (project context)
+2. Agents - Generators\Parents Insight Engine\VF_Parent_Output_Architecture_Decisions.txt
+3. Agents - Generators\Parents Insight Engine\VF_Parent_Output_Task_17_18_Design_Decisions.txt
+
+PRIORITY 2 — Stage 3 current state (what you're expanding):
+4. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt
+5. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.6.txt
+6. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+7. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+8. Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+9. Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+10. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+11. Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+PRIORITY 3 — Ecosystem calibration inputs:
+12. Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+   (Focus: Q22-Q25 ecosystem questions and response options)
+13. Agents - Generators\Athlete Snapshot Generator\VF_App_Athlete_Snapshot_Fields.txt
+   (Focus: ECOSYSTEM sub-block in structured data)
+
+PRIORITY 4 — Sample outputs (for grounding reference examples):
+14. Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+15. Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+16. Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+17. Athlete Data\Grace Kindel\Coaching and Deep Dive\Deep Dive\Grace_Kindel_2026-02-23to2026-03-01_VF_DeepDive.txt
+
+PRIORITY 5 — Stage 5 (audit scope confirmation):
+18. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.2.txt
+19. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+
+PRIORITY 6 — Compliance and voice references:
+20. Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+21. Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
+
+PRIORITY 7 — Parent context:
+22. Agents - Generators\Parents Insight Engine\D2C Parent App Insights and add ons.txt
+
+Total: 22 reference files + CLAUDE.md
+
+============================================================
+WORKFLOW
+============================================================
+1. Read CLAUDE.md + both design decision documents
+2. Read Stage 3 current specifications (Master Prompt V3,
+   Instructions v1.6, Message Map, System Identity,
+   brand voice, content style guide)
+3. Read ecosystem fields from Intake Form Spec + Snapshot
+   Fields
+4. Read sample outputs (Grace Kindel Week 5 CM + DD +
+   snapshot + JSON) for grounding
+5. Present understanding of all locked decisions
+6. Resolve DQ1-DQ5 collaboratively with user
+7. Write Message Map expansion (PARENT SUMMARY -> full
+   4-section routing)
+8. Write Stage 3 Master Prompt expansion (V4 or addendum)
+9. Write Stage 3 Instructions v1.7 (new versioned file)
+10. Define output format + naming
+11. Confirm Stage 5 audit scope (minimal — note in
+    existing v1.2 or addendum)
+12. Update CLAUDE.md
+13. Git commit
+
+============================================================
+VERSIONING RULES (REMINDER)
+============================================================
+- Prompts + Instructions = new versioned files (never edit
+  in place). Preserve v1.6 on disk.
+- Source reference files (Message Map, System Identity) =
+  edit in place.
+- Previous versions kept on disk for audit trail.
+
+============================================================
+IMPORTANT CONTEXT
+============================================================
+
+The existing Message Map already has a PARENT SUMMARY
+section with basic routing:
+  Pull only: growth_phase, consistency trend (simplified),
+  one development signal.
+  Do NOT include: weekly tier labels, technical
+  classifications, scoring bands, execution behavior data.
+
+This needs to be expanded to the full 4-section routing
+defined in Task 17.
+
+The System Identity already lists "Parent-Facing Summary
+(If Requested)" as output #3. This needs to be updated to
+"Parent Coaching Message" as a standard output (not
+"if requested") for D2C Premium athletes.
+
+The brand voice guide already has parent-specific tone:
+"Calm, reassuring, structured. Emphasize support without
+pressure. Provide clarity and direction."
+
+The Parent App overview document describes three pillars:
+visibility, context, and guidance. The philosophy: "Support
+should increase ownership, not replace it."
+
+============================================================
+END OF HANDOFF
+============================================================
