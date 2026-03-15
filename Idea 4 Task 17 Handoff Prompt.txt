@@ -1,0 +1,180 @@
+VIRTUSFOCUS — IDEA 4: PARENT OUTPUT (SESSION 2)
+TASK 17-21 COLLABORATIVE DESIGN + SPECIFICATION
+============================================================
+SESSION MODE: COLLABORATIVE DESIGN + SPECIFICATION WRITING
+============================================================
+
+This is Session 2 of the Idea 4 design work. Session 1
+locked all architecture decisions (A1-A5) and Task 16
+(Parent Compliance Framework). This session picks up at
+Task 17 (Parent Coaching Message design).
+
+============================================================
+WHAT SESSION 1 DECIDED (ALL LOCKED)
+============================================================
+
+ARCHITECTURE (5 decisions):
+
+A1. Parent Coaching Message = Stage 3 third output
+    (alongside Athlete CM + Deep Dive). Coach Arron voice.
+    Generation order: Athlete CM -> DD -> Parent CM.
+    Thematic coherence guaranteed by same-stage generation.
+
+A2. Parent Insights = Mirror Stage 4 Coach Insights.
+    Rebrand 10 sections for parent audience. Same data
+    restrictions as coaches. Stage 4 runs for D2C parent-
+    app athletes (incremental ~$0.04/week).
+
+A3. No parent-specific Stage 5 expansion needed. Existing
+    audit criteria sufficient. Same data boundary = same
+    audit rules.
+
+A4. Daily parent signal = Stage 7 traffic light adaptation.
+    Deterministic, zero AI cost. Labels may be reworded
+    for parent audience.
+
+A5. Premium D2C only. No Base tier parents. Every parent
+    has full Interpretation JSON. No tiering.
+
+TASK 16 — PARENT COMPLIANCE FRAMEWORK (5 decisions):
+
+Q1. Execution data: Same as coaches. All 12 prohibited
+    categories apply identically. "Parents CAN see more.
+    That doesn't mean we WILL show them more."
+
+Q2. JSON fields: If coaches can't see it, parents can't
+    see it. Same inform-only routing.
+
+Q3. Clinical language: Identical rules. VirtusFocus-wide.
+
+Q4. Voice: Coach Arron in parent-update register. Third
+    person. Informational + support guidance. Coach Arron
+    does NOT coach the parent — updates and suggests how
+    to support.
+
+Q5. Name: Athlete's first name (not "your athlete").
+
+KEY SIMPLIFICATION: The parent compliance framework is NOT
+a new framework. It IS the coach-facing framework with
+voice/framing adjustments only. This eliminated: separate
+compliance doc, parent-specific audit criteria, relaxed
+data visibility, execution dashboard metrics beyond Stage 4,
+the entire "third compliance framework" concept.
+
+============================================================
+WHAT THIS SESSION NEEDS TO DO
+============================================================
+
+TASK 17: Design Parent Coaching Message (Q6-Q10)
+  Q6.  Source: ANSWERED — Stage 3 third output (locked A1)
+  Q7.  Sections: What sections? Proposed 5-section structure
+       needs collaborative review and approval.
+  Q8.  Length: How long? Proposed 150-250 words needs review.
+  Q9.  CM reference: Does it reference athlete CM content?
+       Proposed: thematically aligned, never references
+       directly. Needs confirmation.
+  Q10. Parent Deep Dive: Is there one? Proposed: No — the
+       mirrored Stage 4 serves that function. Needs confirm.
+
+TASK 18: Design Parent Insights Dashboard (Q11-Q15)
+  Q11. Weekly document or live app feature?
+       Context: Stage 4 mirror = weekly document.
+       Dashboard = deterministic app UI metrics. Hybrid?
+  Q12. What metrics on the dashboard?
+       Same metrics Stage 4 surfaces (compliance-safe
+       categorical signals only). Growth Phase, Composite
+       Readiness color, weekly tier, confidence direction.
+       No execution metrics beyond what Stage 4 shows.
+  Q13. Does dashboard consume Interpretation JSON directly?
+       Context: Dashboard metrics can be derived from Stage 4
+       output or from JSON with same compliance filters.
+  Q14. Daily data: Does parent see daily signal?
+       Context: A4 confirmed — Stage 7 traffic light adapted.
+       Need to decide: same labels or parent-friendly labels?
+  Q15. First few weeks: What does parent see in Week 1?
+       Same "insufficient data" handling as Stage 4.
+
+TASK 19: Write Parent Coaching Message specification
+  - Expand Stage 3 instructions (v1.7 or addendum)
+  - Expand Stage 3 Master Prompt
+  - Update Message Map with parent section routing
+  - Define voice calibration rules
+  - Define section-by-section content guidance
+  - Define ecosystem field (Q22-Q25) calibration rules
+
+TASK 20: Write Parent Insights Dashboard specification
+  - Stage 4 parent-mode instructions (v1.4 or addendum)
+  - Section rebrand mapping with content guidance
+  - Section 7 reframe (Coach Context Cue -> Support Suggestion)
+  - Stage 7 parent signal adaptation (label decisions)
+  - Deterministic dashboard metric definitions
+
+TASK 21: Update Editorial Audit for parent-facing content
+  - Scope may be minimal: confirm existing criteria cover
+    parent output given same data boundary
+  - Stage 5 now audits 3 Stage 3 outputs (CM + DD + Parent CM)
+  - Document any parent-specific audit notes
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+PRIORITY 1 — Architecture decisions from Session 1:
+1. CLAUDE.md (project context — read first)
+2. Agents - Generators\Parents Insight Engine\VF_Parent_Output_Architecture_Decisions.txt
+
+PRIORITY 2 — Stage 3 (Parent CM source):
+3. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt
+4. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.6.txt
+5. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+6. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+7. Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+8. Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+
+PRIORITY 3 — Stage 4 (Parent Insights mirror source):
+9. Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.1.txt
+10. Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.3.txt
+11. Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+12. Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
+
+PRIORITY 4 — Ecosystem calibration (feeds parent tone):
+13. Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+14. Agents - Generators\Athlete Snapshot Generator\VF_App_Athlete_Snapshot_Fields.txt
+
+PRIORITY 5 — Daily signal (parent adaptation):
+15. Agents - Generators\Daily Coach Insights Engine\Source Files\VF_Daily_Coach_Signal_Design.txt
+16. Agents - Generators\Daily Coach Insights Engine\VF_Daily_Coach_Signal_Determination_Rules_v1.0.txt
+
+PRIORITY 6 — Stage 5 (audit confirmation):
+17. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.2.txt
+18. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+
+PRIORITY 7 — Sample outputs (for grounding):
+19. Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+20. Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+21. Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+
+PRIORITY 8 — Parent context:
+22. Agents - Generators\Parents Insight Engine\D2C Parent App Insights and add ons.txt
+
+Total: 22 reference files + CLAUDE.md
+
+============================================================
+WORKFLOW
+============================================================
+
+1. Read CLAUDE.md + Architecture Decisions document
+2. Read remaining reference files (prioritized order)
+3. Present understanding of locked decisions
+4. Task 17: Collaborative design of Parent CM (Q7-Q10)
+5. Task 18: Collaborative design of Dashboard (Q11-Q15)
+6. Write design decisions to disk
+7. Task 19: Write Parent CM specification (Stage 3 expansion)
+8. Task 20: Write Parent Insights specification
+9. Task 21: Confirm audit coverage
+10. Update CLAUDE.md
+11. Git commit
+
+============================================================
+END OF HANDOFF
+============================================================

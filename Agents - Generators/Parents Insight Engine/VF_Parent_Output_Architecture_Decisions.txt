@@ -1,0 +1,268 @@
+VIRTUSFOCUS — IDEA 4: PARENT OUTPUT
+ARCHITECTURE DECISIONS + TASK 16 DESIGN DECISIONS
+============================================================
+Document Type: Design Decision Record
+Created: 2026-03-15
+Session: Idea 4 Collaborative Design (Session 1 of 2)
+Status: Architecture LOCKED, Task 16 LOCKED
+============================================================
+
+OVERVIEW
+============================================================
+Idea 4 introduces parent-facing output to the VirtusFocus
+pipeline. This document records all architecture and design
+decisions made in the first collaborative design session.
+
+Key reframe (established this session): The parent output
+does NOT introduce a third compliance framework. Parents
+receive the SAME data boundary as institutional coaches.
+The differentiation is voice and framing, not data access.
+
+============================================================
+SECTION 1: ARCHITECTURE DECISIONS (A1-A5)
+============================================================
+
+A1. PARENT COACHING MESSAGE — STAGE 3 EXPANSION
+------------------------------------------------
+Decision: Stage 3 produces the Parent Coaching Message as
+its third output (alongside Athlete CM + Deep Dive).
+
+Rationale:
+- Thematic coherence guaranteed (same JSON read, same
+  generation session, same interpretation)
+- Zero incremental JSON read cost
+- Stage 3 already references parent output in System
+  Identity and Message Map
+- Generation order: Athlete CM -> DD -> Parent CM
+  (athlete outputs complete before parent mode activates)
+
+Risk assessment:
+- Audience bleed (parent voice into athlete output):
+  MITIGATED by sequential generation order
+- Compliance framework confusion: MITIGATED by sequential
+  generation + Stage 5 audit of athlete outputs
+- Context window pressure: LOW (parent CM adds ~3-5 new
+  instruction sections, modern Opus handles comfortably)
+
+A2. PARENT INSIGHTS — MIRROR STAGE 4
+-------------------------------------
+Decision: Mirror the existing Stage 4 Coach Insights output
+for parent consumption. Rebrand sections, do not rebuild.
+
+Rationale:
+- Zero new architecture for insights
+- Stage 4 analytical structure is proven (10 sections)
+- Same data restrictions apply (no relaxation needed)
+- For D2C Premium athletes, Stage 4 currently has no
+  audience (no institutional coaches). The Parent App
+  gives Stage 4 output a consumer in the D2C ecosystem.
+
+Implementation:
+- Stage 4 runs for D2C parent-app athletes (incremental
+  cost: ~$0.04/athlete/week on Opus with caching)
+- Section labels rebranded for parent audience
+- Section 7 (Coach Context Cue) reframed as parent
+  support suggestion
+- Same compliance framework, same prohibited categories
+
+Section rebrand mapping:
+  Stage 4 (Coach)               -> Parent Rebrand
+  1. Weekly Summary              -> Weekly Overview
+  2. Key Performance Signal      -> What Stood Out This Week
+  3. Self-Assessment Alignment   -> How They See Themselves
+  4. Stress Load Indicator       -> Emotional Weight This Week
+  5. Confidence Signal           -> Confidence Check
+  6. Behavioral Pattern of Note  -> Pattern to Notice
+  7. Coach Context Cue           -> How You Can Support
+  8. Risk Indicator              -> Something to Be Aware Of
+  9. Development Tracking        -> Growth Over Time
+  10. Composite Readiness        -> Overall Signal
+
+A3. AUDIT — NO PARENT-SPECIFIC STAGE 5 EXPANSION
+-------------------------------------------------
+Decision: The existing Stage 5 Editorial Audit criteria are
+sufficient for parent output. No parent-specific audit
+criteria needed.
+
+Rationale:
+- Parent output uses the same data boundary as coaches
+- If the audit passes for coach-facing data, it passes
+  for parent-facing data
+- Journal content is already protected in coach output
+- Clinical language prohibition is already enforced
+- Pipeline data leakage criteria (Categories E + F)
+  already cover all prohibited content
+
+Note: The Parent CM (Stage 3 third output) IS audited by
+Stage 5 as part of the Stage 3 output review. The mirrored
+Stage 4 output self-enforces via the same v1.3 instructions
+that govern coach output.
+
+A4. DAILY PARENT SIGNAL — STAGE 7 ADAPTATION
+---------------------------------------------
+Decision: Adapt the Stage 7 daily traffic light for parent
+consumption. Deterministic computation, zero AI cost.
+
+Rationale:
+- Traffic light (Green/Yellow/Orange/Gray) is scannable
+  and parent-friendly
+- Same underlying computation as coach signal
+- Labels may be reworded for parent audience (TBD in
+  Task 18)
+- Zero additional AI cost (deterministic rules engine)
+
+A5. PREMIUM D2C ONLY — NO TIERING
+----------------------------------
+Decision: The Parent App is a Premium D2C add-on only.
+No Base tier parents. No tiering within parent output.
+
+Rationale:
+- Base D2C apps do not have a parent add-on
+- Every parent has access to the full weekly
+  Interpretation JSON (Premium pipeline runs)
+- No need to design Base-level parent experience
+- Simplifies all parent output design (one tier only)
+
+============================================================
+SECTION 2: TASK 16 — PARENT COMPLIANCE FRAMEWORK
+============================================================
+Status: LOCKED
+
+CORE PRINCIPLE: The parent compliance framework is NOT a
+new framework. It is the existing coach-facing compliance
+framework (Stage 4) applied identically, with voice and
+framing adjustments only.
+
+Q1. What execution data CAN parents see?
+-----------------------------------------
+Answer: Same as coaches. All 12 prohibited categories from
+Stage 4's compliance framework apply identically to parent
+output. No completion rates, no streak counts, no timing
+data, no score names, no flag IDs. Parents see compliance-
+safe categorical signals only.
+
+"Parents CAN see more. That doesn't mean we WILL show them
+more. This keeps the parent portion safe and not feel like
+oversight, surveillance, or monitoring."
+
+Q2. Interpretation JSON fields coaches can't see?
+--------------------------------------------------
+Answer: If coaches can't see it, parents can't see it.
+
+- risk_flags: internal to pipeline (not surfaced)
+- narrative_arc: internal to pipeline (not surfaced)
+- Composite score names/bands: prohibited
+- Coach flag IDs/severity: prohibited
+- coach_insights subfields: inform-only (never reproduced)
+
+Same inform-only routing as Stage 4. No relaxation.
+
+Q3. Clinical Language Prohibition interaction?
+----------------------------------------------
+Answer: Identical rules. Same prohibited terms, same
+replacement terms. The clinical language prohibition is a
+VirtusFocus-wide rule across ALL audiences. No parent-
+specific replacement table needed.
+
+Q4. What is the parent-facing voice?
+-------------------------------------
+Answer: Coach Arron in parent-update register.
+
+- Same coach persona as athlete-facing output
+- Third person ("Grace showed..." not "You showed...")
+- Informational + support guidance tone
+- Coach Arron updates the parent and suggests how they
+  can support the process
+- Coach Arron does NOT coach the parent
+
+Voice calibration:
+  Dimension          | Athlete CM              | Parent CM
+  Person             | Second ("You showed")   | Third ("Grace showed")
+  Action orientation | Athlete acts            | Parent supports
+  Micro-commitment   | Directed at athlete     | NOT included
+  Accountability     | Direct (per comp level) | Absent
+  Recognition        | Behavioral              | Contextual
+  Tone               | Coaching (challenge +   | Informational +
+                     |   support)              |   guidance
+
+Q5. Does parent output use athlete's name or "your athlete"?
+-------------------------------------------------------------
+Answer: Athlete's first name.
+
+- Coach Arron knows the athlete by name
+- "Your athlete" would feel corporate, not coaching
+- Matches athlete CM's name usage
+- Reinforces real coaching relationship
+- "Grace showed real composure this week" > "Your athlete
+  showed composure this week"
+
+============================================================
+SECTION 3: WHAT THIS SIMPLIFICATION ELIMINATED
+============================================================
+The decision to keep parent data boundary identical to
+coach data boundary eliminated the following from scope:
+
+- Separate parent compliance framework document (the
+  compliance framework IS the coach framework)
+- Parent-specific Stage 5 audit criteria for data leakage
+- Relaxed execution data visibility rules for parents
+- Deterministic dashboard with execution metrics beyond
+  what Stage 4 already surfaces
+- The "third compliance framework" concept from the
+  original handoff
+- Parent-specific prohibited term replacement tables
+- Any parent-specific data boundary logic in any stage
+
+What IS parent-specific (voice/framing only):
+- Coach Arron third-person register
+- Section label rebranding (Stage 4 mirror)
+- Support guidance framing (Section 7 reframe)
+- Athlete first name usage
+- No micro-commitment assignment to parent
+- No direct accountability language toward parent
+
+============================================================
+SECTION 4: PARENT OUTPUT STACK (FINAL ARCHITECTURE)
+============================================================
+
+Component              | Source          | AI Cost          | Cadence
+Parent Coaching Message| Stage 3 (3rd)  | Zero incremental | Weekly
+Parent Insights        | Stage 4 mirror | ~$0.04/wk (new)  | Weekly
+Parent Daily Signal    | Stage 7 mirror | Zero             | Daily
+Parent Dashboard       | App backend    | Zero             | Always-on
+
+Total incremental AI cost for Parent App:
+- Stage 3 Parent CM: ~$0.02/week (added to existing call)
+- Stage 4 mirror: ~$0.04/week (new call for D2C athletes)
+- Stage 5 audit of Parent CM: ~$0.01/week (added to existing)
+- Total: ~$0.07/athlete/week = ~$0.28/month
+- Parent App price: $5.00/month
+- Margin: >94%
+
+============================================================
+SECTION 5: REMAINING TASKS (Session 2)
+============================================================
+
+Task 17: Design Parent Coaching Message (Q6-Q10)
+  - Section structure, length, CM reference, Deep Dive equiv
+  - Needs collaborative design
+
+Task 18: Design Parent Insights Dashboard (Q11-Q15)
+  - Dashboard metrics, cadence, daily data, early weeks
+  - Stage 4 mirror details, daily signal labels
+
+Task 19: Write Parent Coaching Message specification
+  - Stage 3 expansion (v1.7 or addendum)
+
+Task 20: Write Parent Insights Dashboard specification
+  - Stage 4 parent-mode instructions
+  - Stage 7 parent signal adaptation
+  - Deterministic dashboard metric definitions
+
+Task 21: Update Editorial Audit for parent-facing content
+  - Scope reduced: confirm existing criteria sufficient
+  - May be minimal or unnecessary given same data boundary
+
+============================================================
+END OF DOCUMENT
+============================================================
