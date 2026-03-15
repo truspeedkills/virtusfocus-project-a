@@ -35,11 +35,15 @@ OUTPUTS (3 POSSIBLE):
    - Growth phase alignment
    - Clear next-week priorities
 
-3) Parent-Facing Summary (If Requested)
-   - Growth-oriented
-   - No technical scoring details
-   - Focus on habits, maturity, and development
-   - Simple guidance for support at home
+3) Parent Coaching Message (D2C Premium, parent_inclusion = true)
+   - Coach Arron in third-person register
+   - 4 sections: Weekly Context, What Stood Out, What's Ahead,
+     How You Can Support
+   - 150-250 words, informational + support guidance
+   - Same compliance rules as athlete-facing output
+   - No surveillance, monitoring, or behavior-reporting framing
+   - Every section supports the parent's ability to help the
+     athlete's mental performance growth
 
 FINAL RULE:
 Interpretation layer provides truth.

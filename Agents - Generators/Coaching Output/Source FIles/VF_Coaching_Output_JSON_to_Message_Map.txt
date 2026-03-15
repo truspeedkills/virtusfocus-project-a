@@ -174,19 +174,258 @@ Then prescribe focus areas already in JSON:
 most_important_controllable + micro_commitment.
 
 ------------------------------------------------------------
-PARENT SUMMARY
+PARENT COACHING MESSAGE (4 SECTIONS)
 ------------------------------------------------------------
 
-Pull only:
-- growth_phase
-- consistency trend (simplified)
-- one development signal
+The Parent Coaching Message is generated AFTER the Athlete
+Coaching Message and Deep Dive. It is a standalone output
+for the parent — thematically aligned with the Athlete CM
+(same JSON, same week), but NEVER directly references the
+Athlete CM, Deep Dive, or micro-commitment by name.
+
+Voice: Coach Arron, third-person register. Informational +
+support guidance. Does NOT coach the parent. Updates and
+suggests how to support.
+
+Length: 150-250 words total (4 sections, ~35-65 words each).
+
+Generation trigger: D2C Premium athletes with
+parent_inclusion = true ONLY.
+
+----
+
+SECTION 1 — Weekly Context:
+Purpose: What the athlete is building this week. High-level
+theme, tier-level framing without naming the tier.
+
+Pull from:
+- weekly_tier → frame as "building," "steady," or "working
+  through a tough week" (never name Growth/Mixed/Reset)
+- core_pattern → one-sentence behavioral theme
+- consistency_profile → stability framing
+- growth_phase → developmental framing (subtle, no phase
+  name — see DQ4 rule below)
+- current_season_phase → seasonal context when natural
+  ("heading into competition," "in the offseason")
 
 Do NOT include:
-- weekly tier labels
-- technical classifications
-- scoring bands
-- execution behavior data
+- Weekly tier names (Growth, Mixed, Reset)
+- Growth phase names (Developing, Consistent, etc.)
+- Consistency classifications (Stable Positive, Variable, etc.)
+- Any longitudinal metric values
+
+----
+
+SECTION 2 — What Stood Out:
+Purpose: One specific strength or development signal the
+parent can recognize and reinforce at home. Behavioral,
+not technical.
+
+Pull from:
+- coach_insights.key_habit_signal → translate to parent-
+  recognizable behavioral description
+- control_quality → what the athlete is controlling well
+- athlete_voice.key_phrase or achievement_statement → if the
+  athlete said something the parent would value hearing,
+  include it as a direct quote. Use sparingly — only when
+  it adds genuine warmth.
+- win_the_day.daily_distribution → frame effort level
+  without citing numbers ("full effort all week" or
+  "pushed through a harder stretch")
+
+Do NOT include:
+- Win/Neutral/Missed day counts
+- WTD scores or daily breakdowns
+- Bullseye ring analysis
+- Reflection quality scores
+- Coach flag language
+
+----
+
+SECTION 3 — What's Ahead:
+Purpose: Forward-looking context so the parent can create
+the right environment. Not the micro-commitment itself.
+
+Pull from:
+- upcoming_context.scheduled_competition → name specific
+  upcoming events ("NC trip this week")
+- upcoming_context.anticipated_stressor → thematic framing
+  only ("back-to-back travel," "competition environment").
+  Do NOT reproduce stressor language verbatim.
+- micro_commitment.action → THEMATIC REFERENCE ONLY. Frame
+  the direction of work without quoting the commitment.
+  WRONG: "Grace's goal is to complete a deliberate warmup
+  before each game."
+  CORRECT: "The coaching focus this week is on preparation
+  quality heading into competition."
+- narrative_arc.open_thread → if a longitudinal thread is
+  relevant to what the parent should know about upcoming
+  context, reference it thematically.
+
+Do NOT include:
+- The micro-commitment text itself
+- Narrative arc technical language
+- Derailer terminology
+- Prior commitment results
+
+DERAILER-ACTIVATION WEEKS (DQ3 — indirect):
+When baseline_alignment.alignment_status = "Partially
+Aligned" or "Not Aligned":
+- "What's Ahead" notes the athlete is working on something
+  specific without naming the derailer.
+  CORRECT: "The coaching focus this week is on staying steady
+  in a challenging stretch."
+  WRONG: "Grace's primary derailer — loss of confidence —
+  activated this week."
+- "How You Can Support" adjusts to provide space/stability.
+  The parent should sense the coaching is targeting something
+  without knowing the specifics.
+
+----
+
+SECTION 4 — How You Can Support:
+Purpose: One concrete, actionable support suggestion for the
+parent. Drawn from the week's data, not generic. This is the
+anchor section and differentiator.
+
+PRIMARY CALIBRATION — Q23 home_conversation_pattern:
+  "Mostly supportive":
+    Standard support suggestion. Reinforce what the athlete
+    is doing well. Suggest specific recognition language the
+    parent can use at home.
+    Tone: "Here's something you can say..."
+  "A lot of analysis or advice":
+    Redirect toward listening. Suggest the parent ask instead
+    of advise. Frame support as creating space for the athlete
+    to process independently.
+    Tone: "This week, try asking instead of advising..."
+  "Pressure to perform":
+    Buffer-oriented suggestion. Protect the athlete's mental
+    space. Suggest reducing performance conversation at home.
+    Frame support as NOT discussing results.
+    Tone: "The most helpful thing this week is to let the
+    results go unmentioned..."
+  "We don't discuss performance much":
+    Open-door suggestion. Suggest one low-pressure way to
+    show interest without initiating a performance
+    conversation. Frame support as presence, not conversation.
+    Tone: "You don't need to bring up the game. Just being
+    there is the signal..."
+
+SECONDARY MODIFIER — Q25 support_network_primary:
+  "A parent" or "No one":
+    The parent may be the athlete's primary emotional resource
+    (or the athlete has none). Support suggestions can include
+    emotional availability language — "being someone they can
+    talk to" type guidance.
+  "A teammate" / "My coach" / "A mentor":
+    The athlete's primary support is outside the home.
+    Support suggestions focus on environment — creating space,
+    reducing pressure, being present without needing to be the
+    processing partner.
+
+ADDITIONAL PULL FROM:
+- growth_phase → adjust suggestion complexity.
+  Developing: simpler, routine-oriented suggestions.
+  Consistent: reinforce the athlete's independence.
+  Leadership: celebrate and stay out of the way.
+- emotional_intensity → see EI handling below.
+- core_pattern → ground the suggestion in the week's theme.
+
+EMOTIONAL INTENSITY HANDLING (DQ2 — light touch):
+When emotional_intensity = "High":
+- ONLY "How You Can Support" adjusts.
+- Support suggestion becomes warmer and more protective.
+- Frame: "This was a harder week emotionally. The best
+  support right now is..." + specific protective action.
+- Other sections (1-3) stay informational. Do NOT signal
+  emotional weight in Weekly Context, What Stood Out, or
+  What's Ahead.
+
+When emotional_intensity = "Low" or "Moderate":
+- Standard support tone per Q23/Q25 calibration.
+- No emotional modifier applied.
+
+GROWTH PHASE ADVANCEMENT (DQ4 — subtle):
+When growth_phase advances from one level to the next:
+- Do NOT name the phase transition ("Developing to
+  Consistent").
+- DO reflect the milestone in tone and language.
+  CORRECT: "Grace has shown real consistency in her routine
+  over the past several weeks — that kind of steadiness is
+  worth recognizing."
+  WRONG: "Grace advanced from Developing to Consistent this
+  week."
+- Phase advancement may appear in Section 1 (Weekly Context)
+  or Section 2 (What Stood Out), whichever fits the week's
+  theme more naturally.
+
+INSUFFICIENT DATA / EARLY WEEKS:
+Week 1:
+- Section 1: Welcome tone. "This is Grace's first week in
+  the VirtusFocus program."
+- Section 2: Frame initial engagement as the signal.
+  "Showing up and completing the first week is itself a
+  meaningful step."
+- Section 3: "The early weeks are about building a baseline
+  and getting comfortable with the daily routine."
+- Section 4: Support suggestion focused on encouraging the
+  process. "The most helpful thing right now is to let Grace
+  settle into the routine without asking how it's going."
+Weeks 2-3:
+- All sections functional but longitudinal data limited.
+- Avoid longitudinal language ("over several weeks," "the
+  pattern shows") until Week 4+.
+
+----
+
+PARENT CM — GLOBAL EXCLUSIONS:
+Everything prohibited in the Athlete CM is also prohibited
+in the Parent CM. Additionally:
+
+Do NOT include in any Parent CM section:
+- Weekly tier labels (Growth, Mixed, Reset)
+- Growth phase names (Emerging, Developing, Consistent,
+  Leadership)
+- Consistency classifications
+- Scoring bands or composite score language
+- Coach flag language or flag-derived patterns
+- Self-ratings alignment labels
+- Execution behavior data (raw metrics, composite scores,
+  flags, alignment)
+- Baseline intake profile field names (PPD buckets, ABI
+  pillar names, adversity classifications)
+- The micro-commitment text (thematic reference only)
+- Prior commitment results
+- Drift identification language directed at the parent
+- Accountability language directed at the parent
+- Any reference to what the Athlete CM contains
+- Any language that frames the parent as a monitor,
+  tracker, or compliance agent
+- Clinical language (same VirtusFocus-wide prohibition)
+
+EXECUTION SIGNAL ROUTING (App athletes):
+Same prohibited categories as Athlete CM — composite scores,
+flags, raw metrics, self-ratings alignment labels NEVER
+appear in Parent CM. Execution data may subtly inform the
+support suggestion tone (e.g., if broad disengagement flags
+fire, the support suggestion may lean toward "create space
+and reduce pressure") but no execution terminology surfaces.
+
+INTAKE PROFILE ROUTING (App athletes):
+Same prohibited categories as Athlete CM — PPD bucket names,
+ABI pillar names, adversity classifications NEVER surface.
+Ecosystem fields (Q22-Q25) are used directly for Section 4
+calibration (see above). Other intake fields inform direction
+only, same as Athlete CM routing.
+
+CORE FOUNDATION SKIP:
+When input_source = "core_foundation":
+- Skip all execution signal and intake profile routing in
+  all Parent CM sections.
+- Section 4 uses default support suggestion (no Q23/Q25
+  calibration available — use generic supportive guidance).
+- All other sections function normally using v9.3 fields.
 
 ------------------------------------------------------------
 EXECUTION SIGNAL ROUTING RULES
