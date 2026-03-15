@@ -1,0 +1,611 @@
+VIRTUSFOCUS — IDEA 4: PARENT OUTPUT + PARENT INSIGHTS DASHBOARD
+COLLABORATIVE DESIGN SESSION HANDOFF
+============================================================
+
+SESSION MODE: COLLABORATIVE DESIGN
+============================================================
+
+This session designs the Parent-Facing Output expansion and
+Parent Insights Dashboard — the final idea in the VirtusFocus
+pipeline improvement sequence. This idea introduces the first
+NON-INSTITUTIONAL output in the pipeline: content designed for
+parents in the direct-to-consumer (D2C) ecosystem.
+
+Ideas 1-3 are complete. The pipeline is at its most capable
+state (v9.5 / v1.6 / v1.3 / v1.2 / Stage 6 v1.1 / Stage 7
+Determination Rules v1.0). All architectural decisions from
+Ideas 1-3 are locked and inform this session.
+
+============================================================
+WHAT THIS IDEA IS
+============================================================
+
+Idea 4 has TWO components:
+
+COMPONENT 1 — EXPANDED PARENT COACHING MESSAGE
+  The pipeline already generates a lightweight "Parent Summary"
+  in Stage 3 (Coaching Output Engine). The current parent
+  message is minimal. This component expands it into a real
+  coaching message for parents — helping them understand what
+  their athlete is working on, where progress is happening,
+  and how to support growth at home WITHOUT turning them into
+  the coach.
+
+COMPONENT 2 — PARENT INSIGHTS DASHBOARD
+  A new output stream that provides parents with structured
+  visibility into their athlete's development. Similar in
+  concept to Stage 4 (Coach Insights) but with FUNDAMENTALLY
+  DIFFERENT compliance rules. Parents are NOT subject to the
+  same institutional/NCAA restrictions as coaching staff.
+  Parents CAN see execution behavior data that coaches cannot.
+
+============================================================
+WHY THIS IS DIFFERENT FROM EVERYTHING ELSE IN THE PIPELINE
+============================================================
+
+Every pipeline output built so far operates under ONE of two
+compliance frameworks:
+
+  1. ATHLETE-FACING (Stages 3, 6): Coach Arron's voice, no
+     clinical language, no data surfacing, no pattern naming,
+     no surveillance framing. Protective of the athlete's
+     emotional experience.
+
+  2. INSTITUTIONAL COACH-FACING (Stages 4, 7): Neutral
+     institutional voice, no raw execution data, no score
+     names, no flag IDs. Protective of institutional safety
+     across all staff levels (position coach → AD).
+
+Idea 4 introduces a THIRD compliance framework:
+
+  3. PARENT-FACING (D2C only): Supportive coaching voice
+     (not Coach Arron, not institutional — a parent-guidance
+     voice), MORE data visibility than coaches get, but with
+     a HARD boundary around athlete journaling and personal
+     reflections. Protective of the athlete's private
+     reflective space while giving parents genuine insight.
+
+This is the first time the pipeline produces output for a
+non-coach, non-athlete audience. The compliance rules must be
+designed from scratch — they are neither a subset nor a
+superset of the existing frameworks.
+
+============================================================
+THE D2C PRODUCT MODEL
+============================================================
+
+CONTEXT: VirtusFocus operates in TWO markets:
+
+  INSTITUTIONAL: Teams/programs pay for VirtusFocus. Coaches
+  get Stage 4 weekly reports + Stage 7 daily signals. Athletes
+  get Stage 3 coaching messages + Stage 6 daily snippets.
+  All athletes are full-featured. No tiers.
+
+  D2C (DIRECT-TO-CONSUMER): Individual athletes/families
+  subscribe directly. The athlete gets the full VirtusFocus
+  app experience. Base tier = standalone daily + weekly.
+  Premium tier = enriched by weekly pipeline.
+
+THE PARENT APP IS D2C ONLY:
+  The Parent App is an optional $5/month add-on for D2C
+  families. It gives parents their own app experience on their
+  own phone, connected to their child's VirtusFocus account.
+
+  Institutional athletes do NOT have the Parent App — their
+  coaches get Stage 4/7 output instead. The parent and coach
+  audiences are mutually exclusive by product model.
+
+  This means Idea 4 output is NEVER consumed alongside
+  Stage 4/7 output for the same athlete. A parent will never
+  see a "Coach Insights" report. A coach will never see a
+  "Parent Insights" dashboard. They exist in separate product
+  ecosystems.
+
+============================================================
+WHAT PARENTS SEE VS. DON'T SEE
+============================================================
+
+From the D2C Parent App Overview document:
+
+PARENTS SEE:
+  - Parent-facing coaching messages (what the athlete is
+    working on, where progress is happening, where support
+    may be needed, how to respond constructively)
+  - Enhanced dashboard with metrics and insights
+  - App participation and consistency patterns
+  - Completion patterns and engagement trends
+  - Progress over time
+  - Key mental performance themes
+  - Growth indicators (confidence, focus, resilience,
+    ownership, consistency)
+  - Practical support guidance tied to development
+
+PARENTS DO NOT SEE:
+  - Private journal entries
+  - Exact personal reflections
+  - Private written responses from the coaching process
+  - Raw confidential athlete input
+
+THE CORE BOUNDARY:
+  "Honest reflection requires psychological safety. If athletes
+  believe everything they write will be visible to a parent,
+  the quality and truthfulness of their reflection will drop."
+
+  Journal content is private in BOTH institutional (coaches
+  can't see it) and D2C (parents can't see it). This is the
+  one rule that crosses all compliance frameworks.
+
+HOW PARENT VISIBILITY DIFFERS FROM COACH VISIBILITY:
+
+  Parents get MORE data visibility than coaches in several
+  areas because they are not subject to NCAA/institutional
+  compliance restrictions:
+
+  PARENTS CAN SEE (coaches cannot):
+    - Participation patterns (did the athlete engage?)
+    - Completion data (which components were completed?)
+    - Usage behavior (consistency of app usage)
+    - Engagement metrics (trends in how actively the athlete
+      uses the system)
+    - Streak counts (how many consecutive days engaged?)
+    - Progress patterns with specific data points
+
+  COACHES CANNOT SEE (institutional compliance):
+    - Completion rates
+    - Daily completion counts
+    - Last login timestamps
+    - Engagement scores
+    - Compliance or adherence ratings
+    - Streak counts
+
+  This asymmetry is intentional and by design. Parents are
+  supporters in the home environment. Coaches are evaluators
+  in the institutional environment. Different relationships
+  require different data boundaries.
+
+============================================================
+TASK QUEUE
+============================================================
+
+| # | Task | Deliverable |
+|---|---|---|
+| 16 | Design Parent Compliance Framework | New compliance document defining what parents see vs don't, data boundaries, voice rules, prohibited content |
+| 17 | Design expanded Parent Coaching Message | Approved content framework (structure, voice, sections, relationship to athlete CM) |
+| 18 | Design Parent Insights Dashboard | Approved dashboard design (metrics, signals, visualizations, update cadence) |
+| 19 | Write Parent Coaching Message specification | New spec files (Master Prompt + Instructions or expanded Stage 3) |
+| 20 | Write Parent Insights Dashboard specification | New engine spec (separate stage or expanded Stage 4) |
+| 21 | Update Editorial Audit for parent-facing content | Audit spec update (new criteria for parent output) |
+
+Work through tasks sequentially. Tasks 16-18 are
+collaborative design. Tasks 19-21 are specification writing.
+Present designs for collaborative review before writing to
+disk.
+
+============================================================
+KEY DESIGN QUESTIONS FOR THIS SESSION
+============================================================
+
+TASK 16 — PARENT COMPLIANCE FRAMEWORK:
+
+Q1. What execution data CAN parents see?
+    The D2C Parent App Overview says parents see participation,
+    completion, engagement, usage, consistency, progress. But
+    how granular?
+    Options:
+    (a) Categorical only — "Your athlete completed 5 of 7
+        days this week" (counts, not rates/percentages)
+    (b) Trend-based — "Engagement is improving this week"
+        (directional, no specific numbers)
+    (c) Full dashboard — daily completion breakdown, streak
+        counts, component-by-component engagement, historical
+        charts (maximum visibility)
+    (d) Hybrid — some metrics as specific data, others as
+        trends (calibrated per metric)
+
+Q2. What about the Interpretation JSON fields that coaches
+    can't see?
+    Stage 4 has an explicit list of "inform-only" fields that
+    are never reproduced (risk_flags, narrative_arc, coach_
+    insights subfields, raw execution metrics). Do parents get
+    access to some of these? Specifically:
+    - risk_flags: Should parents see risk indicators?
+    - narrative_arc: Should parents see developmental story?
+    - Composite scores: Should parents see score bands?
+    - Coach flags: Should parents see behavioral warnings?
+
+Q3. How does the parent compliance framework interact with
+    the existing Clinical Language Prohibition?
+    Clinical language is prohibited across ALL pipeline output
+    (athlete, coach, and presumably parent). But the parent
+    voice may need different replacement terms than the coach
+    voice. "Stress load indicator" works for coaches but may
+    confuse parents.
+
+Q4. What is the parent-facing voice?
+    Not Coach Arron (that's the athlete's coach). Not
+    institutional reporting (that's for staff). Options:
+    (a) "VirtusFocus" as the voice — brand speaking to parent
+    (b) "Coach Arron" adapted — same coach persona but
+        speaking to the parent about their child
+    (c) Unnamed coaching voice — authoritative but warm
+    (d) Something else?
+
+Q5. Does the parent output use the athlete's name or "your
+    athlete"?
+    Coach output uses the athlete's first name. Parent output
+    could use the athlete's first name (more personal) or
+    "your athlete" (more formal/protective).
+
+TASK 17 — PARENT COACHING MESSAGE:
+
+Q6. Where does the Parent Coaching Message come from?
+    Options:
+    (a) Stage 3 expansion — add parent message as a third
+        output of the Coaching Output Engine alongside
+        Coaching Message and Deep Dive. Same generation
+        session, same JSON input, different audience rules.
+    (b) Separate new stage (Stage 8) — independent parent
+        coaching engine that reads the Interpretation JSON
+        and produces parent-specific output.
+    (c) Derived from athlete output — generate the athlete
+        CM first, then produce a parent version that
+        references the same themes but with parent framing.
+
+Q7. What sections should the Parent Coaching Message have?
+    The athlete gets: Opening, Drift/Strength, Growth, Identity
+    Anchor, and Micro-Commitment. What does the parent get?
+    Possible sections:
+    - What your athlete is working on this week
+    - Where progress is showing
+    - Where support might help
+    - How to reinforce growth at home
+    - What to avoid (common parent mistakes for this pattern)
+    - A specific support suggestion
+
+Q8. How long should the Parent Coaching Message be?
+    Athlete CM = 250-450 words. Parent message needs to be
+    useful but not overwhelming. Parents are not coaches and
+    may not read lengthy documents.
+
+Q9. Does the parent message reference the athlete's CM
+    content? Or is it independently generated from the JSON?
+    If the parent reads "Your athlete is working on focus this
+    week" and the athlete's CM says "This week is about
+    preparation consistency" — that's a coherence problem.
+
+Q10. Is there a Parent Deep Dive equivalent?
+     The athlete gets a Deep Dive (detailed analysis). Do
+     parents get a deeper document, or just the message?
+
+TASK 18 — PARENT INSIGHTS DASHBOARD:
+
+Q11. Is the Parent Insights Dashboard a weekly document
+     (like Stage 4) or a live app feature (always updated)?
+     Options:
+     (a) Weekly generated document — produced after weekly
+         pipeline runs, like the Coach Insights report
+     (b) Live dashboard — app backend computes metrics in
+         real-time from accumulated data, always current
+     (c) Hybrid — weekly narrative summary + live metrics
+
+Q12. What metrics appear on the Parent Dashboard?
+     From the Parent App Overview, candidates include:
+     - Participation patterns (days engaged this week/month)
+     - Completion trends (components completed over time)
+     - Streak data (current streak, longest streak)
+     - WTD execution pattern (Growth/Mixed/Reset week trend)
+     - Growth Phase progression (Emerging → Leadership)
+     - Confidence and consistency directional signals
+     - Bullseye focus pattern (controllable alignment)
+     - Journaling engagement (frequency, NOT content)
+     - Support suggestions tied to patterns
+
+Q13. Does the Parent Dashboard consume the Interpretation
+     JSON directly, or does it need its own processing stage?
+     Stage 4 reads the Interpretation JSON. Can the Parent
+     Dashboard read the same JSON with different compliance
+     filters? Or does it need a "Parent Interpretation" layer?
+
+Q14. Does the Parent Dashboard show daily data?
+     Stage 7 produces daily signals for coaches. Should
+     parents see a daily signal too? The daily traffic light
+     (Green/Yellow/Orange) could be valuable for parents —
+     but the coach-facing labels (Aligned/Building/Reset Day)
+     might need parent-appropriate translations.
+
+Q15. How does the dashboard handle the athlete's first
+     few weeks? Many metrics need 2-4 weeks of data. What
+     does a parent see in Week 1?
+
+TASK 19 — PARENT COACHING MESSAGE SPEC:
+(No design questions — implementation of Tasks 16-17 decisions)
+
+TASK 20 — PARENT INSIGHTS DASHBOARD SPEC:
+(No design questions — implementation of Tasks 16+18 decisions)
+
+TASK 21 — EDITORIAL AUDIT UPDATE:
+
+Q16. Does the parent output go through the existing Stage 5
+     Editorial Audit, or does it need a separate audit?
+     The current Stage 5 audits athlete-facing Coaching
+     Messages and Deep Dives against the athlete compliance
+     framework. Parent output has a DIFFERENT compliance
+     framework. Options:
+     (a) Expand Stage 5 with parent-specific criteria
+     (b) Create a separate parent audit specification
+     (c) Embed self-validation in the parent generation
+         (same architecture as Stage 6 daily snippets)
+
+Q17. What parent-specific audit criteria are needed?
+     Candidates:
+     - Journal content leakage (THE critical boundary)
+     - Clinical language in parent context
+     - Parent-as-coach framing (output should NOT position
+       the parent as the coach)
+     - Data consistency (parent message aligns with parent
+       dashboard)
+     - Athlete name/privacy in dashboard metrics
+     - Tone appropriateness (supportive, not evaluative)
+
+============================================================
+WHAT IDEAS 1-3 ESTABLISHED (LOCKED ARCHITECTURE)
+============================================================
+
+IDEA 1 (Athlete Intake Form) — COMPLETE:
+  - 29-question unified intake form
+  - PPD scoring (8 buckets), ABI scoring (4 pillars)
+  - baseline_intake_profile in Interpretation JSON
+  - Competitive Level Calibration Rule (Stage 3)
+  - Pipeline Data Leakage Compliance (Categories E+F)
+  - current_season_phase via weekly check-in
+  - Active pipeline: v9.5 / v1.6 / v1.3 / v1.2
+  RELEVANT TO IDEA 4: The intake form includes Q22-Q25
+  (Ecosystem section) specifically designed to feed Idea 4.
+  Q22 = parent awareness of VF, Q23 = home conversation
+  pattern, Q24 = development driver, Q25 = support network.
+  These fields flow into the snapshot's Ecosystem Profile
+  section and are available for parent output calibration.
+
+IDEA 2 (Daily Coaching Snippet) — COMPLETE:
+  - Stage 6: Master Prompt v1.1 + Instructions v1.1
+  - Daily Mini-JSON data contract (shared with Stage 7)
+  - Tiered product model (Base 7/week, Premium 6/week)
+  - Self-validation architecture (Compliance Scan Protocol)
+  - QA Monitoring Protocol v1.1 (Stages 6+7)
+  RELEVANT TO IDEA 4: The Daily Mini-JSON contains daily
+  data that could feed a parent daily view. The tiered
+  product model (Base/Premium) is the same D2C model where
+  the Parent App add-on lives. Parents of Base athletes
+  see Base-level data; parents of Premium athletes see
+  Premium-enriched data.
+
+IDEA 3 (Daily Coach Insights) — COMPLETE:
+  - Stage 7: Deterministic rules engine (no LLM)
+  - Daily Athlete Signal (Traffic Light + 4 signals)
+  - Point-based scoring with weekly calibration
+  - Team/position 4-tier aggregation
+  - Complementary daily-to-weekly relationship (Model C)
+  RELEVANT TO IDEA 4: The daily signal architecture could
+  potentially be adapted for parent-facing daily signals.
+  The traffic light concept (Green/Yellow/Orange) is
+  scannable and parent-friendly. But the labels and
+  compliance rules would differ.
+
+============================================================
+REFERENCE FILES TO READ
+============================================================
+
+Read these files in this order:
+
+1. CLAUDE.md (project context — read first, the full file)
+
+2. Parent App context:
+   Agents - Generators\Parents Insight Engine\D2C Parent App Insights and add ons.txt
+
+3. Intake form ecosystem questions (Q22-Q25 feed parent output):
+   Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+
+4. Athlete snapshot (ecosystem section + baseline anchors):
+   Agents - Generators\Athlete Snapshot Generator\VF_App_Athlete_Snapshot_Fields.txt
+
+5. Stage 3 — current parent message source:
+   Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V3.txt
+   Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.6.txt
+   Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+
+6. Stage 3 voice and style (for parent voice differentiation):
+   Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+   Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+   Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+
+7. Stage 4 — coach-facing parallel (contrast with parent):
+   Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.1.txt
+   Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.3.txt
+
+8. Coach compliance framework (parent framework will differ):
+   Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+   Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+
+9. Stage 5 — Editorial Audit (will need parent criteria):
+   Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.2.txt
+   Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+
+10. Stage 7 — Daily Coach Signal Design (potential parent adaptation):
+    Agents - Generators\Daily Coach Insights Engine\Source Files\VF_Daily_Coach_Signal_Design.txt
+    Agents - Generators\Daily Coach Insights Engine\VF_Daily_Coach_Signal_Determination_Rules_v1.0.txt
+
+11. Daily data contract (daily parent data source):
+    Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Mini_JSON_Specification.txt
+
+12. Interpretation Engine (weekly data source for parent dashboard):
+    Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.5.txt
+
+13. A sample athlete for grounding design decisions:
+    Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+    Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+
+Total: 23 reference files + CLAUDE.md
+
+NOTE: This is the most reference files of any design session.
+Idea 4 touches the entire pipeline — parent output reads from
+Stage 2 (JSON), may expand Stage 3 (coaching message), creates
+a parallel to Stage 4 (dashboard), needs Stage 5 coverage
+(audit), and could leverage Stage 7 architecture (daily
+signals). Read the files but focus your understanding on the
+BOUNDARIES — what each existing stage does and does not surface
+to its audience.
+
+============================================================
+KEY CONSTRAINTS
+============================================================
+
+1. PARENT APP IS D2C ONLY
+   This output NEVER exists in the institutional product. No
+   coach will ever see it. No NCAA compliance concerns. But
+   the clinical language prohibition still applies (VirtusFocus
+   is non-clinical across ALL audiences).
+
+2. JOURNAL CONTENT IS THE HARD BOUNDARY
+   The one rule that is absolute across all audiences: no
+   journal entries, personal reflections, or raw written
+   athlete input appears in ANY parent-facing output. Not
+   quoted. Not paraphrased. Not summarized. Not referenced.
+
+3. SUPPORT, NOT COACHING
+   The parent output helps parents SUPPORT their athlete's
+   development. It does not position the parent as the coach.
+   "Support should increase ownership, not replace it." The
+   parent should never feel they need to coach their child
+   based on this output — they should feel equipped to be a
+   better supporter of the process.
+
+4. THE ATHLETE'S TRUST IS THE PRODUCT
+   If athletes believe their parent sees everything they enter,
+   engagement quality drops. The parent output must be designed
+   so the athlete would be comfortable with what their parent
+   receives. This is not just a compliance rule — it's a
+   product survival rule.
+
+5. PROPORTIONALITY TO PRICE POINT
+   The Parent App is $5/month. The output should be valuable
+   but not require disproportionate compute resources. Consider
+   whether some parent dashboard metrics can be computed
+   deterministically (like Stage 7) vs. requiring LLM
+   generation.
+
+6. ECOSYSTEM QUESTIONS ALREADY DESIGNED
+   The intake form (Task 1) includes Q22-Q25 specifically for
+   Idea 4. These fields are available in the Athlete Snapshot's
+   Ecosystem Profile section. The parent output can use:
+   - Q22: Parent awareness of VF (informed/general/unaware)
+   - Q23: Home conversation pattern (supportive/analysis-advice/
+     pressure/don't discuss)
+   - Q24: Development driver (parent/athlete/coach/self)
+   - Q25: Support network (family/peer/coaching/self-directed)
+   These calibrate the parent message tone and guidance level.
+
+============================================================
+PIPELINE ARCHITECTURE QUESTIONS
+============================================================
+
+Beyond the per-task design questions, the session needs to
+resolve where parent output fits in the pipeline:
+
+A1. Does the Parent Coaching Message come from Stage 3
+    (third output alongside CM + DD) or a new Stage 8?
+    Trade-offs:
+    - Stage 3: Same JSON read, same generation session,
+      guaranteed thematic coherence with athlete CM. But
+      makes Stage 3 more complex and mixes audiences.
+    - Stage 8: Clean separation, independent prompt tuning,
+      can use different model. But risks thematic divergence
+      and doubles the JSON read.
+
+A2. Does the Parent Insights Dashboard come from Stage 4
+    (parallel output) or a new Stage 9?
+    Same trade-offs as A1, plus: the parent compliance
+    framework is fundamentally different from the coach
+    framework. Running both through the same stage with
+    different compliance filters is possible but complex.
+
+A3. Does the parent output need its OWN editorial audit,
+    or does Stage 5 expand?
+    If parent output is LLM-generated, it needs audit. If
+    some dashboard metrics are deterministic (like Stage 7),
+    those don't need LLM audit but may need QA monitoring.
+
+A4. Should there be a daily parent signal alongside the
+    weekly parent output?
+    Stage 7 produces daily signals for coaches. Parents
+    could receive a similar daily signal — potentially
+    even the same traffic light with parent-friendly labels.
+    Or daily parent visibility could be limited to the live
+    dashboard.
+
+A5. How does Base/Premium tiering affect parent output?
+    Parents of Base athletes only have Mini-JSON + Snapshot
+    data. Parents of Premium athletes also have the weekly
+    Interpretation JSON. Does this create two tiers of
+    parent experience? Is that acceptable at the same
+    $5/month price point?
+
+============================================================
+DELIVERABLES
+============================================================
+
+Task 16: Parent Compliance Framework document
+  File: VF_Parent_Compliance_Framework.txt
+  Directory: Agents - Generators\Parents Insight Engine\
+    (rename to "Parent Insights Engine" or keep as-is —
+    decide during session)
+
+Task 17: Parent Coaching Message content framework
+  Design document or incorporated into Task 16 document.
+
+Task 18: Parent Insights Dashboard design
+  Design document defining metrics, visualizations, cadence,
+  data sources.
+
+Task 19: Parent Coaching Message specification
+  New spec files (Master Prompt + Instructions) OR expanded
+  Stage 3 specification (depending on A1 decision).
+  Directory: Agents - Generators\Parents Insight Engine\
+
+Task 20: Parent Insights Dashboard specification
+  New engine spec OR expanded Stage 4 specification
+  (depending on A2 decision).
+
+Task 21: Editorial Audit update for parent-facing content
+  Updated Stage 5 specification OR new parent audit spec
+  (depending on A3 decision).
+
+All deliverables saved to disk, CLAUDE.md updated, git
+committed before session ends.
+
+============================================================
+WORKFLOW
+============================================================
+
+1. Read all 23 reference files + CLAUDE.md
+2. Present understanding of what parent output needs to
+   accomplish and how it differs from all existing output
+3. Resolve architecture questions (A1-A5) collaboratively
+4. Work through Task 16 design questions (Q1-Q5)
+5. Work through Task 17 design questions (Q6-Q10)
+6. Work through Task 18 design questions (Q11-Q15)
+7. Write design documents (Tasks 16-18)
+8. Write specification files (Tasks 19-20)
+9. Design audit criteria (Task 21, Q16-Q17)
+10. Update CLAUDE.md
+11. Git commit
+
+NOTE: This is the largest design session in the pipeline
+improvement sequence. 6 tasks, 17 design questions, 5
+architecture decisions, 23 reference files. The session may
+need to be split across multiple conversations. If so,
+prioritize Tasks 16-18 (design) in the first session and
+Tasks 19-21 (specification) in the second.
+
+============================================================
+END OF HANDOFF
+============================================================
