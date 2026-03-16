@@ -1,0 +1,674 @@
+============================================================
+JASMINE JONES — PIPELINE PROCESSING HANDOFF PROMPT
+============================================================
+SESSION TYPE: Pipeline Processing (Stages 1-5)
+GOAL: Process Jasmine Jones through the full VirtusFocus AI
+Coaching Pipeline: Snapshot Generation (Stage 1) →
+Interpretation Engine (Stage 2) → Coaching Output Engine
+(Stage 3) → Coach Insights Engine (Stage 4) → Editorial
+Audit (Stage 5).
+============================================================
+
+1. WHAT YOU ARE DOING
+============================================================
+You are processing ONE athlete — Jasmine Jones — through the
+full 5-stage pipeline. She is a Core Foundation athlete
+(weekly PDF recap input only — NOT an App athlete). This
+means:
+- input_source = "core_foundation" for all weeks
+- All execution_behavior_signals fields → fallback values
+- All baseline_intake_profile fields → fallback values
+- current_season_phase → "not available"
+- forward_anchor fields → fallback values
+- No PPD/ABI scoring (Core Foundation intake form)
+- No competitive level calibration (default College-equivalent)
+  NOTE: Jasmine is a professional/national team athlete, but
+  the competitive_level calibration field is App-only. The
+  Coaching Output Engine should still use language appropriate
+  to her maturity and level — she's a 29-year-old Olympic
+  aspirant on the USA Bobsled team, not a college freshman.
+  Use natural calibration based on snapshot context, not the
+  formal competitive level parameter.
+- No parent output (no parent_inclusion data)
+
+The pipeline produces IDENTICAL output quality for Core
+Foundation athletes. The v9.6/v1.8/v1.5/v1.3 specifications
+contain Core Foundation skip rules that bypass all App-only
+features while preserving full coaching quality.
+
+Jasmine is the SIXTH athlete processed through the pipeline
+and the HIGHEST competitive level athlete processed to date.
+
+============================================================
+2. ATHLETE PROFILE
+============================================================
+Name: Jasmine Jones
+Sport: Bobsled
+Position: Brakeman
+Team: USA (USABS — USA Bobsled & Skeleton)
+Program: WCAP (World Class Athlete Program)
+Training Location: Lake Placid, NY (Olympic Training Center)
+Age at Intake: 28 (DOB: July 9, 1996 — turns 29 during
+  the program in Week 7)
+Years Competing: 7
+Mental Game Self-Rating: 9/10 (HIGHEST in the pipeline)
+Commitment: All-in
+Parent Involvement: Somewhat involved
+Parent Inclusion: Not specified (treat as NO)
+
+Existing Mental Performance Support: YES — Jasmine already
+  works with a sports psychologist she meets Fridays. This
+  is CRITICAL context. The VirtusFocus pipeline must NOT
+  overlap with, compete with, or replicate clinical support.
+  VirtusFocus is behavioral performance coaching. Her sports
+  psych handles the deeper processing work. This boundary
+  must be maintained throughout all 7 weeks of output.
+
+Mental Struggles Selected: Fear of failure, Handling
+  mistakes, Letting go of bad outcomes
+
+Key Intake Language:
+- Pre-moment: "Execution and how I can be my best self.
+  While reminding myself that I'm not competing for no one
+  else but only for me. As well as trusting my training and
+  everything I learned to get to that race."
+- Holding back: "Putting too much pressure on myself and
+  thinking I'm doing my sport for other people. For example,
+  when my grandfather died I felt pressure that I needed to
+  do extremely well in order to please him when I should've
+  been focusing on myself and that is what he would have
+  wanted as well."
+- Success vision: "Win push champs going into the season
+  and being the best brakemen. Make the World Cup team and
+  soon the Olympic team for the games."
+- Mindset goals: (1) Remaining confident and not comparing
+  myself to others (2) Not putting pressure on myself
+  thinking about other people and doing it for them
+- VirtusFocus hopes: "A better mindset that will put me at
+  another level being an elite athlete. Another way to set
+  me apart from competitors and contributing to being a well
+  rounded athlete."
+
+Single Parent: Jasmine has a daughter named Jade who lives
+  with her in Lake Placid. This is a PERMANENT life context
+  that affects training, recovery, stress, and social life.
+  It is NOT a coaching target — it is environmental context
+  that informs how her consistency and stress load are
+  interpreted.
+
+Intake PDF: Athlete Data\Jasmine Jones\JASMINE-JONES-Bobsled.pdf
+
+============================================================
+3. WEEKLY REVIEWS
+============================================================
+| # | File                       | Submit Date      | Est. Week Period     |
+|---|----------------------------|------------------|----------------------|
+| 1 | Jasmine Jones 5-18.txt     | Sun May 18, 2025 | May 12-18, 2025      |
+| 2 | Jasmine Jones 5-25.txt     | Sun May 25, 2025 | May 19-25, 2025      |
+| 3 | Jasmine Jones 6-1.txt      | Sun Jun 1, 2025  | May 26-Jun 1, 2025   |
+| 4 | Jasmine Jones 6-15.txt     | Sun Jun 15, 2025 | Jun 9-15, 2025       |
+| 5 | Jasmine Jones 6-22.txt     | Mon Jun 23, 2025 | Jun 16-22, 2025      |
+| 6 | Jasmine Jones 6-29.txt     | Sun Jun 29, 2025 | Jun 23-29, 2025      |
+| 7 | Jasmine Jones 7-13.txt     | Sun Jul 13, 2025 | Jul 7-13, 2025       |
+
+Directory: Athlete Data\Jasmine Jones\Weekly Reviews\
+
+DATE GAPS:
+- Weeks 1-3 are consecutive (May 12 - Jun 1)
+- 1-week gap between Week 3 (Jun 1) and Week 4 (Jun 15)
+  — Week of Jun 2-8 is missing. No explanation provided in
+  Week 4. Treat as a standard missing week.
+- Weeks 4-6 are consecutive (Jun 9-29)
+- 1-week gap between Week 6 (Jun 29) and Week 7 (Jul 13)
+  — Jun 30 - Jul 6 was vacation. Jasmine says in Week 7:
+  "Previous week was a vacation." She traveled to PA to
+  visit family (mentioned at end of Week 6), then to visit
+  friends. Jade stayed with Jasmine's mom.
+
+GAP HANDLING:
+- Week 4: prior_commitment_result.execution_status = "Unknown"
+  (no recap for the gap week)
+- Week 7: prior_commitment_result.execution_status = "Unknown"
+  (vacation week, no recap, commitment given before trip)
+- narrative_arc should note both gaps
+- Longitudinal calculations: gaps may reset or produce
+  "insufficient data" depending on threshold rules
+
+DATE RANGE DETERMINATION:
+Weekly review submission dates map to Sun-Sun patterns.
+Verify from the daily entry content that each recap covers
+Monday through Sunday. Jasmine's submission dates are
+consistently Sunday, suggesting she fills out the recap
+at end of day Sunday covering Mon-Sun.
+
+NOTE ON WTD SCORING:
+Jasmine frequently does not provide WTD scores for
+individual days (especially Fri-Sun in some weeks, or
+Mon in Week 1). Multiple weeks have incomplete scoring
+requiring category-only classification. Week 2 and Week 6
+have explicit Gold Streak designations. Week 4 has no
+scorecard designation and multiple missing daily scores.
+The scoring inconsistency is a pattern worth noting in the
+interpretation — it is NOT the same as missing days.
+
+============================================================
+4. KEY THEMES FROM RECAPS
+============================================================
+
+THEME 1: COMPARISON AND EXTERNAL VALIDATION (PRIMARY DERAILER)
+This is the dominant psychological pattern across all 7
+weeks. Jasmine constantly references comparing herself to
+teammates — their training, their workloads, their programs,
+their recognition. Specific instances:
+- Wk1: "Worrying about other people. Especially teammates
+  and their training habits"
+- Wk2: NBC shoot exclusion — felt left out when they posted
+  "bobsled moms with just the pilots" (not brakemen)
+- Wk3: Irritated by teammate's work ethic/complaining in
+  training group
+- Wk4: "Other peoples workload and what programs they are
+  doing"
+- Wk5: Team drama (press incident), screenshots being sent
+- Wk6: Declined push standard test ("nosey people wanting
+  to compare"), frustrated by mid-thigh cleans
+- Wk7: Relationship comparison — "not everyone is going to
+  match my energy"
+
+The comparison pattern extends beyond sport into
+relationships, NBC recognition, and social dynamics. The
+intake directly identifies it: "Remaining confident and not
+comparing myself to others" is mindset goal #1.
+
+THEME 2: PERFORMING FOR OTHERS vs. PERFORMING FOR SELF
+Closely linked to Theme 1. Jasmine's intake reveals the
+foundational version: when her grandfather died, she felt
+pressure to perform for him rather than for herself. This
+"performing for others" pattern recurs:
+- NBC shoot: feeling she needs to be visible/recognized
+- Declining to push for a standard in June: deliberately
+  choosing NOT to perform for others' perception
+- Week 7: "I'm not competing for no one else but only for me"
+  (stated goal, but tested by relationship dynamics)
+
+THEME 3: SINGLE PARENT IN ELITE SPORT
+Jasmine raises Jade alone in Lake Placid (remote, limited
+social options). This affects:
+- Sunday stress (household chores, no childcare help)
+- Saturday quality time (intentional Jade days)
+- Vacation logistics (Jade stays with Jasmine's mom)
+- Social isolation ("there's nothing around here")
+- Training schedule flexibility
+Jade's wellbeing is consistently positive — teammates
+support her, she attends recitals, they go on outings. This
+is NOT a risk flag. It is environmental context.
+
+THEME 4: INTERPERSONAL FRICTION / AGGRESSION
+Jasmine has an intense personality and is very direct about
+her reactions to teammates:
+- Wk3: "I be ready to cuss folks out" — specifically about
+  a teammate who complains during training. Strength coach
+  is aware and helps her manage. She's "scared of what
+  I'll do cause I get hella aggressive"
+- Wk4: Managing temperament in groups
+- Wk5: Team drama (press incident), actively avoiding
+  screenshots and gossip
+- Wk6: "I had to agree to disagree with a good friend"
+- Wk7: Relationship conflict processed through venting and
+  crying (healthy processing)
+
+COMPLIANCE NOTE: The aggression language is within normal
+coaching scope — it is self-identified frustration about
+training environment, not a safety concern. Jasmine's
+strength coach is already involved. The pipeline should
+acknowledge the pattern as a consistency/focus factor, NOT
+frame it clinically.
+
+THEME 5: EMOTIONAL CHANNELING
+Jasmine has a distinctive pattern of converting negative
+emotions into performance fuel:
+- Wk3: "I wonder if I can channel that [aggression] into
+  my weights this week"
+- Wk7: "Usually when I do get my feelings hurt I channel
+  that energy into sport where I feel unstoppable... Each
+  time I got my feelings hurt, I leveled up"
+This is both a strength (produces performance energy) and
+a developmental area (not sustainable, reactive rather than
+proactive). The coaching opportunity is acknowledging the
+channeling as effective while building proactive activation
+that does not depend on being hurt first.
+
+THEME 6: OLYMPIC ASPIRATIONS
+Jasmine's goals are: Win push champs → Make World Cup team
+→ Make Olympic team. She trains at the Olympic Training
+Center in Lake Placid alongside skeleton athletes, other
+bobsled athletes, and coaches. She is currently in her
+off-season training block (May-July 2025). No competition
+during these 7 weeks — all training and preparation.
+
+THEME 7: LONELINESS AND RELATIONSHIPS
+Lake Placid isolation is real. Jasmine names it directly
+in Week 7: "It gets hard knowing the path I'm on as well
+as the area I'm in that it gets lonely. It would be enjoyable
+to have a person I can have my 'escape' with." The dating
+situation in Week 7 triggers past relationship patterns.
+This is personal context that affects her emotional state
+and should inform emotional intensity classification, but
+the pipeline does NOT coach on relationships. It is noise-
+ring context.
+
+THEME 8: PHYSICAL REHABILITATION
+Knee gel injection before Week 1. Progressive improvement
+through the weeks. Sports med and chiro appointments
+are part of her weekly routine. She manages this proactively.
+
+THEME 9: SPORTS PSYCHOLOGIST
+Jasmine mentions her sports psych in Week 7: "I was able
+to talk to my sports psych. I usually talk with him every
+Friday... I was able to dive into my feelings... Talking
+with him always makes me feel lighter." This is an EXISTING
+clinical support relationship that the pipeline must respect.
+VirtusFocus content should NEVER overlap with, replace, or
+reference her sports psych work. The pipeline coaches
+behavior and execution; her sports psych handles the deeper
+emotional processing.
+
+============================================================
+5. PROCESSING ORDER
+============================================================
+
+STAGE 1: ATHLETE SNAPSHOT GENERATION
+  - Read the intake PDF
+  - Follow the Snapshot Builder specification (v1.0 — Core
+    Foundation path, NOT v2.0 App path)
+  - Generate the 9-section baseline narrative snapshot
+  - Derive the 4 locked baseline anchors:
+    * baseline_identity_claim
+    * baseline_hinge_habit
+    * baseline_primary_derailer
+    * baseline_growth_phase
+  - IMPORTANT: The baseline_primary_derailer should capture
+    the external validation / performing-for-others pattern,
+    not the interpersonal friction (which is a secondary
+    behavioral pattern). The holding-back answer directly
+    identifies it.
+  - IMPORTANT: The baseline_hinge_habit should relate to her
+    training discipline and self-trust approach, not to
+    managing her aggression (which is a growth area, not a
+    habit to reinforce).
+  - Growth phase: Developing (standard starting point despite
+    her 9/10 self-rating and 7 years competing. The self-
+    rating is her self-perception; growth phase is pipeline-
+    assessed based on demonstrated patterns).
+  - Save to: Athlete Data\Jasmine Jones\jasmine_jones_athlete_snapshot.txt
+  - Present snapshot to user for review before proceeding
+
+STAGE 2: INTERPRETATION ENGINE (all 7 weeks)
+  - Read the athlete's baseline snapshot
+  - Read ALL weekly reviews in chronological order
+  - Process each week through the Interpretation Engine
+    using v9.6 Project Instructions
+  - input_source = "core_foundation" for all weeks
+  - Apply all Core Foundation fallback rules
+  - Save each week's JSON to: Athlete Data\Jasmine Jones\Weekly JSONS\
+  - Naming: Jasmine_Jones_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_Interpretation.txt
+  DATE RANGE DETERMINATION:
+  Use recap daily content (Monday through Sunday entries) to
+  determine the actual week period. Map submission dates to
+  Mon-Sun coverage. Jasmine submits on Sundays typically.
+
+STAGE 3: COACHING OUTPUT ENGINE (all 7 weeks)
+  - Input: Interpretation JSON only (do NOT re-read recaps)
+  - Follow v1.8 Instructions (Core Foundation path)
+  - Master Prompt V4
+  - Generate Coaching Message + Deep Dive for each week
+  - Persona: Coach Arron
+  - No parent output (Core Foundation, no parent_inclusion)
+  - IMPORTANT: Jasmine's language is raw, direct, and
+    authentic. Coach Arron's voice should match her maturity
+    and directness — she is a 29-year-old elite athlete, not
+    a college student. The coaching tone should be peer-level
+    respectful, not pedagogical.
+  - IMPORTANT: Never reference her sports psychologist in
+    coaching output. The pipeline and her sports psych operate
+    in separate lanes.
+  - Save to: Athlete Data\Jasmine Jones\Coaching and Deep Dive\Coaching Message\
+  - Save to: Athlete Data\Jasmine Jones\Coaching and Deep Dive\Deep Dive\
+  - Naming: Jasmine_Jones_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_CoachingMessage.txt
+  - Naming: Jasmine_Jones_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_DeepDive.txt
+
+STAGE 4: COACH INSIGHTS ENGINE (all 7 weeks)
+  - Input: Interpretation JSON only
+  - Follow v1.5 Instructions (Core Foundation path)
+  - Master Prompt v1.2
+  - Generate Weekly Performance Insight for each week
+  - No parent insight (Core Foundation)
+  - Save to: Athlete Data\Jasmine Jones\Coach Insights\
+  - Naming: Jasmine_Jones_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_WeeklyInsight.txt
+
+STAGE 5: EDITORIAL AUDIT (most complex week)
+  - Choose the most complex week for audit. Candidates:
+    * Week 3 (Jun 1): Interpersonal aggression, irritability,
+      ashwagandha mention, "ready to cuss folks out," complex
+      compliance boundary
+    * Week 5 (Jun 22): Performance camp, team drama/press
+      incident, Juneteenth stress, fatigue
+    * Week 7 (Jul 13): Relationship stress, past trauma
+      references, crying, "fight or flight from past
+      relationships," emotional channeling, birthday,
+      family death processing with sports psych
+    RECOMMENDATION: Week 7 is likely the most complex — it
+    has the highest emotional intensity, relationship triggers,
+    clinical boundary testing (sports psych mention, "past
+    relationship trauma," "fight or flight"), and the most
+    content the audit needs to verify stays within non-
+    clinical coaching scope.
+  - Input: Interpretation JSON + Coaching Message + Deep Dive
+  - Follow v1.3 Instructions
+  - All 13 criteria, all 3 tiers
+  - If REJECT: regenerate the failing output, then re-audit
+  - Save to: Athlete Data\Jasmine Jones\Coaching and Deep Dive\Audit Summaries\
+  - Naming: Jasmine_Jones_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_AuditSummary.txt
+
+============================================================
+6. REFERENCE FILES TO READ
+============================================================
+Read CLAUDE.md first — it contains the full pipeline
+specification, all operating rules, file locations, and
+athlete data status (including 5 completed athletes for
+format reference).
+
+STAGE 1 REFERENCES:
+- Snapshot Builder v1.0 (CF path):
+  Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+- Existing snapshots for format reference:
+  Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+  Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+  Athlete Data\Mergim Bushati\mergim_bushati_snapshot.txt
+  Athlete Data\Aidan Burkardt\aidan_burkardt_athlete_snapshot.txt
+  Athlete Data\Angelo Allen\angelo_allen_athlete_snapshot.txt
+
+STAGE 2 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Interpretation\SOP - Weekly Interp Prompt v7.3.txt
+- Project Instructions (ACTIVE):
+  Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
+- JSON Rules:
+  Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+- Composite Score Rules (CF fallback reference):
+  Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+- Coach Flags Specification (CF fallback reference):
+  Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt
+- App Input Format (CF fallback reference):
+  Agents - Generators\Interpretation\Source Files\VF_App_Input_Format_Specification.txt
+
+STAGE 3 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+- Project Instructions (ACTIVE):
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.8.txt
+- Message Map:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+- Brand Voice:
+  Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+- Content Style Guide:
+  Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+- System Identity:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+- Coaching Message Framework:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+- Deep Dive Framework:
+  Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+- Reflection/Growth Phase Model:
+  Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
+
+STAGE 4 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.2.txt
+- Project Instructions (ACTIVE):
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.5.txt
+- JSON Logic Reference:
+  Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+- Compliance Framework:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+- Dashboard Metrics Reference:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+- Output Structure Master:
+  Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
+
+STAGE 5 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+- Project Instructions:
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+- (Also uses Stage 3 source files listed above)
+
+EXISTING ATHLETE OUTPUTS FOR QUALITY/FORMAT REFERENCE:
+- Angelo Allen Week 4 JSON (most recent, same schema):
+  Athlete Data\Angelo Allen\Weekly JSONS\Angelo_Allen_2026-03-09to2026-03-15_VF_Interpretation.txt
+- Angelo Allen Week 4 CM (Moderate EI, gap handling reference):
+  Athlete Data\Angelo Allen\Coaching and Deep Dive\Coaching Message\Angelo_Allen_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+- Angelo Allen Week 4 DD (competition retrospective reference):
+  Athlete Data\Angelo Allen\Coaching and Deep Dive\Deep Dive\Angelo_Allen_2026-03-09to2026-03-15_VF_DeepDive.txt
+- Angelo Allen Week 4 Audit (13-criterion PASS reference):
+  Athlete Data\Angelo Allen\Coaching and Deep Dive\Audit Summaries\Angelo_Allen_2026-03-09to2026-03-15_VF_AuditSummary.txt
+- Mergim Bushati Week 18 JSON (High EI reference):
+  Athlete Data\Mergim Bushati\Weekly JSONS\Mergim_Bushati_2026-01-05to2026-01-11_VF_Interpretation.txt
+
+============================================================
+7. WHAT THE USER EXPECTS
+============================================================
+- ALL outputs saved to disk in the correct directories
+- Present the snapshot for review before proceeding to Stage 2
+- After completing Jasmine, provide a brief summary:
+  * Week-by-week tier and EI table (same format as CLAUDE.md)
+  * Key arc summary (2-3 sentences)
+  * Any notable findings or patterns
+  * Editorial audit result
+- Commit all work to Git with descriptive commit message
+- Update CLAUDE.md with Jasmine's completed athlete data status
+  (move from "Other Athletes" to her own section, add all
+  tables, arc, open threads)
+
+============================================================
+8. WHAT NOT TO DO
+============================================================
+- Do NOT modify any specification files
+- Do NOT use App-athlete features (execution signals, PPD,
+  ABI, intake profile, forward anchor, parent output)
+- Do NOT skip reading the specification files
+- Do NOT reinterpret or override JSON classifications in
+  downstream stages
+- Do NOT use clinical language in any coaching output
+- Do NOT reference Jasmine's sports psychologist in any
+  coaching output (CM, DD, Coach Insight). It is fine to
+  note in the JSON's coach_insights or risk_flags that she
+  has existing support — but that internal note must NEVER
+  reach athlete-facing or coach-facing output.
+- Do NOT frame interpersonal friction as anger management,
+  impulse control, or any clinical construct. It is a
+  focus/consistency factor within performance coaching scope.
+- Do NOT frame her emotional channeling pattern ("I leveled
+  up when hurt") as a trauma response. It is a behavioral
+  pattern within coaching scope — effective but reactive.
+- Do NOT surface coach_insights, risk_flags, narrative_arc,
+  upcoming_context, or longitudinal_metrics in coaching output
+- Do NOT rush through the snapshot — it is the foundation
+  for all downstream output
+
+============================================================
+9. LOCKED FACTS
+============================================================
+- Jasmine Jones is Core Foundation (input_source = "core_foundation")
+- v9.6 is the active Interpretation Engine schema
+- v1.8 is the active Coaching Output Instructions
+- V4 is the active Coaching Output Master Prompt
+- v1.5 is the active Coach Insights Instructions
+- v1.2 is the active Coach Insights Master Prompt
+- v1.3 is the active Editorial Audit (Master + Instructions)
+- Core Foundation Snapshot Builder is v1.0 (NOT v2.0)
+- 13 audit criteria across 3 tiers (Tier 1: 1-4 + 13)
+- 7 weekly reviews with 2 one-week gaps (Jun 2-8 and Jun 30-Jul 6)
+- Parent inclusion = NO (not specified, default to NO)
+- Existing sports psychologist (Fridays) — clinical support
+  is separate from VirtusFocus coaching pipeline
+- Coach Insights output goes to: Athlete Data\Jasmine Jones\Coach Insights\
+  (NOT the "Insights" directory that already exists)
+- Audit Summaries directory created at:
+  Athlete Data\Jasmine Jones\Coaching and Deep Dive\Audit Summaries\
+
+============================================================
+10. JASMINE-SPECIFIC PROCESSING NOTES
+============================================================
+
+PROFILE DISTINCTIVENESS:
+Jasmine is fundamentally different from all prior pipeline
+athletes in several ways:
+
+(a) HIGHEST COMPETITIVE LEVEL: USA national team, Olympic
+aspirant, WCAP program. All prior athletes are collegiate.
+This affects: language maturity, competitive context
+(international vs conference), training environment (Olympic
+Training Center vs university), stakes (Olympics vs NCAA),
+and identity scope (national representation vs personal
+development).
+
+(b) OLDEST ATHLETE: 28-29 years old (turns 29 in Week 7).
+Prior athletes range from ~18-22. Jasmine's life context
+includes parenting, career planning, adult relationships,
+and financial independence. Her maturity level is adult, not
+emerging-adult.
+
+(c) SINGLE PARENT: No other athlete in the pipeline has a
+dependent child. Jade's presence affects every dimension of
+Jasmine's weekly experience — training schedule, recovery,
+stress, social life, weekend structure, travel logistics.
+
+(d) EXISTING CLINICAL SUPPORT: Only athlete in the pipeline
+with a current sports psychologist. This creates a hard
+boundary: VirtusFocus coaches behavior, the sports psych
+handles the deeper processing. The pipeline must NEVER
+encroach on clinical territory.
+
+(e) HIGHEST SELF-RATING (9/10): Jasmine rates her mental
+game higher than any other athlete. This self-perception
+should be noted in the snapshot but is NOT a pipeline
+assessment. The recaps will reveal whether her behavioral
+patterns match a 9/10 self-perception (potential Conflated
+signal when execution data is available in the App version).
+
+(f) NO COMPETITION DURING PROGRAM: All 7 weeks are off-season
+training. No competitive events. This means: no competition
+data in any JSON, no performance outcomes to interpret,
+coaching output focused entirely on training execution and
+developmental patterns. Competition context comes only from
+future goals (push champs, World Cup, Olympics).
+
+(g) RAW, AUTHENTIC LANGUAGE: Jasmine's voice is distinctly
+different from other athletes. She is direct, unfiltered,
+emotionally open. "Ready to cuss folks out," "hella aggressive,"
+"weirdo basically," "I be ready to fight." Coach Arron's
+voice in the CM should respect this directness — match her
+maturity without mimicking her language.
+
+EXPECTED COMPLEXITY POINTS:
+
+1. CLINICAL BOUNDARY: Week 7 is the biggest compliance risk.
+   Jasmine mentions: "past relationship trauma," "fight or
+   flight mode from past relationships," talking with sports
+   psych about feelings from trip, processing a family death.
+   The coaching output MUST stay within behavioral performance
+   scope. The JSON can note this context internally (risk_flags,
+   coach_insights) but coaching output must address only the
+   behavioral signals (showing up to train, channeling energy,
+   maintaining consistency) without touching the underlying
+   emotional content.
+
+2. INTERPERSONAL AGGRESSION: Weeks 3 and beyond contain
+   increasingly specific descriptions of frustration with
+   teammates. The language is intense ("ready to fight,"
+   "scared of what I'll do"). This is within coaching scope
+   as a FOCUS and CONSISTENCY factor — the irritation disrupts
+   her training focus. It is NOT within scope as anger
+   management or impulse control (clinical constructs). Frame
+   it as: "What is within your control when training
+   environment friction appears?"
+
+3. NBC EXCLUSION (Week 2): This is an identity wound. She
+   was excluded from recognition because she's a brakeman,
+   not a pilot. Her response — "Now I'm working on something
+   that's going to make me stand out and be more than just the
+   brakeman behind the pilot" — is approach-framed. The
+   coaching opportunity is connecting this to her identity
+   claim (competing for herself, not for others' recognition).
+
+4. WTD SCORING INCONSISTENCY: Multiple weeks have missing
+   daily scores. Some weeks have no scorecard designation.
+   Friday-Sunday are particularly likely to be unscored.
+   This requires category-only classification more frequently
+   than other athletes. The pattern itself may be a coaching
+   signal (weekend/non-training days deprioritized in the
+   system).
+
+5. EMOTIONAL INTENSITY CALIBRATION: Jasmine's language is
+   naturally intense even in low-stress weeks. She uses strong
+   language casually ("I was dying," "hella aggressive," "I
+   was over it"). EI classification must distinguish between
+   her natural communication style and genuinely elevated
+   emotional states. Week 7 is likely the only Moderate or
+   High EI week — the relationship situation and family death
+   processing represent actual emotional elevation beyond her
+   baseline intensity.
+
+6. TRAINING BLOCK PERIODIZATION: The 7 weeks span two
+   training blocks plus a performance camp. The training
+   context progresses: Block 1 (Wks 1-3) → gap → Block
+   finish/testing (Wk 4) → Performance camp (Wk 5) → Block 2
+   start with vacation (Wk 6) → gap/vacation → Down week
+   (Wk 7). Understanding this periodization helps interpret
+   fatigue patterns and goal-setting.
+
+7. TWO GAPS: Both gaps are approximately 1 week. Week 4 gap
+   is unexplained. Week 7 gap is vacation (explicitly stated).
+   Neither gap appears to be disengagement — Jasmine maintains
+   Growth-tier execution in the weeks surrounding both gaps.
+
+============================================================
+11. TOTAL OUTPUTS TO PRODUCE
+============================================================
+- 1 athlete snapshot (Stage 1)
+- 7 Interpretation JSONs (Stage 2)
+- 7 Coaching Messages (Stage 3)
+- 7 Deep Dives (Stage 3)
+- 7 Weekly Performance Insights (Stage 4)
+- 1 Editorial Audit Summary (Stage 5, minimum)
+Total: ~30 files
+
+SESSION SPLITTING GUIDANCE:
+This is the largest single-athlete processing job in the
+pipeline (7 weeks). If the session runs long:
+- Priority 1: Snapshot + all 7 JSONs (Stage 1-2) — these
+  are the foundation
+- Priority 2: All 7 CMs + DDs (Stage 3) — athlete-facing
+  output
+- Priority 3: All 7 Coach Insights (Stage 4) — coach-facing
+  output
+- Priority 4: Editorial Audit (Stage 5) — quality gate
+
+If splitting across sessions, commit after each completed
+stage and create a continuation handoff noting exactly
+where processing stopped.
+
+============================================================
+12. POST-PROCESSING NOTES
+============================================================
+After Jasmine is complete, the pipeline will have:
+- 6 athletes processed (Grace, Tucker, Mergim, Aidan,
+  Angelo, Jasmine)
+- This UNLOCKS Team Snapshot generation (requires 5+ athletes)
+- 46 total athlete-weeks of data across 6 athletes
+- Next priorities: Team Snapshot generation, parent output
+  live validation, longitudinal PPD design
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================

@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-16
-**Session Notes:** Processed Angelo Allen through full 5-stage pipeline (Stages 1-5, 4 weeks). 17 files produced: 1 snapshot, 4 Interpretation JSONs, 4 Coaching Messages, 4 Deep Dives, 4 Weekly Performance Insights, 1 Editorial Audit Summary (Week 4 — PASS all 13 criteria). Fifth athlete fully processed. Prior session: Aidan Burkardt processed, Angelo Allen handoff prompt created.
+**Session Notes:** Processed Angelo Allen through full 5-stage pipeline (Stages 1-5, 4 weeks). 17 files produced: 1 snapshot, 4 Interpretation JSONs, 4 Coaching Messages, 4 Deep Dives, 4 Weekly Performance Insights, 1 Editorial Audit Summary (Week 4 — PASS all 13 criteria). Fifth athlete fully processed. Jasmine Jones Processing Handoff Prompt created for fresh session (~30 files). Prior session: Aidan Burkardt processed, Angelo Allen handoff prompt created.
 
 ---
 
@@ -236,6 +236,7 @@ Language-based tone calibration: Low / Moderate / High / insufficient data
 - **Comprehensive Pipeline Briefing: `Comprehensive Pipeline Briefing Handoff Prompt.txt`** — handoff for fresh session to read all 45 reference files and produce a comprehensive written briefing document covering full 7-stage pipeline architecture, 4 product tiers, compliance framework, execution signals, intake system, parent output, forward anchor, athlete data, and cost structure. Replaces the previous Pipeline Overview Handoff Prompt (which covered only the original 5-stage pipeline with 23 files).
 - **New Athlete Processing: `New Athlete Processing Handoff Prompt.txt`** — handoff for fresh session to process 3 Core Foundation athletes (Aidan Burkardt 5wk, Angelo Allen 4wk, Jasmine Jones 7wk) through full pipeline (Stages 1-5). 70+ files to produce. Includes detailed athlete profiles, date range mapping, gap analysis, key themes, and session split guidance. All CF athletes (no App features).
 - **Angelo Allen Processing: `Angelo Allen Processing Handoff Prompt.txt`** — handoff for fresh session to process Angelo Allen (Track & Field Throws, Seton Hill, 4 weeks) through full Stages 1-5 pipeline. ~18 files. Includes athlete profile, PSAC championship gap handling notes, processing-specific guidance, and complete reference file list. Created after Aidan Burkardt completed.
+- **Jasmine Jones Processing: `Jasmine Jones Processing Handoff Prompt.txt`** — handoff for fresh session to process Jasmine Jones (Bobsled Brakeman, USA/WCAP, 7 weeks May-Jul 2025) through full Stages 1-5 pipeline. ~30 files. Includes athlete profile (Olympic aspirant, single parent, existing sports psych, 9/10 mental game), 7 weekly review summaries with date ranges and gaps, 9 key themes (comparison/external validation derailer, performing for others vs self, single parent dynamics, interpersonal friction/aggression, emotional channeling, Olympic aspirations, loneliness, physical rehab, sports psychologist), processing complexity notes (clinical boundary risk, aggression compliance, NBC exclusion, WTD scoring inconsistency, EI calibration for naturally intense language, no competition data). Created after Angelo Allen completed.
 
 ### Versioning Rules (established this session)
 - Prompts + Instructions = new versioned files (never edit in place)
@@ -1002,7 +1003,7 @@ Handoff prompts: `Pipeline Improvement Design Handoff Prompt.txt` (overview), `I
 ### Athlete Pipeline Work
 - [x] **Aidan Burkardt pipeline processing:** 5 weeks, 22 files (snapshot + 5 JSONs + 5 CMs + 5 DDs + 5 Coach Insights + 1 Audit Summary). PASS all 13 criteria.
 - [x] **Process Angelo Allen:** 4 weeks, 17 files (1 snapshot + 4 JSONs + 4 CMs + 4 DDs + 4 Coach Insights + 1 Audit Summary). PASS all 13 criteria. Fifth athlete fully processed.
-- [ ] **Process Jasmine Jones:** 7 weeks, ~30 files. Handoff prompt ready (`New Athlete Processing Handoff Prompt.txt`). Unlocks Team Snapshot (6 athletes after all 3 complete).
+- [ ] **Process Jasmine Jones:** 7 weeks, ~30 files. Dedicated handoff prompt ready (`Jasmine Jones Processing Handoff Prompt.txt`). Unlocks Team Snapshot (6 athletes after all 3 complete).
 - [ ] **Parent output live validation:** Generate Parent CMs + Parent Insights for existing athletes (Grace, Tucker, Mergim) — validates v1.8/v1.5 parent specifications
 - [ ] **Team Snapshot generation:** First team-level output (requires 5+ athletes — will have 6 after new athlete processing)
 - [ ] **Longitudinal PPD design:** Execution-derived PPD comparison against intake self-report, PPD Alignment Signal
