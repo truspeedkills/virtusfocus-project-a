@@ -1,0 +1,318 @@
+COACHING MESSAGE FORMAT STANDARDIZATION — HANDOFF PROMPT
+=========================================================
+
+PURPOSE:
+You are a fresh session tasked with standardizing the format of all
+athlete-facing Coaching Messages across the VirtusFocus pipeline.
+The coaching CONTENT is correct — voice, analytical depth, compliance,
+and coaching quality are all sound. The problem is FORMAT INCONSISTENCY
+across the 33 Coaching Messages on disk (6 athletes, 33 weeks total).
+
+This session has TWO phases:
+  Phase 1: Establish the locked format specification
+  Phase 2: Regenerate all non-compliant Coaching Messages
+
+DO NOT begin Phase 2 until the user explicitly approves the format
+specification from Phase 1.
+
+=========================================================
+THE PROBLEM
+=========================================================
+
+An audit of all 33 Coaching Messages revealed two distinct format
+populations:
+
+GROUP A (FORMATTED — 22 messages):
+  Grace Kindel (6 weeks), Mergim Bushati (19 weeks),
+  Aidan Burkardt (5 weeks partially — need to verify all)
+
+  Format characteristics:
+  - "VIRTUSFOCUS — ATHLETE COACHING MESSAGE" header
+  - Metadata line: athlete name, week number, date range
+  - Schema/EI/Tier metadata line
+  - ━━━ separator bars (full-width, ~73 characters)
+  - Body with salutation ("Grace —")
+  - Labeled "YOUR ACTION — [CONTEXT]" section with separators
+  - Closing phrase + "— Coach Arron" signature
+  - Labeled "NEXT WEEK FOCUS QUESTION" section with separators
+
+GROUP B (UNFORMATTED — 11 messages):
+  Tucker Lloyd (5 weeks), Angelo Allen (4 weeks),
+  Jasmine Jones (7 weeks partially — need to verify all)
+
+  Format characteristics:
+  - NO header, NO metadata lines
+  - Starts directly with salutation ("Tucker," or "Angelo —")
+  - Body narrative (same quality content)
+  - Action embedded in narrative ("Here is your action:" inline)
+  - NO labeled "YOUR ACTION" section
+  - Closing phrase + "— Coach Arron" (sometimes closing phrase absent)
+  - NO "NEXT WEEK FOCUS QUESTION" section at all
+  - NO separator bars anywhere
+
+ROOT CAUSE:
+The Coaching Message Framework spec (VF_Coaching_Message_Framework.txt)
+defines the 5 content sections but says NOTHING about visual format —
+no header, no separators, no "YOUR ACTION" label, no "NEXT WEEK FOCUS
+QUESTION" section. The Master Prompt (V4) also does not specify output
+format for the athlete-facing CM. The formatted version emerged
+organically during early Grace Kindel/Mergim processing sessions and
+was never codified. Later athletes (Tucker, Angelo, Jasmine) were
+processed by parallel agents in fresh sessions that did not inherit
+the format convention.
+
+The Parent CM format IS defined (in Instructions v1.8 Section 23+)
+with explicit header, sections, and separator specification. The
+athlete-facing CM has no equivalent.
+
+=========================================================
+WHAT NEEDS TO HAPPEN
+=========================================================
+
+PHASE 1 — ESTABLISH THE LOCKED FORMAT SPECIFICATION
+
+Read the following files to understand the current state:
+
+  SPECIFICATIONS (read all):
+  1. VF_Coaching_Message_Framework.txt
+     Path: Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+     (Current spec — defines content structure only, no visual format)
+
+  2. SOP_Coaching_Output_Master_Prompt_V4.txt
+     Path: Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+     (Master prompt — no athlete CM format spec)
+
+  3. SOP_Coaching_Output_Instructions_v1.8.txt
+     Path: Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.8.txt
+     (Full instructions — Parent CM format defined in Sections 23+,
+      but NO athlete CM format section exists)
+
+  4. brand_voice.txt
+     Path: Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+
+  5. content_style_guide.txt
+     Path: Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+
+  SAMPLE OUTPUTS — GROUP A (read 3 for format reference):
+  6. Grace Kindel Week 6 (most recent, Group A):
+     Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-03-02to2026-03-08_VF_CoachingMessage.txt
+
+  7. Grace Kindel Week 5:
+     Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+
+  8. Mergim Bushati Week 19:
+     Athlete Data\Mergim Bushati\Coaching and Deep Dive\Coaching Message\Mergim_Bushati_2026-01-12to2026-01-18_VF_CoachingMessage.txt
+
+  SAMPLE OUTPUTS — GROUP B (read 3 for comparison):
+  9. Tucker Lloyd Week 5:
+     Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Coaching Message\Tucker_Lloyd_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+
+  10. Angelo Allen Week 4:
+      Athlete Data\Angelo Allen\Coaching and Deep Dive\Coaching Message\Angelo_Allen_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+
+  11. Jasmine Jones Week 1:
+      Athlete Data\Jasmine Jones\Coaching and Deep Dive\Coaching Message\Jasmine_Jones_2025-05-12to2025-05-18_VF_CoachingMessage.txt
+
+After reading all files, present the user with:
+
+A. A PROPOSED FORMAT SPECIFICATION for the athlete-facing Coaching
+   Message. This should cover:
+
+   1. HEADER — Should the CM have a header? If so, what lines?
+      Consider: the header contains pipeline metadata (schema version,
+      EI classification, weekly tier). This is useful for internal
+      pipeline tracking but may not be appropriate for athlete-facing
+      output in the app. Present options:
+        Option A: Full header (current Group A style — header + metadata + separator)
+        Option B: Clean header (athlete name + week + date only, no pipeline metadata)
+        Option C: No header (starts with salutation, like Group B)
+
+   2. SEPARATORS — Should the CM use visual separator bars?
+      Consider: the Deep Dive uses dashes (----) between sections.
+      The Parent CM uses ━━━ separators. What should the athlete CM use?
+        Option A: Full-width ━━━ bars (current Group A style)
+        Option B: Dashes (---- style, matching Deep Dive)
+        Option C: No separators (clean narrative flow, like Group B)
+
+   3. "YOUR ACTION" SECTION — Should this be a labeled section?
+      Consider: making the action visually distinct helps scannability
+      in the app. The framework spec calls it "ONE Action" (Section 5).
+        Option A: Labeled section with context ("YOUR ACTION — THIS WEEK")
+        Option B: Labeled section without context ("YOUR ACTION")
+        Option C: Inline with narrative ("Here is your action:")
+
+   4. "NEXT WEEK FOCUS QUESTION" — Should this section exist?
+      Consider: this section does not appear in the framework spec at
+      all. Group A includes it; Group B omits it entirely. The JSON
+      contains a next_week_focus_question field. If included, it adds
+      a reflective prompt for the athlete. If excluded, it simplifies
+      the message.
+        Option A: Keep as labeled section after signature
+        Option B: Integrate into the action section or body
+        Option C: Remove entirely (the question stays in the JSON for
+                  Stage 4/Stage 6 use but doesn't appear in the CM)
+
+   5. SALUTATION FORMAT — Minor but inconsistent:
+        "Grace —" (em dash) vs "Tucker," (comma) vs "Angelo —"
+      Lock one format.
+
+   6. CLOSING PHRASE — Should a closing phrase be mandatory?
+      Group A always has one. Group B sometimes omits it (Angelo, Jasmine).
+      Framework spec provides examples but doesn't say "mandatory."
+
+   7. SIGNATURE PLACEMENT — Where does "— Coach Arron" go relative
+      to the action section and focus question?
+
+B. ONCE THE USER APPROVES the format specification:
+   - Update VF_Coaching_Message_Framework.txt with an OUTPUT FORMAT
+     section (same pattern as the Deep Dive Framework revision that
+     added PURPOSE, VOICE, and OUTPUT FORMAT sections)
+   - This is the ROOT CAUSE fix — same approach as the DD voice fix
+
+PHASE 2 — REGENERATE NON-COMPLIANT MESSAGES
+
+After the format is locked and the Framework spec is updated:
+
+1. READ every Coaching Message on disk (all 33 across 6 athletes)
+2. CATEGORIZE each as Compliant or Non-Compliant against the new spec
+3. For Non-Compliant messages:
+   - Read the corresponding Interpretation JSON
+   - Read the prior week's CM (for continuity reference)
+   - Regenerate the CM with IDENTICAL coaching content but corrected format
+   - The coaching content, voice, tone, and analytical depth must be PRESERVED
+   - Only the visual format changes
+   - Overwrite the original file
+
+IMPORTANT REGENERATION RULES:
+- Do NOT change the coaching content, voice, or analytical substance
+- Do NOT re-interpret the JSON or change any coaching decisions
+- Do NOT change the micro-commitment, identity thread, strength signals, or drift identification
+- ONLY apply the locked format: header, separators, section labels, closing phrase, signature placement
+- If a Group B message is missing "NEXT WEEK FOCUS QUESTION" and the
+  format spec includes it, pull the question from the Interpretation
+  JSON's next_week_focus_question field
+- Word count must stay within 250-450 target
+- Preserve the exact closing phrase if one exists; add one from the
+  framework examples if absent
+
+BATCH APPROACH:
+Process in batches to manage context. Suggested batching:
+  Batch 1: Tucker Lloyd (5 weeks) — smallest set, good pilot
+  Batch 2: Angelo Allen (4 weeks)
+  Batch 3: Jasmine Jones (7 weeks)
+  Batch 4: Verify Group A compliance (Grace 6, Mergim 19, Aidan 5)
+           — these SHOULD already comply but verify against locked spec
+           and fix any minor deviations (e.g., inconsistent separator
+           width, missing closing phrase, metadata line format changes)
+
+After each batch, spot-check 2 messages for:
+  - Format compliance with new spec
+  - Content preservation (coaching substance unchanged)
+  - Voice consistency (Coach Arron, second person, direct address)
+  - Compliance (no clinical language, no pipeline terminology)
+
+=========================================================
+COMPLIANCE RULES (ALWAYS APPLY)
+=========================================================
+
+- No clinical language (Categories A-D: anxiety, depression, therapy,
+  coping mechanism, mental health, disorder, trigger [as clinical],
+  fight or flight, etc.)
+- No pipeline terminology (Categories E-G: composite scores, band
+  labels, flag IDs, self-ratings labels, PPD bucket names, ABI terms,
+  forward anchor classifications)
+- No surveillance framing
+- All athletes are Core Foundation — no execution signal language
+- Micro-commitments must not be altered
+- Coach Arron voice throughout
+
+=========================================================
+REFERENCE FILE LIST (PRIORITY ORDER)
+=========================================================
+
+TIER 1 — Read before starting:
+1. VF_Coaching_Message_Framework.txt (current format spec — content only)
+2. SOP_Coaching_Output_Master_Prompt_V4.txt (master prompt)
+3. brand_voice.txt (Coach Arron voice reference)
+4. content_style_guide.txt (writing style)
+5. 3 Group A sample CMs (Grace Wk 5, 6; Mergim Wk 19)
+6. 3 Group B sample CMs (Tucker Wk 5; Angelo Wk 4; Jasmine Wk 1)
+
+TIER 2 — Read for regeneration:
+7. SOP_Coaching_Output_Instructions_v1.8.txt (full instructions —
+   note: Parent CM format is in Sections 23-31 for reference on
+   how format specs are written in this pipeline)
+8. VF_Deep_Dive_Coaching_Analysis_Framework.txt (reference for how
+   the DD Framework was structured — has PURPOSE, VOICE, OUTPUT FORMAT
+   sections that serve as a template for the CM Framework update)
+9. Each athlete's Interpretation JSONs (read per-batch during regeneration)
+
+TIER 3 — Available if needed:
+10. VF_Coaching_Output_System_Identity.txt
+11. VF_Coaching_Output_JSON_to_Message_Map.txt
+12. VF_Reflection_Quality_Growth_Phase_Model.txt
+
+=========================================================
+ATHLETE DATA LOCATIONS
+=========================================================
+
+All Coaching Messages follow the naming convention:
+{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_CoachingMessage.txt
+
+Directories:
+  Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\
+  Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Coaching Message\
+  Athlete Data\Mergim Bushati\Coaching and Deep Dive\Coaching Message\
+  Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Coaching Message\
+  Athlete Data\Angelo Allen\Coaching and Deep Dive\Coaching Message\
+  Athlete Data\Jasmine Jones\Coaching and Deep Dive\Coaching Message\
+
+Interpretation JSONs:
+  Athlete Data\[Athlete]\Weekly JSONS\
+
+Week counts per athlete:
+  Grace Kindel: 6 weeks (Jan 12 - Mar 8, 2026)
+  Tucker Lloyd: 5 weeks (Feb 9 - Mar 15, 2026)
+  Mergim Bushati: 19 weeks (Sep 8, 2025 - Jan 18, 2026)
+  Aidan Burkardt: 5 weeks (Nov 3, 2025 - Feb 22, 2026)
+  Angelo Allen: 4 weeks (Feb 2 - Mar 15, 2026)
+  Jasmine Jones: 7 weeks (May 12 - Jul 13, 2025)
+  TOTAL: 46 Coaching Messages
+
+=========================================================
+WHAT DONE LOOKS LIKE
+=========================================================
+
+[] VF_Coaching_Message_Framework.txt updated with OUTPUT FORMAT section
+   (format locked, approved by user)
+[] All 46 Coaching Messages on disk comply with the locked format
+[] Content, voice, and coaching substance preserved across all files
+[] Spot-check validation completed (2 per batch minimum)
+[] No compliance violations introduced
+[] CLAUDE.md updated with session history entry
+
+=========================================================
+KEY CONTEXT FOR THE FRESH SESSION
+=========================================================
+
+- The Deep Dive format was standardized in a prior session using the
+  same approach: revised VF_Deep_Dive_Coaching_Analysis_Framework.txt
+  to add PURPOSE, VOICE, and OUTPUT FORMAT sections, then regenerated
+  18 files. That fix is complete and all DDs are now consistent.
+  Use the DD Framework as a structural template for how to add an
+  OUTPUT FORMAT section to the CM Framework.
+
+- The Parent CM format IS already defined in the Instructions (v1.8
+  Sections 23-31) with explicit header, section structure, and file
+  format. The athlete CM should have equivalent specificity.
+
+- Voice and tone are NOT the problem — Coach Arron is consistent
+  across all 46 messages. Only visual format varies.
+
+- Content and coaching quality are NOT the problem — the analytical
+  substance, micro-commitments, identity threads, and strength signals
+  are all sound. Do not re-coach or re-interpret.
+
+- The user (Coach Arron) will make the format decisions in Phase 1.
+  Present clear options with trade-offs. Do not assume which format
+  is correct — let the user decide.
