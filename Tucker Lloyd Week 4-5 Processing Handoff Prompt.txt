@@ -1,0 +1,366 @@
+TUCKER LLOYD WEEKS 4-5 PROCESSING — HANDOFF PROMPT
+==============================================
+SESSION OBJECTIVE:
+Process Tucker Lloyd through the full pipeline (Stages 2-5) for TWO new weeks. Both weekly reviews are on disk. Process sequentially — Week 4 first, then Week 5 — because Week 5's Interpretation JSON needs Week 4's JSON as prior week data.
+==============================================
+
+IMPORTANT: TWO UNPROCESSED WEEKS
+==============================================
+There are TWO unprocessed weekly reviews on disk, not one:
+1. Week 4: March 2-8, 2026 (review submitted March 9)
+   File: Athlete Data\Tucker Lloyd\Weekly Reviews\Tucker Lloyd 3-8-2026.txt
+2. Week 5: March 9-15, 2026 (review submitted March 16)
+   File: Athlete Data\Tucker Lloyd\Weekly Reviews\Tucker Lloyd 3-15-2026.txt
+
+Both must be processed. Week 4 FIRST (its JSON becomes prior week input for Week 5).
+==============================================
+
+ATHLETE PROFILE
+==============================================
+Tucker Lloyd
+- Sport: Football (GA/Student Coach — Slot Receivers Manager)
+- School: West Virginia University (NOTE: snapshot says Tusculum, but email is WVU — likely transferred or updated)
+- Additional: Plumbing work alongside coaching and academics
+- Baseline Snapshot: Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+- baseline_identity_claim: Developing into a better person and coach within the football environment
+- baseline_hinge_habit: Consistent gym attendance and personal discipline routines
+- baseline_primary_derailer: Pre-performance focus on what could go wrong
+- baseline_growth_phase: Developing
+- Growth Phase: Developing (stable across all 3 prior weeks)
+==============================================
+
+PRIOR WEEKS SUMMARY (Weeks 1-3 — all processed)
+==============================================
+Week 1 (Feb 9-15): Mixed tier. 4 Win, 2 Neutral, 1 Missed (Sunday Neutral). Low EI. RQS=2. Gym 2x. 3 specific goals. Self-directed structure. No prior week.
+
+Week 2 (Feb 16-22): Mixed tier. 4 Win, 2 Neutral, 1 Missed (FIRST Sunday Missed — "Nothing"). Low EI. RQS=1. Gym 1x (dropped). 1 specific goal. Prior commitment Partial (written plan not executed as written). First Missed day in program.
+
+Week 3 (Feb 23-Mar 1): Mixed tier. 3 Win, 3 Neutral, 1 Missed (SECOND consecutive Sunday Missed — "Nothing"). Low EI. RQS=1. Gym 2x (recovered). Goal: "Become better" (vague — declining from 3→1→vague). Prior commitment NOT ATTEMPTED (Sunday alarm/planning step not attempted). Micro-commitment modality shifted from Written to Behavioral (alarm-based). Stagnant consistency trend. Pattern crystallized.
+
+3-WEEK ARC:
+Structure-dependent execution (baseline) → Weekday-strong with emerging Sunday gap (Wk1) → First Missed day, Sunday disengagement confirmed (Wk2) → Pattern crystallized: consistent Mixed tier, stagnant consistency, gym recovery but Sunday gap repeating (Wk3). 11/21 Win days across program. Win count declining: 4, 4, 3.
+
+OPEN THREADS FROM WEEK 3:
+- Sunday Missed pattern (2 consecutive, "Nothing" both times)
+- Goal-setting quality decline (3 specific → 1 specific → "Become better")
+- Reflection quality at Surface (RQS=1) for 2 consecutive weeks after starting at 2
+- Prior commitment (Sunday alarm) Not Attempted
+- Micro-commitment carry_forward: Yes (Sunday alarm carries into Week 4)
+==============================================
+
+WEEK 4 REVIEW DATA (March 2-8, 2026)
+==============================================
+Source: Athlete Data\Tucker Lloyd\Weekly Reviews\Tucker Lloyd 3-8-2026.txt
+Submitted: Monday, March 9, 2026
+Period: 2026-03-02 to 2026-03-08
+
+GOALS: "Become better" (SAME as Week 3 — 2nd consecutive vague goal)
+
+DAILY RECAP:
+- Monday: Class Work Homework → Win (4-5 pts)
+- Tuesday: 3 Classes Ton of homework Work → Win (4-5 pts)
+- Wednesday: 2 Classes Homework → Neutral (2-3 pts)
+- Thursday: 3 Classes Homework Work → Win (4-5 pts)
+- Friday: Class Homework Work → UNSCORED (no WTD category selected)
+- Saturday: Work → Neutral (2-3 pts)
+- Sunday: Golfed → Missed (0-1 pts)
+
+WTD DISTRIBUTION: 3 Win, 2 Neutral, 1 Missed, 1 Unscored
+Weekly Scorecard (athlete-facing): "3-4 Wins: Still in the Game"
+
+COMPETITION: "Golf" listed in competition section (NOTE: this is the first time Tucker has listed any competition activity. Golf appears to be recreational, not competitive sport — handle accordingly. Do NOT treat this as a formal athletic competition in the pipeline unless the context supports it.)
+
+BULLSEYE:
+- Control: "How well I work"
+- Influence: "How I perform in golf"
+- Noise: "The days I work and how much homework I get"
+
+MOTIVATION:
+- Achievement: "A lot of school work done preparing for spring break"
+- Mindset Challenge: "Durability is what transforms average into excellence over time."
+- Upcoming Goals: "Enjoy spring break"
+
+PROCESSING NOTES FOR WEEK 4:
+1. PRIOR COMMITMENT: The Week 3 micro-commitment was "Set a phone alarm for 9:00 AM on Sunday with a label naming one specific thing to complete before noon." Sunday says "Golfed" and scored as Missed. This is interesting — Tucker DID something on Sunday (golf), unlike the prior 2 weeks of "Nothing." But he still scored it as Missed (0-1 pts). Execution_status determination: Was the alarm set? Was golf the planned activity? Or was golfing spontaneous and unrelated to the commitment? Given the pattern, likely Partial at best — he engaged on Sunday (behavioral improvement from "Nothing") but there's no evidence the alarm planning step was followed, and the WTD score was Missed. The Interpretation Engine should weigh this carefully.
+
+2. FRIDAY UNSCORED: Friday has activities listed ("Class Homework Work") but no WTD score selected. This has happened before in CF recaps. The Interpretation Engine should handle this per the established category-only WTD rule — if no score is given, it cannot be inferred. Mark as unscored and note the gap. This affects win_days count and weekly_tier calculation.
+
+3. SUNDAY PATTERN: Third consecutive Sunday as lowest-scoring day. But "Golfed" is materially different from "Nothing" — Tucker engaged in an activity. The shift from complete disengagement to recreational activity may be a positive micro-signal within the overall Missed classification.
+
+4. GOAL STAGNATION: "Become better" for the second consecutive week. Goal-setting quality is now at its floor — same vague aspiration repeated. This is a 4-week trajectory: 3 specific goals → 1 specific → "Become better" → "Become better."
+
+5. SPRING BREAK CONTEXT: "Enjoy spring break" as upcoming goal + "A lot of school work done preparing for spring break" as achievement. Academic end-of-period push. Spring break likely means Week 5 will have no academic structure — critical given Tucker's structure-dependent execution pattern.
+
+6. GOLF AS INFLUENCE: "How I perform in golf" in the influence ring is actually a reasonable placement — you can influence but not fully control performance outcomes. More sophisticated than prior weeks' influence entries ("My grades," "My grades"). This might be Tucker's best influence-ring item in the program.
+
+7. NOISE RING: "The days I work and how much homework I get" — first noise ring entry that correctly identifies external schedule constraints as uncontrollable. Prior weeks had no noise ring engagement.
+
+8. GYM DATA: No gym sessions mentioned in the daily recap. This would be the first week with zero gym sessions if confirmed. Hinge habit regression from the Week 3 recovery (2 sessions). Check carefully — "lift" is not mentioned on any day.
+Wait — actually, looking again: no "lift" or "gym" mentioned in any daily recap entry. This could be a significant hinge habit signal. The Week 3 CM specifically reinforced gym recovery (1→2 sessions). If Week 4 drops to 0, that's a notable regression.
+
+==============================================
+
+WEEK 5 REVIEW DATA (March 9-15, 2026)
+==============================================
+Source: Athlete Data\Tucker Lloyd\Weekly Reviews\Tucker Lloyd 3-15-2026.txt
+Submitted: Monday, March 16, 2026
+Period: 2026-03-09 to 2026-03-15
+
+GOALS: "Get better and work harder" (slightly more specific than "Become better" — adds an action verb "work harder")
+
+DAILY RECAP:
+- Monday: Homework, work, class → Win (4-5 pts)
+- Tuesday: Homework, work, class, test, lift → Win (4-5 pts)
+- Wednesday: Homework, class, work → Win (4-5 pts)
+- Thursday: Homework, class work, lift → Win (4-5 pts)
+- Friday: Homework, work → Win (4-5 pts)
+- Saturday: Hangout with friends → Missed (0-1 pts)
+- Sunday: Hangout with family → Missed (0-1 pts)
+
+WTD DISTRIBUTION: 5 Win, 0 Neutral, 2 Missed
+Weekly Scorecard (athlete-facing): "5-7 Wins: Gold Streak"
+
+NOTE ON WEEKLY TIER: The athlete-facing "Gold Streak" label is based on Win COUNT (5-7 Wins). But the pipeline's weekly_tier uses POINT TOTALS: 28-35 = Growth, 14-27 = Mixed. With 5 Win days (5 × 4-5 pts = 20-25) + 2 Missed days (2 × 0-1 pts = 0-2), the point total is 20-27. This is Mixed tier by point calculation, NOT Growth — despite the athlete seeing "Gold Streak." The Interpretation Engine should classify this correctly as Mixed based on point range (CF category-only scoring). This is an important distinction.
+
+COMPETITION: None
+
+BULLSEYE:
+- Control: "How much I work"
+- Influence: "What I score on tests"
+- Noise: "What co workers think"
+
+MOTIVATION:
+- Achievement: "Made it to spring break"
+- Mindset Challenge: "Show up consistently"
+- Upcoming Goals: "Enjoy spring break"
+
+PROCESSING NOTES FOR WEEK 5:
+1. PRIOR COMMITMENT: Week 4's micro-commitment will carry forward from whatever the Interpretation Engine assigns. But looking at the pattern: this is now at least 3 weeks where Sunday commitments have been Missed or Not Attempted. The Interpretation Engine needs to determine the appropriate modality for the next micro-commitment. The CM should address the accumulating non-execution pattern.
+
+2. BEST WEEKDAY PERFORMANCE: 5 consecutive weekday Wins (Mon-Fri) is Tucker's best weekday streak in the program. Prior best was 4 weekday Wins (Weeks 1-2). This is a genuine strength signal.
+
+3. WEEKEND GAP EXPANSION: Saturday joins Sunday as Missed for the first time. Previously, Saturday ranged from Win (Week 1) to Neutral (Weeks 2-4) — never Missed. Now BOTH weekend days are Missed. The structure-dependent execution pattern has sharpened: perfect execution with structure (weekdays), complete disengagement without it (weekends). This is the most extreme version of Tucker's pattern.
+
+4. SPRING BREAK WEEK: "Hangout with friends" (Saturday) and "Hangout with family" (Sunday). "Made it to spring break" as achievement. "Enjoy spring break" as upcoming goal. Tucker is in spring break mode — academic structure removed, social/family time dominates weekends. This is the exact stress test for his structure-dependent execution pattern. If the UPCOMING week is spring break proper (no school), Tucker may have no external structure at all. This is a significant upcoming_context consideration.
+
+5. GYM RECOVERY: "Lift" appears on Tuesday and Thursday — 2 gym sessions. This is back to the Week 2-3 level after potentially dropping to 0 in Week 4. Hinge habit is holding at 2x/week when school is in session.
+
+6. MINDSET CHALLENGE IRONY: "Show up consistently" — selected as his favorite mindset challenge during a week where he has a perfect weekday streak but 2 Missed weekend days. This creates an interesting coaching tension: Tucker IS showing up consistently... Monday through Friday. The consistency challenge is about expanding that into days without external structure.
+
+7. NOISE RING EVOLUTION: "What co workers think" — first time Tucker has placed a social/relational item in the noise ring. Prior noise entries were either empty or about homework/schedule. This shows growing sophistication in recognizing what belongs outside his control.
+
+8. ACHIEVEMENT LANGUAGE: "Made it to spring break" is a completion/survival framing, not a growth framing. Compare to Week 1's "The way I handled things" (process-oriented) or even Week 3's "A lot of school work and regular work" (effort-oriented). This is the most passive achievement statement in Tucker's program.
+
+==============================================
+
+PIPELINE PROCESSING INSTRUCTIONS
+==============================================
+
+STAGE 2 — INTERPRETATION ENGINE
+Specification: SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
+JSON Rules: VF_Interpretation_JSON_Rules.txt
+Input: Weekly review (raw recap data) + Athlete snapshot + ALL prior week JSONs
+
+Process Week 4 FIRST, then Week 5. Week 5 uses Week 4's JSON as prior_week data.
+
+Prior week JSONs (read ALL for longitudinal context):
+- Athlete Data\Tucker Lloyd\Weekly JSONS\Tucker_Lloyd_2026-02-09to2026-02-15_VF_Interpretation.txt (Wk1)
+- Athlete Data\Tucker Lloyd\Weekly JSONS\Tucker_Lloyd_2026-02-16to2026-02-22_VF_Interpretation.txt (Wk2)
+- Athlete Data\Tucker Lloyd\Weekly JSONS\Tucker_Lloyd_2026-02-23to2026-03-01_VF_Interpretation.txt (Wk3)
+- [Week 4 JSON — produce this first, then use it as prior for Week 5]
+
+Key interpretation considerations:
+- Tucker is Core Foundation: input_source = "core_foundation". No execution_behavior_signals, no baseline_intake_profile, no forward_anchor. All app-only fields use CF fallback values.
+- WTD scoring is category-only for CF athletes. Use the Win/Neutral/Missed classifications from the recap. Do NOT infer point values.
+- Week 4 Friday is UNSCORED — handle per established rules. This affects day counts and may affect weekly_tier.
+- Week 5 weekly_tier: Despite the athlete seeing "Gold Streak" (5-7 Wins), the pipeline's point-based calculation will likely produce Mixed tier (20-27 pts). Classify correctly — do not use the athlete-facing Win-count label.
+- narrative_arc: Week 4 has 3 prior weeks (arc active). Week 5 has 4 prior weeks (full longitudinal data).
+- Sunday pattern: Week 4 Sunday "Golfed" (Missed) is materially different from "Nothing" — note the behavioral shift even within the Missed classification.
+- prior_commitment_result tracking: Week 3's commitment was the Sunday alarm. Evaluate execution evidence carefully for Week 4. Week 5's prior_commitment comes from Week 4's micro_commitment (which the Interpretation Engine will assign during Week 4 processing).
+- Gym tracking: Week 4 appears to have 0 gym sessions (no "lift" or "gym" in any daily entry). Week 5 has 2 ("lift" on Tuesday and Thursday). Significant hinge habit signal.
+- Growth phase: Developing throughout. No advancement criteria met (Mixed tier, stagnant consistency, no sustained Win streaks meeting threshold).
+
+Output files:
+- Athlete Data\Tucker Lloyd\Weekly JSONS\Tucker_Lloyd_2026-03-02to2026-03-08_VF_Interpretation.txt
+- Athlete Data\Tucker Lloyd\Weekly JSONS\Tucker_Lloyd_2026-03-09to2026-03-15_VF_Interpretation.txt
+
+STAGE 3 — COACHING OUTPUT ENGINE
+Master Prompt: SOP_Coaching_Output_Master_Prompt_V4.txt
+Instructions: SOP_Coaching_Output_Instructions_v1.8.txt
+Source Files: All files in Agents - Generators\Coaching Output\Source FIles\
+
+Generate per week:
+1. Coaching Message (250-450 words, Coach Arron voice, athlete-facing)
+2. Deep Dive (850-1200 words, REVISED DD Framework — second-person voice, 5-section structure)
+
+CRITICAL: Use the REVISED Deep Dive Framework (VF_Deep_Dive_Coaching_Analysis_Framework.txt). The framework was updated to fix a systemic voice/tone issue. All new DDs must be:
+- Second person throughout ("you," "your") — zero third-person analytical passages
+- 5 sections: MINDSET SUMMARY, WEEKLY TRENDLINE, STRENGTH SIGNALS (3-5 items), GROWTH AREAS (2-4 items), IDENTITY THREAD
+- Clean header (no pipeline metadata), ALL CAPS headers, dash separators, no signature
+- 850-1200 words (850-950 for simple Low EI weeks, up to 1200 for complex weeks)
+- Growth Area observations are perspective/observational, NOT directive (no action items — those belong in CM)
+- Each Strength/Growth item closes with an italicized coaching observation
+
+Tucker-specific coaching notes:
+- Tucker is a naturally sparse communicator (RQS=1 for multiple weeks). Don't overweight reflection brevity as disengagement.
+- The micro-commitment modality shift (Written → Behavioral/alarm-based) was made in Week 3. Continue behavioral modality — Tucker does not respond to written commitments.
+- Sunday engagement is the defining development question. Address the pattern directly but without lecturing (per coach_avoidance_note in Week 3 JSON).
+- Week 5's weekend expansion (both Sat AND Sun Missed) is the most significant development — this needs coaching attention in both CM and DD.
+- If spring break is upcoming, the micro-commitment must account for the absence of academic structure. This is Tucker's highest-risk environment.
+- No parent output (Tucker is not D2C Premium with parent_inclusion).
+
+CM voice reference: Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Coaching Message\Tucker_Lloyd_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+
+Output files:
+- Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Coaching Message\Tucker_Lloyd_2026-03-02to2026-03-08_VF_CoachingMessage.txt
+- Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Deep Dive\Tucker_Lloyd_2026-03-02to2026-03-08_VF_DeepDive.txt
+- Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Coaching Message\Tucker_Lloyd_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+- Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Deep Dive\Tucker_Lloyd_2026-03-09to2026-03-15_VF_DeepDive.txt
+
+STAGE 4 — COACH INSIGHTS ENGINE
+Master Prompt: SOP_Coach_Insights_Master_Prompt_v1.2.txt
+Instructions: SOP_Coach_Insights_Project_Instructions_v1.5.txt
+JSON Logic: Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+
+Generate per week:
+1. Weekly Performance Insight (10 sections, compliance-safe, institutional-level)
+
+Tucker-specific insights notes:
+- Composite Readiness has been → Steady (Yellow) for all 3 prior weeks. Week 5's best weekday performance may push toward Green if the overall indicators improve, but the weekend expansion to 2 Missed days may counterbalance.
+- KPS has been "Sunday Engagement Structure" for Week 3. Evaluate whether this remains the primary signal or if the weekend expansion warrants a broader signal name.
+- No parent output for Tucker (no parent_inclusion flag).
+
+Output files:
+- Athlete Data\Tucker Lloyd\Coach Insights\Tucker_Lloyd_2026-03-02to2026-03-08_VF_WeeklyInsight.txt
+- Athlete Data\Tucker Lloyd\Coach Insights\Tucker_Lloyd_2026-03-09to2026-03-15_VF_WeeklyInsight.txt
+
+STAGE 5 — EDITORIAL AUDIT
+Master Prompt: SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+Instructions: SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+
+Run a full audit on Week 5 (the most complex week — best weekday execution + worst weekend, spring break context, micro-commitment accumulation). Week 4 can be audited too if time permits, but Week 5 is priority.
+
+Audit inputs: Interpretation JSON + Coaching Message + Deep Dive (3 documents per week)
+Result: PASS / AUTO-CORRECTED PASS / REJECT AND REGENERATE
+
+All 13 criteria (Tier 1: 1-4 + 13, Tier 2: 5-10, Tier 3: 11-12):
+- Tucker is Core Foundation — Criterion 13 (Pipeline Data Leakage) should verify zero execution signal language exists (CF athlete = any execution-signal-derived language is a FAIL)
+- Clinical language scan (Criterion 2)
+- JSON fidelity (Criterion 1)
+- All other criteria per specification
+
+Output files:
+- Athlete Data\Tucker Lloyd\Audit Summaries\Tucker_Lloyd_2026-03-09to2026-03-15_VF_AuditSummary.txt
+- (If auditing Week 4): Athlete Data\Tucker Lloyd\Audit Summaries\Tucker_Lloyd_2026-03-02to2026-03-08_VF_AuditSummary.txt
+
+==============================================
+
+COMPLIANCE RULES (NON-NEGOTIABLE)
+==============================================
+1. NO clinical language — no anxiety, depression, therapy, coping mechanism, trigger, cognitive reframe, trauma, fight or flight, emotional dysregulation (Categories A-D)
+2. NO pipeline terminology — no RQS=X, Growth tier, Partially Aligned, composite scores, coach flags, execution signals (Categories E-G)
+3. NO surveillance framing — no tracking language, no completion rates, no engagement metrics
+4. NO execution signal data — Tucker is Core Foundation. Any execution-behavior language is a compliance violation.
+5. Emotional Intensity: Low for both weeks — standard coaching tone, no empathetic lead needed
+6. Coach Arron persona: calm authority, direct, identity-focused, supportive but firm
+7. Deep Dives must be SECOND PERSON throughout — zero tolerance for third-person analytical passages (this was the systemic issue fixed in the DD Framework revision)
+
+==============================================
+
+PROCESSING ORDER
+==============================================
+1. Read CLAUDE.md (project instructions — critical context)
+2. Read Tucker's baseline snapshot
+3. Read ALL 3 prior week JSONs (Weeks 1-3) for longitudinal context
+4. Read both weekly reviews (March 8 and March 15)
+5. Read key specification files (Interpretation Engine v9.6, Coaching Output v1.8/V4, DD Framework, Coach Insights v1.5, Editorial Audit v1.3)
+6. Read one existing CM for voice reference (Week 3 recommended — most recent)
+
+PROCESS WEEK 4 (March 2-8):
+7. Generate Interpretation JSON (Week 4)
+8. Generate Coaching Message (Week 4)
+9. Generate Deep Dive (Week 4) — use revised DD Framework
+10. Generate Weekly Performance Insight (Week 4)
+
+PROCESS WEEK 5 (March 9-15):
+11. Generate Interpretation JSON (Week 5) — uses Week 4 JSON as prior
+12. Generate Coaching Message (Week 5)
+13. Generate Deep Dive (Week 5) — use revised DD Framework
+14. Generate Weekly Performance Insight (Week 5)
+
+AUDIT:
+15. Run Editorial Audit on Week 5 (CM + DD + JSON — 3 documents, 13 criteria)
+
+FINALIZE:
+16. Git commit all new files
+17. Update CLAUDE.md with Tucker Week 4-5 data status
+
+==============================================
+
+FILES TO PRODUCE (10 files minimum)
+==============================================
+Week 4:
+1. Tucker_Lloyd_2026-03-02to2026-03-08_VF_Interpretation.txt
+2. Tucker_Lloyd_2026-03-02to2026-03-08_VF_CoachingMessage.txt
+3. Tucker_Lloyd_2026-03-02to2026-03-08_VF_DeepDive.txt
+4. Tucker_Lloyd_2026-03-02to2026-03-08_VF_WeeklyInsight.txt
+
+Week 5:
+5. Tucker_Lloyd_2026-03-09to2026-03-15_VF_Interpretation.txt
+6. Tucker_Lloyd_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+7. Tucker_Lloyd_2026-03-09to2026-03-15_VF_DeepDive.txt
+8. Tucker_Lloyd_2026-03-09to2026-03-15_VF_WeeklyInsight.txt
+
+Audit:
+9. Tucker_Lloyd_2026-03-09to2026-03-15_VF_AuditSummary.txt
+
+CLAUDE.md:
+10. Updated with Tucker Weeks 4-5 athlete data status
+
+==============================================
+
+REFERENCE FILES
+==============================================
+Priority 1 — Read FIRST:
+1. CLAUDE.md
+2. Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+3. All 3 prior week JSONs in Athlete Data\Tucker Lloyd\Weekly JSONS\
+4. Both weekly reviews in Athlete Data\Tucker Lloyd\Weekly Reviews\
+
+Priority 2 — Specification files:
+5. Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
+6. Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+7. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+8. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.8.txt
+9. Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt (REVISED — use this)
+10. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+11. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+12. Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+13. Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+14. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+15. Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
+16. Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.2.txt
+17. Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.5.txt
+18. Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+19. Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+
+Priority 3 — Audit (read when running Stage 5):
+20. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+21. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+
+Priority 4 — Voice reference:
+22. Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Coaching Message\Tucker_Lloyd_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+
+==============================================
+
+WHAT "DONE" LOOKS LIKE
+==============================================
+1. 9 new Tucker Lloyd files on disk (4 per week + 1 audit summary)
+2. Week 4 JSON correctly handles: unscored Friday, Sunday "Golfed" (Missed), prior commitment evaluation (Sunday alarm from Wk3), zero gym sessions, "Become better" goal stagnation, golf in competition section
+3. Week 5 JSON correctly handles: 5 weekday Wins as best-ever performance, weekend expansion (both Sat AND Sun Missed), point-based weekly_tier (Mixed, not Growth despite "Gold Streak" label), spring break context, prior commitment from Week 4
+4. Coaching Messages in Coach Arron voice with appropriate micro-commitments for each week — especially Week 5 which must account for spring break (no academic structure)
+5. Deep Dives in second-person Coach Arron voice using revised DD Framework (5-section structure, ALL CAPS, 850-1200 words, no pipeline metadata, no signature)
+6. Coach Insights compliant (no raw coaching content surfaced, no clinical language)
+7. Editorial Audit PASS on Week 5 (all 13 criteria including Criterion 13 CF check)
+8. Git commit with all new files
+9. CLAUDE.md updated with Tucker Weeks 4-5 data status tables

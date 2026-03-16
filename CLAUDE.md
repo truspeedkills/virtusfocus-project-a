@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-16
-**Session Notes:** Deep Dive regeneration COMPLETE. Regenerated 18 Deep Dives (last 3 weeks per athlete, all 6 athletes) using the revised DD Framework. Third-person analytical voice replaced with second-person Coach Arron coaching voice throughout. All 18 files pass spot-check validation: correct voice, format (clean header, ALL CAPS, 850-1200 words, 5-section structure, no signature), zero compliance violations, analytical depth preserved. 25 older DDs remain in prior voice (available in git history, can be regenerated later if needed). Prior sessions: Revised DD Framework spec (root cause fix), tested 6 comparison DDs, locked formatting decisions, created regeneration handoff prompt.
+**Session Notes:** Processed Tucker Lloyd Weeks 4-5 through full pipeline (Stages 2-5). 9 new files: 2 Interpretation JSONs (v9.6), 2 Coaching Messages (v1.8/V4), 2 Deep Dives (revised DD Framework), 2 Weekly Performance Insights (v1.5), 1 Editorial Audit Summary. Week 4: 3 Win, 2 Neutral, 1 Missed, 1 unscored. Zero gym sessions (first time). Sunday "Golfed" (shift from "Nothing"). Week 5: 5 Win (best weekday), 2 Missed (worst weekend — Saturday expands). Gym recovered to 2. Mixed tier all 5 weeks. Editorial Audit Week 5 PASS all 13 criteria. Spring break micro-commitment: 2 named gym days told to someone.
 
 ---
 
@@ -302,34 +302,43 @@ NC trip begins March 2 (same location as Week 3 emotional strain episode). Flori
 - baseline_primary_derailer: Pre-performance focus on what could go wrong
 - baseline_growth_phase: Developing
 
-**Interpretation JSONs — All 3 Weeks Complete:**
+**Interpretation JSONs — All 5 Weeks Complete:**
 
 | Week | Period | File | Tier | Emotional Intensity | Notes |
 |---|---|---|---|---|---|
 | 1 | Feb 9–15 | `Tucker_Lloyd_2026-02-09to2026-02-15_VF_Interpretation.txt` | Mixed | Low | No prior week. narrative_arc = insufficient data |
 | 2 | Feb 16–22 | `Tucker_Lloyd_2026-02-16to2026-02-22_VF_Interpretation.txt` | Mixed | Low | First Missed day (Sunday). Recommitment = insufficient data |
 | 3 | Feb 23–Mar 1 | `Tucker_Lloyd_2026-02-23to2026-03-01_VF_Interpretation.txt` | Mixed | Low | 2nd consecutive Missed Sunday. narrative_arc activates. Stagnant consistency trend |
+| 4 | Mar 2–8 | `Tucker_Lloyd_2026-03-02to2026-03-08_VF_Interpretation.txt` | Mixed | Low | 3rd consecutive Missed Sunday ("Golfed" — shift from "Nothing"). Zero gym sessions (first time). Friday unscored. Spring break prep |
+| 5 | Mar 9–15 | `Tucker_Lloyd_2026-03-09to2026-03-15_VF_Interpretation.txt` | Mixed | Low | Best weekday execution (5/5 Win). Worst weekend (2/2 Missed — Saturday expands). pattern_shift_detected=Yes. Spring break imminent |
 
-**Coaching Output — All 3 Weeks Complete under v1.4 rules:**
+**Coaching Output — All 5 Weeks Complete (Wks 1-3 under v1.4, Wks 4-5 under v1.8/V4 rules):**
 
 | Week | Period | Coaching Message | Deep Dive |
 |---|---|---|---|
 | 1 | Feb 9–15 | `Tucker_Lloyd_2026-02-09to2026-02-15_VF_CoachingMessage.txt` | `Tucker_Lloyd_2026-02-09to2026-02-15_VF_DeepDive.txt` |
 | 2 | Feb 16–22 | `Tucker_Lloyd_2026-02-16to2026-02-22_VF_CoachingMessage.txt` | `Tucker_Lloyd_2026-02-16to2026-02-22_VF_DeepDive.txt` |
 | 3 | Feb 23–Mar 1 | `Tucker_Lloyd_2026-02-23to2026-03-01_VF_CoachingMessage.txt` | `Tucker_Lloyd_2026-02-23to2026-03-01_VF_DeepDive.txt` |
+| 4 | Mar 2–8 | `Tucker_Lloyd_2026-03-02to2026-03-08_VF_CoachingMessage.txt` | `Tucker_Lloyd_2026-03-02to2026-03-08_VF_DeepDive.txt` |
+| 5 | Mar 9–15 | `Tucker_Lloyd_2026-03-09to2026-03-15_VF_CoachingMessage.txt` | `Tucker_Lloyd_2026-03-09to2026-03-15_VF_DeepDive.txt` |
 
-**Coach Insights — All 3 Weeks Complete:**
+**Coach Insights — All 5 Weeks Complete:**
 
 | Week | Period | Stress | Composite Readiness | Key Signal |
 |---|---|---|---|---|
 | 1 | Feb 9–15 | Low | → Steady (Yellow) | Self-Directed Structure Consistency |
 | 2 | Feb 16–22 | Low | → Steady (Yellow) | Unstructured Day Engagement |
 | 3 | Feb 23–Mar 1 | Low | → Steady (Yellow) | Sunday Engagement Structure |
+| 4 | Mar 2–8 | Low | → Steady (Yellow) | Structural Transition Readiness |
+| 5 | Mar 9–15 | Low | → Steady (Yellow) | Weekend Engagement Expansion |
 
-**Tucker Lloyd 3-Week Arc:**
-Structure-dependent execution (baseline) → Weekday-strong with emerging Sunday gap (Wk 1) → First Missed day, Sunday disengagement confirmed (Wk 2) → Pattern crystallized — consistent Mixed tier, stagnant consistency trend, gym recovery but Sunday gap repeating (Wk 3). 11/21 Win days. Micro-commitment modality shifted from Written to Behavioral after 2 consecutive non-executions.
+**Tucker Lloyd 5-Week Arc:**
+Structure-dependent execution (baseline) → Weekday-strong with emerging Sunday gap (Wk 1) → First Missed day, Sunday disengagement confirmed (Wk 2) → Pattern crystallized — consistent Mixed tier, stagnant consistency, gym recovery but Sunday gap repeating (Wk 3) → Sunday shifts from "Nothing" to "Golfed" (qualitative improvement within Missed), zero gym sessions (first time), spring break prep, Bullseye improvement (Wk 4) → Maximum structural divergence: best weekday execution (5/5 Win) paired with worst weekend (2/2 Missed, Saturday expands for first time), gym recovery to 2 sessions, spring break imminent (Wk 5). 18/35 Win days (15/28 scored days in Wk 4 due to unscored Friday). Mixed tier all 5 weeks. Micro-commitment modality: Written (Wk 1-2) → Behavioral/alarm (Wk 3-4) → Social accountability/gym-specific (Wk 5).
 
-**Editorial Audit:** Week 3 audited — PASS on all 12 criteria. Micro-commitment modality adaptation correctly applied (Written → Behavioral). No clinical language violations. No JSON fidelity issues.
+**Open Thread Heading Into Spring Break:**
+Spring break removes academic structure — the primary driver of all weekday Win days across 5 weeks. Tucker's Weekend gap expanded from 1 Missed day (Weeks 2-4) to 2 Missed days (Week 5), with Saturday joining Sunday as Missed for the first time. The Week 5 micro-commitment (2 named gym days, told to someone) is designed specifically for the unstructured spring break environment. Whether Tucker can maintain any intentional daily structure without school scheduling is the defining test of the program. Achievement framing ("Made it to spring break") and upcoming goal ("Enjoy spring break") suggest endpoint/reward orientation rather than continuation.
+
+**Editorial Audit:** Week 3 audited — PASS on all 12 criteria. Week 5 audited — PASS on all 13 criteria (v1.3 spec including Criterion 13 Pipeline Data Leakage — CF athlete check clean). No clinical language violations. No JSON fidelity issues. No corrections required.
 
 ---
 

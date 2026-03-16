@@ -1,0 +1,137 @@
+{
+  "athlete_name": "Tucker Lloyd",
+  "week_period": "2026-03-09 to 2026-03-15",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Developing into a better person and coach within the football environment",
+    "baseline_hinge_habit": "Consistent gym attendance and personal discipline routines",
+    "baseline_primary_derailer": "Pre-performance focus on what could go wrong",
+    "baseline_why_it_matters": "Strengthening habits and confidence supports both academic stability and long-term coaching development",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Tucker's weekly goal ('Get better and work harder') represents a marginal improvement from the two prior weeks of 'Become better' — the addition of 'work harder' introduces an action verb, though specificity remains low. Weekday execution was the strongest of the program with 5 consecutive Win days (Monday through Friday) — the first perfect weekday streak. Gym attendance recovered to 2 sessions (Tuesday and Thursday) after the Week 4 zero. However, the weekend expanded to 2 Missed days for the first time (Saturday and Sunday), creating the most extreme weekday-weekend divergence of the program. The hinge habit is active again but the overall weekly pattern shows the widest structural gap yet."
+  },
+
+  "athlete_state": "Best weekday execution of the program (5 consecutive Win days, Monday through Friday) paired with the worst weekend execution (both Saturday and Sunday Missed — first time both weekend days scored Missed). Gym attendance recovered to 2 sessions after dropping to zero in Week 4. The week produced Tucker's highest weekday Win count and his first double-Missed weekend simultaneously, creating the sharpest structural execution contrast of the program. This is the last structured week before spring break.",
+
+  "core_pattern": "Maximum structural divergence. Tucker's weekday execution reached its peak — 5 consecutive Win days with gym sessions, academic work, and employment stacked across every day. His weekend execution reached its floor — both Saturday and Sunday Missed, with social activities replacing any intentional engagement. The pattern that has defined Tucker's program from Week 1 — structure produces Wins, absence of structure produces drift — is now expressed at its most extreme. The weekday version of Tucker and the weekend version of Tucker have never been further apart.",
+
+  "behavioral_root_cause": "Tucker's structure-dependent execution has intensified rather than resolved across five weeks. The weekday performance improvement (4 Wins to 5 Wins) demonstrates genuine capacity growth within structured environments — the addition of gym sessions on Tuesday and Thursday shows he can stack discretionary habits onto structured days. But the weekend expansion from 1 Missed day (Sunday only) to 2 Missed days (Saturday and Sunday) reveals that this capacity does not transfer to unstructured time. Saturday's shift from Neutral (Weeks 2-4) to Missed ('Hangout with friends') suggests that end-of-academic-period social pull may override execution habits. The spring break upcoming context amplifies this signal — Tucker's entire next week will resemble his weekends.",
+
+  "prior_commitment_result": {
+    "prior_action": "Each morning of spring break, before doing anything else, name out loud one specific thing you will complete that day.",
+    "execution_status": "Unknown",
+    "execution_notes": "The Week 4 micro-commitment was designed for spring break week, which has not yet occurred — this is the final academic week before the break. The commitment was forward-looking by design (targeting the upcoming spring break rather than the current week). Execution cannot be evaluated until next week's recap. This week's data reflects the last structured academic week, not the spring break environment the commitment was designed for.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Get better and work harder",
+    "achievement_statement": "Made it to spring break",
+    "key_phrase": "Show up consistently",
+    "mindset_resonance": "Show up consistently"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5",
+      "neutral_days": "0",
+      "missed_days": "2"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "insufficient data"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Tucker identified 'How much I work' as his controllable — effort quantity rather than quality, a slight shift from Week 4's effort quality focus. Single item, appropriately placed. The simplicity of the entry is consistent with Tucker's sparse engagement style but represents an accurate center-ring placement.",
+    "influence_quality": "Developing. 'What I score on tests' is a reasonable influence-ring placement — test scores are partially within control through preparation but not fully controllable. Similar pattern to Week 2's 'Get better grades' but slightly more specific (tests vs. grades generally).",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "4",
+    "rolling_win_rate_4wk": "0.536",
+    "rolling_missed_rate_4wk": "0.143",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over five weeks, Tucker has demonstrated a progressively sharpening structural divergence. His weekday execution has improved from 4 Win days (Weeks 1-2) to 5 consecutive Win days this week — the best weekday performance of the program. His weekend execution has deteriorated from 0 Missed days (Week 1) to 1 Missed day (Weeks 2-4) to 2 Missed days (Week 5 — first double-Missed weekend). The gym oscillated (2, 1, 2, 0, 2) without stabilizing. Goal-setting showed a marginal uptick from 'Become better' to 'Get better and work harder' after three weeks of declining specificity. The weekly tier has been Mixed in all five weeks without exception. The defining development is not regression or advancement — it is polarization. Tucker's structured-day capacity is growing while his unstructured-day capacity is not keeping pace, producing the widest execution gap of the program heading into a week with no structure at all.",
+    "milestone_this_week": "Best weekday execution (5/5 Win days) and worst weekend execution (2/2 Missed days) occurring in the same week. Pattern_shift_detected = Yes: Saturday moved from consistent Neutral (Weeks 2-4) to Missed for the first time. This is the first week where the weekend gap expanded beyond Sunday. Gym recovery to 2 sessions after the zero-gym week. 'Show up consistently' selected as mindset focus during a week of maximum inconsistency between weekdays and weekends.",
+    "open_thread": "Spring break begins immediately after this week. Tucker's academic structure — the driver of all weekday Win days across 5 weeks — will be absent for an extended period. The Week 4 micro-commitment (morning verbal naming of one daily action) was designed specifically for the spring break environment. Whether Tucker can generate any self-directed structure during a week with no school, potentially no coaching responsibilities, and social pull from friends and family is the single most significant test of the program. The expansion of the weekend gap from 1 day to 2 days this week makes the spring break test more consequential — the pattern is widening, not narrowing, heading into the unstructured period. The achievement statement ('Made it to spring break') and upcoming goal ('Enjoy spring break') both frame the break as an endpoint rather than a continuation, which may predict reduced engagement."
+  },
+
+  "most_important_controllable": "Self-directed daily structure during spring break — maintaining intentional engagement (gym, work, personal development) across a full week without academic scheduling, coaching requirements, or homework deadlines to anchor the day.",
+
+  "micro_commitment": {
+    "action": "Pick two days during spring break — any two — and go to the gym. Before the week starts, decide which two days and tell someone (friend, family member, anyone) which days you picked.",
+    "when": "Before spring break starts, name the two gym days and tell one person. Complete both sessions during the break week.",
+    "measurement": "At the end of the spring break week, Tucker should have completed 2 gym sessions on the days he named. If both sessions are completed, the commitment is fully executed. If one is completed, it is partial. If zero, it is not attempted."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Spring break — the complete removal of academic structure for an extended period. Tucker's win days have tracked with school scheduling in all 5 program weeks. With no classes, no homework deadlines, and likely reduced coaching responsibilities, Tucker faces a full week resembling his typical weekend — the environment that has consistently produced his lowest execution. Social pull ('Hangout with friends,' 'Hangout with family') and the 'Enjoy spring break' framing suggest reduced intentional engagement.",
+    "athlete_stated_next_goal": "Enjoy spring break"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5/7 Win days — the highest Win count of the program — with 0 Neutral days and 2 Missed days (Saturday and Sunday). Gym attendance recovered to 2 sessions (Tuesday and Thursday) after dropping to zero in Week 4. All 5 weekday days scored as Wins, the first perfect weekday streak. Saturday moved from Neutral to Missed for the first time — 'Hangout with friends' replaced work or neutral-engagement patterns. Sunday remained Missed — 'Hangout with family.' The daily distribution shows no middle ground this week: every day was either a Win or a Missed day.",
+    "key_habit_signal": "The maximum structural divergence — 5 weekday Wins paired with 2 weekend Missed days — is the most important signal of the program. Tucker's capacity within structured environments has never been higher, and his capacity without structure has never been lower in the same week. The gym recovering to 2 sessions (both on weekdays) confirms that Tucker can stack discretionary habits onto structured days but does not transfer that behavior to unstructured time. The mindset selection ('Show up consistently') during a week of maximum inconsistency creates a productive coaching tension between aspiration and execution.",
+    "coach_reinforcement_cue": "The weekday performance is the strongest evidence in Tucker's program that his execution capacity is high. Five consecutive Win days with gym sessions, academic work, and employment demonstrates genuine multi-domain engagement. The coaching opportunity is helping Tucker see that this same capacity exists on weekends — it is not that he cannot execute, it is that he has not yet chosen to execute without external prompts. The gym recovery after zero in Week 4 also demonstrates habit resilience.",
+    "coach_avoidance_note": "Do not frame the 2 Missed weekend days as erasing the 5 weekday Wins. Tucker's best weekday performance deserves recognition even alongside his worst weekend. Do not predict spring break failure — frame it as a test, not a foregone conclusion. Do not dismiss social time with friends and family as wasted time — the issue is not the activity choice but the absence of any intentional structure alongside it."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. The achievement statement ('Made it to spring break') and upcoming goal ('Enjoy spring break') represent an endpoint/reward framing rather than distress. Tucker's recap language remains neutral-to-positive with social engagement language on both Missed days ('Hangout with friends,' 'Hangout with family'). No isolation, withdrawal, or emotional distress signals. Standard coaching scope."
+  },
+
+  "next_week_focus_question": "You said 'Show up consistently' was your favorite mindset challenge this week — you showed up every single weekday. What would showing up consistently look like during a week when nobody is asking you to?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  },
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+  "current_season_phase": "not available — Core Foundation athlete",
+  "forward_anchor": "not available — Core Foundation athlete"
+}

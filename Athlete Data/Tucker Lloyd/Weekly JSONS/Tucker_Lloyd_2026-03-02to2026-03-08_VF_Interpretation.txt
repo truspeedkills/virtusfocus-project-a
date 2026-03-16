@@ -1,0 +1,138 @@
+{
+  "athlete_name": "Tucker Lloyd",
+  "week_period": "2026-03-02 to 2026-03-08",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Developing into a better person and coach within the football environment",
+    "baseline_hinge_habit": "Consistent gym attendance and personal discipline routines",
+    "baseline_primary_derailer": "Pre-performance focus on what could go wrong",
+    "baseline_why_it_matters": "Strengthening habits and confidence supports both academic stability and long-term coaching development",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Tucker's weekly goal ('Become better') is identical to Week 3 — the second consecutive week of the same vague aspiration, representing the floor of goal-setting specificity in the program. Weekday execution pattern held with 3 Win days (Monday, Tuesday, Thursday). The hinge habit (gym attendance) showed no sessions this week — the first zero-gym week of the program and a regression from the Week 3 recovery (2 sessions). Sunday moved from 'Nothing' to 'Golfed' but remained Missed. Friday was unscored despite having activities listed. The gap between stated aspiration and behavioral specificity continues to widen."
+  },
+
+  "athlete_state": "Fourth week of Mixed-tier execution with the weekday-strong structural pattern continuing but showing new signs of erosion. Friday was unscored — the first unscored day of the program — and gym attendance dropped to zero sessions for the first time. Sunday produced 'Golfed' rather than the prior weeks' 'Nothing,' representing a qualitative shift within the Missed classification. Academic workload appears elevated with spring break preparation dominating the achievement narrative.",
+
+  "core_pattern": "Structure-dependent weekday execution with expanding weekend gap. Tucker's Win days continue to cluster on high-structure days (school + homework + work). Wednesday moved from Win to Neutral — the first mid-week Neutral since Week 1 — while the weekend pattern continued with Saturday Neutral and Sunday Missed. The Friday unscored entry introduces a new data gap. The hinge habit (gym) regressed to zero sessions, the most significant habit signal change of the program.",
+
+  "behavioral_root_cause": "Tucker's execution continues to track with external structure availability, but this week introduced two new dimensions: (1) the hinge habit dropped to zero gym sessions despite having maintained at least 1 session every prior week, suggesting that spring break preparation and dual work demands may have compressed available discretionary time, and (2) Sunday shifted from complete disengagement ('Nothing') to recreational activity ('Golfed') — still a Missed day by WTD scoring, but qualitatively different from prior Sundays. The Friday unscored entry may indicate reduced engagement with the scoring process itself, or may be an oversight in a busy week.",
+
+  "prior_commitment_result": {
+    "prior_action": "Set a phone alarm for 9:00 AM on Sunday with a label naming one specific thing to complete before noon. Set it Saturday night.",
+    "execution_status": "Partial",
+    "execution_notes": "Sunday moved from 'Nothing' (Weeks 2-3) to 'Golfed' — Tucker engaged in an activity on Sunday for the first time in three weeks. However, the WTD score remained Missed (0-1 pts), there is no evidence the alarm planning step was executed, and golf appears to be recreational rather than an intentionally committed activity per the alarm-and-label structure of the commitment. The behavioral shift from complete disengagement to recreational engagement is positive, but the specific commitment mechanism (Saturday night alarm with labeled action) was not visibly followed.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Become better",
+    "achievement_statement": "A lot of school work done preparing for spring break",
+    "key_phrase": "Durability is what transforms average into excellence over time.",
+    "mindset_resonance": "Durability is what transforms average into excellence over time."
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3",
+      "neutral_days": "2",
+      "missed_days": "1",
+      "unscored_days": "1"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "insufficient data"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Tucker identified 'How well I work' as his controllable — focused on effort quality rather than a broad category, which is more behaviorally specific than Week 3's 'How well I perform in classes.' Single item but appropriately placed in the center ring.",
+    "influence_quality": "Developing. 'How I perform in golf' is a reasonable influence-ring placement — performance outcomes in a recreational activity are partially within control. This represents Tucker's most accurate influence-ring entry of the program, distinguishing between the controllable effort and the partially-controllable outcome.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "3",
+    "rolling_win_rate_4wk": "0.500",
+    "rolling_missed_rate_4wk": "0.107",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over four weeks, Tucker has established a consistent Mixed-tier execution pattern driven entirely by external structure. Weekday engagement (school, coaching, homework, work) reliably produces Win days, though the weekday Win count has shown a slight declining trajectory (4, 4, 3, 3). Weekend and unstructured time consistently produces Neutral or Missed days. Sunday has been the lowest-scoring day every week — Neutral in Week 1, then Missed in Weeks 2-4. The pattern has crystallized without upward development. Goal-setting quality declined steeply (3 specific targets to 1 to 'Become better' repeated twice). Gym attendance oscillated (2, 1, 2, 0) and dropped to zero this week for the first time. Reflection quality touched its floor (RQS 2, 1, 1) and showed a slight recovery this week (RQS 2) with more engagement in the Bullseye and motivation sections. The one new data point is Sunday's 'Golfed' — qualitatively different from the prior two weeks' 'Nothing,' suggesting the Sunday commitment concept may have partially influenced behavior even without visible execution of the alarm mechanism.",
+    "milestone_this_week": "First zero-gym week introduces a new dimension to hinge habit tracking. Sunday's shift from 'Nothing' to 'Golfed' is the first qualitative change in the Sunday pattern across three consecutive Missed Sundays. Bullseye sophistication improved — influence ring entry ('How I perform in golf') and noise ring entry ('The days I work and how much homework I get') are both Tucker's most accurate placements of the program. Spring break context introduces a structural removal stress test for next week.",
+    "open_thread": "Spring break begins next week — Tucker's academic structure (the primary driver of weekday Wins) will be removed for an extended period. Given the established structure-dependent execution pattern, this is the highest-risk environment Tucker has faced in the program. The gym dropping to zero sessions and the goal remaining at 'Become better' for the second straight week suggest reduced intentional engagement with development planning. Whether Tucker can maintain any execution structure without school-driven scheduling is the defining question heading into the break. The Sunday 'Golfed' shift, while still a Missed day, may indicate the beginning of behavioral change on unstructured days."
+  },
+
+  "most_important_controllable": "Maintaining intentional daily structure during spring break — the upcoming removal of academic scheduling eliminates the primary driver of Tucker's Win days and represents the most significant structural test of the program.",
+
+  "micro_commitment": {
+    "action": "Each morning of spring break, before doing anything else, name out loud one specific thing you will complete that day. It can be anything — gym, work task, personal project, coaching study. Say it out loud, then do it before the day gets away from you.",
+    "when": "Every morning of spring break week, first thing after waking up.",
+    "measurement": "At the end of spring break week, Tucker should be able to name what he committed to each day and whether he completed it. If at least 4 of 7 days have a named-and-completed action, the commitment is fully executed."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Spring break begins — academic structure (the primary external driver of Tucker's Win days) will be removed for an extended period. This is the highest-risk environment for Tucker's structure-dependent execution pattern. With no school schedule, coaching responsibilities may also be reduced, leaving Tucker with minimal external structure to anchor daily engagement.",
+    "athlete_stated_next_goal": "Enjoy spring break"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "3/7 Win days (matching Week 3's program low), with 1 unscored day (Friday) and 1 Missed day (Sunday). Gym attendance dropped to 0 sessions — the first zero-gym week of the program, regressing from the Week 3 recovery of 2 sessions. Weekday structure continued to produce Wins (Monday, Tuesday, Thursday), but Wednesday moved from Win to Neutral. Saturday remained Neutral. Sunday shifted from 'Nothing' to 'Golfed' but stayed Missed. The spring break preparation push dominated the week's achievement narrative.",
+    "key_habit_signal": "The hinge habit (gym attendance) dropping to zero is the most significant regression of Tucker's program. The 4-week gym trajectory — 2, 1, 2, 0 — shows the habit has never stabilized and is now at its lowest point. Combined with the repeated 'Become better' goal (2nd consecutive week) and spring break removing academic structure next week, the discretionary engagement indicators are collectively at their weakest. Counter-signal: the Bullseye improvement (more accurate influence and noise ring placement) and Sunday's shift from 'Nothing' to recreational activity suggest Tucker's self-awareness may be developing even as behavioral execution metrics flatten.",
+    "coach_reinforcement_cue": "Anchor on the academic preparation push ('A lot of school work done preparing for spring break') as evidence of sustained effort capacity when a deadline drives engagement. The Bullseye improvement — placing golf performance in the influence ring and work schedule in the noise ring — shows Tucker's understanding of what he can and cannot control is developing. The Sunday 'Golfed' entry, while still Missed, is qualitatively better than 'Nothing' and suggests the Sunday engagement concept is beginning to register.",
+    "coach_avoidance_note": "Do not catastrophize the zero-gym week — spring break prep may have legitimately compressed Tucker's schedule. Do not frame golf as wasted time — recreational engagement on Sunday is an improvement from complete disengagement. Do not overweight the unscored Friday as intentional disengagement — it may simply be an oversight in the recap submission process."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. The combination of zero gym sessions, repeated vague goal, and spring break upcoming represents a structural risk within normal coaching scope. Tucker's affect language remains neutral-to-positive ('A lot of school work done,' 'Durability is what transforms average into excellence'). No emotional distress, isolation, or withdrawal signals. Standard coaching scope."
+  },
+
+  "next_week_focus_question": "Spring break starts — no classes, no homework schedule. You chose 'Durability is what transforms average into excellence over time.' What does durability look like for you during a week when nothing requires you to show up?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  },
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+  "current_season_phase": "not available — Core Foundation athlete",
+  "forward_anchor": "not available — Core Foundation athlete"
+}
