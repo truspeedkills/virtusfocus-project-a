@@ -1,0 +1,655 @@
+============================================================
+COMPREHENSIVE AI PIPELINE PROJECT BRIEFING — HANDOFF PROMPT
+============================================================
+SESSION TYPE: Research / Document Production
+GOAL: Read all pipeline specification files and produce a
+comprehensive written briefing document covering the full
+VirtusFocus AI Coaching Pipeline architecture, capabilities,
+compliance framework, and current state.
+============================================================
+
+1. WHAT YOU ARE PRODUCING
+============================================================
+
+A single comprehensive briefing document that could be handed
+to an investor, technical partner, app development team, or
+new team member and give them a complete understanding of:
+
+  - What VirtusFocus is and what problem the pipeline solves
+  - The full 7-stage pipeline architecture (+ app backend)
+  - What each stage does, what it reads, what it produces
+  - The 4 product tiers and how they differ
+  - The compliance framework and why it exists
+  - The execution signal system (50+ fields, 7 composite
+    scores, 15 coach flags)
+  - The intake form system (PPD scoring, ABI scoring,
+    dual-mode operation)
+  - The parent output architecture
+  - The daily coaching system (snippets + coach signals)
+  - The forward anchor system
+  - The athlete data processed to date
+  - Cost structure per tier
+  - What has been built vs. what remains
+
+This is NOT a technical specification walkthrough. It is a
+NARRATIVE briefing that tells the story of the pipeline —
+what it does, why it exists, how the pieces connect, and
+what makes it unique. Technical details should be included
+where they illuminate the architecture, but the document
+should be readable by someone who has never seen the
+codebase.
+
+The output format should be discussed with the user before
+writing. Options include:
+  - Word document (.docx) with professional formatting
+  - Plain text document
+  - Markdown document
+
+============================================================
+2. HOW TO APPROACH THIS SESSION
+============================================================
+
+STEP 1: Read CLAUDE.md first. This is the master project
+  specification and contains the full pipeline table,
+  athlete data status, schema definitions, session history,
+  and all architectural decisions. It is long but essential.
+
+STEP 2: Read the Priority 1 reference files (stage
+  specifications — master prompts and project instructions
+  for all 7 stages). These define what each stage does.
+
+STEP 3: Read the Priority 2 reference files (source
+  reference files that define the data contracts, routing
+  rules, compliance framework, and scoring systems).
+
+STEP 4: Read Priority 3 files (parent architecture,
+  assessment documents, sample athlete outputs) to
+  understand the full scope and quality of the pipeline.
+
+STEP 5: Present a proposed outline to the user for
+  feedback before writing the full document.
+
+STEP 6: Write the comprehensive briefing document.
+
+IMPORTANT: This is a READ-ONLY session. Do not modify any
+specification files. Do not run the pipeline. Do not
+process athlete data. Your only output is the briefing
+document itself.
+
+============================================================
+3. CONTEXT — WHAT HAS CHANGED SINCE THE LAST BRIEFING
+============================================================
+
+A previous briefing was produced in Session 37 (2026-03-08)
+covering a 5-stage pipeline with 23 reference files. Since
+then, the pipeline has undergone 4 major improvement
+initiatives and a standalone enhancement:
+
+IDEA 1 — Athlete Intake Form Redesign (7 tasks, COMPLETE)
+  The intake system was completely redesigned. A unified
+  29-question App intake form now feeds three systems
+  simultaneously: Athlete Snapshot (10-section narrative),
+  PPD (Primary Problem Detector — 8-bucket deterministic
+  scoring), and ABI (Athlete Baseline Index — 4-pillar
+  quantitative assessment). The Snapshot Builder was
+  rewritten as a self-contained v2.0 specification with
+  dual-mode detection (App vs Core Foundation). A new
+  baseline_intake_profile JSON block passes 7 fields
+  through Stage 2 for downstream consumption. Competitive
+  Level Calibration Rules were added to Stage 3. Pipeline
+  Data Leakage criteria were expanded in Stage 5.
+
+IDEA 2 — Daily Coaching Snippet (4 tasks, COMPLETE)
+  A brand new Stage 6 (Daily Coaching Engine) was designed
+  and specified. This is the first daily output in what was
+  previously a weekly-only pipeline. The app backend
+  produces a deterministic Daily Mini-JSON (zero AI cost)
+  that feeds Stage 6. Stage 6 runs on Claude Sonnet (not
+  Opus) and produces 2-3 sentence coaching snippets with
+  embedded 3-layer self-validation (no external audit).
+  Two product tiers defined: Base (7 snippets/week,
+  standalone) and Premium (6 snippets/week, enriched by
+  weekly Interpretation JSON).
+
+IDEA 3 — Daily Coach Insights (4 tasks, COMPLETE)
+  A brand new Stage 7 (Daily Coach Insights Engine) was
+  designed as a DETERMINISTIC RULES ENGINE — zero AI, zero
+  cost, zero latency. Produces a Daily Athlete Signal
+  (Traffic Light: Green/Yellow/Orange/Gray) synthesized
+  from 5 inputs via point scoring, with weekly calibration
+  modifiers from the Interpretation JSON. Includes team
+  and position group 4-tier aggregation for institutional
+  clients. Complementary to (not replacing) the weekly
+  Coach Insights from Stage 4.
+
+IDEA 4 — Parent Output + Dashboard (6 tasks, COMPLETE)
+  Parent-facing outputs were integrated across 3 stages:
+  Stage 3 now produces a Parent Coaching Message (3rd
+  output, 4 sections, 150-250 words, Coach Arron voice in
+  third-person register). Stage 4 now produces a Parent
+  Weekly Insight (mirror of coach-facing output with
+  rebranded sections and warmer tone). Stage 7 maps daily
+  signals to parent-friendly labels (Good Day / Building
+  Day / Reset Day / No Update Today). A Parent Dashboard
+  specification defines 5 categorical metrics for the app
+  presentation layer. Key architectural decision: parent
+  data boundary is IDENTICAL to coach data boundary — no
+  separate compliance framework needed.
+
+FORWARD ANCHOR ADDITION (standalone, COMPLETE)
+  Athlete-authored weekly intention input ("One thing you
+  can control next week") integrated across 6 stages with
+  3 new analytical signals (controllability classification,
+  focus consistency, forward anchor alignment). Implements
+  an Anchor-Informed Commitment model where the athlete's
+  stated intention influences (but doesn't override) the
+  coach's micro-commitment assignment.
+
+EXECUTION SIGNAL SCHEMA (13 tasks, COMPLETE — predates
+  the last briefing but was specification-only then)
+  Now fully implemented across all stage specifications.
+  50+ fields in the execution_behavior_signals JSON block,
+  7 composite scores with deterministic formulas, 15 coach
+  flags across 4 categories. Dual-mode operation: App
+  athletes get full execution analysis, Core Foundation
+  athletes get neutral fallback values with zero
+  degradation to existing output quality.
+
+NET RESULT: The pipeline grew from 5 stages to 7 stages
+(+ app backend). The reference file count roughly doubled.
+The product model expanded from a single tier to 4 tiers
+(D2C Base, D2C Premium, D2C Premium + Parent,
+Institutional). Three new athlete-facing output types were
+added (Daily Snippet, Parent CM, Parent Dashboard). Two
+new coach-facing output types were added (Daily Signal,
+Team Aggregation Tiers). The intake system was completely
+redesigned with quantitative scoring.
+
+============================================================
+4. REFERENCE FILES — READING ORDER
+============================================================
+
+Read these files in the order listed. The priority system
+ensures you build understanding from architecture down to
+detail. You do NOT need to memorize every field — focus on
+understanding what each stage does, what it reads, and
+what it produces.
+
+------------------------------------------------------------
+PRIORITY 1: Architecture + Stage Specifications
+------------------------------------------------------------
+Read these first. They define the pipeline.
+
+01. CLAUDE.md
+    — Master project specification. Pipeline table, schema
+      definitions, athlete data, all decisions. LONG but
+      essential. Read the full file.
+    Path: CLAUDE.md
+
+02. Interpretation Engine — Project Instructions v9.6
+    — Stage 2: The single source of truth for all
+      downstream stages. Dual-input processing, 17 sections,
+      execution signal computation, forward anchor.
+    Path: Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
+
+03. Coaching Output Engine — Master Prompt V4
+    — Stage 3: Three outputs (Athlete CM + Deep Dive +
+      Parent CM). Coach Arron persona. Parent mode
+      activation rules.
+    Path: Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+
+04. Coaching Output Engine — Instructions v1.8
+    — Stage 3: 32 sections covering all routing, calibration,
+      compliance, execution signals, intake profile, forward
+      anchor, and 9 parent-specific sections.
+    Path: Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.8.txt
+
+05. Coach Insights Engine — Master Prompt v1.2
+    — Stage 4: Four output types (Coach Insight + Team
+      Snapshot + Parent Insight + Monthly Summary). Parent
+      mode activation. Mandatory generation order.
+    Path: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.2.txt
+
+06. Coach Insights Engine — Instructions v1.5
+    — Stage 4: 28+ sections. Execution signal inform-only
+      routing, intake profile integration, forward anchor,
+      parent sections with 18 additional prohibitions.
+    Path: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.5.txt
+
+07. Editorial Audit — Master Prompt v1.3
+    — Stage 5: 13 tiered audit criteria. Quality gate
+      between production and delivery. Categories A-G
+      in Clinical Language Exclusion List.
+    Path: Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+
+08. Editorial Audit — Instructions v1.3
+    — Stage 5: Full audit procedure, decision tree, edge
+      cases, auto-correction rules, regeneration format.
+    Path: Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+
+09. Daily Coaching Engine — Master Prompt v1.1
+    — Stage 6: System identity, dual-tier inputs, output
+      format, 12 core rules, compliance scan protocol,
+      reference snippets.
+    Path: Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.1.txt
+
+10. Daily Coaching Engine — Instructions v1.2
+    — Stage 6: 20 sections. Voice calibration, competitive
+      level, maturity bands, close-to-open handoff, Base
+      vs Premium generation, forward anchor enrichment,
+      3-layer compliance scan, generic fallbacks.
+    Path: Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Project_Instructions_v1.2.txt
+
+11. Daily Coach Insights — Determination Rules v1.0
+    — Stage 7: App backend implementation spec (NOT an
+      LLM prompt). 14 sections. Point scoring, traffic
+      light thresholds, calibration modifiers, team
+      aggregation, 12 edge cases, parent label mapping.
+    Path: Agents - Generators\Daily Coach Insights Engine\VF_Daily_Coach_Signal_Determination_Rules_v1.0.txt
+
+12. Snapshot Builder — Instructions v2.0
+    — Stage 1: Self-contained production spec (1800+ lines).
+      Dual-mode detection, embedded PPD + ABI computation,
+      10 narrative section writing rules, baseline anchor
+      derivation, validation checklist, worked example.
+    Path: Agents - Generators\Athlete Snapshot Generator\SOP_Snapshot_Builder_Project_Instructions_v2.0.txt
+
+------------------------------------------------------------
+PRIORITY 2: Data Contracts + Scoring Systems + Compliance
+------------------------------------------------------------
+Read these to understand the data flowing through the
+pipeline and the rules governing it.
+
+13. Interpretation JSON Rules
+    — Defines ALL JSON field classifications, execution
+      signal processing (Sections 6-17), baseline intake
+      profile extraction (Section 16-17), forward anchor
+      classification (Section 18-19), global guardrails.
+    Path: Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+
+14. App Input Format Specification
+    — API contract between app backend and Stage 2. Weekly
+      Input Object (7 daily events + weekly check-in with
+      Motivation Inventory, season context, forward anchor).
+      Daily event structure. Evening timing model. Hard-out
+      rules. Tiered operation.
+    Path: Agents - Generators\Interpretation\Source Files\VF_App_Input_Format_Specification.txt
+
+15. Execution Signal Composite Score Rules
+    — Deterministic calculation formulas for all 7 composite
+      scores (Ownership, Drift, Follow-Through, Rhythm,
+      Review Quality, Recovery, Reactivity Risk). Weighted
+      components, band thresholds, edge cases.
+    Path: Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+
+16. Coach Flags Specification
+    — 15 execution-behavior-derived flags across 4
+      categories (score-band, cross-score convergence, raw
+      metric pattern, cross-week escalation). 3 severity
+      tiers. Trigger conditions. Downstream routing.
+    Path: Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt
+
+17. Daily Mini-JSON Specification
+    — Data contract between app backend and daily stages
+      (6 + 7). Field definitions, deliberately excluded
+      fields with compliance rationale, derivation trace,
+      tiered operation (Base vs Premium), generation timing.
+    Path: Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Mini_JSON_Specification.txt
+
+18. Daily Snippet Content Model
+    — 10-section content specification for Stage 6 output.
+      Voice, tone, competitive level calibration, maturity
+      bands, close-to-open handoff, Base vs Premium design,
+      16+ scenario examples, 14 prohibitions.
+    Path: Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Snippet_Content_Model.txt
+
+19. JSON Logic Reference (Coach Insights routing)
+    — Stage 4 field routing: inform-only rules, per-section
+      enrichment, Composite Readiness determination,
+      execution signal compliance filter, KPS priority,
+      Season Phase Overlay, Core Foundation handling.
+    Path: Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+
+20. Coach Insights Compliance Framework
+    — Institutional safety guardrails. What can/cannot
+      appear in coach-facing output. Prohibited categories.
+      The compliance foundation for the entire pipeline.
+    Path: Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+
+21. Coaching Output Message Map
+    — Stage 3 field-to-section routing for all 3 outputs
+      (Coaching Message, Deep Dive, Parent CM). Execution
+      signal routing, intake profile routing, forward
+      anchor routing, severity-tier flag handling.
+    Path: Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+
+22. Coaching Output System Identity
+    — Coach Arron persona definition. 3 output types.
+      Pipeline position. Voice characteristics.
+    Path: Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+
+------------------------------------------------------------
+PRIORITY 3: Intake System + Parent Architecture
+------------------------------------------------------------
+Read these to understand the intake redesign and parent
+output system.
+
+23. App Intake Form Specification
+    — 29 questions, 7 sections, ~5-6 min completion time.
+      Multi-system routing (Snapshot / PPD / ABI / Ecosystem
+      / Longitudinal). Response formats. CF compatibility.
+    Path: Agents - Generators\Athlete Snapshot Generator\VF_App_Intake_Form_Specification.txt
+
+24. PPD Scoring Logic
+    — Primary Problem Detector: 4-layer deterministic
+      scoring (selection weight, amplifiers, agent-classified
+      tie-breaker, bucket priority ranking). 8 buckets.
+      3 worked examples.
+    Path: Agents - Generators\Athlete Snapshot Generator\VF_PPD_Scoring_Logic.txt
+
+25. ABI Scoring Logic
+    — Athlete Baseline Index: 4 pillars (Ownership,
+      Composure, Focus, Structure). Formula, bands, Primary
+      Emphasis rules. 3 worked examples cross-validated
+      against PPD.
+    Path: Agents - Generators\Athlete Snapshot Generator\VF_ABI_Scoring_Logic.txt
+
+26. App Athlete Snapshot Fields
+    — Expanded field structure: structured data block (6
+      sub-blocks, 40+ fields) + 10 narrative sections
+      (400-650 words) + 5 locked baseline anchors.
+      Dual-mode architecture.
+    Path: Agents - Generators\Athlete Snapshot Generator\VF_App_Athlete_Snapshot_Fields.txt
+
+27. Parent Output Architecture Decisions
+    — Architecture A1-A5 locked. Parent CM = Stage 3 third
+      output. Parent Insights = Stage 4 mirror. Daily Signal
+      = Stage 7 adaptation. Premium D2C only. Same data
+      boundary as coaches.
+    Path: Agents - Generators\Parents Insight Engine\VF_Parent_Output_Architecture_Decisions.txt
+
+28. Parent Dashboard Metric Definitions
+    — App development spec. 5 dashboard metrics (Overall
+      Signal, Growth Phase, Weekly Theme, Confidence
+      Direction, Daily Signal). Warm placeholders. Layout
+      principles. Compliance notes.
+    Path: Agents - Generators\Parents Insight Engine\VF_Parent_Dashboard_Metric_Definitions.txt
+
+29. Parent Output Design Decisions (Tasks 17-18)
+    — Parent CM 4-section design. Dashboard categorical
+      signals. Stress load exclusion. Contributing signals
+      hidden. Daily signal parent labels.
+    Path: Agents - Generators\Parents Insight Engine\VF_Parent_Output_Task_17_18_Design_Decisions.txt
+
+------------------------------------------------------------
+PRIORITY 4: Supporting Context + Quality Assurance
+------------------------------------------------------------
+Read these for additional depth if time permits.
+
+30. Daily Coach Signal Design
+    — Collaborative design document. 8 sections. Traffic
+      Light scoring, contributing signals, calibration
+      modifiers, team aggregation, daily-to-weekly
+      relationship, 12 locked design decisions.
+    Path: Agents - Generators\Daily Coach Insights Engine\Source Files\VF_Daily_Coach_Signal_Design.txt
+
+31. QA Monitoring Protocol v1.1
+    — Operational quality review for Stages 6 + 7. 7 quality
+      dimensions for snippets, 5 for signals, cross-stage
+      interactions. Review cadence. Escalation criteria.
+    Path: Agents - Generators\Daily Coaching Engine\VF_Daily_Snippet_QA_Monitoring_Protocol_v1.1.txt
+
+32. Forward Anchor Pipeline Addition (Proposal)
+    — Original proposal document. Design questions, scope,
+      3 new analytical signals, dependency map.
+    Path: Pipeline Enhancement Proposals\Forward_Anchor_Pipeline_Addition.txt
+
+33. No-Degradation Validation Report
+    — 4-layer validation confirming execution signal upgrade
+      introduces zero degradation to existing athlete output.
+      54 files scanned, 74 search terms, all PASS.
+    Path: Validation Reports\Task_13_Execution_Signal_No_Degradation_Validation.txt
+
+34. Interpretation Engine Snapshot Integration Assessment
+    — How v2.0 snapshot fields integrate with Stage 2.
+      7 pass-through fields. Pre-launch blocker (live
+      season phase). Downstream deliverables.
+    Path: Agents - Generators\Athlete Snapshot Generator\VF_Interpretation_Engine_Snapshot_Integration_Assessment.txt
+
+35. Downstream Stage Impact Assessment
+    — Impact of baseline_intake_profile on Stages 3-5.
+      Competitive Level Calibration. PPD/ABI routing.
+      Category F leakage criteria. Season phase design.
+    Path: Agents - Generators\Athlete Snapshot Generator\VF_Downstream_Stage_Impact_Assessment.txt
+
+------------------------------------------------------------
+PRIORITY 5: Sample Athlete Outputs (Understanding Quality)
+------------------------------------------------------------
+Read 1-2 samples from each stage to understand output
+quality and voice. These are all Grace Kindel Week 5
+(the most complete example — Consistent growth phase,
+5th week of data, full longitudinal metrics).
+
+36. Grace Kindel Week 5 — Interpretation JSON
+    Path: Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+
+37. Grace Kindel Week 5 — Coaching Message
+    Path: Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-02-23to2026-03-01_VF_CoachingMessage.txt
+
+38. Grace Kindel Week 5 — Deep Dive
+    Path: Athlete Data\Grace Kindel\Coaching and Deep Dive\Deep Dive\Grace_Kindel_2026-02-23to2026-03-01_VF_DeepDive.txt
+
+39. Grace Kindel Week 5 — Coach Insight
+    Path: Athlete Data\Grace Kindel\Coach Insights\Grace_Kindel_2026-02-23to2026-03-01_VF_WeeklyInsight.txt
+
+40. Grace Kindel — Athlete Snapshot
+    Path: Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+
+------------------------------------------------------------
+PRIORITY 6: Brand Voice + Frameworks (Skim Only)
+------------------------------------------------------------
+These inform the writing style but are less critical for
+a briefing document. Skim if time allows.
+
+41. Brand Voice
+    Path: Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+
+42. Content Style Guide
+    Path: Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+
+43. Coaching Message Framework
+    Path: Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+
+44. Reflection Quality / Growth Phase Model
+    Path: Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
+
+45. Pipeline Visual Flow Diagrams (HTML)
+    — 4 interactive visual diagrams showing data flows
+      per product tier. Cannot be read as text but the
+      user may reference them.
+    Path: Pipeline Visual Flow Diagrams.html
+
+============================================================
+5. SUGGESTED BRIEFING DOCUMENT OUTLINE
+============================================================
+
+This is a suggested structure. The fresh session should
+propose their own outline after reading all files and
+get user approval before writing.
+
+SECTION 1: EXECUTIVE SUMMARY
+  What VirtusFocus is. What the pipeline does. Why it
+  exists (Core Foundation doesn't scale to app). Key
+  numbers (7 stages, 50+ JSON fields, 7 composite scores,
+  15 coach flags, 13 audit criteria, 4 product tiers).
+
+SECTION 2: THE PROBLEM
+  Manual coaching doesn't scale. The Core Foundation
+  program works but requires human interpretation of
+  weekly recaps. An app ecosystem needs automated,
+  compliance-safe, personalized coaching at scale.
+
+SECTION 3: PIPELINE ARCHITECTURE OVERVIEW
+  The 7-stage stacked pipeline + app backend. What each
+  stage does in 2-3 sentences. The "single source of
+  truth" principle (Stage 2 JSON). The quality gate
+  (Stage 5). AI vs. deterministic stages. Model
+  assignments (Opus/Sonnet/None).
+
+SECTION 4: THE BEHAVIORAL SYSTEM
+  Win the Day scoring. Bullseye Method. Daily Journaling.
+  Morning Tune-Up. Weekly Recap + Motivation Inventory.
+  Growth Phases. Reflection Quality Scale. How these
+  feed the pipeline.
+
+SECTION 5: STAGE-BY-STAGE DEEP DIVE
+  For each of the 7 stages + app backend:
+  - What it does
+  - What it reads (inputs)
+  - What it produces (outputs)
+  - Who sees the output
+  - AI model and cadence
+  - Key design decisions
+  - Compliance considerations
+
+SECTION 6: THE EXECUTION SIGNAL SYSTEM
+  The third signal category (alongside score signals and
+  text signals). 50+ fields measuring HOW athletes use the
+  system. 7 composite scores. 15 coach flags. Dual-mode
+  operation. The "sharpens, not expands" principle.
+  Backend-only compliance ruling.
+
+SECTION 7: THE INTAKE SYSTEM
+  Unified 29-question form. PPD scoring (8 buckets,
+  deterministic). ABI scoring (4 pillars, quantitative).
+  Dual-mode detection (App vs Core Foundation). Baseline
+  intake profile pass-through. Competitive Level
+  Calibration.
+
+SECTION 8: PRODUCT TIERS
+  D2C Base ($0.06/wk) — daily snippets only.
+  D2C Premium ($0.66/wk) — weekly + daily.
+  D2C Premium + Parent ($0.73/wk) — full pipeline.
+  Institutional ($0.78/wk) — coach analytics + team.
+  Stage activation matrix. Cost breakdown.
+
+SECTION 9: COMPLIANCE FRAMEWORK
+  Non-clinical mandate. Clinical language prohibition
+  (Categories A-G). Execution data backend-only ruling.
+  Pipeline data leakage criteria. Surveillance framing
+  prohibition. Raw metric exclusion. The "reasonable
+  reader test." How compliance is enforced at each stage.
+
+SECTION 10: PARENT OUTPUT ARCHITECTURE
+  Same data boundary as coaches (key reframe). Coach Arron
+  voice in third-person register. Parent CM (4 sections).
+  Parent Insight (10 sections, rebranded). Daily Signal
+  (parent labels). Dashboard (5 categorical metrics).
+  Contributing signals hidden. Warm placeholders.
+
+SECTION 11: THE FORWARD ANCHOR SYSTEM
+  Athlete-authored weekly intention. Controllability
+  classification. Focus consistency tracking. Anchor-
+  informed commitment (4-tier priority). Deferred
+  alignment timing.
+
+SECTION 12: ATHLETE DATA + VALIDATION
+  3 athletes processed: Grace Kindel (5 weeks, Growth →
+  Consistent advancement), Tucker Lloyd (3 weeks, Mixed
+  tier, Sunday gap pattern), Mergim Bushati (19 weeks,
+  longest dataset, injury recovery, first competition).
+  Editorial audit results. No-degradation validation.
+
+SECTION 13: QUALITY ASSURANCE
+  Stage 5 Editorial Audit (13 criteria, 3 tiers).
+  Stage 6 embedded self-validation (3-layer scan).
+  Stage 7 deterministic (no compliance risk from output).
+  QA Monitoring Protocol. Generic fallback snippets.
+  [COMPLIANCE_FLAG] mechanism.
+
+SECTION 14: COST STRUCTURE
+  Per-tier cost breakdown. Token optimization (prompt
+  caching, Batches API). Opus vs Sonnet allocation.
+  Deterministic stages (zero AI cost). Incremental cost
+  of parent outputs.
+
+SECTION 15: WHAT REMAINS
+  Live athlete processing through full v9.6 pipeline.
+  App development (backend Mini-JSON generation, intake
+  form UI, dashboard rendering). Longitudinal PPD
+  (execution-derived, future enhancement). Grace Kindel
+  Week 6+ processing.
+
+============================================================
+6. WHAT THE USER EXPECTS
+============================================================
+
+- A comprehensive, well-organized briefing document
+- Narrative style — readable by non-technical stakeholders
+- Technical accuracy — every claim verifiable against the
+  specification files
+- No speculation — only state what is actually built and
+  specified
+- Clear distinction between what is specification-complete
+  and what has been validated with live athlete data
+- The document should stand alone — a reader should not
+  need to reference CLAUDE.md or any specification file
+  to understand the pipeline
+
+============================================================
+7. WHAT NOT TO DO
+============================================================
+
+- Do NOT modify any specification files
+- Do NOT run the pipeline or process athlete data
+- Do NOT create new pipeline stages or features
+- Do NOT reorganize the file system
+- Do NOT skip reading CLAUDE.md — it is essential context
+- Do NOT produce a shallow overview — the user wants depth
+- Do NOT copy-paste from specification files — synthesize
+  and explain in narrative form
+- Do NOT include raw JSON schemas in the briefing (describe
+  them in prose instead)
+- Do NOT guess at details — if something is unclear from
+  the files, note it as an open question
+
+============================================================
+8. LOCKED FACTS — DO NOT CHANGE
+============================================================
+
+These are verified facts from the specification files:
+
+- 7 pipeline stages + app backend (8 components total)
+- v9.6 is the current Interpretation Engine schema
+- V4 is the current Coaching Output Master Prompt
+- v1.8 is the current Coaching Output Instructions
+- v1.2 is the current Coach Insights Master Prompt
+- v1.5 is the current Coach Insights Instructions
+- v1.3 is the current Editorial Audit (Master + Instructions)
+- v1.1 is the current Daily Coaching Engine Master Prompt
+- v1.2 is the current Daily Coaching Engine Instructions
+- v1.0 is the current Daily Coach Signal Determination Rules
+- v2.0 is the current Snapshot Builder Instructions
+- 13 audit criteria across 3 tiers (Tier 1: 1-4 + 13)
+- 7 composite scores (Ownership, Drift, Follow-Through,
+  Rhythm, Review Quality, Recovery, Reactivity Risk)
+- 15 coach flags (4 categories, 3 severity tiers)
+- 50+ fields in execution_behavior_signals block
+- 29-question unified intake form (7 sections)
+- 8 PPD buckets, 4 ABI pillars
+- 4 product tiers (D2C Base, Premium, Premium+Parent,
+  Institutional)
+- 3 athletes processed: Grace Kindel (5 wk), Tucker Lloyd
+  (3 wk), Mergim Bushati (19 wk)
+- Stage 6 = Sonnet, Stage 7 = No AI, all others = Opus
+- Zero Missed days for Mergim across 133 program days
+- Grace Kindel advanced from Developing to Consistent
+  (Advancing) at Week 5
+- Pipeline is specification-complete for all 7 stages
+- Core Foundation = dual-mode fallback, not deprecated
+- Total cost: Base $0.06/wk, Premium $0.66/wk,
+  Premium+Parent $0.73/wk, Institutional $0.78/wk
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
