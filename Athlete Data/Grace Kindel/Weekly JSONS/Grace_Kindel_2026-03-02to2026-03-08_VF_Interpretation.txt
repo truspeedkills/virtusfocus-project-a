@@ -1,0 +1,137 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-03-02 to 2026-03-08",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Sixth consecutive aligned week. Grace's Bullseye ('I can control what I do with the chances I get') is a direct behavioral restatement of the Week 4-5 philosophy. Competition execution validated the approach — Wednesday pinch-hit success and Thursday starting DP role both demonstrate action-quality confidence functioning under live game conditions. Sunday's position-specific frustration ('NEVER even be an option for the field') introduces a new dimension but does not represent derailer activation — Grace processed it with a teammate and closed with 'Still gonna work hard.' Goal-setting specificity declined to the program low ('do good I forget tbh') even as behavioral execution remains maximal."
+  },
+
+  "athlete_state": "Competition-validated confidence with emerging position-specific friction. Grace navigated back-to-back trips (NC + Florida) — the open thread from Week 5 — with full behavioral execution (42/42 Win days across the program). Wednesday's pinch-hit success in NC provided the first positive competitive result beyond the Week 4 SC at-bat. Thursday's starting DP role in Florida represented a playing time expansion. Sunday's frustration about being limited to hitting roles (never fielding) reveals a new structural tension distinct from the original confidence derailer.",
+
+  "core_pattern": "Action-quality confidence holding under sustained competition, with goal-setting intentionality declining. Grace's Bullseye restatement ('I can control what I do with the chances I get') confirms the Week 4-5 philosophy is now operational. The warmup commitment from Week 5 showed direct evidence ('warm-up seriously and well, stay ready' on Wednesday). However, goal specificity has traced a five-week decline: specific measurable goals (Wk 1) to mindset-focused intention (Wks 2-4) to philosophy statement (Wk 5) to 'do good I forget tbh' (Wk 6). Execution excellence is outpacing conscious goal-setting.",
+
+  "behavioral_root_cause": "Grace's action-quality philosophy is now self-sustaining — the Bullseye, Wednesday's pinch-hit success, and Thursday's composed response to being pulled from a start all demonstrate it functioning without deliberate goal prompting. This raises a dual-signal question: the goal-setting decline may reflect either (a) the philosophy operating below conscious articulation (healthy integration) or (b) engagement drift masked by habitual execution (early warning). Sunday's position-specific frustration ('its so confusing and it sucks') about never fielding is structurally different from the original confidence derailer — it targets role identity rather than error response.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before each game in NC and Florida, complete a deliberate warmup with full focus, then say Grace's own philosophy to herself: 'If I'm given a chance, I use it well.' No evaluation of playing time or outcomes during the trip — only two questions: Did I prepare well? Did I use my chance?",
+    "execution_status": "Partial",
+    "execution_notes": "Strong evidence of the warmup commitment — Wednesday's recap explicitly states 'warm-up seriously and well, stay ready' before the game where she earned a pinch-hit single. Tuesday's 'I was ready' and the preparation-focused language across game days suggest consistent pre-game focus. The philosophy is reflected behaviorally in the Bullseye ('I can control what I do with the chances I get') and in Wednesday and Thursday competition responses. However, the 'no evaluation of playing time' dimension broke on Sunday — the frustration about never fielding represents a playing-time evaluation. The warmup and philosophy components show clear execution; the outcome-detachment component was maintained through Thursday but not Sunday.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "do good I forget tbh",
+    "achievement_statement": "I achieved playing, getting opportunities, and making contact",
+    "key_phrase": "I can control what I do with the chances I get",
+    "mindset_resonance": "Tuesday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Precise and competition-contextualized. 'I can control what I do with the chances I get' directly restates the Week 4-5 philosophy in behavioral terms, specific to Grace's competitive reality of limited but increasing opportunities. Narrower and more actionable than any prior week — she has moved from general confidence language (Week 4: 'my confidence') to a specific behavioral frame that governs her competition approach.",
+    "influence_quality": "New domain — team dynamics. 'I can influence dynamic in the dugout' shifts from prior weeks' effort-visibility focus (Week 4: 'the effort they see') to team relational influence. Correctly placed in the influence ring. May reflect increased dugout engagement as playing time expands.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Consistent",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "5",
+    "rolling_win_rate_4wk": "1.0",
+    "rolling_missed_rate_4wk": "0.0",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over six weeks, Grace progressed from preparation-driven confidence (Weeks 1-2) through emotional adversity under competition travel (Week 3: coach frustration, homesickness, High EI) to breakthrough adversity-resilient confidence (Week 4: 'the one chance I got, I did something with') to composed competition readiness with internalized philosophy (Week 5: 'If I'm given a chance, use it well') to direct competitive validation — pinch-hit success, first collegiate start, and sustained composure across back-to-back trips in previously destabilizing environments (Week 6). 42/42 Win days across the full program. The confidence mechanism arc: outcome-reactive at baseline → preparation-energized (Wks 1-2) → structure-sustained under pressure (Wk 3) → action-proven (Wk 4) → identity-embedded (Wk 5) → competition-validated (Wk 6). New dimension this week: position-specific frustration (hitting only, never fielding) and declining goal specificity.",
+    "milestone_this_week": "First successful competitive hit of the program (Wednesday NC, pinch-hit through the infield) and first collegiate start as DP (Thursday Florida). Playing time increased from one at-bat under adverse circumstances (Week 4 SC) to multiple game appearances across two trips — first concrete evidence of expanding opportunity. NC environment (same location as Week 3 emotional strain episode) navigated with full composure — the Week 5 open thread resolved favorably.",
+    "open_thread": "Goal-setting quality has declined to the program low ('do good I forget tbh' / 'Work hard') across a five-week trend of decreasing specificity — even as competitive execution and confidence are at their strongest. Sunday revealed position-specific frustration ('NEVER even be an option for the field') that is structurally different from the original confidence derailer: role identity frustration rather than error-response confidence loss. Whether the declining goal intentionality signals early engagement drift masked by habitual execution, or simply reflects the cognitive load of sustained competition travel, is the next monitoring question. The relationship between increasing playing time (which addresses one frustration) and position-specific exclusion (which introduces a new one) creates a tension that may define the next phase of Grace's arc."
+  },
+
+  "most_important_controllable": "Maintaining specific, measurable goal-setting alongside the action-quality philosophy — Grace's execution is holding but her conscious intentionality has declined to its lowest point. Reconnecting deliberate goal-setting to her already-proven competitive approach keeps the philosophy grounded rather than allowing it to drift into habitual execution without directed purpose.",
+
+  "micro_commitment": {
+    "action": "Before the next game, write one specific thing she wants to execute in her moment — not 'work hard' or 'do good,' but something she can picture doing (e.g., 'I attack the first good pitch,' 'I stay locked in between pitches,' 'I warm up like I'm starting'). One sentence, one action. After the game, name whether she did it.",
+    "when": "Written before the next game day. Reviewed after the game — one sentence: did she do the thing she named?",
+    "measurement": "After the game, Grace should be able to say yes or no to the specific action she named. If she can name the action and evaluate it, the commitment is executed. If the action was vague or unevaluable, it needs to be more specific next time."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Continued season play (specific schedule not provided)",
+    "anticipated_stressor": "Position-specific role frustration (hitting-only with no fielding opportunities) may intensify as playing time increases in other areas. Sustained travel and competition demands entering fourth consecutive competition-involved week. Goal-setting intentionality at its lowest point in the program — risk of habitual execution without conscious engagement.",
+    "athlete_stated_next_goal": "Work hard"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days across back-to-back NC and Florida trips — travel Monday, game day with no playing time Tuesday (NC), pinch-hit single Wednesday (NC), starting DP Thursday (FL), off days Friday-Saturday (FL), game day with no playing time Sunday (FL). Competition exposure increased significantly from prior weeks: first pinch-hit success plus first collegiate start in the same trip. Warmup commitment from Week 5 showed direct evidence ('warm-up seriously and well, stay ready').",
+    "key_habit_signal": "The Wednesday pinch-hit success — getting a hit through the infield as a pinch hitter in the last inning — is the first positive competitive result of the program beyond the Week 4 line drive. Combined with Thursday's first collegiate start, this week represents the playing time expansion that has been the structural backdrop of Weeks 3-5. The Bullseye restatement ('I can control what I do with the chances I get') confirms the philosophy is operational, not just aspirational.",
+    "coach_reinforcement_cue": "Name the Wednesday hit and Thursday start as concrete evidence that preparation translates to performance. Grace's warmup commitment from last week directly preceded the pinch-hit success — that preparation-to-execution chain deserves explicit recognition. The Bullseye language ('what I do with the chances I get') is her own framing and should be mirrored, not replaced.",
+    "coach_avoidance_note": "Do not address Sunday's fielding frustration as a problem to solve in the coaching output — Grace processed it in real time (talked to a teammate, closed with 'Still gonna work hard'). Naming it directly risks elevating a managed frustration into a central theme. The goal-setting decline ('do good I forget tbh') should be addressed through the micro-commitment structure, not through criticism of her current approach. Her execution is at its strongest; the coaching move is reconnecting intentionality, not questioning commitment."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Sunday's position-specific frustration ('its so confusing and it sucks') is competitive frustration within normal range — processed with a teammate and followed by forward commitment ('Still gonna work hard'). No breakdown language, no homesickness, no identity-level distress. Fourth consecutive competition-involved week; physical fatigue context noted (sustained travel, heat). All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You said you want to 'work hard' — what does that look like in one specific action the next time you step into a game?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  },
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+  "current_season_phase": "not available — Core Foundation athlete",
+  "forward_anchor": "not available — Core Foundation athlete"
+}
