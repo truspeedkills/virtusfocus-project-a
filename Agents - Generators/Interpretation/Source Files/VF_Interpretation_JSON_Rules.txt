@@ -1559,7 +1559,290 @@ Unrecognized value → "not available" with validation warning
 
 
 ============================================================
-SECTION 18 – GLOBAL GUARDRAILS
+SECTION 18 – FORWARD ANCHOR CLASSIFICATION RULES
+============================================================
+
+The forward_anchor block captures the athlete's weekly
+controllable intention ("One thing you can control next week")
+and produces three analytical signals: controllability
+classification, focus consistency, and forward anchor alignment.
+
+All rules apply ONLY when input_source = "app" AND
+forward_anchor.submitted = true.
+
+Core Foundation fallback:
+  text: null
+  submitted: false
+  controllability_classification: "not available"
+  prior_forward_anchor: {
+    prior_text: null,
+    alignment_status: "not available",
+    alignment_notes: "not available — core foundation athlete"
+  }
+  focus_consistency: "not available"
+
+When input_source = "app" AND forward_anchor.submitted = false:
+  controllability_classification: "insufficient data"
+  prior_forward_anchor: computed normally (prior week may exist)
+  focus_consistency: current week does not contribute; evaluate
+    from prior weeks only if applicable, else "insufficient data"
+
+------------------------------------------------------------
+18A) Controllability Classification
+------------------------------------------------------------
+
+Agent-classified from forward_anchor.text content. Same
+classification pattern as PPD tie-breaker (agent judgment
+with guided examples, not pure keyword matching).
+
+Three categories:
+
+  Controllable
+    The stated intention is an action, behavior, or mindset
+    approach within the athlete's direct control.
+    Indicators: action verbs (respond, complete, bring, focus,
+    prepare, commit, practice), behavioral specificity, effort-
+    oriented language, process focus.
+    Examples:
+      "Respond calmly to mistakes" → Controllable
+      "Complete my morning challenge every day" → Controllable
+      "Bring energy to practice" → Controllable
+      "Stay locked in during drills" → Controllable
+      "Do my full warmup before every game" → Controllable
+
+  Outcome-Oriented
+    The stated intention is a result the athlete cannot directly
+    control. Depends on external factors, opponents, selection
+    decisions, or scoring.
+    Indicators: outcome language (win, score, get selected, beat,
+    earn, achieve a result), external dependency, comparative
+    framing against others.
+    Examples:
+      "Win my next match" → Outcome-Oriented
+      "Score in every game" → Outcome-Oriented
+      "Get more playing time" → Outcome-Oriented
+      "Be the best on the team" → Outcome-Oriented
+
+  Mixed
+    Contains both controllable and outcome elements, or the
+    controllability is ambiguous. The athlete is reaching toward
+    something within their control but frames it through an
+    outcome lens (or vice versa).
+    Examples:
+      "Play confident in the big moments" → Mixed
+        (confidence is internal state, not directly controllable
+        like a behavior, but "play" implies effort)
+      "Be a good teammate" → Mixed
+        (controllable intent, but vague — no specific behavior)
+      "Trust my preparation and let the results come" → Mixed
+        (trust = controllable mindset, results = outcome)
+      "Give 100% so I can earn my spot" → Mixed
+        (effort = controllable, earning spot = outcome)
+
+  Classification requires submitted = true AND non-empty text.
+  If submitted = false or text is null → "insufficient data".
+
+  LONGITUDINAL SIGNIFICANCE: A pattern of Outcome-Oriented →
+  Controllable over weeks indicates growth aligned with the
+  Bullseye Method's center-ring philosophy. Stage 2 does not
+  compute this longitudinal pattern explicitly — it is visible
+  in the forward_anchor history across weekly JSONs and may
+  inform Stage 3 and Stage 4 downstream.
+
+------------------------------------------------------------
+18B) Focus Consistency Classification
+------------------------------------------------------------
+
+Agent-classified cross-week comparison of forward_anchor text
+themes. Requires the current week AND at least one prior week
+with forward_anchor.submitted = true.
+
+Three categories:
+
+  Consistent
+    Current anchor shares the same theme, behavioral domain,
+    or closely related controllable focus as prior week(s).
+    The athlete is sustaining attention on the same area.
+    Example: Week N = "Bring energy to practice."
+             Week N+1 = "Show up with effort every day."
+    Same theme: effort and energy in practice. → Consistent
+
+  Shifting
+    Current anchor addresses a different behavioral domain or
+    focus area than the prior week. Not inherently negative —
+    may reflect appropriate adaptation to new context.
+    Example: Week N = "Respond calmly to mistakes."
+             Week N+1 = "Complete my morning challenge every day."
+    Different domain: mistake response vs. routine compliance.
+    → Shifting
+
+  Scattered
+    No coherent thread across 3+ consecutive submitted anchors.
+    Each week's focus is unrelated to the others. Requires 3+
+    weeks of submitted anchor data to classify.
+    Example: Week N = "Win my next match."
+             Week N+1 = "Be nicer to teammates."
+             Week N+2 = "Sleep more."
+    No thread. → Scattered
+
+  If fewer than 2 submitted anchors available (current + at
+  least 1 prior) → "insufficient data".
+
+  If current anchor not submitted but 2+ prior anchors exist →
+  "insufficient data" (cannot classify without current data).
+
+  CONTEXTUAL NOTE: Consistent focus is not always better than
+  Shifting. An athlete who shifts focus after resolving a prior
+  area is showing adaptive attention. Scattered focus with no
+  follow-through is the coaching signal. Stage 2 classifies
+  only — interpretation of whether the pattern is positive or
+  negative is a Stage 3/4 downstream concern.
+
+------------------------------------------------------------
+18C) Forward Anchor Alignment (Deferred Signal)
+------------------------------------------------------------
+
+Deferred one-week signal. Same timing pattern as
+prior_commitment_result.
+
+The alignment is computed in the CURRENT week's JSON by
+looking back at the PRIOR week's forward_anchor.text and
+comparing it against the CURRENT week's daily behavior.
+
+Input: Prior week JSON's forward_anchor.text
+Evidence sources (current week daily behavior):
+  - Morning Tune-Up focus words (daily_events[].morning_tune_up.
+    focus_word) — thematic alignment with stated anchor
+  - Bullseye entries (daily_events[].evening_review.bullseye
+    ring items) — center-ring items reflecting anchor theme
+  - Journal reflections (daily_events[].evening_review.journaling
+    entries) — references to stated intention or its behavioral
+    domain
+  - WTD question patterns — Q1 (intention) and Q3 (adversity
+    response) patterns that reflect anchor execution
+
+Classification:
+
+  Aligned
+    Behavioral evidence across 3+ days shows the athlete
+    acting on their stated intention. Focus words, Bullseye
+    center-ring items, or journal entries reference the anchor's
+    theme or behavioral domain.
+
+  Partial
+    Some behavioral evidence (1-2 days or weak thematic
+    connection) but inconsistent. The athlete showed awareness
+    of the intention but did not sustain it through the week.
+
+  Misaligned
+    No behavioral evidence of the stated intention in daily
+    data. The anchor had no apparent connection to the athlete's
+    actual behavior during the following week.
+
+  No Prior Week
+    First week in the program, OR the prior week's
+    forward_anchor.submitted = false. No anchor to evaluate.
+
+  insufficient data
+    Prior anchor exists but current week daily data is
+    insufficient to evaluate (e.g., very few completed days,
+    minimal journal/Bullseye content).
+
+  Alignment notes: 1-2 sentence evidence-based explanation.
+  Same style as prior_commitment_result.execution_notes.
+  Example: "Prior anchor 'Respond calmly to mistakes' showed
+  alignment in 4/6 journal entries referencing composure after
+  errors and 3 center-ring Bullseye items about response quality."
+
+------------------------------------------------------------
+18D) Cross-Week Data Access
+------------------------------------------------------------
+
+Forward Anchor classification requires prior week JSON access
+for two of three signals:
+
+  focus_consistency:
+    Read prior week(s) forward_anchor.text and submitted status.
+    For Scattered classification: read 2+ prior weeks.
+    No prior week → "insufficient data".
+
+  prior_forward_anchor.alignment_status:
+    Read prior week JSON's forward_anchor.text.
+    No prior week → "No Prior Week".
+    Prior week exists but submitted = false → "No Prior Week".
+
+  controllability_classification:
+    Current week only. No cross-week data needed.
+
+This follows the same cross-week access pattern as
+trend_analysis, coach_flags 13-15, and cross_week_recovery.
+
+------------------------------------------------------------
+18E) Validation Rules
+------------------------------------------------------------
+
+  forward_anchor.text:
+    String or null. No length validation (athlete-authored).
+
+  forward_anchor.submitted:
+    Boolean. true when text is non-null and non-empty.
+
+  controllability_classification:
+    Must be one of: Controllable | Outcome-Oriented | Mixed |
+    insufficient data | not available
+
+  prior_forward_anchor.prior_text:
+    String or null.
+
+  prior_forward_anchor.alignment_status:
+    Must be one of: Aligned | Partial | Misaligned |
+    No Prior Week | insufficient data | not available
+
+  prior_forward_anchor.alignment_notes:
+    String. "No prior anchor to evaluate" when alignment_status
+    = "No Prior Week". Evidence-based for all other statuses.
+
+  focus_consistency:
+    Must be one of: Consistent | Shifting | Scattered |
+    insufficient data | not available
+
+============================================================
+SECTION 19 – FORWARD ANCHOR AND MICRO-COMMITMENT RELATIONSHIP
+============================================================
+
+The forward_anchor (athlete-authored intention) and
+micro_commitment (coach-assigned action, Step 10) are distinct
+but related fields.
+
+DESIGN DECISION (DQ1 — Anchor-Informed Commitment):
+The micro_commitment BUILDS ON the athlete's Forward Anchor
+when alignment is strong. This is the approved interaction
+model for all pipeline stages.
+
+STAGE 2 RESPONSIBILITIES:
+  - Extract and classify forward_anchor (Section 18)
+  - Generate micro_commitment (Step 10) independently using
+    existing rules
+  - Store both fields in the output JSON
+  - Stage 2 does NOT implement the anchor-informed interaction —
+    that is a STAGE 3 responsibility (micro_commitment framing
+    informed by forward_anchor context)
+
+The forward_anchor.text is stored in the Interpretation JSON
+for downstream consumption. Stage 3 reads both the
+forward_anchor and micro_commitment fields and applies the
+anchor-informed interaction model when generating the Coaching
+Message.
+
+RAW TEXT PRIVACY RULE:
+forward_anchor.text is athlete-private. It informs Stages 3,
+4, and 6 but is NEVER surfaced to coaches or parents. Same
+compliance protection as journal content. Derived
+classifications (controllability, consistency, alignment) are
+compliance-safe in translated behavioral language.
+
+============================================================
+SECTION 20 – GLOBAL GUARDRAILS
 ============================================================
 
 - No clinical terminology.
@@ -1575,7 +1858,7 @@ SECTION 18 – GLOBAL GUARDRAILS
   better coaching output but is not itself coaching content.
 
 ============================================================
-SECTION 19 – FINAL RULE
+SECTION 21 – FINAL RULE
 ============================================================
 
 These rules override interpretive creativity.

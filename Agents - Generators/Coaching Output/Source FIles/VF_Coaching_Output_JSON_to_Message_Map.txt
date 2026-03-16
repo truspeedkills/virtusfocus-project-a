@@ -616,6 +616,198 @@ FIELDS THAT DO NOT APPEAR (intake profile):
   - baseline_season_phase (stale data — use current_season_phase)
 
 
+============================================================
+FORWARD ANCHOR ROUTING
+============================================================
+
+Source: forward_anchor block (top-level JSON field)
+Privacy: Raw forward_anchor.text is athlete-private. NEVER
+reproduce verbatim in any output. Same protection as journal
+content. Derived classifications inform output through
+behavioral translation only.
+
+Applies ONLY when input_source = "app" AND
+forward_anchor.submitted = true.
+
+When input_source = "core_foundation" OR submitted = false:
+  ALL forward anchor routing is skipped.
+
+------------------------------------------------------------
+CONTROLLABILITY CLASSIFICATION ROUTING
+------------------------------------------------------------
+
+Controllable:
+  → Coaching Message Recognition: acknowledge the athlete's
+    ability to identify controllable focus areas
+  → Deep Dive Strength Signal: note center-ring thinking
+    pattern as developmental indicator
+
+Outcome-Oriented:
+  → Coaching Message Drift Identification: gentle redirection
+    toward controllable elements within the stated outcome
+  → micro_commitment: steer toward controllable version of
+    the athlete's stated intention (DQ1: Anchor-Informed)
+
+Mixed:
+  → Coaching Message Growth: acknowledge the controllable
+    element while coaching toward greater specificity
+  → micro_commitment: sharpen the controllable component
+    (DQ1: Anchor-Informed)
+
+------------------------------------------------------------
+FORWARD ANCHOR ALIGNMENT ROUTING (DEFERRED SIGNAL)
+------------------------------------------------------------
+
+prior_forward_anchor.alignment_status:
+
+Aligned:
+  → Coaching Message Recognition: "The focus you set heading
+    into this week showed up in your actions."
+  → Deep Dive Strength Signal: note intention-to-action
+    consistency as behavioral strength
+
+Partial:
+  → Coaching Message Growth: acknowledge intent while noting
+    the gap — "You started strong with the focus you set."
+  → Deep Dive Trendline: note partial follow-through as
+    growth area
+
+Misaligned:
+  → Coaching Message Drift Identification: gentle observation
+    that stated intention and behavior diverged — frame as
+    awareness opportunity, not failure
+  → micro_commitment: target the gap area (DQ1: Anchor-Informed
+    — if athlete anchored on X but didn't follow through,
+    commitment should help bridge that gap)
+
+No Prior Week / insufficient data:
+  → No routing. Skip forward anchor alignment references.
+
+------------------------------------------------------------
+FOCUS CONSISTENCY ROUTING
+------------------------------------------------------------
+
+Consistent:
+  → Deep Dive Trendline: note sustained thematic focus as
+    developmental stability indicator
+
+Shifting:
+  → Deep Dive Weekly Overview: contextual note only. Shifting
+    is not inherently negative — may reflect appropriate
+    adaptation.
+
+Scattered:
+  → Coaching Message Drift Identification: note that weekly
+    focus has been unfocused — frame as opportunity to build
+    sustained intention-setting habits
+  → micro_commitment: may target intention-setting itself as
+    the behavioral focus area
+
+insufficient data:
+  → No routing. Skip focus consistency references.
+
+------------------------------------------------------------
+MICRO-COMMITMENT INTERACTION (DQ1: ANCHOR-INFORMED)
+------------------------------------------------------------
+
+When forward_anchor.submitted = true:
+  The micro_commitment BUILDS ON the athlete's Forward Anchor
+  when the anchor is controllable and specific.
+
+  Priority system (expanded from 3-tier to 4-tier):
+    Priority 1 (Always): Weekly signals (coach flags, composite
+      score concern bands, weekly core_pattern)
+    Priority 1.5 (NEW): Forward Anchor — when no flags fire
+      and anchor is controllable, anchor informs commitment topic
+    Priority 2: PPD baseline coaching implications
+    Priority 3: Default coaching direction per core_pattern
+
+  When flags fire: flags drive topic, but anchor can influence
+  framing even when flags dictate direction.
+
+  Controllable anchor: Coach uses it as foundation and adds
+  behavioral precision + measurement.
+    Example: Anchor = "Respond calmly to mistakes."
+    Commitment = "After your first mistake in practice, take
+    one breath before your next rep."
+
+  Outcome-Oriented anchor: Coach redirects toward a controllable
+  element related to the athlete's stated outcome.
+    Example: Anchor = "Win my next match."
+    Commitment = "Before each match, complete your full warmup
+    with deliberate focus on the first 3 drills."
+
+  Mixed anchor: Coach sharpens the controllable component.
+    Example: Anchor = "Play confident in big moments."
+    Commitment = "In the first big moment of each game, focus
+    on your breathing for 3 seconds before acting."
+
+  When submitted = false: micro_commitment uses existing
+  3-tier priority system unchanged.
+
+------------------------------------------------------------
+FORWARD ANCHOR IN PRIOR COMMITMENT BRIDGE
+------------------------------------------------------------
+
+The 1-3 sentence prior commitment bridge (existing rule) may
+acknowledge BOTH the prior micro_commitment result AND the
+prior Forward Anchor alignment when both exist.
+
+Bridge priority:
+  1. Prior micro_commitment result (always leads — coach-assigned)
+  2. Prior Forward Anchor alignment (secondary — one sentence
+     maximum, only when Aligned or Misaligned, skip for Partial
+     or insufficient data to avoid bridge bloat)
+
+Bridge must NOT exceed 3 sentences total including both elements.
+
+------------------------------------------------------------
+RAW TEXT EXCLUSION
+------------------------------------------------------------
+
+The following forward_anchor data NEVER appears in any
+coaching output (Coaching Message, Deep Dive, Parent CM):
+  - Verbatim forward_anchor.text (never quoted directly)
+  - "Controllable" / "Outcome-Oriented" / "Mixed" as named
+    classification labels
+  - "Aligned" / "Partial" / "Misaligned" as named labels
+  - "Consistent" / "Shifting" / "Scattered" as named labels
+  - "forward_anchor" as a pipeline field name
+  - Numeric alignment scores or rates
+
+Permitted: Behavioral translation of classifications.
+  WRONG: "Your forward anchor was classified as Outcome-Oriented."
+  CORRECT: "The focus you set is reaching for a result — let's
+  ground it in something you can control every day."
+
+------------------------------------------------------------
+PARENT COACHING MESSAGE — FORWARD ANCHOR HANDLING
+------------------------------------------------------------
+
+Forward Anchor MAY inform Parent CM Section 3 (What's Ahead)
+thematically — same rule as micro_commitment (thematic
+reference only, never direct quote).
+
+When forward_anchor.submitted = true AND controllability =
+Controllable:
+  Section 3 may reference the direction of the athlete's
+  self-set focus for the week without naming the anchor text.
+  WRONG: "[Athlete] wrote 'respond calmly to mistakes' as
+  their focus."
+  CORRECT: "The coaching focus this week builds on [athlete]'s
+  own intention around composure."
+
+When Outcome-Oriented or Mixed:
+  Do NOT reference in Parent CM. The redirection is a coaching
+  interaction (Stages 3 athlete CM), not a parent concern.
+
+When submitted = false or not available:
+  No forward anchor reference in Parent CM.
+
+All other Parent CM exclusion rules (Section 3 global
+exclusions) continue to apply.
+
+
 ------------------------------------------------------------
 GLOBAL RULES
 ------------------------------------------------------------

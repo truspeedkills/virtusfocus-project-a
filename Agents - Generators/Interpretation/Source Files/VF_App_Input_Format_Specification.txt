@@ -486,12 +486,17 @@ FIELDS:
   "season_context": {
     "current_season_phase": "Pre-Season | In-Season | Off-Season |
                              Post-Season | Year-Round Training"
+  },
+
+  "forward_anchor": {
+    "text": "string or null",
+    "submitted": "boolean"
   }
 }
 
 FIELD DEFINITIONS:
 
-submitted
+submitted (weekly_check_in level)
   Whether the weekly check-in was submitted. Boolean.
 
 submission_timestamp
@@ -571,6 +576,68 @@ SEASON CONTEXT:
 
     Core Foundation athletes do not submit weekly check-ins.
     current_season_phase = "not available" for CF athletes.
+
+FORWARD ANCHOR:
+
+  text — "One thing you can control next week."
+    Single-line free text. The athlete writes ONE short,
+    controllable focus they carry into the next week.
+
+    Purpose: Psychological bridge between weeks. The Weekly
+    Recap closes the current week — the Forward Anchor is the
+    one piece that points forward. Constrained to ONE thing
+    within the athlete's control. Not a goal list, not a wish.
+
+    Examples:
+      "Respond calmly to mistakes."
+      "Complete my morning challenge every day."
+      "Bring energy to practice."
+
+    Null if the athlete did not enter text. The field is
+    presented on the Weekly Recap screen but is not required
+    to submit the check-in.
+
+    Stage 2 reads this text and performs three classifications:
+      1. Controllability classification (agent-classified:
+         Controllable / Outcome-Oriented / Mixed)
+      2. Focus consistency (cross-week comparison of themes
+         against prior week forward_anchor text)
+      3. Forward Anchor Alignment (deferred — computed NEXT
+         week by comparing this week's stated anchor against
+         next week's actual daily behavior)
+
+    Raw forward_anchor text is athlete-private. It informs
+    downstream stages (Stages 3, 4, 6) but is NEVER surfaced
+    to coaches or parents. Same protection as journal content.
+    Derived classifications (controllability, consistency,
+    alignment) are compliance-safe in translated form.
+
+  submitted (forward_anchor level) — Whether the athlete
+    entered any text in the Forward Anchor field. Boolean.
+    True when text is non-null and non-empty. False when the
+    athlete skipped the field or left it blank.
+
+    Note: forward_anchor.submitted can be false while
+    weekly_check_in.submitted is true (the athlete completed
+    the check-in but skipped the Forward Anchor field).
+
+  STAGE 2 DERIVES FROM FORWARD ANCHOR:
+  - controllability_classification: agent-classified from text
+    (Controllable / Outcome-Oriented / Mixed / insufficient data)
+  - focus_consistency: cross-week comparison against prior
+    forward_anchor texts (Consistent / Shifting / Scattered /
+    insufficient data). Requires 2+ weeks with submitted anchors.
+  - prior_forward_anchor.alignment_status: deferred signal
+    computed the FOLLOWING week — compares prior week's stated
+    anchor against current week's daily behavior (Aligned /
+    Partial / Misaligned / No Prior Week / insufficient data)
+
+  Core Foundation athletes do not submit weekly check-ins.
+  All forward_anchor fields use fallback values:
+    text = null, submitted = false,
+    controllability_classification = "not available",
+    focus_consistency = "not available",
+    prior_forward_anchor = all "not available"
 
 ============================================================
 D. TIME BOUNDARY DEFINITIONS
@@ -919,6 +986,57 @@ COMPOSITE SCORES, COACH FLAGS, SUMMARY
   execution_pattern_summary
     Stage 2 generates 1-2 sentence behavioral execution summary
     from all signals
+
+------------------------------------------------------------
+FORWARD ANCHOR OUTPUT -> INPUT FIELDS
+------------------------------------------------------------
+
+  text
+    Pass-through from weekly_check_in.forward_anchor.text
+    Null if not submitted.
+
+  submitted
+    Pass-through from weekly_check_in.forward_anchor.submitted
+
+  controllability_classification
+    Agent-classified from forward_anchor.text content.
+    Three categories:
+      Controllable — action within the athlete's control
+        (effort, preparation, response, routine, mindset)
+      Outcome-Oriented — result the athlete cannot directly control
+        (winning, scoring, being selected, others' behavior)
+      Mixed — contains both controllable and outcome elements
+    Requires submitted = true. If not submitted → "insufficient data".
+
+  prior_forward_anchor.prior_text
+    Read from prior week JSON's forward_anchor.text
+    Null if no prior week or prior week anchor not submitted.
+
+  prior_forward_anchor.alignment_status
+    Agent-classified DEFERRED signal. Compares PRIOR week's
+    forward_anchor text against CURRENT week's daily behavior
+    (Morning Tune-Up focus words, Bullseye entries, journal
+    reflections, WTD question patterns).
+      Aligned — behavioral evidence matches stated intention
+      Partial — some evidence but inconsistent
+      Misaligned — no behavioral evidence of stated intention
+      No Prior Week — first week or prior anchor not submitted
+      insufficient data — prior anchor exists but current week
+        daily data insufficient to evaluate
+
+  prior_forward_anchor.alignment_notes
+    Evidence-based explanation of alignment classification.
+    Same style as prior_commitment_result.execution_notes.
+
+  focus_consistency
+    Agent-classified cross-week comparison. Compares current
+    forward_anchor text theme against prior week(s):
+      Consistent — same theme or closely related controllable focus
+      Shifting — different focus area from prior week
+      Scattered — no coherent thread across 3+ weeks
+      insufficient data — fewer than 2 submitted anchors available
+    Requires current anchor submitted AND at least 1 prior
+    submitted anchor. If either missing → "insufficient data".
 
 ============================================================
 H. TERMINOLOGY REFERENCE

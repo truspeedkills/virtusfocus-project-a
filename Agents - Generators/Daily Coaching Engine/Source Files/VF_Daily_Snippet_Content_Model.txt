@@ -313,6 +313,29 @@ SPECIFIC PROHIBITIONS FOR THE SNIPPET:
   does this)
 
 ------------------------------------------------------------
+FORWARD ANCHOR IN DAILY SNIPPETS:
+------------------------------------------------------------
+
+The Forward Anchor is the athlete's weekly controllable intention
+("One thing you can control next week"). It is WEEKLY data —
+not in the Daily Mini-JSON. Stage 6 accesses it through the
+weekly Interpretation JSON (same access path as micro_commitment
+for Premium enrichment).
+
+Snippet relationship to Forward Anchor:
+  - Snippet MAY reference the behavioral THEME of the anchor
+    (never the raw text) when there is a natural connection
+    to yesterday's behavior
+  - Snippet NEVER sets the anchor, modifies it, or evaluates
+    it — that is Stage 3's domain
+  - Same "snippet describes / CM interprets" boundary applies
+
+For Base tier athletes: the Forward Anchor is the primary
+forward-looking element (no micro_commitment from CM). The
+snippet may reference it as a weekly intention thread — the
+athlete's self-set direction for the week.
+
+------------------------------------------------------------
 WHAT PREMIUM SNIPPETS CAN DO WITH WEEKLY CONTEXT:
 ------------------------------------------------------------
 
@@ -434,6 +457,33 @@ over-week arc.
 Rule: Design Base as the complete foundation. Design Premium as
 Base + weekly context enrichment. Never design Premium first and
 strip down for Base.
+
+------------------------------------------------------------
+FORWARD ANCHOR ENRICHMENT (BASE AND PREMIUM):
+------------------------------------------------------------
+
+Base tier:
+  Forward Anchor serves as the primary weekly intention thread.
+  First snippet of the week may reference the anchor theme:
+  "The focus you set heading into this week — yesterday's
+  [behavioral observation] connects to that."
+  Same completeness guardrail: remove the anchor reference and
+  the snippet must still work as a standalone coaching moment.
+
+Premium tier:
+  Forward Anchor is a FOURTH enrichment channel alongside
+  micro_commitment thread, identity anchoring, and growth-phase
+  tone. When both micro_commitment and Forward Anchor exist,
+  micro_commitment takes priority (coach-assigned > athlete-set).
+  Forward Anchor adds secondary context.
+
+  Enrichment hierarchy (Premium):
+    1. Micro-commitment thread (primary, coach-assigned)
+    2. Forward Anchor thread (secondary, athlete-authored)
+    3. Identity anchoring
+    4. Growth-phase tone
+  Only use 1-2 enrichment channels per snippet. Do not stack
+  all four.
 
 ============================================================
 SECTION F — COMPETITIVE LEVEL CALIBRATION
@@ -833,6 +883,26 @@ COHESION RULES:
    week. The weekly CM (Premium) or the natural weekly rhythm
    (Base) handles week-to-week continuity.
 
+------------------------------------------------------------
+FORWARD ANCHOR AND DAILY COHESION:
+------------------------------------------------------------
+
+The Forward Anchor provides a weekly-level thematic thread for
+snippets. Unlike the previous snippet (which is a negative
+constraint for repetition avoidance), the Forward Anchor is a
+positive thematic guide — the snippet may lean into it when
+the day's behavioral data connects.
+
+Weekly reset applies to Forward Anchor references: the first
+snippet of each new week may introduce the anchor theme. After
+that, vary whether to reference it or not (same variation
+principle as behavioral focus across the week).
+
+NEVER reference the Forward Anchor on:
+  - Missed days (the athlete's absence is not an anchor failure)
+  - Days where the day's behavior has no connection to the
+    anchor theme (forced connection feels inauthentic)
+
 ============================================================
 SECTION I — SCENARIO COVERAGE
 ============================================================
@@ -1139,6 +1209,20 @@ that is observing.
 Hard cap. If the content cannot fit in 3 sentences, cut — do not
 compress. Compression creates density that breaks the micro-
 moment feel.
+
+------------------------------------------------------------
+13. NO RAW FORWARD ANCHOR TEXT.
+------------------------------------------------------------
+Never quote the athlete's stated weekly intention verbatim.
+Reference the behavioral theme only. Same protection as journal
+content.
+
+------------------------------------------------------------
+14. NO FORWARD ANCHOR CLASSIFICATION LABELS.
+------------------------------------------------------------
+"Controllable", "Outcome-Oriented", "Mixed", "Aligned",
+"Misaligned", "Consistent", "Shifting", "Scattered" are pipeline
+terms. Never surface in snippets.
 
 ============================================================
 DESIGN DECISIONS SUMMARY

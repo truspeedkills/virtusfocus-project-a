@@ -74,6 +74,12 @@ EXECUTION ENRICHMENT (App athletes only):
 - If 3+ composite score bands are in concern range → note
   behavioral stability indicators in the summary.
 
+Forward Anchor Enrichment:
+  When controllability_classification = Controllable AND
+  alignment_status = Aligned → behavioral stability indicator.
+  When Scattered focus_consistency → note developmental
+  concern in executive framing.
+
 2) CONSISTENCY SIGNAL
 Status mapping from win_the_day.consistency_profile:
 - Stable Positive → Stable
@@ -258,6 +264,13 @@ KPS may also be informed by coach_insights.key_habit_signal
 for development marker selection, but must NOT reproduce raw
 content or reference specific athlete behaviors.
 
+Forward Anchor Enrichment:
+  focus_consistency may inform KPS selection when the athlete's
+  intention-setting pattern is the most salient behavioral signal.
+  Controllability classification shift (Outcome → Controllable
+  over weeks) may qualify as a KPS candidate: "Controllable
+  Focus Development" or similar compliance-safe label.
+
 Explanation: use most_important_controllable and micro_commitment.measurement as a measurable target (avoid raw numbers when possible).
 
 9) COACH CONTEXT CUE
@@ -293,6 +306,17 @@ EXECUTION ENRICHMENT (App athletes only):
 - If action-severity coach flags fire → reinforcement direction
   prioritizes the dominant execution concern.
 - Never name flag_id, label, severity tier, or metrics.
+
+Forward Anchor Enrichment:
+  alignment_status informs coaching context:
+    Aligned → "Athlete's self-set weekly focus aligned with
+    observed behavior" (compliance-safe translation)
+    Misaligned → "Gap between athlete's stated weekly focus
+    and observed behavior patterns" (coaching opportunity cue)
+  controllability_classification informs cue framing:
+    Outcome-Oriented → "Athlete's weekly intention framed
+    around outcomes — coaching toward controllable focus
+    recommended" (compliance-safe)
 
 Prohibited phrasing:
 - "Coach should", "Must", "Require", "Discipline"
@@ -457,6 +481,13 @@ current_season_phase (App athletes only)
   Readiness) and enriches Section 1 executive summary with
   seasonal context. Never name the field label in output.
 
+forward_anchor.text (athlete-private — NEVER surfaced, same
+  protection as journal content)
+forward_anchor.controllability_classification
+forward_anchor.prior_forward_anchor.alignment_status
+forward_anchor.prior_forward_anchor.alignment_notes
+forward_anchor.focus_consistency
+
 FIELDS NOT CONSUMED BY STAGE 4:
 - risk_flags → Internal to pipeline only. Never surfaced in
   institutional output.
@@ -536,6 +567,19 @@ Raw execution metrics are internal pipeline data. They inform
 better output through composite score band routing and coach
 flag severity routing, but are NEVER surfaced to coaching staff.
 
+FORWARD ANCHOR COMPLIANCE FILTER (APPLY TO ALL SECTIONS)
+The following forward anchor data categories must NEVER appear
+in any Stage 4 output, in any form:
+- Raw forward_anchor.text (verbatim athlete intention)
+- Controllability classification labels (Controllable,
+  Outcome-Oriented, Mixed) as named pipeline categories
+- Alignment status labels (Aligned, Partial, Misaligned)
+  as named pipeline categories
+- Focus consistency labels (Consistent, Shifting, Scattered)
+  as named pipeline categories
+- "forward_anchor" as a pipeline field/block name
+- Numeric alignment scores or rates
+
 INTAKE PROFILE COMPLIANCE FILTER (APPLY TO ALL SECTIONS)
 The following intake profile data categories must NEVER appear
 in any Stage 4 output, in any form:
@@ -596,6 +640,8 @@ When baseline_intake_profile.input_source = "core_foundation":
 - Season Phase Overlay uses "not available" default (skipped).
 - No intake-profile-derived language appears in any section.
 - Output remains identical to v1.2 behavior for CF athletes.
+- Forward anchor: all routing skipped when input_source =
+  "core_foundation" or forward_anchor.submitted = false
 
 Both skip rules apply independently. An athlete with
 input_source = "core_foundation" in both blocks has ALL
