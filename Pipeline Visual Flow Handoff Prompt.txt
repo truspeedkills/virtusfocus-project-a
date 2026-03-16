@@ -1,0 +1,584 @@
+============================================================
+PIPELINE VISUAL FLOW DIAGRAM — HANDOFF PROMPT
+============================================================
+
+SESSION TYPE: Creative / Visual Design
+GOAL: Create 4 visual pipeline flow diagrams showing how
+data moves through the VirtusFocus AI Coaching Pipeline for
+each product tier. These visuals are for internal use
+(investor decks, team onboarding, app development reference).
+
+============================================================
+1. WHAT YOU ARE BUILDING
+============================================================
+
+4 separate visual flow diagrams, one per product tier:
+
+  DIAGRAM 1: D2C BASE
+  DIAGRAM 2: D2C PREMIUM (no parent)
+  DIAGRAM 3: D2C PREMIUM + PARENT
+  DIAGRAM 4: INSTITUTIONAL (single tier, coach-facing)
+
+Each diagram should show:
+  - Every pipeline stage that runs for that tier
+  - What inputs feed each stage (and where they come from)
+  - What outputs each stage produces
+  - Who receives each output (athlete, coach, parent, next stage, app dashboard)
+  - The cadence of each stage (one-time, weekly, daily)
+  - Which stages use AI (and which model) vs. deterministic
+  - Data flow arrows connecting stages to downstream consumers
+  - Stages that DON'T run for that tier should be visually
+    absent or clearly marked as inactive
+
+The goal is that someone looking at a single diagram can
+immediately understand: "For a [tier] athlete, what happens,
+when, and who sees what?"
+
+============================================================
+2. THE PIPELINE — 7 STAGES + APP BACKEND
+============================================================
+
+The pipeline has 7 AI/computation stages plus the app backend
+which handles data collection and deterministic extraction.
+
+STAGE 0: APP BACKEND (Deterministic — No AI)
+  Role: Collects raw athlete interactions and produces
+        structured data objects for downstream stages.
+  Produces:
+    - Daily Mini-JSON (nightly, one per athlete per day)
+      → consumed by Stage 6 + Stage 7
+    - Weekly Input Object (Monday, assembles 7 daily events
+      + weekly check-in into single structured package)
+      → consumed by Stage 2
+  Cadence: Continuous collection, nightly Mini-JSON generation,
+           weekly input object assembly on Monday
+
+STAGE 1: ATHLETE SNAPSHOT GENERATOR (Claude Opus — One-time)
+  Role: Processes athlete intake form into structured baseline
+        profile. Computes PPD (Primary Problem Detector) scores,
+        ABI (Athlete Baseline Index) pillar scores, and writes
+        10-section narrative snapshot.
+  Input: App intake form (29 questions, 7 sections)
+  Output: Athlete Snapshot file (structured data block +
+          narrative sections + 5 locked baseline anchors)
+  Cadence: ONE TIME at athlete enrollment
+  Consumed by: Stage 2 (reads snapshot for baseline context),
+               Stage 3 (reads snapshot for coaching persona),
+               Stage 6 (reads snapshot for daily snippet context)
+
+STAGE 2: INTERPRETATION ENGINE (Claude Opus — Weekly)
+  Role: Reads all available data sources and produces a
+        comprehensive weekly Interpretation JSON — the single
+        source of truth for all downstream stages.
+  Inputs:
+    - Athlete Snapshot (from Stage 1)
+    - Weekly Input Object (from App Backend — 7 daily events
+      + weekly check-in including Weekly Recap, Motivation
+      Inventory, season context, Forward Anchor)
+    - All prior week Interpretation JSONs (for longitudinal
+      analysis, trend detection, cross-week comparisons)
+  Output: Interpretation JSON (v9.6 schema)
+    Contains: weekly_tier, win_the_day scores, consistency
+    signal, reflection_quality_score, growth_phase,
+    emotional_intensity, micro_commitment,
+    execution_behavior_signals (50+ fields, 7 composite
+    scores, 15 coach flags), baseline_intake_profile
+    (7 pass-through fields), forward_anchor (text +
+    3 classification signals), narrative_arc,
+    upcoming_context, risk_flags, coach_insights subfields
+  Cadence: WEEKLY (Monday)
+  Consumed by: Stage 3, Stage 4, Stage 5, Stage 6 (Premium)
+
+STAGE 3: COACHING OUTPUT ENGINE (Claude Opus — Weekly)
+  Role: Transforms Interpretation JSON into athlete-facing
+        coaching content. Coach Arron persona.
+  Input: Interpretation JSON (from Stage 2)
+  Outputs (up to 3):
+    1. Coaching Message — athlete-facing, 250-450 words
+       (6 sections: Recognition, Drift, Identity, Strength,
+       Growth, Micro-Commitment)
+    2. Deep Dive — athlete-facing, detailed coaching analysis
+       (5 sections: Mindset Summary, Trendline, Strength
+       Signals, Growth Areas, What's Ahead)
+    3. Parent Coaching Message — parent-facing, 150-250 words
+       (4 sections: Weekly Context, What Stood Out, What's
+       Ahead, How You Can Support)
+       CONDITIONAL: Only generated when parent_inclusion=true
+       (D2C Premium + Parent tier ONLY)
+  Cadence: WEEKLY (Monday)
+  Consumed by: Stage 5 (audit), Athlete (via app), Parent (via app)
+
+STAGE 4: COACH INSIGHTS ENGINE (Claude Opus — Weekly)
+  Role: Produces compliance-safe analytical dashboards for
+        coaches and/or parents. NOT athlete-facing.
+  Input: Interpretation JSON (from Stage 2)
+  Outputs (up to 4, tier-dependent):
+    1. Weekly Performance Insight — coach-facing, 10 sections
+       (INSTITUTIONAL ONLY)
+    2. Weekly Team Snapshot — coach-facing aggregate, 7 sections,
+       requires 5+ athletes (INSTITUTIONAL ONLY)
+    3. Parent Weekly Insight — parent-facing, 10 sections
+       (rebranded labels), Coach Arron voice, third person
+       (D2C PREMIUM + PARENT ONLY)
+    4. Monthly Institutional Summary — not currently active
+  Cadence: WEEKLY (Monday)
+  Consumed by: Coach dashboard (institutional), Parent app/dashboard
+               (D2C Premium + Parent)
+
+STAGE 5: EDITORIAL AUDIT AGENT (Claude Opus — Weekly)
+  Role: Quality gate. Audits Stage 3 output against 13 tiered
+        criteria. Does NOT generate coaching content.
+  Input: Interpretation JSON + Coaching Message + Deep Dive
+         + Parent Coaching Message (conditional, if generated)
+  Output: PASS / AUTO-CORRECTED PASS / REJECT AND REGENERATE
+    - If PASS: outputs proceed to delivery
+    - If AUTO-CORRECTED: corrected outputs overwrite originals
+    - If REJECT: Regeneration Instructions written, Stage 3
+      must re-run
+  Cadence: WEEKLY (Monday, runs after Stage 3)
+  13 Criteria across 3 tiers:
+    Tier 1 (must-pass): JSON fidelity, clinical language,
+      tone alignment, length compliance, pipeline data leakage
+    Tier 2 (should-pass): growth phase accuracy, micro-commitment
+      realism, emotional intensity calibration, etc.
+    Tier 3 (quality): style, flow, repetition
+
+STAGE 6: DAILY COACHING ENGINE (Claude Sonnet — Daily)
+  Role: Produces a short daily coaching snippet for the athlete.
+        2-3 sentences, 30-60 words, Coach Arron voice.
+        Closes yesterday, bridges to today.
+  Inputs (vary by tier):
+    BASE: Mini-JSON + Athlete Snapshot + Previous Snippet
+    PREMIUM: Mini-JSON + Athlete Snapshot + Previous Snippet
+             + Weekly Interpretation JSON + Forward Anchor data
+  Output: Daily Coaching Snippet (2-3 sentences, signed
+          "— Coach Arron")
+  Cadence:
+    BASE: DAILY Mon-Sun (7 snippets/week)
+    PREMIUM: DAILY Tue-Sun (6 snippets/week — Monday is
+             full Coaching Message + Deep Dive delivery day)
+  Compliance: Embedded 3-layer self-validation scan
+              (no external audit stage for daily output)
+  Consumed by: Athlete (via app, delivered alongside
+               Morning Tune-Up)
+
+STAGE 7: DAILY COACH INSIGHTS ENGINE (Deterministic — No AI)
+  Role: Produces a structured categorical daily signal for
+        each athlete. Pure backend computation from Mini-JSON.
+        Zero AI cost. Zero generation latency.
+  Input: Daily Mini-JSON + optional Weekly Calibration Cache
+         (emotional_intensity, growth_phase from most recent
+         Stage 2 JSON)
+  Output: Daily Athlete Signal
+    - Traffic Light: Green / Yellow / Orange / Gray
+    - 4 Contributing Signals (coach-facing only):
+      Day Outcome: Aligned / Building / Reset Day
+      Focus Alignment: Centered / Mixed / Drifting
+      Follow-Through: Demonstrated / Gap
+      Weekly Trajectory: Building Week / Steady Week / Cooling Week
+    - Team/Position Group Aggregation (institutional only):
+      Strong Alignment / Positive Trend / Mixed Signals /
+      Needs Attention
+  Cadence: DAILY Mon-Sun (7 days/week, all athletes)
+  Parent Label Mapping (D2C Premium + Parent only):
+    Green → Good Day
+    Yellow → Building Day
+    Orange → Reset Day
+    Gray → No Update Today
+    (Contributing signals HIDDEN from parents — traffic
+    light color + label only)
+  Consumed by:
+    INSTITUTIONAL: Coach dashboard (full signal + team tiers)
+    D2C PREMIUM + PARENT: Parent app (traffic light with
+                          parent labels only)
+
+============================================================
+3. TIER-BY-TIER STAGE ACTIVATION MAP
+============================================================
+
+Use this as the definitive guide for which stages appear
+in each diagram and what outputs they produce.
+
+--------------------------------------------------------------
+DIAGRAM 1: D2C BASE
+--------------------------------------------------------------
+
+Who is this athlete?
+  - App-only athlete, no weekly coaching subscription
+  - Gets daily coaching snippets only (standalone product)
+  - No coach audience, no parent audience
+  - Cheapest tier (~$0.06/athlete/week)
+
+Active stages:
+  Stage 0 (App Backend) → produces Mini-JSON daily
+  Stage 1 (Snapshot Generator) → one-time at enrollment
+  Stage 6 (Daily Coaching Engine) → 7 snippets/week Mon-Sun
+
+Inactive stages (DO NOT RUN):
+  Stage 2 (Interpretation Engine) — no weekly pipeline
+  Stage 3 (Coaching Output Engine) — no weekly pipeline
+  Stage 4 (Coach Insights Engine) — no coach/parent audience
+  Stage 5 (Editorial Audit) — nothing to audit
+  Stage 7 (Daily Coach Insights) — no coach/parent audience
+
+Inputs consumed:
+  Stage 6 reads: Mini-JSON (daily) + Athlete Snapshot (baseline)
+                 + Previous Snippet (for cohesion)
+  NO weekly Interpretation JSON available — Stage 6 operates
+  in "Base mode" with limited context
+
+Outputs delivered to athlete:
+  - Daily Coaching Snippet (via app, 7 days/week)
+  That's it. One output type, one audience.
+
+Key visual elements:
+  - Simple linear flow: App Backend → Mini-JSON → Stage 6 → Snippet → Athlete App
+  - Snapshot feeds in as one-time baseline
+  - Should look clean and minimal compared to other diagrams
+
+--------------------------------------------------------------
+DIAGRAM 2: D2C PREMIUM (no parent)
+--------------------------------------------------------------
+
+Who is this athlete?
+  - App athlete with full weekly + daily coaching subscription
+  - Gets weekly Coaching Message, Deep Dive, AND daily snippets
+  - No parent opted in (parent_inclusion = false)
+  - No coach audience (D2C = direct to consumer)
+  - (~$0.66/athlete/week)
+
+Active stages:
+  Stage 0 (App Backend) → Mini-JSON daily + Weekly Input Object
+  Stage 1 (Snapshot Generator) → one-time at enrollment
+  Stage 2 (Interpretation Engine) → weekly JSON
+  Stage 3 (Coaching Output Engine) → CM + DD (2 outputs)
+  Stage 5 (Editorial Audit) → audits CM + DD
+  Stage 6 (Daily Coaching Engine) → 6 snippets/week Tue-Sun
+
+Inactive stages:
+  Stage 4 (Coach Insights) — no coach audience, no parent
+  Stage 7 (Daily Coach Insights) — no coach audience, no parent
+
+Inputs consumed:
+  Stage 2 reads: Snapshot + Weekly Input Object + prior JSONs
+  Stage 3 reads: Interpretation JSON
+  Stage 5 reads: Interpretation JSON + CM + DD
+  Stage 6 reads: Mini-JSON + Snapshot + Previous Snippet
+                 + Weekly Interpretation JSON (Premium enrichment)
+                 + Forward Anchor data
+
+Outputs delivered to athlete:
+  WEEKLY:
+    - Coaching Message (Monday, via app)
+    - Deep Dive (Monday, via app)
+  DAILY:
+    - Daily Coaching Snippet (Tue-Sun, via app)
+    Note: Monday = CM + DD delivery day, no snippet generated
+
+Key visual elements:
+  - Two parallel tracks visible: WEEKLY (Stages 2→3→5) and
+    DAILY (App Backend → Mini-JSON → Stage 6)
+  - Weekly JSON feeds into Stage 6 as enrichment (cross-track arrow)
+  - Stage 5 as quality gate between Stage 3 and athlete delivery
+  - Monday delivery is special (CM+DD instead of snippet)
+
+--------------------------------------------------------------
+DIAGRAM 3: D2C PREMIUM + PARENT
+--------------------------------------------------------------
+
+Who is this athlete?
+  - Same as D2C Premium, but parent has opted in
+  - parent_inclusion = true (set at intake, Q24)
+  - Athlete gets same outputs as Premium
+  - Parent gets additional outputs: Parent CM, Parent Insight,
+    Parent Daily Signal, Parent Dashboard
+  - (~$0.73/athlete/week — adds ~$0.07 for parent outputs)
+
+Active stages:
+  Stage 0 (App Backend) → Mini-JSON daily + Weekly Input Object
+  Stage 1 (Snapshot Generator) → one-time at enrollment
+  Stage 2 (Interpretation Engine) → weekly JSON
+  Stage 3 (Coaching Output Engine) → CM + DD + Parent CM (3 outputs)
+  Stage 4 (Coach Insights Engine) → Parent Weekly Insight (1 output)
+  Stage 5 (Editorial Audit) → audits CM + DD + Parent CM (3 documents)
+  Stage 6 (Daily Coaching Engine) → 6 snippets/week Tue-Sun
+  Stage 7 (Daily Coach Insights) → Daily Signal with parent labels
+
+Inactive stages:
+  NONE — all 7 stages + app backend are active
+
+Inputs consumed:
+  Stage 2 reads: Snapshot + Weekly Input Object + prior JSONs
+  Stage 3 reads: Interpretation JSON
+  Stage 4 reads: Interpretation JSON
+  Stage 5 reads: Interpretation JSON + CM + DD + Parent CM
+  Stage 6 reads: Mini-JSON + Snapshot + Previous Snippet
+                 + Weekly JSON + Forward Anchor data
+  Stage 7 reads: Mini-JSON + Weekly Calibration Cache
+
+Outputs delivered to ATHLETE:
+  WEEKLY:
+    - Coaching Message (Monday, via app)
+    - Deep Dive (Monday, via app)
+  DAILY:
+    - Daily Coaching Snippet (Tue-Sun, via app)
+
+Outputs delivered to PARENT:
+  WEEKLY:
+    - Parent Coaching Message (Monday, via parent app)
+      4 sections: Weekly Context, What Stood Out, What's Ahead,
+      How You Can Support. 150-250 words. Coach Arron voice,
+      third-person register.
+    - Parent Weekly Insight (Monday, via parent app + dashboard)
+      10 sections (rebranded from coach labels to parent labels).
+      Same data, warmer tone, support-oriented framing.
+  DAILY:
+    - Parent Daily Signal (via parent app + dashboard)
+      Traffic light with parent labels:
+        Green → "Good Day"
+        Yellow → "Building Day"
+        Orange → "Reset Day"
+        Gray → "No Update Today"
+      Contributing signals HIDDEN from parent.
+  DASHBOARD (app presentation layer, always available):
+    - Overall Signal (color)
+    - Growth Phase
+    - Weekly Theme
+    - Confidence Direction
+    - Daily Signal
+    All categorical, no numbers. Warm placeholders in early weeks.
+
+Key visual elements:
+  - MOST COMPLEX DIAGRAM — all stages active
+  - Two audience tracks: ATHLETE receives (CM + DD + Snippets),
+    PARENT receives (Parent CM + Parent Insight + Daily Signal + Dashboard)
+  - Stage 3 splits into athlete track (CM + DD) and parent track (Parent CM)
+  - Stage 4 feeds ONLY the parent track (no coach audience in D2C)
+  - Stage 7 feeds ONLY the parent track (parent labels)
+  - Stage 5 sits between Stage 3 and delivery for BOTH tracks
+  - Daily track (Stage 6 + Stage 7) runs in parallel with weekly track
+  - Parent Dashboard is a presentation layer that renders Stage 4 + Stage 7 output
+
+--------------------------------------------------------------
+DIAGRAM 4: INSTITUTIONAL (single tier)
+--------------------------------------------------------------
+
+Who is this athlete?
+  - College/team athlete enrolled through institutional program
+  - Coaching staff (position coaches → coordinators → head coach)
+    receives analytical dashboards and daily signals
+  - Athlete receives same content as D2C Premium
+  - NO parent output (institutional model is coach-only)
+  - All athletes are full-featured (no Base/Premium distinction)
+  - (~$0.78/athlete/week)
+
+Active stages:
+  Stage 0 (App Backend) → Mini-JSON daily + Weekly Input Object
+  Stage 1 (Snapshot Generator) → one-time at enrollment
+  Stage 2 (Interpretation Engine) → weekly JSON
+  Stage 3 (Coaching Output Engine) → CM + DD (2 outputs, no Parent CM)
+  Stage 4 (Coach Insights Engine) → Weekly Performance Insight
+           + Weekly Team Snapshot (2 outputs)
+  Stage 5 (Editorial Audit) → audits CM + DD
+  Stage 6 (Daily Coaching Engine) → 7 snippets/week Mon-Sun
+  Stage 7 (Daily Coach Insights) → Daily Signal + Team/Position
+           Aggregation
+
+Inactive stages:
+  NONE — all 7 stages + app backend are active
+
+Inputs consumed:
+  Stage 2 reads: Snapshot + Weekly Input Object + prior JSONs
+  Stage 3 reads: Interpretation JSON
+  Stage 4 reads: Interpretation JSON (multiple athletes for Team Snapshot)
+  Stage 5 reads: Interpretation JSON + CM + DD
+  Stage 6 reads: Mini-JSON + Snapshot + Previous Snippet
+                 + Weekly JSON + Forward Anchor data
+  Stage 7 reads: Mini-JSON + Weekly Calibration Cache
+
+Outputs delivered to ATHLETE:
+  WEEKLY:
+    - Coaching Message (Monday, via app)
+    - Deep Dive (Monday, via app)
+  DAILY:
+    - Daily Coaching Snippet (Mon-Sun, 7/week — no Monday skip
+      because institutional Monday delivery includes BOTH
+      CM+DD AND snippet)
+
+Outputs delivered to COACHING STAFF:
+  WEEKLY:
+    - Weekly Performance Insight (Monday, per-athlete, 10 sections)
+      Sections: Executive Summary, Win the Day Performance,
+      Consistency & Engagement, Confidence Assessment, Stress Load
+      Assessment, Growth Phase Context, Behavioral Themes, Key
+      Performance Signal, Coach Context Cue, Composite Readiness
+    - Weekly Team Snapshot (Monday, aggregate, 7 sections)
+      Requires 5+ athletes. Positional group variants available.
+      Sections: T1 Executive Summary, T2 Team Win Performance,
+      T3 Tier Distribution, T4 Consistency Patterns, T5 Stress
+      Load Overview, T6 Theme Patterns, T7 Composite Readiness
+  DAILY:
+    - Daily Athlete Signal (per-athlete, via coach dashboard)
+      Traffic Light: Green / Yellow / Orange / Gray
+      + 4 Contributing Signals:
+        Day Outcome, Focus Alignment, Follow-Through, Weekly Trajectory
+    - Team/Position Aggregation Tiers:
+      Strong Alignment / Positive Trend / Mixed Signals / Needs Attention
+      (minimum 3 athletes per position group, 5 per team)
+
+Key visual elements:
+  - TWO AUDIENCE TRACKS: Athlete receives (CM + DD + Snippets),
+    Coaching Staff receives (Performance Insight + Team Snapshot
+    + Daily Signal + Team Aggregation)
+  - Stage 4 feeds ONLY the coach track (institutional dashboards)
+  - Stage 7 feeds ONLY the coach track (daily signals + team tiers)
+  - Team Snapshot requires multiple athletes flowing through
+    Stage 4 (show fan-in arrow from multiple athlete pipelines
+    converging at Stage 4 for team aggregation)
+  - Stage 7 team aggregation similarly requires multiple athletes
+  - Daily snippets run 7/week (not 6 like D2C Premium)
+  - Stage 5 sits between Stage 3 and delivery as quality gate
+  - Mandatory disclaimer on ALL coach-facing output
+
+============================================================
+4. CROSS-TIER COMPARISON SUMMARY
+============================================================
+
+For reference, here is the complete stage activation matrix:
+
+| Stage | D2C Base | D2C Premium | D2C Premium+Parent | Institutional |
+|-------|----------|-------------|---------------------|---------------|
+| 0 Backend | Mini-JSON | Mini-JSON + Weekly | Mini-JSON + Weekly | Mini-JSON + Weekly |
+| 1 Snapshot | v2.0 App | v2.0 App | v2.0 App | v2.0 App |
+| 2 Interp | — | Weekly JSON | Weekly JSON | Weekly JSON |
+| 3 Coaching | — | CM + DD | CM + DD + Parent CM | CM + DD |
+| 4 Insights | — | — | Parent Insight | Coach Insight + Team |
+| 5 Audit | — | CM + DD | CM + DD + Parent CM | CM + DD |
+| 6 Daily | 7/wk Base | 6/wk Premium | 6/wk Premium | 7/wk Full |
+| 7 Signal | — | — | Parent labels | Coach labels + Team |
+
+AI Model per stage:
+  Stage 1: Opus (one-time)
+  Stage 2: Opus (weekly)
+  Stage 3: Opus (weekly)
+  Stage 4: Opus (weekly)
+  Stage 5: Opus (weekly)
+  Stage 6: Sonnet (daily — lighter model for constrained output)
+  Stage 7: NONE (deterministic rules engine, zero AI cost)
+  App Backend: NONE (deterministic data extraction)
+
+============================================================
+5. VISUAL DESIGN GUIDANCE
+============================================================
+
+These are suggestions, not requirements. The fresh session
+should use its judgment on the best visual approach.
+
+SUGGESTED VISUAL ELEMENTS:
+  - Rounded rectangles for pipeline stages (numbered 1-7)
+  - Different colors for:
+    - AI stages (Opus = darker shade, Sonnet = lighter shade)
+    - Deterministic stages (App Backend, Stage 7 = distinct color)
+    - Inactive/skipped stages (gray or absent)
+  - Arrows showing data flow direction
+  - Dashed arrows for "inform-only" data (data that shapes
+    output but is never surfaced to the recipient)
+  - Distinct output icons or shapes for each deliverable type
+    (document for CM/DD, signal/badge for traffic light, etc.)
+  - Audience labels at the terminus of each output arrow
+    (Athlete App, Coach Dashboard, Parent App)
+  - Cadence labels on each stage (One-time, Weekly, Daily)
+  - A legend explaining all visual conventions
+
+LAYOUT SUGGESTION:
+  - Top: Data sources (Athlete interactions, Intake form)
+  - Middle: Pipeline stages flowing left-to-right or top-to-bottom
+  - Bottom: Output destinations (Athlete App, Coach Dashboard,
+    Parent App) as distinct endpoint zones
+  - Weekly pipeline and daily pipeline as visually distinct tracks
+  - Stage 5 (Audit) shown as a gate/checkpoint between
+    production and delivery
+
+IMPORTANT DISTINCTIONS TO SHOW:
+  - Stage 2 is the SINGLE SOURCE OF TRUTH — everything
+    downstream reads from its JSON output
+  - Stage 5 is a QUALITY GATE — it can reject and force
+    Stage 3 to regenerate (show this feedback loop)
+  - Stage 6 has two modes: Base (standalone, minimal inputs)
+    and Premium (enriched by weekly JSON)
+  - Stage 7 is NOT AI — it's pure computation
+  - The App Backend is NOT a pipeline stage — it's infrastructure
+    that feeds the pipeline
+  - Parent Dashboard is a PRESENTATION LAYER — it renders
+    data from Stage 4 + Stage 7, it doesn't compute anything
+
+============================================================
+6. REFERENCE FILES
+============================================================
+
+The fresh session should read CLAUDE.md first for full project
+context. The following files contain the definitive
+specifications for each stage:
+
+PRIORITY 1 (Read for pipeline architecture understanding):
+  - CLAUDE.md (project overview, pipeline table, all stage summaries)
+
+PRIORITY 2 (Read for specific stage input/output details):
+  - Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
+  - Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+  - Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.2.txt
+  - Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+  - Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.1.txt
+  - Agents - Generators\Daily Coach Insights Engine\VF_Daily_Coach_Signal_Determination_Rules_v1.0.txt
+  - Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Mini_JSON_Specification.txt
+
+PRIORITY 3 (Read only if needed for compliance/detail):
+  - Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+  - Agents - Generators\Parents Insight Engine\VF_Parent_Dashboard_Metric_Definitions.txt
+  - Agents - Generators\Parents Insight Engine\VF_Parent_Output_Architecture_Decisions.txt
+  - Agents - Generators\Daily Coach Insights Engine\Source Files\VF_Daily_Coach_Signal_Design.txt
+
+============================================================
+7. OUTPUT FORMAT
+============================================================
+
+The deliverable is 4 visual flow diagrams. The format should
+be whatever produces the clearest, most professional result.
+Options include:
+
+  - Mermaid diagrams (text-based, renders in markdown/GitHub)
+  - HTML/CSS/SVG (interactive, can be opened in browser)
+  - ASCII art (simple, works everywhere)
+  - Description + specification for a designer to implement
+
+Discuss format options with the user before starting. The
+user may have a preference.
+
+============================================================
+8. LOCKED DECISIONS — DO NOT CHANGE
+============================================================
+
+These architectural decisions are final. The visual diagrams
+must accurately reflect them:
+
+  - D2C Base = daily snippets ONLY (no weekly pipeline)
+  - D2C Premium = weekly pipeline + daily snippets (no parent)
+  - D2C Premium + Parent = full pipeline including parent outputs
+  - Institutional = full pipeline with coach-facing analytics
+    (no parent output, no Base/Premium distinction)
+  - Stage 7 is deterministic (no AI model)
+  - Stage 6 uses Sonnet (not Opus)
+  - All other AI stages use Opus
+  - Stage 5 audits Stage 3 output only (not Stage 4, not Stage 6)
+  - Stage 6 has embedded self-validation (no external audit)
+  - Parent data boundary = identical to coach data boundary
+  - Premium snippets skip Monday (CM+DD delivery day)
+  - Base and Institutional snippets run 7 days/week
+  - Team Snapshot requires 5+ athletes
+  - Position Group aggregation requires 3+ athletes per group
+  - Parent sees traffic light only (contributing signals hidden)
+  - All coach-facing output requires mandatory disclaimer
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
