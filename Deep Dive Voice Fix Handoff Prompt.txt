@@ -1,0 +1,279 @@
+DEEP DIVE VOICE & TONE FIX — HANDOFF PROMPT
+==============================================
+
+SESSION OBJECTIVE:
+Fix a systemic voice and tone issue across ALL Deep Dive coaching outputs. The Deep Dives currently read as third-person analytical coach-to-coach performance reviews instead of athlete-facing content from Coach Arron. The coaching content and accuracy are correct — the problem is presentation, voice, and tone.
+
+This session has two phases:
+1. Revise the Deep Dive Framework specification (the root cause)
+2. Regenerate all 43 Deep Dives across 6 athletes using the revised spec
+
+==============================================
+THE PROBLEM
+==============================================
+
+The Deep Dive is supposed to be the athlete's deeper look into their mental performance journey — written by Coach Arron, addressed TO the athlete, helping them understand what they're building and what to focus on. Instead, the current Deep Dives read like scouting reports or analytical performance reviews that a sport psychologist would write for a coaching staff.
+
+EVIDENCE OF THE PROBLEM (across all 6 athletes):
+
+1. THIRD-PERSON ANALYTICAL VOICE (worst offender)
+   Current (Jasmine Week 1): "Jasmine's first week in the program demonstrates self-directed training ownership with active comparison awareness. Her language is approach-framed and self-referenced..."
+   Current (Jasmine Week 3): "Jasmine's third week introduces a significant behavioral development: frustration-to-execution channeling as a conscious self-regulation strategy."
+   Current (Jasmine Week 6): "Six-week trajectory from self-referenced training ownership (Week 1) through intentional momentum with NBC derailer test passed (Week 2) to frustration-channeling self-regulation (Week 3)..."
+   Current (Grace Week 4 Mindset Summary): "The three-week injury dip (Weeks 14-16) is answered with the strongest training performance in the program. The D1 national qualifier takedowns convert abstract confidence-building into concrete, experiential proof — the athlete now has evidence, not just belief..."
+   Current (Mergim Week 17 Mindset Summary): "the athlete now has evidence, not just belief, that his preparation translates to high-level results."
+
+   Should be: Second person ("you"), written TO the athlete, from Coach Arron.
+
+2. CLINICAL/ANALYTICAL SECTION HEADERS
+   Current: "STRENGTH SIGNALS" / "GROWTH AREAS" / "WEEKLY TRENDLINE" / "BASELINE ALIGNMENT NOTE"
+   These read like internal pipeline categories, not coaching sections.
+
+3. "COACH INSIGHT" FRAMING
+   The DD Framework specifies "Coach Insight (italicized line)" — this framing implies insights FOR a coach reading the report, not FROM a coach writing to an athlete.
+
+4. INCONSISTENCY ACROSS ATHLETES
+   - Jasmine Jones (7 DDs): Fully third person throughout ALL sections. Worst case.
+   - Grace Kindel (5 DDs): Mixed — Weekly Overview and Mindset Summary are third person, but Coach Insight lines in Strengths use "you."
+   - Tucker Lloyd (3 DDs): CLOSEST to desired tone — uses "you" throughout most sections. Best current example of the target voice.
+   - Mergim Bushati (19 DDs): Mixed — Coach Insight lines use "you," Mindset Summary is third person analytical.
+   - Aidan Burkardt (5 DDs): Similar to Mergim pattern.
+   - Angelo Allen (4 DDs): Similar to Jasmine pattern — heavily third person.
+
+5. CONTRAST WITH COACHING MESSAGE (which IS correct)
+   CM (Jasmine Week 7): "Jasmine — You had a vacation week between this one and last... This was a full week. You came back from the trip, transitioned into a down week, trained on your birthday..."
+   DD (Jasmine Week 7): "Seven-week trajectory from self-referenced training ownership (Week 1) through intentional momentum with NBC derailer test passed (Week 2) to frustration-channeling self-regulation (Week 3)..."
+
+   The CM sounds like a coach writing to an athlete. The DD sounds like a research paper about an athlete.
+
+==============================================
+ROOT CAUSE
+==============================================
+
+The root cause is in the Deep Dive Framework specification:
+File: Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+Three specific problems in this spec:
+
+1. QUALITY RULE says: "Feels like high-level performance review, not generic encouragement."
+   This directly instructs the agent to produce analytical, evaluative content — the opposite of coaching voice. The intent was "don't be generic" but the effect is "sound like a performance review board."
+
+2. SECTION STRUCTURE uses analytical/clinical headers:
+   - "STRENGTHS & WINS" with "Behavioral Evidence" + "Coach Insight"
+   - "OPPORTUNITIES & GROWTH AREAS" with "Pattern Explanation" + "Coaching Cue"
+   These sub-elements (Behavioral Evidence, Pattern Explanation) push toward third-person data analysis rather than coaching conversation.
+
+3. NO VOICE DIRECTIVE: The framework never specifies second-person voice, athlete-facing register, or Coach Arron persona. The CM Framework says "sent directly to athlete" — the DD Framework says nothing about audience.
+
+CONTRAST — The Coaching Message Framework gets it right:
+File: Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+- "Short, powerful weekly leadership message sent directly to athlete."
+- "Calm, Direct, Identity-focused, Supportive but firm, No fluff"
+- Clear athlete-facing voice directive
+
+==============================================
+WHAT THE DEEP DIVE SHOULD BE
+==============================================
+
+The Deep Dive is the athlete's deeper look into their mental performance journey. It is written by Coach Arron, addressed TO the athlete, in second person. It goes deeper than the Coaching Message — where the CM is 250-450 words hitting the highlights, the DD is the full picture: what happened this week, what it means for the athlete's development, where strengths showed up, where growth opportunities exist, and how the current week fits into the larger arc.
+
+KEY DISTINCTIONS:
+- Coaching Message = "Here's what stood out and what to do next" (short, action-oriented)
+- Deep Dive = "Here's the full picture of your week and what it means for your journey" (comprehensive, insight-oriented)
+
+Both are athlete-facing. Both use Coach Arron's voice. The DD is NOT a coach-to-coach analytical report. It is NOT a performance review. It is a coaching conversation that happens to be more detailed.
+
+The Deep Dive should feel like sitting across from your mental performance coach and hearing: "Let me walk you through what I saw this week and what it means for where you're headed."
+
+VOICE REQUIREMENTS:
+- Second person throughout ("you," "your")
+- Coach Arron persona (same as CM — calm authority, direct, identity-focused)
+- Athlete's first name used naturally (not as a clinical subject reference)
+- The athlete should feel like the DD was written FOR them, not ABOUT them
+- No pipeline terminology (no "behavioral evidence," no "RQS=4," no "Growth tier")
+- Analytical depth is GOOD — the fix is voice and framing, not dumbing down the content
+
+==============================================
+PHASE 1: REVISE THE DEEP DIVE FRAMEWORK
+==============================================
+
+Read the current DD Framework first:
+- Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+Then revise it. The revised framework should:
+
+1. ADD a clear voice directive (second person, Coach Arron, athlete-facing — match the CM Framework's clarity)
+
+2. REPLACE the Quality Rule. The new rule should capture "analytically rich coaching content" without pushing toward "performance review." Something like: "Feels like a detailed coaching conversation — specific, evidence-grounded, and personally addressed. Not a report about the athlete. A message to the athlete."
+
+3. REVISE section headers and sub-element framing:
+   - "Behavioral Evidence" → integrate naturally into coaching language (the evidence still appears, but woven into the coach's voice, not formatted as a data extract)
+   - "Coach Insight (italicized line)" → this framing is backwards. The ENTIRE DD is the coach's insight. If you keep a closing line per strength/growth item, frame it as a coaching observation TO the athlete, not an insight FOR a coach.
+   - "Pattern Explanation" → same treatment — explain the pattern TO the athlete in coaching voice
+
+4. KEEP the mandatory 5-section structure. The sections themselves are fine — the issue is how they're written, not what they cover:
+   - Section 1: Mindset Summary (what your week looked like from a mental performance standpoint)
+   - Section 2: Weekly Trendline (how this week fits into your journey so far)
+   - Section 3: Strength Signals (what you did well and why it matters)
+   - Section 4: Growth Areas (where the development opportunities are)
+   - Section 5: Identity Thread (who you're becoming and the arc you're building)
+
+   NOTE: The current section order in the DD Framework is different from how the DDs are actually being produced. The framework says: Weekly Overview, Strengths & Wins, Opportunities & Growth Areas, Mindset Summary, Coaching Focus Areas. The actual DDs (especially Jasmine's) use: Mindset Summary, Weekly Trendline, Strength Signals, Growth Areas, Identity Thread. The ACTUAL structure is better — align the framework to match. The Coaching Focus Areas / micro-commitment content belongs in the CM, not the DD.
+
+5. KEEP the Integration Requirements (Win the Day, Bullseye, Reflection Quality, Growth Phase references) — these ensure the DD is grounded in the JSON data. Just ensure they're expressed in coaching voice.
+
+6. ADD examples showing the voice difference:
+   WRONG: "Jasmine's third week introduces a significant behavioral development: frustration-to-execution channeling as a conscious self-regulation strategy."
+   RIGHT: "This was the week you discovered something important about yourself. Those frustrating moments with teammates — instead of letting them derail you, you turned that energy into your best lifting sessions of the program. Wednesday and Friday both followed the same pattern: you got frustrated, you locked in, and you lifted heavier than any other day. You noticed it yourself and even wondered if you could use it on purpose. That's a self-management skill, and you're building it in real time."
+
+   WRONG: "Six-week trajectory from self-referenced training ownership (Week 1) through intentional momentum with NBC derailer test passed (Week 2) to frustration-channeling self-regulation (Week 3)..."
+   RIGHT: "Six weeks in, here's what your journey looks like. You started by owning your training on your own terms. Week 2 tested you when you weren't selected for the NBC group — and you responded by treating it as fuel, not a setback. Week 3 showed you could channel frustration into your best lifting sessions..."
+
+After revising the framework, PAUSE and present the revised spec to the user for approval before proceeding to Phase 2.
+
+==============================================
+PHASE 2: REGENERATE ALL 43 DEEP DIVES
+==============================================
+
+After the revised DD Framework is approved, regenerate ALL Deep Dives for all 6 athletes. The coaching content, accuracy, and JSON-grounded analysis should remain identical — only the voice, tone, and presentation change.
+
+FILES TO REGENERATE (43 total):
+
+Grace Kindel (5 files):
+- Athlete Data\Grace Kindel\Coaching and Deep Dive\Deep Dive\Grace_Kindel_2026-01-12to2026-01-18_VF_DeepDive.txt
+- Grace_Kindel_2026-01-19to2026-01-25_VF_DeepDive.txt
+- Grace_Kindel_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Grace_Kindel_2026-02-16to2026-02-22_VF_DeepDive.txt
+- Grace_Kindel_2026-02-23to2026-03-01_VF_DeepDive.txt
+
+Tucker Lloyd (3 files):
+- Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Deep Dive\Tucker_Lloyd_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Tucker_Lloyd_2026-02-16to2026-02-22_VF_DeepDive.txt
+- Tucker_Lloyd_2026-02-23to2026-03-01_VF_DeepDive.txt
+
+Mergim Bushati (19 files):
+- Athlete Data\Mergim Bushati\Coaching and Deep Dive\Deep Dive\Mergim_Bushati_2025-09-08to2025-09-14_VF_DeepDive.txt
+- Through: Mergim_Bushati_2026-01-12to2026-01-18_VF_DeepDive.txt
+- (All 19 weeks — Sep 8 through Jan 18)
+
+Aidan Burkardt (5 files):
+- Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Deep Dive\Aidan_Burkardt_2025-11-03to2025-11-09_VF_DeepDive.txt
+- Aidan_Burkardt_2025-11-24to2025-11-30_VF_DeepDive.txt
+- Aidan_Burkardt_2025-12-01to2025-12-07_VF_DeepDive.txt
+- Aidan_Burkardt_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Aidan_Burkardt_2026-02-16to2026-02-22_VF_DeepDive.txt
+
+Angelo Allen (4 files):
+- Athlete Data\Angelo Allen\Coaching and Deep Dive\Deep Dive\Angelo_Allen_2026-02-02to2026-02-08_VF_DeepDive.txt
+- Angelo_Allen_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Angelo_Allen_2026-02-16to2026-02-22_VF_DeepDive.txt
+- Angelo_Allen_2026-03-09to2026-03-15_VF_DeepDive.txt
+
+Jasmine Jones (7 files):
+- Athlete Data\Jasmine Jones\Coaching and Deep Dive\Deep Dive\Jasmine_Jones_2025-05-12to2025-05-18_VF_DeepDive.txt
+- Jasmine_Jones_2025-05-19to2025-05-25_VF_DeepDive.txt
+- Jasmine_Jones_2025-05-26to2025-06-01_VF_DeepDive.txt
+- Jasmine_Jones_2025-06-09to2025-06-15_VF_DeepDive.txt
+- Jasmine_Jones_2025-06-16to2025-06-22_VF_DeepDive.txt
+- Jasmine_Jones_2025-06-23to2025-06-29_VF_DeepDive.txt
+- Jasmine_Jones_2025-07-07to2025-07-13_VF_DeepDive.txt
+
+==============================================
+REGENERATION INPUTS
+==============================================
+
+For each Deep Dive regeneration, the input is:
+1. The athlete's baseline snapshot (in Athlete Data\[Athlete]\)
+2. The corresponding week's Interpretation JSON (in Athlete Data\[Athlete]\Weekly JSONS\)
+3. ALL prior week Interpretation JSONs (for longitudinal context — arc summary, trendline)
+4. The revised Deep Dive Framework
+5. The Coaching Output Master Prompt V4 and Instructions v1.8
+
+The Coaching Message for each week should NOT be re-read during DD regeneration — the DD is generated from the JSON, not from the CM. But the CM exists as a reference for the correct Coach Arron voice.
+
+==============================================
+REGENERATION APPROACH
+==============================================
+
+Recommended session split (43 files is too many for one pass):
+
+BATCH 1: Jasmine Jones (7 DDs) — worst affected, most recent processing, good validation set
+BATCH 2: Grace Kindel (5 DDs) + Tucker Lloyd (3 DDs) — 8 files, includes Tucker (closest to target voice already)
+BATCH 3: Mergim Bushati first 10 weeks (Weeks 1-10) — bulk processing
+BATCH 4: Mergim Bushati remaining 9 weeks (Weeks 11-19) — includes highest-complexity weeks (14 hamstring, 17 breakthrough, 18 first competition)
+BATCH 5: Aidan Burkardt (5 DDs) + Angelo Allen (4 DDs) — 9 files, most recent athletes
+
+Each batch can use parallel agents (2-3 DDs per agent) for efficiency.
+
+After each batch, spot-check one DD against:
+- Voice: second person throughout, Coach Arron persona
+- Content accuracy: same coaching insights as original, grounded in JSON
+- Compliance: no clinical language, no pipeline terminology, no execution signal leakage
+- Section structure: matches revised framework
+
+==============================================
+COMPLIANCE RULES (MUST MAINTAIN DURING REGENERATION)
+==============================================
+
+All existing compliance rules remain in force. The voice fix does NOT relax any rules.
+
+1. NO CLINICAL LANGUAGE — no anxiety, depression, therapy, diagnosis, coping mechanism, mental health, cognitive reframe, emotional dysregulation, trauma, fight or flight, trigger (Categories A-D in Editorial Audit)
+2. NO PIPELINE TERMINOLOGY — no RQS=4, Growth tier, Partially Aligned, Stable Positive, WTD scores, composite scores, coach flags, execution signals (Categories E-G)
+3. NO SPORTS PSYCHOLOGIST REFERENCES — if raw data mentions sports psych sessions, exclude from output
+4. NO SURVEILLANCE FRAMING — no tracking language, no completion rates, no engagement metrics
+5. Emotional Intensity calibration — High EI weeks get empathetic lead + reduced framework density, Low EI weeks get standard density
+6. The Deep Dive is athlete-facing content — it is NOT a coach briefing, NOT an institutional report
+7. All athletes in this pipeline are Core Foundation — no execution_behavior_signals, no baseline_intake_profile, no forward_anchor content
+
+==============================================
+REFERENCE FILES TO READ
+==============================================
+
+Priority 1 — Read FIRST (the spec files that govern DD generation):
+1. CLAUDE.md (project instructions — READ COMPLETELY)
+2. Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt (THE FILE TO REVISE)
+3. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+4. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.8.txt
+5. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+6. Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+7. Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+8. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+
+Priority 2 — Read for voice contrast (what the CM does right):
+9. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+
+Priority 3 — Read during regeneration (athlete-specific):
+10. Each athlete's baseline snapshot
+11. Each athlete's Interpretation JSONs
+12. One sample Coaching Message per athlete (for voice reference)
+
+Priority 4 — Read if running audit after regeneration:
+13. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+14. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+
+==============================================
+WHAT "DONE" LOOKS LIKE
+==============================================
+
+1. Revised VF_Deep_Dive_Coaching_Analysis_Framework.txt — approved by user
+2. All 43 Deep Dives regenerated with:
+   - Second-person voice throughout (no third-person analytical passages)
+   - Coach Arron persona (matches CM voice quality)
+   - Same coaching accuracy and JSON-grounded analysis as originals
+   - Zero compliance violations
+   - Correct section structure per revised framework
+3. Spot-check validation on at least 1 DD per athlete (6 spot checks minimum)
+4. Git commit of all changes
+5. CLAUDE.md updated with session notes
+
+==============================================
+IMPORTANT NOTES
+==============================================
+
+- The Coaching Messages are CORRECT and should NOT be touched. Only Deep Dives are affected.
+- The Coach Insights (Stage 4) are CORRECT — they are coach-facing by design and use the appropriate institutional register.
+- The Interpretation JSONs are CORRECT — they are machine-readable data, not athlete-facing.
+- The issue is ONLY in the Deep Dive output and its governing framework spec.
+- Tucker Lloyd's existing DDs are CLOSEST to the desired voice — use these as a reference for the target tone during regeneration.
+- Do NOT change the Instructions file (v1.8) or Master Prompt (V4) unless the DD Framework revision requires corresponding updates to those files. The framework is the primary target.
+- Overwrite the existing DD files (same filenames, same locations). No need to preserve the old versions — they are in git history.
