@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-03-09 to 2026-03-15",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent — building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Mixed alignment following 2.5-week gap. Current week execution is strong (Growth tier, outdoor season transition), but the gap itself represents the baseline derailer activating: PSAC championship week was 'a mess' due to multi-domain overload (exam, grad school planning, broken implements, solo competition, disrupted lifting schedule), and Angelo deliberately disengaged from the VirtusFocus system for two weeks ('Spring Break... slipped my mind' + 'needed time to gather my thoughts'). The championship underperformance is the clearest validation of the baseline derailer — when school, logistics, and sport demands stack simultaneously, performance suffers. However, the current week shows strong recovery: approach-framed outdoor season transition, self-directed solo practices on Saturday and Sunday, mature retrospective processing of the championship experience. Bullseye engagement is compressed (1 item per ring vs 3+ items in Weeks 2-3), suggesting some post-championship emotional residue. Weekly goals stated as 'None' for the first time — another possible signal of processing mode rather than goal-driven mode."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Post-championship recovery and outdoor season transition. 2.5-week gap since last recap: Week 1 missed = PSAC Indoor Championship week (disappointment, emotional processing), Week 2 missed = Spring Break (disengaged). Championship retrospective (reported this week): Shotput disappointing — 'had a 16 meter mid throw in me that day' but 'got worse as it went on.' Weight Throw acceptable — 'happy with where I ended up.' Championship week was disrupted by: big exam, grad school meeting planning, all competition implements broken (had to borrow), only lifted once, no throwing teammates present, practice 'all over the place.' Initial response was anger and frustration — Angelo deliberately delayed recap until he could process rationally ('I don't typically like to talk while I'm emotional or upset'). Current week: returning from Spring Break, outdoor season practice. Strong Monday-Tuesday transition. Wednesday Neutral (sore, took rest day). Thursday anniversary with spouse. Friday outdoor practice ('felt pretty good — usually the start to outdoor practice feels horrible'). Saturday worked with competitive powerlifter and did solo practice. Sunday solo practice and school catch-up. Mindset challenge: 'Prepare earlier than required today.' First outdoor competition Saturday at Shippensburg.",
+
+  "core_pattern": "Mature emotional processing with forward-directed recovery. The most significant behavioral signal this week is not the current execution (which is solid) but the retrospective championship processing. Angelo's description of his emotional delay — 'my initial thoughts were anger and frustration, and I don't typically like to talk while I'm emotional' — reveals an advanced self-regulation pattern. He consciously chose to delay his reflection until rational processing was possible. This is not avoidance; it is a deliberate cooling period. The current week shows the output of that processing: forward application ('taking all my learned experiences from the championship and applying them to my transition in the outdoor'), positive framing despite disappointment, and strong daily execution.",
+
+  "behavioral_root_cause": "The championship retrospective confirms the baseline derailer with precision. Angelo identifies every contributing factor: academic exam (school), grad school planning (work/future), broken implements (equipment), solo at meet (structural isolation), disrupted lifting schedule (preparation), practice 'all over the place' (consistency). These are exactly the multi-domain stacking conditions predicted by the intake profile. The derailer does not manifest as disengagement — Angelo still competed and gave 100% effort. It manifests as eroded preparation quality that degrades competitive output. The gap weeks are secondary evidence: when the derailer activates at a high enough intensity (championship disappointment + Spring Break + emotional processing), Angelo temporarily disengages from the VirtusFocus system as part of his processing. The return this week shows that disengagement is temporary and recovery-oriented, not drifting.",
+
+  "prior_commitment_result": {
+    "prior_action": "Apply same preparation strategy to championship week — write day-by-day plan, keep practice intentional and recovery-focused",
+    "execution_status": "Unknown",
+    "execution_notes": "2.5-week gap between Week 3 and Week 4. The commitment was given before PSAC championship week, but no recap was submitted for that week. Angelo's retrospective description suggests championship preparation was disrupted by multiple factors (broken implements, exam, disrupted lifting schedule), making commitment execution unobservable. The deliberate gap — choosing not to recap during emotional processing — prevents assessment.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "None",
+    "achievement_statement": "A steady, and mostly consistent transition from indoor Track, back to outdoor Track",
+    "key_phrase": "I don't typically like to talk while I'm emotional or upset in anyway. Takes me a bit to collect my thoughts before making decisions or having discussions about them.",
+    "mindset_resonance": "Prepare earlier than required today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "6",
+      "neutral_days": "1",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "Category-only classification. Monday-Thursday scored by athlete (3 Win, 1 Neutral Wednesday — soreness/fatigue, took rest day). Friday-Sunday unscored — classified by content analysis: Friday Win (strong outdoor practice, positive surprise), Saturday Win (great work day, solo practice all events), Sunday Win (school catch-up, solo practice). 6 Win + 1 Neutral + 0 Missed = Growth tier.",
+    "consistency_profile": "Variable",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Compressed. Single item: 'My consistency.' Same controllable as all prior weeks, but notable regression from Week 2's expanded three-item control ring (consistency, effort, mindfulness). The compression may reflect post-championship emotional processing or reduced Bullseye engagement after the gap. The controllable itself remains correctly placed and genuinely actionable.",
+    "influence_quality": "Compressed. Single item: 'My team's morale.' Appropriate for the influence ring. Down from Week 3's contextually specific leadership statement. The brevity mirrors the overall Bullseye compression this week.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Moderate",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable — Growth across all 4 weeks (gap notwithstanding)",
+    "growth_phase_movement": "Stable — Developing across all 4 weeks",
+    "consistency_trend": "Variable — 3 consecutive Growth weeks (Wk1-3) followed by 2.5-week gap then Growth again (Wk4). The gap disrupts the consecutive streak.",
+    "recommitment_trend": "Not Applicable — zero Missed days across all 4 recorded weeks",
+    "pattern_shift_detected": "Yes — Two shifts detected: (1) Achievement language regressed from identity-level (Wk3: 'Emotional groundedness, intent, and gratitude') to task-level (Wk4: 'A steady, and mostly consistent transition'). (2) Bullseye engagement compressed from 3+ items per ring (Wk2) to 1 item per ring (Wk4). Both shifts consistent with post-championship emotional processing and reorientation rather than developmental regression."
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "3",
+    "rolling_win_rate_4wk": "insufficient data — gap disrupts 4-week window calculation",
+    "rolling_missed_rate_4wk": "0.00 — zero Missed days across all 4 recorded weeks",
+    "volatility_index_4wk": "insufficient data — gap disrupts calculation",
+    "recommitment_rate_4wk": "Not Applicable",
+    "controllable_stability_4wk": "Stable core ('consistency') but declining specificity — 1 item → 3 items → 2 items → 1 item across Bullseye control ring",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Illness recovery with approach-framed re-engagement (Wk1) → High-level competition composure as solo competitor, near-PR performance (Wk2) → Peak performance with strategic preparation design and identity-level achievement language (Wk3) → [2.5-week gap: PSAC championship disappointment + emotional processing delay + Spring Break] → Outdoor season reset with mature retrospective processing and forward application (Wk4). The arc reveals the baseline derailer in full operation: when multi-domain demands aligned favorably (Wks1-3), Angelo produced Growth-tier execution and peak performance. When demands stacked (championship week: exam + planning + broken equipment + solo + disrupted preparation), performance suffered and he temporarily disengaged. The recovery pattern — deliberate emotional cooling, rational processing, forward application — is itself a developmental strength.",
+    "milestone_this_week": "Deliberate emotional processing maturity. Angelo's conscious decision to delay his recap until he could process the championship rationally ('I don't typically like to talk while I'm emotional or upset... Takes me a bit to collect my thoughts before making decisions or having discussions about them') represents advanced self-regulation behavior. This is not avoidance — it is managed emotional pacing. The resulting retrospective is the most analytically detailed reflection in his program, identifying 7 specific contributing factors to the championship underperformance.",
+    "open_thread": "First outdoor competition (Saturday at Shippensburg). How will Angelo carry the championship lessons into outdoor season? His framing is forward-oriented ('taking all my learned experiences and applying them'). Key questions: (1) Will Bullseye engagement depth recover from compression? (2) Will goal-setting re-engage (this week's 'None' is a first)? (3) Will the solo competition dynamic be addressed or accepted? (4) Can he build a preparation system for championship-level meets that protects against the multi-domain stacking that derailed indoor championship performance?"
+  },
+
+  "most_important_controllable": "Solo practice initiative — Angelo practiced all events independently on both Saturday and Sunday despite no scheduled team practice. This self-directed training during a transition period shows that the baseline hinge habit (daily training consistency) is operating even when external structure (team practice schedule) is absent. The controllable heading into next week is maintaining this self-directed preparation standard through the first outdoor competition.",
+
+  "micro_commitment": {
+    "action": "Before Saturday's competition at Shippensburg, identify one specific lesson from the PSAC championship experience that you can apply this weekend. Write it down and put it where you will see it on competition morning.",
+    "when": "Friday evening — write the lesson. Saturday morning — read it before competition.",
+    "measurement": "Did Angelo identify and write down a specific championship lesson? Did he apply it during Saturday's competition? Report whether the lesson felt useful or if a different insight emerged during the meet."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "This Saturday at Shippensburg University. First outdoor competition of the year.",
+    "anticipated_stressor": "Moderate. First outdoor competition carries the weight of the indoor championship disappointment — Angelo may feel pressure to prove that outdoor season will be different. The solo competition dynamic from indoor season may recur. However, the stakes are lower (first meet, not championship) and Angelo's current framing is forward-oriented. The transition from indoor to outdoor events (adding Discus to Shot Put) introduces technical adjustment demands alongside the emotional processing.",
+    "athlete_stated_next_goal": "Stay consistent, work toward building that foundation for the outdoor season"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "6 Win, 1 Neutral, 0 Missed (category-only). 2.5-week gap between Weeks 3-4 (PSAC championship + Spring Break). Current week is outdoor season transition. Self-directed solo practices Saturday and Sunday. Wednesday rest day (soreness). Mindset challenge: 'Prepare earlier than required today.' Weekly goals: 'None' (first time). Extensive championship retrospective in additional context section. Bullseye compressed to 1 item per ring.",
+    "key_habit_signal": "Self-directed solo training initiative during a transition period with no team practice structure. Angelo practiced all his events independently on Saturday and Sunday. This is the strongest evidence of the baseline hinge habit operating under reduced external scaffolding — he does not need a coach or team present to maintain his preparation standard. This self-direction is especially notable given the championship disappointment context: his response to a setback is to train more, not less.",
+    "coach_reinforcement_cue": "Angelo's championship retrospective is the most analytically detailed reflection in his program. He identifies 7 specific contributing factors without excuse-making. Frame this analytical capacity as evidence of the 'sharp' quality he named at intake — he does not just experience setbacks, he dissects them with precision. His emotional processing delay ('I don't typically like to talk while I'm emotional') is a self-regulation strength, not a withdrawal behavior.",
+    "coach_avoidance_note": "Do not characterize the 2-week gap as inconsistency or disengagement. Angelo explains both weeks clearly: championship emotional processing (deliberate delay) and Spring Break (natural break). The gap is an expression of his self-regulation pattern, not a consistency failure. Framing it as a problem would misread the behavior and could undermine trust. Also: do not dwell on the championship disappointment in coaching output. Angelo has already processed it thoroughly. The coaching opportunity is in the forward application, not the retrospective."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators. Championship disappointment is a normal competitive emotional response, processed maturely over a 2-week period. Angelo names 'anger and frustration' as past emotions that he deliberately managed through delayed processing — this is self-regulation, not a distress signal. The 'None' weekly goal and Bullseye compression warrant monitoring but are consistent with post-disappointment reorientation rather than disengagement. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You said you are applying what you learned from championships to your outdoor transition — what is the most important thing you are doing differently now?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

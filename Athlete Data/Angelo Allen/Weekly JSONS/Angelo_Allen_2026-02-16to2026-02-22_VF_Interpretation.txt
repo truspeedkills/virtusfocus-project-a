@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-02-16 to 2026-02-22",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent — building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Fully Aligned",
+    "alignment_notes": "Peak alignment week. Angelo's stated goals ('Consistency, Focusing on improving the mistakes of last week, and recovery') directly address the feedback from Week 2's competition. He executed on all three: won both events at Friday's last-chance meet (mistake correction), achieved 6 Win + 1 Neutral with Gold Streak (consistency), and took a strategic rest day Thursday before competition (recovery). The Bullseye center ring ('Myself, my consistency') remains anchored to the baseline hinge habit. Achievement language ('Emotional groundedness, intent, and gratitude') represents an identity-level answer — he names emotional qualities as achievements, not just results. The championship preparation framing in his competition notes ('preserve myself for the PSAC championship the following week') shows strategic self-management beyond week-to-week thinking. Mindset challenge resonance ('Maintaining effort even when fatigue appears today') maps directly to the preparation-activated confidence pattern."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Peak performance week. Won both events at Friday's last-chance meet at Mount Union — 'beat everyone by a lot.' Throws squad 'was on fire' with team energy described as 'electric.' Probably the most fun at a Track meet in a while. Strategic week design: took it easy in practice to preserve for PSAC championship the following week while maintaining competition timing. Tuesday was a Neutral — chose not to attend an important event due to fatigue, immediately self-corrected ('definitely going to make sure I prioritize the event for next week'). Wednesday great practice with 'technical intent coming around nicely.' Thursday rest day for Friday meet. Saturday coached an athlete at work ('learned a lot about coaching cues'). Spouse handling: spouse overwhelmed with schoolwork, 'I think we handled it pretty well all things considered.' All 7 days scored — first complete WTD scoring week.",
+
+  "core_pattern": "Strategic self-management with peak competitive output. Angelo's most important behavioral shift this week is the movement from reactive execution to deliberate preparation strategy. He designed the week around championship readiness: lighter practice loads, targeted recovery, competition timing maintenance. This is the first evidence of multi-week planning — he is thinking beyond the current week to the championship. The Tuesday Neutral is notable not for the miss but for the immediate self-correction. His emotional groundedness achievement statement shows that he is beginning to value internal states, not just external results.",
+
+  "behavioral_root_cause": "Angelo's peak performance this week is enabled by the absence of the baseline derailer. Multi-domain demands are balanced: work is productive ('skills are becoming refined'), school is manageable, the competition is low-stakes (already qualified), and the spouse relationship is positive despite a minor stress moment. When external load allows preparation quality, Angelo's natural competitive intensity ('electric') activates fully. The coaching insight is that his derailer is genuinely structural — it is not about mindset gaps but about environmental conditions. The championship next week will test whether he can maintain this preparation quality when conditions are less favorable.",
+
+  "prior_commitment_result": {
+    "prior_action": "Identify one specific technical adjustment from competition and work on it in at least 2 practice sessions before Friday's meet",
+    "execution_status": "Completed",
+    "execution_notes": "Angelo's competition notes confirm deliberate practice adjustments: 'technical intent is coming around nicely' (Wednesday). He won both events Friday, suggesting the technical work translated to competition. The strategic approach to the week (lighter practice to preserve for championship) goes beyond the commitment — he managed the entire week with intentional preparation design.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Consistency, Focusing on improving the mistakes of last week, and recovery",
+    "achievement_statement": "Emotional groundedness, intent, and gratitude",
+    "key_phrase": "The hype and energy from the team was electric",
+    "mindset_resonance": "Maintaining effort even when fatigue appears today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "6",
+      "neutral_days": "1",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "All 7 days scored by athlete. Monday Win, Tuesday Neutral (2-3), Wednesday Win, Thursday Win, Friday Win, Saturday Win, Sunday Win. 6 Win + 1 Neutral = Growth tier. Gold Streak (5-7 Wins). First complete scoring week — all prior weeks had unscored weekend days.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. 'Myself, my consistency' — same core controllable as Weeks 1-2. Consistently placed and genuinely controllable, but the language has not diversified or deepened over 3 weeks. The stability is both a strength (clear anchor) and a limitation (no behavioral specificity added).",
+    "influence_quality": "Strong. 'Keeping my team high in spirit despite not making it to the championship themselves' is the most contextually specific influence statement in Angelo's program. It shows awareness that his teammates need emotional support and that he can provide it. This is leadership behavior — he is influencing team culture, not just his own performance.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable — Growth → Growth → Growth (3 consecutive)",
+    "growth_phase_movement": "Stable — Developing across all 3 weeks",
+    "consistency_trend": "Stable Positive — 3 consecutive Growth weeks",
+    "recommitment_trend": "Not Applicable — no Missed days in program",
+    "pattern_shift_detected": "Yes — Achievement language shifted from physical recovery (Wk1: 'knowledge on strength and conditioning') to ownership (Wk2: 'Showing up every single day') to identity-level emotional quality (Wk3: 'Emotional groundedness, intent, and gratitude'). This progression from doing to being is a developmental signal."
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "2",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "Not Applicable",
+    "controllable_stability_4wk": "Stable — 'consistency' named in center ring all 3 weeks",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Illness recovery (Wk1) → High-level competition composure as solo competitor (Wk2) → Strategic championship preparation with peak performance and emotional groundedness (Wk3). Three consecutive Growth weeks. Achievement language progression: physical recovery → daily ownership → identity-level emotional quality. The baseline derailer (multi-domain consistency disruption) has not activated — external demands have been manageable across all 3 weeks.",
+    "milestone_this_week": "Peak competitive performance with identity-level achievement language. Won both events. Team energy 'electric.' Achievement named as 'emotional groundedness, intent, and gratitude' — first time Angelo frames internal emotional quality as the week's primary win. This represents a shift from outcome-tracking to identity-development.",
+    "open_thread": "PSAC Indoor Championship next week. This is the defining test: Angelo's baseline derailer (consistency under multi-domain load) has not yet been activated because conditions have been favorable. Championship week will compress preparation, intensify pressure, and reintroduce the solo competition dynamic. His stated goal — 'don't get anxious or overzealous about championships' — shows awareness of the activation risk. Whether the 3-week Growth streak holds through championship conditions is the arc question."
+  },
+
+  "most_important_controllable": "Championship preparation discipline — Angelo's goal ('stay mentally grounded and build a week of consistent, intentional work that properly prepares me for championship') is the right frame. The controllable is executing that intention despite the natural temptation to overextend ('don't get anxious or overzealous'). His preparation approach this week (lighter practice, targeted recovery, competition timing) is the template.",
+
+  "micro_commitment": {
+    "action": "Apply the same preparation strategy that worked this week to championship week: plan your practice sessions to be intentional and recovery-focused rather than volume-driven. Write down your day-by-day championship preparation plan by Monday evening.",
+    "when": "Monday evening — write the plan. Execute Tuesday through competition day.",
+    "measurement": "Did Angelo write the plan? Did practice stay intentional and recovery-focused rather than anxiety-driven? Report whether the championship week felt like a continuation of this week's preparation approach or a departure from it."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "PSAC Indoor Championship — the following week. Angelo's primary season target.",
+    "anticipated_stressor": "Championship is the highest-pressure competition of the indoor season. Known structural challenges: solo at meets (no throwing teammates, no throws coach), potential equipment issues (implements broke in practice this season), multi-domain academic demands running concurrently. Angelo's self-identified risk is anxiety or overenthusiasm disrupting his grounded preparation approach.",
+    "athlete_stated_next_goal": "Prepare for championships, stay consistent, don't get anxious or overzealous about championships. Stay mentally grounded and build a week of consistent, intentional work that properly prepares me for championship. And prioritize recovery work."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "6 Win, 1 Neutral, 0 Missed — Gold Streak. First complete scoring week. Won both events at last-chance meet. Strategic week design (lighter practice, recovery-focused, championship timing). Mindset challenge: 'Maintaining effort even when fatigue appears today.' Coached an athlete at work Saturday. Spouse moment managed well. All 3 domains consistently positive.",
+    "key_habit_signal": "Strategic preparation design is the breakthrough behavior this week. Angelo did not just execute his routine — he designed the week around a multi-week competitive calendar. Lighter practice loads, targeted rest, competition timing maintenance, preservation for championship. This is the first evidence of deliberate periodization thinking in his mindset approach, not just his physical training.",
+    "coach_reinforcement_cue": "The achievement statement ('Emotional groundedness, intent, and gratitude') is the most important language in Angelo's 3-week program history. It signals that he is beginning to measure himself by internal quality, not just external results — even in a week where he won both events. Connect this to his identity claim: this is what 'resilient and sharp' looks like in practice.",
+    "coach_avoidance_note": "Do not overframe the championship as a test or pressure moment. Angelo has already identified the risk ('don't get anxious or overzealous') and articulated the solution (grounded preparation). Adding coaching pressure on top of his self-awareness could activate the very pattern he is trying to manage. Trust his preparation approach and reinforce the process, not the stakes."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators. Championship pressure is a normal competitive stressor. Angelo's language is composed, strategic, and forward-looking. Spouse stress moment managed within normal interpersonal range. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You said you want to stay grounded heading into championships — what does a 'grounded' week of preparation look like for you specifically?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

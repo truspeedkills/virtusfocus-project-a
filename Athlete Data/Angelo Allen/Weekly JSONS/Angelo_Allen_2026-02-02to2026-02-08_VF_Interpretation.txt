@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-02-02 to 2026-02-08",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent — building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "First week of the program. Angelo's weekly goal ('Building back mental and physically quality after a harsh illness') reflects ownership of a recovery process rather than avoidance. Saturday competition return ('finally back to about 100%') shows approach-framed re-engagement. Bullseye control ring ('Myself and my consistency') maps directly to the consistency development goal from intake. The stated goal for next week ('Be consistent, train every thing that needs training in the order that it needs to be trained') is specific, process-focused, and addresses the hinge habit. The baseline derailer (multi-domain overload) is present but managed — Thursday's Neutral was due to soreness recovery, not a demand overload breakdown."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "First week in the program. Returning from a harsh illness, rebuilding both physical and mental quality. Competed Saturday in both throwing events — first competition back, reported feeling 'back to about 100%' and 'starting to feel that right intensity again.' Training week included lifting (Monday, chose lifting over sports practice), great practice Wednesday, strategic rest Thursday (soreness). Friday combined strong school and practice but spouse relationship friction emerged Friday-Saturday, resolving by Sunday. Experimented with dynamic training techniques. Mindset challenge engagement not yet started ('None yet').",
+
+  "core_pattern": "Approach-framed recovery with high ownership. Angelo's first week demonstrates an activation-oriented mindset even during illness recovery — he frames rebuilding as a goal, not a setback. Competition return language is confident ('starting to feel that right intensity again') without overreaching. The Thursday rest day shows self-regulation: he chose recovery over forcing a practice session. The spouse friction (Friday-Saturday) was managed to resolution by Sunday without disrupting training execution.",
+
+  "behavioral_root_cause": "Angelo's daily execution is anchored to intentional self-direction rather than external structure. He made deliberate choices throughout the week — lifting instead of sports practice Monday (physical priority), resting Thursday (recovery priority), experimenting with dynamic training (curiosity-driven). The consistency derailer identified at baseline is not yet activated: multi-domain demands appear balanced this week, with the illness recovery providing a natural simplification of his usual load. The unscored weekend days (Friday-Sunday) limit WTD precision but content analysis shows continued engagement across all three days.",
+
+  "prior_commitment_result": {
+    "prior_action": "No Prior Week",
+    "execution_status": "No Prior Week",
+    "execution_notes": "First week of the program. No prior commitment exists.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Building back mental and physically quality after a harsh illness",
+    "achievement_statement": "A lot more knowledge on strength and conditioning",
+    "key_phrase": "really starting to feel that right intensity again",
+    "mindset_resonance": "None yet"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5",
+      "neutral_days": "2",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "Category-only classification. Monday-Thursday scored by athlete (3 Win, 1 Neutral). Friday-Sunday unscored — classified by content analysis: Friday Neutral (strong school/practice but spouse friction), Saturday Win (successful competition return), Sunday Win (rest day, spouse resolution). 5 Win + 2 Neutral + 0 Missed = Growth tier.",
+    "consistency_profile": "New — First Week",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Single controllable named: 'Myself and my consistency.' Genuinely controllable and aligned with baseline hinge habit. However, single-item center ring limits specificity — no behavioral anchors for how consistency will be maintained.",
+    "influence_quality": "Developing. 'Leading my spouse positively' reflects relational awareness, appropriate for the influence ring. Single item. Relevant to the week's spouse friction context.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "0",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Pre-competition preparation routine — Angelo has a major 2-day competition next weekend (8-9 hours away by bus, high-level field). His Saturday return to competition showed he is physically ready. The controllable is structuring this week's training ('train every thing that needs training in the order that it needs to be trained') to arrive at the meet with the same intentional readiness that produced Saturday's successful return.",
+
+  "micro_commitment": {
+    "action": "Write out your competition preparation plan for the big meet this weekend — what needs to happen Monday through Thursday in practice to arrive Friday ready. One page, specific sessions, specific goals per day.",
+    "when": "Monday evening, before the training week begins.",
+    "measurement": "Did Angelo write the plan? Did he follow it through Thursday? Report in next week's recap whether the preparation felt structured and intentional heading into the meet."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Friday and Saturday — high-level, elite Track and Field competition. 8-9 hours away by bus. Thursday and Sunday are travel days.",
+    "anticipated_stressor": "The multi-day travel schedule (Thursday travel, Friday-Saturday competition, Sunday return) compresses the training week to Monday-Wednesday. School and work demands will need to be front-loaded. This is the first test of the baseline derailer — can Angelo maintain consistency when the schedule compresses?",
+    "athlete_stated_next_goal": "Be consistent, train every thing that needs training in the order that it needs to be trained. And stay healthy through prehab and rehab."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win days (category-only), 2 Neutral, 0 Missed across first program week. Saturday competition return after illness — both throwing events. Thursday rest day was a deliberate recovery choice, not a lapse. Mindset challenge engagement not yet started ('None yet'). Training included lifting, sports practice, and dynamic training experimentation.",
+    "key_habit_signal": "Deliberate recovery management — Angelo chose to rest Thursday when sore rather than forcing practice. This self-regulation is developmentally important: it shows he prioritizes preparation quality over activity volume. Combined with his illness recovery framing ('building back quality'), this indicates a process-oriented athlete, not a compliance-driven one.",
+    "coach_reinforcement_cue": "Angelo's competition return language ('starting to feel that right intensity again') is the most coachable signal this week. He is tracking his own readiness by feel, not just by results. Reinforce this internal calibration as evidence of the mental sharpness he identified as a goal at intake.",
+    "coach_avoidance_note": "Do not overweight the spouse friction. It appeared, was managed, and resolved within the week. It is contextual, not a pattern. The Bullseye influence-ring placement ('Leading my spouse positively') shows Angelo already frames the relationship as within his sphere of influence rather than a source of uncontrollable stress."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Illness recovery is framed as a performance rebuilding process, not a health concern. Spouse friction is interpersonal and resolved. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You have a huge competition weekend ahead — what is one specific thing you want to do differently in your preparation this week compared to last week?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

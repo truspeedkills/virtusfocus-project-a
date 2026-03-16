@@ -1,7 +1,7 @@
 # VirtusFocus — Project A: AI Coaching Pipeline
 **Root Directory:** `D:\OneDrive\Documents\(TEST) Project A\`
 **Last Updated:** 2026-03-16
-**Session Notes:** Processed Aidan Burkardt through full 5-stage pipeline (Stages 1-5, 5 weeks). 22 files produced: 1 snapshot, 5 Interpretation JSONs, 5 Coaching Messages, 5 Deep Dives, 5 Weekly Performance Insights, 1 Editorial Audit Summary (Week 4 — PASS all 13 criteria). Fourth athlete fully processed. Angelo Allen handoff prompt created for fresh session. Prior session: New Athlete Processing Handoff Prompt created.
+**Session Notes:** Processed Angelo Allen through full 5-stage pipeline (Stages 1-5, 4 weeks). 17 files produced: 1 snapshot, 4 Interpretation JSONs, 4 Coaching Messages, 4 Deep Dives, 4 Weekly Performance Insights, 1 Editorial Audit Summary (Week 4 — PASS all 13 criteria). Fifth athlete fully processed. Prior session: Aidan Burkardt processed, Angelo Allen handoff prompt created.
 
 ---
 
@@ -449,8 +449,51 @@ Season transition decision (indoor → outdoor or deload). Visualization managem
 
 ---
 
+### Angelo Allen
+**Baseline Snapshot:** `Athlete Data\Angelo Allen\angelo_allen_athlete_snapshot.txt`
+- baseline_identity_claim: Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life
+- baseline_hinge_habit: Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands
+- baseline_primary_derailer: Consistency disruption when school, work, and sport demands compete for time and energy
+- baseline_growth_phase: Developing
+
+**Interpretation JSONs — All 4 Weeks Complete:**
+
+| Week | Period | File | Tier | Emotional Intensity | Notes |
+|---|---|---|---|---|---|
+| 1 | Feb 2–8 | `Angelo_Allen_2026-02-02to2026-02-08_VF_Interpretation.txt` | Growth | Low | No prior week. Category-only WTD. Competition return from illness |
+| 2 | Feb 9–15 | `Angelo_Allen_2026-02-09to2026-02-15_VF_Interpretation.txt` | Growth | Low | Near-PR Shotput (16.44m vs 16.70m PR). Solo at highest-level meet. RQS=3 |
+| 3 | Feb 16–22 | `Angelo_Allen_2026-02-16to2026-02-22_VF_Interpretation.txt` | Growth | Low | Gold Streak. Won both events. Identity-level achievement. First complete scoring week |
+| 4 | Mar 9–15 | `Angelo_Allen_2026-03-09to2026-03-15_VF_Interpretation.txt` | Growth | **Moderate** | 2.5-week gap. PSAC championship retrospective. Partially Aligned. Unknown prior commitment. Outdoor transition |
+
+**Coaching Output — All 4 Weeks Complete under v1.8/V4 rules:**
+
+| Week | Period | Coaching Message | Deep Dive |
+|---|---|---|---|
+| 1 | Feb 2–8 | `Angelo_Allen_2026-02-02to2026-02-08_VF_CoachingMessage.txt` | `Angelo_Allen_2026-02-02to2026-02-08_VF_DeepDive.txt` |
+| 2 | Feb 9–15 | `Angelo_Allen_2026-02-09to2026-02-15_VF_CoachingMessage.txt` | `Angelo_Allen_2026-02-09to2026-02-15_VF_DeepDive.txt` |
+| 3 | Feb 16–22 | `Angelo_Allen_2026-02-16to2026-02-22_VF_CoachingMessage.txt` | `Angelo_Allen_2026-02-16to2026-02-22_VF_DeepDive.txt` |
+| 4 | Mar 9–15 | `Angelo_Allen_2026-03-09to2026-03-15_VF_CoachingMessage.txt` | `Angelo_Allen_2026-03-09to2026-03-15_VF_DeepDive.txt` |
+
+**Coach Insights — All 4 Weeks Complete:**
+
+| Week | Period | Stress | Composite Readiness | Key Signal |
+|---|---|---|---|---|
+| 1 | Feb 2–8 | Low | → Steady (Yellow) | Competition Re-Engagement Quality |
+| 2 | Feb 9–15 | Low | ↑ Positive (Green) | Competition Composure Under Isolation |
+| 3 | Feb 16–22 | Low | ↑ Positive (Green) | Strategic Preparation Design |
+| 4 | Mar 9–15 | Moderate | → Steady (Yellow) | Self-Directed Recovery Initiative |
+
+**Editorial Audit:** Week 4 audited — PASS on all 13 criteria. Most complex week: Moderate EI, 2.5-week gap with PSAC championship retrospective, Unknown prior commitment, Partially Aligned, Bullseye compression, "None" weekly goals, outdoor season transition. No corrections needed. Style note: vary "self-regulation" language in future outputs.
+
+**Angelo Allen 4-Week Arc:**
+Illness recovery with approach-framed re-engagement (Wk1) → High-level competition composure as solo competitor, near-PR (Wk2) → Peak performance with strategic preparation design and identity-level achievement ("emotional groundedness, intent, and gratitude") (Wk3) → [2.5-week gap: PSAC championship disappointment + emotional processing delay + Spring Break] → Outdoor season reset with mature retrospective processing and forward application (Wk4). Growth tier in all 4 recorded weeks. Zero Missed days across entire program. Achievement language progression: physical recovery → daily ownership → identity-level emotional quality → task-level transition. Baseline derailer (multi-domain overload) validated by championship experience.
+
+**Open Thread:**
+First outdoor competition (Shippensburg, Saturday after Week 4). Championship lessons applied to outdoor season? Bullseye depth recovery (compressed to 1 item/ring in Wk4). Goal-setting re-engagement ("None" in Wk4 — first time). Solo competition dynamic unresolved. Multi-domain load management during championship-level meets is the defining development question.
+
+---
+
 ### Other Athletes (not yet processed)
-- **Angelo Allen** — Track & Field Throws, Seton Hill University, 4 weekly reviews (Feb – Mar 2026, championship gap), intake PDF on disk, no snapshot, no pipeline output. Handoff prompt ready.
 - **Jasmine Jones** — Bobsled Brakeman, USA/WCAP, 7 weekly reviews (May – Jul 2025), intake PDF on disk, no snapshot, no pipeline output. Highest competitive level in pipeline (Olympic aspirant). Handoff prompt ready.
 - **John Tastinger** — data exists, no weekly review data to process yet
 
@@ -565,6 +608,8 @@ Say: "Commit what we've done" or "commit this work." Claude will stage the relev
 56. Idea 4 collaborative design session 2 — Parent CM design (Task 17) + Parent Insights Dashboard design (Task 18). Read 22 reference files (architecture decisions, Stage 3 specs + source files, Stage 4 specs + output structure, compliance framework, intake form spec, snapshot fields, daily signal design, editorial audit, sample outputs, parent app overview). Task 17: Designed Parent CM 4-section structure (Weekly Context, What Stood Out, What's Ahead, How You Can Support) with 150-250 word target. Core design principle: every section exists to help the parent support the athlete's mental performance growth — no surveillance, no monitoring, no behavior reporting. Thematically aligned with athlete CM but never directly references. No Parent Deep Dive (Parent Insights serves that function). No micro-commitment, no accountability, no drift identification directed at parent. Task 18: All parent content lives in live app + browser dashboard (same data, different presentation). Dashboard metrics: Overall Signal (color), Growth Phase, Weekly Theme, Confidence Direction, Daily Signal — all categorical, no numbers. Stress load excluded as standalone dashboard metric (reactivity trigger — handled in narrative Parent Insights sections only via Coach Arron's contextual framing). Week-at-a-glance 7-dot display proposed and rejected (too close to attendance tracker). Contributing signals (Day Outcome, Focus Alignment, Follow-Through, Weekly Trajectory) hidden from parents — traffic light color + label only. Daily signal parent labels: Green=Good Day, Yellow=Building Day, Orange=Reset Day, Gray=No Update Today. Parents never see a blank screen — warm placeholders in early weeks. Dashboard confirmed as presentation layer only (renders Stage 4 + Stage 7 output). Design decisions saved to VF_Parent_Output_Task_17_18_Design_Decisions.txt. Handoff prompt written for Task 19 (Session 3). No specification files modified. No pipeline processing.
 
 57. Idea 4 specification session 3 — Task 19 Parent Coaching Message specification. Read 22 reference files (architecture decisions, Task 17+18 design decisions, Stage 3 Master Prompt V3, Instructions v1.6, Message Map, System Identity, brand voice, content style guide, Coaching Message Framework, Deep Dive Framework, Intake Form Spec Q22-Q25, Snapshot Fields ecosystem block, Grace Kindel Week 5 JSON + CM + snapshot, Editorial Audit v1.2 Master Prompt + Instructions, Compliance Framework, Reflection/Growth Phase Model, Parent App overview). 5 design questions resolved: DQ1 Ecosystem calibration = Moderate (Q23 primary calibration + Q25 secondary modifier, Q22 context only, Q24 gating), DQ2 Emotional intensity = Light touch (only Section 4 "How You Can Support" adjusts, Sections 1-3 stay informational), DQ3 Derailer-activation = Indirect (Section 3 notes specific coaching focus, Section 4 adjusts to provide space/stability, parent never knows the derailer), DQ4 Growth phase advancement = Subtle (reflected in tone, phase name never used), DQ5 Reference examples = 5 scenarios (Growth/Low EI, Mixed/High EI/derailer, Growth/competition/phase advancement, Week 1 welcome, Mixed/Low EI baseline). 7 files modified: (1) VF_Coaching_Output_JSON_to_Message_Map.txt — PARENT SUMMARY replaced with full PARENT COACHING MESSAGE 4-section routing (~200 lines replacing 12), per-section field routing, Q23/Q25 calibration rules, EI handling, derailer-activation rules, growth phase advancement rules, early weeks handling, global exclusions, execution/intake/CF skip rules. (2) SOP_Coaching_Output_Master_Prompt_V4.txt — new versioned file, output #3 = Parent Coaching Message (not "If Requested"), parent mode activation rules, parent voice calibration, 4-section structure definition, parent compliance rules. (3) VF_Coaching_Output_System_Identity.txt — output #3 updated from "Parent-Facing Summary (If Requested)" to "Parent Coaching Message (D2C Premium)" with full description. (4) SOP_Coaching_Output_Instructions_v1.7.txt — new versioned file (2136→3166 lines, 22→32 sections). 9 new parent sections (23-31): Section 23 Parent CM Generation Rule (activation, generation order, output format, file naming, exclusions), Section 24 Section-by-Section Content Guidance (4 sections with source fields, content rules, examples), Section 25 Voice Calibration Rule (voice table, 5 rules, 6 WRONG/CORRECT examples), Section 26 Ecosystem Field Calibration Rule (Q23 primary with 4 conversation patterns + examples, Q25 secondary with 3 support network modifiers, interaction rules, CF fallback), Section 27 Emotional Intensity Handling Rule (High = Section 4 only adjusts, Sections 1-3 unchanged, examples), Section 28 Competitive Level Calibration Rule (2 parameters: vocabulary complexity + concept depth, 5 levels with examples), Section 29 Compliance Rule (inherited rules + 6 parent-specific additions, Stage 5 audit scope with 4-document input), Section 30 Validation Checklist (20 items), Section 31 Reference Examples (5 complete Parent CMs). Section 2 expanded (2 new authoritative sources). Section 3 expanded (parent output awareness, conditional 3rd output). Section 16 expanded (parent output skip for CF athletes). Section 21 scope updated (Parent Summary → Parent Coaching Message). Final System Rule renumbered to Section 32 with parent output standard added. (5) SOP_Editorial_Audit_Master_Prompt_v1.2.txt — INPUTS expanded from 3 to 4 documents (conditional Parent CM), pipeline position line updated to v1.7. (6) Parent Output directory created (Athlete Data\Grace Kindel\Parent Output\). (7) CLAUDE.md updated. Output format: VF_ParentMessage.txt, directory Athlete Data\[Athlete]\Parent Output\. No pipeline processing.
+
+65. Processed Angelo Allen through full 5-stage pipeline (Stages 1-5). Fifth athlete fully processed. Generated 1 baseline snapshot, 4 v9.6 Interpretation JSONs, 4 Coaching Messages (v1.8/V4), 4 Deep Dives (v1.8/V4), 4 Weekly Performance Insights (v1.5), and 1 Editorial Audit Summary. 17 files total. Angelo is a Track & Field Thrower (Seton Hill), Developing phase throughout, most experienced athlete in pipeline (16 years), 4 weeks with 2.5-week PSAC championship gap (Wk3→Wk4). Key arc: illness recovery → high-level competition composure as solo competitor → peak performance with strategic preparation design and identity-level achievement → championship disappointment with mature emotional processing delay → outdoor season reset. Growth tier in all 4 recorded weeks — zero Missed days in entire program. Week 4 was the most complex audit case — Moderate EI, 2.5-week gap, PSAC championship retrospective, Unknown prior commitment, Partially Aligned, Bullseye compression, "None" goals — PASS all 13 criteria. Baseline derailer (multi-domain overload) validated by championship experience. Jasmine Jones is next for processing. CLAUDE.md updated with Angelo's full athlete data status. No specification changes.
 
 64. Processed Aidan Burkardt through full 5-stage pipeline (Stages 1-5). Fourth athlete fully processed. Generated 1 baseline snapshot, 5 v9.6 Interpretation JSONs, 5 Coaching Messages (v1.8/V4), 5 Deep Dives (v1.8/V4), 5 Weekly Performance Insights (v1.5), and 1 Editorial Audit Summary. 22 files total. Aidan is a Track & Field Sprinter (Pitt), Developing phase throughout, with non-consecutive weeks (2-week gap Wk1→2, 10-week gap Wk3→4). Key arc: self-directed re-engagement → holiday maintenance → peak confidence with identity growth → competition derailer activation with emerging self-regulation → visualization self-diagnosis with RQS=4 peak. Week 4 (competition) was the most complex audit case — Moderate EI, first competition, derailer activation, Partially Aligned, Unknown prior commitment from 10-week gap — PASS all 13 criteria. Sleep gap persistent across all 5 weeks. WTD scoring gap (weekends consistently unscored) handled via category-only fallback. Angelo Allen handoff prompt created for fresh session processing. CLAUDE.md updated with Aidan's full athlete data status. No specification changes.
 
@@ -956,7 +1001,7 @@ Handoff prompts: `Pipeline Improvement Design Handoff Prompt.txt` (overview), `I
 
 ### Athlete Pipeline Work
 - [x] **Aidan Burkardt pipeline processing:** 5 weeks, 22 files (snapshot + 5 JSONs + 5 CMs + 5 DDs + 5 Coach Insights + 1 Audit Summary). PASS all 13 criteria.
-- [ ] **Process Angelo Allen (NEXT):** 4 weeks, ~18 files. Handoff prompt ready (`Angelo Allen Processing Handoff Prompt.txt`).
+- [x] **Process Angelo Allen:** 4 weeks, 17 files (1 snapshot + 4 JSONs + 4 CMs + 4 DDs + 4 Coach Insights + 1 Audit Summary). PASS all 13 criteria. Fifth athlete fully processed.
 - [ ] **Process Jasmine Jones:** 7 weeks, ~30 files. Handoff prompt ready (`New Athlete Processing Handoff Prompt.txt`). Unlocks Team Snapshot (6 athletes after all 3 complete).
 - [ ] **Parent output live validation:** Generate Parent CMs + Parent Insights for existing athletes (Grace, Tucker, Mergim) — validates v1.8/v1.5 parent specifications
 - [ ] **Team Snapshot generation:** First team-level output (requires 5+ athletes — will have 6 after new athlete processing)

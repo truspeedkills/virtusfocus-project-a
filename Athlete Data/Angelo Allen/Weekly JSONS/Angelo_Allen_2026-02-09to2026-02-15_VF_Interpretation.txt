@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-02-09 to 2026-02-15",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent — building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Angelo's weekly goal remains illness recovery ('Building back mental and physically quality') but execution has advanced beyond recovery into high-level competition. He competed in one of the highest-level meets of his career and performed near his PR (16.44m vs 16.70m PR in Shotput). The approach-framed activation ('Let's go get this!') from intake is fully operational under competitive pressure. Bullseye engagement expanded significantly — three controllables (consistency, effort, mindfulness), three influence items (team, spouse, example-setting), four noise items. All correctly placed. The consistency hinge habit held through a demanding travel week (Thursday travel, Friday-Saturday competition, Sunday return). Achievement language ('Showing up every single day and time I was supposed to without fail') directly references the consistency goal."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Competition week. Two-day high-level meet — the highest level Angelo has ever competed at. Day 1: Shotput 16.44m (7th place, just off 16.70m PR), Weight Throw 17.00m (12th). Solo at the meet — no throwing teammates, no throws coach present. Day 2: Noticeable fatigue from Day 1 intensity. Poor shotput. Scratched Weight Throw after implement did not weigh in — chose not to borrow due to the social discomfort of asking another team while solo. Training week was strong: Monday consistent, Tuesday hardest day but handled better than last week, Wednesday experimenting with positive results, Thursday travel day with maintained focus. Spouse relationship excellent this week. Mindset challenge engagement started: 'Slowing down during one moment.'",
+
+  "core_pattern": "Composed execution under high-stakes conditions. Angelo's most significant behavioral signal this week is his competition composure — performing near his PR at the highest level he has ever competed, alone, with long waits between events. Day 2 fatigue and the implement issue represent the first evidence of the multi-domain overload derailer activating in a competitive setting: when conditions stack against him (fatigue + equipment + isolation), performance erodes. However, his response to that erosion is mature — he gave 100% effort, made a practical decision about Weight Throw, and frames the weekend as overall positive.",
+
+  "behavioral_root_cause": "Angelo's weekday execution continues to be self-directed and strong. The competition week reveals a critical insight: his consistency derailer operates differently under competition conditions. It is not about missing days or skipping routines — it is about cascading external factors (equipment, isolation, fatigue, event scheduling) eroding the conditions that support his best performance. Day 1 success and Day 2 decline show that Angelo's performance ceiling depends on controllable preparation conditions. When those conditions degrade, he still shows up and competes, but the output suffers.",
+
+  "prior_commitment_result": {
+    "prior_action": "Write out competition preparation plan — specific sessions and goals per day for the big meet",
+    "execution_status": "Completed",
+    "execution_notes": "Angelo maintained structured preparation through the week. Monday consistent, Wednesday 'trying new things, experimenting, and definitely seeing positive results,' Thursday 'stayed mentally focused and prepared.' Day 1 competition performance (near PR in Shotput) confirms that pre-competition preparation was executed with intentionality. His stated achievement — 'Showing up every single day and time I was supposed to without fail' — directly addresses the commitment's consistency focus.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Building back mental and physically quality after a harsh illness",
+    "achievement_statement": "Showing up every single day and time I was supposed to without fail",
+    "key_phrase": "I performed with intentionality and made adjustments as needed",
+    "mindset_resonance": "Slowing down during one moment"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "6",
+      "neutral_days": "1",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "Category-only classification. Monday-Thursday scored by athlete (4 Win). Friday-Sunday unscored — classified by content analysis: Friday Win (excellent competition performance with intentionality), Saturday Neutral (fatigue-impacted, scratched Weight Throw, but gave 100% effort), Sunday Win (travel home, celebrated Valentine's Day, 'ready for upcoming week'). 6 Win + 1 Neutral + 0 Missed = Growth tier.",
+    "consistency_profile": "Emerging Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong. Three controllables named: consistency, effort, mindfulness. All genuinely controllable. 'Mindfulness' is a significant addition from Week 1 — it reflects growing awareness that mental quality (not just physical execution) is within his control. This represents a developmental step in Bullseye engagement.",
+    "influence_quality": "Strong. Three influence items: inspiring team, leading spouse, setting a good example. All appropriately placed. 'Setting a good example' is an identity-level influence statement — he sees himself as a model, not just a participant.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable — Growth → Growth",
+    "growth_phase_movement": "Stable — Developing → Developing",
+    "consistency_trend": "Emerging Positive — 2 consecutive Growth weeks",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "1",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Post-competition recovery and mistake correction — Angelo identified that Day 2 performance suffered from fatigue and he knows what to improve during practice. His stated goals for next week ('Consistency, Focusing on improving the mistakes of last week, and recovery') show he has already extracted the learning. The controllable is translating that awareness into specific practice adjustments rather than general improvement intention.",
+
+  "micro_commitment": {
+    "action": "Identify the one specific technical adjustment from this weekend's competition that you want to address in practice this week. Work on it deliberately in at least two practice sessions before Friday's meet.",
+    "when": "Monday — identify the adjustment. Tuesday and Wednesday or Thursday — execute it in practice.",
+    "measurement": "Did Angelo name a specific adjustment? Did he work on it in at least 2 sessions? Report whether the adjustment felt like progress heading into Friday's last-chance meet."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Friday, February 20th at Mount Union. Last-chance meet — Angelo already qualified. Going for additional competition exposure.",
+    "anticipated_stressor": "Low external stress — this is a chosen meet with no qualification pressure. Angelo frames it as an opportunity for competition timing and readiness. However, the solo competition dynamic from this week may recur. The real stressor looming beyond is PSAC championship the following week.",
+    "athlete_stated_next_goal": "Consistency, Focusing on improving the mistakes of last week, and recovery"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "6 Win days (category-only), 1 Neutral, 0 Missed. Competition week with travel (Thursday-Sunday away). Training Mon-Wed maintained. Mindset challenge engagement started ('Slowing down during one moment'). Solo at competition — no teammates or throws coach. Day 1 near-PR performance (16.44m Shotput vs 16.70m PR). Day 2 fatigue-impacted. Implement issue caused Weight Throw scratch on Day 2.",
+    "key_habit_signal": "Competition composure under isolated conditions — Angelo performed intentionally at the highest competitive level of his career while alone at the meet. His framing of Day 2 shows differentiated self-assessment: he distinguishes between what he can control (effort, showing up) and what he cannot (fatigue, equipment issues). This is the Bullseye method in live application.",
+    "coach_reinforcement_cue": "Angelo's achievement statement ('Showing up every single day and time I was supposed to without fail') is the strongest ownership language in his program so far. Connect this to his identity claim — consistency under demanding conditions is exactly the 'tenacious' quality he identified at intake. He did not just compete; he showed up alone at the highest level and performed near his best.",
+    "coach_avoidance_note": "Do not dwell on the Day 2 decline or Weight Throw scratch. Angelo has already processed these — he frames the weekend as 'overall good' and identifies specific improvements. The implement issue and solo dynamic are structural realities of his program, not coaching opportunities. Focus forward on practice adjustments, not backward on Saturday."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators. Competition fatigue is physical and performance-relevant, not a distress signal. Solo competition dynamic is a structural challenge, not an emotional crisis. Angelo's language is composed and solution-oriented throughout. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You identified specific things to improve from this weekend — what is the most important one you want to focus on in practice before Friday's meet?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

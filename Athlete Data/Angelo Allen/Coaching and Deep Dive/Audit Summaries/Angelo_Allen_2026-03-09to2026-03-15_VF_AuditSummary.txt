@@ -1,0 +1,327 @@
+EDITORIAL AUDIT SUMMARY
+Angelo Allen | Week 4 | March 9-15, 2026
+Audit Date: 2026-03-16
+
+============================================================
+AUDIT INPUT
+============================================================
+Interpretation JSON: Angelo_Allen_2026-03-09to2026-03-15_VF_Interpretation.txt
+Coaching Message: Angelo_Allen_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+Deep Dive: Angelo_Allen_2026-03-09to2026-03-15_VF_DeepDive.txt
+
+============================================================
+COMPLEXITY ASSESSMENT
+============================================================
+This is the most complex week in Angelo Allen's 4-week program:
+- Moderate emotional intensity (championship retrospective with "anger and frustration")
+- 2.5-week gap (PSAC championship + Spring Break)
+- Prior commitment result: Unknown (gap prevents assessment)
+- Alignment status: Partially Aligned (derailer activation evidence + system disengagement)
+- Bullseye compression (1 item per ring, down from 3+)
+- Weekly goals: "None" (first time)
+- Outdoor season transition
+- Championship disappointment processed retroactively
+
+============================================================
+CRITERION-BY-CRITERION AUDIT
+============================================================
+
+------------------------------------------------------------
+CRITERION 1: JSON FIDELITY — TIER 1 (MUST PASS)
+------------------------------------------------------------
+RESULT: PASS
+
+Coaching Message correctly reflects Growth tier, Developing phase, Moderate EI.
+Deep Dive correctly references Growth tier (6 Win, 1 Neutral, 0 Missed), Moderate EI,
+Developing phase, Partially Aligned status, Variable consistency, Unknown prior
+commitment, RQS 3. All JSON classifications accurately represented in coaching output.
+No reinterpretation of tier, phase, or alignment status detected.
+
+Win the Day data: CM does not cite specific WTD numbers — refers to "hit the ground
+running" and behavioral descriptions consistent with Growth classification. DD Section 2
+correctly states "Week 1 Growth → Week 2 Growth → Week 3 Growth (Gold Streak) →
+[2.5-week gap] → Week 4 Growth." Accurate.
+
+Micro-commitment: CM presents the micro-commitment from JSON accurately
+("identify one specific lesson from the championship experience"). When/measurement
+details appropriately summarized.
+
+------------------------------------------------------------
+CRITERION 2: CLINICAL LANGUAGE PROHIBITION — TIER 1 (MUST PASS)
+------------------------------------------------------------
+RESULT: PASS
+
+Full scan of Coaching Message and Deep Dive for Categories A-D clinical terms:
+
+Category A (diagnostic terms): No instances of anxiety, depression, trauma, disorder,
+diagnosis, pathology, symptom, or clinical variants.
+Category B (therapeutic terms): No instances of therapy, treatment, intervention, coping
+mechanism, cognitive, behavioral therapy, or clinical process terms.
+Category C (clinical framing): No instances of mental health, psychological, clinical
+assessment, or diagnostic framing.
+Category D (clinical modifiers): No instances of chronic, acute, clinical-grade,
+subclinical, or medical modifiers.
+
+Specific language checks:
+- "anger and frustration" (CM): Used as athlete's own language describing past emotional
+  state, quoted context. Not clinical framing. PERMITTED.
+- "self-regulation" (CM, DD): Used as behavioral coaching term describing deliberate
+  emotional pacing. Not a clinical term. PERMITTED per VirtusFocus approved language.
+- "emotional processing" (DD): Used as behavioral description of deliberate reflection
+  timing. Not therapeutic framing. PERMITTED.
+- "reorientation" (DD): Behavioral term for directional shift. Not clinical. PERMITTED.
+
+No clinical language violations detected.
+
+------------------------------------------------------------
+CRITERION 3: BASELINE ANCHOR ACCURACY — TIER 1 (MUST PASS)
+------------------------------------------------------------
+RESULT: PASS
+
+Identity claim referenced: CM references "sharp" quality from intake, "resilient" quality
+from intake. Both traceable to baseline identity claim ("goal-oriented, resilient,
+tenacious, and sharp human being"). DD Section 5 Identity Thread directly connects
+championship experience to all four identity qualities from intake. Accurate.
+
+Hinge habit referenced: CM references self-directed solo practice as evidence of training
+consistency maintained without external structure. DD Section 3 identifies solo training
+initiative as "baseline hinge habit operating even without external structure." Consistent
+with baseline hinge habit (approach-framed pre-performance activation and daily training
+consistency). Accurate.
+
+Primary derailer referenced: CM does not name the derailer directly but addresses the
+championship factors that activated it (exam, planning, broken implements, solo dynamic,
+disrupted lifting). DD Section 4 identifies "championship lesson extraction" and
+"multi-domain load management during championship weeks" as growth areas — directly
+connected to the consistency-under-multi-domain-load derailer. Accurate.
+
+Growth phase: CM does not reference growth phase by name. DD Section 1 correctly states
+"Partially Aligned due to gap and derailer activation." Growth phase correctly identified
+as Developing in DD Section 2. Accurate.
+
+No anchor misrepresentation detected.
+
+------------------------------------------------------------
+CRITERION 4: PRIOR COMMITMENT BRIDGE — TIER 1 (MUST PASS)
+------------------------------------------------------------
+RESULT: PASS
+
+JSON prior_commitment_result: execution_status = "Unknown" due to 2.5-week gap.
+CM does not reference the prior commitment directly — appropriately omitted given
+Unknown status. The CM focuses on the championship experience and current-week
+execution rather than assessing commitment execution that cannot be observed.
+DD Section 2 references the gap disruption without claiming commitment execution.
+
+The Unknown status is handled correctly: neither CM nor DD asserts completion or
+non-completion of the prior commitment. The gap is acknowledged as a contextual
+reality. No bridge overclaim.
+
+------------------------------------------------------------
+CRITERION 5: EMOTIONAL INTENSITY CALIBRATION — TIER 2
+------------------------------------------------------------
+RESULT: PASS
+
+JSON emotional_intensity: Moderate.
+
+CM tone assessment: Warm and direct. Opens with "Welcome back" acknowledging the gap.
+Addresses championship disappointment honestly but without amplifying — "The championship
+did not go the way you wanted. That is real." Does not minimize or dramatize. The
+majority of the message focuses on forward-directed behavior (processing maturity,
+current-week execution, outdoor transition). Appropriate for Moderate EI — acknowledged
+without dominating.
+
+DD tone assessment: Analytical and structured. Section 1 correctly identifies Moderate EI
+with retroactive emotional language. Sections 3-4 balance strength signals with growth
+areas. No empathetic overcorrection for Moderate EI. No under-acknowledgment.
+
+"Character flaw" reframe in CM: Angelo says "Call it a character flaw on my part" about
+his emotional processing delay. CM directly counters: "That is not a character flaw. That
+is self-regulation." This is appropriate coaching reframe — using athlete's own language
+and redirecting self-criticism to behavioral strength recognition. Not clinical. Not
+dismissive.
+
+------------------------------------------------------------
+CRITERION 6: MICRO-COMMITMENT REALISM — TIER 2
+------------------------------------------------------------
+RESULT: PASS
+
+Micro-commitment from JSON: "Before Saturday's competition at Shippensburg, identify
+one specific lesson from the PSAC championship experience that you can apply this
+weekend. Write it down and put it where you will see it on competition morning."
+
+Assessment:
+- Behaviorally specific: Yes (identify, write, place visible)
+- Time-bound: Yes (Friday evening write, Saturday morning read)
+- Within athlete's control: Yes (reflection and writing)
+- Appropriate to weekly context: Yes (connects championship learning to upcoming
+  competition)
+- Modality: Written (appropriate — Angelo demonstrated strong analytical capacity in
+  his retrospective; written commitment leverages this strength)
+- Not over-ambitious: Yes (single lesson, single action)
+- Builds on current week's behavioral pattern: Yes (Angelo's championship retrospective
+  already identified lessons; this asks him to select and apply one)
+
+------------------------------------------------------------
+CRITERION 7: TONE CONSISTENCY — TIER 2
+------------------------------------------------------------
+RESULT: PASS
+
+CM maintains Coach Arron voice throughout: direct, warm, grounded. No hype, no
+therapeutic tone, no clinical framing. Opening ("Welcome back") is appropriate for
+a returning athlete after a gap. Closing ("Keep applying what you have learned") is
+forward-directed and action-oriented.
+
+DD maintains analytical coaching voice: structured, evidence-based, developmental.
+Five mandatory sections present with appropriate depth distribution. No coach-directive
+language in athlete-facing sections.
+
+Brand voice alignment: Both documents use calm authority tone consistent with
+VirtusFocus brand voice guidelines. Direct sentences, no fluff, no exaggeration.
+
+------------------------------------------------------------
+CRITERION 8: DEEP DIVE SECTION INTEGRITY — TIER 2
+------------------------------------------------------------
+RESULT: PASS
+
+Five mandatory sections present:
+1. Mindset Summary — Present. Comprehensive overview with key markers (Growth tier,
+   Moderate EI, Partially Aligned, Bullseye compression, "None" goals, RQS 3).
+2. Weekly Trendline — Present. 4-week trajectory with gap notation. Qualitative
+   regression analysis.
+3. Strength Signals — Present. Four signals identified (emotional processing, analytical
+   depth, solo training initiative, outdoor transition positivity).
+4. Growth Areas — Present. Four areas identified (goal re-engagement, Bullseye depth
+   recovery, championship lesson extraction, forward application structure).
+5. Identity Thread — Present. Championship as identity test, four intake qualities
+   assessed against evidence, forward-directed recovery.
+
+No extra sections (Coach Reinforcement, Coach Avoidance, Risk and Compliance) present.
+All 5 sections are athlete-facing. No coach-directive content in any section.
+
+------------------------------------------------------------
+CRITERION 9: SECTION LENGTH COMPLIANCE — TIER 2
+------------------------------------------------------------
+RESULT: PASS
+
+Coaching Message word count: ~370 words. Within 250-450 word target.
+Deep Dive: 5 sections, each with appropriate depth. No section excessively long or
+truncated. Total DD word count proportional to complexity of the week.
+
+------------------------------------------------------------
+CRITERION 10: MICRO-COMMITMENT MODALITY ADAPTATION — TIER 2
+------------------------------------------------------------
+RESULT: PASS
+
+Current modality: Written (write down lesson, place visible).
+
+Prior commitment history:
+- Week 1: Written (write competition preparation plan)
+- Week 2: Written (identify technical adjustment, work on it in practice)
+- Week 3: Written (write day-by-day championship preparation plan)
+- Week 4: Written (write down championship lesson)
+
+All four weeks use Written modality. This is appropriate for Angelo's profile — his
+strongest behavioral signals are analytical and reflective. The Week 4 retrospective
+(most detailed reflection in his program) confirms that written processing is his
+natural strength. No modality adaptation needed given no commitment execution failures
+(Week 1-3 all Completed, Week 4 first Unknown due to gap, not due to non-execution).
+
+------------------------------------------------------------
+CRITERION 11: BULLSEYE REFERENCE ACCURACY — TIER 3
+------------------------------------------------------------
+RESULT: PASS
+
+CM does not reference specific Bullseye items this week — appropriate given the
+compressed engagement (1 item per ring). DD Section 3 correctly references the Bullseye
+trend and identifies the compression from Weeks 2-3 expansion.
+
+JSON bullseye_analysis: Center = "My consistency" (compressed, single item).
+Influence = "My team's morale." Noise = "The weather." DD Section 3 Focus Distribution
+accurately characterizes the compression and notes no outer-ring fixation despite
+championship disappointment. Accurate.
+
+------------------------------------------------------------
+CRITERION 12: WEEK-OVER-WEEK CONTINUITY — TIER 3
+------------------------------------------------------------
+RESULT: PASS
+
+CM references Weeks 1-3 progression implicitly (describes current week as a "return"
+after a gap, references pre-gap behaviors). DD Section 2 provides full 4-week trendline
+with gap notation. DD Section 5 connects championship experience to 3-week progressive
+arc established prior to gap.
+
+The 2.5-week gap is handled appropriately: acknowledged as a contextual reality, not
+characterized as inconsistency or disengagement. The championship experience is framed
+as between-weeks data informing the current week's interpretation, not as Week 4 data.
+
+------------------------------------------------------------
+CRITERION 13: PIPELINE DATA LEAKAGE COMPLIANCE — TIER 1 (MUST PASS)
+------------------------------------------------------------
+RESULT: PASS
+
+Input source: core_foundation. All execution_behavior_signals are fallback values.
+
+Step 2 (Core Foundation check): Scanned CM and DD for any execution-signal-derived
+language. No references to execution signals, composite scores, coach flags,
+self-ratings alignment, or any App-only features. PASS.
+
+Category E scan (Execution Signal Terminology):
+- E1 (composite score names): None detected.
+- E2 (band labels as named classifications): None detected.
+- E3 (coach flag identifiers): None detected.
+- E4 (self-ratings alignment labels): None detected.
+- E5 (raw execution metrics): None detected.
+- E6 (surveillance framing patterns): None detected. "Self-directed solo training"
+  and "daily engagement patterns" are natural coaching language, not surveillance framing.
+- E7 (internal pipeline terminology): None detected.
+
+Category F scan (Intake Profile Terminology):
+- F1 (PPD bucket names): None detected.
+- F2 (scoring artifacts): None detected.
+- F3 (ABI terminology): None detected.
+- F4 (adversity pattern classifications): None detected.
+- F5 (baseline_intake_profile block terms): None detected.
+
+Category G scan (Forward Anchor Terminology):
+- G1-G5: None detected. No forward anchor references in output.
+
+No pipeline data leakage detected.
+
+============================================================
+AUDIT RESULT
+============================================================
+OVERALL RESULT: PASS
+
+All 13 criteria passed. No corrections required.
+
+Tier 1 (MUST PASS): 5/5 — Criteria 1, 2, 3, 4, 13 all PASS
+Tier 2 (SHOULD PASS): 6/6 — Criteria 5, 6, 7, 8, 9, 10 all PASS
+Tier 3 (QUALITY): 2/2 — Criteria 11, 12 all PASS
+
+============================================================
+AUDIT NOTES
+============================================================
+
+COMPLEXITY ASSESSMENT: This week is the most complex in Angelo's program (Moderate EI,
+2.5-week gap, Unknown prior commitment, Partially Aligned, Bullseye compression, "None"
+goals, championship retrospective). The coaching output handles all complexity points
+correctly:
+
+1. Gap handling: Neither CM nor DD characterizes the gap as inconsistency. The 2-week
+   absence is framed as Angelo's deliberate emotional processing pattern.
+
+2. Unknown commitment: Correctly omitted from CM rather than guessing at execution.
+
+3. Championship retrospective: Treated as context informing the current week, not as
+   current-week data. CM acknowledges the championship without reliving it.
+
+4. "Character flaw" reframe: Appropriate coaching intervention — redirects athlete's
+   self-critical language to behavioral strength recognition without clinical framing.
+
+5. Moderate EI calibration: Championship emotions (anger, frustration, disappointment)
+   acknowledged in appropriate proportion — neither minimized nor amplified.
+
+STYLE NOTE: "Self-regulation" appears 4 times across CM and DD combined. While
+permitted as a behavioral coaching term (not clinical), future outputs could vary the
+language (e.g., "emotional pacing," "deliberate processing," "managed response timing")
+to avoid repetition.

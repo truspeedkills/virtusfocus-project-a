@@ -1,0 +1,122 @@
+VF_PIPELINE_SNAPSHOT
+SNAPSHOT_TYPE: Baseline
+ATHLETE_NAME: Angelo Allen
+SPORT: Track & Field
+POSITION: Thrower (Shot Put, Weight Throw)
+TEAM: Seton Hill University
+YEARS_COMPETING: 16
+INTAKE_DATE: 2026-02-04
+MENTAL_GAME_SELF_RATING: 7/10
+
+------------------------------------------------------------
+SECTION_1_PERFORMANCE_CONTEXT
+------------------------------------------------------------
+Angelo Allen is a thrower (Shot Put, Weight Throw) competing for Seton Hill University in the PSAC conference. He has been competing in Track & Field for 16 years, making him the most experienced athlete currently in the pipeline. His 7/10 mental game self-rating reflects high self-awareness with an identified gap in consistency and mistake-handling. He balances a full academic load, a work role involving coaching other athletes, and a competitive season that spans both indoor and outdoor Track & Field.
+
+------------------------------------------------------------
+SECTION_2_PRIMARY_STATED_GOALS
+------------------------------------------------------------
+OUTCOME_GOALS:
+- Finish top 5 at PSAC conference championship.
+- Qualify for nationals in Shot Put.
+- Graduate undergrad and transition into grad school.
+- Complete internship successfully.
+
+BEHAVIOR_GOALS:
+- Grow overall consistency across sport and other areas of life.
+- Develop advanced mental training and preparedness.
+- Improve goal-setting discipline.
+
+------------------------------------------------------------
+SECTION_3_MOTIVATION_DRIVERS
+------------------------------------------------------------
+INTERNAL_DRIVERS:
+- Multi-domain self-improvement — seeks growth as a competitor, student, professional, and person simultaneously.
+- Aspiration toward resilience and tenacity as character traits, not just sport attributes.
+
+EXTERNAL_DRIVERS:
+- PSAC championship placement and nationals qualification as concrete competitive benchmarks.
+- Grad school transition as a near-term life milestone.
+
+IDENTITY_LANGUAGE_DETECTED:
+- "a more goal oriented, resilient, tenacious, and sharp human being" — identity aspiration framed broadly across life domains, not confined to sport.
+- Pre-moment self-talk is approach-framed and energized: "Let's go get this! Time to lock in! Go big now, come on!"
+
+------------------------------------------------------------
+SECTION_4_KNOWN_DERAILERS
+------------------------------------------------------------
+PRIMARY_DERAILERS:
+- Multi-domain demand overload — school, work, and sport competing for time and energy create consistency breakdowns.
+- Handling mistakes during competition — selected as a primary mental struggle.
+- Staying consistent — selected as a primary mental struggle, self-identified as the area most needing development.
+
+DERAILER_CONTEXT:
+- Angelo's holding-back pattern is structural rather than psychological: "Just being busy with school and work related stuff that takes up a lot of my time." When external demands stack, sport consistency erodes first.
+
+------------------------------------------------------------
+SECTION_5_CONFIDENCE_PATTERN
+------------------------------------------------------------
+CONFIDENCE_TYPE: Preparation-activated
+
+DESCRIPTION:
+Angelo's confidence appears tied to preparation quality and competitive readiness rather than outcomes alone. His pre-performance self-talk is energized and approach-framed, suggesting a confident baseline when conditions are right. His 7/10 self-rating and selection of only two mental struggles indicate a competitor who trusts his abilities but recognizes specific edges needing refinement. Confidence likely dips when external factors (time pressure, multi-domain load) prevent the preparation standard he expects of himself.
+
+------------------------------------------------------------
+SECTION_6_IDENTITY_FRICTION
+------------------------------------------------------------
+FRICTION_POINTS:
+- Wants consistency across all life domains but recognizes that busyness with school and work disrupts sport routines.
+- Wants to handle mistakes better but identifies this as a current gap rather than a resolved pattern.
+- Aspires to be "sharp" and goal-oriented but faces structural time conflicts that force trade-offs between competing priorities.
+
+------------------------------------------------------------
+SECTION_7_STRESS_TRIGGER_PROFILE
+------------------------------------------------------------
+COMPETITIVE_PRESSURE:
+- Competes at the PSAC conference level with nationals aspirations — high internal expectations paired with the structural challenge of being a solo thrower at meets (no throwing teammates or throws coach present at competitions).
+
+PRIMARY_TRIGGER:
+- Multi-domain overload — when academic deadlines, work responsibilities, and competition schedules overlap, preparation quality suffers and consistency drops.
+
+BEHAVIORAL_RESPONSE_PATTERN:
+- Approach-framed under pressure — pre-performance language is activation-oriented, not avoidance-oriented.
+- When overwhelmed, appears to deprioritize sport recovery and practice rather than disengage entirely.
+
+EXTERNAL_STRESSORS:
+- School workload (particularly on demanding days).
+- Work schedule and coaching responsibilities.
+- Spouse relationship (generally positive, occasional stress).
+
+------------------------------------------------------------
+SECTION_8_INITIAL_COACHING_EMPHASIS
+------------------------------------------------------------
+COACHING_PRIORITIES:
+- Build structured consistency habits that hold when multi-domain demands increase — consistency under load is the primary development area.
+- Develop a mistake-handling framework for competitive moments — shift from reactive frustration to controlled reset.
+- Leverage his strong approach-framed mindset as a foundation for competition preparation routines.
+- Use his multi-domain identity as a coaching asset, not a limitation — his breadth of commitment reflects discipline, not distraction.
+
+BASELINE_ANCHORS:
+
+ANCHOR_IDENTITY_CLAIM:
+Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life.
+
+ANCHOR_HINGE_HABIT:
+Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands.
+
+ANCHOR_PRIMARY_DERAILER:
+Consistency disruption when school, work, and sport demands compete for time and energy.
+
+ANCHOR_WHY_IT_MATTERS:
+Angelo's multi-domain load is permanent — he will always be balancing sport, academics, work, and relationships. Building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling.
+
+ANCHOR_EXACT_PHRASE:
+"How to be a more goal oriented, resilient, tenacious, and sharp human being."
+
+------------------------------------------------------------
+SECTION_9_GROWTH_PHASE_CLASSIFICATION
+------------------------------------------------------------
+GROWTH_PHASE: Developing
+
+JUSTIFICATION:
+Angelo demonstrates high commitment (All-in), strong self-awareness (7/10 with accurate identification of consistency and mistake-handling as his primary gaps), and an approach-framed competitive mindset. His 16 years of experience provide a mature foundation. However, consistency remains self-identified as the primary area needing development, and mistake-handling during competition is an unresolved pattern. These gaps prevent advancement to Consistent despite his experience and engagement level.
