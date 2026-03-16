@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Jasmine Jones",
+  "week_period": "2025-07-07 to 2025-07-13",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Competing for herself alone — building an elite mindset that sets her apart as more than her role",
+    "baseline_hinge_habit": "Consistent daily training execution and self-directed preparation maintained through a high-demand environment",
+    "baseline_primary_derailer": "Comparison-based self-evaluation and performing for others rather than for herself, activated by teammate dynamics, recognition gaps, and external validation seeking",
+    "baseline_why_it_matters": "Jasmine's competitive environment is inherently comparison-rich — building an internal standard that holds regardless of what teammates are doing is the lever that separates preparation-level confidence from competition-level confidence",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Growth tier maintained through a down week that was dominated by relationship stress rather than training demands. Jasmine's stated goal ('Previous week was a vacation') acknowledged the gap without setting a specific target, yet her behavior showed continued training consistency: icehouse pushing on her birthday, strength coach check-in, sports med appointments, productive Friday training with teammates. Bullseye shifts entirely to relationship domain — control ring names self-presentation in relationships ('As long as I'm giving my true self and my all'), influence ring names emotional boundary management ('feel a mental trigger... back up and remove myself'), outer ring names others' relationship behavior. This is the first week the Bullseye does not name training or comparison in any ring. Despite the domain shift, the underlying pattern — internal standard for her own behavior regardless of what others do — is structurally identical to the training comparison pattern. The hinge habit held: training execution was maintained even through birthday and emotional weekend."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Seventh recorded week. Down week (active recovery) following vacation. Monday drove back to Lake Placid from trip — prioritized full night of rest. Tuesday started moving again: sports med appointment for EHAI testing showed balanced left-right strength with a few corrective exercises needed. Wednesday was her birthday (turns 29): icehouse pushing to get back into rhythm, strength coach check-in confirmed she maintained accountability during vacation, fancy team dinner in the evening. Thursday was light — rehab and treatment in sports med, feeling some injuries and painful areas. Friday was the best training day: productive icehouse session with two women's teammates, coaching each other and doing video. Afterward met with sports psychologist (regular Friday session, missed previous week due to trip) — processed trip feelings and began processing a family death. Weight room session followed and was productive. Saturday was mixed: hung out with a friend and her son, enjoyed the social time, but dating stress emerged — described 'mental trigger from past relationship trauma.' Sunday started in a funk from the dating situation, vented to a male teammate, cried out emotions, felt calmer afterward. The guy then communicated, she expressed her feelings, received an apology. Spent rest of Sunday with friend and didn't think about it.",
+
+  "core_pattern": "Emotional processing capacity under non-sport stress with training execution maintained. This week tested a dimension the program has not previously seen: sustained interpersonal emotional stress unrelated to training or competition. The dating situation produced genuine distress (Saturday-Sunday) including language about past relationship patterns. Jasmine's response followed a recognizable self-regulation sequence: (1) felt the stress, (2) sought a trusted person to process with (male teammate), (3) released emotion through crying, (4) felt calmer, (5) communicated directly with the source of stress, (6) received resolution, (7) moved on with her day. Meanwhile, training execution through Monday-Friday was consistent and purposeful — the down week structure supported rather than demanded, and Jasmine used it well (sports med, icehouse, coaching check-in, productive Friday).",
+
+  "behavioral_root_cause": "Two systems are operating on different timelines: (1) The training execution system continued functioning at Growth level through the down week. Jasmine returned from vacation and immediately re-engaged — sports med Tuesday, icehouse on her birthday Wednesday, productive Friday session. The strength coach confirmed she maintained accountability during vacation. The training identity is stable enough to sustain a week of lower intensity without drift. (2) The emotional regulation system was tested in a new domain — romantic relationships. Jasmine's language about 'past relationship trauma' and 'fight or flight mode from past relationships' indicates a pattern she is aware of and has processed before. Her self-regulation response (venting to a trusted person, crying it out, direct communication) was effective within 24 hours. The most significant behavioral signal is in the 'Tell me anything' section: Jasmine names loneliness in Lake Placid, desire for companionship alongside Olympic goals, and a recurring pattern of channeling relationship hurt into sport performance ('each time I got my feelings hurt, I leveled up'). This emotional channeling pattern is functional — it produces training intensity — but it is not the same as processing the underlying relational need.",
+
+  "prior_commitment_result": {
+    "prior_action": "Use the trip as a genuine reset — enjoy the time, move your body when it feels good, and come back Monday ready to attack the next block. No guilt about rest days.",
+    "execution_status": "Unknown",
+    "execution_notes": "Vacation gap — no direct data on how the trip went. Jasmine's stated goals note 'Previous week was a vacation.' Indirect signals suggest the reset was effective: Monday she prioritized a full night of rest upon return, Tuesday she re-engaged immediately with sports med, and Wednesday (her birthday) she was back in the icehouse. The strength coach check-in Wednesday confirmed she maintained accountability. However, without direct reporting on the trip week, execution cannot be classified as Completed.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Previous week was a vacation",
+    "achievement_statement": "Stayed consistent and following up with sports med. Even on my birthday, still showed up to work out and put in 100% effort. I believe I achieved to actually cry my emotions out and to not bottle them up.",
+    "key_phrase": "Each time I got my feelings hurt, I leveled up in a way where I took that as my revenge to go so hard into my sport.",
+    "mindset_resonance": "Setup your gear and review your game plan before your session"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5",
+      "neutral_days": "2",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "Category-only classification for Friday-Sunday. Monday Win (scored 4-5 — drove back, prioritized rest). Tuesday Win (scored 4-5 — sports med EHAI testing, good results). Wednesday Win (scored 4-5 — birthday, icehouse, strength coach check-in, team dinner). Thursday Win (scored 4-5 — rehab and treatment). Friday Win (content: productive training with teammates, sports psych session, processed family death, good weight room — unscored by athlete but clear positive execution). Saturday Neutral (content: mixed day — good social time with friend but dating stress emerged, 'mental trigger from past relationship trauma' — unscored). Sunday Neutral (content: started in a funk, vented and cried, resolution with the guy, recovered and enjoyed rest of day — unscored). 5 Win + 2 Neutral + 0 Missed = Growth tier.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong with relationship domain application. Jasmine applies the same internal-standard framework to relationships that she has been building in training: 'As long as I'm giving my true self and my all, then it's up to the other person to either receive it or walk away it's on them.' This is structurally identical to the training comparison management ('I control my execution, not what others do'). First week the control ring does not name training — the framework has generalized beyond sport.",
+    "influence_quality": "Strong with emotional boundary specificity. Jasmine names a specific self-regulation strategy: recognizing when a 'mental trigger is going to drain me' and removing herself from the situation. The social media boundary ('I cannot have them on social media and not wonder what they're doing 24/7') is a concrete behavioral plan, not a vague aspiration. The 'out of sight out of mind' approach echoes the screenshot boundary from Week 5.",
+    "noise_fixation_present": "Yes",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Moderate",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stable",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "6",
+    "rolling_win_rate_4wk": "0.75",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Seven-week trajectory from self-referenced training ownership (Week 1) through intentional momentum with NBC derailer test passed (Week 2) to frustration-channeling self-regulation (Week 3) to self-referenced progress confirmation (Week 4) to comparison derailer PASSED under highest-density camp conditions (Week 5) to derailer OVERRIDE with active strategic refusal (Week 6) to emotional processing capacity demonstrated in a new life domain (Week 7). The primary developmental thread — progressive strengthening of the internal standard — completed its training-domain arc in Weeks 5-6 (the derailer was tested, held, then actively overridden). Week 7 reveals the framework generalizing to relationships: 'As long as I'm giving my true self and my all, then it's up to the other person.' The secondary thread — emotional channeling — surfaced in Week 3 (irritability into weights), matured through coach communication (Week 6 midthigh cleans), and now reveals its deepest layer: Jasmine channels relationship hurt into sport performance as a recurring life pattern ('each time I got my feelings hurt, I leveled up'). Zero Missed days across 49 recorded program days.",
+    "milestone_this_week": "Emotional self-regulation demonstrated in a non-sport domain. The Saturday-Sunday dating stress tested Jasmine's capacity to manage strong emotions outside of training. Her response — seeking a trusted person, releasing emotion, communicating directly, resolving and moving on — was effective within 24 hours. The achievement statement naming emotional release as a win ('I achieved to actually cry my emotions out and to not bottle them up') shows increasing emotional awareness. The Bullseye generalization to relationships is structurally significant: the internal-standard framework is becoming a life skill, not just a training tool.",
+    "open_thread": "The emotional channeling pattern ('each time I got my feelings hurt, I leveled up') is functional in the short term — it produces training intensity. But Jasmine also names the underlying need: loneliness in Lake Placid, desire for companionship alongside Olympic goals, the tension between relationship availability and athletic commitment. Whether the channeling pattern remains productive or becomes an avoidance pattern (using sport to escape relational pain rather than processing it) is outside the coaching scope but is the context that shapes her emotional landscape heading into the next performance camp. The family death processing is ongoing — mentioned but not elaborated. Next block and performance camp approaching."
+  },
+
+  "most_important_controllable": "Channeling the emotional energy from this week into the next training block with intentional focus. Jasmine has named the pattern herself — she levels up when hurt. The controllable is directing that energy toward specific technical goals in the icehouse and weight room rather than letting it be diffuse intensity.",
+
+  "micro_commitment": {
+    "action": "Before your first icehouse session of the new block, set one specific technical element you want to improve this week — not a comparison to last camp, just your own next step. Let that be the target your energy goes toward.",
+    "when": "Before the first icehouse pushing session of the new block.",
+    "measurement": "Does Jasmine name a specific, self-referenced technical goal? Does the emotional energy from this week's experiences channel into focused execution rather than diffuse intensity?"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None",
+    "anticipated_stressor": "New training block beginning after active recovery week. Next performance camp approaching (end of month). Relationship stress may be ongoing or resolved. Family death processing is recent. Loneliness in Lake Placid is a structural stressor. Transition from down week to full training intensity.",
+    "athlete_stated_next_goal": "Active recovery week — actually utilize this week before going into the next block and the next performance camp. Start tuning more into pushing since it's getting closer to the end of the month and making sure I am executing."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win days (category-only for Fri-Sun), 2 Neutral, 0 Missed. Seventh consecutive Growth week. Down week following vacation: sports med EHAI testing Tuesday (balanced results), icehouse on birthday Wednesday, strength coach confirmed vacation accountability, productive Friday training with women's teammates (coaching each other, video work). Saturday-Sunday affected by dating stress but resolved within 24 hours through peer support and direct communication. Regular sports psychology session Friday (processed trip feelings and family death). Family death mentioned but not elaborated.",
+    "key_habit_signal": "Training execution maintained through emotional stress — Jasmine's Monday-Friday was consistently positive despite the weekend's emotional difficulty. The strength coach check-in confirmed she maintained accountability during vacation. The EHAI testing results (balanced left-right strength) validate her training approach. The Bullseye framework has generalized from training to relationships — same internal-standard structure applied to a new domain.",
+    "coach_reinforcement_cue": "Jasmine's achievement statement names emotional release as a win: 'I achieved to actually cry my emotions out and to not bottle them up.' This is emotional awareness growth — she is valuing the process of managing emotions, not just training execution. Reinforce that showing up on her birthday to push in the icehouse demonstrates the identity she has been building: someone who competes for herself, on her own terms, on her own timeline.",
+    "coach_avoidance_note": "Do not address the dating situation, relationship stress, or 'past relationship trauma' language. These are personal life domains outside coaching scope. Do not reference or name the sports psychology sessions — Jasmine has professional support for emotional processing. Do not frame the emotional channeling pattern ('each time I got my feelings hurt, I leveled up') as a coaching insight — this is Jasmine's self-awareness, not a coaching assignment. Do not address the family death beyond acknowledging it exists as context. Do not address the loneliness theme."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Moderate emotional intensity week. Language includes 'past relationship trauma,' 'fight or flight mode from past relationships,' and 'mental trigger.' These are the athlete's own words describing her experience — they are not clinical classifications. Jasmine has an active sports psychology relationship (Friday sessions) where she processes emotional content including the family death and trip feelings. The emotional channeling pattern ('each time I got my feelings hurt, I leveled up') is a self-identified behavioral tendency, not a clinical construct. The coaching response is to stay within performance coaching boundaries: acknowledge the emotional context exists, reinforce training consistency and the internal-standard framework, and leave emotional processing to her professional support. All coaching content must remain within non-clinical performance scope."
+  },
+
+  "next_week_focus_question": "You showed up on your birthday, you showed up when things got hard this weekend, and you kept going — what does that tell you about who you are when it counts?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

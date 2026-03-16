@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Jasmine Jones",
+  "week_period": "2025-05-19 to 2025-05-25",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Competing for herself alone — building an elite mindset that sets her apart as more than her role",
+    "baseline_hinge_habit": "Consistent daily training execution and self-directed preparation maintained through a high-demand environment",
+    "baseline_primary_derailer": "Comparison-based self-evaluation and performing for others rather than for herself, activated by teammate dynamics, recognition gaps, and external validation seeking",
+    "baseline_why_it_matters": "Jasmine's competitive environment is inherently comparison-rich — building an internal standard that holds regardless of what teammates are doing is the lever that separates preparation-level confidence from competition-level confidence",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Perfect 7/7 Win week — Gold Streak. Jasmine executed on her stated goal ('Starting off the new block strong') with comprehensive daily engagement across training, recovery, parenting, and community. Bullseye control ring ('How I show up to my training, my mindset into trusting myself') maps directly to hinge habit. Outer ring continues to name comparison ('What other people are doing, how they're putting in their work ethic, social media') but behavior shows she is not acting on it — she stayed in her own lane throughout the week. The NBC exclusion event tested the derailer (recognition gap, being left out) and her response was approach-framed: 'Now I'm working on something that's going to make me stand out.' Achievement language ('Setting the tone on Monday, allowed me to carry that motivation into the rest of the week with the same Intention') shows intentional momentum-building."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Second week of the program and first week of a new training block. Perfect 7/7 Win days — Gold Streak designation. Monday set the tone with strong track and heavy lifting, including below-parallel squats post-knee injection for the first time. Tuesday maintained consistency with core circuits and yoga alongside skeleton athletes. Wednesday resumed sled pushing for the first time this offseason — generated visible excitement and connection to competitive identity. Thursday was a full recovery and community day: chiro, rehab, core circuits, yoga, and Jade's first recital (teammates attended). Friday was tiring but completed sprints and adapted a weight exercise when equipment was limited. Saturday was social — movies and dinner with Jade and teammates. Sunday was productive: church, groceries, laundry. The NBC shoot exclusion was a mid-week identity event — Jasmine felt left out when the network featured 'bobsled moms' with only pilots, not brakemen. She processed this through conversations and reframed it as motivation to stand out on her own terms.",
+
+  "core_pattern": "Intentional tone-setting with full-week momentum carry. Jasmine's Gold Streak was not passive compliance — she actively names the pattern: 'Setting the tone on Monday, allowed me to carry that motivation into the rest of the week with the same Intention.' This is deliberate momentum architecture. The sled pushing resumption Wednesday connects her to competitive identity and generates energy that carries through the week. The NBC exclusion event tested the comparison derailer in its purest form — external recognition was denied based on her role (brakeman vs pilot). Her response was approach-framed rather than withdrawal-based: she reframed the exclusion as fuel to differentiate herself.",
+
+  "behavioral_root_cause": "Jasmine's execution this week is anchored in two drivers: (1) training progression excitement — the knee recovery allowing full squats and sled pushing generated genuine enthusiasm that sustained the week, and (2) deliberate Monday tone-setting that she carried forward. The NBC exclusion is the most significant behavioral event: it directly activated the comparison/recognition derailer, but Jasmine's processing (conversations with others, reframing as motivation) produced an approach response rather than withdrawal. The 'more than just the brakeman behind the pilot' language echoes the baseline identity claim — she is building self-differentiation through preparation and mindset, not through external validation.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before Monday's first track session of the new block, write down one specific thing you want to get out of this training block — not a comparison to anyone else, just your own target. Read it before each morning session this week.",
+    "execution_status": "Completed",
+    "execution_notes": "Jasmine's stated goal for the week ('Starting off the new block strong') and her achievement statement ('Setting the tone on Monday, allowed me to carry that motivation into the rest of the week with the same Intention') demonstrate she set an internal target and carried it through the week. The Gold Streak result confirms consistent self-referenced execution.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Starting off the new block strong",
+    "achievement_statement": "I was able to attack the new block. Setting the tone on Monday, allowed me to carry that motivation into the rest of the week with the same Intention.",
+    "key_phrase": "Now I'm working on something that's going to make me stand out and be more than just the brakemen behind the pilot",
+    "mindset_resonance": "If something changes today, embrace it. Say: 'Adjust and attack'"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "All 7 days scored 4-5 by athlete. Gold Streak designation confirmed in Weekly Scorecard. Perfect execution across training, recovery, parenting, and community engagement.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong. 'How I show up to my training, my mindset into trusting myself and what I'm doing.' Two controllables named — training effort and self-trust. Directly aligned with hinge habit. More specific than Week 1.",
+    "influence_quality": "Developing. Sleep habits and meal quality — both genuinely influenceable and self-care oriented. Practical targets that support training quality.",
+    "noise_fixation_present": "Yes",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "1",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Self-referenced achievement tracking — Jasmine's Gold Streak was driven by her own internal standard ('Setting the tone on Monday'). The controllable heading into next week is continuing to name what SHE accomplished each day rather than measuring against what teammates are doing, especially as she enters the second week of the block where initial excitement may fade.",
+
+  "micro_commitment": {
+    "action": "After each training session this week, identify one thing that went well that was 100% about your own execution — not compared to anyone else. Write it down or note it mentally before leaving the gym.",
+    "when": "After each training session.",
+    "measurement": "Can Jasmine name execution wins that are self-referenced, not comparison-referenced? Does the Gold Streak pattern hold into week two of the block?"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None",
+    "anticipated_stressor": "Second week of the training block — initial novelty may fade. Continued exposure to teammate comparison in daily training environment. NBC exclusion still recent and may resurface if further media events occur.",
+    "athlete_stated_next_goal": "Roll into this week strong, 2nd week of the training block. I want to do better with my eating habits and try to eat more protein."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7 Win days — Gold Streak. Perfect execution across all domains. New block started with heavy lifting (below-parallel squats post-injection), sled pushing resumed, core circuits and yoga maintained, sports med and chiro appointments kept. Jade's recital attended with teammate support. Church Sunday. All 7 days scored by athlete — no category-only inference needed.",
+    "key_habit_signal": "Deliberate momentum architecture — Jasmine explicitly names the pattern of setting Monday's tone and carrying it through the week. This is not accidental consistency; it is an intentional behavioral strategy. The sled pushing resumption was a significant motivation event connecting training to competitive identity.",
+    "coach_reinforcement_cue": "The NBC exclusion response is the most coachable signal this week. Jasmine was tested by the exact derailer pattern (external validation denied, role-based exclusion) and produced an approach-framed response rather than withdrawal. 'I'm working on something that's going to make me stand out' is identity-level reframing — she moved from seeking recognition to building it.",
+    "coach_avoidance_note": "Do not overprocess the NBC exclusion. Jasmine has already reframed it. Drawing further attention risks re-activating the comparison wound. The Bullseye outer ring still names comparison — the pattern is managed, not resolved. Allow the approach-framed response to stand on its own."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators. NBC exclusion was an identity-related recognition event, processed through peer conversations and self-reframing. Response was approach-framed, not avoidant. All content within performance coaching scope."
+  },
+
+  "next_week_focus_question": "You said Monday set the tone for the whole week — what is one thing you want to carry from this block's start into the second week, even when the energy feels different?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

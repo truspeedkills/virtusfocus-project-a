@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Jasmine Jones",
+  "week_period": "2025-05-12 to 2025-05-18",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Competing for herself alone — building an elite mindset that sets her apart as more than her role",
+    "baseline_hinge_habit": "Consistent daily training execution and self-directed preparation maintained through a high-demand environment",
+    "baseline_primary_derailer": "Comparison-based self-evaluation and performing for others rather than for herself, activated by teammate dynamics, recognition gaps, and external validation seeking",
+    "baseline_why_it_matters": "Jasmine's competitive environment is inherently comparison-rich — building an internal standard that holds regardless of what teammates are doing is the lever that separates preparation-level confidence from competition-level confidence",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "First week of the program. Jasmine's stated goal ('shift the mind frame of comparing progress to others') maps directly to the baseline primary derailer. She reports successfully shifting that narrative to focus on herself and her own training. Bullseye control ring ('My effort into my training and my mindset going into them') reflects the hinge habit. The outer ring names the derailer explicitly ('Worrying about other people. Especially teammates and their training habits'). Achievement statement ('Controlling what I can control. Not worrying about the noise') demonstrates approach-framed engagement with the core identity claim. Training execution was consistent through Monday-Friday despite Thursday's off-day for sponsor obligations."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "First week in the program. Returning from a knee gel injection, progressively rebuilding into training. Monday-Wednesday showed strong training execution: track workout plus weights Monday, new rehab protocol Tuesday, grass barefoot 100s plus weight progression Wednesday. Thursday was an off-day for a sponsor meeting in Massachusetts. Friday's countermovement jump testing produced strong numbers and confidence ('I can still feel more potential that I haven't capped my ceiling yet'). Saturday was dedicated quality time with daughter Jade — shopping and arcade. Sunday was stressful with household chores as a single parent, but teammates helped with Jade and she accomplished a productive day. Nutritionist consultation Monday indicates proactive self-management beyond core training.",
+
+  "core_pattern": "Self-directed training ownership with active comparison awareness. Jasmine's first week demonstrates two parallel threads: (1) strong training execution anchored in personal standards — she tracks her own progression from knee injection recovery, celebrates adding weight, and names her own potential ceiling, and (2) explicit awareness of the comparison derailer — her stated goal was to stop comparing, and she reports successfully shifting that narrative. The outer-ring Bullseye placement of teammate comparison shows she has correctly identified it as outside her control. The single-parent demands on Sunday add a structural stressor that other athletes do not carry.",
+
+  "behavioral_root_cause": "Jasmine's training execution is anchored in self-directed preparation and physical progression tracking. When she is focused on her own numbers, effort, and recovery, execution is consistent and confident. The comparison pattern she names at intake is present but managed this week — she explicitly set it as a goal and reports shifting the narrative. The structural demands of single parenting (Sunday stress, household management) create a non-sport stressor that is permanent, not episodic. Thursday's off-day was externally imposed (team obligations), not a disengagement choice.",
+
+  "prior_commitment_result": {
+    "prior_action": "No Prior Week",
+    "execution_status": "No Prior Week",
+    "execution_notes": "First week of the program. No prior commitment exists.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "My goal from last week was to shift the mind frame of comparing progress to others. I was able to shift that narrative to only focus on myself and how I'm training.",
+    "achievement_statement": "Controlling what I can control. Not worrying about the noise and knowing that I am on pace of my end goal.",
+    "key_phrase": "I can still feel more potential that I haven't capped my ceiling yet",
+    "mindset_resonance": "Before your first workout, ask 'Am I acting with purpose right now?'"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5",
+      "neutral_days": "2",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "Category-only classification for Friday-Sunday. Monday-Wednesday Win (scored 4-5 by athlete). Thursday Neutral (scored 2-3 by athlete — off-day, sponsor meeting). Friday Win (content: strong CMJ testing, great numbers, confidence language). Saturday Win (content: intentional quality time with Jade, deliberate break from training). Sunday Neutral (content: stressful household chores, productive but taxing single-parent day). 5 Win + 2 Neutral + 0 Missed = Growth tier.",
+    "consistency_profile": "New — First Week",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong. 'My effort into my training and my mindset going into them.' Directly controllable, behaviorally specific, and aligned with the hinge habit. Clear internal locus of control.",
+    "influence_quality": "Developing. Two influence items: eating habits and organization for household duties. Both are genuinely within her sphere of influence. The household item reflects single-parent reality — she is naming a real structural demand, not an excuse.",
+    "noise_fixation_present": "Yes",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "0",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Internal training standard — Jasmine demonstrated this week that when she anchors to her own progression (knee recovery numbers, weight increases, CMJ testing), her execution is consistent and confident. The controllable is maintaining this self-referenced standard as the new training block begins, when more teammates will be present and comparison opportunities increase.",
+
+  "micro_commitment": {
+    "action": "Before Monday's first track session of the new block, write down one specific thing you want to get out of this training block — not a comparison to anyone else, just your own target. Read it before each morning session this week.",
+    "when": "Monday morning, before the first track session.",
+    "measurement": "Did Jasmine write the block target? Did she read it before sessions? Did the internal target hold when teammates were present?"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None",
+    "anticipated_stressor": "New training block starting next week with increased training group size. More teammates present means more comparison opportunities. The shift from post-injection recovery to full training load may also increase physical demands.",
+    "athlete_stated_next_goal": "It's the start of a new block, I want to start it off strong on the track and in the weight room."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win days (category-only for Fri-Sun), 2 Neutral, 0 Missed across first program week. Training days (Mon-Wed, Fri) all positive execution with progressive loading. Thursday was a team obligation off-day. Saturday was intentional quality time with daughter. Sunday was single-parent household management — stressful but productive with teammate support. Knee gel injection recovery progressing well — CMJ numbers strong.",
+    "key_habit_signal": "Self-referenced progression tracking — Jasmine naturally tracks her own physical markers (knee recovery, weight additions, CMJ numbers, conditioning improvements) without needing external benchmarks. When she is in this mode, execution is confident. This is the behavioral foundation to build on.",
+    "coach_reinforcement_cue": "Jasmine's phrase 'I haven't capped my ceiling yet' is a powerful internal standard statement. Reinforce this self-referenced potential framing as the antidote to comparison. She does not need teammates' programs to know she is progressing.",
+    "coach_avoidance_note": "Do not address the single-parent Sunday stress as a coaching target. It is permanent life context. Do not frame the comparison pattern as a deficiency — she identified it herself and reports managing it this week. Build on the success rather than highlighting the risk."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Comparison pattern is behavioral and self-identified, within performance coaching scope. Single-parent stress is environmental context, not a coaching target. All content within non-clinical coaching boundaries."
+  },
+
+  "next_week_focus_question": "You said you haven't capped your ceiling yet — what is one specific area where you want to see that potential show up this week in the new block?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Jasmine Jones",
+  "week_period": "2025-06-16 to 2025-06-22",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Competing for herself alone — building an elite mindset that sets her apart as more than her role",
+    "baseline_hinge_habit": "Consistent daily training execution and self-directed preparation maintained through a high-demand environment",
+    "baseline_primary_derailer": "Comparison-based self-evaluation and performing for others rather than for herself, activated by teammate dynamics, recognition gaps, and external validation seeking",
+    "baseline_why_it_matters": "Jasmine's competitive environment is inherently comparison-rich — building an internal standard that holds regardless of what teammates are doing is the lever that separates preparation-level confidence from competition-level confidence",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Growth tier maintained through performance camp — the highest-density comparison environment to date. Jasmine's stated goal was to stick to her own programming and not worry about others in the icehouse, and she explicitly reports achieving this: 'proud of myself for not trying to rush myself back into form or comparing myself to what other people were doing.' This is direct evidence of the hinge habit holding under the most significant derailer test in the program. Bullseye control ring names coaching receptivity and trust ('Listening to my coaches and adapting'). Influence ring demonstrates active boundary-setting around team drama (screenshots, gossip). Outer ring continues naming comparison, but the behavioral evidence shows the derailer was tested and managed. Achievement language ('Not reading into being perfect') shows movement from outcome-fixation toward process acceptance."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Fifth recorded week. Performance camp and first week of new strength block. Monday started with heavy squats — felt super heavy but she pushed through, teaming with a teammate on the exercise. Tuesday was the first day of Team Camp: guarded about drama, glad to see coaches and select teammates. Wednesday was the peak training day: 1080 sprint testing showed she moves the same speed at a heavier body weight (validation of training approach), icehouse pushing focused on one technical element per coaching instruction (proud of not comparing), and a strong weight room session. Thursday was the hardest day: super sore, had Jade all day for Juneteenth, felt stressed, but turned it around with grass runs and maintained chiro and rehab appointments. Friday was fatigue-limited: more 1080 sprinting, mentally over it, massage afterward. Saturday was the team board reception — Jasmine felt 'powerful' in how she looked and felt. Sunday was a reset with breakfast and friends. Team drama present throughout: a teammate went to the press about a training center incident, screenshots circulating, Jasmine told people to stop sending them.",
+
+  "core_pattern": "Derailer tested and managed under highest-density comparison conditions. The performance camp placed Jasmine in exactly the environment her derailer targets: multiple athletes pushing in the icehouse, 1080 testing with visible performance metrics, new athletes arriving with their own programs. Her response was to follow coaching instruction, focus on one technical element at a time, and explicitly not compare. The 1080 result (same speed at heavier weight) provided an objective, self-referenced progress signal that validated her approach. The team drama tested a secondary dimension — social comparison and gossip — and Jasmine set clear boundaries (telling people to stop sending screenshots). The Thursday stress with Jade on Juneteenth and accumulating soreness represents the single-parent structural load at its most demanding, but she still completed grass runs and maintained appointments.",
+
+  "behavioral_root_cause": "Two systems are operating in parallel: (1) The comparison management system that has been building since Week 1 was tested at its hardest level and held. Jasmine followed her stated plan (stick to own programming), listened to coaches, and resisted the pull to rush or compare in the icehouse. The key behavioral anchor was the coaching instruction to focus on one thing at a time — external structure that supported her internal intention. (2) The energy management system is being stretched: squat day Monday was very heavy, sled pushing Wednesday, 1080 testing Friday, all with Jade responsibilities and team drama. Thursday's Juneteenth stress-to-grass-runs recovery shows she can still self-regulate even when physically depleted. Friday's 'I was over it' is honest fatigue acknowledgment, not disengagement — she still completed the session.",
+
+  "prior_commitment_result": {
+    "prior_action": "At the performance camp next week, before each icehouse or testing session, remind yourself: 'My program. My numbers. My process.' Stay locked into what your coaches assigned, not what you see others doing.",
+    "execution_status": "Completed",
+    "execution_notes": "Direct evidence: 'I was proud of myself for not trying to rush myself back into form or comparing myself to what other people were doing in the session.' Jasmine followed coaching instruction to focus on one technical element in the icehouse, stayed with her assigned program for 1080 testing, and resisted the pull to compare. The stated commitment was essentially fulfilled verbatim.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "We have a performance camp and my main goal is to stay to my own programming. We are introducing the icehouse and people are going to be in there doing the most. I plan on sticking to what my program says and not being worried about what other people are doing.",
+    "achievement_statement": "Not reading into being perfect and doing things spot on with this 1st team camp/performance camp.",
+    "key_phrase": "I was proud of myself for not trying to rush myself back into form or comparing myself to what other people were doing in the session",
+    "mindset_resonance": "Take 3 calming breaths before every action today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5",
+      "neutral_days": "2",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "Category-only classification for Thursday-Sunday. Monday Win (scored 4-5 — pushed through heavy squats). Tuesday Win (scored 4-5 — camp day, guarded and positive). Wednesday Win (scored 4-5 — peak training day, 1080 + icehouse + weights). Thursday Neutral (content: super sore, stressed with Jade, Juneteenth childcare demands, but did grass runs and rehab). Friday Neutral (content: tired, over it, but completed 1080 and massage). Saturday Win (content: board reception, felt powerful). Sunday Win (content: reset, social). 5 Win + 2 Neutral + 0 Missed = Growth tier.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong with coaching integration. Two controllables: listening to coaches and adapting, channeling energy into trusting execution. The coaching receptivity is new — previous weeks named personal effort; this week names the coach-athlete relationship as a controllable leverage point.",
+    "influence_quality": "Strong with active boundary-setting. Jasmine names her level of involvement in team drama conversations and actively managed it: told people to stop sending screenshots, adopted 'out of sight out of mind' approach. This is specific, actionable, and demonstrates her influence sphere expanding to include social environment management.",
+    "noise_fixation_present": "Yes",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "4",
+    "rolling_win_rate_4wk": "0.79",
+    "rolling_missed_rate_4wk": "0.00",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Five-week trajectory from self-referenced training ownership (Week 1) through intentional momentum with NBC derailer test passed (Week 2) to frustration-channeling self-regulation (Week 3) to self-referenced progress confirmation (Week 4) to comparison derailer PASSED under highest-density conditions (Week 5). The primary developmental thread is the progressive strengthening of the internal standard: Week 1 she set the intention to stop comparing, Week 2 she passed a recognition-based test (NBC), Weeks 3-4 she managed interpersonal friction and built self-referenced benchmarks, and Week 5 she held the standard in the most comparison-rich environment to date (full team camp, icehouse, visible testing). Zero Missed days across 35 recorded program days.",
+    "milestone_this_week": "Performance camp comparison test PASSED. Jasmine was placed in the exact environment that activates her primary derailer (multiple athletes pushing in the icehouse, visible testing metrics, new athletes with different programs) and maintained her internal standard. She explicitly names the success: 'proud of myself for not trying to rush myself back into form or comparing myself.' The active boundary-setting around team drama screenshots represents a new self-regulation behavior — managing social comparison, not just training comparison.",
+    "open_thread": "The fatigue pattern Thursday-Friday suggests the physical demands of camp plus childcare on Juneteenth pushed her toward energy depletion. Whether she can sustain Growth execution through multi-week training blocks without accumulating fatigue that erodes the comparison management is the developing question. The team drama (press incident) is a social dynamic that could escalate or resolve — Jasmine's boundary-setting is the right response but requires ongoing energy."
+  },
+
+  "most_important_controllable": "Maintaining self-referenced development focus through the rest of camp and into the next training block — Jasmine demonstrated the ability to stay in her lane this week. The controllable is making that internal standard the default, not a special effort for camp conditions.",
+
+  "micro_commitment": {
+    "action": "Each day this week, identify one thing you did that was for YOUR development — not a reaction to what someone else said, did, or posted. Keep that list running through the week.",
+    "when": "Daily, end of each training day.",
+    "measurement": "Can Jasmine build a list of self-referenced development wins? Does the list grow through the week?"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None",
+    "anticipated_stressor": "Continued performance camp environment with team drama still active. Physical fatigue accumulating from camp intensity. Childcare demands continue. The press incident and screenshot dynamics may evolve.",
+    "athlete_stated_next_goal": "Maintain sticking to my program, and not buying into drama that's been happening already."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win days (category-only for Thu-Sun), 2 Neutral, 0 Missed. Fifth consecutive Growth week. Performance camp completed: 1080 testing validated training approach (same speed at higher weight), icehouse pushing focused on technique per coaching instruction, heavy squat day Monday. Thursday was most taxing: soreness plus Juneteenth childcare demands, but grass runs and rehab maintained. Friday fatigue-limited but sessions completed. Team drama managed with active boundary-setting (stopped screenshot sharing).",
+    "key_habit_signal": "Comparison derailer override under high-density conditions — Jasmine was in the exact environment her derailer targets (visible testing, multiple athletes pushing, new teammates) and held her internal standard. The coaching instruction to focus on 'one thing' provided external scaffolding that supported the internal intention. This is the strongest behavioral evidence of derailer management in the program.",
+    "coach_reinforcement_cue": "The 1080 result is a powerful self-referenced data point: same speed at a heavier body weight. This is the type of evidence that anchors confidence internally. Reinforce the connection between following her own program and producing measurable progress.",
+    "coach_avoidance_note": "Do not address the team drama details (press incident, specific teammates). Jasmine's boundary-setting response (stopping screenshots) is appropriate. Do not re-surface the comparison derailer as a risk — she passed the test this week. Acknowledge the success and let it build."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators. Team drama (press incident) is interpersonal and social, not a coaching target. Juneteenth childcare stress is environmental context. Fatigue accumulation is physical, not emotional. All content within performance coaching scope."
+  },
+
+  "next_week_focus_question": "You stayed in your lane at camp when it mattered most — what did it feel like to finish the week knowing you stuck to your program?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

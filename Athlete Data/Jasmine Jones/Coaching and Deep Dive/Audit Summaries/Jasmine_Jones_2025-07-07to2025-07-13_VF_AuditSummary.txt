@@ -1,0 +1,371 @@
+AUDIT SUMMARY
+Athlete: Jasmine Jones
+Week: 2025-07-07 to 2025-07-13 (Week 7)
+Audit Date: 2026-03-16
+Result: PASS
+
+COMPLEXITY NOTE:
+Most complex week in the Jasmine Jones program. Moderate EI (only
+elevated week across 7 weeks), relationship stress with "past
+relationship trauma" and "fight or flight mode" language in raw data,
+sports psychologist mention in athlete_state, family death processing,
+emotional channeling pattern ("each time I got my feelings hurt, I
+leveled up"), vacation gap producing Unknown prior commitment, and
+Bullseye shifted entirely to relationship domain (first time no
+training or comparison items in any ring). Core Foundation athlete
+(input_source = "core_foundation").
+
+============================================================
+TIER 1 RESULTS
+============================================================
+
+1. Emotional Intensity Calibration: PASS
+   JSON emotional_intensity = "Moderate". The Moderate rule permits
+   the message to lead with recognition that includes both emotional
+   context and strength signals. Framework language is permitted in
+   the first paragraph but should not dominate. The Coaching Message
+   opens with the vacation gap acknowledgment (emotional context: "I
+   cannot confirm whether you used the trip as a genuine reset") and
+   transitions to strength recognition ("the indirect signs are
+   good"). The second paragraph blends emotional acknowledgment ("dealt
+   with some heavy personal stuff over the weekend") with performance
+   framing ("five Win days and zero Missed"). Framework term "Growth"
+   appears in paragraph 2 alongside emotional context — permitted under
+   Moderate rules. The central paragraph (paragraph 3) leads with the
+   emotional content: Jasmine's achievement statement about crying her
+   emotions out. This is empathetic acknowledgment without High-level
+   structural requirements. Framework density is moderate throughout —
+   appropriate for this EI level.
+
+2. Clinical Language Compliance: PASS
+   Full scan of Coaching Message and Deep Dive for Categories A-D
+   prohibited terms. Zero clinical terms found. Critical checks for
+   this specific week:
+   - "trauma": NOT present in either document. The athlete's raw
+     language includes "past relationship trauma" and "fight or flight
+     mode from past relationships" but Stage 3 correctly excluded these
+     athlete phrases from coaching output. Neither term appears.
+   - "trigger": NOT present in either document. The athlete's raw
+     language includes "mental trigger" but Stage 3 correctly excluded
+     it. Neither the word "trigger" nor "triggered" appears.
+   - "fight or flight": NOT present in either document.
+   - "sports psychologist" / "sports psychology" / "sports psych":
+     NOT present in either document. The athlete has regular Friday
+     sports psychology sessions (mentioned in JSON athlete_state and
+     coach_insights fields), but Stage 3 correctly excluded all
+     references per coach_avoidance_note. No mention of the sports
+     psychologist, therapy, counseling, or professional support
+     appears in either output.
+   - "coping" / "cope": NOT present.
+   - "cognitive": NOT present.
+   - "self-esteem": NOT present.
+   - "anxiety" / "depression" / "disorder" / "symptom" / "diagnosis":
+     NOT present.
+   - Clinical framing check: No diagnostic language patterns, no
+     treatment language, no pathologizing of athlete behavior. The
+     emotional processing is framed as a "skill" and "composure
+     under real pressure" — performance coaching language. The
+     emotional channeling pattern is not named or addressed in
+     coaching output (correctly left to sports psychologist per
+     coach_avoidance_note).
+   - No reference to family death in coaching output (correctly
+     excluded per coach_avoidance_note — mentioned only in JSON
+     for context).
+
+3. Data Fidelity: PASS
+   All factual claims in both documents traced to JSON fields:
+   COACHING MESSAGE:
+   - "vacation week between this one and last" — matches
+     prior_commitment_result.execution_status = "Unknown" and
+     athlete_voice.weekly_goal_stated = "Previous week was a vacation"
+   - "I cannot confirm whether you used the trip as a genuine reset"
+     — matches execution_status = "Unknown"
+   - "in sports med Tuesday" — matches athlete_state (EHAI testing)
+   - "pushing in the icehouse on your birthday Wednesday" — matches
+     athlete_state
+   - "five Win days and zero Missed" — matches daily_distribution
+     (win_days: 5, missed_days: 0)
+   - "Seven consecutive Growth weeks" — matches weekly_tier = Growth
+     and weeks_available = 6 (this is week 7, 7th Growth week)
+   - "to actually cry my emotions out and to not bottle them up" —
+     verbatim from athlete_voice.achievement_statement
+   - "You found someone you trusted, you let the emotions out, you
+     communicated directly, and you moved forward. All within 24
+     hours." — matches core_pattern self-regulation sequence
+   - "teammates coached each other and did video work on Friday" —
+     matches athlete_state
+   - "strength coach confirmed you held accountability during
+     vacation" — matches athlete_state
+   - Micro-commitment: "before your first icehouse session, set one
+     specific technical element" — matches micro_commitment.action
+   DEEP DIVE:
+   - Arc summary paragraph — matches narrative_arc.arc_summary
+   - "Five Win days, two Neutral, zero Missed" — matches
+     daily_distribution
+   - "Growth tier for the seventh consecutive week" — matches
+     weekly_tier
+   - "RQS holds at 3" — matches reflection_quality_score = 3
+   - "Emotional intensity Moderate" — matches emotional_intensity
+   - "Rolling 4-week win rate at 0.75" — matches
+     rolling_win_rate_4wk = 0.75
+   - "zero Missed days across all 49 program days" — matches
+     rolling_missed_rate_4wk = 0.00
+   - "Volatility index Low" — matches volatility_index_4wk
+   - "Controllable stability Stable" — matches
+     controllable_stability_4wk
+   - Bullseye analysis: "control ring names self-presentation in
+     relationships" — matches bullseye_analysis.control_quality
+   - "Pattern shift detected" — matches
+     trend_analysis.pattern_shift_detected = Yes
+   - Milestone: emotional self-regulation in non-sport domain —
+     matches narrative_arc.milestone_this_week
+   - Open thread: emotional channeling pattern — matches
+     narrative_arc.open_thread
+   No fabrication detected. No contradiction detected. No invention
+   detected. All themes traceable to JSON.
+
+4. Prior Commitment Bridge: PASS
+   JSON prior_commitment_result.execution_status = "Unknown" (vacation
+   gap). The Unknown rule states: "The Coaching Message should not
+   reference a specific prior commitment result. A general continuity
+   statement is acceptable." The Coaching Message opens with: "You had
+   a vacation week between this one and last, so I cannot confirm
+   whether you used the trip as a genuine reset. But the indirect
+   signs are good — you came back Monday and prioritized rest, you
+   were in sports med Tuesday, and you were pushing in the icehouse
+   on your birthday Wednesday. That tells me the reset did its job."
+   This is a general continuity statement that acknowledges the gap
+   without fabricating a Completed/Partial/Not Attempted result. The
+   bridge appears before the new micro-commitment (paragraph 5). The
+   acknowledgment is 3 sentences — within the 3-sentence limit.
+   carry_forward = "No" — no continuation check required.
+
+13. Pipeline Data Leakage Compliance: PASS
+    Core Foundation athlete check (input_source = "core_foundation"):
+    Any execution-signal-derived language in a CF athlete's output is
+    an automatic FAIL because no execution data exists. Scanned both
+    documents:
+    - Category E (Execution Signal Terminology): Zero violations.
+      No composite score names (Ownership Index, Drift Score, etc.),
+      no band labels, no coach flag identifiers, no self-ratings
+      alignment labels, no raw execution metrics (completion rates,
+      timing data, reminder dependency, streak counts), no
+      surveillance framing patterns.
+    - Category F (Intake Profile Terminology): Zero violations.
+      No PPD bucket names, no ABI pillar names used as scored labels,
+      no adversity response pattern classifications, no PPD/ABI
+      scoring artifacts, no baseline_intake_profile field references.
+      baseline_intake_profile fields are all "not available — core
+      foundation intake" in JSON.
+    - Category G (Forward Anchor Terminology): Zero violations.
+      No forward_anchor text quoted, no controllability classification
+      labels, no alignment status labels, no focus consistency labels,
+      no pipeline field names. forward_anchor fields are all null/"not
+      available" in JSON.
+    - Surveillance framing scan: Zero violations. No "we tracked,"
+      "data shows," "your metrics," "engagement rate," "compliance,"
+      "monitoring," or similar surveillance-adjacent language.
+    - Natural language check: "composure" (CM paragraph 3) is natural
+      coaching language, not a pipeline term. "accountability" (CM
+      paragraph 4, DD Section 3) refers to the strength coach's
+      confirmation of vacation behavior, not a pipeline metric.
+      "self-regulation" (DD Sections 1, 3, 5) is natural behavioral
+      coaching language describing Jasmine's emotional processing
+      sequence, not a pipeline classification. All pass the
+      reasonable reader test (all three prongs).
+
+============================================================
+TIER 2 RESULTS
+============================================================
+
+5. Athlete Voice Reflection: PASS
+   JSON athlete_voice.achievement_statement = "Stayed consistent and
+   following up with sports med. Even on my birthday, still showed up
+   to work out and put in 100% effort. I believe I achieved to
+   actually cry my emotions out and to not bottle them up."
+   JSON athlete_voice.key_phrase = "Each time I got my feelings hurt,
+   I leveled up in a way where I took that as my revenge to go so hard
+   into my sport."
+   The Coaching Message mirrors the achievement_statement verbatim:
+   'you said your achievement this week was "to actually cry my
+   emotions out and to not bottle them up."' This is directly
+   connected to the identity thread (showing up, doing the work,
+   composure). The key_phrase is NOT mirrored in the Coaching Message
+   — this is correct per coach_avoidance_note (the emotional
+   channeling pattern is Jasmine's self-awareness, not a coaching
+   assignment). One mirror present, connected to identity. PASS.
+
+6. Action Specificity (Three-Part Check): PASS
+   JSON micro_commitment:
+   - action: "Before your first icehouse session of the new block,
+     set one specific technical element you want to improve this
+     week — not a comparison to last camp, just your own next step.
+     Let that be the target your energy goes toward."
+   - when: "Before the first icehouse pushing session of the new
+     block."
+   - measurement: "Does Jasmine name a specific, self-referenced
+     technical goal? Does the emotional energy from this week's
+     experiences channel into focused execution rather than diffuse
+     intensity?"
+   Coaching Message (paragraph 5): "before your first icehouse
+   session, set one specific technical element you want to improve
+   this week — not a comparison to last camp, just your own next
+   step. Let that be where your energy goes."
+   Part 1 ACTION: Present — closely paraphrases JSON action.
+   Part 2 WHEN: Present — "before your first icehouse session"
+   matches JSON when.
+   Part 3 MEASUREMENT: Present implicitly — "You have a lot of
+   energy right now. Point it somewhere specific." The measurement
+   question (does she name a specific goal, does energy channel into
+   focused execution) is embedded in the coaching framing. The
+   explicit measurement language from the JSON is coach-internal
+   (uses "Does Jasmine..." third-person) and correctly not surfaced
+   verbatim. The coaching direction gives the athlete the standard
+   to self-measure against.
+   carry_forward = "No" — no continuation check.
+
+7. Upcoming Context Anchoring: PASS
+   JSON upcoming_context.scheduled_competition = "None". No
+   specific competition to anchor. However,
+   athlete_stated_next_goal references the "next block" and "next
+   performance camp" (end of month). The Coaching Message connects
+   the micro-commitment to the next training block: "before your
+   first icehouse session of the new block." The Deep Dive Growth
+   Areas section references "heading into the next performance camp"
+   and the return to training-focused controllables. Forward-looking
+   context is present even without a specific competition. PASS.
+
+8. Narrative Arc Presence: PASS
+   JSON narrative_arc fields are fully populated (7 weeks of data).
+   Deep Dive Section 1 (Mindset Summary): Contains the full 7-week
+   developmental arc from arc_summary — "Seven-week trajectory from
+   self-referenced training ownership (Week 1) through intentional
+   momentum with NBC derailer test passed (Week 2) to frustration-
+   channeling self-regulation (Week 3)..." through Week 7. Arc
+   summary present: YES.
+   milestone_this_week: "Emotional self-regulation demonstrated in a
+   non-sport domain" — referenced in DD Section 1 ("This week tested
+   a dimension the program had not previously seen") and DD Section 3
+   ("Emotional composure under non-sport pressure"). Milestone
+   present: YES.
+   open_thread: "The emotional channeling pattern... whether the
+   channeling pattern remains productive or becomes an avoidance
+   pattern" — referenced in DD Section 4 Growth Areas ("The
+   emotional channeling pattern Jasmine names... is functional in the
+   short term"). Open thread present: YES.
+
+9. Message Length: PASS
+   Word count: 328 words. Within 250-450 target range.
+
+10. Micro-Commitment Realism: PASS
+    The micro-commitment asks Jasmine to set one specific technical
+    element before her first icehouse session of the new block.
+    Realism check:
+    - Achievable: Yes — setting a technical goal before a session is
+      a simple, low-barrier action.
+    - Specific: Yes — "one specific technical element," "before your
+      first icehouse session," "not a comparison to last camp."
+    - Modality appropriate: Written/behavioral commitment consistent
+      with Growth tier (7th consecutive Growth week, no modality
+      adaptation needed). The action involves naming a goal before a
+      session, which is a behavioral action (not just a written
+      reflection).
+    - Connected to current week: Yes — the micro-commitment channels
+      the emotional energy from this week toward focused technical
+      execution, which is the most_important_controllable in the JSON.
+    NOTE: The micro-commitment is well-designed for this specific
+    context — it takes the emotional channeling pattern (Jasmine's
+    self-identified tendency) and directs it toward a specific,
+    self-referenced technical target rather than diffuse intensity.
+
+============================================================
+TIER 3 RESULTS
+============================================================
+
+11. Brand Voice Tonal Scan: PASS
+    Coach Arron voice present throughout. Second person address
+    maintained. Opening salutation "Jasmine —" is correct.
+    Signed "— Coach Arron." Tone is warm but direct — consistent
+    with brand voice. No exclamation marks. No cliches. No overly
+    clinical or academic register. Empathetic acknowledgment of
+    emotional content without coddling. Strength recognition is
+    specific and behavioral ("You showed up on your birthday to push
+    in the icehouse") rather than generic praise. The phrase "That
+    takes strength" is direct and earned, not inflated.
+
+12. Outer-Ring Language Discipline: PASS
+    Bullseye references in outputs:
+    - Coaching Message: No direct Bullseye ring references. The
+      message references training consistency and emotional
+      processing without naming specific rings. This is appropriate
+      for a Moderate EI week where the Bullseye shifted entirely to
+      relationship domain — naming "center ring" in a relationship
+      context would be awkward.
+    - Deep Dive Section 1: "The Bullseye shifted entirely to the
+      relationship domain for the first time — no training or
+      comparison items in any ring." This accurately reflects
+      bullseye_analysis and the pattern_shift_detected = Yes.
+    - Deep Dive Section 3: "Bullseye framework generalization: the
+      internal-standard framework... applied to relationships is
+      structurally identical to the training comparison management."
+      This accurately reflects bullseye_analysis.control_quality.
+    - JSON noise_fixation_present = "Yes" — the Deep Dive does not
+      explicitly name noise fixation but the Growth Areas section
+      addresses the Bullseye domain shift as something to monitor.
+      The outer ring is not referenced in a way that reinforces
+      noise fixation.
+    All Bullseye language is accurate per JSON. No ring
+    mislabeling. No reinforcing of outer-ring fixation.
+
+============================================================
+CORRECTIONS APPLIED: None.
+============================================================
+
+============================================================
+NOTES:
+============================================================
+
+1. CLINICAL BOUNDARY HANDLING — EXCELLENT: This was the highest-risk
+   week for clinical language violations in the Jasmine Jones program.
+   The athlete's raw data contains "past relationship trauma," "fight
+   or flight mode from past relationships," "mental trigger," sports
+   psychologist sessions, and family death processing. Stage 3
+   correctly excluded ALL of these from coaching output. The emotional
+   content is framed entirely in performance coaching language
+   ("composure under real pressure," "a skill," "strength"). No
+   clinical terms leaked. No sports psychologist reference leaked.
+   No family death addressed beyond the JSON context. This is the
+   compliance standard for high-complexity weeks.
+
+2. EMOTIONAL CHANNELING PATTERN: The JSON's open_thread notes the
+   emotional channeling pattern ("each time I got my feelings hurt,
+   I leveled up") as functional but potentially avoidance-based. The
+   Coaching Message correctly does NOT address this pattern as a
+   coaching insight — per coach_avoidance_note, this is Jasmine's
+   self-awareness, not a coaching assignment. The Deep Dive references
+   it in Growth Areas as context ("functional in the short term") but
+   stays within coaching scope. The micro-commitment subtly redirects
+   the energy ("Point it somewhere specific") without naming the
+   channeling pattern.
+
+3. BULLSEYE DOMAIN SHIFT: First week the Bullseye does not name
+   training or comparison in any ring. The outputs correctly frame
+   this as a generalization of the framework (strength signal) rather
+   than a departure from the program. The internal-standard structure
+   is identified as "structurally identical" between training and
+   relationship domains.
+
+4. SPORTS PSYCHOLOGIST EXCLUSION: The athlete has regular Friday
+   sports psychology sessions. The JSON coach_avoidance_note
+   explicitly instructs "Do not reference or name the sports
+   psychology sessions." Both outputs comply — zero references to
+   the sports psychologist, therapy, or counseling appear in either
+   document. The Friday session is described in the Coaching Message
+   only as "video work on Friday" (the training portion).
+
+5. STYLE NOTE: The Deep Dive uses "self-regulation" three times
+   (Sections 1, 3, 5). While this is permitted behavioral coaching
+   language (not a clinical term), consider varying the phrasing in
+   future outputs to avoid repetitive register. Alternatives:
+   "emotional composure," "emotional management," "processing and
+   moving forward."

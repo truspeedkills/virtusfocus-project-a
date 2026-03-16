@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Jasmine Jones",
+  "week_period": "2025-06-09 to 2025-06-15",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Competing for herself alone — building an elite mindset that sets her apart as more than her role",
+    "baseline_hinge_habit": "Consistent daily training execution and self-directed preparation maintained through a high-demand environment",
+    "baseline_primary_derailer": "Comparison-based self-evaluation and performing for others rather than for herself, activated by teammate dynamics, recognition gaps, and external validation seeking",
+    "baseline_why_it_matters": "Jasmine's competitive environment is inherently comparison-rich — building an internal standard that holds regardless of what teammates are doing is the lever that separates preparation-level confidence from competition-level confidence",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Growth tier maintained through end-of-block testing week. Jasmine's stated goal ('Finishing out the block strong') was achieved — testing numbers were higher than initial block measurements, and body composition results confirmed she is on track compared to last offseason. Bullseye control ring expands to include sled pushing visualization ('imagine how I want my power to go through the sled') and physical therapy, showing increasing specificity. Influence ring now explicitly names temperament management in groups — this is a progression from Week 3's irritability awareness, now framed as something she can influence rather than only react to. Outer ring continues the comparison pattern ('Other peoples workload and what programs they are doing'). The comparison derailer is present but contained — no behavioral disruption from teammate observation."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Fourth recorded week (one-week gap: Jun 2-8 has no recap). End of the current training block with testing. Monday was tired coming off a heavy week but she held her own on long sprints — the easiest the long sprints have felt. Tuesday maintained routine with skeleton core circuits, chiro, and rehab. Sports med continues to tailor progressive rehabilitation exercises for her knee. Wednesday started sluggish but sled pushing produced significantly improved numbers compared to the first block session. Jasmine notes she was able to listen and execute coaching cues. Thursday's skeleton core circuit was more intense than expected, and she surprised herself at handling it — a self-referenced confidence signal. Friday was end-of-block testing: numbers higher than initial block measures, body composition comparable to last July's offseason but stronger. Both data points confirmed she is tracking toward her competitive goals. Saturday was a social day with Jade and friends at home — naming the Lake Placid isolation ('there's nothing around here'). Sunday was a farmers market with teammates, a novelty Jasmine had never done before.",
+
+  "core_pattern": "Block completion with self-referenced progress verification. This week is defined by objective benchmarking against Jasmine's own prior performance: sled pushing numbers improved from first block session, end-of-block testing numbers higher than initial measurements, body composition consistent with last offseason but with more strength. All comparisons are to her own baselines, not to teammates. The Bullseye influence ring now explicitly names temperament management — this is a developmental progression from Week 3's reactive awareness toward a proactive framing. The 'surprised myself' language on Thursday's intense core circuit shows that Jasmine's self-perception is being positively updated by her actual capacity.",
+
+  "behavioral_root_cause": "Jasmine's execution this week is driven by block completion momentum and concrete progress evidence. The testing results provide an objective, self-referenced confirmation that her training approach is working. This is the type of evidence that can anchor confidence internally rather than through comparison. The Wednesday sled pushing improvement is particularly significant — pushing is the direct competitive skill, and measurable improvement validates her offseason process. The Lake Placid isolation mention on Saturday ('there's nothing around here') is environmental context that recurs as a quality-of-life stressor. The temperament management appearing in the Bullseye influence ring represents a cognitive advancement: Week 3 she was reactive to it, Week 4 she frames it as within her sphere of influence.",
+
+  "prior_commitment_result": {
+    "prior_action": "When irritability starts during training — before reacting — take one slow breath and redirect focus to the next rep in front of you. Track how many times you catch the shift this week.",
+    "execution_status": "Unknown",
+    "execution_notes": "One-week gap (Jun 2-8) between Week 3 and this week. No recap exists for the gap week, so execution of the micro-commitment during that period cannot be assessed. However, the Bullseye influence ring now names temperament management as something she can influence, suggesting continued awareness of the irritability-to-focus pattern regardless of explicit tracking.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Finishing out the block strong",
+    "achievement_statement": "Finishing up this last block strong and getting prepared for my performance camp going into block 3",
+    "key_phrase": "I kinda surprised myself into how I was handling certain exercises",
+    "mindset_resonance": "Write down what you still want to achieve — and one step today toward it."
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5",
+      "neutral_days": "2",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "Category-only classification for Monday and Friday-Sunday. Monday Neutral (content: tired from heavy week, held own but not peak). Tuesday Win (scored 4-5). Wednesday Win (scored 4-5 — improved sled pushing numbers). Thursday Win (scored 4-5 — surprised at capacity). Friday Win (content: strong testing results, body comp positive). Saturday Neutral (content: social day at home, relaxing). Sunday Win (content: farmers market with teammates, positive novelty). 5 Win + 2 Neutral + 0 Missed = Growth tier.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong and increasingly specific. Three controllables: channeling energy into exercises, sled pushing visualization ('imagine how I want my power to go through the sled'), and physical therapy commitment. The sled pushing visualization is the most sport-specific controllable Jasmine has named — it connects her mental focus to the direct competitive skill.",
+    "influence_quality": "Progressing. 'Handling my temperament especially being in groups or with certain individuals and I can influence how my actions are and staying on task.' This is a significant reframe from Week 3's reactive awareness — now positioned as within her influence sphere. She is naming specific situations (groups, certain individuals) and a specific behavioral strategy (staying on task).",
+    "noise_fixation_present": "Yes",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "No"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "3",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Four-week trajectory from self-referenced training ownership (Week 1) through intentional momentum architecture with derailer test passed (Week 2) to frustration-channeling as emerging self-regulation (Week 3) to objective self-referenced progress confirmation with temperament reframe (Week 4). The comparison derailer remains present in every Bullseye outer ring but has not disrupted execution across any of the four recorded weeks. The irritability thread has progressed from reactive awareness (Week 3) to influence-framed management (Week 4). Zero Missed days across all 28 recorded program days.",
+    "milestone_this_week": "Temperament management moves from reactive (Week 3: 'I be ready to cuss folks out') to influence-framed ('I can influence how my actions are and staying on task'). This cognitive reframe — from something that happens TO her to something she can INFLUENCE — is the most significant self-regulation progression in the program so far.",
+    "open_thread": "Performance camp next week with the full team introduces the highest-density comparison environment Jasmine has faced in the program. The icehouse introduces other athletes pushing and testing — the exact conditions where comparison activates. Her stated intention is to stick to her own programming. Whether the self-referenced standard holds when surrounded by teammates doing 'the most' is the defining test."
+  },
+
+  "most_important_controllable": "Own programming adherence at performance camp — Jasmine names this herself: staying locked into her assigned program when other athletes are testing, comparing, and pushing for standards in the icehouse. This is the highest-stakes test of the comparison derailer to date.",
+
+  "micro_commitment": {
+    "action": "At the performance camp next week, before each icehouse or testing session, remind yourself: 'My program. My numbers. My process.' Stay locked into what your coaches assigned, not what you see others doing.",
+    "when": "Before each performance camp session.",
+    "measurement": "Did Jasmine stay in her own program lane at camp? Did she resist comparison when other athletes were testing or pushing for standards?"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None",
+    "anticipated_stressor": "Performance camp with full team — high-density comparison environment. Icehouse introduction with other athletes pushing and testing. Multiple days of exposure to teammates' training approaches, standards testing, and visible performance comparison. This is the most significant comparison test since the NBC exclusion in Week 2.",
+    "athlete_stated_next_goal": "We have a performance camp and my main goal is to stay to my own programming. We are introducing the icehouse and people are going to be in there doing the most. I plan on sticking to what my program says and not being worried about what other people are doing."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win days (category-only for Mon, Fri-Sun), 2 Neutral, 0 Missed. Fourth consecutive Growth week. End-of-block testing produced improved numbers (sled pushing, physical testing, body comp). Knee rehabilitation progressing with sports med. Social isolation in Lake Placid named ('there's nothing around here'). Temperament management now framed as influenceable. One-week gap (Jun 2-8) — no explanation provided.",
+    "key_habit_signal": "Self-referenced progress benchmarking — all significant achievements this week are measured against Jasmine's own prior data (sled pushing improvement, testing numbers vs initial block, body comp vs last July). This is the exact behavioral pattern that counteracts the comparison derailer. When she measures against herself, confidence is stable and execution is consistent.",
+    "coach_reinforcement_cue": "The 'surprised myself' language on Thursday is a confidence-building signal — Jasmine's actual capacity exceeded her self-perception. Combined with objective testing improvements, she has concrete evidence that her training process works. Reinforce the connection: following her own program produces measurable results.",
+    "coach_avoidance_note": "Do not address the Lake Placid isolation as a coaching target — it is an environmental reality of training at the Olympic Training Center. Do not re-surface the Week 3 aggression language. The temperament management has naturally progressed from reactive to influence-framed — let that development continue without over-coaching it."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators. Interpersonal friction continues but is now framed as within the athlete's influence sphere — a positive self-regulation progression. Lake Placid social isolation is environmental context. All content within performance coaching scope."
+  },
+
+  "next_week_focus_question": "Performance camp is coming — when you are in the icehouse and you see other athletes pushing, what is one thing you can focus on that is 100% about YOUR technique?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

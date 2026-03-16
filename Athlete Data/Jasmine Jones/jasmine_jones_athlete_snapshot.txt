@@ -1,0 +1,121 @@
+VF_PIPELINE_SNAPSHOT
+SNAPSHOT_TYPE: Baseline
+ATHLETE_NAME: Jasmine Jones
+SPORT: Bobsled
+POSITION: Brakeman
+TEAM: USA (USABS / WCAP)
+YEARS_COMPETING: 7
+INTAKE_DATE: 2025-05-10
+MENTAL_GAME_SELF_RATING: 9/10
+
+------------------------------------------------------------
+SECTION_1_PERFORMANCE_CONTEXT
+------------------------------------------------------------
+Jasmine Jones is a brakeman competing for USA Bobsled & Skeleton (USABS) through the World Class Athlete Program (WCAP), training at the Olympic Training Center in Lake Placid, NY. She is a professional-level athlete — the first in the VirtusFocus pipeline — competing at the national and international level with Olympic team selection as her primary competitive goal. She has been competing for 7 years. Her 9/10 mental game self-rating is the highest in the pipeline and reflects strong self-belief, though her intake identifies specific gaps around comparison and external validation. She is a single parent raising her daughter Jade in Lake Placid, which adds logistical and emotional demands to an already high-performance training environment. She currently works with a sports psychologist on Fridays, indicating existing support for deeper processing work. VirtusFocus operates in the behavioral performance coaching lane alongside but separate from that clinical support.
+
+------------------------------------------------------------
+SECTION_2_PRIMARY_STATED_GOALS
+------------------------------------------------------------
+OUTCOME_GOALS:
+- Win push championships going into the season.
+- Make the World Cup team.
+- Make the Olympic team.
+
+BEHAVIOR_GOALS:
+- Remain confident without comparing herself to others.
+- Stop putting pressure on herself by performing for other people rather than for herself.
+- Develop an elite mindset that sets her apart from competitors.
+
+------------------------------------------------------------
+SECTION_3_MOTIVATION_DRIVERS
+------------------------------------------------------------
+INTERNAL_DRIVERS:
+- Self-differentiation — wants to be more than "just the brakeman behind the pilot." Seeks an identity defined by her own preparation and mindset, not by her role relative to teammates or pilots.
+- Competitive ownership — pre-performance self-talk is approach-framed and self-directed: trusting her training, reminding herself she competes for herself alone.
+
+EXTERNAL_DRIVERS:
+- Olympic team selection and World Cup qualification as concrete competitive milestones.
+- Push championship performance as a near-term benchmark.
+
+IDENTITY_LANGUAGE_DETECTED:
+- "I'm not competing for no one else but only for me" — core identity aspiration, directly at odds with her identified derailer.
+- "A better mindset that will put me at another level being an elite athlete" — framing mental performance as a competitive edge, not a deficit to fix.
+
+------------------------------------------------------------
+SECTION_4_KNOWN_DERAILERS
+------------------------------------------------------------
+PRIMARY_DERAILERS:
+- External validation and comparison — compares herself to teammates' training habits, workloads, and recognition. This extends beyond sport performance into social dynamics and identity.
+- Performing for others rather than for self — the foundational version is anchored in a family loss: when her grandfather died, she felt pressure to perform for him rather than focusing on herself.
+- Fear of failure and letting go of bad outcomes — selected as primary mental struggles.
+
+DERAILER_CONTEXT:
+- The comparison pattern is the dominant thread. Jasmine's holding-back answer explicitly identifies performing for others as the primary behavioral barrier. The comparison habit is the mechanism through which this derailer activates: measuring herself against teammates' training, recognition, and programs rather than staying anchored in her own process.
+
+------------------------------------------------------------
+SECTION_5_CONFIDENCE_PATTERN
+------------------------------------------------------------
+CONFIDENCE_TYPE: Preparation-activated with comparison vulnerability
+
+DESCRIPTION:
+Jasmine's confidence is high when anchored in her own training execution and preparation. Her pre-performance self-talk is approach-framed and self-directed. Her 9/10 self-rating reflects genuine self-belief in her abilities. Confidence dips when external comparison activates — teammates' recognition, others' training programs, or perceived exclusion from visibility opportunities. When she stays process-focused, confidence is stable. When she shifts to measuring against others, doubt enters.
+
+------------------------------------------------------------
+SECTION_6_IDENTITY_FRICTION
+------------------------------------------------------------
+FRICTION_POINTS:
+- Wants to compete only for herself but carries a deep pattern of performing for others, rooted in family expectations and grief.
+- Wants to stop comparing herself to teammates but consistently monitors their training habits, workloads, and recognition.
+- Rates her mental game 9/10 but identifies fear of failure, handling mistakes, and letting go of bad outcomes as primary struggles — suggesting a gap between self-perception and behavioral patterns.
+
+------------------------------------------------------------
+SECTION_7_STRESS_TRIGGER_PROFILE
+------------------------------------------------------------
+COMPETITIVE_PRESSURE:
+- Professional athlete competing at the national/international level — the stakes are Olympic team selection and World Cup qualification, not conference placement. Coaching tone and language should reflect her maturity and professional competitive context.
+
+PRIMARY_TRIGGER:
+- Comparison and external validation — measuring her training, recognition, and progress against teammates rather than against her own standards.
+
+BEHAVIORAL_RESPONSE_PATTERN:
+- Approach-framed under pressure — pre-performance language is execution-focused and self-directed.
+- When comparison activates, energy shifts from internal standards to external measurement.
+
+EXTERNAL_STRESSORS:
+- Single parenting in a remote training location (Lake Placid) with limited social options.
+- Training group dynamics and interpersonal friction with specific teammates.
+- Social isolation in Lake Placid affecting personal life and relationships.
+
+------------------------------------------------------------
+SECTION_8_INITIAL_COACHING_EMPHASIS
+------------------------------------------------------------
+COACHING_PRIORITIES:
+- Anchor confidence in preparation quality and process execution rather than comparison to teammates — build an internal standard that holds when external visibility or recognition shifts.
+- Develop a consistent self-check for when energy shifts from "competing for me" to "competing for others" — this is the primary behavioral lever.
+- Channel her directness and intensity as competitive assets within training, not as reactive patterns driven by interpersonal friction.
+- Reinforce ownership of her training process independent of teammates' programs, workloads, or recognition.
+
+BASELINE_ANCHORS:
+
+ANCHOR_IDENTITY_CLAIM:
+Competing for herself alone — building an elite mindset that sets her apart as more than her role.
+
+ANCHOR_HINGE_HABIT:
+Consistent daily training execution and self-directed preparation maintained through a high-demand environment.
+
+ANCHOR_PRIMARY_DERAILER:
+Comparison-based self-evaluation and performing for others rather than for herself, activated by teammate dynamics, recognition gaps, and external validation seeking.
+
+ANCHOR_WHY_IT_MATTERS:
+Jasmine's competitive environment is inherently comparison-rich — she trains alongside other national team athletes daily. The comparison derailer will be tested constantly. Building an internal standard that holds regardless of what teammates are doing, achieving, or being recognized for is the lever that separates preparation-level confidence from competition-level confidence.
+
+ANCHOR_EXACT_PHRASE:
+"I'm not competing for no one else but only for me."
+
+------------------------------------------------------------
+SECTION_9_GROWTH_PHASE_CLASSIFICATION
+------------------------------------------------------------
+GROWTH_PHASE: Developing
+
+JUSTIFICATION:
+Jasmine demonstrates high commitment (All-in), strong self-belief (9/10 mental game rating), and approach-framed pre-performance language. However, the comparison derailer is active and unresolved, appearing across multiple domains (training, recognition, relationships). Her self-identified goals directly name the patterns she has not yet consistently managed. Existing sports psychology support indicates she is actively working on deeper processing, but behavioral consistency around comparison and external validation has not yet been demonstrated across weeks. These gaps prevent advancement to Consistent despite her experience level and self-rating.

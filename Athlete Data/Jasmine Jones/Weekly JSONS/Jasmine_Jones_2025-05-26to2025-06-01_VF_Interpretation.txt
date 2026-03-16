@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Jasmine Jones",
+  "week_period": "2025-05-26 to 2025-06-01",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Competing for herself alone — building an elite mindset that sets her apart as more than her role",
+    "baseline_hinge_habit": "Consistent daily training execution and self-directed preparation maintained through a high-demand environment",
+    "baseline_primary_derailer": "Comparison-based self-evaluation and performing for others rather than for herself, activated by teammate dynamics, recognition gaps, and external validation seeking",
+    "baseline_why_it_matters": "Jasmine's competitive environment is inherently comparison-rich — building an internal standard that holds regardless of what teammates are doing is the lever that separates preparation-level confidence from competition-level confidence",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Growth tier maintained despite a sluggish Monday start and interpersonal irritability through the week. Jasmine's stated goal acknowledged starting 'meh' but finishing strong — accurate self-assessment. Bullseye control ring names sleep prioritization and showing up, consistent with hinge habit. The irritability pattern toward a teammate is a new behavioral signal this week. Critically, Jasmine channeled the frustration into productive lifting ('took my frustration out on the weights') rather than letting it derail training. This is an approach-framed response to an interpersonal stressor, consistent with the identity claim. The outer ring continues to name teammate behavior ('How other people show up to training') — comparison derailer remains present in awareness. Achievement statement ('Knowing when to reset and lock in') demonstrates self-regulation naming."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Third week of the program, second week of the current training block. Started Monday sluggish — woke late, rushed, tired through track (150s and 120s) and lifting. Tuesday's core circuits and yoga with skeleton athletes served as a reset from Monday's low energy. Wednesday was the most complex day: started irritable, morning session decent, but afternoon lift was great — Jasmine channeled frustration into the weights and kept adding weight. Thursday was productive recovery: core circuits, chiro, rehab with progressive knee exercises, and an NBC interview about being a mom in the sport and WCAP. Friday training was good but interpersonal irritability with a specific teammate intensified — complaining, moans, and sighs disrupted her focus. She locked in for her lift and had a strong session, finishing on time for her massage. Saturday was a deliberate rest day — rain, movies, new protein recipes. Sunday was a positive reset with outdoor time alongside teammates and Jade. Protein intake improvement carried forward from last week's goal.",
+
+  "core_pattern": "Frustration-to-execution channeling as an emerging self-regulation strategy. This week introduces a new behavioral pattern: Jasmine experiences significant interpersonal irritability (particularly toward a specific teammate in her training group) and converts it into training intensity. Wednesday and Friday both followed the same sequence — irritation in the group setting, deliberate mental lock-in, and then strong lifting performance. She names this explicitly: 'I wonder if I can channel that into my weights this week.' This is a conscious recognition of a behavioral pattern, moving from reactive frustration toward intentional redirection. The irritability source is external (teammate's complaining and poor effort), and Jasmine correctly identifies it as outside her control in the Bullseye outer ring. The self-regulation is the channeling, not the absence of the irritation.",
+
+  "behavioral_root_cause": "Two behavioral threads are active this week: (1) Physical fatigue from the second week of the training block — Monday's sluggishness and the general tiredness she names are consistent with accumulating training load, not disengagement. (2) Interpersonal irritability that she attributes partly to a supplement (ashwagandha) and partly to hormonal patterns, but which centers on a specific teammate's behavior in the training group. The irritability is not new — she says she 'normally' cusses out this person and her strength coach already knows. The new element is her self-awareness about the pattern and her explicit interest in channeling it productively. She also names the strength coach as a support resource who helps her manage the intensity. The Monday-to-Wednesday recovery pattern (sluggish start → reset Tuesday → strong channeled performance Wednesday) mirrors the intentional tone-setting from Week 2 but with a harder start.",
+
+  "prior_commitment_result": {
+    "prior_action": "After each training session this week, identify one thing that went well that was 100% about your own execution — not compared to anyone else. Write it down or note it mentally before leaving the gym.",
+    "execution_status": "Completed",
+    "execution_notes": "Jasmine's achievement statement names specific self-referenced execution wins: 'Knowing when to reset and lock in. Wednesday and Fridays were my best lifting days, even my sprints were too. I was able to meet numbers what of what was required and then some.' These are self-benchmarked wins — her own numbers, her own sprint performance, her own ability to reset.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "I been taking in more protein! Starting to utilize protein noodles in dishes. Even though I went into the 2nd week of the block 'meh' I was able to finish it strong.",
+    "achievement_statement": "Knowing when to reset and lock in. Wednesday and Fridays were my best lifting days, even my sprints were too. I was able to meet numbers what of what was required and then some.",
+    "key_phrase": "I wonder if I can channel that into my weights this week",
+    "mindset_resonance": "Practice calm under pressure: 3 deep breaths before reacting."
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5",
+      "neutral_days": "2",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "scoring_note": "Category-only classification for Thursday-Sunday. Monday Neutral (scored 2-3 by athlete — sluggish, tired). Tuesday Win (scored 4-5). Wednesday Win (scored 4-5 — channeled frustration into strong lift). Thursday Win (content: productive rehab, NBC interview, positive engagement). Friday Win (content: good training despite irritation, strong lift, massage). Saturday Neutral (content: lazy rest day, recovery). Sunday Win (content: positive reset, outdoor time with teammates and Jade). 5 Win + 2 Neutral + 0 Missed = Growth tier.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong. Two controllables: showing up to training and prioritizing sleep. Both directly actionable and within her control. Sleep prioritization is new — addresses Monday's late wake-up and names the upcoming heavy week's demands.",
+    "influence_quality": "Developing with self-regulation awareness. Names her irritability and attributes it partly to hormonal patterns and possibly a supplement. The influence framing is accurate: she cannot eliminate the irritation, but she can influence her response to it. 'Locking in and just shifting all of my focus to the next rep/exercise' is a specific behavioral strategy.",
+    "noise_fixation_present": "Yes",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "2",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Three-week trajectory from self-referenced training ownership (Week 1) through intentional momentum architecture with derailer test passed (Week 2, NBC exclusion approach-framed) to frustration-channeling as an emerging self-regulation strategy (Week 3). Comparison derailer remains present in Bullseye outer ring every week but has not disrupted execution. The new interpersonal irritability pattern is a second behavioral thread alongside the primary comparison derailer — both involve teammate dynamics but through different mechanisms (comparison = measuring against others' standards; irritability = reactive frustration at others' behavior).",
+    "milestone_this_week": "First conscious naming of a self-regulation strategy — Jasmine identifies the frustration-to-performance channeling pattern and explicitly considers using it intentionally ('I wonder if I can channel that into my weights'). This moves from reactive behavior to deliberate self-regulation.",
+    "open_thread": "The interpersonal irritability toward the specific teammate is escalating in language intensity ('ready to cuss folks out,' 'hella aggressive,' 'scared of what I'll do,' 'ready to fight'). While the channeling response is productive, the underlying frustration is intensifying. The strength coach is aware and supportive. Whether Jasmine can maintain the channeling without the irritability escalating further is the developing question."
+  },
+
+  "most_important_controllable": "Sleep quality going into the heavy week — Jasmine names this herself as a priority for the upcoming heavy training week. Monday's sluggishness was partly attributed to poor sleep and late waking. Prioritizing sleep is a concrete, controllable lever that directly supports her ability to execute the channeling strategy when irritability arises (harder to regulate when fatigued).",
+
+  "micro_commitment": {
+    "action": "When irritability starts during training — before reacting — take one slow breath and redirect focus to the next rep in front of you. Track how many times you catch the shift this week.",
+    "when": "During any training session when irritability appears.",
+    "measurement": "Did Jasmine catch the irritability-to-focus shift? How many times? Did the channeling into weights pattern continue productively?"
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None",
+    "anticipated_stressor": "Heavy training week ahead — Jasmine specifically names this as the next challenge and prioritizes sleep to handle it. The interpersonal friction with the specific teammate will likely continue in shared training sessions. Goal of 130kg glute bridge for 4x6 represents a specific lifting target.",
+    "athlete_stated_next_goal": "Getting better sleep going into this week. This is heavy week and prioritizing my sleep is going to be key. I plan to keep upping my weights and move it well. 130 kilos in glute bridge for 4x6."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win days (category-only for Thu-Sun), 2 Neutral, 0 Missed. Third consecutive Growth week. Monday started sluggish (late, tired) but recovered by Tuesday. Wednesday and Friday showed the strongest performance despite interpersonal irritability — channeled frustration into lifting produced best sessions. Protein intake improvement maintained from Week 2 goal. NBC interview completed Thursday — positive media engagement. Strength coach is aware of interpersonal dynamics and providing support.",
+    "key_habit_signal": "Frustration-to-execution channeling — Jasmine converted training group irritability into her best lifting sessions of the week. This is a nascent self-regulation pattern. She names it consciously and considers using it intentionally. The strength coach relationship is a valuable support resource she is already utilizing. Monday-to-Wednesday recovery pattern shows resilience within the week.",
+    "coach_reinforcement_cue": "Jasmine's phrase 'knowing when to reset and lock in' is the key coaching signal. She can articulate the behavioral shift from reactive frustration to focused execution. Reinforcing this self-awareness — the NAMING of the shift — is more valuable than addressing the irritability itself.",
+    "coach_avoidance_note": "Do not frame the interpersonal irritability as anger management or impulse control — these are clinical constructs outside coaching scope. The frustration with the teammate is a focus and consistency factor. Do not reference the ashwagandha mention — supplement use is outside coaching scope. Do not frame the irritability-channeling pattern as problematic — it is currently productive. The escalation risk (language intensity increasing) should be monitored but not addressed in coaching output."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Interpersonal irritability is intense in language ('ready to cuss folks out,' 'hella aggressive,' 'scared of what I'll do,' 'ready to fight') but contextually appropriate self-awareness, not a safety concern. Strength coach is already aware and engaged. Ashwagandha mentioned as a possible contributor to irritability — supplement reference, not clinical. The frustration is being channeled into productive training execution. All content within performance coaching scope as a focus/consistency factor."
+  },
+
+  "next_week_focus_question": "You found a way to channel frustration into your strongest lifts this week — what does it look like to bring that same lock-in energy on a day when you are NOT irritated?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}
