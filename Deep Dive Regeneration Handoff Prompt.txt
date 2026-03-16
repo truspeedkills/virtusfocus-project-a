@@ -1,0 +1,267 @@
+DEEP DIVE REGENERATION — HANDOFF PROMPT
+==============================================
+SESSION OBJECTIVE:
+Regenerate 18 Deep Dive coaching outputs across 6 athletes using the revised Deep Dive Framework. The framework was updated this session to fix a systemic voice/tone issue — Deep Dives were reading as third-person analytical performance reviews instead of athlete-facing coaching content from Coach Arron. The framework revision is COMPLETE and on disk. This session only regenerates files.
+
+==============================================
+WHAT WAS DONE (PRIOR SESSION)
+==============================================
+
+1. Identified the systemic issue: Deep Dives across all 6 athletes used third-person analytical voice ("Jasmine's third week introduces a significant behavioral development") instead of second-person coaching voice ("This was the week you discovered something important about yourself").
+
+2. Root cause: VF_Deep_Dive_Coaching_Analysis_Framework.txt had three problems:
+   - Quality Rule said "Feels like high-level performance review" (drove analytical tone)
+   - Section sub-elements used clinical framing ("Behavioral Evidence," "Coach Insight," "Pattern Explanation")
+   - No voice directive specifying second person or Coach Arron persona
+
+3. REVISED the framework (file is on disk, ready to use). Key changes:
+   - Added PURPOSE section and VOICE section with explicit second-person directive and WRONG/RIGHT examples
+   - Replaced Quality Rule: "detailed coaching conversation" instead of "high-level performance review"
+   - Aligned section order to: Mindset Summary, Weekly Trendline, Strength Signals, Growth Areas, Identity Thread
+   - Removed "Coaching Focus Areas" section (belongs in CM, not DD)
+   - Removed "Baseline Alignment Note" section (pipeline classification, not coaching)
+   - Added OUTPUT FORMAT section with locked formatting decisions
+
+4. Regenerated 6 test DDs (one per athlete) and compared against originals. Confirmed:
+   - Voice fix works — second person throughout, Coach Arron persona consistent
+   - Analytical depth preserved — same behavioral evidence, same JSON-grounded insights
+   - Compliance maintained — no clinical language, no pipeline terminology
+   - Content accuracy maintained — same coaching observations, same pattern recognition
+
+5. Locked 6 formatting decisions after comparing test outputs:
+   - Header: Clean (athlete name, week, dates). NO pipeline metadata.
+   - Word target: 850-1200 words (850-950 for simple weeks, up to 1200 for complex weeks)
+   - Section/item headers: ALL CAPS throughout
+   - No "— Coach Arron" signature (coaching document, not a message)
+   - Growth Area italicized lines: observational perspective only, NO action items (those belong in CM)
+   - Analytical depth: non-negotiable — must be maintained
+
+6. Decision: Regenerate last 3 weeks per athlete (18 files) rather than all 43. Rationale:
+   - Framework is fixed for all future generation — root cause resolved
+   - Most recent weeks are what matter for product demonstration
+   - Remaining 25 old DDs can be regenerated later if needed
+   - Token efficiency: 18 files vs 43 files
+
+==============================================
+THE 18 FILES TO REGENERATE
+==============================================
+
+BATCH 1 (6 files):
+Jasmine Jones — Weeks 5, 6, 7:
+- Athlete Data\Jasmine Jones\Coaching and Deep Dive\Deep Dive\Jasmine_Jones_2025-06-16to2025-06-22_VF_DeepDive.txt
+- Athlete Data\Jasmine Jones\Coaching and Deep Dive\Deep Dive\Jasmine_Jones_2025-06-23to2025-06-29_VF_DeepDive.txt
+- Athlete Data\Jasmine Jones\Coaching and Deep Dive\Deep Dive\Jasmine_Jones_2025-07-07to2025-07-13_VF_DeepDive.txt
+Grace Kindel — Weeks 3, 4, 5:
+- Athlete Data\Grace Kindel\Coaching and Deep Dive\Deep Dive\Grace_Kindel_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Athlete Data\Grace Kindel\Coaching and Deep Dive\Deep Dive\Grace_Kindel_2026-02-16to2026-02-22_VF_DeepDive.txt
+- Athlete Data\Grace Kindel\Coaching and Deep Dive\Deep Dive\Grace_Kindel_2026-02-23to2026-03-01_VF_DeepDive.txt
+
+BATCH 2 (6 files):
+Tucker Lloyd — Weeks 1, 2, 3:
+- Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Deep Dive\Tucker_Lloyd_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Deep Dive\Tucker_Lloyd_2026-02-16to2026-02-22_VF_DeepDive.txt
+- Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Deep Dive\Tucker_Lloyd_2026-02-23to2026-03-01_VF_DeepDive.txt
+Angelo Allen — Weeks 2, 3, 4:
+- Athlete Data\Angelo Allen\Coaching and Deep Dive\Deep Dive\Angelo_Allen_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Athlete Data\Angelo Allen\Coaching and Deep Dive\Deep Dive\Angelo_Allen_2026-02-16to2026-02-22_VF_DeepDive.txt
+- Athlete Data\Angelo Allen\Coaching and Deep Dive\Deep Dive\Angelo_Allen_2026-03-09to2026-03-15_VF_DeepDive.txt
+
+BATCH 3 (6 files):
+Mergim Bushati — Weeks 17, 18, 19:
+- Athlete Data\Mergim Bushati\Coaching and Deep Dive\Deep Dive\Mergim_Bushati_2025-12-29to2026-01-04_VF_DeepDive.txt
+- Athlete Data\Mergim Bushati\Coaching and Deep Dive\Deep Dive\Mergim_Bushati_2026-01-05to2026-01-11_VF_DeepDive.txt
+- Athlete Data\Mergim Bushati\Coaching and Deep Dive\Deep Dive\Mergim_Bushati_2026-01-12to2026-01-18_VF_DeepDive.txt
+Aidan Burkardt — Weeks 3, 4, 5:
+- Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Deep Dive\Aidan_Burkardt_2025-12-01to2025-12-07_VF_DeepDive.txt
+- Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Deep Dive\Aidan_Burkardt_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Deep Dive\Aidan_Burkardt_2026-02-16to2026-02-22_VF_DeepDive.txt
+
+==============================================
+REGENERATION PROCESS
+==============================================
+
+For each Deep Dive, launch a parallel agent with these inputs:
+1. The revised DD Framework: Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+2. The athlete's baseline snapshot (in Athlete Data\[Athlete]\)
+3. The target week's Interpretation JSON (in Athlete Data\[Athlete]\Weekly JSONS\)
+4. ALL prior week Interpretation JSONs for that athlete (for longitudinal context — arc, trendline)
+5. One Coaching Message for that athlete (for Coach Arron voice reference — read once per athlete, not per week)
+
+The agent generates the DD, and the result is written to disk overwriting the existing file.
+
+Run 3 batches of 6 parallel agents each. Write files to disk after each batch completes before launching the next batch. This ensures completed work is saved if context pressure builds.
+
+==============================================
+ATHLETE CONTEXT NOTES
+==============================================
+
+JASMINE JONES (Weeks 5, 6, 7)
+- Bobsled Brakeman, USA/WCAP, Olympic aspirant, single parent
+- Snapshot: Athlete Data\Jasmine Jones\jasmine_jones_athlete_snapshot.txt
+- JSONs: Athlete Data\Jasmine Jones\Weekly JSONS\ (7 weeks total, need all 7 for longitudinal context)
+- CM voice reference: any CM in Athlete Data\Jasmine Jones\Coaching and Deep Dive\Coaching Message\
+- Growth tier all 7 weeks. Zero Missed days.
+- Week 5 (Jun 16-22): Performance camp. Comparison derailer PASSED under highest-density conditions. Low EI.
+- Week 6 (Jun 23-29): Gold Streak. Derailer OVERRIDE — declined standard test with articulated reasoning. Low EI.
+- Week 7 (Jul 7-13): Only elevated EI week (Moderate). Relationship stress. Bullseye shifts to relationship domain. Unknown prior commitment (vacation gap).
+- COMPLIANCE CRITICAL: 5 clinical-risk elements in raw data — "past relationship trauma," "fight or flight mode," "mental trigger," sports psychologist reference, family death. ALL must be EXCLUDED from athlete-facing output. Frame emotional content as "composure" and behavioral "skill."
+
+GRACE KINDEL (Weeks 3, 4, 5)
+- Softball, Coker University
+- Snapshot: Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+- JSONs: Athlete Data\Grace Kindel\Weekly JSONS\ (5 weeks total, need all 5)
+- CM voice reference: any CM in Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\
+- Week 3 (Feb 9-15): HIGH EI. Derailer activated on NC trip. "Doing it for me." Empathetic lead required.
+- Week 4 (Feb 16-22): Moderate EI. RQS=4 first time. Breakthrough SC at-bat. Recovery week.
+- Week 5 (Feb 23-Mar 1): Low EI. Growth phase advances to Consistent (Advancing). Full longitudinal data. "If I'm given a chance, use it well."
+
+TUCKER LLOYD (Weeks 1, 2, 3)
+- Football GA/Plumbing, Tusculum
+- Snapshot: Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+- JSONs: Athlete Data\Tucker Lloyd\Weekly JSONS\ (3 weeks total — this is all of them)
+- CM voice reference: any CM in Athlete Data\Tucker Lloyd\Coaching and Deep Dive\Coaching Message\
+- Tucker's existing DDs were CLOSEST to the target voice — mostly second person already. The fix is: remove Baseline Alignment Note + Coaching Focus Areas sections, ensure Mindset Summary and Trendline are fully second-person, add Identity Thread section, align to 5-section structure.
+- Week 1 (Feb 9-15): First week. No prior data. Low EI. Mixed tier. Self-directed structure.
+- Week 2 (Feb 16-22): First Missed day (Sunday). Low EI. Mixed tier. Gym attendance dip.
+- Week 3 (Feb 23-Mar 1): Second consecutive Missed Sunday. Pattern confirmed. Goal specificity declining. Micro-commitment modality shift (Written → Behavioral) — but the MODALITY SHIFT itself belongs in CM, not DD. DD observes the pattern.
+
+ANGELO ALLEN (Weeks 2, 3, 4)
+- Track & Field Throws, Seton Hill, 16 years experience
+- Snapshot: Athlete Data\Angelo Allen\angelo_allen_athlete_snapshot.txt
+- JSONs: Athlete Data\Angelo Allen\Weekly JSONS\ (4 weeks total, need all 4)
+- CM voice reference: any CM in Athlete Data\Angelo Allen\Coaching and Deep Dive\Coaching Message\
+- Week 2 (Feb 9-15): Near-PR shotput (16.44m vs 16.70m PR). Solo at highest-level meet. Low EI.
+- Week 3 (Feb 16-22): Gold Streak. Won both events. Identity-level achievement ("emotional groundedness, intent, and gratitude"). Low EI.
+- Week 4 (Mar 9-15): 2.5-week gap. PSAC championship retrospective. Moderate EI. Partially Aligned. Unknown prior commitment. Outdoor transition. Most complex week.
+
+MERGIM BUSHATI (Weeks 17, 18, 19)
+- Wrestling 184 lbs, Seton Hill
+- Snapshot: Athlete Data\Mergim Bushati\mergim_bushati_snapshot.txt
+- JSONs: Athlete Data\Mergim Bushati\Weekly JSONS\ (19 weeks total — for Weeks 17-19, read at minimum Weeks 14-19 for recent context. The Week 17+ JSONs contain narrative_arc with full longitudinal summary.)
+- CM voice reference: any CM in Athlete Data\Mergim Bushati\Coaching and Deep Dive\Coaching Message\
+- Week 17 (Dec 29-Jan 4): BREAKTHROUGH. D1 national qualifier takedowns. "I leveled up." RQS=4. Moderate EI. Growth tier. Friend's death. Fairmont State Open approaching.
+- Week 18 (Jan 5-11): FIRST COMPETITION. Match 1 derailer activation. Match 2 within-tournament recovery. Shoulder re-injury. HIGH EI. Growth tier. Partially Aligned. Most complex week in entire pipeline.
+- Week 19 (Jan 12-18): Season-ending decision. Low EI. Mixed tier. Forward-looking reframe. "Figured out a plan for the future." 19-week arc complete.
+
+AIDAN BURKARDT (Weeks 3, 4, 5)
+- Track & Field Sprinter, Pitt
+- Snapshot: Athlete Data\Aidan Burkardt\aidan_burkardt_athlete_snapshot.txt
+- JSONs: Athlete Data\Aidan Burkardt\Weekly JSONS\ (5 weeks total, need all 5)
+- CM voice reference: any CM in Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Coaching Message\
+- Week 3 (Dec 1-7): Peak confidence. Identity statement ("developing as a man in general"). Low EI. Growth tier.
+- Week 4 (Feb 9-15): 10-week gap. COMPETITION WEEK. 60m 7.5, 200m 23.4. Derailer activation. Moderate EI. Mixed tier. Partially Aligned. Most complex Bullseye in program.
+- Week 5 (Feb 16-22): RQS=4. Visualization self-diagnosis. Identity-level Bullseye. Low EI. Mixed tier. Pattern shift detected.
+
+==============================================
+FORMATTING RULES (LOCKED — DO NOT DEVIATE)
+==============================================
+
+1. HEADER FORMAT:
+   DEEP DIVE COACHING ANALYSIS
+   [First Name] [Last Name] | Week [#] | [Date Range]
+
+   NO pipeline metadata. NO schema version. NO RQS score. NO Growth Phase label. NO EI label. NO consistency classification.
+
+2. SECTION SEPARATORS: Dashes (------------------------------------------------------------)
+
+3. SECTION HEADERS: ALL CAPS (MINDSET SUMMARY, WEEKLY TRENDLINE, STRENGTH SIGNALS, GROWTH AREAS, IDENTITY THREAD)
+
+4. ITEM HEADLINES: ALL CAPS within Strength Signals and Growth Areas sections
+
+5. WORD TARGET: 850-1200 words
+   - Simple Growth/Low EI weeks: 850-950
+   - Complex weeks (High EI, competition, derailer, breakthrough): up to 1200
+   - Never exceed 1200
+
+6. NO SIGNATURE: No "— Coach Arron" at the end
+
+7. 5 SECTIONS ONLY: Mindset Summary, Weekly Trendline, Strength Signals (3-5 items), Growth Areas (2-4 items), Identity Thread
+
+8. ITALICIZED COACHING OBSERVATIONS: Close each Strength/Growth item with an italicized line. These are observational (WHY this matters) — NOT directive (what to do about it). Action items belong in the CM.
+
+==============================================
+COMPLIANCE RULES (NON-NEGOTIABLE)
+==============================================
+
+1. NO CLINICAL LANGUAGE — no anxiety, depression, therapy, diagnosis, coping mechanism, mental health, cognitive reframe, emotional dysregulation, trauma, fight or flight, trigger (Categories A-D in Editorial Audit)
+2. NO PIPELINE TERMINOLOGY — no RQS=4, Growth tier, Partially Aligned, Stable Positive, WTD scores as classifications, composite scores, coach flags, execution signals (Categories E-G)
+3. NO SPORTS PSYCHOLOGIST REFERENCES — if raw data mentions sports psych sessions, exclude from output
+4. NO SURVEILLANCE FRAMING — no tracking language, no completion rates, no engagement metrics
+5. Emotional Intensity calibration — High EI weeks get empathetic lead + reduced framework density, Low EI weeks get standard density
+6. All athletes are Core Foundation — no execution_behavior_signals, no baseline_intake_profile, no forward_anchor content
+7. SECOND PERSON THROUGHOUT — no third-person analytical passages. Zero tolerance. This is the entire point of the regeneration.
+8. Growth Area observations are PERSPECTIVE, not DIRECTION — do not drift into CM territory with action items or micro-commitments
+
+==============================================
+VOICE REFERENCE
+==============================================
+
+WRONG (third-person analytical — the problem we're fixing):
+"Jasmine's third week introduces a significant behavioral development: frustration-to-execution channeling as a conscious self-regulation strategy."
+"The athlete now has evidence, not just belief, that his preparation translates to high-level results."
+"Angelo's third week represents peak program performance to date. Growth tier with Gold Streak."
+"Six-week trajectory from self-referenced training ownership (Week 1) through intentional momentum with NBC derailer test passed (Week 2)..."
+
+RIGHT (second-person coaching voice — the target):
+"This was the week you discovered something important about yourself."
+"You have evidence now — not just belief — that your preparation translates when it matters most."
+"Angelo, this was your week. Not just because you won both events — but because of how you got there and what you named when it was over."
+"Six weeks in, here's what your journey looks like. You started by owning your training on your own terms."
+
+==============================================
+QUALITY CHECK AFTER EACH BATCH
+==============================================
+
+After each batch of 6 files is written to disk, spot-check ONE DD from each athlete in that batch:
+- Voice: Second person throughout? No third-person analytical passages?
+- Format: Clean header? ALL CAPS headers? Dashes between sections? No signature? No pipeline metadata?
+- Word count: Within 850-1200 range?
+- Content: Coaching insights grounded in JSON data? Behavioral evidence woven into narrative?
+- Compliance: No clinical language? No pipeline terminology? No sports psych references?
+- Structure: 5 sections? Strength Signals 3-5 items? Growth Areas 2-4 items? Italicized observations?
+- Boundary: No action items or micro-commitments in DD? (Those belong in CM)
+
+If a DD fails any check, regenerate that single file before proceeding.
+
+==============================================
+AFTER ALL 18 FILES ARE COMPLETE
+==============================================
+
+1. Git commit all 18 regenerated DDs + the revised DD Framework
+   Commit message: "Regenerated 18 Deep Dives (last 3 weeks per athlete) with revised DD Framework. Fixed systemic voice/tone issue — third-person analytical register replaced with second-person Coach Arron coaching voice. Framework spec updated: added voice directive, revised quality rule, locked output format (clean header, 850-1200 words, ALL CAPS headers, no signature, 5-section structure). Content accuracy and analytical depth preserved. 25 older DDs remain in prior voice (in git history, can be regenerated later)."
+
+2. Update CLAUDE.md Session Notes with completion status
+
+==============================================
+REFERENCE FILES
+==============================================
+
+Priority 1 — Read FIRST (the spec files that govern DD generation):
+1. CLAUDE.md (project instructions)
+2. Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt (THE REVISED FRAMEWORK — already on disk)
+3. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+4. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.8.txt
+
+Priority 2 — Read for voice reference (one CM per athlete):
+5. One Coaching Message per athlete (for Coach Arron voice calibration)
+
+Priority 3 — Read during regeneration (athlete-specific):
+6. Each athlete's baseline snapshot
+7. Each athlete's Interpretation JSONs (target week + all prior weeks for longitudinal context)
+
+Priority 4 — Read only if running audit:
+8. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+9. Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+
+==============================================
+WHAT "DONE" LOOKS LIKE
+==============================================
+
+1. 18 Deep Dive files regenerated and written to disk (overwriting existing files)
+2. All 18 in second-person Coach Arron voice
+3. All 18 following the locked formatting rules (clean header, ALL CAPS, 850-1200 words, 5 sections, no signature)
+4. Zero compliance violations
+5. Analytical depth preserved — same quality of coaching insights as originals
+6. Spot-check validation passed (1 DD per athlete per batch)
+7. Git commit with all changes
+8. CLAUDE.md updated
