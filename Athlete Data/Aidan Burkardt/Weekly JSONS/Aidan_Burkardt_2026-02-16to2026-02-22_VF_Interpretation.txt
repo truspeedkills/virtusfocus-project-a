@@ -1,0 +1,222 @@
+{
+  "athlete_name": "Aidan Burkardt",
+  "week_period": "2026-02-16 to 2026-02-22",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to build independent self-esteem and be proud of who he is without needing external validation",
+    "baseline_hinge_habit": "Execution-focused pre-performance preparation — relaxing, letting speed come out, focusing on mechanics",
+    "baseline_primary_derailer": "Overthinking and age-based comparison that erodes confidence despite real progress",
+    "baseline_why_it_matters": "Shifting from comparison-based confidence to progress-based confidence supports consistent execution and prepares him to perform at the Pitt walk-on level",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Recovery week following Week 4 competition disappointment demonstrates the most advanced baseline alignment of the program. Aidan directly addresses both baseline derailers: (1) Overthinking — identifies that constant mental rehearsal is 'mentally draining me before practice' and wants to 'work on trusting the feeling instead of constantly checking it,' (2) External validation — 'I can control if I will let a time define who I identify as' and 'I can control letting go of what my mind thinks I should be thinking about to validate myself.' The identity claim (independent self-esteem) is being actively pursued: his achievement statement names 'a stronger mental approach by being comfortable with letting go' as the week's primary accomplishment — a mental skill, not a physical result. This is the most direct evidence of the baseline shift from comparison-based to progress-based confidence."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Deliberate recovery and rebuild week following competition disappointment. Weekly goal explicitly names the intent: 'Rebuild momentum and recover.' Monday-Tuesday were post-meet recovery days focused on school and mental readjustment. Wednesday returned to block sessions with intentional mental reorganization. Thursday top-end speed session produced near-10m/s reps on a poor track surface — re-establishing execution confidence. Friday-Sunday: gym sessions (max effort lower, max effort upper with PR, special endurance 2x150 at 16.8/16.4s) and recovery. Only Monday-Thursday scored as Wins. The most significant content is in the 'anything else' section: Aidan identifies that constant visualization rehearsal throughout the day is draining him before practice and asks Coach Arron for guidance on balancing visualization with letting go.",
+
+  "core_pattern": "Post-competition recovery with advanced self-awareness and trust development. Aidan's response to Week 4's competition disappointment is not avoidance or emotional collapse but deliberate rebuild. The behavioral pattern shows three distinct recovery mechanisms: (1) structured return to training fundamentals (block session Wednesday, speed session Thursday), (2) execution evidence rebuilding (near-10m/s reps, gym PR on Saturday, special endurance times), and (3) mental approach revision — identifying constant visualization rehearsal as counterproductive and naming trust as the alternative. The shift from 'checking the feeling' to 'trusting the feeling' is a qualitative leap in self-regulation.",
+
+  "behavioral_root_cause": "The competition disappointment in Week 4 catalyzed a deeper examination of Aidan's mental approach. Rather than simply processing the emotion (which he did in Week 4's Bullseye), he has identified a specific behavioral mechanism that may be undermining his execution: constant mental rehearsal throughout the day as a form of confidence-checking. This connects directly to the baseline derailer — the rehearsal is a manifestation of overthinking, and the need to 'make sure the feelings are still there' is a form of validation-seeking (checking whether he is still prepared enough). His proposed solution — trusting the feeling instead of constantly checking it — is the correct behavioral direction and represents genuine developmental insight.",
+
+  "prior_commitment_result": {
+    "prior_action": "This week, sit down with your sprint coach for 15 minutes and review your 60m race together — specifically the start phase. Go in with one question: 'What is the one thing I can change in my start that would make the biggest difference?' Write down the answer and bring it to your next block session.",
+    "execution_status": "Partial",
+    "execution_notes": "Aidan returned to block sessions on Wednesday and worked specifically on start mechanics ('tried to get reorganized mentally with how blocks should feel'). Thursday's speed session focused on top-end speed maintenance. The start-specific work aligns with the commitment's intent, but there is no explicit mention of the coach conversation or the written takeaway. The block session emphasis suggests the start-improvement direction was pursued, though the specific accountability structure (15-minute conversation, one written answer) may not have been followed precisely.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Rebuild momentum and recover",
+    "achievement_statement": "I achieved a stronger mental approach by being comfortable with letting go",
+    "key_phrase": "I can control if I will let a time define who I identify as",
+    "mindset_resonance": "Improve 1 thing from yesterday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "4",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Advanced. Four controllables that represent the highest sophistication in the program: (1) 'what I visualize before my reps and committing to that feeling' — execution-specific visualization as controllable, (2) 'how I feel about times and whether I want it to affect me emotionally or just treat it as data' — emotional response to results as a choice, (3) 'if I will let a time define who I identify as' — identity-level separation from outcomes, directly addresses baseline derailer, (4) 'letting go of what my mind thinks I should be thinking about to validate myself' — naming and releasing the validation-seeking pattern. This is the first time Aidan has placed identity-level constructs in his controllable ring. The progression from Week 1 (effort per rep, bedtime) to Week 5 (identity definition, emotional response choice, validation release) is the most significant behavioral development arc in his program.",
+    "influence_quality": "Moderate. Two influences: future rep quality through staying calm/collected (CNS management) and execution through trusting body and ability. Both correctly placed. The trust language ('trusting my body and my ability') is new and directly connects to the visualization-vs-letting-go question.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "4",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "4",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over five weeks (with a 2-week gap between Weeks 1-2 and a 10-week gap between Weeks 3-4), Aidan's arc traces the development of self-regulation from awareness to application. Weeks 1-3 established consistent execution and preparation-anchored confidence, culminating in the identity-level statement 'developing as not only a very confident athlete, but a man in general' (Week 3). Week 4 introduced the first competitive test, activating the comparison derailer ('demoralizing') but revealing emerging real-time self-regulation (naming the choice between overthinking and analysis). Week 5 completes the initial arc: Aidan has processed the competition disappointment, identified a specific mental mechanism undermining his execution (constant visualization rehearsal as confidence-checking), and articulated the alternative (trusting the feeling instead of checking it). The Bullseye progression tells the full story — from general controllables (effort, bedtime) in Week 1 to identity-level choices (whether to let a time define who he is) in Week 5.",
+    "milestone_this_week": "First RQS-4 reflection in the program. Aidan's visualization-vs-letting-go insight represents advanced self-leadership: he has identified an internal behavioral pattern (constant mental rehearsal), diagnosed its counterproductive effect (draining him before practice), and proposed a specific alternative (trust over checking). This is the first time an athlete in the pipeline has brought a specific mental strategy question to the coaching relationship unprompted.",
+    "open_thread": "Aidan's visualization question ('How do you suggest I balance visualization with letting go?') is a direct coaching request that should be addressed in the Week 5 coaching message. The outdoor season transition decision (continue training vs. extended deload) remains pending from Week 4. Training metrics this week are positive (near-10m/s reps, gym PR, 16.4s 150m) — the performance foundation is strong despite the competition disappointment. The key developmental question is whether the trust-based approach to visualization and the identity-level Bullseye insights carry forward into the outdoor season, or whether the next competition re-activates the comparison derailer."
+  },
+
+  "most_important_controllable": "The relationship between visualization and trust — Aidan named this himself: 'I want to work on trusting the feeling instead of constantly checking it.' This is the single most important controllable because it addresses the root mechanism of his overthinking derailer: the constant mental rehearsal is a form of checking whether he is prepared enough, which is a validation-seeking behavior. Trusting the preparation and letting the execution emerge is the behavioral shift that breaks the overthinking cycle.",
+
+  "micro_commitment": {
+    "action": "Limit deliberate visualization to one specific window: the 5 minutes before your block or speed session begins. Outside that window, when you catch yourself rehearsing starts or race feelings during the day, name it ('I'm checking again') and let it pass. The training is already in your body — the session is where it shows up.",
+    "when": "All week. The 5-minute pre-session visualization window is the structured practice. The 'checking' awareness is ongoing throughout each day.",
+    "measurement": "Did Aidan catch himself rehearsing outside the pre-session window at least twice this week? When he caught it, did he let it pass or did he keep rehearsing? Did the pre-session visualization feel different when it was the only window? Report all three observations."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "N/A",
+    "anticipated_stressor": "Outdoor season transition approaching. Training momentum rebuilding (near-10m/s reps, gym PR, 16.4s 150m). The visualization question represents an internal stressor — the mental rehearsal pattern is creating fatigue before practice, and Aidan is seeking a resolution. Season direction decision still pending (continue vs. deload).",
+    "athlete_stated_next_goal": "Hit this coming week hard and rest harder. I want to start to increase this momentum to storm into the outdoor season. I'd like to improve my acceleration by getting a muscle memory down more"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "4/4 scored days as Wins (Monday-Thursday). Recovery progression: Mon-Tue mental readjustment, Wed block session (start reorganization), Thu speed session (near-10m/s reps). Fri-Sun gym sessions including max effort upper PR and special endurance 2x150 (16.8, 16.4s) with recovery focus — unscored. Deliberate rebuild structure across the week with both physical and mental dimensions actively managed.",
+    "key_habit_signal": "The visualization-vs-letting-go insight is the most significant self-coaching signal in the program. Aidan has identified that his constant mental rehearsal — which appears discipline-positive on the surface — is actually a form of the overthinking derailer operating through a socially acceptable mechanism. 'Making sure the feelings are still there' is confidence-checking, which is validation-seeking behavior disguised as preparation. His proposed alternative ('trusting the feeling instead of constantly checking it') is the correct behavioral direction. This level of self-diagnosis is rare at the Developing growth phase.",
+    "coach_reinforcement_cue": "Address the visualization question directly — Aidan asked for coaching guidance and deserves a specific answer. The achievement statement ('a stronger mental approach by being comfortable with letting go') names a mental skill as the week's primary accomplishment. This is a major shift: in Weeks 1-3, achievements were physical (walk-on progress, gym PRs, training balance). In Week 5, the achievement is psychological growth. Name this shift explicitly — he is no longer just building an athlete, he is building the mental infrastructure that allows the athlete to perform.",
+    "coach_avoidance_note": "Do not frame the visualization pattern as a problem to fix. Aidan's awareness of it is the breakthrough — many athletes never identify this pattern. The coaching response should validate the insight and offer structure (when to visualize, when to let go) rather than pathologizing the rehearsal behavior. Also, the training metrics this week are genuinely strong (near-10m/s, gym PR, 16.4s 150m) — do not let the post-competition emotional context overshadow the objective performance evidence. Aidan is performing well; the competition disappointment was about expectations, not execution capacity."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. The visualization pattern is within normal performance coaching scope — mental rehearsal management is a standard sport psychology technique. Aidan's self-identified 'draining' effect is performance-related fatigue, not clinical distress. The identity-level Bullseye language ('let a time define who I identify as') is within performance identity coaching scope. Emotional tone is forward-looking and constructive. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You said you want to trust the feeling instead of constantly checking it — what would your training day look like if you only thought about sprinting during the actual sprint session and let the rest of the day be everything else?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

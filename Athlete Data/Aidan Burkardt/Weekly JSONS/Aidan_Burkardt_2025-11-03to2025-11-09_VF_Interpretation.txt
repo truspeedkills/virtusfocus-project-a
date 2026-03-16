@@ -1,0 +1,222 @@
+{
+  "athlete_name": "Aidan Burkardt",
+  "week_period": "2025-11-03 to 2025-11-09",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to build independent self-esteem and be proud of who he is without needing external validation",
+    "baseline_hinge_habit": "Execution-focused pre-performance preparation — relaxing, letting speed come out, focusing on mechanics",
+    "baseline_primary_derailer": "Overthinking and age-based comparison that erodes confidence despite real progress",
+    "baseline_why_it_matters": "Shifting from comparison-based confidence to progress-based confidence supports consistent execution and prepares him to perform at the Pitt walk-on level",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "First week of the program. Aidan's weekly goal (hitting 2.90 30m fly and 365m+ on 45-sec drill by June) reflects clear outcome targets tied to his Pitt walk-on pursuit. Met with Pitt coach and Pitt sprint coach this week to set goals — directly acting on his stated ambitions. The Bullseye cannot-control response ('I can't control where I'm at right now based on the past') reveals the comparison derailer operating in real time, but notably, he places it correctly in the noise ring rather than fixating on it. Mindset challenge resonance ('Do one thing today in your own style instead of following the crowd') maps directly to the external validation dependency identified at baseline."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "First week in the program. Structured training week with gym sessions (volume lower, volume upper, max effort lower, max effort upper with 300lb floor press), ASSE speed work (.96 10m fly), and two meetings with Pitt coaching staff to set walk-on goals. Thursday dip due to late sleep. Saturday and Sunday productive (gym PR and school work) but no WTD scores provided — a recurring pattern in this athlete's recaps. Sleep identified as an active challenge. Re-engaging with the VirtusFocus system ('happy to be back submitting these again').",
+
+  "core_pattern": "Structure-driven execution with sleep-recovery friction. Aidan's weekday execution is strong when gym and school provide scaffolding. The Thursday dip correlates directly with poor sleep — a pattern he names himself. The Bullseye reveals both a strength (places past-comparison in noise ring) and the baseline derailer operating ('can't control where I'm at right now based on the past').",
+
+  "behavioral_root_cause": "Aidan's daily execution is anchored to external structure (gym programming, school schedule, coaching meetings). When structure holds, execution follows. The Thursday Neutral resulted from a controllable lapse (late bedtime) rather than a motivational gap. The derailer (comparison to age-based benchmarks) is present in his thinking but not yet disrupting execution — it sits in his Bullseye noise ring rather than dominating his controllable focus.",
+
+  "prior_commitment_result": {
+    "prior_action": "No Prior Week",
+    "execution_status": "No Prior Week",
+    "execution_notes": "First week of the program. No prior commitment exists.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Focus on recovery, get closer to hitting 2.90 30m fly & 365m+ on 45 sec drill by June",
+    "achievement_statement": "I achieved clear future goals to set, and a proper maintenance of workload at the cost of rest",
+    "key_phrase": "happy to be back submitting these again",
+    "mindset_resonance": "Do one thing today in your own style instead of following the crowd"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "4",
+      "neutral_days": "1",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Three controllables named: effort per rep, bedtime decisions, and freetime usage for assignments. All are genuinely controllable and behaviorally specific. However, they are general habit-level controllables rather than sport-specific execution anchors — appropriate for Week 1 orientation.",
+    "influence_quality": "Developing. 'I can influence my future focus and energy by focusing on rest now' correctly places recovery-to-performance as an influence mechanism. Single item reflects limited engagement with the influence ring.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "0",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Sleep timing — Aidan named bedtime as a controllable and identified sleep as his primary performance limiter this week ('Sleep has been rough due to school work'). Thursday's Neutral day was directly caused by going to bed late. Controlling bedtime is the single lever that protects his otherwise strong execution base.",
+
+  "micro_commitment": {
+    "action": "Set a specific bedtime for three weeknights this week and stick to it — no screens or school work past that time. Track whether the next morning's training session feels different.",
+    "when": "Three weeknights of Aidan's choosing. Set the time the night before and commit to it.",
+    "measurement": "Did Aidan hit his chosen bedtime on at least 3 of 5 weeknights? Did any next-day training sessions feel noticeably different? Report both in next week's recap."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "N/A",
+    "anticipated_stressor": "Continued dual demands of school work and training. Sleep remains the primary friction point between workload and recovery. No competition scheduled, allowing focus on training progression toward June benchmarks.",
+    "athlete_stated_next_goal": "Continue to progress to June's goals and stay focused on form when sprinting and to prioritize recovery"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "4/5 scored days as Wins (Saturday and Sunday productive but unscored). Strong gym adherence (4 sessions including 300lb floor press). Met with Pitt coaching staff twice to set walk-on goals. Thursday dip from late sleep — the only scored non-Win day. Note: Aidan does not consistently provide WTD scores for weekend days across his recaps, limiting the precision of weekly tier classification.",
+    "key_habit_signal": "The Pitt coaching meetings are the most important behavioral signal this week — Aidan is actively pursuing his outcome goal rather than waiting for it. This initiative-taking is a positive counter-signal to the external validation dependency identified at baseline. The Bullseye placement of past-comparison in the noise ring shows emerging awareness of the derailer pattern.",
+    "coach_reinforcement_cue": "Connect the Pitt coaching meetings to Aidan's identity claim. He didn't wait for someone to tell him he was ready — he initiated the conversation himself. That is the independent confidence he described wanting at intake. Name that action as evidence of the identity he's building.",
+    "coach_avoidance_note": "Do not overweight the comparison language in the Bullseye noise ring. Aidan placed it correctly — he knows it's noise. Drawing more attention to it risks reinforcing the fixation rather than the awareness. Focus on the active steps he took (coaching meetings, training metrics) rather than the thinking pattern he identified."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Sleep challenge is within normal performance coaching scope — related to school workload, not distress. Comparison language in Bullseye is self-identified and correctly categorized. 'Happy to be back submitting these again' suggests re-engagement enthusiasm, not program avoidance. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You said sleep has been rough — what is one specific thing you could change about your nighttime routine this week to protect your recovery?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

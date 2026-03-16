@@ -1,0 +1,222 @@
+{
+  "athlete_name": "Aidan Burkardt",
+  "week_period": "2025-11-24 to 2025-11-30",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to build independent self-esteem and be proud of who he is without needing external validation",
+    "baseline_hinge_habit": "Execution-focused pre-performance preparation — relaxing, letting speed come out, focusing on mechanics",
+    "baseline_primary_derailer": "Overthinking and age-based comparison that erodes confidence despite real progress",
+    "baseline_why_it_matters": "Shifting from comparison-based confidence to progress-based confidence supports consistent execution and prepares him to perform at the Pitt walk-on level",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Thanksgiving week with maintained training structure. Achievement statement directly names progress toward baseline goals: 'achieved goals closer to walk-on standards at Pitt, stronger relationships with friends and family, and a stronger, recovered body.' Recovery focus as weekly goal aligns with the execution-focused preparation hinge habit. No comparison language present this week — derailer not activated. The excitement statement ('I'm excited with how close I am to achieving my goals') reflects growing confidence anchored to progress rather than external comparison."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Thanksgiving holiday week with full training maintenance. Five scored Win days (Monday through Friday) including gym deload, volume upper, holiday balancing, max effort lower, and max effort upper with special endurance. Saturday and Sunday productive (gym, work, girlfriend, friends, school) but no WTD scores provided. Recovery-focused weekly goal executed successfully — balanced family time, training, and academic preparation. Sleep concern from Week 1 addressed through intentional recovery prioritization ('I really need to lock in on my sleep though'). Two-week gap since Week 1.",
+
+  "core_pattern": "Structure-maintained execution through disrupted routine. Thanksgiving week could have disrupted Aidan's training schedule, but he maintained gym consistency across the holiday period (deload Monday, volume upper Tuesday, max effort lower Friday, max effort upper + special endurance Saturday). The pattern confirms that his execution is not solely dependent on school/work structure — he generates his own training structure even when external schedules shift.",
+
+  "behavioral_root_cause": "Aidan's holiday week execution provides evidence that his training discipline is internally motivated rather than purely structure-dependent. He maintained four distinct gym sessions across a week when most external demands were relaxed. The recovery focus as a weekly goal — rather than performance benchmarks — shows appropriate periodization awareness. Sleep identified as the persistent friction point between execution capacity and recovery quality.",
+
+  "prior_commitment_result": {
+    "prior_action": "Set a specific bedtime for three weeknights this week and stick to it — no screens or school work past that time. Track whether the next morning's training session feels different.",
+    "execution_status": "Unknown",
+    "execution_notes": "Two-week gap between Week 1 and Week 2. The commitment was designed for the immediately following week, which is not captured in the data. Sleep is mentioned as an ongoing area ('I really need to lock in on my sleep') but no specific evidence of the bedtime tracking commitment being executed or not.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Focus on recovery for each following day",
+    "achievement_statement": "I achieved goals closer to walk-on standards at Pitt, stronger relationships with friends and family, and a stronger, recovered body",
+    "key_phrase": "I'm excited with how close I am to achieving my goals",
+    "mindset_resonance": "Put phone away for 30 mins and do task"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "5",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Two controllables: time management and effort/mindset per rep. Consistent with Week 1 themes (effort, time usage) but not yet developing sport-specific execution controllables. The 'mindset behind each repetition' language is a step toward execution-focused preparation.",
+    "influence_quality": "Developing. 'How satisfied I am with a finished workout based on how hard I attack it initially' correctly identifies that initial effort influences subsequent satisfaction — a forward-looking influence mechanism.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "1",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Sleep discipline — Aidan named sleep as the priority again ('I really need to lock in on my sleep though to make sure I'm ready for the next days to improve'). Training consistency is strong; the limiting factor on performance gains is recovery quality, and sleep is the controllable lever for recovery.",
+
+  "micro_commitment": {
+    "action": "Choose a bedtime for Sunday through Thursday nights this week. Set a phone alarm 30 minutes before that time as a wind-down signal. When the alarm goes off, close school work and begin shutdown — no new tasks after the alarm.",
+    "when": "Every night Sunday through Thursday. The 30-minute alarm is the commitment trigger.",
+    "measurement": "Did Aidan hit the wind-down alarm on at least 4 of 5 nights? Did he stop starting new tasks after the alarm? Report the count and whether next-morning energy felt different."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "N/A",
+    "anticipated_stressor": "Return to full academic schedule after Thanksgiving break. Final exam period approaching. Continued dual load of school and training. Sleep management remains the primary controllable stressor.",
+    "athlete_stated_next_goal": "Study hard for school, prioritize sleep, and get to the gym early and with a good attitude"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5/5 scored days as Wins through a Thanksgiving holiday week — strong maintenance of structure when external routine was disrupted. Four gym sessions across the week (deload, volume upper, max effort lower, max effort upper + special endurance). Family time balanced with training and academic preparation. Saturday and Sunday productive but unscored (consistent with Week 1 pattern).",
+    "key_habit_signal": "The holiday-week execution is a positive structural signal. Aidan maintained his training routine without school/work scaffolding, suggesting internal discipline rather than purely structure-dependent execution. This differentiates him from athletes who only perform when external demands are present.",
+    "coach_reinforcement_cue": "Name the holiday week maintenance as evidence of ownership. Many athletes use holidays as an excuse to disengage — Aidan used it as an opportunity to train while adding recovery and family time. The achievement statement ('goals closer to walk-on standards') shows he is tracking his own progress against his benchmarks, not waiting for someone to evaluate him.",
+    "coach_avoidance_note": "The excitement about being close to his goals is genuine and forward-looking. Do not add caution or temper the enthusiasm. Aidan's tone is confident without being unrealistic — he names sleep as the area still needing work, showing self-awareness alongside the confidence."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Sleep concern is within normal performance coaching scope. Positive emotional tone with self-aware identification of remaining growth area. Two-week gap from Week 1 — no indication of disengagement; Aidan references continuity with the program. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You said you need to lock in on sleep — what is the one change to your nighttime routine that would make the biggest difference for how you feel at the gym the next morning?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

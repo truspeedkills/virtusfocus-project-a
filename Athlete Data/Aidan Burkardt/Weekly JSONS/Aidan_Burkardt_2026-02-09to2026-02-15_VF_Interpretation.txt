@@ -1,0 +1,222 @@
+{
+  "athlete_name": "Aidan Burkardt",
+  "week_period": "2026-02-09 to 2026-02-15",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to build independent self-esteem and be proud of who he is without needing external validation",
+    "baseline_hinge_habit": "Execution-focused pre-performance preparation — relaxing, letting speed come out, focusing on mechanics",
+    "baseline_primary_derailer": "Overthinking and age-based comparison that erodes confidence despite real progress",
+    "baseline_why_it_matters": "Shifting from comparison-based confidence to progress-based confidence supports consistent execution and prepares him to perform at the Pitt walk-on level",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "First competition of the program activates the baseline derailer. Meet results (60m: 7.5 FAT vs 7.2 target, 200m: 23.4 vs sub-23 target) produced the comparison-reactive response predicted by the baseline: 'it felt a little demoralizing' and 'I feel like if I've been training for years now it should definitely be in the 7.0's or even 6.9's by now.' The age-based comparison derailer is operating explicitly — Aidan is measuring results against where he believes he should be based on training duration, not against his actual improvement trajectory. However, the response is more mature than baseline would predict: he channels disappointment into controllable analysis ('choose to overthink or just see the results for what they are and analyze them with others instead of by myself') and maintains forward commitment ('I really am willing to do whatever it takes'). Partially Aligned because the derailer activated but the response demonstrates emerging self-regulation rather than full confidence collapse."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Competition week with derailer activation and mature recovery response. Monday through Thursday scored as Wins with structured training (block starts, volume upper, track sessions, flying sprints) and school balance. Friday and Saturday were intentional rest/recovery days for the Sunday meet (no WTD scores). Sunday competition: 60m dash 7.5 FAT (target 7.2), 200m 23.4 (target sub-23) — described as 'a little demoralizing.' Ten-week gap since Week 3. Despite the disappointing results, Aidan's Bullseye responses show the most sophisticated controllable identification in the program, including direct self-regulation language about choosing how to process results.",
+
+  "core_pattern": "Derailer activation under competitive pressure with emerging self-regulation capacity. The comparison derailer activated precisely as baseline predicted — disappointing results measured against expectations produced 'demoralizing' emotional response and age-based comparison ('should be in the 7.0's or even 6.9's by now'). However, the behavioral response diverges from baseline: rather than sustained overthinking, Aidan names the choice between overthinking and analytical processing ('choose to overthink or just see the results for what they are'), identifies channeling disappointment productively ('apply my disappointment into energy'), and places past results in the noise ring.",
+
+  "behavioral_root_cause": "The competition exposed the gap between Aidan's preparation-anchored confidence (built through Weeks 1-3) and his outcome-reactive evaluation system. His training confidence was genuine — he had a 'breakthrough year' feeling entering the meet. But when results didn't match expectations, the evaluation shifted from progress-based to comparison-based. The derailer mechanism is specifically age-related timeline comparison ('training for years now it should definitely be...'), not simple outcome disappointment. The positive signal is that Aidan recognizes the choice between overthinking and analytical processing in real time — this is new behavioral awareness, not yet a stable habit.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before each workout this week, take 10 seconds to name one specific thing from the previous workout that went well. Carry that into the session as the standard to match or build on.",
+    "execution_status": "Unknown",
+    "execution_notes": "Ten-week gap between Week 3 and Week 4. The commitment was designed for the immediately following week, which is not captured in the data. Training preparation was strong this week (block starts, speed sessions, recovery days before competition), but no specific evidence of the pre-workout reflection commitment being practiced.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Perform well at my meet. Try and hit 7.2 in the 60m, and sub 23 in the 200m. Maintain proper recovery and sleep, and stay on top of school.",
+    "achievement_statement": "I achieved a consistent workout routine, and locked in recovery for the best possible outcome. Despite the outcomes of my meet, I was happy to still go out and compete, and it encourages me to still want to put forth more effort to improve.",
+    "key_phrase": "I really am willing to do whatever it takes to hit the times I want and I'm putting all my faith into the system",
+    "mindset_resonance": "Repeat one positive habit without skipping it"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "4",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Strong. Most sophisticated controllable identification in the program. Four distinct controllables: (1) 'what I can do right now' — present-moment focus, (2) 'choose to overthink or just see the results for what they are and analyze them with others instead of by myself' — naming the derailer and identifying a specific alternative behavior, (3) 'how serious I take my recovery and apply my disappointment into energy that is worth while like school work' — channeling emotion productively, (4) 'how confident I feel' — naming confidence as controllable. The self-regulation specificity (choosing between overthinking and analytical processing, identifying collaborative analysis as healthier than solo fixation) represents a qualitative leap from prior weeks.",
+    "influence_quality": "Moderate. Two influences: future performance based on training/recovery seriousness, and body condition based on diet. Both correctly placed and forward-looking.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Moderate",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "3",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over four weeks (with a 2-week gap between Weeks 1-2 and a 10-week gap between Weeks 3-4), Aidan progressed from structured program re-engagement (Week 1) through training maintenance across disrupted routines (Week 2: holiday, Week 3: finals) to peak preparation-anchored confidence ('breakthrough year in every way,' Week 3). Week 4 introduces the first competitive test — and the confidence mechanism is challenged. Meet results below expectations activate the age-based comparison derailer ('should be in the 7.0's by now'), but the behavioral response shows emerging self-regulation: Aidan names the choice between overthinking and analytical processing, identifies productive emotion channeling, and maintains forward commitment. The arc's central tension — can preparation-built confidence survive outcome disappointment — is now live.",
+    "milestone_this_week": "First competition in the program. First derailer activation under live conditions. The derailer operated exactly as baseline predicted (age-based comparison → 'demoralizing' emotional response), but Aidan's self-regulation response was more mature than expected — he identified the choice between overthinking and analytical processing in the Bullseye, a level of real-time behavioral awareness not present in Weeks 1-3.",
+    "open_thread": "The competition exposed two specific performance gaps Aidan is now processing: (1) 60m start quality ('I feel like my start is really what's holding me back'), and (2) 200m race execution ('I don't know what's holding me back there'). The analytical specificity of the competition section (split times, fly times, comparison to training data) shows he has the capacity for productive analysis rather than emotional fixation. The question is whether this analytical approach stabilizes or whether the 'demoralizing' emotional response dominates heading into the next training block. Additionally, his statement 'I'm putting all my faith into the system' represents significant trust-building — he is choosing to stay committed despite disappointing results."
+  },
+
+  "most_important_controllable": "Processing competition results analytically rather than emotionally — Aidan named this directly: 'choose to overthink or just see the results for what they are and analyze them with others instead of by myself.' This is the single behavioral lever that determines whether the competition disappointment becomes fuel for improvement or a confidence spiral.",
+
+  "micro_commitment": {
+    "action": "This week, sit down with your sprint coach for 15 minutes and review your 60m race together — specifically the start phase. Go in with one question: 'What is the one thing I can change in my start that would make the biggest difference?' Write down the answer and bring it to your next block session.",
+    "when": "Within the first three days of the week. The conversation happens once; the written takeaway carries into training.",
+    "measurement": "Did Aidan have the conversation with his coach? Did he write down one specific change? Did he apply it in at least one block session this week? Three yes/no checkpoints."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "N/A",
+    "anticipated_stressor": "Post-competition emotional processing. Decision point about whether to continue into outdoor season or take an extended deload ('Decide with my coach whether to keep working into outdoor season or to take a long deload to let my body and mind reset'). The framing of this as a decision rather than a reaction is a positive signal — he is approaching the transition point deliberately rather than emotionally.",
+    "athlete_stated_next_goal": "Decide with my coach whether to keep working into outdoor season or to take a long deload to let my body and mind reset in preparation to perform well outdoor season"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "4/4 scored days as Wins (Monday-Thursday). Friday and Saturday intentional rest/recovery for Sunday competition — no WTD scores but purposeful preparation. Sunday competition: 60m 7.5 FAT (target 7.2), 200m 23.4 (target sub-23). Derailer activated by results gap. Competition analysis shows technical specificity: 30-60 split 2.98-3.03 (top end adequate), start identified as limiting factor. Training metrics from preparation period show competence (block starts with resistance, flying sprints, volume programming maintained). Note: only 4 of 7 days scored — WTD scoring gap widened from Weeks 1-3 pattern.",
+    "key_habit_signal": "The Bullseye response under competitive disappointment is the most important coaching signal this week. Aidan's ability to name the choice between overthinking and analytical processing — in real time, after a demoralizing result — represents behavioral awareness beyond what the first three weeks demonstrated. The 'analyze them with others instead of by myself' insight is particularly significant: he has identified that isolated processing feeds the overthinking derailer, while collaborative analysis defuses it.",
+    "coach_reinforcement_cue": "Anchor on the analytical specificity in the competition section. Aidan broke down his 60m into segments (30-60 split, start phase, top end) and identified a specific limiting factor (start). This is exactly the 'see results for what they are' approach he described in his Bullseye. Name this as evidence that he can process competition data without letting it define him. The choice to analyze rather than fixate IS the mental performance skill he has been building.",
+    "coach_avoidance_note": "Do not validate the 'demoralizing' framing. Aidan has already moved past it in the same recap — he ends with commitment and faith in the system. Meeting him at the 'demoralizing' point would anchor him in an emotional state he has already begun processing. Also do not comment on the age-based comparison ('should be in the 7.0's by now') beyond what Aidan has already addressed in his Bullseye — he placed past results in the noise ring himself."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. 'Demoralizing' is used as a common-language descriptor of competitive disappointment, not a clinical term. Emotional response to below-expectation competition results is within normal performance coaching scope. Aidan's self-regulation response (naming the choice, channeling emotion, maintaining commitment) indicates healthy processing. Faith-in-system language ('putting all my faith into the system') reflects commitment, not dependency. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You identified your start as the thing to work on — what would it feel like to walk to the blocks knowing you have a specific plan for that first push, instead of hoping the time shows what you want?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  }
+}

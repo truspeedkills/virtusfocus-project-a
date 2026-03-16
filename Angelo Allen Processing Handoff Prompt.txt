@@ -1,0 +1,405 @@
+============================================================
+ANGELO ALLEN — PIPELINE PROCESSING HANDOFF PROMPT
+============================================================
+SESSION TYPE: Pipeline Processing (Stages 1-5)
+GOAL: Process Angelo Allen through the full VirtusFocus AI
+Coaching Pipeline: Snapshot Generation (Stage 1) →
+Interpretation Engine (Stage 2) → Coaching Output Engine
+(Stage 3) → Coach Insights Engine (Stage 4) → Editorial
+Audit (Stage 5).
+============================================================
+
+1. WHAT YOU ARE DOING
+============================================================
+
+You are processing ONE athlete — Angelo Allen — through the
+full 5-stage pipeline. He is a Core Foundation athlete
+(weekly PDF recap input only — NOT an App athlete). This
+means:
+
+- input_source = "core_foundation" for all weeks
+- All execution_behavior_signals fields → fallback values
+- All baseline_intake_profile fields → fallback values
+- current_season_phase → "not available"
+- forward_anchor fields → fallback values
+- No PPD/ABI scoring (Core Foundation intake form)
+- No competitive level calibration (default College-equivalent)
+- No parent output (no parent_inclusion data)
+
+The pipeline produces IDENTICAL output quality for Core
+Foundation athletes as it did for Grace Kindel, Tucker Lloyd,
+Mergim Bushati, and Aidan Burkardt. The v9.6/v1.8/v1.5/v1.3
+specifications contain Core Foundation skip rules that bypass
+all App-only features while preserving full coaching quality.
+
+============================================================
+
+2. ATHLETE PROFILE
+============================================================
+
+Sport: Track and Field (Throws)
+Team: Seton Hill University
+Position: Thrower (Shot Put, Weight Throw)
+Years Competing: 16
+Mental Game Self-Rating: 7/10
+Commitment: All-in
+Parent Involvement: Somewhat involved
+Parent Inclusion: NO
+Intake Date: 2026-02-04
+Referral: Arron Panigall (VirtusFocus founder)
+
+Mental Struggles Selected: Handling mistakes, Staying consistent
+
+Key Intake Language:
+- Pre-moment: "Let's go get this! Time to lock in! Go big
+  now, come on!"
+- Holding back: "Just being busy with school and work
+  related stuff"
+- Success vision: "top 5 in PSAC championship, graduating
+  undergrad, going to nationals in shot put, finishing
+  internship, transitioning into grad school"
+- Identity: "a more goal oriented, resilient, tenacious,
+  and sharp human being"
+
+Intake PDF: Athlete Data\Angelo Allen\Angelo-Allen-Track-and-Field-Throws.pdf
+
+============================================================
+
+3. WEEKLY REVIEWS
+============================================================
+
+| # | File | Submit Date | Estimated Week Period |
+|---|---|---|---|
+| 1 | Angelo Allen 2-8.txt | Sun Feb 8, 2026 | Feb 3-8, 2026 |
+| 2 | Angeo Allen 2-15.txt | Mon Feb 16, 2026 | Feb 9-15, 2026 |
+| 3 | Angelo Allen 2-22.txt | Thu Feb 26, 2026 | Feb 17-22, 2026 |
+| 4 | Angeo Allen 3-15.txt | Sun Mar 15, 2026 | Mar 10-15, 2026 |
+
+NOTE: Filename typo "Angeo" in Weeks 2 and 4 — read the
+files as-is, just be aware of the spelling.
+
+Directory: Athlete Data\Angelo Allen\Weekly Reviews\
+
+DATE GAPS:
+- Weeks 1-3 are consecutive (Feb 3-22)
+- 2.5-week gap between Week 3 (Feb 22) and Week 4 (Mar 15)
+- Angelo explains the gap in Week 4: missed 2 weekly recaps
+  (Spring Break + emotional processing after PSAC Indoor
+  Championship disappointment)
+
+GAP HANDLING:
+- Weeks 1-3: Normal consecutive processing
+- Week 4: prior_commitment_result.execution_status = "Unknown"
+  (commitment was given before the gap but execution
+  unobservable). Longitudinal metrics may need reset or
+  "insufficient data" depending on gap length vs. threshold.
+  narrative_arc should note the gap. Use v9.6 spec judgment
+  rules for "prior week" definition.
+
+============================================================
+
+4. KEY THEMES FROM RECAPS
+============================================================
+
+- Recovering from harsh illness in early weeks
+- High-level competition: PSAC championship, solo at meets
+  (no throwing teammates, no throws coach present)
+- Equipment issues: broken implements at championship,
+  had to borrow from other teams
+- Week 2 competition: near-PR in shot put (16.44m vs 16.70m PR)
+- Week 3: won both events at last-chance meet, "electric"
+  energy, peak performance
+- PSAC Championship (between Weeks 3-4): disappointing,
+  subpar performance due to broken implements, fatigue,
+  being solo, messy week of academics/personal life
+- Week 4: transitioning to outdoor season, processing
+  championship disappointment, mature reflection
+- Spouse relationship mentioned multiple weeks (positive
+  dynamic, occasional stress, resolution)
+- Leadership thread: team morale, coaching athletes at work
+- Very mature, self-aware communicator (16 years competing,
+  approaching graduation + grad school)
+- Multi-domain balance: school, work, sport, relationship
+- Distinctive voice: enthusiastic, direct, "electric" energy
+  language, high ownership
+
+============================================================
+
+5. PROCESSING ORDER
+============================================================
+
+STAGE 1: ATHLETE SNAPSHOT GENERATION
+  - Read the intake PDF
+  - Follow the Snapshot Builder specification (v1.0 — Core
+    Foundation path, NOT v2.0 App path)
+  - Generate the 9-section baseline narrative snapshot
+  - Derive the 4 locked baseline anchors:
+    * baseline_identity_claim
+    * baseline_hinge_habit
+    * baseline_primary_derailer
+    * baseline_growth_phase
+  - Save to: Athlete Data\Angelo Allen\angelo_allen_athlete_snapshot.txt
+  - Present snapshot to user for review before proceeding
+
+STAGE 2: INTERPRETATION ENGINE (all 4 weeks)
+  - Read the athlete's baseline snapshot
+  - Read ALL weekly reviews in chronological order
+  - Process each week through the Interpretation Engine
+    using v9.6 Project Instructions
+  - input_source = "core_foundation" for all weeks
+  - Apply all Core Foundation fallback rules
+  - Save each week's JSON to: Athlete Data\Angelo Allen\Weekly JSONS\
+  - Naming: Angelo_Allen_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_Interpretation.txt
+
+  DATE RANGE DETERMINATION:
+  The weekly review submission dates do not always align with
+  clean Monday-Sunday weeks. Use the recap content (day-by-day
+  entries starting Monday) to determine the actual week period.
+  Map each recap's Monday-Sunday coverage from the daily entries.
+
+STAGE 3: COACHING OUTPUT ENGINE (all 4 weeks)
+  - Input: Interpretation JSON only (do NOT re-read recaps)
+  - Follow v1.8 Instructions (Core Foundation path)
+  - Master Prompt V4
+  - Generate Coaching Message + Deep Dive for each week
+  - Persona: Coach Arron
+  - No parent output (Core Foundation, no parent_inclusion)
+  - Save to: Athlete Data\Angelo Allen\Coaching and Deep Dive\Coaching Message\
+  - Save to: Athlete Data\Angelo Allen\Coaching and Deep Dive\Deep Dive\
+  - Naming: Angelo_Allen_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_CoachingMessage.txt
+  - Naming: Angelo_Allen_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_DeepDive.txt
+
+STAGE 4: COACH INSIGHTS ENGINE (all 4 weeks)
+  - Input: Interpretation JSON only
+  - Follow v1.5 Instructions (Core Foundation path)
+  - Master Prompt v1.2
+  - Generate Weekly Performance Insight for each week
+  - No parent insight (Core Foundation)
+  - Save to: Athlete Data\Angelo Allen\Coach Insights\
+  - Naming: Angelo_Allen_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_WeeklyInsight.txt
+
+STAGE 5: EDITORIAL AUDIT (most complex week)
+  - Choose the most complex week for audit (likely Week 4 —
+    post-championship disappointment, gap handling, mature
+    emotional processing — or Week 2 if it has competition
+    content with higher EI)
+  - Input: Interpretation JSON + Coaching Message + Deep Dive
+  - Follow v1.3 Instructions
+  - All 13 criteria, all 3 tiers
+  - If REJECT: regenerate the failing output, then re-audit
+  - Save to: Athlete Data\Angelo Allen\Coaching and Deep Dive\Audit Summaries\
+  - Naming: Angelo_Allen_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_AuditSummary.txt
+
+============================================================
+
+6. REFERENCE FILES TO READ
+============================================================
+
+Read CLAUDE.md first — it contains the full pipeline
+specification, all operating rules, file locations, and
+athlete data status (including completed athletes for
+format reference).
+
+STAGE 1 REFERENCES:
+- Snapshot Builder v1.0 (CF path):
+  Agents - Generators\Athlete Snapshot Generator\VF_Intake_Snapshot_Builder_Project_Instructions.txt
+- Existing snapshots for format reference:
+  Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+  Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+  Athlete Data\Mergim Bushati\mergim_bushati_snapshot.txt
+  Athlete Data\Aidan Burkardt\aidan_burkardt_athlete_snapshot.txt
+
+STAGE 2 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Interpretation\SOP - Weekly Interp Prompt v7.3.txt
+- Project Instructions (ACTIVE):
+  Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
+- JSON Rules:
+  Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+- Composite Score Rules (CF fallback reference):
+  Agents - Generators\Interpretation\Source Files\VF_Execution_Signal_Composite_Score_Rules.txt
+- Coach Flags Specification (CF fallback reference):
+  Agents - Generators\Interpretation\Source Files\VF_Coach_Flags_Specification.txt
+- App Input Format (CF fallback reference):
+  Agents - Generators\Interpretation\Source Files\VF_App_Input_Format_Specification.txt
+
+STAGE 3 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+- Project Instructions (ACTIVE):
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.8.txt
+- Message Map:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+- Brand Voice:
+  Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+- Content Style Guide:
+  Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+- System Identity:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+- Coaching Message Framework:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+- Deep Dive Framework:
+  Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+- Reflection/Growth Phase Model:
+  Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
+
+STAGE 4 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.2.txt
+- Project Instructions (ACTIVE):
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.5.txt
+- JSON Logic Reference:
+  Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+- Compliance Framework:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+- Dashboard Metrics Reference:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+- Output Structure Master:
+  Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
+
+STAGE 5 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+- Project Instructions:
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+- (Also uses Stage 3 source files listed above)
+
+EXISTING ATHLETE OUTPUTS FOR QUALITY/FORMAT REFERENCE:
+- Aidan Burkardt Week 4 JSON (most complex, same schema):
+  Athlete Data\Aidan Burkardt\Weekly JSONS\Aidan_Burkardt_2026-02-09to2026-02-15_VF_Interpretation.txt
+- Aidan Burkardt Week 4 CM (Moderate EI reference):
+  Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Coaching Message\Aidan_Burkardt_2026-02-09to2026-02-15_VF_CoachingMessage.txt
+- Aidan Burkardt Week 4 DD (competition week reference):
+  Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Deep Dive\Aidan_Burkardt_2026-02-09to2026-02-15_VF_DeepDive.txt
+- Aidan Burkardt Week 4 Audit (13-criterion PASS reference):
+  Athlete Data\Aidan Burkardt\Coaching and Deep Dive\Audit Summaries\Aidan_Burkardt_2026-02-09to2026-02-15_VF_AuditSummary.txt
+- Aidan Burkardt Week 5 Coach Insight (format reference):
+  Athlete Data\Aidan Burkardt\Coach Insights\Aidan_Burkardt_2026-02-16to2026-02-22_VF_WeeklyInsight.txt
+- Grace Kindel Week 5 JSON (Growth tier reference):
+  Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+
+============================================================
+
+7. WHAT THE USER EXPECTS
+============================================================
+
+- ALL outputs saved to disk in the correct directories
+- Present the snapshot for review before proceeding to Stage 2
+- After completing Angelo, provide a brief summary:
+  * Week-by-week tier and EI table (same format as CLAUDE.md)
+  * Key arc summary (2-3 sentences)
+  * Any notable findings or patterns
+  * Editorial audit result
+- Commit all work to Git with descriptive commit message
+- Update CLAUDE.md with Angelo's completed athlete data status
+
+============================================================
+
+8. WHAT NOT TO DO
+============================================================
+
+- Do NOT modify any specification files
+- Do NOT use App-athlete features (execution signals, PPD,
+  ABI, intake profile, forward anchor, parent output)
+- Do NOT skip reading the specification files — they contain
+  critical rules that changed in recent versions
+- Do NOT reinterpret or override JSON classifications in
+  downstream stages (Stage 3 reads JSON, not recaps)
+- Do NOT use clinical language in any coaching output
+- Do NOT surface coach_insights, risk_flags, narrative_arc,
+  upcoming_context, or longitudinal_metrics in coaching
+  output (these are internal to the pipeline)
+- Do NOT rush through the snapshot — it is the foundation
+  for all downstream output
+
+============================================================
+
+9. LOCKED FACTS
+============================================================
+
+- Angelo Allen is Core Foundation (input_source = "core_foundation")
+- v9.6 is the active Interpretation Engine schema
+- v1.8 is the active Coaching Output Instructions
+- V4 is the active Coaching Output Master Prompt
+- v1.5 is the active Coach Insights Instructions
+- v1.2 is the active Coach Insights Master Prompt
+- v1.3 is the active Editorial Audit (Master + Instructions)
+- Core Foundation Snapshot Builder is v1.0 (NOT v2.0)
+- 13 audit criteria across 3 tiers (Tier 1: 1-4 + 13)
+- 4 weekly reviews with 2.5-week championship gap
+- Parent inclusion = NO
+- Directory structure already exists (Weekly JSONS, Coaching
+  and Deep Dive/Coaching Message, Coaching and Deep Dive/
+  Deep Dive) — currently empty
+- Coach Insights output goes to: Athlete Data\Angelo Allen\Coach Insights\
+
+============================================================
+
+10. ANGELO-SPECIFIC PROCESSING NOTES
+============================================================
+
+PROFILE DISTINCTIVENESS:
+Angelo is the most experienced athlete in the pipeline (16
+years competing). His self-awareness is high (7/10 rating),
+and his intake language is action-oriented and direct. His
+mental struggles (Handling mistakes, Staying consistent) are
+fewer than other athletes — he selected only 2. His success
+vision is multi-domain (athletic achievement + academic +
+professional), which differs from the sport-only focus of
+other pipeline athletes. He has a spouse relationship that
+appears in multiple weeks. He functions as a leader (coaching
+athletes at work, team morale).
+
+EXPECTED COMPLEXITY POINTS:
+1. PSAC Championship Gap: The 2.5-week gap between Weeks 3
+   and 4 includes a MAJOR competitive event (PSAC Indoor
+   Championship) that Angelo describes retrospectively in
+   Week 4. The gap handling here is different from Aidan's
+   10-week gap — Angelo provides detailed retrospective
+   context. The interpretation must capture the championship
+   experience from Angelo's Week 4 description without
+   treating it as Week 4 data (it happened between weeks).
+
+2. Solo Competitor: Angelo competes without throwing teammates
+   or a throws coach at meets. This structural isolation is
+   a coaching-relevant factor — it affects preparation,
+   competition experience, and emotional processing. It
+   should appear in the snapshot and inform coaching tone.
+
+3. Equipment Issues: Broken implements at championship forced
+   borrowing from other teams. This is an external factor
+   that affected performance. The coaching output should
+   acknowledge without amplifying — similar to how Aidan's
+   competition results were acknowledged without anchoring
+   in disappointment.
+
+4. Emotional Intensity Calibration: Angelo's language is
+   generally upbeat and action-oriented ("electric," "let's
+   go"). Even his disappointment is processed maturely. EI
+   may stay Low or Moderate across weeks — watch for whether
+   the PSAC championship retrospective in Week 4 pushes to
+   Moderate based on language intensity.
+
+5. Multi-Domain Identity: Angelo's identity goals span
+   athletics, academics, and professional development. The
+   baseline identity claim should capture this breadth.
+   Coaching output should respect the multi-domain nature
+   rather than reducing to sport-only.
+
+============================================================
+
+11. TOTAL OUTPUTS TO PRODUCE
+============================================================
+
+- 1 athlete snapshot (Stage 1)
+- 4 Interpretation JSONs (Stage 2)
+- 4 Coaching Messages (Stage 3)
+- 4 Deep Dives (Stage 3)
+- 4 Weekly Performance Insights (Stage 4)
+- 1 Editorial Audit Summary (Stage 5, minimum)
+
+Total: ~18 files
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================

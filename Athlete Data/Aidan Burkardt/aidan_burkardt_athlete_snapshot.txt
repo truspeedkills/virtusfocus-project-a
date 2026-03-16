@@ -1,0 +1,118 @@
+VF_PIPELINE_SNAPSHOT
+SNAPSHOT_TYPE: Baseline
+ATHLETE_NAME: Aidan Burkardt
+SPORT: Track & Field
+POSITION: Sprinter
+TEAM: Virtus/Pitt
+YEARS_COMPETING: 7
+INTAKE_DATE: 2025-05-11
+MENTAL_GAME_SELF_RATING: 5/10
+
+------------------------------------------------------------
+SECTION_1_PERFORMANCE_CONTEXT
+------------------------------------------------------------
+Aidan Burkardt is a sprinter training with Virtus and pursuing walk-on standards at the University of Pittsburgh. He has been competing in Track & Field for 7 years. His current training focuses on speed development (30m fly, 45-second drill benchmarks) and strength programming. His self-assessed mental performance rating of 5/10 indicates significant room for improvement in confidence and mental consistency, particularly under competitive pressure.
+
+------------------------------------------------------------
+SECTION_2_PRIMARY_STATED_GOALS
+------------------------------------------------------------
+OUTCOME_GOALS:
+- Get faster and stronger over the next 6 months.
+- Meet Pitt walk-on standards.
+
+BEHAVIOR_GOALS:
+- Stop overthinking before and during performance.
+- Build confidence in his ability independent of outcomes.
+- Reduce dependence on external validation.
+
+------------------------------------------------------------
+SECTION_3_MOTIVATION_DRIVERS
+------------------------------------------------------------
+INTERNAL_DRIVERS:
+- Self-improvement and personal development as both an athlete and a person.
+- Desire to build independent self-esteem and pride in his own progress.
+
+EXTERNAL_DRIVERS:
+- Walk-on opportunity at Pitt as a concrete performance target.
+
+IDENTITY_LANGUAGE_DETECTED:
+- "independently be proud of who I am" — seeking self-sourced validation.
+- "developing a stronger sense of selfishness in a competitive atmosphere" — wants to prioritize his own standards over external comparison.
+
+------------------------------------------------------------
+SECTION_4_KNOWN_DERAILERS
+------------------------------------------------------------
+PRIMARY_DERAILERS:
+- Overthinking during preparation and competition.
+- Fixating on age-based benchmarks — comparing where he is to where he believes he should be.
+- Seeking validation from others rather than self-assessing progress.
+
+DERAILER_CONTEXT:
+- The comparison pattern ("where I should be at my age vs how much I've actually improved overtime") creates a gap between real progress and perceived adequacy. This likely undermines confidence even when objective improvement is occurring.
+
+------------------------------------------------------------
+SECTION_5_CONFIDENCE_PATTERN
+------------------------------------------------------------
+CONFIDENCE_TYPE: Comparison-reactive
+
+DESCRIPTION:
+Aidan's confidence appears tied to external benchmarks and peer comparison rather than personal progress markers. Despite 7 years of competing, his 5/10 self-rating suggests ongoing confidence instability. His pre-performance thoughts are execution-focused (relaxing, letting speed come out, proper mechanics), which is a strength — but confidence erodes when he measures himself against age-based expectations rather than his own trajectory.
+
+------------------------------------------------------------
+SECTION_6_IDENTITY_FRICTION
+------------------------------------------------------------
+FRICTION_POINTS:
+- Wants to be independently confident but currently relies on external validation to feel good about his performance.
+- Wants to stop overthinking but recognizes it as a persistent pattern in his preparation.
+- Expresses desire for "selfishness" in competition but struggles to prioritize his own standards over comparison to others.
+
+------------------------------------------------------------
+SECTION_7_STRESS_TRIGGER_PROFILE
+------------------------------------------------------------
+COMPETITIVE_PRESSURE:
+- High-stakes moments create internal pressure amplified by outcome expectations.
+
+PRIMARY_TRIGGER:
+- Gap between perceived potential and current results, measured through comparison rather than personal growth metrics.
+
+BEHAVIORAL_RESPONSE_PATTERN:
+- Overthinking before performance moments.
+- Post-performance fixation on what "should have been" rather than what was achieved.
+
+EXTERNAL_STRESSORS:
+- Sleep challenges mentioned in intake context.
+- Balancing school, work, and training demands.
+
+------------------------------------------------------------
+SECTION_8_INITIAL_COACHING_EMPHASIS
+------------------------------------------------------------
+COACHING_PRIORITIES:
+- Redirect confidence anchoring from external comparison to personal progress markers.
+- Develop a pre-performance routine that channels his existing execution focus (relaxation, mechanics) while reducing overthinking.
+- Build self-validation habits that reinforce ownership of improvement.
+- Address sleep and recovery as controllable performance behaviors.
+
+BASELINE_ANCHORS:
+
+ANCHOR_IDENTITY_CLAIM:
+Wants to build independent self-esteem and be proud of who he is without needing external validation.
+
+ANCHOR_HINGE_HABIT:
+Execution-focused pre-performance preparation — relaxing, letting speed come out, focusing on mechanics.
+
+ANCHOR_PRIMARY_DERAILER:
+Overthinking and age-based comparison that erodes confidence despite real progress.
+
+ANCHOR_WHY_IT_MATTERS:
+Shifting from comparison-based confidence to progress-based confidence supports consistent execution and prepares him to perform at the Pitt walk-on level.
+
+ANCHOR_EXACT_PHRASE:
+"I hope to gain the ability to have more self-esteem to the point where I can independently be proud of who I am."
+
+------------------------------------------------------------
+SECTION_9_GROWTH_PHASE_CLASSIFICATION
+------------------------------------------------------------
+GROWTH_PHASE: Developing
+
+JUSTIFICATION:
+Aidan demonstrates strong commitment and self-awareness about his mental performance challenges. His pre-performance thinking is already approach-framed (execution cues rather than avoidance), which is a developmental asset. However, his confidence remains comparison-reactive, overthinking is a persistent pattern, and external validation dependency indicates that core mindset habits are still forming.
