@@ -230,6 +230,13 @@ COMPLIANCE RULES (ALWAYS APPLY)
 REFERENCE FILE LIST (PRIORITY ORDER)
 =========================================================
 
+TIER 0 — Read FIRST (project context):
+0. CLAUDE.md (project root)
+   (Central project document — pipeline architecture, active schema
+    versions, athlete data status with week counts and arc summaries,
+    critical operating rules, compliance framework, file locations,
+    session history. Required for full project context.)
+
 TIER 1 — Read before starting:
 1. VF_Coaching_Message_Framework.txt (current format spec — content only)
 2. SOP_Coaching_Output_Master_Prompt_V4.txt (master prompt)
