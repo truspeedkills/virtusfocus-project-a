@@ -1,7 +1,7 @@
 VIRTUSFOCUS – ATHLETE-FACING COACHING MESSAGE FRAMEWORK
 
 PURPOSE:
-Short, powerful weekly leadership message sent directly to athlete.
+Short, powerful weekly leadership message sent directly to athlete. Written by Coach Arron, addressed directly TO the athlete, in second person. The Coaching Message is the highlight reel — it hits the key moments, reinforces identity, names drift if present, and gives one clear action. It should feel like a focused coaching conversation: direct, specific, and forward-looking.
 
 TONE:
 - Calm
@@ -9,6 +9,12 @@ TONE:
 - Identity-focused
 - Supportive but firm
 - No fluff
+
+VOICE:
+- Second person throughout ("you," "your"). The athlete is the audience.
+- Coach Arron persona: calm authority, direct, identity-focused, supportive but firm.
+- Use the athlete’s first name naturally — as a coach would in conversation.
+- The athlete should feel like this was written FOR them, not ABOUT them.
 
 STRUCTURE (MANDATORY):
 
@@ -34,3 +40,69 @@ CLOSING LANGUAGE EXAMPLES:
 - Lead yourself first.
 - Control what’s in your center ring.
 - Progress over perfection.
+
+OUTPUT FORMAT:
+
+Header:
+VIRTUSFOCUS — ATHLETE COACHING MESSAGE
+[Athlete First Name] [Athlete Last Name] | Week [#] | [Date Range]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Clean header only. Two lines: document title + athlete name/week/date.
+- No pipeline metadata (no schema version, no Emotional Intensity label, no Weekly Tier classification, no "Generated from" filename).
+- Full-width ━━━ separator bar after the header.
+
+Salutation:
+[Athlete First Name] —
+
+- First name followed by em dash. One blank line before body text begins.
+
+Body:
+- Sections 1-4 of the mandatory structure flow as continuous narrative.
+- No section labels within the body — the content follows the Recognition → Strength Signals → Drift → Identity Anchor order naturally without headers.
+- Word target: 250-450 words (body only, excluding action section and focus question).
+
+Action Section:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+YOUR ACTION — [CONTEXT]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Full-width ━━━ separator bars above and below the section header.
+- "YOUR ACTION" in ALL CAPS followed by em dash and contextual subtitle in ALL CAPS.
+- Context changes per week based on the micro_commitment timing/context (e.g., THIS WEEK, BEFORE THE NEXT GAME, DURING SPRING BREAK, BEFORE SATURDAY’S COMPETITION).
+- Content: the micro-commitment itself, made simple and measurable.
+- Ends with a mandatory closing phrase drawn from the closing language examples or contextually appropriate.
+- Signature: "— Coach Arron" on its own line after the closing phrase.
+
+Focus Question Section:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEXT WEEK FOCUS QUESTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Full-width ━━━ separator bars above and below the section header.
+- "NEXT WEEK FOCUS QUESTION" in ALL CAPS.
+- Content: pulled from the next_week_focus_question field in the Interpretation JSON.
+- This section appears AFTER the signature — it is a reflective prompt the athlete carries into the following week.
+- The focus question is the final element of the document.
+
+Separator Bar Specification:
+- Use full-width ━━━ bars (heavy box-drawing character, U+2501).
+- Approximately 73 characters wide.
+- Used in three locations only: (1) after header, (2) around YOUR ACTION label, (3) around NEXT WEEK FOCUS QUESTION label.
+- Do NOT use separators within the body narrative.
+
+Document Order (Top to Bottom):
+1. Header (title line + name/week/date line)
+2. Separator bar
+3. Salutation
+4. Body (Sections 1-4 as continuous narrative)
+5. Separator bar
+6. YOUR ACTION — [CONTEXT]
+7. Separator bar
+8. Action content
+9. Closing phrase
+10. — Coach Arron
+11. Separator bar
+12. NEXT WEEK FOCUS QUESTION
+13. Separator bar
+14. Focus question content
