@@ -1490,52 +1490,160 @@ The Interpretation JSON is the central data object in the pipeline. Key fields t
 
 Dashboards are **presentation layers only** — they render data from pipeline output and Stage 7 signals. No new computations.
 
-### 10.1 Coach Dashboard (Institutional Tier Only)
+### 10.1 Coach Dashboard Metric Definitions (Institutional Tier Only)
 
-**6 Metrics:**
+6 compliance-safe metrics for coaching staff dashboard display. All metrics are trend-based, non-punitive, and informational. The dashboard is a presentation layer — it renders data from Stage 4 weekly output + Stage 7 daily output.
 
-| Metric | Source | Display | Color Coding |
-|--------|--------|---------|-------------|
-| **Pattern Stability Indicator** | 4+ weeks of weekly_tier + consistency_signal | Predictable / Transitional / Fluctuating | Green / Yellow / Orange |
-| **Response Recovery Indicator** | 3+ weeks of tier transitions | Rapid / Moderate / Extended / No Recovery Data | Green / Yellow / Orange / Gray |
-| **Multi-Week Trend Visualization** | 4-8 weeks of 8 metrics | Sparkline dots, color-coded, most recent on right | Per-metric color bands |
-| **Color Coding System** | All metrics | Green (positive) / Yellow (steady) / Orange (attention) | See table below |
-| **Season Phase Overlay** | Administrator-configured dates | Timeline bar with phase dividers | Neutral (informational only) |
-| **Team Trend Over Time** | 4+ weeks of team aggregates, 5+ athletes | Stacked area/bar charts, percentages only | Green / Yellow / Orange |
+#### 10.1.1 Pattern Stability Indicator
 
-**Pattern Stability Computation:**
-- 4+ consecutive same-tier weeks → **Predictable**
-- Mix of 2 tiers, 0-1 Reset weeks → **Transitional**
-- 3+ tier changes in 4 weeks OR 2+ Reset weeks → **Fluctuating**
+- **Source:** 4+ weeks of `weekly_tier` + `consistency_signal` from Interpretation JSON
+- **Display:** Text label + color band
 
-**Response Recovery Computation:**
-- Non-Growth → Growth next week → **Rapid**
-- Non-Growth → Mixed → Growth → **Moderate**
-- Non-Growth → 2+ consecutive non-Growth → **Extended**
-- All Growth weeks (untested) → **No Recovery Data** (Gray, positive indicator)
+| Label | Condition | Color |
+|-------|-----------|-------|
+| Predictable | 4+ consecutive same-tier weeks | Green |
+| Transitional | Mix of 2 tiers, 0-1 Reset weeks in window | Yellow |
+| Fluctuating | 3+ tier changes in 4 weeks OR 2+ Reset weeks | Orange |
 
-**Color Coding (complete mapping):**
+- **Update:** Weekly, rolling 4-week window
+- **Minimum data:** 4 weeks of Interpretation JSONs
+- **Early weeks (< 4 weeks):** Gray, "Building Pattern" placeholder
+- **Compliance:** Frame as "Pattern Stability," never "Volatility Index"
 
-| Metric | Green | Yellow | Orange |
-|--------|-------|--------|--------|
-| Weekly Tier | Growth | Mixed | Reset |
-| Consistency | Stable / Improving | Variable (no other negatives) | Variable (with negatives) |
-| Stress Load | Low | Moderate | Elevated |
-| Confidence | Building | Stable | Variable |
-| Focus Distribution | Center-Dominant | Mixed | Outer-Ring Drift |
-| Recommitment | Strong | Moderate | Low |
-| Composite Readiness | Positive | Steady | Attention |
-| Pattern Stability | Predictable | Transitional | Fluctuating |
-| Response Recovery | Rapid | Moderate | Extended |
+#### 10.1.2 Response Recovery Indicator
 
-**Important:** Orange ≠ "at-risk." No red color anywhere. No evaluation implication.
+- **Source:** 3+ weeks of tier transition history from Interpretation JSONs
+- **Display:** Text label + color band
 
-**Season Phase Overlay:**
-- Administrator sets phase dates at season start (calendar-based, not event-based)
-- 5 phases: Pre-Season, Early Season, Mid-Season, Conference, Post-Season
-- Displayed as timeline bar beneath trend visualizations
+| Label | Condition | Color |
+|-------|-----------|-------|
+| Rapid | Non-Growth week → Growth next week | Green |
+| Moderate | Non-Growth → Mixed → Growth (2-week recovery) | Yellow |
+| Extended | Non-Growth → 2+ consecutive non-Growth before recovery | Orange |
+| No Recovery Data | All Growth weeks (athlete untested — this is positive) | Gray |
 
-**Team Trend:** Minimum 5 athletes. All percentages, no individual athlete identification.
+- **Update:** Weekly, using all available history
+- **Minimum data:** 3 weeks with at least one non-Growth week followed by subsequent weeks
+- **Early weeks (< 3 weeks or all-Growth):** Gray, "No Recovery Data" (neutral/positive indicator)
+- **Compliance:** Measures behavioral pattern, NOT resilience or mental toughness
+
+#### 10.1.3 Multi-Week Trend Visualization
+
+- **Source:** 4-8 weeks of 8 metrics from Interpretation JSONs
+- **Display:** Sparkline dots per metric, color-coded, most recent week on right
+
+**8 Tracked Metrics:**
+
+| Metric | Source Field | Values |
+|--------|-------------|--------|
+| Weekly Tier | `win_the_day.weekly_tier` | Growth / Mixed / Reset |
+| Consistency Signal | `consistency_signal` | Stable / Improving / Variable / Declining |
+| Stress Load | `stress_load` | Low / Moderate / Elevated |
+| Confidence Momentum | `confidence_momentum` | Building / Stable / Variable |
+| Focus Distribution | `focus_distribution` | Center-Dominant / Mixed / Outer-Ring Drift |
+| Recommitment Strength | `recommitment_signal` | Strong / Moderate / Low |
+| Growth Phase | `growth_phase` | Emerging / Developing / Consistent / Leadership |
+| Composite Readiness | `composite_readiness_signal` | Positive / Steady / Attention |
+
+- **Display rules:**
+  - Most recent week on right side
+  - Color-coded data points (Green / Yellow / Orange per metric — see color table below)
+  - No raw numbers displayed — classification labels only
+  - Gray dot for insufficient data weeks
+  - Hovering shows: week date + classification label
+  - Minimum 4 weeks to render; maximum 8 weeks shown
+- **Update:** Weekly (Monday)
+
+#### 10.1.4 Color Coding System (Complete Mapping)
+
+| Metric | Green | Yellow | Orange | Gray |
+|--------|-------|--------|--------|------|
+| Weekly Tier | Growth | Mixed | Reset | — |
+| Consistency | Stable / Improving | Variable (no other negatives) | Variable (with negatives) / Declining | insufficient data |
+| Stress Load | Low | Moderate | Elevated | — |
+| Confidence | Building | Stable | Variable | insufficient data |
+| Focus Distribution | Center-Dominant | Mixed | Outer-Ring Drift | insufficient data |
+| Recommitment | Strong | Moderate | Low | Not Applicable |
+| Composite Readiness | Positive | Steady | Attention | — |
+| Pattern Stability | Predictable | Transitional | Fluctuating | < 4 weeks |
+| Response Recovery | Rapid | Moderate | Extended | No Recovery Data |
+
+**Critical:** Orange ≠ "at-risk." No red color anywhere in the system. No evaluation implication. Orange means "coaching staff might want context" — nothing more.
+
+#### 10.1.5 Season Phase Overlay
+
+- **Source:** Administrator-configured calendar dates (NOT event-based, NOT athlete-reported)
+- **Display:** Timeline bar beneath or above trend visualizations with phase dividers
+- **Configuration:** Administrator sets phase start/end dates at season start for the team/program
+
+| Phase | Typical Period |
+|-------|---------------|
+| Pre-Season | Before competitive season begins |
+| Early Season | First 2-4 weeks of competition |
+| Mid-Season | Core competitive schedule |
+| Conference | Championship / postseason period |
+| Post-Season | After competitive season ends |
+
+- **Purpose:** Contextual layer only — provides temporal context for reading trends. No performance expectations tied to schedule phase.
+- **Update:** Static per season (admin configures once, updates as needed)
+
+#### 10.1.6 Team Trend Over Time
+
+- **Source:** 4+ weeks of team-aggregate data, minimum 5 athletes per team
+- **Display:** Stacked area/bar charts showing percentages over time
+
+**Team-Level Metrics:**
+
+| Metric | Display Format |
+|--------|---------------|
+| Performance Distribution | % Growth / % Mixed / % Reset per week |
+| Team Consistency Trend | % Stable / % Variable / % Declining per week |
+| Team Focus Distribution | % Center-Dominant / % Mixed / % Outer-Ring per week |
+| Team Recommitment Trend | % Strong / % Moderate / % Low per week |
+| Team Stress Load Distribution | % Low / % Moderate / % Elevated per week |
+| Team Developmental Distribution | % by Growth Phase per week |
+
+- **Display rules:**
+  - All values as percentages (never raw athlete counts)
+  - 4-8 week window
+  - Minimum 5 athletes to generate
+  - **No individual athlete identification** at any point — aggregate only
+  - No athlete-to-athlete comparison views
+- **Update:** Weekly (Monday)
+- **Compliance:** Same rules as Weekly Team Snapshot output from Stage 4
+
+#### 10.1.7 Coach Dashboard — Excluded Metrics
+
+The following are **explicitly excluded** from the coach dashboard and must NEVER be generated or displayed:
+
+| Excluded Category | Examples |
+|-------------------|---------|
+| Engagement/Activity | Login timestamps, time in app, completion counts, streak counts |
+| Athlete Comparison | Rankings, side-by-side individual comparisons by name |
+| Predictive Signals | Any forward-looking risk assessment (crosses into clinical territory) |
+| Coach Action Tracking | Whether coaches viewed reports, acted on signals |
+| Raw Reflection Quality | RQS 1-4 score surfaced directly (consumed indirectly through Growth Phase) |
+| Effort-Based Metrics | Compliance ratings, adherence scores, participation rankings |
+
+#### 10.1.8 Coach Dashboard — Layout Principles
+
+- **Individual Athlete View:** Pattern Stability + Response Recovery as hero indicators, Multi-Week Trend sparklines below, Season Phase Overlay as contextual bar
+- **Team View:** Team Trend charts as primary display, team-level aggregate signals
+- **Daily Signal** (from Stage 7): Traffic light + 4 contributing signals displayed per athlete. Coach scans traffic lights across roster, drills into contributing signals for Yellow/Orange athletes.
+- **All views** include mandatory disclaimer: "These indicators are informational only and may not be used as a basis for participation, selection, or disciplinary decisions."
+
+#### 10.1.9 Coach Dashboard — Data Refresh Timing
+
+| Metric | Cadence | When |
+|--------|---------|------|
+| Pattern Stability | Weekly | Monday (after pipeline) |
+| Response Recovery | Weekly | Monday |
+| Multi-Week Trends | Weekly | Monday |
+| Season Phase Overlay | Static | Admin-configured |
+| Team Trend | Weekly | Monday |
+| Daily Signal (Stage 7) | Daily | Before morning Tune-Up |
+
+Weekly metrics remain unchanged until next pipeline run. Daily Signal is the only metric refreshing daily for coaches.
 
 ### 10.2 Parent Dashboard (D2C Premium + Parent Tier Only)
 
