@@ -1,7 +1,9 @@
-PARENT OUTPUT LIVE VALIDATION — HANDOFF PROMPT
+PARENT OUTPUT LIVE VALIDATION — HANDOFF PROMPT (v2)
 ==============================================
 SESSION OBJECTIVE:
-Generate the first parent-facing outputs in the VirtusFocus pipeline — Parent Coaching Messages (Stage 3) and Parent Weekly Insights (Stage 4) — for existing athletes. This is a VALIDATION session to confirm that the v1.9/V4 (Stage 3) and v1.5 (Stage 4) parent specifications produce correct, compliance-safe output against real athlete data.
+Generate the first parent-facing outputs in the VirtusFocus pipeline — Parent Coaching Messages (Stage 3) and Parent Weekly Insights (Stage 4) — for existing athletes. This is a VALIDATION session to confirm that the v1.9/V4 (Stage 3) and v1.6/v1.3 (Stage 4) parent specifications produce correct, compliance-safe output against real athlete data.
+
+IMPORTANT: A previous session generated parent output against v1.5 (narrative prose, 10 sections). That output is INVALID — the Parent Insight spec was redesigned in v1.6 with a scan-first format, 9 sections (Section 7 removed), and categorical indicator labels. This session REGENERATES all parent output under the current specs. DELETE any existing parent output files before writing new ones.
 
 No specification changes. No design work. Generate parent output, validate quality, document any findings.
 
@@ -11,11 +13,12 @@ CONTEXT — WHY THIS SESSION EXISTS
 
 The parent output specifications are COMPLETE across all pipeline stages:
 - Stage 3: Parent CM designed (v1.9/V4, Sections 23-32) — 4-section structure, 150-250 words, Coach Arron third-person voice, support-oriented
-- Stage 4: Parent Weekly Insight designed (v1.5, Sections 20-28) — 10 sections rebranded from coach labels, warm/accessible language, same data boundary
+- Stage 4: Parent Weekly Insight redesigned (v1.6/v1.3, Sections 20-28) — 9 sections with scan-first format (categorical indicator + blurb per section), Section 7 "How You Can Support" REMOVED (Parent CM owns support guidance exclusively)
 - Stage 5: Editorial Audit (v1.3) — Parent CM included as conditional 4th audit input, all 13 criteria apply
 - Stage 7: Daily Signal parent label mapping complete (Green→Good Day, Yellow→Building Day, Orange→Reset Day, Gray→No Update Today)
 
-But NO parent output has ever been generated. This session produces the first real outputs and validates them.
+KEY CHANGE FROM v1.5 → v1.6:
+The Parent Insight was redesigned from narrative prose (which read like a second coaching message) to a scan-first dashboard format mirroring the Coach Insights structure. Each section now leads with a categorical indicator (a short scannable label) followed by a 1-3 sentence blurb in Coach Arron's voice. This gives parents the same quick-scan experience coaches get, with warmer language and parent-appropriate labels.
 
 ==============================================
 CRITICAL CONTEXT — ALL ATHLETES ARE CORE FOUNDATION
@@ -33,9 +36,8 @@ VALIDATION OVERRIDE FOR THIS SESSION:
 For validation purposes, OVERRIDE the CF parent skip rules and generate parent output anyway. This is a specification validation exercise, not production processing. The goal is to confirm the output specifications produce correct, well-formed, compliant parent content.
 
 HOW TO HANDLE MISSING ECOSYSTEM DATA:
-- Use the Core Foundation fallback defined in the specs:
-  - Section 4 (Parent CM) / Section 7 (Parent Insight): "Encouraging the process and being available if [athlete first name] wants to talk about how things are going is the most helpful support right now."
-- For ALL other sections: generate normally using the Interpretation JSON fields (weekly_tier, emotional_intensity, coach_insights, growth_phase, narrative_arc, etc.) — these are fully available for all athletes regardless of intake type.
+- Parent CM Section 4 ("How You Can Support"): Use CF fallback. CUSTOMIZE the default to fit each week's context — don't use identical phrasing for all 3 athletes. The fallback provides the BASE message ("Encouraging the process and being available if [first name] wants to talk about how things are going is the most helpful support right now"). Adjust warmth and specificity based on EI, weekly tier, and upcoming context.
+- Parent Insight: No section requires ecosystem data in v1.6 (Section 7 was removed). Generate all 9 sections normally using the Interpretation JSON fields. No ecosystem fallback needed.
 - Flag every instance where ecosystem calibration would normally apply but was skipped due to CF data absence.
 
 ==============================================
@@ -50,12 +52,12 @@ PARENT CM: Grace_Kindel_2026-03-02to2026-03-08_VF_ParentMessage.txt
 PARENT INSIGHT: Grace_Kindel_2026-03-02to2026-03-08_VF_ParentInsight.txt
 
 ATHLETE 2: TUCKER LLOYD — WEEK 5 (Mar 9-15, 2026)
-WHY: Mixed tier (not Growth — tests non-Growth framing). Pattern shift detected (weekend expansion). Spring break structural risk. Low EI. Tests "uneven week" parent framing.
+WHY: Mixed tier (not Growth — tests non-Growth framing). Pattern shift detected (weekend expansion). Spring break structural risk. Low EI. Tests "Uneven Week" parent framing.
 PARENT CM: Tucker_Lloyd_2026-03-09to2026-03-15_VF_ParentMessage.txt
 PARENT INSIGHT: Tucker_Lloyd_2026-03-09to2026-03-15_VF_ParentInsight.txt
 
 ATHLETE 3: JASMINE JONES — WEEK 7 (Jul 7-13, 2025)
-WHY: MODERATE EI (only elevated week in her dataset). Relationship stress. Non-sport Bullseye domain shift. Tests High/Moderate EI parent handling (Section 4 warmth adjustment). Also tests clinical boundary (athlete uses "past relationship trauma," "fight or flight mode," "mental trigger" — all must be excluded). Professional-level competitive calibration.
+WHY: MODERATE EI (only elevated week in her dataset). Relationship stress. Non-sport Bullseye domain shift. Tests Moderate EI parent handling (Section 4 warmth adjustment in Parent CM, "Noticeable" indicator in Parent Insight Section 4). Also tests clinical boundary (athlete uses "past relationship trauma," "fight or flight mode," "mental trigger" — all must be excluded). Professional-level competitive calibration.
 PARENT CM: Jasmine_Jones_2025-07-07to2025-07-13_VF_ParentMessage.txt
 PARENT INSIGHT: Jasmine_Jones_2025-07-07to2025-07-13_VF_ParentInsight.txt
 
@@ -72,15 +74,15 @@ STAGE 3 SPECIFICATION FILES (Parent CM generation):
 2. Project Instructions: Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.9.txt
    - Parent-specific sections: 23 (Generation Rule), 24 (Content Guidance with 5 reference examples), 25 (Voice Calibration), 26 (Ecosystem Calibration), 27 (EI Handling), 28 (Competitive Level), 29 (Compliance Rule), 30 (Validation Checklist — 20 items), 31 (Reference Examples — 5 complete Parent CMs)
 3. Message Map: Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
-   - Parent CM section (lines ~177-429): full 4-section routing with field sources, ecosystem calibration, EI handling, derailer handling, exclusions
+   - Parent CM section: full 4-section routing with field sources, ecosystem calibration, EI handling, derailer handling, exclusions
 4. Brand Voice: Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
 5. System Identity: Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
 6. CM Framework: Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
 
-STAGE 4 SPECIFICATION FILES (Parent Insight generation):
-7. Master Prompt: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.2.txt
-8. Project Instructions: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.5.txt
-   - Parent-specific sections: 20 (Generation Rule), 21 (Section Rebrand + Content Guidance for all 10 sections), 22 (Voice Calibration with voice difference table), 23 (Ecosystem Calibration), 24 (Compliance Rule — 18 additional prohibitions), 25 (Early Weeks + Warm Placeholders), 26 (Parent Insights vs Parent CM Relationship), 27 (Validation Checklist — 28 items), 28 (CF Parent Skip Rule — OVERRIDE for this session)
+STAGE 4 SPECIFICATION FILES (Parent Insight generation — UPDATED v1.6/v1.3):
+7. Master Prompt: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.3.txt
+8. Project Instructions: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.6.txt
+   - Parent-specific sections: 20 (Generation Rule), 21 (Section Rebrand + Indicator Labels + Determination Rules + Per-Section Content Guidance with WRONG/CORRECT examples), 22 (Voice Calibration with voice difference table + 7 rules including indicator vs blurb rule), 23 (Ecosystem Calibration — redirected to Stage 3 in v1.6), 24 (Compliance Rule — 19 additional prohibitions), 25 (Early Weeks + Warm Placeholders with per-section Week 1 guidance), 26 (Parent Insights vs Parent CM Relationship — complementary model), 27 (Validation Checklist — 30 items), 28 (CF Parent Skip Rule — OVERRIDE for this session)
 9. JSON Logic Reference: Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
 10. Compliance Framework: Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
 11. Output Structure Master: Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
@@ -129,33 +131,102 @@ STEP 5: Generate the Parent Coaching Message (Stage 3 output)
          - Signed "— Coach Arron"
          - Thematically aligned with athlete CM but NEVER references it
 STEP 6: Generate the Parent Weekly Insight (Stage 4 output)
-         - Follow SOP_Coach_Insights_Project_Instructions_v1.5.txt Sections 20-28
-         - 10 sections using PARENT labels (see rebrand mapping below)
-         - Third person, warm/accessible language, no arrows/notation
+         - Follow SOP_Coach_Insights_Project_Instructions_v1.6.txt Sections 20-27
+         - 9 sections using PARENT labels (see rebrand mapping below)
+         - SCAN-FIRST FORMAT: Each section = indicator line + blurb (1-3 sentences)
+         - Indicators use LOCKED enum values (fixed sections) or agent-generated 3-5 word phrases
+         - Blurbs use Coach Arron's warm third-person voice — add context, do NOT restate indicator
          - Signed "— Coach Arron"
 STEP 7: Run self-validation against both checklists
          - Parent CM: 20-item checklist (Instructions v1.9, Section 30)
-         - Parent Insight: 28-item checklist (Instructions v1.5, Section 27)
-STEP 8: Write files to disk
+         - Parent Insight: 30-item checklist (Instructions v1.6, Section 27)
+STEP 8: Write files to disk (overwrite any existing files from previous session)
 
 Process all 3 athletes sequentially (Grace → Tucker → Jasmine). Do NOT parallelize — review each pair before moving to the next athlete to catch any systemic issues early.
 
 ==============================================
-PARENT INSIGHT SECTION REBRAND MAPPING
+PARENT INSIGHT — SCAN-FIRST FORMAT SPECIFICATION
 ==============================================
 
-| # | Coach Label | Parent Label |
-|---|-----------|-------------|
-| 1 | Weekly Performance Classification | Weekly Overview |
-| 2 | Key Performance Signal | What Stood Out This Week |
-| 3 | Self-Assessment Alignment | How They See Themselves |
-| 4 | Stress Load Indicator | Emotional Weight This Week |
-| 5 | Confidence Signal | Confidence Check |
-| 6 | Behavioral Pattern of Note | Pattern to Notice |
-| 7 | Coach Context Cue | How You Can Support |
-| 8 | Risk Indicator | Something to Be Aware Of |
-| 9 | Development Tracking | Growth Over Time |
-| 10 | Composite Readiness | Overall Signal |
+The v1.6 Parent Insight uses a scan-first format where each section leads with a CATEGORICAL INDICATOR followed by a BLURB.
+
+SECTION REBRAND MAPPING (9 SECTIONS — Section 7 "How You Can Support" REMOVED):
+
+| # | Coach Source Section | Parent Label | Indicator Type |
+|---|---------------------|-------------|---------------|
+| 1 | Weekly Performance Classification | Weekly Overview | Fixed enum |
+| 2 | Key Performance Signal | What Stood Out This Week | Agent-generated |
+| 3 | Self-Assessment Alignment | How They See Themselves | Fixed enum |
+| 4 | Stress Load Indicator | Emotional Weight This Week | Fixed enum |
+| 5 | Confidence Signal | Confidence Check | Fixed enum |
+| 6 | Behavioral Pattern of Note | Pattern to Notice | Agent-generated |
+| 7 | Risk Indicator | Something to Be Aware Of | Fixed enum |
+| 8 | Development Tracking | Growth Over Time | Fixed enum |
+| 9 | Composite Readiness | Overall Signal | Fixed enum |
+
+LOCKED INDICATOR LABELS:
+
+| Section | Indicator Name | Locked Values |
+|---------|---------------|--------------|
+| 1 | This Week | Strong Week / Uneven Week / Reset Week |
+| 2 | Standout | [Agent-generated 3-5 word phrase] |
+| 3 | Self-View | Grounded / Building / Finding Their Footing |
+| 4 | Emotional Weight | Light / Noticeable / Heavier |
+| 5 | Confidence | Growing / Steady / Fluctuating |
+| 6 | Pattern | [Agent-generated 3-5 word phrase] |
+| 7 | Awareness | Nothing of Note / Something to Note |
+| 8 | Progress | Building Foundations / Getting Consistent / Strong Momentum |
+| 9 | Overall | Good Week (Green) / Steady Week (Yellow) / Support Week (Orange) |
+
+INDICATOR DETERMINATION RULES:
+
+Section 1 — THIS WEEK:
+  Growth tier → Strong Week
+  Mixed tier → Uneven Week
+  Reset tier → Reset Week
+
+Section 3 — SELF-VIEW:
+  Confidence Building + Aligned self-ratings → Grounded
+  Confidence Building + no alignment data → Building
+  Confidence Stable + Aligned → Grounded
+  Confidence Stable + Conflated → Building
+  Confidence Variable → Finding Their Footing
+  Confidence Building + Undervalued → Building
+  Default for early weeks or ambiguous → Building
+
+Section 4 — EMOTIONAL WEIGHT:
+  emotional_intensity = Low → Light
+  emotional_intensity = Moderate → Noticeable
+  emotional_intensity = High → Heavier
+
+Section 5 — CONFIDENCE:
+  Confidence momentum Building → Growing
+  Confidence momentum Stable → Steady
+  Confidence momentum Variable → Fluctuating
+
+Section 7 — AWARENESS:
+  No elevated risk + stress Low/Moderate + no derailer activation → Nothing of Note
+  ANY of: Elevated stress, derailer activation, Low recommitment, pattern_shift_detected=Yes → Something to Note
+
+Section 8 — PROGRESS:
+  Growth phase Emerging or Developing → Building Foundations
+  Growth phase Consistent → Getting Consistent
+  Growth phase Leadership → Strong Momentum
+
+Section 9 — OVERALL:
+  Composite Readiness ↑ Positive (Green) → Good Week (Green)
+  Composite Readiness → Steady (Yellow) → Steady Week (Yellow)
+  Composite Readiness ↓ Attention (Orange) → Support Week (Orange)
+
+Sections 2 and 6 — AGENT-GENERATED:
+  3-5 word phrase in parent-understandable language. No framework terminology.
+
+FORMAT RULES:
+- Indicator line is structured data — use locked enum values exactly. Do NOT make conversational.
+- Blurb is Coach Arron's voice — adds context to the indicator. Do NOT restate the indicator.
+- WRONG: "This Week: Grace had a really strong week!" (conversational indicator)
+- WRONG: "This Week: Strong Week\nThis was a strong week for Grace." (blurb restates indicator)
+- CORRECT: "This Week: Strong Week\nGrace's daily routine held consistent all week."
 
 ==============================================
 OUTPUT FILE FORMAT — PARENT COACHING MESSAGE
@@ -181,7 +252,7 @@ HOW YOU CAN SUPPORT
 — Coach Arron
 
 ==============================================
-OUTPUT FILE FORMAT — PARENT WEEKLY INSIGHT
+OUTPUT FILE FORMAT — PARENT WEEKLY INSIGHT (v1.6 SCAN-FIRST)
 ==============================================
 
 VIRTUSFOCUS — PARENT WEEKLY INSIGHT
@@ -189,34 +260,40 @@ VIRTUSFOCUS — PARENT WEEKLY INSIGHT
 Generated from: [JSON filename]
 
 1) WEEKLY OVERVIEW
-[2-3 sentences]
+This Week: [Strong Week | Uneven Week | Reset Week]
+[1-3 sentence blurb adding behavioral context]
 
 2) WHAT STOOD OUT THIS WEEK
-[1-2 sentences]
+Standout: [Agent-generated 3-5 word phrase]
+[1-2 sentence blurb translating KPS to parent language]
 
 3) HOW THEY SEE THEMSELVES
-[1-2 sentences]
+Self-View: [Grounded | Building | Finding Their Footing]
+[1-2 sentence blurb on confidence and self-assessment]
 
 4) EMOTIONAL WEIGHT THIS WEEK
-[1-3 sentences — ONLY section that adjusts for High EI]
+Emotional Weight: [Light | Noticeable | Heavier]
+[1-3 sentence blurb — ONLY section with EI-adjusted warmth]
 
 5) CONFIDENCE CHECK
+Confidence: [Growing | Steady | Fluctuating]
 [1 sentence — directional only]
 
 6) PATTERN TO NOTICE
-[1-2 sentences]
+Pattern: [Agent-generated 3-5 word phrase]
+[1-2 sentence blurb translating focus/recommitment pattern]
 
-7) HOW YOU CAN SUPPORT
-[2-3 sentences — ecosystem calibrated or CF fallback]
+7) SOMETHING TO BE AWARE OF
+Awareness: [Nothing of Note | Something to Note]
+[1-2 sentence blurb — warm, not alarming]
 
-8) SOMETHING TO BE AWARE OF
-[1-2 sentences — warm, not alarming]
+8) GROWTH OVER TIME
+Progress: [Building Foundations | Getting Consistent | Strong Momentum]
+[1-2 sentence blurb — accessible growth language, no phase names]
 
-9) GROWTH OVER TIME
-[1-2 sentences — accessible growth language]
-
-10) OVERALL SIGNAL
-[1-2 sentences — include color band for dashboard: Green/Yellow/Orange]
+9) OVERALL SIGNAL
+Overall: [Good Week (Green) | Steady Week (Yellow) | Support Week (Orange)]
+[1-2 sentence blurb — color feeds dashboard]
 
 — Coach Arron
 
@@ -234,43 +311,46 @@ Parent Insights:
 - Athlete Data\Tucker Lloyd\Parent Output\Tucker_Lloyd_2026-03-09to2026-03-15_VF_ParentInsight.txt
 - Athlete Data\Jasmine Jones\Parent Output\Jasmine_Jones_2025-07-07to2025-07-13_VF_ParentInsight.txt
 
-Create Parent Output directories for Tucker Lloyd and Jasmine Jones before writing files (Grace Kindel's already exists).
+Create Parent Output directories for Tucker Lloyd and Jasmine Jones if they don't exist. Grace Kindel's already exists. DELETE any existing parent output files before writing — previous session output was generated against v1.5 (wrong format).
 
 ==============================================
 ATHLETE-SPECIFIC NOTES
 ==============================================
 
 GRACE KINDEL — WEEK 6 (BASELINE VALIDATION CASE)
-- Weekly tier: Growth
-- Emotional intensity: Low
-- Growth phase: Consistent (advanced from Developing in Week 5)
+- Weekly tier: Growth → Indicator: "This Week: Strong Week"
+- Emotional intensity: Low → Indicator: "Emotional Weight: Light"
+- Growth phase: Consistent (advanced from Developing in Week 5) → Indicator: "Progress: Getting Consistent"
+- Composite Readiness: ↑ Positive (Green) → Indicator: "Overall: Good Week (Green)"
 - Key events: First pinch-hit single (NC), first collegiate start as DP (FL), back-to-back road trips
 - 42/42 Win days (6th consecutive Growth week)
 - Open thread: Goal-setting at program low, position-specific frustration emerging
 - Competitive level: College (default)
 - Parent framing: Positive week, competition milestones, steady progress
-- Validation targets: Standard Growth/Low EI framing, phase advancement reflected subtly in tone (not named), competition milestones in "What Stood Out"
+- Validation targets: Standard Growth/Low EI framing, phase advancement reflected subtly in tone (not named as "Consistent"), competition milestones in "What Stood Out," all 9 indicators correctly determined
 
 TUCKER LLOYD — WEEK 5 (MIXED TIER VALIDATION CASE)
-- Weekly tier: Mixed
-- Emotional intensity: Low
-- Growth phase: Developing
+- Weekly tier: Mixed → Indicator: "This Week: Uneven Week"
+- Emotional intensity: Low → Indicator: "Emotional Weight: Light"
+- Growth phase: Developing → Indicator: "Progress: Building Foundations"
+- Composite Readiness: → Steady (Yellow) → Indicator: "Overall: Steady Week (Yellow)"
+- pattern_shift_detected: Yes → Indicator: "Awareness: Something to Note"
 - Key events: Best weekday execution (5/5 Win) paired with worst weekend (2/2 Missed), Saturday expanded to Missed for first time, spring break imminent
-- Pattern shift detected: Yes
 - Open thread: Whether structure maintained over spring break
 - Competitive level: College (default)
 - Parent framing: "Uneven week" — strong weekdays, challenging weekends, structural transition ahead
-- Validation targets: Mixed tier → no tier name surfaces, weekend gap framed without naming "Missed," spring break context in "What's Ahead," support suggestion oriented toward environment/structure
+- Validation targets: Mixed tier → "Uneven Week" (no tier name surfaces), weekend gap framed without naming "Missed," spring break context in "What's Ahead," "Something to Note" indicator correctly triggered by pattern_shift_detected=Yes, support suggestion oriented toward environment/structure
 
 JASMINE JONES — WEEK 7 (EI + COMPLIANCE VALIDATION CASE)
-- Weekly tier: Growth
-- Emotional intensity: **Moderate** (only elevated week in her dataset)
-- Growth phase: Developing
+- Weekly tier: Growth → Indicator: "This Week: Strong Week"
+- Emotional intensity: **Moderate** → Indicator: "Emotional Weight: Noticeable"
+- Growth phase: Developing → Indicator: "Progress: Building Foundations"
+- Composite Readiness: → Steady (Yellow) → Indicator: "Overall: Steady Week (Yellow)"
 - Key events: Relationship stress, Bullseye shifts to relationship domain, vacation gap creating Unknown prior commitment
 - Competitive level: Professional
 - 5 clinical-risk elements in raw data: "past relationship trauma," "fight or flight mode," "mental trigger," sports psychologist reference, family death — ALL must be excluded from parent output
-- Parent framing: Growth week with some emotional weight. Section 4 (How You Can Support) adjusts to warmer/protective tone. Sections 1-3 stay informational.
-- Validation targets: EI handling (Section 4 warmth adjustment ONLY — Sections 1-3 unchanged), clinical content exclusion (zero leakage of 5 risk elements), professional-level competitive calibration (vocabulary + concept depth), relationship stress framed as normal life event not pathology
+- Parent framing: Growth week with some emotional weight. Parent CM Section 4 adjusts to warmer/protective tone. Parent Insight Section 4 indicator = "Noticeable" with warm contextualizing blurb. Sections 1-3 stay informational.
+- Validation targets: EI handling (Parent CM Section 4 warmth + Parent Insight "Noticeable" indicator), clinical content exclusion (zero leakage of 5 risk elements across BOTH outputs), professional-level competitive calibration, relationship stress framed as normal life event not pathology
 
 ==============================================
 VALIDATION CRITERIA — CHECK AFTER ALL 6 FILES
@@ -291,34 +371,55 @@ After generating all 6 files, run a validation pass checking:
    j. No surveillance or monitoring framing
    k. No accountability language directed at parent
    l. No reference to what athlete CM or Deep Dive contains
-   m. Section 4 calibrated appropriately (CF fallback for this validation)
+   m. Section 4 calibrated appropriately (CF fallback for this validation — customized per athlete, not identical)
    n. If derailer activated: coaching focus noted in Section 3 without naming derailer
    o. Thematically aligned with athlete CM but independent
 
 2. PARENT INSIGHT VALIDATION (per file):
-   a. All 10 sections present with PARENT labels (not coach labels)
-   b. Third person throughout
-   c. Coach Arron voice — warm, accessible, informational
-   d. No arrows (↑ → ↓) — use words only
-   e. No institutional language (signal, indicator, trend direction)
-   f. No framework terminology
-   g. No clinical language
-   h. No execution signal data or metric leakage
-   i. Section 4 (Emotional Weight) handles stress warmly, not clinically
-   j. Section 7 (How You Can Support) uses CF fallback language
-   k. Section 8 (Something to Be Aware Of) is warm, not alarming
-   l. Section 10 (Overall Signal) includes color band (Green/Yellow/Orange)
-   m. Warm placeholders used for any insufficient-data sections (no "insufficient data" text)
-   n. Complements Parent CM — same direction, not duplicative
-   o. No reference to coach-facing Weekly Performance Insight
+   STRUCTURE:
+   a. All 9 sections present with PARENT labels (not 10 — no "How You Can Support")
+   b. Section order matches rebrand mapping (1-9)
+   c. Header uses parent format (athlete first name, week, date)
+   d. Signed "— Coach Arron"
+
+   INDICATORS:
+   e. Every section has an indicator line BEFORE the blurb
+   f. Fixed-enum sections use ONLY locked values from the indicator table
+   g. Agent-generated indicators (Sections 2, 6) are 3-5 words, plain language
+   h. Indicators are plain text (no bold, italic, or decoration)
+   i. Blurbs do NOT restate the indicator — they add context
+   j. Indicator determination matches the rules (cross-check against athlete notes above)
+
+   VOICE:
+   k. Third person throughout (athlete first name)
+   l. Coach Arron voice in blurbs — warm, informational
+   m. No arrows or technical notation (↑ → ↓)
+   n. No institutional language (signal, indicator, trend direction)
+   o. No framework terminology (Bullseye, WTD, center ring)
+
+   COMPLIANCE:
+   p. No clinical language
+   q. No execution signal data or metric leakage
+   r. No surveillance or monitoring framing
+   s. No accountability language directed at parent
+   t. No tier names, growth phase names as labels, consistency classifications as labels
+   u. No derailer terminology or named derailer language
+
+   CONTENT:
+   v. Section 4 (Emotional Weight) handles stress warmly, not clinically
+   w. Section 7 (Something to Be Aware Of) is warm, not alarming
+   x. Section 9 (Overall Signal) includes color for dashboard
+   y. Warm placeholders for any insufficient-data sections (no "insufficient data" text)
+   z. Parent Insight complements Parent CM — dashboard vs letter, not duplicative
 
 3. CROSS-OUTPUT VALIDATION:
    a. Parent CM and Parent Insight for each athlete point in same direction
-   b. Parent CM Section 4 and Parent Insight Section 7 are complementary (not duplicative)
+   b. Parent CM Section 4 (support guidance) has NO equivalent in Parent Insight (Section 7 removed)
    c. No content that appears in Parent output but NOT in Coach output (same data boundary)
    d. Jasmine Jones: zero leakage of 5 clinical-risk elements across both outputs
    e. Tucker Lloyd: "Missed" day terminology never appears in parent-facing content
    f. Grace Kindel: phase advancement reflected in tone, never named
+   g. Indicator values are consistent with athlete data (cross-check against determination rules)
 
 4. EDITORIAL AUDIT (Grace Kindel only):
    After generating Grace Kindel's Parent CM, run a Stage 5 Editorial Audit with 4 inputs:
@@ -345,19 +446,27 @@ PARENT CM PROHIBITIONS (from Instructions v1.9, Section 29):
 - Athlete CM / Deep Dive content: NEVER reference what CM or DD contained
 - Forward anchor raw text or classification labels
 
-PARENT INSIGHT PROHIBITIONS (from Instructions v1.5, Section 24):
-All of the above PLUS:
-- Institutional language (signal, indicator, trend direction, compliance-safe)
-- Arrow notation (↑ → ↓)
-- Weekly tier names (Growth, Mixed, Reset)
-- Growth phase names as labels
-- Consistency classifications as labels
-- Scoring bands or composite score language
-- Coach flag language
-- Self-ratings alignment labels
-- Derailer terminology or named derailer language
-- Risk flag content
-- "Your athlete" (use first name)
+PARENT INSIGHT PROHIBITIONS (from Instructions v1.6, Section 24):
+All of the above PLUS 19 additional parent-specific prohibitions:
+1. Framework terminology (Bullseye, Win the Day, center ring, outer ring, WTD, reflection quality score)
+2. Institutional language (signal, indicator, trend direction, compliance-safe, informational only)
+3. Arrow notation (↑ → ↓)
+4. Weekly tier names (Growth, Mixed, Reset)
+5. Growth phase names used as labels (Emerging, Developing, Consistent, Leadership)
+6. Consistency classifications used as labels (Stable, Variable, Improving)
+7. Scoring bands or composite score language
+8. Coach flag language
+9. Self-ratings alignment labels
+10. Derailer terminology or named derailer language
+11. Risk flag content
+12. Micro-commitment text
+13. Prior commitment results
+14. References to Coach-facing Weekly Performance Insight
+15. Language framing parent as monitor/tracker/evaluator
+16. Surveillance or monitoring framing
+17. Accountability language directed at parent
+18. "Your athlete" (use athlete's first name)
+19. Forward anchor raw text, classification labels, or intention-setting pattern references
 
 CLINICAL LANGUAGE — ZERO TOLERANCE:
 Same VirtusFocus-wide prohibition. No anxiety, trauma, mental health, therapeutic, clinical, coping mechanism, emotional regulation, cognitive reframe, etc. Use performance and behavioral language only.
@@ -369,16 +478,17 @@ ECOSYSTEM CALIBRATION — CF FALLBACK RULES
 Since all 3 athletes are Core Foundation, ecosystem fields (Q22-Q25) are unavailable.
 
 PARENT CM SECTION 4 ("How You Can Support"):
-Use default: "Encouraging the process and being available if [first name] wants to talk about how things are going is the most helpful support right now."
-- CUSTOMIZE the default to fit each week's context — don't use the exact template verbatim for all 3 athletes.
-- The fallback provides the BASE message. Adjust warmth and specificity based on the week's data (EI, weekly tier, upcoming context).
-- For Jasmine (Moderate EI): warmer and more protective ("This was a harder week emotionally. The best support right now is...")
+Use CF fallback but CUSTOMIZE per athlete:
+- Grace (Low EI, Growth): Standard supportive — "Encouraging the process and being available if Grace wants to talk about how things are going is the most helpful support right now."
+- Tucker (Low EI, Mixed, spring break): Structure-oriented — adjust toward supporting environment/routine during transition
+- Jasmine (Moderate EI, relationship stress): Warmer/protective — "This was a harder week emotionally. The best support right now is being present and giving space..."
+Do NOT use identical phrasing across all 3 athletes.
 
-PARENT INSIGHT SECTION 7 ("How You Can Support"):
-Same CF fallback with more analytical depth. Can elaborate on WHY this support matters based on the week's JSON data (growth phase, weekly tier, narrative arc), but cannot reference ecosystem-specific calibration.
+PARENT INSIGHT:
+No section requires ecosystem data in v1.6 (Section 7 removed). Generate all 9 sections normally. No ecosystem fallback needed for any Parent Insight section.
 
 DOCUMENT ALL FALLBACK USAGE:
-At the end of the session, note every instance where ecosystem calibration was skipped and what the output would look like WITH proper Q23/Q25 data. This informs future validation once App athletes are onboarded.
+At the end of the session, note every instance where ecosystem calibration would normally apply and describe what the output would look like WITH proper Q23/Q25 data. This informs future validation once App athletes are onboarded.
 
 ==============================================
 WHAT TO REPORT AFTER GENERATION
@@ -386,12 +496,13 @@ WHAT TO REPORT AFTER GENERATION
 
 After all 6 files are written and validated, provide:
 
-1. VALIDATION SUMMARY: Pass/fail status for each of the 6 files against the checklists above
+1. VALIDATION SUMMARY: Pass/fail status for each of the 6 files against the checklists above. For Parent Insights, explicitly confirm each indicator value was correctly determined per the determination rules.
 2. AUDIT RESULT: Grace Kindel 4-document editorial audit result (PASS / AUTO-CORRECTED / REJECT)
-3. ECOSYSTEM GAP REPORT: List every section where Q23/Q25 calibration was skipped and describe what would change with proper ecosystem data
-4. CROSS-OUTPUT ALIGNMENT: Confirm Parent CM and Parent Insight for each athlete are complementary
-5. FINDINGS: Any specification issues, edge cases, ambiguities, or quality concerns discovered during generation
-6. JASMINE CLINICAL COMPLIANCE: Explicit confirmation that all 5 clinical-risk elements were excluded from both parent outputs
+3. ECOSYSTEM GAP REPORT: List every instance where ecosystem calibration was skipped (Parent CM Section 4 only — Parent Insight has no ecosystem dependency in v1.6) and describe what would change with proper Q23/Q25 data
+4. CROSS-OUTPUT ALIGNMENT: Confirm Parent CM and Parent Insight for each athlete are complementary (dashboard vs letter, same direction, no duplication)
+5. SCAN-FIRST FORMAT ASSESSMENT: Evaluate whether the indicator + blurb format produces outputs that are genuinely scannable — can a parent glance at all 9 indicators in 30 seconds and understand the week? Any indicators that feel unclear or need label refinement?
+6. FINDINGS: Any specification issues, edge cases, ambiguities, or quality concerns discovered during generation
+7. JASMINE CLINICAL COMPLIANCE: Explicit confirmation that all 5 clinical-risk elements were excluded from both parent outputs
 
 ==============================================
 SESSION MANAGEMENT
