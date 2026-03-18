@@ -1,0 +1,692 @@
+LONGITUDINAL PPD DESIGN — HANDOFF PROMPT
+==============================================
+SESSION OBJECTIVE:
+Design the execution-derived Longitudinal PPD system and
+PPD Alignment Signal. This is a Stage 2 enhancement that
+compares what the athlete THINKS their problems are (intake
+self-report PPD) against what execution data SHOWS their
+actual problems are (derived from accumulated weekly
+composite scores and behavioral patterns). The gap between
+these two produces the PPD Alignment Signal: Problem
+Awareness Aligned / Problem Awareness Gap / Blind Spot.
+
+This is a COLLABORATIVE DESIGN session. The output is a
+specification document — not implementation code. All design
+questions should be resolved collaboratively with the user
+before locking decisions.
+
+OUTPUT: VF_Longitudinal_PPD_Specification.txt saved to:
+Agents - Generators\Interpretation\Source Files\
+
+After the specification is approved, a second deliverable
+identifies all pipeline file changes needed (but does NOT
+implement them — that is a separate session).
+==============================================
+CONTEXT — WHY THIS EXISTS
+==============================================
+At intake, athletes complete a 29-question form. The PPD
+scoring logic (4-layer deterministic formula) identifies their
+Top 3 mental performance friction areas from 8 possible
+buckets:
+
+1. Overthinking Loop
+2. Confidence Volatility
+3. Mistake Recovery Lag
+4. Focus Drift / Distraction
+5. Pressure Reactivity
+6. Discipline Gap
+7. Structure Gap
+8. Ecosystem Friction
+
+This captures what the athlete PERCEIVES as their primary
+problems. It is stored in ppd_all_scores (all 8 bucket
+scores, including zeros) and ppd_top_3 (ranked top 3).
+
+However, athlete self-perception often diverges from reality.
+The canonical example:
+
+TUCKER LLOYD — BLIND SPOT CANDIDATE:
+  Intake PPD Top 3:
+    #1 Overthinking Loop (5)
+    #2 Discipline Gap (5)
+    #3 Confidence Volatility (3)
+
+  Actual execution data (5 weeks):
+    - 3 consecutive Missed Sundays (structural gap)
+    - Zero gym sessions in Week 4 (first time)
+    - Weekend engagement expanding from 1→2 Missed days
+    - Stagnant consistency trend
+    - Self-rated mental game 8/10 (perception inflation)
+
+  Tucker did NOT select "Lack of routine or structure" on
+  Q15 because he THINKS his structure is adequate. His
+  Structure Gap scored only 2 (from Q13 amplifier alone).
+  But execution data reveals structure as his primary
+  friction area — a textbook Blind Spot.
+
+The Longitudinal PPD system detects this divergence and
+produces the PPD Alignment Signal, which:
+- Informs Stage 3 coaching direction (sharpens output)
+- Does NOT appear as named data in any output
+- Mirrors the existing self_ratings_alignment pattern
+
+==============================================
+WHAT'S ALREADY DECIDED (LOCKED)
+==============================================
+These decisions were made in prior sessions and cannot be
+changed. Read the referenced files for full context.
+
+DECISION 1: PPD AS INTAKE + LONGITUDINAL
+(Session 39 — Pipeline Improvement Design)
+- Intake PPD = self-report, computed once at onboarding
+- Longitudinal PPD = execution-derived, computed periodically
+- Gap between them = PPD Alignment Signal
+- ppd_all_scores stores all 8 bucket scores (including zeros)
+  at intake specifically for this future comparison
+
+DECISION 2: PPD ALL SCORES STORED FOR COMPARISON
+(Session 40 — PPD Scoring Logic, Design Decision 6)
+- All 8 bucket scores stored in ppd_all_scores
+- Zeros are critical for Blind Spot detection (a bucket at
+  0 in self-report but high in execution = Blind Spot)
+- Stored as immutable baseline — never modified after intake
+
+DECISION 3: MIRRORS SELF-RATINGS ALIGNMENT PATTERN
+(Session 39 — confirmed, Session 40 — validated)
+- PPD Alignment Signal follows the same architecture as the
+  existing self_ratings_alignment classification
+- self_ratings compares perception (1-10 self-rating) vs
+  reality (composite score bands) → Aligned/Conflated/
+  Undervalued
+- PPD Alignment compares perception (intake PPD bucket
+  ranking) vs reality (execution-derived PPD bucket ranking)
+  → Aligned/Gap/Blind Spot
+
+DECISION 4: BASELINE PPD IS READ-ONLY
+(Session 46 — Interpretation Engine Impact Assessment)
+- baseline_intake_profile is a pass-through block in Stage 2
+- Intake PPD scores are NEVER modified
+- All comparison is one-directional: intake → current execution
+
+DECISION 5: PPD BUCKET NAMES ARE PROHIBITED IN OUTPUT
+(Session 47 — Implementation, Editorial Audit Category F)
+- All 8 PPD bucket names are prohibited as named
+  classifications in any athlete-facing or coach-facing output
+- "PPD," "Primary Problem Detector," scoring artifacts,
+  tie-breaker labels are all prohibited
+- Natural coaching descriptions of the same patterns ARE
+  permitted (e.g., "the pattern of mistakes compounding" is
+  coaching language; "Mistake Recovery Lag" is a prohibited
+  bucket name)
+
+DECISION 6: STAGE 4 HAS ZERO PPD CONSUMPTION
+(Session 47 — Coach Insights v1.3)
+- PPD data is explicitly prohibited in Coach Insights output
+- Bucket names, scores, tie-breaker classifications are all
+  listed as prohibited in the compliance filter
+- PPD informs Stage 3 coaching only, not Stage 4 institutional
+  reporting
+
+DECISION 7: 3-TIER PRIORITY SYSTEM IS LOCKED
+(Session 47 — Coaching Output v1.6, Message Map)
+- Tier 1 (Always): Weekly signals (coach flags, composite
+  score concern bands, weekly core_pattern)
+- Tier 2 (Fallback): PPD baseline coaching implications
+- Tier 3 (Default): Default coaching direction per core_pattern
+- Longitudinal PPD must fit within or alongside this priority
+  system
+
+DECISION 8: APP-ONLY FEATURE
+- Core Foundation athletes have no execution data
+- Longitudinal PPD is an App-athlete feature only
+- CF fallback: all longitudinal PPD fields = "insufficient data"
+
+==============================================
+THE SELF-RATINGS ALIGNMENT PATTERN (MIRROR MODEL)
+==============================================
+The longitudinal PPD is designed to mirror this existing
+pattern. Study it carefully before designing the PPD version.
+
+SELF-RATINGS ALIGNMENT (currently live in v9.6):
+
+Purpose: Compare athlete self-perception (weekly 1-10 scale)
+against composite score execution evidence.
+
+Two dimensions, each independently classified:
+
+DIMENSION 1 — CONFIDENCE ALIGNMENT:
+  Input: confidence_level (1-10 weekly self-rating)
+  Compared against: ownership_index.band + follow_through_score.band
+
+  Step 1 — Perception Tier:
+    High:     confidence_level >= 8
+    Moderate: confidence_level 4-7
+    Low:      confidence_level <= 3
+
+  Step 2 — Execution Tier:
+    High execution:   Both ownership + follow-through in top band
+    Moderate execution: Mixed (not both top, not both bottom)
+    Low execution:    Both in bottom band
+
+  Step 3 — Classification:
+    Aligned:     perception_tier == execution_tier
+    Conflated:   perception_tier > execution_tier
+    Undervalued: perception_tier < execution_tier
+
+DIMENSION 2 — HABIT CONSISTENCY ALIGNMENT:
+  Input: habit_consistency_level (1-10 weekly self-rating)
+  Compared against: rhythm_score.band
+
+  Same 3-tier perception mapping.
+  Execution tier maps directly from Rhythm band:
+    Stable → High, Variable → Moderate, Disrupted → Low
+
+  Same Aligned/Conflated/Undervalued classification.
+
+KEY ARCHITECTURAL FEATURES TO MIRROR:
+- Dual-dimension independence (each classified separately)
+- Inform-only walling (classifications stay internal to pipeline)
+- Directional coaching (Conflated→ground, Undervalued→elevate)
+- Behavioral translation (never name the classifications in output)
+- Weekly computation cadence
+- "insufficient data" fallback when inputs are missing
+
+DOWNSTREAM ROUTING OF SELF-RATINGS:
+- Stage 3: Conflated → Drift Identification (grounding language).
+           Undervalued → Recognition + Identity Anchor (elevation).
+           Aligned → no adjustment.
+- Stage 4: Confidence adjustment only (Conflated shifts toward
+           Variable, Undervalued shifts toward Building). Labels
+           NEVER surfaced.
+- Stage 5: Criterion 13 (Category E4) prohibits alignment labels.
+
+==============================================
+DESIGN QUESTIONS TO RESOLVE
+==============================================
+These are the questions the session must answer collaboratively.
+Present analysis and options for each, then lock decisions.
+
+DQ1: EXECUTION-TO-BUCKET MAPPING
+Which execution signals map to which PPD buckets? This is the
+core design question. Each of the 8 PPD buckets needs a set of
+execution-derived metrics that indicate whether that problem
+area is ACTUALLY present, regardless of whether the athlete
+self-identified it.
+
+Starter mapping for discussion (not locked):
+
+  Overthinking Loop ←
+    reactivity_risk_score (elevated = overthinking patterns?)
+    WTD intraweek volatility (score swings from overthinking?)
+    Bullseye outer-ring dominance (fixating on uncontrollables?)
+
+  Confidence Volatility ←
+    WTD score variance across weeks
+    confidence_alignment (Conflated or Undervalued)
+    win_the_day consistency trend
+
+  Mistake Recovery Lag ←
+    recovery_score (low = slow recovery)
+    recovery_speed_days (high = slow reset)
+    recommitment_signal (low = poor bounce-back)
+
+  Focus Drift / Distraction ←
+    Bullseye outer-ring dominance over time
+    drift_score (engagement erosion)
+    component_avoidance flag
+
+  Pressure Reactivity ←
+    reactivity_risk_score (elevated)
+    WTD score drops in competition weeks
+    emotional_intensity spikes
+
+  Discipline Gap ←
+    ownership_index (low = self-initiation gap)
+    morning_disengagement flag
+    follow_through_score (weak = commitment gap)
+
+  Structure Gap ←
+    rhythm_score (disrupted = routine inconsistency)
+    weekend vs weekday engagement divergence
+    sequence_integrity (broken = routine not maintained)
+
+  Ecosystem Friction ←
+    stress_load (elevated, especially if no competition)
+    ecosystem-related content in journaling (Stage 2 detects)
+    outer-ring items referencing coaches/parents
+
+Key question: Should this be a FORMULA-BASED approach (like
+composite scores — weighted components producing 0-100 numeric)
+or a CLASSIFICATION-BASED approach (rules mapping execution
+evidence directly to bucket presence/absence)?
+
+DQ2: COMPUTATION CADENCE
+When is execution-derived PPD computed?
+
+Options:
+  (a) Weekly — computed every week alongside other Stage 2
+      signals. Pro: most responsive. Con: noisy early on,
+      requires minimum-weeks threshold.
+  (b) Monthly — computed on a 4-week rolling window.
+      Pro: smooths noise, more reliable signal. Con: slower
+      to detect Blind Spots.
+  (c) At milestones — computed when growth_phase changes
+      or at defined program milestones (Week 4, Week 8, etc.).
+      Pro: contextually meaningful. Con: irregular cadence.
+  (d) Weekly computation, but Alignment Signal only
+      recalculated every 4 weeks (or on threshold change).
+      Pro: fresh data always available but signal doesn't
+      flip-flop. Con: more complex.
+
+Recommend: Present analysis of tradeoffs. Consider that
+self_ratings_alignment is computed weekly — should PPD
+Alignment follow the same cadence for consistency?
+
+DQ3: MINIMUM DATA THRESHOLD
+How many weeks of execution data are needed before the
+first execution-derived PPD is computed?
+
+Consider:
+- self_ratings_alignment requires only 1 week of composite scores
+- narrative_arc requires 2+ weeks
+- Pattern Stability Indicator requires 4+ weeks
+- PPD is a deeper signal (problem area ranking) that may need
+  more data to be reliable
+
+Options:
+  (a) 2 weeks (matches narrative_arc threshold — earliest
+      useful signal)
+  (b) 4 weeks (matches Pattern Stability — stable enough
+      for meaningful comparison)
+  (c) 6 weeks (conservative — strong signal, but delays
+      Blind Spot detection significantly)
+  (d) Progressive: preliminary at 2 weeks (lower confidence),
+      standard at 4 weeks (full confidence). Different
+      confidence tiers affect downstream routing weight.
+
+DQ4: SCORING APPROACH
+How are execution-derived bucket scores computed?
+
+Option A — Weighted Formula (like composite scores):
+  Each bucket has a formula with weighted components producing
+  a 0-100 score. Bands map to problem severity (High/Moderate/
+  Low/None). Mirrors the composite_scores architecture exactly.
+  Pro: precise, familiar pattern, enables fine-grained
+  comparison with intake scores. Con: complex (8 formulas ×
+  multiple components each = significant specification work).
+
+Option B — Categorical Mapping:
+  Each bucket maps to a set of execution indicators with
+  binary or ternary presence checks. Bucket classified as
+  Present/Possible/Absent based on how many indicators fire.
+  Pro: simpler, faster to specify, more robust to noise.
+  Con: loses precision, harder to compare against numeric
+  intake ppd_all_scores.
+
+Option C — Hybrid:
+  Use existing composite scores + coach flags as primary
+  inputs (already computed), add bucket-specific rules for
+  mapping. Not a new formula per bucket — instead, rules that
+  say "if drift_score.band=Active AND outer_ring_dominant_rate
+  > 0.40 THEN Focus Drift = Present." Pro: leverages existing
+  computation, minimal new formulas. Con: some buckets may
+  not map cleanly to existing scores.
+
+Recommend: Consider Option C carefully. 7 composite scores
+and 15 coach flags already capture most execution patterns.
+The question is whether they map cleanly to PPD buckets
+without needing additional computation.
+
+DQ5: ALIGNMENT SIGNAL CLASSIFICATION
+How is the PPD Alignment Signal determined from the comparison
+of intake vs. execution-derived PPD?
+
+The signal needs at least these 3 states:
+  Aligned — intake and execution agree on primary problem areas
+  Gap — intake identifies some problems, execution reveals
+        different or additional problems
+  Blind Spot — execution reveals a problem the athlete did NOT
+               self-identify at intake
+
+Sub-questions:
+  (a) Is the comparison at the PRIMARY bucket level only (top 1)
+      or across all top 3?
+  (b) If execution reveals a new bucket in top 3 that wasn't
+      in intake top 3, is that a Gap or a Blind Spot?
+  (c) Should there be a severity/confidence qualifier?
+      (e.g., "Strong Blind Spot" when intake score = 0 and
+      execution score = High, vs "Mild Gap" when intake #2
+      and execution #1 swap positions)
+  (d) Can Aligned have a sub-state? (e.g., "Aligned but
+      Shifting" when the same problems are present but in
+      different ranked order)
+
+DQ6: DOWNSTREAM ROUTING — PRIORITY POSITION
+Where does the PPD Alignment Signal fit in the existing
+3-Tier Priority system for Stage 3 coaching output?
+
+Current system:
+  Tier 1 (Always): Weekly signals
+  Tier 2 (Fallback): PPD baseline coaching implications
+  Tier 3 (Default): Default coaching direction
+
+Options:
+  (a) Insert as Tier 1.5 — between weekly signals and baseline
+      PPD. When Alignment Signal is non-Aligned, it takes
+      priority over baseline PPD but not over weekly signals.
+  (b) Modify Tier 2 — replace static baseline PPD with
+      dynamic PPD (baseline PPD updated by alignment signal).
+      Effectively, the execution-derived PPD becomes the new
+      Tier 2 when sufficient data exists.
+  (c) Separate routing — Alignment Signal doesn't modify
+      priority tiers but instead modifies TONE. Blind Spot
+      triggers grounding language (like Conflated in
+      self-ratings). Gap triggers acknowledgment language.
+      Aligned = no adjustment.
+  (d) Combination: Option (b) for priority + Option (c) for
+      tone. Execution-derived PPD replaces baseline at Tier 2
+      AND Alignment Signal adds tone modification.
+
+DQ7: STAGE 4 ROUTING
+Should the PPD Alignment Signal be visible to Stage 4
+(Coach Insights) at all?
+
+Current rule: Stage 4 has ZERO PPD consumption. PPD bucket
+names, scores, and classifications are all prohibited.
+
+Options:
+  (a) Maintain zero PPD consumption — Alignment Signal stays
+      Stage 2/3 internal only, same as baseline PPD.
+  (b) Allow inform-only Alignment Signal — Stage 4 cannot
+      name PPD buckets or Alignment labels, but CAN use the
+      signal to sharpen Coach Context Cue or Key Performance
+      Signal descriptions. Example: "emerging pattern
+      diverging from athlete's self-identified focus areas"
+      (compliance-safe translation).
+  (c) Allow Alignment Signal in Coach Insights ONLY as a
+      flag-like indicator — a simple "Self-Awareness:
+      Aligned / Developing / Divergent" metric with zero
+      reference to PPD buckets. This would be a new Section
+      or enrichment to Section 9 (Coach Context Cue).
+
+DQ8: EDITORIAL AUDIT EXPANSION
+What new audit criteria are needed for longitudinal PPD?
+
+Category F already covers PPD intake terminology. New items
+needed for:
+- Execution-derived PPD terminology (if different from intake)
+- PPD Alignment Signal labels (Aligned/Gap/Blind Spot)
+- Comparison language ("your intake identified X but data
+  shows Y" = prohibited)
+- Surveillance-adjacent framing ("we've been tracking your
+  problems" = prohibited)
+
+Should this be Category F expansion or a new Category H?
+
+DQ9: JSON SCHEMA PLACEMENT
+Where does the execution-derived PPD and Alignment Signal
+live in the Interpretation JSON?
+
+Options:
+  (a) New sub-block inside execution_behavior_signals:
+      execution_behavior_signals.ppd_longitudinal.{...}
+      Pro: logically grouped with other execution-derived data.
+      Con: PPD is higher-level than raw execution metrics.
+
+  (b) New top-level block: ppd_alignment.{...}
+      Pro: clean separation, easy to route. Con: adds another
+      top-level JSON field.
+
+  (c) Extension of baseline_intake_profile:
+      baseline_intake_profile.ppd_alignment.{...}
+      Pro: grouped with intake PPD data for easy comparison.
+      Con: baseline_intake_profile is supposed to be pass-
+      through (read-only from snapshot). Adding derived data
+      here blurs the boundary.
+
+  (d) New top-level block: longitudinal_ppd.{...}
+      Pro: semantically clear — this is a longitudinal signal,
+      distinct from both intake baseline and weekly execution
+      signals. Con: another top-level field.
+
+==============================================
+REFERENCE FILES
+==============================================
+Read CLAUDE.md FIRST — it contains the full project
+architecture, all file paths, and session history.
+
+CRITICAL (read in full):
+1. PPD Scoring Logic:
+   Agents - Generators\Athlete Snapshot Generator\
+   VF_PPD_Scoring_Logic.txt
+   — All 8 buckets, 4-layer scoring, ppd_all_scores output,
+   3 worked examples (Grace, Tucker, Mergim)
+
+2. Interpretation JSON Rules (Sections 12, 16):
+   Agents - Generators\Interpretation\Source Files\
+   VF_Interpretation_JSON_Rules.txt
+   — Section 12: self_ratings_alignment classification rules
+     (the MIRROR MODEL — study carefully)
+   — Section 16: baseline_intake_profile extraction rules
+
+3. Composite Score Rules:
+   Agents - Generators\Interpretation\Source Files\
+   VF_Execution_Signal_Composite_Score_Rules.txt
+   — All 7 score formulas — these are the primary inputs
+   for execution-derived PPD bucket scoring
+
+4. Coach Flags Specification:
+   Agents - Generators\Interpretation\Source Files\
+   VF_Coach_Flags_Specification.txt
+   — 15 flags — secondary inputs for execution-derived PPD
+
+5. Coaching Output Message Map (Baseline Intake Profile
+   Routing section):
+   Agents - Generators\Coaching Output\Source FIles\
+   VF_Coaching_Output_JSON_to_Message_Map.txt
+   — 3-tier priority system, PPD field routing rules,
+   tone calibration from tie-breaker classification
+
+IMPORTANT (read relevant sections):
+6. Coaching Output Instructions v1.9 (Sections 15, 20):
+   Agents - Generators\Coaching Output\
+   SOP_Coaching_Output_Instructions_v1.9.txt
+   — Section 15: Self-ratings alignment integration rules
+     (MIRROR MODEL downstream routing)
+   — Section 20: Intake profile field integration rules
+     (current PPD routing in Stage 3)
+
+7. Interpretation Engine v9.6 (Steps 1.5, 12-17):
+   Agents - Generators\Interpretation\
+   SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
+   — Step 1.5: baseline_intake_profile pass-through
+   — Steps 12-17: execution behavior signal processing
+   — Canonical output schema
+
+8. Coach Insights Instructions v1.6 (Section 18):
+   Agents - Generators\Coach Insights Engine\
+   SOP_Coach_Insights_Project_Instructions_v1.6.txt
+   — Section 18: Intake profile integration master rule
+   — PPD prohibition rules (zero consumption)
+
+9. Editorial Audit Instructions v1.3 (Category F):
+   Agents - Generators\Editorial Audit\
+   SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+   — Category F: Intake profile terminology prohibitions
+   — F1: PPD bucket names, F2: PPD scoring artifacts
+
+10. App Athlete Snapshot Fields (Section 2A):
+    Agents - Generators\Athlete Snapshot Generator\
+    VF_App_Athlete_Snapshot_Fields.txt
+    — PPD_SCORES sub-block, ppd_all_scores purpose statement
+
+CONTEXT (skim for patterns):
+11. App Input Format Specification:
+    Agents - Generators\Interpretation\Source Files\
+    VF_App_Input_Format_Specification.txt
+    — self_ratings fields, weekly check-in structure
+
+12. Daily Mini-JSON Specification:
+    Agents - Generators\Daily Coaching Engine\Source Files\
+    VF_Daily_Mini_JSON_Specification.txt
+    — Daily data available for longitudinal analysis
+
+13. JSON Logic Reference:
+    Agents - Generators\Coach Insights Engine\Source Files\
+    JSON_logic_reference.txt
+    — PPD prohibition in Stage 4, self-ratings confidence
+    adjustment pattern
+
+ATHLETE DATA (validation examples):
+14. Tucker Lloyd Weeks 1-5 JSONs:
+    Athlete Data\Tucker Lloyd\Weekly JSONS\
+    — PRIMARY validation case for Blind Spot detection
+    — Structure Gap should emerge from execution data despite
+    low intake self-report score
+
+15. Grace Kindel Weeks 1-7 JSONs:
+    Athlete Data\Grace Kindel\Weekly JSONS\
+    — Baseline validation: PPD should show Aligned (intake
+    matches known behavioral profile)
+
+16. Mergim Bushati Weeks 1-19 JSONs (skim weeks 14, 17, 18):
+    Athlete Data\Mergim Bushati\Weekly JSONS\
+    — Longest dataset — test longitudinal stability. Injury
+    (Wk14) and competition (Wk18) may temporarily shift
+    execution-derived PPD
+
+17. Tucker Lloyd Snapshot:
+    Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+
+18. Grace Kindel Snapshot:
+    Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+
+TOTAL REFERENCE FILES: 18
+
+==============================================
+PROCESSING STEPS
+==============================================
+STEP 1: Read CLAUDE.md for full project context
+
+STEP 2: Read files 1-5 (CRITICAL) in full — these contain
+        the existing PPD architecture, composite scores, coach
+        flags, self-ratings alignment pattern, and Stage 3
+        routing rules
+
+STEP 3: Read files 6-9 (IMPORTANT) — relevant sections for
+        downstream routing and compliance constraints
+
+STEP 4: Skim files 10-13 (CONTEXT) for structural patterns
+
+STEP 5: Read Tucker Lloyd and Grace Kindel snapshots + a
+        sample of their weekly JSONs (files 14-18) to
+        understand the validation cases
+
+STEP 6: Present understanding of the existing architecture
+        and the mirror model (self_ratings_alignment) to
+        the user. Confirm understanding before designing.
+
+STEP 7: Work through DQ1-DQ9 collaboratively. For each
+        design question:
+        - Present analysis of options with tradeoffs
+        - Recommend an approach with rationale
+        - Lock the decision with user approval
+        - Document the decision with a rationale note
+
+STEP 8: Write the specification document covering:
+        A. Architecture overview (how longitudinal PPD fits
+           in the existing pipeline)
+        B. Execution-to-bucket mapping (DQ1 — the core logic)
+        C. Computation cadence and minimum data threshold
+           (DQ2, DQ3)
+        D. Scoring approach with full rules (DQ4)
+        E. PPD Alignment Signal classification logic (DQ5)
+        F. Output JSON schema (DQ9)
+        G. Downstream routing rules (DQ6, DQ7)
+        H. Compliance and audit requirements (DQ8)
+        I. Edge cases (first week, CF athletes, injury weeks,
+           insufficient data, all buckets at 0, tied scores)
+        J. Validation — worked examples using Tucker Lloyd
+           (Blind Spot case) and Grace Kindel (Aligned case)
+        K. Core Foundation fallback values
+
+STEP 9: Produce implementation impact assessment — list all
+        pipeline files that need changes, with scope estimates:
+        - VF_Interpretation_JSON_Rules.txt (new section)
+        - SOP_Interpretation_Engine_Project_Instructions
+          (new step in processing sequence)
+        - VF_Coaching_Output_JSON_to_Message_Map.txt
+          (Alignment Signal routing)
+        - SOP_Coaching_Output_Instructions (new section for
+          Alignment Signal integration)
+        - JSON_logic_reference.txt (if DQ7 allows Stage 4)
+        - SOP_Coach_Insights_Project_Instructions (if DQ7)
+        - SOP_Editorial_Audit_Master_Prompt (Category F or H
+          expansion)
+        - SOP_Editorial_Audit_Project_Instructions (new
+          subcategories)
+        - Canonical output schema updates
+
+        Do NOT implement changes — just identify and scope them.
+
+STEP 10: Save specification to:
+         Agents - Generators\Interpretation\Source Files\
+         VF_Longitudinal_PPD_Specification.txt
+
+STEP 11: Commit and update CLAUDE.md.
+
+==============================================
+CRITICAL RULES
+==============================================
+1. MIRROR THE SELF-RATINGS PATTERN: The self_ratings_alignment
+   system (Aligned/Conflated/Undervalued, dual-dimension, inform-
+   only, behavioral translation) is the architectural template.
+   Follow it unless there's a strong reason to diverge.
+
+2. PPD BUCKET NAMES NEVER SURFACE: This is a Tier 1 compliance
+   rule (Category F, Criterion 13). No PPD bucket names in any
+   athlete-facing or coach-facing output. The Alignment Signal
+   itself (Aligned/Gap/Blind Spot) is also an internal pipeline
+   classification — it must be translated to behavioral language
+   in all output.
+
+3. LEVERAGE EXISTING COMPUTATION: 7 composite scores and 15
+   coach flags already capture most execution patterns. Prefer
+   mapping existing signals to PPD buckets over creating new
+   formulas from scratch.
+
+4. NO SURVEILLANCE FRAMING: Language like "we've been tracking
+   your real problems," "the data reveals what you didn't tell
+   us," or "your self-report was inaccurate" is prohibited.
+   The coaching approach is grounding (for Gap/Blind Spot) or
+   confirmation (for Aligned) — never accusatory.
+
+5. CORE FOUNDATION COMPATIBILITY: CF athletes get "insufficient
+   data" for all longitudinal PPD fields. Zero degradation to
+   existing CF processing.
+
+6. THIS IS A FUTURE STAGE 2 ENHANCEMENT: Not needed for app v1
+   launch. Design for correctness and clarity over speed. It's
+   better to lock the right architecture than to rush a flawed
+   one.
+
+7. TUCKER LLOYD IS THE VALIDATION CASE: The specification must
+   demonstrate that Tucker's Structure Gap Blind Spot would be
+   detected by the proposed system using his actual 5-week
+   execution data.
+
+==============================================
+SESSION MANAGEMENT
+==============================================
+- This is a DESIGN session, not implementation. The output is
+  a specification document + impact assessment.
+- Expect 1 session for collaborative design (DQ1-DQ9) +
+  specification writing.
+- If the design questions require more than one session to
+  resolve (particularly DQ1 and DQ4, which are the most
+  complex), that's fine — save progress and create a
+  continuation handoff.
+- Commit the specification and update CLAUDE.md when complete.
+==============================================
+END OF HANDOFF PROMPT
+==============================================
