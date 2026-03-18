@@ -1,0 +1,559 @@
+DEV PARTNER TECHNICAL HANDOFF — HANDOFF PROMPT
+==============================================
+SESSION OBJECTIVE:
+Produce a comprehensive technical handoff document for the
+VirtusFocus app development team. This document defines
+EVERYTHING the backend team must build to support the AI
+coaching pipeline — data contracts, deterministic computations,
+API boundaries, database schema requirements, timing rules,
+and rendering specifications.
+
+The audience is a development team that has NO context on the
+AI pipeline internals. They need to know: what data to
+collect, what to compute, what to send to the AI pipeline,
+what to receive back, and what to render to end users.
+
+OUTPUT FORMAT: Professional Word document (.docx) with clear
+sections, tables, and code-formatted schemas. The document
+should be self-contained — a developer should be able to
+implement the backend from this document alone without reading
+any pipeline specification files.
+==============================================
+CONTEXT — WHY THIS DOCUMENT EXISTS
+==============================================
+VirtusFocus has a fully specified 7-stage AI coaching pipeline
+that transforms athlete behavioral data into coaching output
+for athletes, coaches, and parents. The pipeline specifications
+are written for Claude (the AI agent operating each stage).
+The app development team needs a DIFFERENT document — one that
+describes only what the backend must implement, with clear
+boundaries between "your code" and "the AI handles this."
+
+KEY PRINCIPLE: The app backend handles all DETERMINISTIC
+computations (data extraction, formula-based scoring, rule-
+based signal determination). The AI pipeline handles all
+GENERATIVE work (narrative coaching messages, analytical
+reports, contextual interpretation). The backend never calls
+an LLM for deterministic work. The AI never receives raw app
+event data — only structured JSON intermediaries.
+==============================================
+DOCUMENT STRUCTURE
+==============================================
+The handoff document should contain the following sections.
+Read all reference files before writing. The section order
+reflects the data flow from athlete interaction through
+backend processing to AI pipeline to end-user delivery.
+
+SECTION 1: SYSTEM ARCHITECTURE OVERVIEW
+- Visual description of the full data flow:
+  App UI → Backend → AI Pipeline → Backend → App UI
+- 4 product tiers: D2C Base, D2C Premium, D2C Premium+Parent,
+  Institutional. What each tier activates.
+- Cost per athlete per week by tier (from Comprehensive
+  Pipeline Briefing: Base $0.06, Premium $0.66, Premium+Parent
+  $0.73, Institutional $0.78)
+- AI model assignments: which stages use Opus, which use
+  Sonnet, which are deterministic (no AI)
+- Clear boundary diagram: what the backend owns vs what the
+  AI pipeline owns
+
+SECTION 2: INTAKE FORM & ONBOARDING
+Source: VF_App_Intake_Form_Specification.txt
+- All 29 questions with exact response formats (scales,
+  multi-select options, free-text, yes/no)
+- 7 sections with presentation order
+- Field validation rules (required vs optional, min/max
+  selections, character limits for free-text)
+- Multi-system routing table: which questions feed PPD, ABI,
+  Snapshot, Ecosystem, Longitudinal
+- Dual-mode detection: App intake vs Core Foundation intake
+  (3 structural signals to detect mode)
+
+SECTION 3: PPD SCORING (BACKEND COMPUTATION)
+Source: VF_PPD_Scoring_Logic.txt
+- Complete 4-layer deterministic scoring algorithm:
+  Layer 1: Selection weight (+3 per Q15 friction selection)
+  Layer 2: Amplifiers (Q9, Q13, Q16, Q23 — full lookup tables)
+  Layer 3: Tie-breaker classification (agent-classified, but
+    backend stores the result)
+  Layer 4: Final ranking with bucket priority (1→8)
+- All 8 bucket definitions with names
+- Output schema: ppd_primary_problem, ppd_top_3,
+  ppd_tie_breaker_classification, ppd_all_scores
+- Edge cases (minimum selections, ties, contradictions)
+- NOTE: Layers 1-2 and 4 are fully deterministic (backend
+  computes). Layer 3 (tie-breaker classification) requires
+  agent judgment on the free-text pressure thought (Q18) —
+  backend stores the classification result, does not compute
+  it. Clarify this boundary precisely.
+
+SECTION 4: ABI SCORING (BACKEND COMPUTATION)
+Source: VF_ABI_Scoring_Logic.txt
+- Formula: pillar_score = round((Q_a + Q_b) / 2 * 2)
+- 4 pillars with input question mapping:
+  Ownership (Q7, Q8), Composure (Q9, Q10),
+  Focus (Q11, Q12), Structure (Q13, Q14)
+- All 25 valid input combinations per pillar with outputs
+- Total ABI bands: 8-16 / 17-28 / 29-36 / 37-40
+- Individual pillar bands: Low 2-4 / Moderate 5-7 / High 8-10
+- Primary Emphasis rules (within 2 of lowest, max 2, priority
+  order: Ownership > Composure > Focus > Structure)
+- Output schema: abi_scores object + abi_raw_inputs object
+
+SECTION 5: DAILY DATA COLLECTION & MINI-JSON
+Source: VF_Daily_Mini_JSON_Specification.txt,
+       VF_App_Input_Format_Specification.txt
+- What the app collects daily:
+  Morning Tune-Up (focus word, quick win items, mindset
+    challenge acceptance, timestamp)
+  Evening Review (WTD 5 questions, journaling 3 domains,
+    Bullseye 3 rings as arrays, mindset challenge follow-
+    through, component sequence, timestamp)
+- 4-category evening timing model:
+  on-time (before 10 PM), late (10 PM to backfill boundary),
+  backfill (2 hours before hard-out), missed (after hard-out
+  lockout). Hard-out = Morning Tune-Up release time (default
+  6 AM, configurable per program).
+- Partial data preservation on hard-out lockout
+- Daily Mini-JSON schema: the structured intermediate that
+  the backend assembles from raw daily events. This is what
+  Stage 6 (Daily Coaching Engine) and Stage 7 (Daily Coach
+  Signals) consume.
+- Mini-JSON generation timing: after hard-out lockout,
+  before Morning Tune-Up release
+- Tiered operation: Base = 7 Mini-JSONs/week (Mon-Sun),
+  Premium = 7 Mini-JSONs/week but Stage 6 only generates
+  snippets Tue-Sun (6/week)
+- Deliberately excluded fields (compliance — never in
+  Mini-JSON): trigger_method, reminder timestamps, session
+  duration, login counts, screen time
+
+SECTION 6: WEEKLY DATA ASSEMBLY
+Source: VF_App_Input_Format_Specification.txt
+- Weekly Input Object: 7 daily event records + 1 weekly
+  check-in record
+- Weekly check-in contents:
+  Motivation Inventory (5 questions),
+  self_ratings (confidence_level 1-10, habit_consistency_level
+    1-10),
+  season_context (current_season_phase: Off-Season /
+    Pre-Season / In-Season / Post-Season / Transition),
+  forward_anchor (forward_anchor_text: single-line string,
+    submitted_at timestamp)
+- Assembly timing: after 7th daily event is finalized (Sunday
+  hard-out), before Stage 2 (Interpretation Engine) runs
+- The Weekly Input Object is what Stage 2 consumes for App
+  athletes. Core Foundation athletes submit a PDF recap
+  instead (different input path).
+
+SECTION 7: EXECUTION SIGNAL COMPUTATION (BACKEND)
+Source: VF_Execution_Signal_Composite_Score_Rules.txt,
+       VF_Coach_Flags_Specification.txt
+- 7 composite scores — ALL computed by backend, not AI:
+  1. Ownership Index (3 components, 50/30/20 weights)
+  2. Drift Score (5 components, 25/20/20/20/15 weights)
+  3. Follow-Through Score (2 components, 70/30 weights)
+  4. Rhythm Score (4 components, 25/25/30/20 weights)
+  5. Review Quality Score (3 components, 40/35/25 weights)
+  6. Recovery Score (3 components, 60/25/15 weights,
+     event-triggered)
+  7. Reactivity Risk Score (4 components, 30/25/20/25 weights)
+- For each score: exact formula with component definitions,
+  input field mappings, band thresholds, edge cases
+- Output: { score: integer 0-100, band: categorical enum }
+- 15 coach flags — ALL evaluated by backend:
+  Flag object: { flag_id, severity, label, trigger_source,
+    description }
+  3 severity tiers: monitor (4 flags), attention (8 flags),
+    action (3 flags)
+  4 categories: score-band threshold, cross-score convergence,
+    raw metric pattern, cross-week escalation
+- For each flag: exact trigger condition, description template
+  with dynamic variables
+- Cross-week data requirements: flags 13-15 require prior
+  week data. Recovery Score requires prior week for cross-week
+  recovery. Streaks require all prior week data.
+- Self-ratings alignment classification:
+  confidence vs Ownership+Follow-Through → Aligned/Conflated/
+    Undervalued
+  habit consistency vs Rhythm Score → Aligned/Conflated/
+    Undervalued
+- Core Foundation fallback: all scores = insufficient data,
+  flags = empty array
+
+SECTION 8: DAILY COACH SIGNAL (STAGE 7 — BACKEND)
+Source: VF_Daily_Coach_Signal_Determination_Rules_v1.0.txt
+- Stage 7 is ENTIRELY deterministic — the backend implements
+  this, no LLM involved. Zero AI cost.
+- Input: Daily Mini-JSON + optional weekly calibration cache
+- Output: Traffic Light (Green/Yellow/Orange/Gray) + 4
+  contributing signals + 2 hidden internal inputs
+- Contributing signals (visible to coaches):
+  Day Outcome: Aligned / Building / Reset Day
+  Focus Alignment: Centered / Mixed / Drifting
+  Follow-Through: Demonstrated / Gap
+  Weekly Trajectory: Building Week / Steady Week / Cooling Week
+- Hidden inputs (internal scoring only, never displayed):
+  Reflection Breadth, Morning Engagement
+- Traffic Light determination: 15-step computation sequence
+  (Gray check → point scoring → standard thresholds →
+  calibration modifiers → final assignment)
+- Point scoring system: -4 to +6 range from 5 signal inputs
+- Weekly calibration modifiers from Interpretation JSON:
+  emotional_intensity High → +1 shift first 3 days,
+  growth_phase adjustments
+- Calibration cache: per-athlete key-value store, updated
+  when new weekly Interpretation JSON arrives, EI modifier
+  self-expires via day check
+- Team/position group 4-tier aggregation:
+  Strong Alignment / Positive Trend / Mixed Signals /
+  Needs Attention (percentage-based thresholds)
+- 12 edge cases with handling rules
+- Parent signal label mapping:
+  Green → Good Day, Yellow → Building Day,
+  Orange → Reset Day, Gray → No Update Today
+  Contributing signals HIDDEN from parents.
+  Team aggregation NOT shown to parents.
+- Timing: computed between Mini-JSON generation and Morning
+  Tune-Up release
+
+SECTION 9: AI PIPELINE INTERFACE
+This section defines the API boundary between the backend
+and the AI pipeline. The backend does NOT need to understand
+pipeline internals — it sends structured input and receives
+structured output.
+
+INPUTS TO AI PIPELINE (backend sends):
+- Weekly Input Object (Section 6) → Stage 2 (weekly)
+- Daily Mini-JSON (Section 5) → Stage 6 (daily)
+- Daily Mini-JSON (Section 5) → Stage 7 (daily, but Stage 7
+  is backend-computed per Section 8 — only listed here if
+  Stage 7 is implemented as a separate service)
+- Athlete Snapshot (one-time, after intake) → Stage 1
+
+OUTPUTS FROM AI PIPELINE (backend receives and stores):
+- Interpretation JSON (Stage 2) — weekly, per athlete.
+  ~2000-4000 tokens. Contains all classified signals,
+  composite scores, coach flags, narrative arc, etc.
+  Backend stores this and serves calibration data to Stage 7.
+- Coaching Message (Stage 3) — weekly, per athlete.
+  Plain text, 250-450 words. Athlete-facing.
+- Deep Dive (Stage 3) — weekly, per athlete.
+  Plain text, 850-1200 words. Athlete-facing.
+- Parent Coaching Message (Stage 3) — weekly, per athlete.
+  Plain text, 150-250 words. Parent-facing. D2C Premium only.
+  Generated only when parent_inclusion = true.
+- Daily Coaching Snippet (Stage 6) — daily, per athlete.
+  Plain text, 2-3 sentences. Athlete-facing.
+- Weekly Performance Insight (Stage 4) — weekly, per athlete.
+  Structured text, 10 sections. Coach-facing.
+- Parent Weekly Insight (Stage 4) — weekly, per athlete.
+  Structured text, 9 sections scan-first format (indicator +
+  blurb per section). Parent-facing. D2C Premium only.
+- Weekly Team Snapshot (Stage 4) — weekly, per team.
+  Structured text, 7 sections. Coach-facing. Requires 5+
+  athletes.
+- Audit Summary (Stage 5) — weekly, per athlete.
+  Internal QA document. Not displayed to any end user.
+
+SCHEDULING:
+- Daily cycle: Hard-out → Mini-JSON assembly → Stage 7
+  computation → Stage 6 generation → Morning Tune-Up release
+  with snippet
+- Weekly cycle: Sunday hard-out → Weekly Input Object assembly
+  → Stage 2 → Stage 3 → Stage 5 audit → Stage 4 → delivery
+- Stage 3 generates 2 or 3 outputs per run (CM + DD + optional
+  Parent CM)
+- Stage 4 generates 2 or 3 outputs per run (Coach Insight +
+  optional Parent Insight + optional Team Snapshot)
+
+SECTION 10: DASHBOARD RENDERING
+Source: VF_Coach_Insights_Dashboard_Metrics_Reference.txt,
+       VF_Parent_Dashboard_Metric_Definitions.txt
+- Coach dashboard metrics (app renders from Stage 4 + Stage 7
+  output):
+  Pattern Stability Indicator, Response Recovery Indicator,
+  Multi-Week Trend Visualization (4-8 week sparklines),
+  Color Coding System (Green/Yellow/Orange), Season Phase
+  Overlay, Team Trend Over Time
+- Parent dashboard metrics (app renders from Stage 4 + Stage 7
+  output):
+  Overall Signal (color), Growth Phase, Weekly Theme,
+  Confidence Direction, Daily Signal
+  All categorical — no numbers shown to parents
+  Warm placeholders for early weeks (before sufficient data)
+- Dashboard is a PRESENTATION LAYER only — it renders data
+  from pipeline output, does not compute new signals
+
+SECTION 11: DATA STORAGE & RETENTION
+- What needs persistent storage:
+  Athlete intake form responses (immutable after submission)
+  PPD scores and ABI scores (computed once at intake)
+  Daily event data (raw app interactions)
+  Daily Mini-JSONs (assembled daily)
+  Weekly Input Objects (assembled weekly)
+  All AI pipeline outputs (Interpretation JSONs, CMs, DDs,
+    Coach Insights, Parent output, Team Snapshots, Snippets)
+  Calibration cache for Stage 7 (per-athlete, updated weekly)
+  Cross-week data for composite scores and coach flags
+    (at minimum current + prior week Interpretation JSONs)
+- Streak computation requires ALL prior week data for
+  morning_tune_up.current_streak and longest_streak
+- Cross-week recovery requires prior week's
+  wtd_question_patterns.recovery_speed_days
+
+SECTION 12: COMPLIANCE REQUIREMENTS FOR BACKEND
+- Execution timing data (completion rates, timestamps, login
+  frequency, session duration, reminder dependency counts) is
+  NEVER exposed to coaches, parents, or athletes in any form.
+  Backend computes these internally; only the derived
+  categorical signals (composite score bands, traffic lights,
+  coach flags) are surfaced through the AI pipeline's
+  compliance-safe translations.
+- Raw journal text is athlete-private. Coaches see
+  compliance-safe summaries only (via AI pipeline output).
+- The backend must enforce the hard-out lockout — no evening
+  review submissions after hard-out time.
+- Parent data boundary: parents see the SAME data as coaches,
+  reframed in parent-friendly language by the AI pipeline.
+  Backend does not compute separate parent signals (except
+  parent label mapping in Stage 7 per Section 8).
+
+SECTION 13: CORE FOUNDATION COMPATIBILITY
+- Core Foundation athletes use PDF weekly recaps instead of
+  daily app interactions
+- Backend detects input mode (App vs CF) and routes accordingly
+- CF athletes: no Mini-JSON, no composite scores, no coach
+  flags, no daily snippets, no daily signals
+- CF athletes still receive: weekly Interpretation JSON,
+  Coaching Message, Deep Dive, Coach Insight (all via AI
+  pipeline processing the PDF recap)
+- CF is transitional — will phase out as athletes migrate
+  to App
+
+SECTION 14: PRODUCT TIER ACTIVATION MATRIX
+Define which backend computations and AI pipeline stages
+activate for each tier:
+
+| Component | Base | Premium | Premium+Parent | Institutional |
+|-----------|------|---------|----------------|---------------|
+| Intake Form | Yes | Yes | Yes | Yes |
+| PPD/ABI Scoring | Yes | Yes | Yes | Yes |
+| Daily Mini-JSON | Yes | Yes | Yes | Yes |
+| Stage 7 Signal | No | Yes | Yes | Yes |
+| Stage 6 Snippet | Yes (7/wk) | Yes (6/wk) | Yes (6/wk) | Yes (7/wk) |
+| Stage 2 Interp | No | Yes | Yes | Yes |
+| Stage 3 CM+DD | No | Yes | Yes | Yes |
+| Stage 3 Parent CM | No | No | Yes | No |
+| Stage 4 Coach Insight | No | No | No | Yes |
+| Stage 4 Parent Insight | No | No | Yes | No |
+| Stage 4 Team Snapshot | No | No | No | Yes |
+| Stage 5 Audit | No | Yes | Yes | Yes |
+| Coach Dashboard | No | No | No | Yes |
+| Parent Dashboard | No | No | Yes | No |
+
+Base tier operates standalone — daily snippets generated from
+Mini-JSON + athlete snapshot only, no weekly pipeline.
+==============================================
+FILE LOCATIONS — REFERENCE FILES
+==============================================
+READ CLAUDE.md FIRST — it contains the full project
+architecture, all file paths, and session history.
+
+PRIMARY TECHNICAL SPECIFICATIONS (dev team must implement):
+1. Intake Form:
+   Agents - Generators\Athlete Snapshot Generator\
+   VF_App_Intake_Form_Specification.txt
+
+2. PPD Scoring:
+   Agents - Generators\Athlete Snapshot Generator\
+   VF_PPD_Scoring_Logic.txt
+
+3. ABI Scoring:
+   Agents - Generators\Athlete Snapshot Generator\
+   VF_ABI_Scoring_Logic.txt
+
+4. App Input Format (Weekly):
+   Agents - Generators\Interpretation\Source Files\
+   VF_App_Input_Format_Specification.txt
+
+5. Daily Mini-JSON:
+   Agents - Generators\Daily Coaching Engine\Source Files\
+   VF_Daily_Mini_JSON_Specification.txt
+
+6. Composite Score Rules:
+   Agents - Generators\Interpretation\Source Files\
+   VF_Execution_Signal_Composite_Score_Rules.txt
+
+7. Coach Flags:
+   Agents - Generators\Interpretation\Source Files\
+   VF_Coach_Flags_Specification.txt
+
+8. Daily Coach Signal (Stage 7):
+   Agents - Generators\Daily Coach Insights Engine\
+   VF_Daily_Coach_Signal_Determination_Rules_v1.0.txt
+
+RENDERING SPECIFICATIONS (dev team renders output):
+9. Coach Dashboard Metrics:
+   Agents - Generators\Coach Insights Engine\Source Files\
+   VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+
+10. Parent Dashboard Metrics:
+    Agents - Generators\Parents Insight Engine\
+    VF_Parent_Dashboard_Metric_Definitions.txt
+
+CONTEXT FILES (understand pipeline, don't implement):
+11. Comprehensive Pipeline Briefing:
+    VirtusFocus_Pipeline_Comprehensive_Briefing v2.0.docx
+    (30-page overview — read Sections 1-3 for architecture
+    context, Section 9 for product tiers, Section 10 for
+    compliance)
+
+12. Pipeline Visual Flow Diagrams:
+    Pipeline Visual Flow Diagrams.html
+    (4 interactive diagrams showing data flow per tier)
+
+13. Snapshot Fields (what the AI pipeline expects):
+    Agents - Generators\Athlete Snapshot Generator\
+    VF_App_Athlete_Snapshot_Fields.txt
+
+14. Daily Snippet Content Model (context for Stage 6):
+    Agents - Generators\Daily Coaching Engine\Source Files\
+    VF_Daily_Snippet_Content_Model.txt
+
+15. Daily Signal Design (context for Stage 7):
+    Agents - Generators\Daily Coach Insights Engine\
+    Source Files\VF_Daily_Coach_Signal_Design.txt
+
+16. Compliance Framework:
+    Agents - Generators\Coach Insights Engine\Source Files\
+    VF_Coach_Insights_Compliance_Framework.txt
+
+SAMPLE OUTPUTS (show dev team what the AI produces):
+17. Sample Interpretation JSON:
+    Athlete Data\Grace Kindel\Weekly JSONS\
+    Grace_Kindel_2026-03-09to2026-03-15_VF_Interpretation.txt
+
+18. Sample Coaching Message:
+    Athlete Data\Grace Kindel\Coaching and Deep Dive\
+    Coaching Message\
+    Grace_Kindel_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+
+19. Sample Deep Dive:
+    Athlete Data\Grace Kindel\Coaching and Deep Dive\
+    Deep Dive\
+    Grace_Kindel_2026-03-09to2026-03-15_VF_DeepDive.txt
+
+20. Sample Coach Insight:
+    Athlete Data\Grace Kindel\Coach Insights\
+    Grace_Kindel_2026-03-09to2026-03-15_VF_WeeklyInsight.txt
+
+21. Sample Parent CM:
+    Athlete Data\Grace Kindel\Parent Output\
+    Grace_Kindel_2026-03-02to2026-03-08_VF_ParentMessage.txt
+
+22. Sample Parent Insight:
+    Athlete Data\Grace Kindel\Parent Output\
+    Grace_Kindel_2026-03-02to2026-03-08_VF_ParentInsight.txt
+
+23. Sample Team Snapshot:
+    Team Reports\Coach Insights\
+    VirtusFocus_Validation_Program_Cross-Temporal_VF_WeeklyTeamSnapshot.txt
+
+TOTAL REFERENCE FILES: 23
+==============================================
+PROCESSING STEPS
+==============================================
+STEP 1: Read CLAUDE.md for full project context
+STEP 2: Read all 8 primary technical specifications (files
+         1-8) in full — these contain the exact schemas,
+         formulas, and rules the dev team implements
+STEP 3: Read the 2 rendering specifications (files 9-10)
+STEP 4: Read the Comprehensive Pipeline Briefing (file 11)
+         for architecture overview, product tiers, and
+         compliance context
+STEP 5: Skim the Pipeline Visual Flow Diagrams (file 12) and
+         remaining context files (13-16) for structural
+         understanding
+STEP 6: Read sample outputs (files 17-23) to understand
+         what the AI pipeline produces
+STEP 7: Produce the handoff document following the 14-section
+         structure above
+STEP 8: For every deterministic computation (PPD, ABI,
+         composite scores, coach flags, Stage 7 signals),
+         include the COMPLETE formula/rules — do not
+         summarize or reference external docs. The dev team
+         should not need to read pipeline spec files.
+STEP 9: For every data schema, include exact field names,
+         types, enum values, and validation rules
+STEP 10: For every API boundary, clearly state what the
+          backend sends and what it receives
+STEP 11: Save as .docx with professional formatting (TOC,
+          numbered sections, code-formatted schemas, tables)
+==============================================
+CRITICAL RULES FOR THE HANDOFF DOCUMENT
+==============================================
+1. SELF-CONTAINED: A developer reading ONLY this document
+   should be able to implement the entire backend. Do not
+   say "see VF_Execution_Signal_Composite_Score_Rules.txt
+   for details" — include the details.
+
+2. COMPLETE FORMULAS: Every deterministic computation must
+   include the full formula with all components, weights,
+   thresholds, and edge cases. No summaries of formulas.
+
+3. CLEAR BOUNDARIES: For every piece of functionality,
+   explicitly state whether the BACKEND or the AI PIPELINE
+   handles it. Use consistent labels: [BACKEND], [AI PIPELINE],
+   [BACKEND → AI PIPELINE], [AI PIPELINE → BACKEND].
+
+4. SCHEMA-FIRST: Lead every section with the exact JSON
+   schema (field names, types, enums), then explain the
+   business logic.
+
+5. COMPLIANCE FORWARD: Every section that touches data
+   surfaced to users must note what is PROHIBITED from
+   display. The dev team needs to know what NOT to expose
+   as much as what to expose.
+
+6. TIER-AWARE: Note which components activate for which
+   product tiers. The dev team needs conditional logic.
+
+7. TIMING-PRECISE: Every computation must include when it
+   runs, what triggers it, and what depends on its output.
+   The dev team builds the scheduling infrastructure.
+
+8. NO AI PIPELINE INTERNALS: The dev team does not need to
+   know about prompt engineering, editorial audit criteria,
+   coaching voice calibration, or section-by-section content
+   guidance. They need data contracts and scheduling.
+   Exception: Stage 7 (Daily Coach Signal) IS a backend
+   computation — include full determination logic.
+
+9. EDGE CASES: Include all edge cases from the source specs.
+   The dev team will encounter them in production.
+
+10. SAMPLE DATA: Include at least one worked example for each
+    major computation (PPD, ABI, composite scores, Stage 7
+    signal) using real athlete data from the sample files.
+==============================================
+OUTPUT FILE
+==============================================
+Save as:
+VirtusFocus_Dev_Partner_Technical_Handoff.docx
+
+Location: Project root directory
+(D:\OneDrive\Documents\(TEST) Project A\)
+==============================================
+SESSION MANAGEMENT
+==============================================
+- This is a LARGE document. Expect 40-60 pages.
+- Read ALL reference files before writing. The document must
+  be accurate to the source specifications.
+- Use the docx skill for Word document creation.
+- Present a section outline to the user before writing the
+  full document.
+- Commit the document and update CLAUDE.md when complete.
+==============================================
+END OF HANDOFF PROMPT
+==============================================
