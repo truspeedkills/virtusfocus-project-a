@@ -1,0 +1,534 @@
+TEAM SNAPSHOT GENERATION — HANDOFF PROMPT
+==============================================
+SESSION OBJECTIVE:
+Generate the FIRST Weekly Team Snapshot in the VirtusFocus
+pipeline. This is a Stage 4 (Coach Insights Engine) aggregate
+output — Sections T1-T7 — that synthesizes individual athlete
+signals into a team-level performance dashboard for coaching
+staff.
+
+This is a VALIDATION session. The goal is to confirm that
+the Team Snapshot specification produces correct, compliance-
+safe, institutional-grade aggregate output using real athlete
+data from the pipeline.
+
+No specification changes. No design work. Generate the Team
+Snapshot, validate quality, document any findings.
+==============================================
+CONTEXT — WHY THIS SESSION EXISTS
+==============================================
+The Weekly Team Snapshot specification has been complete since
+v1.1 of the Coach Insights Engine and was expanded with
+execution signal enrichment in v1.2 (Task 11). It has never
+been generated against real data.
+
+The pipeline now has 6 athletes with complete Coach Insights
+output — crossing the 5-athlete minimum threshold required
+for Team Snapshot generation. This session produces the first
+aggregate output and validates the T1-T7 format against
+real signal distributions.
+==============================================
+CRITICAL CONTEXT — VALIDATION OVERRIDES
+==============================================
+Two specification constraints must be OVERRIDDEN for this
+validation exercise:
+
+OVERRIDE 1 — TEMPORAL ALIGNMENT:
+In production, a Weekly Team Snapshot aggregates athletes from
+the SAME TEAM during the SAME WEEK. Our 6 validation athletes
+span different date ranges:
+
+  Grace Kindel:    Jan 12 – Mar 15, 2026 (7 weeks)
+  Tucker Lloyd:    Feb 9 – Mar 15, 2026 (5 weeks)
+  Mergim Bushati:  Sep 8, 2025 – Jan 18, 2026 (19 weeks)
+  Aidan Burkardt:  Nov 3, 2025 – Feb 22, 2026 (5 weeks)
+  Angelo Allen:    Feb 2 – Mar 15, 2026 (4 weeks)
+  Jasmine Jones:   May 12 – Jul 13, 2025 (7 weeks)
+
+No single calendar week has all 6 athletes with data. The
+maximum overlap is 4 athletes (Feb 9-15 or Feb 16-22, 2026),
+which falls below the 5-athlete minimum.
+
+VALIDATION APPROACH: Use each athlete's MOST RECENT WEEK as
+the input. This is a cross-temporal validation that tests the
+aggregation FORMAT and LOGIC, not temporal accuracy. Label
+the output as a "VirtusFocus Program Validation Snapshot"
+rather than a real team report. Use today's date range as a
+placeholder period.
+
+OVERRIDE 2 — CORE FOUNDATION ATHLETES:
+The spec states: "All athletes on a team use the App. Teams
+never mix App and Core Foundation athletes." All 6 validation
+athletes are CF.
+
+VALIDATION APPROACH: Generate the Team Snapshot using CF data
+normally. The execution signal enrichment sections (T1, T2,
+T7) will note that execution data is not available — all
+composite scores are "insufficient data" and coach_flags are
+empty arrays. The base T1-T7 sections work identically
+regardless of input_source because they aggregate weekly_tier,
+consistency_profile, primary_focus_ring, recommitment_signal,
+confidence_momentum, emotional_intensity, growth_phase, and
+Composite Readiness — all of which are populated for CF
+athletes.
+
+Document both overrides in the validation report. Note what
+would change with App athletes (execution enrichment would
+populate in T1, T2, T7) and with same-week data (temporal
+alignment removes the cross-temporal limitation note).
+==============================================
+ATHLETE WEEKS TO AGGREGATE
+==============================================
+Use the MOST RECENT WEEK for each athlete. Read the
+Interpretation JSON as the primary data source and the
+individual Coach Insight as the structural reference.
+
+ATHLETE 1: GRACE KINDEL — WEEK 7 (Mar 9-15, 2026)
+  - Weekly tier: Growth
+  - Consistency: Stable Positive
+  - Focus ring: Control
+  - Recommitment: insufficient data
+  - Confidence momentum: Building
+  - Emotional intensity: Moderate
+  - Growth phase: Consistent (Stable)
+  - Composite Readiness: → Steady (Yellow)
+  - Notes: First competitive failure (strikeout), hinge
+    habit activated, Moderate EI, Partially Aligned
+
+ATHLETE 2: TUCKER LLOYD — WEEK 5 (Mar 9-15, 2026)
+  - Weekly tier: Mixed
+  - Consistency: Mixed Pattern
+  - Focus ring: Control
+  - Recommitment: insufficient data
+  - Confidence momentum: Stable
+  - Emotional intensity: Low
+  - Growth phase: Developing (Stable)
+  - Composite Readiness: → Steady (Yellow)
+  - Notes: Best weekday / worst weekend, pattern shift,
+    spring break imminent
+
+ATHLETE 3: MERGIM BUSHATI — WEEK 19 (Jan 12-18, 2026)
+  - Weekly tier: Mixed
+  - Consistency: Variable
+  - Focus ring: Control
+  - Recommitment: insufficient data
+  - Confidence momentum: Stable
+  - Emotional intensity: Low
+  - Growth phase: Developing (Stable)
+  - Composite Readiness: → Steady (Yellow)
+  - Notes: Season-ending decision, offseason commitment,
+    19-week arc complete
+
+ATHLETE 4: AIDAN BURKARDT — WEEK 5 (Feb 16-22, 2026)
+  - Weekly tier: Mixed
+  - Consistency: Variable
+  - Focus ring: Control
+  - Recommitment: Moderate
+  - Confidence momentum: Building
+  - Emotional intensity: Low
+  - Growth phase: Developing (Stable)
+  - Composite Readiness: → Steady (Yellow)
+  - Notes: Visualization self-diagnosis, identity-level
+    Bullseye, RQS=4 peak, pattern shift
+
+ATHLETE 5: ANGELO ALLEN — WEEK 4 (Mar 9-15, 2026)
+  - Weekly tier: Growth
+  - Consistency: Stable Positive (with gap compression)
+  - Focus ring: Control
+  - Recommitment: insufficient data
+  - Confidence momentum: Stable
+  - Emotional intensity: Moderate
+  - Growth phase: Developing (Stable)
+  - Composite Readiness: → Steady (Yellow)
+  - Notes: PSAC championship retrospective, outdoor
+    transition, 2.5-week gap, Partially Aligned
+
+ATHLETE 6: JASMINE JONES — WEEK 7 (Jul 7-13, 2025)
+  - Weekly tier: Growth
+  - Consistency: Stable Positive
+  - Focus ring: Control
+  - Recommitment: Not Applicable
+  - Confidence momentum: Stable
+  - Emotional intensity: Moderate
+  - Growth phase: Developing (Stable)
+  - Composite Readiness: → Steady (Yellow)
+  - Notes: Moderate EI, relationship stress, Bullseye
+    domain shift, 5 clinical-risk elements in raw data
+
+PRE-COMPUTED AGGREGATION (verify against JSONs):
+  T1 — Weekly Tier Distribution:
+    Growth: 3/6 (50%) — Grace, Angelo, Jasmine
+    Mixed:  3/6 (50%) — Tucker, Mergim, Aidan
+    Reset:  0/6 (0%)
+    Directional Momentum: → Stable (all 6 athletes show
+    Stable weekly_tier_trend)
+
+  T3 — Focus Distribution:
+    Center-Dominant: 6/6 (100%)
+    Mixed Focus: 0/6 (0%)
+    Outer-Ring Drift: 0/6 (0%)
+
+  T4 — Recommitment Distribution:
+    Strong: 0/6 (0%)
+    Moderate: 1/6 (17%) — Aidan
+    Low: 0/6 (0%)
+    Not Applicable/insufficient data: 5/6 (83%)
+
+  T5 — Confidence Direction:
+    Building: 2/6 (33%) — Grace, Aidan
+    Stable: 4/6 (67%) — Tucker, Mergim, Angelo, Jasmine
+    Variable: 0/6 (0%)
+    Overall: → Stable (majority)
+
+  T6 — Stress Distribution:
+    Low: 3/6 (50%) — Tucker, Mergim, Aidan
+    Moderate: 3/6 (50%) — Grace, Angelo, Jasmine
+    Elevated: 0/6 (0%)
+
+  T7 — Developmental Distribution:
+    Emerging: 0/6 (0%)
+    Developing: 5/6 (83%) — Tucker, Mergim, Aidan, Angelo,
+                             Jasmine
+    Consistent: 1/6 (17%) — Grace
+    Leadership: 0/6 (0%)
+
+  T7 — Composite Readiness Distribution:
+    ↑ Positive (Green): 0/6 (0%)
+    → Steady (Yellow):  6/6 (100%)
+    ↓ Attention (Orange): 0/6 (0%)
+
+NOTE: The 100% Steady (Yellow) readiness and 100% Center-
+Dominant focus distributions are REAL patterns in this cohort,
+not data errors. Verify against individual JSONs.
+==============================================
+FILE LOCATIONS — INPUTS
+==============================================
+READ CLAUDE.md FIRST — it contains the full project
+architecture, all file paths, athlete arcs, and session
+history.
+
+STAGE 4 SPECIFICATION FILES:
+1. Master Prompt:
+   Agents - Generators\Coach Insights Engine\
+   SOP_Coach_Insights_Master_Prompt_v1.3.txt
+
+2. Project Instructions:
+   Agents - Generators\Coach Insights Engine\
+   SOP_Coach_Insights_Project_Instructions_v1.6.txt
+   - Section 7: Team Snapshot specification (T1-T7, minimum
+     threshold, positional groups, execution enrichment)
+   - Section 8: Field routing (which JSON fields feed which
+     sections)
+   - Section 9: Compliance rules
+   - Section 17: Raw Metric Exclusion Rule
+
+3. JSON Logic Reference:
+   Agents - Generators\Coach Insights Engine\Source Files\
+   JSON_logic_reference.txt
+
+4. Compliance Framework:
+   Agents - Generators\Coach Insights Engine\Source Files\
+   VF_Coach_Insights_Compliance_Framework.txt
+
+5. Output Structure Master:
+   Agents - Generators\Coach Insights Engine\Source Files\
+   COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
+
+6. Dashboard Metrics Reference:
+   Agents - Generators\Coach Insights Engine\Source Files\
+   VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+
+7. Tracking Metrics Reference:
+   Agents - Generators\Coach Insights Engine\Source Files\
+   VF_Tracking_Reporting_Metrics_Reference.txt
+
+INTERPRETATION JSONS (primary data source — most recent week
+per athlete):
+8. Grace Kindel Week 7:
+   Athlete Data\Grace Kindel\Weekly JSONS\
+   Grace_Kindel_2026-03-09to2026-03-15_VF_Interpretation.txt
+
+9. Tucker Lloyd Week 5:
+   Athlete Data\Tucker Lloyd\Weekly JSONS\
+   Tucker_Lloyd_2026-03-09to2026-03-15_VF_Interpretation.txt
+
+10. Mergim Bushati Week 19:
+    Athlete Data\Mergim Bushati\Weekly JSONS\
+    Mergim_Bushati_2026-01-12to2026-01-18_VF_Interpretation.txt
+
+11. Aidan Burkardt Week 5:
+    Athlete Data\Aidan Burkardt\Weekly JSONS\
+    Aidan_Burkardt_2026-02-16to2026-02-22_VF_Interpretation.txt
+
+12. Angelo Allen Week 4:
+    Athlete Data\Angelo Allen\Weekly JSONS\
+    Angelo_Allen_2026-03-09to2026-03-15_VF_Interpretation.txt
+
+13. Jasmine Jones Week 7:
+    Athlete Data\Jasmine Jones\Weekly JSONS\
+    Jasmine_Jones_2025-07-07to2025-07-13_VF_Interpretation.txt
+
+INDIVIDUAL COACH INSIGHTS (structural reference for
+aggregation):
+14. Grace Kindel Week 7:
+    Athlete Data\Grace Kindel\Coach Insights\
+    Grace_Kindel_2026-03-09to2026-03-15_VF_WeeklyInsight.txt
+
+15. Tucker Lloyd Week 5:
+    Athlete Data\Tucker Lloyd\Coach Insights\
+    Tucker_Lloyd_2026-03-09to2026-03-15_VF_WeeklyInsight.txt
+
+16. Mergim Bushati Week 19:
+    Athlete Data\Mergim Bushati\Coach Insights\
+    Mergim_Bushati_2026-01-12to2026-01-18_VF_WeeklyInsight.txt
+
+17. Aidan Burkardt Week 5:
+    Athlete Data\Aidan Burkardt\Coach Insights\
+    Aidan_Burkardt_2026-02-16to2026-02-22_VF_WeeklyInsight.txt
+
+18. Angelo Allen Week 4:
+    Athlete Data\Angelo Allen\Coach Insights\
+    Angelo_Allen_2026-03-09to2026-03-15_VF_WeeklyInsight.txt
+
+19. Jasmine Jones Week 7:
+    Athlete Data\Jasmine Jones\Coach Insights\
+    Jasmine_Jones_2025-07-07to2025-07-13_VF_WeeklyInsight.txt
+
+TOTAL REFERENCE FILES: 19
+==============================================
+PROCESSING STEPS
+==============================================
+STEP 1: Read CLAUDE.md for full project context
+STEP 2: Read the Stage 4 specification files (1-7 above),
+         focusing on:
+         - Section 7 (Team Snapshot T1-T7)
+         - Output Structure Master (T1-T7 format)
+         - Compliance Framework
+STEP 3: Read all 6 Interpretation JSONs (8-13)
+STEP 4: Read all 6 individual Coach Insights (14-19) as
+         structural reference
+STEP 5: Verify pre-computed aggregation data against JSONs
+         (correct any errors found in the pre-computed values
+         in this handoff prompt)
+STEP 6: Generate the Weekly Team Snapshot (T1-T7)
+         - Aggregate percentage distributions per section
+         - Write 2-3 sentence summaries per section
+         - Apply compliance rules (no individual athletes
+           named, no raw scores, no clinical language)
+         - Execution enrichment sections (T1, T2, T7): note
+           CF fallback — execution data not available
+         - Include mandatory header and disclaimer
+STEP 7: Run self-validation against compliance checklist
+STEP 8: Write file to disk
+STEP 9: Present to user for review
+==============================================
+OUTPUT FILE FORMAT
+==============================================
+Team: VirtusFocus Validation Program
+Week: Cross-Temporal Validation (Most Recent Week Per Athlete)
+Report Type: Weekly Team Snapshot
+Classification: Informational Only
+Athletes Included: 6
+
+"These indicators are informational only and may not be used
+as a basis for participation, selection, or disciplinary
+decisions."
+
+NOTE: This is a validation snapshot using each athlete's most
+recent week. Athletes span different date ranges and different
+sports/institutions. This tests the T1-T7 aggregation format,
+not temporal alignment.
+
+------------------------------------------------------------
+T1) PERFORMANCE DISTRIBUTION
+------------------------------------------------------------
+[Distribution percentages]
+[Directional Momentum]
+[2-3 sentence executive summary]
+[Execution enrichment note if applicable]
+
+------------------------------------------------------------
+T2) TEAM CONSISTENCY SIGNAL
+------------------------------------------------------------
+[Overall Status category]
+[Brief explanation of aggregated consistency profiles]
+[Execution enrichment note if applicable]
+
+------------------------------------------------------------
+T3) TEAM FOCUS DISTRIBUTION
+------------------------------------------------------------
+[Percentage distribution by ring dominance]
+[1-2 sentence neutral explanation]
+
+------------------------------------------------------------
+T4) TEAM RECOMMITMENT TREND
+------------------------------------------------------------
+[Percentage distribution by recommitment strength]
+[Short summary of team-level recovery]
+
+------------------------------------------------------------
+T5) TEAM CONFIDENCE DIRECTION
+------------------------------------------------------------
+[Overall trend]
+[Preparation-linked framing]
+
+------------------------------------------------------------
+T6) TEAM STRESS LOAD DISTRIBUTION
+------------------------------------------------------------
+[Percentage distribution by band]
+[Neutral summary, no attribution]
+
+------------------------------------------------------------
+T7) TEAM DEVELOPMENTAL DISTRIBUTION
+------------------------------------------------------------
+[Growth phase distribution]
+[Composite Readiness distribution]
+[Brief explanation of developmental maturity]
+
+------------------------------------------------------------
+OUTPUT FILE LOCATION:
+Team Reports\Coach Insights\
+VirtusFocus_Validation_Program_Cross-Temporal_VF_WeeklyTeamSnapshot.txt
+
+Create the Team Reports\Coach Insights\ directory if it does
+not exist.
+==============================================
+VALIDATION CRITERIA
+==============================================
+After generating the Team Snapshot, verify:
+
+STRUCTURE:
+1. All 7 sections (T1-T7) present with correct headers
+2. Mandatory header with team name, report type,
+   classification, athlete count
+3. Mandatory disclaimer present
+4. No individual athlete names anywhere in the report
+5. All data presented as percentage distributions only
+6. No daily breakdowns
+
+COMPLIANCE:
+7. No clinical language
+8. No framework terminology (Bullseye, WTD, center ring)
+   — institutional language OK (controllable alignment,
+   behavioral execution, preparation patterns)
+9. No raw score values (WTD scores, RQS, etc.)
+10. No execution signal data leakage (composite score names,
+    band labels, coach flag IDs, self-ratings labels)
+11. No intake profile data leakage (PPD, ABI, adversity
+    classifications)
+12. No individual athlete identification or comparison
+13. No "at-risk" labeling
+14. No participation, selection, or playing time references
+15. No personal disclosures, journal quotes, or emotional
+    diagnoses
+16. No surveillance or monitoring framing
+17. Tone is neutral, executive, structured — reads like a
+    performance dashboard, not a coaching message or
+    psychological assessment
+
+CONTENT:
+18. T1 percentages sum to 100%
+19. T3 percentages sum to 100%
+20. T6 percentages sum to 100%
+21. T7 growth phase percentages sum to 100%
+22. T7 Composite Readiness percentages sum to 100%
+23. T5 overall direction derived from majority
+24. T4 handles the high "insufficient data / Not Applicable"
+    rate gracefully (5 of 6 athletes have no recommitment
+    data — this is normal for the cohort, not an error)
+25. Execution enrichment sections (T1, T2, T7) correctly
+    note CF fallback or omit execution language entirely
+26. All percentage values match the JSON data
+
+CROSS-REFERENCE:
+27. T1 distribution matches individual Coach Insights
+    Section 1 (Weekly Performance Classification)
+28. T7 Composite Readiness matches individual Coach Insights
+    Section 10 (Composite Readiness Signal)
+29. No content appears in Team Snapshot that was not in
+    individual Coach Insights (same data boundary)
+==============================================
+WHAT TO REPORT AFTER GENERATION
+==============================================
+1. VALIDATION SUMMARY: Pass/fail status for each of the 29
+   validation criteria above
+2. AGGREGATION VERIFICATION: Confirm all percentage
+   distributions are correct by listing the per-athlete
+   input values and computed percentages
+3. COMPLIANCE REVIEW: Confirm zero compliance violations
+4. CF EXECUTION ENRICHMENT NOTE: Document how T1, T2, T7
+   handled the absence of execution data, and describe what
+   those sections would look like with App athlete data
+5. CROSS-TEMPORAL NOTE: Describe the impact of cross-temporal
+   aggregation on the output quality and what would change
+   with same-week data
+6. FORMAT ASSESSMENT: Does the T1-T7 format produce a
+   document that coaching staff would find useful? Is it
+   scannable? Is the right information surfaced at the right
+   level of detail? Any sections that feel redundant,
+   unclear, or missing?
+7. FINDINGS: Any specification issues, edge cases,
+   ambiguities, or quality concerns discovered during
+   generation
+==============================================
+SPECIAL CONSIDERATIONS
+==============================================
+1. HIGH "INSUFFICIENT DATA" IN T4:
+   5 of 6 athletes have recommitment = "insufficient data"
+   or "Not Applicable." This is normal — these athletes had
+   no adverse events requiring recommitment in their most
+   recent week. The T4 section should acknowledge this
+   gracefully: "The majority of athletes did not experience
+   adverse execution events requiring recovery this period"
+   rather than "insufficient data across the roster."
+
+2. 100% CENTER-DOMINANT FOCUS (T3):
+   All 6 athletes are Center-Dominant. This is a real cohort
+   pattern, not an error. The T3 section should note this as
+   a positive: strong controllable alignment across the
+   roster. In production with 20+ athletes, this distribution
+   would likely be more varied.
+
+3. 100% STEADY (YELLOW) COMPOSITE READINESS (T7):
+   All 6 athletes are → Steady (Yellow). This is driven by
+   the cohort composition: 3 are Moderate stress, 3 have
+   Mixed tier, and various factors shift individual readiness
+   from Green to Yellow. The T7 section should present this
+   neutrally: a steady foundation with no attention flags.
+
+4. MODERATE EI ATHLETES:
+   Grace (Wk7), Angelo (Wk4), and Jasmine (Wk7) all have
+   Moderate emotional intensity. This maps to T6 as "50%
+   Moderate stress." The T6 section should frame this
+   neutrally without attributing sources. Do NOT mention
+   Jasmine's clinical-risk elements (relationship stress,
+   family death, etc.) — T6 presents distributions only.
+
+5. NO POSITIONAL GROUP VARIANTS:
+   This validation uses athletes from 5 different sports
+   (softball, football, wrestling, track & field, bobsled).
+   Positional group variants do not apply. In production, a
+   football team with 20+ athletes could generate positional
+   group snapshots (e.g., "Offensive Line" with 5+ athletes).
+
+6. JASMINE JONES CLINICAL COMPLIANCE:
+   Jasmine's raw data contains 5 clinical-risk elements. None
+   of these can appear in the Team Snapshot. Since T1-T7 use
+   aggregate distributions only (no individual data), this
+   should be inherently safe. Verify that no individual
+   narrative content from any athlete leaks into aggregate
+   section summaries.
+==============================================
+SESSION MANAGEMENT
+==============================================
+- This session should complete in ONE conversation (1 file
+  + validation report)
+- Read CLAUDE.md first for full project context
+- Read all spec files before generating
+- Present the Team Snapshot to the user for review before
+  writing to disk
+- Commit all work when complete and update CLAUDE.md with
+  session history entry
+==============================================
+END OF HANDOFF PROMPT
+==============================================
