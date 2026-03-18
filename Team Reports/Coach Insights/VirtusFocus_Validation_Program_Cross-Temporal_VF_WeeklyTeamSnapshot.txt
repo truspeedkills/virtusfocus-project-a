@@ -24,12 +24,17 @@ The roster is evenly split between Growth-tier and Mixed-tier performance this p
 
 T2) TEAM CONSISTENCY SIGNAL
 
-  Overall Status: Variable with Improvement Trend
+  Overall Status: Transitional Variability
 
   Stable:    2/6  (33%)
   Variable:  4/6  (67%)
 
-Two-thirds of athletes show variable consistency patterns this period, while one-third demonstrate stable positive consistency. The variability is context-driven rather than degrading — athletes in variable patterns are navigating transitions, structural changes, or post-competition processing rather than declining engagement. No athletes show volatile or deteriorating consistency signals.
+  Determination: Axis 1 (Distribution) = 67% Variable, 0%
+  Volatile. Axis 2 (Trend Direction) = all 6 athletes show
+  Stable weekly tier trends. → Transitional Variability
+  (>40% Variable, zero Volatile, all trends Stable).
+
+Two-thirds of athletes show variable consistency patterns this period, while one-third demonstrate stable positive consistency. The variability is context-driven — athletes in variable patterns are navigating competitive transitions, structural changes, or post-competition processing. No athletes show volatile or deteriorating consistency signals.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

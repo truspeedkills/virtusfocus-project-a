@@ -1247,13 +1247,54 @@ was noted across daily preparation patterns."
 ------------------------------------------------------------
 SECTION T2: TEAM CONSISTENCY SIGNAL
 ------------------------------------------------------------
-Overall Status:
-- Predominantly Stable (majority Stable/Improving)
-- Variable with Improvement Trend (mixed, but more Improving
-  than Volatile)
-- Elevated Variability (majority Variable/Volatile)
+Overall Status (4 categories):
+- Predominantly Stable
+- Transitional Variability
+- Moderate Variability
+- Elevated Variability
 
-Brief explanation referencing aggregated consistency profiles.
+DETERMINATION LOGIC (2-axis):
+The Overall Status is determined by evaluating two axes
+independently, then mapping their combination to one of the
+four categories above.
+
+Axis 1 — Distribution: Compute % of athletes in each
+consistency profile category (Stable/Improving, Variable,
+Volatile) from win_the_day.consistency_profile.
+
+Axis 2 — Trend Direction: Compute the dominant directional
+trend across athletes from trend_analysis.weekly_tier_trend
+(Improving, Stable, Declining).
+
+Category assignment:
+- Predominantly Stable: ≥60% Stable/Improving consistency
+  profiles, regardless of trend direction.
+- Transitional Variability: >40% Variable AND zero Volatile
+  AND all variable athletes show Stable or Improving
+  weekly_tier_trend. Coach response: expected variability
+  during transitions — monitor through transition period.
+- Moderate Variability: >40% Variable AND (at least one
+  Declining weekly_tier_trend OR mixed Improving/Declining
+  trends across athletes) but <50% Volatile. Coach response:
+  active monitoring — check individual reports for emerging
+  patterns.
+- Elevated Variability: ≥50% Variable/Volatile AND at least
+  one Volatile consistency profile, OR majority of athletes
+  show Declining weekly_tier_trend. Coach response:
+  investigate — check individual snapshots for erosion.
+
+Edge cases:
+- If distribution falls between categories (e.g., exactly
+  40% Variable), round toward the less alarming category.
+- If Axis 1 and Axis 2 give conflicting signals (e.g., high
+  Variable % but all trends Improving), the trend direction
+  axis takes precedence — improving trends reduce the
+  category by one level.
+
+Brief explanation (2-3 sentences) referencing aggregated
+consistency profiles. Frame variability in behavioral context
+(transitions, competition cycles, structural changes) rather
+than as abstract data patterns.
 
 EXECUTION ENRICHMENT:
 The team consistency assessment may be enriched by the
@@ -1279,6 +1320,12 @@ CORRECT: "Team consistency signal is Predominantly Stable.
 Daily execution timing patterns across the roster generally
 aligned with the stable scoring trend."
 (Convergence — reinforcement without metrics.)
+
+CORRECT: "Team consistency signal is Transitional Variability.
+Behavioral execution timing patterns showed context-driven
+variability across the roster during a competitive transition
+period."
+(Transitional — variability acknowledged with context.)
 
 CORRECT: "Team consistency signal is Predominantly Stable,
 though behavioral execution timing patterns showed some
