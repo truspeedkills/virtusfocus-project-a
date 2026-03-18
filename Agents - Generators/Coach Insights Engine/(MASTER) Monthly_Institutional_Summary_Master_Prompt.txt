@@ -50,12 +50,20 @@ Insert the mandatory disclaimer:
 ------------------------------------------------------------
 2) TEAM CONSISTENCY SIGNAL
 ------------------------------------------------------------
-Status:
+Status (4 categories, 2-axis determination):
 - Predominantly Stable
-- Variable with Improvement Trend
+- Transitional Variability
+- Moderate Variability
 - Elevated Variability
 
-Short explanation referencing aggregated consistency_profile data only.
+Determined by: Axis 1 (% Stable/Variable/Volatile distribution)
+combined with Axis 2 (dominant weekly_tier_trend direction).
+See SOP_Coach_Insights_Project_Instructions_v1.6.txt Section 7
+T2 for full determination logic and thresholds.
+
+Short explanation referencing aggregated consistency profiles.
+Frame variability in behavioral context (transitions, competition
+cycles, structural changes) rather than as abstract data patterns.
 
 ------------------------------------------------------------
 3) TEAM FOCUS DISTRIBUTION TREND (BULLSEYE)
