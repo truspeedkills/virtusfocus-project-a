@@ -249,7 +249,7 @@ Four questions act as amplifiers, adding points to specific buckets.
 
 | Q9 Value | Points Added to MRL |
 |----------|-------------------|
-| 5 (resets quickly) | +0 |
+| 5 (reset almost immediately) | +0 |
 | 4 | +1 |
 | 3 | +1 |
 | 2 | +2 |
@@ -277,16 +277,16 @@ Each Q16 selection adds a **primary** (+2) and **secondary** (+1) amplifier:
 | During busy or stressful life weeks | Discipline Gap | Focus Drift / Distraction |
 | When expectations from others are high | Pressure Reactivity | Confidence Volatility |
 
-Athlete selects 1-2 options. Both primary and secondary apply per selection.
+Athlete selects 0-2 options. If 0 selected, no amplification occurs. Both primary and secondary apply per selection.
 
 #### 2D. Ecosystem Amplifier (Q23 → Ecosystem Friction)
 
 | Q23 Option | Points Added to EF |
 |------------|-------------------|
-| Mostly supportive listening | +0 |
-| A lot of analysis or advice after games | +2 |
-| Pressure to perform or meet expectations | +3 |
-| We don't discuss sports performance much | +1 |
+| Mostly supportive | +0 |
+| A lot of analysis or advice | +2 |
+| Pressure to perform | +3 |
+| We don't discuss performance much | +1 |
 
 ### 3.4 Layer 3: Tie-Breaker Classification [AI PIPELINE]
 
@@ -1685,7 +1685,7 @@ Dashboards are **presentation layers only** — they render data from pipeline o
 | Pre-Season | Before competitive season begins |
 | Early Season | First 2-4 weeks of competition |
 | Mid-Season | Core competitive schedule |
-| Conference | Championship / postseason period |
+| Conference / Championship | Championship / postseason period |
 | Post-Season | After competitive season ends |
 
 - **Purpose:** Contextual layer only — provides temporal context for reading trends. No performance expectations tied to schedule phase.
@@ -2025,6 +2025,7 @@ When `input_source = "core_foundation"`, the backend populates:
 | **Backfill** | Evening review submitted between 2 hours before hard-out and hard-out time (e.g., 4:00-6:00 AM). Next-morning retroactive catch-up. Counted for composite scores but never surfaced to coaches or parents. |
 | **Self-Ratings Alignment** | Perception-reality comparison of athlete weekly self-assessment against execution data. Produces Aligned / Conflated / Undervalued per dimension. |
 | **Partial Win** | WTD daily score of 2-3 (replaces legacy "Neutral" terminology) |
+| **Weekly Input Object** | Weekly structured data package assembled by backend after Sunday hard-out — contains 7 daily event records + 1 weekly check-in. Input to Stage 2 (Interpretation Engine). |
 | **CF** | Core Foundation — legacy PDF-based intake/weekly recap system |
 
 ---
