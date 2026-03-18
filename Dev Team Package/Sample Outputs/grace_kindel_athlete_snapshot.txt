@@ -1,0 +1,116 @@
+VF_PIPELINE_SNAPSHOT
+SNAPSHOT_TYPE: Baseline
+ATHLETE_NAME: Grace Kindel
+SPORT: Softball
+POSITION: Outfield
+TEAM: Kutztown
+YEARS_COMPETING: 12
+INTAKE_DATE: 2025-05-10
+MENTAL_GAME_SELF_RATING: 6/10
+
+------------------------------------------------------------
+SECTION_1_PERFORMANCE_CONTEXT
+------------------------------------------------------------
+Grace Kindel is a softball outfielder competing with Kutztown and has been involved in the sport for approximately 12 years. She is preparing for the upcoming competitive season and is focused on improving both physical readiness (speed, strength, mobility) and mental consistency. Her current self-assessed mental performance rating is 6/10, suggesting moderate confidence with clear opportunity for improvement in performance stability and response to mistakes.
+
+------------------------------------------------------------
+SECTION_2_PRIMARY_STATED_GOALS
+------------------------------------------------------------
+OUTCOME_GOALS:
+- Earn a strong position or role on the team for the upcoming season.
+- Enter the next season physically stronger, faster, more mobile, and more confident.
+
+BEHAVIOR_GOALS:
+- Maintain confidence in her abilities during competition.
+- Improve consistency in her mental approach.
+- Learn to accept mistakes and move forward without dwelling on them.
+
+------------------------------------------------------------
+SECTION_3_MOTIVATION_DRIVERS
+------------------------------------------------------------
+INTERNAL_DRIVERS:
+- Personal improvement and self-development.
+- Desire to build stronger confidence and mental consistency.
+
+EXTERNAL_DRIVERS:
+- Responsibility to contribute positively to the team.
+- Desire not to let teammates or herself down.
+
+IDENTITY_LANGUAGE_DETECTED:
+- Values being a confident and reliable competitor.
+- Expresses responsibility toward team performance.
+
+------------------------------------------------------------
+SECTION_4_KNOWN_DERAILERS
+------------------------------------------------------------
+PRIMARY_DERAILERS:
+- Loss of confidence during competition.
+- Difficulty letting go of mistakes or negative outcomes.
+- Inconsistent motivation when performance declines.
+
+DERAILER_CONTEXT:
+- Mistakes or perceived failures during competition appear to disrupt belief and focus.
+
+------------------------------------------------------------
+SECTION_5_CONFIDENCE_PATTERN
+------------------------------------------------------------
+CONFIDENCE_TYPE: Outcome-reactive
+
+DESCRIPTION:
+Grace’s confidence appears tied to performance outcomes. Successful moments likely reinforce belief, while mistakes or perceived failures can quickly reduce confidence. Stabilizing confidence independent of immediate outcomes will be a key area of development.
+
+------------------------------------------------------------
+SECTION_6_IDENTITY_FRICTION
+------------------------------------------------------------
+FRICTION_POINTS:
+- Desires to stay confident during competition but reports difficulty maintaining belief after mistakes.
+- Wants to perform reliably for her team but places high pressure on herself in important moments.
+
+------------------------------------------------------------
+SECTION_7_STRESS_TRIGGER_PROFILE
+------------------------------------------------------------
+COMPETITIVE_PRESSURE:
+- Big moments create internal pressure to succeed.
+
+PRIMARY_TRIGGER:
+- Fear of letting teammates or herself down.
+
+BEHAVIORAL_RESPONSE_PATTERN:
+- Increased internal pressure before key moments.
+- Mistakes can trigger reduced confidence and overthinking.
+
+EXTERNAL_STRESSORS:
+- Insufficient data provided.
+
+------------------------------------------------------------
+SECTION_8_INITIAL_COACHING_EMPHASIS
+------------------------------------------------------------
+COACHING_PRIORITIES:
+- Develop a consistent reset routine after mistakes.
+- Reinforce confidence anchored to preparation rather than outcomes.
+- Build structured focus cues for high-pressure moments.
+
+BASELINE_ANCHORS:
+
+ANCHOR_IDENTITY_CLAIM:
+Wants to stay confident in her ability during competition.
+
+ANCHOR_HINGE_HABIT:
+Immediate reset and refocus after mistakes.
+
+ANCHOR_PRIMARY_DERAILER:
+Loss of confidence following errors or perceived failure.
+
+ANCHOR_WHY_IT_MATTERS:
+Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role.
+
+ANCHOR_EXACT_PHRASE:
+"I need to make sure I succeed and if I don’t I will let myself and the team down."
+
+------------------------------------------------------------
+SECTION_9_GROWTH_PHASE_CLASSIFICATION
+------------------------------------------------------------
+GROWTH_PHASE: Developing
+
+JUSTIFICATION:
+Grace demonstrates strong commitment to improving her mindset and awareness of areas she wants to strengthen. However, her confidence currently fluctuates with performance outcomes, indicating that consistent confidence regulation and response to mistakes are still developing.

@@ -1,0 +1,1015 @@
+VIRTUSFOCUS — DAILY COACH SIGNAL DETERMINATION RULES v1.0
+(Stage 7: Daily Coach Insights Engine — App Backend Specification)
+================================================================
+
+This document is the authoritative specification for computing
+the Daily Athlete Signal. It is an app backend implementation
+guide — not an LLM prompt. All computations are deterministic.
+
+COMPANION DOCUMENT: VF_Daily_Coach_Signal_Design.txt contains
+the collaborative design rationale, compliance framework, and
+design decision log. This document contains ONLY the rules
+needed for implementation.
+
+================================================================
+1. INPUT REQUIREMENTS
+================================================================
+
+1.1 PRIMARY INPUT: DAILY MINI-JSON
+
+Source: VF_Daily_Mini_JSON_Specification.txt
+Produced by: App backend (deterministic extraction from raw
+  daily events)
+Frequency: Once per athlete per day
+
+Required fields consumed by Stage 7:
+
+  meta.athlete_id
+  meta.date
+  meta.days_into_week
+  meta.program_day_number
+
+  morning_tune_up.completed
+  morning_tune_up.mindset_challenge_accepted
+
+  evening_review.status  ("completed" | "partial" | "missed")
+  evening_review.wtd.daily_score
+  evening_review.wtd.day_category
+  evening_review.bullseye.center_count
+  evening_review.bullseye.influence_count
+  evening_review.bullseye.outer_count
+  evening_review.bullseye.completed
+  evening_review.mindset_challenge_completed
+
+  running_week_summary.win_days
+  running_week_summary.partial_win_days
+  running_week_summary.missed_days
+  running_week_summary.days_completed
+  running_week_summary.days_into_week
+
+  evening_review.journaling.domains_completed
+
+1.2 CALIBRATION INPUT: WEEKLY INTERPRETATION JSON (OPTIONAL)
+
+Source: Most recent Interpretation JSON for this athlete
+Cached by: App backend (updated when new JSON produced, typically
+  Monday)
+Required fields:
+
+  emotional_intensity  ("Low" | "Moderate" | "High")
+  growth_phase         ("Emerging" | "Developing" | "Consistent" |
+                        "Leadership")
+  growth_phase_movement ("Advancing" | "Stable" | "Regressing" |
+                         "insufficient data")
+
+If no Interpretation JSON exists (first week of program, or
+weekly pipeline not yet run), all calibration modifiers are
+skipped. Standard thresholds apply.
+
+================================================================
+2. OUTPUT SCHEMA
+================================================================
+
+The Daily Athlete Signal is a structured data object. The app
+renders it on the coach dashboard.
+
+OUTPUT OBJECT:
+
+{
+  "athlete_id": "<string>",
+  "signal_date": "<YYYY-MM-DD>",
+  "program_day_number": <integer>,
+  "days_into_week": <integer 1-7>,
+
+  "traffic_light": "<GREEN | YELLOW | ORANGE | GRAY>",
+
+  "day_outcome": "<Aligned | Building | Reset Day | null>",
+  "focus_alignment": "<Centered | Mixed | Drifting | null>",
+  "follow_through": "<Demonstrated | Gap | null>",
+  "weekly_trajectory": "<Building Week | Steady Week | Cooling Week | null>",
+
+  "has_data": <boolean>,
+
+  "_internal": {
+    "point_score": <integer -4 to +6 | null>,
+    "calibration_applied": "<emotional_intensity | growth_phase | none>",
+    "calibration_source": "<High | Emerging | Regressing | Consistent | Leadership | none>",
+    "threshold_shift": <integer -1, 0, or +1>,
+    "green_min": <integer>,
+    "orange_max": <integer>
+  }
+}
+
+FIELD NOTES:
+
+- traffic_light: The primary scannable signal. Always populated.
+- day_outcome, focus_alignment, follow_through: null when the
+  component data is unavailable (Evening Review missed, Bullseye
+  not completed, Tune-Up not completed).
+- weekly_trajectory: null when days_into_week <= 2 (too early)
+  or when days_completed < 2 (insufficient completed days).
+- has_data: false when traffic_light = "GRAY" (entire Evening
+  Review missed). true otherwise.
+- _internal: Backend-only fields for debugging and QA. NEVER
+  exposed to the coach dashboard or any coach-facing API.
+
+================================================================
+3. CONTRIBUTING SIGNAL DETERMINATION
+================================================================
+
+Compute each contributing signal independently from Mini-JSON
+fields. Apply in any order (no dependencies between signals).
+
+------------------------------------------------------------
+3.1 DAY OUTCOME
+------------------------------------------------------------
+
+INPUT: evening_review.wtd.day_category
+
+RULES:
+
+  IF evening_review.status = "missed":
+    day_outcome = null
+    STOP
+
+  IF evening_review.wtd.day_category is null OR wtd not completed:
+    day_outcome = null
+    STOP
+
+  MAPPING:
+    "Win the Day"       → "Aligned"
+    "Partial Win"       → "Building"
+    "Missed the Mark"   → "Reset Day"
+
+------------------------------------------------------------
+3.2 FOCUS ALIGNMENT
+------------------------------------------------------------
+
+INPUT: evening_review.bullseye
+
+RULES:
+
+  IF evening_review.status = "missed":
+    focus_alignment = null
+    STOP
+
+  IF evening_review.bullseye.completed = false OR null:
+    focus_alignment = null
+    STOP
+
+  LET center = evening_review.bullseye.center_count
+  LET influence = evening_review.bullseye.influence_count
+  LET outer = evening_review.bullseye.outer_count
+
+  IF center > outer:
+    focus_alignment = "Centered"
+  ELSE IF outer > center:
+    focus_alignment = "Drifting"
+  ELSE:
+    // center == outer, OR influence >= both center and outer
+    focus_alignment = "Mixed"
+
+  SPECIAL CASE — influence dominant:
+    IF influence >= center AND influence >= outer
+       AND center != outer:
+      focus_alignment = "Mixed"
+    // Influence-dominant with equal center/outer is already Mixed
+
+------------------------------------------------------------
+3.3 FOLLOW-THROUGH
+------------------------------------------------------------
+
+INPUT: morning_tune_up, evening_review.mindset_challenge_completed
+
+RULES:
+
+  IF morning_tune_up.completed = false OR null:
+    follow_through = null
+    STOP
+    // No Tune-Up means no challenge was accepted — no signal
+
+  IF morning_tune_up.mindset_challenge_accepted = false OR null:
+    follow_through = null
+    STOP
+    // Tune-Up completed but no challenge accepted (future V2+)
+
+  IF evening_review.status = "missed":
+    follow_through = null
+    STOP
+    // No evening data to confirm follow-through
+
+  IF evening_review.mindset_challenge_completed = true:
+    follow_through = "Demonstrated"
+  ELSE:
+    follow_through = "Gap"
+
+------------------------------------------------------------
+3.4 WEEKLY TRAJECTORY
+------------------------------------------------------------
+
+INPUT: running_week_summary
+
+RULES:
+
+  LET diw = running_week_summary.days_into_week
+  LET dc = running_week_summary.days_completed
+  LET wins = running_week_summary.win_days
+  LET misses = running_week_summary.missed_days
+  LET partials = running_week_summary.partial_win_days
+
+  IF diw <= 2 OR dc < 2:
+    weekly_trajectory = null
+    STOP
+
+  // Compute rates
+  LET win_rate = wins / dc
+  LET miss_rate = misses / dc
+
+  // Building Week
+  IF win_rate >= 0.50 AND miss_rate <= 0.25:
+    weekly_trajectory = "Building Week"
+    STOP
+
+  // Cooling Week
+  IF miss_rate >= 0.50:
+    weekly_trajectory = "Cooling Week"
+    STOP
+  IF misses > wins AND partials <= 1:
+    weekly_trajectory = "Cooling Week"
+    STOP
+
+  // Everything else
+  weekly_trajectory = "Steady Week"
+
+================================================================
+4. INTERNAL INPUTS (HIDDEN FROM COACH)
+================================================================
+
+These values feed the traffic light point system but are NOT
+displayed as labeled signals on the coach dashboard.
+
+------------------------------------------------------------
+4.1 REFLECTION BREADTH
+------------------------------------------------------------
+
+INPUT: evening_review.journaling.domains_completed
+
+RULES:
+
+  IF evening_review.status = "missed":
+    reflection_breadth = "None"
+  ELSE IF evening_review.journaling.domains_completed = 3:
+    reflection_breadth = "Broad"
+  ELSE IF evening_review.journaling.domains_completed >= 1:
+    reflection_breadth = "Narrow"
+  ELSE:
+    reflection_breadth = "None"
+
+------------------------------------------------------------
+4.2 MORNING ENGAGEMENT
+------------------------------------------------------------
+
+INPUT: morning_tune_up.completed
+
+RULES:
+
+  IF morning_tune_up.completed = true:
+    morning_engagement = "Yes"
+  ELSE:
+    morning_engagement = "No"
+
+================================================================
+5. TRAFFIC LIGHT DETERMINATION
+================================================================
+
+------------------------------------------------------------
+5.1 GRAY STATE CHECK (FIRST)
+------------------------------------------------------------
+
+IF evening_review.status = "missed":
+  traffic_light = "GRAY"
+  day_outcome = null
+  focus_alignment = null
+  follow_through = null
+  has_data = false
+  _internal.point_score = null
+  _internal.calibration_applied = "none"
+  _internal.threshold_shift = 0
+
+  // weekly_trajectory MAY still be populated (uses running
+  // week summary, not today's evening review)
+
+  STOP — do not compute points or apply calibration.
+
+------------------------------------------------------------
+5.2 POINT SCORING
+------------------------------------------------------------
+
+Compute total points from contributing signals + internal inputs:
+
+  Day Outcome:
+    "Aligned"     → +2
+    "Building"    → +1
+    "Reset Day"   → -1
+    null          →  0
+
+  Focus Alignment:
+    "Centered"    → +1
+    "Mixed"       →  0
+    "Drifting"    → -1
+    null          →  0
+
+  Follow-Through:
+    "Demonstrated" → +1
+    "Gap"          → -1
+    null           →  0
+
+  Reflection Breadth (hidden):
+    "Broad"       → +1
+    "Narrow"      →  0
+    "None"        → -1
+
+  Morning Engagement (hidden):
+    "Yes"         → +1
+    "No"          →  0
+
+  TOTAL RANGE: -4 to +6
+
+  Store as _internal.point_score
+
+------------------------------------------------------------
+5.3 STANDARD THRESHOLDS
+------------------------------------------------------------
+
+  Score Range     Traffic Light
+  -----------     -------------
+  +4 to +6        GREEN
+  +1 to +3        YELLOW
+   0 to -4        ORANGE
+
+Standard thresholds apply when:
+  - No weekly Interpretation JSON is available, OR
+  - emotional_intensity is not "High", AND
+  - growth_phase is "Developing", AND
+  - growth_phase_movement is not "Regressing"
+
+Store threshold boundaries:
+  _internal.green_min = 4
+  _internal.orange_max = 0
+
+------------------------------------------------------------
+5.4 WEEKLY CALIBRATION MODIFIERS
+------------------------------------------------------------
+
+Check calibration conditions IN THIS ORDER (first match wins):
+
+CONDITION 1 — HIGH EMOTIONAL INTENSITY:
+
+  IF emotional_intensity = "High"
+     AND days_into_week <= 3:
+
+    Shift = +1 (more forgiving)
+    Adjusted thresholds:
+      GREEN:  +3 to +6
+      YELLOW:  0 to +2
+      ORANGE: -4 to -1
+
+    _internal.calibration_applied = "emotional_intensity"
+    _internal.calibration_source = "High"
+    _internal.threshold_shift = +1
+    _internal.green_min = 3
+    _internal.orange_max = -1
+
+  IF emotional_intensity = "High"
+     AND days_into_week > 3:
+
+    // EI modifier expires after Day 3
+    // Fall through to next condition check
+
+CONDITION 2 — EMERGING OR REGRESSING:
+
+  IF growth_phase = "Emerging"
+     OR growth_phase_movement = "Regressing":
+
+    Shift = +1 (more forgiving)
+    Adjusted thresholds:
+      GREEN:  +3 to +6
+      YELLOW:  0 to +2
+      ORANGE: -4 to -1
+
+    _internal.calibration_applied = "growth_phase"
+    _internal.calibration_source = growth_phase OR "Regressing"
+    _internal.threshold_shift = +1
+    _internal.green_min = 3
+    _internal.orange_max = -1
+
+CONDITION 3 — CONSISTENT OR LEADERSHIP:
+
+  IF growth_phase = "Consistent"
+     OR growth_phase = "Leadership":
+
+    Shift = -1 (higher standard)
+    Adjusted thresholds:
+      GREEN:  +5 to +6
+      YELLOW: +2 to +4
+      ORANGE: -4 to +1
+
+    _internal.calibration_applied = "growth_phase"
+    _internal.calibration_source = growth_phase
+    _internal.threshold_shift = -1
+    _internal.green_min = 5
+    _internal.orange_max = 1
+
+DEFAULT (no condition matched):
+
+    Use standard thresholds (Section 5.3).
+    _internal.calibration_applied = "none"
+    _internal.calibration_source = "none"
+    _internal.threshold_shift = 0
+
+MODIFIER STACKING RULE:
+  Modifiers DO NOT stack. Only one condition applies per signal.
+  The priority order above ensures emotional_intensity (recent
+  state) takes precedence over growth_phase (long-term state)
+  when both would apply.
+
+------------------------------------------------------------
+5.5 FINAL TRAFFIC LIGHT ASSIGNMENT
+------------------------------------------------------------
+
+  IF _internal.point_score >= _internal.green_min:
+    traffic_light = "GREEN"
+  ELSE IF _internal.point_score <= _internal.orange_max:
+    traffic_light = "ORANGE"
+  ELSE:
+    traffic_light = "YELLOW"
+
+  has_data = true
+
+================================================================
+6. TEAM AND POSITION GROUP AGGREGATION
+================================================================
+
+------------------------------------------------------------
+6.1 INPUT
+------------------------------------------------------------
+
+For each group (team or position group), collect all Daily
+Athlete Signals for the same signal_date.
+
+Separate into:
+  data_signals: signals where has_data = true
+  gray_signals: signals where has_data = false (GRAY)
+
+Gray signals are EXCLUDED from all tier calculations.
+
+------------------------------------------------------------
+6.2 MINIMUM GROUP SIZE
+------------------------------------------------------------
+
+  Position groups: minimum 3 data_signals required
+  Team level: minimum 5 data_signals required
+
+If below minimum:
+  tier = "Insufficient Data"
+  tier_number = null
+  STOP
+
+------------------------------------------------------------
+6.3 PERCENTAGE CALCULATION
+------------------------------------------------------------
+
+  LET total = count(data_signals)
+  LET green_count = count where traffic_light = "GREEN"
+  LET orange_count = count where traffic_light = "ORANGE"
+
+  LET green_pct = green_count / total
+  LET orange_pct = orange_count / total
+
+------------------------------------------------------------
+6.4 TIER ASSIGNMENT (CHECK IN ORDER)
+------------------------------------------------------------
+
+  TIER 1 — Strong Alignment:
+    IF green_pct >= 0.75 AND orange_pct == 0:
+      tier = "Strong Alignment"
+      tier_number = 1
+      STOP
+
+  TIER 2 — Positive Trend:
+    IF green_pct >= 0.50 AND orange_pct <= 0.15:
+      tier = "Positive Trend"
+      tier_number = 2
+      STOP
+
+  TIER 3 — Mixed Signals:
+    IF (green_pct >= 0.25 AND green_pct < 0.50)
+       OR (orange_pct > 0.15 AND orange_pct <= 0.30):
+      tier = "Mixed Signals"
+      tier_number = 3
+      STOP
+
+  TIER 4 — Needs Attention:
+    // Default — none of the above matched
+    tier = "Needs Attention"
+    tier_number = 4
+
+------------------------------------------------------------
+6.5 AGGREGATION OUTPUT SCHEMA
+------------------------------------------------------------
+
+{
+  "group_type": "<team | position_group>",
+  "group_name": "<string>",
+  "signal_date": "<YYYY-MM-DD>",
+  "tier_number": <1 | 2 | 3 | 4 | null>,
+  "tier_label": "<Strong Alignment | Positive Trend | Mixed Signals | Needs Attention | Insufficient Data>",
+  "athlete_count": <integer>,
+  "data_count": <integer>,
+  "gray_count": <integer>,
+
+  "_internal": {
+    "green_count": <integer>,
+    "yellow_count": <integer>,
+    "orange_count": <integer>,
+    "green_pct": <decimal>,
+    "orange_pct": <decimal>
+  }
+}
+
+_internal fields are backend-only. NEVER exposed to coach
+dashboard or any coach-facing API.
+
+================================================================
+7. EDGE CASES
+================================================================
+
+------------------------------------------------------------
+7.1 PARTIAL EVENING REVIEW
+------------------------------------------------------------
+
+When evening_review.status = "partial" (some but not all
+components completed):
+
+- traffic_light: Computed normally. Available signals contribute
+  points; unavailable signals contribute 0 points.
+- day_outcome: Populated if WTD was completed, null if not.
+- focus_alignment: Populated if Bullseye was completed, null
+  if not.
+- follow_through: Populated if both Tune-Up and evening
+  mindset_challenge data exist, null if not.
+- reflection_breadth: Based on domains_completed (0 if
+  journaling not completed).
+- has_data: true (some data exists).
+
+The signal naturally degrades when components are missing —
+more null signals and more 0-point contributions push the
+traffic light toward YELLOW without penalizing the athlete
+for missing one specific component.
+
+------------------------------------------------------------
+7.2 PROGRAM DAY 1
+------------------------------------------------------------
+
+On the athlete's first day (program_day_number = 1):
+
+- No previous Mini-JSON exists
+- No Interpretation JSON exists (no calibration)
+- running_week_summary reflects Day 1 only
+- weekly_trajectory = null (days_into_week = 1)
+
+All other signals compute normally. If Day 1 has a full
+evening review, the traffic light computes from available data
+with standard thresholds.
+
+------------------------------------------------------------
+7.3 FIRST WEEK (NO INTERPRETATION JSON)
+------------------------------------------------------------
+
+When no Interpretation JSON is cached for this athlete:
+
+- All calibration modifiers skip
+- Standard thresholds apply
+- _internal.calibration_applied = "none"
+
+This is the expected state for Week 1 of every athlete.
+
+------------------------------------------------------------
+7.4 EVENING REVIEW WITH WTD ONLY (NO JOURNAL, NO BULLSEYE)
+------------------------------------------------------------
+
+  day_outcome = computed (WTD data available)
+  focus_alignment = null (no Bullseye data)
+  follow_through = depends on Tune-Up + challenge data
+  reflection_breadth = "None" (0 domains)
+  morning_engagement = depends on Tune-Up data
+
+Points: Day Outcome contributes, Focus Alignment = 0,
+Reflection Breadth = -1, others depend on data availability.
+
+------------------------------------------------------------
+7.5 MORNING TUNE-UP ONLY (NO EVENING REVIEW)
+------------------------------------------------------------
+
+  evening_review.status = "missed" → GRAY
+  morning_engagement = "Yes" but not used (GRAY bypasses
+    point calculation)
+
+The athlete completed the morning but not the evening. The
+signal is GRAY because no performance data is available.
+Morning engagement alone does not produce a colored signal.
+
+------------------------------------------------------------
+7.6 ALL COMPONENTS COMPLETED, ALL NEGATIVE
+------------------------------------------------------------
+
+Maximum negative scenario:
+  Day Outcome: Reset Day (-1)
+  Focus Alignment: Drifting (-1)
+  Follow-Through: Gap (-1)
+  Reflection Breadth: None (-1)
+  Morning Engagement: No (0)
+  Total: -4 → ORANGE
+
+Even with the most forgiving calibration (+1 shift):
+  -4 is still below -1 → ORANGE
+
+This is correct behavior. A fully negative day should show
+Orange regardless of calibration.
+
+------------------------------------------------------------
+7.7 ALL COMPONENTS COMPLETED, ALL POSITIVE
+------------------------------------------------------------
+
+Maximum positive scenario:
+  Day Outcome: Aligned (+2)
+  Focus Alignment: Centered (+1)
+  Follow-Through: Demonstrated (+1)
+  Reflection Breadth: Broad (+1)
+  Morning Engagement: Yes (+1)
+  Total: +6 → GREEN
+
+Even with the strictest calibration (-1 shift):
+  +6 is still above +5 → GREEN
+
+This is correct behavior. A fully positive day should show
+Green regardless of calibration.
+
+------------------------------------------------------------
+7.8 POSITION GROUP WITH EXACTLY MINIMUM ATHLETES
+------------------------------------------------------------
+
+3-person position group, all have data:
+  Percentages calculated from 3 athletes.
+  1 Orange = 33% → exceeds 30% → Tier 4.
+  1 Orange + 2 Green = 33% Orange, 67% Green → Tier 3
+    (orange_pct > 0.15).
+
+This is correct. Small groups are more sensitive to individual
+signals, which is acceptable — the coach is already managing
+a small group and has direct visibility.
+
+------------------------------------------------------------
+7.9 ZERO DATA SIGNALS IN A GROUP
+------------------------------------------------------------
+
+If ALL athletes in a group have GRAY signals:
+  data_count = 0
+  Below minimum → "Insufficient Data"
+
+This is correct. No coaching intelligence available for the
+group today.
+
+------------------------------------------------------------
+7.10 WEEKLY TRAJECTORY DURING PARTIAL WEEK COMPLETION
+------------------------------------------------------------
+
+Scenario: Day 5 of week, but only 2 evening reviews completed
+(3 missed days).
+
+  days_into_week = 5
+  days_completed = 2
+
+  days_completed >= 2 → trajectory computes
+  Rates calculated from completed days only (2), not from
+  days_into_week (5).
+
+This means a missed day does NOT count as a "Missed" day in
+the trajectory calculation — only days with WTD scores
+contribute. The athlete is not penalized for days without data.
+
+------------------------------------------------------------
+7.11 FOCUS ALIGNMENT — ALL RINGS ZERO
+------------------------------------------------------------
+
+If center_count = 0 AND influence_count = 0 AND outer_count = 0:
+  Bullseye completed but no items placed in any ring.
+  Treat as bullseye.completed = false → focus_alignment = null
+
+------------------------------------------------------------
+7.12 FOCUS ALIGNMENT — TIE WITH INFLUENCE
+------------------------------------------------------------
+
+If center = 2, influence = 3, outer = 2:
+  influence >= center AND influence >= outer → Mixed
+  (influence dominant triggers Mixed regardless of
+  center vs outer relationship)
+
+If center = 3, influence = 3, outer = 1:
+  center > outer → Centered
+  (center dominance takes precedence when influence ties
+  with center but outer is lower)
+
+If center = 1, influence = 3, outer = 3:
+  outer > center → Drifting
+  (outer dominance takes precedence when influence ties
+  with outer but center is lower)
+
+General rule: Compare center to outer first. If center > outer
+→ Centered. If outer > center → Drifting. If equal, or if
+influence is the sole dominant ring, → Mixed.
+
+================================================================
+8. COMPUTATION SEQUENCE
+================================================================
+
+For each athlete, for each day:
+
+  STEP 1: Read Daily Mini-JSON for this athlete + date
+  STEP 2: Read cached weekly calibration data (if available)
+  STEP 3: Check GRAY state (Section 5.1)
+    IF GRAY → populate output, compute weekly_trajectory
+    if eligible, DONE
+  STEP 4: Compute contributing signals (Section 3, any order):
+    3.1 Day Outcome
+    3.2 Focus Alignment
+    3.3 Follow-Through
+    3.4 Weekly Trajectory
+  STEP 5: Compute internal inputs (Section 4):
+    4.1 Reflection Breadth
+    4.2 Morning Engagement
+  STEP 6: Compute point score (Section 5.2)
+  STEP 7: Determine calibration modifier (Section 5.4)
+  STEP 8: Apply thresholds and assign traffic light (Section 5.5)
+  STEP 9: Populate output object (Section 2)
+
+For team/position group aggregation:
+
+  STEP 10: Collect all individual signals for signal_date
+  STEP 11: Separate data vs. gray signals
+  STEP 12: Check minimum group size (Section 6.2)
+  STEP 13: Calculate percentages (Section 6.3)
+  STEP 14: Assign tier (Section 6.4)
+  STEP 15: Populate aggregation output (Section 6.5)
+
+================================================================
+9. COMPUTATION TIMING
+================================================================
+
+The Daily Athlete Signal is computed as part of the daily batch
+processing sequence defined in VF_Daily_Mini_JSON_Specification
+Section G:
+
+  1. [hard-out - 2h] Backend generates Mini-JSON
+  2. Backend computes Daily Athlete Signal (THIS STEP)
+  3. Backend submits Stage 6 batch (LLM snippets)
+  4. [hard-out] Morning delivery — signals available on
+     coach dashboard
+
+Stage 7 computation is deterministic and effectively instant
+(milliseconds per athlete). It does not compete with Stage 6
+for batch processing time and does not depend on Stage 6
+completion.
+
+================================================================
+10. WEEKLY CALIBRATION CACHE MANAGEMENT
+================================================================
+
+10.1 CACHE STRUCTURE:
+
+  Per athlete, store:
+    emotional_intensity: "Low" | "Moderate" | "High"
+    growth_phase: "Emerging" | "Developing" | "Consistent" |
+                  "Leadership"
+    growth_phase_movement: "Advancing" | "Stable" | "Regressing" |
+                           "insufficient data"
+    cache_updated: <timestamp>
+
+10.2 CACHE UPDATE TRIGGER:
+
+  When a new Interpretation JSON is produced for an athlete
+  (typically Monday after weekly pipeline runs), extract the
+  3 fields and update the cache.
+
+10.3 CACHE LIFETIME:
+
+  Cached values persist until the next Interpretation JSON is
+  produced. The cache is never manually expired.
+
+  The emotional_intensity modifier self-expires: it only applies
+  when days_into_week <= 3 (Section 5.4). The cached value
+  persists all week, but the application rule limits its effect
+  to the first 3 days.
+
+10.4 FIRST WEEK (NO CACHE):
+
+  If no cache entry exists for an athlete, all calibration
+  conditions fail. Standard thresholds apply. This is the
+  expected state for Week 1.
+
+================================================================
+11. POSITION GROUP CONFIGURATION
+================================================================
+
+Position groups are defined outside Stage 7 — they are a team
+management feature of the app platform. Stage 7 consumes the
+group definitions; it does not create them.
+
+Stage 7 requires:
+  - A mapping of athlete_id → position_group_name
+  - A mapping of athlete_id → team_name
+  - An athlete can belong to exactly one position group
+  - An athlete belongs to exactly one team
+  - Position groups are subsets of teams
+
+If position group mapping is not configured, position group
+aggregation is not computed. Team-level aggregation still
+operates using the team mapping.
+
+================================================================
+12. DISCLAIMER REQUIREMENTS
+================================================================
+
+Every coach-facing display of the Daily Athlete Signal — whether
+individual, position group, or team — must include:
+
+  "These indicators are informational only and may not be used
+   as a basis for participation, selection, or disciplinary
+   decisions."
+
+This matches the disclaimer on the weekly Coach Insights report
+(Stage 4). It is a rendering requirement, not a computation
+requirement — the backend includes it in the API response or
+the frontend renders it based on signal type.
+
+================================================================
+13. PROHIBITED COACH-FACING EXPOSURES
+================================================================
+
+The following data MUST NEVER appear in any coach-facing API
+response, dashboard view, or exported report:
+
+- _internal block (point scores, calibration details,
+  thresholds, shift values)
+- WTD daily scores (0-5) or score ranges
+- WTD question labels or individual Q1-Q5 answers
+- "Win the Day" / "Partial Win" / "Missed the Mark" (internal
+  pipeline categories)
+- Bullseye ring item counts or actual items written
+- Journaling domain names or coverage details
+- Mindset Challenge text
+- Running week summary counts (win_days, partial_win_days,
+  missed_days, days_completed as numbers)
+- Morning Tune-Up completion as raw data point
+- Completion rates, timing data, streak counts
+- Calibration modifier names, values, or rationale
+- Any raw field from the Daily Mini-JSON
+- Any field from the weekly Interpretation JSON
+- Any execution signal data from the weekly pipeline
+- Aggregation percentages or color distribution counts
+- Individual athlete signals within group views
+- Clinical, therapeutic, or mental health language
+- Surveillance, monitoring, or compliance framing
+- "At-risk," "adherence," or evaluative labels
+
+COMPLIANCE CLASSIFICATION: This list has the same enforcement
+status as the Clinical Language Prohibition in all other
+pipeline stages. Violations are non-negotiable.
+
+================================================================
+14. VERSIONING
+================================================================
+
+This document follows VirtusFocus pipeline versioning rules:
+
+- New versions create new files (never edit in place)
+- Previous versions preserved on disk for audit trail
+- Version changes required for: threshold adjustments, new
+  signals, tier rule changes, calibration rule changes
+- Version changes NOT required for: position group
+  configuration changes, rendering/display updates, team
+  roster updates
+
+Current version: v1.0
+Effective date: 2026-03-15
+Companion design document: VF_Daily_Coach_Signal_Design.txt
+
+================================================================
+15. PARENT SIGNAL LABEL MAPPING
+================================================================
+
+The Daily Athlete Signal is also rendered on the D2C parent
+app for Premium subscribers with parent_inclusion = true.
+
+The parent signal uses the SAME underlying computation as the
+coach signal. No new rules, no new thresholds, no additional
+AI cost. The parent adaptation is a LABEL MAPPING at the
+presentation layer — the app renders parent-friendly labels
+instead of institutional labels.
+
+------------------------------------------------------------
+15.1 TRAFFIC LIGHT PARENT LABELS
+------------------------------------------------------------
+
+  Coach Label     Parent Label        Color
+  -----------     ----------------    -----
+  GREEN           Good Day            Green
+  YELLOW          Building Day        Yellow
+  ORANGE          Reset Day           Orange
+  GRAY            No Update Today     Gray
+
+The color is identical. Only the text label changes.
+
+"No Update Today" (Gray) is neutral. It does NOT mean the
+athlete had a bad day — it means no performance data was
+submitted. Parents must not interpret Gray as negative.
+
+------------------------------------------------------------
+15.2 CONTRIBUTING SIGNALS — HIDDEN FROM PARENTS
+------------------------------------------------------------
+
+The following contributing signals are NOT displayed to
+parents. They are hidden at the app presentation layer:
+
+  - Day Outcome (Aligned / Building / Reset Day)
+  - Focus Alignment (Centered / Mixed / Drifting)
+  - Follow-Through (Demonstrated / Gap)
+  - Weekly Trajectory (Building Week / Steady Week /
+    Cooling Week)
+
+Parents see ONLY the traffic light color + parent label.
+
+Rationale: Contributing signals provide coaching granularity
+that could enable monitoring behavior in parents. The traffic
+light alone provides meaningful signal without exposing
+behavioral detail.
+
+------------------------------------------------------------
+15.3 TEAM/POSITION AGGREGATION — NOT SHOWN TO PARENTS
+------------------------------------------------------------
+
+Team and position group aggregation tiers are coach-facing
+only. Parents do not see team-level signals.
+
+Parents see only their own athlete's daily signal.
+
+------------------------------------------------------------
+15.4 INTERNAL DATA — NEVER EXPOSED
+------------------------------------------------------------
+
+The _internal block (point scores, calibration details,
+thresholds) is NEVER exposed to parents. Same rule as
+coaches — backend-only data.
+
+------------------------------------------------------------
+15.5 DISCLAIMER — NOT APPLICABLE
+------------------------------------------------------------
+
+The institutional disclaimer ("These indicators are
+informational only and may not be used as a basis for
+participation, selection, or disciplinary decisions.") does
+NOT appear on the parent app. This disclaimer is designed
+for coaching staff in institutional contexts. Parents are
+not in a participation-decision role.
+
+------------------------------------------------------------
+15.6 IMPLEMENTATION NOTE
+------------------------------------------------------------
+
+This label mapping is a presentation-layer concern. The app
+backend computes the Daily Athlete Signal identically for
+all consumers. The API response includes the traffic_light
+field (GREEN/YELLOW/ORANGE/GRAY). The parent app frontend
+renders the parent label based on the traffic_light value.
+
+No changes to the computation logic in Sections 1-14 are
+required for parent signal display.
+
+------------------------------------------------------------
+15.7 PARENT SIGNAL WARM PLACEHOLDERS
+------------------------------------------------------------
+
+When a parent opens the app for the first time (no signal
+data yet), the daily signal widget should display:
+
+  Label: "Getting Started"
+  Color: Gray
+  Subtext: "Daily updates begin once [athlete first name]
+  starts the program."
+
+After Day 1 with data, the normal traffic light + parent
+label displays.
+
+================================================================
+END OF DOCUMENT
+================================================================

@@ -1,0 +1,728 @@
+VIRTUSFOCUS — EXECUTION SIGNAL COMPOSITE SCORE RULES
+(Approved 2026-03-06 — Task 4 Complete)
+
+PURPOSE
+These rules define the deterministic calculation logic for all 7
+composite scores in the execution_behavior_signals.composite_scores
+block. Each score has a weighted formula, band thresholds, and
+explicit edge case handling.
+
+All formulas are fully deterministic. No interpretive judgment.
+If an input is missing, the formula has a defined fallback.
+
+Core Foundation athletes: ALL composite scores return
+{ "score": "insufficient data", "band": "insufficient data" }
+when input_source = "core_foundation". Formulas below apply
+ONLY to App athletes.
+
+Compliance: Raw execution metrics (completion rates, timing,
+backfill counts) NEVER reach coaching staff. Composite scores
+are consumed by Stage 3 (tone calibration) and inform Stage 4
+(Composite Readiness, Key Performance Signal) but raw scores
+are not surfaced.
+
+============================================================
+SCORE DIRECTIONALITY
+============================================================
+
+Higher = better: Ownership Index, Follow-Through Score,
+                  Rhythm Score, Review Quality Score,
+                  Recovery Score
+
+Higher = worse:  Drift Score, Reactivity Risk Score
+
+============================================================
+1. OWNERSHIP INDEX
+============================================================
+
+WHAT IT MEASURES:
+Degree to which the athlete self-initiates system engagement
+versus relying on external reminders.
+
+BAND: High | Moderate | Low | insufficient data
+
+INPUT FIELDS:
+- evening_review.self_initiated_count (0-7)
+- evening_review.backfill_count (0-7)
+- morning_tune_up.on_time_count (0-7)
+
+FORMULA:
+Three components, all using 7 (days in week) as denominator.
+
+  C1: Evening Self-Initiation (weight: 0.50)
+      = (self_initiated_count / 7) x 100
+
+  C2: Morning Proactivity (weight: 0.30)
+      = (morning_tune_up.on_time_count / 7) x 100
+
+  C3: Backfill Absence (weight: 0.20)
+      = ((7 - backfill_count) / 7) x 100
+
+  ownership_index = round(0.50 x C1 + 0.30 x C2 + 0.20 x C3)
+
+WEIGHT RATIONALE:
+Self-initiation is the core ownership signal (50%). Morning
+proactivity shows forward-leaning engagement (30%). Backfill
+absence is a negative-indicator inverse — retroactive completion
+signals lower ownership (20%).
+
+BAND THRESHOLDS:
+  High:     70-100  Largely self-driven
+  Moderate: 40-69   Mixed self-initiation and reminder dependency
+  Low:      0-39    Predominantly reminder-dependent or disengaged
+
+EDGE CASES:
+- input_source = "core_foundation" -> insufficient data
+- All app metrics = 0: C1=0, C2=0, C3=100 -> score=20, band=Low
+  (Zero engagement except absence of backfill produces Low)
+- Perfect week: C1=100, C2=100, C3=100 -> score=100, band=High
+
+============================================================
+2. DRIFT SCORE
+============================================================
+
+WHAT IT MEASURES:
+Presence of engagement erosion indicators this week — completion
+drop-off, timing decay, quality compression, and component
+disengagement. Higher score = more drift = worse.
+
+This is a single-week measurement. The actual drift trajectory
+(is this week worse than last?) is determined by comparing Drift
+Scores across weeks — same pattern as how consistency_profile
+captures a single week and consistency_trend captures trajectory.
+
+DISTINCTION FROM V9.3 COMPLEMENTS:
+consistency_signal and trend_analysis detect score-based declining
+patterns (WTD score trajectory). Drift Score adds the execution-
+behavior dimension — the athlete may maintain decent WTD scores
+while silently disengaging from deeper system components.
+
+BAND: None | Early | Active | insufficient data
+
+INPUT FIELDS:
+- evening_review.completion_rate (0.00-1.00, full only)
+- evening_review.late_submission_count (0-7)
+- morning_tune_up.completion_rate (0.00-1.00)
+- journaling_behavior.depth_profile (Thorough|Adequate|Compressed|Minimal)
+- bullseye_behavior.completion_reliability (Consistent|Partial|Inconsistent)
+
+FORMULA:
+Five components. Higher value = more drift present.
+
+  C1: Evening Completion Erosion (weight: 0.25)
+      = (1 - evening_review.completion_rate) x 100
+
+  C2: Morning Completion Erosion (weight: 0.20)
+      = (1 - morning_tune_up.completion_rate) x 100
+
+  C3: Late Submission Rate (weight: 0.20)
+      = (late_submission_count / 7) x 100
+
+  C4: Journaling Compression (weight: 0.20)
+      Enum mapping:
+        Thorough         -> 0
+        Adequate         -> 25
+        Compressed       -> 65
+        Minimal          -> 100
+        insufficient data -> 0 (neutral)
+
+  C5: Bullseye Disengagement (weight: 0.15)
+      Enum mapping:
+        Consistent        -> 0
+        Partial           -> 50
+        Inconsistent      -> 100
+        insufficient data -> 0 (neutral)
+
+  drift_score = round(0.25 x C1 + 0.20 x C2 + 0.20 x C3
+                     + 0.20 x C4 + 0.15 x C5)
+
+WEIGHT RATIONALE:
+Evening review is the primary engagement vehicle (25%). Morning
+completion and late submissions share second tier (20% each).
+Journaling compression is a quality-erosion signal that often
+precedes full disengagement (20%). Bullseye gets lowest weight
+because it is one component of the evening review already
+partially captured by C1 (15%).
+
+BAND THRESHOLDS (asymmetric — sensitive at low end):
+  None:   0-20   Minimal drift indicators; fully engaged
+  Early:  21-45  Emerging engagement compression; worth monitoring
+  Active: 46-100 Significant behavioral disengagement
+
+WHY ASYMMETRIC:
+Early drift at 21 (not 33) catches engagement erosion quickly.
+By the time Active is reached (46+), multiple components are
+degraded simultaneously. Drift is most actionable when caught
+early.
+
+EDGE CASES:
+- input_source = "core_foundation" -> insufficient data
+- All worst (0/7, Minimal, Inconsistent): score=100, band=Active
+- insufficient data on enum fields: treated as 0 (neutral).
+  Absence of data is not evidence of drift.
+
+============================================================
+3. FOLLOW-THROUGH SCORE
+============================================================
+
+WHAT IT MEASURES:
+Mindset Challenge acceptance-to-execution rate — did the athlete
+accept a challenge presented in the Morning Tune-Up and actually
+execute it?
+
+NOTE: The athlete ACCEPTS a Mindset Challenge that is presented
+to them. Field name update: mindset_challenge_set_count is
+renamed to mindset_challenge_accepted_count when schema files
+are updated (Tasks 6-7).
+
+BAND: Strong | Moderate | Weak | insufficient data
+
+INPUT FIELDS:
+- morning_tune_up.days_completed (0-7)
+- morning_tune_up.mindset_challenge_accepted_count (0-7)
+  (currently named mindset_challenge_set_count — rename pending)
+- morning_tune_up.mindset_challenge_completed_count (0-7)
+- morning_tune_up.mindset_challenge_follow_through_rate (0.00-1.00)
+
+FORMULA:
+Two components — execution rate AND acceptance rate.
+
+  C1: Follow-Through Rate (weight: 0.70)
+      = follow_through_rate x 100
+
+  C2: Challenge Acceptance Rate (weight: 0.30)
+      = (accepted_count / max(days_completed, 1)) x 100
+
+  follow_through_score = round(0.70 x C1 + 0.30 x C2)
+
+WEIGHT RATIONALE:
+The core metric is execution of accepted challenges (70%). This
+is what "follow-through" means. Challenge acceptance (30%) is
+secondary but relevant: an athlete who never accepts challenges
+cannot demonstrate follow-through, and low acceptance rate
+reveals avoidance of the commitment mechanism.
+
+NO CAP RULE:
+There is no sample-size cap on the score. The C2 weighting
+naturally penalizes low acceptance — an athlete who accepted
+only 1 challenge in 7 mornings gets C2 = (1/7) x 100 = 14.3,
+which limits the total score regardless of follow-through rate.
+
+BAND THRESHOLDS:
+  Strong:   75-100  Regularly accepts and executes challenges
+  Moderate: 40-74   Mixed — some gaps in acceptance or execution
+  Weak:     0-39    Rarely accepts or rarely follows through
+
+EDGE CASES:
+- input_source = "core_foundation" -> insufficient data
+- days_completed = 0 -> insufficient data (no morning engagement)
+- accepted_count = 0, days_completed > 0: C1=0, C2=0 -> score=0,
+  band=Weak. The athlete skipped the commitment component.
+- Perfect week (7/7 accepted, 7/7 completed): score=100, band=Strong
+
+============================================================
+4. RHYTHM SCORE
+============================================================
+
+WHAT IT MEASURES:
+Consistency of daily engagement timing and sequence — does the
+athlete engage at predictable times in a predictable order?
+
+DISTINCTION FROM OTHER SCORES:
+Drift = WHETHER you engage (completion erosion).
+Ownership = WHO drives the engagement (self vs. reminders).
+Rhythm = HOW CONSISTENTLY you engage when you do (timing
+regularity, sequence integrity, absence of retroactive catch-up).
+
+BAND: Stable | Variable | Disrupted | insufficient data
+
+INPUT FIELDS:
+- morning_tune_up.on_time_count (0-7)
+- morning_tune_up.days_completed (0-7)
+- evening_review.on_time_count (0-7)
+- evening_review.late_submission_count (0-7)
+- evening_review.backfill_count (0-7)
+- evening_review.sequence_integrity (Intact|Partial|Broken)
+
+FORMULA:
+Four components. C1 and C2 use completed sessions as denominator
+(not 7) because Rhythm measures timing quality OF engagement that
+occurred. Missing engagement is Drift's domain.
+
+  C1: Morning Timing Rate (weight: 0.25)
+      If days_completed = 0: 0
+      Else: (on_time_count / days_completed) x 100
+
+  C2: Evening Timing Rate (weight: 0.25)
+      total_submitted = on_time_count + late_submission_count
+                        + backfill_count
+      If total_submitted = 0: 0
+      Else: (on_time_count / total_submitted) x 100
+
+  C3: Sequence Integrity (weight: 0.30)
+      Enum mapping:
+        Intact            -> 100
+        Partial           -> 50
+        Broken            -> 0
+        insufficient data -> 50 (neutral)
+
+  C4: Non-Backfill Rate (weight: 0.20)
+      total_submitted = on_time_count + late_submission_count
+                        + backfill_count
+      If total_submitted = 0: 0
+      Else: ((total_submitted - backfill_count) / total_submitted) x 100
+
+  rhythm_score = round(0.25 x C1 + 0.25 x C2 + 0.30 x C3
+                      + 0.20 x C4)
+
+WEIGHT RATIONALE:
+Sequence integrity gets highest single weight (30%) — most
+direct measure of rhythm (did the athlete follow the designed
+engagement order?). Morning and evening timing share equal
+weight (25% each) as the two daily bookend touchpoints.
+Non-backfill rate (20%) captures whether engagement happened
+in its natural daily window vs. retroactively.
+
+DENOMINATOR NOTE:
+Using max(days_completed, 1) and max(total_submitted, 1) rather
+than 7 means an athlete who completed 3/7 mornings but all 3
+on time gets C1=100%. This is intentional — Rhythm measures
+timing quality of actual engagement. Sparse engagement is
+penalized through C3 (sequence likely Partial/Broken) and C4
+(if backfills were involved).
+
+BAND THRESHOLDS:
+  Stable:    75-100  Consistent timing, intact sequence, minimal backfill
+  Variable:  40-74   Some timing inconsistency or sequence breaks
+  Disrupted: 0-39    Significant timing volatility, broken sequence
+
+EDGE CASES:
+- input_source = "core_foundation" -> insufficient data
+- Zero engagement: C1=0, C2=0, C3=50, C4=0 -> score=15,
+  band=Disrupted. No engagement = no rhythm.
+- Perfect week: C1=100, C2=100, C3=100, C4=100 -> score=100,
+  band=Stable.
+
+============================================================
+5. REVIEW QUALITY SCORE
+============================================================
+
+WHAT IT MEASURES:
+Behavioral execution quality of the Evening Review —
+completeness depth, component engagement breadth, and component
+balance.
+
+DISTINCTION FROM RQS:
+reflection_quality_score (RQS) measures journaling CONTENT depth
+(1-4 scale). Review Quality Score measures BEHAVIORAL execution
+quality of the review process. An athlete can have RQS=3 +
+Review Quality=Low (insightful but rushed/partial) or RQS=1 +
+Review Quality=High (surface content but thorough completion).
+
+TIMING NOTE:
+Evening review timeliness is intentionally NOT included — that
+is Rhythm Score's domain. Review Quality focuses on what was
+done, not when.
+
+BAND: High | Moderate | Low | insufficient data
+
+INPUT FIELDS:
+- evening_review.full_completion_count (0-7)
+- evening_review.partial_completion_count (0-7)
+- evening_review.completion_rate (0.00-1.00, full only)
+- evening_review.component_completion.wtd_completed_count (0-7)
+- evening_review.component_completion.journaling_completed_count (0-7)
+- evening_review.component_completion.bullseye_completed_count (0-7)
+
+FORMULA:
+Three components measuring depth, breadth, and balance.
+
+  C1: Full Completion Rate (weight: 0.40)
+      = completion_rate x 100
+
+  C2: Component Engagement Rate (weight: 0.35)
+      = (wtd_completed + journaling_completed + bullseye_completed)
+        / 21 x 100
+      (21 = 3 components x 7 days)
+
+  C3: Component Balance (weight: 0.25)
+      min_comp = min(wtd_completed, journaling_completed,
+                     bullseye_completed)
+      max_comp = max(wtd_completed, journaling_completed,
+                     bullseye_completed)
+      If max_comp = 0: 0
+      Else: (min_comp / max_comp) x 100
+
+  review_quality_score = round(0.40 x C1 + 0.35 x C2 + 0.25 x C3)
+
+WEIGHT RATIONALE:
+Full completion rate is the primary quality indicator (40%).
+Component engagement captures breadth across all three review
+components (35%). Balance catches cherry-picking patterns —
+athletes who systematically skip harder components like
+journaling (25%).
+
+CHERRY-PICKER DETECTION:
+An athlete with 5/7 full completion but 7/0/7 components
+(skips journaling): C1=71.4, C2=66.7, C3=0 -> score=52,
+band=Moderate. The zero balance score drops what would
+otherwise be High. This is the design intent.
+
+BAND THRESHOLDS:
+  High:     70-100  Thorough, complete, balanced engagement
+  Moderate: 40-69   Adequate with component gaps or frequent partials
+  Low:      0-39    Incomplete, missing components, or mostly partial
+
+EDGE CASES:
+- input_source = "core_foundation" -> insufficient data
+- Zero engagement: C1=0, C2=0, C3=0 -> score=0, band=Low
+- All partial, no full (0 full, 5 partial, 7/7/7 components):
+  C1=0, C2=100, C3=100 -> score=60, band=Moderate. Engaged
+  with everything but never fully completed a review.
+
+============================================================
+6. RECOVERY SCORE
+============================================================
+
+WHAT IT MEASURES:
+How quickly and completely the athlete's execution behavior
+returns to baseline after a WTD disruption (Missed day).
+
+DISTINCTION FROM RECOMMITMENT_SIGNAL:
+recommitment_signal measures within-week score-based rebound
+(did WTD score bounce back?). Recovery Score adds execution-
+behavior dimension — did the athlete maintain system engagement
+through the disruption AND how fast did score recovery happen?
+
+BAND: Strong | Moderate | Low | Pending Data | insufficient data
+
+INPUT FIELDS:
+- wtd_question_patterns.recovery_speed_days
+  (integer 1-7 | not applicable | did not recover | Pending Data
+   | insufficient data)
+- wtd_question_patterns.cross_week_recovery.prior_week_unresolved_miss
+  (Yes | No)
+- wtd_question_patterns.cross_week_recovery.recovery_days
+  (integer 1-7 | did not recover | not applicable)
+- morning_tune_up.completion_rate (0.00-1.00)
+- evening_review.completion_rate (0.00-1.00)
+- evening_review.sequence_integrity (Intact|Partial|Broken)
+
+------------------------------------------------------------
+STATE-BASED COMPUTATION:
+------------------------------------------------------------
+
+STATE 1 — Disruption occurred (recovery_speed_days = integer
+or "did not recover", OR cross_week_recovery.recovery_days
+= integer or "did not recover"):
+
+  C1 INPUT DETERMINATION (priority order):
+  a) If BOTH recovery_speed_days (within-week) is a valid integer
+     AND cross_week_recovery.recovery_days is a valid integer:
+     -> Use the SLOWER of the two (higher number = slower).
+     Rationale: The cross-week miss was severe enough to be
+     unresolved in its original week. The slower recovery is
+     the more concerning signal.
+
+  b) If ONLY recovery_speed_days is a valid integer:
+     -> Use recovery_speed_days.
+
+  c) If ONLY cross_week_recovery.recovery_days is a valid integer:
+     -> Use cross_week_recovery.recovery_days.
+
+  d) If recovery_speed_days = "did not recover" OR
+     cross_week_recovery.recovery_days = "did not recover":
+     -> C1 = 0.
+
+  C1: Recovery Speed (weight: 0.60)
+      Lookup table:
+        1 day           -> 100
+        2 days          -> 85
+        3 days          -> 70
+        4 days          -> 50
+        5 days          -> 35
+        6 days          -> 20
+        7 days          -> 10
+        did not recover -> 0
+
+  C2: Engagement Maintenance (weight: 0.25)
+      = ((morning_completion_rate + evening_completion_rate) / 2)
+        x 100
+
+  C3: Sequence Preservation (weight: 0.15)
+      Enum mapping:
+        Intact            -> 100
+        Partial           -> 50
+        Broken            -> 0
+        insufficient data -> 50 (neutral)
+
+  recovery_score = round(0.60 x C1 + 0.25 x C2 + 0.15 x C3)
+
+STATE 2 — No disruption (recovery_speed_days = "not applicable"
+AND prior_week_unresolved_miss = "No"):
+  score = 85 (fixed)
+  band = Strong
+  WHY 85 NOT 100: Athlete wasn't tested. 85 places them in
+  Strong without claiming perfect recovery evidence.
+
+STATE 3 — Pending measurement (recovery_speed_days = "Pending Data"):
+  score = "Pending Data"
+  band = "Pending Data"
+  This occurs when the last day of the week is Missed with no
+  subsequent day. The next week's cross_week_recovery will
+  resolve this.
+
+STATE 4 — Cannot measure (recovery_speed_days = "insufficient data"
+AND no cross-week data available):
+  score = "insufficient data"
+  band = "insufficient data"
+
+STATE 5 — Core Foundation:
+  score = "insufficient data"
+  band = "insufficient data"
+
+BAND THRESHOLDS (for calculated scores):
+  Strong:   70-100  Fast recovery + maintained engagement
+  Moderate: 40-69   Recovered but slowly or with engagement gaps
+  Low:      0-39    Slow/no recovery + system disengagement
+
+============================================================
+6A. CROSS-WEEK RECOVERY EXTENSION
+============================================================
+
+PURPOSE:
+Eliminates the blind spot created by Sunday Missed days.
+When the last day of a week is Missed, recovery cannot be
+measured within that week. The cross_week_recovery sub-object
+captures the recovery (or continued disruption) visible in
+the following week's early days.
+
+FIELD LOCATION: wtd_question_patterns (alongside recovery_speed_days)
+RATIONALE: Recovery is defined by WTD score (Missed -> Win),
+making it fundamentally a WTD pattern metric even though it
+crosses weeks.
+
+FIELDS:
+  "cross_week_recovery": {
+      "prior_week_unresolved_miss": "Yes | No",
+      "recovery_days": "integer 1-7 | did not recover | not applicable"
+  }
+
+COMPUTATION RULES:
+- Computed in the CURRENT week's JSON by looking back at the
+  prior week's JSON.
+- The prior week's JSON is NEVER modified. Forward-only flow.
+- prior_week_unresolved_miss = "Yes" when the prior week's
+  recovery_speed_days = "Pending Data".
+- recovery_days counts days from Monday of the current week
+  until the first Win day:
+    Monday Win    = 1
+    Tuesday Win   = 2
+    Wednesday Win = 3
+    Thursday Win  = 4
+    Friday Win    = 5
+    Saturday Win  = 6
+    Sunday Win    = 7
+    No Win all week = "did not recover"
+- When prior_week_unresolved_miss = "No": recovery_days =
+  "not applicable".
+
+CORE FOUNDATION FALLBACK:
+  prior_week_unresolved_miss = "not available — weekly recap input only"
+  recovery_days = "not available — weekly recap input only"
+
+PIPELINE FLOW:
+  Week N (Sunday Missed):
+    recovery_speed_days = "Pending Data"
+    Recovery Score = "Pending Data"
+    Stage 3 can name the open thread but cannot address recovery.
+
+  Week N+1:
+    cross_week_recovery.prior_week_unresolved_miss = "Yes"
+    cross_week_recovery.recovery_days = [computed from Monday+]
+    Recovery Score calculated using cross_week_recovery.recovery_days
+    Stage 3 can reference the cross-week recovery directly.
+
+============================================================
+6B. "PENDING DATA" ENUM VALUE
+============================================================
+
+"Pending Data" is an approved enum value for recovery_speed_days
+and Recovery Score ONLY. It is distinct from "insufficient data":
+
+  "insufficient data" = Data is genuinely absent. Won't get more
+    from normal pipeline flow. (e.g., first week, ambiguous data)
+
+  "Pending Data" = Data WILL arrive next week. The measurement
+    is deferred, not missing. (e.g., Sunday Missed with no
+    subsequent day — recovery measurable once Monday data arrives)
+
+SCOPE: This value applies ONLY to:
+  - recovery_speed_days (in wtd_question_patterns)
+  - Recovery Score (composite score + band)
+It is NOT added globally. Most "insufficient data" cases are
+genuinely absent data, not deferred measurements.
+
+DOWNSTREAM HANDLING:
+  Stage 3: "Pending Data" allows naming the open thread
+    explicitly rather than silence.
+  Stage 4: Treated as "insufficient data" for Composite
+    Readiness calculation (defaults to Steady/Yellow).
+  Stage 5: Can verify that "Pending Data" fields were properly
+    resolved in the following week (cross_week_recovery populated).
+
+NOTE: recommitment_signal retains "insufficient data" for the
+same Sunday-Missed scenario. Aligning terminology is flagged
+as a future v9.4 consideration but not changed now to avoid
+cascading updates to Stage 3/4 routing logic.
+
+============================================================
+7. REACTIVITY RISK SCORE
+============================================================
+
+WHAT IT MEASURES:
+Presence of execution-behavior-based reactivity indicators —
+volatile daily patterns suggesting the athlete is responding
+to events rather than executing from a stable routine.
+Higher score = more reactivity risk = worse.
+
+DISTINCTION FROM V9.3 COMPLEMENTS:
+emotional_intensity measures language-based emotional load.
+noise_fixation_present measures Bullseye-based external
+attribution. Reactivity Risk Score adds execution-behavior
+dimension — the athlete may write calmly (Low emotional
+intensity) but behave reactively (volatile scores, broken
+sequence, contradictions, can't finish what they start).
+
+DISTINCTION FROM DRIFT SCORE:
+Drift = gradual, consistent erosion (completion rates
+declining, quality compressing).
+Reactivity = volatile, event-driven disruption (good one day,
+chaotic the next; starting but not finishing; contradicting
+self across assessments).
+
+BAND: Low | Moderate | Elevated | insufficient data
+
+INPUT FIELDS:
+- wtd_question_patterns.intraweek_volatility (Low|Moderate|High)
+- evening_review.sequence_integrity (Intact|Partial|Broken)
+- bullseye_behavior.contradiction_detected (Yes|No)
+- evening_review.full_completion_count (0-7)
+- evening_review.partial_completion_count (0-7)
+
+FORMULA:
+Four components. Higher value = more reactivity risk.
+
+  C1: WTD Intraweek Volatility (weight: 0.30)
+      Enum mapping:
+        Low               -> 0
+        Moderate          -> 50
+        High              -> 100
+        insufficient data -> 0 (neutral)
+
+  C2: Sequence Disruption (weight: 0.25)
+      Enum mapping:
+        Intact            -> 0
+        Partial           -> 50
+        Broken            -> 100
+        insufficient data -> 0 (neutral)
+
+  C3: Bullseye Contradiction (weight: 0.20)
+      Enum mapping:
+        No                -> 0
+        Yes               -> 100
+        insufficient data -> 0 (neutral)
+
+  C4: Engagement Incompletion Rate (weight: 0.25)
+      = partial_completion_count
+        / max(full_completion_count + partial_completion_count, 1)
+        x 100
+
+  reactivity_risk_score = round(0.30 x C1 + 0.25 x C2
+                              + 0.20 x C3 + 0.25 x C4)
+
+WEIGHT RATIONALE:
+WTD volatility is the most direct day-to-day reactivity measure
+(30%). Sequence disruption (25%) and engagement incompletion
+(25%) share second tier — both indicate the athlete started
+engaging but couldn't execute consistently. Bullseye
+contradiction (20%) is a specific within-assessment
+inconsistency signal.
+
+C4 DESIGN RATIONALE:
+The partial-to-full ratio captures a uniquely reactive behavior:
+the athlete begins the evening review but can't finish it.
+"Started but abandoned" is a hallmark of reactivity. This field
+doesn't overlap with other scores: Drift uses completion_rate
+(full/7), Review Quality uses completion_rate and component
+counts, Ownership uses self_initiated.
+
+BAND THRESHOLDS (higher = worse, asymmetric):
+  Low:      0-25   Minimal reactivity; stable execution pattern
+  Moderate: 26-50  Some reactive patterns; worth monitoring
+  Elevated: 51-100 Significant reactivity across multiple indicators
+
+EDGE CASES:
+- input_source = "core_foundation" -> insufficient data
+- All enum fields = "insufficient data" + 0 partial: score=0,
+  band=Low. Absence of data is not evidence of reactivity.
+- All reviews missed (full=0, partial=0): C4=0. Missing
+  engagement = Drift's domain, not Reactivity.
+
+============================================================
+CROSS-SCORE OVERLAP REFERENCE
+============================================================
+
+The following fields appear in multiple scores. Each usage
+serves a distinct analytical purpose. No two scores are
+redundant.
+
+evening_review.completion_rate:
+  -> Drift (C1): erosion indicator
+  -> Review Quality (C1): quality depth
+
+evening_review.on_time_count:
+  -> Rhythm (C2) only: timing consistency
+
+evening_review.backfill_count:
+  -> Ownership (C3): self-driven vs. retroactive
+  -> Rhythm (C4): timing regularity
+
+evening_review.sequence_integrity:
+  -> Rhythm (C3): timing regularity
+  -> Recovery (C3): structural resilience under disruption
+  -> Reactivity (C2): event-driven routine disruption
+
+morning_tune_up.on_time_count:
+  -> Ownership (C2): proactive initiative
+  -> Rhythm (C1): timing consistency
+
+evening_review.self_initiated_count:
+  -> Ownership (C1) only: core ownership signal
+
+evening_review.component_completion.*:
+  -> Review Quality (C2, C3) only: breadth and balance
+
+morning_tune_up.completion_rate:
+  -> Drift (C2): morning erosion
+  -> Recovery (C2): engagement maintenance
+
+evening_review.full_completion_count / partial_completion_count:
+  -> Review Quality (C1, C3 edge case): completion depth
+  -> Reactivity (C4): engagement incompletion rate
+
+============================================================
+FIELD NAME UPDATE PENDING
+============================================================
+
+mindset_challenge_set_count -> mindset_challenge_accepted_count
+
+The athlete ACCEPTS a Mindset Challenge that is presented to
+them in the Morning Tune-Up. The field name will be updated
+from "set" to "accepted" when schema files are updated in
+Tasks 6-7. All references in this document use the approved
+terminology ("accepted").
+
+============================================================
+END OF DOCUMENT
+============================================================

@@ -1,0 +1,881 @@
+VIRTUSFOCUS — UNIFIED APP INTAKE FORM SPECIFICATION
+====================================================================
+Version: 1.0
+Created: 2026-03-10
+Status: APPROVED (Task 1 of Pipeline Improvement Design)
+Approved By: Coach Arron (VirtusFocus Founder)
+====================================================================
+
+PURPOSE
+====================================================================
+
+This document defines the complete intake form for App athletes in
+the VirtusFocus direct-to-consumer ecosystem. It is the single
+source of truth for what questions are asked, in what format, and
+how each answer routes through the pipeline.
+
+The form serves as a UNIFIED INPUT: one question set, answered once
+by the athlete, from which the system derives three outputs:
+
+  1. ATHLETE SNAPSHOT — Expanded narrative baseline profile
+     (9+ sections, 300-500 words)
+  2. PPD TOP 3 — Deterministic ranking of primary problems
+     (8 buckets, scored and ranked)
+  3. ABI 4-PILLAR SCORES — Quantitative developmental baseline
+     (Ownership, Composure, Focus, Structure; each 0-10, total 0-40)
+
+No separate question sets exist. Each question is asked ONCE.
+Shared inputs are routed to multiple systems simultaneously.
+
+
+DESIGN PRINCIPLES
+====================================================================
+
+1. UNIFIED INPUT, DERIVED OUTPUTS — One question set produces
+   Snapshot + PPD + ABI. No duplication.
+
+2. SIGNAL PER MINUTE — Optimized for maximum coaching signal per
+   minute of athlete time. Many structured questions (1-5 scales,
+   multi-select, single-select) + few strategic free-text questions.
+
+3. DUAL-USE ARCHITECTURE — This form is for App athletes ONLY.
+   Core Foundation athletes retain their existing 22-question form
+   and current Snapshot Builder process. The Snapshot Builder
+   detects which form was submitted and routes accordingly.
+
+4. LOCKED BASELINE FIELDS — These 4 fields exist in the current
+   pipeline and do not change. New fields sit alongside them:
+   - baseline_identity_claim
+   - baseline_hinge_habit
+   - baseline_primary_derailer
+   - baseline_growth_phase
+
+5. PPD LONGITUDINAL DESIGN — Self-report PPD is computed at intake
+   (this form). Execution-derived longitudinal PPD is a future
+   Stage 2 enhancement. The PPD output format supports future
+   comparison (PPD Alignment Signal).
+
+
+FORM SUMMARY
+====================================================================
+
+Total Questions: 29
+  Essential: 26
+  Recommended (included): 2 (Q21, Q25)
+  Optional (included): 1 (Q29)
+
+Estimated Completion Time: 5-6 minutes
+
+Sections:
+  Section 1 — Performance Context        6 questions  ~30 sec
+  Section 2 — Self-Assessment Scales     8 questions  ~60 sec
+  Section 3 — Performance Friction       2 questions  ~30 sec
+  Section 4 — Identity & Pressure        3 questions  ~90 sec
+  Section 5 — Behavioral Patterns        2 questions  ~15 sec
+  Section 6 — Ecosystem                  4 questions  ~30 sec
+  Section 7 — Goals & Commitment         4 questions  ~60 sec
+
+Question Format Breakdown:
+  1-5 Scale:       8 questions (Q7-Q14)
+  1-10 Scale:      1 question  (Q27)
+  Single-select:   8 questions (Q4-Q6, Q20-Q22, Q25, Q28)
+  Multi-select:    2 questions (Q15-Q16)
+  Free-text:       7 questions (Q1-Q3, Q17-Q19, Q26)
+  Yes/No + email:  1 question  (Q24)
+  Free-text opt:   1 question  (Q29)
+  Dropdown/select: 1 question  (Q23)
+
+Administrative questions (Name, DOB, Address, Phone, Email) are
+handled by app registration, not this intake form.
+
+
+====================================================================
+COMPLETE QUESTION LIST
+====================================================================
+
+
+--------------------------------------------------------------------
+SECTION 1 — PERFORMANCE CONTEXT
+--------------------------------------------------------------------
+Purpose: Understand the athlete's competitive environment.
+Cognitive load: Low. Dropdowns and short text.
+Estimated time: ~30 seconds.
+
+Q1. "What is your primary sport?"
+    Format: Free text
+    Source: CF Q7 (unchanged)
+    Routes to: Snapshot
+    Field: sport
+
+Q2. "What is your position or event? (if applicable)"
+    Format: Free text
+    Source: CF Q8 (unchanged)
+    Routes to: Snapshot
+    Field: position
+
+Q3. "What is your current team or club? (if applicable)"
+    Format: Free text
+    Source: CF Q9 (unchanged)
+    Routes to: Snapshot
+    Field: team
+
+Q4. "What is your current competitive level?"
+    Format: Single-select
+    Options:
+      - Youth
+      - Middle School
+      - High School
+      - College
+      - Professional
+    Source: NEW
+    Routes to: Snapshot
+    Field: competitive_level
+    Note: Calibrates coaching language and contextualizes
+          performance expectations across the pipeline.
+
+Q5. "How many years have you been competing?"
+    Format: Single-select
+    Options:
+      - Less than 1
+      - 1-2
+      - 3-5
+      - 6-8
+      - 9+
+    Source: UPGRADED from CF Q10 (was free text)
+    Routes to: Snapshot
+    Field: years_competing
+
+Q6. "What is your current season phase?"
+    Format: Single-select
+    Options:
+      - Preseason
+      - In-season
+      - Offseason
+      - Returning from injury
+    Source: NEW
+    Routes to: Snapshot, Longitudinal
+    Field: season_phase
+    Note: Feeds Interpretation Engine upcoming_context field and
+          calibrates initial coaching emphasis. Longitudinal tag
+          because season phase changes over time and the value at
+          intake serves as a baseline reference.
+
+
+--------------------------------------------------------------------
+SECTION 2 — SELF-ASSESSMENT SCALES (ABI FOUNDATION)
+--------------------------------------------------------------------
+Purpose: Capture quantitative self-assessment across 4 pillars.
+         These are the core ABI inputs (2 questions per pillar).
+         Select questions also serve as PPD amplifiers.
+Cognitive load: Moderate. 1-5 scales are fast to complete.
+Estimated time: ~60 seconds (8 questions × ~8 sec each).
+
+All scales run 1 (low/negative) to 5 (high/positive).
+
+--- OWNERSHIP PILLAR ---
+
+Q7. "How much of your development do you currently drive yourself?"
+    Format: 1-5 scale
+    Anchors: 1 = Others drive most of it / 5 = I drive almost all of it
+    Source: NEW
+    Routes to: ABI (Ownership Q1), Snapshot
+    Field: abi_ownership_q1
+
+Q8. "How often do you review your own performance after practices
+     or games?"
+    Format: 1-5 scale
+    Anchors: 1 = Never / 5 = Every time
+    Source: NEW
+    Routes to: ABI (Ownership Q2), Snapshot
+    Field: abi_ownership_q2
+
+--- COMPOSURE PILLAR ---
+
+Q9. "After a mistake, how quickly do you mentally reset?"
+    Format: 1-5 scale
+    Anchors: 1 = It sticks with me for a while / 5 = I reset almost immediately
+    Source: NEW
+    Routes to: ABI (Composure Q1), PPD (amplifier), Snapshot, Longitudinal
+    Field: abi_composure_q1
+    PPD Role: Amplifies the Mistake Recovery Lag bucket.
+              Low values (1-2) add weight; high values (4-5) add none.
+              Exact amplifier weights defined in PPD Scoring Logic (Task 2).
+    Longitudinal Role: Mental Reset Speed — re-administrable baseline
+              metric for composure tracking over time.
+
+Q10. "How well do you keep your composure during big moments?"
+     Format: 1-5 scale
+     Anchors: 1 = I struggle a lot / 5 = I stay very composed
+     Source: NEW
+     Routes to: ABI (Composure Q2), Snapshot
+     Field: abi_composure_q2
+
+--- FOCUS PILLAR ---
+
+Q11. "During performance, how well do you maintain your focus?"
+     Format: 1-5 scale
+     Anchors: 1 = I lose focus very often / 5 = I rarely lose focus
+     Source: NEW
+     Routes to: ABI (Focus Q1), Snapshot
+     Field: abi_focus_q1
+
+Q12. "How much do outside distractions (phone, social media, life
+      stress) affect your training?"
+     Format: 1-5 scale
+     Anchors: 1 = They affect me a lot / 5 = They rarely affect me
+     Source: NEW
+     Routes to: ABI (Focus Q2), Snapshot
+     Field: abi_focus_q2
+
+--- STRUCTURE PILLAR ---
+
+Q13. "How consistent is your pre-performance mental routine?"
+     Format: 1-5 scale
+     Anchors: 1 = I don't have one / 5 = Very consistent
+     Source: NEW
+     Routes to: ABI (Structure Q1), PPD (amplifier), Snapshot
+     Field: abi_structure_q1
+     PPD Role: Amplifies the Structure Gap bucket.
+               Low values (1-2) add weight; high values (4-5) add none.
+               Exact amplifier weights defined in PPD Scoring Logic (Task 2).
+
+Q14. "How consistent is your weekly training and recovery rhythm?"
+     Format: 1-5 scale
+     Anchors: 1 = Very inconsistent / 5 = Very consistent
+     Source: NEW
+     Routes to: ABI (Structure Q2), Snapshot
+     Field: abi_structure_q2
+
+--- ABI CALCULATION SUMMARY ---
+Each pillar score (0-10) = round((Q_a + Q_b) / 2 * 2)
+Total ABI = sum of 4 pillar scores (0-40)
+Full calculation rules defined in ABI Scoring Logic (Task 3).
+
+
+--------------------------------------------------------------------
+SECTION 3 — PERFORMANCE FRICTION
+--------------------------------------------------------------------
+Purpose: Identify the primary problems VirtusFocus must solve.
+         This is the most important section for PPD scoring.
+Cognitive load: Moderate. Multi-select requires reading options.
+Estimated time: ~30 seconds.
+
+Q15. "What usually gets in the way of your best performance?"
+     Format: Multi-select, UP TO 3
+     Options (8 — one per PPD bucket):
+       □ Overthinking
+       □ Confidence going up and down
+       □ Hard time letting go of mistakes
+       □ Losing focus or getting distracted
+       □ Pressure in big moments
+       □ Staying motivated or disciplined
+       □ Lack of routine or structure
+       □ Pressure from coaches or parents
+     Source: UPGRADED from CF Q12
+             (CF had 10 options with overlap; consolidated to 8
+              with 1-to-1 PPD bucket mapping, capped at 3)
+     Routes to: PPD (selection weight), Snapshot
+     Field: performance_friction_selections[]
+     PPD Role: Each selection adds +3 to the corresponding PPD bucket.
+               Maximum 3 selections = maximum 3 buckets activated.
+
+     PPD BUCKET MAPPING:
+       Overthinking                      → Overthinking Loop
+       Confidence going up and down      → Confidence Volatility
+       Hard time letting go of mistakes  → Mistake Recovery Lag
+       Losing focus or getting distracted → Focus Drift / Distraction
+       Pressure in big moments           → Pressure Reactivity
+       Staying motivated or disciplined  → Discipline Gap
+       Lack of routine or structure      → Structure Gap
+       Pressure from coaches or parents  → Ecosystem Friction
+
+     NO "Other" option. The 8 options cover the VirtusFocus problem
+     taxonomy completely. Free-text questions in Section 4 capture
+     anything the structured options cannot express.
+
+Q16. "What situation makes this worse?"
+     Format: Multi-select, UP TO 2
+     Options (5 — trigger context amplifiers):
+       □ Big competitions or high-stakes moments
+       □ After making a mistake
+       □ When being evaluated (coach, scouts, recruiters)
+       □ During busy or stressful life weeks
+       □ When expectations from others are high
+     Source: NEW
+     Routes to: PPD (trigger amplifier), Snapshot
+     Field: trigger_context_selections[]
+     PPD Role: Each trigger selection adds amplifier weight to
+               specific PPD buckets:
+       Big competitions     → +2 Pressure Reactivity, +1 Overthinking
+       After a mistake      → +2 Mistake Recovery Lag, +1 Confidence Volatility
+       Being evaluated      → +2 Overthinking, +1 Confidence Volatility
+       Busy/stressful weeks → +2 Discipline Gap, +1 Focus Drift
+       High expectations    → +2 Pressure Reactivity, +1 Confidence Volatility
+     Exact amplifier weights confirmed in PPD Scoring Logic (Task 2).
+
+
+--------------------------------------------------------------------
+SECTION 4 — IDENTITY & PRESSURE
+--------------------------------------------------------------------
+Purpose: Capture the athlete's core identity language and pressure
+         narrative. These are the highest-value coaching inputs.
+Cognitive load: High. Free-text requires genuine reflection.
+Estimated time: ~90 seconds (3 questions × ~30 sec each).
+
+Q17. "At my best, I compete like someone who..."
+     Format: Free-text sentence completion
+     Source: NEW
+     Routes to: Snapshot
+     Field: identity_sentence_completion
+     Pipeline Role: Primary input for baseline_identity_claim
+                    derivation. The Snapshot Builder synthesizes
+                    this with Q19 (competitor aspiration) to produce
+                    the identity claim anchor.
+     Examples athletes might write:
+       "stays calm under pressure"
+       "attacks every rep"
+       "trusts my training"
+       "doesn't back down"
+
+Q18. "Before a big moment, what thought shows up most often?"
+     Format: Free-text, short answer
+     Display hint: Examples: "Don't mess this up" / "Let's go" /
+                   "I need to prove myself"
+     Source: UPGRADED from CF Q13 (reworded for precision —
+             CF asked "What usually goes through your mind before
+             a big moment?" which invited narrative; this asks for
+             the single dominant thought)
+     Routes to: PPD (tie-breaker), Snapshot
+     Field: pressure_thought_text
+     PPD Role: Used for tie-breaker classification when two or
+               more PPD buckets have equal scores:
+       Avoidance framing ("Don't mess up", "What if I fail") →
+         +1 Overthinking Loop, +1 Pressure Reactivity
+       Proving framing ("I need to prove myself") →
+         +1 Confidence Volatility
+       Obligation framing ("I can't let them down") →
+         +1 Pressure Reactivity, +1 Ecosystem Friction
+       Approach framing ("Let's go", "Trust the process") →
+         No tie-breaker adjustment (positive indicator)
+     Classification logic confirmed in PPD Scoring Logic (Task 2).
+
+Q19. "What kind of competitor do you want to become?"
+     Format: Free-text, short answer
+     Source: NEW
+     Routes to: Snapshot, Longitudinal
+     Field: competitor_aspiration_text
+     Pipeline Role: Identity aspiration anchor. Combined with Q17
+                    (identity sentence) to build the Snapshot's
+                    identity profile. Longitudinal because the
+                    aspiration at intake can be compared against
+                    identity language that emerges in weekly data
+                    over time.
+
+
+--------------------------------------------------------------------
+SECTION 5 — BEHAVIORAL PATTERNS
+--------------------------------------------------------------------
+Purpose: Capture behavioral response and identity self-perception
+         under adversity. Fast single-selects with high signal.
+Cognitive load: Low-moderate. Single-select, clear options.
+Estimated time: ~15 seconds.
+
+Q20. "When something goes wrong in competition, what do you usually
+      do first?"
+     Format: Single-select
+     Options:
+       ○ Blame the situation
+       ○ Get frustrated
+       ○ Try to adjust right away
+       ○ Reset and refocus
+     Source: NEW (from High-Value Intake Additions)
+     Routes to: Snapshot
+     Field: adversity_response_pattern
+     Pipeline Role: Captures behavioral response vs. reaction
+                    pattern. Distinct from Q9 (reset speed) which
+                    measures HOW FAST — this measures WHAT HAPPENS
+                    FIRST. Directly feeds Snapshot Section 4 (Known
+                    Derailers) and Section 7 (Stress & Trigger
+                    Profile). Also informs baseline_hinge_habit
+                    derivation (if answer is "Reset and refocus,"
+                    the hinge habit may already be present).
+
+Q21. "After a bad performance, how do you usually describe yourself?"
+     Format: Single-select
+     Options:
+       ○ I question my ability
+       ○ I get frustrated but move forward
+       ○ I analyze what happened and adjust
+       ○ I stay confident in myself
+     Source: NEW (from High-Value Intake Additions)
+     Routes to: Snapshot
+     Field: adversity_self_description
+     Pipeline Role: Captures identity self-perception under adversity —
+                    a different dimension from Q20 (behavioral response).
+                    Feeds Snapshot Section 5 (Confidence Pattern) and
+                    Section 6 (Identity Friction). Reveals whether
+                    identity is stable or outcome-reactive under
+                    performance pressure.
+
+
+--------------------------------------------------------------------
+SECTION 6 — ECOSYSTEM
+--------------------------------------------------------------------
+Purpose: Understand the parent/coach/support dynamics around the
+         athlete. Feeds Idea 4 (Parent Output + Dashboard) and
+         the Snapshot's ecosystem profile.
+Cognitive load: Low. Single-selects.
+Estimated time: ~30 seconds.
+
+Q22. "How involved are your parents/guardians in your performance
+      journey?"
+     Format: Single-select
+     Options:
+       ○ Very involved
+       ○ Somewhat involved
+       ○ Not very involved
+       ○ Prefer not to say
+     Source: CF Q20 (unchanged)
+     Routes to: Ecosystem, Snapshot
+     Field: parent_involvement_level
+
+Q23. "After games or competitions, conversations at home are
+      usually:"
+     Format: Single-select
+     Options:
+       ○ Mostly supportive
+       ○ A lot of analysis or advice
+       ○ Pressure to perform
+       ○ We don't discuss performance much
+     Source: NEW
+     Routes to: Ecosystem, PPD (amplifier), Snapshot
+     Field: home_conversation_pattern
+     PPD Role: If athlete selects "A lot of analysis or advice" or
+               "Pressure to perform," adds amplifier weight to the
+               Ecosystem Friction bucket.
+               Exact amplifier weight defined in PPD Scoring Logic
+               (Task 2).
+
+Q24. "Would you like to include your parents/guardians in your
+      mindset coaching?"
+     Display note: "All of your personal coaching and input is
+                    private and not shared with anyone other than
+                    you! Your parent/guardian will receive weekly
+                    updates on how they can support you and help
+                    with your mindset growth!"
+     Format: Yes / No
+       → If Yes: "Enter your parent/guardian's email address"
+                 (email field)
+     Source: CF Q21 (unchanged)
+     Routes to: Ecosystem
+     Fields: parent_inclusion (boolean), parent_email (string, conditional)
+
+Q25. "When you struggle, who do you usually talk to first?"
+     Format: Single-select
+     Options:
+       ○ No one
+       ○ A teammate
+       ○ My coach
+       ○ A parent
+       ○ A mentor
+     Source: NEW (from High-Value Intake Additions)
+     Routes to: Ecosystem, Snapshot
+     Field: support_network_primary
+     Pipeline Role: Feeds Snapshot stress/support profile and
+                    provides critical calibration for Idea 4
+                    (Parent Output). If parent is NOT in the
+                    support network, parent coaching messages
+                    need different framing than if parent is the
+                    primary support contact.
+
+
+--------------------------------------------------------------------
+SECTION 7 — GOALS & COMMITMENT
+--------------------------------------------------------------------
+Purpose: Capture forward-looking motivation and program readiness.
+         Ends the form on an energizing, positive note.
+Cognitive load: Low-moderate. One free-text, rest are selects.
+Estimated time: ~60 seconds.
+
+Q26. "What does success look like for you in the next 6 months?"
+     Format: Free-text, short answer
+     Source: CF Q15 (unchanged intent)
+     Routes to: Snapshot
+     Field: success_vision_text
+     Note: This single question CONSOLIDATES three overlapping CF
+           questions: CF Q15 (6-month success), CF Q16 (mindset
+           goals), and CF Q17 (VF hopes). The athlete's behavioral
+           goals are now captured through the structured friction
+           and scale questions (Sections 2-3) rather than asking
+           them to articulate goals in free text.
+
+Q27. "On a scale of 1-10, how would you rate your current mental
+      game?"
+     Format: 1-10 selectable scale
+     Source: CF Q11 (unchanged)
+     Routes to: Snapshot, Longitudinal
+     Field: mental_game_self_rating
+     Longitudinal Role: Re-administrable baseline metric. Future
+                        comparison with execution-derived performance
+                        data enables perception-reality alignment
+                        analysis at the program level.
+
+Q28. "How committed are you to working on your mental game?"
+     Format: Single-select
+     Options:
+       ○ Just curious
+       ○ Pretty serious
+       ○ All-in — let's go
+     Source: CF Q18 (unchanged)
+     Routes to: Snapshot
+     Field: commitment_level
+
+Q29. "Is there anything else you'd like us to know about you, your
+      goals, or your challenges?"
+     Format: Free-text, optional
+     Display hint: "Skip if nothing comes to mind."
+     Source: CF Q22 (unchanged, now explicitly optional)
+     Routes to: Snapshot
+     Field: additional_context_text
+     Note: Low-signal for most athletes but occasionally surfaces
+           important context that structured questions cannot
+           capture (health concerns, family situations, specific
+           competitive pressures, recent significant events).
+
+
+====================================================================
+MULTI-SYSTEM ROUTING TABLE
+====================================================================
+
+Legend:
+  S  = Snapshot (narrative baseline profile)
+  P  = PPD (Primary Problem Detector scoring)
+  A  = ABI (Athlete Baseline Index pillar calculation)
+  E  = Ecosystem (parent/coach/support alignment)
+  L  = Longitudinal (re-administrable baseline metric)
+
+  Sel = Selection Weight (primary PPD input)
+  Amp = Amplifier (secondary PPD input)
+  Tie = Tie-breaker (PPD conflict resolution)
+
+ Q# | Question Summary                   | S | P       | A   | E | L |
+----|-------------------------------------|---|---------|-----|---|---|
+ Q1 | Primary sport                      | ✓ |         |     |   |   |
+ Q2 | Position/event                     | ✓ |         |     |   |   |
+ Q3 | Current team/club                  | ✓ |         |     |   |   |
+ Q4 | Current level                      | ✓ |         |     |   |   |
+ Q5 | Years competing                    | ✓ |         |     |   |   |
+ Q6 | Current season phase               | ✓ |         |     |   | ✓ |
+ Q7 | Development driver (1-5)           | ✓ |         | Own |   |   |
+ Q8 | Performance review (1-5)           | ✓ |         | Own |   |   |
+ Q9 | Mental reset speed (1-5)           | ✓ | Amp     | Com |   | ✓ |
+ Q10| Big-moment composure (1-5)         | ✓ |         | Com |   |   |
+ Q11| Focus maintenance (1-5)            | ✓ |         | Foc |   |   |
+ Q12| Distraction resistance (1-5)       | ✓ |         | Foc |   |   |
+ Q13| Routine consistency (1-5)          | ✓ | Amp     | Str |   |   |
+ Q14| Training rhythm (1-5)             | ✓ |         | Str |   |   |
+ Q15| Performance friction (multi-select) | ✓ | Sel     |     |   |   |
+ Q16| Trigger context (multi-select)     | ✓ | Amp     |     |   |   |
+ Q17| Identity sentence (free-text)      | ✓ |         |     |   |   |
+ Q18| Pressure thought (free-text)       | ✓ | Tie     |     |   |   |
+ Q19| Competitor aspiration (free-text)  | ✓ |         |     |   | ✓ |
+ Q20| Adversity response (select)        | ✓ |         |     |   |   |
+ Q21| Adversity self-description (select)| ✓ |         |     |   |   |
+ Q22| Parent involvement (select)        | ✓ |         |     | ✓ |   |
+ Q23| Home conversation (select)         | ✓ | Amp     |     | ✓ |   |
+ Q24| Include parents (yes/no + email)   |   |         |     | ✓ |   |
+ Q25| Support network (select)           | ✓ |         |     | ✓ |   |
+ Q26| Success vision (free-text)         | ✓ |         |     |   |   |
+ Q27| Mental game self-rating (1-10)     | ✓ |         |     |   | ✓ |
+ Q28| Commitment level (select)          | ✓ |         |     |   |   |
+ Q29| Anything else (free-text, optional)| ✓ |         |     |   |   |
+
+Routing counts:
+  Snapshot:     28 of 29 questions (all except Q24)
+  PPD:           6 questions (Q9, Q13, Q15, Q16, Q18, Q23)
+  ABI:           8 questions (Q7-Q14)
+  Ecosystem:     4 questions (Q22-Q25)
+  Longitudinal:  4 questions (Q6, Q9, Q19, Q27)
+
+
+====================================================================
+PIPELINE FIELD MAPPING
+====================================================================
+
+All fields below are produced from the raw intake form answers.
+Derived outputs (PPD scores, ABI pillar scores, expanded Snapshot
+sections) are computed by downstream systems using these raw fields.
+
+--- CONTEXT FIELDS ---
+sport:                     string (free text)
+position:                  string (free text)
+team:                      string (free text)
+competitive_level:         enum [Youth | Middle School | High School |
+                                 College | Professional]
+years_competing:           enum [Less than 1 | 1-2 | 3-5 | 6-8 | 9+]
+season_phase:              enum [Preseason | In-season | Offseason |
+                                 Returning from injury]
+
+--- ABI SCALE FIELDS (raw 1-5 integers) ---
+abi_ownership_q1:          integer 1-5 (development driver)
+abi_ownership_q2:          integer 1-5 (performance review)
+abi_composure_q1:          integer 1-5 (reset speed)
+abi_composure_q2:          integer 1-5 (big-moment composure)
+abi_focus_q1:              integer 1-5 (focus maintenance)
+abi_focus_q2:              integer 1-5 (distraction resistance)
+abi_structure_q1:          integer 1-5 (routine consistency)
+abi_structure_q2:          integer 1-5 (training rhythm)
+
+--- PPD INPUT FIELDS ---
+performance_friction_selections:  array of 1-3 strings
+    Valid values: [Overthinking | Confidence going up and down |
+                   Hard time letting go of mistakes |
+                   Losing focus or getting distracted |
+                   Pressure in big moments |
+                   Staying motivated or disciplined |
+                   Lack of routine or structure |
+                   Pressure from coaches or parents]
+
+trigger_context_selections:       array of 1-2 strings
+    Valid values: [Big competitions or high-stakes moments |
+                   After making a mistake |
+                   When being evaluated (coach, scouts, recruiters) |
+                   During busy or stressful life weeks |
+                   When expectations from others are high]
+
+--- IDENTITY & PRESSURE FIELDS ---
+identity_sentence_completion:     string (free text)
+pressure_thought_text:            string (free text)
+competitor_aspiration_text:       string (free text)
+
+--- BEHAVIORAL PATTERN FIELDS ---
+adversity_response_pattern:       enum [Blame the situation |
+                                        Get frustrated |
+                                        Try to adjust right away |
+                                        Reset and refocus]
+
+adversity_self_description:       enum [I question my ability |
+                                        I get frustrated but move forward |
+                                        I analyze what happened and adjust |
+                                        I stay confident in myself]
+
+--- ECOSYSTEM FIELDS ---
+parent_involvement_level:         enum [Very involved |
+                                        Somewhat involved |
+                                        Not very involved |
+                                        Prefer not to say]
+
+home_conversation_pattern:        enum [Mostly supportive |
+                                        A lot of analysis or advice |
+                                        Pressure to perform |
+                                        We don't discuss performance much]
+
+parent_inclusion:                 boolean
+parent_email:                     string (conditional — only when
+                                         parent_inclusion = true)
+
+support_network_primary:          enum [No one | A teammate |
+                                        My coach | A parent |
+                                        A mentor]
+
+--- GOALS & COMMITMENT FIELDS ---
+success_vision_text:              string (free text)
+mental_game_self_rating:          integer 1-10
+commitment_level:                 enum [Just curious |
+                                        Pretty serious |
+                                        All-in]
+additional_context_text:          string (free text, optional —
+                                         may be null or empty)
+
+
+====================================================================
+DERIVED OUTPUTS (computed by downstream systems)
+====================================================================
+
+These are NOT stored as raw form answers. They are computed from
+the raw fields above by their respective systems.
+
+1. PPD TOP 3
+   Computed by: PPD Scoring Logic (Task 2)
+   Inputs: performance_friction_selections, trigger_context_selections,
+           abi_composure_q1 (reset speed amplifier),
+           abi_structure_q1 (routine amplifier),
+           home_conversation_pattern (ecosystem amplifier),
+           pressure_thought_text (tie-breaker)
+   Output: Ranked list of top 3 Primary Problems with scores,
+           trigger context, and coaching implication line.
+   8 PPD Buckets:
+     1. Overthinking Loop
+     2. Confidence Volatility
+     3. Mistake Recovery Lag
+     4. Focus Drift / Distraction
+     5. Pressure Reactivity
+     6. Discipline Gap
+     7. Structure Gap
+     8. Ecosystem Friction
+
+2. ABI 4-PILLAR SCORES
+   Computed by: ABI Scoring Logic (Task 3)
+   Inputs: abi_ownership_q1, abi_ownership_q2,
+           abi_composure_q1, abi_composure_q2,
+           abi_focus_q1, abi_focus_q2,
+           abi_structure_q1, abi_structure_q2
+   Output:
+     Ownership:  0-10
+     Composure:  0-10
+     Focus:      0-10
+     Structure:  0-10
+     Total:      0-40
+     Primary Emphasis: lowest 1-2 dimensions
+   Formula: pillar_score = round((Q_a + Q_b) / 2 * 2)
+   Bands: 0-16 Needs Foundation / 17-28 Developing /
+          29-36 Consistent / 37-40 Leadership
+
+3. EXPANDED ATHLETE SNAPSHOT
+   Computed by: Updated Snapshot Builder (Task 5)
+   Inputs: All 29 fields + PPD Top 3 + ABI scores
+   Output: Expanded narrative baseline profile with new sections
+           for PPD summary, ABI summary, and ecosystem profile
+           alongside existing 9-section structure.
+   The 4 locked baseline fields are derived as follows:
+     baseline_identity_claim ← Q17 + Q19 (synthesized)
+     baseline_hinge_habit    ← Q7-Q14 + Q20 + overall profile
+     baseline_primary_derailer ← Q15 + Q16 + Q18 + PPD Top 1
+     baseline_growth_phase   ← behavioral classification from
+                                full profile (not self-report)
+
+
+====================================================================
+CORE FOUNDATION COMPATIBILITY
+====================================================================
+
+This form is for APP ATHLETES ONLY. Core Foundation athletes
+retain their existing 22-question form and current Snapshot
+Builder process (VF_Intake_Snapshot_Builder_Project_Instructions.txt).
+
+The Snapshot Builder will detect which form was submitted:
+  - App form (this spec): 29 questions with structured fields
+    → Produces expanded Snapshot + PPD Top 3 + ABI scores
+  - CF form (existing): 22 questions with free-text heavy format
+    → Produces current 9-section Snapshot with 4 baseline anchors
+    → No PPD. No ABI. Same output as today.
+
+This follows the same dual-mode additive pattern established by
+the Execution Signal upgrade: App athletes get enriched
+capabilities, Core Foundation athletes experience zero degradation.
+
+CF QUESTION → APP QUESTION MAPPING:
+
+  CF Q1-Q5  (admin)          → App registration (separate)
+  CF Q6     (referral)       → RETIRED
+  CF Q7     (sport)          → Q1  (unchanged)
+  CF Q8     (position)       → Q2  (unchanged)
+  CF Q9     (team)           → Q3  (unchanged)
+  CF Q10    (years)          → Q5  (upgraded: free-text → select)
+  CF Q11    (mental rating)  → Q27 (unchanged format, repositioned)
+  CF Q12    (struggles)      → Q15 (upgraded: 10 options → 8 PPD-aligned,
+                                     capped at 3)
+  CF Q13    (pre-moment)     → Q18 (upgraded: reworded for precision)
+  CF Q14    (holding back)   → REPLACED by Q15 + Q16 + Q20
+  CF Q15    (6-month success)→ Q26 (unchanged intent, repositioned)
+  CF Q16    (mindset goals)  → CONSOLIDATED into Q26 + Q19
+  CF Q17    (VF hopes)       → CONSOLIDATED into Q26 + Q19
+  CF Q18    (commitment)     → Q28 (unchanged)
+  CF Q19    (mindset coach)  → RETIRED
+  CF Q20    (parent involve) → Q22 (unchanged)
+  CF Q21    (include parents)→ Q24 (unchanged)
+  CF Q22    (anything else)  → Q29 (unchanged, now explicitly optional)
+
+  NEW QUESTIONS (not in CF):
+    Q4  — Current level
+    Q6  — Current season phase
+    Q7  — Development driver (1-5 scale)
+    Q8  — Performance review frequency (1-5 scale)
+    Q9  — Mental reset speed (1-5 scale)
+    Q10 — Big-moment composure (1-5 scale)
+    Q11 — Focus maintenance (1-5 scale)
+    Q12 — Distraction resistance (1-5 scale)
+    Q13 — Routine consistency (1-5 scale)
+    Q14 — Training rhythm (1-5 scale)
+    Q16 — Trigger context (multi-select)
+    Q17 — Identity sentence completion
+    Q19 — Competitor aspiration
+    Q20 — Adversity response pattern
+    Q21 — Adversity self-description
+    Q23 — Home conversation pattern
+    Q25 — Support network
+
+  Summary: 16 new questions, 7 upgraded from CF, 6 CF retired/consolidated.
+
+
+====================================================================
+FORM SEQUENCING RATIONALE
+====================================================================
+
+The form follows a deliberate cognitive load progression:
+
+  Section 1 (Context): START EASY — demographic dropdowns and short
+  text. Zero self-reflection required. Gets the athlete moving
+  through the form with quick completions.
+
+  Section 2 (Scales): BUILD TO SELF-ASSESSMENT — 1-5 scales require
+  moderate self-awareness but are fast to complete. The scale format
+  feels objective ("rate yourself") rather than vulnerable.
+
+  Section 3 (Friction): PEAK DIAGNOSTIC — multi-select forces the
+  athlete to identify their top problems. This is the most
+  diagnostically valuable section but requires honest self-assessment.
+  Placed after scales have warmed up the athlete's self-reflection.
+
+  Section 4 (Identity): PEAK DEPTH — free-text identity and pressure
+  questions require the most genuine thought. Placed at the peak of
+  the form when the athlete is fully engaged but not yet fatigued.
+
+  Section 5 (Behavioral): QUICK STRUCTURED — single-selects that
+  capture behavioral patterns without requiring deep reflection.
+  Provides a cognitive break after the free-text peak.
+
+  Section 6 (Ecosystem): EXTERNAL FOCUS — shifts attention outward
+  to family and support dynamics. Lower cognitive load because the
+  athlete is describing their environment, not evaluating themselves.
+
+  Section 7 (Goals): END FORWARD-LOOKING — closes on goals,
+  commitment, and an optional catch-all. Ends the form on an
+  energizing, positive note rather than a self-critical one.
+
+
+====================================================================
+DOWNSTREAM TASK DEPENDENCIES
+====================================================================
+
+This specification (Task 1) feeds directly into:
+
+  Task 2: PPD Scoring Logic
+    Uses: Q9, Q13, Q15, Q16, Q18, Q23
+    Defines: exact amplifier weights, tie-breaker classification
+             rules, scoring formula, output format
+
+  Task 3: ABI Scoring Logic
+    Uses: Q7-Q14
+    Defines: pillar calculation formula, band thresholds,
+             primary emphasis determination
+
+  Task 4: New Athlete Snapshot Fields
+    Uses: all fields
+    Defines: new Snapshot section structure, field names for
+             PPD/ABI/ecosystem data within the Snapshot
+
+  Task 5: Updated Snapshot Builder Instructions
+    Uses: this entire specification
+    Defines: dual-mode detection, App form processing rules,
+             expanded output structure
+
+  Tasks 6-7: Interpretation Engine + Downstream Impact
+    Uses: new Snapshot fields (from Task 4)
+    Defines: how Stage 2 reads expanded baseline, any
+             downstream spec updates for Stages 3-5
+
+
+====================================================================
+END OF SPECIFICATION
+====================================================================
