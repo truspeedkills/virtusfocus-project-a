@@ -1,0 +1,703 @@
+LONGITUDINAL PPD IMPLEMENTATION — HANDOFF PROMPT
+==============================================
+SESSION OBJECTIVE:
+Implement the Longitudinal PPD specification across 8
+pipeline files in 4 stages. The specification is COMPLETE
+and LOCKED — all 9 design questions have been resolved.
+This is a pure IMPLEMENTATION session. Do not redesign
+or modify the locked decisions. Implement exactly what
+the specification describes.
+
+OUTPUT: 5 new versioned files + 3 in-place edits across
+Stages 2-5, followed by cross-stage consistency verification.
+
+==============================================
+WHAT'S BEEN DECIDED (ALL LOCKED — DO NOT CHANGE)
+==============================================
+
+Read the full specification first:
+  Agents - Generators\Interpretation\Source Files\
+  VF_Longitudinal_PPD_Specification.txt
+
+Key locked decisions (summary — spec has full details):
+
+1. SCORING: 5-tier evidence strength (Strong/Moderate/Weak/
+   None/Context Insufficient) per bucket. No numeric 0-100
+   scores. Deterministic classification rules using existing
+   composite scores, coach flags, and v9.6 fields.
+
+2. CADENCE: Weekly computation. Rolling window across all
+   available weeks. Predominant-tier calculation (>=50% of
+   evaluable weeks at a tier → that tier overall).
+
+3. THRESHOLD: Progressive. Emerging at 3 weeks (inform-only,
+   no Tier 2 change). Established at 5 weeks (full routing).
+
+4. ALIGNMENT SIGNAL: Aligned/Gap/Blind Spot. Top 3 comparison.
+   Blind Spot = intake ≤2 AND execution Strong. One Strong
+   Blind Spot overrides to overall Blind Spot. 4-step
+   classification logic (spec Section D).
+
+5. ROUTING: Tier 2 replacement when Established (execution-
+   derived PPD replaces static intake). Tone modification
+   across all tiers (Blind Spot=ground, Gap=elevate,
+   Aligned=confirm). Zero Stage 4 consumption.
+
+6. JSON: New top-level block `longitudinal_ppd` with status,
+   weeks_accumulated, measurement_window_start,
+   execution_derived_top_3, execution_derived_all_buckets,
+   alignment_signal, core_foundation_fallback (spec Section F).
+
+7. AUDIT: Category F expanded with F6 (alignment labels),
+   F7 (longitudinal terminology), F8 (intake-to-execution
+   comparison framing). No new criteria — F6-F8 are
+   additional terms within existing Criterion 13.
+
+8. BUCKETS: 8 bucket mappings with full evidence tier
+   determination rules (spec Section B). Season phase context
+   gate for Pressure Reactivity. Ecosystem Friction
+   supplemented with content-derived indicators.
+
+==============================================
+IMPLEMENTATION PLAN — 8 FILES IN 4 ROUNDS
+==============================================
+
+CRITICAL: Implement in this order. Each round builds on
+the prior round's data definitions.
+
+----------------------------------------------
+ROUND 1: STAGE 2 — INTERPRETATION ENGINE
+(Define the data — everything downstream reads this)
+----------------------------------------------
+
+FILE 1: VF_Interpretation_JSON_Rules.txt (EDIT IN PLACE)
+Location: Agents - Generators\Interpretation\Source Files\
+
+  ADD: New section "Longitudinal PPD Classification"
+  Insert after Section 12 (Self-Ratings Perception-Reality
+  Alignment) as Section 13. Renumber subsequent sections.
+
+  Content to include:
+  - Section 13A: Longitudinal PPD Overview
+    Purpose, mirror model reference, computation cadence,
+    status field determination (insufficient data / emerging /
+    established), weeks_accumulated counting rules.
+
+  - Section 13B: Per-Bucket Evidence Tier Determination
+    All 8 buckets with complete determination rules from
+    spec Section B. For each bucket:
+    - Primary signals (field names + thresholds)
+    - Secondary signals
+    - Evidence tier logic (Strong/Moderate/Weak/None/CI)
+    - Any special rules (Season Phase gate for Bucket 5,
+      content-derived supplements for Bucket 8)
+
+  - Section 13C: Rolling Window Aggregation
+    Per-week evidence tier → predominant tier calculation.
+    >=50% threshold. Context Insufficient exclusion from
+    denominator. Tie-breaking by bucket priority (1→8).
+
+  - Section 13D: Execution-Derived Top 3 Derivation
+    Ranking rules. Evidence tier ordering (Strong > Moderate >
+    Weak). Tie-breaking. Fewer-than-3 handling.
+
+  - Section 13E: PPD Alignment Signal Classification
+    4-step logic from spec Section D:
+    Step 1: Derive execution Top 3
+    Step 2: Compare against intake Top 3 (from
+             baseline_intake_profile.ppd_top_3)
+    Step 3: Classify new entries (Blind Spot vs Gap based
+             on intake score thresholds)
+    Step 4: Determine overall signal (overlap count rules +
+             override rule)
+
+  - Section 13F: Edge Cases
+    All 12 edge cases from spec Section G.
+
+  - Section 13G: Core Foundation Fallback
+    CF fallback values for longitudinal_ppd block.
+
+  Estimated: ~200-300 lines added.
+
+  RENUMBERING IMPACT: Current Sections 13-21 shift to 14-22.
+  Update all internal cross-references.
+
+----------------------------------------------
+
+FILE 2: SOP_Interpretation_Engine_Project_Instructions
+  CREATE NEW VERSION: v9.7
+  Location: Agents - Generators\Interpretation\
+  Preserve v9.6 on disk.
+
+  CHANGES (relative to v9.6):
+
+  A. New Step in Core Interpretation Process:
+     Add Step 1.7 (or appropriate position AFTER composite
+     scores Step 14 and coach flags Step 15 are computed):
+     "Longitudinal PPD Computation"
+
+     Step 1.7 sub-steps:
+     1.7a: Check input_source. If core_foundation → populate
+            longitudinal_ppd CF fallback block and skip
+            remaining sub-steps.
+     1.7b: Count weeks_accumulated (number of prior week JSONs
+            with execution data + current week).
+     1.7c: If weeks_accumulated < 3 → populate minimal block
+            with status "insufficient data" and skip.
+     1.7d: For each of the 8 buckets, compute current week's
+            evidence tier using determination rules from
+            JSON Rules Section 13B.
+     1.7e: Load all prior week JSONs in rolling window.
+            For each bucket, compute predominant evidence tier
+            across all weeks (Section 13C rules).
+     1.7f: Derive execution Top 3 (Section 13D rules).
+     1.7g: Read baseline_intake_profile.ppd_top_3 and
+            baseline_intake_profile.ppd_all_scores (from
+            Step 1.5 pass-through).
+     1.7h: Compute alignment signal (Section 13E rules).
+     1.7i: Set status = "emerging" (3-4 weeks) or
+            "established" (5+ weeks).
+     1.7j: Populate full longitudinal_ppd block.
+
+  B. Cross-Week Data Access (Section 7):
+     Add longitudinal_ppd to the list of computations
+     requiring prior week JSON access. Same pattern as
+     streaks, cross-week recovery, coach flags 13-15.
+
+  C. Core Foundation Fallback Rules (Section 6):
+     Add longitudinal_ppd CF fallback to the skip list.
+
+  D. Production Schema Validation (Section 11):
+     Add validation items:
+     - longitudinal_ppd.status matches weeks_accumulated
+     - If status = "established", alignment_signal.overall
+       is populated
+     - If core_foundation_fallback = true, no other
+       longitudinal_ppd fields populated
+     - execution_derived_all_buckets has exactly 8 entries
+
+  E. Canonical Output Schema (Section 17 or equivalent):
+     Add full longitudinal_ppd block to the canonical
+     schema. Use schema from spec Section F.
+
+  F. Authoritative Sources (Section 2):
+     Add VF_Longitudinal_PPD_Specification.txt to the
+     authority hierarchy.
+
+  Estimated: ~150-200 lines added to v9.6 baseline.
+
+----------------------------------------------
+ROUND 2: STAGE 3 — COACHING OUTPUT ENGINE
+(Consume the data for coaching)
+----------------------------------------------
+
+FILE 3: VF_Coaching_Output_JSON_to_Message_Map.txt
+  (EDIT IN PLACE)
+  Location: Agents - Generators\Coaching Output\Source FIles\
+
+  ADD: New section "LONGITUDINAL PPD ROUTING"
+  Insert after the existing "BASELINE INTAKE PROFILE ROUTING"
+  section (since longitudinal PPD modifies Tier 2 which is
+  defined in that section).
+
+  Content:
+  - Tier 2 Replacement Logic:
+    When longitudinal_ppd.status == "established":
+      Tier 2 coaching implications sourced from
+      execution_derived_top_3 instead of static
+      baseline_intake_profile.ppd_top_3.
+    When status == "emerging" or "insufficient data":
+      Tier 2 unchanged (static intake PPD).
+
+  - Tone Modification Routing:
+    alignment_signal.overall == "Blind Spot":
+      → Drift Identification section: grounding language
+        for the unseen pattern. Behavioral description only.
+      → Growth Area section: lean into blind spot bucket's
+        behavioral domain.
+      → Micro-commitment: target blind spot area when
+        actionable.
+    alignment_signal.overall == "Gap":
+      → Recognition section: acknowledge the athlete's
+        partial awareness.
+      → Growth Area section: elevate underestimated area.
+    alignment_signal.overall == "Aligned":
+      → No routing change. Continue current direction.
+      → Optional: subtle confirmation language in
+        Recognition section.
+
+  - Emerging Status Routing:
+    Tone modification available but SUBTLE only.
+    Micro-commitment MAY lean toward emerging pattern.
+    No explicit grounding or elevation language.
+
+  - Per-Section Field Routing:
+    Coaching Message:
+      - Recognition: alignment_signal informs confirmation
+        (Aligned) or partial acknowledgment (Gap)
+      - Drift Identification: blind spot grounding language
+      - Growth Area: execution-derived primary bucket focus
+      - Micro-commitment: blind spot bucket targeting
+    Deep Dive:
+      - Mindset Summary: may reference behavioral shift from
+        intake emphasis to execution emphasis (without naming
+        PPD or comparison mechanism)
+      - Weekly Trendline: no change
+      - Strength Signals: no change
+      - Growth Areas: execution-derived bucket focus
+      - Identity Thread: no change
+
+  - CF Skip Rule:
+    When longitudinal_ppd.core_foundation_fallback == true:
+      Skip all longitudinal PPD routing. Output identical
+      to pre-longitudinal-PPD behavior.
+
+  - Raw Data Exclusion:
+    NEVER surface in any coaching output:
+    - Evidence tier names (Strong/Moderate/Weak/None)
+    - primary_signals array content
+    - Alignment signal labels (Aligned/Gap/Blind Spot)
+    - Bucket names as pipeline classifications
+    - overlap_count, new_entries, dropped_from_intake
+    - intake_score values
+    - weeks_accumulated, measurement_window_start
+    - Status labels (emerging/established)
+
+  Estimated: ~100-150 lines added.
+
+----------------------------------------------
+
+FILE 4: SOP_Coaching_Output_Instructions
+  CREATE NEW VERSION: v2.0
+  Location: Agents - Generators\Coaching Output\
+  Preserve v1.9 on disk.
+
+  CHANGES (relative to v1.9):
+
+  A. New Section: "Longitudinal PPD Integration Rule"
+     (Insert after Section 20 Intake Profile Field Integration,
+     before Section 21 Intake Profile Raw Data Exclusion)
+
+     Content:
+     - Master rule: Longitudinal PPD sharpens coaching
+       direction when sufficient data exists. It does not
+       expand output — same word targets, same sections,
+       same structure.
+     - Tier 2 replacement mechanics:
+       When status = "established": execution-derived Top 3
+       replaces static intake PPD at Tier 2.
+       When status = "emerging": Tier 2 unchanged, subtle
+       tone lean permitted.
+       When status = "insufficient data": Tier 2 unchanged,
+       no longitudinal PPD influence.
+     - Tone modification rules with behavioral translation
+       examples:
+       Blind Spot: "Something that's showing up in your
+       weeks is..." / "The [behavioral pattern] is more
+       central than it might feel."
+       Gap: "That [pattern] you mentioned — it's showing up
+       more than you might think."
+       Aligned: no adjustment (optional subtle confirmation).
+     - Interaction with existing Tier 1 weekly signals:
+       Weekly signals always take priority. Longitudinal PPD
+       tone modification applies to HOW weekly signals are
+       framed, not WHETHER they are addressed.
+     - Interaction with Forward Anchor (Tier 1.5):
+       No change. Forward Anchor routing independent.
+     - Micro-commitment targeting: When blind spot bucket
+       relates to an actionable behavioral pattern, micro-
+       commitment SHOULD target that area.
+     - Emerging vs Established distinction with examples.
+     - WRONG/CORRECT examples (minimum 6):
+       WRONG: "Your intake identified overthinking..."
+       CORRECT: "Something showing up in your weeks..."
+       WRONG: "There's a blind spot in your structure..."
+       CORRECT: "The routine piece is more central..."
+       WRONG: "The data shows a gap between..."
+       CORRECT: "Here's what I'm seeing in how your weeks..."
+       (Plus 3 more covering Gap tone, Aligned confirmation,
+       and Emerging subtle lean)
+
+  B. Expanded Raw Data Exclusion (Section 21 or equivalent):
+     Add longitudinal PPD terminology to prohibited list:
+     - Evidence tier names
+     - Alignment signal labels
+     - Longitudinal PPD computation terms
+     - Intake-to-execution comparison framing
+     (All terms from spec Section H, F6-F8)
+
+  C. Section 2 (Authoritative Sources):
+     Add VF_Longitudinal_PPD_Specification.txt.
+
+  D. Section 3 (Input Requirements):
+     Add longitudinal_ppd block awareness. Note that this
+     block is only present in v9.7+ JSONs.
+
+  E. CF Skip Rule (Section 16 or equivalent):
+     Add longitudinal PPD to CF skip list. When
+     core_foundation_fallback = true, all longitudinal
+     PPD routing skipped.
+
+  Estimated: ~200-250 lines added to v1.9 baseline.
+
+----------------------------------------------
+ROUND 3: STAGE 4 — COACH INSIGHTS ENGINE
+(Confirm non-consumption)
+----------------------------------------------
+
+FILE 5: SOP_Coach_Insights_Project_Instructions
+  CREATE NEW VERSION: v1.7
+  Location: Agents - Generators\Coach Insights Engine\
+  Preserve v1.6 on disk.
+
+  CHANGES (relative to v1.6 — MINIMAL):
+
+  A. Section 4 (Prohibited Data):
+     Add longitudinal_ppd to the list of JSON blocks that
+     Stage 4 does NOT consume. Same prohibition level as
+     existing PPD data.
+     Add to prohibited content list:
+     - longitudinal_ppd.* (all fields)
+     - PPD Alignment Signal labels (Aligned/Gap/Blind Spot)
+     - Evidence tier names
+     - Longitudinal PPD terminology (F7 terms)
+     - Intake-to-execution comparison framing (F8 patterns)
+
+  B. Section 8 (Inform-Only Fields):
+     Add longitudinal_ppd to the NOT-CONSUMED list
+     (alongside existing ppd_primary_problem, ppd_top_3, etc.)
+
+  C. Section 12 (Execution Signal Prohibited Items):
+     Add F6-F8 terms to the prohibited content list.
+
+  D. Section 18 (Intake Profile Integration Master Rule):
+     Add note: longitudinal_ppd does not modify any Stage 4
+     intake profile routing. PPD zero-consumption rule
+     extends to all longitudinal PPD data.
+
+  Estimated: ~20-30 lines added to v1.6 baseline.
+
+----------------------------------------------
+ROUND 4: STAGE 5 — EDITORIAL AUDIT
+(Verify compliance)
+----------------------------------------------
+
+FILE 6: SOP_Editorial_Audit_Master_Prompt
+  CREATE NEW VERSION: v1.4
+  Location: Agents - Generators\Editorial Audit\
+  Preserve v1.3 on disk.
+
+  CHANGES (relative to v1.3):
+
+  A. Clinical Language Exclusion List — Category F Expansion:
+     Add subcategories F6, F7, F8 with full prohibited term
+     lists from spec Section H.
+
+     F6: PPD Alignment Signal Classifications
+       "Aligned" (as PPD classification), "Gap" (as PPD
+       classification), "Blind Spot" (as PPD classification),
+       "Problem Awareness Aligned/Gap/Blind Spot",
+       "PPD Alignment", "alignment signal",
+       "execution-derived PPD", "longitudinal PPD"
+       NOTE: Common English usage permitted. Prohibition is
+       on named pipeline classifications only.
+
+     F7: Longitudinal PPD Terminology
+       "evidence tier", "evidence strength", "Strong/Moderate/
+       Weak/None evidence", "Emerging/Established confidence
+       tier", "intake vs execution", "self-report vs
+       behavioral data", "rolling window", "bucket ranking
+       comparison", "predominant classification",
+       "measurement window", "weeks accumulated"
+
+     F8: Intake-to-Execution Comparison Framing
+       "when you started you thought X", "your intake
+       identified", "what you reported vs what we see",
+       "the data contradicts your self-assessment",
+       "you didn't identify this at intake", "your blind
+       spot is", "you weren't aware of", "the system
+       detected", "we've been tracking your real problems",
+       "comparing your answers against your behavior"
+
+  B. WRONG/CORRECT Examples:
+     Add 6 examples from spec Section H covering all 3
+     new subcategories.
+
+  C. Reasonable Reader Test:
+     Expand with intake-to-execution comparison prong:
+     "Would a reader understand this sentence as 'the system
+     has been comparing my intake answers against my
+     behavior'? If yes, it fails."
+
+  D. Athlete Self-Discovery Distinction:
+     Add edge case: athlete's own self-discovery language
+     (e.g., "I think my real problem is my routine") is
+     PERMITTED. Pipeline comparison mechanism language is
+     PROHIBITED. The audit distinguishes between these.
+
+  E. Pipeline Position Line:
+     Update to reference v2.0 Coaching Output Instructions
+     and v9.7 Interpretation Engine.
+
+  Estimated: ~80-100 lines added to v1.3 baseline.
+
+----------------------------------------------
+
+FILE 7: SOP_Editorial_Audit_Project_Instructions
+  CREATE NEW VERSION: v1.4
+  Location: Agents - Generators\Editorial Audit\
+  Preserve v1.3 on disk.
+
+  CHANGES (relative to v1.3):
+
+  A. Category F Subcategories F6-F8:
+     Full prohibited term lists (same as Master Prompt but
+     with expanded detail and examples per subcategory).
+     Include per-subcategory WRONG/CORRECT examples.
+
+  B. Criterion 13 Scan Steps Expansion:
+     Steps 3-5 (App athlete scans) expanded to include
+     F6, F7, F8 terms alongside existing A-G categories.
+     No new steps — F6-F8 are additional terms in the
+     existing scan.
+
+  C. New Edge Cases:
+     - Athlete self-discovery vs pipeline comparison:
+       Athlete says "I think my real problem is routine"
+       → Stage 3 reflects back → PERMITTED.
+       Stage 3 says "The system identified a gap between
+       your intake and execution" → PROHIBITED.
+     - Common English words: "aligned with your goals"
+       (permitted), "your PPD alignment shows" (prohibited).
+     - CF athlete with longitudinal language: any
+       longitudinal PPD terminology in CF athlete output
+       = FAIL (no execution data exists to derive from).
+
+  D. Decision Tree Update:
+     Add F6-F8 to the Category F branch of the decision
+     tree (same structure as existing F1-F5).
+
+  Estimated: ~150-200 lines added to v1.3 baseline.
+
+----------------------------------------------
+
+FILE 8 (OPTIONAL): JSON_logic_reference.txt
+  Location: Agents - Generators\Coach Insights Engine\
+  Source Files\
+
+  CHANGE: Add longitudinal_ppd to the NOT-CONSUMED fields
+  list alongside existing PPD prohibition entries. Add to
+  inform-only fields exclusion. ~10-15 lines.
+
+  This file is technically covered by the v1.7 Instructions
+  changes, but adding the explicit prohibition here maintains
+  the pattern of dual-documentation (Instructions define
+  rules, JSON Logic Reference defines field routing).
+
+==============================================
+CROSS-STAGE CONSISTENCY VERIFICATION
+==============================================
+
+After all 8 files are modified, run verification:
+
+CHECK 1: Schema Alignment
+  - v9.7 canonical schema includes longitudinal_ppd block
+  - v2.0 references the same field names
+  - v1.7 lists the same fields as prohibited
+  - v1.4 audit lists the same terms as prohibited
+
+CHECK 2: Compliance Categories Alignment
+  - F6 terms identical across Master Prompt v1.4,
+    Instructions v1.4, and Coaching Output v2.0 exclusion
+  - F7 terms identical across all files
+  - F8 terms identical across all files
+
+CHECK 3: CF Fallback Consistency
+  - v9.7 produces CF fallback block
+  - v2.0 skips all longitudinal routing for CF
+  - v1.7 skips all longitudinal routing for CF
+  - v1.4 flags any longitudinal language in CF output
+
+CHECK 4: Tier 2 Routing Consistency
+  - Message Map Tier 2 replacement logic matches v2.0
+    Section description
+  - v2.0 Emerging/Established distinction matches v9.7
+    status field values
+  - Tone modification descriptions consistent across
+    Message Map and v2.0
+
+CHECK 5: Prohibited Terms Consistency
+  - All F6-F8 terms appear in: v2.0 raw data exclusion,
+    v1.7 prohibited content, Master Prompt v1.4, and
+    Instructions v1.4
+  - No term appears in one file but is missing from another
+
+==============================================
+REFERENCE FILES
+==============================================
+
+Read CLAUDE.md FIRST for full project context.
+
+PRIMARY (read in full):
+1. VF_Longitudinal_PPD_Specification.txt
+   Agents - Generators\Interpretation\Source Files\
+   — THE SPECIFICATION. Everything to implement is here.
+   All 11 sections. ~1,774 lines.
+
+2. VF_Interpretation_JSON_Rules.txt
+   Agents - Generators\Interpretation\Source Files\
+   — Current Section 12 (self_ratings_alignment) is the
+   PATTERN to follow for the new Section 13.
+   — Current Section 16 (baseline_intake_profile) is where
+   ppd_all_scores and ppd_top_3 are extracted.
+
+3. SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
+   Agents - Generators\Interpretation\
+   — Current version. Add Step 1.7 for longitudinal PPD.
+
+4. VF_Coaching_Output_JSON_to_Message_Map.txt
+   Agents - Generators\Coaching Output\Source FIles\
+   — Current baseline intake profile routing section.
+   Add longitudinal PPD routing after it.
+
+5. SOP_Coaching_Output_Instructions_v1.9.txt
+   Agents - Generators\Coaching Output\
+   — Current version. Section 15 (self_ratings alignment
+   integration) is the PATTERN for the new longitudinal
+   PPD integration section. Section 20 (intake profile
+   field integration) is where Tier 2 is defined.
+
+6. SOP_Coach_Insights_Project_Instructions_v1.6.txt
+   Agents - Generators\Coach Insights Engine\
+   — Current version. Minimal changes needed.
+
+7. SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+   Agents - Generators\Editorial Audit\
+   — Current version. Category F expansion.
+
+8. SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+   Agents - Generators\Editorial Audit\
+   — Current version. Category F expansion + edge cases.
+
+SECONDARY (read relevant sections):
+9. VF_Execution_Signal_Composite_Score_Rules.txt
+   — Reference for score names, band names, thresholds.
+   NOT modified.
+
+10. VF_Coach_Flags_Specification.txt
+    — Reference for flag names, severity tiers, triggers.
+    NOT modified.
+
+11. VF_PPD_Scoring_Logic.txt
+    — Reference for 8 bucket names, intake scoring.
+    NOT modified.
+
+12. JSON_logic_reference.txt
+    Agents - Generators\Coach Insights Engine\Source Files\
+    — Optional File 8 edit. Read for current PPD prohibition
+    pattern.
+
+TOTAL REFERENCE FILES: 12
+
+==============================================
+PROCESSING STEPS
+==============================================
+
+STEP 1: Read CLAUDE.md for full project context.
+
+STEP 2: Read the Longitudinal PPD Specification (file 1)
+        in FULL. This is the authoritative source for
+        everything being implemented.
+
+STEP 3: Read files 2-8 (current versions of all files
+        being modified). Understand their current structure
+        and patterns.
+
+STEP 4: Implement Round 1 (Stage 2 — files 1-2).
+        Save both files.
+
+STEP 5: Implement Round 2 (Stage 3 — files 3-4).
+        Save both files.
+
+STEP 6: Implement Round 3 (Stage 4 — file 5).
+        Save file.
+
+STEP 7: Implement Round 4 (Stage 5 — files 6-7).
+        Save both files. Optionally implement file 8.
+
+STEP 8: Run cross-stage consistency verification
+        (5 checks). Report results.
+
+STEP 9: Commit all changes with descriptive message.
+
+STEP 10: Update CLAUDE.md:
+         - Session notes
+         - Session history entry
+         - Pipeline table (Stage 2 active schema v9.7)
+         - Handoff prompts section
+         - What's Next section (longitudinal PPD
+           implementation → complete)
+         - Key File Locations (new versioned files)
+
+STEP 11: Final commit for CLAUDE.md update.
+
+==============================================
+CRITICAL RULES
+==============================================
+
+1. IMPLEMENT THE SPECIFICATION EXACTLY. All 9 design
+   decisions are locked. Do not modify the scoring approach,
+   threshold values, classification logic, routing rules,
+   or compliance categories. If something in the
+   specification seems wrong, flag it — do not fix it
+   silently.
+
+2. FOLLOW EXISTING PATTERNS. The self_ratings_alignment
+   implementation (Section 12 of JSON Rules, Section 15 of
+   Coaching Output Instructions) is the exact architectural
+   pattern to follow. Mirror its structure, naming
+   conventions, and documentation style.
+
+3. PRESERVE PREVIOUS VERSIONS. Create new versioned files
+   (v9.7, v2.0, v1.7, v1.4). Never edit versioned files
+   in place. Source reference files (JSON Rules, Message
+   Map, JSON Logic Reference) are edited in place per
+   versioning rules.
+
+4. RENUMBER CAREFULLY. Adding Section 13 to JSON Rules
+   shifts all subsequent sections. Update ALL internal
+   cross-references. Verify no broken references.
+
+5. CROSS-STAGE CONSISTENCY IS NON-NEGOTIABLE. The same
+   prohibited terms must appear in the same form across
+   all files. The same field names must be referenced
+   consistently. Run the 5 verification checks.
+
+6. CF FALLBACK MUST BE COMPLETE. Every file that touches
+   longitudinal PPD must have a CF skip/fallback rule.
+   No code path should attempt to read longitudinal PPD
+   data for a CF athlete.
+
+7. COMMIT BEFORE CLOSING. Stage and commit all changes.
+   Update CLAUDE.md. Verify clean working tree.
+
+==============================================
+SESSION SCOPE
+==============================================
+
+This session should complete in one sitting. The changes
+are well-defined (specification is locked, patterns are
+established, implementation scope is bounded).
+
+If the session runs long due to the volume of text (8 files,
+~900-1230 lines), the natural split point is between
+Round 2 (Stage 3) and Round 3 (Stage 4). Rounds 1-2 are
+the bulk of the work. Rounds 3-4 are smaller. But ideally
+all 4 rounds + verification complete in one session.
+
+Estimated output: ~900-1230 lines of new specification
+text across 8 files, plus cross-stage verification report.
+
+==============================================
+END OF HANDOFF PROMPT
+==============================================
