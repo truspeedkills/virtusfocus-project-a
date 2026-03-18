@@ -596,6 +596,24 @@ This project is tracked with Git. All meaningful changes must be committed befor
 - After any new agent/generator file is created
 - **Always commit before closing a session** so the next session starts from a known state
 
+### End-of-Session Rule (NON-NEGOTIABLE)
+
+Before finishing ANY session — whether the user asks or not — you MUST:
+
+1. **Run `git status`** to check for uncommitted changes
+2. **If uncommitted changes exist:** Stage and commit them with a descriptive message. Do NOT wait to be asked.
+3. **Update CLAUDE.md** if any of the following occurred this session:
+   - New athlete data was generated (JSONs, CMs, DDs, Coach Insights, Audits, Parent output)
+   - Specification files were created or modified
+   - New handoff prompts were created
+   - Athlete arcs, open threads, or coach insights tables need updating
+   - Pending tasks were completed or new tasks identified
+   - Session history needs a new entry
+4. **Commit the CLAUDE.md update** as a separate commit if other work was already committed
+5. **Verify clean working tree** with a final `git status`
+
+This rule exists because prior sessions have ended with uncommitted work and stale CLAUDE.md entries, creating confusion in subsequent sessions. The hooks in `.claude/settings.json` will remind you, but you should proactively check even without being reminded.
+
 ### Commit Message Format
 One sentence describing the *what*. One sentence describing the *why*.
 Example: `"Generated Grace Kindel Week 5 Coaching Message and Deep Dive. First full v1.2/V3 coaching output run."`
