@@ -1,0 +1,137 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-03-09 to 2026-03-15",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Grace's baseline primary derailer was directly tested this week — Monday pinch-hit strikeout ('that sucks') is the first documented competitive failure in the program. The hinge habit activated: Wednesday's 'I just need to reset and I'll be fine' shows the reset mechanism functioning after the Monday at-bat, and execution held 7/7 Win days through the week. However, coach frustration escalated to its highest intensity since Week 3 ('lil mf Coach'), and Thursday's practice frustration about lineup players getting outfield reps while she remains excluded deepened the Week 6 position-specific friction. The Bullseye outer ring carries explicit coach-directed language for the first time since Week 3. Partially Aligned because the derailer was tested and the hinge habit held at the execution level, but the coach-athlete tension has re-intensified and is now occupying cognitive space alongside the position identity frustration."
+  },
+
+  "athlete_state": "Resilient execution through the first competitive failure of the program and escalating coach-athlete frustration. Grace struck out as a pinch-hitter Monday — her first negative competitive result after the Week 4 line drive and Week 6 pinch-hit success — processed it briefly ('that sucks'), reset by Wednesday ('I just need to reset and I'll be fine'), and maintained 7/7 Win days. Coach frustration reached its highest intensity since Week 3 ('lil mf Coach') with a new structural dimension: practice inequity ('putting in people already in the line up to try to play outfield'). Despite no playing time Saturday, Grace stayed 'loud' and prepared. Achievement framing remained strong: 'when I don't I'm still up and loud and prepared.'",
+
+  "core_pattern": "Post-failure composure with intensifying role frustration. The Monday strikeout tested the core confidence mechanism — and it held. Grace's response pattern was brief emotional acknowledgment ('that sucks') followed by reset language within 48 hours ('I just need to reset and I'll be fine'). No confidence spiral, no identity-level distress, no execution disruption. But the parallel pattern of coach-directed frustration and practice inequity processing is consuming increasing emotional bandwidth. The Bullseye outer ring re-intensified with the most charged language since Week 3.",
+
+  "behavioral_root_cause": "Monday's strikeout tested whether Grace's action-quality confidence — built across Weeks 4-6 — could survive a negative competitive outcome. It did: she processed the disappointment at the daily level ('that sucks'), did not spiral across subsequent days, and showed active reset language by Wednesday. The confidence mechanism proved resilient to failure, not just success. Separately, the practice equity frustration (Thursday) represents the Week 6 position-specific friction intensifying — outfield opportunity being given to lineup players while Grace remains hitting-only. This dual-track week (resilient post-failure confidence + escalating role frustration) is the most complex emotional load since Week 3, managed at the execution level but unresolved at the structural level.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before your next game, write one specific thing you want to execute in your moment. Not 'work hard' or 'do good' — something you can picture doing. One sentence. One action. After the game, name whether you did it.",
+    "execution_status": "Unknown",
+    "execution_notes": "Monday's game day entry does not reference a pre-game written action commitment. Grace noted 'good warmups, got in to pinch hit, struck out, that sucks, heading home' — the warmup preparation element from prior weeks showed up ('good warmups'), but no evidence of the specific written one-sentence action commitment. The competition section focuses on the overall trip rather than the specific pre-game commitment structure.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Keep working hard",
+    "achievement_statement": "I'm getting reps and opportunities and when I don't I'm still up and loud and prepared",
+    "key_phrase": "I just need to reset and I'll be fine",
+    "mindset_resonance": "Friday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "7",
+      "neutral_days": "0",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "General. 'I can control my mindset' is accurate but less specific than Week 6's competition-contextualized 'what I do with the chances I get.' Represents a regression in Bullseye precision — from a behaviorally specific competitive frame back to a broad mental concept.",
+    "influence_quality": "Appropriate. 'I can influence like how my coaches see me And my habits' correctly places coach perception in the influence ring. However, 'my habits' is a center-ring controllable misplaced in the influence ring — similar to Week 3's category confusion.",
+    "noise_fixation_present": "Yes",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "3",
+
+  "growth_phase": "Consistent",
+
+  "emotional_intensity": "Moderate",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stable",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "6",
+    "rolling_win_rate_4wk": "1.0",
+    "rolling_missed_rate_4wk": "0.0",
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over seven weeks, Grace progressed from preparation-driven confidence (Weeks 1-2) through emotional adversity with coach frustration and homesickness (Week 3: High EI) to breakthrough adversity-resilient confidence (Week 4: 'the one chance I got, I did something with') to composed competition readiness with internalized philosophy (Week 5) to competition-validated performance (Week 6: first hit, first start). Week 7 introduces the first competitive failure test — a pinch-hit strikeout Monday — and the confidence mechanism survived it. The hinge habit activated ('I just need to reset and I'll be fine'), execution held at 49/49 Win days, and the philosophy remained intact. But the parallel track of coach-athlete frustration re-intensified to Week 3 levels ('lil mf Coach'), and the position-specific frustration deepened further (outfield practice exclusion). The confidence arc: outcome-reactive at baseline → preparation-energized (Wks 1-2) → structure-sustained under pressure (Wk 3) → action-proven (Wk 4) → identity-embedded (Wk 5) → competition-validated (Wk 6) → failure-resilient (Wk 7). Two open threads now run in parallel: declining goal specificity (6th consecutive week of decreasing intentionality) and intensifying role frustration.",
+    "milestone_this_week": "First competitive failure in the program — pinch-hit strikeout on Monday — processed without confidence spiral, identity disruption, or execution breakdown. The hinge habit (reset and refocus after mistakes) activated at the competition level for the first time in response to a negative outcome. Wednesday's 'I just need to reset and I'll be fine' is the clearest evidence in seven weeks that the baseline hinge habit is functional under live competitive adversity — not just neutral or positive conditions.",
+    "open_thread": "Two threads now run simultaneously. (1) Goal-setting intentionality continues at its lowest level — 'Keep working hard' and 'Same thing' extend the six-week decline in specificity. Execution remains maximal (49/49 Win days) but conscious directional intent is absent from goal-setting for the second consecutive week. (2) Coach-athlete frustration re-escalated with the most intense language since Week 3 ('lil mf Coach') and a new dimension — practice inequity where lineup players receive outfield opportunities Grace is excluded from. The Week 6 position-specific frustration ('NEVER be an option for the field') has deepened from a Sunday vent into a Thursday practice-level irritation about structural inequity. Saturday's game day with no playing time was managed composedly ('I was loud!') — the frustration is about practice access, not game-day composure. Sunday's solitary walk may reflect internal processing. Whether the escalating frustration remains managed or begins to erode the composure foundation is the central monitoring question."
+  },
+
+  "most_important_controllable": "Maintaining the reset mechanism and composed presence through games and practices where playing time and practice access remain limited — Grace's achievement framing ('when I don't I'm still up and loud and prepared') is the behavioral standard that sustains her value to the coaching staff and her own identity development, regardless of lineup decisions.",
+
+  "micro_commitment": {
+    "action": "After each game or game-day this week — whether she plays or not — write one sentence naming something she controlled well that day. Not a result, not playing time, not what the coach did. One controllable action she owned. If she played: name the action. If she didn't play: name how she showed up.",
+    "when": "Within 30 minutes after each game day ends, before any other activity.",
+    "measurement": "At the end of the week, she should have one sentence per game day — each naming a specific controllable. If every sentence names something she controlled (not an outcome or a complaint), the commitment is executed."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Another game (specific schedule not provided — 'preparing again for another game')",
+    "anticipated_stressor": "Practice inequity frustration may intensify if outfield opportunities continue to go to lineup players. Coach-athlete friction at elevated intensity. Playing time unpredictable. Goal-setting intentionality at program low for second consecutive week — risk of habitual execution without conscious engagement continuing.",
+    "athlete_stated_next_goal": "Same thing"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days through post-Florida travel recovery, a game-day strikeout (Monday), practice frustration (Thursday), a no-play game day (Saturday), and a solitary processing Sunday. 49/49 Win days across the full program. Achievement framing remained strong: 'when I don't I'm still up and loud and prepared' — composure and presence maintained even on days without playing time.",
+    "key_habit_signal": "Monday's pinch-hit strikeout is the week's most significant behavioral data point — the first negative competitive result in the program. Grace's response tracked across three days: brief emotional acknowledgment Monday ('that sucks'), no reference Tuesday (travel/recovery focus), active reset language Wednesday ('I just need to reset and I'll be fine'). No confidence spiral, no multi-day disruption, no identity-level distress. The hinge habit held under the exact conditions it was designed for — competitive failure followed by reset rather than rumination.",
+    "coach_reinforcement_cue": "Name the Monday strikeout-to-Wednesday reset explicitly as the most important sequence of the program: the first time the hinge habit was tested by a competitive negative and it worked. Use Grace's own language: 'I just need to reset and I'll be fine.' Connect to her identity — someone who stays confident after mistakes, which is exactly what she did. Also reinforce Saturday's composed presence ('I was loud!') as controllable execution on a no-play day.",
+    "coach_avoidance_note": "Coach frustration has re-escalated significantly this week ('lil mf Coach,' Thursday practice rant about lineup players getting outfield reps). Do not dismiss or validate it — redirect to controllables. Do NOT elevate the coach language in the coaching output; it belongs in the outer ring where Grace placed it. Thursday's practice frustration is more granular and potentially more erosive than prior weeks' general coach frustration — it targets specific practice equity decisions. Approach through the lens of what Grace controls at practice, not what the coach decides. Do not address Sunday's solitary walk as concerning — it reads as healthy processing, not isolation."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "Athlete used elevated language about coaching staff ('lil mf Coach') and expressed frustration about practice equity decisions. Both are competitive frustration within normal range — no clinical indicators present. No breakdown language, no homesickness, no identity-level distress. Strikeout disappointment processed within 48 hours with active reset language. Sunday solitary walk consistent with normal post-week processing behavior. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "You said you need to reset and you'll be fine — what does your reset actually look like now, in one specific thing you do in the moment after something doesn't go your way?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  },
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+  "current_season_phase": "not available — Core Foundation athlete",
+  "forward_anchor": "not available — Core Foundation athlete"
+}
