@@ -29,7 +29,8 @@ no scores appear on the parent dashboard.
 
 The dashboard also provides access to:
 - Parent Coaching Message (Stage 3 output, push delivery)
-- Parent Weekly Insight (Stage 4 output, on-demand sections)
+- Parent Weekly Insight (Stage 4 output, 9-section scan-first
+  format with categorical indicators + blurbs)
 
 ============================================================
 2. METRIC DEFINITIONS
@@ -307,7 +308,12 @@ These are guidance for app development, not rigid requirements:
 
 5. PARENT WEEKLY INSIGHT sections are accessible by tapping
    into any dashboard metric — each metric expands to show
-   the full corresponding Parent Insight section text.
+   the full corresponding Parent Insight section (indicator
+   + blurb). The dashboard label and the Parent Insight
+   indicator may use different phrasing (dashboard is a
+   badge, insight is a section header) but always point in
+   the same direction. See Project Instructions v1.6
+   Section 21 for the locked Parent Insight indicator labels.
 
 6. NO raw numbers anywhere on the dashboard. No percentages,
    no scores, no counts. Everything is categorical.
