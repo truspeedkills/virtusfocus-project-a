@@ -115,34 +115,34 @@ Store all inputs and outputs           │
 
 | # | Question | Format | Options/Validation | Routes To |
 |---|----------|--------|--------------------|-----------|
-| Q1 | What sport do you play? | Free text | Required, 1-50 chars | Snapshot |
-| Q2 | What position do you play? | Free text | Required, 1-50 chars | Snapshot |
-| Q3 | What team or program are you part of? | Free text | Required, 1-100 chars | Snapshot |
-| Q4 | What level do you compete at? | Single select | Middle School, High School, Club/Travel, College, Professional/Semi-Pro, Other | Snapshot, Pipeline (competitive_level calibration) |
-| Q5 | How many years have you been competing in your sport? | Single select | Less than 1, 1-2, 3-5, 6-8, 9+ | Snapshot |
-| Q6 | What phase of your season are you in right now? | Single select | Off-Season, Pre-Season, In-Season, Post-Season | Snapshot (baseline_season_phase) |
+| Q1 | What is your primary sport? | Free text | Required | Snapshot |
+| Q2 | What is your position or event? (if applicable) | Free text | Required | Snapshot |
+| Q3 | What is your current team or club? (if applicable) | Free text | Required | Snapshot |
+| Q4 | What is your current competitive level? | Single select | Youth, Middle School, High School, College, Professional | Snapshot, Pipeline (competitive_level calibration) |
+| Q5 | How many years have you been competing? | Single select | Less than 1, 1-2, 3-5, 6-8, 9+ | Snapshot |
+| Q6 | What is your current season phase? | Single select | Preseason, In-season, Offseason, Returning from injury | Snapshot (baseline_season_phase), Longitudinal |
 
 #### Section 2: Self-Assessment Scales (Q7-Q14) — ABI Input
 
-All questions use a 1-5 scale: 1 = Not at all, 5 = Very much.
+All questions use a 1-5 scale with question-specific anchors.
 
-| # | Question | Pillar | ABI Role |
-|---|----------|--------|----------|
-| Q7 | I take responsibility for my own development — I don't wait to be told what to work on. | Ownership | Q_a |
-| Q8 | When things aren't going well, I look at what I can control rather than blaming others. | Ownership | Q_b |
-| Q9 | After a mistake in competition, I can reset and refocus quickly. | Composure | Q_a (also PPD amplifier for Mistake Recovery Lag) |
-| Q10 | I stay composed when I feel pressure from coaches, teammates, or the situation. | Composure | Q_b |
-| Q11 | I can maintain focus on what matters most, even when there are distractions. | Focus | Q_a |
-| Q12 | During competition, I stay locked in on my performance rather than thinking about results. | Focus | Q_b |
-| Q13 | I follow a consistent daily routine that supports my performance. | Structure | Q_a (also PPD amplifier for Structure Gap) |
-| Q14 | I organize my time well enough that school, sport, and personal life don't constantly conflict. | Structure | Q_b |
+| # | Question | Anchors | Pillar | ABI Role |
+|---|----------|---------|--------|----------|
+| Q7 | How much of your development do you currently drive yourself? | 1 = Others drive most of it / 5 = I drive almost all of it | Ownership | Q_a |
+| Q8 | How often do you review your own performance after practices or games? | 1 = Never / 5 = Every time | Ownership | Q_b |
+| Q9 | After a mistake, how quickly do you mentally reset? | 1 = It sticks with me for a while / 5 = I reset almost immediately | Composure | Q_a (also PPD amplifier for Mistake Recovery Lag) |
+| Q10 | How well do you keep your composure during big moments? | 1 = I struggle a lot / 5 = I stay very composed | Composure | Q_b |
+| Q11 | During performance, how well do you maintain your focus? | 1 = I lose focus very often / 5 = I rarely lose focus | Focus | Q_a |
+| Q12 | How much do outside distractions (phone, social media, life stress) affect your training? | 1 = They affect me a lot / 5 = They rarely affect me | Focus | Q_b |
+| Q13 | How consistent is your pre-performance mental routine? | 1 = I don't have one / 5 = Very consistent | Structure | Q_a (also PPD amplifier for Structure Gap) |
+| Q14 | How consistent is your weekly training and recovery rhythm? | 1 = Very inconsistent / 5 = Very consistent | Structure | Q_b |
 
 #### Section 3: Performance Friction (Q15-Q16) — PPD Input
 
 | # | Question | Format | Options | Routes To |
 |---|----------|--------|---------|-----------|
-| Q15 | Which of these do you deal with most? Pick 1-3. | Multi-select (1-3) | Overthinking, Confidence going up and down, Hard time letting go of mistakes, Losing focus or getting distracted, Pressure in big moments, Staying motivated or disciplined, Lack of routine or structure, Pressure from coaches or parents | PPD (selection weight +3 per bucket) |
-| Q16 | When do these show up the most? Pick 1-2. | Multi-select (1-2) | Big competitions, After a mistake, Being evaluated or watched, Busy or stressful weeks, When expectations are high | PPD (trigger amplifier) |
+| Q15 | What usually gets in the way of your best performance? | Multi-select (1-3) | Overthinking, Confidence going up and down, Hard time letting go of mistakes, Losing focus or getting distracted, Pressure in big moments, Staying motivated or disciplined, Lack of routine or structure, Pressure from coaches or parents | PPD (selection weight +3 per bucket), Snapshot |
+| Q16 | What situation makes this worse? | Multi-select (1-2) | Big competitions or high-stakes moments, After making a mistake, When being evaluated (coach, scouts, recruiters), During busy or stressful life weeks, When expectations from others are high | PPD (trigger amplifier), Snapshot |
 
 **Q15 Validation:** Minimum 1, maximum 3 selections. No "Other" option (breaks deterministic PPD scoring).
 
@@ -152,34 +152,34 @@ All questions use a 1-5 scale: 1 = Not at all, 5 = Very much.
 
 | # | Question | Format | Validation | Routes To |
 |---|----------|--------|------------|-----------|
-| Q17 | Complete this sentence: "The athlete I want to become is someone who..." | Free text | Required, 10-300 chars | Snapshot (identity claim anchor), PPD |
-| Q18 | Right before a big moment, what thought usually goes through your head? | Free text | Required, 10-300 chars | PPD (tie-breaker classification), Snapshot |
-| Q19 | Name one athlete you admire. What is it about them you want for yourself? | Free text | Required, 10-300 chars | Snapshot (competitor aspiration), Longitudinal |
+| Q17 | At my best, I compete like someone who... | Free text (sentence completion) | Required | Snapshot (identity claim anchor) |
+| Q18 | Before a big moment, what thought shows up most often? | Free text (short answer) | Required | PPD (tie-breaker classification), Snapshot |
+| Q19 | What kind of competitor do you want to become? | Free text (short answer) | Required | Snapshot (competitor aspiration), Longitudinal |
 
 #### Section 5: Behavioral Patterns (Q20-Q21)
 
 | # | Question | Format | Options | Routes To |
 |---|----------|--------|---------|-----------|
-| Q20 | When things go wrong in your sport, what's your first reaction? | Single select | Blame the situation, Get frustrated, Try to adjust right away, Reset and refocus | Snapshot (adversity_response_pattern), Pipeline |
-| Q21 | How would you describe yourself under adversity? | Single select | I get frustrated but keep going, I shut down for a while, I talk myself through it, I look to others for support | Snapshot (adversity_self_description) |
+| Q20 | When something goes wrong in competition, what do you usually do first? | Single select | Blame the situation, Get frustrated, Try to adjust right away, Reset and refocus | Snapshot (adversity_response_pattern), Pipeline |
+| Q21 | After a bad performance, how do you usually describe yourself? | Single select | I question my ability, I get frustrated but move forward, I analyze what happened and adjust, I stay confident in myself | Snapshot (adversity_self_description) |
 
 #### Section 6: Ecosystem (Q22-Q25)
 
 | # | Question | Format | Options | Routes To |
 |---|----------|--------|---------|-----------|
-| Q22 | How involved are your parents or guardians in your sport? | Single select | Very involved, Supportive and involved, Aware but hands-off, Not involved | Snapshot (Ecosystem), Parent Output calibration |
-| Q23 | When you talk about performance at home, what does it usually sound like? | Single select | Mostly supportive listening, A lot of analysis or advice after games, Pressure to perform or meet expectations, We don't discuss sports performance much | PPD (ecosystem amplifier), Snapshot (Ecosystem), Parent CM calibration |
-| Q24 | Would you like a parent or guardian to receive weekly updates about your progress? | Yes/No + conditional email | If Yes: email field (validated email format) | Parent Output (gating), Snapshot (parent_inclusion) |
-| Q25 | Who do you go to first when something is bothering you about your sport? | Single select | Parents, Coaches, Teammates, Friends outside sport, I handle things on my own | Snapshot (Ecosystem), Parent CM calibration |
+| Q22 | How involved are your parents/guardians in your performance journey? | Single select | Very involved, Somewhat involved, Not very involved, Prefer not to say | Snapshot (Ecosystem), Parent Output calibration |
+| Q23 | After games or competitions, conversations at home are usually: | Single select | Mostly supportive, A lot of analysis or advice, Pressure to perform, We don't discuss performance much | PPD (ecosystem amplifier), Snapshot (Ecosystem), Parent CM calibration |
+| Q24 | Would you like to include your parents/guardians in your mindset coaching? | Yes/No + conditional email | If Yes: email field (validated email format) | Parent Output (gating), Snapshot (parent_inclusion) |
+| Q25 | When you struggle, who do you usually talk to first? | Single select | No one, A teammate, My coach, A parent, A mentor | Snapshot (Ecosystem), Parent CM calibration |
 
 #### Section 7: Goals & Commitment (Q26-Q29)
 
 | # | Question | Format | Validation | Routes To |
 |---|----------|--------|------------|-----------|
-| Q26 | What does success look like for you 6 months from now? | Free text | Required, 10-300 chars | Snapshot |
-| Q27 | On a scale of 1-10, how strong is your mental game right now? | Scale 1-10 | Required, integer | Snapshot (mental_game_self_rating), Longitudinal |
-| Q28 | How committed are you to working on your mindset? | Single select | All in, Willing to try, Curious but unsure, Someone suggested I do this | Snapshot (commitment_level) |
-| Q29 | Anything else you want us to know? | Free text | Optional, 0-500 chars | Snapshot |
+| Q26 | What does success look like for you in the next 6 months? | Free text | Required | Snapshot |
+| Q27 | On a scale of 1-10, how would you rate your current mental game? | Scale 1-10 | Required, integer | Snapshot (mental_game_self_rating), Longitudinal |
+| Q28 | How committed are you to working on your mental game? | Single select | Just curious, Pretty serious, All-in — let's go | Snapshot (commitment_level) |
+| Q29 | Is there anything else you'd like us to know about you, your goals, or your challenges? | Free text | Optional | Snapshot |
 
 ### 2.3 Dual-Mode Detection
 
@@ -199,7 +199,7 @@ Each question feeds one or more downstream systems:
 
 | System | Input Questions |
 |--------|----------------|
-| **Athlete Snapshot** (narrative) | Q1-Q6, Q17-Q22, Q25-Q29 |
+| **Athlete Snapshot** (narrative) | All except Q24 (28 of 29 questions) |
 | **PPD Scoring** (deterministic) | Q15, Q16, Q18, Q9, Q13, Q23 |
 | **ABI Scoring** (deterministic) | Q7-Q14 |
 | **Ecosystem Profile** | Q22-Q25 |
@@ -271,11 +271,11 @@ Each Q16 selection adds a **primary** (+2) and **secondary** (+1) amplifier:
 
 | Q16 Option | Primary (+2) | Secondary (+1) |
 |------------|-------------|----------------|
-| Big competitions | Pressure Reactivity | Overthinking Loop |
-| After a mistake | Mistake Recovery Lag | Confidence Volatility |
-| Being evaluated or watched | Overthinking Loop | Confidence Volatility |
-| Busy or stressful weeks | Discipline Gap | Focus Drift |
-| When expectations are high | Pressure Reactivity | Confidence Volatility |
+| Big competitions or high-stakes moments | Pressure Reactivity | Overthinking Loop |
+| After making a mistake | Mistake Recovery Lag | Confidence Volatility |
+| When being evaluated (coach, scouts, recruiters) | Overthinking Loop | Confidence Volatility |
+| During busy or stressful life weeks | Discipline Gap | Focus Drift / Distraction |
+| When expectations from others are high | Pressure Reactivity | Confidence Volatility |
 
 Athlete selects 1-2 options. Both primary and secondary apply per selection.
 
@@ -299,9 +299,11 @@ The AI agent classifies Q18 (pressure thought free-text) into one of 4 categorie
 | Obligation | "Can't let them down," duty language | +1 Pressure Reactivity, +1 Ecosystem Friction |
 | Approach | "Execute my plan," process-focused | No adjustment (positive indicator) |
 
-**Dual classification allowed** (max 2 categories):
-- Avoidance+Obligation, Avoidance+Proving, Proving+Obligation
-- When dual: both adjustments apply (e.g., Avoidance+Obligation = +1 OL, +1 PR, +1 PR, +1 EF = +1 OL, +2 PR, +1 EF)
+**Dual classification rules:**
+- Max 2 categories per pressure thought. If 3+ categories detected, classify the 2 most dominant framings only.
+- Valid dual combinations: Avoidance+Proving, Avoidance+Obligation, Proving+Obligation
+- **Approach combinations are invalid** — Approach framing is definitionally incompatible with Avoidance/Proving/Obligation. If text contains both approach and non-approach elements, classify the non-approach framing(s) only.
+- When dual: all adjustments from both categories apply (e.g., Avoidance+Obligation = +1 OL, +1 PR, +1 PR, +1 EF = +1 OL, +2 PR, +1 EF)
 
 ### 3.5 Layer 4: Final Ranking [BACKEND]
 
@@ -356,14 +358,14 @@ The AI agent classifies Q18 (pressure thought free-text) into one of 4 categorie
 
 | Bucket | coaching_implication |
 |--------|---------------------|
-| Overthinking Loop | Focus on present-moment anchoring and pre-performance routines |
-| Confidence Volatility | Build process-based confidence independent of outcomes |
-| Mistake Recovery Lag | Develop in-competition reset sequences and hinge habits |
-| Focus Drift / Distraction | Strengthen controllable-focus habits and Bullseye clarity |
-| Pressure Reactivity | Build approach-framed pre-performance activation |
-| Discipline Gap | Establish minimum daily structure and accountability rhythms |
-| Structure Gap | Design and reinforce consistent daily routines |
-| Ecosystem Friction | Navigate external pressure while maintaining internal locus of control |
+| Overthinking Loop | Controllable-focus cues + single Bullseye target under pressure |
+| Confidence Volatility | Preparation-based confidence anchoring + evidence collection |
+| Mistake Recovery Lag | Reset reps + next-play language |
+| Focus Drift / Distraction | Focus cue routines + distraction boundaries |
+| Pressure Reactivity | Controllable-focus under pressure + approach-framed self-talk |
+| Discipline Gap | Win the Day minimums + habit stacking |
+| Structure Gap | Build pre-performance routine + daily rhythm anchors |
+| Ecosystem Friction | Communication boundaries + support system clarification |
 
 ### 3.7 Theoretical Maximum Scores Per Bucket
 
@@ -380,44 +382,54 @@ The AI agent classifies Q18 (pressure thought free-text) into one of 4 categorie
 
 ### 3.8 Edge Cases
 
-- **Minimum 1 selection** for Q15 (form validation enforces this)
-- **All buckets score 0** except selected ones after Layer 1 (non-selected buckets can still accumulate via Layers 2-3)
-- **Contradictory answers** (e.g., Q9=5 "resets quickly" but selects "Hard time letting go of mistakes"): Score as-is. Snapshot Builder adds narrative note.
-- **Layer 3 unclassifiable** (pressure thought too vague): `ppd_tie_breaker_classification = "Unclassified"`, no Layer 3 adjustments applied.
+1. **Minimum 1 selection** for Q15 — app form validation enforces 1-3 constraint.
+2. **Multi-way tie for Top 3** — when 4+ buckets tie for positions within the Top 3, the deterministic bucket priority order (1-8) resolves all ties. No ties are left unresolved.
+3. **Contradictory answers** (e.g., Q9=5 "resets quickly" but selects "Hard time letting go of mistakes"): Score as-is. Snapshot Builder may note the contradiction narratively.
+4. **Layer 3 unclassifiable** (pressure thought empty, illegible, or too vague): `ppd_tie_breaker_classification = "Unclassified"`, no Layer 3 adjustments applied.
+5. **Zero trigger selections (Q16)** — Q16 allows "up to 2" selections. If 0 selected, Layer 2C produces no adjustments. Valid state.
+6. **Approach-framed pressure thought** — If Q18 classified as Approach, no tie-breaker adjustments are made. Layer 3 is skipped. Ties resolved by bucket priority order only.
+7. **Maximum scoring scenario** — PR can reach 9: Selection(3) + two trigger primaries(2+2) + dual tie-breaker(1+1).
 
 ### 3.9 Worked Example: Grace Kindel
 
 **Inputs:**
-- Q9 = 3 (moderate reset), Q13 = 4 (decent routine)
-- Q15 selections: "Confidence going up and down", "Hard time letting go of mistakes" (2 selections)
-- Q16 selections: "Big competitions", "After a mistake"
-- Q18 tie-breaker: classified as "Avoidance"
-- Q23: "Mostly supportive listening"
+- Q9 = 3 (moderate reset), Q13 = 3 (somewhat consistent routine)
+- Q15 selections: "Confidence going up and down", "Hard time letting go of mistakes", "Pressure in big moments" (3 selections)
+- Q16 selections: "After making a mistake", "Big competitions or high-stakes moments"
+- Q18: "I need to make sure I succeed and if I don't I will let myself and the team down" → classified as **Obligation**
+- Q23: "Mostly supportive"
 
 **Layer 1 (Selection Weight):**
 - Confidence Volatility: +3
 - Mistake Recovery Lag: +3
+- Pressure Reactivity: +3
 
 **Layer 2 (Amplifiers):**
 - Q9=3 → MRL +1
-- Q13=4 → SG +0
-- Q16 "Big competitions" → PR +2, OL +1
-- Q16 "After a mistake" → MRL +2, CV +1
+- Q13=3 → SG +1
+- Q16 "After making a mistake" → MRL +2, CV +1
+- Q16 "Big competitions or high-stakes moments" → PR +2, OL +1
 - Q23 "Mostly supportive" → EF +0
 
-**Layer 3 (Tie-breaker = Avoidance):**
-- OL +1, PR +1
+**Layer 3 (Tie-breaker = Obligation):**
+- PR +1, EF +1
 
 **Final Scores:**
 
 | Bucket | L1 | L2 | L3 | Total |
 |--------|----|----|----|----- |
-| Mistake Recovery Lag | 3 | 1+2=3 | 0 | **6** |
-| Pressure Reactivity | 0 | 2 | 1 | 3 |→ not top 3 in this case |
+| Overthinking Loop | 0 | 1 | 0 | **1** |
 | Confidence Volatility | 3 | 1 | 0 | **4** |
-| Overthinking Loop | 0 | 1 | 1 | **2** |→ enters top 3 via tie-break priority |
+| Mistake Recovery Lag | 3 | 1+2=3 | 0 | **6** |
+| Focus Drift / Distraction | 0 | 0 | 0 | **0** |
+| Pressure Reactivity | 3 | 2 | 1 | **6** |
+| Discipline Gap | 0 | 0 | 0 | **0** |
+| Structure Gap | 0 | 1 | 0 | **1** |
+| Ecosystem Friction | 0 | 0 | 1 | **1** |
 
-**Result:** ppd_top_3 = [MRL(6), CV(4), OL(2)], ppd_primary_problem = "Mistake Recovery Lag"
+**Top 3** (tie at 6 broken by bucket priority: MRL #3 > PR #5):
+
+**Result:** ppd_top_3 = [MRL(6), PR(6), CV(4)], ppd_primary_problem = "Mistake Recovery Lag", ppd_tie_breaker_classification = "Obligation"
 
 ---
 
@@ -538,18 +550,18 @@ Identifies the 1-2 pillars that need the most coaching attention.
 
 ### 4.7 Worked Example: Grace Kindel
 
-**Inputs:** Q7=4, Q8=3, Q9=3, Q10=3, Q11=5, Q12=4, Q13=4, Q14=4
+**Inputs:** Q7=3, Q8=3, Q9=3, Q10=2, Q11=4, Q12=4, Q13=3, Q14=4
 
 | Pillar | Q_a | Q_b | Calculation | Score | Band |
 |--------|-----|-----|-------------|-------|------|
-| Ownership | 4 | 3 | round(3.5×2) | **7** | Moderate |
-| Composure | 3 | 3 | round(3.0×2) | **6** | Moderate |
-| Focus | 5 | 4 | round(4.5×2) | **9** | High |
-| Structure | 4 | 4 | round(4.0×2) | **8** | High |
+| Ownership | 3 | 3 | round(3.0×2) | **6** | Moderate |
+| Composure | 3 | 2 | round(2.5×2) | **5** | Moderate |
+| Focus | 4 | 4 | round(4.0×2) | **8** | High |
+| Structure | 3 | 4 | round(3.5×2) | **7** | Moderate |
 
-**Total:** 7+6+9+8 = **30** → Band: **Consistent**
+**Total:** 6+5+8+7 = **26** → Band: **Developing**
 
-**Primary Emphasis:** Lowest=Composure(6), 2nd=Ownership(7), gap=1 ≤ 2 → `["Composure", "Ownership"]`
+**Primary Emphasis:** Lowest=Composure(5), 2nd=Ownership(6), gap=1 ≤ 2 → `["Composure", "Ownership"]`
 
 ---
 
@@ -560,10 +572,10 @@ Identifies the 1-2 pillars that need the most coaching attention.
 Each day, the athlete interacts with two components:
 
 **Morning Tune-Up** (before training/school):
-- Focus word for the day (free text)
-- 3 Quick Win items (short free-text entries)
+- Focus word (system-assigned daily mental filter, e.g., "Compete", "Clarity", "Stalwart")
+- 3 Quick Win items (system-generated micro-agreements — all 3 must be acknowledged to complete)
 - Mindset Challenge acceptance (checkbox — V1 is mandatory to complete Tune-Up)
-- Mindset Challenge text (displayed by backend, not athlete-authored)
+- Mindset Challenge text (system-generated challenge presented to athlete)
 - Timestamp
 
 **Evening Review** (end of day):
@@ -579,12 +591,12 @@ Each day, the athlete interacts with two components:
 ```json
 {
   "completed": "boolean",
-  "completion_timestamp": "ISO-8601 datetime | null",
+  "completion_timestamp": "ISO-8601 datetime or null",
   "trigger_method": "self_initiated | reminder | null",
-  "mindset_challenge_accepted": "boolean | null",
-  "mindset_challenge_text": "string | null",
-  "focus_word": "string | null",
-  "quick_win_items": ["string array (3 items) | null"]
+  "mindset_challenge_accepted": "boolean or null",
+  "mindset_challenge_text": "string or null",
+  "focus_word": "string or null",
+  "quick_win_items": ["string array (3 items) or null"]
 }
 ```
 
@@ -602,30 +614,30 @@ Each day, the athlete interacts with two components:
 ```json
 {
   "submitted": "boolean",
-  "completion_timestamp": "ISO-8601 datetime | null",
+  "completion_timestamp": "ISO-8601 datetime or null",
   "trigger_method": "self_initiated | reminder | null",
   "wtd": {
     "completed": "boolean",
-    "q1_intention": "boolean | null",
-    "q2_challenge": "boolean | null",
-    "q3_adversity": "boolean | null",
-    "q4_progress": "boolean | null",
-    "q5_gratitude": "boolean | null"
+    "q1_intention": "boolean or null",
+    "q2_challenge": "boolean or null",
+    "q3_adversity": "boolean or null",
+    "q4_progress": "boolean or null",
+    "q5_gratitude": "boolean or null"
   },
   "journaling": {
     "completed": "boolean",
-    "school_work_entry": "string | null",
-    "sport_entry": "string | null",
-    "home_life_entry": "string | null"
+    "school_work_entry": "string or null",
+    "sport_entry": "string or null",
+    "home_life_entry": "string or null"
   },
   "bullseye": {
     "completed": "boolean",
-    "center_ring_items": ["string array | null"],
-    "influence_ring_items": ["string array | null"],
-    "outer_ring_items": ["string array | null"]
+    "center_ring_items": ["string array or null"],
+    "influence_ring_items": ["string array or null"],
+    "outer_ring_items": ["string array or null"]
   },
-  "mindset_challenge_completed": "boolean | null",
-  "component_sequence": ["array of component names | null"]
+  "mindset_challenge_completed": "boolean or null",
+  "component_sequence": ["array of component names or null"]
 }
 ```
 
@@ -683,56 +695,58 @@ The Daily Mini-JSON is a structured intermediate assembled by the backend from r
     "athlete_id": "string",
     "athlete_name": "string",
     "date": "YYYY-MM-DD",
-    "day_of_week": "Monday | Tuesday | ... | Sunday",
-    "program_day_number": "integer (days since athlete started)",
+    "day_of_week": "string",
+    "program_day_number": "integer",
     "week_period": "YYYY-MM-DD to YYYY-MM-DD",
-    "days_into_week": "integer 1-7",
-    "input_source": "app",
-    "tier": "base | premium"
+    "days_into_week": "integer 1-7"
   },
   "morning_tune_up": {
     "completed": "boolean",
-    "focus_word": "string | null",
-    "quick_win_items": ["string array | null"],
-    "mindset_challenge_text": "string | null",
-    "mindset_challenge_accepted": "boolean | null"
+    "focus_word": "string or null",
+    "mindset_challenge_text": "string or null",
+    "quick_win_items": ["string array (3 items) or null"]
   },
   "evening_review": {
-    "status": "complete | partial | missed",
+    "status": "completed | partial | missed",
     "wtd": {
       "completed": "boolean",
-      "daily_score": "integer 0-5 | null",
-      "category": "Win the Day | Partial Win | Missed the Mark | null",
-      "questions": {
-        "q1_intention": "boolean | null",
-        "q2_challenge": "boolean | null",
-        "q3_adversity": "boolean | null",
-        "q4_progress": "boolean | null",
-        "q5_gratitude": "boolean | null"
-      }
+      "daily_score": "integer 0-5 or null",
+      "day_category": "Win the Day | Partial Win | Missed the Mark | null",
+      "q1_intention": "boolean or null",
+      "q2_challenge": "boolean or null",
+      "q3_adversity": "boolean or null",
+      "q4_progress": "boolean or null",
+      "q5_gratitude": "boolean or null",
+      "missed_questions": ["array of Q labels or empty array"]
     },
     "journaling": {
       "completed": "boolean",
-      "school_work_entry": "string | null",
-      "sport_entry": "string | null",
-      "home_life_entry": "string | null"
+      "domains_completed": ["array of domain names or empty array"],
+      "domains_omitted": ["array of domain names or empty array"],
+      "sport_entry": "string or null",
+      "school_work_entry": "string or null",
+      "home_life_entry": "string or null"
     },
     "bullseye": {
       "completed": "boolean",
-      "center_ring_items": ["string array | null"],
-      "influence_ring_items": ["string array | null"],
-      "outer_ring_items": ["string array | null"]
+      "center_ring_items": ["string array or null"],
+      "influence_ring_items": ["string array or null"],
+      "outer_ring_items": ["string array or null"],
+      "center_count": "integer or null",
+      "influence_count": "integer or null",
+      "outer_count": "integer or null"
     },
-    "mindset_challenge_completed": "boolean | null"
+    "mindset_challenge_completed": "boolean or null"
   },
   "running_week_summary": {
     "days_completed": "integer 0-7",
     "win_days": "integer",
     "partial_win_days": "integer",
-    "miss_days": "integer",
-    "no_data_days": "integer",
+    "missed_days": "integer",
     "current_win_streak": "integer",
-    "running_weekly_score": "integer"
+    "morning_completions": "integer",
+    "evening_completions": "integer",
+    "challenge_follow_throughs": "integer"
   }
 }
 ```
@@ -741,25 +755,23 @@ The Daily Mini-JSON is a structured intermediate assembled by the backend from r
 
 | Condition | Status |
 |-----------|--------|
-| `submitted = true` AND all 3 components completed | `"complete"` |
-| `submitted = true` AND 1-2 components completed | `"partial"` |
-| `submitted = false` (hard-out lockout or didn't start) | `"missed"` |
+| `submitted = true` in raw daily event | `"completed"` |
+| `submitted = false` AND at least one component has `completed = true` | `"partial"` |
+| `submitted = false` AND no components have `completed = true` | `"missed"` |
 
 ### 5.8 Deliberately Excluded Fields (Compliance)
 
-The following fields are **NEVER included in the Mini-JSON** even though the backend collects them:
+The following fields exist in the raw daily event record but are **NEVER included in the Mini-JSON** — they are execution signal metrics that must remain backend-only per the pipeline's compliance framework.
 
 | Excluded Field | Why |
 |---------------|-----|
-| `trigger_method` (self_initiated / reminder) | Surfacing would reveal engagement monitoring |
-| `completion_timestamp` (exact times) | Timing data is backend-only computation input |
-| `reminder_timestamps` | Notification data is private |
-| `session_duration` | Time-in-app is prohibited metric |
-| `login_count` | Usage frequency is prohibited metric |
-| `screen_time` | Engagement measurement is prohibited |
-| `evening_timing_category` (on-time/late/backfill) | Backend uses for composite scores, never surfaces |
+| `completion_timestamp` (morning and evening) | Execution timing data is backend-only |
+| `trigger_method` (self_initiated / reminder) | Whether the athlete opened the app proactively or via reminder is an execution behavior metric, not coaching content |
+| `mindset_challenge_accepted` | In V1 acceptance is mandatory to complete the Tune-Up, so `completed = true` implies `accepted = true` — redundant for Stage 6. Retained in raw daily event for Stage 2 weekly processing |
+| `component_sequence` | Component completion order is a sequence integrity metric for Stage 2 weekly processing — Stage 6 references what the athlete produced, not the order |
+| Rates and percentages (completion_rate, yes_rate, follow_through_rate) | Rates are derived analytical metrics computed by Stage 2 from weekly aggregated data — the Mini-JSON provides raw counts via running_week_summary |
 
-These fields are collected by the backend for composite score computation (Section 7) but stripped before the Mini-JSON is sent to the AI pipeline.
+These fields are collected by the backend for composite score computation (Section 7) but stripped before the Mini-JSON is sent to the AI pipeline. By excluding these fields at the data layer, Stage 6 cannot accidentally leak execution signal data — compliance-by-construction.
 
 ### 5.9 Generation Timing
 
@@ -839,7 +851,7 @@ Assembled after all 7 daily events are finalized (Sunday hard-out). This is what
 | **Forward Anchor** | text (free text, optional) | "One thing you can control next week" — athlete-authored intention |
 
 **Self-Ratings Perception-Reality Alignment** (computed by Stage 2):
-- `confidence_level` compared against Ownership + Follow-Through + Recovery → Aligned / Conflated / Undervalued
+- `confidence_level` compared against Ownership Index + Follow-Through Score → Aligned / Conflated / Undervalued
 - `habit_consistency_level` compared against Rhythm Score + completion rates → Aligned / Conflated / Undervalued
 
 ### 6.3 Core Foundation Weekly Input
@@ -880,15 +892,23 @@ The backend computes three categories of execution signals from raw daily event 
 2. **15 Coach Flags** — threshold-based warning flags with 3 severity tiers
 3. **Self-Ratings Alignment** — perception vs. reality comparison using weekly self-ratings
 
+**Score Directionality:**
+- Higher = better: Ownership Index, Follow-Through Score, Rhythm Score, Review Quality Score, Recovery Score
+- Higher = worse: Drift Score, Reactivity Risk Score
+
 ### 7.2 Composite Score #1: Ownership Index
 
 **Measures:** Self-initiation vs. reminder dependency
 
+**Input fields:** `evening_review.self_initiated_count` (0-7), `evening_review.backfill_count` (0-7), `morning_tune_up.on_time_count` (0-7)
+
 | Component | Weight | Formula | Range |
 |-----------|--------|---------|-------|
-| C1: Evening Self-Initiation Rate | 50% | `(self_initiated_count / max(full_completion_count + partial_completion_count, 1)) × 100` | 0-100 |
-| C2: Morning Proactivity Rate | 30% | `(morning_on_time_count / max(morning_completed_count, 1)) × 100` | 0-100 |
-| C3: Backfill Absence Rate | 20% | `((7 - backfill_count) / 7) × 100` | 0-100 |
+| C1: Evening Self-Initiation | 50% | `(self_initiated_count / 7) × 100` | 0-100 |
+| C2: Morning Proactivity | 30% | `(morning_tune_up.on_time_count / 7) × 100` | 0-100 |
+| C3: Backfill Absence | 20% | `((7 - backfill_count) / 7) × 100` | 0-100 |
+
+All three components use **7 (days in week) as denominator.**
 
 **Final Score:** `round(C1 × 0.50 + C2 × 0.30 + C3 × 0.20)`
 
@@ -900,17 +920,24 @@ The backend computes three categories of execution signals from raw daily event 
 | 40-69 | Moderate |
 | 0-39 | Low |
 
+**Edge Cases:**
+- `input_source = "core_foundation"` → insufficient data
+- All app metrics = 0: C1=0, C2=0, C3=100 → score=20, band=Low
+- Perfect week: C1=100, C2=100, C3=100 → score=100, band=High
+
 ### 7.3 Composite Score #2: Drift Score
 
-**Measures:** Engagement erosion over the week (higher = worse)
+**Measures:** Presence of engagement erosion indicators this week (higher = worse). Single-week measurement — cross-week drift trajectory is determined by comparing Drift Scores across weeks.
+
+**Input fields:** `evening_review.completion_rate` (0.00-1.00, full only), `evening_review.late_submission_count` (0-7), `morning_tune_up.completion_rate` (0.00-1.00), `journaling_behavior.depth_profile` (enum), `bullseye_behavior.completion_reliability` (enum)
 
 | Component | Weight | Formula | Range |
 |-----------|--------|---------|-------|
-| C1: Evening Completion Erosion | 25% | Compare first-half vs. second-half evening completion rates. If second-half < first-half: `((first_half_rate - second_half_rate) / max(first_half_rate, 0.01)) × 100`. If equal or improving: 0 | 0-100 |
-| C2: Morning Completion Erosion | 20% | Same pattern as C1 but for morning tune-up | 0-100 |
-| C3: Late Submission Increase | 20% | `(late_submission_count / max(full_completion_count + partial_completion_count, 1)) × 100` | 0-100 |
-| C4: Journaling Compression | 20% | If depth_profile = Compressed or Minimal: proportional score. Thorough/Adequate = 0 | 0-100 |
-| C5: Bullseye Disengagement | 15% | `((7 - bullseye_completed_count) / 7) × 100` if bullseye completed < 4; else 0 | 0-100 |
+| C1: Evening Completion Erosion | 25% | `(1 - evening_review.completion_rate) × 100` | 0-100 |
+| C2: Morning Completion Erosion | 20% | `(1 - morning_tune_up.completion_rate) × 100` | 0-100 |
+| C3: Late Submission Rate | 20% | `(late_submission_count / 7) × 100` | 0-100 |
+| C4: Journaling Compression | 20% | Enum mapping: Thorough=0, Adequate=25, Compressed=65, Minimal=100, insufficient data=0 (neutral) | 0-100 |
+| C5: Bullseye Disengagement | 15% | Enum mapping: Consistent=0, Partial=50, Inconsistent=100, insufficient data=0 (neutral) | 0-100 |
 
 **Final Score:** `round(C1 × 0.25 + C2 × 0.20 + C3 × 0.20 + C4 × 0.20 + C5 × 0.15)`
 
@@ -922,14 +949,21 @@ The backend computes three categories of execution signals from raw daily event 
 | 21-45 | Early |
 | 46-100 | Active |
 
+**Edge Cases:**
+- `input_source = "core_foundation"` → insufficient data
+- All worst (0/7 completion, Minimal, Inconsistent): score=100, band=Active
+- `insufficient data` on enum fields: treated as 0 (neutral). Absence of data is not evidence of drift.
+
 ### 7.4 Composite Score #3: Follow-Through Score
 
 **Measures:** Mindset Challenge acceptance-to-execution rate
 
+**Input fields:** `morning_tune_up.days_completed` (0-7), `morning_tune_up.mindset_challenge_accepted_count` (0-7), `morning_tune_up.mindset_challenge_completed_count` (0-7), `morning_tune_up.mindset_challenge_follow_through_rate` (0.00-1.00)
+
 | Component | Weight | Formula | Range |
 |-----------|--------|---------|-------|
-| C1: Follow-Through Rate | 70% | `(mindset_challenge_completed_count / max(mindset_challenge_accepted_count, 1)) × 100` | 0-100 |
-| C2: Acceptance Rate | 30% | `(mindset_challenge_accepted_count / max(morning_completed_count, 1)) × 100` | 0-100 |
+| C1: Follow-Through Rate | 70% | `follow_through_rate × 100` | 0-100 |
+| C2: Challenge Acceptance Rate | 30% | `(accepted_count / max(days_completed, 1)) × 100` | 0-100 |
 
 **Final Score:** `round(C1 × 0.70 + C2 × 0.30)`
 
@@ -941,22 +975,30 @@ The backend computes three categories of execution signals from raw daily event 
 | 40-74 | Moderate |
 | 0-39 | Weak |
 
-**Note:** In V1, Tune-Up completion requires challenge acceptance, so C2 = 100 whenever morning is completed. C2 becomes meaningful in future V2 when acceptance is optional.
+**Note:** In V1, Tune-Up completion requires challenge acceptance, so C2 = 100 whenever morning is completed. C2 becomes meaningful in future V2 when acceptance is optional. No sample-size cap — the C2 weighting naturally penalizes low acceptance (e.g., 1 accepted out of 7 mornings gives C2 = 14.3).
+
+**Edge Cases:**
+- `input_source = "core_foundation"` → insufficient data
+- `days_completed = 0` → insufficient data (no morning engagement)
+- `accepted_count = 0, days_completed > 0`: C1=0, C2=0 → score=0, band=Weak
+- Perfect week (7/7 accepted, 7/7 completed): score=100, band=Strong
 
 ### 7.5 Composite Score #4: Rhythm Score
 
 **Measures:** Timing consistency and sequence integrity
 
+**Input fields:** `morning_tune_up.on_time_count` (0-7), `morning_tune_up.days_completed` (0-7), `evening_review.on_time_count` (0-7), `evening_review.late_submission_count` (0-7), `evening_review.backfill_count` (0-7), `evening_review.sequence_integrity` (enum)
+
 | Component | Weight | Formula | Range |
 |-----------|--------|---------|-------|
-| C1: Morning Timing Consistency | 25% | `(morning_on_time_count / max(morning_completed_count, 1)) × 100` | 0-100 |
-| C2: Evening Timing Consistency | 25% | `(evening_on_time_count / max(evening_submitted_count, 1)) × 100` | 0-100 |
-| C3: Sequence Integrity | 30% | Intact=100, Partial=50, Broken=0, insufficient data=50 | 0-100 |
-| C4: Non-Backfill Rate | 20% | `((evening_submitted_count - backfill_count) / max(evening_submitted_count, 1)) × 100` | 0-100 |
+| C1: Morning Timing Rate | 25% | If `days_completed = 0`: 0. Else: `(on_time_count / days_completed) × 100` | 0-100 |
+| C2: Evening Timing Rate | 25% | `total_submitted = on_time_count + late_submission_count + backfill_count`. If `total_submitted = 0`: 0. Else: `(on_time_count / total_submitted) × 100` | 0-100 |
+| C3: Sequence Integrity | 30% | Enum mapping: Intact=100, Partial=50, Broken=0, insufficient data=50 (neutral) | 0-100 |
+| C4: Non-Backfill Rate | 20% | `total_submitted = on_time_count + late_submission_count + backfill_count`. If `total_submitted = 0`: 0. Else: `((total_submitted - backfill_count) / total_submitted) × 100` | 0-100 |
 
 **Final Score:** `round(C1 × 0.25 + C2 × 0.25 + C3 × 0.30 + C4 × 0.20)`
 
-**Important:** Rhythm Score uses **completed-sessions denominator** (not 7). This measures timing quality of actual engagement, not penalizing non-engagement (which Ownership and Drift already capture).
+**Important:** Rhythm Score uses **completed-sessions denominator** (not 7). This measures timing quality of actual engagement. Sparse engagement is penalized through C3 (sequence likely Partial/Broken) and C4 (if backfills were involved), not through C1/C2.
 
 **Bands:**
 
@@ -966,15 +1008,22 @@ The backend computes three categories of execution signals from raw daily event 
 | 40-74 | Variable |
 | 0-39 | Disrupted |
 
+**Edge Cases:**
+- `input_source = "core_foundation"` → insufficient data
+- Zero engagement: C1=0, C2=0, C3=50, C4=0 → score=15, band=Disrupted
+- Perfect week: C1=100, C2=100, C3=100, C4=100 → score=100, band=Stable
+
 ### 7.6 Composite Score #5: Review Quality Score
 
-**Measures:** Behavioral execution quality of the evening review
+**Measures:** Behavioral execution quality of the evening review (completeness depth, component engagement breadth, component balance)
+
+**Input fields:** `evening_review.full_completion_count` (0-7), `evening_review.partial_completion_count` (0-7), `evening_review.completion_rate` (0.00-1.00, full only), `evening_review.component_completion.wtd_completed_count` (0-7), `evening_review.component_completion.journaling_completed_count` (0-7), `evening_review.component_completion.bullseye_completed_count` (0-7)
 
 | Component | Weight | Formula | Range |
 |-----------|--------|---------|-------|
-| C1: Full Completion Rate | 40% | `(full_completion_count / 7) × 100` | 0-100 |
-| C2: Component Engagement Depth | 35% | Average of (wtd_completed_count + journaling_completed_count + bullseye_completed_count) / 3, as percentage of submitted evenings | 0-100 |
-| C3: Component Balance | 25% | `(min_component_count / max(max_component_count, 1)) × 100`. Catches cherry-picking (e.g., always WTD, never journaling) | 0-100 |
+| C1: Full Completion Rate | 40% | `completion_rate × 100` | 0-100 |
+| C2: Component Engagement Rate | 35% | `(wtd_completed + journaling_completed + bullseye_completed) / 21 × 100` where 21 = 3 components × 7 days | 0-100 |
+| C3: Component Balance | 25% | `min_comp = min(wtd, journaling, bullseye)`, `max_comp = max(wtd, journaling, bullseye)`. If `max_comp = 0`: 0. Else: `(min_comp / max_comp) × 100` | 0-100 |
 
 **Final Score:** `round(C1 × 0.40 + C2 × 0.35 + C3 × 0.25)`
 
@@ -986,42 +1035,63 @@ The backend computes three categories of execution signals from raw daily event 
 | 40-69 | Moderate |
 | 0-39 | Low |
 
+**Cherry-picker detection example:** An athlete with 5/7 full completion but 7/0/7 components (skips journaling): C1=71.4, C2=66.7, C3=0 → score=52, band=Moderate. The zero balance score drops what would otherwise be High.
+
+**Edge Cases:**
+- `input_source = "core_foundation"` → insufficient data
+- Zero engagement: C1=0, C2=0, C3=0 → score=0, band=Low
+- All partial, no full (0 full, 5 partial, 7/7/7 components): C1=0, C2=100, C3=100 → score=60, band=Moderate
+
 ### 7.7 Composite Score #6: Recovery Score
 
-**Measures:** Post-disruption execution recovery. **Event-triggered** — only computed when a disruption occurs.
+**Measures:** Post-disruption execution recovery. **Event-triggered** — only computed when a WTD disruption (Missed day) occurs.
 
-| Component | Weight | Formula | Range |
-|-----------|--------|---------|-------|
-| C1: Recovery Speed | 60% | Based on `recovery_speed_days`: 1 day=100, 2 days=80, 3 days=60, 4 days=40, 5 days=20, 6-7 days or "did not recover"=0 | 0-100 |
-| C2: Engagement Maintenance | 25% | Evening completion rate in the 3 days following disruption | 0-100 |
-| C3: Sequence Preservation | 15% | Whether designed component order was maintained post-disruption | 0-100 |
-
-**Final Score:** `round(C1 × 0.60 + C2 × 0.25 + C3 × 0.15)`
+**Input fields:** `wtd_question_patterns.recovery_speed_days`, `wtd_question_patterns.cross_week_recovery.prior_week_unresolved_miss`, `wtd_question_patterns.cross_week_recovery.recovery_days`, `morning_tune_up.completion_rate` (0.00-1.00), `evening_review.completion_rate` (0.00-1.00), `evening_review.sequence_integrity` (enum)
 
 **5 States:**
 
 | State | When | Score | Band |
 |-------|------|-------|------|
 | Calculated | Disruption occurred and recovery measurable | 0-100 | Strong 70+ / Moderate 40-69 / Low 0-39 |
-| No disruption | No Missed or low-WTD day this week | Fixed 85 | Strong |
-| Pending Data | Disruption on Sunday (recovery unmeasurable this week) | "Pending Data" | "Pending Data" |
+| No disruption | `recovery_speed_days = "not applicable"` AND `prior_week_unresolved_miss = "No"` | Fixed 85 | Strong |
+| Pending Data | `recovery_speed_days = "Pending Data"` (disruption on last day of week, recovery unmeasurable this week) | "Pending Data" | "Pending Data" |
 | Insufficient data | First week or no prior data | "insufficient data" | "insufficient data" |
 | CF fallback | Core Foundation athlete | "insufficient data" | "insufficient data" |
 
-**Recovery Speed measurement:** Days from a Missed day (WTD 0-1) to next Win day (WTD 4-5). Uses fastest recovery instance when multiple Missed days occur.
+**Calculated State Formula (State 1):**
 
-**Cross-week recovery:** If a Missed day occurs on Sunday, recovery is measured in the **next week's** early days via `cross_week_recovery.recovery_days` in the weekly Interpretation JSON.
-
-### 7.8 Composite Score #7: Reactivity Risk Score
-
-**Measures:** Volatile execution patterns (higher = worse)
+**C1 input determination (priority order):**
+- If BOTH `recovery_speed_days` (within-week) AND `cross_week_recovery.recovery_days` are valid integers → use the SLOWER of the two (higher number)
+- If ONLY `recovery_speed_days` is a valid integer → use it
+- If ONLY `cross_week_recovery.recovery_days` is a valid integer → use it
+- If either value = "did not recover" → C1 = 0
 
 | Component | Weight | Formula | Range |
 |-----------|--------|---------|-------|
-| C1: WTD Intraweek Volatility | 30% | Standard deviation of daily WTD scores, normalized to 0-100 | 0-100 |
-| C2: Sequence Disruption Frequency | 25% | Days where component_sequence deviates from designed order, as % of submitted days | 0-100 |
-| C3: Bullseye Contradiction Rate | 20% | Days where outer-ring items > center-ring items, as % of Bullseye-completed days | 0-100 |
-| C4: Engagement Incompletion Rate | 25% | `(partial_completion_count / max(full_completion_count + partial_completion_count, 1)) × 100` — ratio of partial to full completions as reactivity signal | 0-100 |
+| C1: Recovery Speed | 60% | Lookup table: 1 day=100, 2 days=85, 3 days=70, 4 days=50, 5 days=35, 6 days=20, 7 days=10, did not recover=0 | 0-100 |
+| C2: Engagement Maintenance | 25% | `((morning_completion_rate + evening_completion_rate) / 2) × 100` — average of full-week morning AND evening completion rates | 0-100 |
+| C3: Sequence Preservation | 15% | Enum mapping from `sequence_integrity`: Intact=100, Partial=50, Broken=0, insufficient data=50 (neutral) | 0-100 |
+
+**Final Score:** `round(C1 × 0.60 + C2 × 0.25 + C3 × 0.15)`
+
+**Why fixed 85 for no-disruption:** Athlete was not tested. 85 places them in Strong without claiming perfect recovery evidence.
+
+**Recovery Speed measurement:** Days from a Missed day (WTD 0-1) to next Win day (WTD 4-5). Uses fastest recovery instance when multiple Missed days occur.
+
+**Cross-week recovery:** If a Missed day occurs on the last day of the week, `recovery_speed_days = "Pending Data"` and recovery is measured in the **next week's** early days via `cross_week_recovery.recovery_days`. The prior week's JSON is NEVER modified — forward-only flow.
+
+### 7.8 Composite Score #7: Reactivity Risk Score
+
+**Measures:** Volatile execution patterns (higher = worse). Distinct from Drift Score: Drift = gradual consistent erosion; Reactivity = volatile event-driven disruption.
+
+**Input fields:** `wtd_question_patterns.intraweek_volatility` (enum), `evening_review.sequence_integrity` (enum), `bullseye_behavior.contradiction_detected` (enum), `evening_review.full_completion_count` (0-7), `evening_review.partial_completion_count` (0-7)
+
+| Component | Weight | Formula | Range |
+|-----------|--------|---------|-------|
+| C1: WTD Intraweek Volatility | 30% | Enum mapping: Low=0, Moderate=50, High=100, insufficient data=0 (neutral) | 0-100 |
+| C2: Sequence Disruption | 25% | Enum mapping from `sequence_integrity`: Intact=0, Partial=50, Broken=100, insufficient data=0 (neutral) | 0-100 |
+| C3: Bullseye Contradiction | 20% | Enum mapping from `contradiction_detected`: No=0, Yes=100, insufficient data=0 (neutral) | 0-100 |
+| C4: Engagement Incompletion Rate | 25% | `(partial_completion_count / max(full_completion_count + partial_completion_count, 1)) × 100` — ratio of partial-to-full captures "started but abandoned" reactivity | 0-100 |
 
 **Final Score:** `round(C1 × 0.30 + C2 × 0.25 + C3 × 0.20 + C4 × 0.25)`
 
@@ -1032,6 +1102,11 @@ The backend computes three categories of execution signals from raw daily event 
 | 0-25 | Low |
 | 26-50 | Moderate |
 | 51-100 | Elevated |
+
+**Edge Cases:**
+- `input_source = "core_foundation"` → insufficient data
+- All enum fields = "insufficient data" + 0 partial: score=0, band=Low. Absence of data is not evidence of reactivity.
+- All reviews missed (full=0, partial=0): C4=0. Missing engagement = Drift's domain, not Reactivity.
 
 ### 7.9 Composite Score Summary Table
 
@@ -1109,19 +1184,35 @@ The backend computes three categories of execution signals from raw daily event 
 
 ### 7.11 Self-Ratings Alignment Classification
 
-Compares the athlete's weekly self-assessment (from weekly check-in) against computed execution data.
+Compares the athlete's weekly self-assessment (from weekly check-in) against computed execution data. Each dimension is classified independently.
+
+**Self-Perception Tier Mapping (both dimensions):**
+
+| Self-Rating (1-10) | Perception Tier |
+|---------------------|-----------------|
+| 8-10 | High |
+| 4-7 | Moderate |
+| 1-3 | Low |
 
 **Dimension 1: Confidence Alignment**
-- Input: `self_ratings.confidence_level` (1-10) vs. average of Ownership Index band + Follow-Through Score band + Recovery Score band
-- Mapping: If self-rating suggests high confidence (7-10) but execution bands are Low/Weak/Low → **Conflated**
-- If self-rating suggests low confidence (1-4) but execution bands are High/Strong/Strong → **Undervalued**
-- Otherwise → **Aligned**
+- Input: `self_ratings.confidence_level` (1-10) vs. Ownership Index band + Follow-Through Score band (2 scores)
+- Execution tier determination: count top-band scores (Ownership High = +1 top, Follow-Through Strong = +1 top) and bottom-band scores (Ownership Low = +1 bottom, Follow-Through Weak = +1 bottom). High: top count = 2. Low: bottom count = 2. Moderate: all other combinations.
+- **Aligned:** confidence perception tier == confidence execution tier
+- **Conflated:** confidence perception tier > confidence execution tier (athlete self-rates higher than execution supports)
+- **Undervalued:** confidence perception tier < confidence execution tier (execution exceeds self-assessment)
+- If `confidence_level = null` → "insufficient data"
+- If either composite score band = "insufficient data" → "insufficient data"
 
 **Dimension 2: Habit Consistency Alignment**
-- Input: `self_ratings.habit_consistency_level` (1-10) vs. Rhythm Score band + completion rates
-- Same Conflated / Undervalued / Aligned logic
+- Input: `self_ratings.habit_consistency_level` (1-10) vs. Rhythm Score band (1 score)
+- Execution tier mapping: Stable → High, Variable → Moderate, Disrupted → Low
+- **Aligned:** habit perception tier == habit execution tier
+- **Conflated:** habit perception tier > habit execution tier
+- **Undervalued:** habit perception tier < habit execution tier
+- If `habit_consistency_level = null` → "insufficient data"
+- If `rhythm_score.band = "insufficient data"` → "insufficient data"
 
-**Output:** Each dimension classified independently.
+**Output:**
 
 ```json
 "self_ratings_alignment": {
@@ -1154,7 +1245,9 @@ Stage 7 is **entirely deterministic** — the backend implements this with zero 
 ```json
 {
   "athlete_id": "string",
-  "date": "YYYY-MM-DD",
+  "signal_date": "YYYY-MM-DD",
+  "program_day_number": "integer",
+  "days_into_week": "integer 1-7",
   "traffic_light": "GREEN | YELLOW | ORANGE | GRAY",
   "day_outcome": "Aligned | Building | Reset Day | null",
   "focus_alignment": "Centered | Mixed | Drifting | null",
@@ -1162,20 +1255,28 @@ Stage 7 is **entirely deterministic** — the backend implements this with zero 
   "weekly_trajectory": "Building Week | Steady Week | Cooling Week | null",
   "has_data": "boolean",
   "_internal": {
-    "point_score": "integer",
-    "calibration_applied": "string | null",
-    "thresholds": { "green_min": "integer", "yellow_min": "integer" }
+    "point_score": "integer -4 to +6 | null",
+    "calibration_applied": "emotional_intensity | growth_phase | none",
+    "calibration_source": "High | Emerging | Regressing | Consistent | Leadership | none",
+    "threshold_shift": "integer -1, 0, or +1",
+    "green_min": "integer",
+    "orange_max": "integer"
   }
 }
 ```
 
 **`_internal` fields are backend-only** — NEVER exposed to coaches, parents, or athletes.
 
+**Field notes:**
+- `weekly_trajectory`: null when `days_into_week <= 2` OR `days_completed < 2` (too early for meaningful trajectory).
+- `has_data`: false when `traffic_light = "GRAY"` (entire Evening Review missed). true otherwise.
+- `_internal.point_score`: null when GRAY (points not computed).
+
 ### 8.3 Step 1: Gray State Check
 
 **Execute first, before any scoring.**
 
-If `evening_review.status == "missed"` → Set `traffic_light = "GRAY"`, all contributing signals = `null`, `has_data = false`. **Skip all remaining steps.**
+If `evening_review.status == "missed"` → Set `traffic_light = "GRAY"`, all contributing signals = `null`, `has_data = false`, `_internal.point_score = null`, `_internal.calibration_applied = "none"`, `_internal.threshold_shift = 0`. Weekly Trajectory MAY still be populated (uses running week summary, not today's evening review). **Skip all remaining steps.**
 
 ### 8.4 Step 2: Contributing Signal Determination
 
@@ -1205,18 +1306,18 @@ If `evening_review.status == "missed"` → Set `traffic_light = "GRAY"`, all con
 | Tune-Up completed + challenge accepted + challenge NOT completed | Gap |
 | No Tune-Up OR challenge not accepted | null |
 
-#### Weekly Trajectory (from running week summary, after Day 2)
+#### Weekly Trajectory (from running week summary, computes from Day 3+)
 
 | Condition | Weekly Trajectory |
 |-----------|------------------|
 | `win_rate >= 0.50` AND `miss_rate <= 0.25` | Building Week |
 | `miss_rate >= 0.50` OR (`misses > wins` AND `partials <= 1`) | Cooling Week |
 | Everything else | Steady Week |
-| Day 1 (insufficient data) | null |
+| `days_into_week <= 2` OR `days_completed < 2` | null |
 
 Where:
 - `win_rate = win_days / days_completed`
-- `miss_rate = (miss_days + no_data_days) / days_completed`
+- `miss_rate = missed_days / days_completed`
 
 ### 8.5 Step 3: Hidden Input Determination
 
@@ -1226,9 +1327,9 @@ These two inputs contribute to the point score but are **NEVER displayed to anyo
 
 | Condition | Value |
 |-----------|-------|
-| Journaling completed with entries in 2+ domains | Broad |
-| Journaling completed with entry in exactly 1 domain | Narrow |
-| No journaling or all domains empty | None |
+| `domains_completed` = 3 (exactly 3 domains) | Broad |
+| `domains_completed` = 1 or 2 | Narrow |
+| No journaling or evening review missed | None |
 
 #### Morning Engagement
 
@@ -1287,11 +1388,11 @@ Applied in priority order — **first match wins, no stacking:**
 
 ### 8.8 Calibration Cache Management
 
-- **Storage:** Per-athlete key-value store with fields: `emotional_intensity`, `growth_phase`, `growth_phase_movement`, `last_updated_week`
+- **Storage:** Per-athlete key-value store with fields: `emotional_intensity`, `growth_phase`, `growth_phase_movement`, `cache_updated` (timestamp)
 - **Update trigger:** When a new Interpretation JSON arrives from Stage 2
 - **Read timing:** When computing each day's traffic light
 - **First week (no cache):** Use standard thresholds (Priority 4)
-- **Stale cache:** If `last_updated_week` is more than 2 weeks old, fall back to standard thresholds
+- **Cache lifetime:** Cached values persist until the next Interpretation JSON is produced. The cache is never manually expired. The `emotional_intensity` modifier self-expires via its application rule (`days_into_week <= 3`), not via cache expiration.
 
 ### 8.9 Team & Position Group Aggregation
 
@@ -1329,7 +1430,7 @@ Where:
 | 7 | All signals positive | Score can reach +6. Traffic light = GREEN. System works as designed. |
 | 8 | Below minimum group size | Do not generate team/position aggregation. Return null for group tier. |
 | 9 | Zero non-Gray data in group | All athletes missed → no aggregation possible. Return null. |
-| 10 | Partial week trajectory | Weekly Trajectory computed from available days. Day 1 = null. Day 2+ uses running_week_summary. |
+| 10 | Partial week trajectory | Weekly Trajectory computed from completed days only. Days 1-2 = null. Day 3+ uses running_week_summary rates from `days_completed`. |
 | 11 | All Bullseye rings zero items | Focus Alignment = null (no data to determine ring balance). |
 | 12 | Influence ring ties (center == outer, influence has most) | Focus Alignment = Mixed. |
 
@@ -1351,7 +1452,7 @@ Parents see simplified labels. **Contributing signals are HIDDEN from parents.**
 - **Trigger:** After Mini-JSON generation (Section 5.9)
 - **Before:** Stage 6 (snippet generation) and Morning Tune-Up release
 - **Computation time:** Milliseconds per athlete (deterministic rules, no AI)
-- **Daily sequence:** Hard-out → Mini-JSON → Stage 7 → Stage 6 → Tune-Up release with snippet
+- **Daily sequence:** Mini-JSON generation (starts 2 hours before hard-out) → Stage 7 → Stage 6 → hard-out → Tune-Up release with snippet
 
 ---
 
@@ -1413,12 +1514,11 @@ Daily Snippet: stored by date, not week period.
 
 **Daily Cycle:**
 ```
-1. Hard-out lockout (default 6:00 AM)
-2. Backend assembles Mini-JSON for each athlete
-3. Backend computes Stage 7 signal for each athlete (milliseconds)
-4. Backend sends Mini-JSON + context to Stage 6 (AI generates snippet)
-5. Stage 6 returns snippet (seconds per athlete with batching)
-6. Morning Tune-Up released to athlete with snippet attached
+1. [hard-out - 2h] Backend generates Mini-JSON for each athlete
+2. Backend computes Stage 7 signal for each athlete (milliseconds)
+3. Backend sends Mini-JSON + context to Stage 6 (AI generates snippet)
+4. Stage 6 returns snippet (seconds per athlete with batching)
+5. [hard-out] Morning Tune-Up released to athlete with snippet attached
 ```
 
 **Weekly Cycle:**
@@ -1439,10 +1539,12 @@ Daily Snippet: stored by date, not week period.
 - Always: Coaching Message + Deep Dive
 - Conditional: Parent Coaching Message (only when `parent_inclusion = true` AND tier is D2C Premium + Parent)
 
-**Stage 4 generates 1-3 outputs per run:**
-- Always (Institutional): Weekly Performance Insight
-- Conditional: Parent Weekly Insight (D2C Premium + Parent)
-- Conditional: Weekly Team Snapshot (when 5+ athletes on a team)
+**Stage 4 generates 1-3 outputs per run (tier-dependent):**
+- Conditional: Weekly Performance Insight (Institutional tier only)
+- Conditional: Parent Weekly Insight (D2C Premium + Parent tier, when `parent_inclusion = true`)
+- Conditional: Weekly Team Snapshot (Institutional tier, when 5+ athletes on a team)
+
+**Note:** Stage 4 runs for both Institutional and D2C Premium + Parent tiers, producing different outputs for each. Institutional gets Coach Insight + Team Snapshot. Premium + Parent gets Parent Insight.
 
 ### 9.5 Interpretation JSON Key Fields
 
@@ -1501,7 +1603,7 @@ Dashboards are **presentation layers only** — they render data from pipeline o
 
 | Label | Condition | Color |
 |-------|-----------|-------|
-| Predictable | 4+ consecutive same-tier weeks | Green |
+| Predictable | 4+ consecutive same-tier weeks with Stable or Improving consistency signal | Green |
 | Transitional | Mix of 2 tiers, 0-1 Reset weeks in window | Yellow |
 | Fluctuating | 3+ tier changes in 4 weeks OR 2+ Reset weeks | Orange |
 
@@ -1537,7 +1639,7 @@ Dashboards are **presentation layers only** — they render data from pipeline o
 | Metric | Source Field | Values |
 |--------|-------------|--------|
 | Weekly Tier | `win_the_day.weekly_tier` | Growth / Mixed / Reset |
-| Consistency Signal | `consistency_signal` | Stable / Improving / Variable / Declining |
+| Consistency Signal | `consistency_signal` | Stable / Improving / Variable (see note in 10.1.4 regarding "Declining") |
 | Stress Load | `stress_load` | Low / Moderate / Elevated |
 | Confidence Momentum | `confidence_momentum` | Building / Stable / Variable |
 | Focus Distribution | `focus_distribution` | Center-Dominant / Mixed / Outer-Ring Drift |
@@ -1559,7 +1661,7 @@ Dashboards are **presentation layers only** — they render data from pipeline o
 | Metric | Green | Yellow | Orange | Gray |
 |--------|-------|--------|--------|------|
 | Weekly Tier | Growth | Mixed | Reset | — |
-| Consistency | Stable / Improving | Variable (no other negatives) | Variable (with negatives) / Declining | insufficient data |
+| Consistency | Stable / Improving | Variable (no other negatives) | Variable (with negatives) | insufficient data |
 | Stress Load | Low | Moderate | Elevated | — |
 | Confidence | Building | Stable | Variable | insufficient data |
 | Focus Distribution | Center-Dominant | Mixed | Outer-Ring Drift | insufficient data |
@@ -1567,6 +1669,8 @@ Dashboards are **presentation layers only** — they render data from pipeline o
 | Composite Readiness | Positive | Steady | Attention | — |
 | Pattern Stability | Predictable | Transitional | Fluctuating | < 4 weeks |
 | Response Recovery | Rapid | Moderate | Extended | No Recovery Data |
+
+**Note on "Declining" consistency signal:** The Interpretation JSON uses `consistency_signal` values including "Declining" (per JSON Rules), but the Dashboard Metrics Reference source does not explicitly map "Declining" to a color band. The source handles the Consistency row via "Variable" with contextual modifiers (Yellow when no other negatives, Orange when co-occurring with other negative signals). If the backend encounters a "Declining" value, treat it as Orange. This mapping is an implementation inference — confirm with specification owner if precise color mapping for "Declining" is needed.
 
 **Critical:** Orange ≠ "at-risk." No red color anywhere in the system. No evaluation implication. Orange means "coaching staff might want context" — nothing more.
 
@@ -1876,7 +1980,7 @@ When `input_source = "core_foundation"`, the backend populates:
 | **Athlete Snapshot (Stage 1)** | Yes | Yes | Yes | Yes |
 | **Daily Mini-JSON Assembly** | Yes | Yes | Yes | Yes |
 | **Stage 7 Daily Signal** | No | Yes | Yes | Yes |
-| **Stage 6 Daily Snippet** | Yes (7/wk Mon-Sun) | Yes (6/wk Tue-Sun) | Yes (6/wk Tue-Sun) | Yes (7/wk Mon-Sun) |
+| **Stage 6 Daily Snippet** | Yes (7/wk Mon-Sun) | Yes (6/wk Tue-Sun) | Yes (6/wk Tue-Sun) | Yes (6/wk Tue-Sun) |
 | **Stage 2 Interpretation** | No | Yes | Yes | Yes |
 | **Stage 3 Coaching Message + Deep Dive** | No | Yes | Yes | Yes |
 | **Stage 3 Parent Coaching Message** | No | No | Yes | No |
@@ -1892,8 +1996,7 @@ When `input_source = "core_foundation"`, the backend populates:
 **Key conditional logic notes:**
 
 - **Base tier operates standalone** — Mini-JSON + Athlete Snapshot are the only inputs to Stage 6. No weekly pipeline runs. Athletes receive 7 daily snippets per week and nothing else from the AI pipeline.
-- **Premium Monday skip** — Stage 6 does not generate a Monday snippet for Premium athletes because they receive the full Coaching Message + Deep Dive on Monday instead.
-- **Institutional snippets are 7/week** — no Monday skip because coaches (not just athletes) are the audience, and institutional athletes receive snippets alongside (not instead of) the weekly output.
+- **Monday skip (Premium and Institutional)** — Stage 6 does not generate a Monday snippet for Premium or Institutional athletes because they receive the full Coaching Message + Deep Dive on Monday instead. Both tiers produce 6 snippets per week (Tue-Sun). Only Base tier produces 7 snippets per week (Mon-Sun) since Base has no weekly pipeline.
 - **Parent outputs gated by `parent_inclusion`** — even in the Premium + Parent tier, Parent CM and Parent Insight are only generated when the athlete's `parent_inclusion` flag is true (Q24 = Yes).
 - **Team Snapshot requires 5+ athletes** — if a team or program has fewer than 5 athletes, no Team Snapshot is generated.
 - **Stage 5 Audit is internal** — the audit result (PASS / REJECT) is never shown to any end user. It triggers Stage 3 regeneration if the output fails quality checks.
@@ -1915,9 +2018,15 @@ When `input_source = "core_foundation"`, the backend populates:
 | **Traffic Light** | Daily indicator: GREEN / YELLOW / ORANGE / GRAY |
 | **Coach Flags** | 15 execution-behavior-derived warnings (monitor / attention / action severity) |
 | **Forward Anchor** | Athlete-authored weekly intention: "One thing you can control next week" |
+| **RQS** | Reflection Quality Score -- 1-4 scale measuring journaling content depth (1=Surface, 2=Emerging, 3=Clear, 4=Advanced Self-Leadership). Consumed indirectly through Growth Phase progression; never surfaced directly on dashboards. |
+| **EI** | Emotional Intensity -- language-based tone classification: Low / Moderate / High / insufficient data. Determines coaching tone calibration and Stage 7 calibration modifiers. |
+| **KPS** | Key Performance Signal -- the single most important coaching observation for the week, determined by Stage 4. Appears as Section 8 of Coach Insight and drives Weekly Theme on parent dashboard. |
+| **Calibration Cache** | Per-athlete key-value store holding emotional_intensity, growth_phase, growth_phase_movement, last_updated_week from most recent Interpretation JSON. Read by Stage 7 for daily traffic light calibration. Stale after 2 weeks. |
+| **Backfill** | Evening review submitted between 2 hours before hard-out and hard-out time (e.g., 4:00-6:00 AM). Next-morning retroactive catch-up. Counted for composite scores but never surfaced to coaches or parents. |
+| **Self-Ratings Alignment** | Perception-reality comparison of athlete weekly self-assessment against execution data. Produces Aligned / Conflated / Undervalued per dimension. |
 | **Partial Win** | WTD daily score of 2-3 (replaces legacy "Neutral" terminology) |
 | **CF** | Core Foundation — legacy PDF-based intake/weekly recap system |
 
 ---
 
-*Document generated 2026-03-18. Source specifications: VirtusFocus AI Coaching Pipeline v9.6 / v1.9 / v1.6 / v1.3.*
+*Document generated 2026-03-18. Source specifications: VirtusFocus AI Coaching Pipeline v9.7 / v2.0 / v1.7 / v1.4.*
