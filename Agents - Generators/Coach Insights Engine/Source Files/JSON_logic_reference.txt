@@ -489,6 +489,16 @@ forward_anchor.prior_forward_anchor.alignment_notes
 forward_anchor.focus_consistency
 
 FIELDS NOT CONSUMED BY STAGE 4:
+- longitudinal_ppd (ALL fields) → NOT CONSUMED. The
+  longitudinal_ppd block (status, weeks_accumulated,
+  measurement_window_start, execution_derived_top_3,
+  execution_derived_all_buckets, alignment_signal,
+  core_foundation_fallback) is computed by Stage 2 for
+  Stage 3 consumption only. Stage 4 does NOT read,
+  reference, or route any longitudinal PPD data. This
+  mirrors the existing zero-PPD-consumption rule and
+  extends it to all execution-derived PPD classifications,
+  evidence tiers, and alignment signal labels.
 - risk_flags → Internal to pipeline only. Never surfaced in
   institutional output.
 - upcoming_context → Stage 3 only. May contain personal
@@ -611,6 +621,28 @@ NOTE: Pillar NAMES (Ownership, Composure, Focus, Structure)
 used as natural coaching concepts are PERMITTED. "Building
 composure under pressure" is institutional language. "Composure
 pillar is Low" is a leakage violation. Apply context judgment.
+
+LONGITUDINAL PPD COMPLIANCE FILTER (APPLY TO ALL SECTIONS)
+The following longitudinal PPD data categories must NEVER appear
+in any Stage 4 output, in any form:
+- longitudinal_ppd block name and ALL field names
+- PPD Alignment Signal labels: "Aligned" (as PPD classification),
+  "Gap" (as PPD classification), "Blind Spot" (as PPD
+  classification), "Problem Awareness Aligned/Gap/Blind Spot"
+- Evidence tier names: "Strong/Moderate/Weak/None evidence",
+  "Context Insufficient", "Emerging/Established" (as PPD
+  confidence tiers)
+- Longitudinal PPD terminology: "execution-derived PPD",
+  "longitudinal PPD", "rolling window", "measurement window",
+  "weeks accumulated", "bucket ranking comparison", "predominant
+  classification"
+- Intake-to-execution comparison framing: "when you started you
+  thought X", "your intake identified", "what you reported vs
+  what we see", "your blind spot is", "the system detected",
+  "comparing your answers against your behavior"
+NOTE: "aligned," "gap," and "blind spot" are common English words.
+Prohibition applies ONLY when used as named PPD pipeline
+classifications.
 
 OUTPUT CONSISTENCY RULES
 - Use exact locked section headers.

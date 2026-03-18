@@ -617,6 +617,87 @@ FIELDS THAT DO NOT APPEAR (intake profile):
 
 
 ============================================================
+LONGITUDINAL PPD ROUTING
+============================================================
+
+TIER 2 REPLACEMENT LOGIC:
+
+When longitudinal_ppd.status == "established":
+  Tier 2 coaching implications sourced from execution_derived_top_3
+  instead of static baseline_intake_profile.ppd_top_3.
+  Each execution-derived bucket's coaching implication replaces
+  the corresponding intake PPD implication.
+  Execution-derived evidence_tier (Strong/Moderate/Weak) informs
+  coaching confidence — stronger evidence = more direct coaching.
+
+When longitudinal_ppd.status == "emerging":
+  Tier 2 remains static intake PPD (UNCHANGED).
+  Execution-derived signal is preliminary — used for subtle tone
+  lean only.
+
+When longitudinal_ppd.status == "insufficient data":
+  Tier 2 remains static intake PPD (UNCHANGED).
+  No longitudinal PPD influence.
+
+TONE MODIFICATION ROUTING:
+
+alignment_signal.overall == "Blind Spot":
+  Coaching Message:
+    → Drift Identification: grounding language for the unseen
+      pattern. Behavioral description only — never name the bucket
+      or comparison mechanism.
+    → Growth Area: lean into blind spot bucket's behavioral domain.
+    → Micro-commitment: target blind spot area when actionable.
+  Deep Dive:
+    → Mindset Summary: may reference behavioral shift direction
+      without naming PPD/comparison.
+    → Growth Areas: execution-derived primary bucket focus.
+
+alignment_signal.overall == "Gap":
+  Coaching Message:
+    → Recognition: acknowledge athlete's partial awareness.
+    → Growth Area: elevate underestimated area.
+  Deep Dive:
+    → Mindset Summary: may note widening or shifting emphasis areas.
+
+alignment_signal.overall == "Aligned":
+  → No routing change. Continue current direction.
+  → Optional: subtle confirmation language in Coaching Message
+    Recognition section.
+
+EMERGING STATUS ROUTING:
+  Tone modification available but SUBTLE only.
+  No explicit grounding or elevation language.
+  Micro-commitment MAY lean toward emerging pattern.
+  No Tier 2 change.
+
+PARENT COACHING MESSAGE:
+  Longitudinal PPD does NOT route to Parent CM.
+  Parent CM uses the same Tier 2 as Coaching Message (which may
+  be execution-derived when established), but alignment-specific
+  tone modification (grounding/elevation) does NOT apply.
+  Parent sees the coaching direction without the tone mechanics.
+
+CF SKIP RULE:
+  When longitudinal_ppd.core_foundation_fallback == true:
+  Skip all longitudinal PPD routing. Output identical to
+  pre-longitudinal-PPD behavior.
+
+RAW DATA EXCLUSION (NEVER SURFACE IN ANY COACHING OUTPUT):
+  - Evidence tier names (Strong / Moderate / Weak / None /
+    Context Insufficient)
+  - primary_signals array content
+  - Alignment signal labels (Aligned / Gap / Blind Spot)
+  - Bucket names as named pipeline classifications
+  - overlap_count, new_entries, dropped_from_intake
+  - intake_score values
+  - weeks_accumulated, measurement_window_start
+  - Status labels (emerging / established / insufficient data)
+  - "execution-derived PPD", "longitudinal PPD"
+  - Any intake-to-execution comparison framing
+
+
+============================================================
 FORWARD ANCHOR ROUTING
 ============================================================
 

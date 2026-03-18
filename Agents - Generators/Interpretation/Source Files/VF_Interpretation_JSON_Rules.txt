@@ -1237,7 +1237,503 @@ If rhythm_score.band = "insufficient data" →
   "insufficient data"
 
 ============================================================
-SECTION 13 – COMPOSITE SCORE CLASSIFICATION RULES
+SECTION 13 – LONGITUDINAL PPD CLASSIFICATION RULES
+============================================================
+
+All rules in this section apply ONLY when input_source = "app".
+Core Foundation athletes: use fallback values (Section 13G).
+
+The Longitudinal PPD system compares intake self-report PPD
+(from baseline_intake_profile.ppd_top_3) against execution-
+derived PPD (computed from accumulated weekly execution data)
+to produce the PPD Alignment Signal: Aligned / Gap / Blind Spot.
+
+This mirrors the self_ratings_alignment system (Section 12):
+  self_ratings: weekly self-rating vs composite score bands
+  longitudinal_ppd: intake PPD ranking vs execution-derived ranking
+
+Computation cadence: weekly, rolling window across all available
+weeks with execution data.
+
+Status field:
+  "insufficient data" — fewer than 3 weeks OR Core Foundation
+  "emerging" — 3-4 weeks accumulated (inform-only, no routing)
+  "established" — 5+ weeks accumulated (full routing active)
+
+weeks_accumulated counting rules:
+  Counts ONLY weeks with execution data (input_source = "app").
+  Gap weeks (no data submitted) do not count.
+  Prior week JSONs with execution_behavior_signals.input_source =
+  "core_foundation" do not count.
+  Current week counts toward the total.
+
+Full specification: VF_Longitudinal_PPD_Specification.txt
+
+------------------------------------------------------------
+13A) Per-Bucket Evidence Tier Determination
+------------------------------------------------------------
+
+Each of the 8 PPD buckets is mapped to execution-derived signals
+that indicate whether that friction area is ACTUALLY present in
+the athlete's behavior, regardless of intake self-report.
+
+Evidence tiers:
+  Strong — Multiple signals converge, sustained across weeks
+  Moderate — Some signals present, or strong but limited weeks
+  Weak — Minimal or isolated evidence
+  None — No execution signals fire for this bucket
+  Context Insufficient — Required conditions not present
+
+--- BUCKET 1: OVERTHINKING LOOP ---
+
+Primary signals:
+  - reactivity_risk_score.band (Elevated)
+  - bullseye_behavior.outer_ring_dominant_rate (>= 0.40)
+  - wtd_question_patterns.intraweek_volatility (High)
+
+Secondary signals:
+  - bullseye_behavior.contradiction_detected (Yes)
+
+STRONG:
+  reactivity_risk_score.band == "Elevated"
+  AND (outer_ring_dominant_rate >= 0.40
+       OR intraweek_volatility == "High")
+  Sustained 2+ weeks in rolling window.
+
+MODERATE:
+  reactivity_risk_score.band == "Moderate"
+  AND (outer_ring_dominant_rate >= 0.40
+       OR intraweek_volatility == "High"
+       OR contradiction_detected == "Yes")
+  OR: reactivity_risk_score.band == "Elevated"
+      (single week only, not yet sustained)
+
+WEAK:
+  Any single signal present at threshold but others normal.
+  Example: outer_ring_dominant_rate >= 0.40 in isolation
+  with Low reactivity and Low volatility.
+
+NONE:
+  reactivity_risk_score.band == "Low"
+  AND outer_ring_dominant_rate < 0.40
+  AND intraweek_volatility != "High"
+  AND contradiction_detected != "Yes"
+
+--- BUCKET 2: CONFIDENCE VOLATILITY ---
+
+Primary signals:
+  - self_ratings_alignment.confidence (Conflated or Undervalued)
+  - consistency_signal (Variable or Declining)
+
+Secondary signals:
+  - Competition-week WTD drop
+  - follow_through_score.band declining trend
+
+STRONG:
+  self_ratings_alignment.confidence == "Conflated"
+  AND consistency_signal in ["Variable", "Declining"]
+  Sustained 2+ weeks in rolling window.
+  OR: confidence == "Conflated" AND competition-week WTD drop.
+
+MODERATE:
+  confidence == "Conflated" (single dimension, no additional)
+  OR: confidence == "Undervalued" AND consistency == "Variable"
+  OR: consistency == "Declining" sustained 2+ weeks without
+      self_ratings data.
+
+WEAK:
+  confidence == "Undervalued" in isolation
+  OR: isolated single-week consistency dip.
+
+NONE:
+  confidence == "Aligned"
+  AND consistency_signal in ["Stable", "Improving"]
+
+NOTE: Undervalued is NOT confidence volatility (low self-belief,
+not unstable belief). Undervalued alone = Weak.
+
+--- BUCKET 3: MISTAKE RECOVERY LAG ---
+
+Primary signals:
+  - recovery_score.band (Low)
+  - recovery_speed_days (4+)
+  - recommitment_signal (Low)
+
+Secondary signals:
+  - cross_week_recovery.recovery_days (high or "did not recover")
+  - recovery_failure flag
+
+STRONG:
+  recovery_score.band == "Low"
+  OR recovery_failure flag fires
+  OR (recovery_speed_days >= 4 sustained across 2+ recovery
+      events in rolling window)
+
+MODERATE:
+  recovery_score.band == "Moderate"
+  OR recommitment_signal == "Low"
+  OR cross_week_recovery.recovery_days >= 3
+
+WEAK:
+  recovery_speed_days == 3 (isolated single instance)
+  AND recovery_score.band != "Low"
+  AND recommitment_signal != "Low"
+
+NONE:
+  recovery_score.band == "Strong"
+  OR recovery_score == "no disruption" (fixed 85)
+
+CONTEXT INSUFFICIENT:
+  No WTD disruption events in measurement window (zero Missed
+  days across all measured weeks). Recovery capability cannot be
+  evaluated without adversity.
+
+--- BUCKET 4: FOCUS DRIFT / DISTRACTION ---
+
+Primary signals:
+  - drift_score.band (Early or Active)
+  - bullseye_behavior.outer_ring_dominant_rate (high sustained)
+
+Secondary signals:
+  - component_avoidance flag
+  - journaling_behavior.domain_omission_pattern != "none"
+  - drift_early flag or drift_active flag
+
+STRONG:
+  drift_score.band == "Active"
+  OR drift_active flag fires
+  OR (drift_score.band == "Early"
+      AND outer_ring_dominant_rate >= 0.40
+      Sustained 2+ weeks)
+
+MODERATE:
+  drift_score.band == "Early"
+  OR (outer_ring_dominant_rate >= 0.40 sustained 2+ weeks
+      without drift_score elevation)
+  OR (component_avoidance flag fires
+      AND domain_omission_pattern != "none")
+
+WEAK:
+  drift_early flag fires in isolation (single week, no
+  supporting signals).
+  OR: domain_omission_pattern != "none" in isolation.
+
+NONE:
+  drift_score.band == "None"
+  AND outer_ring_dominant_rate < 0.40
+  AND no component_avoidance flag
+  AND domain_omission_pattern == "none"
+
+--- BUCKET 5: PRESSURE REACTIVITY (SEASON PHASE GATED) ---
+
+Primary signals:
+  - reactivity_risk_score.band (Elevated)
+  - Competition-week WTD drop
+  - emotional_intensity (High)
+
+Secondary signals:
+  - baseline_alignment == "Partially Aligned" in competition weeks
+  - reactivity_elevated flag
+
+SEASON PHASE CONTEXT GATE:
+  In-Season / Post-Season:
+    FULLY EVALUABLE. All signals meaningful.
+
+  Pre-Season:
+    PARTIALLY EVALUABLE. Strong → Moderate. Moderate → Weak.
+
+  Off-Season / Year-Round Training:
+    CONTEXT INSUFFICIENT. Cannot evaluate.
+
+  Mixed phases in rolling window:
+    Use the most evaluable phase present. Evaluate using only
+    the weeks with evaluable context.
+
+STRONG (when evaluable):
+  reactivity_risk_score.band == "Elevated"
+  AND (competition-week WTD drop
+       OR emotional_intensity == "High" in competition week)
+  Sustained across 2+ competition-context weeks.
+
+MODERATE:
+  reactivity Elevated without competition-specific WTD drop
+  OR: competition-week WTD drop with reactivity Moderate
+  OR: emotional_intensity == "High" in competition week alone
+
+WEAK:
+  Isolated single-week reactivity without competition context.
+  OR: emotional_intensity == "Moderate" in competition week alone.
+
+NONE:
+  reactivity_risk_score.band == "Low"
+  AND no competition-week WTD drops
+  AND emotional_intensity not elevated in competition weeks
+  (Requires sufficient competition-context weeks to evaluate.)
+
+--- BUCKET 6: DISCIPLINE GAP ---
+
+Primary signals:
+  - ownership_index.band (Low)
+  - follow_through_score.band (Weak)
+
+Secondary signals:
+  - morning_disengagement flag
+  - surface_engagement flag
+
+STRONG:
+  ownership_index.band == "Low"
+  AND (follow_through_score.band == "Weak"
+       OR morning_disengagement flag fires)
+  OR: ownership_low AND follow_through_weak fire simultaneously
+  OR: surface_engagement flag fires sustained 2+ weeks
+
+MODERATE:
+  ownership_index.band == "Low" alone
+  OR: follow_through_score.band == "Weak" alone
+  OR: morning_disengagement flag fires (isolated)
+
+WEAK:
+  ownership_index.band == "Moderate"
+  AND follow_through_score.band == "Moderate"
+  AND one supporting flag fires (single week)
+
+NONE:
+  ownership_index.band == "High"
+  AND follow_through_score.band in ["Strong", "Moderate"]
+  AND no discipline-related flags
+
+DISTINGUISHING FROM STRUCTURE GAP (BUCKET 7):
+  Discipline Gap = motivation inconsistency. The athlete CAN
+  structure but doesn't maintain effort consistently.
+  Structure Gap = routine absence. The athlete doesn't HAVE
+  the routine.
+  Key: If performance is strong when external structure exists
+  but collapses without it → Structure Gap, not Discipline Gap.
+
+--- BUCKET 7: STRUCTURE GAP ---
+
+Primary signals:
+  - rhythm_score.band (Disrupted)
+  - rhythm_disrupted flag
+
+Secondary signals:
+  - evening_review.sequence_integrity (Broken)
+  - Weekday-weekend WTD divergence
+
+STRONG:
+  rhythm_score.band == "Disrupted"
+  OR rhythm_disrupted flag fires
+  OR (rhythm_score.band == "Variable"
+      AND weekday-weekend divergence >= 0.40
+      Sustained 2+ weeks in rolling window)
+
+MODERATE:
+  rhythm_score.band == "Variable"
+  OR sequence_integrity == "Broken"
+  OR (divergence present but < 0.40 or not sustained)
+
+WEAK:
+  sequence_integrity == "Partial"
+  AND rhythm_score.band == "Stable"
+  AND no weekday-weekend divergence
+
+NONE:
+  rhythm_score.band == "Stable"
+  AND sequence_integrity == "Intact"
+  AND no weekday-weekend divergence
+
+WEEKDAY-WEEKEND DIVERGENCE:
+  weekday_win_rate = (Mon-Fri Win days) / (Mon-Fri scored days)
+  weekend_win_rate = (Sat-Sun Win days) / (Sat-Sun scored days)
+  divergence = weekday_win_rate - weekend_win_rate
+  >= 0.40 sustained 2+ weeks = Strong structural dependency.
+
+--- BUCKET 8: ECOSYSTEM FRICTION ---
+
+Primary signals:
+  - stress_load (Elevated, non-competition)
+  - noise_fixation_present (Yes)
+
+Secondary signals:
+  - Bullseye outer-ring coach/parent references
+  - Journaling ecosystem conflict themes
+
+STRONG:
+  stress_load == "Elevated" sustained 2+ weeks
+  AND (noise_fixation_present == "Yes"
+       OR outer-ring coach/parent references sustained 2+ weeks)
+  AND no scheduled_competition in those weeks
+
+MODERATE:
+  stress_load == "Elevated" (single week, non-competition)
+  OR noise_fixation_present == "Yes" sustained 2+ weeks
+  OR outer-ring coach/parent with stress_load == "Moderate"
+
+WEAK:
+  stress_load == "Moderate" with isolated ecosystem outer-ring
+  (single week)
+  OR: noise_fixation_present == "Yes" (single week only)
+
+NONE:
+  stress_load in ["Low", "Moderate"] consistently
+  AND noise_fixation_present != "Yes"
+  AND no ecosystem-referencing outer-ring patterns
+
+NOTE: Lowest execution signal quality of all 8 buckets.
+Primarily content-derived.
+
+------------------------------------------------------------
+13B) Rolling Window Aggregation
+------------------------------------------------------------
+
+Step 1: Compute per-week evidence tier for each bucket using
+  that week's data and Section 13A rules.
+
+Step 2: Across all weeks in the rolling window, determine
+  predominant tier:
+  - Strong in >= 50% of evaluable weeks → Strong overall
+  - Moderate-or-above in >= 50% of evaluable weeks → Moderate
+  - Weak-or-above in >= 50% of evaluable weeks → Weak overall
+  - Otherwise → None
+
+Step 3: Context Insufficient weeks excluded from percentage
+  (reduce denominator, not count). If ALL weeks are Context
+  Insufficient for a bucket → Context Insufficient overall.
+
+Step 4: Derive execution Top 3 by ranking buckets by tier
+  (Strong > Moderate > Weak). Ties broken by bucket priority
+  order (1→8).
+
+------------------------------------------------------------
+13C) Execution-Derived Top 3 Derivation
+------------------------------------------------------------
+
+Rank all 8 buckets by evidence tier:
+  Strong > Moderate > Weak > None
+
+Skip None and Context Insufficient.
+
+Within same tier, use bucket priority order (1→8).
+
+Take top 3 (or fewer if < 3 buckets have Weak-or-above).
+
+If fewer than 3 buckets qualify → signal may be unreliable,
+flag but still compute with adjusted comparison logic.
+
+------------------------------------------------------------
+13D) PPD Alignment Signal Classification (4-Step Logic)
+------------------------------------------------------------
+
+Step 1: Derive execution Top 3 (Section 13C).
+
+Step 2: Compare against intake Top 3 (from
+  baseline_intake_profile.ppd_top_3). Count overlap, identify
+  new entries, identify dropped.
+
+Step 3: Classify each new entry:
+
+  intake_score <= 2 AND execution Strong → BLIND SPOT
+    (Athlete had essentially no awareness.)
+
+  intake_score <= 2 AND execution Moderate → GAP
+    (Some evidence emerging but athlete was unaware.)
+
+  intake_score 3-4 AND execution Strong or Moderate → GAP
+    (Athlete had some awareness but underestimated.)
+
+  intake_score >= 5 → GAP
+    (Ranking shift, not unseen.)
+
+Step 4: Determine overall signal:
+
+  3/3 overlap → ALIGNED
+
+  2/3 overlap:
+    Check 1 new entry: Blind Spot → BLIND SPOT; Gap → GAP
+
+  1/3 overlap:
+    → GAP unless new entry = Blind Spot → BLIND SPOT
+
+  0/3 overlap:
+    → BLIND SPOT
+
+  OVERRIDE RULE:
+    Any single bucket classified as Blind Spot in Step 3
+    AND execution evidence = Strong → overall BLIND SPOT,
+    regardless of overlap count.
+
+Step 5: Edge cases:
+
+  Fewer than 3 execution buckets:
+    Compare available buckets. Apply same logic with adjusted
+    denominator. Note reduced reliability.
+
+  All buckets None or Context Insufficient:
+    Status remains "insufficient data" regardless of
+    weeks_accumulated.
+
+  Same Top 3 different order:
+    → ALIGNED. Ranking order differences within the same
+    Top 3 are not significant.
+
+------------------------------------------------------------
+13E) Edge Cases
+------------------------------------------------------------
+
+1. First week (App): weeks_accumulated = 1, status =
+   "insufficient data", populate minimal block only.
+
+2. Core Foundation: core_foundation_fallback = true, all
+   fields use minimal fallback values (Section 13G).
+
+3. Injury/unusual week: rolling window smooths anomalies
+   naturally. No special handling required.
+
+4. Insufficient data despite sufficient weeks: all buckets
+   None or Context Insufficient → status = "insufficient data"
+   despite weeks_accumulated >= 5.
+
+5. All 8 intake buckets at zero: normal classification, focus
+   on selected vs non-selected contrast.
+
+6. Tied execution evidence tiers: bucket priority order (1→8).
+
+7. Fewer than 3 execution buckets: compare available, note
+   reduced reliability.
+
+8. Season phase changes mid-window: use most evaluable phase
+   for Bucket 5.
+
+9. Gap in data: weeks_accumulated counts only weeks WITH data.
+   Gap weeks do not increment.
+
+10. Alignment signal changes over time: normal — rolling
+    window updates weekly.
+
+11. Athlete retakes intake: out of scope, deferred to app
+    architecture.
+
+12. compound_disengagement flag: no special handling for
+    longitudinal PPD. All buckets evaluated independently.
+
+------------------------------------------------------------
+13F) Core Foundation Fallback
+------------------------------------------------------------
+
+When input_source = "core_foundation":
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+
+All other fields (execution_derived_top_3,
+execution_derived_all_buckets, alignment_signal) are NOT
+populated for CF athletes.
+
+============================================================
+SECTION 14 – COMPOSITE SCORE CLASSIFICATION RULES
 ============================================================
 
 Full calculation formulas, weighted components, and edge cases
@@ -1253,7 +1749,7 @@ Core Foundation: all scores →
   { "score": "insufficient data", "band": "insufficient data" }
 
 ------------------------------------------------------------
-13A) Band Threshold Summary
+14A) Band Threshold Summary
 ------------------------------------------------------------
 
 SCORE                  DIRECTION       BANDS
@@ -1267,7 +1763,7 @@ Recovery Score         Higher=better   Strong 70+ | Mod 40-69 | Low 0-39
 Reactivity Risk Score  Higher=worse    Low 0-25 | Mod 26-50 | Elevated 51+
 
 ------------------------------------------------------------
-13B) Special Score States
+14B) Special Score States
 ------------------------------------------------------------
 
 Recovery Score has 5 possible states:
@@ -1283,7 +1779,7 @@ Recovery Score has 5 possible states:
 Score. No other fields use this value.
 
 ------------------------------------------------------------
-13C) Composite Score Format
+14C) Composite Score Format
 ------------------------------------------------------------
 
 Each composite score is a nested object:
@@ -1295,7 +1791,7 @@ Categorical band: deterministic classification for Stage 4
 compliance-safe routing and coach flag triggers.
 
 ============================================================
-SECTION 14 – COACH FLAGS CLASSIFICATION RULES
+SECTION 15 – COACH FLAGS CLASSIFICATION RULES
 ============================================================
 
 Full flag specifications, trigger conditions, and description
@@ -1310,7 +1806,7 @@ All rules apply ONLY when input_source = "app".
 Core Foundation: coach_flags = [] (empty array).
 
 ------------------------------------------------------------
-14A) Flag Object Structure
+15A) Flag Object Structure
 ------------------------------------------------------------
 
 Each flag in the coach_flags array:
@@ -1323,7 +1819,7 @@ Each flag in the coach_flags array:
 }
 
 ------------------------------------------------------------
-14B) Flag Catalog Summary (15 flags)
+15B) Flag Catalog Summary (15 flags)
 ------------------------------------------------------------
 
 SEV     FLAG_ID                           TRIGGER
@@ -1345,7 +1841,7 @@ mon     component_avoidance               Any comp 0 + another >= 3
 mon     morning_disengagement             morning <= 0.29 + evening >= 0.57
 
 ------------------------------------------------------------
-14C) Ordering Rule
+15C) Ordering Rule
 ------------------------------------------------------------
 
 Flags are ordered in the array by severity descending:
@@ -1354,7 +1850,7 @@ Flags are ordered in the array by severity descending:
 Within the same severity tier, flags follow catalog sequence.
 
 ------------------------------------------------------------
-14D) Flag Independence Rule
+15D) Flag Independence Rule
 ------------------------------------------------------------
 
 Individual worst-band flags fire independently even when
@@ -1363,7 +1859,7 @@ appear in the array. Compound and cross-week flags are
 additive, not replacing.
 
 ------------------------------------------------------------
-14E) Cross-Week Data Requirements
+15E) Cross-Week Data Requirements
 ------------------------------------------------------------
 
 Flags 13-15 (sustained_drift, persistent_attention_pattern,
@@ -1375,7 +1871,7 @@ If no prior week JSON (first week of program):
   Only single-week flags (catalog 1-12) are evaluated.
 
 ============================================================
-SECTION 15 – EXECUTION PATTERN SUMMARY RULES
+SECTION 16 – EXECUTION PATTERN SUMMARY RULES
 ============================================================
 
 execution_pattern_summary is a 1-2 sentence behavioral
@@ -1388,7 +1884,7 @@ Core Foundation fallback:
   not available"
 
 ------------------------------------------------------------
-15A) Content Rules
+16A) Content Rules
 ------------------------------------------------------------
 
 The summary SHOULD capture:
@@ -1409,7 +1905,7 @@ The summary uses behavioral language only. It describes
 WHAT the athlete did, not WHY or what it means.
 
 ------------------------------------------------------------
-15B) Generation Rule
+16B) Generation Rule
 ------------------------------------------------------------
 
 Deterministic synthesis: the summary must be derivable from
@@ -1420,7 +1916,7 @@ If all composite scores = "insufficient data" →
   "Insufficient execution data for pattern summary."
 
 ============================================================
-SECTION 16 – BASELINE INTAKE PROFILE EXTRACTION RULES
+SECTION 17 – BASELINE INTAKE PROFILE EXTRACTION RULES
 ============================================================
 
 The baseline_intake_profile block is a PASS-THROUGH extraction
@@ -1429,7 +1925,7 @@ logic is applied. Stage 2 reads these fields from the snapshot
 and writes them unchanged to the weekly Interpretation JSON.
 
 ------------------------------------------------------------
-16A) App Athletes — Field Extraction
+17A) App Athletes — Field Extraction
 ------------------------------------------------------------
 
 Read the following fields from the athlete snapshot and write
@@ -1480,7 +1976,7 @@ to the baseline_intake_profile block in the output JSON:
 No classification rules apply. This is pure extraction.
 
 ------------------------------------------------------------
-16B) Core Foundation Athletes — Fallback Values
+17B) Core Foundation Athletes — Fallback Values
 ------------------------------------------------------------
 
 When input_source = "core_foundation", ALL baseline_intake_
@@ -1499,14 +1995,14 @@ profile fields use fallback values:
 
 
 ============================================================
-SECTION 17 – CURRENT SEASON PHASE EXTRACTION RULES
+SECTION 18 – CURRENT SEASON PHASE EXTRACTION RULES
 ============================================================
 
 The current_season_phase field is a PASS-THROUGH extraction
 from the weekly check-in. No classification logic is applied.
 
 ------------------------------------------------------------
-17A) App Athletes — Extraction
+18A) App Athletes — Extraction
 ------------------------------------------------------------
 
 Read current_season_phase from:
@@ -1522,7 +2018,7 @@ Valid values:
 No derivation. No classification. Pure pass-through.
 
 ------------------------------------------------------------
-17B) First-Week Default Rule
+18B) First-Week Default Rule
 ------------------------------------------------------------
 
 If the athlete has not yet submitted a weekly check-in
@@ -1538,7 +2034,7 @@ If baseline_season_phase is also "not available":
   current_season_phase = "not available"
 
 ------------------------------------------------------------
-17C) Core Foundation Athletes — Fallback
+18C) Core Foundation Athletes — Fallback
 ------------------------------------------------------------
 
   current_season_phase = "not available"
@@ -1547,7 +2043,7 @@ Core Foundation athletes do not submit structured weekly
 check-ins. No inference from recap content.
 
 ------------------------------------------------------------
-17D) Validation
+18D) Validation
 ------------------------------------------------------------
 
 current_season_phase must be one of:
@@ -1559,7 +2055,7 @@ Unrecognized value → "not available" with validation warning
 
 
 ============================================================
-SECTION 18 – FORWARD ANCHOR CLASSIFICATION RULES
+SECTION 19 – FORWARD ANCHOR CLASSIFICATION RULES
 ============================================================
 
 The forward_anchor block captures the athlete's weekly
@@ -1588,7 +2084,7 @@ When input_source = "app" AND forward_anchor.submitted = false:
     from prior weeks only if applicable, else "insufficient data"
 
 ------------------------------------------------------------
-18A) Controllability Classification
+19A) Controllability Classification
 ------------------------------------------------------------
 
 Agent-classified from forward_anchor.text content. Same
@@ -1650,7 +2146,7 @@ Three categories:
   inform Stage 3 and Stage 4 downstream.
 
 ------------------------------------------------------------
-18B) Focus Consistency Classification
+19B) Focus Consistency Classification
 ------------------------------------------------------------
 
 Agent-classified cross-week comparison of forward_anchor text
@@ -1699,7 +2195,7 @@ Three categories:
   negative is a Stage 3/4 downstream concern.
 
 ------------------------------------------------------------
-18C) Forward Anchor Alignment (Deferred Signal)
+19C) Forward Anchor Alignment (Deferred Signal)
 ------------------------------------------------------------
 
 Deferred one-week signal. Same timing pattern as
@@ -1755,7 +2251,7 @@ Classification:
   errors and 3 center-ring Bullseye items about response quality."
 
 ------------------------------------------------------------
-18D) Cross-Week Data Access
+19D) Cross-Week Data Access
 ------------------------------------------------------------
 
 Forward Anchor classification requires prior week JSON access
@@ -1778,7 +2274,7 @@ This follows the same cross-week access pattern as
 trend_analysis, coach_flags 13-15, and cross_week_recovery.
 
 ------------------------------------------------------------
-18E) Validation Rules
+19E) Validation Rules
 ------------------------------------------------------------
 
   forward_anchor.text:
@@ -1807,7 +2303,7 @@ trend_analysis, coach_flags 13-15, and cross_week_recovery.
     insufficient data | not available
 
 ============================================================
-SECTION 19 – FORWARD ANCHOR AND MICRO-COMMITMENT RELATIONSHIP
+SECTION 20 – FORWARD ANCHOR AND MICRO-COMMITMENT RELATIONSHIP
 ============================================================
 
 The forward_anchor (athlete-authored intention) and
@@ -1820,7 +2316,7 @@ when alignment is strong. This is the approved interaction
 model for all pipeline stages.
 
 STAGE 2 RESPONSIBILITIES:
-  - Extract and classify forward_anchor (Section 18)
+  - Extract and classify forward_anchor (Section 19)
   - Generate micro_commitment (Step 10) independently using
     existing rules
   - Store both fields in the output JSON
@@ -1842,7 +2338,7 @@ classifications (controllability, consistency, alignment) are
 compliance-safe in translated behavioral language.
 
 ============================================================
-SECTION 20 – GLOBAL GUARDRAILS
+SECTION 21 – GLOBAL GUARDRAILS
 ============================================================
 
 - No clinical terminology.
@@ -1858,7 +2354,7 @@ SECTION 20 – GLOBAL GUARDRAILS
   better coaching output but is not itself coaching content.
 
 ============================================================
-SECTION 21 – FINAL RULE
+SECTION 22 – FINAL RULE
 ============================================================
 
 These rules override interpretive creativity.
