@@ -1,0 +1,1774 @@
+================================================================
+VIRTUSFOCUS — LONGITUDINAL PPD SPECIFICATION
+Version: 1.0
+Date: 2026-03-18
+Status: APPROVED — All 9 design questions locked
+================================================================
+
+================================================================
+SECTION A: ARCHITECTURE OVERVIEW
+================================================================
+
+PURPOSE:
+The Longitudinal PPD system compares what the athlete THINKS
+their primary mental performance friction areas are (intake
+self-report PPD) against what accumulated execution data SHOWS
+their actual friction areas are (execution-derived PPD). The
+gap between these two produces the PPD Alignment Signal:
+Aligned / Gap / Blind Spot.
+
+This is a Stage 2 (Interpretation Engine) enhancement that
+feeds Stage 3 (Coaching Output Engine) for improved coaching
+direction and tone calibration. It does NOT feed Stage 4
+(Coach Insights) or any institutional output.
+
+MIRROR MODEL:
+The Longitudinal PPD mirrors the existing self_ratings_alignment
+system (Section 12, VF_Interpretation_JSON_Rules.txt):
+
+  self_ratings_alignment:
+    Compares: weekly 1-10 self-rating vs. composite score bands
+    Output: Aligned / Conflated / Undervalued
+    Cadence: weekly
+    Routing: Stage 3 tone (Conflated=ground, Undervalued=elevate)
+    Walling: inform-only, labels never surfaced
+
+  longitudinal_ppd:
+    Compares: intake PPD bucket ranking vs. execution-derived
+              bucket ranking
+    Output: Aligned / Gap / Blind Spot
+    Cadence: weekly (stabilized by rolling window)
+    Routing: Stage 3 priority (Tier 2 replacement when
+             Established) + tone (Blind Spot=ground, Gap=elevate)
+    Walling: inform-only, labels never surfaced
+
+KEY ARCHITECTURAL FEATURES:
+- Inform-only walling (classifications stay internal to pipeline)
+- Behavioral translation in all output (never name classifications)
+- Leverages existing computation (composite scores, coach flags,
+  v9.6 fields — no new weighted formulas)
+- App-athlete feature only (CF = "insufficient data")
+- Future Stage 2 enhancement — not required for app v1 launch
+
+CANONICAL EXAMPLE — TUCKER LLOYD (BLIND SPOT):
+  Intake PPD Top 3: Overthinking Loop (5), Discipline Gap (5),
+                    Confidence Volatility (3)
+  Execution data (5 weeks): 3 consecutive Missed Sundays,
+    zero gym sessions in Week 4, weekend engagement expanding
+    from 1→2 Missed days, rhythm disrupted, stagnant
+    consistency trend
+  Intake Structure Gap score: 2 (Q13 amplifier only — athlete
+    did NOT select "Lack of routine or structure" on Q15)
+  Execution Structure Gap evidence: STRONG
+  PPD Alignment Signal: BLIND SPOT
+
+================================================================
+SECTION B: EXECUTION-TO-BUCKET MAPPING
+================================================================
+
+Each of the 8 PPD buckets is mapped to a set of execution-
+derived signals that indicate whether that friction area is
+ACTUALLY present in the athlete's behavior, regardless of
+intake self-report.
+
+SCORING APPROACH: Hybrid (Option C)
+Each bucket is classified into a 5-tier evidence strength
+using deterministic rules based on existing composite score
+bands, coach flags, and v9.6 fields. No new weighted formulas
+are created — the system leverages all existing computation.
+
+EVIDENCE TIERS:
+
+  STRONG — Multiple execution signals converge on this bucket,
+           sustained across weeks. High confidence — this is a
+           real friction area regardless of self-report.
+
+  MODERATE — Some execution signals present, or strong signals
+             but limited weeks of evidence. Meaningful — worth
+             monitoring, may inform coaching direction.
+
+  WEAK — Minimal or isolated execution evidence. Low confidence
+         — insufficient to redirect coaching.
+
+  NONE — No execution signals fire for this bucket. Not present
+         in behavioral data.
+
+  CONTEXT INSUFFICIENT — Required conditions (competition,
+                         specific stressors) not present in the
+                         measurement window. Cannot evaluate —
+                         distinct from None (absence of context,
+                         not absence of problem).
+
+----------------------------------------------------------------
+BUCKET 1: OVERTHINKING LOOP
+Excessive mental rehearsal of negative scenarios; rumination
+displacing execution focus.
+----------------------------------------------------------------
+
+PRIMARY SIGNALS:
+- reactivity_risk_score.band (Elevated = reactive/ruminative
+  execution patterns)
+- bullseye_behavior.outer_ring_dominant_rate (high = persistently
+  fixating on uncontrollables)
+- wtd_question_patterns.intraweek_volatility (High = day-to-day
+  score swings suggesting mental state instability)
+
+SECONDARY SIGNALS:
+- bullseye_behavior.contradiction_detected (Yes = naming
+  controllables but focusing on uncontrollables)
+
+EVIDENCE TIER DETERMINATION:
+
+  STRONG:
+    reactivity_risk_score.band == "Elevated"
+    AND (outer_ring_dominant_rate >= 0.40
+         OR intraweek_volatility == "High")
+    Sustained 2+ weeks in rolling window.
+
+  MODERATE:
+    reactivity_risk_score.band == "Moderate"
+    AND (outer_ring_dominant_rate >= 0.40
+         OR intraweek_volatility == "High"
+         OR contradiction_detected == "Yes")
+    OR: reactivity_risk_score.band == "Elevated"
+        (single week only, not yet sustained)
+
+  WEAK:
+    Any single signal present at threshold but others normal.
+    Example: outer_ring_dominant_rate >= 0.40 in isolation
+    with Low reactivity and Low volatility.
+
+  NONE:
+    reactivity_risk_score.band == "Low"
+    AND outer_ring_dominant_rate < 0.40
+    AND intraweek_volatility != "High"
+    AND contradiction_detected != "Yes"
+
+NOTE: Overthinking is partially content-derived (Stage 2
+detects rumination language in journaling). The execution
+mapping captures the behavioral signature of overthinking —
+volatility, outer-ring fixation, contradiction. Content-
+derived signals (e.g., journaling themes) are NOT used here
+to maintain the execution-derived boundary.
+
+----------------------------------------------------------------
+BUCKET 2: CONFIDENCE VOLATILITY
+Confidence tied to outcomes rather than preparation; unstable
+self-belief.
+----------------------------------------------------------------
+
+PRIMARY SIGNALS:
+- self_ratings_alignment.confidence classification (Conflated
+  or Undervalued = perception-reality mismatch on confidence)
+- consistency_signal (Variable or Declining = week-to-week
+  WTD instability)
+
+SECONDARY SIGNALS:
+- WTD score variance between competition vs non-competition
+  weeks (score drops when stakes rise = outcome-dependent
+  confidence)
+- follow_through_score.band declining trend over weeks
+  (weakening commitment follow-through can reflect eroding
+  self-belief)
+
+EVIDENCE TIER DETERMINATION:
+
+  STRONG:
+    self_ratings_alignment.confidence == "Conflated"
+    AND consistency_signal in ["Variable", "Declining"]
+    Sustained 2+ weeks in rolling window.
+    OR: self_ratings_alignment.confidence == "Conflated"
+        AND competition-week WTD drop observed.
+
+  MODERATE:
+    self_ratings_alignment.confidence == "Conflated"
+    (single dimension mismatch without additional signals)
+    OR: self_ratings_alignment.confidence == "Undervalued"
+        AND consistency_signal == "Variable"
+    OR: consistency_signal == "Declining" sustained 2+ weeks
+        without self_ratings data.
+
+  WEAK:
+    self_ratings_alignment.confidence == "Undervalued"
+    in isolation (athlete underestimates but execution
+    shows capability — this is the OPPOSITE of confidence
+    volatility; may indicate low self-belief but not
+    volatility per se).
+    OR: Isolated single-week consistency dip.
+
+  NONE:
+    self_ratings_alignment.confidence == "Aligned"
+    AND consistency_signal in ["Stable", "Improving"]
+
+  NOTE ON UNDERVALUED:
+  "Undervalued" confidence (athlete rates low, execution
+  shows high) is NOT the same as Confidence Volatility.
+  Undervalued suggests low self-belief, not unstable belief.
+  Confidence Volatility specifically requires outcome-
+  dependent swings. Undervalued alone maps to Weak, not
+  Moderate or Strong.
+
+----------------------------------------------------------------
+BUCKET 3: MISTAKE RECOVERY LAG
+Slow/incomplete mental reset after errors; mistakes carry
+forward across days.
+----------------------------------------------------------------
+
+PRIMARY SIGNALS:
+- recovery_score.band (Low = direct measure of post-disruption
+  recovery failure)
+- recovery_speed_days (4+ = slow return to Win after Missed day)
+- recommitment_signal (Low = poor within-week bounce-back)
+
+SECONDARY SIGNALS:
+- cross_week_recovery.recovery_days (high or "did not recover"
+  = recovery failure extending across week boundary)
+- recovery_failure flag (fires when recovery_score.band == Low)
+
+EVIDENCE TIER DETERMINATION:
+
+  STRONG:
+    recovery_score.band == "Low"
+    OR recovery_failure flag fires
+    OR (recovery_speed_days >= 4 sustained across 2+ recovery
+        events in rolling window)
+
+  MODERATE:
+    recovery_score.band == "Moderate"
+    OR recommitment_signal == "Low"
+    OR cross_week_recovery.recovery_days >= 3
+
+  WEAK:
+    recovery_speed_days == 3 (isolated single instance)
+    AND recovery_score.band != "Low"
+    AND recommitment_signal != "Low"
+
+  NONE:
+    recovery_score.band == "Strong"
+    OR recovery_score == "no disruption" (fixed 85 — no
+    adverse events occurred, recovery not tested)
+
+  CONTEXT INSUFFICIENT:
+    No WTD disruption events in measurement window (zero
+    Missed days across all measured weeks). Recovery
+    capability cannot be evaluated without adversity.
+    NOTE: This is distinct from "no disruption" Recovery
+    Score (which returns fixed 85). Context Insufficient
+    here means the BUCKET cannot be evaluated, not that
+    recovery is good.
+
+NOTE: This is the cleanest mapping in the system — Recovery
+Score was designed to measure exactly this behavioral
+dimension.
+
+----------------------------------------------------------------
+BUCKET 4: FOCUS DRIFT / DISTRACTION
+Attention pulled from controllables during performance;
+external distractions disrupt engagement quality.
+----------------------------------------------------------------
+
+PRIMARY SIGNALS:
+- drift_score.band (Early or Active = engagement erosion /
+  compression pattern)
+- bullseye_behavior.outer_ring_dominant_rate (high over
+  sustained weeks = attention directed at uncontrollables)
+
+SECONDARY SIGNALS:
+- component_avoidance flag (selective avoidance of one system
+  component = attention not fully engaged)
+- journaling_behavior.domain_omission_pattern != "none"
+  (omitting domains suggests attention narrowing or avoidance)
+- drift_early flag or drift_active flag
+
+EVIDENCE TIER DETERMINATION:
+
+  STRONG:
+    drift_score.band == "Active"
+    OR drift_active flag fires
+    OR (drift_score.band == "Early" AND outer_ring_dominant_rate
+        >= 0.40 sustained 2+ weeks)
+
+  MODERATE:
+    drift_score.band == "Early"
+    OR (outer_ring_dominant_rate >= 0.40 sustained 2+ weeks
+        without drift_score elevation)
+    OR (component_avoidance flag fires AND domain_omission_pattern
+        != "none")
+
+  WEAK:
+    drift_early flag fires in isolation (single week, no
+    supporting signals).
+    OR: domain_omission_pattern != "none" in isolation.
+
+  NONE:
+    drift_score.band == "None"
+    AND outer_ring_dominant_rate < 0.40
+    AND no component_avoidance flag
+    AND domain_omission_pattern == "none"
+
+NOTE: Drift Score measures engagement erosion broadly — not
+just focus/distraction specifically. Bullseye outer-ring
+dominance and domain omission add focus-specific evidence
+that distinguishes this bucket from Discipline Gap (which
+also involves drift-adjacent patterns).
+
+----------------------------------------------------------------
+BUCKET 5: PRESSURE REACTIVITY
+Behavioral/mental performance changes under high-stakes
+conditions; altered execution patterns when pressure exists.
+----------------------------------------------------------------
+
+PRIMARY SIGNALS:
+- reactivity_risk_score.band (Elevated = volatile execution
+  patterns indicating event-reactive behavior)
+- WTD score drop in competition weeks vs non-competition
+  weeks (direct evidence of performance degradation)
+- emotional_intensity (High, especially recurring = language-
+  based intensity spikes)
+
+SECONDARY SIGNALS:
+- baseline_alignment == "Partially Aligned" during competition
+  weeks (derailer activation under competitive pressure)
+- reactivity_elevated flag
+
+SEASON PHASE CONTEXT GATE:
+This bucket requires competitive or high-stakes context to
+manifest. The current_season_phase field (collected weekly
+via check-in) gates evaluation:
+
+  In-Season / Post-Season:
+    FULLY EVALUABLE. Competition context exists. All signals
+    meaningful.
+
+  Pre-Season:
+    PARTIALLY EVALUABLE. Some pressure contexts exist (tryouts,
+    scrimmages, evaluations) but less frequent. Evidence
+    weighted at reduced confidence — Strong evidence in
+    Pre-Season maps to Moderate tier. Moderate maps to Weak.
+
+  Off-Season / Year-Round (no competition in window):
+    CONTEXT INSUFFICIENT. Cannot evaluate. Not the same as
+    None — the conditions to trigger pressure reactivity
+    have not been present.
+
+  Mixed season phases in rolling window:
+    Use the most evaluable phase present. If 2 weeks are
+    In-Season and 2 weeks Off-Season, evaluate using the
+    In-Season weeks only.
+
+EVIDENCE TIER DETERMINATION (when evaluable):
+
+  STRONG:
+    reactivity_risk_score.band == "Elevated"
+    AND (competition-week WTD drop observed
+         OR emotional_intensity == "High" in competition week)
+    Sustained across 2+ competition-context weeks.
+
+  MODERATE:
+    reactivity_risk_score.band == "Elevated" (without
+    competition-specific WTD drop — general volatility
+    present but not yet linked to pressure context)
+    OR: Competition-week WTD drop observed but
+        reactivity_risk_score.band == "Moderate"
+    OR: emotional_intensity == "High" in competition week
+        without reactivity elevation
+
+  WEAK:
+    Isolated single-week reactivity elevation without
+    competition context confirmation.
+    OR: emotional_intensity == "Moderate" in competition
+        week with no other signals.
+
+  NONE:
+    reactivity_risk_score.band == "Low"
+    AND no competition-week WTD drops
+    AND emotional_intensity not elevated in competition weeks
+    (Requires sufficient competition-context weeks to
+    evaluate — see Context Gate above)
+
+----------------------------------------------------------------
+BUCKET 6: DISCIPLINE GAP
+Inconsistent motivation/effort; habits fluctuate based on
+mood, outcomes, or circumstances.
+----------------------------------------------------------------
+
+PRIMARY SIGNALS:
+- ownership_index.band (Low = not self-initiating engagement,
+  dependent on external prompts)
+- follow_through_score.band (Weak = accepting commitments but
+  not executing = effort inconsistency)
+
+SECONDARY SIGNALS:
+- morning_disengagement flag (selective morning skip while
+  completing evening = effort selectivity, not structural
+  absence)
+- surface_engagement flag (high completion but degraded
+  quality = going through motions)
+
+EVIDENCE TIER DETERMINATION:
+
+  STRONG:
+    ownership_index.band == "Low"
+    AND (follow_through_score.band == "Weak"
+         OR morning_disengagement flag fires)
+    OR: ownership_low flag AND follow_through_weak flag
+        fire simultaneously
+    OR: surface_engagement flag fires sustained 2+ weeks
+
+  MODERATE:
+    ownership_index.band == "Low" (without follow-through
+    confirmation)
+    OR: follow_through_score.band == "Weak" (without
+        ownership confirmation)
+    OR: morning_disengagement flag fires (isolated)
+
+  WEAK:
+    ownership_index.band == "Moderate" AND
+    follow_through_score.band == "Moderate"
+    AND one supporting flag fires (surface_engagement
+    or morning_disengagement, single week)
+
+  NONE:
+    ownership_index.band == "High"
+    AND follow_through_score.band in ["Strong", "Moderate"]
+    AND no discipline-related flags
+
+DISTINGUISHING FROM STRUCTURE GAP (BUCKET 7):
+Discipline Gap = motivation/effort inconsistency. The athlete
+CAN structure but doesn't maintain effort consistently.
+Structure Gap = routine/rhythm absence. The athlete doesn't
+HAVE the routine.
+
+Key differentiator: If performance is strong when external
+structure exists (weekdays, scheduled activities) but collapses
+when structure is removed (weekends, breaks), the primary
+signal is Structure Gap, not Discipline Gap. Discipline Gap
+presents as inconsistent effort WITHIN structured time
+(skipping morning tune-ups despite having time, doing the
+minimum, surface engagement).
+
+Tucker Lloyd example: His weekday execution is strong (5/5 Win
+in Week 5) — this rules out Discipline Gap as primary.
+His weekend execution collapses (2/2 Missed) — this points to
+Structure Gap. Tucker has motivation; he lacks self-directed
+routine. Discipline Gap = Moderate (follow-through on micro-
+commitments has been partial), Structure Gap = Strong.
+
+----------------------------------------------------------------
+BUCKET 7: STRUCTURE GAP
+Absence/inconsistency of pre-performance routines, daily
+rhythms, or training structure.
+----------------------------------------------------------------
+
+PRIMARY SIGNALS:
+- rhythm_score.band (Disrupted = timing and sequence
+  inconsistency in daily routines)
+- rhythm_disrupted flag (formal flag for structural breakdown)
+
+SECONDARY SIGNALS:
+- evening_review.sequence_integrity (Broken = routine
+  component ordering not maintained)
+- Weekday vs weekend WTD divergence (structural dependency —
+  performance collapses when external scaffolding removed)
+
+EVIDENCE TIER DETERMINATION:
+
+  STRONG:
+    rhythm_score.band == "Disrupted"
+    OR rhythm_disrupted flag fires
+    OR (rhythm_score.band == "Variable" AND weekday-weekend
+        WTD win rate divergence >= 3 Win-day difference
+        AND sustained 2+ weeks in rolling window)
+
+  MODERATE:
+    rhythm_score.band == "Variable"
+    OR sequence_integrity == "Broken"
+    OR (weekday-weekend divergence present but < 3 Win-day
+        difference or not yet sustained 2+ weeks)
+
+  WEAK:
+    sequence_integrity == "Partial"
+    AND rhythm_score.band == "Stable"
+    AND no weekday-weekend divergence
+    (Minor routine imperfections without structural impact)
+
+  NONE:
+    rhythm_score.band == "Stable"
+    AND sequence_integrity == "Intact"
+    AND no weekday-weekend divergence
+
+WEEKDAY-WEEKEND DIVERGENCE CALCULATION:
+For each week in the rolling window:
+  weekday_win_rate = (Mon-Fri Win days) / (Mon-Fri scored days)
+  weekend_win_rate = (Sat-Sun Win days) / (Sat-Sun scored days)
+  divergence = weekday_win_rate - weekend_win_rate
+If divergence >= 0.40 (approximately 3+ Win-day difference
+in a 7-day week) sustained across 2+ weeks → Strong evidence
+of structural dependency.
+
+Tucker Lloyd validation: Weeks 2-5 show weekday 4-5 Wins,
+weekend 0-1 Wins. Divergence is extreme and sustained.
+Structure Gap = Strong.
+
+----------------------------------------------------------------
+BUCKET 8: ECOSYSTEM FRICTION
+External pressure from coaches, parents, or environment
+destabilizing mental performance.
+----------------------------------------------------------------
+
+PRIMARY SIGNALS:
+- stress_load (Elevated, especially without competition
+  context — suggests environmental rather than competitive
+  pressure)
+- noise_fixation_present (Yes = fixation on external noise
+  intruding on controllable focus)
+
+SECONDARY SIGNALS (CONTENT-DERIVED SUPPLEMENTS):
+- Bullseye outer-ring content referencing coaches, parents,
+  or environmental stressors (Stage 2 detects in text analysis)
+- Journaling themes indicating ecosystem conflict (Stage 2
+  already captures)
+
+EVIDENCE TIER DETERMINATION:
+
+  STRONG:
+    stress_load == "Elevated" sustained 2+ weeks
+    AND (noise_fixation_present == "Yes"
+         OR Bullseye outer-ring coach/parent references
+            sustained 2+ weeks)
+    AND no scheduled_competition in those weeks (ruling out
+        competition-induced stress)
+
+  MODERATE:
+    stress_load == "Elevated" (single week, non-competition)
+    OR noise_fixation_present == "Yes" sustained 2+ weeks
+    OR Bullseye outer-ring coach/parent references present
+       but stress_load == "Moderate"
+
+  WEAK:
+    stress_load == "Moderate" with isolated ecosystem-
+    referencing outer-ring content (single week).
+    OR: noise_fixation_present == "Yes" (single week only)
+
+  NONE:
+    stress_load in ["Low", "Moderate"] consistently
+    AND noise_fixation_present != "Yes"
+    AND no ecosystem-referencing outer-ring patterns
+
+SIGNAL QUALITY NOTE:
+Ecosystem Friction has the LOWEST execution signal quality of
+all 8 buckets. It is primarily content-derived, not execution-
+derived. The behavioral signature is weak — an athlete
+experiencing ecosystem friction might show the same execution
+patterns as one with any other stressor. The content-derived
+supplements (stress_load, noise_fixation, outer-ring themes)
+provide the most meaningful increase in coaching quality for
+this bucket, even though they are not pure execution signals.
+
+================================================================
+SECTION C: COMPUTATION CADENCE AND MINIMUM DATA THRESHOLD
+================================================================
+
+COMPUTATION CADENCE: Weekly with Stabilized Alignment Signal
+
+The Longitudinal PPD is computed every week as part of the
+Stage 2 Interpretation Engine processing. However, the signal
+is inherently stable because it is based on a ROLLING WINDOW
+of accumulated evidence across all available weeks, not a
+single week's data.
+
+ROLLING WINDOW LOGIC:
+For each bucket, the evidence tier is determined by the
+PREDOMINANT classification across all weeks in the window:
+
+  Step 1: Compute per-week evidence tier for each bucket
+          using that week's execution data and the rules
+          in Section B.
+
+  Step 2: Across all weeks in the rolling window, determine
+          the predominant tier:
+          - If a bucket is Strong in >= 50% of evaluable weeks
+            → Strong overall
+          - If a bucket is Moderate-or-above in >= 50% of
+            evaluable weeks → Moderate overall
+          - If a bucket is Weak-or-above in >= 50% of
+            evaluable weeks → Weak overall
+          - Otherwise → None
+
+  Step 3: "Context Insufficient" weeks are excluded from the
+          percentage calculation (they reduce the denominator,
+          not the count). If ALL weeks are Context Insufficient
+          for a bucket → Context Insufficient overall.
+
+  Step 4: Derive execution-derived Top 3 by ranking buckets
+          by evidence tier (Strong > Moderate > Weak). Ties
+          broken by bucket priority order (1→8, matching
+          intake PPD Layer 4 tie-breaker).
+
+MINIMUM DATA THRESHOLD: Progressive (Two Confidence Tiers)
+
+  INSUFFICIENT DATA (< 3 weeks accumulated):
+    All longitudinal_ppd fields = "insufficient data"
+    Status = "insufficient data"
+    No computation performed. No alignment signal.
+
+  EMERGING (3-4 weeks accumulated):
+    Status = "emerging"
+    Execution-derived bucket evidence tiers computed.
+    Alignment Signal computed but labeled "Emerging."
+    Stage 3 routing: Tier 2 remains static intake PPD.
+    Stage 3 tone: Alignment Signal MAY subtly inform tone
+    but does NOT redirect coaching emphasis.
+    Purpose: Early detection, coaching heads-up, not
+    confident enough to redirect.
+
+  ESTABLISHED (5+ weeks accumulated):
+    Status = "established"
+    Full computation with high confidence.
+    Stage 3 routing: Tier 2 replaced with execution-derived
+    PPD Top 3.
+    Stage 3 tone: Full Alignment Signal tone modification
+    active (Blind Spot=ground, Gap=elevate, Aligned=confirm).
+    Purpose: Sufficient evidence to confidently redirect
+    coaching emphasis when warranted.
+
+RATIONALE FOR 3 AND 5 WEEK THRESHOLDS:
+- 3 weeks: Minimum for pattern detection. Tucker's Sunday
+  Missed was a pattern by Week 3 (3 consecutive), not just
+  a one-off by Week 2. Two weeks is one data point and one
+  comparison — insufficient to distinguish signal from noise.
+- 5 weeks: Sufficient accumulated evidence for a rolling
+  window to be meaningful. Tucker at 5 weeks has an
+  unmistakable Structure Gap pattern. Grace at 5 weeks has
+  clear Aligned confirmation including adversity test (Week 3)
+  and recovery (Weeks 4-5). Enough varied contexts (good
+  weeks, bad weeks, possibly competition) for reliable signal.
+
+================================================================
+SECTION D: PPD ALIGNMENT SIGNAL CLASSIFICATION
+================================================================
+
+The PPD Alignment Signal is determined by comparing the intake
+PPD Top 3 (from ppd_top_3 in baseline_intake_profile) against
+the execution-derived Top 3 (computed in Section C).
+
+THREE CLASSIFICATION STATES:
+
+  ALIGNED:
+    Intake and execution agree on primary friction areas.
+    Athlete's self-awareness is accurate. Continue current
+    coaching emphasis.
+
+  GAP:
+    Intake identified some problems, but execution reveals
+    different problems as primary. Some overlap exists —
+    the athlete has partial awareness but underestimated
+    certain areas.
+    Coaching: begin shifting emphasis toward what execution
+    shows, while acknowledging what the athlete identified.
+    Gradual redirection.
+
+  BLIND SPOT:
+    Execution reveals a significant friction area the athlete
+    did NOT self-identify at intake (low or zero intake score).
+    Coaching: introduce the unseen pattern gently. Grounding
+    language — "here's what's showing up in your weeks."
+    Not accusatory. Same approach as Conflated in self_ratings
+    (ground without shaming).
+
+CLASSIFICATION LOGIC:
+
+  STEP 1: DERIVE EXECUTION TOP 3
+    Rank all 8 buckets by evidence tier:
+      Strong > Moderate > Weak > None
+    Skip "None" and "Context Insufficient" buckets.
+    Within same tier, use bucket priority order (1→8).
+    Take top 3 (or fewer if less than 3 buckets have
+    Weak-or-above evidence).
+    If fewer than 3 buckets have any evidence → signal
+    may be unreliable. Flag but still compute.
+
+  STEP 2: COMPARE AGAINST INTAKE TOP 3
+    Count OVERLAP: buckets appearing in BOTH intake Top 3
+    and execution Top 3.
+    Identify NEW ENTRIES: buckets in execution Top 3 but
+    NOT in intake Top 3.
+    Identify DROPPED: buckets in intake Top 3 but NOT in
+    execution Top 3.
+
+  STEP 3: CLASSIFY EACH NEW ENTRY
+    For each new entry, compare intake score (from
+    ppd_all_scores) against execution evidence tier:
+
+    intake_score <= 2 AND execution = Strong → BLIND SPOT
+      (Athlete had essentially no awareness. Intake score
+       of 0 = no Q15 selection AND no amplifier fired.
+       Score of 1-2 = amplifier fired but athlete did not
+       self-identify via Q15.)
+
+    intake_score <= 2 AND execution = Moderate → GAP
+      (Some evidence emerging but athlete was unaware.
+       Moderate confidence — could still be Gap rather
+       than confirmed Blind Spot.)
+
+    intake_score 3-4 AND execution = Strong or Moderate → GAP
+      (Athlete had SOME awareness — the bucket had a
+       non-trivial intake score — but underestimated its
+       importance. The friction area was ranked 4th-5th
+       at intake but is now top 3 in execution.)
+
+    intake_score >= 5 → unlikely to be a new entry
+      (A score of 5+ means the bucket was already
+       significant at intake. If it appears in execution
+       Top 3, it likely also appeared in intake Top 3.
+       Edge case: if it appears as new despite high score,
+       classify as GAP — the problems shifted in ranking
+       rather than being unseen.)
+
+  STEP 4: DETERMINE OVERALL ALIGNMENT SIGNAL
+
+    3/3 overlap (same Top 3 in both):
+      → ALIGNED
+
+    2/3 overlap:
+      Check the 1 new entry classification from Step 3:
+        If Blind Spot → overall BLIND SPOT
+        If Gap → overall GAP
+
+    1/3 overlap:
+      → GAP (significant divergence but some self-awareness)
+      UNLESS a new entry is classified as Blind Spot →
+      overall BLIND SPOT
+
+    0/3 overlap:
+      → BLIND SPOT (complete misalignment between self-
+         perception and execution reality)
+
+    OVERRIDE RULE:
+    Any single bucket classified as Blind Spot in Step 3
+    AND execution evidence = Strong → overall signal =
+    BLIND SPOT, regardless of overlap count. One strong
+    blind spot is enough to flag, even with 2/3 overlap.
+    Rationale: A coaching-significant unseen friction area
+    should not be masked by partial overlap elsewhere.
+
+  STEP 5: HANDLE EDGE CASES
+
+    Fewer than 3 buckets have evidence:
+      If only 2 buckets have Weak-or-above evidence,
+      compare those 2 against intake Top 3.
+      Apply same overlap logic with adjusted denominator.
+      Overall signal reliability is reduced — note in
+      alignment_signal output.
+
+    All buckets are None or Context Insufficient:
+      longitudinal_ppd.status remains "insufficient data"
+      regardless of weeks_accumulated. The athlete has
+      execution data but no discernible friction patterns.
+      This is rare but possible for high-functioning
+      athletes in early Growth weeks.
+
+    Execution Top 3 matches intake Top 3 but in different
+    order:
+      → ALIGNED. Ranking order differences within the
+         same Top 3 are not significant enough to
+         constitute a Gap. Stage 3 already has the
+         per-bucket evidence tiers and can see shifts
+         in relative emphasis.
+
+================================================================
+SECTION E: DOWNSTREAM ROUTING RULES
+================================================================
+
+STAGE 3: COACHING OUTPUT ENGINE
+
+  PRIORITY ROUTING (modifies Tier 2):
+
+    Status = "established" (5+ weeks):
+      Tier 2 = execution-derived PPD Top 3 REPLACES
+      static intake PPD.
+      Coaching implications from execution-derived buckets
+      inform the coaching direction when weekly signals
+      (Tier 1) are not driving a specific emphasis.
+
+    Status = "emerging" (3-4 weeks):
+      Tier 2 = static intake PPD (UNCHANGED).
+      Execution-derived data is too preliminary to redirect
+      coaching priority.
+
+    Status = "insufficient data" (< 3 weeks):
+      Tier 2 = static intake PPD (UNCHANGED).
+
+  TONE MODIFICATION (applies across all tiers):
+
+    alignment_signal.overall = "Blind Spot":
+      GROUNDING TONE. Introduce the unseen pattern
+      behaviorally without naming the bucket or the
+      comparison mechanism.
+      Approach: "Something that's showing up in your
+      weeks is..." or "The routine piece is more central
+      than it might feel."
+      Same coaching approach as Conflated in self_ratings —
+      ground without shaming.
+
+    alignment_signal.overall = "Gap":
+      ELEVATION TONE. The athlete had some awareness but
+      underestimated the area. Elevate the underestimated
+      friction area.
+      Approach: "That [behavioral pattern] you mentioned —
+      it's showing up more than you might think."
+      Same coaching approach as acknowledging partial
+      awareness while directing attention.
+
+    alignment_signal.overall = "Aligned":
+      CONFIRMATION TONE. No adjustment needed. Continue
+      current coaching direction.
+      Coaching can reinforce the athlete's accurate self-
+      understanding: their own read on their challenges
+      matches what their weeks are showing.
+
+    Status = "emerging":
+      Tone modification available but SUBTLE only. No
+      explicit grounding or elevation. At most, a slight
+      lean in the direction the emerging signal suggests.
+      Example: if Structure Gap is emerging as Strong,
+      micro-commitment might lean toward routine/structure
+      topics even though Tier 2 priority hasn't changed.
+
+  UPDATED PRIORITY SYSTEM:
+
+    Tier 1 (Always):    Weekly signals (coach flags, composite
+                        score concern bands, weekly core_pattern)
+    Tier 1.5:           Forward Anchor
+    Tier 2 (Fallback):  PPD coaching implications
+                        - Static intake PPD (default)
+                        - Execution-derived PPD (when
+                          status = "established")
+    Tier 3 (Default):   Default coaching direction per
+                        core_pattern
+    + Tone Modification: PPD Alignment Signal
+                        (Blind Spot / Gap / Aligned)
+                        applies across all active tiers
+
+  MICRO-COMMITMENT INTERACTION:
+  When alignment_signal = "Blind Spot" and the blind spot
+  bucket relates to a behavioral pattern the micro-commitment
+  can address, the micro-commitment SHOULD target the blind
+  spot area (subject to the existing micro-commitment
+  modality adaptation rule in Section 10 of the Coaching
+  Output Instructions). This is the primary mechanism for
+  introducing the blind spot pattern to the athlete through
+  action rather than explanation.
+
+  Example (Tucker): Blind Spot = Structure Gap. Micro-
+  commitment targets weekend routine: "Name two specific
+  days you'll get to the gym during spring break. Tell
+  someone." This addresses the blind spot without naming it.
+
+STAGE 4: COACH INSIGHTS ENGINE
+
+  ZERO PPD CONSUMPTION MAINTAINED.
+  The longitudinal_ppd block is NOT consumed by Stage 4.
+  PPD bucket names, alignment signal labels, evidence tiers,
+  and all longitudinal PPD terminology remain prohibited.
+  Stage 4 continues to surface the same behavioral patterns
+  through composite scores and coach flags — different
+  pathway, same coaching value. No compliance filter changes
+  needed for Stage 4.
+
+STAGE 5: EDITORIAL AUDIT
+
+  Criterion 13 (Pipeline Data Leakage Compliance) expanded
+  with Category F subcategories F6-F8 (see Section H).
+  Stage 5 audits Stage 3 output for longitudinal PPD
+  terminology leakage using the same scan process as
+  existing Categories A-F.
+
+================================================================
+SECTION F: OUTPUT JSON SCHEMA
+================================================================
+
+New top-level block in the Interpretation JSON:
+
+"longitudinal_ppd": {
+  "status": "insufficient data | emerging | established",
+  "weeks_accumulated": <integer>,
+  "measurement_window_start": "<YYYY-MM-DD>",
+
+  "execution_derived_top_3": [
+    {
+      "rank": <1|2|3>,
+      "bucket": "<bucket name>",
+      "evidence_tier": "Strong | Moderate | Weak",
+      "primary_signals": ["<signal description>", ...]
+    }
+  ],
+
+  "execution_derived_all_buckets": {
+    "overthinking_loop": "<evidence tier>",
+    "confidence_volatility": "<evidence tier>",
+    "mistake_recovery_lag": "<evidence tier>",
+    "focus_drift": "<evidence tier>",
+    "pressure_reactivity": "<evidence tier>",
+    "discipline_gap": "<evidence tier>",
+    "structure_gap": "<evidence tier>",
+    "ecosystem_friction": "<evidence tier>"
+  },
+
+  "alignment_signal": {
+    "overall": "Aligned | Gap | Blind Spot",
+    "overlap_count": <0|1|2|3>,
+    "overlap_buckets": ["<bucket name>", ...],
+    "new_entries": [
+      {
+        "bucket": "<bucket name>",
+        "classification": "Blind Spot | Gap",
+        "intake_score": <integer>,
+        "execution_evidence": "Strong | Moderate"
+      }
+    ],
+    "dropped_from_intake": ["<bucket name>", ...]
+  },
+
+  "core_foundation_fallback": <boolean>
+}
+
+FIELD DEFINITIONS:
+
+  status:
+    "insufficient data" — < 3 weeks accumulated, OR CF
+    athlete, OR all buckets None/Context Insufficient
+    despite sufficient weeks.
+    "emerging" — 3-4 weeks accumulated. Preliminary signal.
+    "established" — 5+ weeks accumulated. Full confidence.
+
+  weeks_accumulated:
+    Integer count of weeks with execution data in the
+    rolling window. Increments each week. CF athletes = 0.
+
+  measurement_window_start:
+    Date of the earliest week in the rolling window.
+    Used for audit trail and temporal context.
+
+  execution_derived_top_3:
+    Array of 1-3 objects, ranked by evidence tier then
+    bucket priority. Each object includes:
+    - rank: 1, 2, or 3
+    - bucket: human-readable bucket name (matching PPD
+      Scoring Logic bucket names exactly)
+    - evidence_tier: Strong, Moderate, or Weak
+    - primary_signals: array of strings describing which
+      execution signals drove this tier classification.
+      For pipeline debugging and audit trail ONLY — never
+      surfaced in any output.
+    Array may contain fewer than 3 entries if insufficient
+    buckets have Weak-or-above evidence.
+
+  execution_derived_all_buckets:
+    Object with all 8 bucket names as keys and evidence
+    tier as values. Evidence tier values:
+    "Strong", "Moderate", "Weak", "None",
+    "Context Insufficient"
+    Mirrors ppd_all_scores structure from intake for
+    direct comparison.
+
+  alignment_signal:
+    Computed comparison result. Only populated when
+    status != "insufficient data".
+    - overall: headline signal consumed by Stage 3
+    - overlap_count: 0-3, number of buckets in both
+      intake and execution Top 3
+    - overlap_buckets: array of overlapping bucket names
+    - new_entries: array of buckets in execution Top 3
+      but not intake Top 3, with per-bucket classification
+      (Blind Spot or Gap), intake score, and execution
+      evidence tier
+    - dropped_from_intake: array of bucket names in
+      intake Top 3 but not execution Top 3
+
+  core_foundation_fallback:
+    Boolean. When true, all other fields are minimal
+    (status = "insufficient data", weeks_accumulated = 0).
+    Binary check for downstream stages.
+
+CORE FOUNDATION ATHLETE:
+{
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}
+
+APP ATHLETE < 3 WEEKS:
+{
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 2,
+    "measurement_window_start": "2026-02-09",
+    "core_foundation_fallback": false
+  }
+}
+
+APP ATHLETE 3-4 WEEKS (EMERGING):
+Full schema populated. status = "emerging".
+alignment_signal populated but Stage 3 uses for
+subtle tone only — no Tier 2 replacement.
+
+APP ATHLETE 5+ WEEKS (ESTABLISHED):
+Full schema populated. status = "established".
+Full routing active — Tier 2 replacement + tone
+modification.
+
+================================================================
+SECTION G: EDGE CASES
+================================================================
+
+EDGE CASE 1: FIRST WEEK (APP ATHLETE)
+  weeks_accumulated = 1. Status = "insufficient data".
+  No computation. Output = minimal block with
+  weeks_accumulated = 1, core_foundation_fallback = false.
+
+EDGE CASE 2: CORE FOUNDATION ATHLETE
+  core_foundation_fallback = true. All fields minimal.
+  Zero degradation to existing CF processing. CF athletes
+  have no execution data — longitudinal PPD is an App-
+  athlete feature only.
+
+EDGE CASE 3: INJURY WEEK / UNUSUAL WEEK
+  Injury, illness, or other disruption may temporarily
+  shift execution patterns. A single injury week should
+  not flip the alignment signal.
+  Resolution: The rolling window naturally smooths single-
+  week anomalies. Mergim's Week 14 (hamstring injury) would
+  temporarily push some bucket tiers toward elevated evidence,
+  but the predominant-tier calculation across 14 weeks would
+  absorb it. No special handling needed beyond the rolling
+  window design.
+
+EDGE CASE 4: INSUFFICIENT DATA DESPITE SUFFICIENT WEEKS
+  An athlete has 5+ weeks but all bucket evidence tiers are
+  None or Context Insufficient (e.g., perfect execution,
+  no adversity, off-season, minimal friction signals).
+  Resolution: status = "insufficient data" despite
+  weeks_accumulated >= 5. The status field reflects signal
+  quality, not just time elapsed. alignment_signal is not
+  populated. Stage 3 uses static intake PPD at Tier 2.
+
+EDGE CASE 5: ALL 8 BUCKETS AT ZERO IN INTAKE
+  If the athlete's ppd_all_scores has 0 for multiple
+  buckets (possible if minimal Q15 selections and few
+  amplifiers fire), any execution-derived evidence for
+  those buckets would be classified as Blind Spot (intake
+  score 0, execution evidence present).
+  Resolution: Normal classification logic applies. However,
+  intake scores of 0 on all non-selected buckets is the
+  expected default — most athletes will have 5 buckets at
+  0 (8 total minus 1-3 Q15 selections). The system should
+  focus on the contrast between SELECTED buckets (3+
+  intake score) and NON-SELECTED buckets (0-2 intake score)
+  when determining Blind Spot vs Gap.
+
+EDGE CASE 6: TIED EXECUTION EVIDENCE TIERS
+  Multiple buckets have the same evidence tier (e.g.,
+  3 buckets all at Moderate).
+  Resolution: Break ties using bucket priority order (1→8),
+  matching the intake PPD Layer 4 tie-breaker. Internal/
+  cognitive buckets (1-5) prioritized over structural/
+  external (6-8).
+
+EDGE CASE 7: EXECUTION TOP 3 HAS FEWER THAN 3 BUCKETS
+  Possible when only 1-2 buckets have Weak-or-above evidence.
+  Resolution: Compare available execution entries against
+  intake Top 3. Overlap calculated against available count,
+  not always 3. Signal reliability is noted but classification
+  still proceeds. Example: if only 1 bucket has evidence and
+  it's in intake Top 3 → Aligned (limited data). If 1 bucket
+  has evidence and it's NOT in intake Top 3 → Blind Spot or
+  Gap depending on intake score.
+
+EDGE CASE 8: SEASON PHASE CHANGES MID-WINDOW
+  Athlete transitions from Off-Season to In-Season during
+  the rolling window. Pressure Reactivity bucket was Context
+  Insufficient in early weeks but becomes evaluable in later
+  weeks.
+  Resolution: Per Bucket 5 Season Phase Context Gate — use
+  the most evaluable phase present. Evaluate Pressure
+  Reactivity using only the In-Season weeks. Other buckets
+  use all weeks in the window.
+
+EDGE CASE 9: PRIOR WEEK JSON NOT AVAILABLE (GAP IN DATA)
+  Program gaps (e.g., Tucker's potential spring break gap,
+  Aidan's 10-week gap) reduce the rolling window's effective
+  data points.
+  Resolution: weeks_accumulated counts only weeks WITH data.
+  A 10-week gap does not add 10 to weeks_accumulated. The
+  rolling window uses all available JSONs in chronological
+  order. If an athlete has 3 weeks of data spread across 8
+  calendar weeks, status = "emerging" (3 weeks accumulated,
+  not 8).
+
+EDGE CASE 10: ALIGNMENT SIGNAL CHANGES OVER TIME
+  An athlete starts as Aligned but execution shifts over
+  months — a new friction area emerges that wasn't present
+  at intake.
+  Resolution: Normal behavior. The alignment signal updates
+  weekly based on the rolling window. If the rolling window
+  shows a new bucket becoming Moderate-then-Strong over
+  weeks, the signal will shift from Aligned to Gap (or
+  Blind Spot if intake score was low). This is the system
+  working as intended — it detects emerging problems.
+
+EDGE CASE 11: ATHLETE RETAKES INTAKE FORM
+  If the app allows intake form re-administration (e.g.,
+  at a new season or program re-enrollment), the baseline
+  PPD resets.
+  Resolution: Out of scope for this specification. If re-
+  administration is supported, the new intake PPD becomes
+  the comparison baseline, weeks_accumulated resets to 0,
+  and the longitudinal PPD recalculates from the new
+  baseline. Design decision deferred to app architecture.
+
+EDGE CASE 12: COMPOUND_DISENGAGEMENT FLAG
+  When compound_disengagement fires (3+ of 5 scores in worst
+  band), multiple buckets may simultaneously show Strong
+  evidence. This is expected and correct — a broadly
+  disengaging athlete may genuinely have multiple active
+  friction areas.
+  Resolution: No special handling. All buckets classified
+  independently. If 4+ buckets show Strong evidence, the
+  execution Top 3 captures the most prominent (using bucket
+  priority for ties). The Alignment Signal reflects the
+  comparison against intake regardless of how many buckets
+  are active.
+
+================================================================
+SECTION H: COMPLIANCE AND AUDIT REQUIREMENTS
+================================================================
+
+EDITORIAL AUDIT — CATEGORY F EXPANSION
+
+Category F (Intake Profile Terminology) expanded with 3 new
+subcategories for Longitudinal PPD:
+
+F6: PPD ALIGNMENT SIGNAL CLASSIFICATIONS
+  Prohibited terms (as named pipeline classifications):
+  - "Aligned" (when describing PPD intake-to-execution match)
+  - "Gap" (when describing PPD intake-to-execution divergence)
+  - "Blind Spot" (when describing unseen friction area)
+  - "Problem Awareness Aligned"
+  - "Problem Awareness Gap"
+  - "PPD Alignment"
+  - "alignment signal"
+  - "execution-derived PPD"
+  - "longitudinal PPD"
+
+  NOTE: "aligned," "gap," and "blind spot" are common English
+  words. Prohibition applies ONLY when used as named pipeline
+  classifications describing the intake-to-execution comparison.
+  Natural coaching usage is permitted:
+    PERMITTED: "your actions are aligned with your goals"
+    PERMITTED: "there's a gap between your intentions and
+               your weekends"
+    PROHIBITED: "there's a blind spot in your self-assessment"
+    PROHIBITED: "your PPD alignment shows a gap"
+
+  Reasonable reader test: Would a reader understand this
+  sentence as referencing a formal pipeline classification
+  system? If yes, it fails.
+
+F7: LONGITUDINAL PPD TERMINOLOGY
+  Prohibited terms:
+  - "execution-derived PPD"
+  - "longitudinal PPD"
+  - "evidence tier" / "evidence strength"
+  - "Strong / Moderate / Weak / None evidence"
+  - "Emerging / Established confidence tier"
+  - "intake vs execution"
+  - "self-report vs behavioral data"
+  - "rolling window"
+  - "bucket ranking comparison"
+  - "predominant classification"
+  - "measurement window"
+  - "weeks accumulated"
+
+F8: INTAKE-TO-EXECUTION COMPARISON FRAMING
+  Prohibited patterns:
+  - "when you started you thought X"
+  - "your intake identified"
+  - "what you reported vs what we see"
+  - "the data contradicts your self-assessment"
+  - "you didn't identify this at intake"
+  - "your blind spot is"
+  - "you weren't aware of"
+  - "the system detected"
+  - "we've been tracking your real problems"
+  - "your self-report was inaccurate"
+  - "comparing your answers against your behavior"
+  - Any framing that positions the pipeline as having
+    surveilled the athlete's self-awareness accuracy
+
+  Reasonable reader test: Would a reader understand this
+  sentence as "the system has been comparing my intake
+  answers against my behavior"? If yes, it fails.
+
+  ATHLETE'S OWN SELF-DISCOVERY IS PERMITTED:
+  If the athlete says in their weekly recap "I think my
+  real problem is my routine, not my confidence," Stage 3
+  CAN reflect this back: "You named it yourself — the
+  routine piece is where the energy needs to go." The
+  audit distinguishes between the athlete's own language
+  (permitted) and the pipeline's comparison mechanism
+  (prohibited).
+
+WRONG/CORRECT EXAMPLES:
+
+  WRONG: "Your intake identified overthinking as your primary
+         challenge, but structure is where the real pattern
+         lives."
+  CORRECT: "Something that's been showing up in your weeks is
+           how different your weekdays and weekends look."
+
+  WRONG: "There's a blind spot in your self-awareness around
+         routine."
+  CORRECT: "The routine piece is more central to your week
+           than it might feel."
+
+  WRONG: "The data shows a gap between what you reported and
+         what's actually happening."
+  CORRECT: "Here's what I'm seeing in how your weeks are
+           landing."
+
+  WRONG: "Your PPD alignment is divergent."
+  CORRECT: (No equivalent — pure pipeline language with no
+           coaching translation needed)
+
+  WRONG: "Since you started the program, the real friction
+         area has shifted from confidence to structure."
+  CORRECT: "The structure of your week — especially weekends —
+           is where the next level lives."
+
+  WRONG: "We've noticed a pattern you may not be aware of."
+  CORRECT: "Your weekdays are strong. The question is what
+           happens when that external schedule goes away."
+
+AUDIT PROCESS:
+Criterion 13 (Pipeline Data Leakage Compliance) scan steps
+3-5 expanded to include F6, F7, F8 terms alongside existing
+A-G categories. No new criteria needed — F6-F8 are additional
+prohibited terms within the existing Criterion 13 framework.
+
+================================================================
+SECTION I: CORE FOUNDATION FALLBACK
+================================================================
+
+Core Foundation athletes have no execution data. The
+Longitudinal PPD system is an App-athlete feature only.
+
+CF FALLBACK VALUES:
+{
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}
+
+All other fields (execution_derived_top_3,
+execution_derived_all_buckets, alignment_signal) are NOT
+populated when core_foundation_fallback = true.
+
+CF DOWNSTREAM BEHAVIOR:
+- Stage 3: Tier 2 = static intake PPD (always). No tone
+  modification from alignment signal. Identical to pre-
+  longitudinal-PPD behavior. Zero degradation.
+- Stage 4: No change (zero PPD consumption rule unchanged).
+- Stage 5: Criterion 13 CF check — any longitudinal PPD
+  terminology in a CF athlete's output = FAIL (there is
+  no execution data to derive PPD from, so any such
+  language is a hallucination).
+
+================================================================
+SECTION J: VALIDATION — WORKED EXAMPLES
+================================================================
+
+EXAMPLE 1: TUCKER LLOYD (BLIND SPOT CASE)
+5 weeks of execution data (Feb 9 – Mar 15, 2026)
+
+  Intake PPD (from VF_PPD_Scoring_Logic.txt worked example):
+    Top 3: Overthinking Loop (5), Discipline Gap (5),
+           Confidence Volatility (3)
+    ppd_all_scores:
+      overthinking_loop: 5
+      discipline_gap: 5
+      confidence_volatility: 3
+      pressure_reactivity: 2
+      mistake_recovery_lag: 2
+      structure_gap: 2
+      focus_drift: 0
+      ecosystem_friction: 0
+
+  Execution Evidence (5 weeks accumulated):
+    Status: "established"
+
+    Bucket-by-bucket assessment:
+
+    Overthinking Loop: WEAK
+      - reactivity_risk_score: Low (no volatility evidence
+        — Tucker's patterns are structural, not reactive)
+      - outer_ring_dominant_rate: not elevated
+      - intraweek_volatility: Low (weekday scores are
+        consistently high, weekend consistently low —
+        this is predictable, not volatile)
+      Tucker doesn't overthink. He under-structures.
+
+    Confidence Volatility: WEAK
+      - consistency_signal: Variable/Stagnant (but this is
+        structural, not confidence-driven)
+      - self_ratings_alignment.confidence: would likely show
+        Conflated (self-rates mental game 8/10 but execution
+        shows Mixed tier) — however, this is perception
+        inflation about structure, not unstable confidence
+      - No competition-week WTD drops (limited competition
+        context in 5 weeks of off-season football)
+      Marginal signal. Tucker's inconsistency is structural,
+      not confidence-driven.
+
+    Mistake Recovery Lag: CONTEXT INSUFFICIENT
+      - Tucker's Missed days are structural (every Sunday,
+        expanding to Saturday) — they are not error-recovery
+        scenarios. He doesn't "miss" because of mistakes;
+        he misses because no external structure exists.
+      - recovery_speed_days: Not meaningful when the "miss"
+        is structural rather than reactive.
+      Cannot evaluate — the conditions for testing mistake
+      recovery (reactive adverse events) have not occurred.
+
+    Focus Drift: MODERATE
+      - drift_score: likely Early (some engagement compression
+        visible in declining goal specificity and Bullseye
+        breadth over 5 weeks)
+      - domain_omission_pattern: unclear from available data
+      - No component_avoidance flag (Tucker completes when
+        he engages — he just doesn't engage on weekends)
+      Some evidence of engagement narrowing over time but
+      not dominant.
+
+    Pressure Reactivity: CONTEXT INSUFFICIENT
+      - Off-season football. No competition context.
+      - Season phase gate: Off-Season → cannot evaluate.
+
+    Discipline Gap: MODERATE
+      - ownership_index: likely Moderate (Tucker self-
+        initiates on weekdays when academic structure
+        exists, but this may be structure-driven not
+        self-driven)
+      - follow_through_score: likely Moderate (micro-
+        commitment execution has been partial — 3 weeks
+        of partial or not attempted)
+      - morning_disengagement: unclear
+      - surface_engagement: unlikely (Tucker's engagement
+        quality is genuine when he engages)
+      Some evidence — Tucker's follow-through on commitments
+      is inconsistent. But the root cause appears structural,
+      not motivational.
+
+    Structure Gap: STRONG
+      - rhythm_score: Disrupted or Variable (timing
+        completely inconsistent between weekdays and
+        weekends, gym attendance volatile 2/1/2/0/2)
+      - sequence_integrity: likely Partial at best
+      - Weekday vs weekend divergence: EXTREME. Week 5:
+        5/5 Win weekdays, 2/2 Missed weekends.
+        Divergence sustained across ALL 5 weeks (Sundays
+        Missed in Wks 2-5, Saturday joins in Wk 5).
+      Multiple signals converge. Sustained 5 weeks.
+      Unmistakable pattern.
+
+    Ecosystem Friction: NONE
+      - stress_load: Low across all 5 weeks
+      - noise_fixation_present: No
+      No ecosystem friction signals.
+
+  Execution-Derived Top 3:
+    1. Structure Gap — Strong
+    2. Discipline Gap — Moderate
+    3. Focus Drift — Moderate
+
+  Alignment Signal Computation:
+    Intake Top 3: Overthinking Loop, Discipline Gap,
+                  Confidence Volatility
+    Execution Top 3: Structure Gap, Discipline Gap,
+                     Focus Drift
+    Overlap: 1/3 (Discipline Gap)
+    New entries:
+      Structure Gap: intake_score = 2, execution = Strong
+        → BLIND SPOT (score <= 2 AND Strong)
+      Focus Drift: intake_score = 0, execution = Moderate
+        → GAP (score <= 2 AND Moderate)
+    Dropped from intake: Overthinking Loop,
+                         Confidence Volatility
+    Override check: Structure Gap = Blind Spot with Strong
+      evidence → override fires.
+
+    OVERALL: BLIND SPOT
+
+  JSON Output:
+  {
+    "longitudinal_ppd": {
+      "status": "established",
+      "weeks_accumulated": 5,
+      "measurement_window_start": "2026-02-09",
+      "execution_derived_top_3": [
+        {
+          "rank": 1,
+          "bucket": "Structure Gap",
+          "evidence_tier": "Strong",
+          "primary_signals": [
+            "rhythm_score.band: Disrupted/Variable",
+            "weekday_weekend_divergence: sustained 5 weeks",
+            "gym_attendance_volatility: 2/1/2/0/2"
+          ]
+        },
+        {
+          "rank": 2,
+          "bucket": "Discipline Gap",
+          "evidence_tier": "Moderate",
+          "primary_signals": [
+            "follow_through_score.band: Moderate",
+            "micro_commitment_execution: partial 3/5 weeks"
+          ]
+        },
+        {
+          "rank": 3,
+          "bucket": "Focus Drift",
+          "evidence_tier": "Moderate",
+          "primary_signals": [
+            "drift_score.band: Early",
+            "goal_specificity_decline: sustained"
+          ]
+        }
+      ],
+      "execution_derived_all_buckets": {
+        "overthinking_loop": "Weak",
+        "confidence_volatility": "Weak",
+        "mistake_recovery_lag": "Context Insufficient",
+        "focus_drift": "Moderate",
+        "pressure_reactivity": "Context Insufficient",
+        "discipline_gap": "Moderate",
+        "structure_gap": "Strong",
+        "ecosystem_friction": "None"
+      },
+      "alignment_signal": {
+        "overall": "Blind Spot",
+        "overlap_count": 1,
+        "overlap_buckets": ["Discipline Gap"],
+        "new_entries": [
+          {
+            "bucket": "Structure Gap",
+            "classification": "Blind Spot",
+            "intake_score": 2,
+            "execution_evidence": "Strong"
+          },
+          {
+            "bucket": "Focus Drift",
+            "classification": "Gap",
+            "intake_score": 0,
+            "execution_evidence": "Moderate"
+          }
+        ],
+        "dropped_from_intake": [
+          "Overthinking Loop",
+          "Confidence Volatility"
+        ]
+      },
+      "core_foundation_fallback": false
+    }
+  }
+
+  COACHING IMPACT:
+  Stage 3 Tier 2 now routes to Structure Gap as primary
+  coaching emphasis (replacing Overthinking Loop from intake).
+  Tone = Blind Spot grounding: "Something that's been showing
+  up in your weeks is how different your weekdays and weekends
+  look. Your weekdays are strong — the question is what
+  happens when that external schedule goes away."
+  Micro-commitment targets weekend structure: "Name two
+  specific days you'll get to the gym during spring break.
+  Tell someone."
+
+----------------------------------------------------------------
+
+EXAMPLE 2: GRACE KINDEL (ALIGNED CASE)
+5 weeks of execution data (Jan 12 – Mar 1, 2026)
+
+  Intake PPD (projected from profile — actual scores depend
+  on specific Q answers, using known behavioral profile):
+    Top 3: Mistake Recovery Lag (high), Pressure Reactivity
+           (high), Confidence Volatility (moderate)
+    ppd_all_scores (projected):
+      mistake_recovery_lag: 6
+      pressure_reactivity: 6
+      confidence_volatility: 4
+      overthinking_loop: 3
+      focus_drift: 0
+      discipline_gap: 0
+      structure_gap: 0
+      ecosystem_friction: 0
+
+  Execution Evidence (5 weeks accumulated):
+    Status: "established"
+
+    Bucket-by-bucket assessment:
+
+    Overthinking Loop: WEAK
+      - Week 3 showed elevated outer-ring activity (coach
+        frustration) but isolated to one week.
+      - No sustained volatility or contradiction pattern.
+
+    Confidence Volatility: MODERATE
+      - Derailer activated Week 3 under emotional strain
+        (direct evidence of confidence instability under
+        adversity).
+      - BUT: Hinge habit held. Recovery Weeks 4-5 showed
+        strengthening confidence ("the one chance I got, I
+        did something with" → "If I'm given a chance, use
+        it well").
+      - self_ratings_alignment.confidence: likely Aligned
+        (Grace's self-perception matches execution).
+      - consistency_signal: Stable/Improving.
+      Evidence exists (derailer activation) but the athlete
+      is actively managing it. Moderate, not Strong.
+
+    Mistake Recovery Lag: MODERATE
+      - Week 3 adversity → strong recovery by Weeks 4-5.
+      - Recovery pattern is POSITIVE, not lagging — but the
+        fact that recovery was needed confirms the friction
+        area exists.
+      - recommitment_signal: Strong when tested.
+      - recovery_speed_days: fast (hinge habit functional).
+      The friction area is real (mistakes do affect her)
+      but she has a functional recovery mechanism.
+
+    Focus Drift: NONE
+      - No drift patterns. Engagement consistent across
+        all 5 weeks. 42/42 Win days by Week 6.
+      - Bullseye center-ring dominant.
+
+    Pressure Reactivity: MODERATE
+      - Week 3: derailer activated under competitive/
+        emotional pressure → direct evidence.
+      - Season phase: In-Season → fully evaluable.
+      - BUT: Week 4 competition context → derailer NOT
+        activated. Pinch-hit opportunity used well.
+      - Pattern: reactive under emotional strain (Week 3)
+        but not under pure competitive pressure (Week 4).
+      Evidence exists but mixed — pressure reactivity is
+      context-dependent for Grace.
+
+    Discipline Gap: NONE
+      - Ownership high. Follow-through strong. No selective
+        avoidance or surface engagement patterns.
+
+    Structure Gap: NONE
+      - Rhythm stable. Consistent execution across all
+        contexts including NC travel and Florida trip.
+
+    Ecosystem Friction: WEAK
+      - Week 3 coach frustration in outer-ring Bullseye.
+        Isolated, not sustained. stress_load not elevated.
+
+  Execution-Derived Top 3:
+    1. Confidence Volatility — Moderate
+    2. Mistake Recovery Lag — Moderate
+    3. Pressure Reactivity — Moderate
+
+  Alignment Signal Computation:
+    Intake Top 3: Mistake Recovery Lag, Pressure Reactivity,
+                  Confidence Volatility
+    Execution Top 3: Confidence Volatility, Mistake Recovery
+                     Lag, Pressure Reactivity
+    Overlap: 3/3 (same buckets, different order)
+    New entries: none
+    Dropped from intake: none
+    Per Step 4: 3/3 overlap → ALIGNED
+    (Different ranking order within same Top 3 = still
+     Aligned per classification logic)
+
+    OVERALL: ALIGNED
+
+  JSON Output:
+  {
+    "longitudinal_ppd": {
+      "status": "established",
+      "weeks_accumulated": 5,
+      "measurement_window_start": "2026-01-12",
+      "execution_derived_top_3": [
+        {
+          "rank": 1,
+          "bucket": "Confidence Volatility",
+          "evidence_tier": "Moderate",
+          "primary_signals": [
+            "derailer_activation: Week 3 (emotional strain)",
+            "consistency_signal: Stable (managed)"
+          ]
+        },
+        {
+          "rank": 2,
+          "bucket": "Mistake Recovery Lag",
+          "evidence_tier": "Moderate",
+          "primary_signals": [
+            "recovery_needed: Week 3 adversity",
+            "recovery_outcome: positive (Weeks 4-5)"
+          ]
+        },
+        {
+          "rank": 3,
+          "bucket": "Pressure Reactivity",
+          "evidence_tier": "Moderate",
+          "primary_signals": [
+            "derailer_activation: Week 3 (emotional/competitive)",
+            "derailer_not_activated: Week 4 (pure competition)",
+            "season_phase: In-Season (fully evaluable)"
+          ]
+        }
+      ],
+      "execution_derived_all_buckets": {
+        "overthinking_loop": "Weak",
+        "confidence_volatility": "Moderate",
+        "mistake_recovery_lag": "Moderate",
+        "focus_drift": "None",
+        "pressure_reactivity": "Moderate",
+        "discipline_gap": "None",
+        "structure_gap": "None",
+        "ecosystem_friction": "Weak"
+      },
+      "alignment_signal": {
+        "overall": "Aligned",
+        "overlap_count": 3,
+        "overlap_buckets": [
+          "Confidence Volatility",
+          "Mistake Recovery Lag",
+          "Pressure Reactivity"
+        ],
+        "new_entries": [],
+        "dropped_from_intake": []
+      },
+      "core_foundation_fallback": false
+    }
+  }
+
+  COACHING IMPACT:
+  Stage 3 Tier 2 now uses execution-derived PPD (same buckets
+  as intake). Tone = Aligned confirmation. Net effect on
+  coaching output: minimal change from current approach.
+  Grace's coaching was already well-directed — the system
+  confirms her self-awareness is accurate. Coaching continues
+  building confidence resilience, recovery automaticity, and
+  pre-competition preparation anchors.
+
+================================================================
+SECTION K: DESIGN DECISIONS LOG
+================================================================
+
+All 9 design questions locked during collaborative session
+on 2026-03-18.
+
+DQ1: EXECUTION-TO-BUCKET MAPPING
+  Decision: 8-bucket mapping using existing composite scores,
+  coach flags, and v9.6 fields. No new weighted formulas.
+  Season phase context gate for Pressure Reactivity (Bucket 5).
+  Ecosystem Friction (Bucket 8) supplemented with content-
+  derived indicators (stress_load, noise_fixation, outer-ring
+  themes). See Section B for complete mapping.
+  Rationale: Leverages existing computation. Maximizes coaching
+  quality without over-engineering. Each bucket has at least
+  one primary execution signal.
+
+DQ2: COMPUTATION CADENCE
+  Decision: Option (d) — Weekly computation with stabilized
+  Alignment Signal. Rolling window across all available weeks
+  produces naturally stable signal that doesn't flip-flop.
+  Rationale: Matches self_ratings_alignment weekly cadence.
+  Rolling window smooths single-week noise while providing
+  fresh signal every week.
+
+DQ3: MINIMUM DATA THRESHOLD
+  Decision: Option (d) — Progressive threshold with two
+  confidence tiers. Emerging at 3 weeks (inform-only, no
+  routing change). Established at 5 weeks (full Alignment
+  Signal, Tier 2 replacement enabled).
+  Rationale: 3 weeks = minimum for pattern detection (Tucker's
+  Sunday Missed was a pattern by Week 3). 5 weeks = sufficient
+  for confident coaching redirection. Progressive approach
+  prevents "6 weeks of misaligned coaching" problem while
+  avoiding premature signal overreliance.
+
+DQ4: SCORING APPROACH
+  Decision: Option C — Hybrid with 5-tier evidence strength
+  (Strong / Moderate / Weak / None / Context Insufficient).
+  Deterministic classification rules per bucket using existing
+  composite score bands, coach flags, and v9.6 fields.
+  Rationale: Produces the best coaching output. Numeric 0-100
+  scores (Option A) imply false precision. Binary present/
+  absent (Option B) loses ranking capability needed for Blind
+  Spot detection. 5-tier evidence strength enables ranking,
+  Blind Spot detection, and appropriate coaching confidence
+  without manufacturing false precision. No new formulas
+  needed.
+
+DQ5: ALIGNMENT SIGNAL CLASSIFICATION
+  Decision: Top 3 comparison (not just #1 vs #1). Blind Spot =
+  intake score ≤2 AND execution evidence Strong. Gap = intake
+  score ≤2 AND execution Moderate, OR intake score 3-4 AND
+  execution Strong/Moderate. No sub-states within Aligned.
+  One Strong Blind Spot bucket overrides to overall Blind Spot
+  even with 2/3 overlap. 4-step classification logic.
+  Rationale: Top 3 comparison captures partial overlap (Tucker
+  shares Discipline Gap with intake). Blind Spot vs Gap
+  distinction based on intake score threshold enables
+  appropriate coaching tone (introduce vs elevate). Override
+  rule ensures a single significant blind spot is never masked.
+
+DQ6: DOWNSTREAM ROUTING — PRIORITY POSITION
+  Decision: Option (d) — Combination. Execution-derived PPD
+  replaces static intake at Tier 2 (when Established) + PPD
+  Alignment Signal tone modification across all tiers (Blind
+  Spot = grounding, Gap = elevation, Aligned = confirmation).
+  Forward Anchor unaffected at Tier 1.5.
+  Rationale: Addresses both the priority question (WHAT to
+  coach) and the tone question (HOW to frame it). Emerging
+  tier = subtle tone only, no Tier 2 change. Established =
+  full routing + tone.
+
+DQ7: STAGE 4 ROUTING
+  Decision: Option (a) — Maintain zero PPD consumption in
+  Stage 4. Alignment Signal stays internal to Stage 2/3.
+  Rationale: Stage 4 already surfaces the same behavioral
+  patterns through composite scores and flags — different
+  pathway, same coaching value. Surfacing "Self-Awareness:
+  Divergent" in institutional reports creates curiosity gaps
+  coaching staff cannot fill without accessing prohibited
+  PPD data.
+
+DQ8: EDITORIAL AUDIT EXPANSION
+  Decision: Expand Category F with 3 new subcategories (F6:
+  PPD Alignment Signal classifications, F7: Longitudinal PPD
+  terminology, F8: Intake-to-execution comparison framing).
+  Not a new Category H.
+  Rationale: Thematically consistent with existing Category F
+  (intake profile terminology). Same audit process — F6-F8
+  are additional prohibited terms within Criterion 13, not
+  new criteria.
+
+DQ9: JSON SCHEMA PLACEMENT
+  Decision: Option (d) — New top-level block `longitudinal_ppd`.
+  Rationale: Semantically clear — distinct from intake baseline
+  (baseline_intake_profile) and weekly execution signals
+  (execution_behavior_signals). Avoids nesting derived data
+  inside its own input source or inside a read-only pass-
+  through block.
+
+================================================================
+END OF SPECIFICATION
+================================================================
