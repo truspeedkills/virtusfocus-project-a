@@ -1,0 +1,218 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-03-16 to 2026-03-22",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent — he will always be balancing sport, academics, work, and relationships. Building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Baseline derailer actively managed this week — multi-domain demands present (school, work, coaching athletes, practice, competition) but preparation quality was intentionally protected. 'Lifting was properly planned, not spontaneous, and had great work put behind it without distractions' is the direct reversal of the PSAC championship preparation problems. Hinge habit fully operational: approach-framed activation evident in competition goals ('have the best season opener of all time') and daily training consistency maintained including self-directed practice when team practice was canceled (Wednesday Discus breakthroughs). Identity claim active: 'best season opener ever,' process-focused goal reframing, multi-event PSAC auto qualifications. Strongest alignment since Week 3's peak performance week."
+  },
+
+  "athlete_state": "Championship lesson applied to best-ever outdoor season opener. Angelo responded to the PSAC championship disappointment by rebuilding his preparation structure — lifting properly planned, solo practice when team practice was canceled, preparation intentionally protected from multi-domain distractions. Saturday's track meet produced his best outdoor season opener of his collegiate career: exceeded all prior opening marks, hit all PSAC auto qualifier marks across three events (2nd Discus, 3rd Shot Put, 4th Hammer), and competed confidently against strong competition. Process-focused goal reframing: 'It wasn't about hitting my furthest marks, just hitting the marks I aimed for, while also setting myself up for a good start.' Thirty-five program days with zero Missed. First 7/7 Win week — Gold Streak.",
+
+  "core_pattern": "Structured preparation producing peak competitive output. The PSAC championship taught Angelo what happens when preparation is chaotic — and this week he deliberately did the opposite. Lifting was planned, not spontaneous. When team practice was canceled Wednesday, he practiced alone and had breakthroughs in Discus. Competition goals were process-anchored, not outcome-chasing. The result was his best outdoor opener ever. The derailer (multi-domain consistency disruption) was not just managed — it was actively countered through intentional structure.",
+
+  "behavioral_root_cause": "Angelo's Week 4 retrospective identified the PSAC championship problems clearly: disrupted lifting, chaotic practice, multiple external factors stacking. This week he applied those lessons systematically. The preparation system he described — 'properly planned, not spontaneous, without distractions' — is the structural answer to his baseline derailer. When Angelo intentionally protects his preparation from multi-domain interference, his competitive output reaches its highest level. The process-focused goal reframing ('not about furthest marks, just the marks I aimed for') is a coaching philosophy shift that was validated by results — he hit every target he set and exceeded all prior opening performances.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before Saturday's competition at Shippensburg, identify one specific PSAC championship lesson to apply. Write it down and put it where he'll see it competition morning.",
+    "execution_status": "Completed",
+    "execution_notes": "The PSAC championship lesson was comprehensively identified and applied. Angelo's additional notes make the application explicit: 'Lifting was good. Feels like the first week in a while where my lifting was properly planned, not spontaneous, and had great work put behind it without distractions. I really focused on executing those things for this week especially. In preparation for the meet this weekend.' The specific lessons applied: (1) structured lifting replacing chaotic preparation, (2) intentional focus replacing distracted execution, (3) process-focused competition goals replacing outcome-chasing ('not about hitting my furthest marks, just hitting the marks I aimed for'). Competition results validated the application — best outdoor opener of career, all PSAC auto qualifiers hit. No explicit evidence of the physical write-down format, but the lesson identification and application are thorough, deliberate, and results-validated.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Stay consistent, work toward building that foundation for the outdoor season",
+    "achievement_statement": "I exceeded any previous marks from prior openers, hit all of the PSAC auto qualifier marks for each of my events",
+    "key_phrase": "It wasn't about hitting my furthest marks, just hitting the marks I aimed for, while also setting myself up for a good start",
+    "mindset_resonance": "Map out your approach to one challenge today before taking action"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Win",
+      "sunday": "Win"
+    },
+    "win_days": 7,
+    "neutral_days": 0,
+    "missed_days": 0,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Gold Streak",
+    "consistency_profile": "Emerging Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Single item: 'My work ethic.' Compressed depth continues from Week 4 (1 item per ring for second consecutive week), but content shifted from 'consistency' to 'work ethic' — broader, more action-oriented framing. Represents stable depth at the compressed level rather than further regression.",
+    "influence_quality": "'My team's morale.' Same item as Week 4. Stable. Appropriate team-oriented influence identification.",
+    "noise_fixation_present": "No",
+    "noise_content": "'Definitely the weather for each day.' Practical uncontrollable relevant to outdoor track season. Appropriate acknowledgment without fixation.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 3,
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Improving",
+    "recommitment_trend": "Not Applicable",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 4,
+    "rolling_win_rate_4wk": 0.89,
+    "rolling_missed_rate_4wk": 0.0,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "Not Applicable",
+    "controllable_stability_4wk": "Stable",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Five-week progression from illness recovery with approach-framed re-engagement (Wk1) to high-level competition composure as solo competitor, near-PR (Wk2) to peak performance with strategic preparation and identity-level achievement (Wk3: 'emotional groundedness, intent, and gratitude') to [2.5-week gap: PSAC championship disappointment + emotional processing delay + Spring Break] outdoor season reset with mature retrospective processing (Wk4) to championship lesson applied: structured preparation producing best-ever outdoor opener (Wk5). The PSAC championship was the defining developmental event — it exposed the baseline derailer in full operation (multi-domain stacking disrupting preparation quality) and Angelo's deliberate response (structured planning, intentional focus, process-focused goal reframing) produced his strongest competitive result. Achievement language returned to identity-level: 'best season opener of all time,' 'most promising start to an outdoor season ever.' Confidence pattern: preparation-activated at baseline, validated through competition composure (Wks 1-3), disrupted by championship conditions (gap), rebuilt through deliberate lesson application (Wk5).",
+    "milestone_this_week": "Best outdoor season opener of collegiate career — exceeded all prior opening marks, hit all PSAC auto qualifier marks across three events (Discus, Shot Put, Hammer). Directly validates the PSAC championship lesson application: structured preparation ('properly planned, not spontaneous, without distractions') produced peak competitive output. Process-focused goal reframing — 'not about hitting my furthest marks, just hitting the marks I aimed for' — is a coaching philosophy shift from outcome-chasing to preparation-anchored execution, validated by results. Also: Wednesday's self-directed Discus practice when team practice was canceled produced technical breakthroughs — strongest self-directed initiative in the program.",
+    "open_thread": "(1) Bullseye depth remains compressed for second consecutive week (1 item per ring). Content quality is appropriate but depth has not recovered from Week 3's 2-item level or Week 2's 3-item peak. Whether this represents Angelo's stable Bullseye depth or an area for development remains to be seen. (2) Upcoming CMU meet March 27-28 — back-to-back competition days. The PSAC championship problems included multi-day fatigue and cumulative stacking. This is the first multi-day outdoor meet. Will the preparation structure hold across a 2-day format? (3) Solo competitor dynamic — recap mentions 'my team' and team morale but no throwing teammates at the Saturday competition. Did he have team support? (4) Growth phase: Developing maintained. Advancing to Consistent requires sustained Stable Positive consistency (currently Emerging Positive after the gap disruption), 3+ weeks of win rate ≥ 0.85, and Aligned status. Week 5 re-establishes momentum toward these thresholds."
+  },
+
+  "most_important_controllable": "Preparation structure quality. Angelo's Week 5 success was directly produced by intentional preparation — planned lifting, focused practice, process-anchored competition goals. When preparation is structured and protected from multi-domain interference, competitive output reaches its highest level. This is the controllable that most directly counters his baseline derailer.",
+
+  "micro_commitment": {
+    "action": "Before each day of the CMU meet (Thursday and Friday), write one specific technical or mental action he wants to execute that day — not a distance target, but one thing he can control in his approach. After each competition day, name one thing he executed well.",
+    "when": "Thursday morning before competition and Friday morning before competition. Reflection within 30 minutes of finishing each day's events.",
+    "measurement": "At the end of the two-day meet, he should have two pre-competition targets and two post-competition reflections. If the targets are controllable actions and the reflections name executed controllables, the commitment is working."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "CMU meet March 27-28. Two-day format. First multi-day outdoor meet.",
+    "anticipated_stressor": "Multi-day competition format — the PSAC championship included cumulative fatigue across multiple events over multiple days. The CMU meet will test whether the preparation structure that worked for a single-day opener holds across a two-day format. Multi-domain load from school and work continues. Lower competitive stakes than PSACs but important for continuing outdoor season momentum.",
+    "athlete_stated_next_goal": "Build on the progress from last week even stronger"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days — first perfect week in the program (prior weeks had 1 Neutral each). Gold Streak. 30 Win, 5 Neutral, 0 Missed across all 35 recorded program days. Multi-domain management intentionally structured this week.",
+    "key_habit_signal": "Preparation structure intentionally rebuilt: 'properly planned, not spontaneous, without distractions.' This is the direct answer to the PSAC championship disruption. Wednesday's self-directed Discus practice when team practice was canceled shows initiative and self-direction. Process-focused competition goals validated by best-ever opener results. Approach-framed activation fully operational.",
+    "coach_reinforcement_cue": "Name the preparation structure rebuild as the direct cause of Saturday's success. 'Properly planned, not spontaneous' is Angelo's own language for what changed. The process-focused goal reframing — 'not about hitting my furthest marks, just the marks I aimed for' — is a coaching philosophy shift worth naming as a development marker. Reinforce Wednesday's self-directed Discus practice as the kind of initiative that separates his preparation from the chaotic championship approach.",
+    "coach_avoidance_note": "Do not over-celebrate Saturday's results — Angelo recognizes the significance and has appropriate perspective ('Only up from here'). Focus on the preparation system that produced the results. Do not frame the PSAC gap as fully resolved — one successful application does not mean the derailer is permanently managed. The CMU 2-day meet will test sustainability. Do not name specific competitive placements or distances in institutional output beyond general performance context."
+  },
+
+  "risk_flags": "No clinical indicators. Positive emotional state across all seven days. Multi-domain management successful. Competition results validate preparation approach. All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You said your lifting this week was 'properly planned, not spontaneous' — what specifically did you do differently this time to protect your preparation from the things that disrupted it before?",
+
+  "current_season_phase": "not available",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available — Core Foundation athlete",
+    "focus_consistency": "not available — Core Foundation athlete",
+    "forward_anchor_alignment": "not available — Core Foundation athlete"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}

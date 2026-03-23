@@ -1,0 +1,218 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-03-16 to 2026-03-22",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "No derailer activation this week. Playing time exclusion on Friday game day handled composedly — 'staying positive always being loud.' Coach frustration de-escalated significantly from Week 7's 'lil mf Coach' intensity to a generalized outer-ring acceptance frame ('I can't control how people view and treat me'). Sunday's self-directed defensive practice with teammate Kabine represents proactive agency in response to the position frustration that has been building across Weeks 6-7. Hinge habit not tested by competitive failure this week but composure mechanisms remained active throughout. Confidence remained stable through non-selection."
+  },
+
+  "athlete_state": "Agency-driven composure through a week with no competitive playing time and approaching conference tournament pressure. Grace responded to Friday's game-day exclusion ('I didn't get time') with composed engagement ('staying positive always being loud'), de-escalated coach frustration from Week 7's highest intensity to a generalized acceptance principle, and most significantly went to the field on Sunday with teammate Kabine to work on defense independently — the first self-directed practice initiative in the program, directly addressing the position access frustration from Weeks 6-7. Emerging compartmentalization awareness: 'I need to try to separate softball from my life I think. Like not letting in constantly interfere with my mind.' Fifty-six consecutive Win days. Eighth Growth week.",
+
+  "core_pattern": "Self-directed agency replacing reactive frustration. The Weeks 6-7 position frustration arc (never fielding, practice inequity, 'lil mf Coach') has shifted from complaint and emotional charge to proactive self-solution. Sunday's defensive work with Kabine is action, not venting. Friday's composed game-day presence is established practice, not effortful restraint. The Bullseye outer ring moved from charged coach-directed language to a philosophical interpersonal principle. In parallel, Grace is developing metacognitive awareness about cognitive load — recognizing that softball occupies disproportionate mental bandwidth and naming compartmentalization as a goal.",
+
+  "behavioral_root_cause": "Sunday's defensive practice with Kabine answers the question that has been building since Week 6: will Grace stay frustrated about not getting outfield reps at team practice, or will she create her own solution? She created her own solution. This is the same self-directed pattern that has driven her execution (56/56 Win days) now applied to her development gaps. The cognitive load awareness ('separate softball from my life') reflects the cumulative weight of carrying a full competitive season with minimal playing time — not disengagement, but recognition that softball frustration is bleeding into other life domains. Her response ('keep doing what I'm doing, classroom I'm great, everywhere else things are fine') shows she is anchoring stability in non-softball domains while managing the softball frustration.",
+
+  "prior_commitment_result": {
+    "prior_action": "After each game day this week — whether she plays or not — write one sentence naming something she controlled well that day.",
+    "execution_status": "Partial",
+    "execution_notes": "Friday was the only game day. Entry includes controllable identifications — 'strong warmups' and 'staying positive always being loud' — which name specific behaviors she owned on a no-play game day. However, no evidence of the deliberate one-sentence post-game written exercise as a separate intentional action. The controllable identification is present within the recap format rather than as a distinct commitment output. Partial because the behavioral intent is demonstrated but the specific written format is not evidenced. This extends a pattern of Written modality producing Partial results across Weeks 3-7.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "work hard everyday",
+    "achievement_statement": "Same thing as it's been just continuing on and working hard",
+    "key_phrase": "I'm sure as hell not quitting",
+    "mindset_resonance": "Sunday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Win",
+      "sunday": "Win"
+    },
+    "win_days": 7,
+    "neutral_days": 0,
+    "missed_days": 0,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Gold Streak",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate specificity. 'I can control what I do outside of practice and school to determine how I perform' — frames control around preparation and off-field behavior. More specific than Week 7's general 'my mindset' but less competition-contextualized than Week 6's 'what I do with the chances I get.' Represents recovery from Week 7's regression without reaching Week 6's peak specificity.",
+    "influence_quality": "'I can influence others to work hard too' — clean leadership framing. No category confusion this week (Week 7 misplaced habits in influence ring). Appropriate team-influence language.",
+    "noise_fixation_present": "No",
+    "noise_content": "Outer ring: 'I can't control how people view and treat me.' Significant cognitive reframing — generalizes the coach-specific frustration from Weeks 6-7 into a broader interpersonal acceptance principle. No charged language, no coach naming, no practice inequity detail. De-escalation from Week 7's 'lil mf Coach' to a philosophical statement about interpersonal acceptance.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 3,
+
+  "growth_phase": "Consistent",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stable",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 7,
+    "rolling_win_rate_4wk": 1.0,
+    "rolling_missed_rate_4wk": 0.0,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Eight-week progression from preparation-driven confidence (Wks 1-2) through emotional adversity (Wk 3: High EI, NC trip) to breakthrough action-quality philosophy (Wk 4: SC at-bat) to identity-embedded composure (Wk 5: Consistent phase) to competition-validated performance (Wk 6: first hit, first start) to failure-resilient confidence (Wk 7: strikeout processed in 48 hours) to agency-driven composure (Wk 8: self-directed defensive practice, composed playing time exclusion, cognitive load awareness). Confidence arc: outcome-reactive at baseline, preparation-energized (Wks 1-2), structure-sustained under pressure (Wk 3), action-proven (Wk 4), identity-embedded (Wk 5), competition-validated (Wk 6), failure-resilient (Wk 7), agency-driven (Wk 8). Position frustration arc resolved from complaint to action: Week 6 frustration about never fielding, Week 7 practice inequity charge, Week 8 self-directed solution (defensive work with Kabine). Coach frustration de-escalated from Week 7 peak to generalized acceptance. Goal-setting remains at program low (7th consecutive week).",
+    "milestone_this_week": "Sunday's self-directed defensive practice with teammate Kabine — first time in the program Grace has proactively created her own practice opportunity to address a development gap. The position frustration arc (Weeks 6-7: never getting outfield reps, practice inequity, charged coach language) shifted from reactive complaint to self-directed agency. Separately, the compartmentalization insight ('I need to try to separate softball from my life') represents emerging metacognitive awareness about cognitive load management — Grace recognizing that softball frustration occupies disproportionate mental bandwidth and naming the need for domain separation.",
+    "open_thread": "(1) Goal-setting at program low for 7th consecutive week ('work hard everyday'). Upcoming goals show marginal improvement ('be consistent in practice and work on the little things') but remain well below Weeks 1-2 specificity levels. Execution-intention gap continues to widen. (2) PSACs approaching — 3 doubleheaders (6 games) in the coming week. Biggest competitive stretch of the season. Playing time uncertain — 'Another girl and the starter are the only two she's really looking at now.' Will Grace get competitive opportunities? How will sustained game days with no playing time affect the composure she has maintained? (3) Compartmentalization goal — 'separate softball from my life' is the first time Grace has named cognitive load management. Whether this represents healthy domain boundary-setting or early signs of emotional withdrawal from the sport requires monitoring. Her non-softball anchoring ('classroom I'm great, everywhere else things are fine') and continued Gold Streak execution suggest the former."
+  },
+
+  "most_important_controllable": "Self-directed preparation quality outside of team practice. Sunday's defensive work with Kabine demonstrates that Grace can create her own development opportunities when team practice does not provide them. This is a center-ring controllable that directly addresses the position frustration she has been processing.",
+
+  "micro_commitment": {
+    "action": "Before the first game of each doubleheader this week, name one specific thing she wants to execute that day — say it out loud to herself or to Kabine. Not 'work hard.' One specific controllable action she can own whether she plays or not.",
+    "when": "Before the first pitch of each doubleheader, during warmups or pregame.",
+    "measurement": "At the end of the week, she should be able to name what she said before each doubleheader. If every one is a center-ring controllable, the commitment is working."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "PSACs approaching. 3 doubleheaders (6 games) in the coming week. Biggest competitive stretch of the season.",
+    "anticipated_stressor": "Playing time uncertainty — 'Another girl and the starter are the only two she's really looking at now' suggests narrowing rotation. Sustained game days with limited or no competitive opportunities may test composure over a longer stretch than single game days have. Volume of games may amplify the frustration-to-compartmentalization dynamic. Goal-setting at program low heading into highest-stakes stretch.",
+    "athlete_stated_next_goal": "be consistent in practice and work on the little things"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days, 56/56 across full program. Gold Streak maintained for 8th consecutive week. No Missed or Neutral days in entire program history. Maximum possible execution ceiling sustained.",
+    "key_habit_signal": "Sunday's self-directed defensive practice with teammate Kabine is the strongest agency signal in the program. Grace proactively created the practice opportunity she has been frustrated about not receiving — the position frustration arc from Weeks 6-7 resolved through action rather than continued complaint. Friday's composed no-play response demonstrates established composure under playing time exclusion. Coach frustration language de-escalated from Week 7's peak intensity to a philosophical acceptance frame.",
+    "coach_reinforcement_cue": "Name Sunday's defensive work initiative as a self-directed development decision. Reinforce that creating her own opportunities when team practice does not provide them is a controllable action and a maturity signal. Reinforce Friday's composed game-day presence — 'staying positive and being loud' when not playing is exactly the standard she has been building across Weeks 6-7. The Bullseye outer ring de-escalation from charged coach language to generalized acceptance principle represents growth in how she processes what she cannot control.",
+    "coach_avoidance_note": "Do not interpret 'I need to try to separate softball from my life' as disengagement — this is cognitive load awareness, Grace recognizing that softball frustration occupies disproportionate mental space. Frame as attention management, not distancing. Do not name specific playing time decisions or lineup rotation in institutional output. Do not reference prior weeks' charged coach language — it has de-escalated naturally. Wednesday's diving catch at practice is a positive signal but do not over-interpret a single practice event as playing time trajectory evidence."
+  },
+
+  "risk_flags": "No clinical indicators. 'I need to try to separate softball from my life' is cognitive load management awareness, not clinical language. 'I'm sure as hell not quitting' is determination and grit, not distress. Playing time exclusion managed composedly. Coach frustration de-escalated from prior week. All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You went to the field on your own with Kabine on Sunday to work on defense — what did that practice give you that you have not been getting anywhere else?",
+
+  "current_season_phase": "not available",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available — Core Foundation athlete",
+    "focus_consistency": "not available — Core Foundation athlete",
+    "forward_anchor_alignment": "not available — Core Foundation athlete"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}

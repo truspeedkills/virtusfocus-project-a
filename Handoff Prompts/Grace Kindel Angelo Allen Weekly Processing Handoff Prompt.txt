@@ -1,0 +1,513 @@
+============================================================
+GRACE KINDEL (WEEK 8) + ANGELO ALLEN (WEEK 5)
+PIPELINE PROCESSING HANDOFF PROMPT
+============================================================
+SESSION TYPE: Pipeline Processing (Stages 2-5 only — both
+athletes already have snapshots on disk)
+GOAL: Process one new weekly review per athlete through the
+full pipeline: Interpretation Engine (Stage 2) → Coaching
+Output Engine (Stage 3) → Coach Insights Engine (Stage 4) →
+Editorial Audit (Stage 5).
+============================================================
+
+FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE:
+Read CLAUDE.md in the project root directory. It contains
+the full pipeline specification, all operating rules, all
+file locations, active schema versions, and complete athlete
+data status for all 6 athletes in the pipeline. CLAUDE.md is
+the master context document — everything in this handoff
+prompt assumes you have read and understood it.
+
+============================================================
+
+1. WHAT YOU ARE DOING
+============================================================
+
+You are processing TWO athletes — one new weekly review each
+— through Stages 2-5. Both are Core Foundation athletes
+(weekly recap input only — NOT App athletes). This means:
+
+- input_source = "core_foundation" for both
+- All execution_behavior_signals fields → fallback values
+- All baseline_intake_profile fields → fallback values
+- current_season_phase → "not available"
+- forward_anchor fields → fallback values
+- No PPD/ABI scoring (Core Foundation intake form)
+- No competitive level calibration (default College)
+- No parent output (Core Foundation)
+
+Stage 1 (Snapshot Generation) is NOT needed — both athletes
+have existing snapshots on disk. Read the existing snapshots
+as baseline inputs.
+
+PROCESSING ORDER: Process Grace Kindel Week 8 first (all 4
+stages), then Angelo Allen Week 5 (all 4 stages). Grace
+first because she has the longer longitudinal history (7
+prior weeks vs Angelo's 4) and any cross-athlete format
+consistency issues can be caught on the second athlete.
+
+ACTIVE SPEC VERSIONS:
+- Interpretation Engine: v9.7 / v7.3 (SOP - Weekly Interp Prompt v7.3)
+- Coaching Output: v2.0 / V4 (Master Prompt V4)
+- Coach Insights: v1.7 / v1.3 (Master Prompt v1.3)
+- Editorial Audit: v1.4 / v1.4 (Master Prompt v1.4)
+
+============================================================
+
+2. ATHLETE A: GRACE KINDEL — WEEK 8
+============================================================
+
+2A. PROFILE
+------------------------------------------------------------
+Sport: Softball
+Position: Outfield
+Team: Kutztown University
+Baseline Identity Claim: Wants to stay confident in her
+  ability during competition
+Baseline Hinge Habit: Immediate reset and refocus after
+  mistakes
+Baseline Primary Derailer: Loss of confidence following
+  errors or perceived failure
+Growth Phase: Consistent (advanced from Developing in Week 5)
+
+Snapshot: Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot  V2.txt
+  NOTE: filename has two spaces before "V2" — read as-is.
+
+2B. PRIOR WEEK SUMMARY (7 WEEKS ON DISK)
+------------------------------------------------------------
+
+| Wk | Period | Tier | EI | Alignment | Key |
+|----|--------|------|----|-----------|-----|
+| 1 | Jan 12-18 | Growth | Low | Aligned | First week, preparation-driven |
+| 2 | Jan 19-25 | Growth | Low | Aligned | Body care, teammate leadership |
+| 3 | Feb 9-15 | Growth | High | Partially | NC trip derailer activation |
+| 4 | Feb 16-22 | Growth | Mod | Aligned | "the one chance I got" SC at-bat |
+| 5 | Feb 23-Mar 1 | Growth | Low | Aligned | Consistent phase. Scrimmage dominant |
+| 6 | Mar 2-8 | Growth | Low | Aligned | First hit (NC), first start (FL) |
+| 7 | Mar 9-15 | Growth | Mod | Partially | First strikeout. Hinge habit held |
+
+49/49 Win days across all 7 weeks. Zero Missed days.
+Rolling win rate: 1.0. Volatility: Low.
+
+CRITICAL: Read ALL 7 prior week JSONs from disk before
+processing Week 8. The interpretation requires full
+longitudinal context — narrative_arc, trend_analysis,
+longitudinal_metrics, and prior_commitment_result all
+reference prior weeks.
+
+Prior JSONs: Athlete Data\Grace Kindel\Weekly JSONS\
+  Grace_Kindel_2026-01-12to2026-01-18_VF_Interpretation.txt
+  Grace_Kindel_2026-01-19to2026-01-25_VF_Interpretation.txt
+  Grace_Kindel_2026-02-09to2026-02-15_VF_Interpretation.txt
+  Grace_Kindel_2026-02-16to2026-02-22_VF_Interpretation.txt
+  Grace_Kindel_2026-02-23to2026-03-01_VF_Interpretation.txt
+  Grace_Kindel_2026-03-02to2026-03-08_VF_Interpretation.txt
+  Grace_Kindel_2026-03-09to2026-03-15_VF_Interpretation.txt
+
+2C. WEEKLY REVIEW TO PROCESS
+------------------------------------------------------------
+File: Athlete Data\Grace Kindel\Weekly Reviews\Grace Kindel 3-22-2026.txt
+Submitted: Monday, March 23, 2026
+Week Period: 2026-03-16 to 2026-03-22
+Week Number: 8
+
+Read this file directly at Stage 2. The raw weekly review is
+the primary input to the Interpretation Engine — do not rely
+on pre-analysis. Apply the v9.7 specification rules to the
+raw recap data.
+
+2D. OPEN THREADS FROM WEEK 7
+------------------------------------------------------------
+These are the active developmental threads from the Week 7
+JSON that Week 8 should address or update. Read the Week 7
+JSON to see the full context; these are summarized here so
+you know what to watch for in the raw recap:
+
+1. GOAL-SETTING DECLINE: 6th consecutive week at program low
+   in Week 7. Has it continued, stabilized, or recovered?
+
+2. COACH FRUSTRATION: Re-escalated to Week 3 intensity in
+   Week 7 ("lil mf Coach," practice equity rant about lineup
+   players getting outfield reps). Has it de-escalated,
+   held, or intensified?
+
+3. PRIOR COMMITMENT: Week 7 micro_commitment = "After each
+   game day — whether you play or not — write one sentence
+   naming something you controlled well that day." Evaluate
+   execution from the recap.
+
+4. BULLSEYE PRECISION: Regressed from Week 6's competition-
+   specific frame to Week 7's general "my mindset." Has
+   specificity returned?
+
+5. POSITION FRUSTRATION: Deepened across Weeks 6-7 (hitting
+   only, never fielding, practice equity). Watch for any
+   self-directed response, continued frustration, or
+   resolution signals.
+
+6. PLAYING TIME TRAJECTORY: Expanded in Week 6 (pinch-hit
+   single + first start), contracted in Week 7 (pinch-hit
+   strikeout only). What happened in Week 8?
+
+2E. PROCESSING-SPECIFIC NOTES
+------------------------------------------------------------
+- Grace entered Week 8 with 49/49 Win days. If she reports
+  7/7 Win again, that extends to 56/56 across 8 weeks.
+- Week 7 was Moderate EI (competitive failure + coach
+  frustration escalation). Compare Week 8's emotional load.
+- Week 7 Composite Readiness dropped to Steady (Yellow) from
+  Week 6's Positive (Green) due to Moderate stress band.
+  Re-evaluate based on Week 8 stress indicators.
+- The Weeks 6-7 position frustration arc (never fielding,
+  practice inequity) is a key longitudinal thread. Any
+  developments in the Week 8 recap related to fielding,
+  defensive opportunities, or practice access are
+  significant and should be interpreted in that context.
+
+============================================================
+
+3. ATHLETE B: ANGELO ALLEN — WEEK 5
+============================================================
+
+3A. PROFILE
+------------------------------------------------------------
+Sport: Track and Field (Throws)
+Position: Thrower (Shot Put, Discus, Hammer, Weight Throw)
+Team: Seton Hill University
+Years Competing: 16
+Baseline Identity Claim: Becoming a more goal-oriented,
+  resilient, tenacious, and sharp human being across sport
+  and life
+Baseline Hinge Habit: Approach-framed pre-performance
+  activation and daily training consistency maintained
+  through multi-domain demands
+Baseline Primary Derailer: Consistency disruption when
+  school, work, and sport demands compete for time and
+  energy
+Growth Phase: Developing
+
+Snapshot: Athlete Data\Angelo Allen\angelo_allen_athlete_snapshot.txt
+
+3B. PRIOR WEEK SUMMARY (4 WEEKS ON DISK)
+------------------------------------------------------------
+
+| Wk | Period | Tier | EI | Alignment | Key |
+|----|--------|------|----|-----------|-----|
+| 1 | Feb 2-8 | Growth | Low | Aligned | Illness recovery, competition return |
+| 2 | Feb 9-15 | Growth | Low | Aligned | Near-PR shot put (16.44m), solo at meet |
+| 3 | Feb 16-22 | Growth | Low | Aligned | Won both events. Gold Streak. "Electric" |
+| 4 | Mar 9-15 | Growth | Mod | Partially | PSAC retrospective. 2.5-wk gap. Outdoor transition |
+
+Growth tier in all 4 weeks. Zero Missed days in entire
+program.
+
+CRITICAL: Read ALL 4 prior week JSONs from disk before
+processing Week 5. Week 4 has a 2.5-week gap and Unknown
+prior commitment — Week 5 is the first normal consecutive
+week since Week 3.
+
+Prior JSONs: Athlete Data\Angelo Allen\Weekly JSONS\
+  Angelo_Allen_2026-02-02to2026-02-08_VF_Interpretation.txt
+  Angelo_Allen_2026-02-09to2026-02-15_VF_Interpretation.txt
+  Angelo_Allen_2026-02-16to2026-02-22_VF_Interpretation.txt
+  Angelo_Allen_2026-03-09to2026-03-15_VF_Interpretation.txt
+
+3C. WEEKLY REVIEW TO PROCESS
+------------------------------------------------------------
+File: Athlete Data\Angelo Allen\Weekly Reviews\Angelo Allen 3-22-2026.txt
+Submitted: Monday, March 23, 2026
+Week Period: 2026-03-16 to 2026-03-22
+Week Number: 5
+
+Read this file directly at Stage 2. The raw weekly review is
+the primary input to the Interpretation Engine — do not rely
+on pre-analysis. Apply the v9.7 specification rules to the
+raw recap data.
+
+3D. OPEN THREADS FROM WEEK 4
+------------------------------------------------------------
+These are the active developmental threads from the Week 4
+JSON that Week 5 should address or update. Read the Week 4
+JSON to see the full context; these are summarized here so
+you know what to watch for in the raw recap:
+
+1. PSAC CHAMPIONSHIP PROCESSING: Week 4 retrospectively
+   processed the disappointing PSAC Indoor Championship
+   (subpar performance, broken equipment, fatigue, being
+   solo). Has Angelo moved forward? Any competition this
+   week that provides a comparative data point?
+
+2. GOAL-SETTING RECOVERY: Week 4 had "None" for both
+   weekly goals and upcoming goals — the lowest specificity
+   in his program. Has goal-setting recovered?
+
+3. BULLSEYE DEPTH: Week 4 had compressed Bullseye (1 item
+   per ring). Watch for whether depth and specificity return.
+
+4. OUTDOOR SEASON TRANSITION: Week 4 was the transition
+   point from indoor to outdoor. Week 5 is the first
+   outdoor execution week. Any competition results are
+   significant as the first outdoor data.
+
+5. SOLO COMPETITOR DYNAMIC: Angelo competes without throwing
+   teammates or a throws coach at meets. Watch for whether
+   he has team support at any competitions this week.
+
+6. PRIOR COMMITMENT: Check the Week 4 JSON micro_commitment
+   field and evaluate execution from the recap.
+
+3E. PROCESSING-SPECIFIC NOTES
+------------------------------------------------------------
+- Week 5 is consecutive with Week 4 (no gap) — the first
+  normal consecutive week since Week 3. Longitudinal metrics
+  and trend_analysis can operate normally.
+- Angelo's baseline derailer is consistency disruption from
+  multi-domain demands (school, work, sport). Any evidence
+  of intentional planning or structure management is
+  relevant to derailer monitoring.
+- Angelo is the most experienced athlete in the pipeline (16
+  years competing). His self-awareness is high. Language
+  tends to be upbeat, action-oriented, and direct. EI has
+  been Low in Weeks 1-3 and Moderate only in Week 4 (PSAC
+  championship processing).
+- Week 4 Composite Readiness was Steady (Yellow) due to
+  Moderate stress from PSAC processing. Re-evaluate based
+  on Week 5 stress indicators.
+
+============================================================
+
+4. PROCESSING INSTRUCTIONS — BOTH ATHLETES
+============================================================
+
+FOR EACH ATHLETE, PRODUCE IN THIS ORDER:
+
+STAGE 2: INTERPRETATION JSON
+  - Read the athlete's baseline snapshot from disk
+  - Read ALL prior week JSONs from disk
+  - Read the raw weekly review file from disk
+  - Process through v9.7 Interpretation Engine rules
+  - input_source = "core_foundation"
+  - Apply all Core Foundation fallback rules (execution
+    signals, baseline intake profile, season phase, forward
+    anchor all use fallback values)
+  - The raw weekly review is the primary data source — apply
+    the specification's classification rules directly to
+    what the athlete wrote, not to any pre-analysis
+  - Save to: Athlete Data\[Athlete]\Weekly JSONS\
+  - Naming: {FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_Interpretation.txt
+
+STAGE 3: COACHING MESSAGE + DEEP DIVE
+  - Input: Interpretation JSON only (do NOT re-read recap)
+  - Follow v2.0 Instructions + Master Prompt V4
+  - Core Foundation path (skip all execution signal,
+    intake profile, and forward anchor sections)
+  - Generate Coaching Message (250-450 words, OUTPUT FORMAT
+    per VF_Coaching_Message_Framework.txt — header, separator
+    bars, YOUR ACTION section, NEXT WEEK FOCUS QUESTION,
+    signature)
+  - Generate Deep Dive (850-1200 words, 5 mandatory sections,
+    second-person Coach Arron voice throughout)
+  - No parent output (Core Foundation)
+  - Save CM to: Athlete Data\[Athlete]\Coaching and Deep Dive\Coaching Message\
+  - Save DD to: Athlete Data\[Athlete]\Coaching and Deep Dive\Deep Dive\
+
+STAGE 4: COACH INSIGHTS — WEEKLY PERFORMANCE INSIGHT
+  - Input: Interpretation JSON only
+  - Follow v1.7 Instructions + Master Prompt v1.3
+  - Core Foundation path
+  - 10-section Weekly Performance Insight
+  - No parent insight (Core Foundation)
+  - Save to: Athlete Data\[Athlete]\Coach Insights\
+
+STAGE 5: EDITORIAL AUDIT
+  - Input: Interpretation JSON + Coaching Message + Deep Dive
+  - Follow v1.4 Instructions + Master Prompt v1.4
+  - All 13 criteria across 3 tiers
+  - Tier 1: Criteria 1-4 + 13 (MUST PASS — reject on fail)
+  - Tier 2: Criteria 5-10 (auto-correct if possible)
+  - Tier 3: Criteria 11-12 (auto-correct silently)
+  - If REJECT: regenerate failing output, then re-audit
+  - Save audit summary to: Athlete Data\[Athlete]\Coaching and Deep Dive\Audit Summaries\
+
+FILE NAMING FOR ALL:
+  {FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_{Type}.txt
+
+Grace Week 8 dates: 2026-03-16 to 2026-03-22
+Angelo Week 5 dates: 2026-03-16 to 2026-03-22
+
+============================================================
+
+5. REFERENCE FILES TO READ
+============================================================
+
+STAGE 2 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Interpretation\SOP - Weekly Interp Prompt v7.3.txt
+- Project Instructions (ACTIVE — v9.7):
+  Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.7.txt
+- JSON Rules:
+  Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+
+STAGE 3 REFERENCES:
+- Master Prompt (ACTIVE — V4):
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+- Project Instructions (ACTIVE — v2.0):
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.0.txt
+- Message Map:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+- Brand Voice:
+  Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+- Content Style Guide:
+  Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+- System Identity:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+- Coaching Message Framework:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+- Deep Dive Framework:
+  Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+- Reflection/Growth Phase Model:
+  Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
+
+STAGE 4 REFERENCES:
+- Master Prompt (ACTIVE — v1.3):
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.3.txt
+- Project Instructions (ACTIVE — v1.7):
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.7.txt
+- JSON Logic Reference:
+  Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+- Compliance Framework:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+- Dashboard Metrics Reference:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+- Output Structure Master:
+  Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
+
+STAGE 5 REFERENCES:
+- Master Prompt (ACTIVE — v1.4):
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.4.txt
+- Project Instructions (ACTIVE — v1.4):
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.4.txt
+- (Also uses Stage 3 source files listed above)
+
+EXISTING OUTPUTS FOR FORMAT REFERENCE:
+- Grace Kindel Week 7 JSON (most recent, same schema):
+  Athlete Data\Grace Kindel\Weekly JSONS\Grace_Kindel_2026-03-09to2026-03-15_VF_Interpretation.txt
+- Grace Kindel Week 7 CM (format reference):
+  Athlete Data\Grace Kindel\Coaching and Deep Dive\Coaching Message\Grace_Kindel_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+- Grace Kindel Week 7 DD (voice reference):
+  Athlete Data\Grace Kindel\Coaching and Deep Dive\Deep Dive\Grace_Kindel_2026-03-09to2026-03-15_VF_DeepDive.txt
+- Grace Kindel Week 7 Coach Insight (format reference):
+  Athlete Data\Grace Kindel\Coach Insights\Grace_Kindel_2026-03-09to2026-03-15_VF_WeeklyInsight.txt
+- Angelo Allen Week 4 JSON (most recent, same schema):
+  Athlete Data\Angelo Allen\Weekly JSONS\Angelo_Allen_2026-03-09to2026-03-15_VF_Interpretation.txt
+- Angelo Allen Week 4 CM (format reference):
+  Athlete Data\Angelo Allen\Coaching and Deep Dive\Coaching Message\Angelo_Allen_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+- Angelo Allen Week 4 Audit (13-criterion reference):
+  Athlete Data\Angelo Allen\Coaching and Deep Dive\Audit Summaries\Angelo_Allen_2026-03-09to2026-03-15_VF_AuditSummary.txt
+
+============================================================
+
+6. WHAT THE USER EXPECTS
+============================================================
+
+- ALL outputs saved to disk in the correct directories
+- After completing EACH athlete, provide a brief summary:
+  * Tier, EI, Alignment status
+  * Composite Readiness signal
+  * Key finding (1-2 sentences)
+  * Editorial audit result
+- After both athletes are done, provide:
+  * Updated week-by-week tables for both athletes
+  * Grace's 8-week arc summary (2-3 sentences)
+  * Angelo's 5-week arc summary (2-3 sentences)
+  * Any notable cross-athlete patterns
+- Commit all work to Git with descriptive commit message
+- Update CLAUDE.md with both athletes' completed data
+
+============================================================
+
+7. WHAT NOT TO DO
+============================================================
+
+- Do NOT modify any specification files
+- Do NOT use App-athlete features (execution signals, PPD,
+  ABI, intake profile, forward anchor, parent output)
+- Do NOT skip reading the specification files — they contain
+  critical rules that changed in recent versions
+- Do NOT reinterpret or override JSON classifications in
+  downstream stages (Stage 3 reads JSON, not recaps)
+- Do NOT use clinical language in any coaching output
+- Do NOT surface coach_insights, risk_flags, narrative_arc,
+  upcoming_context, or longitudinal_metrics in coaching
+  output (these are internal to the pipeline)
+- Do NOT combine both athletes into a single processing run
+  — process Grace fully (Stages 2-5), then Angelo fully
+  (Stages 2-5)
+- Do NOT skip the Editorial Audit for either athlete
+- Do NOT pre-interpret the raw weekly reviews before reading
+  the specification files — let the spec rules guide your
+  classification decisions
+
+============================================================
+
+8. LOCKED FACTS
+============================================================
+
+BOTH ATHLETES:
+- Core Foundation (input_source = "core_foundation")
+- v9.7 Interpretation Engine (ACTIVE)
+- v2.0 Coaching Output Instructions (ACTIVE)
+- V4 Coaching Output Master Prompt (ACTIVE)
+- v1.7 Coach Insights Instructions (ACTIVE)
+- v1.3 Coach Insights Master Prompt (ACTIVE)
+- v1.4 Editorial Audit Master Prompt + Instructions (ACTIVE)
+- 13 audit criteria across 3 tiers (Tier 1: 1-4 + 13)
+- Both weekly reviews submitted Monday, March 23, 2026
+- Both cover the same week period: March 16-22, 2026
+- Parent inclusion = NO for both
+- No Stage 1 needed — snapshots exist
+
+GRACE KINDEL:
+- Week 8 of the program
+- 7 prior week JSONs on disk (Weeks 1-7)
+- Growth phase: Consistent (since Week 5)
+- 49/49 Win days entering this week
+- Coach Insights output goes to: Athlete Data\Grace Kindel\Coach Insights\
+- Coaching output goes to: Athlete Data\Grace Kindel\Coaching and Deep Dive\
+
+ANGELO ALLEN:
+- Week 5 of the program
+- 4 prior week JSONs on disk (Weeks 1-4)
+- Growth phase: Developing
+- Zero Missed days in entire program
+- 2.5-week gap between Weeks 3 and 4 (resolved in Week 4)
+- Week 5 is consecutive with Week 4 (no gap)
+- Coach Insights output goes to: Athlete Data\Angelo Allen\Coach Insights\
+- Coaching output goes to: Athlete Data\Angelo Allen\Coaching and Deep Dive\
+
+============================================================
+
+9. TOTAL OUTPUTS TO PRODUCE
+============================================================
+
+GRACE KINDEL WEEK 8:
+- 1 Interpretation JSON
+- 1 Coaching Message
+- 1 Deep Dive
+- 1 Weekly Performance Insight
+- 1 Editorial Audit Summary
+Subtotal: 5 files
+
+ANGELO ALLEN WEEK 5:
+- 1 Interpretation JSON
+- 1 Coaching Message
+- 1 Deep Dive
+- 1 Weekly Performance Insight
+- 1 Editorial Audit Summary
+Subtotal: 5 files
+
+TOTAL: 10 files + CLAUDE.md update + Git commit
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
