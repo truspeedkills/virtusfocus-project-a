@@ -1,0 +1,633 @@
+============================================================
+WEEKLY ATHLETE PROCESSING — HANDOFF PROMPT TEMPLATE
+============================================================
+VERSION: 1.0
+LAST UPDATED: 2026-03-23
+============================================================
+
+HOW TO USE THIS TEMPLATE:
+
+Fill in the three fields below. Paste this entire document
+into a fresh Claude session alongside the athlete's newest
+weekly review file. The session will read CLAUDE.md, all
+prior data, and all specification files — then process the
+athlete through the full pipeline (Stages 2-5) and save
+all outputs to disk.
+
+Do NOT modify anything below the fill-in fields unless the
+pipeline specification versions have changed. Everything
+the session needs is either in this template or on disk.
+
+============================================================
+FILL IN THESE THREE FIELDS
+============================================================
+
+ATHLETE NAME: {{ATHLETE_NAME}}
+WEEK NUMBER: {{WEEK_NUMBER}}
+WEEKLY REVIEW FILE: {{WEEKLY_REVIEW_FILE_PATH}}
+
+Example:
+ATHLETE NAME: Grace Kindel
+WEEK NUMBER: 9
+WEEKLY REVIEW FILE: Athlete Data\Grace Kindel\Weekly Reviews\Grace Kindel 3-29-2026.txt
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline. Read it
+completely — do not skim.
+
+From CLAUDE.md, extract and internalize ALL of the following
+for the athlete named above:
+
+  A. BASELINE PROFILE
+     - Snapshot file path
+     - baseline_identity_claim
+     - baseline_hinge_habit
+     - baseline_primary_derailer
+     - baseline_growth_phase
+
+  B. LONGITUDINAL HISTORY
+     - Complete Interpretation JSON table (all prior weeks)
+     - Weekly tier, emotional intensity, and alignment for
+       every prior week
+     - Coach Insights table (stress, composite readiness,
+       key signal per week)
+     - The athlete's full developmental arc summary
+     - Current open threads heading into this week
+
+  C. PIPELINE CONFIGURATION
+     - Active specification versions for all 4 stages
+     - All reference file paths organized by stage
+     - Operating rules, versioning rules, compliance rules
+     - File naming conventions and save directories
+
+  D. COACHING OUTPUT HISTORY
+     - Coaching Message and Deep Dive file paths for all
+       prior weeks (you will read the most recent as format
+       references)
+
+If any of the above information is missing from CLAUDE.md
+for this athlete, STOP and inform the user before
+proceeding. Do not guess or assume missing context.
+
+============================================================
+2. CONTEXT GATHERING PROTOCOL
+============================================================
+
+After reading CLAUDE.md, execute the following steps IN
+ORDER before generating any output. Do not skip any step.
+Do not begin Stage 2 processing until all steps are done.
+
+STEP 1 — READ THE BASELINE SNAPSHOT
+Read the athlete's baseline snapshot file from the path
+listed in CLAUDE.md. Internalize the full profile: sport,
+position, team, years competing, mental game self-rating,
+all 9 sections, all baseline anchors, growth phase
+classification and justification.
+
+STEP 2 — READ ALL PRIOR WEEK JSONS
+Read EVERY prior week Interpretation JSON from the athlete's
+Weekly JSONS directory. Not just the most recent — ALL of
+them. You need the full longitudinal data set for:
+  - narrative_arc construction
+  - trend_analysis computation
+  - longitudinal_metrics calculation
+  - prior_commitment_result evaluation
+  - consistency_signal and recommitment_signal tracking
+  - growth_phase progression assessment
+  - pattern_shift detection across the full program
+
+STEP 3 — DEEP-READ THE MOST RECENT PRIOR WEEK JSON
+Read the most recent prior week JSON with particular
+attention to these fields, which directly feed Week N
+processing:
+  - narrative_arc.open_thread — these are the active
+    developmental threads you must address or update
+  - micro_commitment — this is the prior commitment you
+    must evaluate for execution in the new week's recap
+  - upcoming_context — this tells you what was anticipated
+    for the current week
+  - next_week_focus_question — may appear in the recap
+  - coach_insights — informs Stage 3 coaching approach
+  - growth_phase + growth_phase_movement — current phase
+    and trajectory
+  - emotional_intensity — prior week's EI for comparison
+  - trend_analysis — all trend directions entering this week
+  - longitudinal_metrics — rolling rates and stability
+
+STEP 4 — READ FORMAT REFERENCES
+Read the most recent prior week's Coaching Message, Deep
+Dive, and Coach Insight files. These are your format
+references — match their visual structure, section layout,
+separator style, header format, and word count range. Format
+consistency across weeks is a quality requirement.
+
+STEP 5 — READ THE NEW WEEKLY REVIEW
+Now read the weekly review file specified above. This is the
+primary input to the Interpretation Engine. Read it as raw
+data — apply the specification's classification rules to
+what the athlete wrote, not to any pre-analysis or
+assumptions.
+
+STEP 6 — READ ALL SPECIFICATION FILES
+Read the specification files listed in Section 5 of this
+template. These contain the classification rules, output
+formats, compliance requirements, and quality standards that
+govern every output you produce. You must read them — do not
+rely on summaries or prior knowledge. Rules change between
+specification versions.
+
+============================================================
+3. SESSION CONTEXT
+============================================================
+
+SESSION TYPE: Pipeline Processing (Stages 2-5)
+ATHLETE: An established athlete with an existing baseline
+  snapshot and prior week JSONs already on disk.
+GOAL: Process one new weekly review through the full
+  pipeline and produce 5 output files.
+
+This is a Core Foundation athlete (weekly recap input only).
+This means:
+  - input_source = "core_foundation"
+  - All execution_behavior_signals → CF fallback values
+  - All baseline_intake_profile fields → CF fallback values
+  - current_season_phase → "not available"
+  - forward_anchor fields → CF fallback values
+  - longitudinal_ppd → CF fallback values
+  - No PPD/ABI scoring (Core Foundation intake form)
+  - No competitive level calibration (default College)
+  - No parent output (Core Foundation)
+
+Stage 1 (Snapshot Generation) is NOT needed — the snapshot
+exists on disk. Read it as a baseline input only.
+
+============================================================
+4. PROCESSING INSTRUCTIONS
+============================================================
+
+Produce the following outputs IN THIS ORDER. Do not skip
+any stage. Do not proceed to the next stage until the
+current stage output is complete and saved to disk.
+
+------------------------------------------------------------
+STAGE 2: INTERPRETATION JSON
+------------------------------------------------------------
+Input: Baseline snapshot + ALL prior week JSONs + new
+  weekly review (raw text)
+Process: Apply v9.7 Interpretation Engine specification
+  rules directly to the raw recap data.
+
+The raw weekly review is the PRIMARY data source. Apply
+classification rules to what the athlete actually wrote:
+  - Win the Day: Score each day from the recap. 4-5 = Win,
+    2-3 = Neutral, 0-1 = Missed. If no numeric score is
+    visible, use category-only classification from the
+    weekly scorecard (Gold Streak = Growth tier).
+  - Bullseye: Classify center/influence/outer ring quality
+    and specificity. Detect noise fixation. Detect category
+    confusion (controllables misplaced in wrong ring).
+  - Reflection Quality: 1=Surface, 2=Emerging awareness,
+    3=Clear pattern recognition, 4=Ownership + forward
+    adjustment.
+  - Emotional Intensity: Low=task-oriented/composed,
+    Moderate=friction named but managed,
+    High=significant emotional strain.
+  - Alignment: Compare baseline identity claim, hinge habit,
+    and primary derailer against this week's evidence.
+  - Prior Commitment: Evaluate the most recent prior week's
+    micro_commitment against evidence in the new recap.
+  - Growth Phase: Check advancement/regression criteria
+    against longitudinal data.
+  - Narrative Arc: Thread this week into the full program
+    arc. Name milestone and open threads.
+
+Core Foundation fallback: Set input_source to
+"core_foundation". Skip Steps 12-18 (execution signals,
+longitudinal PPD). Populate all CF fallback values for
+execution_behavior_signals, baseline_intake_profile,
+current_season_phase, forward_anchor, and longitudinal_ppd
+blocks.
+
+Determine the week period dates from the weekly review
+submission date (the recap covers the 7 days ending the
+Saturday before submission, which is typically Monday).
+
+Save to: Athlete Data\[Athlete]\Weekly JSONS\
+Naming: {FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_Interpretation.txt
+
+------------------------------------------------------------
+STAGE 3: COACHING MESSAGE + DEEP DIVE
+------------------------------------------------------------
+Input: The Interpretation JSON you just produced (Stage 2
+  output). Do NOT re-read the raw recap. Do NOT recalculate
+  Win the Day. Do NOT reinterpret or override JSON
+  classifications.
+Process: Apply v2.0 Coaching Output Instructions + Master
+  Prompt V4.
+
+COACHING MESSAGE FORMAT:
+  VIRTUSFOCUS — ATHLETE COACHING MESSAGE
+  [Name] | Week [#] | [Date Range]
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  [Name] —
+  [Body: 250-450 words. Continuous narrative. Recognition →
+   Strength Signals → Drift Identification → Identity
+   Anchor. Prior commitment bridge 1-3 sentences BEFORE new
+   micro-commitment. Athlete voice mirrored. EI-calibrated
+   tone. Upcoming context anchored.]
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  YOUR ACTION — [CONTEXTUAL SUBTITLE]
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  [Micro-commitment: action + when + measurement.
+   Max 2 action steps. Binary yes/no measurement.
+   Modality: Written/Oral/Behavioral.
+   If same modality had Partial execution 2+ consecutive
+   weeks, shift modality.]
+  [Closing phrase]
+  — Coach Arron
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  NEXT WEEK FOCUS QUESTION
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  [From next_week_focus_question field in JSON]
+
+DEEP DIVE FORMAT:
+  DEEP DIVE COACHING ANALYSIS
+  [Name] | Week [#] | [Date Range]
+  5 mandatory sections, ALL CAPS headers, dashes between:
+  1. MINDSET SUMMARY — week's theme, growth phase, arc
+  2. WEEKLY TRENDLINE — longitudinal context, trends
+  3. STRENGTH SIGNALS — 3-5 items, ALL CAPS headline,
+     2-4 sentences, italicized coaching observation
+  4. GROWTH AREAS — 2-4 items, same format, NO action
+     items (those belong in CM)
+  5. IDENTITY THREAD — who the athlete is becoming
+  850-1200 words (850-950 simple weeks, up to 1200 complex).
+  Second person throughout ("you"/"your"). Coach Arron voice.
+  No signature. No pipeline metadata.
+
+PERSONA: Coach Arron, head mindset coach of VirtusFocus.
+  Direct, earned recognition (not given), no hype, no
+  cliches, no coddling, no guilt. Name what is strong.
+  Name what needs attention. Connect to identity.
+
+CORE FOUNDATION PATH: Skip all execution signal sections
+  (Sections 12-17), competitive level calibration (Section
+  19), intake profile integration (Sections 20-21), forward
+  anchor (Section 22), and longitudinal PPD (Section 23).
+  No parent output. Output identical to v1.4 behavior.
+
+Save CM to: Athlete Data\[Athlete]\Coaching and Deep Dive\Coaching Message\
+Save DD to: Athlete Data\[Athlete]\Coaching and Deep Dive\Deep Dive\
+CM Naming: {FirstName_LastName}_{dates}_VF_CoachingMessage.txt
+DD Naming: {FirstName_LastName}_{dates}_VF_DeepDive.txt
+
+------------------------------------------------------------
+STAGE 4: COACH INSIGHTS — WEEKLY PERFORMANCE INSIGHT
+------------------------------------------------------------
+Input: The Interpretation JSON (Stage 2 output).
+Process: Apply v1.7 Coach Insights Instructions + Master
+  Prompt v1.3.
+
+10-section Weekly Performance Insight:
+  1) Weekly Performance Classification (tier + trend arrow)
+  2) Consistency Signal (Stable/Variable/Improving)
+  3) Focus Distribution — Bullseye Trend (ring dominance)
+  4) Recommitment & Response Signal
+  5) Confidence Momentum (directional arrow)
+  6) Stress Load Indicator (Low/Moderate/Elevated)
+  7) Growth Phase Status (phase + movement)
+  8) Key Performance Signal (single short development phrase
+     + 1-2 sentence explanation)
+  9) Coach Context Cue (neutral coaching language:
+     "Reinforce..." / "Monitor trend...")
+  10) Composite Readiness Signal (Green/Yellow/Orange)
+
+COMPOSITE READINESS DETERMINATION (CF athletes):
+  Growth + Stable/Improving + Strong/Not Applicable
+    recommitment + Control → Green
+  Growth + any other combination → Yellow
+  Mixed + Moderate+ recommitment → Yellow
+  Mixed + Low recommitment OR Variable+Low → Orange
+  Reset → Orange
+  Stress Load Elevated → shift one level toward Attention
+  (Step 2.5 execution modifier SKIPPED for CF athletes)
+
+MANDATORY HEADER + DISCLAIMER:
+  Athlete: [Name]
+  Week: [Date Range]
+  Report Type: Weekly Performance Insight
+  Classification: Informational Only
+  "These indicators are informational only and may not be
+  used as a basis for participation, selection, or
+  disciplinary decisions."
+
+PROHIBITED CONTENT: Daily scores, usage metrics, journal
+  quotes, personal disclosures, raw coach_insights content,
+  risk_flags, narrative_arc, rankings, clinical language,
+  emotional narrative, pipeline field names.
+
+CORE FOUNDATION PATH: Skip execution signal integration
+  (Sections 15-17), intake profile routing (Section 18),
+  forward anchor (Section 19). No parent insight (Section
+  28 — CF default). Output identical to v1.1 behavior.
+
+Save to: Athlete Data\[Athlete]\Coach Insights\
+Naming: {FirstName_LastName}_{dates}_VF_WeeklyInsight.txt
+
+------------------------------------------------------------
+STAGE 5: EDITORIAL AUDIT
+------------------------------------------------------------
+Input: Interpretation JSON + Coaching Message + Deep Dive
+  (all three required). No Parent CM for CF athletes.
+Process: Apply v1.4 Editorial Audit Master Prompt +
+  Instructions.
+
+Run ALL 13 audit criteria in order. Do not skip any.
+
+TIER 1 — MUST PASS (reject on failure, never auto-correct):
+  1. Emotional Intensity Calibration
+     - High EI: empathy leads, no framework in first 2
+       paragraphs
+     - Low EI: no empathy framing, recognition-forward
+  2. Clinical Language Compliance
+     - ZERO clinical terms. Never auto-corrected.
+     - Categories A-D: anxiety, trigger/triggered, emotional
+       regulation, coping mechanism, regression, trauma,
+       avoidance behavior, self-esteem, therapeutic,
+       cognitive restructuring/reframing, self-efficacy,
+       emotional dysregulation, maladaptive, behavioral
+       intervention, psychoeducation
+     - Replacements: anxiety→pressure/nerves, trigger→
+       activated/derailed, emotional regulation→composure/
+       staying centered, coping mechanism→response pattern/
+       go-to move, regression→setback/dip/drift
+  3. Data Fidelity
+     - Every claim must trace to the JSON. No fabrication,
+       no contradiction, no invention.
+  4. Prior Commitment Bridge
+     - Must acknowledge prior commitment BEFORE new one.
+     - 1-3 sentences.
+  13. Pipeline Data Leakage Compliance
+     - No execution signal terminology (Category E: score
+       names, band labels, flag IDs, self-ratings labels,
+       raw metrics, surveillance framing, pipeline terms)
+     - No intake profile terminology (Category F: PPD
+       buckets, scoring artifacts, ABI terms, adversity
+       classifications, field names, F6-F8 longitudinal PPD)
+     - No forward anchor terminology (Category G: raw text,
+       controllability labels, alignment labels, consistency
+       labels, field names)
+     - CF STRICTNESS: ANY execution/intake/forward-anchor-
+       derived language is an automatic FAIL — no such data
+       exists for CF athletes.
+
+TIER 2 — SHOULD PASS (auto-correct if possible, else reject):
+  5. Athlete Voice Reflection (mirror language once)
+  6. Action Specificity (action + when + measurement)
+  7. Upcoming Context Anchoring (connect to competition)
+  8. Narrative Arc Presence (arc in DD when data exists)
+  9. Message Length Constraint (CM 250-450 words)
+  10. Micro-Commitment Realism (modality adaptation check)
+
+TIER 3 — QUALITY CHECKS (auto-correct silently):
+  11. Brand Voice Tonal Scan (no hype/cliches/coddling/guilt)
+  12. Outer-Ring Language Discipline (redirect to center ring)
+
+THREE POSSIBLE RESULTS:
+  PASS — no issues detected
+  AUTO-CORRECTED PASS — Tier 2/3 issues corrected in place,
+    corrected outputs overwrite originals
+  REJECT AND REGENERATE — Tier 1 failure, regenerate the
+    failing output, then re-audit
+
+If auto-correcting: fix the issue in the CM/DD file on
+disk, then note the correction in the audit summary.
+
+Save to: Athlete Data\[Athlete]\Coaching and Deep Dive\Audit Summaries\
+Naming: {FirstName_LastName}_{dates}_VF_AuditSummary.txt
+
+============================================================
+5. REFERENCE FILES — READ BEFORE PROCESSING
+============================================================
+
+Read these specification files before beginning Stage 2.
+They contain the classification rules and output standards
+that govern all processing decisions.
+
+STAGE 2 REFERENCES:
+- Master Prompt:
+  Agents - Generators\Interpretation\SOP - Weekly Interp Prompt v7.3.txt
+- Project Instructions (ACTIVE — v9.7):
+  Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.7.txt
+- JSON Rules:
+  Agents - Generators\Interpretation\Source Files\VF_Interpretation_JSON_Rules.txt
+
+STAGE 3 REFERENCES:
+- Master Prompt (ACTIVE — V4):
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+- Project Instructions (ACTIVE — v2.0):
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.0.txt
+- Message Map:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
+- Brand Voice:
+  Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+- Content Style Guide:
+  Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+- System Identity:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+- Coaching Message Framework:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+- Deep Dive Framework:
+  Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+- Reflection/Growth Phase Model:
+  Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
+
+STAGE 4 REFERENCES:
+- Master Prompt (ACTIVE — v1.3):
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.3.txt
+- Project Instructions (ACTIVE — v1.7):
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.7.txt
+- JSON Logic Reference:
+  Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
+- Compliance Framework:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+- Dashboard Metrics Reference:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+- Output Structure Master:
+  Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
+
+STAGE 5 REFERENCES:
+- Master Prompt (ACTIVE — v1.4):
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.4.txt
+- Project Instructions (ACTIVE — v1.4):
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.4.txt
+- (Also uses all Stage 3 source files listed above)
+
+============================================================
+6. QUALITY STANDARDS
+============================================================
+
+The outputs you produce are delivered to real athletes and
+real coaching staffs. Quality is not optional. Every output
+must meet these standards — not just pass the audit, but
+serve the athlete's development and the coach's decision-
+making.
+
+INTERPRETATION JSON (Stage 2):
+- Every classification must be evidence-based and traceable
+  to specific language in the raw recap.
+- The narrative arc must thread this week into the full
+  program story — not just describe the current week in
+  isolation.
+- Open threads must be specific enough that the next
+  session can use them without re-reading the entire history.
+- The micro-commitment must be realistic, specific, and
+  connected to the athlete's upcoming context. It must be
+  something the athlete can actually do this week.
+- The next_week_focus_question must be a question the
+  athlete would want to answer — grounded in something they
+  said or did, inviting reflection, not a test.
+
+COACHING MESSAGE (Stage 3):
+- This is a message FROM Coach Arron TO the athlete. It
+  must sound like a real coach talking to a real person —
+  not a report, not a template, not a performance review.
+- Recognition must be EARNED — grounded in specific
+  evidence from the JSON. Never give generic praise.
+- The identity thread must connect the athlete's baseline
+  identity claim to what they demonstrated this week. This
+  is the "who you are becoming" thread that makes coaching
+  personal, not transactional.
+- Growth areas must be named directly without softening,
+  hedging, or apologizing. Coach Arron is direct.
+- The prior commitment bridge shows the athlete their
+  coaching is continuous, not episodic.
+
+DEEP DIVE (Stage 3):
+- This is the analytical depth document. It exists to give
+  the athlete a detailed understanding of their week that
+  the shorter CM cannot provide.
+- Every Strength Signal and Growth Area must have a specific
+  behavioral example and an italicized coaching observation
+  that adds perspective the athlete may not see.
+- The Weekly Trendline must place this week in the full arc
+  — what changed, what continued, what is developing.
+- Second person throughout. Coach Arron voice. No third-
+  person reporting. No coach-to-coach language.
+
+COACH INSIGHTS (Stage 4):
+- This is an institutional document visible to coaching
+  staff at every level (position coach → coordinator →
+  head coach). Every word must be compliance-safe.
+- No personal disclosures, journal quotes, emotional
+  narrative, risk flags, or pipeline internal data.
+- The Key Performance Signal (Section 8) is the most
+  important section — it tells coaches the one thing worth
+  paying attention to this week. Make it precise.
+- The Coach Context Cue (Section 9) must use neutral
+  coaching language: "Reinforce..." / "Monitor trend..." /
+  "Recognize..." — never directive.
+
+EDITORIAL AUDIT (Stage 5):
+- Run all 13 criteria. Do not skip any.
+- Every Tier 1 criterion is a MUST PASS. A single Tier 1
+  failure means the output must be regenerated.
+- Clinical language violations are the highest-severity
+  issue. Scan every sentence in both CM and DD.
+- Data fidelity means EVERY factual claim traces to the
+  JSON. If you cannot point to the JSON field that supports
+  a claim, the claim is fabricated and fails Criterion 3.
+
+============================================================
+7. RULES AND EXPECTATIONS
+============================================================
+
+WHAT NOT TO DO:
+- Do NOT modify any specification files.
+- Do NOT use App-athlete features (execution signals, PPD,
+  ABI, intake profile, forward anchor, parent output).
+- Do NOT skip reading the specification files — they contain
+  critical rules that changed in recent versions.
+- Do NOT reinterpret or override JSON classifications in
+  downstream stages (Stage 3 reads JSON, not recaps).
+- Do NOT use clinical language in any coaching output.
+- Do NOT surface internal pipeline fields in coaching output:
+  coach_insights, risk_flags, narrative_arc, upcoming_context,
+  longitudinal_metrics, execution_behavior_signals,
+  baseline_intake_profile, forward_anchor, longitudinal_ppd.
+- Do NOT skip the Editorial Audit.
+- Do NOT pre-interpret the raw weekly review before reading
+  the specification files.
+- Do NOT use the word "trigger" or "triggered" — use
+  "activated" or "derailed."
+- Do NOT use "cognitive reframing" — use "mental shift" or
+  "reframing."
+- Do NOT fabricate athlete quotes or paraphrase them
+  inaccurately.
+- Do NOT add pipeline metadata to the CM header (no schema
+  version, no EI label, no tier classification).
+- Do NOT include action items in the DD Growth Areas — those
+  belong in the CM micro-commitment.
+
+WHAT THE USER EXPECTS AFTER PROCESSING:
+- ALL 5 outputs saved to disk in the correct directories.
+- A brief summary including:
+  * Weekly tier, EI, alignment status
+  * Composite Readiness signal (Green/Yellow/Orange)
+  * Key finding (1-2 sentences)
+  * Editorial audit result
+  * Updated arc summary (2-3 sentences)
+  * Open threads heading into next week
+- CLAUDE.md updated with:
+  * New row in the athlete's Interpretation JSON table
+  * New row in the athlete's Coaching Output table
+  * New row in the athlete's Coach Insights table
+  * Updated arc summary
+  * Updated open thread
+  * Updated editorial audit note
+  * New session history entry
+- All work committed to Git with a descriptive message.
+- Clean working tree verified with final git status.
+
+TOTAL OUTPUTS TO PRODUCE:
+  1 Interpretation JSON
+  1 Coaching Message
+  1 Deep Dive
+  1 Weekly Performance Insight
+  1 Editorial Audit Summary
+  = 5 files + CLAUDE.md update + Git commit
+
+============================================================
+8. FILE NAMING CONVENTION
+============================================================
+
+All output files follow this naming pattern:
+{FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_{Type}.txt
+
+Types:
+  _VF_Interpretation.txt    → Weekly JSONS directory
+  _VF_CoachingMessage.txt   → Coaching Message directory
+  _VF_DeepDive.txt          → Deep Dive directory
+  _VF_WeeklyInsight.txt     → Coach Insights directory
+  _VF_AuditSummary.txt      → Audit Summaries directory
+
+The date range is the week period (Monday to Sunday) that
+the recap covers, NOT the submission date.
+
+============================================================
+END OF TEMPLATE
+============================================================
+When you have read CLAUDE.md, completed the Context
+Gathering Protocol (Section 2), read all specification files
+(Section 5), and are ready to begin processing — start with
+Stage 2 and proceed through Stage 5 in order.
+
+Do not ask for permission to proceed. Do not ask clarifying
+questions about the pipeline. The specifications and
+CLAUDE.md contain everything you need. Process the athlete
+and produce all 5 outputs.
+============================================================
