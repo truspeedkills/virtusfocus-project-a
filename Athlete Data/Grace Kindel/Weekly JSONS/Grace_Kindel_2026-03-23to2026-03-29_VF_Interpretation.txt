@@ -1,0 +1,218 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-03-23 to 2026-03-29",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Ninth consecutive Growth week. Baseline primary derailer tested by Sunday's pop-out — second competitive failure of the program — and did not activate. Grace's response was immediate composure: 'I was ready, I was positive, was a good day.' No reset delay, no 'that sucks' processing phase, no confidence disruption. More composed response than Week 7's strikeout-to-Wednesday reset. Hinge habit functioning with decreasing recovery time under competitive failure. Wednesday's direct conversation with the coach about playing time represents the first self-advocacy in the program — the position frustration arc has progressed from complaint (Week 6) to charged frustration (Week 7) to self-directed practice (Week 8) to direct advocacy (Week 9). Goal-setting showed first improvement in eight weeks."
+  },
+
+  "athlete_state": "Advocacy-active composure through a week that combined the first direct coach conversation about playing time, a second competitive failure managed without disruption, and the first goal-setting improvement in eight weeks. Grace spoke to her coach Wednesday about opportunity — a positive conversation that yielded confusing feedback about speed ('I don't even know I'm sitting here confused') but represented the program's first self-advocacy act. Sunday's pop-out in the second game was processed immediately: 'I was ready, I was positive, was a good day.' Self-directed hitting continued across three separate sessions (Monday, Wednesday, Friday). Achievement language at its strongest: 'I spoke up, I moved with a purpose, and I am succeeding.' Sixty-three consecutive Win days. Ninth Growth week.",
+
+  "core_pattern": "Direct advocacy replacing indirect frustration processing. The position frustration arc that began in Week 6 has traced a four-week progression: Sunday complaint (Week 6) to charged practice-level frustration (Week 7) to self-directed practice creation with Kabine (Week 8) to direct conversation with the coach (Week 9). Grace moved from processing what she cannot control to directly engaging the person who makes the decisions. The coach conversation was positive but yielded mixed results — speed concern raised that Grace found confusing — yet the frustration did not re-escalate. The Week 7 'lil mf Coach' language is absent. Grace is operating in advocacy mode, not grievance mode. In parallel, Sunday's pop-out confirmed that the failure-resilient confidence from Week 7 has strengthened — response time from competitive failure to composure has shortened from 48 hours (Week 7) to immediate (Week 9).",
+
+  "behavioral_root_cause": "Wednesday's coach conversation is the behavioral answer to two consecutive weeks of position frustration processing. Week 8 addressed the controllable dimension (created own practice). Week 9 addressed the influence dimension (spoke to the decision-maker). Grace said she debated Tuesday whether to say something, then decided Wednesday. The conversation was positive ('it was good'), coach expressed speed concern ('she's still worried about my speed'), and Grace was confused by the feedback ('I don't even know I'm sitting here confused') but did not escalate emotionally. The confusion represents a new processing thread — Grace expected the conversation to clarify her situation, and instead it introduced an unexpected variable. Sunday's pop-out was the second competitive failure test, and Grace's response was her most composed yet: no emotional processing delay, no need for mid-week reset language, immediate positive framing on the same day. The self-directed hitting pattern (three sessions: Monday stayed after practice, Wednesday hit with struggling teammate, Friday went to field on off day) is now a sustained self-directed development behavior rather than a single initiative.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before the first game of each doubleheader this week, name one specific thing she wants to execute that day — say it out loud to herself or to Kabine. Not 'work hard.' One specific controllable action she can own whether she plays or not.",
+    "execution_status": "Partial",
+    "execution_notes": "No doubleheaders occurred during this reporting period — the PSACs doubleheader stretch begins next week. Sunday was the only game day. Sunday's recap shows specific game-day controllable naming: 'goal for today, stay ready when I'm called, have intentional warm ups' with a confirmation check mark. This is the behavioral spirit of the commitment applied to the one game that occurred — she named specific controllables before the game and evaluated them. However, no evidence of the oral delivery method (saying it out loud to herself or Kabine) as a deliberate pre-game action. The format of the commitment (doubleheader-specific, oral modality) was not tested because no doubleheaders occurred. Partial because the underlying behavioral intent — naming a specific controllable before competition — was demonstrated, but the specific commitment format was not fully testable.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "be consistent and intentional, work on the little things",
+    "achievement_statement": "I spoke up, I moved with a purpose, and I am succeeding",
+    "key_phrase": "I was ready, I was positive, was a good day",
+    "mindset_resonance": "Friday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Win",
+      "sunday": "Win"
+    },
+    "win_days": 7,
+    "neutral_days": 0,
+    "missed_days": 0,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Gold Streak",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Preparation-oriented. 'I can control how I prepare mentally and physically' — appropriate behavioral framing covering both mental and physical preparation dimensions. Broader than Week 6's competition-specific 'what I do with the chances I get' but more concrete than Week 7's general 'my mindset.' Consistent with Week 8's preparation focus. Appropriate for a week dominated by practice and development work with only one game day.",
+    "influence_quality": "'I can influence energy during long hard' — appears truncated in the recap but references team energy during demanding periods. Appropriately placed in the influence ring. No category confusion.",
+    "noise_fixation_present": "No",
+    "noise_content": "'I can't control final decisions.' Clean and de-escalated. Third consecutive week of philosophical acceptance framing in the outer ring (Week 7: 'my mindset' placed in outer ring with charged coach language; Week 8: 'how people view and treat me'; Week 9: 'final decisions'). Progressing from personal/emotional framing to structural/categorical framing. No coach naming, no charged language, no practice inequity detail.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 3,
+
+  "growth_phase": "Consistent",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stable",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 8,
+    "rolling_win_rate_4wk": 1.0,
+    "rolling_missed_rate_4wk": 0.0,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Nine-week progression from preparation-driven confidence (Wks 1-2) through emotional adversity (Wk 3: High EI, NC trip) to breakthrough action-quality philosophy (Wk 4: SC at-bat) to identity-embedded composure (Wk 5: Consistent phase) to competition-validated performance (Wk 6: first hit, first start) to failure-resilient confidence (Wk 7: strikeout processed in 48 hours) to agency-driven composure with self-directed practice (Wk 8: Kabine defensive work) to advocacy-active composure with accelerated competitive failure processing (Wk 9: spoke to coach, pop-out handled immediately, goal-setting improves). Confidence arc: outcome-reactive at baseline → preparation-energized (Wks 1-2) → structure-sustained under pressure (Wk 3) → action-proven (Wk 4) → identity-embedded (Wk 5) → competition-validated (Wk 6) → failure-resilient (Wk 7) → agency-driven (Wk 8) → advocacy-active (Wk 9). Position frustration arc: complaint (Wk 6) → charged practice-level frustration (Wk 7) → self-directed solution (Wk 8) → direct advocacy with coach (Wk 9). Coach conversation yielded positive exchange but confusing speed concern feedback. Goal-setting showed first improvement in eight weeks — weekly goal included 'intentional' and upcoming goals contain daily structure.",
+    "milestone_this_week": "Wednesday's direct conversation with the coach about playing time and opportunity — the first self-advocacy act in the nine-week program. Grace debated Tuesday whether to speak up, decided Wednesday, and had a positive conversation. The position frustration arc has completed a full progression: identifying the problem (Week 6), processing it emotionally (Week 7), creating a self-directed solution (Week 8), and directly engaging the decision-maker (Week 9). Separately, Sunday's pop-out represents the second competitive failure of the program, handled with more immediate composure than the first — no delayed reset language, no 'that sucks,' straight to positive framing on the same day.",
+    "open_thread": "(1) Coach speed concern — the Wednesday conversation introduced an unexpected variable. Grace expected clarity about playing time and instead heard that the coach is 'worried about my speed.' Grace's reaction was confusion ('I don't even know I'm sitting here confused') rather than frustration. Whether this becomes a new processing thread — a controllable she can address (speed work) or an external judgment she cannot change (perceived limitation) — needs monitoring. (2) PSACs start next week — 8 games mentioned. Playing time still uncertain (Sunday's pop-out was only AB in second game). Biggest competitive stretch of the season. (3) Goal-setting improvement — first uptrend in 8 weeks. 'Stretch everyday and do one thing each day specifically to benefit me' contains daily structure and self-directed intentionality. Whether this improvement holds or reverts will indicate if the seven-week decline was engagement drift or processing load. (4) Self-directed hitting now a sustained pattern (3 extra sessions this week, continuing from Week 8 Kabine practice). Development behavior is becoming a consistent weekly feature."
+  },
+
+  "most_important_controllable": "Pre-game specific controllable naming for each PSACs game. Sunday showed that when Grace names a specific game-day goal ('stay ready when I'm called, have intentional warm ups'), she executes composedly and processes results without disruption. With eight games ahead, making that specific pre-game naming a deliberate practice for each game turns the advocacy-active confidence into a structured competition routine.",
+
+  "micro_commitment": {
+    "action": "Before each game at PSACs this week, say one specific thing out loud — to Kabine, to herself, or written on her hand — that she wants to own that day. Not 'work hard.' One specific center-ring action. After each game, name one thing she controlled well, whether she played or not. If she played: name the action. If she did not play: name how she showed up.",
+    "when": "Before the first pitch of each game, during warmups. After each game, within the first hour.",
+    "measurement": "At the end of PSACs, she should have one pre-game intention and one post-game controlled-action for each game day. If every pre-game intention is a center-ring controllable and every post-game evaluation names something she owned, the commitment is executed."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "PSACs — 8 games this week. The biggest competitive stretch of the season. Multiple game days with potential doubleheaders.",
+    "anticipated_stressor": "Playing time remains uncertain — Sunday's one AB in the second game suggests limited but present opportunity. Coach speed concern from Wednesday's conversation may be processing in the background. Volume of games over a compressed PSACs stretch tests composure differently than single game days. Goal-setting improvement is fragile — first uptrend in eight weeks heading into the highest-pressure stretch.",
+    "athlete_stated_next_goal": "Stretch everyday and do one thing each day specifically to benefit me"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7/7 Win days. Sixty-three consecutive Win days across the full program. Gold Streak maintained for ninth consecutive week. Self-directed hitting in three separate sessions (Monday stayed after practice, Wednesday hit with struggling teammate, Friday went to field on off day). Saturday rest day with a walk. Sunday game day with composed pop-out response.",
+    "key_habit_signal": "Wednesday's direct conversation with the coach about playing time and opportunity is the most significant behavioral signal of the week — and one of the most significant in the program. Grace moved from indirect frustration processing (Weeks 6-7) and self-directed solutions (Week 8) to directly engaging the coaching staff about her situation. The conversation was positive, but the coach raised a speed concern that Grace found confusing. Grace's response — confusion rather than anger, continued effort rather than withdrawal — shows she can advocate for herself and process mixed feedback without destabilizing. The three self-directed hitting sessions (Monday, Wednesday, Friday) extend the Week 8 initiative into a consistent development pattern.",
+    "coach_reinforcement_cue": "Name the Wednesday coach conversation as advocacy — Grace identified what she wanted, debated it (Tuesday), and then did it (Wednesday). The achievement statement — 'I spoke up, I moved with a purpose, and I am succeeding' — is the strongest self-evaluation in the program. Reinforce all three elements: the speaking up (advocacy), the purposeful movement (agency), and the self-affirmation (confidence). Also reinforce Sunday's pop-out response: 'I was ready, I was positive, was a good day' — this is the second competitive failure handled composedly, with faster composure recovery than the first. Name the goal-setting improvement as a positive signal — first uptrend in eight weeks.",
+    "coach_avoidance_note": "The speed concern from Wednesday's conversation is processing as confusion, not frustration. Do not interpret or expand on the coach's speed concern in coaching output — Grace is still processing it and has not determined what to do with the feedback. Do not frame the pop-out as concerning — Grace framed it as a positive day and that framing should be matched. The goal-setting improvement is real but fragile — reinforce it without over-celebrating. Do not reference the prior weeks' charged coach language — the conversation has shifted the dynamic and old language is no longer operative."
+  },
+
+  "risk_flags": "No clinical indicators. Wednesday's coach conversation was positive and productive, handled with appropriate advocacy. Sunday's pop-out processed composedly on the same day. Friday irritation managed through intentional self-regulation ('took some time for myself before responding'). 'I'm sure as hell not quitting' (Week 8 carryover sentiment) reflects determination, not distress. All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You spoke up this week and it was good — what is one thing you learned from that conversation that changes how you prepare for PSACs?",
+
+  "current_season_phase": "not available",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available — Core Foundation athlete",
+    "focus_consistency": "not available — Core Foundation athlete",
+    "forward_anchor_alignment": "not available — Core Foundation athlete"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}

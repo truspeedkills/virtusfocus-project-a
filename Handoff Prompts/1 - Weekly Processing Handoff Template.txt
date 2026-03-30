@@ -5,31 +5,10 @@ VERSION: 1.1
 LAST UPDATED: 2026-03-23
 ============================================================
 
-HOW TO USE THIS TEMPLATE:
-
-Fill in the three fields below. Paste this entire document
-into a fresh Claude session alongside the athlete's newest
-weekly review file. The session will read CLAUDE.md, all
-prior data, and all specification files — then process the
-athlete through the full pipeline (Stages 2-5) and save
-all outputs to disk.
-
-Do NOT modify anything below the fill-in fields. Everything
-the session needs is either in this template, in CLAUDE.md,
-or in the specification files on disk.
-
-============================================================
-FILL IN THESE THREE FIELDS
-============================================================
 
 ATHLETE NAME: {{ATHLETE_NAME}}
 WEEK NUMBER: {{WEEK_NUMBER}}
-WEEKLY REVIEW FILE: {{WEEKLY_REVIEW_FILE_PATH}}
-
-Example:
-ATHLETE NAME: Grace Kindel
-WEEK NUMBER: 9
-WEEKLY REVIEW FILE: Athlete Data\Grace Kindel\Weekly Reviews\Grace Kindel 3-29-2026.txt
+WEEKLY REVIEW FILE: Athlete Data\  \Weekly Reviews\.txt
 
 ============================================================
 1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
