@@ -1,0 +1,219 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-03-23 to 2026-03-29",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent — he will always be balancing sport, academics, work, and relationships. Building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Weekday execution strong (Monday through Thursday all Win days) despite severely limited practice access — only one practice session the entire week (Monday, poor quality due to rain and cold). The baseline derailer is partially active in a new form: schedule changes eliminated practice Tuesday through Thursday (work schedule conflict Wednesday, unspecified disruptions other days), reducing sport preparation to a single session. Illness Friday through Saturday introduced the first Missed day in 42 program days. Angelo's response to both disruptions is mature: Saturday he lifted despite being sick, Sunday returned to Win, and he reframes the illness as potentially beneficial ('might have actually been a blessing') because preparation was already compromised. Weekly goals are recovery-focused and appropriate ('Recovery, fine tunement, and consistency'). Bullseye compressed for third consecutive week (1 center item). Achievement language shifted entirely to non-sport domain ('Building better relationships with the people I work with') — first time in the program. The CMU meet was cancelled due to illness, removing the planned competitive test of the Week 5 preparation system. Partially Aligned rather than Aligned due to: derailer-adjacent practice disruption, first Missed day, no competition, Bullseye compression continuing, non-sport achievement focus."
+  },
+
+  "current_season_phase": "not available",
+
+  "athlete_state": "Disrupted week with illness and severely limited practice. Only one team practice the entire week (Monday — rain and cold, quality compromised, Hammer throw work only, no other events). Tuesday through Thursday had no practice due to schedule changes and work conflicts. Friday: became ill, stayed home, first Missed day in the program. Was supposed to compete at CMU meet this weekend but could not attend either day. Saturday: still sick but lifted despite illness ('did lift today'). Sunday: recovered to Win, no practice. School/work domains strong throughout the weekdays — Tuesday notes growing workplace confidence ('becoming more confident in the work place'). Mindset challenge engagement: 'Notice and correct one small mistake before anyone else points it out.' Achievement framed in non-sport terms: 'Building better relationships with the people I work with.' Additional context reveals analytical processing: illness reframed as potentially beneficial because practice preparation was already compromised, Easter break identified as catch-up opportunity ('use the extra free time throughout the week to catch up and dial in on the missed time from this past week').",
+
+  "core_pattern": "Mature disruption management with forward-directed recovery planning. Angelo's most significant behavioral signal this week is how he manages a week where almost nothing went according to plan. Practice was limited to one poor-quality session. Illness forced the first Missed day in 42 program days and cancelled the CMU competition that was supposed to test his rebuilt preparation system. Yet weekday execution remained strong (4 consecutive Win days), he engaged with the mindset challenge, he lifted on Saturday despite being sick, and he immediately identified Easter break as the recovery pathway. The illness reframe ('might have actually been a blessing, because going into the meet, my week of practice leading up to it was heavily restricted') shows analytical self-awareness — he recognizes that competing with compromised preparation would have repeated the PSAC championship pattern rather than validated his improvement.",
+
+  "behavioral_root_cause": "The practice disruption this week reveals a secondary expression of the baseline derailer. In prior weeks, the derailer manifested as multi-domain overload degrading preparation quality. This week, it manifests as schedule conflicts eliminating practice access entirely — work schedule changes on Wednesday, unspecified disruptions Tuesday and Thursday. Angelo had only one practice session in seven days, and that session was weather-compromised and limited to Hammer throw only. The distinction matters: Angelo did not choose to skip practice or deprioritize training. External schedule conflicts removed the opportunity. His response — maintaining all other Win-day behaviors, lifting Saturday while sick, planning Easter break catch-up — shows that his engagement is intact even when the training structure is disrupted. The illness is genuinely uncontrollable and correctly placed in his outer ring ('Getting ill'). The real coaching insight is that Angelo's competition was cancelled not by illness alone but by the compound effect of disrupted practice making competition inadvisable — he may have unconsciously recognized this when calling the illness 'a blessing.'",
+
+  "prior_commitment_result": {
+    "prior_action": "Before each day of the CMU meet, write one specific technical or mental action to execute that day — not a distance target, one controllable. After each competition day, name one thing executed well.",
+    "execution_status": "Not Attempted",
+    "execution_notes": "The CMU meet (scheduled for this weekend) was cancelled for Angelo due to illness. He became sick on Friday and could not compete on either day. The commitment was specifically tied to pre-competition targets and post-competition reflections — since no competition occurred, the commitment could not be executed. This is an external health event preventing execution, not a choice to disengage. Angelo's Week 5 preparation system work (planned lifting, intentional practice) was in progress Monday but the week's disruptions (limited practice, illness) made the commitment moot before it could be tested.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Build on the progress from last week even stronger",
+    "achievement_statement": "Building better relationships with the people I work with",
+    "key_phrase": "The illness that came over me in the weekend might have actually been a blessing, because going into the meet, my week of practice leading up to it was heavily restricted",
+    "mindset_resonance": "Notice and correct one small mistake before anyone else points it out"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Missed",
+      "saturday": "Neutral",
+      "sunday": "Win"
+    },
+    "win_days": 5,
+    "neutral_days": 1,
+    "missed_days": 1,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Still in the Game (self-scored) — corrected to Growth",
+    "scoring_note": "All 7 days scored by athlete. Monday Win, Tuesday Win, Wednesday Win, Thursday Win, Friday Missed (0-1, illness), Saturday Neutral (2-3, lifted despite illness), Sunday Win (4-5). 5 Win + 1 Neutral + 1 Missed = Growth tier. Athlete's self-scorecard reports '3-4 Wins: Still in the Game' which is inaccurate — daily scores total 5 Win days. Interpretation Engine classifies based on daily scores. First Missed day in 42 program days. First Neutral due to illness rather than schedule or fatigue.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Moderate"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Compressed. Single item: 'Myself and my consistency.' Third consecutive week at 1 center-ring item. Content returned to the exact language from Weeks 1 and 4 after Week 5's 'work ethic' variant. Correctly placed and genuinely controllable but depth has not expanded despite 6 weeks of engagement. The regression from Week 2's 3-item peak (consistency, effort, mindfulness) is now a sustained pattern rather than a temporary compression.",
+    "influence_quality": "Moderate. Two items: 'My home' and 'My friends.' First time non-sport influence items named — all prior weeks referenced team morale, spouse leadership, or example-setting. The shift to personal/social influence items may reflect the non-sport achievement focus this week or reduced sport-domain engagement due to practice disruption.",
+    "noise_fixation_present": "No",
+    "noise_content": "Three items: 'Getting ill,' 'Other people,' 'The weather.' All correctly placed. 'Getting ill' is directly relevant to this week's Missed day. 'The weather' connects to Monday's rain-compromised practice. Appropriate acknowledgment without fixation.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 2,
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable — Growth across all 6 recorded weeks",
+    "growth_phase_movement": "Stable — Developing across all 6 weeks",
+    "consistency_trend": "Stable Positive — 3 consecutive Growth weeks (Wks 4-6), 6 total Growth weeks across program",
+    "recommitment_trend": "First opportunity — Moderate recovery (Friday Missed → Saturday Neutral with active engagement → Sunday Win, 2-day recovery)",
+    "pattern_shift_detected": "Yes — Three shifts detected: (1) First Missed day in the entire program (42 days, previously zero). Illness-driven, genuinely uncontrollable. (2) Achievement language shifted to non-sport domain for the first time ('Building better relationships with the people I work with'). All prior weeks had sport or identity-level achievement framing. (3) No competition for first time since Week 1 — every Week 2-5 had competition or competition-adjacent activity. The compound effect of no practice + no competition + first Missed day makes this the lowest sport-engagement week in the program."
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 5,
+    "rolling_win_rate_4wk": 0.857,
+    "rolling_missed_rate_4wk": 0.036,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "1.00 — single event, recovered within 2 days",
+    "controllable_stability_4wk": "Stable — 'consistency' in center ring across all 6 weeks. Depth persistently compressed (1 item) for 3 consecutive weeks.",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Six-week progression: Illness recovery with approach-framed re-engagement (Wk1) → High-level competition composure as solo competitor, near-PR (Wk2) → Peak performance with strategic preparation and identity-level achievement (Wk3: 'emotional groundedness, intent, and gratitude') → [2.5-week gap: PSAC championship disappointment + emotional processing + Spring Break] → Outdoor season reset with mature retrospective processing (Wk4) → Championship lesson applied: structured preparation producing best-ever outdoor opener with all PSAC auto qualifiers hit (Wk5) → Disrupted week: practice limited to one session, illness forces first Missed day in program, CMU competition cancelled, but weekday execution maintained and recovery-focused forward planning demonstrates sustained engagement (Wk6). The arc now contains the full cycle: preparation quality drives performance (Wks 1-3, 5), disrupted preparation degrades output (PSAC championship, Wk6 practice limitation), and Angelo's response to disruption is consistently forward-directed (championship retrospective, illness reframe, Easter break planning).",
+    "milestone_this_week": "First recommitment in the program. After 42 consecutive days without a Missed day, Angelo experienced his first Missed (Friday illness) and demonstrated Moderate recovery — lifting on Saturday despite being sick, returning to Win on Sunday. The recommitment behavior (lifting while ill) shows that his engagement baseline is strong enough to produce active effort even under adverse health conditions. Also notable: the illness reframe ('might have actually been a blessing') reveals analytical self-awareness that his compromised preparation made competition inadvisable — he recognized the PSAC championship pattern (disrupted preparation → poor performance) and implicitly accepted the illness as protecting him from repeating it.",
+    "open_thread": "(1) Easter break recovery — Angelo plans to use the extra free time to 'catch up and dial in on the missed time from this past week.' The break removes academic structure but provides training time. Will he self-direct practice as he did in Week 5 (Saturday and Sunday solo sessions) or will the unstructured break produce drift? (2) Competition gap extending — no competition for two consecutive weekends now (missed CMU, Easter break next). The Week 5 opener momentum may cool. Next competition TBD. (3) Bullseye depth at 3 consecutive weeks of compression (1 center item). This is now a sustained pattern, not a temporary post-championship response. (4) Practice access — this week's 1 practice in 7 days was the lowest sport-engagement in the program. Whether this is a one-off (schedule disruption + illness) or emerging pattern needs monitoring. (5) RQS dropped to 2 from 3 (Weeks 2-5 were all 3). Daily entries are extremely brief. The additional context section retains some analytical quality but overall reflection depth declined."
+  },
+
+  "most_important_controllable": "Easter break self-directed practice structure. Angelo's stated goal is to 'catch up and dial in for the missed time from last week' with 'Recovery, fine tunement, and consistency' as targets. Easter break provides the free time but removes the academic and team practice structure that supports his weekday Wins. The controllable is building a specific practice plan for the break — the same deliberate preparation approach that produced the Week 5 opener — rather than letting the unstructured time pass without sport development. His Week 5 pattern of self-directed solo practice on days without team sessions is the template.",
+
+  "micro_commitment": {
+    "action": "Write out a practice plan for Easter break before Monday: which days will be training days, what events will be covered each day, and what specific technical focus carries over from the Shippensburg opener and the missed CMU preparation. Share the plan in next week's recap.",
+    "when": "Sunday evening or Monday morning — before the break begins.",
+    "measurement": "Did Angelo write the plan before the break started? Did he follow it? Report which days he trained, what events he covered, and whether the break felt structured or unstructured. If illness lingered, report how he adjusted the plan."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None — Easter break. No competition scheduled for next week.",
+    "anticipated_stressor": "Low competitive stress but moderate structural risk. Easter break removes academic and team practice scheduling. Angelo's baseline derailer activates when external structure is absent or competing demands disrupt preparation. The break could be an opportunity (dedicated training time, recovery from illness) or a risk (unstructured days, no team practice, no competitive pressure maintaining urgency). The illness may linger — Saturday lifting despite sickness suggests he is pushing through, which could prolong recovery if not managed. The 2-week competition gap extends further.",
+    "athlete_stated_next_goal": "Use this week to catch up and dial in for the missed time from last week. Recovery, fine tunement, and consistency are my goals for this next week."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win, 1 Neutral, 1 Missed — Growth tier. First Missed day in 42 program days (Friday illness). Only one team practice the entire week (Monday, weather-compromised). Tuesday-Thursday had no practice due to schedule changes and work conflicts. CMU competition cancelled due to illness. Saturday lifted despite being sick. Mindset challenge: 'Notice and correct one small mistake before anyone else points it out.' Bullseye at 1 center item for third consecutive week. Achievement: non-sport domain ('Building better relationships with the people I work with'). Goals: recovery-focused for Easter break.",
+    "key_habit_signal": "Recommitment behavior under adverse conditions — Angelo's response to his first program Missed day was to lift on Saturday while still sick and return to Win on Sunday. This is the first evidence of his recovery pattern, and it shows a strong engagement baseline. He did not disengage after the Missed day; he actively chose training despite illness. The illness reframe ('a blessing') also reveals that he is applying the PSAC championship lesson to current decisions — recognizing that competing with compromised preparation would be counterproductive.",
+    "coach_reinforcement_cue": "The illness reframe is the most coachable signal this week. Angelo's recognition that 'the illness might have actually been a blessing' because his practice preparation was already compromised shows he has internalized the PSAC championship lesson at a decision-making level, not just a retrospective level. He is now applying the preparation-quality-drives-performance principle to real-time situations. The Saturday lift also deserves recognition — his first Missed day was followed by immediate active engagement, not withdrawal.",
+    "coach_avoidance_note": "Do not characterize this as a bad week or frame the illness as a setback. Angelo's execution on the days he was healthy was strong (4 consecutive Wins). The Missed day was genuinely uncontrollable (illness). Do not over-emphasize the practice disruption — Angelo did not choose to skip practice; schedule conflicts removed the opportunity. Also: do not dwell on the cancelled CMU meet as a missed opportunity. Angelo's own framing (illness as potential blessing given compromised preparation) is the right read. Focus forward on Easter break planning."
+  },
+
+  "risk_flags": "No clinical indicators. Illness is physical and self-limited, not a distress signal. Angelo's language is composed, forward-looking, and analytically self-aware throughout. The first Missed day after 42 days is a health event, not a behavioral pattern. All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You have Easter break ahead with no competition scheduled — what does your ideal training week look like when you have the time but no team structure?",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available — Core Foundation athlete",
+    "focus_consistency": "not available — Core Foundation athlete",
+    "forward_anchor_alignment": "not available — Core Foundation athlete"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}
