@@ -1,0 +1,245 @@
+{
+  "athlete_name": "John Tastinger",
+  "week_period": "2026-03-30 to 2026-04-05",
+  "week_number": 1,
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Building a disciplined, consistent, decisive mindset as a high-performance entrepreneur and leader",
+    "baseline_hinge_habit": "Consistent 10pm-6am sleep schedule and formatted daily work routine maintained regardless of business outcomes",
+    "baseline_primary_derailer": "Cycles of high performance followed by procrastination and schedule drift, anchored in inconsistent sleep and overthinking",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "identity_alignment": "Partially Aligned — strong business execution (6 deals signed, exceeded weekly goal) demonstrates the decisive, goal-oriented identity. However, sleep inconsistency Monday through Wednesday and no lifts for the first 3 days directly conflict with the disciplined-consistent-operator identity being built.",
+    "hinge_habit_status": "Partially Active — lift sessions completed Thursday and Friday show the hinge habit can function when activated. Monday through Wednesday the habit was inactive (slept too late all 3 days, no lifts). Weekend lift status not mentioned.",
+    "derailer_status": "Active — schedule drift confirmed in the first half of the week. Sleeping late Monday through Wednesday despite no external job obligations demonstrates the baseline derailer pattern (inconsistency when external structure is removed). Quitting the job removes the last external schedule anchor.",
+    "growth_phase_current": "Developing"
+  },
+
+  "win_the_day": {
+    "daily_scores": {
+      "monday": "Neutral",
+      "tuesday": "Neutral",
+      "wednesday": "Neutral",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Win",
+      "sunday": "Win"
+    },
+    "win_days": 4,
+    "neutral_days": 3,
+    "missed_days": 0,
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Variable — clear first-half Neutral / second-half Win split. No Missed days. Business output was present all 7 days but structural discipline (lifting, sleep) only activated Thursday onward.",
+    "recommitment_signal": "Not Applicable",
+    "wtd_scoring_note": "Athlete self-reported Gold Streak (5-7 Wins) on weekly scorecard but daily self-scoring shows 4 Win days and 3 Neutral days. This overestimation suggests difficulty distinguishing productive business days from structured Win days that include physical discipline."
+  },
+
+  "prior_commitment_result": {
+    "execution_status": "No Prior Week",
+    "execution_notes": "Week 1 — no prior micro-commitment exists.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Sign 5+ deals adding 250,000 in PV 4 big heavy lifts",
+    "achievement_statement": "signed alot of deals",
+    "key_phrase": "Finally officially quit my job",
+    "mindset_resonance": "aim higher than yesterday"
+  },
+
+  "athlete_state": "Outcome-driven momentum with structural discipline gap. Strong business execution and deal-closing capability operating alongside inconsistent physical and schedule habits. The job transition creates both opportunity and structural vulnerability.",
+
+  "core_pattern": "Split-week execution — first half coasts on business momentum without physical discipline, second half activates full routine including lifts. Output remains high throughout (deals signed every day) but input structure (sleep, exercise) only engages mid-week.",
+
+  "behavioral_root_cause": "Removal of external schedule structure. Quitting the job eliminates the last imposed time boundary. Without external accountability for wake time, the athlete defaults to late sleep and skips the physical routine that distinguishes Win days from Neutral days. Business motivation alone drives activity but does not create the structural discipline the baseline identity requires.",
+
+  "bullseye_analysis": {
+    "control_ring": "Effort output, wake time, number of calls, number of appointments taken",
+    "influence_ring": "Personal efficiency",
+    "noise_ring": "Prospects unwilling to hear him out",
+    "primary_focus_ring": "Control",
+    "bullseye_quality": "Center-ring dominant but aspirational — the athlete correctly identified effort and wake time as controllables, yet wake time was not controlled for the first 3 days. The Bullseye awareness exceeds the Bullseye execution this week. Influence ring is thin (single generic entry). Noise ring is appropriately narrow and externally focused.",
+    "noise_fixation_present": false
+  },
+
+  "reflection_quality_score": 2,
+  "reflection_quality_justification": "Entries are brief (1-2 sentences per day) with limited self-analysis. Some ownership present — correctly identifies wake time and effort as controllables, acknowledges sleeping late. However, no pattern recognition across the week, no connection between the sleep gap and Neutral scoring, and no self-awareness about the scoring discrepancy (self-reported Gold Streak vs actual 4 Win days). Achievement statement is surface-level. Emerging insight but not yet consistent.",
+
+  "growth_phase": "Developing",
+  "growth_phase_movement": "Stable",
+
+  "most_important_controllable": "Wake time — the single structural variable that separated Win days (lifts completed, full engagement) from Neutral days (slept late, no lift, business-only). Controlling wake time is the gateway to the full daily routine the baseline identity requires.",
+
+  "micro_commitment": {
+    "action": "Set a phone alarm for 6:00 AM and place the phone across the room. Complete a lift session before starting any business work.",
+    "when": "Monday through Friday of the upcoming week",
+    "measurement": "4 of 5 weekday mornings with a completed lift before the first business call or appointment"
+  },
+
+  "next_week_focus_question": "On the mornings you woke up late this week, what was the decision point the night before that made it happen — and what would you change about that moment?",
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "insufficient data",
+    "open_thread": "insufficient data"
+  },
+
+  "emotional_intensity": "Low",
+
+  "upcoming_context": {
+    "scheduled_competition": "No formal competition scheduled. Business goal: sign 7-10 deals. Competitive framing: outperform co-founders in deal volume.",
+    "anticipated_stressor": "First full week as a full-time entrepreneur with no external job structure. The removal of imposed schedule creates maximum vulnerability to the baseline derailer (sleep drift and procrastination cycles).",
+    "athlete_stated_next_goal": "Sign 7-10 deals"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Split-week pattern — Monday through Wednesday showed zero physical discipline (no lifts, slept late all 3 days) despite productive business output. Thursday through Sunday showed engaged routine with lifts Thursday-Friday and family time Saturday-Sunday. The hinge habit activated mid-week, suggesting the capability exists but the morning trigger is missing.",
+    "stress_load": "Low — positive business momentum with 6 deals signed exceeding the 5-deal goal. Job quit framed positively as a deliberate transition. Family time present on weekend. No stress-related language in recap.",
+    "attention_pattern": "Business execution is the dominant attention domain. Physical discipline is secondary and competed for the same morning time slot. When the athlete sleeps late, business activity fills the day but the physical routine is lost entirely. Attention is outcome-focused (deals, proposals) rather than process-focused (routine, schedule).",
+    "identity_thread": "The baseline identity aspires to consistent, disciplined operation. This week demonstrated the gap: strong execution capability (exceeded deal goal) without structural discipline (3 of 7 mornings failed). The job quit amplifies both the opportunity and the risk — full schedule ownership with no external scaffolding.",
+    "coaching_opportunity": "The transition to full-time entrepreneurship is the highest-leverage coaching moment. If the athlete builds self-imposed morning structure now — before schedule drift becomes the default — the identity shift from clutch performer to consistent operator has a foundation. If the first weeks of full entrepreneurship establish late-wake patterns, the derailer calcifies.",
+    "compliance_safe_flag": "None"
+  },
+
+  "risk_flags": {
+    "risk_level": "Low",
+    "compliance_safe_note": "Schedule drift confirmed in first half of week against baseline derailer. Job transition removes external structure — monitor for escalating pattern. No clinical concerns. WTD scoring inconsistency (self-reported Gold Streak vs actual 4 Win days) suggests self-perception accuracy gap worth monitoring."
+  },
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 1,
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "insufficient data"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation athlete",
+    "baseline_season_phase": "not available — core foundation athlete",
+    "ppd_primary_problem": "not available — core foundation athlete",
+    "ppd_tie_breaker_classification": "not available — core foundation athlete",
+    "ppd_top_3": "not available — core foundation athlete",
+    "abi_primary_emphasis": "not available — core foundation athlete",
+    "adversity_response_pattern": "not available — core foundation athlete"
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": "not available — core foundation athlete",
+    "submitted": "not available — core foundation athlete",
+    "controllability_classification": "not available — core foundation athlete",
+    "prior_forward_anchor": {
+      "text": "not available — core foundation athlete",
+      "focus_consistency": "not available — core foundation athlete"
+    }
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+
+    "self_ratings_alignment": {
+      "confidence_alignment": "not available — weekly recap input only",
+      "habit_consistency_alignment": "not available — weekly recap input only"
+    },
+
+    "coach_flags": [],
+
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "not available — core foundation athlete",
+    "weeks_accumulated": "not available — core foundation athlete",
+    "execution_derived_top_3": "not available — core foundation athlete",
+    "execution_derived_all_buckets": "not available — core foundation athlete",
+    "alignment_signal": "not available — core foundation athlete",
+    "core_foundation_fallback": true
+  }
+}
