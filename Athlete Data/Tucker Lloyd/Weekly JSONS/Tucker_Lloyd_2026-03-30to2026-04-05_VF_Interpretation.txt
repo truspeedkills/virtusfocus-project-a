@@ -1,0 +1,138 @@
+{
+  "athlete_name": "Tucker Lloyd",
+  "week_period": "2026-03-30 to 2026-04-05",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Developing into a better person and coach within the football environment",
+    "baseline_hinge_habit": "Consistent gym attendance and personal discipline routines",
+    "baseline_primary_derailer": "Pre-performance focus on what could go wrong",
+    "baseline_why_it_matters": "Strengthening habits and confidence supports both academic stability and long-term coaching development",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Tucker's weekly goal ('Make some money and get to Virtus') introduces VirtusFocus by name for the first time in the program — a new engagement signal — and pairs it with a financial outcome goal. The goal remains low-specificity (no behavioral targets, no measurable benchmarks). However, behavioral execution showed meaningful improvement: zero Missed days for the first time since Week 1, Sunday scored Neutral (Easter with family) rather than Missed for the first time since Week 1 (breaking a 4-week Missed Sunday streak), and Tucker self-initiated ab circuits on Monday and Wednesday without gym access. The most significant alignment event was the Coach Bradley conversation — Tucker proactively discussed stepping up and advancing his coaching role, the first career-development initiative of the program and a direct expression of the baseline_identity_claim. The hinge habit (gym attendance) was absent this week — ab circuits are self-directed physical activity but not gym sessions. The gap between stated goals and behavioral specificity persists, but the weekend execution improvement and proactive role-advancement conversation represent the strongest alignment signals of the program."
+  },
+
+  "athlete_state": "Return from a 2-week gap (spring break, no submissions) with improved weekend execution and the first proactive career-advancement conversation of the program. Three weekday Win days (Monday through Wednesday) driven by academic exams and coursework. Thursday through Sunday scored Neutral — Tucker went home for Easter break on Thursday, and all 4 days at home included purposeful activity (Easter celebration, family time, fishing, friends, hands-on projects). Zero Missed days for the first time since Week 1. Tucker spoke with Coach Bradley about stepping up and moving up his coaching role — the first time he has actively pursued role advancement rather than simply executing assigned responsibilities.",
+
+  "core_pattern": "Improved weekend execution with persistent structural dependence. Tucker's weekday pattern held — school and work produced Win days Monday through Wednesday. The shift this week is the weekend: all 4 non-school days (Thursday through Sunday) scored Neutral rather than Missed. The Easter break at home provided social and family structure (garage cleaning, dirt bikes, fishing, Easter celebration) that kept Tucker engaged in purposeful activity even without academic scheduling. The pattern remains structure-dependent — the structure source shifted from school (weekdays) to family and social activities (Easter weekend) — but the outcome improved because some form of external engagement existed on every day. No day this week lacked activity. The hinge habit (gym) was absent, but self-directed ab circuits on Monday and Wednesday show Tucker independently choosing physical activity.",
+
+  "behavioral_root_cause": "Tucker's zero-Missed-day week is the direct result of environmental context: Easter break at home provided social and family structure on all 4 weekend days. Unlike prior weekends where Saturday or Sunday had no planned activity (leading to 'Nothing' or 'Hangout' entries and Missed scores), every day this week included specific named activities with other people — garage project with Dad, dirt bikes with friends, fishing on opening day, Easter with family. Tucker did not generate this structure himself — the holiday and family environment provided it. The ab circuits on Monday and Wednesday represent the clearest self-directed behavior of the week, chosen without any external prompt. The Coach Bradley conversation is a new behavioral domain: Tucker initiated a discussion about advancing his role, not in response to a prompt or commitment, but because he wanted to. This proactive career action is distinct from Tucker's typical execution pattern of performing well within provided structure.",
+
+  "prior_commitment_result": {
+    "prior_action": "Pick two days during spring break — any two — and go to the gym. Before the week starts, decide which two days and tell someone (friend, family member, anyone) which days you picked.",
+    "execution_status": "Unknown",
+    "execution_notes": "The Week 5 micro-commitment was designed specifically for spring break (Mar 16-29). Tucker did not submit a weekly recap for either spring break week ('Forgot to submit last week'). No data exists to evaluate gym attendance, day selection, or social accountability during the break period. The current week (Mar 30 - Apr 5) is the return-from-break week, not the target week. The commitment's time window has passed. This week's recap mentions self-directed ab circuits (Monday and Wednesday) but no gym sessions.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Make some money and get to Virtus",
+    "achievement_statement": "Got a lot of work done.",
+    "key_phrase": "Spoke with Coach Bradley about stepping up and moving up my role with the football team",
+    "mindset_resonance": "Aim Higher Than Yesterday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3",
+      "neutral_days": "4",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Tucker identified 'How well I perform with grades and work during the week' as his controllable — effort quality within academic and professional domains, correctly placed in the center ring. Single item, consistent with Tucker's sparse engagement style. Similar in content to Week 3's 'How well I perform in classes' but expanded to include work, reflecting the Coach Bradley role-advancement conversation.",
+    "influence_quality": "Developing. 'How much I enjoy my time' as an influence-ring placement is reasonable — personal enjoyment is partially within control through activity choice and mindset but not fully controllable. This is Tucker's most abstract influence-ring entry, shifting from outcome-focused items (grades, golf performance) to an experiential quality. The placement is appropriate but lacks behavioral specificity.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "5",
+    "rolling_win_rate_4wk": "0.500",
+    "rolling_missed_rate_4wk": "0.143",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over six weeks spanning four months, Tucker has demonstrated a consistent Mixed-tier execution pattern driven by external structure — with this week providing the first evidence of weekend improvement. Weekday Win counts by week: 4, 4, 3, 3, 5, 3. Missed days by week: 0, 1, 1, 1, 2, 0. The defining trajectory from Weeks 1-5 was intensifying structural divergence — weekday execution improving while weekend execution degrading, peaking in Week 5 with the best weekday (5/5) and worst weekend (2/2 Missed) of the program simultaneously. Spring break then created a 2-week data void (no submissions). The return week (Week 6) reverses the weekend trend: zero Missed days for the first time since Week 1, with Sunday scoring Neutral (Easter with family) after 4 consecutive Missed Sundays. The reversal is context-dependent — Easter at home provided social and family structure on all weekend days — but it demonstrates that Tucker can avoid Missed days when any form of engagement exists. Two new behavioral domains appeared: self-directed physical activity (ab circuits on Monday and Wednesday, without gym access or external prompt) and proactive career advocacy (Coach Bradley conversation about role advancement). Goal-setting remains at the floor of specificity ('Make some money and get to Virtus') but VirtusFocus is mentioned by name for the first time. The gym has not appeared in any form across the last three data weeks (Weeks 4-6: 0, 2, 0 sessions). The program's defining question has shifted from 'Can Tucker execute without structure?' to 'Can Tucker sustain improved weekend execution when the environmental context returns to normal?'",
+    "milestone_this_week": "Zero Missed days — first since Week 1. Sunday Neutral (Easter family celebration) breaks the 4-week Missed Sunday streak (Weeks 2-5). Coach Bradley conversation about role advancement is the first proactive career-development initiative of the program. Self-directed ab circuits (Monday and Wednesday) are the first physical activity Tucker has initiated without a gym commitment or external prompt. VirtusFocus mentioned by name in goals for the first time. pattern_shift_detected = Yes: Sunday moved from 4 consecutive Missed to Neutral. Missed days moved from a 4-week escalating trend (0→1→1→1→2) to zero.",
+    "open_thread": "Can the zero-Missed-day standard sustain through a normal school week without the Easter/holiday family structure? Tucker's prior pattern shows that non-holiday weekends without planned social activities produce Missed days. Next week will be a standard school + work week — the first since Week 5 that Tucker has a normal weekend without spring break or Easter. The Coach Bradley conversation opens a new development domain — whether Tucker follows up with specific actions to advance his coaching role (film study, additional responsibilities, initiative) will distinguish a one-time conversation from a sustained career-development thread. The ab circuits are self-directed physical activity, but the hinge habit (gym attendance) has been absent for 2 of the last 3 data weeks. Whether Tucker converts the ab circuit behavior into gym sessions — or whether the ab circuits themselves represent an evolving form of the hinge habit — is a monitoring question. The spring break data void (2 missed submissions) means the program's biggest structural test produced no observable data. Tucker's return engagement is positive but the spring break experience remains unknown."
+  },
+
+  "most_important_controllable": "Sustaining weekend engagement through a standard (non-holiday) school week — proving that the zero-Missed-day improvement can hold without Easter/family structure providing the engagement scaffold. Secondarily, converting self-directed physical activity (ab circuits) into gym sessions or establishing the ab circuit as a consistent daily discipline.",
+
+  "micro_commitment": {
+    "action": "Do your ab circuit on at least three days this week — you already did it Monday and Wednesday without anyone asking you to. Pick your three days now and write them down. On one of those three days, do the circuit at the gym instead of at home.",
+    "when": "This week. Pick the three days and write them down before Monday morning. Complete one gym-based session and two at-home sessions across the week.",
+    "measurement": "At the end of the week, Tucker should have completed ab circuits on at least 3 of 7 days, with at least 1 session at the gym. If 3+ circuits completed with 1+ at the gym, the commitment is fully executed. If 3+ circuits but none at the gym, it is partial. If fewer than 3 circuits, it is not attempted."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "First standard school + work week since the spring break gap. Tucker's prior 5-week pattern shows that non-holiday weekends without planned social activities produce Missed days. The Easter environment that provided weekend structure this week will not be present next week. Whether Tucker can sustain the zero-Missed-day standard during a normal weekend is the primary structural question. Additionally, the Coach Bradley conversation may generate new role responsibilities or expectations that could add to Tucker's weekly demand load.",
+    "athlete_stated_next_goal": "Make some money and get to Virtus"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "3/7 Win days (Monday through Wednesday) with 4 Neutral days (Thursday through Sunday). Zero Missed days — the first zero-Missed week since Week 1. All weekday Wins were driven by academic exams (SUST 36/40, Econ passed, Math passed) and football coaching work. Thursday transition to Easter break at home produced 4 consecutive Neutral days with named activities each day (Easter celebration, garage project, fishing, dirt bikes, family gathering). No gym sessions this week. Self-directed ab circuits on Monday and Wednesday — the first physical activity Tucker has initiated without a gym-specific commitment. Tucker mentioned 'Forgot to submit last week' — the first missed submission of the program, corresponding to the spring break gap.",
+    "key_habit_signal": "The zero-Missed-day week is the most significant execution signal of the program. Tucker's 4-week Missed day escalation (0→1→1→1→2) has reversed to zero. The reversal is context-dependent (Easter at home with family and friends provided engagement structure on all weekend days), but the outcome demonstrates that Tucker can sustain Neutral-or-better across a full week when environmental context supports engagement. The Coach Bradley conversation is a new signal: Tucker proactively seeking role advancement aligns directly with his baseline identity claim and represents the first career-development initiative of the program. The ab circuits (Mon, Wed) are a quieter but potentially important signal — Tucker chose physical activity independently, without it being tied to a commitment or goal.",
+    "coach_reinforcement_cue": "Lead with the zero-Missed-day achievement — after 4 weeks of the weekend gap widening, this week reversed the trend entirely. Anchor on the Coach Bradley conversation as the strongest identity-claim alignment event of the program: Tucker is not just talking about becoming a better coach, he is actively pursuing it. Recognize the ab circuits as evidence that Tucker's physical activity instinct exists even without a gym goal — he did pushups and an ab circuit because he wanted to, not because he was told to. Frame the academic results (3 exams passed, including a 36/40 on SUST) as evidence of sustained execution capacity.",
+    "coach_avoidance_note": "Do not dismiss the zero-Missed-day achievement because it was Easter-assisted. Tucker still had to choose to engage — Easter does not automatically produce Neutral days. Do not frame the missing spring break submissions as disengagement or program failure — Tucker named it honestly ('Forgot to submit') and returned to the program voluntarily. Do not overemphasize the gym absence — the ab circuits show physical activity initiative, and Tucker was at home for Easter break with limited gym access. Do not frame 'Make some money and get to Virtus' as a low-quality goal without acknowledging that it names VirtusFocus for the first time."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Tucker's recap language is task-oriented and positive throughout. The Easter break at home included family engagement (garage with Dad, Easter celebration) and peer engagement (dirt bikes, fishing, fixing friend's brake). No isolation, withdrawal, or emotional distress signals. The missed spring break submission is a data gap, not a distress indicator — Tucker named it proactively and returned to the program. The Coach Bradley conversation suggests active engagement with his professional development. Standard coaching scope."
+  },
+
+  "next_week_focus_question": "You told Coach Bradley you want to step up your role with the team — and you picked 'Aim Higher Than Yesterday' as your mindset challenge. What does aiming higher look like for you this week, both as a student coach and in your own daily habits?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  },
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+  "current_season_phase": "not available — Core Foundation athlete",
+  "forward_anchor": "not available — Core Foundation athlete",
+  "longitudinal_ppd": "not available — Core Foundation athlete"
+}
