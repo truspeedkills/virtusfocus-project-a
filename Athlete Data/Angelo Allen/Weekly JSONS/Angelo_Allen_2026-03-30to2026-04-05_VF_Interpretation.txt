@@ -1,0 +1,219 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-03-30 to 2026-04-05",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent — he will always be balancing sport, academics, work, and relationships. Building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Recovery-week goal executed as stated. Angelo's own goal going into the week was 'catch up and dial in for the missed time from last week' with 'Recovery, fine tunement, and consistency' as targets — and the week delivered on all three. Seven Win days (first Gold Streak since Week 3), Bullseye center-ring expanded from 1 item to 6 items (ending a three-week compression pattern), and both practice days available (Monday and Wednesday) were used productively ('got good work in,' 'more awesome improvements'). Illness resolved — no recurrence mentioned. Achievement framed at identity level ('greater mental stability and equilibrium'), with additional context confirming deliberate mental work during the break. Approach-framed competition anticipation ('hit this come back Track Meet strong') signals preparation mindset intact heading into Mt Union. Aligned rather than Partially Aligned despite limited practice access because: (a) the week's stated purpose was recovery and rest, not training volume, (b) Angelo self-directed two quality practice sessions during an unstructured break, (c) Bullseye expansion addresses the most significant open thread from Week 6, and (d) achievement and goal framing both align with baseline identity claim."
+  },
+
+  "current_season_phase": "not available",
+
+  "athlete_state": "Easter break recovery week executed to intention. Seven consecutive Win days — first Gold Streak since Week 3. Monday and Wednesday both had practice sessions Angelo described positively ('Was great got good work in,' 'More awesome improvements'). Tuesday, Thursday, Friday, Saturday had no practice (expected during Easter break / Spring Break, academic schedule removed Thursday onward). Work continued throughout — Tuesday 'super solid day, despite this being the hardest day of the week,' Friday 'Awesome work day, stayed a little longer since I had the time.' Sunday was Easter Sunday — rest day with a friend's family brunch invitation. Achievement framed at identity level: 'greater mental stability and equilibrium.' Additional context: 'Good rest week, did some mental work on finding better mental clarity and stability.' Mindset challenge engaged: 'Find one area in your routine today where working smarter beats working harder.' Mt Union meet Friday and Saturday of next week — Angelo's stated goal is to 'hit this come back Track Meet strong.'",
+
+  "core_pattern": "Recovery-intention executed, Bullseye depth restored, competition readiness emerging. This week tested whether Angelo could use an unstructured Easter break for deliberate recovery rather than letting it become drift. The answer is clear: seven Win days, two self-directed practice sessions, mental work on clarity and stability, and a six-item center-ring Bullseye that ends the three-week compression pattern. The behavioral signal is that Angelo treated the break the way he treated the week before Shippensburg — as intentional preparation rather than passive time off. The shift from 'Myself and my consistency' (three weeks running) to six specific self-traits (dedication, tenacity, willpower, time management, study habits, myself) is the largest Bullseye depth change in the program. The achievement framing — 'greater mental stability and equilibrium' — is also notable: it is non-performance, non-outcome, internal-state focused. Angelo used the recovery week to do the quiet work that supports competitive execution rather than chasing compensatory training volume.",
+
+  "behavioral_root_cause": "The multi-domain derailer operates in reverse this week. In prior weeks, the pattern was: external demands compete for time → sport preparation degrades. This week the structure inverted: academic demand reduced by Spring Break → work load steady → sport access limited by holiday calendar → but Angelo filled the available space with recovery-oriented self-direction rather than letting the unstructured time drift. The Week 6 open thread about Easter break risk (would removal of academic and team structure produce drift or deliberate work?) resolved in the deliberate-work direction. The two practice days he had access to were used with intention, and the days without practice were framed as rest rather than as absence of opportunity. The Bullseye expansion is the clearest downstream signal: when the external pressure eased and the mental space opened up, Angelo brought back the specificity that had been compressed since the PSAC championship gap. This suggests the compression was not a capability loss — it was bandwidth allocation under competing demands.",
+
+  "prior_commitment_result": {
+    "prior_action": "Write out a practice plan for Easter break before Monday — which days will be training days, what events will be covered each day, and what specific technical focus carries over from the Shippensburg opener and the missed CMU preparation. Share the plan in next week's recap.",
+    "execution_status": "Partial",
+    "execution_notes": "Angelo's recap reflects the recovery-oriented intent of the commitment but does not share a written plan. The week's stated goals ('catch up and dial in for the missed time from last week. Recovery, fine tunement, and consistency') align with the commitment's spirit. Two practice days (Monday and Wednesday) were used with positive framing, which suggests some preparation structure. However, the specific elements of the commitment — which days training, what events covered each day, what technical focus carried over from Shippensburg — are not present in the recap. No written plan was shared. Partial rather than Completed because the intent was honored and the week produced positive outcomes but the specific accountability deliverable (a shared plan) is absent.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Use this week to catch up and dial in for the missed time from last week. Recovery, fine tunement, and consistency are my goals for this next week",
+    "achievement_statement": "I achieved greater mental stability and equilibrium",
+    "key_phrase": "Good rest week, did some mental work on finding better mental clarity and stability",
+    "mindset_resonance": "Find one area in your routine today where working smarter beats working harder"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Win",
+      "sunday": "Win"
+    },
+    "win_days": 7,
+    "neutral_days": 0,
+    "missed_days": 0,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Gold Streak",
+    "scoring_note": "All 7 days scored by athlete at 4-5 points (Win the Day). Athlete's self-scorecard ('5-7 Wins: Gold Streak') matches daily scores exactly for the first time since Week 3. 7 Win + 0 Neutral + 0 Missed = Growth tier, Gold Streak classification. First 7/7 Win week since Week 3 (Feb 16-22). Sunday scored as Win despite being a rest/holiday day with no sport activity — Angelo classifies the low-demand recovery day as a Win based on the social connection (friend's family brunch) and the rest purpose of the week.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Expanded. Six items: 'Myself,' 'my dedication,' 'my tenacity,' 'my willpower,' 'my time management,' 'my study habits.' Largest center-ring expansion in the program — ends a three-week compression pattern at 1 item ('Myself and my consistency' in Weeks 4-6). All items are self-traits rather than behavioral specifics. 'Myself' is vague but the remaining five are identifiable traits connecting directly to the baseline identity claim ('goal-oriented, resilient, tenacious, and sharp'). 'My tenacity' and 'my willpower' map explicitly to the resilience language. 'My time management' and 'my study habits' map to multi-domain execution. The expansion is not event-specific (no 'my breathing before the first mark' or 'staying patient through the wind-up'), but the depth restoration is the critical signal — Angelo returned to a multi-item center ring for the first time since Week 3.",
+    "influence_quality": "Stable. Two items: 'My home' and 'My friends.' Same personal/social framing as Week 6. Continues the shift away from sport-specific influence items (team morale, spouse leadership, example-setting) that dominated Weeks 1-5. The non-sport framing is consistent with the recovery week's focus on mental stability and social connection (friend's family brunch on Easter Sunday).",
+    "noise_fixation_present": "No",
+    "noise_content": "Three items: 'Getting ill,' 'Other people,' 'The weather.' Identical to Week 6 — same three items in same order. Correctly placed and not fixated on. 'Getting ill' remains relevant given the prior week's illness experience but is not dwelled on. Appropriate outer-ring awareness.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 2,
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable — Growth across all 7 recorded weeks",
+    "growth_phase_movement": "Stable — Developing across all 7 weeks",
+    "consistency_trend": "Stable Positive — 4 consecutive Growth weeks (Wks 4-7), 7 total Growth weeks across program. Second Gold Streak (first since Wk3)",
+    "recommitment_trend": "Not applicable this week — zero Missed days. Prior week's Missed day (Wk6 Friday illness) fully recovered with 7/7 Win week following",
+    "pattern_shift_detected": "Yes — Three pattern shifts detected: (1) Bullseye center-ring expansion from 1 item (3-week compression) to 6 items — largest depth increase in the program. (2) Second Gold Streak of the program (first since Week 3) — 7/7 Win days during an unstructured Easter break week. (3) Achievement language shifted to internal/psychological domain ('mental stability and equilibrium') — distinct from prior sport achievement framing (Weeks 1-5) and non-sport interpersonal framing (Week 6). The three shifts together suggest Angelo used the recovery week to do identity-level internal work rather than compensatory training or external-relationship investment."
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 6,
+    "rolling_win_rate_4wk": 0.964,
+    "rolling_missed_rate_4wk": 0.036,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "1.00 — single event (Wk6), recovered within 2 days with sustained 7/7 Wins the week following",
+    "controllable_stability_4wk": "Variable — 1 item (Wk4) → 1 item (Wk5) → 1 item (Wk6) → 6 items (Wk7). Compression broken this week with largest depth restoration in the program.",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Seven-week progression: Illness recovery with approach-framed re-engagement (Wk1) → High-level competition composure as solo competitor, near-PR (Wk2) → Peak performance with strategic preparation and identity-level achievement (Wk3: 'emotional groundedness, intent, and gratitude') → [2.5-week gap: PSAC championship disappointment + emotional processing + Spring Break] → Outdoor season reset with mature retrospective processing (Wk4) → Championship lesson applied: structured preparation producing best-ever outdoor opener with all PSAC auto qualifiers hit (Wk5) → Disrupted week: practice limited to one session, illness forces first Missed day, CMU cancelled, weekday execution maintained (Wk6) → Easter break recovery week executed with deliberate intention: 7/7 Wins, Bullseye center-ring restored from 1 to 6 items, identity-level internal achievement ('mental stability and equilibrium'), Mt Union meet on the horizon (Wk7). The arc now shows that Angelo can use unstructured time for deliberate recovery rather than letting it drift — the same deliberate-preparation capability that produced Week 5's opener, applied to rest instead of training.",
+    "milestone_this_week": "Bullseye depth restoration. After three consecutive weeks at 1 center-ring item ('Myself and my consistency' in Weeks 4, 5, and 6), Angelo expanded to 6 items this week (Myself, dedication, tenacity, willpower, time management, study habits). This is the largest Bullseye depth change in the program and directly addresses the most significant open thread from Week 6. The expansion is also notable for its content: five of the six items map explicitly to the baseline identity claim ('goal-oriented, resilient, tenacious, and sharp human being'). Angelo is not just naming more controllables — he is naming the specific traits he came into the program wanting to develop.",
+    "open_thread": "(1) Mt Union meet preparation — Angelo's stated goal is to 'hit this come back Track Meet strong.' This is his first competition since Week 5's Shippensburg opener (three-week gap: CMU cancelled + Easter break). Whether the preparation rebuild pattern from Week 5 sustains across a longer competition gap is the key monitoring question. (2) Bullseye specificity for competition moment — the 6-item expansion is a major signal, but the items are self-traits rather than event-specific technical or mental focus. In-the-moment Bullseye usefulness will depend on whether Angelo can translate 'my tenacity' into 'stay patient through the second attempt' during the competition itself. (3) RQS remains at 2 — daily entries are still brief despite the identity-level achievement framing and expanded Bullseye. The analytical depth is present in the recap's other elements but not in the day-by-day reflections. (4) Practice access limited to 2 days during the break — whether this returns to 5-6 practices per week during a normal school week or whether the recent practice access pattern persists. (5) Achievement domain continues to shift: Wks 1-5 sport, Wk6 work relationships, Wk7 internal psychological state. Watching whether sport-domain achievement returns as competition re-enters the picture."
+  },
+
+  "most_important_controllable": "Translating the expanded Bullseye into Mt Union competition moments. Angelo restored his center ring from 1 item to 6 items this week — the largest depth change in the program — but the content is self-trait language ('my tenacity,' 'my willpower'), not event-specific technical or mental focus. At Shippensburg in Week 5, the preparation system worked because it was deliberate and specific. At PSAC championships, the preparation was disrupted and the results suffered. Mt Union on Friday and Saturday is the first test of whether Week 5's preparation standard holds three weeks later. The controllable is taking one trait from the expanded center ring and converting it into a specific in-the-moment focus for each event day — not 'my tenacity' as an abstract quality but what tenacity looks like in the second attempt after a foul, or what 'my willpower' looks like in the cage on a day when the early marks are off.",
+
+  "micro_commitment": {
+    "action": "Before each day of the Mt Union meet, take one trait from the 6-item center ring you named this week and translate it into a specific in-the-moment focus for that day's events. Not 'my tenacity' — what tenacity looks like on the first throw, or on the rebound throw after a foul. Write it the morning of each competition day.",
+    "when": "Friday morning before Mt Union Day 1, and Saturday morning before Day 2.",
+    "measurement": "Did Angelo write a specific in-the-moment focus for each competition day? Did it connect to a trait from this week's center ring? Did he reference it during or after the events? Report what he wrote for each day and whether it felt useful in the competition moment."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Mt Union — Friday and Saturday of next week. Two-day meet. First outdoor competition since Shippensburg (Week 5). Three-week competition gap (PSAC championship → CMU cancelled → Easter break → Mt Union).",
+    "anticipated_stressor": "Moderate competitive pressure returning after three-week gap. Angelo's Week 5 opener pattern (deliberate preparation → best-ever outdoor marks) has not been tested since. The Mt Union meet is the first validation of whether that preparation standard holds when there is a gap between opener and follow-up. Physical readiness should be strong — the recovery week provided rest and two focused practices, illness is resolved, and fatigue load is Low. The structural risk is momentum cooling: the Week 5 sharpness was built on a specific preparation arc that has now been interrupted by a week off and a holiday break. Angelo's approach-framed language ('come back Track Meet strong') suggests activation mindset intact.",
+    "athlete_stated_next_goal": "To hit this come back Track Meet strong"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7 Win, 0 Neutral, 0 Missed — Growth tier, Gold Streak (first since Week 3). Second 7/7 Win week in the program. Easter break / Spring Break recovery week executed to stated intention. Two practice days (Monday and Wednesday) used with positive framing. Bullseye center-ring expanded from 1 item to 6 items — largest depth change in program. Achievement framed at identity/psychological level ('greater mental stability and equilibrium'). Mindset challenge engaged: 'Find one area in your routine today where working smarter beats working harder.' Mt Union meet Friday-Saturday next week. Prior commitment (practice plan for break) executed with Partial status — recovery intent honored, no explicit plan shared.",
+    "key_habit_signal": "Deliberate recovery capability. Angelo's most significant behavioral signal this week is that he used an unstructured break the way he used the week before Shippensburg — with intention. The Week 5 opener worked because preparation was deliberate. This week the 'preparation' was recovery rather than training, but the deliberateness was the same. He didn't drift through the break. He self-directed two practice sessions, did mental work on clarity and stability, and restored the Bullseye depth that had been compressed for three weeks. The transferable pattern: Angelo's execution quality tracks with deliberateness of intention, not with volume or external structure. When he decides what the week is for, the week reflects that decision.",
+    "coach_reinforcement_cue": "The Bullseye expansion is the most reinforcement-worthy signal this week. Three weeks at 1 item suggested compression had become default. Moving to 6 items in a recovery week — with content mapping directly to the baseline identity claim — shows the compression was bandwidth allocation, not capability loss. The depth restoration happened when the external demands eased, which is exactly what should happen. Also reinforcement-worthy: the deliberate recovery framing. Many athletes would treat Easter break as 'off' time. Angelo treated it as 'different work' time. Recognize that distinction.",
+    "coach_avoidance_note": "Do not push for training volume catch-up or frame the recovery week as insufficient preparation for Mt Union. The week was explicitly recovery-oriented by Angelo's own goal-setting, and the outcomes support that framing — resolved illness, restored Bullseye depth, internal-state achievement, approach-framed competition anticipation. Do not treat the Bullseye expansion as complete — the content is still self-trait language rather than event-specific focus, and the competitive test is next week. Celebrate the depth restoration but keep the specificity-in-the-moment development pointed at Mt Union preparation. Also: do not dwell on the Partial prior commitment status. The recovery intent was honored, which was the important part. The missing specific plan is worth noting but not worth emphasizing."
+  },
+
+  "risk_flags": "No clinical indicators. Language throughout is composed, forward-looking, and recovery-oriented. 'Mental stability and equilibrium' and 'mental clarity and stability' are performance and self-awareness terms, not distress signals. Easter Sunday at a friend's family brunch represents healthy social engagement. All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You restored your center-ring Bullseye from one item to six items this week — which one are you going to carry into the cage at Mt Union, and what will it actually look like in the moment?",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available — Core Foundation athlete",
+    "focus_consistency": "not available — Core Foundation athlete",
+    "forward_anchor_alignment": "not available — Core Foundation athlete"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}
