@@ -378,22 +378,62 @@ the brand voice instruction to "speak with certainty."
 ------------------------------------------------------------
 
 B6. EM DASH OVERUSE
-Severity: MODERATE (DDs)
+Severity: MAJOR
+STATUS: CONFIRMED DECISION — TOTAL BAN (2026-04-10)
 
 Em dash counts per file:
-- CMs average: 3-5 (acceptable)
-- DDs average: 5-8 (elevated)
+- CMs average: 3-5
+- DDs average: 5-8
 - Peak: Grace Wk9 DD (12), Angelo Wk7 DD (11), Tucker
   Wk6 DD (8), Mergim Wk19 DD (7), Jasmine Wk6 DD (7)
 
 DDs trend upward in em dash usage over time. The em dash
 is frequently used for the "Not X -- Y" pattern, which
-compounds with the B1 finding. A human coach would use
-more periods and fewer parenthetical insertions.
+compounds with the B1 finding. Em dashes are a widely
+recognized hallmark of AI-generated content and are
+immediately identifiable to anyone aware of AI writing
+patterns. They stick out.
 
-Recommendation: Cap em dashes at 6 per DD. When the
-"Not X -- Y" construction is used, count each instance
-against the cap.
+DECISION: Em dashes are BANNED from all athlete-facing
+output (Coaching Messages, Deep Dives, Parent Coaching
+Messages, Daily Coaching Snippets). Zero tolerance. This
+is not a cap — it is a prohibition.
+
+REPLACEMENT RULES BY FUNCTION:
+
+  Parenthetical aside
+    BEFORE: "you did X — and that matters"
+    AFTER:  "you did X, and that matters"
+    OR:     "You did X. That matters."
+
+  "Not X — Y" reframe
+    BEFORE: "not habit — identity"
+    AFTER:  "Not habit. Identity."
+    OR:     "not habit, but identity"
+
+  Mid-sentence pivot
+    BEFORE: "Match 1 — you blanked out"
+    AFTER:  "Match 1: you blanked out"
+    OR:     "Match 1, you blanked out"
+
+  List introduction
+    BEFORE: "three things stood out — your preparation..."
+    AFTER:  "three things stood out: your preparation..."
+
+  Dramatic pause
+    BEFORE: "you showed up — every single day"
+    AFTER:  "You showed up. Every single day."
+
+IMPLEMENTATION: Add em dash to the prohibited punctuation
+list in Coaching Output Instructions, Deep Dive Framework,
+Coaching Message Framework, Daily Coaching Engine
+Instructions, and Parent Coaching Message sections.
+The Editorial Audit (Stage 5) should flag any em dash
+as a Tier 2 auto-correctable violation (replace with
+the appropriate alternative per the rules above).
+The Daily Coaching Engine compliance scan (Stage 6)
+should include em dash detection in Layer 1 mechanical
+checks.
 
 ------------------------------------------------------------
 CATEGORY C: STRUCTURAL PATTERNS
@@ -845,7 +885,8 @@ What: Track and cap these constructions:
   replace with varied transitions)
 - "The version of you that": 0 (retire entirely)
 - "I also want to name/acknowledge": 0/CM (retire)
-- Em dashes: 4/CM, 6/DD max
+- Em dashes: BANNED (zero tolerance — see B6 CONFIRMED
+    DECISION for replacement rules by function)
 Why: These phrases appear at template-detectable frequency
 across all athletes.
 

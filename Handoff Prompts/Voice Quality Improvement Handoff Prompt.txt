@@ -1,0 +1,767 @@
+============================================================
+VOICE QUALITY IMPROVEMENT — HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-10
+SESSION TYPE: Collaborative design + implementation
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline.
+
+Then read the Voice & Tone Authenticity Audit Report:
+  Validation Reports\Voice_Tone_Authenticity_Audit_Report.txt
+
+That audit report is the foundation for everything in
+this session. It contains the specific findings, severity
+ratings, example passages, and recommendations that drive
+every change below.
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+This is a COLLABORATIVE SESSION to improve the voice
+quality of all athlete-facing coaching output in the
+VirtusFocus pipeline. The audit identified specific AI-
+detectable patterns that undermine authenticity. This
+session fixes those patterns at the specification level
+and then regenerates all athlete-facing output.
+
+The core question: "If an athlete showed this message to
+a teammate and said 'my coach wrote this,' would the
+teammate believe it was written by a human coach?"
+
+The pipeline's coaching CONTENT is strong — behaviorally
+grounded, athlete-specific, analytically sound. The
+problem is in the EXPRESSION — repetitive constructions,
+formulaic transitions, predictable structures, and
+punctuation habits that fingerprint the output as AI-
+generated.
+
+THIS SESSION HAS TWO PHASES:
+
+PHASE 1 — SPECIFICATION CHANGES (collaborative)
+  Review each audit recommendation with the user. Lock
+  decisions. Update specification files. This phase
+  requires user approval before proceeding.
+
+PHASE 2 — OUTPUT REGENERATION (execution)
+  Regenerate the last 4 weeks per athlete (48 files: 24
+  CMs + 24 DDs) under the updated specifications. These
+  are not being sent to athletes — they validate the
+  voice improvements and set the standard for all future
+  output.
+
+============================================================
+3. WHAT THE AUDIT FOUND — SUMMARY FOR CONTEXT
+============================================================
+
+Overall Assessment: ADEQUATE — individual paragraphs
+frequently pass the human-coach test, but structural
+patterns become detectable across multiple files.
+
+TOP 3 AI-DETECTABLE PATTERNS:
+
+1. "That is [noun]." standalone declarative — appears in
+   EVERY file (~80+ instances). The #1 AI fingerprint.
+   Example: "That is advocacy." "That is ownership."
+   "That is discipline."
+
+2. Trendline arc recitation — Deep Dives retell the full
+   program history every week using hyphenated compound
+   adjectives. Grace Wk9 has a 9-item enumeration in one
+   sentence. Jasmine Wk6 and Wk7 trendlines are nearly
+   verbatim for the first 5-6 paragraphs.
+
+3. Cross-athlete structural cloning — All 7 athletes
+   receive DDs with identical internal architecture.
+   Same section order, same Strength Signal format
+   (heading + paragraph + italicized capper at 100%
+   consistency), same opening patterns.
+
+TOP 3 STRENGTHS (preserve these):
+
+1. Athlete-specific behavioral grounding — references
+   specific days, events, and athlete's own words.
+
+2. Domain and competitive level calibration — sport-
+   specific language is precise across all 7 athletes.
+
+3. High EI week handling — the most emotionally authentic
+   writing occurs during disrupted or High EI weeks.
+
+============================================================
+4. LOCKED DECISIONS (already approved — do not re-discuss)
+============================================================
+
+The following decision was confirmed by the user before
+this session and is NOT open for collaborative review:
+
+LOCKED: EM DASH TOTAL BAN
+  Em dashes (—) are BANNED from all athlete-facing output.
+  Zero tolerance. This is not a cap — it is a prohibition.
+
+  Replacement rules by function:
+  - Parenthetical aside → comma or period + new sentence
+  - "Not X — Y" reframe → "Not X. Y." or "not X, but Y"
+  - Mid-sentence pivot → colon or comma
+  - List introduction → colon
+  - Dramatic pause → period + new sentence
+
+  Implementation locations:
+  - VF_Coaching_Message_Framework.txt (OUTPUT FORMAT)
+  - VF_Deep_Dive_Coaching_Analysis_Framework.txt (OUTPUT
+    FORMAT)
+  - SOP_Coaching_Output_Instructions_v2.0.txt → v2.1
+    (new prohibited punctuation rule)
+  - SOP_Editorial_Audit_Project_Instructions_v1.4.txt →
+    v1.5 (Tier 2 auto-correctable violation)
+  - SOP_Daily_Coaching_Engine_Project_Instructions_v1.2.txt
+    → v1.3 (Layer 1 mechanical check addition)
+  - SOP_Daily_Coaching_Engine_Master_Prompt_v1.1.txt →
+    v1.2 (core rule addition)
+
+  Full details in the audit report, Section 2, Category
+  B6 (STATUS: CONFIRMED DECISION — TOTAL BAN).
+
+============================================================
+5. RECOMMENDATIONS FOR COLLABORATIVE REVIEW
+============================================================
+
+Present each recommendation below to the user. For each
+one, explain what the audit found, show specific examples
+from the audit report, and propose the implementation.
+Wait for the user to approve, modify, or reject before
+moving to the next recommendation.
+
+Group the review into three rounds: HIGH priority first,
+then MEDIUM, then LOW.
+
+------------------------------------------------------------
+ROUND 1: HIGH PRIORITY (4 recommendations)
+------------------------------------------------------------
+
+H1. CAP "THAT IS [NOUN]." STANDALONE DECLARATIVE
+  Audit finding: 80+ instances across ~50 files. Every
+  athlete. Every file type. Every week. The #1 AI-
+  detectable pattern.
+  Proposed rule: Maximum 2 per CM, maximum 2 per DD.
+  Force variation: embed judgments mid-sentence, use
+  different constructions, or let evidence speak without
+  a declarative stamp.
+  Example alternatives:
+    BEFORE: "That is ownership."
+    AFTER:  "You owned that moment."
+    AFTER:  "Ownership, plain and simple."
+    AFTER:  (delete — let the evidence stand)
+
+  FILES TO CHANGE: SOP_Coaching_Output_Instructions
+  (new frequency limit rule), VF_Coaching_Message_
+  Framework (voice guidance), VF_Deep_Dive_Coaching_
+  Analysis_Framework (voice guidance)
+
+H2. ELIMINATE TRENDLINE ARC RECITATION (after Week 4)
+  Audit finding: DD trendlines retell the athlete's
+  entire program from Week 1 every week, growing longer.
+  Grace Wk9 has 9 hyphenated compound adjectives in one
+  sentence. Jasmine Wk6/Wk7 are nearly verbatim for
+  their first 5-6 paragraphs.
+  Proposed rule: After Week 4, the Trendline references
+  2-3 key inflection points relevant to the current
+  week. Never enumerate every prior week. Never use
+  hyphenated compound-adjective arc labels. Replace
+  percentage citations with qualitative descriptors
+  ("you have won almost every day" not "96.4 percent").
+
+  FILES TO CHANGE: VF_Deep_Dive_Coaching_Analysis_
+  Framework (Trendline section rewrite)
+
+H3. PHRASE FREQUENCY LIMITS
+  Audit finding: Multiple phrases appear at template-
+  detectable frequency across ALL athletes.
+  Proposed caps:
+    "The question is [whether]...": 0/CM, 1/DD max
+    "Not X — Y" correction: 1/CM, 2/DD max
+      (note: em dashes banned, so this becomes
+       "Not X. Y." or "not X, but Y" constructions)
+    "Here is what [verb]...": RETIRE entirely
+    "The version of you that...": RETIRE entirely
+    "I also want to name/acknowledge...": RETIRE from CMs
+    "[N] weeks into this program...": 0/DD (retire as
+      trendline opener — use specific behavioral opener)
+    "The athletes who [X] are the ones who [Y]": max 1
+      per DD, never in consecutive weeks for same athlete
+
+  FILES TO CHANGE: SOP_Coaching_Output_Instructions
+  (new frequency limit section)
+
+H4. RESTORE CONTRACTIONS AS DEFAULT REGISTER
+  Audit finding: Grace Wk1 CM uses contractions and
+  sounds more natural. Later weeks shifted to formal
+  no-contraction English ("did not," "it is," "That is")
+  which sounds stiffer and more AI-like. Even Jasmine
+  (Professional level) has 0% contractions across all CMs.
+  Proposed rule: Contractions are the default register
+  for Coach Arron. "Don't," "isn't," "wasn't," "you're,"
+  "that's," "here's," "it's," "I'm" are standard speech.
+  Reserve formal non-contraction prose for specific
+  emphasis moments only (1-2 per CM max, 3-4 per DD max).
+  Even Professional-level athletes receive 70-80%
+  contraction usage — Coach Arron is still a human coach
+  regardless of the athlete's competitive level.
+
+  FILES TO CHANGE: VF_Coaching_Message_Framework (VOICE
+  section), VF_Deep_Dive_Coaching_Analysis_Framework
+  (VOICE section), brand_voice.txt or content_style_
+  guide.txt (if register is specified there),
+  SOP_Coaching_Output_Instructions (contraction rule)
+
+------------------------------------------------------------
+ROUND 2: MEDIUM PRIORITY (5 recommendations)
+------------------------------------------------------------
+
+M1. DD STRUCTURAL VARIATION
+  Audit finding: Every DD across all 7 athletes follows
+  an identical internal template — same section order,
+  same Strength Signal count (always 3-4), same Growth
+  Area count (always 2-3), italicized capper on 100% of
+  items.
+  Proposed rules:
+  - Strength Signal count may vary 2-5
+  - Growth Area count may vary 1-4
+  - Italicized observation frequency: 70-80% (1-2 items
+    per DD may end without an italicized capper — let the
+    evidence speak)
+  - When used, italicized observations should vary in
+    form: sometimes a question, sometimes a callback to
+    athlete language, sometimes a concrete observation
+    (not always a universal maxim like "The athletes who
+    [X] are the ones who [Y]")
+  - For disrupted weeks, permit section reordering
+    (e.g., Growth Areas before Strength Signals when the
+    disruption is the dominant story)
+
+  FILES TO CHANGE: VF_Deep_Dive_Coaching_Analysis_
+  Framework (section guidance rewrite)
+
+M2. CM-DD DEDUPLICATION RULE
+  Audit finding: Jasmine Wk7 has "That is not a small
+  thing. That is a skill." verbatim in both CM and DD.
+  John Wk1 has the same "The question is whether..."
+  construction in both documents.
+  Proposed rule: No phrase longer than 8 words should
+  appear identically in both the CM and DD for the same
+  week. The CM and DD should feel like two distinct
+  pieces from the same coach, not two cuts from the same
+  draft.
+
+  FILES TO CHANGE: SOP_Coaching_Output_Instructions (new
+  deduplication rule)
+
+M3. CM OPENING FORMULA ROTATION
+  Audit finding: Grace Wks 7-9 CMs use identical
+  "[count]. [count]. And this week..." template. Tucker
+  opens 3 of 4 CMs with Win/Missed day count.
+  Proposed rule: Specify 5+ opening approaches:
+    (a) Stat-led ("Sixty-three straight Win days.")
+    (b) Quote-led ("'I spoke up.' Those three words...")
+    (c) Moment-led ("Monday's pinch-hit strikeout...")
+    (d) Challenge-led ("I want to push you on something.")
+    (e) Context-led ("This was a recovery week, and...")
+    (f) Callback-led ("Remember what you said in Week 3?")
+  No athlete should see the same opening approach in
+  consecutive weeks. The spec should define these as
+  available tools, not a rotation mandate — the right
+  opening depends on the week's character.
+
+  FILES TO CHANGE: VF_Coaching_Message_Framework
+  (opening guidance addition)
+
+M4. TRANSITION ROTATION BANK
+  Audit finding: "Here is what earned recognition" appears
+  identically in 3 consecutive Grace CMs. "Here is what I
+  want you to see" used across 5+ athletes.
+  Proposed rule: Provide 6-8 alternative transitions for
+  each coaching function (pivoting to recognition,
+  pivoting to growth, framing challenges, bridging
+  topics). Enforce variety against the prior 2-3 weeks of
+  output for the same athlete. No transition phrase should
+  repeat within a 3-week window for the same athlete.
+
+  FILES TO CHANGE: SOP_Coaching_Output_Instructions
+  (new transition variety section with example bank)
+
+M5. BAN PIPELINE CLASSIFICATION LANGUAGE FROM DDs
+  Audit finding: "Emotional intensity returned to Low,"
+  "Consistent phase maintained," "Developing phase
+  maintained," "Growth tier," "RQS [number]," "Stable
+  Positive," "approach-framed" — all appear in DDs.
+  "Approach-framed" is surfaced directly to athletes 3
+  times. A college wrestler would not understand
+  "approach-framed execution."
+  Proposed rule: Add these terms to the prohibited
+  vocabulary in the DD Framework and Coaching Output
+  Instructions:
+    "Emotional intensity [Low/Moderate/High]"
+    "[Growth/Developing/Consistent] phase maintained"
+    "Growth tier" / "Mixed tier" / "Reset tier"
+    "RQS [number]" / "Reflection Quality Score"
+    "Stable Positive" / "Partially Aligned" / "Aligned"
+    "approach-framed"
+    "pattern_shift_detected"
+    "center-ring dominant" / "outer-ring dominant"
+  Require behavioral description instead:
+    "Your emotional weight was heavier this week" (not
+     "Emotional intensity: Moderate")
+    "You've been building steadily for four weeks" (not
+     "Consistent phase maintained")
+    "You competed to score, not to avoid losing" (not
+     "approach-framed execution")
+
+  FILES TO CHANGE: VF_Deep_Dive_Coaching_Analysis_
+  Framework (prohibited vocabulary addition),
+  SOP_Coaching_Output_Instructions (expanded prohibited
+  list with behavioral replacements)
+
+------------------------------------------------------------
+ROUND 3: LOW PRIORITY (3 recommendations)
+------------------------------------------------------------
+
+L1. VARY IDENTITY THREAD APPROACH
+  Audit finding: Angelo's DDs enumerate all 4 baseline
+  traits (goal-oriented, resilient, tenacious, sharp)
+  every single week. Tucker's DDs repeat the "weekday
+  version vs. weekend version" binary in Wks 4-6.
+  Proposed rule: Do not enumerate all baseline traits
+  every week. Pick 1-2 most relevant and go deeper.
+  Reference the full set only every 3-4 weeks.
+
+  FILES TO CHANGE: VF_Deep_Dive_Coaching_Analysis_
+  Framework (Identity Thread guidance)
+
+L2. ATHLETE-SPECIFIC CLOSING PHRASES
+  Audit finding: "Control what's in your center ring" and
+  "Lead yourself first" each used for 3+ athletes.
+  Proposed rule: In addition to the standard rotation,
+  develop 2-3 athlete-specific closings connected to each
+  athlete's baseline identity claim or hinge habit.
+  Example: Grace could receive "Show them what a chance
+  looks like when you use it." Tucker could receive
+  "Build the structure yourself." These supplement, not
+  replace, the standard rotation.
+
+  FILES TO CHANGE: VF_Coaching_Message_Framework (closing
+  guidance), possibly individual athlete snapshots or a
+  new reference section in the Instructions
+
+L3. PRE-FIX DEEP DIVES (deferred)
+  Audit finding: Session 69 regenerated 18 DDs (last 3
+  weeks per athlete). 25+ older DDs still contain the
+  pre-fix format: pipeline metadata headers, coach-facing
+  section labels, numbered headers, coach-facing sections
+  that should not exist in athlete output.
+  Status: NOT in scope for this session. The regeneration
+  scope is last 4 weeks per athlete only (validation
+  purpose, not athlete delivery). Older DDs remain on
+  disk in their current form. The specification changes
+  govern all future generation. If a full historical
+  regeneration is ever needed (e.g., for app deployment
+  where athletes browse their full history), it can be
+  done in a future session using the updated specs.
+
+  NO SPEC CHANGE NEEDED. NO REGENERATION THIS SESSION.
+
+============================================================
+6. SPECIFICATION FILES TO MODIFY (Phase 1)
+============================================================
+
+After all recommendations are reviewed and locked, modify
+these files. Follow the project's versioning rules: new
+versioned files for Prompts + Instructions, edit in place
+for source reference files.
+
+SOURCE REFERENCE FILES (edit in place):
+  1. Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Message_Framework.txt
+     Changes: em dash ban in OUTPUT FORMAT, contraction
+     default in VOICE, opening formula rotation, closing
+     phrase guidance, "That is [noun]." cap
+
+  2. Agents - Generators\Coaching Output\Source FIles\
+     VF_Deep_Dive_Coaching_Analysis_Framework.txt
+     Changes: em dash ban in OUTPUT FORMAT, contraction
+     default in VOICE, trendline guidance rewrite (no arc
+     recitation after Week 4), structural variation
+     (Strength 2-5, Growth 1-4, italicized capper 70-80%),
+     pipeline vocabulary prohibition, Identity Thread
+     variation guidance
+
+  3. Agents - Generators\Coaching Output\Source FIles\
+     brand_voice.txt
+     Changes: contraction as default register (if not
+     already specified), em dash prohibition note
+
+  4. Agents - Generators\Coaching Output\Source FIles\
+     content_style_guide.txt
+     Changes: contraction default, em dash prohibition,
+     sentence variety guidance (if applicable)
+
+NEW VERSIONED FILES:
+  5. SOP_Coaching_Output_Instructions_v2.1.txt
+     (from v2.0)
+     New/expanded sections:
+     - Prohibited punctuation: em dash (with replacement
+       rules by function)
+     - Phrase frequency limits (all caps from H1/H3)
+     - Contraction default register rule
+     - CM-DD deduplication rule
+     - Transition rotation bank with example alternatives
+     - Pipeline classification vocabulary prohibition
+       (expanded list with behavioral replacements)
+     - CM opening formula variety requirement
+
+  6. SOP_Editorial_Audit_Project_Instructions_v1.5.txt
+     (from v1.4)
+     Changes:
+     - Em dash as Tier 2 auto-correctable violation
+       (replace with appropriate alternative)
+     - Pipeline classification language in DDs added to
+       scan criteria (if not already covered by existing
+       Criterion 2 or 13)
+
+  7. SOP_Editorial_Audit_Master_Prompt_v1.4.txt
+     Changes: Only if the Instructions changes require
+     a prompt-level update. May not be needed — assess
+     after writing v1.5 Instructions.
+
+  8. SOP_Daily_Coaching_Engine_Project_Instructions_v1.3.txt
+     (from v1.2)
+     Changes:
+     - Em dash added to Layer 1 mechanical checks
+     - "That is [noun]." frequency awareness
+     - Contraction default
+
+  9. SOP_Daily_Coaching_Engine_Master_Prompt_v1.2.txt
+     (from v1.1)
+     Changes:
+     - Em dash prohibition in core rules
+     - Contraction default in voice calibration
+
+TOTAL: 4 files edited in place + up to 5 new versioned
+files. Previous versions preserved on disk per project
+versioning rules.
+
+============================================================
+7. OUTPUT REGENERATION SCOPE (Phase 2)
+============================================================
+
+After all specification changes are locked and saved to
+disk, regenerate the LAST 4 WEEKS per athlete. These
+updated files are not being sent to athletes — they serve
+as validation that the specification changes produce the
+intended voice quality and as the production standard for
+all future output.
+
+Older weeks remain on disk in their current form. The
+specification changes govern all future generation. The
+regenerated last-4-weeks demonstrate what that future
+output should sound like.
+
+SCOPE: Last 4 weeks per athlete (or all weeks if the
+athlete has fewer than 4 weeks of data).
+
+TOTAL FILES: 48 (24 CMs + 24 DDs)
+
+  GRACE KINDEL:    Wks 6, 7, 8, 9 = 4 CMs + 4 DDs = 8
+  MERGIM BUSHATI:  Wks 16, 17, 18, 19 = 4 CMs + 4 DDs = 8
+  TUCKER LLOYD:    Wks 3, 4, 5, 6 = 4 CMs + 4 DDs = 8
+  ANGELO ALLEN:    Wks 4, 5, 6, 7 = 4 CMs + 4 DDs = 8
+  AIDAN BURKARDT:  Wks 2, 3, 4, 5 = 4 CMs + 4 DDs = 8
+  JASMINE JONES:   Wks 4, 5, 6, 7 = 4 CMs + 4 DDs = 8
+  JOHN TASTINGER:  Wk 1 only = 1 CM + 1 DD = 2
+
+NOTE: John Tastinger has only 1 week. All other athletes
+have 4+ weeks available, so the last-4-week scope applies
+cleanly.
+
+WHY LAST 4 WEEKS:
+- Enough consecutive weeks to validate trendline fix
+  (H2 — no arc recitation after Week 4)
+- Enough to validate opening formula rotation (M3 — no
+  identical openers across consecutive weeks)
+- Enough to validate transition variety (M4 — no repeat
+  within 3-week window)
+- Enough to validate DD structural variation (M1 —
+  Strength/Growth counts should vary across 4 weeks)
+- Covers each athlete's most recent and most complex
+  weeks (competition weeks, High EI weeks, disrupted
+  weeks are concentrated in later program weeks)
+- Manageable scope: 48 files instead of 108
+
+REGENERATION INPUTS (per file):
+  CM input: Interpretation JSON for that week
+  DD input: Interpretation JSON for that week
+  Reference: Athlete baseline snapshot, all prior week
+  JSONs (for longitudinal context), updated spec files
+
+REGENERATION RULES:
+- Content accuracy must be preserved — the coaching
+  observations, behavioral evidence, and micro-commitments
+  in the current files are correct. The regeneration
+  changes HOW they are expressed, not WHAT they say.
+- All 13 Editorial Audit criteria still apply.
+- Format standards from Session 72 (CM format
+  standardization) still apply: VIRTUSFOCUS header,
+  separator bars, YOUR ACTION section, NEXT WEEK FOCUS
+  QUESTION, closing phrase, signature.
+- DD format standards from Session 69 still apply: clean
+  header, ALL CAPS section headers, 5-section structure
+  (with new structural variation allowed per M1),
+  850-1200 word target, no signature.
+
+REGENERATION BATCHING:
+
+  Batch 1 (PILOT — 6 files):
+    1 CM + 1 DD for 3 representative athletes:
+    - Grace Kindel Week 9 (Growth, Low EI, 9-week
+      relationship maturity, longest arc, tests trendline
+      fix and opening rotation)
+    - Tucker Lloyd Week 6 (Mixed tier, Low EI, tests
+      accountability calibration, weekend gap framing)
+    - Jasmine Jones Week 7 (Growth, Moderate EI, tests
+      Professional competitive level calibration and
+      clinical boundary compliance)
+
+    PURPOSE: Validate the specification changes produce
+    the intended quality improvement before regenerating
+    the remaining 42 files. Present pilot output to user
+    for review. Adjust specifications if needed before
+    proceeding.
+
+  Batch 2 (if pilot approved — 42 files):
+    All remaining last-4-week files across all 7 athletes.
+    Use parallel agents: 1 agent per athlete, each agent
+    generates all CM+DD pairs for that athlete's last 4
+    weeks sequentially (so it can enforce opening rotation
+    and transition variety across consecutive weeks).
+
+    7 parallel agents:
+    - Grace Kindel: Wks 6, 7, 8 (Wk 9 done in pilot)
+    - Mergim Bushati: Wks 16, 17, 18, 19
+    - Tucker Lloyd: Wks 3, 4, 5 (Wk 6 done in pilot)
+    - Angelo Allen: Wks 4, 5, 6, 7
+    - Aidan Burkardt: Wks 2, 3, 4, 5
+    - Jasmine Jones: Wks 4, 5, 6 (Wk 7 done in pilot)
+    - John Tastinger: Wk 1
+
+    IMPORTANT: Aidan Burkardt Week 5 CM is identified in
+    the audit report as the single most authentic passage
+    in the entire corpus ("You asked me a direct question
+    this week, so I am going to answer it directly.").
+    The regenerated version must not regress from this
+    quality level. If the regenerated Aidan Wk5 CM is
+    weaker than the original, flag it for review.
+
+SESSION GUIDANCE:
+Phase 1 (specification changes) and the pilot batch
+should fit in one session. If the pilot is approved,
+Batch 2 (42 files across 7 parallel agents) should also
+fit within the same session. Total session scope: spec
+changes + 48 regenerated files. If the session must
+split, create a continuation handoff.
+
+============================================================
+8. QUALITY VALIDATION PROTOCOL
+============================================================
+
+After each batch, validate a sample using these checks:
+
+MECHANICAL CHECKS:
+- Zero em dashes in any file
+- "That is [noun]." standalone: ≤2 per CM, ≤2 per DD
+- "Not X. Y." / "not X, but Y": ≤1 per CM, ≤2 per DD
+- "The question is": 0 per CM, ≤1 per DD
+- "Here is what [verb]": 0 (retired)
+- "The version of you": 0 (retired)
+- Contractions present (≥70% of contractable phrases)
+- No trendline arc recitation past Week 4
+- No pipeline classification language in athlete output
+
+VOICE CHECKS (human judgment):
+- Does the output sound like a real coach wrote it?
+- Does the sentence rhythm vary within each paragraph?
+- Do CMs for the same athlete vary in opening approach
+  across consecutive weeks?
+- Do DDs for the same athlete vary in Strength Signal
+  count, Growth Area count, and structural approach?
+- Is the coaching content accuracy preserved?
+
+COMPLIANCE CHECKS:
+- All 13 Editorial Audit criteria still pass
+- No clinical language
+- No pipeline data leakage
+- No surveillance framing
+- Format standards maintained (CM: header, separators,
+  YOUR ACTION, focus question, closing, signature;
+  DD: clean header, ALL CAPS, 850-1200 words)
+
+============================================================
+9. WHAT NOT TO CHANGE
+============================================================
+
+The following are STRENGTHS identified in the audit and
+must be preserved during all specification changes and
+regeneration:
+
+- Athlete-specific behavioral grounding (referencing
+  specific days, events, and the athlete's own words)
+- Domain and competitive level calibration (sport-
+  specific language appropriate to each athlete)
+- High EI week handling (empathy-first approach that
+  produces the most natural, least formulaic writing)
+- YOUR ACTION section quality (good variation in
+  modality, specificity, and contextual subtitles)
+- Week-type content differentiation (Gold Streak vs
+  disrupted, competition vs recovery, High EI vs Low EI)
+- Exemplar passages identified in the audit report
+  (Section 8) — these represent the target voice quality.
+  The goal is to make ALL output sound like these
+  passages, not to change these passages.
+
+============================================================
+10. REFERENCE FILES
+============================================================
+
+PRIORITY 1 — Read before anything else:
+  1. CLAUDE.md (project root)
+  2. Validation Reports\Voice_Tone_Authenticity_Audit_
+     Report.txt
+
+PRIORITY 2 — Voice reference files (current state):
+  3. Agents - Generators\Coaching Output\Source FIles\
+     brand_voice.txt
+  4. Agents - Generators\Coaching Output\Source FIles\
+     content_style_guide.txt
+  5. Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Output_System_Identity.txt
+  6. Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Message_Framework.txt
+  7. Agents - Generators\Coaching Output\Source FIles\
+     VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+PRIORITY 3 — Specification files to modify:
+  8. Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Master_Prompt_V4.txt
+  9. Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Instructions_v2.0.txt
+  10. Agents - Generators\Editorial Audit\
+      SOP_Editorial_Audit_Master_Prompt_v1.4.txt
+  11. Agents - Generators\Editorial Audit\
+      SOP_Editorial_Audit_Project_Instructions_v1.4.txt
+  12. Agents - Generators\Daily Coaching Engine\
+      SOP_Daily_Coaching_Engine_Master_Prompt_v1.1.txt
+  13. Agents - Generators\Daily Coaching Engine\
+      SOP_Daily_Coaching_Engine_Project_Instructions_v1.2.txt
+
+PRIORITY 4 — Athlete baseline snapshots:
+  14. Athlete Data\Grace Kindel\
+      grace_kindel_athlete_snapshot V2.txt
+  15. Athlete Data\Tucker Lloyd\
+      tucker_lloyd_snapshot.txt
+  16. Athlete Data\Mergim Bushati\
+      mergim_bushati_snapshot.txt
+  17. Athlete Data\Aidan Burkardt\
+      aidan_burkardt_athlete_snapshot.txt
+  18. Athlete Data\Angelo Allen\
+      angelo_allen_athlete_snapshot.txt
+  19. Athlete Data\Jasmine Jones\
+      jasmine_jones_athlete_snapshot.txt
+  20. Athlete Data\John Tastinger\
+      John_Tastinger_Athlete_Snapshot.txt
+
+PRIORITY 5 — Interpretation JSONs (needed for
+regeneration, read per-athlete during Phase 2):
+  All files matching *_VF_Interpretation.txt in each
+  athlete's Weekly JSONS folder.
+
+PRIORITY 6 — Sample current output (for before/after
+comparison during pilot validation):
+  21. Grace Kindel Week 9 CM + DD (current versions)
+  22. Tucker Lloyd Week 6 CM + DD (current versions)
+  23. Jasmine Jones Week 7 CM + DD (current versions)
+  Read these BEFORE regenerating the pilot batch so you
+  can compare the old vs. new expression quality.
+
+============================================================
+11. CRITICAL OPERATING RULES
+============================================================
+
+- This is a COLLABORATIVE session. Do not implement
+  specification changes without user approval on each
+  recommendation.
+- Present recommendations one round at a time (HIGH,
+  then MEDIUM, then LOW). Wait for the user to approve,
+  modify, or reject each recommendation before moving
+  to implementation.
+- The em dash ban is the ONLY pre-locked decision. All
+  other recommendations are proposals for the user to
+  evaluate.
+- When modifying specification files, follow the
+  project's versioning rules: new versioned files for
+  Prompts + Instructions (never edit in place), edit
+  source reference files in place. Previous versions
+  are preserved on disk in Archived\ subfolders.
+- When regenerating output files, preserve coaching
+  content accuracy. The regeneration changes expression
+  quality, not coaching substance.
+- All 13 Editorial Audit criteria must still pass after
+  regeneration.
+- Run the pilot batch (Batch 1) and present results to
+  the user BEFORE proceeding with full regeneration.
+- Commit all specification changes before starting
+  regeneration. Commit regenerated output in per-batch
+  commits.
+- Update CLAUDE.md at end of session with: new spec
+  version numbers, session history entry, any changes
+  to athlete data status.
+
+============================================================
+12. COLLABORATION APPROACH
+============================================================
+
+Start the session by presenting the audit findings to
+the user in a concise summary. Then walk through each
+recommendation round.
+
+For each recommendation, present:
+  1. What the audit found (1-2 sentences + key example)
+  2. The proposed rule change
+  3. Which files it affects
+  4. Ask: "Does this match what you want? Any
+     modifications?"
+
+After all recommendations are locked, summarize the
+complete set of specification changes before making them.
+Get a final "go ahead" from the user before modifying
+any files.
+
+After specification changes are saved, read the 3 pilot
+athlete weeks' current CM+DD output, then regenerate the
+6 pilot files. Present the pilot output alongside the
+originals so the user can compare the voice quality
+improvement.
+
+The user IS Coach Arron — the person whose voice the
+pipeline replicates. His feedback on pilot output is
+authoritative. If he says "this doesn't sound like me,"
+adjust the specifications before proceeding.
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
