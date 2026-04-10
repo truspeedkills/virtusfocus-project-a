@@ -1,0 +1,1143 @@
+============================================================
+VIRTUSFOCUS VOICE & TONE AUTHENTICITY AUDIT REPORT
+============================================================
+Date: 2026-04-10
+Scope: All 7 athletes, ~50 Coaching Messages and Deep
+       Dives sampled (recent 3 weeks + early week per
+       athlete)
+Auditor: Fresh-session AI audit against voice reference
+         files and cross-athlete pattern detection
+============================================================
+
+
+============================================================
+1. EXECUTIVE SUMMARY
+============================================================
+
+OVERALL AUTHENTICITY ASSESSMENT: ADEQUATE — with specific
+patterns that require attention before scale deployment.
+
+Individual paragraphs frequently pass the human-coach
+test. The coaching content is strong, behaviorally
+grounded, and athlete-specific. The problems emerge at
+the STRUCTURAL level — identical sentence constructions,
+formulaic transitions, predictable document architecture,
+and cross-athlete template sameness that would be
+detectable to anyone reading 2-3 consecutive weeks or
+comparing messages across athletes.
+
+TOP 3 STRENGTHS:
+
+1. ATHLETE-SPECIFIC BEHAVIORAL GROUNDING. The output
+   consistently references specific days, events, and
+   the athlete's own words. The coaching observations
+   are earned by evidence, not generic. This is the
+   pipeline's strongest quality.
+
+2. DOMAIN AND COMPETITIVE LEVEL CALIBRATION. Sport-
+   specific language is precise (Aidan's sprint metrics,
+   Jasmine's icehouse vocabulary, Angelo's throws
+   terminology, John's business language). The voice
+   genuinely adapts across domains.
+
+3. HIGH EI WEEK HANDLING. The most emotionally authentic
+   writing in the corpus occurs during High EI or
+   disrupted weeks (Mergim Wk18 competition, Grace Wk7
+   strikeout, Jasmine Wk7 relationship stress). The
+   constraint of empathy-first produces more natural,
+   less formulaic output.
+
+TOP 3 CONCERNS:
+
+1. "THAT IS [NOUN]." STANDALONE DECLARATIVE OVERUSE.
+   This single sentence construction appears in EVERY
+   athlete's output, in EVERY file audited (~80+ total
+   instances across the corpus). It is the #1 AI-
+   detectable pattern. (See Category B1, Section 2.)
+
+2. TRENDLINE ARC RECITATION. Deep Dive trendline sections
+   retell the athlete's entire program history from Week
+   1 every week, growing longer each time. By Week 9
+   (Grace) or Week 19 (Mergim), this is a multi-paragraph
+   enumeration of hyphenated labels. No human coach
+   retells the full arc weekly. (See Category E2,
+   Section 2.)
+
+3. CROSS-ATHLETE STRUCTURAL CLONING. Deep Dives for all
+   7 athletes follow an identical internal template:
+   same section order, same Strength Signal format
+   (heading + paragraph + italicized capper at 100%
+   consistency), same opening patterns. A reader
+   comparing any two athletes' DDs would see the same
+   document architecture. (See Category D1, Section 3.)
+
+PRIORITY RECOMMENDATION: Address the "That is [noun]."
+construction and the trendline recitation pattern before
+any new athlete output is generated. These two issues
+account for the majority of the AI-detectability risk.
+
+
+============================================================
+2. CATEGORY-BY-CATEGORY FINDINGS
+============================================================
+
+------------------------------------------------------------
+CATEGORY A: SENTENCE STRUCTURE PATTERNS
+------------------------------------------------------------
+
+A1. PARALLEL CONSTRUCTION OVERUSE
+Severity: MODERATE
+Frequency: Present in all 7 athletes' output
+
+The pipeline produces "You [verb]. You [verb]. You [verb]."
+inventory sequences as its default device for listing
+behavioral evidence. Examples:
+
+Grace Wk8 CM: "That is agency. That is you controlling
+what you can control."
+
+Angelo Wk7 DD: "You did not drift. You used the two
+practice days you had available. You did mental work on
+clarity and stability. You rested on Sunday."
+
+The "You did X. You did Y. You did Z." inventory pattern
+is the most consistent structural AI tell across all
+athletes. A human coach would cluster several actions into
+a single sentence or break the rhythm with a fragment or
+different subject.
+
+Recommendation: Add a structural variation rule requiring
+that behavioral evidence lists use at least 2 different
+grammatical structures within any 4-sentence sequence.
+Cluster actions into compound sentences, lead with a
+detail, or use a fragment to break the rhythm.
+
+------------------------------------------------------------
+
+A2. FORMULAIC TRANSITIONS
+Severity: MODERATE
+Frequency: 30+ instances across the corpus
+
+Five transition patterns appear with predictable regularity
+across all athletes:
+
+(1) "Here is what I want you to see" / "Here is what
+    earned recognition" / "Here is what needs attention"
+    — Used in Grace Wks 7-9 CMs (identical in all 3),
+    Mergim (5 of 6 sampled weeks), Angelo, Tucker, Aidan.
+
+(2) "The question is [whether]..." — 9 instances in
+    Angelo's 8 files, 4 in Tucker's 8 files, 4 in
+    Mergim's 12 files, 2+ in Jasmine, 2+ in John. This
+    is the pipeline's default device for framing a
+    developmental challenge.
+
+(3) "I also want to name..." / "I want to acknowledge..."
+    — 3 of 4 Jasmine CMs use this as a topic bridge.
+
+(4) "Now the test..." / "This is the biggest test..."
+    — Tucker Wks 4-5 use near-identical phrasing.
+
+(5) "Here is what [number] weeks have built..." — Mergim,
+    Grace, Angelo all use this in their DD trendlines.
+
+Recommendation: Build a rotation bank of 6-8 transition
+alternatives for each function (pivoting to recognition,
+pivoting to growth, framing a challenge, bridging to a
+new topic). Enforce variety checking against the prior 2-3
+weeks of output for the same athlete. "The question is"
+should be capped at 0 per CM and 1 per DD maximum.
+
+------------------------------------------------------------
+
+A3. TOPIC-SENTENCE-THEN-EVIDENCE PATTERN
+Severity: MINOR
+Frequency: Structural default across all files
+
+Nearly every paragraph opens with a thesis claim, then
+provides supporting evidence, then delivers an
+interpretive statement. This is standard essay structure,
+not coaching voice. Most visible in DD Strength Signals
+where every sub-section follows: bold label, behavioral
+claim, evidence, italicized observation.
+
+A real coach sometimes leads with the detail and lets the
+meaning emerge. The pipeline almost never does this.
+
+Recommendation: Specify that 1-2 paragraphs per CM and
+1-2 sections per DD should lead with the behavioral detail
+before arriving at the coaching point.
+
+------------------------------------------------------------
+
+A4. CADENCE MONOTONY
+Severity: MINOR (CMs), MODERATE (DDs)
+Frequency: DDs more affected than CMs
+
+CMs generally have reasonable sentence-length variation.
+DDs tend toward medium-length sentences (15-25 words)
+across entire sections without the short punchy breaks
+that mark human writing. The Mindset Summary and Weekly
+Trendline sections are the most monotonous.
+
+Recommendation: Add a cadence variation note to the DD
+Framework specifying that each section should contain at
+least one sentence under 8 words and at least one over
+30 words.
+
+------------------------------------------------------------
+
+A5. EXCESSIVE ENUMERATION
+Severity: MINOR
+Frequency: Occasional
+
+The CMs largely avoid numbered lists. The DDs use bold
+sub-headers appropriately. The main enumeration concern
+is the trendline sections (covered in E2) and Angelo's
+Identity Thread four-trait mechanical mapping (covered in
+Category D2 below).
+
+------------------------------------------------------------
+CATEGORY B: VOCABULARY AND PHRASING PATTERNS
+------------------------------------------------------------
+
+B1. OVERUSED COACHING PHRASES
+Severity: MAJOR
+This is the highest-priority finding in the audit.
+
+PHRASE FREQUENCY TABLE (see also Section 7):
+
+"That is [noun]." STANDALONE DECLARATIVE
+Total instances found: 80+ across ~50 files audited
+(average 1.5+ per file, with some files containing 4-5)
+Found in: Every athlete. Every file type. Every week.
+Severity: MAJOR
+
+Examples:
+- Grace Wk7 CM: "That is your hinge habit" / "That is
+  not something most people do" / "That is a choice"
+  (3 in one CM)
+- Mergim Wk17 CM: "That is not a goal anymore. That is
+  a conclusion you earned."
+- Mergim Wk18 CM: "That is the derailer doing exactly
+  what derailers do" / "That recovery speed is the
+  growth" / "That is not a phrase -- that is a man
+  processing a hard day" (3 in one CM)
+- Jasmine Wk6 CM: "That is an active choice" / "That is
+  the frustration-to-communication pattern getting
+  stronger" (2 in one CM)
+- John Wk1 DD: "That is an identity-level change"
+
+A real coach uses "That is [noun]" occasionally as an
+emphatic punctuation device. Using it 3-5 times per
+document, and using it in every single document across
+7 athletes, creates an unmistakable AI fingerprint.
+
+"NOT X -- Y" CORRECTION PATTERN
+Total instances: 40+ across the corpus
+Found in: Every athlete, nearly every file
+Severity: MODERATE
+
+Examples:
+- Grace Wk8 CM: "not because of what happened in a game,
+  but because of what you did on a Sunday"
+- Angelo Wk6 CM: "not because the Missed day matters,
+  but because what you did after it does"
+- Mergim Wk17 CM: "That was not confidence built on
+  belief. That was confidence built on evidence."
+- John DD Wk1: "it is not about working harder, it is
+  about becoming someone who does the mundane things
+  reliably"
+
+This negation-then-reframe is the pipeline's primary
+rhetorical move. It appears at least once per file across
+all athletes. The device itself is effective coaching
+communication, but its universal frequency makes it a
+detectable template.
+
+"THE QUESTION IS [WHETHER]..."
+Total instances: 25+ across the corpus
+Found in: All 7 athletes
+Severity: MODERATE
+
+Angelo alone has 9 instances across 8 files. Tucker has
+4 across 8 files. The phrase appears in both CMs and DDs,
+sometimes in both documents for the same week (John Wk1
+CM and DD pose essentially the same question).
+
+"HERE IS WHAT [I WANT YOU TO SEE]..."
+Total instances: 15+ across the corpus
+Severity: MODERATE
+
+Used as the standard pivot from evidence to interpretation
+across all athletes. Grace Wks 7-9 use the identical
+phrase "Here is what earned recognition this week."
+
+"THE VERSION OF YOU THAT..."
+Total instances: 10+ across Tucker and Aidan files
+Severity: MAJOR (for those athletes)
+
+Tucker Wks 4-6 DDs: "the weekday Tucker" vs "the weekend
+Tucker." Aidan Wk4 DD: "Not the version that needs a
+7.2... The version that can look at a 7.5..." — three
+"version" references in one paragraph. No human coach
+uses "the version of you" to describe an athlete.
+
+Recommendation: Cap "That is [noun]." to maximum 2 per
+CM and 2 per DD. Cap "Not X -- Y" to maximum 1 per CM
+and 2 per DD. Cap "The question is" to 0 per CM and 1
+per DD. Retire "the version of you" entirely -- replace
+with "you" or specific contextual framing. Add all of
+these to the Coaching Output Instructions as tracked
+frequency limits.
+
+------------------------------------------------------------
+
+B2. REGISTER SHIFTS
+Severity: MODERATE (DDs), MINOR (CMs)
+
+The most notable register shifts occur in Deep Dives
+where the voice oscillates between direct coaching and
+analytical observation:
+
+Grace Wk8 DD: "Emotional intensity returned to Low after
+Week 7's Moderate elevation" — direct pipeline field
+description. A coach would never say "emotional intensity
+returned to Low."
+
+Grace Wk9 DD: "One data point does not confirm a trend
+reversal" — statistical analysis language.
+
+Tucker Wk5 DD: "Your Win days by week: 4, 4, 3, 3, 5.
+Your Missed days: 0, 1, 1, 1, 2." — raw number sequences
+presented as prose. No human writes this way.
+
+Jasmine's CMs use an absolute no-contraction register
+(0% contractions across all CMs) which crosses from
+elevated to stiff. Even for a Professional-level athlete,
+a coach would use occasional contractions.
+
+Recommendation: Ban pipeline classification language from
+DDs (no "Emotional intensity returned to Low," no "Stable
+Positive," no "Growth tier"). Require that data be
+presented in coaching voice ("You have won almost every
+day for the last month" not "Rolling win rate: 96.4%").
+Allow 15-20% contraction usage even for Professional
+athletes.
+
+------------------------------------------------------------
+
+B3. PIPELINE VOCABULARY LEAKAGE
+Severity: MODERATE
+
+No hard compliance violations (no composite score names,
+flag IDs, etc.). However, conceptual fingerprints of
+pipeline classifications appear throughout the DDs:
+
+- "Consistent phase maintained" — Grace Wks 7-9 DDs
+- "Developing phase maintained" — Angelo Wks 5-7 DDs
+- "Emotional intensity Low" — verbatim in multiple DDs
+- "Growth tier" — Jasmine Wk1 DD, Angelo Wk1 DD
+- "RQS 2" / "RQS at 2" — Angelo, Jasmine DDs
+- "Approach-framed execution" — Mergim Wks 2, 17, 18
+  (used directly in athlete-facing CMs)
+
+"Approach-framed" is the most notable leakage — it is
+pipeline-internal terminology surfaced directly to the
+athlete 3 times. A college wrestler would not understand
+"approach-framed execution."
+
+Recommendation: Add "approach-framed" to the prohibited
+vocabulary list with replacement: "going toward something
+instead of away from it" or "competing to score, not to
+not lose." Require that growth phase and emotional
+intensity be described behaviorally, never by
+classification name.
+
+------------------------------------------------------------
+
+B4. ADVERB AND QUALIFIER OVERUSE
+Severity: MINOR
+
+Generally well-controlled. The writing follows the brand
+voice guide's preference for strong verbs. One cluster:
+Angelo's output uses "deliberately" / "intentional" /
+"intentionally" approximately 25 times across 8 files.
+This is thematically appropriate (preparation discipline
+is his thread) but exceeds natural density.
+
+------------------------------------------------------------
+
+B5. HEDGING LANGUAGE
+Severity: MINOR
+
+Very little hedging across the corpus. The voice is
+appropriately direct and confident. The pipeline follows
+the brand voice instruction to "speak with certainty."
+
+------------------------------------------------------------
+
+B6. EM DASH OVERUSE
+Severity: MODERATE (DDs)
+
+Em dash counts per file:
+- CMs average: 3-5 (acceptable)
+- DDs average: 5-8 (elevated)
+- Peak: Grace Wk9 DD (12), Angelo Wk7 DD (11), Tucker
+  Wk6 DD (8), Mergim Wk19 DD (7), Jasmine Wk6 DD (7)
+
+DDs trend upward in em dash usage over time. The em dash
+is frequently used for the "Not X -- Y" pattern, which
+compounds with the B1 finding. A human coach would use
+more periods and fewer parenthetical insertions.
+
+Recommendation: Cap em dashes at 6 per DD. When the
+"Not X -- Y" construction is used, count each instance
+against the cap.
+
+------------------------------------------------------------
+CATEGORY C: STRUCTURAL PATTERNS
+------------------------------------------------------------
+
+C1. OPENING HOOK FORMULA
+Severity: MAJOR (Grace), MODERATE (others)
+
+Grace Kindel Wks 7-9 CMs use an identical opening
+template:
+- Wk7: "Forty-nine straight Win days. Seven consecutive
+  Growth weeks. And this week..."
+- Wk8: "Fifty-six straight Win days. Eight consecutive
+  Growth weeks. And this week..."
+- Wk9: "Sixty-three straight Win days. Nine consecutive
+  Growth weeks. And this week..."
+
+Six of six recent Grace files (CMs + DDs) open with the
+same "[count]. [count]. And this week..." formula. This
+is the second most detectable AI pattern after "That is
+[noun]."
+
+Tucker opens 3 of 4 CMs with Win/Missed day count.
+
+Angelo and Aidan show better variation. John's CM opening
+is the strongest in the corpus ("Six deals in your first
+week.").
+
+Recommendation: Specify 5+ opening approaches (stat-led,
+quote-led, moment-led, question-led, challenge-led,
+context-led) and require rotation. No athlete should see
+the same opening formula 3 weeks in a row.
+
+------------------------------------------------------------
+
+C2. PARAGRAPH FLOW PREDICTABILITY
+Severity: MODERATE
+
+CMs follow a highly predictable internal structure:
+1. Opening hook (stats or behavioral headline)
+2. Prior commitment bridge
+3. Recognition block ("Here is what earned recognition")
+4. Growth/attention block ("Here is what needs attention")
+5. Identity anchor callback
+6. YOUR ACTION section
+7. Closing + signature
+8. NEXT WEEK FOCUS QUESTION
+
+This order is essentially identical every week across all
+athletes. A real coach would sometimes lead with the
+challenge, skip recognition when the week demands it, or
+vary the proportion of praise to push.
+
+Recommendation: Add structural variation guidance allowing
+CMs to occasionally front-load the challenge, lead with
+a question, or merge recognition and growth into a single
+narrative rather than separate blocks.
+
+------------------------------------------------------------
+
+C3. DEEP DIVE SECTION SAMENESS
+Severity: MODERATE
+
+Every DD across all 7 athletes follows the exact same
+internal pattern:
+- Mindset Summary: opens with "[N] weeks into this
+  program..." or "This was the week that..."
+- Trendline: opens with longitudinal data enumeration
+- Strength Signals: 3-4 items, each with identical format
+  (ALL CAPS heading + evidence paragraph + italicized
+  observation)
+- Growth Areas: 2-3 items, same format as above
+- Identity Thread: opens with baseline reference
+
+The fixed count of Strength Signals (always 3-4) and
+Growth Areas (always 2-3) is detectable at scale. A human
+analyst would sometimes have 5 strengths and 1 growth
+area, or 2 strengths and 4 growth areas.
+
+Recommendation: Allow the Strength Signal count to vary
+from 2-5 and Growth Area count to vary from 1-4 based on
+the week's character. Permit occasional section reordering
+for disrupted weeks.
+
+------------------------------------------------------------
+
+C4. YOUR ACTION SECTION VARIATION
+Severity: MINOR — This is a strength.
+
+YOUR ACTION sections show good variation in modality
+(written, oral, behavioral, social, combined), specificity
+(practice-based, competition-based, daily routine),
+and subtitle (contextual per week). Aidan's actions are
+the best in the corpus for variety and specificity.
+
+------------------------------------------------------------
+
+C5. CLOSING PHRASE VARIETY
+Severity: MINOR
+
+Most athletes receive 3-4 different closing phrases across
+their program. Some cross-athlete duplication exists
+("Control what's in your center ring" and "Lead yourself
+first" each used for 3+ athletes). Jasmine's closings are
+the most distinctive and varied.
+
+Recommendation: Develop 2-3 athlete-specific closing
+phrases per athlete that connect to their baseline profile,
+in addition to the standard rotation.
+
+------------------------------------------------------------
+CATEGORY D: CROSS-ATHLETE PATTERNS (see Section 3)
+CATEGORY E: DEEP DIVE SPECIFIC (see Section 2 continued)
+CATEGORY F: FORMAT (see Section 2 continued)
+------------------------------------------------------------
+
+E1. ITALICIZED OBSERVATION QUALITY
+Severity: MODERATE
+Frequency: 100% — every Strength Signal and Growth Area
+item across all athletes ends with an italicized
+observation, with zero exceptions.
+
+The italicized lines follow a consistent template:
+abstract the specific evidence into a universal coaching
+principle.
+
+Strong examples:
+- Grace Wk7 DD: "This is the first time your reset habit
+  was tested by a real competitive negative. The fact
+  that it held is the strongest evidence in seven weeks
+  that this piece of your mental game is no longer
+  developing -- it is working."
+
+Formulaic examples:
+- Grace Wk8 DD: "The athletes who create their own
+  development opportunities are the ones who eventually
+  outgrow the situations that frustrated them."
+- Grace Wk9 DD: "The athletes who build their own
+  development programs are the ones who eventually
+  outgrow the limitations of the opportunities they
+  are given."
+  (Nearly identical to Week 8. Same structure, similar
+  wording, same principle in consecutive weeks.)
+
+The "The athletes who [X] are the ones who [Y]" general-
+principle opener should not appear in consecutive weeks.
+The 100% consistency of italicized cappers — never
+varying, never omitted — is a structural AI signature.
+
+Recommendation: Reduce italicized observation frequency
+to 70-80%. Permit 1-2 items per DD to end without an
+italicized capper (let the evidence speak). When used,
+vary the form: sometimes a question, sometimes a callback
+to athlete language, sometimes a concrete observation
+rather than a universal maxim.
+
+------------------------------------------------------------
+
+E2. TRENDLINE SECTION NATURALNESS
+Severity: MAJOR
+
+The Weekly Trendline is the least human-sounding section
+across all Deep Dives. Two specific problems:
+
+PROBLEM 1: FULL ARC RECITATION
+The trendline retells the athlete's entire program history
+from Week 1 every single week, appending the new week's
+data to the end. By Week 9 (Grace), this produces a
+9-item enumeration of hyphenated labels:
+
+Grace Wk9 DD: "outcome-reactive at baseline, preparation-
+driven through the preseason, structure-sustained under
+adversity in Week 3, action-proven in Week 4, identity-
+embedded in Week 5, competition-validated in Week 6,
+failure-resilient in Week 7, agency-driven in Week 8,
+and now advocacy-active in Week 9."
+
+This reads like a data visualization legend. No coach
+writes nine hyphenated compound adjectives in a single
+sentence.
+
+By Week 19 (Mergim), the athlete has read the same origin
+story three consecutive times with one new paragraph
+appended.
+
+Jasmine's DD Wk6 and Wk7 trendlines are nearly identical
+for their first 5-6 paragraphs. The first sentence of
+Wk6 ("Six weeks in, here is what your journey looks
+like.") and Wk7 ("Seven weeks in, here is what your
+journey looks like.") differ by one word.
+
+PROBLEM 2: DATA-ANALYSIS VOICE
+Tucker Wk5 DD: "Your Win days by week: 4, 4, 3, 3, 5.
+Your Missed days: 0, 1, 1, 1, 2." — Raw number sequences.
+
+Angelo Wk6 DD: "Your rolling win rate across the last
+four weeks is 85.7 percent." — Calculated to one decimal
+place. No coach reports rolling win rates as percentages
+in prose.
+
+Grace Wk9 DD: "One data point does not confirm a trend
+reversal." — Statistical analysis language.
+
+Recommendation: After Week 4, the trendline should never
+enumerate every prior week. Reference 2-3 key inflection
+points relevant to the current week. Replace hyphenated
+arc labels with behavioral descriptions. Replace exact
+percentages with qualitative descriptors ("you have won
+almost every day" not "96.4 percent").
+
+------------------------------------------------------------
+
+E3. GROWTH AREA TONE
+Severity: MINOR — appropriately calibrated.
+
+Growth Areas correctly frame observations as perspective
+rather than directive. No "you need to" or "you should"
+language detected. The spec revision from Session 68 is
+holding. One exception: Mergim Wk19 DD leads Growth Areas
+with "REFLECTION DEPTH" noting shortened reflections in
+a season-closing document. A coach would soften this in
+a final week.
+
+------------------------------------------------------------
+
+F1-F5. FORMAT FINDINGS
+Severity: MAJOR (unregenerated DDs), MINOR (other)
+
+UNREGENERATED DEEP DIVES:
+The DD voice fix (Session 69) regenerated the last 3
+weeks per athlete. Earlier DDs retain the pre-fix format:
+- Pipeline metadata headers ("Generated from:", "Schema:
+  v9.3 | Reflection Quality: 2 | Growth Phase:
+  Developing | Emotional Intensity: Low")
+- Coach-facing section labels ("Behavioral Evidence:",
+  "Coach Insight:", "Coaching Cue:")
+- Numbered section headers (1-5 instead of named)
+- "COACHING FOCUS AREAS" section (coach-facing)
+- "BASELINE ALIGNMENT NOTE" section (pipeline data)
+
+Confirmed in: Grace Wk1 DD, Aidan Wk1 DD, Mergim Wks
+1-2 DDs, Mergim Wk14 DD. Tucker Wk1 DD also likely
+affected (pre-regeneration scope).
+
+An athlete reading Week 1 and Week 7+ would see two
+completely different document formats.
+
+OTHER FORMAT NOTES:
+- Tucker Wk6 CM has shortened separator bars (14 chars
+  vs standard 72) and "-- Arron" instead of "-- Coach
+  Arron"
+- Grace Wk1 CM uses contractions; Wks 7-9 CMs do not
+  (voice inconsistency within same athlete)
+- All recent CMs are format-consistent (VIRTUSFOCUS
+  header, separator bars, YOUR ACTION, closing, NEXT
+  WEEK FOCUS QUESTION)
+
+
+============================================================
+3. CROSS-ATHLETE VOICE DIFFERENTIATION ASSESSMENT
+============================================================
+
+QUESTION: Does each athlete receive a distinct coaching
+voice?
+
+WHERE INDIVIDUATION SUCCEEDS:
+
+1. SPORT-SPECIFIC LANGUAGE. Each athlete's output uses
+   domain-appropriate terminology. Aidan gets sprint
+   metrics (".96 10m fly," "30-60 split at 2.98").
+   Jasmine gets bobsled vocabulary ("icehouse," "push
+   champs," "sled pushing"). John gets business language
+   ("deals," "proposals," "operator"). Angelo gets
+   throws terminology. This is excellent.
+
+2. ACCOUNTABILITY CALIBRATION. Tucker (Mixed tier, 6
+   weeks) receives more direct accountability language
+   ("you chose not to," "the bar is not golf"). Grace
+   (Growth tier, 9 weeks) receives more recognition-
+   forward coaching. Jasmine (Professional) receives
+   elevated framing. This maps correctly to competitive
+   level and weekly tier.
+
+3. EMOTIONAL INTENSITY ADAPTATION. High EI weeks
+   (Mergim Wk14 injury, Mergim Wk18 competition, Grace
+   Wk7 strikeout, Jasmine Wk7 relationship stress)
+   produce warmer, slower-paced, more empathetic output
+   that is well-differentiated from Low EI weeks.
+
+WHERE INDIVIDUATION FAILS:
+
+1. DD STRUCTURAL CLONING. All 7 athletes receive DDs with
+   identical internal architecture: same section order,
+   same Strength Signal format (heading + paragraph +
+   italicized capper), same Growth Area format, same
+   Trendline enumeration pattern. Jasmine (Olympic
+   bobsled) and John (entrepreneur, Week 1) receive
+   structurally indistinguishable Deep Dives. The
+   template overwhelms the voice.
+
+2. SHARED PHRASE INVENTORY. The "That is [noun]."
+   construction, the "Not X -- Y" reframe, the "The
+   question is" framing, and the "Here is what" pivot
+   appear in every athlete's output at similar frequency.
+   A reader comparing any two athletes' CMs would
+   encounter the same rhetorical devices.
+
+3. CLOSING PHRASE OVERLAP. "Control what's in your center
+   ring" and "Lead yourself first" each appear for 3+
+   athletes. A reader comparing Tucker and Aidan's CMs
+   would see the same closing phrase.
+
+4. IDENTITY THREAD MECHANICAL MAPPING. Angelo's DDs
+   enumerate all 4 baseline traits (goal-oriented,
+   resilient, tenacious, sharp) every single week in the
+   Identity Thread using the same colon-delineated
+   format. Tucker's DDs repeat the "weekday version vs.
+   weekend version" binary across Wks 4-6. These have
+   become crutches rather than evolving observations.
+
+
+============================================================
+4. COACHING RELATIONSHIP MATURITY ASSESSMENT
+============================================================
+
+QUESTION: Does the voice mature over time within each
+athlete?
+
+GRACE KINDEL (9 weeks):
+- Content maturation: YES. Coaching observations become
+  progressively more specific and longitudinally grounded.
+  By Week 9, the coach references specific prior weeks,
+  connects patterns across 2-month spans, and the micro-
+  commitments are highly situation-tailored.
+- Voice maturation: MIXED. Week 1 CM uses contractions
+  and shorter sentences — sounds more natural. By Week 9,
+  the voice has shifted to formal non-contraction English
+  ("did not," "That is," "it is") which sounds stiffer.
+  The specification-driven structure (separator bars,
+  identical transitions) crystallized between Week 1 and
+  Week 7, adding consistency but reducing naturalness.
+
+MERGIM BUSHATI (19 weeks):
+- Content maturation: YES. Week 18 CM ("Match 2 is the
+  real data") is surgically specific compared to Week 1
+  CM (generically encouraging). The athlete's own
+  language is integrated more naturally in later weeks.
+  YOUR ACTION sections evolve from generic to highly
+  situation-specific.
+- Voice maturation: PARTIAL. The "That is [noun]." device
+  persists from Week 1 to Week 19 at the same rate. The
+  "Here's what" transition persists across the full span.
+  A coach 19 weeks into a relationship should have
+  developed shorthand and familiarity — more direct
+  challenges, fewer framing devices.
+
+TUCKER LLOYD (6 weeks):
+- Voice starts more natural (Week 1 has better rhythm and
+  conversational register) and gets slightly more
+  formulaic over time. The "weekday vs. weekend" framing
+  becomes a repeated talking point without variation.
+
+AIDAN BURKARDT (5 weeks):
+- Week 5 CM is the single most human-sounding CM in the
+  entire corpus ("You asked me a direct question this
+  week, so I'm going to answer it directly."). The voice
+  is responsive to what the athlete brought, not what the
+  template expects.
+
+JOHN TASTINGER (1 week):
+- The CM adapts well to Week 1. The DD is remarkably
+  detailed and confident for a first interaction — a real
+  coach would be more tentative in Week 1, with more
+  "what I am seeing so far" language and fewer confident
+  pattern declarations.
+
+OVERALL: Content quality improves over time across all
+athletes. Voice authenticity does not consistently
+improve — and in some cases, the specification-driven
+structure makes later weeks more formulaic than early
+weeks.
+
+
+============================================================
+5. WEEK-TYPE VOICE VARIATION ASSESSMENT
+============================================================
+
+GOLD STREAK vs. DISRUPTED WEEKS:
+The coaching voice DOES differentiate between week types,
+primarily in content focus and emotional calibration.
+However, the DD structural template remains identical
+regardless of week character — same section count, same
+Strength Signal format, same internal architecture. A
+disrupted week should feel structurally different (shorter
+strengths, longer recovery narrative, potentially
+reordered sections). Instead, disruption is reflected in
+content but not in form.
+
+HIGH EI vs. LOW EI WEEKS:
+High EI weeks produce the corpus's most authentic writing.
+The constraint of empathy-first forces more natural,
+evidence-grounded prose. Mergim Wk18 (first competition),
+Grace Wk7 (first competitive failure), and Jasmine Wk7
+(relationship stress) are among the strongest files
+because the emotional specificity gives the writing a
+natural anchor.
+
+COMPETITION vs. RECOVERY WEEKS:
+Competition weeks (Angelo Wk5, Aidan Wk4, Mergim Wk18)
+are well-differentiated — they lead with competitive
+moments and the coaching observations are appropriately
+more evaluative. Recovery weeks (Angelo Wk7, Tucker Wk6)
+correctly shift tone to recovery and recommitment.
+
+FINDING: Week-type content differentiation is adequate.
+Week-type structural differentiation is absent. The DD
+template does not flex based on the week's character.
+
+
+============================================================
+6. SPECIFICATION IMPROVEMENT RECOMMENDATIONS
+============================================================
+
+PRIORITY: HIGH
+
+H1. CAP "THAT IS [NOUN]." CONSTRUCTION
+Where: Coaching Output Instructions (frequency limit)
+What: Maximum 2 standalone "That is [noun]." sentences per
+CM, maximum 2 per DD. Force variation: embed judgments
+mid-sentence, use different constructions, or let evidence
+speak without a declarative stamp.
+Why: #1 AI-detectable pattern. Appears in every file.
+
+H2. ELIMINATE TRENDLINE ARC RECITATION
+Where: Deep Dive Framework (Trendline section guidance)
+What: After Week 4, the Trendline should reference 2-3
+key inflection points relevant to the current week. Never
+enumerate every prior week. Never use hyphenated compound-
+adjective arc labels. Replace percentage citations with
+qualitative descriptors.
+Why: #2 AI-detectable pattern. Grows worse with each week.
+
+H3. ADD PHRASE FREQUENCY LIMITS
+Where: Coaching Output Instructions (new section)
+What: Track and cap these constructions:
+- "The question is [whether]...": 0/CM, 1/DD max
+- "Not X -- Y" correction: 1/CM, 2/DD max
+- "Here is what [I want you to see]": 0 (retire entirely,
+  replace with varied transitions)
+- "The version of you that": 0 (retire entirely)
+- "I also want to name/acknowledge": 0/CM (retire)
+- Em dashes: 4/CM, 6/DD max
+Why: These phrases appear at template-detectable frequency
+across all athletes.
+
+H4. RESTORE CONTRACTIONS AS DEFAULT
+Where: Coaching Output Instructions (voice section)
+What: Contractions are the default register for Coach
+Arron. Formal no-contraction prose should be reserved
+only for specific emphasis moments (1-2 per CM max).
+Even Professional-level athletes should receive 70-80%
+contraction usage.
+Why: The shift from Week 1 contractions to later-week
+formal prose makes the voice less human over time.
+
+PRIORITY: MEDIUM
+
+M1. ADD DD STRUCTURAL VARIATION
+Where: Deep Dive Framework (section guidance)
+What: Allow Strength Signal count to vary 2-5, Growth
+Area count to vary 1-4. Permit section reordering for
+disrupted weeks. Allow occasional omission of the
+italicized observation (target 70-80%, not 100%).
+Why: Fixed counts and 100% capper consistency are
+detectable at scale.
+
+M2. ADD CM-DD DEDUPLICATION RULE
+Where: Coaching Output Instructions (new rule)
+What: No phrase longer than 8 words should appear
+identically in both the CM and DD for the same week.
+Why: Jasmine Wk7 has "That is not a small thing. That
+is a skill." verbatim in both CM and DD. John Wk1 has
+the same "The question is whether..." construction in
+both documents.
+
+M3. BREAK CM OPENING FORMULA
+Where: Coaching Message Framework (opening guidance)
+What: Specify 5+ opening approaches (stat-led, quote-led,
+moment-led, question-led, challenge-led). No athlete
+should see the same opening formula in consecutive weeks.
+Why: Grace Wks 7-9 use identical "[count]. [count]. And
+this week..." template.
+
+M4. ADD TRANSITION ROTATION BANK
+Where: Coaching Output Instructions (new section)
+What: Provide 6-8 alternative transitions for each
+function (pivoting to recognition, pivoting to growth,
+framing challenges, bridging topics). Enforce variety
+against prior 2-3 weeks.
+Why: "Here is what earned recognition" appears identically
+in consecutive Grace CMs.
+
+M5. BAN PIPELINE CLASSIFICATION LANGUAGE FROM DDs
+Where: Deep Dive Framework (voice rules)
+What: Prohibit: "Emotional intensity returned to Low,"
+"Consistent phase maintained," "Developing phase
+maintained," "Growth tier," "RQS [number]," "Stable
+Positive," "approach-framed." Require behavioral
+description instead.
+Why: These pipeline-concept descriptions break the
+coaching voice register.
+
+PRIORITY: LOW
+
+L1. VARY IDENTITY THREAD APPROACH
+Where: Deep Dive Framework (Identity Thread guidance)
+What: Do not enumerate all baseline traits every week.
+Pick 1-2 most relevant and go deeper. Reference the full
+set only every 3-4 weeks.
+Why: Angelo's DDs mechanically map 4 intake traits weekly.
+
+L2. DEVELOP ATHLETE-SPECIFIC CLOSING PHRASES
+Where: Coaching Message Framework (closing guidance)
+What: In addition to standard rotation, develop 2-3
+athlete-specific closings connected to each athlete's
+baseline profile.
+Why: Cross-athlete duplication of closing phrases.
+
+L3. REGENERATE REMAINING PRE-FIX DDs
+Where: Operations (not specification)
+What: Regenerate all DDs outside the Session 69 scope
+(Grace Wk1, Aidan Wks 1-2, Tucker Wk1, Angelo Wk1,
+Mergim Wks 1-16) under current DD Framework.
+Why: Pipeline metadata and coach-facing labels in old-
+format DDs are athlete-visible.
+
+
+============================================================
+7. PHRASE FREQUENCY TABLE
+============================================================
+
+Phrase                          | Instances | Files  | Severity
+                                | (sampled) | w/hits |
+--------------------------------|-----------|--------|----------
+"That is [noun]." standalone    |   80+     |  ALL   | MAJOR
+"Not X -- Y" correction        |   40+     |  ALL   | MODERATE
+"The question is [whether]..."  |   25+     |  6/7   | MODERATE
+"Here is what [verb]..."        |   15+     |  6/7   | MODERATE
+"That matters" / "worth naming" |   12+     |  5/7   | MODERATE
+"The version of you that..."    |   10+     | Tuck/Aid| MAJOR*
+"I also want to name/ack..."   |    3      | Jasmine | MODERATE
+"[N] weeks into this program"   |   15+     | All DDs | MODERATE
+"The athletes who [X] are..."   |    4+     | Grace   | MODERATE
+"deliberately" / "intentional"  |   25      | Angelo  | MINOR
+
+* MAJOR for affected athletes, not corpus-wide
+
+
+============================================================
+8. EXEMPLAR PASSAGES
+============================================================
+
+The 5 best passages — most authentically human-sounding:
+
+1. AIDAN BURKARDT, WEEK 5 CM
+   File: Aidan_Burkardt_2026-02-16to2026-02-22_VF_
+   CoachingMessage.txt
+
+   "You asked me a direct question this week, so I am
+   going to answer it directly. You noticed that you
+   are mentally rehearsing your start and race feelings
+   throughout the day -- checking to make sure they are
+   still there. And you recognized that the constant
+   rehearsal is draining you before practice. That
+   observation alone is the kind of self-awareness most
+   athletes never develop. Here is the answer:
+   visualization works when it has a window. It stops
+   working when it runs all day."
+
+   WHY IT WORKS: The coach is responding to a specific
+   question from the athlete. The observation validates
+   before the answer arrives. The answer itself is
+   concrete and memorable ("a window"). This sounds like
+   a real coaching conversation — responsive, earned,
+   specific.
+
+2. MERGIM BUSHATI, WEEK 18 CM
+   File: Mergim_Bushati_2026-01-05to2026-01-11_VF_
+   CoachingMessage.txt
+
+   "Match 1 -- you blanked out. 'Completely forgot
+   everything. I wrestled like nothing like how I do in
+   the wrestling room.' That happened. I am not going
+   to pretend it did not... But here is what happened
+   next. Match 2 -- you just wrestled... Listen to me
+   carefully: match 2 is the real data."
+
+   WHY IT WORKS: Honest acknowledgment ("I am not going
+   to pretend it did not"), directional shift ("But here
+   is what happened next"), and authoritative reframe
+   ("Listen to me carefully"). The sentence variety is
+   excellent. The athlete's own words anchor the entire
+   passage.
+
+3. GRACE KINDEL, WEEK 7 CM
+   File: Grace_Kindel_2026-03-09to2026-03-15_VF_
+   CoachingMessage.txt
+
+   "Monday you stepped in as a pinch-hitter, you struck
+   out, and the first thing you wrote was 'that sucks.'
+   By Wednesday, you wrote 'I just need to reset and
+   I will be fine.' That two-day sequence is the most
+   important thing that has happened in this program."
+
+   WHY IT WORKS: Uses the athlete's exact words from two
+   different days. The pacing mirrors how a real coach
+   would narrate this moment. The claim ("the most
+   important thing") feels earned and personal.
+
+4. JOHN TASTINGER, WEEK 1 CM
+   File: John_Tastinger_2026-03-30to2026-04-05_VF_
+   CoachingMessage.txt
+
+   "Six deals in your first week. You set a target of
+   five, hit six, and helped someone on your team close
+   their first. That right there tells me something
+   about what you are capable of when you are locked in."
+
+   WHY IT WORKS: Direct, specific, earned. "That right
+   there tells me" is natural coaching speech. The
+   numbers are concrete. The opening is not generic
+   welcome language — it is about what John actually did.
+
+5. JASMINE JONES, WEEK 6 CM
+   File: Jasmine_Jones_2025-06-23to2025-06-29_VF_
+   CoachingMessage.txt
+
+   "When your teammates pushed for a standard test in
+   the icehouse on Wednesday, you declined. That was
+   not avoidance. That was strategy."
+
+   WHY IT WORKS: Sharp, direct, earned recognition. The
+   "That was not avoidance. That was strategy." reframe
+   is exactly what a coach would say. Short sentences,
+   clear judgment, no filler.
+
+
+============================================================
+9. PROBLEM PASSAGES
+============================================================
+
+The 5 worst passages — most obviously AI-generated:
+
+1. GRACE KINDEL, WEEK 9 DD, WEEKLY TRENDLINE
+   File: Grace_Kindel_2026-03-23to2026-03-29_VF_
+   DeepDive.txt
+
+   "outcome-reactive at baseline, preparation-driven
+   through the preseason, structure-sustained under
+   adversity in Week 3, action-proven in Week 4,
+   identity-embedded in Week 5, competition-validated
+   in Week 6, failure-resilient in Week 7, agency-
+   driven in Week 8, and now advocacy-active in Week 9"
+
+   WHY IT FAILS: Nine hyphenated compound adjectives in
+   a single sentence. No human writes this. It reads
+   like a legend from a data visualization, not a
+   coaching document. This passage would immediately
+   identify the output as AI-generated.
+
+2. TUCKER LLOYD, WEEK 5 DD, WEEKLY TRENDLINE
+   File: Tucker_Lloyd_2026-03-09to2026-03-15_VF_
+   DeepDive.txt
+
+   "Your Win days by week: 4, 4, 3, 3, 5. Your Missed
+   days: 0, 1, 1, 1, 2."
+
+   WHY IT FAILS: Raw number sequences presented as
+   sentences. This is a data table forced into prose.
+   No human coach writes this way.
+
+3. ANGELO ALLEN, WEEK 7 DD, IDENTITY THREAD
+   File: Angelo_Allen_2026-03-30to2026-04-05_VF_
+   DeepDive.txt
+
+   "Seven weeks in, the pattern is clear. Peak
+   performance weeks happen when preparation is
+   deliberate. Recovery weeks work when rest is
+   deliberate. Disruption weeks hold when engagement
+   is deliberate. The common thread is not volume or
+   external structure -- it is intention."
+
+   WHY IT FAILS: Triple parallel "X weeks [verb] when
+   Y is deliberate" construction. Textbook AI-generated
+   prose. No human coach writes three consecutive
+   sentences with identical syntactic architecture to
+   arrive at a fourth sentence that names the abstract
+   principle.
+
+4. JASMINE JONES, WK6 DD / WK7 DD, TRENDLINE OPENING
+   File: Jasmine_Jones_2025-06-23to2025-06-29_VF_
+   DeepDive.txt (and Week 7 DD)
+
+   Wk6: "Six weeks in, here is what your journey looks
+   like. You started by owning your training..."
+   Wk7: "Seven weeks in, here is what your journey looks
+   like. You started by owning your training..."
+
+   WHY IT FAILS: The first sentence differs by one word
+   ("Six" vs "Seven"). The subsequent week-by-week
+   recitation is nearly verbatim. The athlete reading
+   both would see a copy-paste with one paragraph
+   appended.
+
+5. AIDAN BURKARDT, WEEK 4 DD, IDENTITY THREAD
+   File: Aidan_Burkardt_2026-02-09to2026-02-15_VF_
+   DeepDive.txt
+
+   "Not the version that needs a 7.2 to feel good about
+   himself. The version that can look at a 7.5, feel the
+   disappointment, break the race into pieces, identify
+   what to work on, and still walk away committed. The
+   version that recognizes the choice between
+   overthinking and analysis -- and chooses analysis."
+
+   WHY IT FAILS: Three uses of "the version" in three
+   consecutive sentences. The accumulating parallel
+   construction with each "version" getting a longer
+   predicate (short, medium, long with em dash) is a
+   recognizable AI writing pattern.
+
+
+============================================================
+END OF REPORT
+============================================================
+
+Report compiled: 2026-04-10
+Files audited: ~50 CMs and DDs across 7 athletes
+Voice references consulted: brand_voice.txt,
+  content_style_guide.txt, VF_Coaching_Output_System_
+  Identity.txt, VF_Coaching_Message_Framework.txt,
+  VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+This report is read-only. No specification files were
+modified. No output files were modified. Recommendations
+are for implementation in a future session.
+============================================================
