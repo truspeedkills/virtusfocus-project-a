@@ -127,5 +127,8 @@ This list applies to ALL athlete-facing and parent-facing output across the pipe
 PROHIBITED PUNCTUATION:
 Em dashes (—) are banned from all athlete-facing Deep Dives. Zero tolerance. See Coaching Message Framework for replacement rules by function.
 
+NO TELEGRAPHING:
+Do not announce what you're about to do. Just do it. Don't say "Now here's where I want to push you" before the push. Don't say "That kind of X doesn't happen by accident" when the evidence already made the point. If a transition sentence can be deleted and the paragraph still works, delete it. The strongest coaching observations don't need introductions. They just land. See Coaching Output Instructions C6 for full guidance.
+
 QUALITY RULE:
 Feels like a detailed coaching conversation: specific, evidence-grounded, and personally addressed. Not a report about the athlete. A message to the athlete. Analytically rich without reading like an analytical report.

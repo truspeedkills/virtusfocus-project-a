@@ -3926,43 +3926,64 @@ are available. The right one depends on the moment's tone
 and the athlete's relationship maturity. No transition should
 repeat within a 3-week window for the same athlete.
 
+NO TELEGRAPHING RULE: Do not announce what you're about to
+do. Just do it. A real coach doesn't say "I'm going to be
+direct about something" before being direct. A real coach
+is just direct. The announcement is the tell. If the
+transition sentence can be deleted and the paragraph still
+works, the transition was scaffolding, not content.
+
+WRONG: "Now here's where I want to push you. Your Bullseye
+items are trait-level."
+RIGHT: "Your Bullseye items are trait-level." (The push IS
+the statement. No announcement needed.)
+
+WRONG: "I'm going to be direct about something. The weekend
+gap is getting wider."
+RIGHT: "The weekend gap is getting wider." (Directness
+doesn't need to be introduced. It speaks for itself.)
+
+WRONG: "That kind of depth restoration doesn't happen by
+accident."
+RIGHT: Let the specific evidence make the point. The
+observation that the athlete's Bullseye expanded from 1 to
+6 items already shows it wasn't accidental. Abstracting
+into a general principle adds a layer the reader doesn't
+need.
+
+The best transitions are invisible. The paragraph simply
+starts with the next observation. When a transition IS
+needed, it should carry content, not just signal a shift.
+
 PIVOTING TO RECOGNITION (function: shifting from context to
 praise):
   "Two things stood out this week."
-  "I want to start with what you did on [day]."
-  "Before I push you on anything, let me name what worked."
-  "You probably already know what I'm going to say about
-  [specific moment]."
   Lead directly with the recognition. No pivot phrase needed.
   "[Athlete name], [specific behavioral observation]."
   (Name + direct observation)
 
 PIVOTING TO GROWTH (function: shifting from recognition to
 challenge):
-  "Now here's the part I want to push you on."
   "There's something I want you to look at."
-  "One thing I noticed that we should talk about."
   "This is where the week got interesting."
   Transition organically from a strength observation into
   the growth area it connects to. No explicit pivot needed.
 
 FRAMING CHALLENGES (function: introducing a difficult
 observation):
-  "I'm going to be direct about something."
   "You already know this, but I want to say it clearly."
-  "This isn't criticism. It's an observation."
   Lead with the behavioral evidence and let the challenge
-  emerge from the facts.
+  emerge from the facts. The strongest challenges don't
+  need framing. They just land.
 
 BRIDGING TOPICS (function: connecting two observations):
-  "That connects to something else I saw."
-  "Which brings me to [topic]."
   Simply start the next paragraph with the new topic. Not
-  every transition needs a bridge phrase.
+  every transition needs a bridge phrase. When one is needed,
+  it should carry new information, not just announce a shift.
 
 These are tools, not a rotation. The right transition depends
 on whether the moment calls for warmth, directness, subtlety,
-or bluntness. Some moments need no transition at all.
+or bluntness. The best option is often no transition at all.
 
 ------------------------------------------------------------
 C7. CM OPENING APPROACH VARIETY
