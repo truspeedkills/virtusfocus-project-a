@@ -1,0 +1,659 @@
+============================================================
+VOICE & TONE AUTHENTICITY AUDIT — HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-10
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline. You need
+to understand:
+
+  A. What VirtusFocus is (non-clinical athlete mental
+     performance coaching — NOT therapy, NOT sports
+     psychology)
+  B. The pipeline architecture (7 stages, Stages 2-5
+     active for weekly processing)
+  C. All 7 athletes currently in the pipeline, their
+     profiles, their arcs, and their developmental phases
+  D. The Coaching Output Engine (Stage 3) — what it
+     produces and what rules govern it
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+This is a VOICE AND TONE AUTHENTICITY AUDIT of the
+pipeline's athlete-facing output — specifically Coaching
+Messages (CMs) and Deep Dives (DDs).
+
+The pipeline produces ~120 athlete-facing files across 7
+athletes. These outputs are written in the voice of Coach
+Arron, head mindset coach of VirtusFocus, and are delivered
+directly to athletes. They must sound like a real human
+coach wrote them — not like AI-generated content.
+
+THIS SESSION DOES NOT:
+- Modify any specification files
+- Regenerate any output files
+- Process any new athlete data
+- Change the pipeline architecture
+
+THIS SESSION PRODUCES:
+- A comprehensive Voice & Tone Audit Report documenting
+  findings across all athletes and all recent weeks
+- Specific examples of language that reads authentically
+  vs. language that reads AI-generated
+- Pattern identification (repetitive structures, formulaic
+  transitions, predictable sentence patterns)
+- Actionable recommendations for specification-level
+  improvements (to be implemented in a FUTURE session)
+
+Save the audit report to:
+  Validation Reports\Voice_Tone_Authenticity_Audit_Report.txt
+
+============================================================
+3. WHAT YOU ARE AUDITING
+============================================================
+
+Read the following athlete-facing output files. Focus on
+the MOST RECENT 3 WEEKS per athlete (these represent the
+current production voice) but also sample 1-2 EARLIER
+weeks per athlete to detect voice drift or improvement
+over time.
+
+GRACE KINDEL — 9 weeks of output (longest arc with most
+  specification revisions applied):
+  Recent: Weeks 7, 8, 9
+  Early sample: Weeks 1 or 2
+  Path: Athlete Data\Grace Kindel\Coaching and Deep Dive\
+
+ANGELO ALLEN — 7 weeks of output:
+  Recent: Weeks 5, 6, 7
+  Early sample: Week 1
+  Path: Athlete Data\Angelo Allen\Coaching and Deep Dive\
+
+TUCKER LLOYD — 6 weeks of output:
+  Recent: Weeks 4, 5, 6
+  Early sample: Week 1
+  Path: Athlete Data\Tucker Lloyd\Coaching and Deep Dive\
+
+MERGIM BUSHATI — 19 weeks of output (longest dataset,
+  spans the most specification versions):
+  Recent: Weeks 17, 18, 19
+  Early sample: Weeks 1 or 2
+  Path: Athlete Data\Mergim Bushati\Coaching and Deep Dive\
+
+AIDAN BURKARDT — 5 weeks of output:
+  Recent: Weeks 3, 4, 5
+  Early sample: Week 1
+  Path: Athlete Data\Aidan Burkardt\Coaching and Deep Dive\
+
+JASMINE JONES — 7 weeks of output:
+  Recent: Weeks 5, 6, 7
+  Early sample: Week 1
+  Path: Athlete Data\Jasmine Jones\Coaching and Deep Dive\
+
+JOHN TASTINGER — 1 week of output (newest athlete):
+  Week 1 only
+  Path: Athlete Data\John Tastinger\Coaching and Deep Dive\
+
+TOTAL FILES TO AUDIT: Approximately 40-50 CMs + 40-50 DDs
+across the sample set above. Read them all. Do not skim.
+
+============================================================
+4. AUTHORITATIVE VOICE REFERENCES — READ FIRST
+============================================================
+
+These are the source files that define what the output
+SHOULD sound like. Read all of them before reading any
+athlete output.
+
+BRAND VOICE:
+  Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+
+CONTENT STYLE GUIDE:
+  Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+
+SYSTEM IDENTITY:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+
+COACHING MESSAGE FRAMEWORK:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+
+DEEP DIVE FRAMEWORK:
+  Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+These files define the voice contract. Every finding in
+the audit should be measured against what these files
+specify.
+
+============================================================
+5. WHAT "AUTHENTICITY" MEANS IN THIS AUDIT
+============================================================
+
+An authentic coaching message sounds like a real human
+coach sat down, reviewed the athlete's week, and wrote
+a personal note. It should feel like a conversation
+between Coach Arron and the athlete — not like a report
+generated from structured data.
+
+The pipeline IS generating from structured data (the
+Interpretation JSON). That is by design. The question is
+whether the output successfully hides the machinery and
+reads as genuine human coaching communication.
+
+THE CORE QUESTION FOR EVERY FILE:
+"If this athlete showed this message to a teammate and
+said 'my coach wrote this,' would the teammate believe
+it was written by a human coach?"
+
+============================================================
+6. SPECIFIC AI-PATTERN DETECTION CRITERIA
+============================================================
+
+Audit every file against the following categories. For each
+category, provide specific examples (quote the exact text,
+cite the file) and rate severity: MINOR (stylistic
+preference), MODERATE (noticeable to careful reader),
+MAJOR (obviously AI-generated to a reasonable reader).
+
+------------------------------------------------------------
+CATEGORY A: SENTENCE STRUCTURE PATTERNS
+------------------------------------------------------------
+
+A1. PARALLEL CONSTRUCTION OVERUSE
+AI models tend to produce parallel sentence structures
+excessively — same rhythm, same length, same grammatical
+pattern repeated in sequence.
+
+  EXAMPLE OF THE PROBLEM:
+  "You showed up Monday. You pushed through Tuesday.
+   You adapted Wednesday. You recovered Thursday."
+
+  A real coach would vary the rhythm:
+  "Monday you showed up. The Tuesday session was where
+   the push-through happened — and by Wednesday you had
+   already adapted your approach."
+
+Look for: Consecutive sentences with identical grammatical
+structure, especially in lists of behavioral observations.
+
+A2. FORMULAIC TRANSITIONS
+AI models use predictable transition patterns between
+ideas. Look for:
+- "Here is what..." / "Here is the thing..."
+- "That matters because..."
+- "This is worth naming..."
+- "Now the test..."
+- "The question is..."
+- "What [X] tells me is..."
+
+These are not inherently wrong — a real coach might use
+any of them. The problem is frequency and predictability.
+If every CM uses "Here is what I want you to see" as the
+second-paragraph opener, it becomes a template, not a
+conversation.
+
+A3. TOPIC-SENTENCE-THEN-EVIDENCE PATTERN
+AI models tend to state a conclusion and then support it.
+Real coaching conversations are messier — sometimes the
+evidence comes first and the insight emerges.
+
+  AI PATTERN:
+  "The biggest signal this week is the Bullseye expansion.
+   For three weeks your center ring had one item..."
+
+  HUMAN PATTERN:
+  "For three straight weeks your center ring said the same
+   thing. This week it opened up to six items — and that
+   is worth stopping on."
+
+Look for: Every paragraph opening with a thesis statement
+followed by supporting evidence. Real coaches sometimes
+lead with the detail and let the meaning emerge.
+
+A4. CADENCE MONOTONY
+AI tends to produce sentences of similar length. A real
+coach varies between short punches and longer explanatory
+sentences. Look for sections where every sentence is
+15-25 words without variation.
+
+A5. EXCESSIVE ENUMERATION
+AI loves to list things in numbered or parallel form.
+
+  AI PATTERN:
+  "Three pattern shifts detected: (1) Bullseye expansion,
+   (2) Gold Streak, (3) achievement language shift."
+
+  This is fine in the JSON. It should not appear in
+  athlete-facing coaching output. A coach would integrate
+  these observations into narrative flow.
+
+------------------------------------------------------------
+CATEGORY B: VOCABULARY AND PHRASING PATTERNS
+------------------------------------------------------------
+
+B1. OVERUSED COACHING PHRASES
+Track the frequency of specific phrases across all files.
+Flag any phrase that appears in more than 30% of CMs or
+DDs as potentially formulaic:
+- "That matters"
+- "That is worth naming"
+- "Here is what I want you to see"
+- "The question is"
+- "This is not about [X] — it is about [Y]"
+- "What [X] tells me is"
+- "That is [noun]" as a standalone sentence (e.g., "That
+  is advocacy." "That is ownership." "That is discipline.")
+- "The [X] that produced [Y] has not been tested since [Z]"
+- "Not [X] — [Y]" correction pattern
+
+B2. REGISTER SHIFTS
+Does the voice stay consistent within a single file? Look
+for moments where the register shifts from conversational
+coaching to analytical/clinical/report language.
+
+  CONVERSATIONAL: "You lifted while sick. That tells me
+   something about who you are in this program."
+
+  ANALYTICAL SHIFT: "The recommitment behavior under
+   adverse conditions demonstrates a strong engagement
+   baseline that holds under physical adversity."
+
+The second version is accurate but reads like a
+performance review, not a coaching message.
+
+B3. PIPELINE VOCABULARY LEAKAGE
+Even when pipeline terms are not used explicitly (which
+would be a compliance violation), their conceptual
+fingerprints can leak into the coaching voice:
+
+  LEAKAGE: "Your consistency profile held at Stable
+   Positive" — uses the actual field name.
+
+  SUBTLER LEAKAGE: "Your consistency has been stable and
+   positive across the last four weeks" — mirrors the
+   classification structure even though it uses natural
+   language.
+
+  AUTHENTIC: "Four straight Growth weeks now. That kind
+   of run is not accidental."
+
+B4. ADVERB AND QUALIFIER OVERUSE
+AI models tend to use qualifiers excessively: "notably,"
+"significantly," "genuinely," "particularly," "clearly,"
+"directly." A real coach either commits to the statement
+or does not make it.
+
+  AI: "This is genuinely significant progress."
+  COACH: "This is progress."
+
+B5. HEDGING LANGUAGE
+AI hedges to avoid overstatement. A confident coach does
+not hedge:
+
+  AI: "This may suggest that your preparation quality
+   is improving."
+  COACH: "Your preparation is improving."
+
+B6. EM DASH OVERUSE
+AI models (Claude in particular) tend to overuse em dashes
+for parenthetical insertions. Count em dash frequency per
+file. A real coach might use 1-3 per page. More than 5-6
+in a 400-word CM suggests AI patterning.
+
+------------------------------------------------------------
+CATEGORY C: STRUCTURAL PATTERNS
+------------------------------------------------------------
+
+C1. OPENING HOOK FORMULA
+Do all CMs open the same way? Track the opening pattern
+across all files:
+- Metric-first opening ("Seven for seven. Gold Streak.")
+- Behavioral-first opening ("You showed up this week.")
+- Context-first opening ("This was a week where...")
+- Challenge-first opening ("I want to push you on...")
+
+If 80%+ of CMs use the same opening pattern, the formula
+is detectable regardless of content variation.
+
+C2. PARAGRAPH FLOW PREDICTABILITY
+Does every CM follow the same Recognition → Strength →
+Drift → Identity → Action arc? The framework specifies
+this arc, but a real coach would sometimes lead with the
+challenge, sometimes lead with the question, sometimes
+skip recognition entirely when the week demands it.
+
+Flag any CM where the structure is so predictable that
+you could label each paragraph by its role without
+reading the content.
+
+C3. DEEP DIVE SECTION SAMENESS
+The DD framework mandates 5 sections. But within each
+section, is there structural variation? Or does every
+DD follow the exact same internal pattern:
+- Mindset Summary: always opens with "[N] weeks into
+  this program..." or "This was the week that..."
+- Trendline: always opens with longitudinal metrics
+- Strength Signals: always 3 items with same format
+- Growth Areas: always 2-3 items with same format
+- Identity Thread: always opens with intake reference
+
+C4. YOUR ACTION SECTION VARIATION
+Does the action section vary in format, specificity, and
+voice? Or does every CM follow the same pattern of
+[micro-commitment restated as instruction]?
+
+C5. CLOSING PHRASE VARIETY
+Track the closing phrase used in every CM across all
+athletes. The framework specifies a set ("Stay centered,"
+"Lead yourself first," "Control what's in your center
+ring," "Progress over perfection") but a real coach would
+also use contextual closings. How much variety exists?
+
+------------------------------------------------------------
+CATEGORY D: CROSS-ATHLETE CONSISTENCY vs. INDIVIDUATION
+------------------------------------------------------------
+
+D1. VOICE DIFFERENTIATION
+A real coach adjusts their voice for different athletes.
+Grace Kindel (freshman softball player, 9 weeks in) should
+receive a different register than Jasmine Jones (Olympic
+bobsled athlete, 7 weeks in) or John Tastinger
+(entrepreneur, Week 1).
+
+Read CMs from the same week across different athletes.
+Does the voice actually shift? Or could you swap the
+athlete names and the messages would still read the same?
+
+Dimensions to check:
+- Vocabulary complexity (should scale with athlete
+  sophistication and competitive level)
+- Directness/accountability level (should scale with
+  athlete's program tenure and growth phase)
+- Sport-specific language (should be natural and specific
+  to each athlete's domain)
+- Emotional calibration (should match the athlete's
+  emotional intensity classification)
+
+D2. COACHING RELATIONSHIP MATURITY
+Compare Week 1 CMs to Week 7+ CMs for the same athlete.
+Does the coaching voice mature over time? A real coach
+builds familiarity — the tone should shift from
+introductory to established. Look for:
+- Week 1: More orientation, more explanation, more
+  encouragement
+- Week 7+: More shorthand, more direct challenge, more
+  expectation of athlete understanding
+
+D3. WEEK-TYPE DIFFERENTIATION
+A Gold Streak week should feel different from a first
+Missed day week. A competition week should feel different
+from a recovery week. A High EI week should feel different
+from a Low EI week.
+
+Read one Gold Streak CM and one disrupted-week CM for the
+same athlete. Does the voice actually shift in energy,
+rhythm, directness, and focus? Or is the same coaching
+template applied regardless of week character?
+
+------------------------------------------------------------
+CATEGORY E: DEEP DIVE SPECIFIC ISSUES
+------------------------------------------------------------
+
+E1. ITALICIZED OBSERVATION QUALITY
+The DD framework specifies italicized coaching
+observations at the end of each Strength Signal and
+Growth Area. These are supposed to be insight — the "so
+what" that a real coach would say after laying out the
+evidence.
+
+Audit whether these observations:
+- Add genuine insight (not just restating the evidence)
+- Vary in style and structure across files
+- Sound like a coach reflecting, not an AI summarizing
+- Avoid formulaic framing ("The takeaway here is...")
+
+E2. TRENDLINE SECTION NATURALNESS
+The Trendline section contains longitudinal data. The
+challenge is presenting this data in a coaching voice
+rather than a data-analysis voice.
+
+  DATA-ANALYSIS: "Rolling win rate across the last four
+   weeks stands at 96.4 percent. Missed rate at 3.6
+   percent. Volatility index Low."
+
+  COACHING VOICE: "You have won 96 percent of your days
+   over the last month. One Missed day in four weeks —
+   and even that one you recovered from in 48 hours."
+
+E3. GROWTH AREA TONE
+Growth Areas should be developmental observations, not
+criticism and not action items. Audit whether the tone
+reads as:
+- Coach sharing a perspective the athlete might not see
+  (CORRECT)
+- Coach telling the athlete what to improve (INCORRECT
+  — that belongs in the CM action section)
+- Coach being critical of the athlete's performance
+  (INCORRECT — never)
+
+------------------------------------------------------------
+CATEGORY F: FORMAT AND PRESENTATION
+------------------------------------------------------------
+
+F1. SEPARATOR BAR CONSISTENCY
+All CMs should use identical separator bars (full-width
+━━━ characters). Check for inconsistencies across athletes
+and across weeks.
+
+F2. SIGNATURE CONSISTENCY
+"— Coach Arron" everywhere. Check for variants ("— Arron,"
+"— Coach A," missing signatures, etc.).
+
+F3. YOUR ACTION SUBTITLE VARIATION
+Each CM's YOUR ACTION section should have a contextual
+subtitle (e.g., "BEFORE EACH DAY OF MT UNION," "FOR THIS
+WEEK," "BEFORE PRACTICE MONDAY"). Check that these vary
+and connect to the specific week's content.
+
+F4. HEADER FORMAT CONSISTENCY
+"VIRTUSFOCUS — ATHLETE COACHING MESSAGE" followed by
+"[Name] | Week [N] | [Date Range]". Check for
+inconsistencies.
+
+F5. DEEP DIVE HEADER FORMAT
+"DEEP DIVE COACHING ANALYSIS" followed by name/week/date.
+Section headers in ALL CAPS with separator lines. Check
+for format drift across files.
+
+============================================================
+7. AUDIT METHODOLOGY
+============================================================
+
+PHASE 1: READ ALL VOICE REFERENCE FILES (Section 4)
+Internalize the voice contract before reading any output.
+
+PHASE 2: READ RECENT OUTPUT (last 3 weeks per athlete)
+Read every CM and DD for the most recent 3 weeks across
+all 7 athletes. Take notes on each file.
+
+PHASE 3: READ EARLY OUTPUT (Week 1 samples)
+Read Week 1 CM and DD for each athlete. Note voice
+differences vs. recent output.
+
+PHASE 4: CROSS-ATHLETE COMPARISON
+Read CMs from the SAME week across multiple athletes
+(e.g., Grace Wk7 + Angelo Wk5 + Tucker Wk5 are all
+from the March 9-15 period). Compare voice, vocabulary,
+structure.
+
+PHASE 5: PATTERN ANALYSIS
+Compile findings into the Category A-F framework above.
+For each finding, provide:
+- Category and subcategory (e.g., A2 Formulaic Transitions)
+- Severity (MINOR / MODERATE / MAJOR)
+- Specific example(s) with exact quotes and file citations
+- Frequency (how many files exhibit this pattern)
+- Recommendation (what the specification should change)
+
+PHASE 6: WRITE THE AUDIT REPORT
+Structure the report as specified in Section 8.
+
+============================================================
+8. AUDIT REPORT STRUCTURE
+============================================================
+
+The final report should contain these sections:
+
+1. EXECUTIVE SUMMARY
+   - Overall authenticity assessment (Strong / Adequate /
+     Needs Work / Failing)
+   - Top 3 strengths
+   - Top 3 concerns
+   - Priority recommendation
+
+2. CATEGORY-BY-CATEGORY FINDINGS (A through F)
+   For each category and subcategory:
+   - Finding (what you observed)
+   - Severity rating
+   - Examples with exact quotes and file paths
+   - Frequency across the sample set
+   - Recommendation
+
+3. CROSS-ATHLETE VOICE DIFFERENTIATION ASSESSMENT
+   - Does each athlete receive a distinct coaching voice?
+   - Where does individuation succeed?
+   - Where does it fail?
+
+4. COACHING RELATIONSHIP MATURITY ASSESSMENT
+   - Does the voice mature over time within each athlete?
+   - Week 1 vs. Week 7+ comparison results
+
+5. WEEK-TYPE VOICE VARIATION ASSESSMENT
+   - Gold Streak weeks vs. disrupted weeks
+   - Competition weeks vs. recovery weeks
+   - High EI weeks vs. Low EI weeks
+
+6. SPECIFICATION IMPROVEMENT RECOMMENDATIONS
+   Organized by priority (High / Medium / Low):
+   - What should change in the Coaching Message Framework?
+   - What should change in the Deep Dive Framework?
+   - What should change in the brand voice or style guide?
+   - What should change in the Coaching Output Instructions?
+   - Any new rules or guidelines needed?
+
+7. PHRASE FREQUENCY TABLE
+   A table of the most frequently used phrases across all
+   audited files, with counts and severity assessment.
+
+8. EXEMPLAR PASSAGES
+   The 5 best passages across all files — the ones that
+   most authentically sound like a real coach. Quote them
+   in full with file citations. Explain what makes them
+   work.
+
+9. PROBLEM PASSAGES
+   The 5 worst passages — the ones that most obviously
+   read as AI-generated. Quote them in full with file
+   citations. Explain what makes them fail.
+
+============================================================
+9. REFERENCE FILES
+============================================================
+
+VOICE REFERENCES (read before any output):
+  1. Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
+  2. Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
+  3. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
+  4. Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Message_Framework.txt
+  5. Agents - Generators\Coaching Output\Source FIles\VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+SPECIFICATION FILES (for understanding rules governing
+output — helps distinguish intentional patterns from
+unintentional ones):
+  6. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+  7. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.0.txt
+
+ATHLETE BASELINE SNAPSHOTS (for understanding each
+athlete's profile, sport, competitive level, and
+communication style baseline):
+  8. Athlete Data\Grace Kindel\grace_kindel_athlete_snapshot V2.txt
+  9. Athlete Data\Angelo Allen\angelo_allen_athlete_snapshot.txt
+  10. Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+  11. Athlete Data\Mergim Bushati\mergim_bushati_snapshot.txt
+  12. Athlete Data\Aidan Burkardt\aidan_burkardt_athlete_snapshot.txt
+  13. Athlete Data\Jasmine Jones\jasmine_jones_athlete_snapshot.txt
+  14. Athlete Data\John Tastinger\John_Tastinger_Athlete_Snapshot.txt
+
+ATHLETE OUTPUT FILES (the actual audit targets):
+  15-70+. All CM and DD files across all 7 athletes
+          (paths listed in CLAUDE.md athlete data sections)
+
+============================================================
+10. CRITICAL OPERATING RULES
+============================================================
+
+- Do NOT modify any files. This is a read-only audit.
+- Do NOT regenerate any output. This session produces a
+  report, not corrected files.
+- Do NOT modify any specification files. Recommendations
+  go in the report for a future implementation session.
+- Read the actual files — do not rely on summaries or
+  assumptions about what they contain.
+- Quote exact text when citing examples. Do not paraphrase.
+- Be specific about file paths so the user can locate
+  every cited example.
+- Be honest. If the output is strong, say so with evidence.
+  If it has problems, name them clearly with examples. The
+  goal is accurate assessment, not reassurance.
+- Remember: these outputs go directly to real athletes.
+  The stakes are real. An athlete who receives AI-sounding
+  coaching messages will lose trust in the program.
+
+============================================================
+11. CONTEXT FOR EVALUATING QUALITY
+============================================================
+
+The pipeline has already addressed one major voice issue:
+Session 68-69 identified and fixed a systemic problem
+where Deep Dives were written in third-person analytical
+voice instead of second-person coaching voice. The DD
+Framework was revised, and 18 DDs were regenerated.
+
+Session 71-72 identified and fixed a systemic format
+inconsistency across all 46 Coaching Messages. The CM
+Framework was updated with an OUTPUT FORMAT section, and
+all 46 files were standardized.
+
+This audit is the next layer: not structural issues (those
+are fixed) but voice authenticity. The question is no
+longer "is the format right?" — it is "does it sound like
+a real coach?"
+
+The user (Arron) IS Coach Arron — the person whose voice
+the pipeline is replicating. His evaluation of the audit
+findings will be informed by his actual coaching style.
+The audit should give him enough specific examples and
+pattern analysis to make decisions about where the voice
+needs adjustment.
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
+When you have read CLAUDE.md, all voice reference files,
+and the output files listed above — produce the Voice &
+Tone Authenticity Audit Report per the structure in
+Section 8.
+
+Do not ask for permission to proceed. Do not ask
+clarifying questions. The specifications, voice references,
+and output files contain everything you need. Read them
+and produce the report.
+============================================================
