@@ -1,20 +1,20 @@
-This style guide ensures all content — social posts, emails, scripts, and marketing — is consistent, sharp, and aligned with the VirtusFocus brand identity.
+This style guide ensures all content (social posts, emails, scripts, and marketing) is consistent, sharp, and aligned with the VirtusFocus brand identity.
 
 1. Core Content Identity
 
 VirtusFocus content is:
 
-Clear — no fluff, no filler
+Clear:no fluff, no filler
 
-Direct — strong framing, strong takeaways
+Direct:strong framing, strong takeaways
 
-Grounded — real-world examples and insights
+Grounded:real-world examples and insights
 
-Actionable — gives direction, not theory
+Actionable:gives direction, not theory
 
-Composed — calm, focused, authoritative
+Composed:calm, focused, authoritative
 
-Performance-oriented — tied to identity, discipline, consistency
+Performance-oriented:tied to identity, discipline, consistency
 
 The content should always make athletes, parents, or coaches think:
 “This gives me clarity and direction.”
@@ -37,7 +37,7 @@ Identity as the root of long-term change
 
 Simplicity over complexity
 
-These themes should show up frequently, subtly, and naturally — they are the backbone of VirtusFocus messaging.
+These themes should show up frequently, subtly, and naturally:they are the backbone of VirtusFocus messaging.
 
 3. Tone & Voice Rules
 
@@ -281,15 +281,15 @@ For Coaches:
 
 Every piece of content should create one or more of these feelings:
 
-Clarity — “I know what to do next.”
+Clarity:“I know what to do next.”
 
-Groundedness — “This makes sense.”
+Groundedness:“This makes sense.”
 
-Capability — “I can do this.”
+Capability:“I can do this.”
 
-Responsibility — “This is on me.”
+Responsibility:“This is on me.”
 
-Calm Confidence — “I can handle pressure.”
+Calm Confidence:“I can handle pressure.”
 
 No hype.
 No guilt.
@@ -348,3 +348,9 @@ Does this reinforce identity?
 Does this create direction or momentum?
 
 If the answer is yes, it’s on-brand.
+
+11. Register and Punctuation
+
+CONTRACTION DEFAULT: VirtusFocus coaching content uses contractions naturally. "Don’t," "isn’t," "you’re," "that’s," "here’s," "it’s" are standard speech. Formal non-contraction prose is reserved for specific emphasis moments only. This applies across all competitive levels.
+
+EM DASH PROHIBITION: Em dashes (—) are not used in any athlete-facing or parent-facing VirtusFocus output. Use commas, periods, colons, or sentence breaks instead. This applies to Coaching Messages, Deep Dives, Parent Coaching Messages, Parent Insights, and Daily Coaching Snippets.

@@ -2,7 +2,7 @@ VirtusFocus Brand Voice Guide
 
 Core Identity
 VirtusFocus communicates with calm authority, precision, and purpose.
-The voice is clear, grounded, and focused — never hype-driven.
+The voice is clear, grounded, and focused. Never hype-driven.
 It guides athletes, parents, and coaches toward discipline, confidence, and ownership.
 
 Tone Characteristics
@@ -11,7 +11,7 @@ Clear & Concise: Remove noise. Say only what matters.
 
 Direct & Confident: Speak with certainty and expertise.
 
-Calm Intensity: Steady, composed, and laser-focused — like a seasoned competitor.
+Calm Intensity: Steady, composed, and laser-focused. Like a seasoned competitor.
 
 Actionable: Every insight leads to clarity or a next step.
 
@@ -140,7 +140,7 @@ Emphasize support without pressure
 Provide clarity and direction
 
 Example:
-“Your role isn’t to motivate them — it’s to give them the space and tools to lead themselves.”
+“Your role isn’t to motivate them. It’s to give them the space and tools to lead themselves.”
 
 For Coaches
 
@@ -188,3 +188,7 @@ A guide who helps athletes become self-led, disciplined competitors
 A professional resource parents and coaches trust
 
 Every piece of communication should create a feeling of confidence, clarity, and direction.
+
+Register and Punctuation Notes:
+- CONTRACTION DEFAULT: The VirtusFocus coaching voice uses contractions naturally. "Don't," "isn't," "you're," "that's," "here's," "it's" are standard speech for Coach Arron across all competitive levels. Formal non-contraction prose is reserved for specific emphasis moments only. A real coach talks in contractions.
+- EM DASH PROHIBITION: Em dashes (—) are not used in any athlete-facing or parent-facing VirtusFocus output. Use commas, periods, colons, or sentence breaks instead.
