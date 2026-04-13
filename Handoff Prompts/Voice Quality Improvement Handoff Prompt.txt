@@ -659,15 +659,15 @@ PRIORITY 3 — Specification files to modify:
   8. Agents - Generators\Coaching Output\
      SOP_Coaching_Output_Master_Prompt_V4.txt
   9. Agents - Generators\Coaching Output\
-     SOP_Coaching_Output_Instructions_v2.0.txt
+     SOP_Coaching_Output_Instructions_v2.1.txt
   10. Agents - Generators\Editorial Audit\
-      SOP_Editorial_Audit_Master_Prompt_v1.4.txt
+      SOP_Editorial_Audit_Master_Prompt_v1.5.txt
   11. Agents - Generators\Editorial Audit\
-      SOP_Editorial_Audit_Project_Instructions_v1.4.txt
+      SOP_Editorial_Audit_Project_Instructions_v1.5.txt
   12. Agents - Generators\Daily Coaching Engine\
-      SOP_Daily_Coaching_Engine_Master_Prompt_v1.1.txt
+      SOP_Daily_Coaching_Engine_Master_Prompt_v1.2.txt
   13. Agents - Generators\Daily Coaching Engine\
-      SOP_Daily_Coaching_Engine_Project_Instructions_v1.2.txt
+      SOP_Daily_Coaching_Engine_Project_Instructions_v1.3.txt
 
 PRIORITY 4 — Athlete baseline snapshots:
   14. Athlete Data\Grace Kindel\

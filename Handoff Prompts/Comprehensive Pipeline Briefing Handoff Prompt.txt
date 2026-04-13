@@ -198,47 +198,48 @@ Read these first. They define the pipeline.
       activation rules.
     Path: Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
 
-04. Coaching Output Engine — Instructions v1.8
-    — Stage 3: 32 sections covering all routing, calibration,
+04. Coaching Output Engine — Instructions v2.1
+    — Stage 3: 32+ sections covering all routing, calibration,
       compliance, execution signals, intake profile, forward
-      anchor, and 9 parent-specific sections.
-    Path: Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v1.8.txt
+      anchor, 9 parent-specific sections, and voice quality rules.
+    Path: Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.1.txt
 
-05. Coach Insights Engine — Master Prompt v1.2
+05. Coach Insights Engine — Master Prompt v1.4
     — Stage 4: Four output types (Coach Insight + Team
       Snapshot + Parent Insight + Monthly Summary). Parent
       mode activation. Mandatory generation order.
-    Path: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.2.txt
+    Path: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.4.txt
 
-06. Coach Insights Engine — Instructions v1.5
+06. Coach Insights Engine — Instructions v1.8
     — Stage 4: 28+ sections. Execution signal inform-only
       routing, intake profile integration, forward anchor,
       parent sections with 18 additional prohibitions.
-    Path: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.5.txt
+    Path: Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.8.txt
 
-07. Editorial Audit — Master Prompt v1.3
+07. Editorial Audit — Master Prompt v1.5
     — Stage 5: 13 tiered audit criteria. Quality gate
       between production and delivery. Categories A-G
-      in Clinical Language Exclusion List.
-    Path: Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
+      in Clinical Language Exclusion List. Voice quality
+      checks (em dash Tier 2 auto-correct, pipeline jargon scan).
+    Path: Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.5.txt
 
-08. Editorial Audit — Instructions v1.3
+08. Editorial Audit — Instructions v1.5
     — Stage 5: Full audit procedure, decision tree, edge
       cases, auto-correction rules, regeneration format.
-    Path: Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.3.txt
+    Path: Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.5.txt
 
-09. Daily Coaching Engine — Master Prompt v1.1
+09. Daily Coaching Engine — Master Prompt v1.2
     — Stage 6: System identity, dual-tier inputs, output
       format, 12 core rules, compliance scan protocol,
       reference snippets.
-    Path: Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.1.txt
+    Path: Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.2.txt
 
-10. Daily Coaching Engine — Instructions v1.2
+10. Daily Coaching Engine — Instructions v1.3
     — Stage 6: 20 sections. Voice calibration, competitive
       level, maturity bands, close-to-open handoff, Base
       vs Premium generation, forward anchor enrichment,
       3-layer compliance scan, generic fallbacks.
-    Path: Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Project_Instructions_v1.2.txt
+    Path: Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Project_Instructions_v1.3.txt
 
 11. Daily Coach Insights — Determination Rules v1.0
     — Stage 7: App backend implementation spec (NOT an
@@ -622,12 +623,12 @@ These are verified facts from the specification files:
 - 7 pipeline stages + app backend (8 components total)
 - v9.6 is the current Interpretation Engine schema
 - V4 is the current Coaching Output Master Prompt
-- v1.8 is the current Coaching Output Instructions
-- v1.2 is the current Coach Insights Master Prompt
-- v1.5 is the current Coach Insights Instructions
-- v1.3 is the current Editorial Audit (Master + Instructions)
-- v1.1 is the current Daily Coaching Engine Master Prompt
-- v1.2 is the current Daily Coaching Engine Instructions
+- v2.1 is the current Coaching Output Instructions
+- v1.4 is the current Coach Insights Master Prompt
+- v1.8 is the current Coach Insights Instructions
+- v1.5 is the current Editorial Audit (Master + Instructions)
+- v1.2 is the current Daily Coaching Engine Master Prompt
+- v1.3 is the current Daily Coaching Engine Instructions
 - v1.0 is the current Daily Coach Signal Determination Rules
 - v2.0 is the current Snapshot Builder Instructions
 - 13 audit criteria across 3 tiers (Tier 1: 1-4 + 13)

@@ -48,9 +48,9 @@ consistency issues can be caught on the second athlete.
 
 ACTIVE SPEC VERSIONS:
 - Interpretation Engine: v9.7 / v7.3 (SOP - Weekly Interp Prompt v7.3)
-- Coaching Output: v2.0 / V4 (Master Prompt V4)
-- Coach Insights: v1.7 / v1.3 (Master Prompt v1.3)
-- Editorial Audit: v1.4 / v1.4 (Master Prompt v1.4)
+- Coaching Output: v2.1 / V4 (Master Prompt V4)
+- Coach Insights: v1.8 / v1.4 (Master Prompt v1.4)
+- Editorial Audit: v1.5 / v1.5 (Master Prompt v1.5)
 
 ============================================================
 
@@ -298,7 +298,7 @@ STAGE 2: INTERPRETATION JSON
 
 STAGE 3: COACHING MESSAGE + DEEP DIVE
   - Input: Interpretation JSON only (do NOT re-read recap)
-  - Follow v2.0 Instructions + Master Prompt V4
+  - Follow v2.1 Instructions + Master Prompt V4
   - Core Foundation path (skip all execution signal,
     intake profile, and forward anchor sections)
   - Generate Coaching Message (250-450 words, OUTPUT FORMAT
@@ -313,7 +313,7 @@ STAGE 3: COACHING MESSAGE + DEEP DIVE
 
 STAGE 4: COACH INSIGHTS — WEEKLY PERFORMANCE INSIGHT
   - Input: Interpretation JSON only
-  - Follow v1.7 Instructions + Master Prompt v1.3
+  - Follow v1.8 Instructions + Master Prompt v1.4
   - Core Foundation path
   - 10-section Weekly Performance Insight
   - No parent insight (Core Foundation)
@@ -321,7 +321,7 @@ STAGE 4: COACH INSIGHTS — WEEKLY PERFORMANCE INSIGHT
 
 STAGE 5: EDITORIAL AUDIT
   - Input: Interpretation JSON + Coaching Message + Deep Dive
-  - Follow v1.4 Instructions + Master Prompt v1.4
+  - Follow v1.5 Instructions + Master Prompt v1.5
   - All 13 criteria across 3 tiers
   - Tier 1: Criteria 1-4 + 13 (MUST PASS — reject on fail)
   - Tier 2: Criteria 5-10 (auto-correct if possible)
@@ -351,8 +351,8 @@ STAGE 2 REFERENCES:
 STAGE 3 REFERENCES:
 - Master Prompt (ACTIVE — V4):
   Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
-- Project Instructions (ACTIVE — v2.0):
-  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.0.txt
+- Project Instructions (ACTIVE — v2.1):
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.1.txt
 - Message Map:
   Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
 - Brand Voice:
@@ -369,10 +369,10 @@ STAGE 3 REFERENCES:
   Agents - Generators\Coaching Output\Source FIles\VF_Reflection_Quality_Growth_Phase_Model.txt
 
 STAGE 4 REFERENCES:
-- Master Prompt (ACTIVE — v1.3):
-  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.3.txt
-- Project Instructions (ACTIVE — v1.7):
-  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.7.txt
+- Master Prompt (ACTIVE — v1.4):
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.4.txt
+- Project Instructions (ACTIVE — v1.8):
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.8.txt
 - JSON Logic Reference:
   Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
 - Compliance Framework:
@@ -383,10 +383,10 @@ STAGE 4 REFERENCES:
   Agents - Generators\Coach Insights Engine\Source Files\COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
 
 STAGE 5 REFERENCES:
-- Master Prompt (ACTIVE — v1.4):
-  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.4.txt
-- Project Instructions (ACTIVE — v1.4):
-  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.4.txt
+- Master Prompt (ACTIVE — v1.5):
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.5.txt
+- Project Instructions (ACTIVE — v1.5):
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.5.txt
 - (Also uses Stage 3 source files listed above)
 
 EXISTING OUTPUTS FOR FORMAT REFERENCE:
@@ -456,11 +456,11 @@ EXISTING OUTPUTS FOR FORMAT REFERENCE:
 BOTH ATHLETES:
 - Core Foundation (input_source = "core_foundation")
 - v9.7 Interpretation Engine (ACTIVE)
-- v2.0 Coaching Output Instructions (ACTIVE)
+- v2.1 Coaching Output Instructions (ACTIVE)
 - V4 Coaching Output Master Prompt (ACTIVE)
-- v1.7 Coach Insights Instructions (ACTIVE)
-- v1.3 Coach Insights Master Prompt (ACTIVE)
-- v1.4 Editorial Audit Master Prompt + Instructions (ACTIVE)
+- v1.8 Coach Insights Instructions (ACTIVE)
+- v1.4 Coach Insights Master Prompt (ACTIVE)
+- v1.5 Editorial Audit Master Prompt + Instructions (ACTIVE)
 - 13 audit criteria across 3 tiers (Tier 1: 1-4 + 13)
 - Both weekly reviews submitted Monday, March 23, 2026
 - Both cover the same week period: March 16-22, 2026

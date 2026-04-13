@@ -579,7 +579,7 @@ SPECIFICATION FILES (for understanding rules governing
 output — helps distinguish intentional patterns from
 unintentional ones):
   6. Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
-  7. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.0.txt
+  7. Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.1.txt
 
 ATHLETE BASELINE SNAPSHOTS (for understanding each
 athlete's profile, sport, competitive level, and

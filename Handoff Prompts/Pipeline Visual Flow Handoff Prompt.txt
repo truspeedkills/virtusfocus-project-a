@@ -526,9 +526,9 @@ PRIORITY 1 (Read for pipeline architecture understanding):
 PRIORITY 2 (Read for specific stage input/output details):
   - Agents - Generators\Interpretation\SOP_Interpretation_Engine_Project_Instructions_v9.6.txt
   - Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
-  - Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.2.txt
-  - Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.3.txt
-  - Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.1.txt
+  - Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.4.txt
+  - Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.5.txt
+  - Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.2.txt
   - Agents - Generators\Daily Coach Insights Engine\VF_Daily_Coach_Signal_Determination_Rules_v1.0.txt
   - Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Mini_JSON_Specification.txt
 
