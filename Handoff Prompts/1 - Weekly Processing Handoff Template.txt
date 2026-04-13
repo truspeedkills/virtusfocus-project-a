@@ -314,6 +314,38 @@ directly harm coaching quality:
   the authoritative rules. This template does not.
 - Do NOT skip the Editorial Audit.
 
+VOICE QUALITY RULES (v2.1):
+All athlete-facing and coach-facing output must comply with
+the voice quality rules in Instructions v2.1 Section 35.
+The specification files contain the full rules. Key points:
+- ZERO em dashes in any athlete-facing output (CM, DD)
+- Contractions are Coach Arron's default register
+- "That is [noun]." standalone: max 1/CM, 1/DD, never both
+- No retired phrases: "Here is what [verb]," "the version
+  of you," "I also want to name/acknowledge," "[N] weeks
+  into this program" as DD trendline opener
+- No pipeline classification language in any output reaching
+  athletes, parents, or coaches: "Emotional intensity Low,"
+  "Growth tier," "RQS [number]," "Stable Positive,"
+  "approach-framed," "pattern_shift_detected," etc.
+- No telegraphing intent: don't announce what you're about
+  to do ("I'm going to be direct"), just do it
+- DD trendline after Week 4: reference 2-3 inflection points
+  relevant to this week, not a full program-history
+  enumeration. No hyphenated compound-adjective labels.
+  Qualitative descriptors, not percentages.
+- DD structural variation: Strength Signal count (2-5) and
+  Growth Area count (1-4) based on the week's character,
+  not a fixed template
+- CM opening variety: no same approach in consecutive weeks
+- 3-week same-athlete non-repeat window for transitions
+- CM-DD deduplication: two distinct pieces from same coach
+- Athlete-specific closing phrases (standard rotation as
+  fallback only)
+The Editorial Audit (Stage 5, v1.5) will catch em dashes
+(Tier 2 auto-correct) and pipeline classification language.
+Generate output that passes without correction.
+
 ============================================================
 END OF TEMPLATE
 ============================================================
