@@ -161,7 +161,7 @@ STAGE 3 — COACHING OUTPUT ENGINE:
 - Master Prompt (ACTIVE):
   Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
 - Project Instructions (ACTIVE):
-  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.0.txt
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.1.txt
 - Message Map:
   Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
 - Brand Voice:
@@ -193,9 +193,9 @@ STAGE 4 — COACH INSIGHTS ENGINE:
 
 STAGE 5 — EDITORIAL AUDIT:
 - Master Prompt (ACTIVE):
-  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.4.txt
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.5.txt
 - Project Instructions (ACTIVE):
-  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.4.txt
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.5.txt
 - (Also uses all Stage 3 source files listed above)
 
 ============================================================

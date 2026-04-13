@@ -1,0 +1,138 @@
+{
+  "athlete_name": "Tucker Lloyd",
+  "week_period": "2026-04-06 to 2026-04-12",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Developing into a better person and coach within the football environment",
+    "baseline_hinge_habit": "Consistent gym attendance and personal discipline routines",
+    "baseline_primary_derailer": "Pre-performance focus on what could go wrong",
+    "baseline_why_it_matters": "Strengthening habits and confidence supports both academic stability and long-term coaching development",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Tucker's weekly goal ('Go to virtus') is the most compressed goal statement of the program, declining further from Week 6's 'Make some money and get to Virtus.' The VirtusFocus reference persists but without any behavioral content. The ab circuit micro-commitment was partially executed: Tucker completed circuits on 3 days (Monday, Tuesday, Wednesday) and expanded to include pushups, but did not complete any session at the gym. The zero-Missed-day standard held for the second consecutive week, this time through a standard school week without any holiday or family structure assisting. Weekend days (Friday fishing, Saturday fishing, Sunday accounting exam + relax) were all Neutral rather than Missed, confirming that Tucker is filling unstructured time with intentional activity rather than defaulting to disengagement. The hinge habit (gym attendance) remains absent for the third time in four data weeks. The Coach Bradley career-development conversation from Week 6 produced no visible follow-up. The gap between declining goal quality and improving behavioral execution (ab circuits, zero Missed days) creates a split signal: Tucker is doing more than he is articulating."
+  },
+
+  "athlete_state": "Second consecutive zero-Missed-day week, this time through a standard school week with no holiday, family gathering, or special event providing weekend structure. Three weekday Win days (Monday through Wednesday) driven by academics, work, and self-directed pushup/ab circuits. Thursday through Sunday scored Neutral with academic-only attendance (Thursday), recreational fishing (Friday and Saturday), and an accounting exam plus rest (Sunday). The ab circuit expanded from Week 6: three days instead of two, with pushups added on Monday and Wednesday. Tuesday included a new protein tracking entry (200 grams), the first nutritional awareness signal of the program.",
+
+  "core_pattern": "Sustained weekday execution with recreational weekend engagement replacing prior disengagement. Tucker's Monday-through-Wednesday Win pattern held with the same academic + work + physical activity structure. The shift from prior weeks is what happened Thursday through Sunday: four Neutral days rather than a mix of Neutral and Missed. Friday and Saturday fishing replaced the prior weekend drift pattern ('Nothing,' 'Hangout'). Sunday's accounting exam provided academic structure on what has historically been Tucker's worst day. The pattern remains structure-dependent on weekdays and activity-dependent on weekends, but the weekend floor has risen from Missed to Neutral for two consecutive weeks.",
+
+  "behavioral_root_cause": "Tucker's zero-Missed-day standard persisting through a normal school week confirms that the Week 6 improvement was not purely Easter-driven. The mechanism appears to be activity selection rather than structural self-generation: Tucker filled Friday and Saturday with fishing (an inherently engaging all-day activity) and Sunday with an exam obligation. He did not create disciplined structure on unstructured days; he chose activities that naturally occupy time. This is a meaningful improvement from the Week 2-5 pattern where unstructured days produced 'Nothing' or minimal engagement, but it is distinct from the self-directed structure that produced the ab circuits on weekdays. The ab circuit expansion (2 days to 3, pushups added, protein tracked) demonstrates genuine self-directed habit building within the structured weekday environment. The gym remains absent, suggesting that the ab circuit may be replacing the gym as Tucker's primary physical activity modality rather than serving as a stepping stone toward it.",
+
+  "prior_commitment_result": {
+    "prior_action": "Do your ab circuit on at least three days this week. Pick your three days now and write them down. On one of those three days, do the circuit at the gym instead of at home.",
+    "execution_status": "Partial",
+    "execution_notes": "Tucker completed ab circuits on Monday, Tuesday, and Wednesday (3 days, meeting the volume target). He also expanded the circuit to include pushups on Monday and Wednesday, adding a component beyond what was committed. However, no session was completed at the gym. All circuits appear to have been done at home. The measurement criteria specified: '3+ circuits completed with 1+ at the gym = fully executed. 3+ circuits but none at the gym = partial.' Tucker met the frequency component and exceeded the scope, but did not attempt the gym conversion component. This is the second consecutive week of Partial execution on gym-related stretch components (Week 5 commitment for spring break gym sessions was Unknown due to missing data).",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Go to virtus",
+    "achievement_statement": "Getting a lot of necessary work easier work out of the way.",
+    "key_phrase": "Discipline is your edge.",
+    "mindset_resonance": "Discipline is your edge."
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3",
+      "neutral_days": "4",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Moderate. Tucker identified 'How much effort I give to complete my goals' as his controllable. This is the most effort-focused and generalizable center-ring entry of the program, moving from domain-specific ('How well I perform in classes,' 'How well I work') to effort as a meta-category. Single item, appropriately placed, but the broadness means it does not target any specific behavioral area.",
+    "influence_quality": "Developing. 'The outcomes of tasks I do' is a reasonable influence-ring placement: task outcomes are partially within control through effort and preparation but not fully controllable. Similar pattern to prior weeks but slightly more abstract. The distinction between controllable effort and partially-controllable outcomes is present but not developed.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stagnant",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "6",
+    "rolling_win_rate_4wk": "0.500",
+    "rolling_missed_rate_4wk": "0.107",
+    "volatility_index_4wk": "Moderate",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Over seven weeks spanning two months, Tucker has maintained a consistent Mixed tier in every recorded week without exception. The defining story evolved across three phases: structural divergence (Weeks 1-5, weekday improvement paired with weekend degradation, peaking in Week 5 with 5 weekday Wins and 2 weekend Missed), weekend reversal (Week 6, Easter-assisted zero Missed days with Coach Bradley career conversation and self-directed ab circuits), and sustainability confirmation (Week 7, zero Missed days sustained through a standard school week with no holiday scaffolding). The ab circuit is now a 2-week self-directed pattern, expanding from 2 to 3 days with pushups added. The gym has been absent 3 of the last 4 data weeks (0, 2, 0, 0 sessions). Goal-setting quality reached its program floor ('Go to virtus'). The Coach Bradley career-development conversation from Week 6 produced no visible Week 7 follow-up. Win days by week: 4, 4, 3, 3, 5, 3, 3. Missed days by week: 0, 1, 1, 1, 2, 0, 0. The Missed day trajectory reversed from a 4-week escalation (0, 1, 1, 1, 2) to 2 consecutive zeros. The weekend character shifted from disengagement ('Nothing,' 'Hangout') to recreational engagement (fishing) to exam-plus-rest. Tucker is filling his days with activity rather than drifting, even when no external structure demands it.",
+    "milestone_this_week": "Zero-Missed-day standard confirmed through a standard school week. This resolves the primary open thread from Week 6: the improvement is not purely holiday-dependent. Ab circuit expanded to 3 days with pushups added (2-week self-directed physical activity pattern). Protein tracking on Tuesday is a new self-monitoring behavior, the first nutritional awareness signal in the program. pattern_shift_detected = Yes: the zero-Missed-day trend is now 2 consecutive weeks (1 holiday-assisted, 1 standard), establishing it as a sustained behavioral shift rather than a contextual anomaly.",
+    "open_thread": "The zero-Missed-day standard is established (2 weeks) but not yet habitual (needs 3+ weeks for trend confirmation). The ab circuit is becoming Tucker's de facto physical activity habit, but it has not converted to gym sessions and may be replacing the hinge habit rather than building toward it. The gym has been absent 3 of 4 most recent data weeks, and both micro-commitments that included a gym component were only partially executed (circuits done, gym not attempted). Whether the hinge habit should be reconceptualized around the ab circuit (what Tucker actually does consistently) or whether the gym remains the target (what the baseline identified) is a coaching design question. The Coach Bradley conversation thread from Week 6 went silent in Week 7, suggesting it may have been a one-time event. Goal-setting quality has been declining for 5 consecutive weeks and hit a new floor ('Go to virtus'). Tucker's behavioral execution (zero Missed, ab circuits, protein tracking) is diverging upward from his reflective engagement (compressed goals, RQS held at 2, brief recaps), creating a 'doing more than he says' dynamic."
+  },
+
+  "most_important_controllable": "Sustaining the ab circuit pattern through a third consecutive week while adding the gym conversion component. Tucker has demonstrated the circuit is self-generating (3 days without external prompt); the development edge is translating that consistency into the gym environment where his baseline hinge habit lives.",
+
+  "micro_commitment": {
+    "action": "Do your pushup and ab circuit four days this week instead of three. You already do Monday, Tuesday, Wednesday without anyone asking. Add Thursday. On one of those four days, do the full circuit at the gym instead of at home. Four days, one at the gym.",
+    "when": "This week. Write down the four days (Mon, Tue, Wed, Thu) and circle which one will be a gym session. Complete the gym session on the circled day.",
+    "measurement": "At the end of the week, Tucker should have completed circuits on at least 4 days, with at least 1 session at the gym. If 4+ circuits with 1+ at the gym, the commitment is fully executed. If 4+ circuits but no gym session, it is partial. If fewer than 4 circuits, it is not attempted."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Tucker stated his next week goal is 'Get all of my schoolwork done because I have a lot,' suggesting an elevated academic load. Heavy schoolwork weeks have historically supported Tucker's weekday Win pattern (school provides structure), but may compress time available for discretionary habits like the gym. The weekend remains the monitoring target: whether Tucker fills Friday through Sunday with intentional activity (as he did with fishing this week) or reverts to the prior drift pattern when no specific recreational plan exists.",
+    "athlete_stated_next_goal": "Get all of my schoolwork done because I have a lot"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "3/7 Win days (Monday through Wednesday) with 4 Neutral days (Thursday through Sunday). Zero Missed days for the second consecutive week. All weekday Wins included self-directed pushup/ab circuits alongside academic and work commitments. Tuesday included a new protein tracking entry (200g), the first nutritional self-monitoring in the program. Thursday was academic-only (3 classes, no circuit). Friday and Saturday were fishing days. Sunday was an accounting exam plus relaxation. No gym sessions this week. The ab circuit pattern expanded from Week 6 (2 days) to 3 days with pushups added, demonstrating progressive self-directed habit development.",
+    "key_habit_signal": "The zero-Missed-day standard sustaining through a normal school week is the most important confirmation of the program. Week 6's improvement could have been dismissed as Easter-dependent, but Week 7 proves Tucker can avoid Missed days without holiday structure. The mechanism is different: Easter provided social/family activities; this week's weekend was self-selected recreation (fishing) and academic obligation (exam). Tucker is choosing to fill his time, even if the filling is recreational rather than developmental. The ab circuit evolution (2 days without pushups → 3 days with pushups and protein tracking) is the strongest self-directed physical activity signal in the program. The gym remains absent, but the circuit is becoming Tucker's actual physical activity habit rather than a placeholder.",
+    "coach_reinforcement_cue": "Anchor on the zero-Missed-day sustainability: this is the first time Tucker has proven the improvement holds outside of a holiday environment. Recognize the ab circuit expansion as evidence of habit building in action: Tucker added a day, added pushups, and tracked protein without being asked. The circuits are his, not something assigned. Frame the fishing weekends as a positive behavioral shift from the Week 2-5 pattern: Tucker chose an activity rather than defaulting to 'Nothing.' Name the protein tracking as a new self-monitoring behavior.",
+    "coach_avoidance_note": "Do not dismiss the fishing as wasted days. Tucker fishing all day is qualitatively different from Tucker doing 'Nothing.' Do not over-push the gym: Tucker has partially executed two consecutive gym-conversion commitments. The ab circuit at home is what Tucker consistently does. Forcing the gym may undermine the habit that is actually forming. Do not frame the declining goal quality as disengagement: Tucker's behaviors are improving even as his stated goals compress. Do not lecture about Coach Bradley follow-up: one week of silence does not confirm the thread is dead."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Tucker's recap language is task-oriented and positive throughout. Weekend fishing represents recreational social engagement. The accounting exam on Sunday shows continued academic engagement. No isolation, withdrawal, or emotional distress signals. The protein tracking and expanded circuit suggest proactive health engagement. Standard coaching scope."
+  },
+
+  "next_week_focus_question": "You picked 'Discipline is your edge' as your mindset challenge this week, and you backed it up: three straight days of circuits, pushups, and protein tracking. What would adding one more day of that discipline look like for you this week?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  },
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+  "current_season_phase": "not available — Core Foundation athlete",
+  "forward_anchor": "not available — Core Foundation athlete",
+  "longitudinal_ppd": "not available — Core Foundation athlete"
+}
