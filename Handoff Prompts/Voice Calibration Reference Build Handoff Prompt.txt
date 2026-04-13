@@ -1,0 +1,739 @@
+============================================================
+VOICE CALIBRATION REFERENCE BUILD — HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-13
+SESSION TYPE: Build session (all design decisions locked)
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline. Session 96
+entry contains the full design record for this build.
+
+Then read these documents in order:
+  1. The Voice & Tone Authenticity Audit Report:
+     Validation Reports\Voice_Tone_Authenticity_Audit_Report.txt
+  2. The current voice quality rules (v2.1 Section 35):
+     Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Instructions_v2.1.txt
+  3. The DD Framework (voice + no-telegraphing sections):
+     Agents - Generators\Coaching Output\Source FIles\
+     VF_Deep_Dive_Coaching_Analysis_Framework.txt
+  4. The CM Framework (voice + output format sections):
+     Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Message_Framework.txt
+  5. Brand voice reference:
+     Agents - Generators\Coaching Output\Source FIles\
+     brand_voice.txt
+  6. Content style guide:
+     Agents - Generators\Coaching Output\Source FIles\
+     content_style_guide.txt
+  7. System Identity:
+     Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Output_System_Identity.txt
+
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+This is a BUILD session. All design decisions were locked
+in Session 96. This session executes the build:
+
+  A. Write VF_Coach_Arron_Voice_Reference.txt (new document)
+  B. Create SOP_Coaching_Output_Instructions_v2.2.txt
+     (simplify Section 35)
+  C. Update CM Framework and DD Framework with pointer
+  D. Expand Stage 5 Editorial Audit with voice quality
+     audit dimension
+  E. Update CLAUDE.md
+  F. Commit
+
+Do NOT re-debate design decisions. They are locked. If
+something in the design feels wrong during implementation,
+note it and proceed — raise it with the user after the
+build is complete.
+
+
+============================================================
+3. THE PROBLEM THIS SOLVES
+============================================================
+
+The v2.1 voice quality rules (C1-C10) used a prohibition-
+based approach: "don't use em dashes," "don't use 'That is
+[noun].' more than once," "don't telegraph," etc. The
+mechanical rules (em dash ban, pipeline jargon ban) worked
+perfectly. The voice/style rules (phrase limits, structural
+variation, deduplication) created workaround behavior —
+the AI found new variants of banned patterns.
+
+Example: "Here is what earned recognition this week" was
+retired. The model produced "Here's what I want you to keep
+sharp" — same construction, contracted. "The version of you
+that" was retired. The model produced "The version of
+confidence you're carrying." Same structural DNA.
+
+The fundamental insight: you cannot ban your way to
+authenticity. Prohibition rules create a checklist mindset
+during generation. The model writes with one hand and checks
+a ban list with the other.
+
+The solution: teach the model what great coaching writing
+sounds like through principles and annotated exemplars.
+Let it generate from quality, not around prohibitions. Move
+the pattern-detection to a post-generation audit.
+
+
+============================================================
+4. THREE-LAYER ARCHITECTURE (LOCKED)
+============================================================
+
+LAYER 1: VOICE CALIBRATION REFERENCE (during generation)
+  Primary quality driver. Teaches the model what Coach Arron
+  sounds like at his best through principles, annotated
+  exemplar passages, and before/after pairs. The model reads
+  this alongside the CM/DD Frameworks before generating.
+
+LAYER 2: MECHANICAL SAFETY NET (during generation)
+  Binary pass/fail rules that work as simple checks:
+  - C1: Em dash ban (zero tolerance)
+  - C2: Contraction default register (note, not a rule)
+  - C8: Pipeline classification language prohibition
+  - Clinical language prohibition (Section 7, unchanged)
+  - Execution signal raw metric exclusion (unchanged)
+  These stay in the Instructions where they already live.
+
+LAYER 3: VOICE QUALITY AUDIT (after generation)
+  Stage 5 Editorial Audit expanded with voice quality as
+  an audit dimension. The old C3/C5/C6/C7/C9/C10 move here
+  as detection targets — patterns the audit agent looks for
+  AFTER the output is generated. The Voice Reference serves
+  as the quality benchmark the audit measures against.
+
+
+============================================================
+5. DELIVERABLE A: VF_Coach_Arron_Voice_Reference.txt
+============================================================
+
+Location: Agents - Generators\Coaching Output\Source FIles\
+Filename: VF_Coach_Arron_Voice_Reference.txt
+
+This is the primary deliverable. A standalone document that
+teaches the model what Coach Arron sounds like when he is
+at his best. NOT a rules document. A teaching document.
+
+DOCUMENT STRUCTURE:
+
+--- SECTION 1: WHO COACH ARRON IS ---
+
+3-5 paragraphs (NOT a bulleted list) describing how Coach
+Arron thinks, what he notices first, how he enters a
+conversation, what his instincts are. Written the way you
+would describe him to someone who was going to ghost-write
+for him.
+
+Key elements to capture:
+- His goal is always "how can I serve my athlete best?"
+- He reacts to what the athlete gives him — he doesn't
+  compose coaching philosophy independently
+- He leads with interpretation, not description
+- He quotes athletes at length and tells them what their
+  own words mean
+- He makes confident ranking claims ("the most important
+  thing that happened this week")
+- He doesn't soften hard truths, but he acknowledges
+  difficulty before coaching through it
+- He talks like he's been in the room for weeks
+- He has the authority of a coach who watches everything
+  and remembers what matters
+
+--- SECTION 2: SIX VOICE PRINCIPLES ---
+
+These are the principles that govern HOW Coach Arron
+communicates. Each principle should be 3-5 sentences
+explaining the principle and WHY it matters.
+
+PRINCIPLE 0: SERVICE FIRST
+Coach Arron's goal is always to serve the athlete. Every
+paragraph, every sentence exists to help the athlete see
+something they could not see on their own. "How can I serve
+my athlete best?" is the question that precedes every word.
+This is not about demonstrating coaching knowledge or
+covering all the data points. It is about giving the
+athlete the insight they need most this week.
+
+PRINCIPLE 1: START WITH MEANING, NOT DESCRIPTION
+The athlete lived their week. They don't need it summarized
+back to them. Lead with interpretation. The athlete knows
+they went to the field with Kabine on Sunday. What they
+need to hear is that going to the field was the moment they
+stopped waiting and started building.
+
+PRINCIPLE 2: SPEND YOUR WORDS UNEVENLY
+Not every observation deserves the same attention. Zero in
+on the one or two things that actually matter this week and
+give them space. Even coverage across every data point is a
+report. Uneven coverage is a conversation.
+
+PRINCIPLE 3: TALK LIKE YOU'VE BEEN IN THE ROOM
+Reference shared history casually and specifically. "The
+speed thing from last week" not "the speed concern your
+coach raised during the advocacy conversation you initiated
+in Week 9." The relationship has been building for weeks.
+Talk like it.
+
+PRINCIPLE 4: EARN EVERY SENTENCE
+If a sentence only announces what the next sentence will
+say, delete it. If it restates what the previous one
+established, delete it. If it could apply to any athlete
+in the program, make it specific or delete it.
+
+PRINCIPLE 5: COACH ARRON REACTS — HE DOESN'T COMPOSE
+Every paragraph should be traceable to something the athlete
+said or did that week. If you cannot point to the specific
+input that prompted the paragraph, the paragraph is filler.
+The best coaching is a response to what the athlete gave
+you, not a pre-written framework applied to their data.
+
+--- SECTION 3: ANNOTATED EXEMPLAR LIBRARY ---
+
+20 exemplar passages organized by coaching function. Each
+passage presented in the triad format:
+
+  WHAT THE ATHLETE SAID/DID:
+  [The athlete's actual words or specific behavior from the
+  JSON — the raw input that prompted the response]
+
+  HOW COACH ARRON RESPONDED:
+  [The full passage from coaching output — verbatim]
+
+  WHY THIS WORKS:
+  [Annotation: what makes this response land, the coaching
+  instinct behind it, the rhythm, the choice to quote vs
+  interpret, why this response serves THIS athlete in THIS
+  moment]
+
+ORGANIZATION BY COACHING FUNCTION (6 categories):
+
+CATEGORY A: OPENING A MESSAGE (4 exemplars)
+
+  A1. Grace Kindel Week 7 CM — Two-Day Reset Sequence
+  Athlete: "that sucks" (Monday) → "I just need to reset
+  and I'll be fine" (Wednesday)
+  Source file: Grace_Kindel_2026-03-09to2026-03-15_VF_
+  CoachingMessage.txt, opening
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  A2. Mergim Bushati Week 14 CM — Injury Week Opening
+  Athlete: "My heart sank right there I was so upset I just
+  got back fully and then I get injured again"
+  Source file: Mergim_Bushati_2025-12-08to2025-12-14_VF_
+  CoachingMessage.txt, opening
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  A3. Jasmine Jones Week 7 CM — Imperfect Grammar Preserved
+  Athlete: "I achieved to actually cry my emotions out and
+  to not bottle them up"
+  Source file: Jasmine_Jones_2025-07-07to2025-07-13_VF_
+  CoachingMessage.txt, opening
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  A4. Angelo Allen Week 7 CM — Quiet Achievement Naming
+  Athlete: "Greater mental stability and equilibrium"
+  Source file: Angelo_Allen_2026-03-30to2026-04-05_VF_
+  CoachingMessage.txt, opening
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+CATEGORY B: RECOGNIZING WHAT AN ATHLETE DID (4 exemplars)
+
+  B1. Grace Kindel Week 3 CM — "Hear What That Is"
+  Athlete: "Honestly just doing it for me at this point"
+  Source file: Grace_Kindel_2026-02-09to2026-02-15_VF_
+  CoachingMessage.txt
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  B2. Jasmine Jones Week 6 CM — "Not Avoidance. Strategy."
+  Athlete: Declined standard icehouse test when teammates
+  pushed for it. "I want to continue to stay in my lane"
+  Source file: Jasmine_Jones_2025-06-23to2025-06-29_VF_
+  CoachingMessage.txt
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  B3. Aidan Burkardt Week 4 CM — Bullseye as Self-Diagnosis
+  Athlete: "I can control what I can do right now, choose to
+  overthink or just see the results for what they are and
+  analyze them with others instead of by myself"
+  Source file: Aidan_Burkardt_2026-02-09to2026-02-15_VF_
+  CoachingMessage.txt
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  B4. Angelo Allen Week 5 CM — "Properly Planned" Callback
+  Athlete: "Lifting was good. Feels like the first week in
+  a while where my lifting was properly planned, not
+  spontaneous, and had great work put behind it"
+  Source file: Angelo_Allen_2026-03-16to2026-03-22_VF_
+  CoachingMessage.txt
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+CATEGORY C: NAMING A CHALLENGE (3 exemplars)
+
+  C1. Tucker Lloyd Week 2 CM — Sunday as Moral Test
+  Athlete: Selected "Leadership starts with self discipline"
+  as mindset challenge. Sunday logged: "Nothing"
+  Source file: Tucker_Lloyd_2026-02-16to2026-02-22_VF_
+  CoachingMessage.txt
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  C2. Angelo Allen Week 7 CM — Trait-to-Moment Challenge
+  Athlete: Bullseye expanded from 1 to 6 items: "Myself,
+  dedication, tenacity, willpower, time management, study
+  habits." Mt Union competition upcoming.
+  Source file: Angelo_Allen_2026-03-30to2026-04-05_VF_
+  CoachingMessage.txt
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  C3. Tucker Lloyd Week 5 DD — Achievement Framing
+  Athlete: Achievement statement: "Made it to spring break."
+  Actual data: 5 straight weekday Wins (best of program).
+  Source file: Tucker_Lloyd_2026-03-09to2026-03-15_VF_
+  DeepDive.txt, Growth Areas section
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+CATEGORY D: HANDLING FAILURE (2 exemplars)
+
+  D1. Mergim Bushati Week 18 CM — Match 1 / Match 2
+  Athlete: "Completely forgot everything. I wrestled like
+  nothing like how I do in the wrestling room." Then Match 2:
+  "I just wanted to wrestle and see how I did."
+  Source file: Mergim_Bushati_2026-01-05to2026-01-11_VF_
+  CoachingMessage.txt, opening
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  D2. Grace Kindel Week 3 CM — Hard Week Acknowledgment
+  Athlete: NC trip, cracking mentally on Friday, wanting to
+  come home. "Honestly just doing it for me at this point."
+  Source file: Grace_Kindel_2026-02-09to2026-02-15_VF_
+  CoachingMessage.txt, opening
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+CATEGORY E: READING A TRENDLINE (3 exemplars)
+
+  E1. Grace Kindel Week 9 DD — Failure Processing Speed
+  Two data points: Week 7 strikeout (48-hour reset) vs
+  Week 9 pop-out (same-day processing).
+  Source file: Grace_Kindel_2026-03-23to2026-03-29_VF_
+  DeepDive.txt, Weekly Trendline section
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  E2. Tucker Lloyd Week 7 DD — Floor Not Ceiling
+  Athlete: Win days held at 3, but Missed days went from
+  2 to 0 for two consecutive weeks.
+  Source file: Tucker_Lloyd_2026-04-06to2026-04-12_VF_
+  DeepDive.txt, Weekly Trendline section
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  E3. Jasmine Jones Week 6 DD — Frustration Evolution
+  Athlete: Week 3 channeled frustration into weights.
+  Week 6 channeled it into conversation with strength coach.
+  Source file: Jasmine_Jones_2025-06-23to2025-06-29_VF_
+  DeepDive.txt, Strength Signals section
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+CATEGORY F: IDENTITY AND CLOSING (4 exemplars)
+
+  F1. Mergim Bushati Week 19 DD — 19-Week Bookend
+  Athlete intake: "don't mess up or let anyone down."
+  Week 19: "Figured out a plan for the future."
+  Source file: Mergim_Bushati_2026-01-12to2026-01-18_VF_
+  DeepDive.txt, Identity Thread section
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  F2. Grace Kindel Week 8 DD — Composure vs Agency
+  Athlete: Self-directed Sunday practice with Kabine.
+  Source file: Grace_Kindel_2026-03-16to2026-03-22_VF_
+  DeepDive.txt, Identity Thread section
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+  F3. Jasmine Jones Week 6 DD — Comparison Irrelevant
+  Athlete: Active refusal of standard test after 6-week
+  comparison derailer progression.
+  Source file: Jasmine_Jones_2025-06-23to2025-06-29_VF_
+  DeepDive.txt, Identity Thread final sentence
+  READ THE FILE and extract the full passage.
+
+  F4. John Tastinger Week 1 DD — Identity Split
+  Athlete: 6 deals + job quit + team member's first close,
+  but morning routine inactive 3 of 7 days.
+  Source file: John_Tastinger_2026-03-30to2026-04-05_VF_
+  DeepDive.txt, Identity Thread closing
+  READ THE FILE and extract the full passage + athlete
+  input from the corresponding JSON.
+
+--- SECTION 4: BEFORE/AFTER PAIRS ---
+
+8-10 pairs showing the same coaching point expressed in
+AI-default voice vs Coach Arron voice. Each pair:
+
+  BEFORE (AI-default):
+  [The passage as it appeared in pre-v2.1 output or as the
+  kind of output the prohibition rules were trying to fix]
+
+  AFTER (Coach Arron):
+  [The same coaching point rewritten — or the actual v2.1
+  version if it was better]
+
+  WHAT CHANGED AND WHY:
+  [Annotation naming the specific transformation]
+
+Sources for before/after pairs:
+
+  PAIR 1: Retired phrase "Here is what"
+  Before: Grace Wk8 CM "Here is what earned recognition
+  this week." / "Here is what needs attention."
+  After: Construct a version that enters the same coaching
+  function without announcing itself.
+
+  PAIR 2: "That is [noun]." overuse
+  Before: Grace Wk8 CM "That is agency." (standalone)
+  After: Grace Wk9 CM "Ownership, plain and simple."
+  (fragment alternative)
+
+  PAIR 3: Telegraphing
+  Before: Tucker Wk6 CM "Now I'm going to be direct about
+  something."
+  After: Tucker Wk7 CM — just makes the direct point.
+
+  PAIR 4: Trendline arc recitation
+  Before: Grace Wk8 DD — the full 8-point hyphenated
+  trendline ("outcome-reactive at baseline, preparation-
+  driven through Weeks 1-2...")
+  After: Grace Wk9 DD — references only Wk7 and Wk8 as
+  relevant inflection points.
+
+  PAIR 5: Pipeline jargon
+  Before: Grace Wk8 DD "Consistent phase maintained through
+  your eighth consecutive Growth week. Emotional intensity
+  returned to Low."
+  After: Describe the same facts in coaching language.
+
+  PAIR 6: Triple-negative AI pattern
+  Before: Grace Wk10 DD "Not a failure, not a breakthrough,
+  not a moment to reset from. Just a quiet redirection."
+  After: Construct a version that enters the week directly.
+  A coach sitting across the table would just say what the
+  week was.
+
+  PAIR 7: Stat-led template opening
+  Before: Grace Wk8 CM "Fifty-six straight Win days. Eight
+  consecutive Growth weeks." / Grace Wk10 CM "Seventy
+  straight Win days. Ten consecutive Growth weeks."
+  After: Construct an opening that leads with THIS WEEK's
+  meaning, not the running total.
+
+  PAIR 8: "The version of [X]" construction
+  Before: Grace Wk9 DD "The version of confidence you're
+  carrying into PSACs isn't the outcome-dependent kind."
+  After: Construct a version that says the same thing
+  without the "version of" framework.
+
+  READ the actual pre-v2.1 files to get the full BEFORE
+  passages. For AFTER versions that need construction
+  (Pairs 1, 6, 7, 8), write them fresh using the Voice
+  Principles and exemplar quality as the guide.
+
+--- SECTION 5: COMPACT SAFETY NET APPENDIX ---
+
+Short section listing the mechanical rules that remain as
+binary checks during generation. These are simple, they
+work, and they don't create workaround behavior:
+
+  - Em dash ban: Zero em dashes in any athlete-facing or
+    parent-facing output. No exceptions. (C1)
+  - Contraction default: Contractions are Coach Arron's
+    natural register. Formal non-contractions reserved for
+    genuine emphasis. Max 1-2/CM, 3-4/DD. (C2)
+  - Pipeline classification language: Zero pipeline jargon
+    in athlete-facing output. (C8 — include the full
+    prohibited terms list from current Section 35 C8)
+  - Clinical language: Reference Section 7 of the
+    Instructions (unchanged).
+
+These are the ONLY rules that operate during generation.
+Everything else is handled by the Voice Principles and
+exemplars (teaching) and Stage 5 audit (catching).
+
+
+============================================================
+6. DELIVERABLE B: SOP_Coaching_Output_Instructions_v2.2.txt
+============================================================
+
+Create new versioned file. Changes from v2.1:
+
+SECTION 35: VOICE QUALITY AND EXPRESSION RULES
+  - STRIP: C3 ("That is [noun]." rule), C5 (CM-DD
+    deduplication principle), C6 (transition variety +
+    no-telegraphing), C7 (CM opening approach variety),
+    C9 (identity thread variation), C10 (athlete-specific
+    closing). These move to Stage 5 audit.
+  - KEEP: C1 (em dash ban), C2 (contraction default),
+    C8 (pipeline classification language prohibition).
+    These remain as mechanical safety net.
+  - ADD: Voice Calibration Reference pointer. New first
+    paragraph in Section 35:
+    "Read VF_Coach_Arron_Voice_Reference.txt before
+    generating any coaching output. That document defines
+    Coach Arron's voice through principles and annotated
+    examples. The rules below are mechanical safety checks
+    that complement the Voice Reference."
+  - RENAME: Section 35 from "VOICE QUALITY AND EXPRESSION
+    RULES" to "VOICE CALIBRATION AND MECHANICAL CHECKS"
+    (or similar — signals the shift from prohibition to
+    teaching).
+
+SECTION 2: AUTHORITATIVE SOURCES
+  - ADD: VF_Coach_Arron_Voice_Reference.txt to the source
+    file list, positioned ABOVE brand_voice.txt (it is the
+    primary voice authority).
+
+All other sections unchanged. Preserve v2.1 on disk per
+versioning rules.
+
+
+============================================================
+7. DELIVERABLE C: FRAMEWORK UPDATES
+============================================================
+
+VF_Coaching_Message_Framework.txt — edit in place:
+  - Add to the VOICE section (or create one if absent):
+    "Voice Calibration: Read VF_Coach_Arron_Voice_Reference
+    .txt before generating. Your output should sound like
+    the exemplar passages in that document. The principles
+    in Section 2 of that document govern how Coach Arron
+    communicates."
+
+VF_Deep_Dive_Coaching_Analysis_Framework.txt — edit in place:
+  - Add to the VOICE section:
+    Same pointer as above.
+  - The existing NO TELEGRAPHING section can be simplified
+    to a short note pointing to the Voice Reference, since
+    the teaching now lives there. Keep the core principle
+    ("Don't announce what you're about to do. Just do it.")
+    but remove the extensive WRONG/RIGHT examples that are
+    now in the Voice Reference before/after pairs.
+
+
+============================================================
+8. DELIVERABLE D: STAGE 5 EDITORIAL AUDIT EXPANSION
+============================================================
+
+The old C3/C5/C6/C7/C9/C10 move here as audit criteria.
+NOT as 6 separate new criteria. As ONE new dimension within
+an existing criterion or as a single new Tier 2 criterion.
+
+Recommended approach: Expand Criterion 11 (Repetition and
+Freshness) OR add Criterion 14: Voice Quality Regression.
+
+The audit agent should check for:
+  - "That is [noun]." standalone overuse (>1/CM or >1/DD
+    or both in same week)
+  - CM-DD substantial phrase duplication
+  - Telegraphing constructions (deletable transition
+    sentences that only announce the next point)
+  - Consecutive same-opening-approach for the same athlete
+  - Full baseline enumeration in Identity Thread (should
+    pick 1-2 relevant threads)
+  - Generic closing phrases when athlete-specific was
+    available
+  - Triple-negative setup patterns ("Not X, not Y, not Z.
+    Just...")
+  - "Here is what" / "Here's what" announcement patterns
+  - "The version of [X]" constructions
+  - Stat-led openings with running totals
+  - Trendline arc recitation (>3 prior weeks enumerated)
+
+The Voice Reference is the benchmark. The audit agent reads
+the Voice Reference to understand what quality looks like,
+then checks whether the output meets that standard.
+
+Tier assignment: Tier 2 (auto-correct if possible, reject
+if not). Voice quality regression is a quality issue, not
+a compliance violation. The audit should auto-correct
+detectable patterns (e.g., replace a telegraphing sentence
+with its deletion) and flag patterns that require
+regeneration.
+
+Files to modify:
+  - SOP_Editorial_Audit_Master_Prompt_v1.6.txt (new version)
+  - SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+    (new version)
+
+Preserve v1.5 on disk per versioning rules.
+
+
+============================================================
+9. PROCESSING ORDER
+============================================================
+
+1. Read CLAUDE.md completely.
+2. Read all 7 reference files from Section 1.
+3. Read all 20 source output files for the exemplars
+   (CMs and DDs listed in Section 5), PLUS their
+   corresponding Interpretation JSONs for athlete input.
+4. Read the pre-v2.1 output files needed for before/after
+   pairs (Grace Wk8 CM+DD, Tucker Wk6 CM, Grace Wk10
+   CM+DD).
+5. BUILD Deliverable A: VF_Coach_Arron_Voice_Reference.txt
+   - Write Section 1 (Coach Arron identity)
+   - Write Section 2 (6 voice principles)
+   - Assemble Section 3 (20 exemplars in triad format —
+     read each source file and extract full passages)
+   - Build Section 4 (8 before/after pairs — read pre-v2.1
+     files for BEFORE, construct AFTER versions)
+   - Write Section 5 (safety net appendix)
+6. Present Voice Reference to user for review before
+   proceeding to spec changes.
+7. BUILD Deliverable B: v2.2 Instructions
+8. BUILD Deliverable C: Framework updates
+9. BUILD Deliverable D: Stage 5 expansion
+10. Update CLAUDE.md
+11. Commit all changes
+
+
+============================================================
+10. CRITICAL OPERATING RULES
+============================================================
+
+- ALL DESIGN DECISIONS ARE LOCKED. Do not re-debate the
+  architecture, the exemplar picks, the principles, or the
+  approach. Build what was designed.
+
+- THE "BEST NOT BETTER" PRINCIPLE: Every element of the
+  Voice Reference should expand expressive range, not
+  create new templates. The principles teach WHY. The
+  exemplars show WHAT. Neither prescribes a formula.
+
+- THE VOICE REFERENCE IS A TEACHING DOCUMENT, NOT A RULES
+  DOCUMENT. It should read like a senior coach briefing a
+  new writer on how Coach Arron communicates. Not like a
+  compliance specification.
+
+- EXEMPLAR PASSAGES MUST BE VERBATIM from the source files.
+  Do not paraphrase, edit, or improve them. The whole point
+  is that these are real production output at its best.
+
+- ATHLETE INPUT must be the actual words from the athlete's
+  recap (found in the Interpretation JSON athlete_voice
+  section, key_phrase, achievement_statement, or competition
+  results). Not a summary of what they said.
+
+- ANNOTATIONS should teach, not evaluate. "Why this works"
+  should help the model understand the coaching instinct
+  behind the passage, not grade it. The tone should be:
+  "here's what Arron is doing and why it lands."
+
+- FOR BEFORE/AFTER PAIRS: The BEFORE must be the actual
+  text from the pre-v2.1 file. The AFTER should demonstrate
+  the same coaching point expressed through the Voice
+  Principles. For pairs where a good v2.1 version already
+  exists, use it. For pairs where the AFTER needs to be
+  constructed (Pairs 1, 6, 7, 8), write it fresh.
+
+- PRESERVE ALL PREVIOUS VERSIONS on disk per versioning
+  rules. v2.1 Instructions, v1.5 Editorial Audit Master
+  Prompt and Instructions all stay on disk.
+
+- MODEL RECOMMENDATION: Opus for all deliverables. The
+  Voice Reference requires judgment, voice sensitivity,
+  and the ability to write annotations that teach rather
+  than prescribe.
+
+
+============================================================
+11. REFERENCE FILES BY PRIORITY
+============================================================
+
+PRIORITY 1 — Read before anything else:
+  1. CLAUDE.md (project root)
+  2. Validation Reports\Voice_Tone_Authenticity_Audit_
+     Report.txt
+  3. SOP_Coaching_Output_Instructions_v2.1.txt (Section 35)
+  4. VF_Deep_Dive_Coaching_Analysis_Framework.txt
+  5. VF_Coaching_Message_Framework.txt
+  6. brand_voice.txt
+  7. content_style_guide.txt
+  8. VF_Coaching_Output_System_Identity.txt
+
+PRIORITY 2 — Exemplar source files (read for Section 3):
+  9-28. The 20 CM/DD files listed in Section 5 above
+  29-48. Their corresponding Interpretation JSONs in
+         Athlete Data\[Athlete]\Weekly JSONS\
+
+PRIORITY 3 — Before/after source files (read for Section 4):
+  49. Grace_Kindel_2026-03-16to2026-03-22_VF_CoachingMessage
+  50. Grace_Kindel_2026-03-16to2026-03-22_VF_DeepDive
+  51. Tucker_Lloyd_2026-03-30to2026-04-05_VF_CoachingMessage
+  52. Grace_Kindel_2026-04-06to2026-04-12_VF_CoachingMessage
+  53. Grace_Kindel_2026-04-06to2026-04-12_VF_DeepDive
+  54. Grace_Kindel_2026-03-23to2026-03-29_VF_DeepDive
+      (for "version of confidence" before text)
+
+PRIORITY 4 — Stage 5 files (read for Deliverable D):
+  55. SOP_Editorial_Audit_Master_Prompt_v1.5.txt
+  56. SOP_Editorial_Audit_Project_Instructions_v1.5.txt
+
+PRIORITY 5 — Athlete snapshots (baseline context):
+  57-63. All 7 athlete snapshot files in their respective
+         Athlete Data\[Athlete]\ directories
+
+
+============================================================
+12. VERIFICATION CHECKLIST
+============================================================
+
+After all deliverables are complete, verify:
+
+[ ] Voice Reference exists at correct path
+[ ] Voice Reference has all 5 sections
+[ ] Section 3 has exactly 20 exemplars (4+4+3+2+3+4)
+[ ] All exemplar passages are verbatim from source files
+[ ] All athlete input is from actual JSON data
+[ ] Section 4 has 8 before/after pairs
+[ ] All BEFORE passages are from actual pre-v2.1 files
+[ ] v2.2 Instructions exist, v2.1 preserved
+[ ] Section 35 stripped of C3/C5/C6/C7/C9/C10
+[ ] Section 35 has Voice Reference pointer
+[ ] Section 2 has Voice Reference in source list
+[ ] CM Framework has Voice Reference pointer
+[ ] DD Framework has Voice Reference pointer
+[ ] Editorial Audit v1.6 exists, v1.5 preserved
+[ ] Voice quality audit dimension added
+[ ] CLAUDE.md updated with all changes
+[ ] All files committed to Git
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
