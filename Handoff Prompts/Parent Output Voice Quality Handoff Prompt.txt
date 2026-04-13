@@ -1,0 +1,496 @@
+============================================================
+PARENT OUTPUT VOICE QUALITY IMPROVEMENT — HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-13
+SESSION TYPE: Collaborative audit + specification update
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline.
+
+Then read the athlete-facing Voice & Tone Authenticity Audit
+Report that drove the prior voice quality improvement work:
+  Validation Reports\Voice_Tone_Authenticity_Audit_Report.txt
+
+That audit established the methodology, the "Best not Better"
+principle, and the approach that this session adapts for
+parent-facing output. You are not re-running that audit.
+You are running an equivalent audit on a different output
+type.
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+This is a COLLABORATIVE SESSION to improve the voice quality
+of all parent-facing output in the VirtusFocus pipeline. The
+pipeline produces two parent-facing documents per athlete per
+week:
+
+  1. Parent Coaching Message (Stage 3) — 4 sections, 150-250
+     words, Coach Arron voice, third person, warm and
+     support-oriented
+
+  2. Parent Weekly Insight (Stage 4) — 9 sections, scan-first
+     format with categorical indicator + blurb per section,
+     Coach Arron voice, third person
+
+The athlete-facing Voice Quality Improvement (Sessions 90-92)
+identified and fixed specific AI-detectable patterns in
+Coaching Messages and Deep Dives. That work produced voice
+quality rules (v2.1 Section 35, C1-C10) and the "Best not
+Better" principle.
+
+This session applies the same methodology to parent output:
+audit the existing samples for AI-detectable patterns, design
+specification improvements collaboratively, and update the
+relevant spec files.
+
+The core question: "If a parent showed this message to another
+parent and said 'my kid's mindset coach wrote this,' would
+they believe it was written by a human coach?"
+
+THE "BEST NOT BETTER" PRINCIPLE (NON-NEGOTIABLE):
+Every improvement must expand the range of natural, warm,
+human expression. Do NOT swap one template for another. Do
+NOT create rigid rotation rules. Alternatives banks are tools,
+not mandates. Constraints are ceilings, not floors. Specs
+teach WHY constructions work so the agent can make judgment
+calls, not just follow a checklist.
+
+THIS SESSION HAS TWO PHASES:
+
+PHASE 1 — COLLABORATIVE AUDIT AND DESIGN
+  A. Read all 6 existing parent output files (3 Parent CMs +
+     3 Parent Insights) to identify voice quality patterns.
+  B. Read the 5 voice reference files to understand the
+     baseline voice standards.
+  C. Read the current parent output specifications (Stage 3
+     Sections 23-31, Stage 4 Sections 20-28).
+  D. Produce a structured audit report organized by severity
+     (HIGH / MEDIUM / LOW) with specific examples and
+     recommendations.
+  E. Review each finding collaboratively with the user.
+  F. Lock decisions for specification changes.
+  G. Update specification files.
+
+PHASE 2 — VALIDATION REGENERATION
+  Regenerate the 3 Parent CMs and 3 Parent Insights under
+  updated specifications. These validate the voice
+  improvements. Compare against originals.
+
+============================================================
+3. WHAT TO AUDIT — PARENT OUTPUT ASSESSMENT CATEGORIES
+============================================================
+
+The athlete-facing audit used 6 categories (A-F). Adapt
+these for parent output:
+
+A. SENTENCE STRUCTURE AND VARIETY
+   - Is sentence rhythm varied or predictable?
+   - Are sentences varying in length and construction?
+   - Is there a dominant sentence pattern repeated across
+     documents?
+
+B. VOCABULARY AND PHRASING
+   - Are the same phrases recurring across different athletes'
+     parent output?
+   - Are there AI-detectable template phrases?
+   - Does the language sound like a human coach updating a
+     parent, or like a report generator?
+   - Are em dashes present? (Should be zero — banned in v2.1)
+
+C. STRUCTURAL PATTERNS (PARENT CM)
+   - Do all 3 Parent CMs have the same internal structure
+     within each section?
+   - Is Section 1 (Weekly Context) always the same length
+     and format?
+   - Is Section 4 (How You Can Support) always the same
+     pattern ("The best support right now is..." or similar)?
+   - Does the opening of each section follow the same formula?
+
+D. STRUCTURAL PATTERNS (PARENT INSIGHT)
+   - Do the blurbs in all 3 Parent Insights follow the same
+     sentence structure?
+   - Is there variety in how blurbs are constructed, or do
+     they all start/end the same way?
+   - Are the agent-generated indicators (Standout, Pattern)
+     varied and specific, or generic?
+   - Does the scan-first format feel informative and warm,
+     or clinical and robotic?
+
+E. CROSS-ATHLETE DIFFERENTIATION
+   - If you covered the athlete's name, could you tell which
+     parent output belongs to which athlete?
+   - Does the parent output reflect the unique character of
+     each athlete's program?
+   - Does Grace's parent output feel different from Tucker's,
+     which feels different from Jasmine's?
+
+F. VOICE AUTHENTICITY
+   - Does it sound like Coach Arron talking to a parent?
+   - Is the third-person register warm and natural, or stiff
+     and distant?
+   - Are contractions used naturally (Coach Arron's default)?
+   - Does the tone calibrate appropriately across different
+     week types (Strong Week vs Uneven Week vs Moderate EI)?
+   - Is the parent positioned as supporter throughout, or does
+     monitoring/surveillance language creep in?
+
+============================================================
+4. EXISTING PARENT OUTPUT FILES TO AUDIT
+============================================================
+
+PARENT COACHING MESSAGES (Stage 3):
+  1. Athlete Data\Grace Kindel\Parent Output\
+     Grace_Kindel_2026-03-02to2026-03-08_VF_ParentMessage.txt
+     Context: Growth/Low EI, competition milestones (first
+     hit, first start), CF fallback ecosystem
+
+  2. Athlete Data\Tucker Lloyd\Parent Output\
+     Tucker_Lloyd_2026-03-09to2026-03-15_VF_ParentMessage.txt
+     Context: Mixed tier, weekday/weekend split, spring break
+     ahead, CF fallback ecosystem
+
+  3. Athlete Data\Jasmine Jones\Parent Output\
+     Jasmine_Jones_2025-07-07to2025-07-13_VF_ParentMessage.txt
+     Context: Growth/Moderate EI, personal weight, 5 clinical-
+     risk elements excluded, professional competitive level,
+     CF fallback ecosystem
+
+PARENT WEEKLY INSIGHTS (Stage 4):
+  4. Athlete Data\Grace Kindel\Parent Output\
+     Grace_Kindel_2026-03-02to2026-03-08_VF_ParentInsight.txt
+
+  5. Athlete Data\Tucker Lloyd\Parent Output\
+     Tucker_Lloyd_2026-03-09to2026-03-15_VF_ParentInsight.txt
+
+  6. Athlete Data\Jasmine Jones\Parent Output\
+     Jasmine_Jones_2025-07-07to2025-07-13_VF_ParentInsight.txt
+
+NOTE: The sample size is small (3 per type vs 50+ for the
+athlete-facing audit). This means patterns should be flagged
+with appropriate confidence — a pattern seen in 3/3 files is
+notable, but we should not over-index on it. The goal is to
+anticipate what would happen at scale (20+ parent outputs per
+athlete over a season) and address structural tendencies now.
+
+============================================================
+5. PARENT OUTPUT CONTEXT — WHAT MAKES THIS DIFFERENT
+============================================================
+
+Parent output is NOT the same as athlete output. The audit
+must account for key differences:
+
+AUDIENCE:
+- Parents are not the athlete. They are supporters.
+- Parents see LESS context than coaches or athletes.
+- Parents should never feel like they are monitoring.
+- The output should make them feel informed and helpful.
+
+VOICE:
+- Coach Arron, third person ("Grace showed..." not "you
+  showed...")
+- Warm, informational, support-oriented
+- Natural contractions (Coach Arron's default register)
+- NOT institutional/executive (that is coach-facing)
+
+STRUCTURE:
+- Parent CM: 4 fixed sections (Weekly Context, What Stood
+  Out, What's Ahead, How You Can Support), 150-250 words
+- Parent Insight: 9 fixed sections, scan-first (indicator
+  line + 1-3 sentence blurb per section)
+
+FORMAT CONSTRAINTS:
+- Parent CM signature: "Coach Arron" (no dash prefix)
+- Parent Insight signature: "Coach Arron" (no dash prefix)
+- Both use separator bars
+- Header includes em dash between "VIRTUSFOCUS" and output
+  type — these header em dashes are format elements, not
+  prose. Address in audit if needed.
+
+COMPLIANCE:
+- Same data boundary as coach-facing output
+- Clinical language prohibition
+- Pipeline classification language prohibition
+- No surveillance/monitoring framing
+- No framework terminology (Bullseye, Win the Day, etc.)
+- Athlete first name only
+
+ECOSYSTEM:
+- All 3 existing samples use CF fallback (no Q22-Q25 data)
+- Section 4 (How You Can Support) is calibrated by Q23/Q25
+  when available — CF athletes get generic supportive
+  guidance
+- This is a known limitation of the current samples, not
+  a spec issue
+
+============================================================
+6. WHAT THE ATHLETE-FACING AUDIT FOUND (FOR REFERENCE)
+============================================================
+
+The athlete-facing Voice & Tone Authenticity Audit (Session
+90) identified these patterns across ~50 CMs and DDs. These
+were fixed in Sessions 91-92. Review whether any of these
+same patterns appear in parent output:
+
+HIGH PRIORITY (fixed in v2.1):
+  H1. "That is [noun]." standalone declaratives at template
+      frequency (~80+ instances across 50 files)
+  H2. DD trendline arc recitation (retelling full history
+      every week, growing longer each week)
+  H3. Phrase frequency problems: "Here is what," "The
+      version of you that," "The question is"
+  H4. Non-contracted prose as AI fingerprint
+
+MEDIUM PRIORITY (fixed in v2.1):
+  M1. DD structural cloning (identical format every week)
+  M2. CM-DD content duplication
+  M3. CM opening formula repetition
+  M4. Transition repetition
+  M5. Pipeline classification language in athlete output
+
+LOW PRIORITY (fixed in v2.1):
+  L1. Identity Thread enumeration instead of selection
+  L2. Generic closing phrases instead of athlete-specific
+
+Some of these (H2, M1, M2, L1) are structurally impossible
+in parent output (no trendline, no DD, no identity thread).
+Others (H1, H3, H4, M3, M4, M5, L2) could manifest.
+
+============================================================
+7. SPECIFICATION FILES THAT MAY BE MODIFIED
+============================================================
+
+If the audit identifies issues requiring specification
+changes, these are the files in scope:
+
+STAGE 3 (Parent CM):
+  - SOP_Coaching_Output_Instructions_v2.1.txt
+    Sections 23-31 (parent CM specification)
+    Would create v2.2 if changes needed.
+
+  - SOP_Coaching_Output_Master_Prompt_V4.txt
+    Parent mode activation and voice calibration
+    Edited in place (not versioned — it is the master prompt)
+
+STAGE 4 (Parent Insight):
+  - SOP_Coach_Insights_Project_Instructions_v1.8.txt
+    Sections 20-28 (parent insight specification)
+    Would create v1.9 if changes needed.
+
+  - SOP_Coach_Insights_Master_Prompt_v1.4.txt
+    Parent output description and validation
+    Would create v1.5 if changes needed.
+
+SOURCE FILES (edited in place):
+  - brand_voice.txt (if parent-specific voice guidance needed)
+  - content_style_guide.txt (if parent-specific style guidance
+    needed)
+
+VERSIONING RULES:
+  - Prompts + Instructions = new versioned files (never edit
+    in place)
+  - Source reference files = edit in place
+  - Previous versions preserved on disk
+
+============================================================
+8. PROCESSING ORDER
+============================================================
+
+1. Read CLAUDE.md completely.
+2. Read the athlete-facing Voice & Tone Authenticity Audit
+   Report to understand the methodology and findings.
+3. Read the 5 voice reference files:
+   a. brand_voice.txt
+   b. content_style_guide.txt
+   c. VF_Coaching_Output_System_Identity.txt
+   d. VF_Coaching_Message_Framework.txt
+   e. VF_Deep_Dive_Coaching_Analysis_Framework.txt
+4. Read the current parent output specifications:
+   a. SOP_Coaching_Output_Instructions_v2.1.txt Sections
+      23-31 (Parent CM)
+   b. SOP_Coach_Insights_Project_Instructions_v1.8.txt
+      Sections 20-28 (Parent Insight)
+5. Read all 6 parent output files.
+6. Produce structured audit report (findings, severity,
+   examples, recommendations).
+7. Present findings to user for collaborative review.
+8. Lock decisions per finding.
+9. Update specification files (new versions where required).
+10. Regenerate all 6 parent output files under updated specs.
+11. Compare regenerated output against originals.
+12. Update CLAUDE.md.
+13. Commit to Git.
+
+============================================================
+9. CRITICAL OPERATING RULES
+============================================================
+
+- The "Best not Better" principle governs all changes.
+  Every fix must expand expressive range, not constrain it.
+  If a recommendation replaces one template with another
+  template, it is not an improvement.
+
+- The sample size is small (3 per type). Flag patterns with
+  appropriate confidence levels. Distinguish between "this
+  appears in 3/3 files (strong signal)" and "this appears
+  in 1/3 files (may be circumstantial)."
+
+- Parent output compliance rules are NON-NEGOTIABLE. No
+  voice quality improvement may weaken compliance. The
+  parent must never feel like they are monitoring their
+  child. Clinical language, surveillance framing, and
+  framework terminology must remain banned.
+
+- The parent output format (4 sections for CM, 9 sections
+  with indicators for Insight) is locked. Voice quality
+  improvements are about HOW content is expressed within
+  sections, not changing the section structure.
+
+- The indicator labels in Parent Insights are locked enum
+  values (Strong Week / Uneven Week / Reset Week, etc.).
+  These cannot be changed. The blurbs beneath them are
+  where voice quality improvements apply.
+
+- Existing voice quality rules (v2.1 Section 35, v1.8
+  Section 29) already apply to parent output. This audit
+  assesses whether additional parent-specific voice
+  guidance is needed beyond what already exists.
+
+- Recommendations should be presented to the user with:
+  1. The specific finding with example text
+  2. Why it is a problem (what a reader would notice)
+  3. A proposed fix that follows "Best not Better"
+  4. Severity rating (HIGH / MEDIUM / LOW)
+
+- Do NOT make specification changes without user approval.
+  Present all findings first, then lock decisions
+  collaboratively.
+
+============================================================
+10. REFERENCE FILES
+============================================================
+
+PRIORITY 1 — Read before anything else:
+  1. CLAUDE.md (project root)
+  2. Validation Reports\Voice_Tone_Authenticity_Audit_
+     Report.txt
+
+PRIORITY 2 — Voice reference files:
+  3. Agents - Generators\Coaching Output\Source FIles\
+     brand_voice.txt
+  4. Agents - Generators\Coaching Output\Source FIles\
+     content_style_guide.txt
+  5. Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Output_System_Identity.txt
+  6. Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Message_Framework.txt
+  7. Agents - Generators\Coaching Output\Source FIles\
+     VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+PRIORITY 3 — Current parent output specifications:
+  8. Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Instructions_v2.1.txt
+     (Sections 23-31: Parent CM specification)
+  9. Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Master_Prompt_V4.txt
+  10. Agents - Generators\Coach Insights Engine\
+      SOP_Coach_Insights_Project_Instructions_v1.8.txt
+      (Sections 20-28: Parent Insight specification)
+  11. Agents - Generators\Coach Insights Engine\
+      SOP_Coach_Insights_Master_Prompt_v1.4.txt
+
+PRIORITY 4 — Parent output files to audit:
+  12. Athlete Data\Grace Kindel\Parent Output\
+      Grace_Kindel_2026-03-02to2026-03-08_VF_ParentMessage.txt
+  13. Athlete Data\Grace Kindel\Parent Output\
+      Grace_Kindel_2026-03-02to2026-03-08_VF_ParentInsight.txt
+  14. Athlete Data\Tucker Lloyd\Parent Output\
+      Tucker_Lloyd_2026-03-09to2026-03-15_VF_ParentMessage.txt
+  15. Athlete Data\Tucker Lloyd\Parent Output\
+      Tucker_Lloyd_2026-03-09to2026-03-15_VF_ParentInsight.txt
+  16. Athlete Data\Jasmine Jones\Parent Output\
+      Jasmine_Jones_2025-07-07to2025-07-13_VF_ParentMessage.txt
+  17. Athlete Data\Jasmine Jones\Parent Output\
+      Jasmine_Jones_2025-07-07to2025-07-13_VF_ParentInsight.txt
+
+PRIORITY 5 — Athlete-facing output for comparison (samples):
+  18. Athlete Data\Grace Kindel\Coaching and Deep Dive\
+      Coaching Message\
+      Grace_Kindel_2026-03-02to2026-03-08_VF_CoachingMessage.txt
+  19. Athlete Data\Tucker Lloyd\Coaching and Deep Dive\
+      Coaching Message\
+      Tucker_Lloyd_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+  20. Athlete Data\Jasmine Jones\Coaching and Deep Dive\
+      Coaching Message\
+      Jasmine_Jones_2025-07-07to2025-07-13_VF_CoachingMessage.txt
+
+PRIORITY 6 — Interpretation JSONs (context for regeneration):
+  21. Athlete Data\Grace Kindel\Weekly JSONS\
+      Grace_Kindel_2026-03-02to2026-03-08_VF_Interpretation.txt
+  22. Athlete Data\Tucker Lloyd\Weekly JSONS\
+      Tucker_Lloyd_2026-03-09to2026-03-15_VF_Interpretation.txt
+  23. Athlete Data\Jasmine Jones\Weekly JSONS\
+      Jasmine_Jones_2025-07-07to2025-07-13_VF_Interpretation.txt
+
+PRIORITY 7 — Athlete snapshots (baseline context):
+  24. Athlete Data\Grace Kindel\
+      grace_kindel_athlete_snapshot V2.txt
+  25. Athlete Data\Tucker Lloyd\
+      tucker_lloyd_snapshot.txt
+  26. Athlete Data\Jasmine Jones\
+      jasmine_jones_athlete_snapshot.txt
+
+============================================================
+11. KNOWN ISSUES TO INVESTIGATE
+============================================================
+
+The following patterns were observed during a preliminary
+review of the 6 parent output files. The audit should
+confirm, expand, or dismiss these observations:
+
+PARENT CM OBSERVATIONS:
+  - All 3 CMs have em dashes in prose (banned under v2.1).
+    These files were generated before the voice quality
+    update. Regeneration will fix this mechanically, but
+    check whether the spec instructs clearly enough.
+  - "What stood out is that..." appears in 2/3 CMs as the
+    opening of Section 2 (What Stood Out). Formulaic?
+  - Section 4 (How You Can Support) follows a pattern of
+    "[action] is the most helpful support right now" in
+    2/3 CMs. Template phrase?
+  - "She is building real momentum" (Grace) vs "He has the
+    capacity" (Tucker) vs "She has strong people around
+    her" (Jasmine) — the closing sentences vary, which is
+    good. But do they vary enough at scale?
+  - Signature still reads "— Coach Arron" (with em dash
+    prefix) in all 3. Should be "Coach Arron" per v2.1.
+
+PARENT INSIGHT OBSERVATIONS:
+  - All 3 Insights have em dashes in prose (same issue).
+  - "Generated from:" metadata line present in all 3.
+    Pipeline metadata in parent-facing output?
+  - Blurb structure may be formulaic across athletes.
+    Section 1 blurbs all follow "[Name]'s [routine/effort]
+    [held/continued] [through context]" pattern.
+  - Section 8 (Growth Over Time) blurbs all start with
+    "[Name] is [actively building / in the early stages
+    of building]" — same construction, different athlete.
+  - "That is a sign of strength" appears in Jasmine's
+    Section 4 — a "That is [noun]." variant.
+  - Signature still reads "— Coach Arron" in all 3.
+
+These are STARTING OBSERVATIONS, not conclusions. The audit
+should assess them systematically and may find additional
+patterns not listed here.
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
