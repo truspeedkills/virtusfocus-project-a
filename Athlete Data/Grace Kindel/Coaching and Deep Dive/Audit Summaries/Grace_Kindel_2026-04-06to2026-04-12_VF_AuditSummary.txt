@@ -1,0 +1,194 @@
+EDITORIAL AUDIT SUMMARY
+Grace Kindel | Week 10 | April 6 - 12, 2026
+Audit Specification: v1.5
+
+============================================================
+PRE-CRITERIA MECHANICAL SCAN
+============================================================
+Em Dash Check: PASS (zero em dashes detected in CM or DD)
+
+============================================================
+AUDIT RESULTS
+============================================================
+
+TIER 1 (MUST PASS)
+------------------------------------------------------------
+Criterion 1: Emotional Intensity Calibration — PASS
+JSON classifies Moderate EI. CM addresses the emotional
+content (playing time exclusion, acceptance reframe,
+practice frustration) with appropriate warmth and
+validation without over-processing or minimizing. DD
+Mindset Summary names the shift in emotional texture
+and validates it without clinical framing. Neither
+output treats the "I don't even care" language as
+distress or alarm. Tone matches Moderate: friction
+named but managed, empathetic but not therapeutic.
+
+Criterion 2: Clinical Language Compliance — PASS
+No clinical terminology detected. "Acceptance" used as
+everyday English (athlete's own processing language),
+not as a clinical or therapeutic term. "Protective
+reframe" and "self-protection mechanism" do NOT appear
+in athlete-facing output (present only in the JSON).
+No references to anxiety, depression, therapy,
+diagnosis, or clinical concepts. "Composure" used
+appropriately as a behavioral descriptor.
+
+Criterion 3: Data Fidelity — PASS
+All claims in CM and DD verified against JSON:
+- 70 consecutive Win days: correct (63 prior + 7 this week)
+- 10 consecutive Growth weeks: correct
+- Two game days with zero playing time: correct (Wed, Fri)
+- "Not even getting told to warm up anymore": quoted
+  accurately from recap
+- Saturday hitting practice: confirmed in recap
+- "I was one of the loudest ones": accurately quoted
+  from Wednesday's entry
+- Week 9 coach conversation referenced accurately
+  (no fabricated details)
+- 3 more games upcoming: confirmed from recap
+- Goal-setting regression from Week 9: accurate (Week 9
+  goals had daily structure; this week's goals are
+  general/gratitude-oriented)
+- Self-directed sessions: accurately noted as reduced
+  from 3 (Week 9) to 1 (this week)
+
+Criterion 4: Prior Commitment Bridge — PASS
+CM does not reference the prior commitment directly
+(appropriate: commitment was PSACs-specific, PSACs
+occurred during gap week, no data available for
+evaluation). The new micro-commitment builds on the
+same behavioral foundation (specific pre-game
+controllable naming) adapted to the current situation.
+No false claims about commitment execution.
+
+Criterion 13: Pipeline Data Leakage Compliance — PASS
+No pipeline classification language detected:
+- No "Emotional intensity Moderate" (described
+  behaviorally as "complicated emotional shift")
+- No "Growth tier" or "Consistent phase" named
+- No "RQS" or reflection quality scores
+- No "Stable Positive" or "Partially Aligned"
+- No "pattern_shift_detected"
+- No composite score names, band labels, or flag IDs
+- No execution signal terminology
+- No intake profile terminology or PPD/ABI references
+- No forward anchor terminology
+- No surveillance framing patterns
+- Category E-G scan: clean
+- Reasonable reader test (4 prongs): all pass — no
+  content identifiable as derived from quantified app
+  data, formal intake scoring, classification tracking,
+  or system comparison
+
+TIER 2 (SHOULD PASS)
+------------------------------------------------------------
+Criterion 5: Athlete Voice Reflection — PASS
+CM opens with the 70-day streak (stat-led opening,
+different from Week 9's quote-led opening). Athlete
+language quoted accurately: "if I get in, have fun.
+If I don't, have fun" (CM and DD), "I was one of the
+loudest ones" (CM and DD, different contexts), "I'm
+not giving up" (DD), "it's not in a bad way. Idk hard
+to explain here" (DD). Language attributed correctly,
+not paraphrased into clinical or pipeline terms.
+
+Criterion 6: Action Specificity (Three-Part Check) — PASS
+(a) Specific: "write down one specific thing you want
+to bring to that day" with examples (warm-up drill,
+being first one loud, specific cage work)
+(b) Measurable: "three games, three intentions, three
+sentences"
+(c) Athlete-accessible: builds on her existing behavior
+(she already shows up loudly, already hits on her own)
+and works within the acceptance frame rather than
+against it.
+
+Criterion 7: Upcoming Context Anchoring — PASS
+CM references "these last games" and the micro-
+commitment is structured around 3 upcoming games.
+DD trendline contextualizes the gap week and the
+coach conversation's lack of impact. Focus question
+references "these last games." No false specificity
+about dates or opponents.
+
+Criterion 8: Narrative Arc Presence — PASS
+DD trendline references two specific inflection points
+(Week 9 coach conversation producing no change, and
+the goal-setting/development trajectory shift). Does
+not enumerate all 10 weeks. Connects this week's
+acceptance to the position frustration arc without
+retelling the full history. CM references Weeks 8-9
+self-directed sessions as context for the contraction.
+Arc presence is thematic, not chronological.
+
+Criterion 9: Message Length Constraint — PASS
+CM body: approximately 390 words (within 250-450 range)
+DD: approximately 1,150 words (within 850-1200 range)
+
+Criterion 10: Micro-Commitment Realism — PASS
+"Write down one specific thing you want to bring to
+that day" is achievable within current context (game
+days with likely no playing time). Examples provided
+span different scenarios (warmup drill, dugout
+presence, cage work). Does not require playing time.
+Post-game reflection sentence is low-friction. Three
+games = three cycles = right-sized for one week.
+Modality: Written (appropriate given the athlete's
+current acceptance frame, where oral commitments to
+Kabine may feel less natural if the emotional
+investment has shifted).
+
+TIER 3 (QUALITY OPTIMIZATION)
+------------------------------------------------------------
+Criterion 11: Brand Voice Tonal Scan — PASS
+Coach Arron voice consistent throughout. Contractions
+used naturally (doesn't, didn't, won't, you're, you've,
+it's, that's, aren't, etc.). No formal prose
+overuse. "That is [noun]." standalone: zero instances
+in CM, zero instances in DD. No retired phrases
+detected. No telegraphing ("I want to push you," "I'm
+going to be direct"). Opening approach: stat-led
+(different from Week 9's quote-led). Transitions
+varied. CM-DD deduplication: "if I get in, have fun"
+quote appears in both but in different analytical
+contexts (CM: validation of the acceptance; DD:
+defining the week's shift). No substantive phrase
+duplication.
+
+Criterion 12: Outer-Ring Language Discipline — PASS
+No coaching staff named in athlete-facing output. No
+lineup decisions described in specifics. "She'll never
+see me as" paraphrased in the JSON but not surfaced in
+CM or DD (appropriately). Playing time discussed only
+in terms of Grace's response to it, not in terms of
+the coach's decisions. No practice-specific inequity
+details from Monday's entry appear in output.
+
+============================================================
+VOICE QUALITY COMPLIANCE (v2.1 Section 35)
+============================================================
+C1 Em Dash Ban: PASS (zero instances)
+C2 Contraction Default: PASS (natural throughout)
+C3 Emphatic Naming: PASS (zero "That is [noun].")
+C4 Phrase Frequency: PASS (no retired phrases, no
+   capped phrases exceeded)
+C5 CM-DD Deduplication: PASS
+C6 No Telegraphing: PASS
+C7 Opening Variety: PASS (stat-led vs Week 9 quote-led)
+C8 Pipeline Classification Ban: PASS
+C9 Identity Thread Variation: PASS (focuses on
+   composure-through-absence and effort identity,
+   different angle from Week 9's advocacy framing)
+C10 Athlete-Specific Closing: PASS (connects to
+    showing up when specific)
+
+============================================================
+FINAL RESULT: PASS
+============================================================
+All 13 criteria met. No corrections required.
+Complexity: Moderate (Moderate EI, Partially Aligned,
+1-week gap, competitive engagement posture shift,
+RQS decline, acceptance/detachment dynamic).
+
+Output approved as written.
