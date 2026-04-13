@@ -1,0 +1,346 @@
+============================================================
+VOICE QUALITY DOWNSTREAM COMPLETION — HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-13
+SESSION TYPE: Implementation (specification updates + reference cleanup)
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline.
+
+This session completes the Voice Quality Improvement work
+started in the prior session (Session 92 in CLAUDE.md).
+That session updated all Stage 3, Stage 5, and Stage 6
+specifications with voice quality rules. This session
+handles the remaining downstream work.
+
+============================================================
+2. WHAT WAS DONE IN THE PRIOR SESSION
+============================================================
+
+The Voice Quality Improvement session (Session 92) made
+the following changes:
+
+SPECIFICATION CHANGES (9 files):
+  4 source files edited in place:
+    - VF_Coaching_Message_Framework.txt
+    - VF_Deep_Dive_Coaching_Analysis_Framework.txt
+    - brand_voice.txt
+    - content_style_guide.txt
+
+  5 new versioned files created:
+    - SOP_Coaching_Output_Instructions_v2.1.txt
+    - SOP_Editorial_Audit_Master_Prompt_v1.5.txt
+    - SOP_Editorial_Audit_Project_Instructions_v1.5.txt
+    - SOP_Daily_Coaching_Engine_Master_Prompt_v1.2.txt
+    - SOP_Daily_Coaching_Engine_Project_Instructions_v1.3.txt
+
+ADDITIONAL UPDATES:
+  - SOP_Coaching_Output_Master_Prompt_V4.txt (em dashes
+    removed, v2.1 reference added, voice quality summary)
+  - Weekly Processing Handoff Template (voice quality
+    rules section added)
+
+VOICE QUALITY RULES ADDED (Section 35 of v2.1):
+  C1. Em dash total ban (zero tolerance, all output)
+  C2. Contraction default register
+  C3. "That is [noun]." limits (1/CM, 1/DD, never both)
+  C4. Phrase frequency limits + retired phrases
+  C5. CM-DD deduplication principle
+  C6. Transition variety + no-telegraphing rule
+  C7. CM opening approach variety
+  C8. Pipeline classification language prohibition
+  C9. Identity Thread variation (DD only)
+  C10. Athlete-specific closing phrases (CM only)
+
+KEY PRINCIPLE: "Best not Better" — every fix expands
+expressive range rather than swapping one formulaic pattern
+for another. Alternatives banks are tools, not rotation
+mandates. Constraints are ceilings, not floors.
+
+============================================================
+3. WHAT REMAINS — TWO TASKS
+============================================================
+
+TASK A: STAGE 4 VOICE QUALITY UPDATE
+  Coach Insights Engine produces THREE types of human-facing
+  output:
+    1. Weekly Performance Insight (coach-facing)
+    2. Weekly Team Snapshot (coach-facing)
+    3. Parent Weekly Insight (parent-facing)
+
+  All three reach human audiences (coaches or parents).
+  None currently have voice quality rules from v2.1.
+
+  The voice quality rules that APPLY to Stage 4 output:
+    - Em dash ban (consistency across all pipeline output)
+    - Pipeline classification language prohibition (coaches
+      and parents should see behavioral descriptions, not
+      JSON field names or pipeline terminology)
+    - No-telegraphing (applies to any prose output)
+    - Contraction default (Coach Arron voice in parent
+      output; institutional register in coach output may
+      be slightly more formal but still natural)
+
+  The voice quality rules that DO NOT apply to Stage 4:
+    - "That is [noun]." limits (athlete-facing construction)
+    - CM opening variety (no CM structure in Stage 4)
+    - CM-DD deduplication (no CM-DD pair)
+    - Identity Thread variation (no identity thread section)
+    - Athlete-specific closing phrases (no closing phrase)
+    - Phrase frequency limits from C4 (the specific retired
+      phrases like "Here is what" are Stage 3 constructions;
+      Stage 4 has its own section structure)
+
+  DELIVERABLES:
+    - SOP_Coach_Insights_Master_Prompt_v1.4.txt (new version)
+    - SOP_Coach_Insights_Project_Instructions_v1.8.txt (new
+      version)
+
+  SCOPE OF CHANGES:
+    Master Prompt v1.4:
+      - Remove any em dashes from prose
+      - Add reference to voice quality compliance
+      - Add note that all human-facing output (coach and
+        parent) must comply with pipeline classification
+        language prohibition and em dash ban
+      - Update parent output signature from "— Coach Arron"
+        to "Coach Arron" if present
+
+    Instructions v1.8:
+      - Add a new section (after existing parent sections,
+        before Final Rule) covering voice quality rules
+        applicable to Stage 4 output
+      - Em dash ban (zero tolerance in all output)
+      - Pipeline classification language prohibition with
+        Stage 4-specific WRONG/CORRECT examples:
+          WRONG: "Emotional intensity returned to Low"
+          RIGHT: "The emotional weight of the week was
+          lighter compared to last week"
+          WRONG: "Growth phase: Developing maintained"
+          RIGHT: "The athlete continues to build foundational
+          consistency"
+          WRONG: "Composite Readiness shifted from Positive
+          to Steady"
+          RIGHT: The Composite Readiness signal IS the
+          coach-facing translation — it's already designed
+          to be compliance-safe. The prohibition is on raw
+          field names and pipeline terminology, not on the
+          Stage 4 output labels themselves.
+      - No-telegraphing rule
+      - Contraction guidance: parent output uses Coach Arron
+        voice with natural contractions; coach-facing output
+        uses institutional register (slightly more formal
+        but still natural prose, not stiff academic writing)
+      - Remove any em dashes from existing prose, examples,
+        and WRONG/CORRECT pairs throughout the file
+      - Update any internal references to other specs that
+        changed version (v2.0→v2.1 for Coaching Output
+        Instructions, if referenced)
+
+  IMPORTANT NUANCE — STAGE 4 COMPLIANCE-SAFE LABELS:
+    Stage 4 already has its own compliance framework. Terms
+    like "Composite Readiness: Positive (Green)," "Key
+    Performance Signal," "Stress Load: Moderate," and the
+    section names (Sections 1-10 for coach, T1-T7 for team,
+    9 sections for parent) are the DESIGNED coach-facing
+    translations. These are NOT pipeline classification
+    language — they ARE the product.
+
+    The prohibition targets:
+    - Raw JSON field names used as labels ("emotional_
+      intensity," "growth_phase_movement," "consistency_
+      signal")
+    - Stage 2 internal classifications surfaced verbatim
+      ("Stable Positive," "Partially Aligned," "approach-
+      framed," "pattern_shift_detected")
+    - Execution signal internals ("Ownership Index: 72,"
+      "drift_score.band = Early")
+    - Pipeline metadata ("RQS 2," "v9.7 schema")
+
+    The Stage 4 output structure and terminology (section
+    names, Composite Readiness, KPS, stress categories,
+    dashboard metrics) are compliance-safe by design.
+
+------------------------------------------------------------
+
+TASK B: HANDOFF PROMPT VERSION REFERENCE CLEANUP
+  Multiple handoff prompts reference old specification
+  versions. These need updating so any future session that
+  uses them reads the correct specs.
+
+  VERSION CHANGES TO PROPAGATE:
+    - Coaching Output Instructions: v2.0 → v2.1
+    - Editorial Audit Master Prompt: v1.4 → v1.5
+    - Editorial Audit Instructions: v1.4 → v1.5
+    - Daily Engine Master Prompt: v1.1 → v1.2
+    - Daily Engine Instructions: v1.2 → v1.3
+    - Coach Insights Master Prompt: v1.3 → v1.4 (after
+      Task A creates it)
+    - Coach Insights Instructions: v1.7 → v1.8 (after
+      Task A creates it)
+
+  FILES THAT NEED VERSION REFERENCE UPDATES:
+
+  1. Voice Quality Improvement Handoff Prompt.txt
+     - Multiple references to v2.0 Coaching Output
+     - Multiple references to v1.4 Editorial Audit
+     - Multiple references to v1.1/v1.2 Daily Engine
+     NOTE: This handoff has been EXECUTED and won't be
+     re-run. Update for historical accuracy, not urgency.
+
+  2. Voice Tone Authenticity Audit Handoff Prompt.txt
+     - Line 582: v2.0 Coaching Output Instructions
+     NOTE: Already executed. Low priority.
+
+  3. Grace Kindel Angelo Allen Weekly Processing Handoff
+     Prompt.txt
+     - Lines 51, 53: v2.0 Coaching Output, v1.4 Editorial
+     - Lines 301, 324, 354-355, 386-389, 459, 463:
+       multiple version references
+     NOTE: This is a processing handoff. If reused, it
+     MUST reference correct versions. Higher priority.
+
+  4. Comprehensive Pipeline Briefing Handoff Prompt.txt
+     - Lines 207, 211: Coach Insights Master Prompt v1.2
+       (should be v1.4 after Task A)
+     - Lines 230, 234: Daily Engine Master Prompt v1.1
+       (should be v1.2)
+     - Lines 236, 241: Daily Engine Instructions v1.2
+       (should be v1.3)
+     - Lines 626-632: Summary version statements
+     NOTE: This produces briefing documents. Correct
+     versions matter for accuracy. Higher priority.
+
+  5. Pipeline Visual Flow Handoff Prompt.txt
+     - Line 529: Coach Insights Master Prompt v1.2
+       (should be v1.4 after Task A)
+     - Line 531: Daily Engine Master Prompt v1.1
+       (should be v1.2)
+
+  6. Forward Anchor Pipeline Addition Handoff Prompt.txt
+     - Multiple references to v1.4 Coach Insights
+       Instructions, v1.2 Editorial Audit, v1.1 Daily
+       Engine
+     NOTE: Already executed. Low priority.
+
+  7. Longitudinal PPD Implementation Handoff Prompt.txt
+     - Check for any outdated references
+     NOTE: Already executed. Low priority.
+
+  APPROACH: Start with the files that will be reused
+  (items 3, 4, 5). Then update the already-executed ones
+  (items 1, 2, 6, 7) for historical accuracy.
+
+  DO NOT update version references in handoff prompts that
+  describe what version was CURRENT at the time of execution
+  as part of their historical change log or "what was done"
+  sections. Only update references that instruct a future
+  session which files to READ.
+
+============================================================
+4. PROCESSING ORDER
+============================================================
+
+1. Read CLAUDE.md completely.
+2. Read the voice quality rules in SOP_Coaching_Output_
+   Instructions_v2.1.txt Section 35 (C1-C10). This is the
+   source of truth for what voice quality rules exist.
+3. Read the no-telegraphing rule in VF_Deep_Dive_Coaching_
+   Analysis_Framework.txt (NO TELEGRAPHING section near the
+   end).
+4. Execute Task A:
+   a. Read SOP_Coach_Insights_Master_Prompt_v1.3.txt
+   b. Read SOP_Coach_Insights_Project_Instructions_v1.7.txt
+   c. Create v1.4 Master Prompt (targeted changes)
+   d. Create v1.8 Instructions (targeted additions)
+   e. Verify: zero em dashes in both new files
+5. Execute Task B:
+   a. Update reusable handoff prompts (items 3, 4, 5)
+   b. Update already-executed handoff prompts (items 1, 2,
+      6, 7)
+6. Update CLAUDE.md:
+   - Pipeline table: Stage 4 version numbers
+   - Key File Locations: Stage 4 file paths
+   - Session history entry
+7. Commit all work to Git.
+8. Verify clean working tree.
+
+============================================================
+5. REFERENCE FILES
+============================================================
+
+PRIORITY 1 — Read before anything else:
+  1. CLAUDE.md (project root)
+
+PRIORITY 2 — Voice quality rules (source of truth):
+  2. Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Instructions_v2.1.txt
+     (Section 35: C1-C10)
+  3. Agents - Generators\Coaching Output\Source FIles\
+     VF_Deep_Dive_Coaching_Analysis_Framework.txt
+     (NO TELEGRAPHING section)
+
+PRIORITY 3 — Files to modify (Task A):
+  4. Agents - Generators\Coach Insights Engine\
+     SOP_Coach_Insights_Master_Prompt_v1.3.txt
+  5. Agents - Generators\Coach Insights Engine\
+     SOP_Coach_Insights_Project_Instructions_v1.7.txt
+
+PRIORITY 4 — Files to update references (Task B):
+  6. Handoff Prompts\Grace Kindel Angelo Allen Weekly
+     Processing Handoff Prompt.txt
+  7. Handoff Prompts\Comprehensive Pipeline Briefing
+     Handoff Prompt.txt
+  8. Handoff Prompts\Pipeline Visual Flow Handoff Prompt.txt
+  9. Handoff Prompts\Voice Quality Improvement Handoff
+     Prompt.txt
+  10. Handoff Prompts\Voice Tone Authenticity Audit
+      Handoff Prompt.txt
+  11. Handoff Prompts\Forward Anchor Pipeline Addition
+      Handoff Prompt.txt
+  12. Handoff Prompts\Longitudinal PPD Implementation
+      Handoff Prompt.txt
+
+PRIORITY 5 — Stage 4 source files (context for Task A):
+  13. Agents - Generators\Coach Insights Engine\
+      Source Files\VF_Coach_Insights_Compliance_Framework.txt
+  14. Agents - Generators\Coach Insights Engine\
+      Source Files\JSON_logic_reference.txt
+
+============================================================
+6. CRITICAL OPERATING RULES
+============================================================
+
+- Follow the project's versioning rules: new versioned
+  files for Prompts + Instructions (never edit in place).
+  Previous versions preserved on disk.
+- Stage 4's existing compliance framework and output
+  structure are correct. The voice quality update is
+  ADDITIVE — it adds rules about expression quality, not
+  changes to what data is consumed or how sections are
+  structured.
+- The pipeline classification language prohibition for
+  Stage 4 targets raw JSON field names and Stage 2 internal
+  classifications, NOT Stage 4's own designed output labels
+  (Composite Readiness, KPS, stress categories, etc.).
+- The "Best not Better" principle applies: don't create
+  rigid rules that constrain Stage 4 output into a new
+  template. Add expression quality guidelines that expand
+  the range of natural, professional prose.
+- When updating handoff prompt version references,
+  distinguish between "what files to read" references
+  (update these) and "what was done at the time" historical
+  references (leave these as-is).
+- Commit Task A and Task B as separate commits.
+- Update CLAUDE.md at end of session.
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
