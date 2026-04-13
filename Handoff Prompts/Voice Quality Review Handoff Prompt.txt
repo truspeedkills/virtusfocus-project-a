@@ -1,0 +1,485 @@
+============================================================
+VOICE QUALITY REVIEW — HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-13
+SESSION TYPE: Collaborative grading + specification refinement
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline.
+
+Then read these two documents:
+  1. The Voice & Tone Authenticity Audit Report:
+     Validation Reports\Voice_Tone_Authenticity_Audit_Report.txt
+  2. The voice quality rules in v2.1 Section 35 (C1-C10):
+     Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Instructions_v2.1.txt
+
+These are the foundation: the audit identified the problems,
+v2.1 implemented the fixes. This session grades how well
+those fixes actually worked in production output.
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+This is a COLLABORATIVE GRADING SESSION. The pipeline's
+voice quality rules were updated in Session 92 (v2.1). Two
+athletes have since had output generated under the new rules:
+
+  Grace Kindel Week 9 (most recent, v2.1 rules)
+  Tucker Lloyd Week 7 (most recent, v2.1 rules)
+
+The user has noticed issues in the generated output. This
+session conducts a structured review of these 4 files (2 CMs
++ 2 DDs) to:
+
+  A. Grade how well each v2.1 rule (C1-C10) is followed
+  B. Identify any NEW patterns not covered by existing rules
+  C. Identify residual issues where rules exist but aren't
+     being followed consistently
+  D. Compare against the PRE-v2.1 output for the same
+     athletes (Grace Wk8, Tucker Wk6) to measure actual
+     improvement
+  E. Propose targeted specification refinements if needed
+
+This is NOT a full audit like Session 90. It is a focused
+quality review of the first production output under the new
+rules, using the user's noticed issues as the starting point.
+
+THE "BEST NOT BETTER" PRINCIPLE:
+Every proposed fix must expand expressive range, not replace
+one template with another. Constraints are ceilings, not
+floors. The goal is output that sounds like a human coach
+wrote it, not output that follows a different mechanical
+formula.
+
+============================================================
+3. FILES TO REVIEW
+============================================================
+
+POST-V2.1 OUTPUT (generated under new voice quality rules):
+
+  1. Athlete Data\Grace Kindel\Coaching and Deep Dive\
+     Coaching Message\
+     Grace_Kindel_2026-03-23to2026-03-29_VF_CoachingMessage.txt
+     CONTEXT: Week 9. First direct coach advocacy (playing
+     time conversation). Second competitive failure (pop-out,
+     same-day processing). Goal-setting improved first time
+     in 8 weeks. Self-directed hitting 3 sessions. PSACs
+     start next week. Low EI. Aligned.
+
+  2. Athlete Data\Grace Kindel\Coaching and Deep Dive\
+     Deep Dive\
+     Grace_Kindel_2026-03-23to2026-03-29_VF_DeepDive.txt
+     Same week as above. Should be complementary to CM,
+     not duplicative.
+
+  3. Athlete Data\Tucker Lloyd\Coaching and Deep Dive\
+     Coaching Message\
+     Tucker_Lloyd_2026-04-06to2026-04-12_VF_CoachingMessage.txt
+     CONTEXT: Week 7. Zero Missed days sustained through
+     standard week (confirms Week 6 wasn't Easter-dependent).
+     Ab circuit expanded to 3 days with pushups. Protein
+     tracking first time. No gym. Goal quality at program
+     floor. Low EI. Partially Aligned.
+
+  4. Athlete Data\Tucker Lloyd\Coaching and Deep Dive\
+     Deep Dive\
+     Tucker_Lloyd_2026-04-06to2026-04-12_VF_DeepDive.txt
+     Same week as above.
+
+PRE-V2.1 OUTPUT (for comparison — what did the old rules
+produce?):
+
+  5. Athlete Data\Grace Kindel\Coaching and Deep Dive\
+     Coaching Message\
+     Grace_Kindel_2026-03-16to2026-03-22_VF_CoachingMessage.txt
+     CONTEXT: Week 8. Pre-v2.1. Self-directed defensive
+     practice with Kabine. No playing time Friday. Coach
+     frustration de-escalated. Low EI. Aligned.
+
+  6. Athlete Data\Grace Kindel\Coaching and Deep Dive\
+     Deep Dive\
+     Grace_Kindel_2026-03-16to2026-03-22_VF_DeepDive.txt
+     Same week as above. Pre-v2.1.
+
+  7. Athlete Data\Tucker Lloyd\Coaching and Deep Dive\
+     Coaching Message\
+     Tucker_Lloyd_2026-03-30to2026-04-05_VF_CoachingMessage.txt
+     CONTEXT: Week 6. Pre-v2.1. Return from spring break.
+     Zero Missed days (first since Wk 1). Coach Bradley
+     conversation. Self-directed ab circuits. Low EI.
+
+  8. Athlete Data\Tucker Lloyd\Coaching and Deep Dive\
+     Deep Dive\
+     Tucker_Lloyd_2026-03-30to2026-04-05_VF_DeepDive.txt
+     Same week as above. Pre-v2.1.
+
+============================================================
+4. GRADING FRAMEWORK — V2.1 RULE-BY-RULE ASSESSMENT
+============================================================
+
+For each of the 4 post-v2.1 files, grade every applicable
+C-rule from v2.1 Section 35:
+
+C1. EM DASH BAN
+    Grade: PASS / FAIL (count violations)
+    Check: Zero em dashes in output.
+
+C2. CONTRACTION DEFAULT REGISTER
+    Grade: STRONG / ADEQUATE / WEAK
+    Check: Are contractions the default? Are formal non-
+    contractions reserved for emphasis? Count formal non-
+    contractions per document (max 1-2/CM, 3-4/DD). Are the
+    formal ones used for genuine emphasis or just randomly
+    scattered?
+
+C3. "THAT IS [NOUN]." RULE
+    Grade: PASS / FAIL
+    Check: Max 1 per CM, 1 per DD, never both same week.
+    Are alternatives used when emphatic naming occurs?
+
+C4. PHRASE FREQUENCY LIMITS
+    Grade: STRONG / ADEQUATE / WEAK
+    Check: Zero retired phrases ("Here is what," "The version
+    of you that," "I also want to name/acknowledge," "[N]
+    weeks into this program"). Capped phrases within limits.
+    3-week non-repeat window respected.
+
+C5. CM-DD DEDUPLICATION
+    Grade: STRONG / ADEQUATE / WEAK
+    Check: Are the CM and DD genuinely complementary, or do
+    they echo each other? Does the DD explore what the CM
+    highlights from a different angle?
+
+C6. TRANSITION VARIETY + NO-TELEGRAPHING
+    Grade: STRONG / ADEQUATE / WEAK
+    Check: Are transitions varied and content-carrying? No
+    announcement-before-the-point patterns. Could any
+    transition sentence be deleted without loss?
+
+C7. CM OPENING APPROACH VARIETY
+    Grade: STRONG / ADEQUATE / WEAK
+    Check: What opening approach does each CM use? Is it
+    appropriate for the week? Is it different from the prior
+    week's opening?
+
+C8. PIPELINE CLASSIFICATION LANGUAGE
+    Grade: PASS / FAIL (list violations)
+    Check: Zero pipeline jargon in athlete-facing output.
+    No JSON field names, no tier names, no RQS scores.
+
+C9. IDENTITY THREAD VARIATION (DD only)
+    Grade: STRONG / ADEQUATE / WEAK
+    Check: Does the DD pick 1-2 relevant threads or enumerate
+    the full baseline? Does the framing evolve from prior
+    weeks?
+
+C10. ATHLETE-SPECIFIC CLOSING (CM only)
+     Grade: STRONG / ADEQUATE / WEAK
+     Check: Does the closing connect to this specific athlete's
+     arc, or is it a generic rotation phrase?
+
+============================================================
+5. ADDITIONAL QUALITY DIMENSIONS
+============================================================
+
+Beyond the C-rules, assess these quality dimensions:
+
+VOICE AUTHENTICITY
+  Would a teammate believe a human coach wrote this? Which
+  paragraphs pass that test and which don't? Be specific.
+  Quote the problematic passages.
+
+SENTENCE VARIETY
+  Is there rhythmic variation, or does the output fall into
+  a predictable pattern? Count sentence lengths across a
+  paragraph. Note any passages where every sentence follows
+  the same subject-verb-object structure.
+
+SPECIFICITY VS ABSTRACTION
+  Does the output ground observations in specific behavioral
+  evidence, or drift into abstract coaching philosophy?
+  Athlete-specific detail is a known strength of the pipeline.
+  Has v2.1 preserved that strength, or have the new rules
+  diluted it?
+
+EMOTIONAL CALIBRATION
+  Does the tone match the week's emotional intensity?
+  Grace Wk9 is Low EI with significant developmental content.
+  Tucker Wk7 is Low EI with a "doing more than saying"
+  dynamic. Are the tones appropriately distinct?
+
+LENGTH AND DENSITY
+  Are the CMs within the 250-450 word target? Are the DDs
+  within 850-1200 words? Is every paragraph earning its
+  space, or are there passages that pad without adding value?
+
+============================================================
+6. COMPARISON METHODOLOGY
+============================================================
+
+For each athlete, compare the POST-v2.1 file against the
+PRE-v2.1 file from the prior week:
+
+  Grace: Wk9 (post) vs Wk8 (pre)
+  Tucker: Wk7 (post) vs Wk6 (pre)
+
+For each comparison, answer:
+
+1. WHAT IMPROVED? Cite specific passages from the post-v2.1
+   output that are better than equivalent passages in the
+   pre-v2.1 output. Name which C-rule drove the improvement.
+
+2. WHAT DIDN'T IMPROVE? Cite specific passages where the
+   same pattern appears in both the pre and post versions.
+   These are rules that aren't being followed consistently.
+
+3. WHAT GOT WORSE? Cite any passages where the post-v2.1
+   output is less natural or less effective than the pre-v2.1
+   version. These suggest a rule may be overcorrecting.
+
+4. WHAT'S NEW? Any patterns in the post-v2.1 output that
+   weren't present in pre-v2.1 — good or bad.
+
+============================================================
+7. PRELIMINARY OBSERVATIONS
+============================================================
+
+The following patterns were observed during a preliminary
+read of the post-v2.1 output. The review should confirm,
+dismiss, or expand each of these:
+
+GRACE KINDEL WEEK 9 CM:
+  - No em dashes detected (C1 appears to PASS)
+  - Contractions used naturally throughout ("aren't," "didn't,"
+    "you're," "isn't") — C2 appears STRONG
+  - "Ownership, plain and simple." — a fragment construction
+    from the C3 alternatives. Effective here?
+  - No retired phrases detected
+  - Opening uses a quote-led approach (athlete's own words).
+    Week 8 used a stat-led approach (56 straight Win days).
+    Good variety.
+
+GRACE KINDEL WEEK 8 CM (PRE-V2.1, for comparison):
+  - Uses em dashes in prose ("Grace —" salutation, multiple
+    mid-sentence em dashes)
+  - "Here is what earned recognition this week." — retired
+    phrase (H3)
+  - "Here is what needs attention." — retired phrase (H3)
+  - "That is agency." — standalone "That is [noun]." (H1)
+  - "That is the version of you that walks into PSACs" —
+    retired phrase (H3)
+  - "— Coach Arron" signature — old em dash format
+  - Non-contracted "did not" / "does not" scattered, not
+    all used for emphasis
+
+TUCKER LLOYD WEEK 7 CM:
+  - No em dashes detected
+  - Contractions natural throughout
+  - "You said 'Discipline is your edge' this week. Backed
+    it up Monday through Wednesday." — good behavioral
+    grounding
+  - Opening is context-led (two consecutive zero-Missed weeks)
+  - Short punchy final paragraph
+
+TUCKER LLOYD WEEK 6 CM (PRE-V2.1, for comparison):
+  - "Now I'm going to be direct about something." — a
+    TELEGRAPHING pattern (C6) that was explicitly called out
+    in v2.1: "A real coach doesn't say 'I'm going to be
+    direct about something' before being direct."
+  - "I also want to point out what happened" — retired
+    phrase variant ("I also want to name/acknowledge")
+  - Mixed contraction usage
+
+GRACE KINDEL WEEK 9 DD:
+  - "Your reset mechanism isn't just working. It's getting
+    faster." — natural contraction, good rhythm
+  - Trendline section references Weeks 7 and 8 by specific
+    behavioral content, not hyphenated labels. C4 trendline
+    rule appears followed.
+  - Identity Thread picks up baseline claim and evolves it.
+    Uses athlete's own words. Good.
+  - BUT: "The version of confidence you're carrying into
+    PSACs isn't the outcome-dependent kind you started with."
+    — contains "The version of [X]" which was flagged as a
+    retired pattern variant. Is "the version of confidence"
+    the same issue as "the version of you that..."?
+
+TUCKER LLOYD WEEK 7 DD:
+  - "This week answered a question that's been hanging over
+    your program since Week 6." — strong, specific opening
+  - Trendline uses numeric trajectory (0, 1, 1, 1, 2, 0, 0)
+    effectively
+  - Growth Areas: "Here's the thing:" — natural use of
+    "here's" or formulaic? Appears once.
+  - Identity Thread: "The coaching identity thread went
+    quiet for a week. The personal discipline thread got
+    louder." — uses "thread" language. Pipeline jargon or
+    natural coaching vocabulary?
+
+============================================================
+8. OUTPUT FORMAT
+============================================================
+
+The review should produce:
+
+1. RULE-BY-RULE SCORECARD (all 4 post-v2.1 files)
+   Table format: Rule | Grace CM | Grace DD | Tucker CM |
+   Tucker DD | Notes
+
+2. PRE/POST COMPARISON (per athlete)
+   What improved, what didn't, what got worse, what's new.
+   Specific passages quoted.
+
+3. FINDINGS BY SEVERITY
+   HIGH: Issues that undermine voice authenticity at scale
+   MEDIUM: Issues noticeable in longitudinal reading
+   LOW: Polish items, style notes
+
+4. RECOMMENDATIONS
+   For each finding: what to change, where to change it
+   (which spec file, which section), and whether it requires
+   a new versioned file or a refinement within existing
+   v2.1 rules. Follow "Best not Better."
+
+5. DISCUSSION WITH USER
+   Present all findings to the user for collaborative review.
+   Lock decisions per finding before any specification changes.
+
+============================================================
+9. PROCESSING ORDER
+============================================================
+
+1. Read CLAUDE.md completely.
+2. Read the Voice & Tone Authenticity Audit Report.
+3. Read v2.1 Section 35 (C1-C10) — the rules being graded.
+4. Read the DD Framework NO TELEGRAPHING section.
+5. Read all 8 output files (4 post-v2.1, 4 pre-v2.1).
+6. Read the corresponding Interpretation JSONs for context:
+   a. Grace Kindel Wk9 JSON (for behavioral context)
+   b. Grace Kindel Wk8 JSON (for comparison context)
+   c. Tucker Lloyd Wk7 JSON
+   d. Tucker Lloyd Wk6 JSON
+7. Produce rule-by-rule scorecard.
+8. Produce pre/post comparison.
+9. Produce severity-rated findings.
+10. Present to user for collaborative review.
+11. Lock decisions.
+12. If spec changes needed: update files (new versions).
+13. If regeneration needed: regenerate affected files.
+14. Update CLAUDE.md.
+15. Commit to Git.
+
+============================================================
+10. REFERENCE FILES
+============================================================
+
+PRIORITY 1 — Read before anything else:
+  1. CLAUDE.md (project root)
+  2. Validation Reports\Voice_Tone_Authenticity_Audit_
+     Report.txt
+  3. Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Instructions_v2.1.txt
+     (Section 35: C1-C10, plus Sections 7-8 for format
+     and clinical language rules)
+  4. Agents - Generators\Coaching Output\Source FIles\
+     VF_Deep_Dive_Coaching_Analysis_Framework.txt
+     (NO TELEGRAPHING section)
+
+PRIORITY 2 — Post-v2.1 output (the files being graded):
+  5. Grace_Kindel_2026-03-23to2026-03-29_VF_CoachingMessage.txt
+  6. Grace_Kindel_2026-03-23to2026-03-29_VF_DeepDive.txt
+  7. Tucker_Lloyd_2026-04-06to2026-04-12_VF_CoachingMessage.txt
+  8. Tucker_Lloyd_2026-04-06to2026-04-12_VF_DeepDive.txt
+
+PRIORITY 3 — Pre-v2.1 output (comparison baseline):
+  9. Grace_Kindel_2026-03-16to2026-03-22_VF_CoachingMessage.txt
+  10. Grace_Kindel_2026-03-16to2026-03-22_VF_DeepDive.txt
+  11. Tucker_Lloyd_2026-03-30to2026-04-05_VF_CoachingMessage.txt
+  12. Tucker_Lloyd_2026-03-30to2026-04-05_VF_DeepDive.txt
+
+PRIORITY 4 — Interpretation JSONs (behavioral context):
+  13. Athlete Data\Grace Kindel\Weekly JSONS\
+      Grace_Kindel_2026-03-23to2026-03-29_VF_Interpretation.txt
+  14. Athlete Data\Grace Kindel\Weekly JSONS\
+      Grace_Kindel_2026-03-16to2026-03-22_VF_Interpretation.txt
+  15. Athlete Data\Tucker Lloyd\Weekly JSONS\
+      Tucker_Lloyd_2026-04-06to2026-04-12_VF_Interpretation.txt
+  16. Athlete Data\Tucker Lloyd\Weekly JSONS\
+      Tucker_Lloyd_2026-03-30to2026-04-05_VF_Interpretation.txt
+
+PRIORITY 5 — Voice reference files:
+  17. Agents - Generators\Coaching Output\Source FIles\
+      brand_voice.txt
+  18. Agents - Generators\Coaching Output\Source FIles\
+      content_style_guide.txt
+  19. Agents - Generators\Coaching Output\Source FIles\
+      VF_Coaching_Output_System_Identity.txt
+  20. Agents - Generators\Coaching Output\Source FIles\
+      VF_Coaching_Message_Framework.txt
+  21. Agents - Generators\Coaching Output\Source FIles\
+      VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+PRIORITY 6 — Athlete snapshots (baseline context):
+  22. Athlete Data\Grace Kindel\
+      grace_kindel_athlete_snapshot V2.txt
+  23. Athlete Data\Tucker Lloyd\
+      tucker_lloyd_snapshot.txt
+
+PRIORITY 7 — Specification files (if changes needed):
+  24. Agents - Generators\Coaching Output\
+      SOP_Coaching_Output_Instructions_v2.1.txt (full file)
+  25. Agents - Generators\Coaching Output\
+      SOP_Coaching_Output_Master_Prompt_V4.txt
+  26. Agents - Generators\Coaching Output\Source FIles\
+      VF_Coaching_Message_Framework.txt
+  27. Agents - Generators\Coaching Output\Source FIles\
+      VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+============================================================
+11. CRITICAL OPERATING RULES
+============================================================
+
+- This is a GRADING session, not a regeneration session.
+  The primary output is a quality assessment and discussion,
+  not new coaching files. Regeneration only happens if the
+  user decides specific fixes are needed AND locks decisions.
+
+- The user has noticed issues. Take those seriously. Do not
+  grade the output charitably. Be honest about what works,
+  what doesn't, and what the rules failed to address.
+
+- Quote specific passages. Vague assessments like "mostly
+  good" or "some issues" are not useful. Cite the line,
+  explain why it's a problem, and show what it should look
+  like instead.
+
+- Compare fairly. The pre-v2.1 output had known problems
+  (the audit identified them). The question is whether v2.1
+  ACTUALLY FIXED those problems, introduced new ones, or
+  left gaps.
+
+- If rules are being followed but the output still sounds
+  AI-generated, the rules aren't sufficient. That finding
+  is valuable. New rules may be needed.
+
+- "Best not Better" means sometimes the answer is fewer
+  rules, not more. If a rule is creating a new template
+  pattern, the fix might be removing or loosening the rule.
+
+- Do NOT regenerate any files without explicit user approval.
+  Present findings and recommendations first. Lock decisions
+  collaboratively. Then execute if the user decides changes
+  are needed.
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
