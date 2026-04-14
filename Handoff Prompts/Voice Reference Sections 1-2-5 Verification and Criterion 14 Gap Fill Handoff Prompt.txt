@@ -1,0 +1,632 @@
+============================================================
+VOICE REFERENCE SECTIONS 1, 2, 5 VERIFICATION
++ CRITERION 14 ALIGNMENT AUDIT
++ SECTION 4 GAP-FILL PAIRS (FABRICATED DATA)
+HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-14 (end of Session 101)
+SESSION TYPE: Multi-phase verification + design + build
+PREREQUISITE SESSIONS: 96 (Voice Reference architecture),
+                       97 (Voice Reference v1 build),
+                       98 (v2.2 handoff creation),
+                       99 (Stage 3 v2.2 build),
+                       100 (Section 3 WHY THIS WORKS
+                            second pass),
+                       101 (Section 4 WHAT CHANGED
+                            second pass + this handoff)
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION
+============================================================
+
+Read CLAUDE.md in the project root. Session 100 and 101
+entries explain the quality bar that has been applied to
+Sections 3 and 4 of the Voice Reference. This session
+brings Sections 1, 2, and 5 to that same bar, audits the
+full document for gaps against Stage 5 Criterion 14, and
+closes identified gaps through new Section 4 pairs built
+from fabricated athlete data.
+
+Then read the current Voice Reference in full:
+`Agents - Generators\Coaching Output\Source FIles\VF_Coach_Arron_Voice_Reference.txt`
+
+Read this handoff prompt in full before beginning any work.
+
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+Three goals, executed in four phases. Do not skip phases
+or reorder them.
+
+GOAL A: Bring Sections 1, 2, and 5 to the same quality bar
+as the Section 3 and Section 4 second-pass rewrites.
+
+GOAL B: Audit the Voice Reference against Stage 5
+Criterion 14 (12 fail conditions) to verify every fail
+condition has a clear teaching home somewhere in the
+document. Identify gaps.
+
+GOAL C: Close the identified gaps by designing and adding
+new Section 4 before/after pairs built from FABRICATED
+athlete data. Fabricated data is the user's explicit
+decision (Session 101) because it allows tailored teaching
+without sampling bias and without over-indexing on any one
+athlete's situation.
+
+
+============================================================
+3. WHY THIS WORK MATTERS
+============================================================
+
+The user's Session 101 framing: "this document will help
+us create great product for our end users. we can not
+afford poor quality."
+
+The Voice Reference is the primary voice authority for
+Stage 3 generation and the source of voice standards that
+flow (through pointer references) into Stages 4, 6, and 7.
+Every customer-facing coaching output the pipeline
+produces reads this document at generation time. A
+weakness in Section 2 (the six principles) propagates to
+every block in Sections 3 and 4 that cites a principle.
+A gap against Criterion 14 means the model can fail in
+ways the teacher never prepared it for. A Grace-heavy
+Section 4 teaches the model Grace-specific lessons instead
+of general principles.
+
+This session is the final quality-lock pass on the Voice
+Reference before the document is declared "gold standard."
+Do not rush. The user has explicitly chosen quality over
+speed as a standing directive.
+
+
+============================================================
+4. LOCKED DESIGN DECISIONS (DO NOT RE-DEBATE)
+============================================================
+
+DECISION 1: Four phases in this fixed order.
+  Phase 1: Sections 1, 2, 5 verification and revision.
+  Phase 2: Criterion 14 alignment audit.
+  Phase 3: New Section 4 pairs from fabricated data.
+  Phase 4: Final document pass.
+
+  Phase order is non-negotiable. Phase 1 before Phase 3
+  because new pairs cite principles from Section 2 and
+  must cite them accurately. Phase 2 before Phase 3
+  because you need the gap list before designing the fills.
+
+DECISION 2: Section 2 is the load-bearing section.
+  The six Voice Principles are cited by 8 of 8 Section 4
+  blocks and 14 of 18 Section 3 blocks after the Session 100
+  second pass. A weak principle wording propagates to every
+  citing block. Section 2 gets the most careful read in
+  Phase 1.
+
+DECISION 3: Fabricated data for new Section 4 pairs.
+  Do NOT use additional production output from the 6
+  existing athletes (Grace, Tucker, Mergim, Aidan, Angelo,
+  Jasmine, John). Production output carries Grace-heavy
+  sampling bias and may also carry residual AI patterns
+  from earlier spec versions. Fabricated data lets you:
+    - Tailor athlete situations to teach exactly one
+      principle per pair.
+    - Vary sport, competitive level, gender, age, and
+      week type across pairs for balanced sampling.
+    - Guarantee the BEFORE passage cleanly demonstrates
+      the targeted AI failure mode.
+    - Guarantee the AFTER passage cleanly demonstrates
+      the corrective without unrelated contamination.
+
+  Fabricated data quality standards:
+    - Athlete name, sport, position, competitive level,
+      week number, week outcome all specified.
+    - Behavioral details specific enough to feel real
+      (WTD counts, Bullseye ring items, journal quotes).
+    - No references to real athletes or real institutions.
+    - No names that match any current athlete in the
+      pipeline.
+
+DECISION 4: Same quality constraints as Section 3/4
+  second passes apply to new content.
+  (1) Vocabulary tracking with 2-use cap on pedagogical
+      verbs across all new blocks.
+  (2) Instinct-first opening sentences.
+  (3) Variable length based on complexity.
+  (4) Explicit Voice Principle references.
+  (5) Zero review-process jargon.
+  (6) Zero em dashes.
+  (7) Zero curly smart quotes.
+
+DECISION 5: Section 2 principles may be re-worded but
+  not renamed or reordered.
+  The six principle names are already cited in many
+  places (Instructions v2.2, Frameworks, Editorial Audit
+  v1.6, Section 3 WHY THIS WORKS blocks, Section 4 WHAT
+  CHANGED blocks). Renaming them would cascade into
+  downstream work. Re-wording WITHIN a principle is fine;
+  renaming the principle itself is not.
+
+  The six names (lock these):
+    0. Service First
+    1. Start with Meaning, Not Description
+    2. Spend Your Words Unevenly
+    3. Talk Like You've Been in the Room
+    4. Earn Every Sentence
+    5. React Don't Compose (Coach Arron Reacts, He Doesn't
+       Compose)
+
+DECISION 6: New Section 4 pair count is determined by
+  the Phase 2 audit, not pre-set.
+  The current Section 4 has 8 pairs covering 8 of the 12
+  Criterion 14 fail conditions. Phase 2 will identify
+  which of the remaining 4 conditions (and which already-
+  covered conditions) need additional or different
+  teaching. Phase 3 builds pairs to fill gaps. If the
+  audit identifies 3 gaps, you build 3 pairs. If 5, build
+  5. Do not cap artificially.
+
+DECISION 7: Downstream pass-through (Stages 4/6/7) is
+  NOT in scope for this session.
+  The user explicitly deferred downstream pass-through to
+  a separate session arc (likely Session 103+). Do not
+  touch Stage 4 v1.8, Stage 6 v1.3, or Stage 7
+  Determination Rules in this session. If you find issues
+  while reading those files for reference, flag them for
+  the deferred session and move on.
+
+
+============================================================
+5. PHASE 1 EXECUTION: SECTIONS 1, 2, 5 VERIFICATION
+============================================================
+
+Read Sections 1, 2, 5 in full before making any edits.
+
+PHASE 1A: SECTION 2 VERIFICATION (HIGHEST PRIORITY)
+
+For each of the six Voice Principles, assess:
+  - Is the principle statement one clear sentence?
+  - Does it lead with the instinct, not the rule?
+  - Is the supporting explanation concrete or abstract?
+  - Are the example applications specific and vivid?
+  - Does it use any em dashes, curly quotes, or review-
+    process jargon?
+  - Does it contradict any Session 100/101 lessons?
+
+Common failure modes to watch for:
+  - Principle stated as a rule instead of an instinct.
+  - Supporting prose that lists failure modes instead of
+    describing what the principle generates.
+  - Examples that are template-y (every principle uses
+    the same example format).
+  - Length inflation (principles padded with filler
+    because 3 paragraphs each was the template).
+
+If a principle needs rewriting, do a focused revision
+against the same 5 constraints used for Section 3 second
+pass. Write the new version, present it to the user,
+apply on approval.
+
+PHASE 1B: SECTION 1 VERIFICATION
+
+Section 1 is "Who Coach Arron Is." It was written in
+Session 96 and has not been touched since. Read it and
+assess:
+  - Does it lead with interpretation (the central
+    identity claim) or with biography?
+  - Does it make confident ranking claims about how Coach
+    Arron thinks, or does it hedge?
+  - Does it talk about Coach Arron in a register that
+    matches the voice Sections 3 and 4 teach?
+  - Does it acknowledge difficulty (hard weeks, athlete
+    pain) before reaching for coaching instincts?
+
+Revise if needed against the same 5 constraints.
+
+PHASE 1C: SECTION 5 VERIFICATION
+
+Section 5 is the compact safety net appendix. It lists
+C1-C4 rule numbers and prohibited term lists referencing
+Coaching Output Instructions v2.2 Section 35.
+
+Verify:
+  - Rule numbers match v2.2 Section 35 exactly (C1 em
+    dash ban, C2 contraction default, C3 phrase
+    frequency, C4 pipeline classification language).
+  - Prohibited term list for C4 includes "Growth weeks"
+    and "Win days" (these were added to the prohibited
+    list in v2.2 per CLAUDE.md Session 99 entry).
+  - No drift from v2.2 terminology.
+  - Cross-references to other sections are accurate.
+
+If Section 5 has drifted from v2.2, correct it. This is
+mostly mechanical verification, not creative rewriting.
+
+
+============================================================
+6. PHASE 2 EXECUTION: CRITERION 14 ALIGNMENT AUDIT
+============================================================
+
+Read SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+Section 14 in full. It contains 12 fail conditions:
+
+  14.1  Reusable Opening Template
+  14.2  Telegraphing
+  14.3  Untraceable Paragraph
+  14.4  Category Coverage Over Response
+  14.5  Brand Copy Close
+  14.6  Same Construction 3-Week Window
+  14.7  DD as Expanded CM
+  14.8  "That is [Noun]." Standalone Overuse
+  14.9  "Version of [X]" Construction
+  14.10 Triple-Negative Setup
+  14.11 Trendline Arc Recitation
+  14.12 Pipeline-Adjacent Vocabulary
+
+For each fail condition, find its teaching home in the
+Voice Reference. A teaching home can be:
+
+  TYPE A: Section 3 positive exemplar
+    The principle that prevents this failure is taught
+    positively through an exemplar that demonstrates the
+    correct instinct. Acceptable home if the exemplar
+    explicitly addresses the failure mode.
+
+  TYPE B: Section 4 before/after pair
+    The failure is taught directly through a BEFORE
+    demonstrating the failure and an AFTER demonstrating
+    the fix. Acceptable home with no caveat.
+
+  TYPE C: Section 5 binary rule
+    The failure is a mechanical rule (em dash ban,
+    specific term prohibition). Acceptable home only for
+    failures that reduce to binary mechanical checks.
+
+  TYPE D: NO HOME — GAP
+    The failure condition has no clear teaching location
+    in the Voice Reference. The model reading the Voice
+    Reference will not learn to avoid this failure except
+    through the audit catching it after the fact.
+
+Produce a table with one row per fail condition:
+
+  Condition | Home Type | Location | Adequacy
+
+"Adequacy" rating:
+  STRONG — the teaching is concrete, uses a specific
+    example, and explicitly addresses the failure mode.
+  ADEQUATE — the teaching exists but is abstract or
+    indirect.
+  WEAK — the teaching exists but is mentioned only in
+    passing without demonstrating the fix.
+  GAP — no teaching home.
+
+Any condition rated GAP or WEAK is a candidate for a new
+Section 4 pair in Phase 3.
+
+Present the audit table to the user before beginning
+Phase 3. User approves which conditions get new pairs.
+
+
+============================================================
+7. PHASE 3 EXECUTION: NEW SECTION 4 PAIRS (FABRICATED DATA)
+============================================================
+
+For each approved gap, design one new Section 4 pair.
+
+PAIR STRUCTURE (consistent with existing Section 4):
+
+  PAIR [N]: [Short descriptive name of the AI pattern]
+  ------------------------------------------------------------
+
+  BEFORE (Fabricated — [Athlete Name] Wk[N] [CM or DD]):
+  "[Passage demonstrating the AI pattern cleanly]"
+
+  THE PROBLEM:
+  [1-3 sentence diagnostic explanation]
+
+  AFTER:
+  "[Passage demonstrating the corrective cleanly]"
+
+  WHAT CHANGED:
+  [Second-pass quality block: instinct-first opening,
+  explicit Voice Principle reference, concrete mechanics,
+  variable length]
+
+FABRICATED DATA DESIGN CHECKLIST per pair:
+
+  1. Athlete profile:
+     - First name + last name (no real athlete names).
+     - Sport (vary across pairs — basketball, wrestling,
+       swimming, volleyball, golf, gymnastics, etc.).
+     - Position/event.
+     - Competitive level (vary — HS, College D1, College
+       D2/D3, Pro, Masters).
+     - Week number (specific, not "week N").
+     - Week tier (Growth/Mixed/Reset).
+     - Emotional intensity (Low/Moderate/High).
+     - Growth phase (Developing/Consistent/Leadership).
+
+  2. Situational details specific enough to feel real:
+     - Competition or practice event.
+     - WTD day counts (e.g., "4W/2N/1M").
+     - Bullseye ring items (actual item names, not
+       placeholders).
+     - Journal quote if the pair needs one.
+     - Prior week context if relevant.
+
+  3. Targeted failure mode:
+     - The BEFORE must cleanly demonstrate exactly one
+       Criterion 14 failure mode. Not two. Not a
+       combination. One.
+     - No contamination from other AI patterns.
+
+  4. Targeted fix:
+     - The AFTER must cleanly demonstrate exactly one
+       Voice Principle applied as the corrective.
+     - The connection between principle and fix must be
+       teachable in the WHAT CHANGED block.
+
+  5. Sampling balance:
+     - Across all new pairs, target diverse athlete
+       profiles. If the current Section 4 is Grace-heavy
+       (6 of 8 pairs), new pairs should avoid anything
+       resembling Grace's situation.
+     - Vary emotional intensity, growth phase, week tier,
+       sport, competitive level.
+
+  6. Zero cross-references to real athletes:
+     - Do not invent a name that sounds like any of the
+       6 existing athletes (Grace Kindel, Tucker Lloyd,
+       Mergim Bushati, Aidan Burkardt, Angelo Allen,
+       Jasmine Jones, John Tastinger).
+     - Do not use real school names (Seton Hill, Pitt,
+       etc.) or real team names.
+     - Use plausible but generic names.
+
+PAIR NUMBERING:
+  Existing Section 4 has Pairs 1-8. New pairs start at
+  Pair 9. If the audit identifies 3 gaps, you add Pair 9,
+  Pair 10, Pair 11.
+
+PRESENT THE FULL PAIR DESIGN TO THE USER BEFORE WRITING
+PROSE. Include fabricated athlete profile, targeted
+failure mode, targeted principle, and a brief description
+of the BEFORE/AFTER strategy. User approves the design
+before you write the WHAT CHANGED blocks.
+
+Once design is approved, write the full pair (BEFORE,
+THE PROBLEM, AFTER, WHAT CHANGED) and present the batch
+for review. Apply on approval.
+
+
+============================================================
+8. PHASE 4 EXECUTION: FINAL DOCUMENT PASS
+============================================================
+
+Mechanical verification only:
+
+  1. Em dash count = 0 (grep -c "—" on the file)
+  2. Curly smart quote count = 0 (grep for U+201C,
+     U+201D, U+2018, U+2019)
+  3. Section numbering still sequential (1, 2, 3, 4, 5)
+  4. Section 4 pair numbering sequential (Pair 1 through
+     the new final pair)
+  5. All principle names spelled exactly as listed in
+     Decision 5
+  6. Cross-references to Instructions v2.2 Section 35
+     still accurate
+  7. File reads top to bottom without broken transitions
+     introduced by new content
+
+If any mechanical check fails, fix it and re-verify.
+
+
+============================================================
+9. EXECUTION ORDER SUMMARY
+============================================================
+
+1. Read CLAUDE.md.
+2. Read VF_Coach_Arron_Voice_Reference.txt in full.
+3. Read this handoff prompt in full.
+4. PHASE 1A: Verify Section 2. Revise if needed.
+5. PHASE 1B: Verify Section 1. Revise if needed.
+6. PHASE 1C: Verify Section 5. Revise if needed.
+7. PHASE 2: Read SOP_Editorial_Audit_Project_Instructions
+   _v1.6.txt Section 14. Build the 12-condition alignment
+   audit table. Present to user.
+8. Get user approval on which gaps to close.
+9. PHASE 3: Design each new pair (fabricated data +
+   targeted failure + targeted principle). Present
+   designs to user.
+10. Get user approval on designs.
+11. Write full pair text for each new pair. Present
+    batch to user.
+12. Apply on approval.
+13. PHASE 4: Mechanical verification pass.
+14. Update CLAUDE.md with Session 102 entry.
+15. Commit.
+
+
+============================================================
+10. CRITICAL OPERATING RULES
+============================================================
+
+RULE 1: DO NOT APPLY ANY CHANGE WITHOUT USER LOCK.
+  Present for review, wait for explicit approval, apply
+  immediately in the same turn. This is the standing
+  process established in Session 100.
+
+RULE 2: PHASE 1 BEFORE PHASE 3. No exceptions.
+  Section 2 principles must be verified before new
+  Section 4 pairs are designed, because the new pairs
+  will cite principles and cannot cite principles that
+  are about to change.
+
+RULE 3: FABRICATED DATA MUST BE INTERNALLY CONSISTENT.
+  If you say the athlete is a D2 wrestler in a Reset week
+  with High EI, the BEFORE and AFTER and WHAT CHANGED all
+  must stay consistent with that profile. No drift
+  between the BEFORE's athlete and the AFTER's athlete.
+
+RULE 4: ZERO EM DASHES IN ALL NEW PROSE.
+  Applies to WHAT CHANGED blocks, to fabricated BEFORE/
+  AFTER passages, to THE PROBLEM diagnostic sentences,
+  and to any messages you write to the user during the
+  session.
+
+RULE 5: DO NOT MODIFY EXISTING PAIRS 1-8.
+  Session 101 completed those. Do not touch them unless
+  Phase 2 audit reveals a specific problem that requires
+  editing an existing pair to close a gap. If that
+  happens, flag it to the user before editing.
+
+RULE 6: MODEL RECOMMENDATION — OPUS.
+  All judgment-intensive writing work in this session
+  should use Opus. The Section 2 principle verification
+  and the Section 4 pair design are the most judgment-
+  heavy tasks in the Voice Reference build process.
+
+RULE 7: PHASE 2 AUDIT MUST BE DONE AGAINST THE CURRENT
+  VOICE REFERENCE STATE, NOT A REMEMBERED STATE.
+  Re-read each Section 3 exemplar and Section 4 pair
+  before marking a Criterion 14 condition as covered.
+  Do not rely on the CLAUDE.md summary or this handoff
+  prompt for coverage claims. Verify against the document.
+
+RULE 8: CLAUDE.MD + COMMIT AT THE END.
+  Session 102 entry should describe what was done in each
+  phase, which conditions got new pairs, and what the
+  final Voice Reference state looks like. Commit Voice
+  Reference and CLAUDE.md together as the final session
+  commit.
+
+
+============================================================
+11. REFERENCE FILES BY PRIORITY
+============================================================
+
+PRIORITY 1 - Read before anything else:
+  1. CLAUDE.md (project root).
+  2. VF_Coach_Arron_Voice_Reference.txt (full file).
+     Path: Agents - Generators\Coaching Output\Source FIles\
+
+PRIORITY 2 - Needed for Phase 2:
+  3. SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+     Path: Agents - Generators\Editorial Audit\
+     Focus: Section 14 (12 fail conditions with
+     descriptions, auto-correction rules, decision tree).
+
+PRIORITY 3 - Needed for Phase 3 cross-check:
+  4. SOP_Coaching_Output_Instructions_v2.2.txt
+     Path: Agents - Generators\Coaching Output\
+     Focus: Section 2 authority hierarchy, Section 35
+     C1-C4 mechanical rules, Sections 36-37 uneven
+     coverage and exemplar category matching.
+
+  5. VF_Coaching_Output_Voice_Foundations.txt
+     Path: Agents - Generators\Coaching Output\Source FIles\
+
+PRIORITY 4 - Context only:
+  6. Session 100 and Session 101 entries in CLAUDE.md
+     describe the quality bar applied to Sections 3 and
+     4 and the constraints that bar represents.
+
+
+============================================================
+12. SUCCESS CRITERIA
+============================================================
+
+Session 102 is complete when ALL of the following are
+true:
+
+  [ ] Sections 1, 2, 5 of Voice Reference verified and
+      revised if needed. Section 2 principles are at the
+      same quality bar as Section 3 and Section 4 second
+      passes.
+
+  [ ] Criterion 14 alignment audit complete. Every one of
+      the 12 fail conditions has a documented teaching
+      home with an adequacy rating.
+
+  [ ] All GAP and WEAK conditions approved by user have
+      been closed through new Section 4 pairs built from
+      fabricated data.
+
+  [ ] New pairs meet all quality constraints from
+      Sections 100/101 second passes (zero em dashes,
+      zero curly quotes, instinct-first openings,
+      explicit principle references, variable length,
+      vocabulary caps, zero review-process jargon, no
+      dead connector sentences).
+
+  [ ] Final mechanical pass verifies 0 em dashes,
+      0 curly quotes, sequential numbering, accurate
+      cross-references.
+
+  [ ] CLAUDE.md updated with Session 102 entry.
+
+  [ ] Commit created with descriptive message.
+
+  [ ] Final git status shows clean working tree.
+
+
+============================================================
+13. WHAT NOT TO DO
+============================================================
+
+DO NOT:
+  - Start Phase 3 before Phase 1 is complete.
+  - Start Phase 3 before Phase 2 audit is presented and
+    user-approved.
+  - Use real athlete production data for new Section 4
+    pairs. Fabricated only.
+  - Invent athlete names that echo existing pipeline
+    athletes.
+  - Reorder or rename the six Voice Principles.
+  - Touch downstream specs (Stage 4 v1.8, Stage 6 v1.3,
+    Stage 7 Determination Rules). That is a separate
+    session arc.
+  - Modify existing Pairs 1-8 without explicit user
+    approval.
+  - Rush Phase 1. The user has explicitly stated quality
+    over speed as the standing directive.
+  - Ship if any GAP condition remains uncovered without
+    user approval.
+  - Introduce em dashes, curly quotes, or review-process
+    jargon anywhere in new content.
+  - Mention this handoff's existence in messages to the
+    user during the session (they know it exists —
+    reference the phase numbers instead).
+
+
+============================================================
+14. FINAL NOTE
+============================================================
+
+The Voice Reference after Session 102 should be the
+definitive teacher for Stage 3 generation and the
+spine of voice standards for the entire pipeline. Every
+Coaching Message, Deep Dive, Parent Coaching Message,
+Coach Insight, Parent Insight, and Daily Snippet that the
+pipeline generates reads from this document's authority.
+
+The user's Session 101 directive: "this document will
+help us create great product for our end users. we can
+not afford poor quality."
+
+Do this work at the Section 3/4 second-pass bar or
+higher. If at any point you are uncertain about quality,
+flag it to the user before applying rather than shipping
+below the bar.
+
+Good luck.
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
