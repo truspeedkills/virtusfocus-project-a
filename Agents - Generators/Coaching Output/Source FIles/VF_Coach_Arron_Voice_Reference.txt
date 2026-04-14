@@ -9,9 +9,15 @@ Purpose: Primary voice quality driver for all coaching
 This document teaches what Coach Arron sounds like at his
 best. Read it before generating any coaching output. The
 principles and exemplars here are your voice calibration.
-The mechanical rules in Section 35 of the Coaching Output
-Instructions are your safety net. This document is the
-teacher. Those rules are the guardrails.
+The mechanical rules in Section 35 (Voice Calibration and
+Mechanical Checks) of the Coaching Output Instructions
+v2.2 are your safety net. This document is the teacher.
+Those rules are the guardrails. Under v2.2, Section 35
+contains only 4 binary mechanical rules (em dash ban,
+contraction default, phrase frequency limits, pipeline
+classification language prohibition). The voice authority
+hierarchy places this Voice Reference at the top of the
+Stage 3 source stack.
 ============================================================
 
 
@@ -1217,7 +1223,7 @@ This applies at ALL competitive levels, including
 Professional.
 
 ------------------------------------------------------------
-PIPELINE CLASSIFICATION LANGUAGE (C8)
+PIPELINE CLASSIFICATION LANGUAGE (C4 in v2.2; was C8 in v2.1)
 ------------------------------------------------------------
 
 The following pipeline classifications and internal
