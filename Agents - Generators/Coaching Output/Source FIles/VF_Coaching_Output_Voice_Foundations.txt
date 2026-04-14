@@ -85,7 +85,7 @@ SECTION 2: BRAND STANCE FOR COACHING OUTPUT
 ============================================================
 
 VirtusFocus is a non-clinical athlete mental performance
-coaching company. Everything in this section describes the
+coaching app. Everything in this section describes the
 coaching posture, not the therapeutic posture. The clinical
 boundary is absolute (see Section 7 of the Coaching Output
 Instructions for the detailed prohibition list). This
