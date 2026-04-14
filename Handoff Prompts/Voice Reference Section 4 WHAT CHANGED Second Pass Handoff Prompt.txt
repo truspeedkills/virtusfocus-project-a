@@ -1,0 +1,761 @@
+============================================================
+VOICE REFERENCE SECTION 4 WHAT CHANGED SECOND PASS
+HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-14 (end of Session 100)
+SESSION TYPE: Focused prose rewrite (single document, 8 blocks)
+PREREQUISITE SESSIONS: 96 (Voice Reference architecture design),
+                       97 (Voice Reference v1 build),
+                       98 (Stage 3 v2.2 handoff creation),
+                       99 (Stage 3 v2.2 build execution),
+                       100 (Voice Reference exemplar library
+                            review + Section 3 WHY THIS WORKS
+                            second-pass rewrite, applied)
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION - READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline. Session 100
+entry describes the Section 3 review work and explains why
+this Section 4 second pass is needed.
+
+Then read the current state of the Voice Reference:
+`Agents - Generators\Coaching Output\Source FIles\VF_Coach_Arron_Voice_Reference.txt`
+
+The Voice Reference is the primary voice authority for Stage 3
+athlete-facing and parent-facing coaching output. Section 2
+contains the 6 Voice Principles. Section 3 contains 18
+annotated exemplars (HOW COACH ARRON RESPONDS + WHY THIS WORKS
+pairs). Section 4 contains 8 Before/After Pairs demonstrating
+specific AI-pattern fixes. Section 5 is the compact safety net
+appendix.
+
+Your work in this session is Section 4 only, specifically the
+WHAT CHANGED prose blocks after each Pair's BEFORE/AFTER
+comparison. The AFTER text is already updated. The BEFORE text
+is historical context and should not change. Only the WHAT
+CHANGED prose needs rewriting.
+
+Also read this handoff prompt in its entirety before beginning
+any writing.
+
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+Rewrite all 8 WHAT CHANGED prose blocks in Section 4 of the
+Voice Reference. The current WHAT CHANGED blocks contain
+phantom references to content that no longer exists in the
+corresponding AFTER text (the AFTERs were revised during
+Session 100, and the WHAT CHANGED analysis was never updated
+to match).
+
+After the 8 rewrites are complete, run the end-of-document
+uniform format pass: convert any curly smart quotes (" " '
+') to straight quotes (" ') throughout the Voice Reference.
+This was flagged as a minor issue during Session 100's
+Category A review but deferred to this session.
+
+Target quality bar: match the Section 3 WHY THIS WORKS
+second-pass quality (instinct-first framing, explicit Voice
+Principle references, tight vocabulary variety, variable
+length, zero review-process jargon, zero em dashes).
+
+
+============================================================
+3. CONTEXT - WHY THIS IS A SECOND PASS
+============================================================
+
+In Session 100, a first draft of all 8 Section 4 WHAT CHANGED
+rewrites was produced and presented for user review. The user
+asked for honest self-assessment. Five specific problems were
+identified:
+
+PROBLEM 1: Uneven depth across the 8 blocks
+  Pairs 1, 4, 5, 6, 7 were strong. Pairs 2, 3, 8 were adequate
+  but thinner. The thin blocks had either less analytical
+  depth or stretched a single idea across two paragraphs
+  when one would have sufficed.
+
+PROBLEM 2: "A real coach does/does not..." construction crutch
+  The construction "A real coach does/does not..." appeared
+  5 times across 8 blocks (Pairs 1, 2, 3, 7, 8). This is the
+  Section 4 equivalent of the "ranks" and "names" crutches
+  that forced a second pass on Section 3. The construction
+  works, but at 5 uses it becomes the document's signature
+  move, which teaches the model to copy the pattern.
+
+PROBLEM 3: Voice Principles named in only 4 of 8 blocks
+  Pairs 1, 2, 3, 8 explicitly named principles (Start with
+  Meaning Not Description, Spend Your Words Unevenly, Earn
+  Every Sentence, Earn Every Sentence applied to transitions).
+  Pairs 4, 5, 6, 7 did not. Section 3's second pass hit 14 of
+  18 blocks; Section 4's first draft hit 4 of 8.
+
+PROBLEM 4: Filler sentences in Pairs 3 and 8
+  Pair 3 had "Directness that has to introduce itself is not
+  directness. The announcement is the tell." Two sentences
+  saying the same thing from two angles. Tighter: keep one.
+  Pair 8 had a psychological explanation clause ("because
+  announcing a shift is easier than making it") that did not
+  teach what Coach Arron does differently - it explained the
+  AI pattern's source rather than the fix.
+
+PROBLEM 5: No consistent structural template across the 8 blocks
+  The blocks opened in three different ways (abstract
+  principle, declarative observation, quote). The analysis
+  unfolded in different structures. Variety is good, but
+  within the variety there was inconsistency in how each
+  block reached its conclusion. A disciplined second pass
+  should establish a loose shared structure (what the AI
+  pattern does wrong at an instinct level, what the AFTER
+  does to fix it, connection to a Voice Principle) while
+  still varying the prose.
+
+User approved the second pass but the session had accumulated
+significant context from the Section 3 review and rewrite work.
+Section 4 second pass was deferred to a fresh session to
+maintain the same quality bar as Section 3 without context
+pressure. That fresh session is this one.
+
+
+============================================================
+4. LOCKED DESIGN DECISIONS (DO NOT RE-DEBATE)
+============================================================
+
+DECISION 1: Second pass is needed
+  The first draft was adequate but below the Section 3 quality
+  bar. The user affirmed quality over speed ("saving time at
+  the expense of quality is a non starter"). Do not attempt
+  to shortcut this by applying the first draft with minor
+  edits. Write the second pass from scratch against the five
+  constraints below.
+
+DECISION 2: Five quality constraints (inherited from Section 3
+            second pass)
+
+  Constraint A - Vocabulary tracking
+  Track pedagogical verb usage as you write. Cap any single
+  verb at 2 uses maximum across the 8 blocks. Specifically
+  watch for: "names," "ranks," "grounds," "delivers," "lands,"
+  "arrives," "carries," "tells," "says," "offers," "holds,"
+  "identifies," "points to," "draws from." These were the
+  ceiling verbs in Section 3. If you use one, count it against
+  the cap.
+
+  Constraint B - Instinct-first framing
+  Every block's opening sentence names the coaching reason
+  before describing the rhetorical structure. Lead with WHY
+  a coach would make this move, not WHAT the move is. The
+  Section 3 WHY THIS WORKS rewrites all pass this test; read
+  them for pattern reference.
+
+  Constraint C - Variable length based on pair complexity
+  Let each block find its own length between approximately 5
+  and 10 sentences. Simple single-instinct pairs should be
+  shorter. Multi-move pairs should be longer. Uniform length
+  across all 8 blocks is a failure mode. Section 3's second
+  pass ranged from 5 sentences (A2, A3, C1, C2) to 9 sentences
+  (F1).
+
+  Constraint D - Explicit Voice Principle references
+  Name Voice Principles by name in 7 or 8 of 8 blocks. The
+  six principles are:
+    0. Service First
+    1. Start with Meaning, Not Description
+    2. Spend Your Words Unevenly
+    3. Talk Like You've Been in the Room
+    4. Earn Every Sentence
+    5. React Don't Compose (Coach Arron Reacts, He Doesn't Compose)
+  Section 3's second pass hit 14 of 18 blocks. Target similar
+  density or higher for Section 4.
+
+  Constraint E - Zero review-process jargon
+  Do not use "load-bearing," "contrast-reframe," "softened
+  contrast," "subordinated trailing clause," "pattern-adjacent,"
+  or other analysis vocabulary that emerged during the review
+  process. Write for a reader of the Voice Reference, not for
+  someone reviewing the Voice Reference's design history.
+
+DECISION 3: "A real coach" construction cap
+  Cap the "A real coach does/does not" construction at 2 uses
+  maximum across the 8 blocks. The first draft used it 5 times.
+  This construction is rhetorically effective when deployed
+  once or twice, and becomes a signature crutch at higher
+  frequency. Use different contrasts for the other 6 blocks:
+    - "A coach who has been watching for [N] weeks..."
+    - "A coach sitting across from an athlete in Week N..."
+    - "The athlete already [did/lived/wrote] X. The coach's job
+      is Y."
+    - "[AI pattern] works until the athlete notices the pattern."
+    - Direct observation of what the BEFORE teaches the model
+      to copy.
+    - Negative framing of the AI pattern's effect on the athlete.
+  Vary the framing. Do not default to the same contrast move.
+
+DECISION 4: Zero em dashes (applies to all backend/pedagogical
+            documents)
+  The em dash ban established in Section 35 of the Coaching
+  Output Instructions v2.2 applies to the Voice Reference as
+  well, per user directive during Session 100. The current
+  Voice Reference has 0 em dashes, verified. Do not introduce
+  any. Use commas, periods, colons, or parentheses for
+  parenthetical asides, mid-sentence pivots, list introductions,
+  and dramatic pauses. See Section 35 C1 for replacement rules
+  by function.
+
+DECISION 5: Do not modify the BEFORE or AFTER text
+  Only WHAT CHANGED prose blocks get rewritten. The BEFORE
+  quotes are historical production output and should not be
+  edited. The AFTER text was finalized during Session 100 and
+  should not be changed. If you notice a problem with an AFTER
+  during this session, flag it to the user but do not edit it
+  without approval.
+
+DECISION 6: End-of-document format pass is part of this session
+  After the 8 WHAT CHANGED rewrites are complete and applied,
+  run a search-and-replace pass converting any curly smart
+  quotes to straight quotes throughout the Voice Reference.
+  Curly quotes to convert:
+    " (U+201C, left double quote)
+    " (U+201D, right double quote)
+    ' (U+2018, left single quote)
+    ' (U+2019, right single quote)
+  Replace with:
+    " (U+0022, straight double quote)
+    ' (U+0027, straight single quote, or apostrophe)
+  This was flagged in A1 early in Session 100 but deferred
+  because the document was being actively edited. With all
+  content work complete, run the format pass as the final step.
+
+
+============================================================
+5. THE 8 SECTION 4 PAIRS - CURRENT AFTER TEXT
+============================================================
+
+These are the finalized AFTER versions (Session 100 end-state).
+Your WHAT CHANGED rewrites must accurately describe these
+texts. Do not reference content that is not in these AFTERs.
+
+------------------------------------------------------------
+PAIR 1: Stat-led template opening
+------------------------------------------------------------
+
+BEFORE (Grace Wk8 CM):
+"Fifty-six straight Win days. Eight consecutive Growth weeks.
+And this week showed me something new about who you are
+becoming."
+
+BEFORE (Grace Wk10 CM):
+"Seventy straight Win days. Ten consecutive Growth weeks.
+You've now maintained your daily standard longer than any
+other athlete in this program."
+
+AFTER (Week 10, rewritten):
+"You didn't play a single minute this week, and you still
+showed up every day. You are the story right now, not the
+streak."
+
+AI pattern the AFTER fixes: Stat-led template opening where
+the athlete can predict every message's first sentence from
+the same [streak count] + [week count] + [transition]
+structure.
+
+------------------------------------------------------------
+PAIR 2: Recounting vs Interpreting
+------------------------------------------------------------
+
+BEFORE (typical pattern):
+"Monday you went to the gym. Tuesday you had a good practice.
+Wednesday you wrote in your journal about staying focused.
+Thursday you had a difficult conversation with your coach.
+Friday you took the day off. Saturday you hit the field with
+your teammate."
+
+AFTER:
+"Thursday's conversation with your coach is what the week
+turned on. You'd been moving toward it all week, and the way
+you showed up after that moment told me it hit the way it
+needed to."
+
+AI pattern the AFTER fixes: Day-by-day recounting. Listing
+what the athlete did is reading, not interpreting. The AFTER
+replaces the list with the one moment that carries the week's
+meaning.
+
+------------------------------------------------------------
+PAIR 3: Telegraphing
+------------------------------------------------------------
+
+BEFORE (Tucker Wk6 CM):
+"Now I'm going to be direct about something. The
+zero-Missed-day week happened because Easter gave you a
+full schedule of activities with people you care about."
+
+AFTER (Tucker Wk7 CM approach):
+"The gym hasn't been part of the last few weeks. You've
+shown you'll do the work at home. Now bring that same
+standard into the gym."
+
+AI pattern the AFTER fixes: Telegraphing - announcing a
+coaching move before making it. "I'm going to be direct
+about something" is not directness; it is preamble.
+
+------------------------------------------------------------
+PAIR 4: Trendline arc recitation
+------------------------------------------------------------
+
+BEFORE (Grace Wk8 DD):
+"The eight-week trendline now carries two complete arcs.
+The first is the confidence arc: outcome-reactive at
+baseline, preparation-driven through Weeks 1-2,
+structure-sustained under pressure in Week 3, action-
+proven in Week 4, identity-embedded in Week 5,
+competition-validated in Week 6, and failure-resilient
+in Week 7."
+
+AFTER (Grace Wk9 DD approach):
+"Week 7 was anger. Week 8 was you going out on Sunday
+and creating your own answer with Kabine. This week was
+you going straight to the person who makes the decisions.
+You're not stuck reacting anymore. You're doing something
+with it."
+
+AI pattern the AFTER fixes: Trendline arc recitation with
+hyphenated compound-adjective arc labels. The AFTER uses
+three concrete moments instead of seven labeled phases.
+
+------------------------------------------------------------
+PAIR 5: Pipeline jargon
+------------------------------------------------------------
+
+BEFORE (Grace Wk8 DD):
+"Consistent phase maintained through your eighth
+consecutive Growth week. Emotional intensity returned to
+Low after Week 7's Moderate elevation."
+
+AFTER:
+"This is eight straight weeks of you showing up with the
+same standard. And this week didn't carry the same
+frustration as last week. After Week 7, that's worth
+paying attention to."
+
+AI pattern the AFTER fixes: Internal pipeline classification
+vocabulary surfacing in athlete-facing output. The AFTER
+translates category labels into the athlete's own experience.
+
+------------------------------------------------------------
+PAIR 6: Triple-negative AI pattern
+------------------------------------------------------------
+
+BEFORE (Grace Wk10 DD):
+"This week brought something different. Not a failure,
+not a breakthrough, not a moment to reset from. Just a
+quiet redirection of where your energy goes."
+
+AFTER:
+"This was a quieter week. You didn't get any playing
+time, and there wasn't a big moment to react to. You just
+kept showing up and stayed steady in it."
+
+AI pattern the AFTER fixes: Triple-negative setup "Not X,
+not Y, not Z. Just W." The AFTER leads with positive
+framing and supports it with specific context.
+
+------------------------------------------------------------
+PAIR 7: "The version of [X]" construction
+------------------------------------------------------------
+
+BEFORE (Grace Wk9 DD):
+"The version of confidence you're carrying into PSACs
+isn't the outcome-dependent kind you started with."
+
+AFTER:
+"The confidence you're taking into PSACs now isn't tied
+to outcomes the way it used to be. It's coming from nine
+weeks of showing up the same way whether the day gives
+back or not."
+
+AI pattern the AFTER fixes: "The version of [X]"
+construction that turns an abstract quality into a
+labeled object, creating distance between the athlete
+and the quality being described.
+
+------------------------------------------------------------
+PAIR 8: "Here is what" announcements
+------------------------------------------------------------
+
+BEFORE (Grace Wk8 CM):
+"Here is what earned recognition this week."
+"Here is what needs attention."
+
+AFTER:
+Start with the recognition or challenge itself.
+
+Instead of:
+"Here is what earned recognition this week."
+
+Write:
+"You handled Sunday's setback faster than you would have
+three weeks ago."
+
+Instead of:
+"Here is what needs attention."
+
+Write:
+"The part that still needs more structure is what happens
+when the day opens up and nobody is waiting on you."
+
+AI pattern the AFTER fixes: "Here is what" transition
+sentences that announce a shift without doing any coaching
+work. The AFTER demonstrates the fix through two paired
+before/after examples rather than a single AFTER passage.
+
+
+============================================================
+6. SECTION 3 SECOND PASS AS VOICE REFERENCE
+============================================================
+
+The Section 3 WHY THIS WORKS rewrites completed and applied
+in Session 100 are your primary style reference. They are in
+the current Voice Reference file after each HOW COACH ARRON
+RESPONDS block. Read at least 4 of them before writing Section
+4 to absorb the pedagogical voice.
+
+Recommended Section 3 WHY sections to read before writing:
+
+  A1 (Grace Wk3) - Opens with instinct ("When the week was
+     hard, a coach who moves straight to interpretation has
+     already missed the first job"), names Service First
+     explicitly, 6 sentences, ends with principle explanation.
+
+  A3 (Mergim Wk12) - Opens with instinct ("A single practice
+     decision can carry more meaning than the entire week
+     around it"), names Earn Every Sentence, 7 sentences,
+     ends with principle applied to the exemplar.
+
+  E2 (Tucker Wk7) - Opens with the reader expectation the
+     exemplar subverts ("Every reader of progress data
+     instinctively asks 'did the best get better?'"), names
+     Start with Meaning Not Description, 7 sentences,
+     explains the instinct through the principle.
+
+  F2 (Mergim Wk19) - Opens with the two ways a longitudinal
+     claim could be made ("Nineteen weeks of coaching could
+     be summarized as an arc with dozens of inflection
+     points, or as the distance between two quotes"), names
+     Spend Your Words Unevenly, 9 sentences, scale-appropriate.
+
+These four cover different opening styles, different principle
+references, and different lengths. They are the voice target.
+
+
+============================================================
+7. EXECUTION ORDER
+============================================================
+
+1. Read CLAUDE.md in full.
+
+2. Read VF_Coach_Arron_Voice_Reference.txt in full (Sections
+   1-5). Pay special attention to:
+   - Section 2 (6 Voice Principles) for exact principle names
+   - Section 3 WHY THIS WORKS rewrites for voice reference
+   - Section 4 current BEFORE/AFTER pairs for the content
+   - Section 4 current WHAT CHANGED blocks for what needs replacing
+
+3. Read this handoff prompt again, especially Sections 4 and
+   5 (locked decisions and AFTER texts).
+
+4. Draft all 8 new WHAT CHANGED blocks in one batch. Track
+   vocabulary as you write. Verify each opening sentence is
+   instinct-first. Verify Voice Principle references (target
+   7-8 of 8). Verify length variation. Verify zero em dashes.
+   Verify zero "A real coach" constructions beyond 2.
+
+5. Present the batch to the user for review in a single
+   message. Include a self-assessment section that names:
+   - Number of Voice Principle references across the 8 blocks
+   - "A real coach" construction count (target 0-2)
+   - Pedagogical verbs that hit the 2-use cap
+   - Length range (shortest to longest)
+   - Any blocks you are less confident about
+
+6. Apply the batch on user approval. Do not apply before
+   explicit user lock. Use Edit tool one block at a time,
+   reading current state before each edit to get exact
+   old_string match.
+
+7. Verify zero em dashes remain after the edits:
+   grep -c "—" <voice reference file path>
+   Result must be 0.
+
+8. Run the end-of-document format pass (curly smart quotes
+   to straight quotes). Use a single bash command or a
+   targeted Python script if necessary. Verify after by
+   greping for the curly quote characters and confirming
+   zero results.
+
+9. Commit the completed Voice Reference with a descriptive
+   commit message naming the Section 4 second pass + format
+   pass completion.
+
+10. Update CLAUDE.md with a Session 101 entry describing
+    what was done. Update pipeline status notes if relevant.
+    Commit CLAUDE.md.
+
+11. Report completion to the user with a brief summary of
+    what was applied and the final Voice Reference state.
+
+
+============================================================
+8. CRITICAL OPERATING RULES
+============================================================
+
+RULE 1: DO NOT APPLY THE BATCH WITHOUT USER LOCK
+  The standing process established in Session 100 is: present
+  for review, get explicit user approval, apply immediately
+  in the same turn. Do not deviate from this. The user reserves
+  the right to request revisions before applying.
+
+RULE 2: DO NOT USE EM DASHES
+  Zero em dashes in any new prose you write. This applies to
+  the WHAT CHANGED blocks AND to any messages you write to the
+  user during this session. Em dashes are banned across all
+  VirtusFocus pipeline documents including backend/pedagogical
+  ones. Use commas, periods, colons, parentheses instead.
+
+RULE 3: DO NOT CHANGE THE BEFORE OR AFTER TEXT
+  Only WHAT CHANGED blocks get rewritten. BEFORE quotes are
+  historical. AFTER text was finalized in Session 100. If you
+  notice a problem with an AFTER, flag it but do not edit
+  without user approval.
+
+RULE 4: TRACK VOCABULARY AS YOU WRITE
+  The first draft of Section 4 had "A real coach" at 5 uses
+  and other pedagogical verbs clustering without being caught.
+  Section 3's second pass avoided this by tracking deliberately.
+  You are writing 8 blocks, not 18 - the tracking is easier,
+  but you still have to do it. Count your verbs as you draft.
+
+RULE 5: LEAD WITH THE INSTINCT, NOT THE MOVE
+  Every opening sentence should name WHY a coach would make
+  this move, not WHAT the move is. If your opening is "The
+  AFTER replaces X with Y," that is structure-first, not
+  instinct-first. Rewrite it to start with the coaching
+  reason behind the substitution.
+
+RULE 6: NAME VOICE PRINCIPLES BY NAME
+  "Service First" is a proper noun in this document. So are
+  the other five principles. When you reference them, name
+  them directly, not through paraphrase. Section 3 second
+  pass hit 14 of 18 blocks. Target similar density or
+  higher in Section 4 (7-8 of 8).
+
+RULE 7: VARIABLE LENGTH IS A FEATURE
+  Do not write 8 blocks at the same length. Simple pairs
+  (Pair 3, Pair 7) can be 5-6 sentences. Complex pairs
+  (Pair 4 arc recitation, Pair 1 template opening) can be
+  8-10 sentences. Pair 8 is unusual because the AFTER has
+  two paired examples rather than one passage; the WHAT
+  CHANGED block for Pair 8 may need to be slightly longer
+  to cover both examples.
+
+RULE 8: MODEL RECOMMENDATION
+  Opus for all writing work in this session. The writing is
+  judgment-intensive prose with multiple constraints held
+  simultaneously. Section 3 second pass was done with Opus
+  and hit the quality bar. Do not downshift.
+
+RULE 9: UPDATE CLAUDE.MD + COMMIT AT THE END
+  After the Section 4 rewrites are applied and the format
+  pass is complete, add a Session 101 entry to CLAUDE.md
+  describing the work. Commit the Voice Reference and
+  CLAUDE.md together as the final session commit.
+
+
+============================================================
+9. WHAT NOT TO DO
+============================================================
+
+DO NOT:
+  - Apply the Section 4 first draft from Session 100. It is
+    below the quality bar. Write from scratch.
+  - Re-debate the 5 locked constraints. The user has already
+    approved the quality discipline that was applied to
+    Section 3's second pass. Apply the same discipline here.
+  - Skip the pedagogical voice check by mimicking the Section
+    3 rewrites literally. The exemplar library (Section 3)
+    teaches coaching exemplars; the before/after pairs
+    (Section 4) teach specific AI-pattern fixes. The voices
+    should rhyme but not be identical. Section 4 blocks are
+    slightly more clinical about the pattern being fixed and
+    slightly more concrete about the fix mechanism.
+  - Introduce em dashes. Every em dash is a violation.
+  - Use "A real coach does/does not" more than twice.
+  - Leave any WHAT CHANGED block under 5 sentences or over
+    11 sentences. The range is 5-10 with most blocks in the
+    6-8 range.
+  - Modify content outside the WHAT CHANGED blocks.
+  - Skip the smart quote format pass. It is part of this
+    session's work.
+  - Present the batch as "good enough." If you are not
+    confident the batch matches the Section 3 quality bar,
+    tell the user before asking for approval.
+
+
+============================================================
+10. REFERENCE FILES BY PRIORITY
+============================================================
+
+PRIORITY 1 - Read before anything else:
+  1. CLAUDE.md (project root)
+  2. VF_Coach_Arron_Voice_Reference.txt (full file)
+     Path: Agents - Generators\Coaching Output\Source FIles\
+     Focus: Section 2 principles, Section 3 WHY THIS WORKS
+     rewrites, Section 4 current state.
+
+PRIORITY 2 - Stage 3 authority stack (for context):
+  3. SOP_Coaching_Output_Instructions_v2.2.txt
+     Path: Agents - Generators\Coaching Output\
+     Focus: Section 2 authority hierarchy, Section 35 C1 em
+     dash ban with replacement rules, Sections 36-37 uneven
+     coverage and exemplar category matching.
+
+  4. VF_Coaching_Output_Voice_Foundations.txt
+     Path: Agents - Generators\Coaching Output\Source FIles\
+     Focus: Brand stance section and writing standards.
+
+PRIORITY 3 - Audit spec (for Criterion 14 context):
+  5. SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+     Path: Agents - Generators\Editorial Audit\
+     Focus: Section 14 (Criterion 14 Voice Quality Regression)
+     which contains the 12 fail conditions that map to the
+     Section 4 AI patterns. Helpful for framing what each
+     Pair targets.
+
+PRIORITY 4 - Session history (optional):
+  6. Session 100 entry in CLAUDE.md describes the Section 3
+     second pass methodology and the specific failure modes
+     of the first draft.
+
+
+============================================================
+11. VERIFICATION CHECKLIST
+============================================================
+
+After the 8 WHAT CHANGED rewrites are written, verify:
+
+CONTENT ACCURACY:
+  [ ] Each block accurately describes the current AFTER text
+  [ ] Zero phantom references to content that no longer exists
+  [ ] Each block names the AI pattern the BEFORE demonstrates
+  [ ] Each block names what the AFTER does to fix the pattern
+
+QUALITY CONSTRAINTS:
+  [ ] Instinct-first opening sentence in all 8 blocks
+  [ ] Variable length (5-10 sentences, not uniform)
+  [ ] "A real coach does/does not" construction used 0-2 times
+      (not more)
+  [ ] Voice Principles named in 7 or 8 of 8 blocks
+  [ ] Zero review-process jargon ("load-bearing," "contrast-
+      reframe," "subordinated trailing clause," etc.)
+  [ ] No pedagogical verb used more than 2 times across blocks
+
+MECHANICAL:
+  [ ] Zero em dashes in new prose
+  [ ] Proper line wrapping matching existing file style (~55-65 chars)
+  [ ] No smart quotes in new prose (use straight quotes)
+
+APPLY PHASE:
+  [ ] Each Edit applied with exact old_string match
+  [ ] Final em dash count = 0 (via grep)
+  [ ] Final grep count of curly smart quotes = 0 after format pass
+
+DOCUMENTATION:
+  [ ] CLAUDE.md updated with Session 101 entry
+  [ ] Handoff prompt reference updated or removed from
+      pending list
+  [ ] Commit created with descriptive message
+  [ ] Final git status shows clean working tree
+
+
+============================================================
+12. EXAMPLE OF THE TARGET VOICE (FROM SECTION 3)
+============================================================
+
+This is the A1 WHY THIS WORKS block that was applied during
+Session 100. It is 6 sentences, leads with the coaching
+instinct, names a Voice Principle by name, has zero em dashes,
+and contains no review-process jargon. Use it as the tonal
+benchmark for Section 4 rewrites.
+
+    WHY THIS WORKS:
+    When the week was hard, a coach who moves straight to
+    interpretation has already missed the first job. The
+    opening marks Friday as the week's most important moment
+    in a single sentence and then stays inside what Grace
+    experienced (cracked, wanted to come home) before
+    reaching for anything else. Only after the difficulty
+    has been fully honored does the second paragraph turn to
+    what Grace did: kept the routine, not because anyone
+    told her to, but because it was hers. The quote pull of
+    Grace's own line ("Honestly just doing it for me at this
+    point") becomes the interpretive gift. The coach tells
+    Grace what her own sentence means, which she could not
+    do for herself. This is Service First applied to an
+    empathy-first week: the coach asks what Grace needs this
+    week and decides it is someone to stay in the hard place
+    with her before offering anywhere else to go.
+
+Notes on why this works as a model for Section 4:
+  - Opens with "When the week was hard, a coach who..." This
+    is instinct-first framing.
+  - Uses parentheses for parenthetical aside (cracked, wanted
+    to come home) instead of em dashes.
+  - Names Service First explicitly in the closing sentence.
+  - Paragraph structure follows the exemplar's structure
+    (opening empathy, second paragraph turn, quote pull,
+    closing principle).
+  - Concrete and specific throughout ("Friday," "the routine,"
+    "Honestly just doing it for me at this point").
+  - No review-process jargon. No "load-bearing." No "subordinated
+    trailing clause." The prose is about the coaching, not the
+    analysis.
+
+Section 4 rewrites should sound like they came from the same
+writer as this block, adapted to the Before/After Pair format
+instead of the exemplar format. The voice rhymes, the
+structure adapts.
+
+
+============================================================
+13. FINAL NOTE
+============================================================
+
+The Voice Reference is the primary voice authority for all
+Stage 3 coaching output generation. Every CM, DD, and Parent
+CM the pipeline produces will read this document at generation
+time. The quality of Section 4's pedagogical prose directly
+affects the quality of generated output.
+
+Section 3 is complete and at the target quality bar. Section
+4 is the final piece. Do this carefully. Quality over speed.
+If you reach a point where you are uncertain about a specific
+block, flag it to the user before applying rather than shipping
+something below the bar.
+
+The user's standing directive from Session 100: "saving time
+at the expense of quality is a non starter."
+
+Good luck.
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
