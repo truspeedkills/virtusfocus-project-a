@@ -1,0 +1,1240 @@
+============================================================
+STAGE 3 VOICE ARCHITECTURE v2.2 BUILD HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-13
+SESSION TYPE: Build session (all design decisions locked)
+PREREQUISITE SESSIONS: 96 (design), 97 (Voice Reference build),
+                       98 (external review integration + plan)
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the
+master context document for the entire pipeline. Session 97
+entry contains the Voice Reference build history. Session 98
+entry (this handoff was created at the end of it) contains
+the external reviewer's diagnosis integration.
+
+Then read these documents in order:
+
+  1. VF_Coach_Arron_Voice_Reference.txt (v3, production)
+     Agents - Generators\Coaching Output\Source FIles\
+     VF_Coach_Arron_Voice_Reference.txt
+     — This is the primary voice authority. Read it fully
+     to understand what Coach Arron sounds like.
+
+  2. Current Section 35 of v2.1 Instructions (C1-C10)
+     Agents - Generators\Coaching Output\
+     SOP_Coaching_Output_Instructions_v2.1.txt
+     — Lines 3749 through end of Section 35. Know what you
+     are simplifying.
+
+  3. Current legacy files you will REPLACE the authority of:
+     Agents - Generators\Coaching Output\Source FIles\
+     brand_voice.txt
+     brand_themes.txt
+     content_style_guide.txt
+     — Read fully to identify what is valuable vs what is
+     marketing/social/email contamination.
+
+  4. Current CM Framework:
+     Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Message_Framework.txt
+     — Specifically the OPENING APPROACHES section you will
+     be updating.
+
+  5. Current DD Framework:
+     Agents - Generators\Coaching Output\Source FIles\
+     VF_Deep_Dive_Coaching_Analysis_Framework.txt
+     — Already has strong voice guidance from Session 68
+     revision. You are adding a pointer to the Voice
+     Reference and a coverage/structure note.
+
+  6. Current Stage 5 v1.5 files:
+     Agents - Generators\Editorial Audit\
+     SOP_Editorial_Audit_Master_Prompt_v1.5.txt
+     SOP_Editorial_Audit_Project_Instructions_v1.5.txt
+     — Know the existing 13 criteria structure before adding
+     Criterion 14.
+
+  7. External reviewer diagnosis (reference only):
+     D:\OneDrive\Desktop\virtusfocus_stage3_voice_diagnosis.md
+     — Some insights from this document were integrated.
+     Read it for context on WHY certain changes are being
+     made. Do NOT follow its recommendations literally —
+     several were flagged incongruent. This handoff already
+     filtered and integrated the valuable parts.
+
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+This session executes the Stage 3 Voice Architecture v2.2
+redesign. All design decisions are locked. Do NOT re-debate
+the architecture during build.
+
+The session produces:
+
+  Deliverable E (NEW FILE):
+    VF_Coaching_Output_Voice_Foundations.txt
+    — Pipeline-native replacement for the rhetorical
+    authority of brand_voice.txt, brand_themes.txt, and
+    content_style_guide.txt. Purpose-built for Stage 3
+    athlete-facing and parent-facing weekly outputs.
+
+  Deliverable B (NEW VERSIONED FILE):
+    SOP_Coaching_Output_Instructions_v2.2.txt
+    — Strip C3/C5/C6/C7/C9/C10 from Section 35. Promote
+    Voice Reference to top authority. Remove legacy files
+    from authoritative sources. Add new Foundations doc.
+    Add "ban moves not phrases" framing, "uneven coverage"
+    principle, exemplar-category-matching guidance.
+
+  Coordination Update (EDIT IN PLACE):
+    VF_Coach_Arron_Voice_Reference.txt
+    — Update header reference to Section 35 rule numbers
+    so they match v2.2. Update Section 5 safety net
+    appendix if C rule numbers shift.
+
+  Deliverable C1 (EDIT IN PLACE):
+    VF_Coaching_Message_Framework.txt
+    — Retire challenge-led opening from menu. Demote
+    stat-led with explicit "rare use only" caveat. Add
+    "reusable opening" test. Add voice authority pointer
+    to Voice Reference. Add explicit note that Framework
+    defines coverage and structure, not rhetorical
+    templates.
+
+  Deliverable C2 (EDIT IN PLACE):
+    VF_Deep_Dive_Coaching_Analysis_Framework.txt
+    — Add voice authority pointer to Voice Reference.
+    Add explicit coverage/structure-not-rhetorical-template
+    note.
+
+  Deliverable D (NEW VERSIONED FILES):
+    SOP_Editorial_Audit_Master_Prompt_v1.6.txt
+    SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+    — Add Criterion 14: Voice Quality Regression (Tier 2,
+    auto-correct where possible). Update decision tree,
+    criteria overview, auto-correction rules to match.
+
+  CLAUDE.md update + commit.
+
+
+============================================================
+3. CONTEXT: WHY THIS IS HAPPENING
+============================================================
+
+The current v2.1 Stage 3 stack produces coaching output
+that is polished, on-brand, and mechanically compliant, but
+still shows detectable AI patterns at the rhetorical-move
+level. The Voice Reference document was built in Sessions
+96-97 to teach what Coach Arron sounds like at his best,
+but it is not currently elevated as the top authority in
+the active stack.
+
+Three root causes were identified:
+
+ROOT CAUSE 1: Authority-hierarchy conflict inside Stage 3
+The Voice Reference presents itself as the primary voice
+authority but is not operationally elevated. The active
+stack gives high implicit authority to broad brand/content
+documents (brand_voice.txt, brand_themes.txt,
+content_style_guide.txt) that were NOT built for this
+pipeline project. They are legacy marketing/social/email
+documents dragged into Stage 3 as defaults.
+
+ROOT CAUSE 2: Legacy document contamination
+content_style_guide.txt contains structures like "Here's
+the problem / Here's why / Here's the fix" and hook types
+for viral posts, captions, CTAs. That rhetorical DNA leaks
+into one-to-one coaching prose even when the exact phrases
+are never reproduced. It teaches a posture of explanatory
+branded content, not coach-athlete relationship.
+
+brand_voice.txt mixes legitimate coaching voice principles
+with audience-specific marketing tone adjustments and
+brand phrases designed to function as marketing slogans.
+
+brand_themes.txt is similar legacy content.
+
+These files were built for a DIFFERENT project and got
+absorbed into the pipeline as utility documents. They are
+not purpose-built for Stage 3.
+
+ROOT CAUSE 3: Internal contradictions in the stack
+The CM Framework still legitimizes opening approaches
+(stat-led, challenge-led) that the Voice Reference later
+flags as AI tells. The model receives mixed instruction:
+one file says this opening type is available, another
+says the same move is a tell. When instructions contradict,
+the model produces safe averages, not voice-authentic
+prose.
+
+The three-layer architecture locked in Session 96 (Voice
+Reference as teacher during generation, Section 35 as
+mechanical safety net, Stage 5 as post-generation audit)
+requires the authority stack to be consistent. v2.1 got
+the teacher and safety net parts right but did not
+restructure the authority stack. v2.2 completes that work.
+
+
+============================================================
+4. LOCKED DESIGN DECISIONS (DO NOT RE-DEBATE)
+============================================================
+
+DECISION 1: Purpose-Built Principle
+Every document in the Stage 3 source stack must be
+explicitly purpose-built for Stage 3 athlete-facing and
+parent-facing weekly outputs. Legacy catch-all documents
+do not belong in the authoritative source list.
+
+DECISION 2: New Foundations Document (Not File Limitation)
+Instead of limiting the legacy files' scope (which would
+leave mixed authority), create a new pipeline-native
+document that replaces their rhetorical authority for
+Stage 3. Legacy files are REMOVED from Stage 3 authoritative
+sources entirely. They remain on disk for whatever other
+stages (Stage 4, Stage 6) currently reference them. Those
+stages will be evaluated separately in future sessions.
+
+DECISION 3: Voice Reference Stays at Top
+VF_Coach_Arron_Voice_Reference.txt remains the primary
+voice authority. Nothing in v2.2 changes that. Everything
+else is subordinate for voice/rhetorical matters.
+
+DECISION 4: Frameworks Define Coverage, Not Voice
+CM Framework and DD Framework remain authoritative for:
+  - Mandatory sections
+  - Word targets
+  - Output format (headers, separators, signatures)
+  - Coverage requirements
+They cede rhetorical/voice authority to the Voice Reference.
+They are NOT converted to post-hoc validation layers (the
+external reviewer's suggestion to do so was flagged as
+incongruent with the pipeline architecture — Stage 5
+already serves that function).
+
+DECISION 5: Ban Moves, Not Just Phrases
+Section 35 v2.2 explicitly adopts "ban moves, not just
+phrases" as its framing principle. This matches what the
+Voice Reference already teaches via exemplars.
+
+DECISION 6: Uneven Coverage IS a Feature (with caveat)
+Coaching prose should spend words proportionally to what
+matters most in the week. A defining moment gets space.
+A stable pattern gets acknowledgment. Uneven coverage is
+deliberate.
+
+CRITICAL CAVEAT: Uneven coverage means PROPORTIONAL
+ATTENTION, not selective omission. Every significant
+thread in the week (hinge habit status, derailer activation,
+competition events, behavioral patterns, athlete voice)
+must still be read and accounted for. The unevenness is
+in how much space each gets, not in what gets covered.
+The coach does not skip important data to make the
+message sound more "real." The coach weights the data
+according to what matters most THIS week.
+
+DECISION 7: Exemplar Category Matching (No Retrieval Rebuild)
+The external reviewer suggested building a retrieval system
+to match exemplars to scenarios before generation. This
+was flagged as architecturally incongruent — our pipeline
+loads all source files at generation time, there is no
+RAG layer. The simpler equivalent is to add explicit
+guidance in v2.2: before generating, identify which Voice
+Reference exemplar category best matches this week's
+dominant coaching function (opening for hard week, handling
+failure, reading a trendline, etc.) and use those specific
+exemplars as primary calibration for tone, pacing, and
+move selection. No architectural change needed.
+
+DECISION 8: Reusable Opening Test
+New audit test from the external reviewer, adopted:
+"If the opening could be reused next week by changing
+only the number, it is too templated."
+Added to Section 35 v2.2 as guidance, added to Stage 5
+v1.6 Criterion 14 as a fail condition.
+
+DECISION 9: Criterion 14 Scope
+Stage 5 v1.6 adds Criterion 14: Voice Quality Regression.
+Tier 2 (auto-correct where possible, reject if not).
+The fail conditions detect the patterns the old
+C3/C5/C6/C7/C9/C10 rules tried to prevent at generation
+time. Those generation rules are removed from v2.2 in
+favor of audit-stage detection. The Voice Reference is
+the quality benchmark the audit measures against.
+
+DECISION 10: Phased Migration
+Stage 3 is the first purpose-built migration. It becomes
+the template. Stage 4 and Stage 6 legacy file evaluations
+happen in SEPARATE FUTURE SESSIONS, not as part of this
+build. Do not cascade changes into other stages during
+this session.
+
+
+============================================================
+5. DELIVERABLE E: VF_Coaching_Output_Voice_Foundations.txt
+============================================================
+
+Location: Agents - Generators\Coaching Output\Source FIles\
+Filename: VF_Coaching_Output_Voice_Foundations.txt
+
+This is a NEW file. It does not replace any existing file
+on disk. It replaces the AUTHORITY of the three legacy
+files in the Stage 3 source stack.
+
+BUILD SEQUENCE:
+
+Step 1: Read brand_themes.txt
+  This file has not been read in prior sessions. Read it
+  fully to understand what it contains.
+
+Step 2: Extract preservable content from the 3 legacy files
+  From brand_voice.txt, preserve:
+    - Calm intensity / direct / confident tone
+    - Identity-over-willpower philosophy
+    - Non-clinical stance
+    - Supportive-not-coddling posture
+    - Strong verbs, short sentences, tight structure
+    - Real-world grounding over abstract motivation
+
+  From brand_themes.txt, preserve:
+    - Whatever legitimate brand philosophy exists there
+    - Ownership and control-the-controllables philosophy
+    - Discipline-as-freedom framing
+    - Anything that supports Coach Arron's coaching stance
+
+  From content_style_guide.txt, preserve:
+    - Short sentences, strong verbs guidance
+    - Avoid hype, clichés, fluff
+    - Sentence rhythm (begin with clarity, tight structure)
+    - Avoid academic or overly intellectual tone
+
+  DO NOT preserve:
+    - Social media formats
+    - Caption structures
+    - Hook types for viral posts
+    - CTA examples
+    - Email newsletter rhythms
+    - "Here's the problem / here's why / here's the fix"
+      template structures
+    - Audience-adjustment guidance for marketing purposes
+    - Brand phrases as slogans to repeat frequently
+
+Step 3: Write VF_Coaching_Output_Voice_Foundations.txt
+  Structure:
+
+  SECTION 1: PURPOSE AND SCOPE
+    - This document governs Stage 3 athlete-facing and
+      parent-facing weekly outputs (Coaching Messages,
+      Deep Dives, Parent Coaching Messages)
+    - Not applicable to Stage 6 daily snippets, Stage 4
+      coach insights, or any marketing/social/email content
+    - Authority position: subordinate to Voice Reference
+      (primary) and Section 35 of v2.2 Instructions
+      (mechanical safety net); above Frameworks for
+      non-structural matters
+
+  SECTION 2: BRAND STANCE FOR COACHING OUTPUT
+    - What VirtusFocus stands for in the coaching context
+    - Non-clinical boundary (reference Section 7 of v2.2
+      Instructions for the detailed prohibition; here name
+      the philosophical stance)
+    - Identity-first coaching: athletes become someone, not
+      just do things differently
+    - Ownership and controllables philosophy
+    - Discipline as freedom, not punishment
+    - The relationship model: coach continuing a
+      relationship with an athlete he has been watching for
+      weeks or months, not a therapist-patient dynamic,
+      not a motivational speaker, not a content creator
+
+  SECTION 3: WRITING STANDARDS
+    - Short sentences as default, long sentences when the
+      content earns it
+    - Strong verbs, specific nouns
+    - Avoid: hype, clichés, fluff, academic register,
+      corporate tone, motivational-speaker cadence
+    - Sentence rhythm: clarity first, uneven pacing,
+      earned resolution
+    - Formatting hygiene, readability, punctuation
+      consistency
+
+  SECTION 4: EXPLICIT NON-APPLICABILITY
+    - This document does NOT contain:
+      - Rhetorical templates
+      - Opening formulas
+      - Structural recipes like "problem/why/fix/action"
+      - Content formats for social/email/marketing
+    - Marketing and social content structures from legacy
+      files are explicitly NOT authoritative for Stage 3
+    - If tension arises between this document and
+      anything in brand_voice.txt / brand_themes.txt /
+      content_style_guide.txt, this document governs
+      (those files are removed from Stage 3 authority
+      entirely in v2.2)
+
+  SECTION 5: RELATIONSHIP TO VOICE REFERENCE
+    - Voice Reference is the primary voice authority
+    - This document provides brand stance and writing
+      standards that support the Voice Reference
+    - Where they appear to overlap, the Voice Reference
+      governs voice and rhetorical decisions; this document
+      governs brand philosophy and writing hygiene
+
+  Keep the document focused and readable. Target length:
+  400-800 lines. This is a foundations document, not an
+  exhaustive manual.
+
+
+============================================================
+6. DELIVERABLE B: SOP_Coaching_Output_Instructions_v2.2.txt
+============================================================
+
+Create new versioned file. Preserve v2.1 on disk per
+versioning rules.
+
+CHANGES FROM V2.1:
+
+CHANGE B1: Section 2 (Authoritative Sources)
+  REMOVE from source list:
+    - brand_voice.txt
+    - brand_themes.txt
+    - content_style_guide.txt
+
+  ADD to source list:
+    - VF_Coaching_Output_Voice_Foundations.txt
+
+  ADD explicit authority hierarchy declaration at top of
+  Section 2 (this is NEW structure):
+
+    "AUTHORITY HIERARCHY FOR WEEKLY ATHLETE-FACING AND
+    PARENT-FACING OUTPUTS:
+
+    1. VF_Coach_Arron_Voice_Reference.txt — Primary voice
+       authority. Read before generating any coaching
+       output.
+
+    2. Section 35 of this document — Mechanical safety net
+       (em dash ban, contraction default, pipeline
+       classification language prohibition).
+
+    3. VF_Coaching_Output_Voice_Foundations.txt — Brand
+       stance and writing standards.
+
+    4. VF_Coaching_Message_Framework.txt and
+       VF_Deep_Dive_Coaching_Analysis_Framework.txt —
+       Coverage requirements, structure, format, word
+       targets. These define WHAT must be present. They
+       do NOT define rhetorical moves or voice. Voice
+       decisions cede to the Voice Reference.
+
+    5. VF_Coaching_Output_JSON_to_Message_Map.txt — JSON
+       field routing.
+
+    6. Clinical Language Prohibition (Section 7 of this
+       document) and Execution Signal Raw Metric Exclusion
+       Rule (Section 17 of this document) — Compliance
+       boundaries.
+
+    When any of these sources appear to conflict with each
+    other on voice or rhetorical matters, the Voice
+    Reference governs. Do not average across sources. The
+    Voice Reference is the teacher. Everything else
+    supports it."
+
+CHANGE B2: Section 35 Simplification
+  RENAME Section 35 from "VOICE QUALITY AND EXPRESSION
+  RULES" to "VOICE CALIBRATION AND MECHANICAL CHECKS"
+
+  ADD new first paragraph:
+    "Read VF_Coach_Arron_Voice_Reference.txt before
+    generating any coaching output. That document defines
+    Coach Arron's voice through principles and annotated
+    examples. The rules below are mechanical safety checks
+    that complement the Voice Reference. The Voice
+    Reference is the primary authority for voice and
+    rhetorical decisions. The rules in this section are
+    binary checks that support it."
+
+  KEEP (unchanged):
+    C1. Prohibited Punctuation: Em Dash
+    C2. Contraction Default Register
+    C8. Pipeline Classification Language Prohibition
+
+  STRIP ENTIRELY (move to Stage 5 audit via Criterion 14):
+    C3. Emphatic Naming: "That is [Noun]." Rule
+    C5. CM-DD Deduplication Principle
+    C6. Transition Variety (including no-telegraphing rule)
+    C7. CM Opening Approach Variety
+    C9. Identity Thread Variation (DD only)
+    C10. Athlete-Specific Closing Phrases
+
+  KEEP C4 (Phrase Frequency Limits) but evaluate whether
+  it should move to audit. Default: keep it as a mechanical
+  rule because phrase frequency is a binary check.
+
+  RENUMBER the kept rules as C1, C2, C3 (Phrase Frequency),
+  C4 (Pipeline Classification). Update all cross-references.
+
+CHANGE B3: Add "Ban Moves, Not Just Phrases" Framing
+  At the top of the new Section 35 (after the Voice
+  Reference pointer paragraph), add:
+
+    "BAN MOVES, NOT JUST PHRASES. The rules below are
+    mechanical checks against specific character or term
+    patterns. The real authority for voice is the Voice
+    Reference, which teaches you which RHETORICAL MOVES
+    to make and which to avoid. A move is the function
+    a sentence serves — announcing before saying, framing
+    before landing, summarizing before interpreting,
+    explaining before trusting the evidence. Banning a
+    phrase is a low-level fix. Banning a move is what
+    changes the writing. Internalize the moves the Voice
+    Reference teaches. The mechanical rules below are
+    the safety net, not the teacher."
+
+CHANGE B4: Add "Uneven Coverage" Principle as New Section
+  Create new section in v2.2 (not in Section 35 — give it
+  its own section). Recommended placement: near Section 4
+  (NEW FIELD USAGE RULES) or as new Section 37.
+
+  Section title: "UNEVEN COVERAGE PRINCIPLE"
+
+  Content:
+    "Coaching prose spends words proportionally to what
+    matters most in the week. A defining moment gets
+    space. A stable pattern gets acknowledgment. Uneven
+    coverage is deliberate and is a feature of authentic
+    coaching writing.
+
+    CRITICAL CAVEAT: Uneven coverage means PROPORTIONAL
+    ATTENTION, not selective omission. Every significant
+    thread in the week must still be read and accounted
+    for: hinge habit status, derailer activation or
+    absence, competition events, behavioral patterns,
+    athlete voice, emotional intensity, micro-commitment
+    results. The unevenness is in how much space each
+    gets, not in what gets covered.
+
+    The coach does not skip important data to make the
+    message sound more real. The coach weights the data
+    according to what matters most THIS week.
+
+    Examples:
+      - A Gold Streak week with six strong data points
+        does not need six paragraphs of equal weight. It
+        needs the one or two things that define the week
+        explored with depth.
+      - A stable week does not need the full baseline
+        arc recited. A brief acknowledgment of continuity
+        is enough.
+      - A competition week can legitimately spend 80% of
+        the message on one at-bat or one match if that
+        was what the week was about.
+
+    Even coverage across every data point produces a
+    report. Uneven coverage produces a conversation."
+
+CHANGE B5: Add Exemplar Category Matching Guidance
+  Add new section or subsection explaining how to use the
+  Voice Reference exemplars at generation time.
+
+  Section title: "EXEMPLAR CATEGORY MATCHING"
+
+  Content:
+    "Before generating a Coaching Message or Deep Dive,
+    identify which Voice Reference exemplar category best
+    matches this week's dominant coaching function. The
+    Voice Reference provides 18 exemplars across 6
+    categories:
+
+      A. Opening a Message (3 exemplars)
+      B. Recognizing What an Athlete Did (3 exemplars)
+      C. Naming a Challenge (3 exemplars)
+      D. Handling Failure (3 exemplars)
+      E. Reading a Trendline (3 exemplars)
+      F. Identity and Closing (3 exemplars)
+
+    Match the week's dominant function to the category,
+    then use those 3 exemplars as primary calibration for
+    tone, pacing, move selection, and sentence rhythm.
+
+    Some weeks will span multiple categories (a hard week
+    may require both A Opening and D Handling Failure
+    exemplars). Use the exemplars from each relevant
+    category.
+
+    The exemplars are calibration points, not templates.
+    Do not reproduce their structure. Internalize the
+    coaching instincts behind them and apply those
+    instincts to the specific athlete, specific week, and
+    specific data you are working with."
+
+CHANGE B6: Update Section 16 (Core Foundation Skip Rule)
+  If CF skip rule references any of the removed files,
+  update to reference the new Foundations doc instead.
+
+CHANGE B7: Preserve Everything Else
+  All other sections of v2.1 remain unchanged unless
+  directly affected by the Section 35 renumbering.
+
+
+============================================================
+7. COORDINATION UPDATE: Voice Reference Sync
+============================================================
+
+File (edit in place):
+  Agents - Generators\Coaching Output\Source FIles\
+  VF_Coach_Arron_Voice_Reference.txt
+
+UPDATE 1: Header reference
+  Current header says:
+    "The mechanical rules in Section 35 of the Coaching
+    Output Instructions are your safety net."
+
+  Update to reflect v2.2:
+    "The mechanical rules in Section 35 (Voice Calibration
+    and Mechanical Checks) of the Coaching Output
+    Instructions v2.2 are your safety net."
+
+UPDATE 2: Section 5 Safety Net Appendix
+  Currently references C1 (em dash), C2 (contractions),
+  C8 (pipeline classification). After v2.2 renumbering,
+  C8 becomes C4 (or whatever the new number is).
+
+  Update the rule letters in Section 5 to match v2.2's
+  new numbering. Content of the rules is unchanged.
+
+These are 2-3 line edits. Do them after v2.2 Instructions
+are finalized so you know the final rule numbers.
+
+
+============================================================
+8. DELIVERABLE C1: VF_Coaching_Message_Framework.txt
+============================================================
+
+Edit in place. Preserve everything not explicitly called
+out for change.
+
+CHANGE C1.1: Add Voice Authority Pointer
+  At the top of the VOICE section, add:
+
+    "VOICE AUTHORITY: The primary authority for voice,
+    tone, and rhetorical decisions in the Coaching
+    Message is VF_Coach_Arron_Voice_Reference.txt. Read
+    that document before generating any CM. This
+    Framework defines WHAT must be covered and in what
+    format. The Voice Reference defines HOW to say it.
+    Where this Framework appears to suggest a rhetorical
+    move that the Voice Reference later flags as an AI
+    pattern, the Voice Reference governs."
+
+CHANGE C1.2: Replace Opening Approaches Menu
+  Current section lists: stat-led, quote-led, moment-led,
+  challenge-led, context-led, callback-led.
+
+  REPLACE with:
+
+    "OPENING SELECTION RULE
+
+    Open with the most meaningful fact of the week, not
+    the most available format. The right opening depends
+    on what THIS week was about, not a menu of options.
+
+    Preferred openings (in priority order):
+      1. A defining moment from the week — the specific
+         event, decision, or behavior that the week most
+         turned on
+      2. A defining meaning statement — an interpretive
+         claim about what the week reveals, delivered
+         before any data
+      3. Athlete language that changes the reading of
+         the week — a specific phrase or sentence from
+         the athlete's recap that, when interpreted,
+         reframes the week
+      4. A difficult reality that must be acknowledged
+         first — when the week contained genuine
+         difficulty, lead with acknowledgment before any
+         coaching
+
+    AVOID:
+      - Stat-led openings that could be reused next week
+        by changing only the number. If your opening is
+        'X straight Win days' or 'Y consecutive Growth
+        weeks,' it is templated. Use this only when the
+        stat itself genuinely defines the week (a
+        milestone, a record, a first).
+      - Challenge-led openings that announce a coaching
+        push instead of delivering it. 'I want to push
+        you on something this week' is a setup sentence
+        that does not belong. If you have a push, make
+        it. Do not announce it.
+      - Openings that could fit another athlete with
+        only surface edits. If you could swap the name
+        and the opening still works, it is too generic.
+
+    REUSABLE OPENING TEST: If the opening of a new message
+    could be reused next week by changing only the number
+    or date, it is too templated. Rewrite it to lead with
+    something specific to this week's meaning.
+
+    See VF_Coach_Arron_Voice_Reference.txt Category A
+    (Opening a Message) for 3 exemplars demonstrating
+    strong openings across different scenarios."
+
+CHANGE C1.3: Add Coverage vs Rhetorical Template Clarification
+  In the STRUCTURE section (or a new note at the top of
+  it), add:
+
+    "STRUCTURE DEFINES COVERAGE, NOT RHETORIC. The
+    mandatory structure below specifies what must be
+    covered in every Coaching Message. It does NOT
+    specify the order in which those elements must
+    appear in prose, how they must be transitioned
+    between, or what rhetorical moves must introduce
+    them. Voice and rhetorical decisions cede to the
+    Voice Reference. Coverage and format decisions
+    remain authoritative here."
+
+
+============================================================
+9. DELIVERABLE C2: VF_Deep_Dive_Coaching_Analysis_Framework.txt
+============================================================
+
+Edit in place. This document already has strong voice
+guidance from the Session 68 revision. The changes are
+minimal.
+
+CHANGE C2.1: Add Voice Authority Pointer
+  At the top of the VOICE section, add same pointer as
+  CM Framework:
+
+    "VOICE AUTHORITY: The primary authority for voice,
+    tone, and rhetorical decisions in the Deep Dive is
+    VF_Coach_Arron_Voice_Reference.txt. Read that
+    document before generating any DD. This Framework
+    defines WHAT must be covered and in what format.
+    The Voice Reference defines HOW to say it."
+
+CHANGE C2.2: Add Coverage vs Rhetorical Template Clarification
+  Same note as CM Framework, adapted for DD. In the
+  MANDATORY STRUCTURE section:
+
+    "STRUCTURE DEFINES COVERAGE, NOT RHETORIC. The five
+    mandatory sections below specify what must be covered
+    in every Deep Dive. They do NOT specify the specific
+    rhetorical moves within each section. Voice and
+    rhetorical decisions cede to the Voice Reference.
+    Coverage, structure, and format decisions remain
+    authoritative here."
+
+CHANGE C2.3: Simplify Existing NO TELEGRAPHING Section
+  The DD Framework currently has a NO TELEGRAPHING section
+  with WRONG/RIGHT examples. Since telegraphing will be
+  caught by Stage 5 Criterion 14 and the principle is now
+  taught by the Voice Reference, simplify the NO
+  TELEGRAPHING section to a short pointer:
+
+    "NO TELEGRAPHING: Do not announce what you are about
+    to do. Just do it. See Voice Reference Principle 4
+    (Earn Every Sentence) and Before/After Pair 3 for
+    full guidance and examples."
+
+  Remove the extensive WRONG/RIGHT examples that are now
+  redundant with the Voice Reference.
+
+
+============================================================
+10. DELIVERABLE D: Stage 5 Editorial Audit v1.6
+============================================================
+
+Create new versioned files. Preserve v1.5 on disk.
+
+FILES TO CREATE:
+  Agents - Generators\Editorial Audit\
+    SOP_Editorial_Audit_Master_Prompt_v1.6.txt
+    SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+
+CHANGE D1: Add Criterion 14 to Master Prompt
+  Update the AUDIT CRITERIA OVERVIEW section. Current
+  structure has 13 criteria across 3 tiers.
+
+  Add Criterion 14: Voice Quality Regression
+  Tier: 2 (should pass, auto-correct if possible, reject if not)
+  Scope: Coaching Message AND Deep Dive
+
+  Update counts in the change log and overview.
+
+CHANGE D2: Write Criterion 14 Full Spec in Project Instructions
+  Add new Section 14 (Criterion 14: Voice Quality Regression)
+  after Section 13 (Pipeline Data Leakage). Before the
+  current Section 14 (Structural Integrity Checks) — so
+  all existing sections 14-21 renumber to 15-22.
+
+  Full content for new Section 14:
+
+    "SECTION 14: CRITERION 14 — VOICE QUALITY REGRESSION
+    Tier: 2 (SHOULD PASS, auto-correct where possible,
+    reject if not)
+    Applies to: Coaching Message AND Deep Dive
+
+    PURPOSE:
+    Detects AI-pattern regressions in voice and
+    rhetorical moves that the Voice Calibration Reference
+    is designed to prevent. Complements the Voice
+    Reference by catching patterns that slipped through
+    generation. The Voice Reference is the quality
+    benchmark this criterion measures against.
+
+    CHECK LOGIC:
+    Scan both documents for the following fail
+    conditions. Flag any detected.
+
+    FAIL CONDITION 14.1: Reusable Opening
+    The opening of the CM or DD could be reused next
+    week by changing only the number, date, or surface
+    detail. Common forms:
+      - Stat-led openings with running totals (e.g.,
+        'X straight Win days. Y consecutive Growth
+        weeks.')
+      - Template openings where substituting another
+        athlete would still work
+      - Generic scene-setters that do not reference
+        anything specific from THIS week
+
+    FAIL CONDITION 14.2: Telegraphing
+    A sentence announces the coaching move instead of
+    making it. Common forms:
+      - 'Now I want to push you on something this week.'
+      - 'Here is what I want you to see.'
+      - 'There is something I want to talk about.'
+      - 'I'm going to be direct about something.'
+    The announcement is the tell. If the sentence can
+    be deleted and the paragraph still works, it was
+    scaffolding.
+
+    FAIL CONDITION 14.3: Untraceable Paragraph
+    A paragraph is not clearly traceable to a specific
+    athlete behavior, statement, or moment from the
+    week. Every paragraph in a CM or DD should be
+    responding to something the athlete did or said.
+    Paragraphs that apply generic coaching principles
+    without specific athlete grounding fail this check.
+
+    FAIL CONDITION 14.4: Category Coverage Over Response
+    The message reads like it is covering required
+    categories (recognition, strength, drift, identity,
+    action) rather than responding to THIS week. Signs:
+      - Evenly balanced paragraphs when the week was
+        not evenly balanced
+      - Transition sentences that announce section
+        shifts
+      - Coverage of every field in the JSON regardless
+        of relevance
+      - The message reads like a report, not a
+        conversation
+
+    FAIL CONDITION 14.5: Brand Copy Close
+    The closing reads like marketing copy, a motivational
+    slogan, or a generic brand phrase rather than
+    athlete-specific language. The close should connect
+    to something from THIS athlete's arc: identity
+    claim, hinge habit, a specific moment, or their own
+    language. Standard rotation phrases are acceptable
+    as fallback only.
+
+    FAIL CONDITION 14.6: Same Construction in 3-Week Window
+    The same rhetorical construction appears in the
+    current week's CM or DD and in either of the prior
+    2 weeks for the same athlete. Common forms to check:
+      - Same opening approach
+      - Same transition phrase
+      - Same italicized observation structure
+      - Same closing phrase
+      - Same reframe move
+
+    FAIL CONDITION 14.7: DD as Expanded CM
+    The Deep Dive reads like an expanded or repeated
+    version of the Coaching Message instead of a
+    different angle on the same week. The CM is the
+    highlight reel. The DD is the full picture. They
+    should feel like two complementary perspectives from
+    the same coach, not the same draft at two lengths.
+    Check for substantial phrase duplication between CM
+    and DD for the same week (more than a few words of
+    natural coaching vocabulary).
+
+    FAIL CONDITION 14.8: 'That is [Noun].' Standalone Overuse
+    'That is [noun].' standalone declaratives (e.g.,
+    'That is ownership.') appearing more than once in
+    a CM, more than once in a DD, or in both CM and DD
+    for the same week. Occasional use as genuine
+    emphasis is acceptable. Repeated use as a structural
+    habit fails this check.
+
+    FAIL CONDITION 14.9: 'Version of [X]' Construction
+    Any use of 'the version of you,' 'the version of
+    confidence,' 'the version of [athlete's quality]'
+    constructions. These are retired entirely.
+
+    FAIL CONDITION 14.10: Triple-Negative Setup
+    'Not X, not Y, not Z. Just W.' constructions as
+    openers or transitions. This is a recognizable AI
+    pattern and should be replaced with direct positive
+    framing.
+
+    FAIL CONDITION 14.11: Trendline Arc Recitation
+    DD Weekly Trendline section enumerates more than 3
+    prior weeks or uses hyphenated compound-adjective
+    arc labels ('outcome-reactive,' 'preparation-
+    driven,' 'structure-sustained,' etc.). Trendline
+    should reference 2-3 inflection points relevant to
+    THIS week's story.
+
+    FAIL CONDITION 14.12: Pipeline-Adjacent Vocabulary
+    Terminology that is not a direct Category E/F/G
+    violation (which would fail Criterion 13) but still
+    reads as pipeline-adjacent:
+      - 'Growth weeks' / 'Win days' as named categories
+      - 'approach-framed' (in any form)
+      - 'the system' as a reference to the VirtusFocus
+        program (when it reads clinically)
+      - Other jargon-adjacent terms that a real coach
+        would not use
+
+    AUTO-CORRECTION RULES FOR CRITERION 14:
+    Auto-correct only when the fix is clear and
+    mechanical. Examples:
+      - Fail 14.2 (telegraphing): Delete the announcing
+        sentence. If the following sentence now reads
+        naturally, the correction is complete.
+      - Fail 14.8 (That is [Noun] overuse): Convert
+        extra instances to alternate constructions
+        (fragment, embedded judgment, athlete callback).
+      - Fail 14.9 (version of X): Replace 'the version
+        of [X]' with '[X]' or direct language.
+      - Fail 14.11 (trendline recitation): Trim to 2-3
+        inflection points with plain-language
+        descriptions.
+      - Fail 14.12 (pipeline-adjacent): Replace with
+        behavioral description.
+
+    REJECT AND REGENERATE when:
+      - Fail 14.1 (reusable opening): Requires full
+        opening rewrite, not mechanical replacement.
+      - Fail 14.3 (untraceable paragraph): Requires
+        generation of new content grounded in athlete
+        data.
+      - Fail 14.4 (category coverage over response):
+        Structural problem requiring full regeneration.
+      - Fail 14.7 (DD as expanded CM): Requires DD to
+        be rewritten as a different angle.
+      - Multiple auto-correctable fails (3+): Reject
+        rather than patch.
+
+    REGENERATION INSTRUCTION TEMPLATE:
+    When rejecting for Criterion 14, include in the
+    regeneration instruction:
+      - Which fail conditions triggered
+      - The specific passage(s) that failed
+      - Reference to the relevant Voice Reference
+        exemplar category for calibration
+      - Explicit instruction to re-read the Voice
+        Reference before regenerating
+
+    RELATIONSHIP TO OTHER CRITERIA:
+    Criterion 11 (Brand Voice Tonal Scan) handles
+    tonal register violations (hype, cliche, guilt,
+    academic, preachy). Criterion 14 handles voice
+    quality regression at the rhetorical-move level.
+    They are distinct and both apply.
+
+    Criterion 13 (Pipeline Data Leakage) handles raw
+    pipeline data surfacing (Category E/F/G). Criterion
+    14 handles pipeline-adjacent vocabulary that does
+    not directly surface data but reads as jargon.
+    They are distinct and both apply."
+
+CHANGE D3: Update Decision Tree
+  Add Criterion 14 to the decision tree in both Master
+  Prompt and Project Instructions.
+
+  Current tree (simplified):
+    Step 1: Structural check
+    Step 2: Tier 1 fail (1-4 or 13)? → REJECT
+    Step 3: Tier 2 non-correctable fail? → REJECT
+    Step 4: Tier 2/3 corrections applied? → AUTO-CORRECTED PASS
+    Step 5: All pass? → PASS
+
+  Updated:
+    Step 2: Tier 1 fail (1-4 or 13)? → REJECT
+    Step 3: Tier 2 fail (5-10 or 14):
+      If non-correctable OR 3+ auto-correct fails → REJECT
+      If auto-correctable → auto-correct and continue
+    Step 4: Tier 3 auto-correct applied → AUTO-CORRECTED PASS
+    Step 5: All pass → PASS
+
+CHANGE D4: Update Auto-Correction Rules Section
+  Add Criterion 14 to the list of conditionally
+  auto-correctable criteria (alongside C13A em dash and
+  C13B pipeline classification). Note the specific
+  auto-correct rules from 14 above.
+
+CHANGE D5: Update Criterion Counts in Master Prompt
+  Tier 1 count: unchanged (5 criteria: 1, 2, 3, 4, 13)
+  Tier 2 count: 7 criteria (5, 6, 7, 8, 9, 10, 14)
+  Tier 3 count: 2 criteria (11, 12)
+  Total: 14 criteria
+
+  Update change log for v1.5 → v1.6.
+
+
+============================================================
+11. EXECUTION ORDER
+============================================================
+
+1. Read all priority reference files (Section 1 of this
+   handoff)
+2. Read brand_themes.txt (not previously read)
+3. Build Deliverable E: VF_Coaching_Output_Voice_Foundations.txt
+4. Build Deliverable B: SOP_Coaching_Output_Instructions_v2.2.txt
+5. Apply Coordination Update to Voice Reference (2-3 line
+   edits to header and Section 5)
+6. Apply Deliverable C1 to CM Framework
+7. Apply Deliverable C2 to DD Framework
+8. Build Deliverable D: Stage 5 v1.6 (Master Prompt +
+   Project Instructions)
+9. Update CLAUDE.md with all changes
+10. Commit in logical commits (can be one commit or grouped)
+11. Verify clean working tree
+
+
+============================================================
+12. CRITICAL OPERATING RULES
+============================================================
+
+RULE 1: DO NOT RE-DEBATE LOCKED DECISIONS
+  All 10 locked decisions in Section 4 of this handoff
+  are final. Do not second-guess or propose alternatives
+  during build. If something feels wrong during
+  implementation, complete the work and raise it with
+  the user AFTER the build is done.
+
+RULE 2: PRESERVE ALL PREVIOUS VERSIONS ON DISK
+  - v2.1 Instructions stays on disk
+  - v1.5 Editorial Audit Master Prompt and Instructions
+    stay on disk
+  - Legacy files (brand_voice.txt, brand_themes.txt,
+    content_style_guide.txt) stay on disk — they are
+    removed from Stage 3 AUTHORITY, not deleted
+
+RULE 3: DO NOT CASCADE CHANGES INTO OTHER STAGES
+  This session is Stage 3 only. Do not modify Stage 4
+  (Coach Insights) files, Stage 6 (Daily Coaching Engine)
+  files, Parent Output sections, or anything outside the
+  Stage 3 scope. Stage 4 and Stage 6 legacy file
+  evaluations are separate future sessions.
+
+RULE 4: THE PURPOSE-BUILT PRINCIPLE
+  Every document in the new Stage 3 authoritative source
+  list must be explicitly purpose-built for Stage 3
+  athlete-facing and parent-facing weekly outputs. If you
+  find yourself tempted to add a legacy file back to the
+  list because 'it still has some useful content,' STOP.
+  Extract the useful content into the Foundations doc
+  instead.
+
+RULE 5: VOICE REFERENCE IS THE TEACHER
+  Nothing in v2.2 overrides the Voice Reference. Section
+  35 is safety net. Foundations doc is brand stance.
+  Frameworks are coverage. Voice Reference is voice.
+  When anything appears to conflict with the Voice
+  Reference on a voice matter, the Voice Reference
+  governs.
+
+RULE 6: FRAMEWORKS DEFINE COVERAGE, NOT RHETORIC
+  Do not rewrite the CM or DD Frameworks into validation
+  layers. Do not remove their structural authority. They
+  still govern mandatory sections, word targets, and
+  output format. They just stop dictating rhetorical
+  moves. This is a surgical change, not a restructuring.
+
+RULE 7: MODEL RECOMMENDATION
+  Opus for all deliverables. The Foundations doc requires
+  judgment about what to extract from legacy files. The
+  v2.2 Instructions restructuring requires careful edits
+  to a large file. Criterion 14 requires precise audit
+  specification. These are judgment-intensive tasks.
+
+RULE 8: UPDATE CLAUDE.MD COMPLETELY
+  After all deliverables are built, update CLAUDE.md:
+    - Session notes at top
+    - Session history entry (this is Session 99)
+    - Key File Locations section (add new Foundations
+      doc, update Stage 3 spec file versions, update
+      Stage 5 spec file versions)
+    - Pipeline status table (update spec versions)
+    - Completed section if relevant
+  The CLAUDE.md update is part of the build, not
+  optional.
+
+
+============================================================
+13. WHAT NOT TO DO
+============================================================
+
+DO NOT:
+  - Delete brand_voice.txt, brand_themes.txt, or
+    content_style_guide.txt from disk. They stay as
+    legacy files for other stages.
+  - Modify Stage 4 or Stage 6 files. Those are separate
+    future sessions.
+  - Convert the CM or DD Frameworks into pure validation
+    layers. Keep them as coverage and structure
+    authorities.
+  - Add more prohibition rules to v2.2 beyond what is
+    specified. The whole point of v2.2 is to STRIP
+    prohibition rules and let the Voice Reference teach.
+  - Build a retrieval system or RAG layer. Use the
+    exemplar-category-matching guidance instead.
+  - Rewrite the Voice Reference. It is in final form.
+    Only the header line and Section 5 rule numbers get
+    updated to match v2.2.
+  - Cascade Voice Reference changes into Stage 6 Daily
+    Coaching Engine or Stage 4 Coach Insights. Those
+    stages have their own voice work in v1.2/v1.3 and
+    v1.4/v1.8 respectively.
+  - Re-debate or re-design. This is a build session.
+
+
+============================================================
+14. REFERENCE FILES BY PRIORITY
+============================================================
+
+PRIORITY 1 — Read before anything else:
+  1. CLAUDE.md (project root)
+  2. VF_Coach_Arron_Voice_Reference.txt
+  3. SOP_Coaching_Output_Instructions_v2.1.txt (full file)
+  4. brand_voice.txt
+  5. brand_themes.txt (NOT previously read — important)
+  6. content_style_guide.txt
+  7. VF_Coaching_Message_Framework.txt
+  8. VF_Deep_Dive_Coaching_Analysis_Framework.txt
+  9. VF_Coaching_Output_System_Identity.txt
+
+PRIORITY 2 — Stage 5 files to upgrade:
+  10. SOP_Editorial_Audit_Master_Prompt_v1.5.txt
+  11. SOP_Editorial_Audit_Project_Instructions_v1.5.txt
+
+PRIORITY 3 — External reviewer context (optional):
+  12. D:\OneDrive\Desktop\virtusfocus_stage3_voice_diagnosis.md
+      — Do NOT follow literally. Several recommendations
+      were flagged incongruent. This handoff filtered the
+      valuable parts. Read only for background context.
+
+PRIORITY 4 — Cross-reference (if needed):
+  13. VF_Coaching_Output_JSON_to_Message_Map.txt
+  14. Sample CM and DD files for any athlete (to sanity-
+      check that the new guidance produces expected
+      improvements)
+
+
+============================================================
+15. VERIFICATION CHECKLIST
+============================================================
+
+After all deliverables are complete, verify:
+
+DELIVERABLE E (Foundations doc):
+  [ ] File exists at correct path
+  [ ] Purpose and scope explicitly limited to Stage 3
+      athlete-facing and parent-facing weekly outputs
+  [ ] Brand stance section captures non-clinical boundary,
+      identity-first, ownership, relationship model
+  [ ] Writing standards section covers sentence mechanics,
+      readability, what to avoid
+  [ ] Non-applicability section explicitly names
+      marketing/social/email/content structures as NOT
+      authoritative
+  [ ] No rhetorical templates in the document
+  [ ] No opening formulas
+  [ ] No "problem/why/fix/action" structures
+  [ ] Relationship to Voice Reference clearly stated
+
+DELIVERABLE B (v2.2 Instructions):
+  [ ] v2.2 file exists, v2.1 preserved on disk
+  [ ] Section 2 has explicit authority hierarchy at top
+  [ ] brand_voice.txt, brand_themes.txt,
+      content_style_guide.txt REMOVED from authoritative
+      sources
+  [ ] VF_Coaching_Output_Voice_Foundations.txt ADDED to
+      authoritative sources
+  [ ] Section 35 renamed to "VOICE CALIBRATION AND
+      MECHANICAL CHECKS"
+  [ ] Section 35 first paragraph points to Voice Reference
+  [ ] C3, C5, C6, C7, C9, C10 stripped from Section 35
+  [ ] C1 (em dash), C2 (contractions), C8 (pipeline
+      classification) retained and renumbered as needed
+  [ ] "Ban moves, not just phrases" framing added to top
+      of Section 35
+  [ ] New "Uneven Coverage Principle" section added with
+      caveat about not skipping important threads
+  [ ] New "Exemplar Category Matching" guidance added
+  [ ] All cross-references updated for renumbering
+  [ ] Change log updated
+
+COORDINATION UPDATE (Voice Reference):
+  [ ] Header reference to Section 35 updated for v2.2
+  [ ] Section 5 safety net appendix rule numbers updated
+
+DELIVERABLE C1 (CM Framework):
+  [ ] Voice authority pointer added
+  [ ] Opening approaches menu replaced with opening
+      selection rule
+  [ ] Stat-led opening demoted with "rare use only"
+  [ ] Challenge-led opening retired
+  [ ] Reusable opening test added
+  [ ] Coverage-vs-rhetoric clarification added
+
+DELIVERABLE C2 (DD Framework):
+  [ ] Voice authority pointer added
+  [ ] Coverage-vs-rhetoric clarification added
+  [ ] NO TELEGRAPHING section simplified to pointer
+
+DELIVERABLE D (Stage 5 v1.6):
+  [ ] v1.6 Master Prompt exists, v1.5 preserved
+  [ ] v1.6 Instructions exists, v1.5 preserved
+  [ ] Criterion 14 (Voice Quality Regression) added
+  [ ] Tier 2 placement correct
+  [ ] All 12 fail conditions specified
+  [ ] Auto-correction rules specified for 14
+  [ ] Reject conditions specified
+  [ ] Decision tree updated
+  [ ] Criterion count updated (14 total)
+  [ ] Regeneration instruction template updated
+  [ ] Change log updated
+
+CLAUDE.MD:
+  [ ] Session notes at top updated
+  [ ] Session 99 entry added to session history
+  [ ] Pipeline status table updated with new versions
+  [ ] Key File Locations updated with new Foundations doc
+  [ ] Stage 3 spec file versions updated (v2.2)
+  [ ] Stage 5 spec file versions updated (v1.6)
+
+COMMITS:
+  [ ] All changes committed
+  [ ] Working tree clean
+  [ ] Commit messages describe what and why
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
