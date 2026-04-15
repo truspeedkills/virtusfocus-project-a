@@ -7,135 +7,6 @@ All Rights Reserved.
 Confidential and proprietary source code of NBAP Development LLC.
 Unauthorized copying or distribution prohibited.
 
-Lineage: Upgrades SOP_Coach_Insights_Project_Instructions_v1.7.txt.
-Adds voice quality and expression rules applicable to all Stage 4
-human-facing output (coach and parent). Em dash ban, pipeline
-classification language prohibition with Stage 4-specific guidance,
-no-telegraphing rule, contraction guidance for institutional vs
-parent registers. All em dashes removed from specification prose.
-References v1.4 Master Prompt.
-
-Change Log from v1.7:
-- All em dashes replaced with hyphens throughout the file
-- Added VOICE QUALITY AND EXPRESSION RULES (Section 29)
-  with Stage 4-specific guidance: em dash ban, pipeline
-  classification language prohibition (distinguishing raw
-  JSON field names from Stage 4 designed output labels),
-  no-telegraphing rule, contraction guidance (institutional
-  register for coach output, Coach Arron natural register
-  for parent output), WRONG/CORRECT examples
-- Section 30 renumbered to Section 31 (FINAL SYSTEM RULE)
-- All v1.7 content preserved and unchanged below unless noted
-
-Change Log from v1.6:
-- Section 1 updated: References v9.7 schema, adds longitudinal_ppd
-  block awareness (zero consumption confirmation)
-- Section 4 expanded: longitudinal_ppd added to prohibited data with
-  full field list and F6-F8 terminology
-- Section 8 expanded: longitudinal_ppd added to NOT-CONSUMED fields
-  with non-consumption note
-- Section 12 expanded: F6-F8 terms added to prohibited content list
-- Section 18 expanded: longitudinal_ppd non-consumption note added
-- All v1.6 content preserved and unchanged below unless noted
-
-Change Log from v1.5 (preserved from v1.6):
-- Section 1 updated: Parent Weekly Insight description updated
-  (9 sections, scan-first format)
-- Section 20 rewritten: Output format updated to 9-section scan-first
-  layout with indicator line + blurb per section. Section 7 removed.
-- Section 21 rewritten: Rebrand mapping updated (9 sections).
-  Per-section content guidance now includes INDICATOR LABELS with
-  locked enum values, indicator determination rules, and blurb
-  guidance. New INDICATOR FORMAT RULE subsection.
-- Section 22 expanded: New voice rule 7 for indicator label formatting
-- Section 23 rewritten: Ecosystem calibration redirected to Parent CM
-  Section 4 exclusively. Parent Insight no longer has a support
-  section requiring ecosystem calibration.
-- Section 26 rewritten: Section 7 coordination removed. Support
-  guidance exclusively in Parent CM. Complementary model updated.
-- Section 27 rewritten: Validation checklist updated for 9-section
-  scan-first format with indicator validation items.
-- All other sections preserved from v1.5 unchanged
-
-Change Log from v1.4 (preserved from v1.5):
-- Section 1 expanded: References v9.6 schema, adds forward_anchor
-  block awareness
-- Section 3 expanded: Added forward anchor classification source
-  (VF_Interpretation_JSON_Rules.txt Sections 18-19)
-- Section 4 expanded: Forward anchor prohibited data added
-- Section 6 expanded: Per-section forward anchor enrichment guidance
-  for Sections 1, 8, 9 with WRONG/CORRECT examples
-- Added FORWARD ANCHOR INTEGRATION RULE (Section 19)
-- Section 24 expanded: Forward anchor added to parent-specific
-  prohibitions
-- Renumbered Sections 20-29 to 20-30 (FINAL SYSTEM RULE now
-  Section 30)
-- All v1.4 content preserved and unchanged below unless noted
-
-Change Log from v1.3 (preserved from v1.4):
-- Section 1 expanded: References Parent Weekly Insight output type,
-  parent_inclusion activation gate, v1.2 Master Prompt
-- Section 2 expanded: Pipeline position notes parent output
-- Section 5 expanded: Output type 3 (Parent Weekly Insight) added
-  with activation rules, generation order, audience
-- Section 13 expanded: Parent validation checklist items added
-- Section 14 expanded: Parent output file naming and directory
-- Section 16 expanded: Core Foundation parent skip rule added
-- Added PARENT INSIGHTS GENERATION RULE (Section 20)
-- Added PARENT SECTION REBRAND AND CONTENT GUIDANCE (Section 21)
-- Added PARENT VOICE CALIBRATION RULE (Section 22)
-- Added PARENT ECOSYSTEM CALIBRATION RULE (Section 23)
-- Added PARENT COMPLIANCE RULE (Section 24)
-- Added PARENT EARLY WEEKS AND WARM PLACEHOLDERS (Section 25)
-- Added PARENT INSIGHTS VS PARENT CM RELATIONSHIP (Section 26)
-- Added PARENT VALIDATION CHECKLIST (Section 27)
-- Added CORE FOUNDATION PARENT SKIP RULE (Section 28)
-- Renumbered FINAL SYSTEM RULE to Section 29
-- All v1.3 content preserved and unchanged below unless noted
-
-Change Log from v1.2 (preserved from v1.3):
-- Section 1 expanded: References baseline_intake_profile and
-  current_season_phase awareness
-- Section 3 expanded: Added 3 new authoritative sources
-  (PPD Scoring Logic, ABI Scoring Logic, App Intake Form Spec)
-- Section 4 expanded: Intake profile prohibited data added,
-  WRONG/CORRECT examples for PPD/ABI/adversity translations
-- Section 6 expanded: Per-section intake profile enrichment
-  guidance for Sections 1, 4, 8, 9, 10
-- Section 8 expanded: Intake profile field routing (inform-only
-  fields, prohibited fields, not-consumed fields)
-- Section 12 expanded: Intake profile prohibited terms added
-- Section 15 expanded: Intake profile integration principle added
-- Section 16 expanded: Intake profile CF skip rules added
-- Section 17 expanded: Intake profile prohibited terms added
-  with WRONG/CORRECT examples
-- Added INTAKE PROFILE INTEGRATION MASTER RULE (Section 18)
-- Renumbered FINAL SYSTEM RULE to Section 19
-- All v1.2 content preserved and unchanged below unless noted
-
-Change Log from v1.1 (preserved from v1.2):
-- Section 1 expanded: References v9.4 schema, adds
-  execution_behavior_signals awareness
-- Section 3 expanded: Added 3 new authoritative sources
-  (Composite Score Rules, Coach Flags Spec, App Input Format)
-- Section 4 expanded: v9.4 input, dual-mode awareness, expanded
-  prohibited data list
-- Section 6 expanded: Per-section execution enrichment guidance
-  for Sections 1, 2, 4, 5, 8, 9, 10 with WRONG/CORRECT examples.
-  Sections 3, 6, 7 explicitly noted as no execution routing.
-- Section 7 expanded: Weekly Team Snapshot execution enrichment
-  for Sections T1, T2, T7
-- Section 8 expanded: v9.4 field routing with execution signal
-  entries (inform-only fields, raw metrics not consumed)
-- Section 12 expanded: Execution signal items added to prohibited
-  content list
-- Added EXECUTION SIGNAL INTEGRATION MASTER RULE (Section 15)
-- Added CORE FOUNDATION EXECUTION SKIP RULE (Section 16)
-- Added RAW METRIC EXCLUSION RULE (Section 17)
-- Renumbered FINAL SYSTEM RULE to Section 18
-- All v1.1 content preserved and unchanged below unless noted
-
-
 ============================================================
 SECTION 1 - PROJECT ROLE
 ============================================================
@@ -200,10 +71,9 @@ execution-derived PPD bucket rankings, evidence tiers, alignment
 signal (Aligned/Gap/Blind Spot), and measurement window metadata.
 This block is computed by Stage 2 for Stage 3 consumption ONLY.
 Stage 4 does NOT read, reference, or route any longitudinal PPD
-data. The zero-PPD-consumption rule (established in v1.3 for intake
-PPD) extends fully to longitudinal PPD. See Section 4 for the
-complete prohibited field list and Section 18 for the non-consumption
-confirmation.
+data. The zero-PPD-consumption rule extends fully to longitudinal
+PPD. See Section 4 for the complete prohibited field list and
+Section 18 for the non-consumption confirmation.
 
 You do NOT:
 - Interpret raw recap data
@@ -362,7 +232,7 @@ Do NOT request or reference:
 - Self-ratings alignment classification labels (Conflated,
   Undervalued, Aligned)
 
-INTAKE PROFILE PROHIBITED DATA [NEW IN V1.3]:
+INTAKE PROFILE PROHIBITED DATA:
 Do NOT request or reference:
 - PPD bucket names (Overthinking Loop, Confidence Volatility,
   Mistake Recovery Lag, Focus Drift / Distraction, Pressure
@@ -384,7 +254,7 @@ Do NOT request or reference:
 - "current_season_phase" or "competitive_level" as named field
   labels
 
-FORWARD ANCHOR PROHIBITED DATA [NEW IN V1.5]:
+FORWARD ANCHOR PROHIBITED DATA:
 Do NOT request or reference:
 - Forward anchor raw text (athlete-private, same as journal content)
 - Controllability classification labels as named categories
@@ -392,7 +262,7 @@ Do NOT request or reference:
 - Focus consistency labels as named categories
 - "forward_anchor" as a pipeline field/block name
 
-LONGITUDINAL PPD PROHIBITED DATA [NEW IN V1.7]:
+LONGITUDINAL PPD PROHIBITED DATA:
 Do NOT request or reference:
 - longitudinal_ppd.* (ALL fields): status, weeks_accumulated,
   measurement_window_start, execution_derived_top_3,
@@ -468,7 +338,7 @@ Stage 4 produces up to FOUR output types depending on context:
    - Positional group variants available when group has 5+ athletes
    - Must include mandatory disclaimer
 
-3) PARENT WEEKLY INSIGHT (INDIVIDUAL) [UPDATED IN V1.6]
+3) PARENT WEEKLY INSIGHT (INDIVIDUAL)
    - Generated: When parent_inclusion = true (D2C Premium only)
    - Audience: Parent/guardian via D2C parent app
    - Purpose: Parent-accessible athlete development dashboard
@@ -602,7 +472,7 @@ momentum. Behavioral execution patterns reinforced the
 consistency signal across the week."
 (Convergence case - execution data strengthens existing signal.)
 
-FORWARD ANCHOR ENRICHMENT (App athletes only) [NEW IN V1.5]:
+FORWARD ANCHOR ENRICHMENT (App athletes only):
 
 When forward_anchor.submitted = true and forward anchor
 classifications are populated:
@@ -986,7 +856,7 @@ engagement is being initiated, with opportunity to strengthen
 independent preparation behaviors."
 (Flag-derived KPS with institutional explanation.)
 
-FORWARD ANCHOR ENRICHMENT (App athletes only) [NEW IN V1.5]:
+FORWARD ANCHOR ENRICHMENT (App athletes only):
 
 When forward_anchor.submitted = true and classifications are
 populated:
@@ -1101,7 +971,7 @@ preparation routine stability."
 (Attention-flag case: rhythm_disrupted translated to
 institutional reinforcement language.)
 
-FORWARD ANCHOR ENRICHMENT (App athletes only) [NEW IN V1.5]:
+FORWARD ANCHOR ENRICHMENT (App athletes only):
 
 When forward_anchor.submitted = true and classifications are
 populated:
@@ -1218,7 +1088,7 @@ reflect consistent routine stability and strong controllable
 alignment this week."
 (No execution shift needed: standard framing.)
 
-SEASON PHASE OVERLAY (App athletes only) [NEW IN V1.3]:
+SEASON PHASE OVERLAY (App athletes only):
 
 When current_season_phase is populated (not "not available"):
 - The season phase provides contextual framing for interpreting
@@ -1593,26 +1463,26 @@ current_season_phase (App athletes only)
   Readiness) and enriches Section 1 executive summary with
   seasonal context. Never name the field label in output.
 
-forward_anchor.text (App athletes only) [NEW IN V1.5]
+forward_anchor.text (App athletes only)
 → Athlete-private. NEVER surfaced in any output. Same
   protection level as journal content.
 
-forward_anchor.controllability_classification (App athletes only) [NEW IN V1.5]
+forward_anchor.controllability_classification (App athletes only)
 → Informs Section 1 (behavioral stability indicator) and
   Section 9 (coaching context cue framing). Classifications
   translated into neutral behavioral observations. Never name
   the classification label or field name.
 
-forward_anchor.prior_forward_anchor.alignment_status (App athletes only) [NEW IN V1.5]
+forward_anchor.prior_forward_anchor.alignment_status (App athletes only)
 → Informs Section 9 (coaching context - aligned or
   misaligned intention-setting). Translated into compliance-
   safe coaching context. Never name the classification label.
 
-forward_anchor.prior_forward_anchor.alignment_notes (App athletes only) [NEW IN V1.5]
+forward_anchor.prior_forward_anchor.alignment_notes (App athletes only)
 → Internal context only. Helps engine understand alignment
   assessment. Never surfaced in output.
 
-forward_anchor.focus_consistency (App athletes only) [NEW IN V1.5]
+forward_anchor.focus_consistency (App athletes only)
 → Informs Section 8 (KPS candidate when intention-setting
   is salient signal). Translated into compliance-safe signal
   labels. Never name the classification label.
@@ -1718,7 +1588,7 @@ identically here. Key prohibited terms:
   rumination, catastrophizing, self-sabotage, maladaptive,
   avoidance behavior, deficit, protocol
 
-Approved replacements: See SOP_Coaching_Output_Instructions_v2.1.txt
+Approved replacements: See SOP_Coaching_Output_Instructions_v2.3.txt
 Section 7 for the full substitution table.
 
 Additionally: technical compliance language from the
@@ -1744,7 +1614,7 @@ Positional Group Variant:
 Write individual reports to:
 Athlete Data\[Athlete Name]\Coach Insights\
 
-Parent Weekly Insight [NEW IN V1.4]:
+Parent Weekly Insight:
 {FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_ParentInsight.txt
 
 Write parent reports to:
@@ -1805,7 +1675,7 @@ EXISTING PROHIBITIONS (v1.1):
 - Avoidance guidance
 - Upcoming context with personal emotional history
 
-EXECUTION SIGNAL PROHIBITIONS [NEW IN V1.2]:
+EXECUTION SIGNAL PROHIBITIONS:
 - Composite score names (Ownership Index, Drift Score,
   Follow-Through Score, Rhythm Score, Review Quality Score,
   Recovery Score, Reactivity Risk Score)
@@ -1843,7 +1713,7 @@ EXECUTION SIGNAL PROHIBITIONS [NEW IN V1.2]:
   - Depth profile labels
   - Contradiction detection results
 
-INTAKE PROFILE PROHIBITIONS [NEW IN V1.3]:
+INTAKE PROFILE PROHIBITIONS:
 - PPD bucket names (Overthinking Loop, Confidence Volatility,
   Mistake Recovery Lag, Focus Drift / Distraction, Pressure
   Reactivity, Discipline Gap, Structure Gap, Ecosystem Friction)
@@ -1879,7 +1749,7 @@ used as natural institutional language are PERMITTED. "Building
 composure under pressure" is institutional language. "Composure
 pillar is Low" is a leakage violation.
 
-FORWARD ANCHOR PROHIBITIONS [NEW IN V1.5]:
+FORWARD ANCHOR PROHIBITIONS:
 - Forward anchor raw text (athlete-private, same as journal
   content - NEVER surfaced in any form)
 - Controllability classification labels (Controllable,
@@ -1891,7 +1761,7 @@ FORWARD ANCHOR PROHIBITIONS [NEW IN V1.5]:
 - "forward_anchor" as a pipeline field/block name
 - Numeric alignment scores or rates
 
-LONGITUDINAL PPD PROHIBITIONS [NEW IN V1.7]:
+LONGITUDINAL PPD PROHIBITIONS:
 - longitudinal_ppd block name and ALL field names (status,
   weeks_accumulated, measurement_window_start,
   execution_derived_top_3, execution_derived_all_buckets,
@@ -1979,7 +1849,7 @@ longitudinal and aggregate dashboard metrics.
 
 ============================================================
 SECTION 15 - EXECUTION SIGNAL INTEGRATION MASTER RULE
-[NEW IN V1.2]
+
 ============================================================
 
 This is the master rule governing how execution_behavior_signals
@@ -2100,7 +1970,7 @@ apply the integration guidance from Section 6 for HOW to
 express it in compliance-safe language.
 
 ------------------------------------------------------------
-INTAKE PROFILE INTEGRATION (SAME PRINCIPLE) [NEW IN V1.3]:
+INTAKE PROFILE INTEGRATION (SAME PRINCIPLE):
 ------------------------------------------------------------
 
 The same core principle applies to baseline_intake_profile
@@ -2148,7 +2018,7 @@ anchor-derived language appears in any section. See Section 16.
 
 ============================================================
 SECTION 16 - CORE FOUNDATION EXECUTION SKIP RULE
-[NEW IN V1.2]
+
 ============================================================
 
 When execution_behavior_signals.input_source = "core_foundation":
@@ -2172,7 +2042,7 @@ This means:
   - All execution enrichment subsections are skipped
   - No execution-related language appears in any section
 
-ALSO SKIP ALL INTAKE PROFILE INTEGRATION [NEW IN V1.3].
+ALSO SKIP ALL INTAKE PROFILE INTEGRATION.
 
 When baseline_intake_profile.input_source = "core_foundation":
   - ALL baseline_intake_profile fields = "not available -
@@ -2188,7 +2058,7 @@ When baseline_intake_profile.input_source = "core_foundation":
   - Season Phase Overlay is skipped (uses "not available")
   - No intake-profile-derived language appears in any section
 
-ALSO SKIP ALL FORWARD ANCHOR INTEGRATION [NEW IN V1.5].
+ALSO SKIP ALL FORWARD ANCHOR INTEGRATION.
 
 When input_source = "core_foundation" or
 forward_anchor.submitted = false:
@@ -2206,7 +2076,7 @@ Output for Core Foundation athletes uses v9.3 fields ONLY.
 The resulting Weekly Performance Insight is identical in
 structure and quality to v1.2 behavior.
 
-ALSO SKIP ALL PARENT OUTPUT [NEW IN V1.4].
+ALSO SKIP ALL PARENT OUTPUT.
 
 Core Foundation athletes do not have parent_inclusion data
 from the App intake form. Default parent_inclusion to false.
@@ -2258,7 +2128,7 @@ aggregate outputs.
 
 ============================================================
 SECTION 17 - RAW METRIC EXCLUSION RULE (COMPLIANCE)
-[NEW IN V1.2]
+
 ============================================================
 
 This is a compliance rule, not a style preference - same
@@ -2298,7 +2168,7 @@ intake profile categories are PROHIBITED from Stage 4 output:
   12. Self-ratings alignment classification labels
       (Conflated, Undervalued, Aligned)
 
-INTAKE PROFILE PROHIBITED CATEGORIES [NEW IN V1.3]:
+INTAKE PROFILE PROHIBITED CATEGORIES:
   13. PPD bucket names, field names, abbreviation, numeric
       scores, ranking positions, and coaching_implication
       field references
@@ -2314,7 +2184,7 @@ INTAKE PROFILE PROHIBITED CATEGORIES [NEW IN V1.3]:
       baseline_season_phase values (stale), current_season_phase
       and competitive_level as named field labels
 
-FORWARD ANCHOR PROHIBITED CATEGORIES [NEW IN V1.5]:
+FORWARD ANCHOR PROHIBITED CATEGORIES:
   18. Forward anchor raw text (athlete-private, same as journal
       content)
   19. Controllability classification labels (Controllable,
@@ -2326,7 +2196,7 @@ FORWARD ANCHOR PROHIBITED CATEGORIES [NEW IN V1.5]:
   22. "forward_anchor" as a pipeline field/block name
   23. Numeric alignment scores or rates
 
-LONGITUDINAL PPD PROHIBITED CATEGORIES [NEW IN V1.7]:
+LONGITUDINAL PPD PROHIBITED CATEGORIES:
   24. PPD Alignment Signal labels: "Aligned" (as PPD
       classification), "Gap" (as PPD classification), "Blind
       Spot" (as PPD classification), "Problem Awareness Aligned",
@@ -2390,7 +2260,7 @@ Stage 4 output:
   9. Forward anchor behavioral TRANSLATIONS - inform-only
      context for Sections 1, 8, 9 when forward anchor data
      is populated. Never as named classification labels,
-     field names, or raw intention text. [NEW IN V1.5]
+     field names, or raw intention text.
 
 ------------------------------------------------------------
 EXAMPLES - WRONG VS. CORRECT:
@@ -2466,7 +2336,7 @@ observations in Stage 4 output.
 
 ----
 
-INTAKE PROFILE EXAMPLES [NEW IN V1.3]:
+INTAKE PROFILE EXAMPLES:
 
 WRONG: "PPD primary problem is Confidence Volatility, ranked
 #1 with a score of 7."
@@ -2501,7 +2371,7 @@ no stale season data.)
 
 ----
 
-FORWARD ANCHOR EXAMPLES [NEW IN V1.5]:
+FORWARD ANCHOR EXAMPLES:
 
 WRONG: "Forward anchor alignment was Aligned this week with
 Controllable classification."
@@ -2550,7 +2420,7 @@ scores, compliance or adherence ratings.
 
 ============================================================
 SECTION 18 - INTAKE PROFILE INTEGRATION MASTER RULE
-[NEW IN V1.3]
+
 ============================================================
 
 This is the master rule governing how baseline_intake_profile
@@ -2698,7 +2568,7 @@ leakage under the expanded Criterion 13 (Pipeline Data Leakage
 Compliance) using Category F (Intake Profile Terminology).
 
 ------------------------------------------------------------
-LONGITUDINAL PPD NON-CONSUMPTION [NEW IN V1.7]:
+LONGITUDINAL PPD NON-CONSUMPTION:
 ------------------------------------------------------------
 
 longitudinal_ppd does NOT modify any Stage 4 intake profile
@@ -2726,7 +2596,7 @@ route coaching themes from PPD data in any form.
 
 ============================================================
 SECTION 19 - FORWARD ANCHOR INTEGRATION RULE
-[NEW IN V1.5]
+
 ============================================================
 
 FORWARD ANCHOR INTEGRATION RULE
@@ -2837,7 +2707,7 @@ Same compliance framework as all other inform-only data:
 
 ============================================================
 SECTION 20 - PARENT INSIGHTS GENERATION RULE
-[REWRITTEN IN V1.6 - SCAN-FIRST FORMAT]
+
 ============================================================
 
 The Parent Weekly Insight is a conditional second individual
@@ -2987,7 +2857,7 @@ WHAT IS NOT IN THE PARENT WEEKLY INSIGHT:
 
 ============================================================
 SECTION 21 - PARENT SECTION REBRAND, INDICATORS, AND CONTENT GUIDANCE
-[REWRITTEN IN V1.6 - SCAN-FIRST FORMAT]
+
 ============================================================
 
 The Parent Weekly Insight uses a 9-section scan-first
@@ -3356,13 +3226,13 @@ week that builds long-term confidence.
 
 ============================================================
 SECTION 22 - PARENT VOICE CALIBRATION RULE
-[UPDATED IN V1.6]
+
 ============================================================
 
 The Parent Weekly Insight uses Coach Arron's voice in
 third-person register - warm, informational, and guidance-
 oriented. The same voice rules established in Stage 3
-Instructions v2.1 Section 25 apply here.
+Instructions v2.3 Section 25 apply here.
 
 The v1.6 scan-first format adds a new voice dimension:
 each section has an INDICATOR LINE (categorical label) and
@@ -3444,20 +3314,16 @@ PARENT VOICE RULES:
 
 ============================================================
 SECTION 23 - PARENT ECOSYSTEM CALIBRATION RULE
-[REWRITTEN IN V1.6]
+
 ============================================================
 
-In v1.5, this section governed ecosystem calibration for
-Parent Insight Section 7 (How You Can Support). That section
-has been REMOVED from the Parent Weekly Insight in v1.6.
-
-Support guidance now lives EXCLUSIVELY in the Parent Coaching
-Message (Stage 3, Instructions v2.1 Section 26). Ecosystem
+Support guidance lives EXCLUSIVELY in the Parent Coaching
+Message (Stage 3, Instructions v2.3 Section 26). Ecosystem
 calibration (Q23 primary, Q25 secondary, CF fallback) is
 handled entirely at Stage 3.
 
 ------------------------------------------------------------
-PARENT INSIGHT ECOSYSTEM USAGE (V1.6):
+PARENT INSIGHT ECOSYSTEM USAGE:
 ------------------------------------------------------------
 
 The Parent Weekly Insight no longer has a section requiring
@@ -3484,7 +3350,7 @@ for support guidance is handled in the Parent CM (Stage 3).
 
 ============================================================
 SECTION 24 - PARENT COMPLIANCE RULE
-[NEW IN V1.4]
+
 ============================================================
 
 The Parent Weekly Insight is subject to the SAME compliance
@@ -3566,7 +3432,7 @@ Insight, and the parent version follows the same architecture.
 
 ============================================================
 SECTION 25 - PARENT EARLY WEEKS AND WARM PLACEHOLDERS
-[UPDATED IN V1.6]
+
 ============================================================
 
 Per Task 18 design decision: parents never see a blank screen.
@@ -3662,7 +3528,7 @@ PLACEHOLDER PRINCIPLES:
 
 ============================================================
 SECTION 26 - PARENT INSIGHTS VS PARENT CM RELATIONSHIP
-[REWRITTEN IN V1.6]
+
 ============================================================
 
 The Parent Weekly Insight (Stage 4) and Parent Coaching
@@ -3683,23 +3549,20 @@ scannable dashboard with categorical indicators.
 | Purpose          | Quick read, push delivery  | Scan-first dashboard     |
 | Length           | 150-250 words, 4 sections  | 9 sections, indicator + blurb |
 | Delivery         | Push notification/message  | App dashboard accessible |
-| Support guidance | YES - Section 4            | NO - removed in v1.6     |
+| Support guidance | YES - Section 4            | NO                       |
 | Format           | Narrative prose            | Categorical indicator + blurb |
 | Frequency        | Weekly (with CM)           | Weekly (with Insight)    |
 | Voice            | Coach Arron, 3rd person    | Coach Arron, 3rd person  |
 | Data boundary    | Same                       | Same                     |
 
 ------------------------------------------------------------
-SUPPORT GUIDANCE OWNERSHIP (V1.6 CHANGE):
+SUPPORT GUIDANCE OWNERSHIP:
 ------------------------------------------------------------
 
-In v1.5, both outputs had a "How You Can Support" element.
-This created duplication and blurred the distinct purposes.
-
-In v1.6, support guidance lives EXCLUSIVELY in the Parent
-Coaching Message (Stage 3, Section 4). The Parent Insight
-is a dashboard - it tells the parent how things are going,
-not what to do about it.
+Support guidance lives EXCLUSIVELY in the Parent Coaching
+Message (Stage 3, Section 4). The Parent Insight is a
+dashboard - it tells the parent how things are going, not
+what to do about it.
 
 Parent CM Section 4: 35-65 words. One actionable suggestion.
 Calibrated by Q23/Q25 ecosystem fields. Delivered as part
@@ -3726,7 +3589,7 @@ picture: state (Insight) + action (CM).
 
 ============================================================
 SECTION 27 - PARENT VALIDATION CHECKLIST
-[REWRITTEN IN V1.6]
+
 ============================================================
 
 Before finalizing the Parent Weekly Insight, confirm:
@@ -3734,7 +3597,7 @@ Before finalizing the Parent Weekly Insight, confirm:
 STRUCTURE:
 1. All 9 sections present with PARENT labels (1-9)
 2. Section order matches Section 21 rebrand mapping
-3. No "How You Can Support" section (removed in v1.6)
+3. No "How You Can Support" section
 4. Header uses parent format (athlete first name, week, date)
 5. Signed "- Coach Arron"
 6. No institutional disclaimer
@@ -3779,7 +3642,7 @@ CONTENT:
 
 ============================================================
 SECTION 28 - CORE FOUNDATION PARENT SKIP RULE
-[NEW IN V1.4]
+
 ============================================================
 
 Core Foundation athletes do NOT receive Parent Weekly Insights.
@@ -3803,7 +3666,7 @@ is strictly additive for D2C Premium athletes.
 
 ============================================================
 SECTION 29 - VOICE QUALITY AND EXPRESSION RULES
-[NEW IN V1.8]
+
 ============================================================
 
 This section governs voice quality, expression variety, and

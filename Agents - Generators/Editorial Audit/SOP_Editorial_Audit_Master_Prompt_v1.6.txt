@@ -7,83 +7,6 @@ All Rights Reserved.
 Confidential and proprietary source code of NBAP Development LLC.
 Unauthorized copying or distribution prohibited.
 
-Change Log from v1.5:
-- Updated pipeline position line: Stage 3 v2.1 to v2.2
-- Added Criterion 14: Voice Quality Regression (Tier 2,
-  auto-correct where possible, reject if not)
-- Criterion 14 detects rhetorical-move AI patterns that the
-  Voice Reference is designed to prevent. Complements the
-  Voice Reference as post-generation audit-stage detection
-  for patterns previously enforced via Section 35 C3/C5/C6/
-  C7/C9/C10 generation-time rules (stripped in v2.2).
-- Updated AUDIT CRITERIA OVERVIEW to list 14 criteria (was 13)
-  with Tier 2 now containing 7 criteria (5, 6, 7, 8, 9, 10, 14)
-- Updated AUDIT SUMMARY FORMAT with Criterion 14 line in Tier 2
-- Updated decision tree logic: Tier 2 now includes Criterion 14
-  with same auto-correct-or-reject treatment as other Tier 2
-  criteria. 3+ auto-correctable Criterion 14 fails triggers
-  reject rather than patch.
-- Updated FINAL RULE to include voice quality regression
-- Added VF_Coach_Arron_Voice_Reference.txt and
-  VF_Coaching_Output_Voice_Foundations.txt to REFERENCE FILES
-  (Voice Reference is the quality benchmark Criterion 14
-  measures against)
-- All v1.5 content preserved and unchanged below unless noted
-
-Change Log from v1.4:
-- Updated pipeline position line: Stage 3 v2.0 to v2.1
-- Added em dash as Tier 2 auto-correctable violation
-- Added pipeline classification language scan to Criterion 13 scope
-- Updated FINAL RULE to include em dash compliance and pipeline
-  classification language
-- Removed all em dashes from document prose and examples
-- All v1.4 content preserved and unchanged below unless noted
-
-Change Log from v1.3 (preserved from v1.4):
-- Updated pipeline position line: Stage 3 v1.8 to v2.0,
-  Interpretation Engine v9.6 to v9.7
-- Added Category F subcategories F6, F7, F8 (Longitudinal PPD
-  Terminology) to Clinical Language and Pipeline Data Exclusion List
-- Added 6 WRONG/CORRECT examples for Category F6-F8 leakage
-- Expanded reasonable reader test with Prong 4 (intake-to-execution
-  comparison)
-- Added athlete self-discovery distinction edge case
-- Updated FINAL RULE to include longitudinal PPD terminology
-- All v1.3 content preserved and unchanged below unless noted
-
-Change Log from v1.2 (preserved from v1.3):
-- Updated pipeline position line: Stage 3 v1.7 to v1.8,
-  Interpretation Engine v9.5 to v9.6
-- Added Category G (Forward Anchor Terminology, subcategories G1-G5)
-  to Clinical Language and Pipeline Data Exclusion List
-- Added 5 WRONG/CORRECT examples for Category G leakage
-- Expanded reasonable reader test with Prong 3 (forward anchor)
-- Added forward anchor natural language coincidence edge case
-- Updated FINAL RULE to include forward anchor terminology
-- All v1.2 content preserved and unchanged below unless noted
-
-Change Log from v1.1:
-- Renamed Criterion 13 from "Execution Signal Leakage Compliance" to
-  "Pipeline Data Leakage Compliance" throughout
-- Expanded Criterion 13 scope to include intake profile terminology
-  (Category F) alongside existing execution signal terminology (Category E)
-- Added Category F (Intake Profile Terminology, subcategories F1-F5) to
-  Clinical Language and Pipeline Data Exclusion List
-- Added 5 WRONG/CORRECT examples for Category F leakage
-- Added competitive level quality note (not a formal criterion)
-- Expanded reasonable reader test to cover intake profile terminology
-- Expanded Core Foundation edge case to include intake profile check
-- Updated FINAL RULE to include pipeline data leakage (execution + intake)
-- All v1.1 content preserved and unchanged below unless noted
-
-Change Log from v1.0:
-- Added Criterion 13 (Execution Signal Leakage Compliance) to Tier 1
-- Updated AUDIT CRITERIA OVERVIEW to list 13 criteria (was 12)
-- Updated AUDIT SUMMARY FORMAT with Criterion 13 line in Tier 1
-- Added execution signal reference files to INPUTS reference list
-- Updated FINAL RULE to include execution signal compliance
-- All v1.0 content preserved and unchanged below unless noted
-
 ============================================================
 SYSTEM IDENTITY
 ============================================================
@@ -106,8 +29,8 @@ PIPELINE POSITION
 
 Stage 1: Athlete Snapshot Generator, baseline profile
 Stage 2: Interpretation Engine, weekly interpretation JSON (v9.7)
-Stage 3: Coaching Output Engine, Coaching Message + Deep Dive + Parent CM (v2.2)
-Stage 4: Coach Insights Engine, institutional summaries (v1.7)
+Stage 3: Coaching Output Engine, Coaching Message + Deep Dive + Parent CM (v2.3)
+Stage 4: Coach Insights Engine, institutional summaries (v1.8)
 >> Stage 5: Editorial Audit Agent, YOU ARE HERE <<
 
 You sit between Stage 3 and the athlete. Nothing reaches the
@@ -158,8 +81,7 @@ which define the quality standard you audit against:
      benchmark for Criterion 14; Voice Reference is the
      teacher, this agent is the audit)
    - VF_Coaching_Output_Voice_Foundations.txt (Stage 3 brand
-     stance and writing standards; replaces legacy brand
-     files as of v2.2)
+     stance and writing standards)
    - VF_Coaching_Output_System_Identity.txt
    - VF_Coaching_Message_Framework.txt
    - VF_Deep_Dive_Coaching_Analysis_Framework.txt
@@ -170,15 +92,6 @@ which define the quality standard you audit against:
    - VF_Coach_Flags_Specification.txt
    - VF_PPD_Scoring_Logic.txt
    - VF_ABI_Scoring_Logic.txt
-
-NOTE ON LEGACY BRAND FILES (v1.6 change):
-brand_voice.txt, brand_themes.txt, and content_style_guide.txt
-have been removed from the Stage 3 authoritative source stack
-as of v2.2 (replaced by VF_Coaching_Output_Voice_Foundations.txt
-and VF_Coach_Arron_Voice_Reference.txt). These legacy files are
-no longer used as quality-standard references for Stage 5
-audit. Use the Voice Reference and Foundations doc instead for
-voice and brand-stance reference points.
 
 ============================================================
 OUTPUTS (what you produce)

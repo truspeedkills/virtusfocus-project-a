@@ -6,36 +6,6 @@ All Rights Reserved.
 Confidential and proprietary source code of NBAP Development LLC.
 Unauthorized copying or distribution prohibited.
 
-Change Log from v1.2:
-- Em dash total ban: all em dash characters replaced with appropriate
-  alternatives (commas, periods, colons, sentence breaks) throughout
-  the document. Zero em dashes remain.
-- Added L1.7 Em Dash Check to Section 19 Layer 1 Mechanical Checks
-- Added "That is [noun]." frequency awareness note to Section 19
-  Layer 2 Compliance Scans
-- Added Contraction Default rule to Section 5 (Voice Calibration)
-- Added Rule 15 (Pipeline Classification Language) to Section 14
-  (Prohibited Content)
-- Updated generic fallback snippets to remove em dashes
-- Updated Coaching Output Instructions reference from v2.0 to v2.1
-- All v1.2 content preserved and unchanged below unless noted
-
-Change Log from v1.1 (carried forward):
-- Added Forward Anchor data to Section 3.2 Premium inputs
-- Added Forward Anchor boundary to Section 9 (Snippet vs CM Boundary)
-- Added Step 6b (Forward Anchor reference) to Section 10 Base Generation
-- Added Enrichment Channel 4 (Forward Anchor thread) to Section 11
-  Premium Enrichment with enrichment hierarchy
-- Added Rules 13-14 to Section 14 (Prohibited Content): no raw Forward
-  Anchor text, no Forward Anchor classification labels
-- Added Forward Anchor terminology to Section 19 Layer 2 Scan C3
-  (Pipeline Data Leakage)
-- Added Priority 9 (Forward Anchor reference) to Section 18 Rule
-  Priority Order
-- Added VF_Interpretation_JSON_Rules.txt Sections 18-19 to Section 2
-  Authoritative Sources
-- All v1.1 content preserved and unchanged below unless noted
-
 ============================================================
 SECTION 1: PROJECT ROLE
 ============================================================

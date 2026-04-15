@@ -7,134 +7,6 @@ All Rights Reserved.
 Confidential and proprietary source code of NBAP Development LLC.
 Unauthorized copying or distribution prohibited.
 
-Lineage: Upgrades SOP_Editorial_Audit_Project_Instructions_v1.5.txt.
-Adds Criterion 14 (Voice Quality Regression) as a Tier 2
-auto-correctable criterion detecting rhetorical-move AI
-patterns that the Voice Reference is designed to prevent.
-Complements the Voice Reference by catching regressions at
-audit time. 12 fail conditions specified (reusable opening,
-telegraphing, untraceable paragraph, category-coverage-over-
-response, brand-copy close, same-construction 3-week repetition,
-DD-as-expanded-CM, "That is [Noun]." standalone overuse,
-"version of X" construction, triple-negative setup, trendline
-arc recitation, pipeline-adjacent vocabulary). Stage 3 spec
-version updated from v2.1 to v2.2.
-
-Change Log from v1.5:
-- Added new Section 14 (CRITERION 14: VOICE QUALITY REGRESSION).
-  Renumbered former Section 14 (Structural Integrity Checks)
-  and all subsequent sections upward by 1 (14->15, 15->16,
-  16->17, 17->18, 18->19, 19->20, 20->21, 21->22).
-- Updated Section 16 (Decision Tree, was 15) to include
-  Criterion 14 in Tier 2 flow logic: 3+ auto-correctable fails
-  triggers reject, structural fails (reusable opening,
-  untraceable paragraph, category coverage over response,
-  DD-as-expanded-CM) trigger reject.
-- Updated Section 17 (Regeneration Instruction Format, was 16)
-  with Criterion 14 regeneration template (fail conditions +
-  passages + Voice Reference exemplar category reference +
-  re-read instruction).
-- Updated Section 18 (Auto-Correction Rules, was 17) with
-  Rule 7: Criterion 14 conditionally auto-correctable with
-  specific mechanical rules per fail condition.
-- Updated all "13 criteria" references to "14 criteria"
-- Added VF_Coach_Arron_Voice_Reference.txt to Section 20
-  Reference Files (was 19) as primary quality benchmark for
-  Criterion 14
-- Added VF_Coaching_Output_Voice_Foundations.txt to Section 20
-- Stage 3 Coaching Output spec version reference updated
-  from v2.1 to v2.2
-- All v1.5 content preserved and unchanged below unless noted
-
-Change Log from v1.4:
-- Added em dash ban as Tier 2 auto-correctable violation
-  (new Section 13A, runs as mechanical check before content
-  analysis criteria)
-- Added Pipeline Classification Language check expanding
-  Criterion 2 and Criterion 13 coverage to core v9.7 field
-  names leaking into coaching prose
-- Added em dash scan to audit execution sequence as a
-  mechanical pre-check
-- Updated Coaching Output Instructions reference from v2.0
-  to v2.1
-- All v1.4 criteria (1-13) preserved and unchanged
-- All existing Categories A-G content preserved and unchanged
-
-Change Log from v1.3 (preserved from v1.4):
-- Expanded Category F with subcategories F6 (PPD Alignment Signal
-  Classifications), F7 (Longitudinal PPD Terminology), F8 (Intake-
-  to-Execution Comparison Framing) in exclusion list
-- Added WRONG/CORRECT examples for F6-F8 leakage
-- Expanded Criterion 13 Steps 4 and 5 with F6-F8 terms (no new
-  steps - F6-F8 are additional terms in existing scans)
-- Added edge cases 16-18 (athlete self-discovery, common English
-  words, CF with longitudinal language)
-- Expanded reasonable reader test with Prong 4 (intake-to-execution
-  comparison)
-- Updated decision tree note for Category F expansion
-- Updated auto-correction rule 4 for longitudinal PPD terminology
-- Updated Section 2 (Authoritative Sources) references to v9.7
-  and v2.0
-- Added VF_Longitudinal_PPD_Specification.txt to Reference Files
-- Updated FINAL OPERATING RULE for longitudinal PPD terminology
-- All v1.3 criteria (1-12) preserved and unchanged
-- All existing Category E, F1-F5, and G content preserved and
-  unchanged
-
-Change Log from v1.2 (preserved from v1.3):
-- Expanded Criterion 13 check logic with Step 7 (Forward Anchor
-  Scan) for forward anchor data scanning
-- Added Category G (Forward Anchor Terminology, subcategories
-  G1-G5) to exclusion list alongside existing Categories E and F
-- Added WRONG/CORRECT examples for Category G leakage
-- Expanded reasonable reader test with Prong 3 (forward anchor)
-- Added forward anchor edge case (15) to Edge Cases section
-- Expanded Core Foundation edge case 8 to include forward anchor
-- Updated decision tree description for expanded Criterion 13
-- Updated auto-correction rule 4 for pipeline data (execution +
-  intake + forward anchor)
-- Updated FINAL OPERATING RULE for forward anchor terminology
-- Updated Section 2 (Authoritative Sources) references to v9.6
-  and v1.8
-- All v1.2 criteria (1-12) preserved and unchanged
-- All existing Category E and Category F content preserved and
-  unchanged
-
-Change Log from v1.1:
-- Renamed Criterion 13 from "Execution Signal Leakage Compliance"
-  to "Pipeline Data Leakage Compliance" throughout
-- Expanded Criterion 13 check logic Steps 2, 4, 5, 6 for intake
-  profile data scanning
-- Added Category F (Intake Profile Terminology, subcategories
-  F1-F5) to exclusion list alongside existing Category E
-- Added 5 WRONG/CORRECT examples for Category F leakage
-- Added competitive level quality note (not a formal criterion)
-- Expanded reasonable reader test with Prong 2 (intake profile)
-- Added 3 intake profile edge cases (12-14) to Edge Cases section
-- Expanded Core Foundation edge case 8 to include intake profile
-- Updated decision tree description for expanded Criterion 13
-- Updated auto-correction rule 4 for pipeline data (not just
-  execution signal)
-- Added intake profile reference files to Reference Files section
-- Updated FINAL OPERATING RULE for pipeline data leakage
-- All v1.1 criteria (1-12) preserved and unchanged
-- All existing Category E content preserved and unchanged
-
-Change Log from v1.0:
-- Added CRITERION 13: EXECUTION SIGNAL LEAKAGE COMPLIANCE
-  (new Section 13, Tier 1 - MUST PASS)
-- Updated AUDIT EXECUTION SEQUENCE to 13 criteria
-- Expanded CLINICAL LANGUAGE EXCLUSION LIST with Category E
-  (Execution Signal Terminology - 7 subcategories)
-- Updated DECISION TREE references from 12 to 13 criteria
-- Added Criterion 13 auto-correction note to AUTO-CORRECTION RULES
-- Added Criterion 13 edge cases to EDGE CASES section
-- Added execution signal reference files to REFERENCE FILES
-- Updated FINAL OPERATING RULE with execution signal compliance
-- All sections renumbered: old Sections 13-20 → Sections 14-21
-- All v1.0 criteria (1-12) preserved and unchanged
-
-
 ============================================================
 PURPOSE
 ============================================================
@@ -1018,7 +890,7 @@ Step 2: CORE FOUNDATION CHECK.
           "at your competitive level," language referencing
           a formal competitive tier classification)
 
-        Forward anchor language (new in v1.3):
+        Forward anchor language:
        - Forward anchor intention references (e.g.,
           "your stated weekly intention," "the intention
           you set," language clearly referencing a tracked
@@ -1156,7 +1028,7 @@ Step 4: COMPOSITE SCORE, FLAG, ALIGNMENT, AND INTAKE
              The summary must be translated into coaching
              language, not reproduced.
 
-        LONGITUDINAL PPD SCAN (Category F6-F7 - new in v1.4):
+        LONGITUDINAL PPD SCAN (Category F6-F7):
 
         h2) PPD Alignment Signal labels used as named
             pipeline classifications:
@@ -1295,7 +1167,7 @@ Step 5: SURVEILLANCE AND CLASSIFICATION FRAMING SCAN
         profile) is classification framing and FAILS.
 
         Prohibited intake-to-execution comparison framing
-        patterns (Category F8 - new in v1.4):
+        patterns (Category F8):
        - "when you started you thought X"
        - "your intake identified"
        - "what you reported vs what we see"
@@ -1400,7 +1272,7 @@ Step 6: CONTEXT-DEPENDENT JUDGMENT.
           - "Your tie-breaker classification is Avoidance"
           - "PPD primary problem: Confidence Volatility"
 
-        FORWARD ANCHOR PERMITTED LANGUAGE (new in v1.3):
+        FORWARD ANCHOR PERMITTED LANGUAGE:
 
         l) Behavioral observations about intentions expressed
            in coaching language:
@@ -1416,7 +1288,7 @@ Step 6: CONTEXT-DEPENDENT JUDGMENT.
              that's the work paying off" (coaching
              observation connecting to intention theme)
 
-        FORWARD ANCHOR PROHIBITED LANGUAGE (new in v1.3):
+        FORWARD ANCHOR PROHIBITED LANGUAGE:
 
         m) Raw forward anchor text reproduction:
           - Verbatim or closely paraphrased quotes from
@@ -1923,7 +1795,6 @@ Audit Summary or Regeneration Instruction.
 
 ============================================================
 SECTION 14 - CRITERION 14: VOICE QUALITY REGRESSION
-[NEW IN V1.6]
 ============================================================
 
 Tier: 2 (SHOULD PASS, auto-correct where possible, reject
@@ -1940,18 +1811,6 @@ Reference is the quality benchmark this criterion measures
 against. Read VF_Coach_Arron_Voice_Reference.txt before
 running this criterion to understand what the target
 quality looks like.
-
-CONTEXT:
-In Stage 3 v2.1, generation-time rules (Section 35 C3, C5,
-C6, C7, C9, C10) enforced prohibitions on these patterns.
-Those rules produced workaround behavior: the model found
-new variants of banned patterns without actually improving
-voice quality. In v2.2, those generation rules were
-stripped and the Voice Reference was elevated as primary
-voice authority. This criterion replaces the generation
-rules with post-generation detection. The Voice Reference
-teaches the instincts; this criterion catches the
-regressions.
 
 CHECK LOGIC:
 Scan the Coaching Message and Deep Dive (and Parent CM when
@@ -2057,7 +1916,7 @@ Signs:
 - One-paragraph-per-data-point structure regardless of
   what mattered most in the week
 
-Coaching Output Instructions v2.2 Section 36 (Uneven
+Coaching Output Instructions v2.3 Section 36 (Uneven
 Coverage Principle) governs generation-time application.
 This criterion catches its absence at audit.
 
@@ -2297,7 +2156,7 @@ regeneration instruction:
   - Explicit instruction to re-read the Voice Reference
     and the Voice Foundations document before regenerating
   - Instruction to apply the Uneven Coverage Principle
-    (Coaching Output Instructions v2.2 Section 36) and
+    (Coaching Output Instructions v2.3 Section 36) and
     Exemplar Category Matching (Section 37) in the
     regeneration
 
@@ -2330,7 +2189,6 @@ Tier 1 is resolved in regeneration.
 
 ============================================================
 SECTION 15 - STRUCTURAL INTEGRITY CHECKS
-[RENUMBERED FROM SECTION 14 IN V1.6]
 ============================================================
 
 These are not scored criteria. They are prerequisite
@@ -2654,7 +2512,7 @@ CATEGORY F - INTAKE PROFILE TERMINOLOGY:
       athlete" in natural context is permitted,
       "competitive_level: College" is prohibited)
 
-  F6 - PPD ALIGNMENT SIGNAL CLASSIFICATIONS [NEW IN V1.4]
+  F6 - PPD ALIGNMENT SIGNAL CLASSIFICATIONS
        (never used as named pipeline classifications):
     "Aligned" (when describing PPD intake-to-execution match)
     "Gap" (when describing PPD intake-to-execution divergence)
@@ -2677,7 +2535,7 @@ CATEGORY F - INTAKE PROFILE TERMINOLOGY:
     CORRECT: "The routine piece is more central to your week than
     it might feel."
 
-  F7 - LONGITUDINAL PPD TERMINOLOGY [NEW IN V1.4]
+  F7 - LONGITUDINAL PPD TERMINOLOGY
        (never cited in any form):
     "execution-derived PPD" / "longitudinal PPD"
     "evidence tier" / "evidence strength"
@@ -2696,7 +2554,7 @@ CATEGORY F - INTAKE PROFILE TERMINOLOGY:
     CORRECT: "Here's what I'm seeing in how your weeks are
     landing."
 
-  F8 - INTAKE-TO-EXECUTION COMPARISON FRAMING [NEW IN V1.4]
+  F8 - INTAKE-TO-EXECUTION COMPARISON FRAMING
        (never used - positions coaching as comparing intake
        answers against observed behavior):
     "when you started you thought X"
@@ -2746,10 +2604,10 @@ CATEGORY F - INTAKE PROFILE TERMINOLOGY:
     "ABI emphasis: Composure and Focus"
     "Your Motivation and Resilience Loss score suggests..."
     "Based on your intake assessment..."
-    "There's a blind spot in your self-assessment" [NEW IN V1.4]
-    "Your PPD alignment shows a gap" [NEW IN V1.4]
-    "Your intake identified X as your primary challenge" [NEW IN V1.4]
-    "The system detected a pattern you weren't aware of" [NEW IN V1.4]
+    "There's a blind spot in your self-assessment"
+    "Your PPD alignment shows a gap"
+    "Your intake identified X as your primary challenge"
+    "The system detected a pattern you weren't aware of"
 
   TEST: Does the language name a formal classification system,
   or does it describe a behavioral observation? The former is
@@ -3070,7 +2928,7 @@ When applying auto-corrections (Result B), follow these rules:
    (intake profile, including F6-F8 longitudinal PPD), and
    Category G (forward anchor) violations.
 
-5. EM DASH CORRECTIONS ARE AUTO-CORRECTABLE [NEW IN V1.5]
+5. EM DASH CORRECTIONS ARE AUTO-CORRECTABLE
    Em dash violations (Section 13A) are always auto-corrected.
    Replace each em dash with the contextually appropriate
    alternative per the replacement rules in Section 13A.
@@ -3078,7 +2936,7 @@ When applying auto-corrections (Result B), follow these rules:
    change coaching content, intent, or direction.
 
 6. PIPELINE CLASSIFICATION LANGUAGE IS CONDITIONALLY
-   AUTO-CORRECTABLE [NEW IN V1.5]
+   AUTO-CORRECTABLE
    Pipeline classification language violations (Section 13B)
    are auto-corrected when a behavioral replacement is clear
    and the term is not central to the coaching claim. When
@@ -3087,7 +2945,7 @@ When applying auto-corrections (Result B), follow these rules:
    be regenerated (Tier 1 treatment).
 
 7. CRITERION 14 (VOICE QUALITY REGRESSION) IS CONDITIONALLY
-   AUTO-CORRECTABLE [NEW IN V1.6]
+   AUTO-CORRECTABLE
    Criterion 14 fail conditions are auto-correctable or
    non-correctable depending on the specific condition.
 
@@ -3347,7 +3205,7 @@ SECTION 20 - EDGE CASES AND JUDGMENT CALLS
     with no surrounding forward anchor context, it is
     permitted.
 
-16. ATHLETE SELF-DISCOVERY VS PIPELINE COMPARISON [NEW IN V1.4]
+16. ATHLETE SELF-DISCOVERY VS PIPELINE COMPARISON
     Athlete's own self-discovery language reflected in coaching
     output is PERMITTED. Pipeline comparison mechanism language
     is PROHIBITED. The audit distinguishes between these:
@@ -3368,7 +3226,7 @@ SECTION 20 - EDGE CASES AND JUDGMENT CALLS
     words/awareness, or does it expose a system that has been
     comparing intake data against execution data?
 
-17. COMMON ENGLISH WORDS IN LONGITUDINAL PPD CONTEXT [NEW IN V1.4]
+17. COMMON ENGLISH WORDS IN LONGITUDINAL PPD CONTEXT
     "aligned," "gap," and "blind spot" are common English words.
    - "your actions are aligned with your goals" → natural
       coaching language. PERMITTED.
@@ -3385,7 +3243,7 @@ SECTION 20 - EDGE CASES AND JUDGMENT CALLS
     likely not a coincidence. If it appears in normal coaching
     flow describing observed behavioral patterns, it is permitted.
 
-18. CF ATHLETE WITH LONGITUDINAL PPD LANGUAGE [NEW IN V1.4]
+18. CF ATHLETE WITH LONGITUDINAL PPD LANGUAGE
     Core Foundation athletes have no longitudinal_ppd data
     (block contains fallback values). ANY longitudinal PPD
     terminology in a CF athlete's output is an automatic FAIL
@@ -3434,7 +3292,7 @@ SECTION 21 - REFERENCE FILES
 The following files define the quality standard against which
 all auditing is performed. These files are authoritative.
 
-1. VF_Coach_Arron_Voice_Reference.txt [NEW IN V1.6]
+1. VF_Coach_Arron_Voice_Reference.txt
    Primary voice quality benchmark. Defines Coach Arron's
    voice through 6 voice principles and 18 annotated
    exemplars across 6 categories (Opening, Recognition,
@@ -3443,20 +3301,10 @@ all auditing is performed. These files are authoritative.
    quality target against which all fail conditions are
    measured. Also used by Criterion 11 for tonal scan.
 
-2. VF_Coaching_Output_Voice_Foundations.txt [NEW IN V1.6]
+2. VF_Coaching_Output_Voice_Foundations.txt
    Pipeline-native brand stance and writing standards for
-   Stage 3 output. Replaces legacy brand_voice.txt,
-   brand_themes.txt, and content_style_guide.txt authority
-   as of Stage 3 v2.2. Used by: Criterion 11 (Brand Voice
+   Stage 3 output. Used by: Criterion 11 (Brand Voice
    Tonal Scan), Criterion 14 (voice quality context).
-
-NOTE ON LEGACY BRAND FILES: brand_voice.txt,
-brand_themes.txt, and content_style_guide.txt have been
-removed from the Stage 3 authoritative source stack as of
-v2.2. They remain on disk for other stages but are no
-longer authoritative quality references for Stage 5. The
-Voice Reference and Voice Foundations replace their role
-for auditing Stage 3 output.
 
 4. VF_Coaching_Output_System_Identity.txt
    Defines Stage 3 role and constraints.
@@ -3519,7 +3367,7 @@ for auditing Stage 3 output.
     pillar score labels, band names, and emphasis
     classifications that must not appear in coaching output)
 
-14. VF_Longitudinal_PPD_Specification.txt [NEW IN V1.4]
+14. VF_Longitudinal_PPD_Specification.txt
     Defines the execution-derived PPD system, 8-bucket
     mapping, evidence tiers, alignment signal classification,
     downstream routing rules, and worked examples.

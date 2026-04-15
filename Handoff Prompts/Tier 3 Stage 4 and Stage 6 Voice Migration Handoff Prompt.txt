@@ -1,0 +1,803 @@
+============================================================
+TIER 3: STAGE 4 AND STAGE 6 VOICE MIGRATION
+HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-15 (end of Session 103)
+SESSION TYPE: Architectural migration + new spec authoring
+PREREQUISITE SESSIONS: Session 99 (v2.2 Stage 3 Voice Architecture
+                       build, Purpose-Built Principle established,
+                       Stage 4/6 legacy file migration deferred),
+                       Session 102 (v2.3 Stage 3 C3 retirement),
+                       Session 103 (Phase 4 verification + Tier 1
+                       cohesion fixes + Tier 2 housekeeping)
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION
+============================================================
+
+Read CLAUDE.md in the project root. The Session 103 entry
+contains the full arc summary of what Session 103 did across
+Tier 1 (cohesion fixes) and Tier 2 (housekeeping cleanup).
+Read it first.
+
+Then read this handoff prompt in full before beginning any
+work. Pay particular attention to Section 8 (EFFORT
+GUIDANCE) and set your Claude Code effort level before
+starting.
+
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+Session 99 created VF_Coaching_Output_Voice_Foundations.txt
+as a pipeline-native, purpose-built brand stance and writing
+standards document for Stage 3. The Purpose-Built Principle
+was established: every spec file in the pipeline source
+stack must be explicitly built for its owning stage. Legacy
+marketing files (brand_voice.txt, brand_themes.txt,
+content_style_guide.txt) were removed from Stage 3
+authority because their rhetorical DNA leaked into coaching
+prose.
+
+The Purpose-Built Principle was scoped to Stage 3 in
+Session 99. Stage 4 (Coach Insights Engine) and Stage 6
+(Daily Coaching Engine) still reference the legacy brand
+files. This was an explicit deferral, not an oversight.
+Migrating these stages requires architectural decisions
+about what their voice authority should look like.
+
+Session 103 surfaced this gap during a comprehensive
+cross-stage version reference scan and confirmed it was
+a real cohesion issue, not a cosmetic one. The user
+locked architectural decisions for both stages (Section 5
+of this handoff). This session executes the migration.
+
+GOAL A: Create two new purpose-built voice authority
+documents (one for Stage 6 daily snippets, one for Stage 4
+coach-facing institutional reports).
+
+GOAL B: Cascade new versioned files for Stage 4 and Stage 6
+specs that reference the new voice authorities and remove
+legacy brand file dependencies.
+
+GOAL C: Verify cross-stage consistency and update
+CLAUDE.md.
+
+
+============================================================
+3. CONTEXT: WHY THIS WORK MATTERS
+============================================================
+
+The pipeline currently has a cohesion problem at the voice
+authority level. Stage 3 Coaching Output (athlete-facing
+weekly CMs and DDs, Parent CMs) uses Voice Reference and
+Voice Foundations as authoritative voice sources.
+
+But:
+
+- Stage 4 (Coach Insights Engine) produces coach-facing
+  institutional reports AND parent-facing reports. It
+  currently references brand_voice.txt as its voice source.
+  The brand_voice.txt file was built for marketing/social
+  content, not for coaching reports. This means Stage 4
+  output is being generated against the wrong rhetorical
+  DNA.
+
+- Stage 6 (Daily Coaching Engine) produces athlete-facing
+  daily coaching snippets in the same Coach Arron voice
+  used by Stage 3. It currently references brand_voice.txt
+  and content_style_guide.txt as its voice sources. Same
+  problem: legacy marketing files governing coaching prose.
+
+The Voice Reference document (created in Sessions 96-100)
+explicitly includes "Daily Coaching Snippets" in its
+purpose statement on line 7. So the Voice Reference is
+already designed to govern Stage 6. The migration task
+is making Stage 6 actually reference it.
+
+Voice Foundations was built specifically for Stage 3 word
+counts and document types. It does not transfer cleanly to
+Stage 6 (30-60 word snippets vs 250-450 word CMs) or to
+Stage 4 (institutional reports vs athlete coaching). Each
+stage needs its own purpose-built foundations doc.
+
+
+============================================================
+4. WHAT SESSION 103 ACCOMPLISHED (CONTEXT)
+============================================================
+
+Tier 1 (cohesion fixes — generation-critical):
+
+- 12 cross-file version bumps applied across Stage 3 source
+  stack (Voice Reference, Voice Foundations), Stage 5
+  Editorial Audit (Master Prompt v1.6, Project Instructions
+  v1.6), Stage 4 Coach Insights v1.8.
+- 1 stale rule pointer fix in Daily Mini-JSON Spec (v1.6
+  Section 21 Raw Metric Exclusion → v2.3 Section 17 Raw
+  Metric Exclusion).
+- 1 stale Editorial Audit version reference fix in Daily
+  Mini-JSON Spec (v1.2 → v1.6).
+- Master Prompt V5 created (SOP_Coaching_Output_Master_
+  Prompt_V5.txt). V5 replaces V4 as active. Changes from
+  V4: reference file list updated to drop Brand Voice
+  Guide / Brand Themes / Content Style Guide and add Voice
+  Reference + Voice Foundations + Message Map + System
+  Identity + Reflection Model. Voice Quality Rules block
+  rewritten to match v2.3 Section 35 (4 mechanical rules
+  C1-C4 only). Stale caps moved to Stage 5 Criterion 14
+  removed (That is [noun] cap, telegraphing, CM-DD dedup,
+  athlete-specific closings). Version pin updated v2.1
+  ACTIVE → v2.3 ACTIVE.
+
+Tier 2 (housekeeping cleanup):
+
+- v2.3 Instructions cleaned of all v2.2 breadcrumbs:
+  multi-version change log block (lines 10-184), document
+  title V2.2→V2.3, subtitle dropped, all inline [NEW IN
+  V2.2] / [UPDATED IN V2.2] / [RENUMBERED] / [RESTRUCTURED]
+  / [REWRITTEN] / [EXPANDED] tags stripped, 3 NOTE blocks
+  in Section 35 deleted, "was the v2.2 hedge" phrase
+  rewritten. Net 265 lines removed (4454 → 4189).
+- Editorial Audit v1.6 Master Prompt cleaned: change log
+  blocks deleted, "as of v2.2" phrases rewritten, "NOTE ON
+  LEGACY BRAND FILES" block deleted. Net 87 lines removed
+  (710 → 623).
+- Editorial Audit v1.6 Project Instructions cleaned: change
+  log blocks deleted, 18 inline version tags stripped, 5
+  "(new in v1.x)" parentheticals cleaned, "NOTE ON LEGACY
+  BRAND FILES" block deleted, Criterion 14 historical
+  CONTEXT paragraph deleted (preserved PURPOSE / CHECK
+  LOGIC / fail conditions). Net 152 lines removed
+  (3554 → 3402).
+- Coach Insights v1.8 cleaned: change log block + lineage
+  paragraph deleted, 44 inline version tags stripped, 4
+  historical phrases rewritten, 2 inline historical NOTE
+  blocks rewritten to drop historical framing. Net 137
+  lines removed (3970 → 3833).
+- Daily Coaching Engine v1.3 Project Instructions cleaned:
+  change log block deleted (2 entries). Net 30 lines
+  removed (2004 → 1974).
+- Voice Foundations cleaned: "as of v2.2" phrase rewritten.
+- Stray V1.txt / V2.txt draft files in Stage 3 Source FIles
+  archived to Coaching Output/Archived/.
+- All cleaned files verified zero breadcrumbs via grep
+  patterns: v2\.x, v1\.x change logs, NEW IN, UPDATED IN,
+  RENUMBERED, RESTRUCTURED, REWRITTEN, EXPANDED, "as of v",
+  "Change Log from".
+
+Total Session 103 net cleanup across all files: ~700 lines
+removed.
+
+NOT done in Session 103 (deferred to this session):
+
+- Stage 4 (Coach Insights) and Stage 6 (Daily Coaching
+  Engine) still reference legacy brand_voice.txt and
+  content_style_guide.txt files in their reference file
+  lists. These are the Tier 3 architectural items. This
+  session executes the migration.
+
+
+============================================================
+5. LOCKED ARCHITECTURAL DECISIONS
+============================================================
+
+The user locked these decisions at the end of Session 103
+before deferring Tier 3 to a fresh session.
+
+---
+DECISION 1: STAGE 6 (DAILY COACHING ENGINE) VOICE SOURCE
+---
+
+Create a new lightweight VF_Daily_Snippet_Voice_Foundations.txt
+specific to short-form daily output. Stage 6 references the
+shared Voice Reference (cross-stage Coach Arron voice
+authority) PLUS this new stage-specific Foundations doc.
+
+This matches Session 99's Purpose-Built Principle: Voice
+Foundations is built for Stage 3 word counts and document
+types; daily snippets need their own Foundations doc that
+addresses the specific constraints of 30-60 word, 2-3
+sentence, morning-bridge output.
+
+Stage 6 STOPS referencing brand_voice.txt and
+content_style_guide.txt entirely. These legacy files are
+removed from the Stage 6 authoritative source list.
+
+---
+DECISION 2: STAGE 4 (COACH INSIGHTS) VOICE SOURCE
+---
+
+Stage 4 produces TWO different output types with materially
+different voice requirements:
+
+- Parent output (Parent Weekly Insight, parent-facing
+  sections): Coach Arron in third-person register. SAME
+  voice as Stage 3 Parent CM, just rendered in Stage 4's
+  scan-first dashboard format. Reference Voice Reference
+  directly. The voice doesn't change, only the format does.
+
+- Coach-facing output (Weekly Performance Insight, Team
+  Snapshot, Monthly Institutional Summary): Institutional
+  report voice. Factual, compliance-safe, executive register.
+  Specific approved coaching vocabulary. NO athlete-coaching
+  warmth patterns (no empathy-first openings, no "you cracked"
+  emotional framing, no contractions in the institutional
+  register). This needs its own purpose-built spec.
+
+Create a new VF_Coach_Insights_Output_Voice_Standards.txt
+specifying institutional report voice for the coach-facing
+output types. Stage 4 references Voice Reference (for
+parent output) AND this new standards doc (for coach-facing
+output).
+
+Stage 4 STOPS referencing brand_voice.txt entirely. The
+legacy file is removed from the Stage 4 authoritative
+source list.
+
+
+============================================================
+6. DELIVERABLES
+============================================================
+
+This session produces SIX new files and updates CLAUDE.md.
+
+---
+DELIVERABLE A: VF_Daily_Snippet_Voice_Foundations.txt (NEW)
+---
+
+Location: `Agents - Generators\Daily Coaching Engine\Source Files\VF_Daily_Snippet_Voice_Foundations.txt`
+
+Purpose: Pipeline-native brand stance and writing standards
+for Stage 6 daily coaching snippets. Lightweight (the
+constraints of 30-60 word, 2-3 sentence output are tight
+enough that Foundations content should be focused and
+short).
+
+Suggested structure:
+
+  Section 1: Purpose and Scope
+    - This document is the brand stance for Stage 6 only.
+    - Voice Reference is the primary voice authority
+      (cross-stage Coach Arron voice).
+    - Voice Foundations (Stage 3) is NOT authoritative for
+      Stage 6 — daily snippets have different constraints.
+    - This document does not duplicate Voice Reference;
+      it adds the daily-snippet-specific brand stance.
+
+  Section 2: Brand Stance for Daily Snippets
+    - Coach Arron speaking in compressed form
+    - Morning bridge: close yesterday, open today
+    - Athlete-first (close→open handoff to Tune-Up)
+    - Calm authority compressed into 2-3 sentences
+    - No hype, no questions, no clinical language
+    - Identity-first (the snippet is FROM Coach Arron, TO
+      this specific athlete, on this specific morning)
+
+  Section 3: Writing Standards for Daily Snippets
+    - 2-3 sentences, 30-60 words, hard cap 3 sentences
+    - Close→bridge structure (close yesterday's moment,
+      bridge to today's intention)
+    - Signed "- Coach Arron"
+    - Same em dash ban, contraction default, pipeline
+      classification language ban as Stage 3
+    - Specific guidance on what to AVOID in compressed
+      form (no fragment-form for fragment's sake, no
+      cramming of multiple coaching moves into one
+      snippet, no recap-style summarization)
+
+  Section 4: Authority Position
+    - Voice Reference is the primary voice authority
+    - Voice Reference Section 4 Pair 8 (Earn Every
+      Sentence applied to compressed form) is the
+      relevant exemplar for snippet voice
+    - This document is the Stage 6 brand stance layer
+    - Daily Snippet Content Model (existing file) is the
+      structural specification for what snippets contain
+    - Mechanical safety net: same compliance scan protocol
+      that exists in v1.3 Project Instructions
+
+  Section 5: Explicit Non-Applicability
+    - Long-form rhetorical structures (multi-paragraph
+      development, full document opening/middle/close
+      arcs) do not apply
+    - Daily snippet structure is constrained, not
+      free-form
+    - The legacy brand_voice.txt and content_style_guide.txt
+      marketing files are explicitly NOT authoritative for
+      Stage 6 daily snippets
+
+Word target: ~250-400 lines. Should be lighter than Voice
+Foundations (which is ~370 lines for Stage 3) because daily
+snippet constraints are simpler.
+
+---
+DELIVERABLE B: VF_Coach_Insights_Output_Voice_Standards.txt (NEW)
+---
+
+Location: `Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Output_Voice_Standards.txt`
+
+Purpose: Pipeline-native voice standards for Stage 4
+coach-facing institutional reports. This is fundamentally
+different from athlete-coaching voice — it's executive,
+factual, compliance-safe, structured.
+
+Suggested structure:
+
+  Section 1: Purpose and Scope
+    - This document governs voice for Stage 4 coach-facing
+      output ONLY (Weekly Performance Insight, Team Snapshot,
+      Monthly Institutional Summary).
+    - Stage 4 PARENT output uses Voice Reference directly
+      (Coach Arron third-person register, athlete-coaching
+      voice). Parent output is OUT OF SCOPE for this
+      document.
+    - The audience is coaching staff at every organizational
+      level (position coach, coordinator, head coach).
+
+  Section 2: Voice for Institutional Reports
+    - Executive register (factual, structured, compliance-safe)
+    - Third-person institutional voice
+    - Status indicators and trend descriptions
+    - Full sentences (not athlete-coaching fragments)
+    - NO empathy-first openings (athlete coaching pattern,
+      not institutional)
+    - NO "you cracked" / "you wrote" emotional framing
+    - NO athlete-coaching warmth patterns
+    - Contractions are PERMITTED but not the default
+      (institutional register)
+
+  Section 3: Approved Vocabulary
+    - Approved coaching terms: "controllables," "consistency,"
+      "engagement quality," "self-direction," "preparation,"
+      "execution," "follow-through," "recovery"
+    - Approved trend language: "building," "stable,"
+      "rebuilding," "drifting," "consistent," "variable"
+    - Compliance-safe synonyms for all v9.7 JSON fields
+      (cross-reference VF_Coach_Insights_Compliance_Framework.txt
+      and SOP_Coach_Insights_Project_Instructions for the
+      complete substitution table)
+
+  Section 4: Prohibited Patterns
+    - No clinical language (inherited from clinical language
+      prohibition)
+    - No execution signal raw metrics (inherited from
+      Section 17 Raw Metric Exclusion in Stage 3 Instructions)
+    - No PPD bucket names, no ABI pillar names, no other
+      pipeline-internal classifications
+    - No surveillance framing
+    - No coaching-prescription language (Stage 4 is
+      informational, not directive)
+    - No hype, motivational copy, or marketing language
+      (institutional briefings, not promotional content)
+
+  Section 5: Format Standards
+    - Section structure follows existing Coach Insights
+      Output Structure Master spec
+    - Status lines + blurbs (existing pattern)
+    - Em dash ban (inherited)
+    - Contractions PERMITTED but not default
+
+  Section 6: Authority Position
+    - This document is the Stage 4 coach-facing voice
+      authority
+    - VF_Coach_Insights_Compliance_Framework.txt is the
+      compliance authority (binary checks)
+    - VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+      is the metric definitions authority
+    - Voice Reference is NOT authoritative for coach-facing
+      output (athlete-coaching voice is the wrong register)
+    - Voice Reference IS authoritative for parent output
+      sections of Stage 4 (referenced separately in the
+      Project Instructions)
+
+  Section 7: Explicit Non-Applicability
+    - Athlete-coaching voice patterns from Voice Reference
+      (empathy-first openings, instinct-based responses,
+      Coach Arron's "talk like you've been in the room")
+      do NOT transfer to coach-facing institutional output
+    - The legacy brand_voice.txt marketing file is NOT
+      authoritative for Stage 4 coach-facing output
+
+Word target: ~400-600 lines. Heavier than the daily snippet
+Foundations because Stage 4 has more structural diversity
+(multiple output types, mandatory disclaimer, compliance
+framework references).
+
+---
+DELIVERABLE C: SOP_Coach_Insights_Master_Prompt_v1.5.txt (NEW VERSION)
+---
+
+Location: `Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.5.txt`
+
+Source: copy from current v1.4. Apply these changes:
+
+1. Update Reference Files block:
+   - REMOVE: brand_voice.txt
+   - ADD: VF_Coach_Insights_Output_Voice_Standards.txt
+     (for coach-facing output voice)
+   - ADD: VF_Coach_Arron_Voice_Reference.txt (for parent
+     output voice — Coach Arron third-person register)
+2. Update any version pin if present
+3. Add a brief AUTHORITY HIERARCHY note at the top of the
+   reference list distinguishing coach-facing voice
+   authority (new Standards doc) from parent-facing voice
+   authority (Voice Reference)
+4. Preserve all other v1.4 content unchanged
+
+Mechanical: zero em dashes, zero curly quotes.
+
+---
+DELIVERABLE D: SOP_Coach_Insights_Project_Instructions_v1.9.txt (NEW VERSION)
+---
+
+Location: `Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.9.txt`
+
+Source: copy from current v1.8 (the cleaned version, 3833
+lines). Apply these changes:
+
+1. Update Section 2 (Authoritative Sources) or wherever
+   reference files are listed:
+   - REMOVE brand_voice.txt from coach-facing sections
+   - ADD VF_Coach_Insights_Output_Voice_Standards.txt as
+     the coach-facing voice authority
+   - ADD VF_Coach_Arron_Voice_Reference.txt as the parent
+     output voice authority (already partially referenced
+     in v1.8 Section 22 — make it the formal authority)
+2. Update Section 22 (Parent Voice Calibration Rule) to
+   point at Voice Reference as primary instead of "Stage 3
+   Instructions v2.3 Section 25"
+3. Add or update a section explicitly distinguishing
+   coach-facing voice authority from parent-facing voice
+   authority
+4. Update any references to brand_voice.txt elsewhere in
+   the body of the spec
+5. Preserve all other v1.8 content unchanged
+
+Mechanical: zero em dashes, zero curly quotes.
+
+---
+DELIVERABLE E: SOP_Daily_Coaching_Engine_Master_Prompt_v1.3.txt (NEW VERSION)
+---
+
+Location: `Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Master_Prompt_v1.3.txt`
+
+Source: copy from current v1.2. Apply these changes:
+
+1. Update Reference Files block:
+   - REMOVE: brand_voice.txt
+   - REMOVE: content_style_guide.txt
+   - ADD: VF_Coach_Arron_Voice_Reference.txt (primary
+     voice authority)
+   - ADD: VF_Daily_Snippet_Voice_Foundations.txt (Stage 6
+     brand stance and writing standards)
+2. Add a brief AUTHORITY HIERARCHY note: Voice Reference
+   is primary, Daily Snippet Foundations is the Stage 6
+   brand stance layer, Daily Snippet Content Model is the
+   structural spec
+3. Preserve all other v1.2 content unchanged
+
+Mechanical: zero em dashes, zero curly quotes.
+
+---
+DELIVERABLE F: SOP_Daily_Coaching_Engine_Project_Instructions_v1.4.txt (NEW VERSION)
+---
+
+Location: `Agents - Generators\Daily Coaching Engine\SOP_Daily_Coaching_Engine_Project_Instructions_v1.4.txt`
+
+Source: copy from current v1.3 (the cleaned version, 1974
+lines). Apply these changes:
+
+1. Update RANK 4 SHARED VOICE AND STYLE block (around line
+   86-89 in v1.3):
+   - REMOVE: brand_voice.txt
+   - REMOVE: content_style_guide.txt
+   - ADD: VF_Coach_Arron_Voice_Reference.txt (primary
+     voice authority)
+   - ADD: VF_Daily_Snippet_Voice_Foundations.txt (Stage 6
+     brand stance)
+2. Update any other body-level references to brand_voice.txt
+   or content_style_guide.txt
+3. Add or update an AUTHORITY HIERARCHY note distinguishing
+   Voice Reference (primary) from Daily Snippet Foundations
+   (brand stance layer) from Daily Snippet Content Model
+   (structural spec)
+4. Preserve all other v1.3 content unchanged
+
+Mechanical: zero em dashes, zero curly quotes.
+
+---
+DELIVERABLE G: CLAUDE.md update
+---
+
+Add Session 104 entry capturing the Tier 3 migration. Update
+Key File Locations to reference the new Master Prompt /
+Instructions versions for Stage 4 and Stage 6 and the new
+voice authority docs. Update the pipeline status table for
+Stage 4 (v1.5 / v1.9) and Stage 6 (v1.3 / v1.4) versions.
+
+Note in the Session 104 entry that the legacy brand_voice.txt
+and content_style_guide.txt are now removed from Stage 4 and
+Stage 6 authority. Update the existing CLAUDE.md note that
+says "Stage 4 and Stage 6 legacy file migrations remain
+deferred to future sessions" — that statement is no longer
+accurate after this session.
+
+
+============================================================
+7. EXECUTION ORDER
+============================================================
+
+Recommended order (roughly increasing dependency complexity):
+
+PHASE 1: Voice authority docs (foundations)
+  1. Read Voice Foundations (Stage 3) for structural reference
+  2. Read VF_Daily_Snippet_Content_Model.txt and VF_Daily_
+     Mini_JSON_Specification.txt for Stage 6 context
+  3. Read brand_voice.txt and content_style_guide.txt to
+     identify what currently transfers (and what doesn't)
+  4. Write VF_Daily_Snippet_Voice_Foundations.txt
+     (Deliverable A)
+  5. Read VF_Coach_Insights_Compliance_Framework.txt and
+     COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt for Stage 4
+     context
+  6. Read brand_voice.txt again (already loaded) for what
+     Stage 4 currently uses
+  7. Write VF_Coach_Insights_Output_Voice_Standards.txt
+     (Deliverable B)
+
+PHASE 2: Stage 6 spec migration
+  8. Read SOP_Daily_Coaching_Engine_Master_Prompt_v1.2.txt
+  9. Write SOP_Daily_Coaching_Engine_Master_Prompt_v1.3.txt
+     (Deliverable E)
+  10. Read SOP_Daily_Coaching_Engine_Project_Instructions_v1.3.txt
+  11. Write SOP_Daily_Coaching_Engine_Project_Instructions_v1.4.txt
+      (Deliverable F)
+
+PHASE 3: Stage 4 spec migration
+  12. Read SOP_Coach_Insights_Master_Prompt_v1.4.txt
+  13. Write SOP_Coach_Insights_Master_Prompt_v1.5.txt
+      (Deliverable C)
+  14. Read SOP_Coach_Insights_Project_Instructions_v1.8.txt
+      (already cleaned in Session 103)
+  15. Write SOP_Coach_Insights_Project_Instructions_v1.9.txt
+      (Deliverable D)
+
+PHASE 4: Verification and CLAUDE.md
+  16. Cross-stage consistency check: verify all 6 new files
+      are internally coherent and reference each other
+      correctly
+  17. Mechanical scan: zero em dashes, zero curly quotes
+      in all 6 new files
+  18. Functional scan: verify no remaining references to
+      brand_voice.txt or content_style_guide.txt in Stage 4
+      or Stage 6 active spec files (legacy files stay on disk
+      but are no longer authoritative)
+  19. Update CLAUDE.md (Deliverable G)
+  20. Commit
+
+
+============================================================
+8. EFFORT GUIDANCE BY PHASE
+============================================================
+
+Phase 1 (Voice authority docs): HIGH
+  Writing two new purpose-built spec files. Design-forward
+  work that establishes voice authority for two stages.
+  Same effort register as Session 99 Voice Foundations
+  build.
+
+Phase 2 (Stage 6 spec migration): MEDIUM
+  Mechanical-ish: copy v1.2/v1.3 → v1.3/v1.4, swap
+  reference file lines, preserve everything else. HIGH
+  escalation if any body content needs updating beyond
+  the reference list (which it likely does in places where
+  brand_voice.txt content is invoked).
+
+Phase 3 (Stage 4 spec migration): MEDIUM
+  Same pattern as Phase 2. HIGH escalation if Stage 4 has
+  significant body content invoking brand_voice.txt that
+  needs to be replaced with new Standards doc references.
+
+Phase 4 (Verification + CLAUDE.md): MEDIUM
+  Mechanical scans + CLAUDE.md update. HIGH if cross-stage
+  consistency surfaces issues that need design judgment.
+
+
+============================================================
+9. REFERENCE FILES BY PRIORITY
+============================================================
+
+PRIORITY 1 - Read before anything else:
+  1. CLAUDE.md (project root) — Session 103 entry
+  2. This handoff prompt in full
+
+PRIORITY 2 - Phase 1 (Voice authority doc design):
+  3. VF_Coaching_Output_Voice_Foundations.txt (Stage 3
+     reference for structure and tone)
+  4. VF_Coach_Arron_Voice_Reference.txt (cross-stage voice
+     authority — already in scope, verify it's still v1.0)
+  5. brand_voice.txt (legacy file, identify what transfers
+     to new Foundations docs and what doesn't)
+  6. content_style_guide.txt (same)
+  7. VF_Daily_Snippet_Content_Model.txt (Stage 6 structural
+     spec — Foundations doc must coordinate with this)
+  8. VF_Daily_Mini_JSON_Specification.txt (Stage 6 input
+     contract)
+  9. VF_Coach_Insights_Compliance_Framework.txt (Stage 4
+     compliance authority — Standards doc must coordinate)
+  10. COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt (Stage 4
+      output structure)
+
+PRIORITY 3 - Phase 2 Stage 6 migration:
+  11. SOP_Daily_Coaching_Engine_Master_Prompt_v1.2.txt
+  12. SOP_Daily_Coaching_Engine_Project_Instructions_v1.3.txt
+  13. VF_Daily_Snippet_QA_Monitoring_Protocol_v1.1.txt
+      (cross-reference for compliance scan protocol)
+
+PRIORITY 4 - Phase 3 Stage 4 migration:
+  14. SOP_Coach_Insights_Master_Prompt_v1.4.txt
+  15. SOP_Coach_Insights_Project_Instructions_v1.8.txt
+  16. JSON_logic_reference.txt (Stage 4 routing logic)
+  17. VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+  18. VF_Tracking_Reporting_Metrics_Reference.txt
+
+
+============================================================
+10. CRITICAL OPERATING RULES
+============================================================
+
+RULE 1: VOICE REFERENCE IS THE CROSS-STAGE AUTHORITY.
+  Voice Reference governs Coach Arron voice across Stage 3,
+  Stage 4 (parent output), and Stage 6 (daily snippets).
+  Do not duplicate Voice Reference content in the new
+  Foundations docs. Reference it.
+
+RULE 2: NEW FOUNDATIONS DOCS ARE STAGE-SPECIFIC, NOT
+GENERAL.
+  Daily Snippet Foundations is for Stage 6 only. Coach
+  Insights Output Voice Standards is for Stage 4 coach-
+  facing output only. Do not write either as a "general
+  voice doc" — they exist because Voice Foundations (Stage
+  3) does not transfer cleanly.
+
+RULE 3: STAGE 4 PARENT OUTPUT IS A SEPARATE TRACK.
+  Stage 4 parent output (Parent Weekly Insight) uses Voice
+  Reference directly. The new Coach Insights Output Voice
+  Standards doc explicitly excludes parent output from its
+  scope. Stage 4 has TWO voice authorities, not one.
+
+RULE 4: ZERO EM DASHES IN ALL NEW PROSE.
+  Same em dash ban applies. Use straight hyphens, periods,
+  commas, or colons.
+
+RULE 5: PRESERVE V1.X / V1.X CONTENT.
+  When creating new versioned files (v1.3, v1.4, v1.5,
+  v1.9), preserve all existing content from the source
+  version. Only change the reference file lists and any
+  body content that explicitly invokes the removed legacy
+  files. Do NOT rewrite sections beyond what the migration
+  requires.
+
+RULE 6: NO BREADCRUMBS IN NEW FILES.
+  The Session 103 housekeeping principle applies to new
+  files too. Do not include change log blocks, [NEW IN
+  V1.X] tags, "as of v1.X" historical phrases, or NOTE
+  blocks explaining what changed from prior versions.
+  CLAUDE.md is the version history reference.
+
+RULE 7: PRESERVE OLD VERSIONS ON DISK.
+  v1.2 (Stage 6 Master Prompt), v1.3 (Stage 6 Instructions),
+  v1.4 (Stage 4 Master Prompt), v1.8 (Stage 4 Instructions)
+  all stay on disk. The new versions are additions, not
+  replacements.
+
+RULE 8: USER APPROVAL FOR DESIGN DECISIONS.
+  The two architectural decisions are LOCKED. Do not
+  re-open them. But within the doc structures (what
+  sections, what content), present design decisions to
+  the user for approval BEFORE writing the files. Standard
+  Session 100+ process.
+
+RULE 9: END-OF-SESSION DISCIPLINE.
+  Update CLAUDE.md with Session 104 entry. Commit before
+  closing. Per CLAUDE.md end-of-session rule.
+
+
+============================================================
+11. SUCCESS CRITERIA
+============================================================
+
+Session is complete when ALL of the following are true:
+
+  [ ] VF_Daily_Snippet_Voice_Foundations.txt created
+      (Deliverable A)
+  [ ] VF_Coach_Insights_Output_Voice_Standards.txt created
+      (Deliverable B)
+  [ ] SOP_Coach_Insights_Master_Prompt_v1.5.txt created
+      (Deliverable C)
+  [ ] SOP_Coach_Insights_Project_Instructions_v1.9.txt
+      created (Deliverable D)
+  [ ] SOP_Daily_Coaching_Engine_Master_Prompt_v1.3.txt
+      created (Deliverable E)
+  [ ] SOP_Daily_Coaching_Engine_Project_Instructions_v1.4.txt
+      created (Deliverable F)
+  [ ] All 6 new files have zero em dashes and zero curly
+      quotes
+  [ ] Stage 4 v1.5/v1.9 active spec files contain no
+      references to brand_voice.txt
+  [ ] Stage 6 v1.3/v1.4 active spec files contain no
+      references to brand_voice.txt or content_style_guide.txt
+  [ ] CLAUDE.md updated with Session 104 entry, Key File
+      Locations updated, pipeline status table updated, the
+      "Stage 4 and Stage 6 legacy file migrations remain
+      deferred" note removed
+  [ ] Git commit created and working tree is clean
+
+
+============================================================
+12. WHAT NOT TO DO
+============================================================
+
+DO NOT:
+  - Touch Stage 3 files (Coaching Output Instructions v2.3,
+    Master Prompt V5, Voice Reference, Voice Foundations,
+    Frameworks, Message Map, System Identity). Stage 3 is
+    out of scope.
+  - Touch Stage 5 Editorial Audit files. Stage 5 is out of
+    scope.
+  - Touch Stage 7 Determination Rules. Stage 7 is
+    deterministic and has no voice authority dependency.
+  - Touch Stage 1 Snapshot Builder or Stage 2 Interpretation
+    Engine. Out of scope.
+  - DELETE the legacy brand_voice.txt or content_style_guide.txt
+    files from disk. They stay on disk for historical
+    reference. Only their AUTHORITY over Stage 4 and Stage 6
+    is removed.
+  - Re-open the architectural decisions in Section 5. They
+    are locked.
+  - Add change log blocks, version tags, or NOTE-explaining-
+    history blocks to the new files.
+  - Edit existing Stage 4 v1.4/v1.8 or Stage 6 v1.2/v1.3
+    files in place. Create new versioned files instead, per
+    the versioning discipline.
+  - Skip the user-approval step for doc structure design
+    decisions. Present design before writing.
+  - Treat CLAUDE.md Session 103 entry as a substitute for
+    actually reading the relevant spec files.
+
+
+============================================================
+13. FINAL NOTE
+============================================================
+
+After this session completes, the pipeline will have full
+cross-stage cohesion at the voice authority level:
+
+- Stage 3 (Coaching Output): Voice Reference + Voice
+  Foundations
+- Stage 4 (Coach Insights):
+    - Coach-facing output: Coach Insights Output Voice
+      Standards
+    - Parent output: Voice Reference
+- Stage 5 (Editorial Audit): References Voice Reference and
+  Voice Foundations as quality benchmarks (already in place)
+- Stage 6 (Daily Coaching Engine): Voice Reference + Daily
+  Snippet Voice Foundations
+- Stage 7 (Daily Coach Insights): No voice authority needed
+  (deterministic)
+
+Every stage will have a purpose-built voice authority. No
+stage will reference legacy marketing files that were built
+for a different project. The Purpose-Built Principle from
+Session 99 will be fully realized.
+
+Good luck.
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================

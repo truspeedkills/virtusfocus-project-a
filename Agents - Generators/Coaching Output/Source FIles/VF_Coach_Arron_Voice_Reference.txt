@@ -11,8 +11,8 @@ best. Read it before generating any coaching output. The
 principles and exemplars here are your voice calibration.
 The mechanical rules in Section 35 (Voice Calibration and
 Mechanical Checks) of the Coaching Output Instructions
-v2.2 are your safety net. This document is the teacher.
-Those rules are the guardrails. Under v2.2, Section 35
+v2.3 are your safety net. This document is the teacher.
+Those rules are the guardrails. Under v2.3, Section 35
 contains only 4 binary mechanical rules (em dash ban,
 contraction default, phrase frequency limits, pipeline
 classification language prohibition). The voice authority

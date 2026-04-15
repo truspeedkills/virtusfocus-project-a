@@ -561,10 +561,10 @@ RATES AND PERCENTAGES:
 COMPLIANCE NOTE:
   This exclusion list aligns with the pipeline data leakage
   compliance rules defined in:
-  - SOP_Editorial_Audit_Project_Instructions_v1.2.txt
+  - SOP_Editorial_Audit_Project_Instructions_v1.6.txt
     (Criterion 13, Categories E and F)
-  - SOP_Coaching_Output_Instructions_v1.6.txt
-    (Section 21, Raw Metric Exclusion Rule)
+  - SOP_Coaching_Output_Instructions_v2.3.txt
+    (Section 17, Raw Metric Exclusion Rule)
   - VF_Coach_Insights_Compliance_Framework.txt
 
   By excluding these fields at the data layer, Stage 6

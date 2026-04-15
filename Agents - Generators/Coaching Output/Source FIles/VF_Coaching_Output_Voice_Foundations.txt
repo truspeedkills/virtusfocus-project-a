@@ -59,7 +59,7 @@ AUTHORITY POSITION:
      (read before generating any output)
 
   2. Mechanical safety net: Section 35 of
-     SOP_Coaching_Output_Instructions_v2.2.txt
+     SOP_Coaching_Output_Instructions_v2.3.txt
      (em dash ban, contraction default, pipeline
      classification language prohibition, phrase
      frequency limits)
@@ -71,7 +71,7 @@ AUTHORITY POSITION:
      VF_Deep_Dive_Coaching_Analysis_Framework.txt
 
   5. Clinical language boundary: Section 7 of
-     SOP_Coaching_Output_Instructions_v2.2.txt
+     SOP_Coaching_Output_Instructions_v2.3.txt
 
 When anything in this document appears to conflict with
 the Voice Reference on a voice or rhetorical matter, the
@@ -352,12 +352,11 @@ content_style_guide.txt files are explicitly NOT
 authoritative for Stage 3 output. Those files were built
 for a different project and a different purpose. They
 remain on disk for whatever other stages currently
-reference them, but they have no authority over Stage 3
-as of v2.2.
+reference them, but they have no authority over Stage 3.
 
 If tension arises between this document and anything in
 those legacy files, this document governs for Stage 3.
-The Coaching Output Instructions v2.2 Section 2 removes
+The Coaching Output Instructions Section 2 removes
 those files from the Stage 3 authoritative source list.
 
 WHY THIS MATTERS:

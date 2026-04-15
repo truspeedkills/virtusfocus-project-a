@@ -1,188 +1,10 @@
-COACHING OUTPUT PROJECT INSTRUCTIONS V2.2
-(VOICE ARCHITECTURE: FOUNDATIONS DOC + VOICE REFERENCE AUTHORITY + STRIPPED SECTION 35 + UNEVEN COVERAGE + EXEMPLAR MATCHING)
+COACHING OUTPUT PROJECT INSTRUCTIONS V2.3
 
 Copyright © 2026 NBAP Development LLC
 All Rights Reserved.
 
 Confidential and proprietary source code of NBAP Development LLC.
 Unauthorized copying or distribution prohibited.
-
-Change Log from v2.1:
-- Section 2 restructured: Added explicit AUTHORITY HIERARCHY
-  declaration at top. Removed brand_voice.txt, brand_themes.txt,
-  and content_style_guide.txt from Stage 3 authoritative
-  source list (legacy marketing files, not purpose-built for
-  Stage 3). Added VF_Coaching_Output_Voice_Foundations.txt as
-  pipeline-native replacement for brand stance and writing
-  standards. Voice Reference elevated to top authority for
-  all voice and rhetorical decisions.
-- Section 35 renamed from "VOICE QUALITY AND EXPRESSION RULES"
-  to "VOICE CALIBRATION AND MECHANICAL CHECKS". Purpose shifted
-  from generation-rule enforcement to mechanical safety net
-  supporting the Voice Reference.
-- Section 35 simplified: Stripped C3 (That is [Noun] rule),
-  C5 (CM-DD Deduplication), C6 (Transition Variety +
-  telegraphing), C7 (CM Opening Approach Variety), C9 (Identity
-  Thread Variation), C10 (Athlete-Specific Closings). These
-  generation-time prohibitions were producing workaround
-  behavior. Pattern detection for these conditions moved to
-  Stage 5 v1.6 Criterion 14 (Voice Quality Regression).
-- Section 35 retained: C1 (Em Dash Ban), C2 (Contraction
-  Default), C4 Phrase Frequency Limits (renumbered to C3),
-  C8 Pipeline Classification Language Prohibition (renumbered
-  to C4). These are binary mechanical checks that work.
-- Section 35 added: Voice Reference pointer paragraph,
-  "BAN MOVES, NOT JUST PHRASES" framing principle.
-- New Section 36: UNEVEN COVERAGE PRINCIPLE. Proportional
-  attention to what matters most in the week. Critical caveat:
-  uneven coverage means proportional weight, not selective
-  omission of significant threads.
-- New Section 37: EXEMPLAR CATEGORY MATCHING. Pre-generation
-  guidance to match the week's dominant coaching function to
-  Voice Reference exemplar categories (A-F).
-- Renumbered FINAL SYSTEM RULE from Section 36 to Section 38.
-- All v2.1 content preserved and unchanged below unless noted.
-  The structural changes are localized to Section 2 and the
-  Section 35-38 range.
-
-Change Log from v2.0:
-- Section 8 updated: Salutation format changed from em dash to
-  comma ("[Name],"). YOUR ACTION label changed from em dash to
-  colon ("YOUR ACTION: [CONTEXT]"). Signature changed from
-  em dash prefix to plain "Coach Arron". All em dashes removed
-  from format specification and examples.
-- All em dashes removed from entire file. Replaced with commas,
-  periods, colons, or sentence breaks per context. Em dash is
-  now a banned character in all athlete-facing and parent-facing
-  output.
-- Added VOICE QUALITY AND EXPRESSION RULES (Section 35) with 10
-  subsections: C1 Prohibited Punctuation (em dash ban), C2
-  Contraction Default Register, C3 Emphatic Naming rule, C4
-  Phrase Frequency Limits, C5 CM-DD Deduplication, C6 Transition
-  Variety, C7 CM Opening Approach Variety, C8 Pipeline
-  Classification Language Prohibition, C9 Identity Thread
-  Variation, C10 Athlete-Specific Closing Phrases.
-- Renumbered FINAL SYSTEM RULE from Section 34 to Section 36.
-- Section 32 (Parent CM Validation Checklist) updated: signature
-  format changed to "Coach Arron".
-- Section 33 (Parent CM Reference Examples): all example signatures
-  changed to "Coach Arron". All em dashes replaced.
-- Section 25 (Parent CM Output Specification): signature format
-  changed to "Coach Arron".
-- All v2.0 content preserved and unchanged below unless noted
-
-Change Log from v1.9:
-- Section 2 expanded: Added VF_Longitudinal_PPD_Specification.txt
-  to authoritative sources
-- Section 3 expanded: Added longitudinal_ppd block awareness
-  (present in v9.7+ JSONs, contains execution-derived bucket
-  evidence tiers and alignment signal when status != "insufficient data").
-  Input schema reference updated to v9.7.
-- Section 16 expanded: Core Foundation Skip Rule now covers
-  longitudinal PPD routing
-- Section 17 expanded: Raw Metric Exclusion Rule now includes
-  longitudinal PPD terminology (evidence tier names, alignment
-  signal labels, intake-to-execution comparison framing) with
-  Category F6/F7/F8 reference per Editorial Audit spec
-- Added LONGITUDINAL PPD INTEGRATION RULE (Section 23)
-- Renumbered old Sections 24-33 to 25-34 (all parent sections
-  and Final System Rule shifted by +1)
-- Updated all internal cross-references to match new numbering
-- All v1.9 content preserved and unchanged below unless noted
-
-Change Log from v1.8:
-- Section 8 expanded: Renamed from "COACHING MESSAGE LENGTH TARGET" to
-  "COACHING MESSAGE OUTPUT FORMAT." Added mandatory reference to
-  VF_Coaching_Message_Framework.txt OUTPUT FORMAT section. Added explicit
-  format requirements: clean header (no pipeline metadata), separator bars,
-  labeled YOUR ACTION section, NEXT WEEK FOCUS QUESTION section, salutation
-  format, mandatory closing phrase, signature placement. Word target
-  (250-450) preserved unchanged within expanded section.
-- All v1.8 content preserved and unchanged below unless noted
-
-Change Log from v1.7:
-- Section 2 expanded: Added VF_Interpretation_JSON_Rules.txt Sections
-  18-19 (forward anchor classification) to authoritative sources
-- Section 3 expanded: Added forward anchor block awareness (text,
-  controllability_classification, prior_forward_anchor, focus_consistency)
-- Section 4 expanded: Added forward anchor field usage rules to NEW
-  FIELD USAGE RULES block (4 fields)
-- Section 9 expanded: Added Forward Anchor in Prior Commitment Bridge
-  rule (one additional sentence for Aligned/Misaligned, 3 sentence max)
-- Section 10 expanded: Added Forward Anchor Interaction Rule (DQ1:
-  Anchor-Informed Commitment, 4-tier priority system, controllability-
-  based commitment shaping, flag + anchor + modality triple interaction)
-- Added FORWARD ANCHOR INTEGRATION RULE (Section 22)
-- Renumbered all subsequent sections by +1 (old 23→24 through 32→33)
-- Section 25 (Parent CM Content Guidance, was 24) expanded: Added
-  Forward Anchor handling in Section 3 (What's Ahead)
-- Section 30 (Parent CM Compliance Rule, was 29) expanded: Added
-  forward anchor raw text and classification labels to parent-specific
-  prohibitions
-- All v1.7 content preserved and unchanged below unless noted
-
-Change Log from v1.6 (retained from v1.7):
-- Section 2 expanded: Added VF_Parent_Output_Architecture_Decisions.txt
-  and VF_Parent_Output_Task_17_18_Design_Decisions.txt to authoritative
-  sources
-- Section 3 expanded: Added parent output activation awareness
-  (parent_inclusion gating, D2C Premium only)
-- Section 16 expanded: Core Foundation Skip Rule now covers parent
-  output (skip parent ecosystem calibration, use default support)
-- Section 21 expanded: Added parent output to scope ("not in the
-  Parent Coaching Message")
-- Added PARENT COACHING MESSAGE GENERATION RULE (Section 24, was 23)
-- Added PARENT CM SECTION-BY-SECTION CONTENT GUIDANCE (Section 25, was 24)
-- Added PARENT CM VOICE CALIBRATION RULE (Section 26, was 25)
-- Added PARENT CM ECOSYSTEM FIELD CALIBRATION RULE (Section 27, was 26)
-- Added PARENT CM EMOTIONAL INTENSITY HANDLING RULE (Section 28, was 27)
-- Added PARENT CM COMPETITIVE LEVEL CALIBRATION RULE (Section 29, was 28)
-- Added PARENT CM COMPLIANCE RULE (Section 30, was 29)
-- Added PARENT CM VALIDATION CHECKLIST (Section 31, was 30)
-- Added PARENT CM REFERENCE EXAMPLES (Section 32, was 31)
-- Renumbered FINAL SYSTEM RULE to Section 33 (was 32)
-- All v1.6 content preserved and unchanged below unless noted
-
-Change Log from v1.5 (retained from v1.6):
-- Section 2 expanded: Added VF_PPD_Scoring_Logic.txt,
-  VF_ABI_Scoring_Logic.txt, and VF_App_Intake_Form_Specification.txt
-  to authoritative sources
-- Section 3 expanded: Added baseline_intake_profile block and
-  current_season_phase field awareness, dual-mode note for CF fallback
-- Section 4 expanded: Added intake profile field usage rules to
-  NEW FIELD USAGE RULES block (8 fields)
-- Section 6 expanded: Added 5th routing category for baseline coaching
-  context fields + intake raw data to DO NOT APPEAR list
-- Section 10 expanded: Added PPD coaching implication note for
-  micro-commitment focus area selection
-- Section 16 expanded: Renamed to Core Foundation Skip Rule, now
-  covers both execution signals and intake profile routing
-- Added COMPETITIVE LEVEL CALIBRATION RULE (Section 19)
-- Added INTAKE PROFILE FIELD INTEGRATION RULE (Section 20)
-- Added INTAKE PROFILE RAW DATA EXCLUSION RULE (Section 21)
-- Renumbered FINAL SYSTEM RULE to Section 33
-- All v1.5 content preserved and unchanged below unless noted
-
-Change Log from v1.4 (retained from v1.5):
-- Section 2 expanded: Added VF_Execution_Signal_Composite_Score_Rules.txt
-  and VF_Coach_Flags_Specification.txt to authoritative sources
-- Section 3 expanded: Input is now v9.4 JSON with dual-mode awareness
-  (App vs Core Foundation)
-- Section 4 expanded: Added execution signal field usage rules to
-  NEW FIELD USAGE RULES block
-- Section 6 expanded: Added execution_behavior_signals fields to
-  routing categories + new 4th category for prohibited raw metrics
-- Section 10 expanded: Added coach flag interaction rule for
-  micro-commitment targeting
-- Added EXECUTION SIGNAL INTEGRATION RULE (Section 12)
-- Added COMPOSITE SCORE TONE CALIBRATION RULE (Section 13)
-- Added COACH FLAG INTEGRATION RULE (Section 14)
-- Added SELF-RATINGS ALIGNMENT INTEGRATION RULE (Section 15)
-- Added CORE FOUNDATION EXECUTION SKIP RULE (Section 16)
-- Added RAW METRIC EXCLUSION RULE (Section 17)
-- Renumbered FINAL SYSTEM RULE to Section 33
-- All v1.4 content preserved and unchanged below unless noted
-
 
 ============================================================
 SECTION 1: PROJECT ROLE
@@ -206,7 +28,7 @@ SECTION 2: AUTHORITATIVE SOURCE MATERIALS
 ============================================================
 
 AUTHORITY HIERARCHY FOR WEEKLY ATHLETE-FACING AND
-PARENT-FACING OUTPUTS [NEW IN V2.2]:
+PARENT-FACING OUTPUTS:
 
 The following sources govern Stage 3 output, in priority
 order. When sources appear to conflict on voice or
@@ -233,8 +55,8 @@ lower authority is supporting material.
    Stage 3 outputs. Replaces the Stage 3 authority of the
    legacy brand_voice.txt, brand_themes.txt, and
    content_style_guide.txt files (which were built for a
-   different project and are REMOVED from the Stage 3
-   source list as of v2.2). Provides the philosophical
+   different project and are NOT part of the Stage 3
+   source list). Provides the philosophical
    stance and sentence-level hygiene that support the
    Voice Reference.
 
@@ -260,8 +82,8 @@ lower authority is supporting material.
    Compliance boundaries. Non-negotiable regardless of
    any voice consideration.
 
-IMPORTANT: The following legacy files are NO LONGER
-authoritative sources for Stage 3 as of v2.2:
+IMPORTANT: The following legacy files are NOT
+authoritative sources for Stage 3:
 
   - brand_voice.txt
   - brand_themes.txt
@@ -330,7 +152,7 @@ VF_Coaching_Output_JSON_to_Message_Map.txt.
 
 Do not improvise message structure or field emphasis.
 
-If conflict occurs [UPDATED IN V2.2]:
+If conflict occurs:
 The authority hierarchy at the top of this section governs.
 Voice Reference is the primary voice authority. Voice
 Foundations provides brand stance. Frameworks define coverage.
@@ -361,7 +183,7 @@ Plus one additional top-level field:
 
 All blocks are always present. The engine must process all four.
 
-LONGITUDINAL PPD AWARENESS [NEW IN V2.0]:
+LONGITUDINAL PPD AWARENESS:
 When input_source = "app" AND longitudinal_ppd.status is not
 "insufficient data", the longitudinal_ppd block contains:
   - status: "emerging" (3-4 weeks) or "established" (5+ weeks)
@@ -375,7 +197,7 @@ When input_source = "app" AND longitudinal_ppd.status is not
 When status = "insufficient data" or core_foundation_fallback = true,
 all longitudinal PPD routing is skipped. See Section 23.
 
-PARENT OUTPUT AWARENESS [NEW IN V1.7]:
+PARENT OUTPUT AWARENESS:
 The engine produces UP TO 3 outputs per run:
   1. Athlete Coaching Message (always)
   2. Deep Dive Coaching Analysis (always)
@@ -407,7 +229,7 @@ data source:
     Skip all execution signal integration AND all intake profile
     routing (Section 16).
 
-FORWARD ANCHOR AWARENESS [NEW IN V1.8]:
+FORWARD ANCHOR AWARENESS:
 When input_source = "app", the Interpretation JSON contains a
 forward_anchor block with:
   - text (athlete-authored intention, athlete-private)
@@ -459,7 +281,7 @@ NEW FIELD USAGE RULES:
 - If emotional_intensity = "High": lead with acknowledgment,
   reduce framework density, increase direct human language.
 
-EXECUTION SIGNAL FIELD USAGE RULES [NEW IN V1.5]:
+EXECUTION SIGNAL FIELD USAGE RULES:
 - If composite_scores contain any positive bands (High, Strong,
   Stable for higher-is-better scores; None for Drift; Low for
   Reactivity): use as behavioral evidence in Recognition and
@@ -484,7 +306,7 @@ EXECUTION SIGNAL FIELD USAGE RULES [NEW IN V1.5]:
   labels, flag IDs, or raw execution metrics in coaching output.
   Only behavioral translations are permitted (Section 13, 17).
 
-BASELINE INTAKE PROFILE FIELD USAGE RULES [NEW IN V1.6]:
+BASELINE INTAKE PROFILE FIELD USAGE RULES:
 - If competitive_level is populated (not "not available"):
   Apply Competitive Level Calibration Rule (Section 19) to ALL
   output sections. Determines vocabulary complexity, directness
@@ -522,7 +344,7 @@ BASELINE INTAKE PROFILE FIELD USAGE RULES [NEW IN V1.6]:
 - If input_source = "core_foundation": skip all baseline intake
   profile field usage rules above (Section 16).
 
-FORWARD ANCHOR FIELD USAGE RULES [NEW IN V1.8]:
+FORWARD ANCHOR FIELD USAGE RULES:
 
 forward_anchor.text
   ATHLETE-PRIVATE. Never reproduce verbatim in any output.
@@ -542,7 +364,7 @@ forward_anchor.focus_consistency
 
 
 ============================================================
-SECTION 5: DEEP DIVE SECTION BOUNDARY RULE [NEW IN V1.3]
+SECTION 5: DEEP DIVE SECTION BOUNDARY RULE
 ============================================================
 
 The Deep Dive Coaching Analysis MUST contain ONLY the five
@@ -585,8 +407,7 @@ create standalone sections to house it.
 
 
 ============================================================
-SECTION 6: JSON FIELD ROUTING RULE [NEW IN V1.3,
-EXPANDED V1.5]
+SECTION 6: JSON FIELD ROUTING RULE
 ============================================================
 
 Not all JSON fields are destined for the Deep Dive. The following
@@ -646,7 +467,7 @@ ANALYTICAL CONTENT, NOT STANDALONE SECTIONS):
   - coach_insights.coach_avoidance_note → Use as a guardrail
     for what NOT to emphasize. Do NOT reproduce as a section.
 
-FIELDS THAT PROVIDE BASELINE COACHING CONTEXT [NEW IN V1.6]:
+FIELDS THAT PROVIDE BASELINE COACHING CONTEXT:
   - baseline_intake_profile.competitive_level → All sections
     (Competitive Level Calibration Rule, Section 19)
   - baseline_intake_profile.ppd_primary_problem → Drift
@@ -667,7 +488,7 @@ FIELDS THAT PROVIDE BASELINE COACHING CONTEXT [NEW IN V1.6]:
 
 FIELDS THAT DO NOT APPEAR IN ANY COACHING OUTPUT:
   - risk_flags → Stage 4 only. Do not include in any form.
-  - baseline_intake_profile raw data [NEW IN V1.6]:
+  - baseline_intake_profile raw data:
       ppd_top_3.score (numeric PPD values)
       ppd_all_scores (not in JSON, stays in snapshot)
       baseline_intake_profile.input_source (routing field only)
@@ -699,7 +520,7 @@ FIELDS THAT DO NOT APPEAR IN ANY COACHING OUTPUT:
 
 
 ============================================================
-SECTION 7: CLINICAL LANGUAGE PROHIBITION [NEW IN V1.3]
+SECTION 7: CLINICAL LANGUAGE PROHIBITION
 ============================================================
 
 VirtusFocus is a non-clinical coaching service. No clinical,
@@ -748,7 +569,7 @@ performance and behavioral language.
 
 
 ============================================================
-SECTION 8: COACHING MESSAGE OUTPUT FORMAT [EXPANDED IN V1.9]
+SECTION 8: COACHING MESSAGE OUTPUT FORMAT
 ============================================================
 
 ------------------------------------------------------------
@@ -798,7 +619,7 @@ FILE NAMING: {FirstName_LastName}_{YYYY-MM-DD}to{YYYY-MM-DD}_VF_CoachingMessage.
 OUTPUT DIRECTORY: Coaching and Deep Dive\Coaching Message\
 
 ------------------------------------------------------------
-8B. LENGTH TARGET [ORIGINALLY V1.3]
+8B. LENGTH TARGET
 ------------------------------------------------------------
 
 The Coaching Message body should target 250-450 words.
@@ -821,7 +642,7 @@ mapped elements are present. A short message that contains
 everything is acceptable. A short message that is missing
 required elements is not.
 
-NOTE [V1.5]: Execution signal integration does NOT increase
+NOTE: Execution signal integration does NOT increase
 the word target. Execution evidence sharpens existing sections ,
 it replaces generic phrasing with behaviorally specific phrasing,
 not adds new paragraphs. If execution integration pushes the
@@ -830,7 +651,7 @@ strength signals, trim transition language.
 
 
 ============================================================
-SECTION 9: PRIOR COMMITMENT BRIDGE LENGTH RULE [NEW IN V1.3]
+SECTION 9: PRIOR COMMITMENT BRIDGE LENGTH RULE
 ============================================================
 
 When prior_commitment_result.execution_status is not "No Prior
@@ -848,7 +669,7 @@ Do NOT exceed 3 sentences. The prior commitment bridge creates
 continuity. It should not become the focus of the message.
 Move forward after the bridge.
 
-FORWARD ANCHOR IN PRIOR COMMITMENT BRIDGE [NEW IN V1.8]:
+FORWARD ANCHOR IN PRIOR COMMITMENT BRIDGE:
 When prior_forward_anchor exists (alignment_status is not
 "No Prior Week" or "not available"):
   The bridge MAY include one additional sentence acknowledging
@@ -863,7 +684,6 @@ When prior_forward_anchor exists (alignment_status is not
 
 ============================================================
 SECTION 10: MICRO-COMMITMENT MODALITY ADAPTATION RULE
-[NEW IN V1.4, EXPANDED V1.5]
 ============================================================
 
 Micro-commitments come in three modality types:
@@ -932,7 +752,7 @@ sentence then review it before each game"), classify by the
 PRIMARY action the athlete must initiate.
 
 ------------------------------------------------------------
-COACH FLAG INTERACTION RULE [NEW IN V1.5]:
+COACH FLAG INTERACTION RULE:
 ------------------------------------------------------------
 
 When attention or action severity coach flags fire AND the
@@ -963,7 +783,7 @@ action flag fires, it takes priority over all attention flags
 for micro-commitment targeting.
 
 ------------------------------------------------------------
-FORWARD ANCHOR INTERACTION RULE [NEW IN V1.8]
+FORWARD ANCHOR INTERACTION RULE
 (DQ1: Anchor-Informed Commitment):
 ------------------------------------------------------------
 
@@ -1023,7 +843,7 @@ When forward_anchor.submitted = true:
   All three constraints apply simultaneously.
 
 ------------------------------------------------------------
-PPD COACHING IMPLICATION NOTE [NEW IN V1.6]:
+PPD COACHING IMPLICATION NOTE:
 ------------------------------------------------------------
 
 PPD coaching implications (from ppd_top_3.coaching_implication)
@@ -1056,7 +876,6 @@ coach's preferred structure.
 
 ============================================================
 SECTION 11: GROWTH PHASE ADVANCEMENT SURFACING RULE
-[NEW IN V1.4]
 ============================================================
 
 When the Interpretation JSON's trend_analysis.growth_phase_
@@ -1106,7 +925,6 @@ When growth_phase_movement = "Stable":
 
 ============================================================
 SECTION 12: EXECUTION SIGNAL INTEGRATION RULE
-[NEW IN V1.5]
 ============================================================
 
 This is the master rule governing how execution_behavior_signals
@@ -1213,7 +1031,6 @@ Message Map.
 
 ============================================================
 SECTION 13: COMPOSITE SCORE TONE CALIBRATION RULE
-[NEW IN V1.5]
 ============================================================
 
 This section defines HOW each composite score's band value
@@ -1395,7 +1212,6 @@ process real attention."
 
 ============================================================
 SECTION 14: COACH FLAG INTEGRATION RULE
-[NEW IN V1.5]
 ============================================================
 
 Coach flags are execution-behavior-derived warning signals
@@ -1582,7 +1398,6 @@ v9.3 fields and composite score band evidence.
 
 ============================================================
 SECTION 15: SELF-RATINGS ALIGNMENT INTEGRATION RULE
-[NEW IN V1.5]
 ============================================================
 
 Self-ratings alignment compares the athlete's self-reported
@@ -1711,7 +1526,6 @@ were null.
 
 ============================================================
 SECTION 16: CORE FOUNDATION SKIP RULE
-[NEW IN V1.5, EXPANDED V1.6, EXPANDED V1.7]
 ============================================================
 
 When execution_behavior_signals.input_source = "core_foundation":
@@ -1719,7 +1533,7 @@ When execution_behavior_signals.input_source = "core_foundation":
 SKIP ALL EXECUTION SIGNAL INTEGRATION AND ALL INTAKE PROFILE
 ROUTING.
 
-EXECUTION SIGNAL SKIP (v1.5):
+EXECUTION SIGNAL SKIP:
   - Do NOT apply Section 12 (Execution Signal Integration Rule)
   - Do NOT apply Section 13 (Composite Score Tone Calibration)
   - Do NOT apply Section 14 (Coach Flag Integration)
@@ -1731,7 +1545,7 @@ EXECUTION SIGNAL SKIP (v1.5):
   - Do NOT reference composite scores, coach flags, self-ratings
     alignment, or execution_pattern_summary
 
-INTAKE PROFILE SKIP [NEW IN V1.6]:
+INTAKE PROFILE SKIP:
   - SKIP Section 19 (Competitive Level Calibration Rule) ,
     default to College level for all output (zero degradation,
     all existing athlete output was produced at College level)
@@ -1754,19 +1568,19 @@ INTAKE PROFILE SKIP [NEW IN V1.6]:
     (baseline_identity_claim, baseline_hinge_habit,
     baseline_primary_derailer, baseline_growth_phase)
 
-FORWARD ANCHOR SKIP [NEW IN V1.8]:
+FORWARD ANCHOR SKIP:
   - SKIP Section 22 (Forward Anchor Integration Rule) ,
     no forward anchor data exists for CF athletes.
   - Do NOT reference forward_anchor fields in any output section.
 
-LONGITUDINAL PPD SKIP [NEW IN V2.0]:
+LONGITUDINAL PPD SKIP:
   - SKIP Section 23 (Longitudinal PPD Integration Rule) ,
     longitudinal_ppd.core_foundation_fallback = true for CF athletes.
   - Do NOT apply Tier 2 replacement or tone modification.
   - Do NOT reference longitudinal_ppd fields in any output section.
   - Output is identical to pre-longitudinal-PPD behavior.
 
-PARENT OUTPUT SKIP [NEW IN V1.7]:
+PARENT OUTPUT SKIP:
   - If the Parent CM is being generated for a CF athlete
     (unlikely, Parent App is D2C Premium, but defensive rule):
   - SKIP Section 28 (Ecosystem Field Calibration), no Q22-Q25
@@ -1782,7 +1596,7 @@ PARENT OUTPUT SKIP [NEW IN V1.7]:
 
 Output for Core Foundation athletes uses v9.3 fields and
 baseline_profile ONLY. The resulting Coaching Message and Deep
-Dive are identical in structure and quality to v1.4 behavior.
+Dive retain their structure and quality.
 
 ------------------------------------------------------------
 WHY THIS RULE EXISTS:
@@ -1814,7 +1628,6 @@ intake profile routing.
 
 ============================================================
 SECTION 17: RAW METRIC EXCLUSION RULE (COMPLIANCE)
-[NEW IN V1.5]
 ============================================================
 
 This is a compliance rule, not a style preference, same
@@ -1929,7 +1742,7 @@ week."
 (Behavioral observation derived from Ownership Index band.)
 
 ------------------------------------------------------------
-LONGITUDINAL PPD TERMINOLOGY [NEW IN V2.0]:
+LONGITUDINAL PPD TERMINOLOGY:
 ------------------------------------------------------------
 
 The following longitudinal PPD data is PROHIBITED from
@@ -2013,7 +1826,6 @@ boundary. Raw data stays behind it.
 
 ============================================================
 SECTION 19: COMPETITIVE LEVEL CALIBRATION RULE
-[NEW IN V1.6]
 ============================================================
 
 The competitive_level field (from baseline_intake_profile)
@@ -2209,7 +2021,6 @@ SELF-RATINGS ALIGNMENT + COMPETITIVE LEVEL:
 
 ============================================================
 SECTION 20: INTAKE PROFILE FIELD INTEGRATION RULE
-[NEW IN V1.6]
 ============================================================
 
 This section defines HOW baseline_intake_profile fields and
@@ -2481,7 +2292,6 @@ coaching emphasis and contextual framing across all sections.
 ============================================================
 SECTION 21: INTAKE PROFILE RAW DATA EXCLUSION RULE
 (COMPLIANCE)
-[NEW IN V1.6]
 ============================================================
 
 This is a compliance rule, not a style preference, same
@@ -2629,7 +2439,6 @@ layer. The athlete sees coaching, not data.
 
 ============================================================
 SECTION 22: FORWARD ANCHOR INTEGRATION RULE
-[NEW IN V1.8]
 ============================================================
 
 The Forward Anchor is the athlete's self-authored weekly
@@ -2684,7 +2493,7 @@ FOCUS CONSISTENCY AS COACHING SIGNAL:
 CORE FOUNDATION SKIP RULE:
 When input_source = "core_foundation":
   Skip this entire section. No forward anchor data exists.
-  Output is identical to v1.7 behavior.
+  Output proceeds without forward anchor integration.
 
 When input_source = "app" AND forward_anchor.submitted = false:
   Skip all forward anchor integration. The athlete chose not
@@ -2694,7 +2503,6 @@ When input_source = "app" AND forward_anchor.submitted = false:
 
 ============================================================
 SECTION 23: LONGITUDINAL PPD INTEGRATION RULE
-[NEW IN V2.0]
 ============================================================
 
 The longitudinal PPD system computes execution-derived problem
@@ -2875,7 +2683,6 @@ When longitudinal_ppd.status = "insufficient data":
 
 ============================================================
 SECTION 25: PARENT COACHING MESSAGE GENERATION RULE
-[NEW IN V1.7]
 ============================================================
 
 The Parent Coaching Message (Parent CM) is the THIRD output
@@ -2963,7 +2770,6 @@ what coaching strategy the athlete received this week.
 
 ============================================================
 SECTION 26: PARENT CM SECTION-BY-SECTION CONTENT GUIDANCE
-[NEW IN V1.7]
 ============================================================
 
 ------------------------------------------------------------
@@ -3077,7 +2883,7 @@ Content rules:
   4. Do NOT reference prior commitment results, narrative
      arc technical language, or derailer terminology.
 
-FORWARD ANCHOR IN PARENT CM [NEW IN V1.8]:
+FORWARD ANCHOR IN PARENT CM:
 When forward_anchor.submitted = true AND controllability_classification
 = Controllable:
   Section 3 may reference the direction of the athlete's self-set
@@ -3151,7 +2957,6 @@ Example (Q23 = Don't discuss, Q25 = No one):
 
 ============================================================
 SECTION 27: PARENT CM VOICE CALIBRATION RULE
-[NEW IN V1.7]
 ============================================================
 
 The Parent CM uses Coach Arron's voice in a DIFFERENT
@@ -3262,7 +3067,6 @@ directed through the parent.)
 
 ============================================================
 SECTION 28: PARENT CM ECOSYSTEM FIELD CALIBRATION RULE
-[NEW IN V1.7]
 ============================================================
 
 The "How You Can Support" section (Section 4) is calibrated
@@ -3388,7 +3192,6 @@ specific home dynamic.
 
 ============================================================
 SECTION 29: PARENT CM EMOTIONAL INTENSITY HANDLING RULE
-[NEW IN V1.7]
 ============================================================
 
 DQ2 DECISION: Light touch. Only "How You Can Support"
@@ -3454,7 +3257,6 @@ tone per Q23/Q25 calibration.
 
 ============================================================
 SECTION 30: PARENT CM COMPETITIVE LEVEL CALIBRATION RULE
-[NEW IN V1.7]
 ============================================================
 
 The competitive_level field adjusts the Parent CM voice just
@@ -3538,7 +3340,6 @@ CF FALLBACK: College.
 
 ============================================================
 SECTION 31: PARENT CM COMPLIANCE RULE
-[NEW IN V1.7]
 ============================================================
 
 The Parent CM follows ALL compliance rules that apply to the
@@ -3650,7 +3451,6 @@ to coach-facing output.
 
 ============================================================
 SECTION 32: PARENT CM VALIDATION CHECKLIST
-[NEW IN V1.7]
 ============================================================
 
 Before delivering the Parent CM, verify:
@@ -3684,7 +3484,6 @@ Before delivering the Parent CM, verify:
 
 ============================================================
 SECTION 33: PARENT CM REFERENCE EXAMPLES
-[NEW IN V1.7]
 ============================================================
 
 5 reference examples covering the major scenarios. These
@@ -3915,46 +3714,6 @@ SCOPE:
 These rules apply to Coaching Messages, Deep Dives,
 Parent CMs, and Daily Snippets.
 
-NOTE ON RULE SCOPE CHANGE IN V2.2:
-
-In v2.1, this section contained 10 rules (C1-C10). In
-v2.2, the section has been simplified to 4 mechanical
-rules. The following rules have been MOVED from
-generation-time prohibitions to Stage 5 v1.6 audit
-detection (Criterion 14: Voice Quality Regression):
-
-  - "That is [Noun]." standalone overuse (was C3)
-  - CM-DD Deduplication (was C5)
-  - Transition Variety and No Telegraphing (was C6)
-  - CM Opening Approach Variety (was C7)
-  - Identity Thread Variation (was C9)
-  - Athlete-Specific Closing Phrases (was C10)
-
-Why the move: generation-time prohibition on these
-patterns produced workaround behavior. The model would
-find new variants of banned patterns (contracted versions
-of retired phrases, updated numbers in the same template
-opening, triple-negative replacements for banned
-constructions). The underlying voice quality was not
-actually improving, only the surface pattern was
-rotating. The Voice Reference teaches the instincts that
-prevent these patterns at generation time. Stage 5
-Criterion 14 detects them at audit time if they slip
-through. Together, the two layers produce better output
-than prohibition-at-generation produced alone.
-
-What is KEPT here as mechanical safety net:
-
-  - C1: Em Dash Ban (binary character check)
-  - C2: Contraction Default Register (binary register check)
-  - C3: Phrase Frequency Limits (binary phrase count)
-  - C4: Pipeline Classification Language Prohibition
-    (binary term check)
-
-These 4 rules are all binary mechanical checks that work
-reliably at generation time without producing workaround
-behavior.
-
 ------------------------------------------------------------
 C1. PROHIBITED PUNCTUATION: EM DASH
 ------------------------------------------------------------
@@ -4025,9 +3784,8 @@ C3. PHRASE FREQUENCY LIMITS
 The following constructions reach AI-detectable frequency
 at template use across athletes or weeks. They are retired
 outright. Capping AI-pattern constructions like these at
-"1 per DD" or "0 per CM, 1 per DD" was the v2.2 hedge, and
-it produced
-workaround behavior: the model rationed the pattern instead
+"1 per DD" or "0 per CM, 1 per DD" produces
+workaround behavior: the model rations the pattern instead
 of expanding into specific language. Retirement is the
 correct architectural move because retirement does not
 invite workaround. There is no quota to manage, no judgment
@@ -4090,19 +3848,6 @@ same athlete. This prevents mechanical repetition without
 creating a mechanical rotation. The right construction
 depends on what the week demands.
 
-NOTE ON C5-C7 (MOVED TO STAGE 5 AUDIT IN V2.2):
-C5 (CM-DD Deduplication), C6 (Transition Variety and No
-Telegraphing), and C7 (CM Opening Approach Variety) from
-v2.1 have been moved to Stage 5 v1.6 Criterion 14 (Voice
-Quality Regression) for post-generation detection. The
-instincts that prevent these patterns at generation time
-are taught by the Voice Reference (Principles 1, 4, and
-5; Category A Opening exemplars). The mechanical
-generation-time prohibitions produced workaround behavior
-without improving the underlying voice quality. These
-moves are still prohibited, they are just detected at
-audit instead of prevented by rule at generation.
-
 ------------------------------------------------------------
 C4. PIPELINE CLASSIFICATION LANGUAGE PROHIBITION
 ------------------------------------------------------------
@@ -4158,18 +3903,9 @@ complementary to the existing Clinical Language Prohibition
 Rule. Pipeline jargon has no business in athlete-facing
 output.
 
-NOTE ON C9 AND C10 (MOVED TO STAGE 5 AUDIT IN V2.2):
-C9 (Identity Thread Variation) and C10 (Athlete-Specific
-Closing Phrases) from v2.1 have been moved to Stage 5 v1.6
-Criterion 14 for audit-stage detection. The Voice Reference
-Category F exemplars (Identity and Closing) teach the
-instincts these rules targeted. Stage 5 catches the
-regressions at audit.
-
 
 ============================================================
 SECTION 36: UNEVEN COVERAGE PRINCIPLE
-[NEW IN V2.2]
 ============================================================
 
 Coaching prose spends words proportionally to what matters
@@ -4300,7 +4036,6 @@ observation as equal.
 
 ============================================================
 SECTION 37: EXEMPLAR CATEGORY MATCHING
-[NEW IN V2.2]
 ============================================================
 
 Before generating a Coaching Message or Deep Dive, identify
