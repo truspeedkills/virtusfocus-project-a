@@ -34,6 +34,9 @@ Then read the current Voice Reference in full:
 `Agents - Generators\Coaching Output\Source FIles\VF_Coach_Arron_Voice_Reference.txt`
 
 Read this handoff prompt in full before beginning any work.
+Pay particular attention to Section 15 (EFFORT GUIDANCE BY
+PHASE) and set your Claude Code effort level for Phase 1
+before sending the first message.
 
 
 ============================================================
@@ -625,6 +628,61 @@ flag it to the user before applying rather than shipping
 below the bar.
 
 Good luck.
+
+
+============================================================
+15. EFFORT GUIDANCE BY PHASE
+============================================================
+
+Claude cannot auto-set the Claude Code effort /
+thinking-budget slider. The user controls it in the UI
+before sending each message. Set the recommended level
+below before beginning each phase. Phase transition
+reports also include an effort recommendation as the
+final line.
+
+PHASE 1 (Sections 1, 2, 5 verification): HIGH
+  Section 2 principles are load-bearing for all downstream
+  work in the session. Section 5 cross-reference accuracy
+  matters for mechanical rule propagation to v2.3
+  Instructions. Judgment calls about whether a principle
+  needs revision cannot be reduced to mechanical checks.
+
+PHASE 2 (Criterion 14 alignment audit): HIGH
+  12 separate adjudication calls, each requiring document
+  cross-comparison between the Voice Reference and Stage 5
+  v1.6 Section 14. Adequacy ratings (STRONG / ADEQUATE /
+  WEAK / GAP) are subtle judgment distinctions that benefit
+  from extended thinking. The audit table feeds directly
+  into Phase 3 scope; wrong calls propagate downstream and
+  are expensive to reverse.
+
+PHASE 3 (new Section 4 pairs, fabricated data): HIGH
+  Creative work with the strictest constraint set in the
+  session: vocabulary caps across all new blocks, Voice
+  Principle citations that must be load-bearing, targeted
+  failure mode per pair, fabricated athlete profiles that
+  must stay internally consistent, zero contamination from
+  other AI patterns. Each pair holds many constraints
+  simultaneously.
+
+PHASE 4 (final mechanical pass): MEDIUM
+  Grep verification, numbering checks, cross-reference
+  verification. Mechanical work with clear targets.
+
+  ESCALATION FLAG: the CLAUDE.md Session 102 update is
+  a HIGH-effort sub-task inside this phase because it
+  captures the session arc for future sessions and
+  requires judgment about which decisions are worth
+  recording. Consider bumping effort briefly for that
+  sub-task, then returning to MEDIUM for the final
+  commit.
+
+General heuristic for level selection:
+  HIGH   = multi-case judgment with downstream propagation
+  MEDIUM = verifiable mechanical work with clear targets
+  LOW    = trivial tasks (typo fixes, file moves, status
+           checks)
 
 
 ============================================================

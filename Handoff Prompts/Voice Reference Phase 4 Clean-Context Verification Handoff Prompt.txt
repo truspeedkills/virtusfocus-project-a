@@ -1,0 +1,658 @@
+============================================================
+VOICE REFERENCE PHASE 4 CLEAN-CONTEXT VERIFICATION
+HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-15 (end of Session 102)
+SESSION TYPE: Verification + optional refinement + Session 103 bridge
+PREREQUISITE SESSIONS: 96-101 (Voice Reference architecture
+                       and build), 102 (Sections 1/2/5
+                       verification, Criterion 14 audit,
+                       new Section 4 Pairs 9-11)
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION
+============================================================
+
+Read CLAUDE.md in the project root. The Session 102 entry
+contains the full arc summary of what Session 102 did
+across Phases 1-3. Read it first.
+
+Then read the current Voice Reference in full:
+  Agents - Generators\Coaching Output\Source FIles\VF_Coach_Arron_Voice_Reference.txt
+
+Then read this handoff prompt in full before beginning any
+work. Pay particular attention to Section 8 (EFFORT
+GUIDANCE) and set your Claude Code effort level before
+starting.
+
+
+============================================================
+2. PURPOSE OF THIS SESSION
+============================================================
+
+Session 102 completed Phases 1-3 of the Voice Reference
+Sections 1/2/5 verification + Criterion 14 gap-fill work.
+Phases 1-3 were executed across a long single session with
+multiple file edits, multi-turn design reviews, and a
+HIGH-effort re-audit that caught subtle drift. Session 102
+closed with Phase 4 step 0 (mechanical verification) and
+Phase 4 step 2 (CLAUDE.md Session 102 entry) completed
+in-session, committed as a single atomic commit.
+
+Phase 4 in this fresh session is the CLEAN-CONTEXT
+VERIFICATION pass. The purpose is:
+
+GOAL A: Verify the Session 102 work reads correctly with
+clean context. A fresh session with no prior load is
+structurally different from Session 102's long-form
+execution context and may catch subtle issues that
+in-session HIGH-effort re-audit missed.
+
+GOAL B: Confirm Voice Reference v1.0 (post-Session 102) is
+sealed as the definitive teaching document for Stage 3
+generation.
+
+GOAL C: Prepare the Session 103 bridge handoff if downstream
+pass-through work (Stage 4 v1.8, Stage 6 v1.3, Stage 7
+Determination Rules) is ready to begin.
+
+
+============================================================
+3. WHAT SESSION 102 ACCOMPLISHED
+============================================================
+
+Full details are in CLAUDE.md Session 102 entry. Summary
+below for quick orientation.
+
+---
+PHASE 1: Sections 1, 2, 5 verification + v2.3 Instructions
+---
+
+1A. Section 1 (Who Coach Arron Is): verified clean, no
+    changes needed.
+
+1B. Section 2 (Six Voice Principles): Principle 5 revised.
+    Title changed from "COACH ARRON REACTS -- HE DOESN'T
+    COMPOSE" to "REACT, DON'T COMPOSE". Added a third
+    paragraph demonstrating the catch-and-anchor move
+    through a Mergim Wk12 textbook-sentence vs reactive-
+    sentence example. Principles 0-4 verified clean.
+
+1C. Section 5 (Compact Safety Net Appendix): Critical gap
+    found and closed. Section 5 was missing C3 (Phrase
+    Frequency Limits) entirely. New C3 condensed entry
+    inserted between C2 and C4. C4 header cleaned from
+    "PIPELINE CLASSIFICATION LANGUAGE (C4 in v2.2; was C8
+    in v2.1)" to "PIPELINE CLASSIFICATION LANGUAGE (C4)".
+
+1D. Section 3 / D2 second paragraph: rewritten. The
+    original used a "Not X or Y" parallel-sentence
+    construction ("You're not checked out or pretending it
+    doesn't hurt") that was structurally the same pattern
+    being retired in v2.3 Section 35 C3. Also contained
+    "quit"-adjacent surfacing in the WHY THIS WORKS block.
+    New second paragraph uses asymmetric refusal: one
+    explicit rejection ("That's not checking out") plus
+    positive description that implicitly refuses the other
+    misreading ("The hurt is real, and you're actively
+    showing up"). "Quit" word dropped entirely.
+
+1E. SOP_Coaching_Output_Instructions_v2.3.txt: created from
+    v2.2 copy. Section 35 C3 fully rewritten. The original
+    v2.2 C3 capped three patterns ("The question is
+    [whether]", "Not X. Y. / not X, but Y", "The athletes
+    who [X] are the ones who [Y]") at 0 per CM / 1 per DD
+    or similar. User identified that capping invites
+    workaround behavior. All three patterns moved to
+    RETIRED (no allowed instance). Explanatory paragraph
+    added to C3 explaining why retirement is the correct
+    architectural move. Section 35 C3 header cleaned from
+    "C3. PHRASE FREQUENCY LIMITS [RENUMBERED FROM C4 IN
+    V2.2]" to "C3. PHRASE FREQUENCY LIMITS". Two orphan
+    CORRECT examples at lines 1991 and 2750 that used
+    "The question is what happens when that external
+    schedule goes away" updated to "What you do when that
+    external schedule goes away is what the program is
+    testing now" (preserves coaching move, drops retired
+    construction).
+
+1F. RE-AUDIT (HIGH-effort pass): ran after Phase 1
+    completed to catch subtle drift. Found three issues:
+
+    - Finding 1 (HIGH severity): D2 WHY THIS WORKS
+      analytical block still quoted the OLD D2 second
+      paragraph verbatim and described old mechanics
+      ("collapses two misreadings into a single clause",
+      "double refusal"). The rewrite had updated D2's
+      HOW COACH ARRON RESPONDS but not the analytical
+      block. Propagation risk: v2.3 C3 cross-references
+      D2 as the corrective pattern for asymmetric refusal,
+      so the analysis needed to match. Rewrote the middle
+      section of D2 WHY THIS WORKS to describe asymmetric
+      refusal mechanics and quote the new second paragraph.
+
+    - Finding 2 (LOW severity): v2.3 Section 35 C4 header
+      still carried [RENUMBERED FROM C8 IN V2.2] tag while
+      the analogous C3 header and Voice Reference Section
+      5 C4 header had been cleaned. Cleaned v2.3 C4 header
+      to match.
+
+    - Finding 3 (LOW severity): v2.3 C3 explanation
+      paragraph opened with "Capping AI-pattern
+      constructions at..." which could be misread as
+      implicating C2's register caps. Tightened to
+      "Capping AI-pattern constructions like these at..."
+      to scope the claim unambiguously to the three
+      retired patterns.
+
+    - Bonus finding (F1 cross-exemplar consistency): F1
+      Grace Wk10 DD exemplar contained "You're not
+      quitting" — the exact "quit"-surfacing pattern D2
+      had just been scrubbed of. F1 is a different
+      exemplar about the same athlete/week. Applied a
+      one-sentence swap: "You're not quitting. You're
+      still showing up. You're still bringing good
+      energy." became "You haven't walked away from this.
+      You're still showing up. You're still bringing good
+      energy." F1's WHY THIS WORKS block did not quote
+      the affected sentence, so no analytical block
+      update needed.
+
+---
+PHASE 2: Criterion 14 alignment audit
+---
+
+Read v1.6 Section 14 in full (12 fail conditions). For each
+condition, re-read the relevant Voice Reference sections to
+find teaching homes. Built the audit table with adequacy
+ratings.
+
+Pre-Phase 3 results:
+  STRONG:  8 conditions (14.1, 14.2, 14.3, 14.4,
+           14.9, 14.10, 14.11, 14.12)
+  ADEQUATE: 3 conditions (14.5, 14.6, 14.8)
+  WEAK:    1 condition  (14.7)
+  GAP:     0 conditions
+
+The WEAK condition (14.7 DD as Expanded CM) was the
+biggest teaching gap. The CM/DD distinction was not
+explicitly taught anywhere in the Voice Reference; it was
+only implicitly shown through paired exemplars in Category
+B/E/F. A model reading the Voice Reference could pass
+every other criterion and still produce a DD that was an
+expanded CM because nothing named the failure or the fix.
+
+The two ADEQUATE conditions with new pair candidates were
+14.5 (Brand Copy Close — Category F had positive exemplars
+but no dedicated BEFORE/AFTER) and 14.8 ("That is [Noun]."
+Standalone Overuse — Category B demonstrated alternatives
+implicitly via v1.6 cross-reference but no dedicated pair
+named the failure).
+
+The remaining ADEQUATE condition (14.6 Same Construction
+3-Week Window) is inherently cross-week and cannot be
+demonstrated in a single-pair format. Section 5 C3 3-week
+non-repeat window rule is the correct layer and was already
+in place.
+
+---
+PHASE 3: Three new Section 4 pairs from fabricated data
+---
+
+Built Pairs 9, 10, 11 using fabricated athlete profiles
+per handoff Decision 3 (no echoes of the 7 existing
+pipeline athletes). All three athletes are in sports not
+represented in the existing pipeline, with diverse
+competitive levels and balanced gender mix.
+
+PAIR 9: DD as expanded CM
+  Athlete: Maya Chen, volleyball libero, D1 College,
+           Week 12, Growth tier, Consistent phase, Low EI
+  Week: Wednesday breakthrough defensive read (coach
+        public praise in film session) + Saturday first-
+        time defensive rotation substitution handled
+        with composure
+  Targets: Criterion 14.7
+  Principle: Earn Every Sentence applied at document layer
+  Structure: CM CONTEXT (Wednesday focus) + BEFORE (DD
+             that restates CM's Wednesday observation with
+             more words, same framing, same evidence) +
+             AFTER (DD that covers the SAME Wednesday
+             moment but places it inside twelve weeks of
+             failed attempts, adding longitudinal depth
+             the CM could not hold)
+
+  CONCEPTUAL NOTE: Initial design mis-targeted this pair
+  as "DD covers a different topic than CM." User caught
+  the error: the DD Framework spec says the DD is "a
+  deeper coaching breakdown" and can cover the same topic
+  as the CM, just at greater depth. Redesigned around
+  same-topic-with-depth mechanic. This lesson is captured
+  in Session 102's memory save #2 (quote consistency) and
+  should inform any future Section 4 pair additions.
+
+PAIR 10: Brand copy close
+  Athlete: Marcus Taylor, Men's Golf, D2 College, junior,
+           Week 8, Growth tier, Developing phase, Low EI
+  Week: Best stroke average of fall season in conference
+        qualifier, returned to 3-step pre-shot routine
+        dropped in Weeks 4-6, Thursday journal line ("I'm
+        just trusting what I decided before I step in"),
+        Saturday par-4 18th-hole committed 7-iron over
+        water
+  Targets: Criterion 14.5
+  Principle: Talk Like You've Been in the Room
+  Structure: BEFORE (closing paragraph with four stacked
+             brand phrases) + AFTER (closing paragraph
+             anchored to Thursday journal line, Saturday
+             18th, and the 3-step routine return)
+
+  USER CATCH DURING REVIEW: Initial AFTER draft opened
+  with "This is eight weeks of you showing up to the
+  work." User flagged this as Reusable Opening Test
+  failure (14.1 spirit, even though it was in a closing
+  position). Dropped from both BEFORE and AFTER. BEFORE
+  became pure brand-copy stack. AFTER opens directly with
+  "Thursday you wrote..."
+
+PAIR 11: "That is [Noun]." standalone overuse
+  Athlete: Sofia Ramirez, HS Senior, Swimming (100m
+           butterfly specialist), Week 15 (taper phase),
+           Growth tier, Developing phase, Low EI
+  Week: Three-week taper schedule held through travel
+        meet weekend, midweek meet main-event-only rule
+        honored, Wednesday after-main-set underwater
+        dolphin-kick work on weak-side walls
+  Targets: Criterion 14.8
+  Principle: Earn Every Sentence
+  Structure: BEFORE (recognition paragraph with three
+             "That is [Noun]." stamps) + AFTER (same
+             recognition work using three distinct
+             alternatives: embedded judgment, pattern-
+             form recognition sentence, evidence-only)
+
+  USER CATCH DURING REVIEW: Initial AFTER used fragment
+  form for Behavior 2 ("Ownership. Plain and simple."),
+  which banged rhythmically against long flanking
+  sentences. User proposed sentence-form replacement
+  ("Ownership is showing in these type of decisions,
+  Sofia.") with a grammar fix ("these type" → "these
+  types"). Applied. The pair still demonstrates three
+  distinct alternatives; the fragment-form alternative
+  was replaced with pattern-form sentence (which names
+  the virtue as emerging across multiple decisions, not
+  stamped on one moment).
+
+Post-Phase 3 Criterion 14 coverage:
+  STRONG:  11 conditions (all except 14.6)
+  ADEQUATE: 1 condition  (14.6)
+  WEAK:    0 conditions
+  GAP:     0 conditions
+
+---
+Memory saves
+---
+
+Two feedback memories saved during Session 102:
+
+1. feedback_effort_guidance_workflow.md
+   Convention: every handoff prompt includes an EFFORT
+   GUIDANCE BY PHASE section; every phase transition
+   report closes with an effort recommendation; within-
+   phase escalations are flagged explicitly. Reason:
+   Claude cannot auto-set the Claude Code effort slider;
+   the user must set it manually before each message, and
+   proactive recommendations reduce attention cost.
+
+2. feedback_quote_consistency.md
+   Convention: any quote rewritten in one part of a
+   layered document must match verbatim everywhere the
+   same text is cited. Analytical blocks that quote the
+   prose they analyze drift easily when the prose is
+   revised. Reason: Session 102 re-audit caught D2 WHY
+   THIS WORKS block quoting the OLD D2 second paragraph
+   verbatim after the rewrite. Prose said one thing and
+   the analysis said another.
+
+Both indexed in MEMORY.md.
+
+---
+Handoff prompt update during Session 102
+---
+
+The existing Session 102 handoff file (Voice Reference
+Sections 1-2-5 Verification and Criterion 14 Gap Fill
+Handoff Prompt.txt) was updated mid-session to add
+Section 15 EFFORT GUIDANCE BY PHASE. The FIRST
+INSTRUCTION block was also updated to reference the new
+section. This was done to establish the effort-guidance
+convention in the handoff file itself so future sessions
+inherit it automatically.
+
+
+============================================================
+4. FINAL STATE AFTER SESSION 102 (FILE SUMMARY)
+============================================================
+
+VOICE REFERENCE (VF_Coach_Arron_Voice_Reference.txt)
+  1587 lines (Session 101 end) -> 1790 lines
+  +203 lines net (Phase 1 revisions + Phase 3 new pairs)
+  Sections 1-5 all verified at second-pass quality bar
+  Section 4 now has 11 pairs (was 8)
+  Em dashes: 0
+  Curly smart quotes: 0
+  All mechanical checks pass
+
+v2.3 INSTRUCTIONS (SOP_Coaching_Output_Instructions_v2.3.txt)
+  New versioned file created from v2.2 copy
+  Section 35 C3 fully rewritten (retirement-only,
+    explanatory paragraph, cross-references to Voice
+    Reference Section 4 Pairs 1, 6, 7, 8)
+  Section 35 C4 header cleaned
+  Two orphan CORRECT examples updated
+  Em dashes: 0
+  Curly smart quotes: 0
+
+SESSION 102 HANDOFF PROMPT (updated in-session)
+  Added Section 15 EFFORT GUIDANCE BY PHASE
+  FIRST INSTRUCTION block updated to reference Section 15
+
+MEMORY FILES
+  feedback_effort_guidance_workflow.md (new)
+  feedback_quote_consistency.md (new)
+  MEMORY.md index updated with both pointers
+
+PRESERVED (not modified)
+  SOP_Coaching_Output_Instructions_v2.2.txt (on disk per
+    versioning rule)
+  All existing Voice Reference Section 3 exemplars except
+    D2 and F1
+  All existing Voice Reference Section 4 Pairs 1-8
+  All downstream specs (Stage 4 v1.8, Stage 6 v1.3,
+    Stage 7 Determination Rules) — out of scope per
+    Session 102 handoff Decision 7
+
+
+============================================================
+5. PHASE 4 SCOPE (THIS SESSION)
+============================================================
+
+Phase 4 is a CLEAN-CONTEXT VERIFICATION session. The work
+here is read-heavy and judgment-focused. Produce at most
+minor refinements; do not undertake new substantive work.
+
+---
+STEP 1: Re-read the Voice Reference in full at HIGH effort
+---
+
+Read VF_Coach_Arron_Voice_Reference.txt top to bottom in a
+single session opening. Look for:
+
+  - Does Section 1 still read clean and instinct-first?
+  - Are the six Voice Principles (Section 2) all at the
+    same quality bar, including the Session 102 revision
+    to Principle 5?
+  - Do the 18 Section 3 exemplars all work as teaching
+    examples? Specifically, does the D2 rewrite (Grace
+    Wk10 CM) read naturally, and does its WHY THIS WORKS
+    block accurately describe the rewritten prose?
+  - Does F1 (Grace Wk10 DD) still read naturally after
+    the "You haven't walked away from this" swap?
+  - Do Section 4 Pairs 9, 10, 11 teach their intended
+    failures at the same bar as Pairs 1-8?
+  - Does Section 5 C3 read correctly as a condensed
+    safety-net reference to v2.3 Section 35 C3?
+
+Any issues surfaced here should be flagged to the user
+before applying a fix.
+
+---
+STEP 2: Re-read v2.3 Instructions Section 35 in full
+---
+
+Verify that Section 35 C3's retirement-only architecture
+is clean and that the explanatory paragraph reads
+correctly. Verify Section 35 C4 header is cleaned. Verify
+the two orphan CORRECT examples (lines around 1991 and
+2751) use the new construction.
+
+---
+STEP 3: Criterion 14 coverage spot-check
+---
+
+For each of the 12 fail conditions in v1.6 Section 14,
+verify that the teaching home holds under clean-context
+reading. Specifically re-verify the three new pairs
+(Pair 9 / 14.7, Pair 10 / 14.5, Pair 11 / 14.8) against
+their target conditions. Use Rule 7 discipline: re-read,
+don't rely on memory or CLAUDE.md Session 102 entry.
+
+---
+STEP 4: Decide whether any polish is needed
+---
+
+If Steps 1-3 surface any issues, decide whether:
+  a) The issue warrants a fix in this session (apply,
+     verify, commit refinement)
+  b) The issue is minor enough to be deferred to the
+     Session 103 bridge work (note in Session 103
+     handoff)
+  c) The issue is not a real issue (explain reasoning
+     to user)
+
+If no issues surface, proceed to Step 5.
+
+---
+STEP 5: Prepare Session 103 bridge handoff (if scope allows)
+---
+
+Session 102 handoff Decision 7 explicitly deferred
+downstream pass-through to Stage 4 (v1.8), Stage 6 (v1.3),
+and Stage 7 Determination Rules. These documents currently
+reference the old brand files (brand_voice.txt,
+brand_themes.txt, content_style_guide.txt) or older
+Section 35 rule numbers, and need updating to align with
+the new Stage 3 v2.3 architecture.
+
+Scope the Session 103 bridge as follows:
+  - Audit Stage 4 v1.8 for any references to Stage 3
+    v2.2 that need updating to v2.3
+  - Audit Stage 6 v1.3 for same
+  - Audit Stage 7 Determination Rules for same
+  - Check Editorial Audit v1.6 for any references that
+    need updating
+  - Decide whether the alignment work is purely
+    mechanical (reference updates) or requires
+    substantive spec revision
+  - Draft a Session 103 Downstream Pass-Through handoff
+    prompt with scoped work list and effort guidance
+
+If Session 103 bridge scoping is too large for this Phase
+4 session, defer it and just write a "Session 103 scoping
+needed" note as your final deliverable.
+
+
+============================================================
+6. REFERENCE FILES BY PRIORITY
+============================================================
+
+PRIORITY 1 - Read before anything else:
+  1. CLAUDE.md (project root) — Session 102 entry
+  2. VF_Coach_Arron_Voice_Reference.txt (Agents -
+     Generators\Coaching Output\Source FIles\)
+
+PRIORITY 2 - Needed for Step 2 and Step 3:
+  3. SOP_Coaching_Output_Instructions_v2.3.txt (Agents -
+     Generators\Coaching Output\)
+     Focus: Section 35 C3 (retirement list + explanation),
+     Section 35 C4 (cleaned header)
+  4. SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+     (Agents - Generators\Editorial Audit\)
+     Focus: Section 14 (12 fail conditions)
+
+PRIORITY 3 - Needed for Step 5 (Session 103 scoping):
+  5. SOP_Coach_Insights_Project_Instructions_v1.8.txt
+     (Stage 4 — Agents - Generators\Coach Insights Engine\)
+  6. SOP_Daily_Coaching_Engine_Project_Instructions_v1.3.txt
+     (Stage 6 — Agents - Generators\Daily Coaching Engine\)
+  7. VF_Daily_Coach_Signal_Determination_Rules_v1.0.txt
+     (Stage 7 — Agents - Generators\Daily Coach Insights
+     Engine\)
+  8. SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+     (cross-check — already in Priority 2)
+
+
+============================================================
+7. CRITICAL OPERATING RULES
+============================================================
+
+RULE 1: DO NOT APPLY ANY CHANGE WITHOUT USER APPROVAL.
+  Present findings for review, wait for explicit approval,
+  apply in the same turn. Standard Session 100+ process.
+
+RULE 2: DO NOT UNDO SESSION 102 WORK.
+  If a clean-context read surfaces a question about a
+  Session 102 decision, present the concern to the user.
+  Do not unilaterally revert Session 102 changes.
+
+RULE 3: RE-READ, DON'T REMEMBER.
+  CLAUDE.md Session 102 entry is a summary, not a
+  substitute for the actual file state. Every coverage
+  claim must be verified against the current file state
+  per Rule 7 of the original Session 102 handoff.
+
+RULE 4: DOWNSTREAM PASS-THROUGH IS THE SESSION 103 ARC.
+  Stage 4, Stage 6, Stage 7 changes are NOT Phase 4 work.
+  Phase 4 scopes the Session 103 bridge but does not
+  execute it. Do not touch downstream spec files except
+  to read them for scoping purposes.
+
+RULE 5: ZERO EM DASHES IN ALL NEW PROSE.
+  Same em-dash ban applies as prior sessions. Any new
+  content must use straight hyphens, periods, or commas.
+
+RULE 6: MODEL RECOMMENDATION = OPUS.
+  Verification work is judgment-heavy when done at the
+  bar Session 102 established.
+
+RULE 7: END-OF-SESSION DISCIPLINE.
+  Per CLAUDE.md end-of-session rule: update CLAUDE.md
+  with a Session 103 entry (if any refinements or
+  scoping work occurred), and commit before closing.
+  Even if Phase 4 produces no file changes, update
+  CLAUDE.md with a brief "Session 103: Phase 4 clean-
+  context verification — no issues found, Session 102
+  work sealed" entry.
+
+
+============================================================
+8. EFFORT GUIDANCE BY PHASE
+============================================================
+
+This session has one logical phase (Phase 4 clean-context
+verification) with internal sub-steps. Effort recommendation:
+
+STEP 1 (Voice Reference full re-read): HIGH
+  Clean-context verification is the whole purpose of this
+  session. A shallow read misses the subtle-drift issues
+  the session is designed to catch.
+
+STEP 2 (v2.3 Section 35 verification): MEDIUM
+  Focused read of a specific section with clear targets.
+  Mechanical where possible, HIGH if any judgment calls
+  surface.
+
+STEP 3 (Criterion 14 coverage spot-check): HIGH
+  Judgment work: re-verify 12 coverage claims against the
+  current document state. Same rationale as Session 102
+  Phase 2.
+
+STEP 4 (Decide on refinements): HIGH
+  Judgment-forward decision work. If any issues surface,
+  the user needs a clear recommendation with reasoning.
+
+STEP 5 (Session 103 bridge scoping): HIGH
+  Scoping work for a new session arc. Requires reading
+  downstream specs and identifying alignment gaps. Same
+  effort register as the Session 102 Phase 2 audit.
+
+CLAUDE.md update (at end of session): MEDIUM, with HIGH
+  escalation if substantive refinements occurred.
+
+Git commit (final step): LOW.
+
+
+============================================================
+9. SUCCESS CRITERIA
+============================================================
+
+Session is complete when ALL of the following are true:
+
+  [ ] Voice Reference re-read in full at HIGH effort and
+      no subtle-drift issues are present (or surfaced
+      issues have been fixed with user approval).
+
+  [ ] v2.3 Instructions Section 35 re-verified clean.
+
+  [ ] Criterion 14 coverage spot-check confirms post-
+      Session 102 ratings (11 STRONG, 1 ADEQUATE, 0 WEAK,
+      0 GAP) hold under clean-context reading.
+
+  [ ] Either: Session 103 Downstream Pass-Through handoff
+      prompt written, OR a Session 103 scoping note
+      documented in CLAUDE.md for a future session.
+
+  [ ] CLAUDE.md updated with Session 103 entry (even if
+      brief).
+
+  [ ] Git commit created and working tree is clean.
+
+
+============================================================
+10. WHAT NOT TO DO
+============================================================
+
+DO NOT:
+  - Undo Session 102 revisions without user approval.
+  - Touch downstream spec files (Stage 4/6/7) except to
+    read them for Session 103 scoping.
+  - Add new Section 4 pairs without user approval.
+  - Re-open architectural decisions locked in Session 102
+    (cap-to-retirement for C3, label-free pair context
+    lines, fabricated-athlete convention).
+  - Add review-process jargon or pipeline classification
+    language to any new content.
+  - Treat CLAUDE.md Session 102 entry as a substitute for
+    reading the actual files.
+  - Skip the Voice Reference full re-read even if it
+    feels redundant; the whole point of this session is
+    clean-context verification.
+  - Rush Step 5 (Session 103 scoping) if it is too large
+    for this session. Defer and document instead.
+
+
+============================================================
+11. FINAL NOTE
+============================================================
+
+The Voice Reference after Session 102 is positioned to be
+the definitive teacher for Stage 3 generation and the
+voice standard that flows into Stages 4/6/7. Phase 4 is
+the final quality-lock pass. The bar is Session 100/101
+second-pass quality sustained under clean-context reading.
+
+If nothing surfaces: the work is sealed. Move to Session
+103 scoping.
+
+If something surfaces: fix it with the same quality
+discipline Session 102 applied. No shortcuts.
+
+Good luck.
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
