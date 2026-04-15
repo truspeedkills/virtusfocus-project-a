@@ -3868,7 +3868,6 @@ Coach Arron
 
 ============================================================
 SECTION 35: VOICE CALIBRATION AND MECHANICAL CHECKS
-[RESTRUCTURED IN V2.2 - WAS VOICE QUALITY AND EXPRESSION RULES]
 ============================================================
 
 VOICE REFERENCE IS THE TEACHER:
