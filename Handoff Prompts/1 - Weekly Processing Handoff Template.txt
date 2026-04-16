@@ -1,8 +1,8 @@
 ============================================================
 WEEKLY ATHLETE PROCESSING — HANDOFF PROMPT TEMPLATE
 ============================================================
-VERSION: 1.1
-LAST UPDATED: 2026-03-23
+VERSION: 2.0
+LAST UPDATED: 2026-04-16
 ============================================================
 
 
@@ -159,15 +159,15 @@ STAGE 2 — INTERPRETATION ENGINE:
 
 STAGE 3 — COACHING OUTPUT ENGINE:
 - Master Prompt (ACTIVE):
-  Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V4.txt
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Master_Prompt_V5.txt
 - Project Instructions (ACTIVE):
-  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.1.txt
+  Agents - Generators\Coaching Output\SOP_Coaching_Output_Instructions_v2.3.txt
+- Voice Calibration Reference (PRIMARY VOICE AUTHORITY):
+  Agents - Generators\Coaching Output\Source FIles\VF_Coach_Arron_Voice_Reference.txt
+- Voice Foundations (BRAND STANCE):
+  Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_Voice_Foundations.txt
 - Message Map:
   Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_JSON_to_Message_Map.txt
-- Brand Voice:
-  Agents - Generators\Coaching Output\Source FIles\brand_voice.txt
-- Content Style Guide:
-  Agents - Generators\Coaching Output\Source FIles\content_style_guide.txt
 - System Identity:
   Agents - Generators\Coaching Output\Source FIles\VF_Coaching_Output_System_Identity.txt
 - Coaching Message Framework:
@@ -179,13 +179,15 @@ STAGE 3 — COACHING OUTPUT ENGINE:
 
 STAGE 4 — COACH INSIGHTS ENGINE:
 - Master Prompt (ACTIVE):
-  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.3.txt
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Master_Prompt_v1.5.txt
 - Project Instructions (ACTIVE):
-  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.7.txt
+  Agents - Generators\Coach Insights Engine\SOP_Coach_Insights_Project_Instructions_v1.9.txt
 - JSON Logic Reference:
   Agents - Generators\Coach Insights Engine\Source Files\JSON_logic_reference.txt
 - Compliance Framework:
   Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Compliance_Framework.txt
+- Coach-Facing Voice Standards:
+  Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Output_Voice_Standards.txt
 - Dashboard Metrics Reference:
   Agents - Generators\Coach Insights Engine\Source Files\VF_Coach_Insights_Dashboard_Metrics_Reference.txt
 - Output Structure Master:
@@ -193,10 +195,11 @@ STAGE 4 — COACH INSIGHTS ENGINE:
 
 STAGE 5 — EDITORIAL AUDIT:
 - Master Prompt (ACTIVE):
-  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.5.txt
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Master_Prompt_v1.6.txt
 - Project Instructions (ACTIVE):
-  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.5.txt
-- (Also uses all Stage 3 source files listed above)
+  Agents - Generators\Editorial Audit\SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+- (Also uses the Voice Reference and Voice Foundations from
+  Stage 3 as quality benchmarks for Criterion 14)
 
 ============================================================
 5. PROCESSING ORDER
@@ -229,9 +232,10 @@ Input: The Interpretation JSON you just produced.
   Do NOT re-read the raw recap. Do NOT recalculate or
   override JSON classifications.
 Output: One Coaching Message + one Deep Dive
-Apply: Coaching Output Master Prompt + Instructions +
-  Message Map + all source files (brand voice, style guide,
-  system identity, frameworks, growth phase model).
+Apply: Coaching Output Master Prompt V5 + Instructions v2.3
+  + Voice Reference (primary voice authority, read before
+  generating) + Voice Foundations (brand stance) + Message
+  Map + System Identity + Frameworks + Growth Phase Model.
   Match format to the prior week's CM and DD (Step 4).
 Save CM to: Athlete Data\[Athlete]\Coaching and Deep Dive\Coaching Message\
 Save DD to: Athlete Data\[Athlete]\Coaching and Deep Dive\Deep Dive\
@@ -241,8 +245,9 @@ STAGE 4: COACH INSIGHTS — WEEKLY PERFORMANCE INSIGHT
 ------------------------------------------------------------
 Input: The Interpretation JSON (Stage 2 output).
 Output: One Weekly Performance Insight
-Apply: Coach Insights Master Prompt + Instructions + JSON
-  Logic Reference + Compliance Framework + Output Structure.
+Apply: Coach Insights Master Prompt v1.5 + Instructions v1.9
+  + JSON Logic Reference + Compliance Framework + Voice
+  Standards + Output Structure.
   Match format to the prior week's Coach Insight (Step 4).
 Save to: Athlete Data\[Athlete]\Coach Insights\
 
@@ -252,8 +257,8 @@ STAGE 5: EDITORIAL AUDIT
 Input: Interpretation JSON + Coaching Message + Deep Dive
   (all three required).
 Output: One Audit Summary. Corrected CM/DD if needed.
-Apply: Editorial Audit Master Prompt + Instructions.
-  Run ALL audit criteria in order. Do not skip any.
+Apply: Editorial Audit Master Prompt v1.6 + Instructions
+  v1.6. Run ALL 14 audit criteria in order. Do not skip any.
   If Tier 1 failure: REJECT and regenerate the failing
   output, then re-audit.
   If auto-correcting: fix the issue in the CM/DD file on
@@ -314,37 +319,62 @@ directly harm coaching quality:
   the authoritative rules. This template does not.
 - Do NOT skip the Editorial Audit.
 
-VOICE QUALITY RULES (v2.1):
-All athlete-facing and coach-facing output must comply with
-the voice quality rules in Instructions v2.1 Section 35.
-The specification files contain the full rules. Key points:
-- ZERO em dashes in any athlete-facing output (CM, DD)
-- Contractions are Coach Arron's default register
-- "That is [noun]." standalone: max 1/CM, 1/DD, never both
-- No retired phrases: "Here is what [verb]," "the version
-  of you," "I also want to name/acknowledge," "[N] weeks
-  into this program" as DD trendline opener
-- No pipeline classification language in any output reaching
-  athletes, parents, or coaches: "Emotional intensity Low,"
-  "Growth tier," "RQS [number]," "Stable Positive,"
-  "approach-framed," "pattern_shift_detected," etc.
-- No telegraphing intent: don't announce what you're about
-  to do ("I'm going to be direct"), just do it
-- DD trendline after Week 4: reference 2-3 inflection points
-  relevant to this week, not a full program-history
-  enumeration. No hyphenated compound-adjective labels.
-  Qualitative descriptors, not percentages.
-- DD structural variation: Strength Signal count (2-5) and
-  Growth Area count (1-4) based on the week's character,
-  not a fixed template
-- CM opening variety: no same approach in consecutive weeks
-- 3-week same-athlete non-repeat window for transitions
-- CM-DD deduplication: two distinct pieces from same coach
-- Athlete-specific closing phrases (standard rotation as
-  fallback only)
-The Editorial Audit (Stage 5, v1.5) will catch em dashes
-(Tier 2 auto-correct) and pipeline classification language.
-Generate output that passes without correction.
+============================================================
+8. VOICE QUALITY ARCHITECTURE
+============================================================
+
+Voice quality for Stage 3 output (Coaching Messages and Deep
+Dives) is governed by a three-layer architecture. The
+specification files contain the full rules. This section
+orients you to the architecture so you apply it correctly.
+
+LAYER 1 — VOICE REFERENCE (THE TEACHER):
+VF_Coach_Arron_Voice_Reference.txt is the primary voice
+authority. Read it before generating any coaching output.
+It teaches what Coach Arron sounds like through 6 voice
+principles and 18 annotated exemplars across 6 coaching
+categories (Opening, Recognition, Challenge, Failure,
+Trendline, Identity/Closing). The principles and exemplars
+are your voice calibration. Generate output that sounds like
+those exemplars.
+
+LAYER 2 — v2.3 SECTION 35 (MECHANICAL SAFETY NET):
+Instructions v2.3 Section 35 contains 4 binary mechanical
+rules only:
+  C1: Em dash ban (zero tolerance, no exceptions)
+  C2: Contraction default (Coach Arron's natural register)
+  C3: Phrase frequency limits (retirement-only architecture,
+      retired constructions listed in Section 35)
+  C4: Pipeline classification language prohibition (no
+      growth_phase names, weekly_tier names, "Growth weeks,"
+      "Win days," or any pipeline-internal classification in
+      athlete-facing output)
+
+These 4 rules are mechanical checks. They are not the voice.
+The Voice Reference is the voice.
+
+LAYER 3 — STAGE 5 CRITERION 14 (AUDIT):
+Editorial Audit v1.6 Criterion 14 (Voice Quality Regression,
+Tier 2) detects 12 rhetorical-move patterns that indicate
+AI-generated or formulaic output: reusable openings,
+telegraphing, untraceable paragraphs, category coverage over
+response, brand copy closings, same-construction 3-week
+repetition, DD-as-expanded-CM, "That is [Noun]." overuse,
+"version of X" construction, triple-negative setup,
+trendline arc recitation, and pipeline-adjacent vocabulary.
+
+Generate output that passes Criterion 14 without correction.
+The Voice Reference exemplars teach the instincts that
+produce passing output naturally. If you sound like the
+exemplars, Criterion 14 will pass.
+
+VOICE QUALITY FOR STAGE 4 (COACH INSIGHTS):
+Coach-facing output uses institutional register per
+VF_Coach_Insights_Output_Voice_Standards.txt. Executive,
+structured, compliance-safe. Zero em dashes. No pipeline
+classification language (raw JSON field names, Stage 2
+internals). No telegraphing. Contractions permitted but not
+default. See Instructions v1.9 Section 29 for full rules.
 
 ============================================================
 END OF TEMPLATE
