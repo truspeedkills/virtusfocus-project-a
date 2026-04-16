@@ -1,0 +1,774 @@
+============================================================
+VOICE QUALITY COMPARISON ANALYSIS
+Angelo Allen Weeks 3, 5, 7, 8
+============================================================
+DATE: 2026-04-16
+SCOPE: Angelo Allen coaching output across 4 specification
+       versions (v1.8/V4, v1.8/V4, v2.1/V4, v2.3/V5)
+FILES ANALYZED: 8 (4 Coaching Messages + 4 Deep Dives)
+============================================================
+
+
+============================================================
+SECTION 1: EXECUTIVE SUMMARY
+============================================================
+
+The v2.3/V5 architecture produced a measurable improvement
+in voice quality. Week 8 output is the cleanest in the set
+across all 5 analysis dimensions: zero Criterion 14
+violations, zero em dashes, zero retired constructions, zero
+pipeline classification language in CMs, and the widest
+expressive range of any week analyzed. The improvement is not
+attributable to "better model output" generically -- it maps
+directly to specific architectural decisions: the Voice
+Reference teaching through exemplars rather than prohibiting
+through rules, the v2.3 Section 35 retirement-only
+architecture eliminating workaround behavior, the removal of
+legacy brand files eliminating structural templates, and
+Criterion 14 providing a post-generation quality gate. The
+hypothesis that teaching produces better voice than
+prohibition is supported by this first data point. Week 7
+(v2.1) represented a meaningful intermediate improvement over
+Weeks 3/5 (v1.8), confirming that the voice quality work was
+progressive, but Week 8 clears the remaining v2.1 gaps
+(telegraphing, pipeline language leakage, DD structural
+variety).
+
+
+============================================================
+SECTION 2: CRITERION 14 PATTERN ANALYSIS
+============================================================
+
+Table: Instances per fail condition across 4 weeks.
+"clean" = zero instances. Numbers = count of instances.
+CM and DD counts combined per week.
+
+------------------------------------------------------------
+FAIL CONDITION          | Wk3  | Wk5  | Wk7  | Wk8
+------------------------------------------------------------
+14.1  Reusable Opening  | clean| 1    | clean| clean
+14.2  Telegraphing      | 1    | 1    | 1    | clean
+14.3  Untraceable Para  | clean| 1    | clean| clean
+14.4  Coverage>Response | bord.| bord.| clean| clean
+14.5  Brand Copy Close  | bord.| 1    | clean| clean
+14.6  3-Week Repetition | n/a  | n/a  | clean| clean
+14.7  DD as Expanded CM | bord.| bord.| clean| clean
+14.8  "That is [Noun]." | 2    | 1    | clean| clean
+14.9  "Version of [X]"  | clean| clean| clean| clean
+14.10 Triple-Negative   | clean| clean| clean| clean
+14.11 Trendline Recite  | bord.| bord.| clean| clean
+14.12 Pipeline Language | 1    | 6+   | 2    | clean*
+------------------------------------------------------------
+TOTAL VIOLATIONS        | 4+   | 10+  | 3    | 0
+------------------------------------------------------------
+
+* Week 8 DD uses "Win days" (line 36) and "Gold Streaks"
+  (line 8) in descriptive context. These passed the Week 8
+  editorial audit under the reasonable reader test. Borderline
+  but not violations per audit judgment.
+
+NOTABLE INSTANCES:
+
+14.1 (Reusable Opening):
+  Week 5 DD: "Five weeks into this program, and this was the
+  week that showed what happens when your preparation matches
+  your ability." Uses the retired "[N] weeks into this
+  program" construction (C3 retired).
+
+14.2 (Telegraphing):
+  Week 3 CM: "But here is what stands out most to me this
+  week" -- announces the observation.
+  Week 5 CM: "Here is what needs attention." -- retired C3
+  construction AND telegraphing.
+  Week 7 CM: "Now here's where I want to push you." --
+  classic telegraphing, specifically listed in Criterion 14.2.
+  Week 8: Zero instances. The coaching moves land directly
+  without announcement.
+
+14.3 (Untraceable Paragraph):
+  Week 5 DD: "The athletes who create their own development
+  moments are the ones who get ahead of their competition
+  calendar." -- generic principle, uses retired "The athletes
+  who [X] are the ones who [Y]" construction.
+
+14.5 (Brand Copy Close):
+  Week 5 CM: "Keep building." -- two words, could appear on
+  any athlete's message or a social media post.
+  Week 8 CM: "Prepared for anything. That's the standard
+  you're building." -- grounded in this week's weather
+  preparation lesson. Not interchangeable.
+
+14.8 ("That is [Noun]." Standalone):
+  Week 3 DD: "That is initiative." (line 35) and "That is
+  leadership behavior." (line 40).
+  Week 5 DD: No standalones found, though "That is not a
+  coincidence" and "That is not hype" appear with full
+  predicate clauses (not the standalone pattern).
+
+14.12 (Pipeline Language):
+  Week 5 DD is the worst case. Six instances in a single
+  file: "Developing phase maintained through your fifth
+  consecutive Growth week. Emotional intensity returned to
+  Low after Week 4's Moderate elevation. Alignment fully
+  restored." (all line 10) + "Two consecutive Growth weeks
+  from a Variable state. Your rolling win rate across the
+  last four weeks is 89 percent... One more sustained Growth
+  week and the consistency indicators re-enter the positive
+  band." (line 20). This reads as pipeline telemetry, not
+  coaching.
+  Week 7 DD: "you haven't had consecutive Growth weeks like
+  this" (line 18) + "win rate" reference -- reduced but not
+  eliminated under v2.1.
+  Week 8: Zero pipeline classification language in CM or DD
+  body text.
+
+
+============================================================
+SECTION 3: VOICE PRINCIPLE ALIGNMENT
+============================================================
+
+P0: SERVICE FIRST
+------------------------------------------------------------
+Week 8 demonstration: The entire CM is built around what
+Angelo needs going into Slippery Rock Thursday. The weather
+lesson, the practice instability acknowledgment, and the
+honest prior-commitment gap assessment all serve the
+athlete's immediate coaching need.
+
+Best prior: Week 7 CM is also strongly service-oriented,
+built around the Mt Union preparation need.
+
+Worst prior: Week 5 DD drifts into reporting mode with
+pipeline metrics ("rolling win rate 89 percent," "consistency
+indicators re-enter the positive band") that serve data
+completeness, not the athlete.
+
+P1: START WITH MEANING, NOT DESCRIPTION
+------------------------------------------------------------
+Week 8 CM: "Friday's weather hit you with something you
+didn't prepare for." Opens with what happened and immediately
+moves to what Angelo DID about it. The meaning (two kinds of
+toughness) emerges from the narrative rather than being
+stated as a topic sentence.
+
+Week 8 DD: "This was the first week in your program where
+things didn't go the way you planned." Opens with the
+meaning of the week (disruption after 7 steady weeks), not a
+description of events.
+
+Best prior: Week 7 CM opens with the athlete's own
+meaning-laden language ("Greater mental stability and
+equilibrium"). Strong P1 alignment.
+
+Worst prior: Week 5 CM opens stat-led ("Best outdoor season
+opener of your career"). While the stat IS the story, the
+opening describes what happened rather than leading with why
+it matters. Week 5 DD is worse: "[N] weeks into this
+program" is a temporal anchor, not meaning.
+
+P2: SPEND YOUR WORDS UNEVENLY
+------------------------------------------------------------
+Week 8 CM: The weather/competition story gets the most space
+(paragraph 2, longest). Practice instability gets direct
+treatment (paragraph 3). Prior commitment gap gets brief,
+honest handling (paragraph 4, shortest). Clear proportional
+weighting by importance.
+
+Week 8 DD: The Trendline section is the longest and deepest,
+connecting PSAC and Bullseye threads at length because those
+are the two historically relevant patterns. Growth Areas
+gives disproportionate depth to "Competition-Day Mental
+Preparation" over "Practice Instability." Strong proportional
+weighting.
+
+Best prior: Week 7 DD is also proportionally weighted.
+
+Worst prior: Weeks 3 and 5 DDs each have 4 strength signals
+with roughly equal space. Coverage feels report-like rather
+than proportional to importance.
+
+P3: TALK LIKE YOU'VE BEEN IN THE ROOM
+------------------------------------------------------------
+Week 8 CM: "Rain, cold, wind, no extra clothes, and a
+forecast that lied to you." Vivid, specific, lists the
+sensory details of the experience. "I'm not going to pretend
+those numbers don't matter to you." Direct, human. "You
+called these 'horrible circumstances,' and that's fair. They
+are." Validates before coaching.
+
+Week 8 DD: "I'm not going to tell you to just focus on what
+you can control as if the frustration isn't legitimate."
+Anticipates what a bad coach would say and refuses to do it.
+"Saturday's gear decision shows the same lesson-extraction
+pattern that converted the PSAC disappointment into the
+Shippensburg opener." References shared history naturally.
+
+Best prior: Week 7 CM: "Look at that list and compare it to
+what you told me at intake." Natural, conversational,
+references shared knowledge.
+
+Worst prior: Week 5 DD: "That initiative is what separates
+athletes who wait for development from athletes who build
+it." Textbook coaching principle, not room-talk. Week 3 DD:
+"That is leadership behavior." Declarative label rather than
+conversational observation.
+
+P4: EARN EVERY SENTENCE
+------------------------------------------------------------
+Week 8 CM: Every sentence carries specific information or
+does coaching work. "I'm not going to pretend those numbers
+don't matter to you. But the story of this meet isn't in the
+distances." The first validates, the second reframes. Neither
+is filler. "You didn't wait until the next competition to
+apply the lesson. You applied it the next morning." Tight.
+
+Week 8 DD: "The preparation side took a hit. You trusted the
+forecast, didn't pack for weather, and paid for it on
+Friday. But the self-correction was immediate, not deferred."
+Three sentences, each carrying specific information.
+
+Worst prior: Week 3 DD: "That is leadership behavior." A
+declarative stamp that announces rather than demonstrates.
+Week 5 DD: "The athletes who create their own development
+moments are the ones who get ahead of their competition
+calendar." Generic principle that doesn't earn its space with
+this-athlete specificity. "Process-focused athletes do not
+need the perfect day to perform well." Same issue.
+
+P5: REACT, DON'T COMPOSE
+------------------------------------------------------------
+Week 8 CM: Clearly reactive. Opens with the weather story
+because that's what defined the week. Moves to practice
+instability because Angelo named it. Addresses the prior
+commitment because it's honest coaching. Ends with Slippery
+Rock because that's next. The structure follows the week, not
+a template.
+
+Week 8 DD: The trendline section connects PSAC and Bullseye
+specifically because those are the two threads this week
+tested. The strength signals (competing through adversity,
+immediate self-correction, weekday execution) respond to what
+actually happened, not to categories of positive behavior.
+
+Worst prior: Weeks 3 and 5 DDs have 4 strength signals each
+that feel like the output is covering positive data points
+systematically rather than reacting to what mattered most.
+Week 5 DD's Mindset Summary dumps pipeline classifications
+(Developing phase, Emotional intensity, Alignment) as if
+checking boxes.
+
+
+============================================================
+SECTION 4: MECHANICAL COMPLIANCE
+============================================================
+
+------------------------------------------------------------
+FILE                    | Em   | "That is  | C3      | Pipe-
+                        | Dash | [Noun]."  | Retired | line
+------------------------------------------------------------
+Wk3 CM                 | 3*   | 0         | 0       | 0
+Wk3 DD                 | 7+   | 2         | 0       | 1
+Wk5 CM                 | 3*   | 0         | 1       | 0
+Wk5 DD                 | 6+   | 0         | 2       | 6+
+Wk7 CM                 | 0    | 0         | 0       | 0
+Wk7 DD                 | 0    | 0         | 0       | 2
+Wk8 CM                 | 0    | 0         | 0       | 0
+Wk8 DD                 | 0    | 0         | 0       | 0**
+------------------------------------------------------------
+
+* Weeks 3/5 CM em dashes include salutation ("Angelo --"),
+  signature ("-- Coach Arron"), and section headers ("YOUR
+  ACTION --") per pre-Session-92 formatting conventions, plus
+  body-text em dashes.
+
+** Week 8 DD uses "Win days" (line 36) and "Gold Streaks"
+   (line 8) in descriptive context. Passed editorial audit
+   under reasonable reader test. Borderline.
+
+CONTRACTION REGISTER:
+  Weeks 3/5: Predominantly formal. "I do not just mean,"
+  "you did not just apply," "That is not just follow-through,"
+  "That has not happened before," "it was not the results."
+  Formal non-contraction prose is the default register.
+  Weeks 7/8: Natural contractions throughout. "That's what
+  you named," "I don't know," "didn't wait," "aren't
+  questioning," "isn't just about." Formal reserved for
+  emphasis.
+
+C3 RETIRED CONSTRUCTIONS:
+  Week 5 CM: "Here is what needs attention." (retired)
+  Week 5 DD: "The question is not whether you can prepare
+  well" and "The question is whether you can prepare well
+  consistently" (retired "The question is [whether]").
+  Week 5 DD: "The athletes who create their own development
+  moments are the ones who get ahead of their competition
+  calendar" (retired "athletes who [X] are the ones who [Y]").
+  Weeks 7/8: Zero retired constructions.
+
+EM DASH DETAIL:
+  Weeks 3/5 body text em dashes (excluding formatting):
+    Wk3 CM: "electric -- your word" (line 11),
+    "challenge -- Maintaining effort" (line 15, quoting),
+    "Monday evening -- intentional" (line 21)
+    Wk3 DD: "after illness -- framing" (line 16),
+    "complete package -- you won" (line 30),
+    "when both are present -- and" (line 32),
+    "your technical intent -- your" (line 35),
+    "influence ring -- keeping" (line 40),
+    "so you can rebuild -- so" (line 56),
+    "from recovery to resilience -- is not" (line 66)
+    Wk5 CM: "said about it -- It wasn't" (line 7),
+    "accurate -- but when" (line 15)
+    Wk5 DD: "accidental -- it was" (line 8),
+    "complete form -- every day" (line 10),
+    "protected -- illness" (line 16),
+    "disrupted -- chaotic" (line 16),
+    "the problem -- you built" (line 27),
+    "coincidence -- it is" (line 28),
+    "strongest weeks -- when" (line 35),
+    "canceled -- they happened" (line 36),
+    "this program -- each" (line 39),
+    "balance -- school, work" (line 39),
+    "not hype -- it is" (line 60)
+  Weeks 7/8: Zero em dashes across all 4 files (confirmed
+  by grep search).
+
+
+============================================================
+SECTION 5: COACHING AUTHENTICITY ASSESSMENT
+============================================================
+
+------------------------------------------------------------
+FILE                    | RATING      | KEY EVIDENCE
+------------------------------------------------------------
+Wk3 CM                 | ADEQUATE    | Specific references
+                        |             | to competition and
+                        |             | achievement, but
+                        |             | formal register and
+                        |             | some teaching-mode
+                        |             | language.
+------------------------------------------------------------
+Wk3 DD                 | ADEQUATE    | Strong data grounding
+                        |             | but 4 equal-weight
+                        |             | strength signals feel
+                        |             | report-like. "That is
+                        |             | leadership behavior"
+                        |             | is a stamp.
+------------------------------------------------------------
+Wk5 CM                 | ADEQUATE    | Good use of Angelo's
+                        |             | own language. But
+                        |             | telegraphing ("Here
+                        |             | is what needs
+                        |             | attention"), generic
+                        |             | closing ("Keep
+                        |             | building"), and
+                        |             | formal register.
+------------------------------------------------------------
+Wk5 DD                 | WEAK        | Pipeline language
+                        |             | throughout creates
+                        |             | analytical distance.
+                        |             | Retired constructions.
+                        |             | Generic principles.
+                        |             | Reads as performance
+                        |             | report, not coaching.
+------------------------------------------------------------
+Wk7 CM                 | STRONG      | Opens with athlete's
+                        |             | language. Natural
+                        |             | contractions. Specific
+                        |             | competition prep push.
+                        |             | One telegraphing
+                        |             | instance.
+------------------------------------------------------------
+Wk7 DD                 | STRONG      | Reactive to recovery
+                        |             | week character.
+                        |             | Disciplined trendline.
+                        |             | Good proportional
+                        |             | weighting. Minor
+                        |             | pipeline language.
+------------------------------------------------------------
+Wk8 CM                 | STRONG      | Visceral opening.
+                        |             | Validates before
+                        |             | coaching. Honest
+                        |             | prior-commitment
+                        |             | handling. Specific
+                        |             | action item. Zero
+                        |             | violations.
+------------------------------------------------------------
+Wk8 DD                 | STRONG      | Different angle from
+                        |             | CM. Disciplined
+                        |             | 2-moment trendline.
+                        |             | Anticipates bad
+                        |             | coaching and refuses.
+                        |             | Forward-facing close.
+------------------------------------------------------------
+
+SINGLE STRONGEST PASSAGE (all 8 files):
+
+Week 8 CM, paragraph 1:
+"Friday's weather hit you with something you didn't prepare
+for. Rain, cold, wind, no extra clothes, and a forecast that
+lied to you. You competed through it anyway. Saturday you
+brought the gear even though the sun was out. That's two
+different kinds of toughness in the same weekend, and the
+second one tells me more than the first."
+
+Why this is the strongest: It opens in the specific moment
+(P5 React). It leads with what the week means, not what
+happened (P1 Start with Meaning). The language is vivid and
+conversational (P3 Been in the Room). Every sentence carries
+weight (P4 Earn Every Sentence). And the final clause -- "the
+second one tells me more than the first" -- is a genuinely
+insightful coaching observation that distinguishes between
+reactive toughness (competing through bad conditions) and
+proactive toughness (preparing for them next time).
+
+SINGLE WEAKEST PASSAGE (all 8 files):
+
+Week 5 DD, trendline ending (lines 20-21):
+"The consistency trend is improving. Two consecutive Growth
+weeks from a Variable state. Your rolling win rate across the
+last four weeks is 89 percent. The gap disrupted the streak,
+but the momentum is re-establishing. One more sustained
+Growth week and the consistency indicators re-enter the
+positive band."
+
+Why this is the weakest: Five consecutive sentences of
+pipeline telemetry. "Growth weeks," "Variable state,"
+"rolling win rate," "consistency indicators," "positive band"
+-- all pipeline classification language. This does not sound
+like a coach talking to an athlete. It sounds like a
+dashboard reading its own metrics aloud.
+
+
+============================================================
+SECTION 6: EXPRESSIVE RANGE ASSESSMENT
+============================================================
+
+OPENING APPROACHES:
+  Wk3 CM: Quality judgment ("This was your best week yet")
+  Wk5 CM: Stat-led achievement ("Best outdoor season opener")
+  Wk7 CM: Athlete quote ("Greater mental stability...")
+  Wk8 CM: Specific moment ("Friday's weather hit you")
+
+  Wk3 DD: Identity statement ("preparation became identity")
+  Wk5 DD: Temporal anchor ("[N] weeks into this program")
+  Wk7 DD: Week character ("a week about proving you can rest")
+  Wk8 DD: Defining contrast ("first week where things didn't
+          go the way you planned")
+
+Assessment: Four different CM opening approaches across 4
+weeks. The progression moves from external description
+(Wk3/5 -- what happened to you) toward internal reaction
+(Wk7/8 -- what you did about it). Week 8's opening is the
+most reactive and specific.
+
+SENTENCE RHYTHM:
+  Weeks 3/5: Predominantly long sentences. Formal academic
+  feel with little rhythmic variation. Sentences tend toward
+  compound structures with semicolons and subordinate clauses.
+
+  Week 7: More varied. Mix of long analytical sentences and
+  shorter declaratives. "Not a throw distance. Not a
+  placement." introduces fragment rhythm.
+
+  Week 8 CM: Strong rhythmic variation across lengths:
+  "Rain, cold, wind, no extra clothes, and a forecast that
+  lied to you." (list rhythm)
+  "You competed through it anyway." (short declarative)
+  "Saturday you brought the gear even though the sun was
+  out." (medium narrative)
+  "That's two different kinds of toughness in the same
+  weekend, and the second one tells me more than the first."
+  (long analytical)
+
+  This is the widest sentence-length range in the set.
+
+RECOGNITION MOVES:
+  Wk3: Labels behavior ("That is what intentional preparation
+  looks like at a high level")
+  Wk5: Elevates athlete's words ("That sentence is a coaching
+  philosophy, not just a recap")
+  Wk7: Invites self-recognition ("Look at that list and
+  compare it to what you told me at intake")
+  Wk8: Comparative recognition ("That's two different kinds
+  of toughness in the same weekend, and the second one tells
+  me more than the first") -- distinguishes between types of
+  strength, names which one matters more. NEW move.
+  Wk8: Directional recognition ("Your frustration about the
+  practice instability is pointed outward at the conditions,
+  not inward at yourself") -- recognizes the direction of
+  frustration as the signal. Another NEW move.
+
+CLOSING MOVES:
+  Wk3 CM: Short anchor ("Stay grounded")
+  Wk5 CM: Generic ("Keep building")
+  Wk7 CM: Callback ("Planned, not spontaneous. That's your
+  standard now.")
+  Wk8 CM: Grounded callback ("Prepared for anything. That's
+  the standard you're building.")
+  Wk8 DD: Direct challenge with timeline ("Slippery Rock is
+  Thursday. Five days. You know what the preparation gap was
+  this weekend. Close it before you step into the ring.")
+
+  The Week 8 DD close is a genuinely new move that doesn't
+  appear in any prior week -- a forward-facing challenge
+  grounded in this week's specific gap, with a deadline.
+
+OVERALL EXPRESSIVE RANGE ASSESSMENT:
+Week 8 demonstrates expanded range, not just cleaner
+execution of the same patterns. The recognition moves are
+genuinely new (comparative, directional). The sentence rhythm
+is more varied. The DD close introduces a new move type
+(specific challenge with timeline). The opening approaches
+continue to vary across weeks, with Week 8 adding the
+"specific moment" approach to the repertoire. This is
+consistent with the "Best Not Better" principle -- the fixes
+expanded what the output CAN do, not just cleaned what it
+SHOULD NOT do.
+
+
+============================================================
+SECTION 7: ARCHITECTURAL ATTRIBUTION
+============================================================
+
+Each observed improvement mapped to its source:
+
+1. OPENING SPECIFICITY (Wk8 vs Wk3/5)
+   Source: Voice Reference P1 (Start with Meaning) + P5
+   (React, Don't Compose) + Category A exemplars.
+   The Voice Reference teaches opening with a specific moment,
+   and v2.3 promotes this through exemplars rather than
+   prohibiting stat-led openings through rules. Week 7 (v2.1)
+   already showed improvement here (athlete quote opening),
+   but v2.1 used a rule-based approach ("opening approach
+   variety"). v2.3's exemplar-teaching approach produced a
+   further step forward.
+
+2. TELEGRAPHING ELIMINATION (Wk8 vs all 3 prior)
+   Source: Voice Reference P4 (Earn Every Sentence) + Category
+   C exemplars + Criterion 14.2 (post-generation detection).
+   Critical finding: v2.1 (Week 7) still had "Now here's
+   where I want to push you" despite having an explicit
+   no-telegraphing rule. v2.3 (Week 8) has zero instances.
+   This supports the hypothesis that teaching through
+   exemplars (showing what direct coaching looks like) is
+   more effective than prohibition (telling the model not to
+   telegraph). The model learned from Category C exemplars
+   that a coach doesn't announce -- they just say it.
+
+3. PIPELINE LANGUAGE ELIMINATION (Wk8 vs Wk3/5/7)
+   Source: v2.3 Section 35 C4 (Pipeline Classification
+   Language Prohibition) + Voice Reference P3 (Talk Like
+   You've Been in the Room) + Purpose-Built Principle
+   (removal of legacy brand files).
+   Progressive improvement: Wk5 had 6+ instances, Wk7 had 2,
+   Wk8 has 0 (with borderline "Win days" / "Gold Streaks"
+   passing audit). The combined effect of prohibition (C4,
+   present since v2.1) AND teaching (Voice Reference replacing
+   pipeline language with behavioral description, v2.3 only)
+   AND legacy file removal (Purpose-Built Principle removing
+   content_style_guide.txt and brand_voice.txt which had no
+   equivalent prohibition) produced the full elimination.
+
+4. RETIRED C3 CONSTRUCTIONS (Wk8 vs Wk5)
+   Source: v2.3 Section 35 C3 (retirement-only architecture).
+   Direct attribution. "The question is [whether]" and "The
+   athletes who [X] are the ones who [Y]" appeared in Week 5
+   DD (v1.8, where these were not yet identified as problems).
+   Week 8 uses neither. The retirement-only approach (no
+   quota, no workaround path, just banned) works because there
+   is nothing to game.
+
+5. EM DASH ELIMINATION (Wk7/8 vs Wk3/5)
+   Source: v2.1 Section 35 C1 (em dash ban, established
+   Session 92). Already working in v2.1. v2.3 inherited
+   this unchanged. Not a v2.3-specific improvement.
+
+6. CONTRACTION REGISTER (Wk7/8 vs Wk3/5)
+   Source: v2.1 Section 35 C2 (contraction default). Already
+   working in v2.1. v2.3 inherited this unchanged. Not a
+   v2.3-specific improvement.
+
+7. "THAT IS [NOUN]" ELIMINATION (Wk7/8 vs Wk3)
+   Source: v2.1 capped this pattern. v2.3 moved detection to
+   Criterion 14.8 + Voice Reference Category B exemplars
+   teach alternatives. Already working in v2.1 but the Voice
+   Reference exemplars provide the model with concrete
+   alternatives, reinforcing the elimination.
+
+8. UNEVEN COVERAGE (Wk8 vs Wk3/5)
+   Source: v2.3 Section 36 (Uneven Coverage Principle) + Voice
+   Reference P2 (Spend Your Words Unevenly).
+   v2.3-specific improvement. Weeks 3/5 DDs had 4 equally-
+   weighted strength signals. Week 8 DD has proportional
+   depth. This is a new architectural element that had no
+   equivalent in v2.1.
+
+9. DD DISTINCTNESS FROM CM (Wk8 vs Wk3/5)
+   Source: Voice Reference Section 4 Pair 9 (DD as Expanded CM
+   teaching) + Criterion 14.7 (post-generation detection).
+   v2.3-specific improvement. Week 8 CM focuses on weather
+   story / practice facility / commitment gap. Week 8 DD
+   focuses on PSAC/Bullseye trendline / behavioral
+   self-correction pattern / baseline derailer reframing.
+   Clearly different angles. Weeks 3/5 had more overlap.
+
+10. "REFUSE TO COACH BADLY" MOVES (Wk8 only)
+    Source: Voice Reference P0 (Service First) + Category D
+    exemplars (Handling Failure) + Voice Foundations (explicit
+    non-applicability of content_style_guide.txt "Here's the
+    problem / Here's why / Here's the fix" template).
+    "I'm not going to pretend those numbers don't matter to
+    you" and "I'm not going to tell you to just focus on what
+    you can control as if the frustration isn't legitimate"
+    are new expressive moves that anticipate what a bad coach
+    (or a template-following AI) would say and refuse to do
+    it. This maps to the Voice Foundations document explicitly
+    rejecting marketing/social structures and to the Category
+    D exemplars teaching how to sit with difficulty.
+
+11. BRAND COPY CLOSE ELIMINATION (Wk8 vs Wk5)
+    Source: Voice Reference P3 (athlete-specific grounding) +
+    Criterion 14.5 (post-generation detection).
+    "Keep building" (Wk5) vs "Prepared for anything. That's
+    the standard you're building." (Wk8). The improvement is
+    grounding: Week 8's close connects to the weather
+    preparation lesson from this specific week.
+
+12. TRENDLINE DISCIPLINE (Wk8 vs Wk3/5)
+    Source: Voice Reference Category E exemplars + Criterion
+    14.11 + v2.3 C3 (retirement of "[N] weeks into this
+    program" opener).
+    "Two moments from earlier in this program are directly
+    relevant" (Wk8) vs week-by-week recitation with
+    achievement-label enumeration (Wk3 DD) and pipeline
+    metrics (Wk5 DD). The improvement is selection:
+    Week 8 picks the two relevant moments instead of
+    reciting the full arc.
+
+
+============================================================
+SECTION 8: REMAINING GAPS
+============================================================
+
+1. "WIN DAYS" / "GOLD STREAKS" BORDERLINE LANGUAGE
+   Week 8 DD uses "Three Win days before the meet" (line 36)
+   and "two Gold Streaks" (line 8). These passed the editorial
+   audit under the reasonable reader test, and "Win days" is
+   arguably natural language for "days you won." But these
+   terms originate as pipeline categories ("Win" = 4-5 on
+   WTD scoring), and a real coach would more likely say
+   "three strong days" or "your second perfect week." This is
+   a borderline area that deserves monitoring across athletes.
+   Week 7 CM also used "Seven Win days. Gold Streak." under
+   v2.1. The pattern persists into v2.3.
+
+2. "THIS WAS THE [X] WEEK" DD OPENING TEMPLATE
+   Week 8 DD opens "This was the first week in your program
+   where things didn't go the way you planned." Week 7 DD
+   opens "This was a week about proving you can rest." Week 3
+   DD opens "This was the week your preparation became your
+   identity." Three of four DDs use the "This was..." frame.
+   If future output continues this pattern, it could become a
+   14.1 reusable opening at the DD level. Not yet a violation
+   (each "This was..." sentence is specific to its week) but
+   an emerging template.
+
+3. DD SUBSECTION STRUCTURAL TEMPLATE
+   All 4 weeks' DDs use the same internal structure: section
+   heading + paragraph(s) + sometimes italicized observation
+   capper. The heading + paragraph + italic-capper format is
+   consistent across all 8 DDs in this analysis and was
+   flagged in the Session 90 Voice Tone Authenticity Audit as
+   structural cloning. v2.3 improved content quality
+   significantly but did not address structural monotony.
+   Criterion 14 does not have a specific fail condition for
+   DD subsection format repetition. M1 (DD structural
+   variation) from Session 92 directed variable strength/growth
+   counts and optional italic capper omission, but the v2.3
+   architecture moved this from generation-time rules to Voice
+   Reference teaching, and the Voice Reference does not
+   specifically teach DD subsection format variation.
+
+4. WEEK 8 DD MINDSET SUMMARY MINI-ARC
+   "Eight weeks of steady building, seven consecutive strong
+   weeks, two Gold Streaks, and then a week that pushed back."
+   This is a brief arc summary that borders on trendline-in-
+   miniature. It's short (one sentence) and serves the
+   "first disruption" framing, so it's not a 14.11 violation.
+   But it's the closest Week 8 gets to arc recitation, and the
+   "Gold Streaks" reference is pipeline-adjacent.
+
+5. PRIOR-COMMITMENT HANDLING TEMPLATE
+   Week 8 CM paragraph 4: "That exercise didn't show up in
+   your recap this week. I don't know whether you did it, but
+   the competition sections focused on conditions and results,
+   not on mental preparation." This is honest, direct coaching.
+   But the construction "I don't know whether you did it"
+   could become a template for handling Unknown prior
+   commitment results. Monitor across athletes to see if this
+   phrase becomes mechanical.
+
+
+============================================================
+SECTION 9: RECOMMENDATIONS
+============================================================
+
+1. EXPAND SAMPLE SIZE BEFORE DRAWING CONCLUSIONS
+   This analysis covers one athlete across 4 weeks. The
+   hypothesis (teaching > prohibition) is supported but not
+   confirmed by a single data point. As more athletes submit
+   new weekly data under v2.3/V5, run the same Criterion 14
+   pattern check on the first CM + DD for each athlete.
+   Priority athletes: Grace Kindel (10 weeks of prior output
+   to compare), Tucker Lloyd (different athlete profile --
+   Mixed tier, structure-dependent), and Jasmine Jones (most
+   complex compliance case). A 3-athlete, 4-week comparison
+   would be a more robust test.
+
+2. MONITOR "WIN DAYS" / "GOLD STREAKS" LANGUAGE
+   Consider whether these terms should be added to Section 35
+   C4 as explicitly prohibited pipeline terminology, or
+   whether the reasonable reader test is the correct
+   calibration. If they persist across multiple athletes under
+   v2.3, a targeted prohibition may be warranted. If they
+   appear only when genuinely describing the athlete's program
+   history (not as classification labels), the current audit
+   judgment may be correct.
+
+3. CONSIDER DD STRUCTURAL VARIATION GUIDANCE
+   The Voice Reference teaches voice quality through
+   exemplars but does not specifically address DD subsection
+   format. The 18 exemplars are all paragraph-form passages,
+   not DD-structured sections. If DD structural monotony
+   persists across athletes under v2.3, consider adding a
+   brief note to the Deep Dive Framework or Voice Reference
+   about varying the heading/paragraph/capper format -- e.g.,
+   sometimes opening a section with the observation rather
+   than the description, or omitting the italic capper when
+   the final paragraph already carries the teaching.
+
+4. WATCH FOR V2.3-SPECIFIC TEMPLATE EMERGENCE
+   v2.1 had its own template patterns (telegraphing, pipeline
+   language, retired constructions). v2.3 may develop its own.
+   The "I'm not going to [do the wrong thing]" move appeared
+   twice in Week 8 (CM paragraph 2 and DD Growth Areas). If
+   this becomes a recurring structure across athletes, it
+   would be a new form of template -- even though the content
+   is good coaching, the construction could become mechanical.
+   Similarly, the "Two moments from earlier in this program"
+   trendline opener is effective but could become its own
+   template if it appears in every DD.
+
+5. NO SPEC CHANGES RECOMMENDED FROM THIS ANALYSIS
+   This is one data point. The v2.3 architecture is producing
+   the expected improvements. No specification changes are
+   warranted until the sample size supports a pattern-level
+   finding rather than a single-instance observation. The
+   remaining gaps identified above are monitoring items, not
+   action items.
+
+
+============================================================
+END OF ANALYSIS
+============================================================
