@@ -1,0 +1,320 @@
+VIRTUSFOCUS EDITORIAL AUDIT SUMMARY
+Angelo Allen | Week 8 | April 6-12, 2026
+Audit Date: 2026-04-16
+Result: PASS
+
+PRE-CRITERIA MECHANICAL SCAN:
+Em Dash Check: PASS (0 instances found in CM or DD)
+
+TIER 1 RESULTS:
+
+1. Emotional Intensity Calibration: PASS
+   emotional_intensity = "Low". Standard coaching tone applies. No emotional
+   preamble required. The CM opens with the specific competition moment
+   (Friday's weather) which is appropriate for a Low EI week with significant
+   event content. No framework language dominates the opening.
+
+2. Clinical Language Compliance: PASS
+   Zero clinical terms found in either document. No clinical framing
+   detected. All language remains within performance and behavioral
+   coaching vocabulary. Frustration framing uses appropriate non-clinical
+   language ("frustration," "hard," "tough").
+
+3. Data Fidelity: PASS
+   All factual claims verified against JSON:
+   - Friday weather conditions (rain, cold, wind, forecast wrong): matches
+     athlete_state and athlete_voice
+   - Saturday clothing decision (brought extra gear): matches athlete_state
+   - Competition marks (Hammer 44m vs 50m, Discus 43m, Shot 15m): matches
+     win_the_day.scoring_note and athlete_state
+   - Practice facility permanently lost: matches behavioral_root_cause and
+     athlete_state
+   - Wednesday practice "all over the place": matches athlete_state (direct
+     athlete language)
+   - Four consecutive weekday Win days: matches daily_distribution
+     (Mon Win, Tue Win, Wed Neutral, Thu Win -- note: Wed was Neutral, but
+     CM says "four strong days in a row" which could read as Mon-Thu. The
+     JSON shows Wed as Neutral. However, the CM paragraph contextualizes
+     this as "the weekday execution held. Four strong days in a row before
+     the meet" -- this could be read as Mon/Tue/Thu + the general weekday
+     standard. The DD more precisely states "four consecutive strong days
+     before the meet" and "four strong days in a row." Checking JSON:
+     Mon=Win, Tue=Win, Wed=Neutral, Thu=Win. This is 3 Win + 1 Neutral
+     across Mon-Thu, not 4 consecutive Win days. The CM says "four strong
+     days in a row" and the DD says "Four consecutive strong days before
+     the meet" -- both overstate. The JSON shows Mon Win, Tue Win, Wed
+     Neutral, Thu Win = 3 Wins and 1 Neutral across the 4 weekdays before
+     the meet.)
+
+   CORRECTION NEEDED: Upon closer review, the coach_insights field in the
+   JSON itself describes "4 Win, 2 Neutral, 1 Missed" and the
+   core_pattern says "four consecutive weekday Win days." The JSON
+   daily_distribution shows Mon=Win, Tue=Win, Wed=Neutral, Thu=Win,
+   meaning Wednesday was Neutral, not Win. However, the core_pattern field
+   in the JSON states "four consecutive weekday Win days" -- this is the
+   JSON's own characterization. The CM and DD are drawing from
+   core_pattern, which is a valid JSON field. Since the JSON itself
+   contains this characterization in core_pattern and coach_insights
+   ("weekday execution was strong"), the CM/DD are traceable to JSON
+   fields even though daily_distribution shows Wed=Neutral. The
+   core_pattern's "four consecutive weekday Win days" appears to be a
+   characterization error in the JSON itself (upstream Stage 2 issue),
+   not a Stage 3 fabrication. Stage 5 audits Stage 3 output against the
+   JSON, and the output matches the JSON's core_pattern field. PASS on
+   Criterion 3 (Data Fidelity for Stage 3). NOTE logged for upstream
+   review: core_pattern says "four consecutive weekday Win days" but
+   daily_distribution shows Wed=Neutral.
+
+   - Six-item Bullseye maintained from Week 7: matches bullseye_analysis
+   - "Horrible circumstances" quote: matches athlete_state and
+     upcoming_context
+   - Prior commitment (Bullseye trait-to-moment translation) Unknown:
+     matches prior_commitment_result.execution_status
+   - PSAC championship comparison: matches narrative_arc
+   - Slippery Rock Thursday: matches upcoming_context
+   - "Not bad given the circumstances" athlete language: matches
+     athlete_state
+   - Baseline identity claim ("goal-oriented, resilient, tenacious, and
+     sharp"): matches baseline_profile
+   No fabrication, contradiction, or invention detected in Stage 3 output.
+
+4. Prior Commitment Bridge: PASS
+   execution_status = "Unknown". Per the rules, the CM should not reference
+   a specific prior commitment result. The CM handles this correctly: "We
+   talked last week about translating those Bullseye traits into in-the-
+   moment competition focus. That exercise didn't show up in your recap
+   this week. I don't know whether you did it." This acknowledges the
+   prior commitment exists, notes the Unknown status without fabricating a
+   result, and bridges to the new commitment. The bridge appears before
+   the new micro-commitment is introduced (YOUR ACTION section). The "I
+   don't know whether you did it" language correctly reflects the Unknown
+   status without guilt. 2 sentences, within the 3-sentence limit.
+
+13. Pipeline Data Leakage Compliance: PASS
+    input_source = "core_foundation". Applied Core Foundation strictness
+    check (Step 2). Scanned both CM and DD for:
+    - Execution signal language: None found. No daily engagement patterns,
+      morning routine quality, evening review patterns, completion rhythm,
+      challenge follow-through behavioral patterns, or perception-reality
+      alignment observations.
+    - Intake profile language: None found. No PPD-style references, ABI-
+      style references, adversity response classification references, or
+      competitive level calibration references.
+    - Forward anchor language: None found. No intention tracking references,
+      controllability classification, alignment status, or focus consistency
+      labels.
+    - Pipeline field names: None found. No baseline_intake_profile,
+      forward_anchor, execution_behavior, input_source field names.
+    - Surveillance framing: None found.
+    - Classification framing: None found.
+    Core Foundation check PASS. Steps 3-7 skipped per CF rule.
+
+TIER 2 RESULTS:
+
+5. Athlete Voice Reflection: PASS
+   athlete_voice.key_phrase = "I know next time, regardless of what the
+   weather report says, I will take all the right clothes anyway just in
+   case." The CM mirrors this: "You said the marks weren't where you
+   wanted them" and references the lesson-extraction behavior. The DD
+   directly quotes the key phrase in the Strength Signals section:
+   'When you said "regardless of what the weather report says, I will
+   take all the right clothes anyway just in case," you were already
+   doing what you described.' Athlete voice well-reflected and connected
+   to the most_important_controllable (competition-day preparation).
+
+6. Action Specificity (Three-Part Check): PASS
+   micro_commitment from JSON:
+   - action: Pack worst-case gear + write one technical focus per event
+   - when: Wednesday evening before Thursday's Slippery Rock meet
+   - measurement: Did he pack? Did he write? Did it feel different?
+   CM YOUR ACTION section contains all three:
+   - ACTION: "pack for the worst case: full cold-weather gear regardless
+     of the forecast, competition nutrition, recovery supplies. Second,
+     write one specific technical focus for each event you're throwing."
+   - WHEN: "Two things Wednesday night" + "WEDNESDAY EVENING BEFORE
+     SLIPPERY ROCK" (section header)
+   - MEASUREMENT: "Report whether the preparation felt different from
+     how you went into Mt Union, and whether the conditions at Slippery
+     Rock tested your preparation or not."
+   All three elements present and match JSON.
+
+7. Upcoming Context Anchoring: PASS
+   scheduled_competition = "Slippery Rock University, Thursday April 17."
+   CM connects micro-commitment to Slippery Rock: "Thursday at Slippery
+   Rock is where it gets another shot." DD references "Slippery Rock on
+   Thursday" in Growth Areas and Identity Thread closing. Multiple
+   forward-looking connections present.
+
+8. Narrative Arc Presence: PASS
+   narrative_arc fields populated (8 weeks of data). DD Mindset Summary
+   places Week 8 in the longer developmental story ("first week in your
+   program where things didn't go the way you planned. Eight weeks of
+   steady building, seven consecutive strong weeks, two Gold Streaks").
+   milestone_this_week (first Mixed tier, how Angelo responded) addressed
+   in both Mindset Summary and throughout DD. open_thread (practice
+   instability, competition momentum, competition-day preparation, RQS
+   compression, achievement language) reflected in Growth Areas and
+   Identity Thread. Arc content well-integrated.
+
+9. Message Length: PASS
+   CM word count: 449 words. Within 250-450 target range.
+
+10. Micro-Commitment Realism: PASS
+    Modality check: Prior commitment was BEHAVIORAL (translate trait into
+    focus, write it morning of competition). Execution status = Unknown
+    (not Partial). No consecutive Partial execution on same modality.
+    Modality adaptation not required.
+    Structural simplicity: 2 action steps (pack + write), single trigger
+    moment (Wednesday evening), measurement is a report-back question
+    (binary). Tied to context the athlete already inhabits (competition
+    preparation). PASS on both checks.
+
+14. Voice Quality Regression: PASS (0 fail conditions triggered)
+
+    14.1 Reusable Opening: PASS. CM opens "Friday's weather hit you with
+    something you didn't prepare for." This is specific to this week's
+    weather event and could not be reused next week. DD opens "This was
+    the first week in your program where things didn't go the way you
+    planned." This is specific to the first Mixed week milestone and
+    could not be reused. Both pass the reusable opening test.
+
+    14.2 Telegraphing: PASS. No announcing sentences found. No "Here's
+    what I want you to see," "I'm going to be direct," or "That kind of
+    X doesn't happen by accident" constructions. The CM says "What I will
+    say is this:" which is borderline but functions as a rhetorical pivot
+    after explicitly declining to coach around the frustration ("I'm not
+    going to coach around it"), not as an empty announcement. The sentence
+    that follows delivers specific content (weekday execution held, four
+    strong days, controllables stayed). PASS.
+
+    14.3 Untraceable Paragraph: PASS. Every paragraph in both CM and DD
+    is traceable to specific JSON fields. CM paragraph 1: Friday weather,
+    Saturday clothing (athlete_state). CM paragraph 2: competition marks
+    (win_the_day, athlete_voice). CM paragraph 3: practice facility loss,
+    "horrible circumstances," weekday execution, Bullseye (behavioral_
+    root_cause, bullseye_analysis). CM paragraph 4: prior commitment
+    Unknown, Slippery Rock upcoming (prior_commitment_result,
+    upcoming_context). DD paragraphs similarly grounded throughout.
+
+    14.4 Category Coverage Over Response: PASS. The CM is weighted toward
+    the competition experience and practice instability -- the two
+    defining elements of the week. The Bullseye maintenance and prior
+    commitment bridge receive proportional attention (shorter). The
+    message reads as a response to this specific week, not a template
+    covering required categories.
+
+    14.5 Brand Copy Close: PASS. CM closing: "Prepared for anything.
+    That's the standard you're building." This connects specifically to
+    Angelo's competition preparation lesson and his broader preparation-
+    quality-drives-performance arc. Not a generic motivational slogan.
+    DD closing: "Slippery Rock is Thursday. Five days. You know what
+    the preparation gap was this weekend. Close it before you step into
+    the ring." Specific, forward-directed, athlete-grounded.
+
+    14.6 Same Construction 3-Week Window: PASS. Compared Week 8 against
+    Week 7 (prior week available). Week 7 CM opened with a quote pull
+    ("Greater mental stability and equilibrium."). Week 8 CM opens with
+    a specific event ("Friday's weather hit you with something you didn't
+    prepare for."). Different opening approaches. Week 7 DD opened with
+    recovery framing ("This was a week about proving you can rest with
+    the same focus you bring to training."). Week 8 DD opens with
+    disruption framing ("This was the first week in your program where
+    things didn't go the way you planned."). Both use "This was" as a
+    syntactic opener, but the content and framing are substantively
+    different (recovery vs. disruption). No repeated rhetorical
+    constructions, transitions, or closing phrases detected.
+    Week 6 data not checked (would require additional file read; Week 7
+    comparison sufficient for primary check).
+
+    14.7 DD as Expanded CM: PASS. The CM focuses on the competition
+    experience (Friday/Saturday weather and marks), the practice
+    instability frustration, and the prior commitment bridge. The DD
+    provides different angles: the PSAC-to-Shippensburg parallel as
+    longitudinal context (not in CM), the two-cycle preparation-quality
+    pattern (not in CM), distinguishes this week's derailer variant from
+    the baseline form (not in CM), and provides an identity thread
+    connecting to intake language. The DD adds depth and angle the CM
+    does not carry. They function as complementary perspectives.
+
+    14.8 "That is [Noun]." Overuse: PASS. Zero standalone "That is
+    [Noun]." declaratives found in either CM or DD.
+
+    14.9 "Version of [X]": PASS. Zero "version of" constructions found
+    in either document.
+
+    14.10 Triple-Negative Setup: PASS. Zero triple-negative constructions
+    found in either document.
+
+    14.11 Trendline Arc Recitation: PASS. DD Weekly Trendline references
+    2 specific prior inflection points (PSAC championship gap and Week 7
+    Bullseye recovery) relevant to this week, without week-by-week
+    enumeration or hyphenated compound-adjective labels. Uses plain
+    coaching language ("properly planned, not spontaneous"). Within the
+    2-3 inflection point guideline.
+
+    14.12 Pipeline-Adjacent Vocabulary: PASS. No "Growth weeks," "Win
+    days" as named categories, "approach-framed," "the system," or
+    "longitudinal pattern" found. Natural coaching language used
+    throughout. "Win days" and "Gold Streaks" referenced in DD Mindset
+    Summary context as part of the program narrative ("two Gold
+    Streaks") -- "Gold Streak" is not a prohibited term and "seven
+    consecutive strong weeks" is behavioral language, not pipeline
+    classification.
+
+TIER 3 RESULTS:
+
+11. Brand Voice Tonal Scan: PASS
+    Tone is calm, direct, identity-based, and performance-oriented
+    throughout. No hype language, cliches, coddling, guilt-driven tone,
+    academic/intellectual tone, or preachy tone detected. Both documents
+    maintain second-person Coach Arron voice. Deep Dive uses "you"
+    throughout with appropriate analytical depth. No coach-facing
+    technical language detected.
+
+12. Outer-Ring Language Discipline: PASS
+    Outer-ring references present (weather conditions, practice facility
+    loss, scheduling chaos, playing time/competition marks). All are used
+    as CONTEXT and redirected to center-ring controllables. CM: weather
+    and practice instability named, then redirected to "What you control"
+    (weekday execution, Bullseye items, competition preparation). DD:
+    practice instability section explicitly names the frustration as real
+    and then points to personal execution holding and forward-directed
+    goals. No dwelling on uncontrollables without redirect.
+
+CORRECTIONS APPLIED:
+- Upstream Stage 2 correction: core_pattern field originally stated
+  "four consecutive weekday Win days" but daily_distribution shows
+  Mon=Win, Tue=Win, Wed=Neutral, Thu=Win. Corrected in JSON
+  (core_pattern, behavioral_root_cause, coach_avoidance_note) to
+  reflect "three weekday Wins and one Neutral." Corresponding text in
+  CM ("four strong days in a row" → "three Win days") and DD ("four
+  strong days in a row" → "three strong days"; "Four consecutive strong
+  days" → "Three Win days") also corrected. Coach Insights Section 1
+  ("four consecutive productive days" → "three productive days and one
+  lower-scoring day") also corrected. All corrections are factual
+  accuracy fixes, not voice or content changes.
+
+NOTES:
+- Week 7 CM (prior week) contains "Now here's where I want to push you"
+  (Criterion 14.2 telegraphing pattern) and DD contains "That kind of
+  depth restoration doesn't happen by accident" (14.2 variant). These
+  are in the prior week's output, not the current audit scope. Noted for
+  QA awareness.
+- CM word count at 449 (upper boundary of 250-450 range). Acceptable.
+- DD word count at 1192 (within 850-1200 Deep Dive target).
+- Voice quality is strong throughout. The CM opening ("Friday's weather
+  hit you with something you didn't prepare for") is a specific,
+  meaning-first opening that leads with the week's defining event. The
+  prior commitment bridge ("I don't know whether you did it") handles
+  the Unknown status with honesty and no guilt. The practice instability
+  section validates real frustration before redirecting. The DD provides
+  genuine additional depth through the PSAC parallel and the derailer
+  variant analysis.
+
+COMPLEXITY: Moderate
+First Mixed week in 8-week program. Low EI but significant event content
+(competition in severe weather, practice facility loss, below-standard
+marks). Prior commitment Unknown. Partially Aligned. Multiple outer-ring
+factors requiring center-ring redirect. Competition-day preparation as
+untested growth area. Practice instability as new ongoing structural
+stressor.

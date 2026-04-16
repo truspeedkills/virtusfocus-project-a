@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-04-06 to 2026-04-12",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent — he will always be balancing sport, academics, work, and relationships. Building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Angelo's weekly goal ('To hit this come back Track Meet strong') was not met on its own terms — competition marks in all three events were significantly below his usual output (Hammer 44m vs 50m usual, Discus 43m, Shot 15m). However, the below-standard performance is heavily contextualized: Friday's competition day brought unexpected severe weather (rain, cold, wind despite a 70-and-sunny forecast), Angelo was under-prepared for the conditions (no extra clothing), and Saturday's performance was still hampered by physical recovery from Friday's exposure. The practice week leading up to the meet was also disrupted: the team lost their usual throwing area permanently ('last practice at our usual throwing area, we now have to practice at other high school'), Wednesday practice was chaotic due to scheduling conflicts with other schools' fields ('all over the place'), and only two of seven days had practice (Monday and Wednesday). Despite this, weekday execution was strong (three Win days and one Neutral across Monday through Thursday, with Wednesday's Neutral driven by practice disruption rather than personal disengagement), Angelo competed through the Friday conditions rather than withdrawing, Saturday's decision to bring extra clothes regardless of forecast shows immediate self-correction, and next-week goals remain approach-framed and forward-directed. Partially Aligned rather than Aligned due to: first Mixed tier in the program (8 weeks), below-standard competition performance, practice instability introducing a new structural stressor, and the baseline derailer operating in a new form (environmental/structural disruption of practice access rather than the familiar multi-domain overload pattern). The Bullseye maintained its Week 7 six-item expansion through the disruption, which is a positive signal."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Comeback competition week with significant environmental disruption. Mt Union two-day meet (Friday and Saturday) was Angelo's first competition since the Shippensburg opener in Week 5 — a three-week gap (CMU cancelled due to illness, Easter break recovery). Monday: good practice, but final session at the team's usual throwing area — permanent relocation to a high school facility announced. Tuesday: no practice, strong school and work day ('super fun and insightful'). Wednesday: practice 'all over the place' due to scheduling conflicts with the other schools whose fields they're trying to use; 'killed team morale a bit, and was frustrating,' but team was still able to practice. Thursday: no practice, strong school and home days. Friday: Mt Union Day 1, severe weather — 'super rainy, cold, and windy' — weather forecast had said 70 and sunny, Angelo got excited about the good weather and didn't bring extra clothing. Stuck through it. Hammer was 'a decent mark given the circumstances.' Scored as Missed (0-1). Saturday: Mt Union Day 2, much better weather (70 and sunny), brought extra clothes despite not needing them. Still recovering from Friday's harsh conditions — very tired and sore despite recovery work Friday night. Scored as Neutral (2-3). Sunday: rest day, good. Scored as Win. Competition results: Hammer 44m (usually around 50m), Discus 43m, Shot about 15m. 'All the distances were lower than usual, but not bad given that this is my come back meet and the horrible day on Friday.' Mindset challenge engaged: 'Step into one intimidating situation today and handle it with composure and courage.' Achievement: 'a better understanding that we need to always be more prepared for potential unseen outcomes across the board.' Frustration expressed about practice instability: 'frustration with how unstable our practice schedule and locations are. And the uncertainty of how and where we will practice moving forward.'",
+
+  "core_pattern": "Adaptive composure under compounding structural and environmental disruption. The most significant behavioral signal this week is not the below-standard competition marks — it is what happened around them. Angelo's practice facility was permanently removed. His team's morale took a hit from scheduling chaos. His competition day brought the worst weather conditions of his outdoor season. His preparation was inadequate for those conditions (no extra clothing). And through all of it: three weekday Wins with only Wednesday's practice frustration producing a Neutral, he competed through Friday's conditions rather than pulling out, he brought extra clothes Saturday as immediate self-correction, he frames the marks as 'not bad given the circumstances,' and his goals for next week remain forward-directed. The frustration is real and named — 'horrible circumstances I'm facing right now on my track team' is the strongest negative language in Angelo's program. But the frustration is directed at structural conditions, not at himself. He is not questioning his ability or his commitment. He is identifying what went wrong and naming what he'll do differently.",
+
+  "behavioral_root_cause": "This week exposes a variation of the baseline derailer that has not been seen before: environmental and structural disruption of practice access and quality. The prior weeks showed the derailer as multi-domain overload (school + work + sport competing for time and energy). This week, the derailer manifests as the practice environment itself becoming unstable — permanent facility loss, scheduling conflicts with borrowed fields, chaotic practice conditions — while school and work domains remain strong. The distinction matters because Angelo's response patterns differ. When multi-domain demands overloaded him (PSAC championship), preparation quality degraded and performance suffered. When the practice environment itself became unstable (this week), Angelo's personal execution remained strong (3 weekday Wins and 1 Neutral, approach-framed goals) but his competitive output was impacted by compounding factors he could not prepare for (weather, cumulative recovery). His immediate self-correction on the weather preparation failure ('next time, regardless of what the weather report says, I will take all the right clothes anyway just in case') is the same deliberate lesson-extraction behavior that produced the Week 5 Shippensburg opener after the PSAC championship disappointment. The PSAC lesson was about preparation structure. This week's lesson is about preparation for the uncontrollable.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before each day of the Mt Union meet, take one trait from the 6-item center ring and translate it into a specific in-the-moment focus for that day's events. Write it the morning of each competition day.",
+    "execution_status": "Unknown",
+    "execution_notes": "Angelo's recap describes both competition days in detail — weather conditions, marks, physical recovery, lessons learned — but makes no reference to the specific commitment exercise. The competition sections focus on conditions and results rather than pre-competition mental preparation or Bullseye-to-moment translation. The absence of any mention in a detailed competition recap suggests the exercise was not executed, but the recap format (which focuses on daily narrative rather than specific commitment reporting) prevents definitive assessment. The trait-to-moment translation that the commitment was designed to develop remains untested.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "To hit this come back Track Meet strong",
+    "achievement_statement": "Honestly, just a better understanding that we need to always be more prepared for potential unseen outcomes across the board",
+    "key_phrase": "I know next time, regardless of what the weather report says, I will take all the right clothes anyway just in case",
+    "mindset_resonance": "Step into one intimidating situation today and handle it with composure and courage"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Neutral",
+      "thursday": "Win",
+      "friday": "Missed",
+      "saturday": "Neutral",
+      "sunday": "Win"
+    },
+    "win_days": 4,
+    "neutral_days": 2,
+    "missed_days": 1,
+    "weekly_tier": "Mixed",
+    "weekly_scorecard": "Still in the Game",
+    "scoring_note": "All 7 days scored by athlete. Monday Win, Tuesday Win, Wednesday Neutral (2-3, practice disruption and frustration), Thursday Win, Friday Missed (0-1, Mt Union Day 1 in severe weather), Saturday Neutral (2-3, still recovering from Friday's conditions), Sunday Win (rest day). 4 Win + 2 Neutral + 1 Missed = Mixed tier. First Mixed week in Angelo's entire program — all 7 prior recorded weeks were Growth tier. Angelo's self-scorecard ('3-4 Wins: Still in the Game') is accurate this week.",
+    "consistency_profile": "Variable",
+    "recommitment_signal": "Moderate"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Maintained. Six items: 'Myself,' 'my dedication,' 'my tenacity,' 'my willpower,' 'my time management,' 'my study habits.' Identical to Week 7's expanded list. The six-item depth survived a disrupted competition week, which confirms the Week 7 expansion was genuine recovery rather than a one-week aberration. Content remains self-trait level rather than event-specific. 'The weather' in the noise ring is directly relevant to Friday's competition experience.",
+    "influence_quality": "Stable. Two items: 'My home' and 'My friends.' Third consecutive week at this framing. Consistent non-sport influence identification.",
+    "noise_fixation_present": "No",
+    "noise_content": "Three items: 'Getting ill,' 'Other people,' 'The weather.' Same items as Weeks 6-7. 'The weather' is particularly relevant this week — Friday's weather was the primary factor in competition underperformance. Angelo correctly identifies it as uncontrollable. Appropriate acknowledgment without fixation.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 2,
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Declining — first Mixed week breaks 7 consecutive Growth weeks",
+    "growth_phase_movement": "Stable — Developing across all 8 recorded weeks",
+    "consistency_trend": "Variable — Growth streak (Wks 4-7, 4 consecutive) broken by first Mixed week. Rolling win rate declining from 96.4% program high.",
+    "recommitment_trend": "Moderate — second recommitment in the program (first was Wk6 illness). Friday Missed → Saturday Neutral (competed through fatigue) → Sunday Win. 2-day recovery pattern consistent with Week 6.",
+    "pattern_shift_detected": "Yes — Three shifts detected: (1) First Mixed tier in the entire program (all 7 prior weeks Growth). Driven by competition-day weather and cumulative recovery, not behavioral disengagement. (2) New structural stressor introduced: permanent loss of practice facility and ongoing scheduling uncertainty for borrowed fields. This is distinct from the baseline derailer (multi-domain overload) — it is environmental instability of the practice environment itself. (3) Strongest negative language in the program ('horrible circumstances I'm facing right now on my track team') — directed at structural conditions, not at self or commitment."
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 7,
+    "rolling_win_rate_4wk": 0.821,
+    "rolling_missed_rate_4wk": 0.071,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "1.00 — both Missed events (Wk6 illness, Wk8 weather) recovered within 2 days",
+    "controllable_stability_4wk": "Stable — 6-item center ring maintained for 2 consecutive weeks after 3-week compression. Content identical (self-traits). Depth expansion holding.",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Eight-week progression: Illness recovery with approach-framed re-engagement (Wk1) → High-level competition composure as solo competitor, near-PR (Wk2) → Peak performance with strategic preparation and identity-level achievement (Wk3) → [2.5-week gap: PSAC championship disappointment + emotional processing + Spring Break] → Outdoor season reset with mature retrospective processing (Wk4) → Championship lesson applied: structured preparation producing best-ever outdoor opener (Wk5) → Disrupted week: illness forces first Missed day, CMU cancelled, weekday execution maintained (Wk6) → Easter break recovery executed with deliberate intention: 7/7 Wins, Bullseye depth restored, identity-level internal achievement (Wk7) → Comeback meet under compounding disruption: practice facility lost, weather conditions severe, competition marks below standard, but composure maintained, immediate self-correction, forward-directed processing (Wk8). The arc now contains a second full cycle of the preparation-quality-drives-performance pattern: Week 5 showed what happens when preparation is structured (best-ever opener). Week 8 shows what happens when preparation is environmentally disrupted (below-standard marks). In both cases, Angelo's response is to identify the specific cause and name the specific correction. The derailer has now been validated in two distinct forms: multi-domain overload (PSAC championship) and environmental instability (Week 8 practice disruption + weather).",
+    "milestone_this_week": "First Mixed tier in the program. After 7 consecutive Growth weeks (including Gold Streaks in Weeks 3, 5, and 7), Angelo produced his first below-Growth week. The milestone is not the Mixed classification itself — it is what caused it and how Angelo responded. The causes were predominantly environmental (practice facility loss, weather conditions, borrowed-field scheduling chaos) rather than behavioral. The response was immediate self-correction on the weather preparation failure and forward-directed frustration about the practice instability, with approach-framed goals for the next competition at Slippery Rock.",
+    "open_thread": "(1) Practice instability — the team has permanently lost their usual throwing area and is now dependent on borrowed high school facilities with scheduling conflicts. This is an ongoing structural stressor with no clear resolution. Wednesday's 'all over the place' practice and the frustration about 'how and where we will practice moving forward' suggest this will persist. Whether Angelo can maintain his preparation standard under these conditions is the central development question heading forward. (2) Competition momentum — two meets in 8 recorded weeks (Shippensburg Wk5, Mt Union Wk8) with three weeks between them and below-standard marks at the second. Slippery Rock is this Thursday (4/17) — a quick 5-day turnaround. Whether Angelo can apply the weather preparation lesson and produce marks closer to his capability with better conditions. (3) Competition-day preparation — the Week 7 micro-commitment (trait-to-moment Bullseye translation) was not visibly executed. The gap between Angelo's strong Bullseye awareness (6 items, all trait-level) and in-the-moment competition focus remains untested. (4) RQS at 2 for third consecutive week — daily entries remain compressed despite expanded Bullseye and strong analytical quality in competition and context sections. (5) Achievement language at preparedness/lesson level ('better understanding that we need to always be more prepared') — distinct from the identity-level and internal-state framing of Weeks 3 and 7. Whether this represents a temporary shift due to the week's challenges or a regression toward task-level processing."
+  },
+
+  "most_important_controllable": "Competition-day preparation and environmental readiness. Angelo learned the hard way that weather reports cannot be trusted and that his competition-day preparation must include contingency planning for conditions. His own self-correction — 'regardless of what the weather report says, I will take all the right clothes anyway just in case' — is the right lesson, but it applies beyond clothing. The broader controllable is preparing for the controllable elements of competition (equipment, clothing, warm-up routine, mental focus) regardless of the environmental conditions he cannot predict. Slippery Rock is Thursday — five days to apply this lesson.",
+
+  "micro_commitment": {
+    "action": "Before Thursday's meet at Slippery Rock, pack for the worst-case scenario: full cold-weather gear regardless of the forecast, competition nutrition, recovery supplies. Then write one specific technical focus for each event he's throwing — not a distance target, but one thing he can control in his approach. Both the gear preparation and the event focus should be done the night before.",
+    "when": "Wednesday evening — pack and write the event focus list before Thursday's meet.",
+    "measurement": "Did Angelo pack for worst-case conditions? Did he write a specific technical focus per event? Report whether the preparation felt different from the Mt Union approach and whether the meet conditions tested his preparation or not."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Slippery Rock University, Thursday April 17. Single-day meet. Five-day turnaround from Mt Union.",
+    "anticipated_stressor": "Moderate. Quick turnaround from a physically demanding two-day meet in bad weather — Angelo may still be carrying some fatigue from Mt Union. Practice access remains uncertain due to the facility change. The team morale impact from the practice instability may persist. However, the competitive stakes are moderate (not a championship), and Angelo's approach-framed goal language ('Stability, mental drive, keeping my disciple on point despite the horrible circumstances') shows he is already framing the next week as a composure challenge, not an outcome challenge.",
+    "athlete_stated_next_goal": "Stability, mental drive, keeping my disciple on point despite the horrible circumstances I'm facing right now on my track team. And doing good at the meet at Slippery Rock University this Thursday."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "4 Win, 2 Neutral, 1 Missed — first Mixed week in the program (all 7 prior weeks Growth). Mt Union two-day meet: Friday severe weather (Missed), Saturday recovery fatigue (Neutral). Competition marks below standard in all three events (Hammer 44m vs 50m usual, Discus 43m, Shot 15m). Practice access disrupted: team lost usual throwing area permanently, Wednesday practice chaotic due to borrowed-field scheduling conflicts. Only 2 practice days out of 7 (Monday and Wednesday). Mindset challenge engaged: 'Step into one intimidating situation today and handle it with composure and courage.' Bullseye maintained at 6 items from Week 7. Achievement framed as preparedness lesson rather than identity or performance. Slippery Rock meet Thursday next week. Prior commitment (trait-to-moment Bullseye focus) status Unknown — no reference in recap despite detailed competition description.",
+    "key_habit_signal": "Immediate self-correction under adverse conditions. Angelo's response to the weather preparation failure is specific and forward-directed: 'I know next time, regardless of what the weather report says, I will take all the right clothes anyway just in case.' This is the same lesson-extraction pattern that converted the PSAC championship disappointment into the Week 5 best-ever opener. The mechanism is consistent: identify the specific controllable factor that went wrong, name the specific behavioral change, apply it next time. Friday's conditions were genuinely harsh, but Angelo's recognition that his own preparation (not the weather) was the correctable factor shows the preparation-quality-drives-performance principle is operating at the decision-making level.",
+    "coach_reinforcement_cue": "The decision to compete through Friday's severe conditions deserves recognition. Angelo could have scratched or half-committed, but he 'stuck through it' and produced 'a decent mark given the circumstances.' Saturday's proactive clothing decision (brought extra gear despite not needing it) is the behavioral evidence that the lesson was already being applied within the same competition weekend. The immediate application — not waiting until the next meet, adjusting the very next day — shows the same rapid self-correction that defined the PSAC-to-Shippensburg improvement arc. Additionally, the Bullseye holding at 6 items through a disrupted week confirms the Week 7 expansion was a genuine depth restoration, not a one-week recovery artifact.",
+    "coach_avoidance_note": "Do not frame this as a bad week or a regression. The Mixed tier was driven primarily by environmental factors (weather, practice instability) rather than behavioral disengagement. Angelo's weekday execution (3 Wins, 1 Neutral) was strong. Do not dwell on the below-standard competition marks — Angelo has already contextualized them accurately ('not bad given that this is my come back meet and the horrible day on Friday'). Do not dismiss the practice instability frustration — 'horrible circumstances I'm facing right now on my track team' is real frustration about a real structural problem that is outside Angelo's control. Name the frustration, validate it, and redirect to what remains controllable. Do not over-emphasize the first Mixed tier as a trend concern — single-week tier dips driven by environmental factors do not indicate developmental regression."
+  },
+
+  "risk_flags": "No clinical indicators. Frustration about practice conditions is appropriate and directed at structural factors, not at self or commitment. Competition disappointment is framed with perspective and specific self-correction. 'Horrible circumstances' language is strong for Angelo's program but references team-level structural problems, not personal distress. All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You said you'll bring the right clothes next time no matter what the forecast says — what else about your competition preparation do you want to control better at Slippery Rock?",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}
