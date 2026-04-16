@@ -1,0 +1,379 @@
+============================================================
+VOICE QUALITY COMPARISON ANALYSIS
+HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-16
+SESSION TYPE: Read-only analysis (no spec files modified,
+             no output generated, no pipeline processing)
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION
+============================================================
+
+Read CLAUDE.md in the project root. Pay attention to:
+  - Angelo Allen's athlete data status (all 8 weeks)
+  - Session history entries 92 (voice quality improvement),
+    96-100 (Voice Reference build), 99 (v2.2 architecture),
+    102 (v2.3 C3 retirement), 103-104 (cohesion + Tier 3)
+  - The Voice Quality Architecture section in the Weekly
+    Processing Template (Section 8) for a concise summary
+    of the three-layer system
+
+Then read this handoff prompt in full before beginning.
+
+
+============================================================
+2. PURPOSE
+============================================================
+
+Angelo Allen Week 8 (Apr 6-12) is the FIRST coaching output
+generated under the full v2.3 / V5 / Voice Reference
+architecture. All prior Angelo weeks (1-7) were generated
+under older spec versions with different voice authority.
+
+The user reviewed the Week 8 CM and DD and observed
+"significant improvement in the quality of the generated
+expression of the coaching." This session performs a
+structured comparison analysis to identify WHAT specifically
+improved, map improvements to architectural decisions, and
+establish a baseline for ongoing voice quality evaluation as
+more athletes submit new weekly data.
+
+This is a read-only analysis. No spec files are modified.
+No output is generated. No pipeline processing occurs.
+
+
+============================================================
+3. WHAT TO READ
+============================================================
+
+Read these files IN ORDER before beginning analysis.
+
+PHASE A — VOICE ARCHITECTURE (understand what changed):
+
+1. VF_Coach_Arron_Voice_Reference.txt
+   Agents - Generators\Coaching Output\Source FIles\
+   (Primary voice authority. 6 principles, 18 exemplars,
+   11 before/after pairs. This is what v2.3 output is
+   calibrated against. Read it to understand the target.)
+
+2. SOP_Coaching_Output_Instructions_v2.3.txt Section 35
+   Agents - Generators\Coaching Output\
+   (4 mechanical rules only: C1 em dash ban, C2 contraction
+   default, C3 phrase frequency limits retirement-only, C4
+   pipeline classification language. This is the ENTIRE
+   generation-time mechanical ruleset. Everything else moved
+   to Stage 5 Criterion 14 or to the Voice Reference.)
+
+3. SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+   Section 14 only (Criterion 14: Voice Quality Regression)
+   Agents - Generators\Editorial Audit\
+   (12 fail conditions. These are the specific patterns that
+   the audit detects. Use them as your checklist for what
+   SHOULD be absent in Week 8 and may be present in prior
+   weeks.)
+
+PHASE B — THE NEW OUTPUT (Week 8, v2.3/V5):
+
+4. Angelo_Allen_2026-04-06to2026-04-12_VF_CoachingMessage.txt
+   Athlete Data\Angelo Allen\Coaching and Deep Dive\Coaching Message\
+
+5. Angelo_Allen_2026-04-06to2026-04-12_VF_DeepDive.txt
+   Athlete Data\Angelo Allen\Coaching and Deep Dive\Deep Dive\
+
+PHASE C — PRIOR OUTPUT FOR COMPARISON:
+
+Read these three prior weeks to create a three-point
+comparison across the voice quality evolution:
+
+6. Week 7 CM + DD (Mar 30 - Apr 5)
+   Generated under v2.1 rules (post-Session-92 voice quality
+   improvement, but BEFORE Voice Reference existed). This is
+   the most recent prior output and the closest comparison.
+
+7. Week 5 CM + DD (Mar 16-22)
+   Generated under v1.8/V4 rules (pre-voice-quality-
+   improvement, pre-Voice-Reference, pre-v2.2 architecture).
+   Brand_voice.txt and content_style_guide.txt were still
+   authoritative. This represents the baseline.
+
+8. Week 3 CM + DD (Feb 16-22)
+   Generated under v1.8/V4 rules (earliest available Angelo
+   output with enough program history for meaningful coaching
+   content). Provides a second pre-improvement data point.
+
+Total: 8 files to read (4 CMs + 4 DDs across 4 weeks).
+
+
+============================================================
+4. ANALYSIS FRAMEWORK
+============================================================
+
+Analyze the output across these 5 dimensions. For each
+dimension, compare Week 8 against the three prior weeks.
+Use specific quotes and line references.
+
+------------------------------------------------------------
+DIMENSION 1: CRITERION 14 PATTERN PRESENCE
+------------------------------------------------------------
+
+Check all 8 files (4 CMs + 4 DDs) against each of the 12
+Criterion 14 fail conditions. For each condition, note:
+  - Present in Week 3? Week 5? Week 7? Week 8?
+  - If present, quote the specific instance
+  - If absent in Week 8 but present in prior weeks, note
+    the improvement
+
+The 12 fail conditions:
+  14.1  Reusable Opening (could work for another athlete
+        with surface edits)
+  14.2  Telegraphing ("I'm going to be direct," "Here's
+        what I want you to hear")
+  14.3  Untraceable Paragraph (no specific behavioral
+        evidence from this athlete's week)
+  14.4  Category Coverage Over Response (hitting every data
+        point vs coaching the athlete)
+  14.5  Brand Copy Close (generic motivational ending not
+        grounded in this week)
+  14.6  Same Construction 3-Week Window (repeated rhetorical
+        structure across recent weeks)
+  14.7  DD as Expanded CM (Deep Dive reads like a longer
+        version of the CM, not a different depth)
+  14.8  "That is [Noun]." Standalone Overuse
+  14.9  "Version of [X]" Construction
+  14.10 Triple-Negative Setup ("Not X, not Y, but Z")
+  14.11 Trendline Arc Recitation (full program history
+        enumeration instead of 2-3 relevant inflection
+        points)
+  14.12 Pipeline-Adjacent Vocabulary ("approach-framed,"
+        "pattern_shift_detected," "Growth weeks," etc.)
+
+------------------------------------------------------------
+DIMENSION 2: VOICE PRINCIPLE ALIGNMENT
+------------------------------------------------------------
+
+Assess how well Week 8 output embodies the 6 Voice
+Principles from the Voice Reference, compared to prior
+weeks. For each principle, note whether Week 8 demonstrates
+it more naturally than prior output.
+
+The 6 principles:
+  P0: Service First ("How can I serve this athlete best
+      this week?")
+  P1: Start with Meaning, Not Description (lead with why
+      it matters, not what happened)
+  P2: Spend Your Words Unevenly (proportional attention to
+      what matters most, not equal coverage)
+  P3: Talk Like You've Been in the Room (specific behavioral
+      knowledge, not generic coaching)
+  P4: Earn Every Sentence (every sentence carries weight,
+      no filler)
+  P5: React, Don't Compose (respond to the athlete's week,
+      don't construct a template around the data)
+
+------------------------------------------------------------
+DIMENSION 3: MECHANICAL COMPLIANCE
+------------------------------------------------------------
+
+Quick binary checks across all 8 files:
+  - Em dashes: count per file (should be 0 in Week 8)
+  - Contractions: present as natural register?
+  - C3 retired constructions: "The question is [whether],"
+    "Not X. Y. / not X, but Y," "The athletes who [X] are
+    the ones who [Y]" — present in any file?
+  - Pipeline classification language: any instances?
+  - "That is [Noun]." standalone count per file
+
+------------------------------------------------------------
+DIMENSION 4: COACHING AUTHENTICITY
+------------------------------------------------------------
+
+This is the qualitative dimension. For each CM and DD,
+assess:
+
+  A. Does it sound like a real coach who knows this athlete,
+     or like an AI processing a JSON?
+  B. Is the opening grounded in a specific moment from this
+     week, or could it work for any athlete?
+  C. Does the coaching move (recognition, challenge, drift
+     identification) feel reactive to what happened, or
+     constructed around what the data contains?
+  D. Does the Deep Dive add genuine analytical depth beyond
+     the CM, or does it read like an expanded version of the
+     same content?
+  E. Is the language specific enough that you could identify
+     which athlete and which week this was written for?
+
+Rate each file: STRONG / ADEQUATE / WEAK on authenticity.
+Quote the strongest and weakest passages.
+
+------------------------------------------------------------
+DIMENSION 5: EXPRESSIVE RANGE
+------------------------------------------------------------
+
+This maps to the "Best Not Better" principle established in
+Session 92: fixes must expand expressive range, not swap one
+template for another.
+
+Compare the rhetorical variety across weeks:
+  - Opening approaches: does Week 8 use a different approach
+    than prior weeks, or does it follow a template?
+  - Sentence rhythm: does Week 8 vary sentence length and
+    structure more naturally?
+  - Recognition moves: does Week 8 recognize athlete
+    behavior in a way that feels fresh, or does it use the
+    same recognition template as prior weeks?
+  - Closing moves: does Week 8 close differently than prior
+    weeks?
+
+The goal is not that Week 8 is "better" in a single
+direction. It is that the expressive RANGE is wider — the
+output has more ways to coach, not just a cleaner version
+of the same way.
+
+
+============================================================
+5. DELIVERABLE
+============================================================
+
+Produce a single analysis document with these sections:
+
+  SECTION 1: EXECUTIVE SUMMARY (1 paragraph)
+    Overall assessment of voice quality improvement.
+
+  SECTION 2: CRITERION 14 PATTERN ANALYSIS (table)
+    12 rows (one per fail condition) x 4 columns (Wk3, Wk5,
+    Wk7, Wk8). Cell values: count of instances or "clean."
+    Quote notable instances.
+
+  SECTION 3: VOICE PRINCIPLE ALIGNMENT (per-principle)
+    For each of the 6 principles: Week 8 demonstration with
+    quote, comparison to best/worst prior week instance.
+
+  SECTION 4: MECHANICAL COMPLIANCE (table)
+    Per-file counts for em dashes, "That is [Noun]."
+    standalones, retired C3 constructions, pipeline language.
+
+  SECTION 5: COACHING AUTHENTICITY ASSESSMENT
+    Per-file STRONG/ADEQUATE/WEAK rating with quoted evidence
+    for each rating. Identify the single strongest passage
+    and the single weakest passage across all 8 files.
+
+  SECTION 6: EXPRESSIVE RANGE ASSESSMENT
+    Comparison of rhetorical variety across the 4 weeks.
+    Does Week 8 demonstrate expanded range or just cleaner
+    execution of the same patterns?
+
+  SECTION 7: ARCHITECTURAL ATTRIBUTION
+    For each observed improvement, map it to the specific
+    architectural decision that produced it:
+    - Voice Reference (which principle or exemplar?)
+    - v2.3 Section 35 C3 retirement (which retired pattern?)
+    - Criterion 14 (which fail condition?)
+    - Voice Foundations (brand stance influence?)
+    - Purpose-Built Principle (legacy file removal effect?)
+
+  SECTION 8: REMAINING GAPS
+    Any voice quality issues that persist in Week 8 despite
+    the architectural improvements. These inform future
+    Voice Reference updates or Criterion 14 expansion.
+
+  SECTION 9: RECOMMENDATIONS
+    What to watch for as more athletes submit new data under
+    v2.3. Any patterns that need a larger sample size to
+    evaluate. Any spec adjustments suggested by this first
+    data point.
+
+Save to: Validation Reports\Voice_Quality_Comparison_Analysis.txt
+
+Present findings to the user before saving. The user will
+review and may direct revisions.
+
+
+============================================================
+6. WHAT NOT TO DO
+============================================================
+
+- Do NOT modify any specification files
+- Do NOT generate any coaching output
+- Do NOT run any pipeline processing
+- Do NOT read output from other athletes (scope is Angelo
+  Allen only for this analysis)
+- Do NOT treat this as a pass/fail audit — it is a
+  comparative analysis of voice quality evolution
+- Do NOT soften findings. If Week 8 has issues, name them.
+  If prior weeks have strengths that Week 8 lost, name
+  those too. The goal is honest assessment.
+- Do NOT attribute improvements to "general model quality"
+  when they map to specific architectural decisions. The
+  point of this analysis is to validate that the
+  specification work produced the improvement, not that
+  the model happened to do better.
+
+
+============================================================
+7. CONTEXT ON SPEC VERSION HISTORY
+============================================================
+
+For mapping output quality to architectural decisions:
+
+WEEK 3 (Feb 16-22) generated under:
+  - Master Prompt V4 (brand_voice.txt, content_style_guide.txt
+    in authoritative reference list, v2.1 version pin, 4 stale
+    voice quality caps from pre-v2.2)
+  - Instructions v1.8 (pre-Voice-Reference, pre-Voice-
+    Foundations, Section 35 had 10 rules C1-C10 as generation-
+    time caps)
+  - No Voice Reference existed
+  - No Voice Foundations existed
+  - brand_voice.txt was authoritative for Stage 3
+
+WEEK 5 (Mar 16-22) generated under:
+  - Same as Week 3 (v1.8/V4)
+
+WEEK 7 (Mar 30 - Apr 5) generated under:
+  - Master Prompt V4 (updated in Session 92 with em dash
+    removal and v2.1 reference, but still referenced
+    brand_voice.txt)
+  - Instructions v2.1 (Session 92 voice quality improvement:
+    em dash ban, contraction default, "That is [noun]" cap,
+    retired phrases, pipeline classification ban, no-
+    telegraphing, DD structural variation, CM-DD dedup,
+    CM opening variety, 3-week non-repeat, athlete-specific
+    closings — all as GENERATION-TIME rules in Section 35)
+  - No Voice Reference existed
+  - No Voice Foundations existed
+  - brand_voice.txt was still authoritative
+
+WEEK 8 (Apr 6-12) generated under:
+  - Master Prompt V5 (Voice Reference + Voice Foundations as
+    authoritative, brand files removed, 4 mechanical rules
+    only matching v2.3 Section 35)
+  - Instructions v2.3 (Voice Reference as primary voice
+    authority, Section 35 stripped to 4 binary mechanical
+    rules C1-C4, C3 retirement-only architecture, Sections 36
+    Uneven Coverage + 37 Exemplar Category Matching)
+  - Voice Reference v1.0 (6 principles, 18 exemplars, 11
+    before/after pairs — the teacher)
+  - Voice Foundations v1.0 (pipeline-native brand stance)
+  - brand_voice.txt REMOVED from Stage 3 authority
+  - content_style_guide.txt REMOVED from Stage 3 authority
+  - Criterion 14 (12 voice quality fail conditions) active
+    in Stage 5 v1.6
+
+The fundamental architectural shift: v2.1 tried to improve
+voice quality through MORE generation-time rules (10 caps
+and prohibitions in Section 35). v2.3 tries to improve
+voice quality through TEACHING (Voice Reference exemplars)
+plus a minimal mechanical safety net (4 rules) plus
+post-generation audit (Criterion 14). The hypothesis is
+that teaching produces better voice than prohibition.
+This analysis tests that hypothesis.
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
