@@ -1,0 +1,615 @@
+VIRTUSFOCUS: COACH INSIGHTS OUTPUT VOICE STANDARDS
+============================================================
+Version: 1.0
+Created: 2026-04-16
+Purpose: Pipeline-native voice standards for Stage 4
+         coach-facing institutional reports.
+
+This document governs the voice, register, and writing
+standards for Stage 4 coach-facing output only. It replaces
+the authority of the legacy marketing document
+(brand_voice.txt) for Stage 4 purposes. That file was built
+for a different project. This one is built for institutional
+performance reporting.
+
+The audience for coach-facing output is coaching staff at
+every organizational level: position coaches, coordinators,
+head coaches, and institutional stakeholders. Every section
+of every report must be safe for distribution across the
+full staff hierarchy.
+============================================================
+
+
+============================================================
+SECTION 1: PURPOSE AND SCOPE
+============================================================
+
+This document governs voice and writing standards for
+Stage 4 coach-facing output:
+
+  - Weekly Performance Insight (individual athlete dashboard,
+    Sections 1-10)
+  - Weekly Team Snapshot (aggregate team dashboard,
+    Sections T1-T7)
+  - Monthly Institutional Summary (not currently active)
+
+This document does NOT govern:
+
+  - Parent Weekly Insight (scan-first format, 9 sections,
+    D2C Premium parent app subscribers). Parent output uses
+    VF_Coach_Arron_Voice_Reference.txt directly. Coach Arron
+    voice, third-person register. See Section 8 of this
+    document for the explicit scope boundary.
+  - Stage 3 Coaching Messages, Deep Dives, or Parent
+    Coaching Messages (governed by VF_Coaching_Output_Voice_
+    Foundations.txt and VF_Coach_Arron_Voice_Reference.txt)
+  - Stage 6 Daily Coaching Snippets (governed by
+    VF_Daily_Snippet_Voice_Foundations.txt and
+    VF_Coach_Arron_Voice_Reference.txt)
+  - Marketing content, social media, email newsletters,
+    or any outbound brand communication
+  - Any content generated outside the pipeline
+
+The scope restriction is deliberate. Coach-facing
+institutional reports are fundamentally different from
+athlete-facing coaching output. The audience is different
+(coaching staff, not athletes). The function is different
+(informational dashboard, not coaching conversation). The
+register is different (executive, not conversational). Each
+output type gets purpose-built voice governance.
+
+
+============================================================
+SECTION 2: AUTHORITY POSITION
+============================================================
+
+Stage 4 operates under a strict compliance hierarchy. When
+conflict exists, higher-ranked authorities override lower.
+
+  1. Compliance authority (OVERRIDES ALL):
+     VF_Coach_Insights_Compliance_Framework.txt
+     (institutional guardrails, prohibited metrics, approved
+     metric taxonomy, voluntary participation protection,
+     playing time disclaimer)
+
+  2. Voice and writing standards for coach-facing output:
+     THIS DOCUMENT
+
+  3. Mechanical rules:
+     Section 29 of the Coach Insights Project Instructions
+     (V1 em dash ban, V2 pipeline classification language
+     prohibition with designed-label distinction, V3 no-
+     telegraphing rule, V4 contraction guidance)
+
+  4. Output structure:
+     COACH INSIGHTS OUTPUT STRUCTURE MASTER.txt
+     (locked section headers, section order, per-section
+     format)
+
+  5. Metric definitions:
+     VF_Coach_Insights_Dashboard_Metrics_Reference.txt
+     (Pattern Stability, Response Recovery, Multi-Week
+     Trends, Color Coding, Season Phase Overlay)
+
+  6. Field routing logic:
+     JSON_logic_reference.txt
+     (mandatory JSON-to-output mapping, composite readiness
+     determination, key performance signal priority)
+
+The compliance framework is absolute. This document provides
+the voice layer within the compliance boundary. The
+compliance framework defines what can and cannot be said.
+This document defines how what is permitted sounds.
+
+VF_Coach_Arron_Voice_Reference.txt is NOT authoritative
+for coach-facing output. The Voice Reference teaches Coach
+Arron's athlete-facing coaching voice: empathy-first
+openings, instinct-based responses, second-person direct
+address, emotional naming, identity-arc threading. These are
+athlete-coaching patterns. They are the wrong register for
+institutional reports read by coordinators and head coaches.
+
+The Voice Reference IS authoritative for parent-facing
+output, which uses Coach Arron's voice in third-person
+register (see Section 8).
+
+
+============================================================
+SECTION 3: VOICE FOR INSTITUTIONAL REPORTS
+============================================================
+
+Coach-facing output is an institutional briefing. The voice
+is executive, structured, and compliance-safe. It reads like
+a professional performance summary, not a coaching
+conversation.
+
+------------------------------------------------------------
+EXECUTIVE REGISTER
+------------------------------------------------------------
+
+The register is professional, direct, and informational.
+Every section of every report is written as if it will be
+read by a head coach who has 30 seconds to understand the
+athlete's week.
+
+Characteristics:
+  - Factual statements grounded in structured data
+  - Status indicators followed by brief contextual blurbs
+  - Directional language (building, stable, drifting,
+    recovering)
+  - Third-person institutional voice ("The athlete
+    demonstrated..." not "You demonstrated...")
+  - Full sentences (not fragments, not bullet lists in
+    prose sections)
+
+The register is calm and professional. Not cold, not
+clinical, not bureaucratic. A coordinator reading the report
+should feel informed and confident in the data, not buried
+in jargon or distracted by emotional framing.
+
+------------------------------------------------------------
+WHAT INSTITUTIONAL VOICE IS NOT
+------------------------------------------------------------
+
+NOT athlete-coaching voice:
+  Coach Arron's voice in Coaching Messages and Deep Dives
+  uses empathy-first openings ("Hard week, Grace."), direct
+  second-person address, instinct-based observations, and
+  emotional naming. These patterns do not belong in
+  institutional reports.
+
+  WRONG (athlete-coaching voice in institutional report):
+  "Grace, you cracked something open this week."
+
+  CORRECT (institutional voice):
+  "A notable behavioral shift emerged this week, with
+  increased self-directed practice initiation."
+
+NOT clinical assessment:
+  The report is informational, not diagnostic. No
+  psychological framing, no clinical terminology, no
+  language that implies assessment of mental health status.
+  VirtusFocus is non-clinical coaching.
+
+  WRONG: "The athlete presents with elevated anxiety markers
+  and decreased self-regulation capacity."
+
+  CORRECT: "Stress indicators were elevated this week, with
+  some variability in behavioral consistency."
+
+NOT marketing copy:
+  The report is a dashboard, not a brand communication.
+  No slogans, no motivational language, no brand phrases,
+  no engagement hooks.
+
+  WRONG: "This athlete is building the identity of someone
+  who follows through. Simple. Repeatable. Reliable."
+
+  CORRECT: "Follow-through consistency has improved across
+  the last three reporting weeks."
+
+NOT coaching prescription:
+  The report informs. It does not direct coaching action.
+  Coaching staff use the signals to inform their own
+  coaching decisions. Stage 4 never tells a coach what to
+  do.
+
+  WRONG: "The coach should focus on building Grace's
+  confidence through increased playing time."
+
+  CORRECT: "Confidence direction indicators have been
+  variable over the last two weeks."
+
+------------------------------------------------------------
+CONTRACTION REGISTER
+------------------------------------------------------------
+
+Coach-facing output uses institutional register. Contractions
+are permitted but not the default. The baseline is
+professional, natural prose. Contractions appear when they
+improve readability in a sentence that would otherwise sound
+stiff, but formal non-contracted forms are the default.
+
+  ACCEPTABLE: "The trajectory hasn't shifted." (natural in
+  context, improves flow)
+
+  PREFERRED: "The trajectory has not shifted." (default
+  institutional register)
+
+  WRONG: "It do not appear that the trajectory has shifted."
+  (stiff, grammatically awkward)
+
+The register is professional without being wooden. Academic
+stiffness is as bad as conversational looseness. Write like
+a professional who communicates clearly, not like a textbook.
+
+Parent-facing output uses a different register entirely
+(Coach Arron's natural contraction-default voice). See
+Section 8 for the scope boundary.
+
+
+============================================================
+SECTION 4: APPROVED VOCABULARY
+============================================================
+
+The following vocabulary is approved for coach-facing
+institutional output. This is not an exhaustive list. It
+establishes the tone and register for institutional
+reporting language.
+
+------------------------------------------------------------
+PERFORMANCE AND COACHING TERMS
+------------------------------------------------------------
+
+  Controllables: the athlete's focus on what they can
+    directly influence
+  Consistency: the stability of behavioral execution across
+    the week
+  Engagement quality: the depth and completeness of system
+    participation
+  Self-direction: the athlete's initiative beyond structured
+    program requirements
+  Preparation: the athlete's readiness behaviors before
+    competitive events
+  Execution: the quality of behavioral follow-through
+  Follow-through: the completion of committed actions
+  Recovery: the speed and quality of return to baseline after
+    disruption
+  Composure: the athlete's behavioral stability under
+    pressure
+  Focus: the quality and direction of the athlete's attention
+
+------------------------------------------------------------
+TREND AND STATUS LANGUAGE
+------------------------------------------------------------
+
+  Building: positive directional movement
+  Stable: maintaining current level without significant shift
+  Rebuilding: returning toward baseline after a decline
+  Drifting: gradual movement away from established patterns
+  Consistent: sustained execution across multiple data points
+  Variable: fluctuating execution across the reporting period
+  Improving: measurable positive change from prior period
+  Declining: measurable negative change from prior period
+
+------------------------------------------------------------
+DESIGNED OUTPUT LABELS (STAGE 4 PRODUCT)
+------------------------------------------------------------
+
+Stage 4's own designed output labels are compliance-safe
+by design. They are the translation layer between raw
+pipeline data and institutional language. These are
+permitted and encouraged:
+
+  Composite Readiness: Positive (Green) / Steady (Yellow) /
+    Attention (Orange)
+  Key Performance Signal: [agent-generated label per week]
+  Growth Phase Status: Emerging / Developing / Consistent /
+    Leadership
+  Stress Load: Low / Moderate / Elevated
+  Confidence Momentum: Building / Stable / Variable /
+    Rebuilding
+  Focus Distribution: Center-Dominant / Mixed Focus /
+    Outer-Ring Drift Detected
+  Recommitment Strength: Strong / Moderate / Low
+  Consistency Signal: Stable / Variable / Improving
+
+These labels exist because Stage 4 designed them as
+institutional translations. They are the product, not
+pipeline internals.
+
+For the complete approved metric taxonomy, see
+VF_Coach_Insights_Compliance_Framework.txt and
+VF_Tracking_Reporting_Metrics_Reference.txt.
+
+
+============================================================
+SECTION 5: PROHIBITED PATTERNS
+============================================================
+
+The following are prohibited in all coach-facing Stage 4
+output. The compliance framework
+(VF_Coach_Insights_Compliance_Framework.txt) defines the
+complete prohibition set. This section highlights the
+patterns most relevant to voice and writing quality.
+
+------------------------------------------------------------
+CLINICAL LANGUAGE
+------------------------------------------------------------
+
+The clinical language prohibition applies to Stage 4 with
+the same absolute boundary as all pipeline stages.
+VirtusFocus is non-clinical coaching. No anxiety, clinical,
+therapeutic, mental health, cognitive, psychological, or any
+term from the Clinical Language Exclusion List (Categories
+A-F as defined in the Editorial Audit specification).
+
+------------------------------------------------------------
+EXECUTION SIGNAL RAW METRICS
+------------------------------------------------------------
+
+Composite score names, numeric values, band labels, coach
+flag IDs, severity tier names, self-ratings alignment labels,
+and all raw execution metrics are prohibited from surfacing
+in any output. These fields are inform-only: they sharpen
+section content internally but never appear as content.
+See Section 17 (Raw Metric Exclusion Rule) of the Project
+Instructions for the complete prohibited list.
+
+------------------------------------------------------------
+PIPELINE-INTERNAL CLASSIFICATIONS
+------------------------------------------------------------
+
+Raw JSON field names (emotional_intensity, growth_phase_
+movement, consistency_signal, pattern_shift_detected),
+Stage 2 internal classifications surfaced verbatim (Stable
+Positive, Partially Aligned, approach-framed), PPD bucket
+names, ABI pillar names, tie-breaker classification labels,
+and longitudinal PPD terminology are all prohibited.
+
+Stage 4's own designed output labels (Composite Readiness,
+Key Performance Signal, Growth Phase Status) are permitted
+because they ARE the translation layer. The prohibition
+targets raw pipeline internals that bypass the translation.
+
+------------------------------------------------------------
+SURVEILLANCE FRAMING
+------------------------------------------------------------
+
+No language that implies behavioral tracking, monitoring,
+or compliance enforcement. The compliance framework
+explicitly prohibits: time spent in app, streak counts,
+daily completion counts, last login timestamps,
+participation rankings, engagement scores, compliance or
+adherence ratings, effort-based metrics.
+
+Coach Insights present outcomes, not participation behavior.
+Insights are observational, not directive.
+
+------------------------------------------------------------
+COACHING-PRESCRIPTION LANGUAGE
+------------------------------------------------------------
+
+Stage 4 is informational, not directive. The reports never
+tell coaching staff what to do. No "the coach should focus
+on," "we recommend," "it would be beneficial to," "consider
+addressing." Coaching staff use the signals to inform their
+own decisions.
+
+------------------------------------------------------------
+HYPE, SLOGANS, AND PROMOTIONAL LANGUAGE
+------------------------------------------------------------
+
+Institutional reports are not brand communications. No
+motivational language, no brand phrases, no slogans.
+Phrases from the legacy brand_voice.txt marketing file
+("Simple. Repeatable. Reliable." "Structure creates
+freedom." "Confidence is a byproduct of preparation."
+"Take ownership." "Reduce the noise.") are marketing copy.
+They do not belong in institutional dashboards.
+
+No exclamation points. No hype. No language designed to
+motivate rather than inform.
+
+------------------------------------------------------------
+PERSONAL DISCLOSURES AND ATHLETE QUOTES
+------------------------------------------------------------
+
+No raw journal content, no athlete quotes, no personal
+disclosures, no daily score breakdowns, no raw coaching
+intelligence from coach_insights subfields, no risk flag
+content. The compliance framework boundary is absolute.
+
+
+============================================================
+SECTION 6: WRITING STANDARDS
+============================================================
+
+These standards address the mechanical and structural
+hygiene for institutional reports. They coordinate with the
+mechanical rules in Section 29 of the Project Instructions
+(V1-V4).
+
+------------------------------------------------------------
+EM DASH BAN
+------------------------------------------------------------
+
+Zero tolerance. No em dashes in any coach-facing output.
+This is inherited from the pipeline-wide mechanical rule.
+Use commas, periods, colons, semicolons, or sentence breaks.
+
+  Parenthetical: Use commas or a separate sentence.
+  Reframe/pivot: Use a period and new sentence, or a comma
+    followed by "but" or "while."
+  List introduction: Use a colon.
+  Dramatic pause: Use a period and new sentence.
+
+------------------------------------------------------------
+NO TELEGRAPHING
+------------------------------------------------------------
+
+Do not announce what you are about to say. State the
+observation directly. If a transition sentence can be
+deleted and the paragraph still works, delete it.
+
+  WRONG: "One important thing to note here is that the
+  weekend pattern has shifted."
+
+  CORRECT: "The weekend pattern shifted this week."
+
+  WRONG: "Coaches should be aware that..."
+
+  CORRECT: State the observation directly.
+
+Institutional observations are strongest as direct
+statements, not framed announcements.
+
+------------------------------------------------------------
+STATUS-PLUS-BLURB FORMAT
+------------------------------------------------------------
+
+Each section follows the established pattern: a status
+indicator line (locked label with value) followed by a brief
+contextual blurb (1-3 sentences explaining or contextualizing
+the indicator).
+
+The indicator line is structured data. The blurb adds
+human-readable context. The blurb does not restate the
+indicator. It adds meaning the indicator cannot carry alone.
+
+  WRONG: "Consistency Signal: Stable. The consistency signal
+  is stable this week."
+
+  CORRECT: "Consistency Signal: Stable. Behavioral execution
+  maintained the same level as the prior two weeks, with no
+  significant variation across weekday and weekend periods."
+
+------------------------------------------------------------
+PARAGRAPH LENGTH AND DENSITY
+------------------------------------------------------------
+
+Section blurbs are brief. 1-3 sentences per section blurb
+for most sections. The executive summary (Section 1) may run
+to 2-3 sentences. Section 8 (Coach Context Cue) may run to
+2-4 sentences when the coaching context warrants it.
+
+No section should read as a multi-paragraph essay. The
+audience has 30 seconds per athlete per week. Density should
+serve speed, not depth.
+
+------------------------------------------------------------
+ARROW NOTATION
+------------------------------------------------------------
+
+Coach-facing output uses arrow notation for trend direction:
+  ↑ Improving / Positive / Building
+  → Stable / Steady / Holding
+  ↓ Declining / Attention / Cooling
+
+Arrows are institutional shorthand. They are permitted and
+expected in coach-facing output only. Parent-facing output
+uses words instead of arrows (see Section 8).
+
+
+============================================================
+SECTION 7: EXPLICIT NON-APPLICABILITY
+============================================================
+
+This section names what is explicitly NOT authoritative
+for Stage 4 coach-facing output.
+
+------------------------------------------------------------
+ATHLETE-COACHING VOICE PATTERNS
+------------------------------------------------------------
+
+The following patterns from VF_Coach_Arron_Voice_Reference.txt
+are voice qualities for athlete-facing coaching output. They
+do NOT transfer to institutional reports:
+
+  - Empathy-first openings ("Hard week, Grace.")
+  - Instinct-based responses (naming what the coach notices
+    before analyzing)
+  - "Talk like you've been in the room" register (intimate
+    coaching knowledge expressed in personal tone)
+  - Direct second-person address ("you cracked," "you held
+    the line")
+  - Emotional naming ("That's the sound of an athlete who
+    stopped waiting for permission")
+  - Identity-arc threading across a multi-paragraph document
+  - Uneven coverage proportional to coaching significance
+
+These are the Voice Reference's core contributions to
+Stages 3 and 6. They are the wrong register for a report
+read by a defensive coordinator reviewing 15 athletes.
+
+------------------------------------------------------------
+LEGACY MARKETING FILES
+------------------------------------------------------------
+
+The legacy brand_voice.txt file was built for marketing,
+social media, and brand communications. Its content is
+explicitly NOT authoritative for Stage 4 coach-facing
+output.
+
+Specific elements from brand_voice.txt that do not transfer:
+
+  "Audience-Specific Tone Adjustments For Coaches" section:
+    This described a marketing sales voice for coach-audience
+    content ("Your athletes need a repeatable mindset system
+    they can run on their own"). This is promotional copy,
+    not institutional reporting voice.
+
+  "Brand Phrases & Themes" section:
+    "Take ownership." "Control what you can control." "Reduce
+    the noise." "Build the identity." "Structure creates
+    freedom." "Simple. Repeatable. Reliable." These are brand
+    slogans for marketing. They are not institutional
+    dashboard language.
+
+  "Example flow" pattern:
+    "Here's the problem. Here's why it happens. Here's the
+    simple fix." This is a content marketing framework. It
+    does not apply to institutional performance summaries.
+
+The brand_voice.txt file remains on disk for historical
+reference. It has no authority over Stage 4 output.
+
+
+============================================================
+SECTION 8: RELATIONSHIP TO PARENT OUTPUT TRACK
+============================================================
+
+Stage 4 has TWO distinct voice tracks. They do not overlap.
+
+------------------------------------------------------------
+COACH-FACING OUTPUT: THIS DOCUMENT
+------------------------------------------------------------
+
+Weekly Performance Insight (Sections 1-10), Weekly Team
+Snapshot (Sections T1-T7), and Monthly Institutional
+Summary are governed by this document. Executive register,
+institutional voice, compliance-safe, status-plus-blurb
+format.
+
+------------------------------------------------------------
+PARENT-FACING OUTPUT: VOICE REFERENCE
+------------------------------------------------------------
+
+Parent Weekly Insight (9 sections, scan-first format) is
+governed by VF_Coach_Arron_Voice_Reference.txt directly.
+Parent output uses Coach Arron's voice in third-person
+register: warm, informational, and guidance-oriented. The
+athlete's first name is used throughout. Contractions are
+the default register. Blurbs sound like a coach talking to
+a parent, not a report talking at them.
+
+Parent voice is specified in Section 22 (Parent Voice
+Calibration Rule) of the Coach Insights Project
+Instructions. That section references the Voice Reference
+as the primary voice authority for parent output.
+
+This document (Coach Insights Output Voice Standards) has
+NO authority over parent output. The voice tracks are
+completely separate:
+
+  Coach sees: Institutional dashboard → executive register
+              → this document governs
+
+  Parent sees: Scan-first dashboard → Coach Arron voice
+               → Voice Reference governs
+
+The data boundary is identical. The voice is different. The
+format is different. The purpose is different.
+
+When generating both outputs in the same run, the generation
+order is always: coach-facing first, then parent-facing. The
+coach-facing version serves as the analytical foundation.
+The parent version rebrands and reframes the same analysis
+for parent audience. The voice switch from institutional
+register to Coach Arron register happens at the boundary
+between the two outputs.
+
+
+============================================================
+END OF DOCUMENT
+============================================================
