@@ -1,7 +1,7 @@
 ============================================================
 WEEKLY ATHLETE PROCESSING — HANDOFF PROMPT TEMPLATE
 ============================================================
-VERSION: 2.0
+VERSION: 2.1
 LAST UPDATED: 2026-04-16
 ============================================================
 
@@ -45,8 +45,8 @@ for the athlete named above:
 
   D. COACHING OUTPUT HISTORY
      - Coaching Message and Deep Dive file paths for all
-       prior weeks (you will read the most recent as format
-       references)
+       prior weeks (for awareness of what exists on disk,
+       NOT as format or voice references)
 
 If any of the above information is missing from CLAUDE.md
 for this athlete, STOP and inform the user before
@@ -91,12 +91,32 @@ processing:
   - trend_analysis — all trend directions entering this week
   - longitudinal_metrics — rolling rates and stability
 
-STEP 4 — READ FORMAT REFERENCES
-Read the most recent prior week's Coaching Message, Deep
-Dive, and Coach Insight files. These are your format
-references — match their visual structure, section layout,
-separator style, header format, and word count range. Format
-consistency across weeks is a quality requirement.
+STEP 4 — DO NOT READ PRIOR OUTPUT AS FORMAT REFERENCES
+Do NOT read prior Coaching Messages, Deep Dives, or Coach
+Insights for format or voice calibration. Prior output was
+generated under older specification versions and may contain
+voice patterns, rhetorical moves, and formatting that
+conflict with the current spec files. Loading prior output
+into your generation context risks reproducing stale
+patterns that the current Voice Reference and v2.3
+architecture are designed to eliminate.
+
+All format, structure, and voice quality standards are fully
+defined in the specification files you read in Step 6:
+  - CM format: VF_Coaching_Message_Framework.txt (OUTPUT
+    FORMAT section) + Instructions v2.3 Section 8
+  - DD format: VF_Deep_Dive_Coaching_Analysis_Framework.txt
+  - Coach Insights format: COACH INSIGHTS OUTPUT STRUCTURE
+    MASTER.txt + Instructions v1.9
+  - Voice: VF_Coach_Arron_Voice_Reference.txt (the teacher)
+  - Mechanical rules: Instructions v2.3 Section 35
+
+The specification files are the format authority. The Voice
+Reference is the voice authority. Prior output is neither.
+
+Week-to-week coaching continuity comes from the prior week's
+Interpretation JSON (Step 3), not from reading prior
+coaching prose.
 
 STEP 5 — READ THE NEW WEEKLY REVIEW
 Now read the weekly review file specified above. This is the
@@ -236,7 +256,8 @@ Apply: Coaching Output Master Prompt V5 + Instructions v2.3
   + Voice Reference (primary voice authority, read before
   generating) + Voice Foundations (brand stance) + Message
   Map + System Identity + Frameworks + Growth Phase Model.
-  Match format to the prior week's CM and DD (Step 4).
+  Format and voice governed entirely by the spec files.
+  Do NOT reference prior output for format or style.
 Save CM to: Athlete Data\[Athlete]\Coaching and Deep Dive\Coaching Message\
 Save DD to: Athlete Data\[Athlete]\Coaching and Deep Dive\Deep Dive\
 
@@ -248,7 +269,8 @@ Output: One Weekly Performance Insight
 Apply: Coach Insights Master Prompt v1.5 + Instructions v1.9
   + JSON Logic Reference + Compliance Framework + Voice
   Standards + Output Structure.
-  Match format to the prior week's Coach Insight (Step 4).
+  Format governed by Output Structure Master + Instructions.
+  Do NOT reference prior output for format or style.
 Save to: Athlete Data\[Athlete]\Coach Insights\
 
 ------------------------------------------------------------
