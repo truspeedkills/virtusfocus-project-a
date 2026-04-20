@@ -1,0 +1,285 @@
+EDITORIAL AUDIT SUMMARY
+Grace Kindel | Week 11 | April 13 - 19, 2026
+Audit Specification: v1.6
+
+============================================================
+PRE-CRITERIA MECHANICAL SCAN
+============================================================
+Em Dash Check: PASS (zero em dashes detected in CM or DD)
+Retired Phrase Check: PASS (zero instances of "Here is what,"
+"The version of you that," "I also want to name/acknowledge,"
+"The question is [whether]," "Not X. Y." parallel-sentence
+construction, "The athletes who [X] are the ones who [Y]")
+Pipeline Classification Check: PASS (zero instances of
+"Growth tier," "Growth weeks," "Win days" as named category,
+"emotional intensity Low/Moderate/High," "approach-framed,"
+"Stable Positive," "pattern_shift_detected," "center-ring
+dominant")
+
+============================================================
+AUDIT RESULTS
+============================================================
+
+TIER 1 (MUST PASS)
+------------------------------------------------------------
+Criterion 1: Emotional Intensity Calibration — PASS
+JSON classifies Low EI. CM and DD tone matches: direct,
+calm, identity-anchored, no over-empathy or framework-heavy
+processing. No elevated language or therapeutic register.
+The Saturday/Sunday Neutral days are discussed with honesty
+but not alarm, consistent with Low EI framing. Tuesday's
+earned-identity line and Wednesday's running-technique
+target are treated with appropriate interpretive weight
+without emotional escalation.
+
+Criterion 2: Clinical Language Compliance — PASS
+No clinical terminology detected in CM or DD. "Acceptance"
+used as the athlete's own processing language (appears in
+her own prior weeks and recap). No references to anxiety,
+depression, trigger, trauma, diagnosis, therapy, or related
+clinical concepts. "Compression" used as behavioral
+descriptor for reflection depth, not as psychological term.
+All language within performance coaching scope.
+
+Criterion 3: Data Fidelity — PASS
+All claims in CM and DD verified against JSON and recap:
+- Wednesday's running technique quote: accurate ("try to
+  focus running on my toes and not the backs of my feet")
+- Tuesday's earned-identity line: accurate ("been told I
+  was never going to continue playing this sport and I'm
+  here so boom")
+- First Neutral days in program: accurate (prior 70 days
+  all Win)
+- Saturday Senior Day / dad visit: accurate
+- Sunday chill day: accurate
+- Three games this week: accurate
+- Tuesday's loud positive energy / teammate reinforcement:
+  accurate
+- Friday's positivity + equipment help: accurate
+- Next-week stated goal ("sit down longer and sit with
+  the mindset goals before the day starts"): accurate quote
+- Ten straight weeks of perfect-Win execution: accurate
+  (Wks 1-10 all 7/7 Win prior to Week 11)
+- Seventy straight winning days: accurate
+- Weekly goal ("write something I'm thankful for each
+  day"): accurate from recap
+- "I didn't write anything down tbh" and "also didn't do
+  this" Saturday/Sunday quotes: accurate from recap
+- Bullseye center-ring quote ("how well I warm up and
+  show what I can do even here"): accurate
+
+Criterion 4: Prior Commitment Bridge — PASS
+CM includes explicit 2-sentence bridge in paragraph 4: "At
+Tuesday's and Friday's games you did name what you brought.
+That was most of what last week's ask was reaching for. What
+fell off was the writing piece..." Bridge accurately
+represents Partial execution: post-game action-naming
+approximated for 2 of 3 games in loose verbal form, written
+pre-game intentions not executed across any of the three
+games. No false claims about commitment execution. Bridge
+appears before introduction of new micro-commitment and
+naturally connects to the Saturday/Sunday challenge-writing
+non-completion pattern that the new commitment addresses.
+
+Criterion 13: Pipeline Data Leakage Compliance — PASS
+No pipeline classification language detected in CM or DD:
+- No "Emotional intensity" naming (tone calibration conveyed
+  behaviorally)
+- No "Growth tier" / "Mixed tier" / "Consistent phase" named
+- No "RQS" or reflection quality scores surfaced
+- No "Stable Positive" / "Partially Aligned" classifications
+- No "pattern_shift_detected" language
+- No composite score names, band labels, or flag IDs
+- No execution signal terminology
+- No intake profile terminology or PPD/ABI references
+- No forward anchor terminology
+- No longitudinal PPD terminology (F6-F8)
+- No surveillance framing patterns
+- Category E-G scan: clean
+- Reasonable reader test (4 prongs): all pass — no content
+  identifiable as derived from quantified app data, formal
+  intake scoring, classification tracking, or system
+  comparison. "Bullseye center ring" referenced as athlete's
+  own section name, which she uses herself.
+
+TIER 2 (SHOULD PASS)
+------------------------------------------------------------
+Criterion 5: Athlete Voice Reflection — PASS
+CM opens with direct quote of Wednesday's running-technique
+line. Tuesday's earned-identity quote used in both CM and
+DD in different analytical contexts (CM: identity anchor
+reach-back; DD: Strength Signal and Identity Thread).
+Bullseye center-ring quote ("how well I warm up and show
+what I can do even here") used in DD Strength Signal.
+Next-week goal ("sit down longer and sit with the mindset
+goals before the day starts") used in both CM and Focus
+Question. "I didn't write anything down tbh" referenced
+in CM paragraph 4 via "challenge prompt that didn't get
+written." All attributions accurate.
+
+Criterion 6: Action Specificity (Three-Part Check) — PASS
+(a) Specific: "write down one specific thing you're working
+on that day" with examples (run a drill on your toes, rep a
+specific throw, name a teammate you're going to reinforce)
+(b) Measurable: "Seven days, seven specific things, written
+before the day starts"
+(c) Athlete-accessible: builds directly on her own stated
+next-week goal ("sit down longer and sit with the mindset
+goals before the day starts"). Works within her current
+daily rhythm. Includes rest-day adaptation. Low friction.
+
+Criterion 7: Upcoming Context Anchoring — PASS
+CM references "this week" and "seven days" mapping to the
+three upcoming games and daily rhythm. Focus question
+anchors to "before Monday" and "this week." DD Identity
+Thread connects to the late-season arc. No false
+specificity about opponents or dates.
+
+Criterion 8: Narrative Arc Presence — PASS
+DD Weekly Trendline references two specific inflection
+points (Week 9 coach conversation feedback surfacing
+specifically on Wednesday; Week 10 compression extending
+into challenge writing on Sat/Sun). Does not enumerate all
+11 weeks. CM Identity Anchor references the longer-arc
+history ("the years that got you here"). Arc presence is
+thematic, not chronological.
+
+Criterion 9: Message Length Constraint — PASS
+CM body: approximately 335 words (within 250-450 range)
+DD: approximately 1,100 words (within 850-1200 range)
+
+Criterion 10: Micro-Commitment Realism — PASS
+Daily morning-write commitment is achievable within current
+context (she is already engaging with mindset challenge
+prompts on most days). Seven days × seven specific targets
+is right-sized for one week. Built on her own stated
+diagnosis. Explicit rest-day adaptation prevents the fix
+from becoming its own rigidity. Modality: Written
+(appropriate for addressing the specific gap: she named
+two games' post-game contents aloud but the writing piece
+is where the slip happened).
+
+TIER 3 (QUALITY OPTIMIZATION)
+------------------------------------------------------------
+Criterion 11: Brand Voice Tonal Scan — PASS
+Coach Arron voice consistent throughout. Contractions
+default and natural ("you've," "it's," "that's," "didn't,
+" "you're," "aren't," "don't"). Formal non-contraction
+prose used sparingly for emphasis. No retired phrases
+detected. No telegraphing. Opening: moment-led/quote-led
+(Wednesday's running-technique line as the defining
+moment). Transitions varied. CM-DD relationship: CM focuses
+on the shift and the action; DD provides longitudinal
+context, specific strength signals, and identity thread.
+Substantive deduplication avoided.
+
+Criterion 12: Outer-Ring Language Discipline — PASS
+No coaching staff named in CM or DD. No lineup decisions
+described in specifics. Playing time discussed through the
+athlete's response to it (game-day presence, specific
+actions at each game), not through coaching decisions.
+Saturday Senior Day framed as personal family context, not
+as competitive context. No practice-specific inequity
+details surfaced. Monday's practice-culture frustration
+from prior week not referenced.
+
+============================================================
+CRITERION 14: VOICE QUALITY REGRESSION (TIER 2)
+============================================================
+14.1 Reusable Opening — PASS
+CM opens with specific Wednesday quote and interpretive
+claim about what the sentence represents. Not reusable
+next week by changing number or date.
+
+14.2 Telegraphing — PASS
+No announcing sentences ("Now here's where I want to push
+you," "I'm going to be direct," "What I want to name is").
+All coaching moves delivered directly.
+
+14.3 Untraceable Paragraph — PASS
+Every paragraph traceable to specific athlete input.
+Para 1: Wednesday's running technique line. Para 2:
+Tuesday's Worthy-challenge entry. Para 3: specific
+behavioral actions at three games. Para 4: Saturday/Sunday
+challenge non-completion + next-week stated goal.
+
+14.4 Category Coverage Over Response — PASS
+CM responds to the actual shift of the week (re-engagement
+with specific targets alongside first compliance
+deviation) rather than covering each structural category
+dutifully. Uneven coverage: running-technique and Tuesday
+identity get space; Sat/Sun handled briefly; Bullseye not
+separately named. The response matches what the week asked
+for.
+
+14.5 Brand Copy Close — PASS
+CM closes with "Now show up to the writing too" tied
+specifically to Grace's own pattern (ten weeks of daily
+showing-up, writing discipline as the new frontier). Not
+generic brand copy. Focus question references her own
+stated goal. DD closes with earned claim about building
+when no one's watching, connected to the running-technique
+Strength Signal.
+
+14.6 Same Construction 3-Week Window — PASS
+Week 11 opening: moment-led/quote-led (specific Wednesday
+sentence as defining moment).
+Week 10 opening: stat-led (70 straight Win days).
+Week 9 opening: quote-led (Grace's "I spoke up" line).
+Three different constructions across the three-week window.
+
+14.7 DD as Expanded CM — PASS
+DD adds analytical depth not present in CM: Weekly Trendline
+with Week 9 coach conversation thread and Week 10
+compression continuation; specific Strength Signal on
+Bullseye center-ring framing not addressed in CM; Growth
+Area on reflection depth compression (second straight week
+pattern); Identity Thread connecting to baseline identity
+claim. DD is longer and analytically distinct, not
+rephrased CM content.
+
+14.8 "That is [Noun]." Standalone Overuse — PASS
+Zero formal "That is [Noun]." standalone declaratives in
+CM or DD. Contracted "That's" uses (3 in CM, 2 in DD) all
+appear within flowing prose, not as standalone emphatic
+stamps. None function as formulaic recognition stamps.
+
+14.9 "Version of [X]" Construction — PASS
+No "the version of you," "a version of," or similar
+construction in CM or DD.
+
+14.10 Triple-Negative Setup — PASS
+No triple-negative sentence constructions. CM and DD
+openings both affirmative ("You wrote one sentence
+Wednesday..." / "Something shifted this week...").
+
+14.11 Trendline Arc Recitation — PASS
+DD Weekly Trendline references two specific inflection
+points (Week 9 coach feedback surfacing on Wednesday;
+Week 10 compression extending to challenge writing). Does
+not enumerate all 11 weeks. Does not open with "[N] weeks
+into this program." Uses no hyphenated compound arc labels
+("outcome-reactive," "structure-sustained"). Uses
+qualitative descriptors for longitudinal data ("seventy
+straight winning days" instead of "96.4% win rate").
+
+14.12 Pipeline-Adjacent Vocabulary — PASS
+Scan for pipeline-adjacent terms: no "Growth weeks" or
+"Win days" as named categories ("ten straight weeks,"
+"seventy straight winning days" use descriptive forms);
+no "approach-framed," no "the system," no "longitudinal
+pattern," no "developing stretch of the program," no
+"phase advancement." All categorical pipeline terminology
+replaced with behavioral description.
+
+============================================================
+FINAL RESULT: PASS
+============================================================
+All 14 criteria met. No corrections required.
+Complexity: Moderate (first daily-standard deviation in
+program history, re-engagement pivot from prior week's
+acceptance posture, first indirect absorption of Week 9
+coach speed feedback, partial prior commitment execution,
+continued reflection depth compression).
+
+Output approved as written.

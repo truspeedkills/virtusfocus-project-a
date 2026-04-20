@@ -1,0 +1,218 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-04-13 to 2026-04-19",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Eleventh consecutive Growth week. Baseline primary derailer was not tested this week because no competitive opportunities occurred: Grace did not play in any of the three games (Tuesday, Friday, Saturday). The hinge habit (reset after mistakes) was not activated because there were no competitive moments to reset from. However, multiple signals this week show partial re-engagement with competitive readiness after Week 10's protective acceptance posture: (1) Tuesday's identity-rooted entry, 'been told I was never going to continue playing this sport and I'm here so boom,' re-anchors her presence in the sport to earned identity rather than protective detachment, (2) Friday's 'if i get the chance I will perform' replaces Week 10's 'if I get in, have fun' as the forward-facing statement, (3) Wednesday introduces a specific physical controllable target (running technique, toes not backs of feet) that directly addresses the Week 9 coach's speed concern for the first time since it was raised, (4) center-ring Bullseye shifts from Week 10's perspective-oriented framing ('how I view each day') back to preparation-oriented framing ('how well I warm up and show what I can do even here'). Alignment held as Partially Aligned because the derailer was not tested and the hinge habit was not activated, but the direction of movement this week is toward re-engagement with specific development targets rather than deepening acceptance."
+  },
+
+  "athlete_state": "Composed re-engagement with specific development targets alongside the first pattern deviations in program-long daily execution. Grace wrote the weekly goal 'write something I'm thankful for each day' and executed it on most days. Three games occurred (Tuesday, Friday, Saturday-Senior Day). Grace played in none of them and the recap does not mention warmup access. Rather than processing the playing time absence as a distinct thread the way Week 10 did, the games are contextualized through her actions at them: Tuesday brought 'loud, positive energy' and teammate reinforcement; Friday brought 'positivity and a helping hand with equipment'; Saturday's dad came up for Senior Day and Grace was present. Wednesday introduced a specific technique goal (running on toes) that maps directly onto the Week 9 coach speed feedback, the first time Grace has publicly engaged with that controllable since it was raised. Tuesday's 'been told I was never going to continue playing this sport and I'm here so boom' re-roots her presence in earned identity. Saturday and Sunday produced Neutral days: both through explicit non-completion of the mindset challenge writing prompts ('I didn't write anything down tbh,' 'also didn't do this'), not through behavioral or emotional disruption. Daily execution dropped from 70/70 Win (program max, set Week 10) to 75/77 Win days.",
+
+  "core_pattern": "Partial return of intentional development alongside the first daily-execution deviation in program history. The acceptance reframe from Week 10 is still present but has shifted from the foreground to the background. The foreground this week is Grace re-engaging with specific things she can work on: running technique (directly addressing the Week 9 coach speed feedback), warm-up specificity, being a teammate-reinforcing presence. Simultaneously, the Win-day streak that held for 70 consecutive days broke on a challenge-compliance technicality: Saturday and Sunday were scored Neutral because the mindset challenge writing prompts went un-executed, not because the days themselves were disrupted (Saturday was Senior Day with her dad present; Sunday was a planned chill/reset day). The pattern is mixed: specific re-engagement on weekdays, program-first Neutrals on low-stakes weekend days tied to challenge non-completion. Reflection depth remains compressed (RQS held at 2 for a second consecutive week). Goal-setting for next week returns to metacognitive territory ('trying to actually sit down longer and sit with the mindset goals before the day starts'), a process-oriented target that addresses the reflection compression directly.",
+
+  "behavioral_root_cause": "Grace is navigating two parallel developments. First, the acceptance posture from Week 10 is maturing into a stable background frame rather than a preoccupation. She is no longer processing the playing time situation as the week's emotional center. Instead, she is looking for specific things she can work on within the situation she has. Wednesday's running technique focus is the clearest evidence: this is the first week she has named a specific physical controllable tied to the Week 9 coach speed feedback, suggesting the coach conversation is beginning to produce internal work even though it did not produce playing time. Tuesday's earned-identity statement ('been told I was never going to continue playing this sport and I'm here') functions as a re-anchoring move: rather than defining herself through playing time absence, she is defining herself through the longer arc of having continued when others said she wouldn't. Second, the daily-execution perfection that characterized Weeks 1-10 has broken on a challenge-compliance margin. Saturday (Senior Day, dad visiting) and Sunday (planned rest day) both scored Neutral because the mindset challenge writing prompt was skipped, not because the days were disrupted. The non-completion is notable precisely because it was absent from ten prior weeks. It suggests the reflective-engagement compression that began in Week 10 may be extending into challenge-completion discipline on low-stakes days. Next week's stated goal ('sit down longer and sit with the mindset goals before the day starts') reads as Grace's own self-diagnosis of this pattern and a specific attempt to address it.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before each game this week, write down one specific thing she wants to bring to that day, whether she plays or not. Not 'be positive' or 'have fun,' but something she can actually do: own a specific warm-up drill, be the first one loud after a teammate's play, work on something specific in her own cage time. After the game, write one sentence naming what she brought. Three games, three intentions, three sentences.",
+    "execution_status": "Partial",
+    "execution_notes": "The commitment asked for three written pre-game intentions and three written post-game naming sentences across three games. Grace had three games (Tuesday, Friday, Saturday). Tuesday's entry contains a post-game naming sentence with specific action: 'to the game I brought loud, positive energy, even when it was low. I reminded my teammates of something they did well even if the outcome wasn't desired.' This meets the spirit of the post-game naming half. Friday's entry contains both pre-game intention elements ('positivity and a helping hand with equipment') and a forward-facing readiness statement ('if i get the chance I will perform'), approximating both halves in a compressed form. Saturday's entry is the clearest non-execution: 'to the game i brought Write down your single biggest purpose for today and read it before every session. Purpose I didn't write anything down tbh.' She explicitly acknowledges the non-completion. Partial overall: spirit met for 2 of 3 games in loose verbal form, written pre-game intentions not executed for any of the three games as the commitment specified, and Saturday's non-completion was explicit.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "write something I'm thankful for each day",
+    "achievement_statement": "Was able to stay up everyday and work hard while balancing two big tests",
+    "key_phrase": "been told I was never going to continue playing this sport and I'm here so boom",
+    "mindset_resonance": "Tuesday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Neutral",
+      "sunday": "Neutral"
+    },
+    "win_days": 5,
+    "neutral_days": 2,
+    "missed_days": 0,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Gold Streak",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Preparation-oriented and competition-contextualized. 'I can control how well I warm up and show what I can do even here.' The 'even here' qualifier is load-bearing: she is naming a controllable inside the constrained situation (no playing time) rather than generalizing to daily emotional outlook the way Week 10 did. The framing returns to behavioral specificity after Week 10's perspective-oriented placement ('how I view each day'). Single item, brief, competitively situated. Consistent with Week 6 peak ('what I do with the chances I get') and Week 8-9 preparation-orientation more than with Week 10's emotional-regulation framing.",
+    "influence_quality": "'I can influence the energy.' Single item, brief, consistent with prior weeks' team-energy framing. Less specific than Week 9's teammate-focused framing but thematically continuous.",
+    "noise_fixation_present": "No",
+    "noise_content": "'I can't control who coach puts in.' Direct and unembellished. The language is cleaner than Week 10's 'what goes on in rooms I'm not in' (which was still in the philosophical-acceptance register). This week's phrasing is a straightforward categorical placement without charged language or coach naming. Fifth consecutive week of composed outer-ring framing. The acceptance of coaching-decision sovereignty has stabilized into unremarkable language.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 2,
+
+  "growth_phase": "Consistent",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Stable",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 10,
+    "rolling_win_rate_4wk": 0.929,
+    "rolling_missed_rate_4wk": 0.0,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Eleven-week progression from preparation-driven confidence (Wks 1-2) through emotional adversity (Wk 3: High EI) to breakthrough action-quality philosophy (Wk 4) to identity-embedded composure (Wk 5: Consistent phase) to competition-validated performance (Wk 6: first hit, first start) to failure-resilient confidence (Wk 7: strikeout processed in 48 hours) to agency-driven composure (Wk 8: Kabine defensive work) to advocacy-active confidence (Wk 9: spoke to coach, goal-setting improved) to [1-week gap: PSACs] to acceptance-oriented composure (Wk 10: zero playing time, protective detachment, Moderate EI) to re-engaged specificity inside acceptance (Wk 11: Tuesday earned-identity anchor, Wednesday running-technique target directly addressing the Week 9 coach speed feedback, first Neutrals in program-history Saturday/Sunday tied to challenge-writing non-completion). Confidence arc has added a re-engagement pivot: Week 10's protective acceptance produced Week 11's composed return to specific development targets. The position frustration arc that ran Weeks 6-10 (complaint, charged frustration, self-directed solution, direct advocacy, composed acceptance) has released its grip this week. Playing time absence is no longer the week's emotional centerpiece. In its place: a specific technique goal, earned-identity reframing, and the first challenge-compliance deviations in eleven weeks.",
+    "milestone_this_week": "First Neutral days in program history after 70 consecutive Win days, paired with the first substantive re-engagement with the Week 9 coach speed feedback through Wednesday's running-technique target. The Neutrals are not behavioral disruption: Saturday was Senior Day with Grace's dad visiting, Sunday was a planned chill/reset day, and both scored Neutral specifically because the mindset challenge writing prompt was skipped ('I didn't write anything down tbh,' 'also didn't do this'). The running-technique target is the first time Grace has named a physical controllable tied to the Week 9 coach feedback since it was raised. Both events together define the week: a subtle extension of the reflection-engagement compression into challenge-compliance, paired with forward movement on a specific developmental controllable.",
+    "open_thread": "(1) Challenge-compliance discipline: first two Neutral days of the program both tied to challenge writing non-completion on low-stakes days. Whether Saturday/Sunday challenge skips are a two-day contextual blip (Senior Day, planned rest) or the next stage of reflective-engagement compression needs monitoring. Next week's stated goal ('sit down longer and sit with the mindset goals before the day starts') is Grace's own attempt to address this directly. (2) Running-technique follow-through: Wednesday named running on toes as a specific target, which addresses the Week 9 coach speed feedback for the first time. Whether this shows up in subsequent weeks as sustained work or stays a one-week mention determines whether the speed feedback is being absorbed as ongoing development or was a one-entry acknowledgment. (3) Identity anchoring stability: Tuesday's 'been told I was never going to continue playing this sport and I'm here so boom' is the strongest earned-identity language since Week 9's 'I spoke up, I moved with a purpose, and I am succeeding.' Whether this earned-identity anchor continues to replace Week 10's protective detachment as the stable frame is the central trajectory question heading into the final games. (4) RQS held at 2 for second consecutive week. The reflection compression that began in Week 10 has not deepened but also has not recovered. (5) 3 more games upcoming. Late-season schedule continuing. Playing time trajectory unchanged from Week 10 (no warmup access referenced this week, no playing time)."
+  },
+
+  "most_important_controllable": "Specific daily development target naming, executed before the day starts. Grace has identified the exact mechanism herself in next week's goal: 'sit down longer and sit with the mindset goals before the day starts.' The daily standard continues to hold at the behavior level, but the mindset engagement is where this week showed both the most meaningful movement (Wednesday's running-technique target, Tuesday's earned-identity anchor) and the first signals of compression (Saturday/Sunday challenge non-completion, RQS held at 2). The controllable that matters most is naming one specific thing before each day that she is actively working on, and using the mindset challenge prompts as that naming structure rather than skipping them when the day feels low-stakes.",
+
+  "micro_commitment": {
+    "action": "Name one specific thing she's working on before each day starts this week. The mindset challenge prompt is the structure. Whatever the day's prompt is (Willpower, Determined, Purpose, etc.), sit with it long enough to write down one specific thing, not an attitude, that she's going to work on that day. Something she can actually do: run on her toes through a specific drill, rep a specific throw, name one teammate she's going to actively reinforce. The Sunday 'chill day' counts: even a rest day has a specific thing worth naming (recovery, sleep, tomorrow's prep). Seven days, seven specific things, written down before the day starts.",
+    "when": "Before each day begins. Morning, not evening.",
+    "measurement": "At the end of the week, she should have seven specific targets written, one per day, each naming an action rather than an attitude. If every day has a specific target written before the day started and zero days were left blank or filled with an attitude word, the commitment is executed. Partial execution is five or six of seven with specific targets. Anything under five or use of general attitude words (positive, focused) instead of specific actions is not executed."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "3 more games this coming week.",
+    "anticipated_stressor": "Continued late-season schedule with playing time trajectory unchanged from Weeks 10-11 (no playing time, no warmup access). This is likely the last week of meaningful regular season games. End-of-season framing may enter the weekly review. Whether the challenge-compliance slippage from Saturday/Sunday extends into the weekday rhythm is the primary monitoring question. Next week's stated process goal (sitting longer with mindset goals before the day starts) is a direct attempt to address this.",
+    "athlete_stated_next_goal": "trying to actually sit down longer and sit with the mindset goals before the day starts"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win days, 2 Neutral days (Saturday, Sunday), 0 Missed days. 75 Win days across 77 program days. First Neutrals in program history. Neutrals tied to mindset challenge writing non-completion on low-stakes weekend days (Senior Day with dad visiting, planned rest day), not to behavioral or emotional disruption. Weekly goal ('write something I'm thankful for each day') executed on most days. Three games (Tuesday, Friday, Saturday), no playing time in any of them.",
+    "key_habit_signal": "Two parallel signals this week. First, re-engagement with specific development targets: Wednesday's running-technique goal (toes, not backs of feet) is the first direct engagement with the Week 9 coach speed feedback; Tuesday's earned-identity entry ('been told I was never going to continue playing this sport and I'm here') re-anchors her program presence in earned history rather than protective detachment; the Bullseye center returns to preparation-oriented framing ('how well I warm up and show what I can do even here'). Second, the first challenge-compliance deviations in eleven weeks: Saturday and Sunday both scored Neutral because the mindset challenge writing prompt was explicitly skipped ('I didn't write anything down tbh,' 'also didn't do this'). The reflection-engagement compression that began in Week 10 has extended into challenge discipline on low-stakes days without yet touching weekday execution. Next week's stated goal is metacognitive: sitting with the mindset goals longer before the day starts. She has identified the pattern herself.",
+    "coach_reinforcement_cue": "Name the running-technique target from Wednesday as the first substantive absorption of the Week 9 coach speed feedback. Connect Tuesday's earned-identity language ('been told I was never going to continue playing this sport and I'm here') to the longer arc of the program. Recognize that the re-engagement pivot from Week 10's acceptance to Week 11's specific development targets is mature, not restless: she is still composed, just now with concrete things to work on. Address the Saturday/Sunday challenge-writing non-completion honestly but proportionately: two low-stakes days in a program that has held eleven weeks of execution do not warrant alarm, but they do warrant the specific intervention she has already named for herself (sitting with the mindset prompts before the day starts). Use her own next-week goal as the frame for the micro-commitment.",
+    "coach_avoidance_note": "Do not frame Saturday/Sunday Neutrals as falling off. She maintained daily engagement, the Neutrals are specifically about challenge writing non-completion on a Senior Day and a rest day, and she was honest about them ('I didn't write anything down tbh'). Do not introduce the Week 9 coach speed feedback directly in the Coaching Message even though the running-technique target addresses it. The athlete has begun absorbing it internally; surfacing the full connection risks disrupting the organic integration. Do not overstate the Tuesday earned-identity entry as breakthrough. It is a solid anchoring moment, not a phase-advancement signal. Do not return to Week 10's acceptance reframe as the week's center. That posture is still present but has moved to the background. The week's center is the re-engagement with specific targets and the first compliance slippage, not the emotional reframing. Do not reference the dad visiting or Senior Day as playing time context (she is not a senior). It was a personal family visit; that is all."
+  },
+
+  "risk_flags": "No clinical indicators. The Neutral days are challenge-writing non-completion, not distress. Tuesday's 'been told I was never going to continue playing this sport and I'm here so boom' is earned-identity language, not adversity reframing. No breakdown language, no homesickness, no identity-level crisis. Saturday's dad visit is framed positively ('thankful that my dad can come up'). Sunday is a planned chill/reset day with explicit forward-looking intent ('reset for this next week'). All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You wrote that you want to sit down longer with the mindset goals before the day starts. What's one specific thing you're working on this week that you'd want written down before Monday?",
+
+  "current_season_phase": "not available",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available — Core Foundation athlete",
+    "focus_consistency": "not available — Core Foundation athlete",
+    "forward_anchor_alignment": "not available — Core Foundation athlete"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}
