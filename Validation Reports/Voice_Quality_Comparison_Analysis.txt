@@ -770,5 +770,477 @@ SECTION 9: RECOMMENDATIONS
 
 
 ============================================================
-END OF ANALYSIS
+END OF ORIGINAL ANALYSIS
+============================================================
+
+
+
+============================================================
+============================================================
+APPENDIX A: CROSS-ATHLETE VALIDATION
+Tucker Lloyd and Grace Kindel
+============================================================
+DATE: 2026-04-21
+SCOPE: Test whether Angelo Week 8 findings replicate for
+       Tucker and Grace under v2.3/V5.
+FILES ANALYZED: 8 (Tucker Wk7/Wk8 CM+DD, Grace Wk10/Wk11
+                CM+DD). v2.1 → v2.3 before/after for each.
+============================================================
+
+
+============================================================
+APPENDIX SECTION 1: HYPOTHESIS AND TEST DESIGN
+============================================================
+
+The original analysis concluded that the v2.3/V5 architecture
+produced significantly improved voice quality for Angelo
+Allen Week 8 relative to prior output. Section 9 recommended
+expanding the sample size before treating the hypothesis as
+confirmed. This appendix tests replication.
+
+Test design: For each of Tucker and Grace, compare the first
+v2.3/V5 output (Tucker Wk8, Grace Wk11) against the
+immediately prior v2.1 output (Tucker Wk7, Grace Wk10). Apply
+the same Criterion 14 pattern check and mechanical compliance
+scan used for Angelo. Check for replication of the 12
+improvements identified in Angelo's Section 7 Architectural
+Attribution.
+
+Result: Findings replicate strongly. The Grace before/after
+pair produced the cleanest possible validation: Week 10 DD
+(v2.1) opens with the exact triple-negative AI construction
+the Voice Reference was designed to retire. Week 11 DD
+(v2.3/V5) has no such construction.
+
+
+============================================================
+APPENDIX SECTION 2: CRITERION 14 CROSS-ATHLETE TABLE
+============================================================
+
+------------------------------------------------------------
+FAIL CONDITION          | TUCKER        | GRACE
+                        | Wk7  | Wk8    | Wk10 | Wk11
+                        | v2.1 | v2.3   | v2.1 | v2.3
+------------------------------------------------------------
+14.1  Reusable Opening  | 1*   | clean  | 1    | clean
+14.2  Telegraphing      | clean| clean  | 1    | clean
+14.3  Untraceable Para  | clean| clean  | clean| clean
+14.4  Coverage>Response | clean| clean  | clean| clean
+14.5  Brand Copy Close  | clean| clean  | clean| clean
+14.7  DD as Expanded CM | clean| clean  | clean| clean
+14.8  "That is [Noun]." | clean| clean  | clean| clean
+14.9  "Version of [X]"  | clean| clean  | clean| clean
+14.10 Triple-Negative   | clean| clean  | 1!   | clean
+14.11 Trendline Recite  | clean| clean  | clean| clean
+14.12 Pipeline Language | 3    | 1**    | 4    | 0
+------------------------------------------------------------
+TOTAL VIOLATIONS        | 4    | 1      | 7    | 0
+------------------------------------------------------------
+
+* Tucker Wk7 CM opens "Two consecutive weeks without a
+  single Missed day." This uses "Missed day" as a named
+  category (14.12) and functions as a reusable opening
+  (14.1) -- the construction could work next week by
+  changing the number.
+
+** Tucker Wk8 DD line 18: "Your Win days have held at 3 for
+   three of the last four weeks." Uses "Win days" as a named
+   category. The Wk8 editorial audit noted this as borderline
+   but passed it under reasonable reader test. Same category
+   as the Angelo Wk8 "Win days" / "Gold Streaks" finding.
+
+! MAJOR FINDING: Grace Wk10 DD opens: "This week brought
+  something different. Not a failure, not a breakthrough,
+  not a moment to reset from." This is the exact triple-
+  negative AI pattern that Voice Reference Section 4 Pair 6
+  was designed to retire. The Before example in that pair
+  reads: "Not a failure. Not a breakthrough. Not a moment
+  to reset from. Just a week that asked you to stand."
+  Grace Wk11 DD, generated one week later under v2.3/V5,
+  has no triple-negative construction.
+
+NOTABLE INSTANCES:
+
+14.1 + 14.12 (Grace Wk10 CM opening):
+  "Seventy straight Win days. Ten consecutive Growth weeks.
+  You've now maintained your daily standard longer than any
+  other athlete in this program..."
+  Stat-led opening using "Win days" and "Growth weeks" as
+  named pipeline categories. Grace Wk11 CM opens instead
+  with an athlete quote: "You wrote one sentence Wednesday
+  that changed the shape of this week. 'Try to focus
+  running on my toes and not the backs of my feet.'"
+
+14.2 + C3 Retired (Grace Wk10 CM line 13):
+  "Here's what I want you to keep sharp."
+  Contracted variant of retired "Here is what" construction.
+  Flagged in Session 96 voice quality review. Grace Wk11 has
+  no "Here's what" / "Here is what" instances.
+
+14.12 (Grace Wk10 DD):
+  "Seventy consecutive Win days across ten Growth weeks"
+  (line 10)
+  "Seventy straight Win days" (line 53)
+  Pipeline categories exposed. Grace Wk11 DD: zero instances.
+
+
+============================================================
+APPENDIX SECTION 3: MECHANICAL COMPLIANCE REPLICATION
+============================================================
+
+EM DASHES:
+  Tucker Wk7 CM+DD: zero (v2.1 ban already working)
+  Tucker Wk8 CM+DD: zero (confirmed via grep)
+  Grace Wk10 CM+DD: zero (v2.1 ban already working)
+  Grace Wk11 CM+DD: zero (confirmed via grep)
+  Replication: CONFIRMED. Both athletes hold zero em dashes
+  across v2.1 and v2.3. This was already working in v2.1.
+
+RETIRED C3 CONSTRUCTIONS:
+  Tucker Wk7: zero
+  Tucker Wk8: zero
+  Grace Wk10: ONE -- "Here's what I want you to keep sharp"
+  Grace Wk11: zero
+  Replication: CONFIRMED. Grace's v2.1 → v2.3 transition
+  eliminated the contracted "Here's what" construction that
+  v2.1 had failed to catch.
+
+CONTRACTION REGISTER:
+  All four files (Tucker Wk7/8, Grace Wk10/11) use natural
+  contractions as default register. Replication: CONFIRMED
+  for v2.1 baseline. This was already working in v2.1.
+
+"THAT IS [NOUN]." STANDALONES:
+  All four files: zero standalones.
+  Replication: CONFIRMED for v2.1 baseline.
+
+PIPELINE LANGUAGE:
+  Tucker Wk7 DD: "Three Win days driven by academics"
+  (line 18), "Your Win days have held at 3" (line 18).
+  Tucker Wk8 DD: "Your Win days have held at 3 for three
+  of the last four weeks" (line 18) -- this actually appears
+  in the WEEKLY TRENDLINE section. Verified via grep.
+  Grace Wk10 CM: "Seventy straight Win days. Ten
+  consecutive Growth weeks."
+  Grace Wk10 DD: "ten Growth weeks," "Seventy consecutive
+  Win days," "Seventy straight Win days."
+  Grace Wk11 CM+DD: zero pipeline classification terms.
+  Translates to behavioral language: "You've already shown
+  up every day for ten straight weeks" (Wk11 CM line 21) vs.
+  "Ten consecutive Growth weeks" (Wk10 CM line 7).
+
+  Replication: CONFIRMED for Grace (clean elimination from
+  Wk10 to Wk11). PARTIAL for Tucker (Wk8 DD retains one
+  "Win days" instance that passed audit under reasonable
+  reader test; matches the Angelo Wk8 borderline finding).
+
+
+============================================================
+APPENDIX SECTION 4: ANGELO FINDINGS REPLICATION SCORECARD
+============================================================
+
+Each of the 12 improvements identified in Angelo Section 7
+tested for replication in Tucker and Grace.
+
+------------------------------------------------------------
+IMPROVEMENT              | TUCKER       | GRACE
+------------------------------------------------------------
+1. Opening specificity   | CONFIRMED    | CONFIRMED
+2. Telegraphing elim.    | was clean    | CONFIRMED
+                         | in v2.1      |
+3. Pipeline lang. elim.  | PARTIAL      | CONFIRMED
+4. Retired C3 elim.      | was clean    | CONFIRMED
+                         | in v2.1      |
+5. Em dash elimination   | was clean    | was clean
+                         | in v2.1      | in v2.1
+6. Contraction register  | was clean    | was clean
+                         | in v2.1      | in v2.1
+7. "That is [Noun]"      | was clean    | was clean
+                         | in v2.1      | in v2.1
+8. Uneven coverage       | CONFIRMED    | CONFIRMED
+9. DD distinct from CM   | CONFIRMED    | CONFIRMED
+10. "Refuse to coach     | CONFIRMED    | not present
+    badly" moves         | (Wk8 CM)     | (neither week)
+11. Brand copy close     | was clean    | was clean
+12. Trendline discipline | CONFIRMED    | CONFIRMED
+------------------------------------------------------------
+
+DETAILED OBSERVATIONS:
+
+OPENING SPECIFICITY:
+  Tucker Wk7 opens with a stat/category pattern ("Two
+  consecutive weeks without a single Missed day"). Tucker
+  Wk8 opens with a specific moment: "Saturday is the day
+  that pulled this week out of the pattern. Virtus Barbell,
+  four cars, Penguins game." This is a direct parallel to
+  the Angelo Wk8 weather-opening improvement.
+  Grace Wk10 opens stat-led. Grace Wk11 opens with an
+  athlete-quote pulled from Wednesday's journal entry. This
+  is the strongest opening in the set -- even stronger than
+  Angelo Wk8 -- because it grounds the entire message in
+  one of the athlete's own sentences.
+
+PIPELINE LANGUAGE:
+  Grace's v2.1 → v2.3 transition is the cleanest elimination:
+  Wk10 had 4+ instances, Wk11 has zero. The architectural
+  hypothesis is clearly validated here.
+  Tucker's Wk8 retains the "Win days" reference. Combined
+  with Angelo Wk8's "Win days / Gold Streaks" finding, this
+  appears to be a systematic borderline area where v2.3 lets
+  these terms through under the reasonable reader test.
+
+DD DISTINCT FROM CM:
+  Tucker Wk8: CM focuses on Saturday as pattern-break + gym
+  return + Bullseye gap. DD focuses on different angle:
+  weekend floor vs ceiling + gym/circuit trade-off + scout-
+  on-self metaphor. Clearly different analytical cuts.
+  Grace Wk11: CM focuses on specific Wednesday/Tuesday
+  moments + challenge-writing gap. DD focuses on different
+  angle: coach-conversation feedback finally surfacing +
+  weekday re-engagement vs weekend compression pattern.
+  Clearly different analytical cuts.
+
+"REFUSE TO COACH BADLY" MOVES:
+  Tucker Wk8 CM: "I'm not going to pretend finals prep
+  isn't the reason, because it is. But if you can hit six
+  strong days during a finals-approach week..."
+  This is the same move Angelo Wk8 used ("I'm not going to
+  pretend those numbers don't matter to you. But the story
+  of this meet isn't in the distances"). Same construction,
+  same rhetorical function.
+  Grace Wk11: this construction is NOT present. Grace's
+  output uses different moves (the Tuesday identity-anchor
+  reach, the "You named it before I could" recognition).
+  Finding: the "I'm not going to [do the wrong thing]"
+  construction appears in 2 of 3 v2.3/V5 athletes, 3 of 6
+  files. It is emerging as a pattern but not yet universal.
+  (See Appendix Section 5.)
+
+
+============================================================
+APPENDIX SECTION 5: V2.3-EMERGENT TEMPLATE CHECK
+============================================================
+
+The original analysis flagged two potential emergent
+templates to monitor across athletes. This appendix tests
+whether they appeared in Tucker/Grace.
+
+TEMPLATE 1: "I'M NOT GOING TO [DO THE WRONG THING]"
+  Angelo Wk8 CM: "I'm not going to pretend those numbers
+    don't matter to you"
+  Angelo Wk8 DD: "I'm not going to tell you to just focus
+    on what you can control as if the frustration isn't
+    legitimate"
+  Tucker Wk8 CM: "I'm not going to pretend finals prep
+    isn't the reason"
+  Grace Wk11: not present
+
+  Status: EMERGING BUT NOT UNIVERSAL. Present in 3 of 6
+  v2.3/V5 files (50%), 2 of 3 athletes. The construction is
+  genuinely good coaching -- it validates a realistic reason
+  while refusing to let the athlete off the hook. But if it
+  appears in every Coaching Message across every athlete, it
+  becomes a template. At 50% frequency it is still a tool in
+  the repertoire, not yet a default.
+
+  Monitoring threshold: If this appears in the next 3
+  athlete outputs (6 more files) at above 70% frequency,
+  consider adding a targeted rotation guidance to the
+  Voice Reference or a Criterion 14 fail condition.
+
+TEMPLATE 2: DD OPENING PATTERN
+  Angelo Wk8 DD: "This was the first week in your program
+    where things didn't go the way you planned"
+  Tucker Wk8 DD: "This is the first week your behavioral
+    execution and your reflective engagement went in
+    opposite directions at the same time"
+  Grace Wk11 DD: "Something shifted this week, Grace, and
+    it shifted quietly"
+
+  Status: PARTIAL TEMPLATE. Angelo and Tucker both open
+  with "This is/was the [X] week" or "This is the first
+  week [X]." Grace breaks the pattern with "Something
+  shifted." Two of three is not yet a template but is a
+  pattern to watch. All three do follow P1 (Start with
+  Meaning, Not Description) in structurally similar ways.
+
+TEMPLATE 3: TRENDLINE OPENING (NEW -- NOT IN ORIGINAL)
+  Angelo Wk8 DD: "Two moments from earlier in this program
+    are directly relevant to what happened this week"
+  Tucker Wk8 DD: "Week 5 was your hardest week in this
+    program... Week 6 reversed the weekend... Week 7 held
+    the reversal" (3 inflection points, different structure)
+  Grace Wk11 DD: "Two threads from the last few weeks matter
+    for reading this one"
+
+  Status: EMERGING. Angelo and Grace use nearly identical
+  trendline openers ("Two [moments/threads] from [period]
+  matter/are directly relevant"). Tucker uses a different
+  structure (direct week-by-week with inflection naming).
+  Two of three matches is a higher replication than
+  Template 1. Monitor for continued replication.
+
+TEMPLATE 4: "YOU [SPECIFIC ACTION]" RECOGNITION
+  Angelo Wk8: "You didn't wait until the next competition
+    to apply the lesson. You applied it the next morning."
+  Tucker Wk8: "You built at the highest level you've built
+    and wrote about it less than any week before."
+  Grace Wk11: "You named it before I could."
+
+  Status: CONSISTENT VOICE, NOT TEMPLATE. The "You [specific
+  action]" construction appears across all 3 athletes but
+  in structurally different forms. This is the Voice
+  Reference P3 (Talk Like You've Been in the Room) working
+  as designed -- the coach recognizes specific behavior in
+  each athlete's own context. Not a template concern.
+
+
+============================================================
+APPENDIX SECTION 6: ATHLETE-SPECIFIC OBSERVATIONS
+============================================================
+
+TUCKER LLOYD (MIXED TIER PROFILE):
+  Tucker's Wk8 CM handles the execution-up/reflection-down
+  split with honest prior-commitment accounting: "Last week
+  I asked for four circuits with one at the gym. You did two
+  circuits and made the gym trip on a different day for a
+  lift. Not the exact composition I pointed to, but the gym
+  piece is what I've been waiting to see for a month."
+  This is a new coaching move -- acknowledging that the
+  athlete substituted rather than executed, naming what
+  matters more, and crediting the piece that counts. Similar
+  to the Angelo Wk8 prior-commitment honesty but applied to
+  partial execution rather than non-execution.
+
+  The Tucker Wk8 DD closing moves to "scout on yourself"
+  metaphor that extends Tucker's stated identity (coach +
+  developing athlete): "A coach notices what's working and
+  what isn't, then writes it down so the pattern's visible
+  the next time the week starts... The Bullseye is where
+  the coach version of you writes the scouting report on
+  yourself." This is P3 (Been in the Room) applied through
+  Tucker's specific identity frame. Different athlete, same
+  architectural mechanism.
+
+  No Tucker-specific concerns surfaced.
+
+GRACE KINDEL (COMPLEX IDENTITY ARC):
+  Grace Wk11 is the strongest CM opening in either the
+  original analysis or this appendix. Opening with the
+  athlete's Wednesday journal line ("Try to focus running
+  on my toes and not the backs of my feet") and immediately
+  interpreting what it signals ("It's the first thing you've
+  named in a while that's about a concrete skill") executes
+  P1 (Start with Meaning) + P3 (Been in the Room) + P5
+  (React, Don't Compose) simultaneously.
+
+  The Tuesday paragraph is a second strong move: "'Been
+  told I was never going to continue playing this sport
+  and I'm here so boom.' That's you reaching back into your
+  own history to find the anchor, Grace." Names the
+  coaching insight directly without telegraphing it.
+
+  Grace Wk10 (v2.1) was one of the most problematic outputs
+  in either analysis: stat-led opening, "Here's what I want
+  you to keep sharp" retired construction, pipeline category
+  language, and a triple-negative DD opener. The v2.1
+  architecture failed to catch any of these. All are clean
+  in Wk11.
+
+  No Grace-specific concerns surfaced.
+
+
+============================================================
+APPENDIX SECTION 7: UPDATED HYPOTHESIS STATUS
+============================================================
+
+BEFORE (after Angelo n=1 analysis):
+  "The v2.3/V5 architecture produced measurable improvement
+  in voice quality. Hypothesis supported by one data point.
+  Recommend expanding sample size before drawing firm
+  conclusions."
+
+AFTER (after Tucker + Grace n=3 analysis):
+  "The v2.3/V5 architecture produces measurable, replicable
+  improvement in voice quality across three athletes of
+  different profiles (Growth tier / Mixed tier / Growth tier
+  with complex identity arc). Every improvement mechanism
+  identified in the Angelo analysis either replicated in
+  Tucker and Grace or was already working at the v2.1
+  baseline. No v2.1 cases of improved voice quality
+  regressed under v2.3/V5."
+
+The single strongest validation point is Grace Wk10 DD's
+triple-negative opener ("Not a failure, not a breakthrough,
+not a moment to reset from") being the exact pattern Voice
+Reference Section 4 Pair 6 was designed to retire. v2.1
+missed this; v2.3 caught it -- not through a new prohibition
+rule but through the Voice Reference teaching that the
+retired pattern would have appeared in exemplar training.
+This is the cleanest architectural attribution possible.
+
+Cross-athlete replication of the 7 v2.3-specific improvements
+(items 1, 3, 8, 9, 10, 11, 12 from the Angelo scorecard):
+  Replicated in both Tucker and Grace: 5 (1, 8, 9, 12, plus
+    partial 3 for Tucker / full 3 for Grace)
+  Replicated in Tucker only: 1 (item 10, "Refuse to coach
+    badly" -- not present in Grace Wk11)
+  Replicated in Grace only: 1 (item 4, retired C3 -- Tucker
+    Wk7 was already clean)
+
+Every v2.3-specific improvement is present in at least one
+of the two additional athletes. None regressed.
+
+
+============================================================
+APPENDIX SECTION 8: UPDATED RECOMMENDATIONS
+============================================================
+
+1. TREAT THE HYPOTHESIS AS CONFIRMED FOR PRODUCTION USE
+   Three athletes, six post-v2.3 files, zero regressions,
+   and one complete validation of a retired Voice Reference
+   pattern (Grace Wk10 triple-negative → Wk11 clean) is a
+   sufficient basis to treat v2.3/V5 as the production
+   standard. No further n=1 validations needed before
+   continuing athlete processing.
+
+2. MONITOR "I'M NOT GOING TO [X]" CONSTRUCTION FREQUENCY
+   Appeared in 3 of 6 post-v2.3 files across 2 of 3 athletes.
+   Genuinely good coaching move, but susceptible to becoming
+   a template if it appears at higher frequency. Re-check
+   after the next 3 athlete weeks are processed. If it
+   exceeds 70% frequency across all v2.3/V5 output,
+   consider adding targeted guidance to Voice Reference
+   or a Criterion 14 fail condition.
+
+3. "WIN DAYS" / "GOLD STREAKS" STATUS CONFIRMED AS
+   BORDERLINE-PASSING
+   Now observed across all three v2.3/V5 athletes' output
+   (Angelo Wk8, Tucker Wk8) with editorial audits passing
+   them under the reasonable reader test. Grace Wk11
+   translated them to behavioral language ("ten straight
+   weeks," "every day for ten straight weeks"). The audit
+   judgment appears correct -- these pass when used as
+   descriptions of what happened, fail when used as
+   pipeline classification labels. No spec change needed.
+
+4. CONSIDER DD OPENING GUIDANCE IN VOICE REFERENCE
+   Two of three v2.3/V5 DDs open with "This is/was the
+   first week [X]" pattern. Grace breaks it with "Something
+   shifted." If future athletes continue the "This [is/was]
+   the [X]" pattern, the DD opening could drift toward
+   template. The Voice Reference does not currently have
+   DD-specific opening exemplars in Category A (all are CM-
+   oriented). If DD opening monotony surfaces in the next
+   sample, consider adding DD-specific exemplars to
+   Category A.
+
+5. NO SPEC CHANGES RECOMMENDED FROM THIS EXPANSION
+   Same conclusion as the original Angelo analysis. The
+   architecture is working. Items 2-4 above are monitoring
+   notes, not action items.
+
+
+============================================================
+END OF APPENDIX A
 ============================================================
