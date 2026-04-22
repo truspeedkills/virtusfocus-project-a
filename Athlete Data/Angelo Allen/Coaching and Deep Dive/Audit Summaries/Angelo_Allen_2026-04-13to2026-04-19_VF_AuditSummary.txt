@@ -27,8 +27,26 @@ TIER 1 RESULTS (MUST PASS)
    to your body" are performance-language terms used in the
    context of recovery and readiness assessment. Permitted.
 
-3. Data Fidelity: PASS
-   All claims traceable to JSON:
+3. Data Fidelity: PASS (with post-audit user refinement)
+   POST-AUDIT NOTE: Original CM opening ("Slippery Rock isn't
+   a better result because the conditions were better. The
+   conditions were not better.") used the word "conditions"
+   ambiguously. Practice/training conditions being unchanged
+   IS supported by the recap ("disoriented practices at
+   different facilities," "I didn't lift this past week due
+   to schedule conflicts," "horrible circumstances I'm facing
+   right now on my track team"). Meet-day weather conditions
+   at Slippery Rock are NOT described in the recap. User
+   flagged that the opening could be read as a weather
+   comparison (since Wk8 was defined by weather) and manually
+   tightened the opening to: "Slippery Rock isn't a better
+   result because the environment around you got better. It
+   didn't." This scopes the claim unambiguously to the
+   practice/training environment, which the subsequent body
+   sentences already detailed. Data fidelity restored to
+   strict reading.
+
+   All other claims traceable to JSON:
    - Outdoor shot put school record over 16m, discus PR,
      hammer improvement: milestone_this_week
    - "my body was telling me..." quote: athlete_voice.key_phrase
