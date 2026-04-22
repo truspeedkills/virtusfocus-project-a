@@ -40,8 +40,8 @@ TIER 1 RESULTS (MUST PASS)
    flagged that the opening could be read as a weather
    comparison (since Wk8 was defined by weather) and manually
    tightened the opening to: "Slippery Rock isn't a better
-   result because the environment around you got better. It
-   didn't." This scopes the claim unambiguously to the
+   result because anything around you got easier." This
+   scopes the claim unambiguously to the
    practice/training environment, which the subsequent body
    sentences already detailed. Data fidelity restored to
    strict reading.
