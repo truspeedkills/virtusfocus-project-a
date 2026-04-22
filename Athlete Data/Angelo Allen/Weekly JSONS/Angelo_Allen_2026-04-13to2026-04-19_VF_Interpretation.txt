@@ -1,0 +1,223 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-04-13 to 2026-04-19",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent. He will always be balancing sport, academics, work, and relationships. Building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling.",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Angelo's stated weekly goal ('Stability, mental drive, keeping my disciple on point despite the horrible circumstances I'm facing right now on my track team. And doing good at the meet at Slippery Rock University this Thursday') was met in both the behavioral and competitive dimensions. Execution was clean across all 7 days (7 Wins, no Neutral, no Missed). The Thursday meet produced the strongest competitive output of Angelo's outdoor season: new outdoor shot put school record over 16m (matching his explicit stated goal, 'Got the record over 16m which was my goal'), a new discus PR, and hammer improvement on the prior week's Mt Union mark. The preparation quality was deliberate and self-directed: Angelo listened to his body, prioritized recovery work over lifting (missed lift due to schedule conflicts but reframed the absence as strategic), and focused on technique. This was executed despite continued practice facility instability ('disoriented practices at different facilities'). The Week 8 baseline derailer (environmental disruption of practice access) remained active as a context, but execution held at both the behavioral and performance levels. Achievement language returned to sport-performance + process ownership ('An excellent balance and preparation... listened to my body, prioritized recovery work, and had a stellar outdoor meet'), distinct from the preparedness/lesson framing of Week 8. Forward-directed next-week goal ('Build off of what was learned last week'). Aligned rather than Partially Aligned because: competitive goal was met explicitly, execution was clean, preparation quality was deliberate, the response to ongoing structural disruption was adaptive rather than reactive, and the PSAC-to-Shippensburg pattern (lesson extraction from Week 8 disappointment translated into best-ever performance) was validated for a second time in Angelo's program."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Bounce-back week with program-best outdoor performance. Monday: solid shot put practice, good across school and home. Tuesday: no practice day, strong school and home. Wednesday: solid practice in shot put and discus, good across school and home. Thursday: Slippery Rock meet. Set a new outdoor shot put school record over 16m ('which was my goal'), set a new discus PR, and hammer showed improvement on Mt Union. Described as 'a stellar outdoor meet, the best meet of the season.' Friday: rest day, strong across school and home. Saturday: work day, good across all domains. Sunday: rest day. Scored all 7 days as Win (Gold Streak, self-scored 5-7 Wins). Weekly goal ('Stability, mental drive, keeping my disciple on point despite the horrible circumstances I'm facing right now on my track team. And doing good at the meet at Slippery Rock University this Thursday') met. Achievement statement: 'An excellent balance and preparation for my competition, despite disoriented practices at different facilities. I listened to my body, prioritized recovery work, and had a stellar outdoor meet, the best meet of the season.' No lift this week due to schedule conflicts, reframed as strategic: 'my body was telling me that I was still in a state of readiness for the meet on thursday, I just needed to prioritize recovery work, and technique practice, which I did.' Favorite mindset challenge engaged: 'Write down your single biggest purpose for today and read it before every session.' Next-week goal: 'Build off of what was learned last week.' Next competition: Saturday at Juniata College.",
+
+  "core_pattern": "Preparation quality operating as the primary performance driver, validated for the second time in Angelo's program under structural disruption. The most significant signal this week is not the school record itself. It is what produced the school record. Angelo's practice environment remained unstable ('disoriented practices at different facilities'). His usual lift session was cut due to schedule conflicts. His team's structural stressors from Week 8 have not resolved. And despite all of that, Angelo self-directed a competition preparation plan built on body-awareness (listening to signs of readiness versus fatigue), recovery prioritization (choosing recovery work over lift when the schedule forced a trade), and technique focus. The outcome was the strongest competitive week of his outdoor season: outdoor shot put school record meeting his explicit distance goal, discus PR, hammer improvement on Mt Union. The Week 5 Shippensburg opener demonstrated this same principle once (best outdoor opener built on deliberate preparation after the PSAC championship lesson). Week 9 demonstrates it again, this time under worse structural conditions than Week 5 had and after a below-standard Week 8 competition. Two validations of the same principle makes it a repeatable pattern, not a situational response.",
+
+  "behavioral_root_cause": "Angelo's execution quality tracks with deliberateness of intention, not with volume or external structure. This principle has now shown up across four distinct scenarios in Angelo's program: Week 3 peak performance (strategic preparation design), Week 5 best-ever outdoor opener (PSAC lesson applied), Week 7 Easter break recovery (deliberate internal work restoring Bullseye depth), Week 9 school record (self-directed preparation system under degraded practice access). The opposite pattern also holds: Week 4 PSAC championship disappointment and Week 8 Mt Union below-standard marks both occurred when preparation was either insufficient (PSAC: multi-domain overload) or environmentally disrupted (Mt Union: no contingency for weather). Week 9 closes the second full cycle of the pattern: structural disruption continued, Angelo responded with deliberate preparation, performance followed. The decision-making level is where this shows up. Angelo did not wait for the practice environment to stabilize. He worked with what he had, chose recovery over lift when lift was not available, and made the competition-day decisions that position performance.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before Thursday's meet at Slippery Rock, pack for the worst-case scenario (full cold-weather gear regardless of the forecast, competition nutrition, recovery supplies). Then write one specific technical focus for each event he's throwing, not a distance target, but one thing he can control in his approach. Both the gear preparation and the event focus should be done the night before.",
+    "execution_status": "Partial",
+    "execution_notes": "The preparation principle behind the commitment was demonstrably executed and validated by the outcome (outdoor shot put school record, discus PR, hammer improvement). Angelo's achievement statement ('An excellent balance and preparation for my competition... listened to my body, prioritized recovery work') and his self-reported readiness assessment ('my body was telling me that I was still in a state of readiness') indicate deliberate competition-week preparation. The favorite mindset challenge ('Write down your single biggest purpose for today and read it before every session') suggests engagement with a written-focus practice, adjacent to the commitment's per-event technical focus mechanic. However, the specific commitment mechanics (worst-case gear packing, per-event written technical focus the night before) are not directly documented in the recap. The Slippery Rock weather appears not to have been adverse, so the gear-packing element was not tested against harsh conditions. The trait-to-moment translation that the commitment was designed to develop remains visible in outcome but not in explicit form.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Stability, mental drive, keeping my disciple on point despite the horrible circumstances I'm facing right now on my track team. And doing good at the meet at Slippery Rock University this Thursday.",
+    "achievement_statement": "An excellent balance and preparation for my competition, despite disoriented practices at different facilities. I listened to my body, prioritized recovery work, and had a stellar outdoor meet, the best meet of the season.",
+    "key_phrase": "my body was telling me that I was still in a state of readiness for the meet on thursday, I just needed to prioritize recovery work, and technique practice, which I did",
+    "mindset_resonance": "Write down your single biggest purpose for today and read it before every session"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Win",
+      "sunday": "Win"
+    },
+    "win_days": 7,
+    "neutral_days": 0,
+    "missed_days": 0,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Gold Streak",
+    "scoring_note": "All 7 days self-scored as Win (4-5 points) by athlete. Monday, Tuesday, Wednesday: school/practice/home all positive. Thursday: track meet day scored as Win, outcome validates (school record shot put, discus PR, hammer improvement). Friday, Saturday, Sunday: rest days and work days, all positive. Self-scorecard '5-7 Wins: Gold Streak' is accurate. 7/7 Win distribution = Growth tier. Third Gold Streak in Angelo's program (prior: Week 3, Week 7). Returns to Growth after Week 8 first-ever Mixed week.",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Maintained. Six items: 'Myself,' 'my dedication,' 'my tenacity,' 'my willpower,' 'my time management,' 'my study habits.' Identical to Weeks 7 and 8. Third consecutive week at six-item depth, confirming the Week 7 expansion was a durable restoration. Content remains self-trait level rather than event-specific. The consistency of this center ring across a recovery week (Week 7), a disrupted competition week (Week 8), and a program-best performance week (Week 9) shows the depth is not situational.",
+    "influence_quality": "Stable. Two items: 'My home' and 'My friends.' Fourth consecutive week at this framing. Consistent non-sport influence identification.",
+    "noise_fixation_present": "No",
+    "noise_content": "Three items: 'Getting ill,' 'Other people,' 'The weather.' Same items as Weeks 6-7-8. Appropriate acknowledgment of uncontrollables without fixation.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 3,
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Recovering. Returns to Growth after Week 8 first-ever Mixed week. Eight of nine recorded weeks now Growth tier.",
+    "growth_phase_movement": "Stable. Developing across all 9 recorded weeks. Rolling win rate has not reached the 0.85 threshold required for advancement to Consistent, and 2+ consecutive weeks of Aligned + Stable Positive + RQS 3 is not yet established.",
+    "consistency_trend": "Improving. Stable Positive returns after Week 8 Variable. Rolling 4-week win rate holds at 0.821 (window: Wks 6-9, identical numerator to Wk8 window because Wk5 Growth drops out as Wk9 Growth is added).",
+    "recommitment_trend": "Pattern holds. Friday Missed (Week 8) → Sunday Win (Week 8) → seven consecutive Wins (Week 9). Cross-week recovery from the Week 8 disruption is clean: no residual impact on Week 9 execution or performance.",
+    "pattern_shift_detected": "Yes. Three shifts detected: (1) Program-best outdoor competitive performance (outdoor shot put school record, discus PR, hammer improvement over Mt Union). Second validation of the preparation-quality-drives-performance principle first demonstrated at Shippensburg (Week 5). (2) Self-directed preparation system executed successfully under ongoing structural disruption (practice facility instability persists, lift session cut due to schedule conflicts) without compromising performance. This is a more demanding test of the Week 5 preparation principle than Week 5 itself had. (3) Achievement language returns to sport-performance level with explicit process ownership ('listened to my body, prioritized recovery work'), distinct from the preparedness/lesson framing of Week 8."
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 8,
+    "rolling_win_rate_4wk": 0.821,
+    "rolling_missed_rate_4wk": 0.036,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "1.00 — both Missed events in the available window (Wk6 illness, Wk8 Mt Union weather) recovered within 2 days",
+    "controllable_stability_4wk": "Stable. Six-item center ring maintained for 3 consecutive weeks (Wks 7, 8, 9). Content identical across all three weeks (self-traits). Depth restoration from Week 7 has held through both disruption (Week 8) and peak performance (Week 9).",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Nine-week progression: Illness recovery with approach-framed re-engagement (Wk1) → High-level competition composure as solo competitor, near-PR (Wk2) → Peak performance with strategic preparation and identity-level achievement (Wk3) → [2.5-week gap: PSAC championship disappointment + emotional processing + Spring Break] → Outdoor season reset with mature retrospective processing (Wk4) → Championship lesson applied: structured preparation producing best-ever outdoor opener (Wk5) → Disrupted week: illness forces first Missed day, CMU cancelled, weekday execution maintained (Wk6) → Easter break recovery executed with deliberate intention: 7/7 Wins, Bullseye depth restored, identity-level internal achievement (Wk7) → Comeback meet under compounding disruption: practice facility lost, weather conditions severe, competition marks below standard, but composure maintained, immediate self-correction, forward-directed processing (Wk8) → Program-best outdoor performance: outdoor shot put school record, discus PR, hammer improvement, delivered under continued practice instability and without a lift week, driven by self-directed preparation built on body-awareness and recovery prioritization (Wk9). The arc now contains two full validation cycles of the same principle: preparation quality is the primary performance driver. Week 5 showed it once. Week 9 shows it again, under worse structural conditions than Week 5, with a below-standard Week 8 in between. The principle has moved from extracted lesson to demonstrated pattern.",
+    "milestone_this_week": "Outdoor shot put school record over 16m, meeting Angelo's explicit stated goal. Paired with a discus PR and hammer improvement over the Mt Union mark. Self-described as 'the best meet of the season.' The milestone is not just the performance, it is the conditions under which the performance was produced: ongoing practice facility instability, no lift this week, and a below-standard previous meet. The record validates the preparation-quality-drives-performance principle under adverse conditions.",
+    "open_thread": "(1) Sustainability of school-record-level preparation across back-to-back competition weeks. Juniata College Saturday is the next test. The Week 5 Shippensburg opener was followed by a three-week competition gap. The Week 9 Slippery Rock performance is followed by a 6-day turnaround. Whether Angelo can sustain the preparation standard across consecutive competition weeks is the first-time test. (2) Practice facility instability persists. The team remains dependent on borrowed high school facilities. Angelo has now demonstrated that top-level performance is possible under these conditions, but the structural stressor is unresolved. (3) No lift this week due to schedule conflicts. New variable in the program. Whether gym access becomes consistent again or whether the recovery-prioritization substitution becomes a more permanent feature to manage. (4) Reflection quality recovered to 3 after two consecutive weeks at 2. Achievement statement now shows causal attribution and ownership. Whether this depth holds through the next non-peak competition week. (5) Preparation-system articulation. Angelo has now produced school-record performance but has not been asked to name the specific preparation decisions that drove it. The next developmental edge is making the preparation system explicit enough to replicate intentionally, not just intuitively."
+  },
+
+  "most_important_controllable": "The specific preparation decisions that produced this week's performance. Angelo now has two validation cycles of the preparation-quality-drives-performance principle (Week 5 Shippensburg, Week 9 Slippery Rock). Both times, he identified what went wrong, made specific adjustments, and produced strong competitive output. The next developmental step is to make the preparation system explicit rather than intuitive. Angelo said this week that he 'listened to my body, prioritized recovery work, and had a stellar outdoor meet.' Those three words (listened, prioritized, stellar) describe a causal chain. Naming the specific decisions that linked body-awareness to recovery choice to performance outcome is what converts a repeatable instinct into a repeatable system.",
+
+  "micro_commitment": {
+    "action": "Before Saturday at Juniata, write down the three specific preparation decisions from the Slippery Rock week that Angelo believes produced the school record. Be concrete: not 'I prepared well,' but the actual choices (e.g., 'prioritized recovery over lift when the schedule forced a choice,' 'focused Wednesday practice on technique instead of volume,' 'listened to my body on Tuesday rest decision'). Then pick the two most important of the three and apply them to the Juniata week deliberately. Report back what the three were, which two he carried forward, and whether the application felt different from the intuitive version.",
+    "when": "Wednesday evening or Thursday morning, before Saturday's meet at Juniata College. Write it down.",
+    "measurement": "Did Angelo name three specific preparation decisions from the Slippery Rock week? Did he pick two to apply deliberately to the Juniata week? Report the three decisions, the two carried forward, and whether naming the system explicitly changed how the Juniata week felt."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Juniata College, Saturday. Single-day meet. Six-day turnaround from Slippery Rock.",
+    "anticipated_stressor": "Moderate. Angelo is coming off program-best outdoor performance at Slippery Rock, so momentum and confidence are high. Practice access remains unstable, no lift continuity yet restored. The stressor is not physical or emotional. It is the first test of whether the preparation standard from Slippery Rock can be reproduced in consecutive competition weeks rather than in isolation. Fatigue load is Low entering the week, but cumulative physical load from Slippery Rock performance may factor in. Approach-framed next-week goal ('Build off of what was learned last week') indicates Angelo is already oriented toward carrying the pattern forward.",
+    "athlete_stated_next_goal": "Build off of what was learned last week."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "7 Win, 0 Neutral, 0 Missed. Growth tier. Gold Streak (third of program, prior at Weeks 3 and 7). Slippery Rock meet Thursday produced outdoor shot put school record over 16m (meeting stated goal), new discus PR, hammer improvement on Mt Union. Self-described as 'the best meet of the season.' No lift this week due to schedule conflicts, reframed by athlete as strategic substitution ('prioritize recovery work, and technique practice'). Practice facility instability continues but does not compromise execution or performance. Bullseye maintained at 6-item center ring for third consecutive week. Achievement language returns to sport-performance plus process ownership. Mindset challenge engaged: 'Write down your single biggest purpose for today and read it before every session.' Prior commitment (worst-case gear packing + per-event written technical focus) status Partial. Juniata College meet Saturday next week.",
+    "key_habit_signal": "Self-directed preparation system executed under structural disruption. Angelo's response to the missing lift week was not frustration or compensation. It was substitution: he identified what his body actually needed (recovery and technique), chose that over lift, and matched the decision to the meet schedule. The decision pattern is the same one that produced the Week 5 Shippensburg opener (identify what preparation this meet needs, provide that specifically) but this time applied to a constraint rather than a choice. The preparation-quality-drives-performance principle has now been demonstrated across four distinct conditions in Angelo's program (Week 3, Week 5, Week 7, Week 9) with two direct competitive validations (Week 5 and Week 9). It is now a repeatable pattern rather than a contextual response.",
+    "coach_reinforcement_cue": "The outdoor shot put school record deserves naming as a milestone, but the stronger reinforcement is the preparation system that produced it. Angelo did not get the school record because the conditions were favorable. Practice access was still disrupted. Lift was cut. The team environment was the same environment that produced below-standard Mt Union marks one week earlier. What changed was Angelo's self-directed preparation decisions. The reinforcement-worthy signal is the decision-making level: body-awareness to recovery choice to technique focus to performance outcome. Also reinforcement-worthy: achievement language recovered to sport-performance + process ownership after Week 8's preparedness/lesson level. Angelo is now describing what he did in ownership terms, which is the reflection quality that produces systems rather than recoveries.",
+    "coach_avoidance_note": "Do not frame this as a return to form or a recovery from Week 8. The framing undersells what happened. Week 8 was not a failure that was recovered from. It was a disruption that supplied the lesson Week 9 applied. The pattern is preparation-quality-drives-performance, not setback-then-recovery. Do not dwell on the school record as outcome. Angelo has already framed the performance in process terms ('preparation,' 'listened to my body,' 'prioritized recovery work'), and that framing is what the coaching response should reinforce. Do not list every data point. The week has one story (preparation system validated under adverse conditions) and it deserves depth, not breadth. Do not treat the unresolved practice instability as a problem needing resolution this week. Angelo has now proven he can produce at the top level under those conditions, which changes what the conditions mean."
+  },
+
+  "risk_flags": "No clinical indicators. Language throughout is composed, forward-directed, and process-oriented. Reference to 'the horrible circumstances I'm facing right now on my track team' carries from Week 8 but is framed declaratively ('despite' rather than 'because of'), indicating frustration acknowledged without distress. All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You produced the best outdoor meet of your season while your practice environment was still disrupted. What specifically did you decide this week that you want to carry into Juniata on purpose?",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}

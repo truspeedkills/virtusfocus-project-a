@@ -1,0 +1,246 @@
+AUDIT SUMMARY
+Athlete: Angelo Allen
+Week: April 13-19, 2026 (Week 9)
+Audit Date: 2026-04-22
+Result: AUTO-CORRECTED PASS
+
+============================================================
+PRE-CRITERIA MECHANICAL SCAN
+============================================================
+
+Em Dash Check: PASS (0 instances in CM or DD)
+Curly Quote Check: PASS (straight quotes throughout)
+
+============================================================
+TIER 1 RESULTS (MUST PASS)
+============================================================
+
+1. Emotional Intensity Calibration: PASS
+   JSON emotional_intensity = Low. Coaching tone is standard
+   calm, direct, identity-focused. No over-warm lead, no
+   empathetic acknowledgment required. Matches Low EI
+   calibration.
+
+2. Clinical Language Compliance: PASS
+   No clinical, therapeutic, or mental health terminology in
+   CM or DD. "Body-awareness," "body-signal," and "listened
+   to your body" are performance-language terms used in the
+   context of recovery and readiness assessment. Permitted.
+
+3. Data Fidelity: PASS
+   All claims traceable to JSON:
+   - Outdoor shot put school record over 16m, discus PR,
+     hammer improvement: milestone_this_week
+   - "my body was telling me..." quote: athlete_voice.key_phrase
+     verbatim
+   - PSAC / Shippensburg / Mt Union arc references: narrative_arc
+   - No lift this week: athlete_state + core_pattern
+   - Practice facility unstable: core_pattern +
+     behavioral_root_cause
+   - Three-consecutive-week Bullseye depth: bullseye_analysis +
+     longitudinal_metrics.controllable_stability_4wk
+   - Developing phase: growth_phase
+   - Goal-oriented/resilient/tenacious/sharp identity: baseline
+     identity claim verbatim
+   - "Build off of what was learned last week": next goal
+   - Juniata Saturday: upcoming_context.scheduled_competition
+
+4. Prior Commitment Bridge: PASS
+   CM P4 opens with 2-sentence bridge: "Last week I asked
+   you to write a technical focus for each event before
+   Mt Union. That specific exercise didn't show up in your
+   recap, but the broader principle did, and the outcome
+   this week proved it." Accurately reflects JSON
+   prior_commitment_result execution_status = Partial.
+
+13. Pipeline Data Leakage Compliance: PASS
+   Category A (Clinical): No violations
+   Category B (Composite scores): No violations
+   Category C (Coach flags): No violations
+   Category D (Self-ratings): No violations
+   Category E (Execution metrics): No violations
+   Category F (Intake profile): Baseline identity claim phrase
+     used verbatim as athlete's own language. Permitted.
+   Category G (Forward anchor): No violations (CF athlete)
+   Reasonable reader test: No sentence would read as
+   pipeline-derived. The word "system" is used naturally
+   throughout as "Angelo's preparation system," not as
+   a named classification.
+
+============================================================
+TIER 2 RESULTS (SHOULD PASS)
+============================================================
+
+5. Athlete Voice Reflection: PASS
+   Primary mirror: key_phrase quoted verbatim in CM P1 and
+   DD Strength Signal 3.
+   Secondary mirror: baseline identity claim phrase
+   ("goal-oriented, resilient, tenacious, and sharp") used
+   in CM P4 and DD Identity Thread.
+   Tertiary mirror: achievement_statement content ("I
+   listened to my body, prioritized recovery work, and had
+   a stellar outdoor meet") referenced in DD Growth Area 1.
+
+6. Action Specificity (Three-Part Check): PASS
+   WHEN: "Before Saturday at Juniata"
+   WHAT: "write down three specific preparation decisions...
+   pick the two most important of the three, and apply them
+   to the Juniata week on purpose"
+   MEASUREMENT: "Report back what the three were, which two
+   you carried forward, and whether naming them changed how
+   the week felt"
+
+7. Upcoming Context Anchoring: PASS
+   Action connects directly to Juniata College Saturday
+   meet, matches JSON upcoming_context.scheduled_competition.
+
+8. Narrative Arc Presence: PASS
+   DD Trendline references three arc inflection points
+   (Shippensburg proof-of-concept, Mt Union counter-evidence,
+   Slippery Rock validation) without exhaustive week-by-week
+   recitation. CM P2 references PSAC disappointment +
+   Shippensburg + Mt Union. DD Identity Thread connects to
+   baseline identity claim and phase trajectory.
+
+9. Message Length: PASS
+   CM body: 442 words (target 250-450). Within range.
+   DD body: 1050 words (target 850-1200). Within range,
+   appropriate for peak-performance complex week.
+
+10. Micro-Commitment Realism: PASS
+    Action is achievable in scope (write 3 decisions, pick 2,
+    apply to one meet). Developing-phase appropriate:
+    converts intuitive system into explicit method, which
+    is the developmental stretch for this phase. Connects
+    to the central Week 9 theme (preparation system
+    validated, needs explicitness to replicate intentionally).
+
+14. Voice Quality Regression: CORRECTED
+    Initial generation contained 4 parallel-sentence reframe
+    constructions close to the retired "Not X. Y." / "not X,
+    but Y" pattern (C3 retired list). All 4 corrected.
+
+    14.1 Reusable Opening Test: PASS
+       Opening ("Slippery Rock isn't a better result because
+       the conditions were better. The conditions were not
+       better") is specific to Wk8/Wk9 comparison and cannot
+       be reused next week by changing only the stat.
+    14.2 Telegraphing: PASS
+       No "Now here's where I want to push you" or similar
+       announcement sentences. All coaching moves delivered
+       directly.
+    14.3 Untraceable Paragraph: PASS
+       Every paragraph grounded in specific JSON content.
+    14.4 Category Coverage Over Response: PASS
+       CM concentrates on one theme (preparation system
+       validated under disruption) with uneven coverage.
+       Does not mechanically cover every data point.
+    14.5 Brand Copy Close: PASS
+       Closing "The preparation is the system now. Build it
+       in on purpose." is Angelo-specific, connects to the
+       week's central claim, and does not use standard
+       rotation phrases.
+    14.6 Same-Construction 3-Week Window: PASS
+       Opening and closing constructions are novel. No
+       reuse of Wk7 or Wk8 structural moves verified.
+    14.7 DD as Expanded CM: PASS
+       DD uses distinct 5-section structure with deeper
+       trendline analysis, 4 strength signals, 2 growth
+       areas, and identity thread with specific baseline
+       trait exploration. Not an expanded CM.
+    14.8 "That is [Noun]." Standalone Overuse: PASS
+       Zero pure "That is [noun]." standalones in CM or DD.
+       All "that's" usages extend into elaborations.
+    14.9 "Version of X" Construction: PASS
+       None present.
+    14.10 Triple-Negative Setup: PASS
+       None present. "None of that happened to you.
+       You decided it." is a two-sentence negation-then-
+       correction, not a triple-negative parallel.
+    14.11 Trendline Arc Recitation: PASS
+       DD Trendline focuses on 3 inflection points relevant
+       to Week 9 story, not week-by-week program history.
+    14.12 Pipeline-Adjacent Vocabulary: PASS
+       No "Growth weeks," "Win days" as categories, "Gold
+       Streak" as label, "Stable Positive," "approach-framed,"
+       or "center-ring dominant" in CM or DD. "Developing
+       phase" used naturally per DD Framework permitted
+       phrasing.
+
+    Corrections applied at audit (parallel-sentence reframe
+    variants close to "Not X. Y." retired pattern):
+    (1) CM P4: "Intuition isn't a bad system. But it's
+        harder..." → "Intuition works, and it's harder..."
+    (2) CM P4: "Sharp means you can name the decisions that
+        produced the result, not just feel them." → "Sharp
+        is knowing the decisions well enough to name them."
+    (3) DD Strength 1: "you didn't compensate and you
+        didn't complain. You substituted." → "instead of
+        compensating or complaining, you substituted."
+    (4) DD Strength 4: "The depth wasn't a response to
+        conditions. It's been your actual center..." →
+        "The depth has been your actual center since you
+        restored it at Easter. It hasn't fluctuated with
+        conditions."
+    (5) DD Identity Thread: "The Developing phase isn't
+        a holding pattern. It's the phase where..." →
+        "The Developing phase is where..."
+
+============================================================
+TIER 3 RESULTS (QUALITY OPTIMIZATION)
+============================================================
+
+11. Brand Voice Tonal Scan: PASS
+    Calm, direct, identity-focused, actionable. No hype, no
+    clinical framing, no fluff.
+
+12. Outer-Ring Language Discipline: PASS
+    Coaching anchored in controllable-focused observations
+    (preparation decisions, body-awareness, technique focus,
+    recovery prioritization). Outcome (school record) framed
+    as result of controllables executed well, not as
+    outcome-fixation.
+
+============================================================
+CORRECTIONS APPLIED
+============================================================
+
+5 Tier 2 Criterion 14 corrections applied (parallel-sentence
+reframe constructions variant-close to retired "Not X. Y."
+pattern). All applied via in-place edit to CM and DD files.
+No regeneration required.
+
+============================================================
+NOTES
+============================================================
+
+- Week 9 represents the second validation of the
+  preparation-quality-drives-performance principle in
+  Angelo's program (first: Week 5 Shippensburg opener).
+  Second validation under more constrained conditions
+  (continued practice instability + no-lift week) than
+  the first validation had.
+- Rolling 4-week win rate holds at 0.821, below the 0.85
+  sustained threshold required for Developing → Consistent
+  advancement. Wk5 drops out of the window as Wk9 enters,
+  with an identical numerator. Week 8 breaks the consecutive
+  Aligned + Stable Positive + RQS 3 chain, so earliest viable
+  advancement window is Weeks 10-11 if both qualify.
+- RQS recovered to 3 after two consecutive weeks at 2.
+  Daily entries remain compressed, but achievement
+  statement shows causal attribution + ownership language.
+- Prior commitment execution Partial: the preparation
+  principle was demonstrably executed (outcomes prove it),
+  but the specific written per-event technical focus
+  mechanic was not directly documented in recap. Favorite
+  mindset challenge ("Write down your single biggest
+  purpose for today and read it before every session")
+  aligns adjacent to the written-focus spirit.
+- No lift this week due to schedule conflicts. New minor
+  thread. Whether gym access becomes consistent again or
+  recovery-prioritization substitution becomes a more
+  permanent feature to track going forward.
+- Juniata Saturday is the first back-to-back competition
+  week test in the program. Whether Angelo can sustain
+  the Slippery Rock preparation standard across
+  consecutive-week meets is a new developmental question.
