@@ -1244,3 +1244,584 @@ APPENDIX SECTION 8: UPDATED RECOMMENDATIONS
 ============================================================
 END OF APPENDIX A
 ============================================================
+
+
+
+============================================================
+============================================================
+APPENDIX B: SAME-ATHLETE BACK-TO-BACK VALIDATION
+Angelo Allen Week 9
+============================================================
+DATE: 2026-04-22
+SCOPE: Full analysis of Angelo Allen Week 9 (Apr 13-19)
+       under v2.3/V5, with explicit Week 8 → Week 9 same-
+       athlete comparison. First back-to-back v2.3 output
+       for any athlete in the validation corpus.
+FILES ANALYZED: 2 (Wk9 CM + DD) + Wk9 audit summary for
+               audit disposition context.
+============================================================
+
+
+============================================================
+APPENDIX B SECTION 1: WHY WEEK 9 MATTERS
+============================================================
+
+Angelo Week 9 is the first same-athlete back-to-back v2.3
+output in the validation corpus. Angelo Week 8 was his first
+v2.3 week; Week 9 is his second consecutive v2.3 week.
+Previous cross-athlete comparisons (Appendix A) tested
+whether improvements replicated across different athletes.
+This test isolates a different question: does the voice hold
+or drift across consecutive weeks for the same athlete?
+
+Week 9 is also proportionally significant at this sample
+size. With 6 v2.3 files in the corpus before this addition,
+Week 9's 2 files represent ~25% new data. At this scale,
+every file is diagnostic.
+
+Three specific things this single file can test that no
+prior analysis could:
+  1. Template persistence within an athlete week-to-week
+  2. Whether new patterns emerge under v2.3 at a rate the
+     earlier sample didn't reveal
+  3. How the editorial audit is judging borderline cases
+     (via the audit summary disposition)
+
+
+============================================================
+APPENDIX B SECTION 2: AUDIT DISPOSITION SUMMARY
+============================================================
+
+Week 9 result per editorial audit: AUTO-CORRECTED PASS.
+
+14 criteria PASS. 5 Criterion 14 auto-corrections applied
+at audit, all for the same underlying pattern: parallel-
+sentence reframe constructions close to the retired
+"Not X. Y." / "not X, but Y" pattern (C3 retired list).
+
+The 5 corrections:
+  (1) CM P4: "Intuition isn't a bad system. But it's
+      harder..." → "Intuition works, and it's harder..."
+  (2) CM P4: "Sharp means you can name the decisions that
+      produced the result, not just feel them." → "Sharp
+      is knowing the decisions well enough to name them."
+  (3) DD Strength 1: "you didn't compensate and you didn't
+      complain. You substituted." → "instead of compensating
+      or complaining, you substituted."
+  (4) DD Strength 4: "The depth wasn't a response to
+      conditions. It's been your actual center..." → "The
+      depth has been your actual center since you restored
+      it at Easter. It hasn't fluctuated with conditions."
+  (5) DD Identity Thread: "The Developing phase isn't a
+      holding pattern. It's the phase where..." → "The
+      Developing phase is where..."
+
+SIGNIFICANCE: The initial generation produced 5 instances
+of a specific retired pattern (parallel-sentence reframes).
+The architecture caught and corrected all 5 via Criterion
+14. This is the post-generation audit layer working as
+designed. But it also signals that the initial-generation
+layer is still susceptible to this pattern at a non-trivial
+rate. Five instances in one week's output is material.
+
+This matters because until now, the v2.3 corpus we analyzed
+was either clean PASS (Angelo Wk8, Grace Wk11) or had
+minimal corrections (Tucker Wk8 had 3 corrections, but for
+different categories). Week 9 shows the initial generation
+producing retired patterns at higher frequency than the
+prior weeks. Whether this is noise or signal requires more
+data, but it is the first observation of the initial-
+generation layer producing the retired pattern at scale
+within a single file.
+
+
+============================================================
+APPENDIX B SECTION 3: CRITERION 14 FINAL-OUTPUT SCAN
+============================================================
+
+After the 5 corrections, the final output on disk is what
+the athlete reads. All 12 fail conditions scanned against
+the corrected version:
+
+------------------------------------------------------------
+FAIL CONDITION          | RESULT | NOTES
+------------------------------------------------------------
+14.1  Reusable Opening  | CLEAN  | "Slippery Rock isn't a
+                        |        | better result because
+                        |        | anything around you got
+                        |        | easier" -- cannot be
+                        |        | reused next week.
+14.2  Telegraphing      | CLEAN  | No announcement
+                        |        | sentences.
+14.3  Untraceable Para  | CLEAN  | All paragraphs grounded.
+14.4  Coverage>Response | CLEAN  | CM weighted to prep-as-
+                        |        | system insight.
+14.5  Brand Copy Close  | CLEAN  | "The preparation is the
+                        |        | system now. Build it in
+                        |        | on purpose." -- week-
+                        |        | specific.
+14.6  3-Week Repetition | CLEAN  | Opening and closing
+                        |        | structurally distinct
+                        |        | from Wk7, Wk8.
+14.7  DD as Expanded CM | CLEAN  | Different analytical
+                        |        | angle from CM.
+14.8  "That is [Noun]." | CLEAN  | Zero standalones.
+14.9  "Version of [X]"  | CLEAN  |
+14.10 Triple-Negative   | CLEAN  | "None of that happened
+                        |        | to you. You decided it"
+                        |        | is a 2-sentence
+                        |        | negation-correction, not
+                        |        | triple-negative.
+14.11 Trendline Recite  | CLEAN  | 3 inflection points
+                        |        | (Shippensburg / Mt Union
+                        |        | / Slippery Rock), not
+                        |        | week-by-week history.
+14.12 Pipeline Language | BORDER.| "Developing phase" used
+                        |        | twice in DD Identity
+                        |        | Thread. Audit judgment:
+                        |        | PASS under reasonable
+                        |        | reader test, "used
+                        |        | naturally per DD
+                        |        | Framework permitted
+                        |        | phrasing." See Section 5.
+------------------------------------------------------------
+TOTAL FINAL VIOLATIONS  | 0 (1 borderline flagged by me,
+                        |    not by audit)
+------------------------------------------------------------
+
+
+============================================================
+APPENDIX B SECTION 4: TEMPLATE PERSISTENCE CHECK
+============================================================
+
+The three emergent templates flagged in Appendix A tested
+against Week 9.
+
+TEMPLATE 1: "I'M NOT GOING TO [DO THE WRONG THING]"
+  Week 8 CM: "I'm not going to pretend those numbers don't
+    matter to you" (present)
+  Week 8 DD: "I'm not going to tell you to just focus on
+    what you can control as if the frustration isn't
+    legitimate" (present)
+  Week 9 CM: not present
+  Week 9 DD: variant present -- "That's honest, and I don't
+    want to soften it." Same rhetorical function (coach
+    refuses a bad move) in different grammatical form.
+
+  Strict pattern frequency across Angelo corpus (4 files):
+    2 of 4 (50%). Same as cross-athlete rate.
+  Broader "refuse the bad move" pattern frequency:
+    3 of 4 (75%). Above the 70% monitoring threshold
+    if we treat the variant as a match.
+
+  Status: DIVERGING PATTERN. The strict construction did
+  not persist into Angelo Week 9. A variant did. This may
+  be the architecture self-correcting away from the strict
+  template while preserving the underlying coaching move --
+  which is exactly the expected behavior. If future output
+  continues to vary the grammatical form of the "refuse the
+  bad move" gesture, that's healthy. If one specific
+  grammatical form re-emerges at 70%+ frequency, action
+  needed.
+
+TEMPLATE 2: "THIS IS/WAS THE [X] WEEK" DD OPENER
+  Angelo Wk8 DD: "This was the first week in your program
+    where things didn't go the way you planned." ✓
+  Tucker Wk8 DD: "This is the first week your behavioral
+    execution and your reflective engagement went in
+    opposite directions at the same time." ✓
+  Grace Wk11 DD: "Something shifted this week, Grace, and
+    it shifted quietly." ✗
+  Angelo Wk9 DD: "This was the week your program moved
+    from lesson to system." ✓
+
+  Frequency across 4 v2.3 DDs: 3 of 4 (75%). CROSSED
+  THE 70% MONITORING THRESHOLD.
+
+  Status: TEMPLATE CONFIRMED AT THRESHOLD. This is now the
+  first template that has crossed the threshold I flagged
+  in Appendix A. Per the monitoring protocol, this is the
+  signal to act.
+
+  RECOMMENDATION: Add DD-specific opening exemplars to
+  Voice Reference Category A. Current Category A exemplars
+  are CM-oriented (opening a CM). The absence of DD-opening
+  exemplars means the model falls back on a single
+  structural approach ("This [is/was] the [X] week") as
+  the default DD opener. Two candidate exemplars to add:
+
+    Example alternative DD opening 1 (from Grace Wk11):
+    "Something shifted this week, Grace, and it shifted
+    quietly. The acceptance frame from last week is still
+    here, but it's no longer doing all the work."
+
+    Example alternative DD opening 2 (candidate new form):
+    Open with an athlete quote + interpretive pivot, same
+    way Week 11 CM for Grace opens. This would teach the
+    model that DD openings can also mirror strong CM
+    opening approaches.
+
+TEMPLATE 3: "TWO [MOMENTS/THREADS] FROM [PERIOD] MATTER/ARE
+           DIRECTLY RELEVANT" TRENDLINE OPENER
+  Angelo Wk8 DD: "Two moments from earlier in this program
+    are directly relevant to what happened this week." ✓
+  Tucker Wk8 DD: "Week 5 was your hardest week..." (3
+    inflection points, different structure) ✗
+  Grace Wk11 DD: "Two threads from the last few weeks
+    matter for reading this one." ✓
+  Angelo Wk9 DD: "The arc right now is simpler than it's
+    been in weeks. Three moments matter for understanding
+    where you are." -- variant (different number, similar
+    "[N] moments matter" construction)
+
+  Strict pattern frequency: 2 of 4 (50%).
+  Including variants ("[N] moments matter..."): 3 of 4
+  (75%). CROSSED 70% THRESHOLD when variants included.
+
+  Status: TEMPLATE AT THRESHOLD WHEN VARIANTS INCLUDED.
+  The strict "Two [X] from [Y] matter" construction is at
+  50%, but the broader "[N] moments matter" scaffolding
+  is at 75%.
+
+  RECOMMENDATION: Less urgent than Template 2. Monitor for
+  one more round (next 3 athlete weeks) before acting. If
+  the "[N] moments matter" scaffolding persists at 70%+
+  across another sample, add trendline-opening exemplars
+  to Voice Reference Category E with alternative
+  approaches (open with a single moment, open with a
+  question about the arc, open with an athlete statement).
+
+
+============================================================
+APPENDIX B SECTION 5: "DEVELOPING PHASE" JUDGMENT CALL
+============================================================
+
+Week 9 DD uses "Developing phase" twice in the Identity
+Thread section:
+
+  "You're still in the Developing phase, and that isn't
+   going to change on a single week."
+
+  "The Developing phase is where you're building the
+   explicit system the next phase will rely on."
+
+The editorial audit judged both uses as PASS under 14.12,
+noting: "'Developing phase' used naturally per DD Framework
+permitted phrasing."
+
+ANALYSIS:
+
+C4 in v2.3 Section 35 lists as prohibited:
+  "[Growth/Developing/Consistent] phase maintained"
+Replacement: "Describe sustained behavior"
+
+The C4 example is specifically about PHASE MAINTAINED as
+a classification-state phrase. Week 9's usage is different:
+the phase name is referenced as context for where the
+athlete is in development, not as a classification status
+label.
+
+This is the same judgment pattern the audit has been
+applying to "Win days" / "Gold Streaks" across the v2.3
+corpus: the term passes when used descriptively (describing
+what happened or where the athlete is), fails when used as
+a pipeline classification label ("phase maintained," "Growth
+weeks" as category).
+
+CONSISTENCY CHECK ACROSS THE V2.3 CORPUS:
+  - Angelo Wk8: no named phases in final output
+  - Tucker Wk8: no named phases in final output
+  - Grace Wk11: no named phases in final output
+  - Angelo Wk9: "Developing phase" twice, judged acceptable
+
+Angelo Wk9 is the first v2.3 output to use the phase name
+in the final version. The audit judgment is defensible but
+represents a boundary case. If subsequent output uses phase
+names at increasing frequency, the "descriptive vs
+classification" judgment will need tighter criteria.
+
+FINDING: The phrase "still in the Developing phase" reads
+as coaching context to an experienced reader but could
+read as pipeline-classification to an expert reviewer
+looking for AI tells. This is exactly the kind of borderline
+that matters at the 95%-to-98% quality transition.
+Recommendation: no spec change yet. Watch for the pattern
+across the next 3 athlete weeks. If phase names appear in
+50%+ of v2.3 output going forward, tighten the 14.12 check
+to exclude phase names in all contexts.
+
+
+============================================================
+APPENDIX B SECTION 6: VOICE PRINCIPLE ALIGNMENT (WK9)
+============================================================
+
+P0 SERVICE FIRST:
+The entire CM is built around helping Angelo convert an
+intuitive success into a repeatable system. The action item
+specifically targets this conversion. Strong P0.
+
+P1 START WITH MEANING, NOT DESCRIPTION:
+Week 9 CM opens with a refuse-the-false-framing move:
+"Slippery Rock isn't a better result because anything
+around you got easier. Your practice access was still
+unstable. You didn't get a lift this week because the
+schedule didn't allow one. The team environment that
+surrounded Mt Union is the same one that surrounded this
+week. What changed was you."
+
+This is a different P1 mechanism than prior weeks. It
+opens by naming what the meaning ISN'T (conditions) and
+then delivers what the meaning IS (you changed). The
+meaning is still primary; it just arrives through negation-
+and-correction rather than direct statement. Strong P1.
+
+P2 SPEND YOUR WORDS UNEVENLY:
+CM Paragraph 2 is the longest and deepest -- it carries
+the "second time the pattern has appeared" insight.
+Paragraph 3 extends the insight to what it means going
+forward. Paragraph 4 addresses prior commitment briefly.
+The CM is clearly weighted to the preparation-as-system
+insight. Strong P2.
+
+P3 TALK LIKE YOU'VE BEEN IN THE ROOM:
+"You wrote it yourself" (line 7) + the athlete's sentence
+quoted verbatim. This is P3 working as designed -- the
+coach holds up the athlete's own language and names what
+it means. Strong P3.
+
+P4 EARN EVERY SENTENCE:
+"That matters because preparation was supposed to be the
+thing that broke first when the environment broke. It
+didn't." Each sentence carries specific information.
+"The record happened while the practice facility was still
+lost, while borrowed fields were still chaotic, while your
+own week was short one lift session." Every clause is
+loadbearing. Strong P4.
+
+P5 REACT, DON'T COMPOSE:
+The structure responds to the week's defining event (school
+record under constraint), then connects it to the prior
+pattern (Shippensburg), then names what changed (the
+preparation held even when environmental conditions didn't
+improve). The structure follows the week's actual story,
+not a template. Strong P5.
+
+OVERALL: 6 of 6 voice principles in strong alignment. This
+matches Week 8 Angelo's principle alignment.
+
+
+============================================================
+APPENDIX B SECTION 7: EXPRESSIVE RANGE CHECK
+============================================================
+
+OPENING APPROACHES FOR ANGELO (all 4 v2.3 CMs would show
+4 distinct approaches; Angelo has 2 v2.3 CMs):
+  Wk8 CM: Specific moment ("Friday's weather hit you")
+  Wk9 CM: Refuse-the-false-framing ("Slippery Rock isn't
+    a better result because anything around you got
+    easier")
+
+These are structurally distinct opening approaches. Neither
+is a repeat of the other. Good variation.
+
+NEW EXPRESSIVE MOVES IN WEEK 9:
+
+MOVE 1: "YOU CHOSE X. YOU CHOSE Y. YOU CHOSE Z. YOU
+         DECIDED IT."
+  "You chose recovery when a lift wasn't available. You
+  chose technique over volume. You listened before you
+  acted. None of that happened by accident. You decided
+  it."
+
+  Parallel-affirmative construction (three "You chose"
+  sentences + summation). This is structurally parallel,
+  but it's parallel AFFIRMATIVE rather than parallel
+  NEGATIVE (which would be the retired "Not X, Y" pattern).
+  Not a violation. But: if this construction recurs at high
+  frequency, it could become its own template. Monitor.
+
+MOVE 2: "REFUSE THE OBVIOUS FRAMING" OPENER
+  "Slippery Rock isn't a better result because anything
+  around you got easier. [Three specific counter-evidence
+  items.] What changed was you."
+
+  This is a coaching move that sets up a false explanation,
+  refutes it with specifics, and pivots to the real answer.
+  Effective. But similar-shaped openings in subsequent
+  weeks would be a template. Monitor.
+
+MOVE 3: "THAT SENTENCE IS WHAT PRODUCED [OUTCOME]" AS
+         RECOGNITION
+  "That sentence is what produced the outdoor shot put
+  school record over 16m."
+
+  Rather than recognizing the athlete's behavior directly
+  ("You did X well"), this recognition traces the outcome
+  backward to a specific athlete utterance. The sentence
+  becomes the causal agent. Strong P3 + P1 fusion.
+
+CLOSING MOVES:
+  Wk7 closing: "Planned, not spontaneous. That's your
+    standard now."
+  Wk8 closing: "Prepared for anything. That's the standard
+    you're building."
+  Wk9 closing: "The preparation is the system now. Build
+    it in on purpose."
+
+  All three end with a distilled-principle + directive
+  structure, but with different principles and directives.
+  The "[Principle]. [Directive]." closing form is the one
+  closing template to watch -- it's now at 3 of 3 for
+  Angelo's v2.3 output. If Grace and Tucker also use this
+  form at 70%+ frequency, the closing form itself becomes
+  a template.
+
+
+============================================================
+APPENDIX B SECTION 8: SAME-ATHLETE CONSISTENCY (WK8 → WK9)
+============================================================
+
+The most useful comparison in this analysis: does Angelo's
+voice hold, drift, or evolve across consecutive v2.3 weeks?
+
+VOICE IDENTITY CONSISTENCY:
+Both weeks sound like the same coach talking to the same
+athlete. The "you decided it," "I don't want to soften it,"
+"The record is real, and it matched the goal you named"
+cadence is consistent with Week 8's "I'm not going to
+pretend those numbers don't matter to you" cadence.
+CONSISTENT.
+
+ANALYTICAL STYLE CONSISTENCY:
+Both weeks structure the analysis around connecting this
+week to a prior inflection point (Wk8 connected to PSAC;
+Wk9 connects to Shippensburg + Mt Union). Both weeks
+identify a pattern operating at a more abstract level than
+the week's events. CONSISTENT.
+
+STRUCTURAL VARIATION:
+CM opening Wk8: specific moment. CM opening Wk9: refute-
+false-framing. DIFFERENT (good variation).
+DD opening Wk8: "This was the first week..." DD opening
+Wk9: "This was the week your program moved..." SIMILAR
+(template concern, see Section 4).
+Closings: different content, similar "[Principle].
+[Directive]." form.
+
+DRIFT CONCERNS:
+  - "This was the [X] week" DD opener recurred (Template 2)
+  - 5 initial-generation "Not X. Y." pattern attempts
+    (caught by audit)
+  - "Developing phase" appearance in final output (first
+    in v2.3 corpus)
+
+EVOLUTION:
+  - New opening approach (refute-false-framing)
+  - New recognition move ("that sentence is what produced
+    [outcome]")
+  - New parallel-affirmative construction ("You chose X.
+    You chose Y. You chose Z. You decided it.")
+
+NET ASSESSMENT: Voice identity holds. Some structural
+drift on the DD opening. Pipeline-adjacent vocabulary
+borderline case introduced. New expressive moves emerged
+in positive directions. The voice is not regressing, but
+one template crossed the monitoring threshold.
+
+
+============================================================
+APPENDIX B SECTION 9: CROSS-APPENDIX TEMPLATE FREQUENCY
+============================================================
+
+Updated template frequencies including Angelo Wk9.
+
+V2.3 CORPUS NOW: 8 FILES (4 CMs + 4 DDs across Angelo Wk8,
+Wk9, Tucker Wk8, Grace Wk11).
+
+  Template 1 strict ("I'm not going to [X]"):
+    2 of 8 files = 25% (below threshold)
+  Template 1 broader ("Coach refuses bad move"):
+    ~4 of 8 files = 50% (monitoring)
+
+  Template 2 ("This [is/was] the [X] week" DD opener):
+    3 of 4 DDs = 75% (ABOVE 70% threshold)
+
+  Template 3 strict ("Two [X] from [Y] matter"):
+    2 of 4 DDs = 50% (monitoring)
+  Template 3 broader ("[N] moments/threads matter"):
+    3 of 4 DDs = 75% (ABOVE 70% threshold when variants
+    included)
+
+  New patterns emerged in Wk9:
+    - Parallel-affirmative construction -- monitor
+    - Refute-false-framing opener -- monitor
+    - "[Principle]. [Directive]." closing -- watch across
+      athletes
+
+ACTION TRIGGERED:
+  Template 2 has crossed the 70% threshold at 4 DDs across
+  3 athletes. Per the monitoring protocol established in
+  Appendix A Section 8, this is the signal to add DD-
+  specific exemplars to Voice Reference Category A.
+
+  This would be the first concrete spec-adjacent work
+  surfaced by the validation process -- not a generation
+  rule change, just an exemplar addition that teaches the
+  model alternative DD opening approaches.
+
+
+============================================================
+APPENDIX B SECTION 10: RECOMMENDATIONS
+============================================================
+
+1. ACT ON TEMPLATE 2 (DD OPENING)
+   Add 2-3 new exemplars to Voice Reference Category A that
+   demonstrate alternative DD opening approaches:
+
+     a. "Something shifted this week" form (Grace Wk11 is
+        the live exemplar candidate)
+     b. Athlete-quote opening applied to DD (not just CM)
+     c. Single-moment opening applied to DD
+
+   This is a targeted addition, not a generation rule
+   change. Expected to fold cleanly into the existing
+   Voice Reference architecture.
+
+2. MONITOR TEMPLATE 3 ONE MORE ROUND
+   "[N] moments matter" trendline opener is at 75%
+   including variants. Before acting, see one more round
+   of athlete data to confirm the pattern persists rather
+   than self-correcting.
+
+3. MONITOR "DEVELOPING PHASE" PHRASE FREQUENCY
+   First v2.3 appearance of phase name in final output.
+   Audit judged acceptable. If phase names appear in 50%+
+   of future v2.3 output, tighten 14.12 interpretation.
+
+4. MONITOR "[PRINCIPLE]. [DIRECTIVE]." CLOSING FORM
+   All 3 Angelo v2.3 CMs end this way. If Grace and Tucker
+   converge on this form, it becomes a closing template.
+   Worth watching but not yet acting on.
+
+5. NOTE THE INITIAL-GENERATION "NOT X. Y." RATE
+   Week 9 had 5 instances of this pattern at initial
+   generation, all caught by audit. This is the highest
+   count in any single v2.3 file so far. If future
+   generation shows 4+ instances per file consistently,
+   the initial-generation layer (Voice Reference teaching)
+   may need reinforcement on this specific pattern. For
+   now, audit catching it is the architecture working
+   as designed.
+
+6. HYPOTHESIS STATUS: HOLDING AT ~92-95%
+   The voice quality estimate from Session 108 still holds.
+   Week 9's template finding is within the monitoring
+   envelope and doesn't regress the estimate. The fact
+   that Criterion 14 caught 5 patterns and the final output
+   is clean is evidence of the architecture's self-
+   correction capacity.
+
+
+============================================================
+END OF APPENDIX B
+============================================================

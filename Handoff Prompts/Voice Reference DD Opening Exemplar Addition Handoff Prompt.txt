@@ -1,0 +1,531 @@
+============================================================
+VOICE REFERENCE DD OPENING EXEMPLAR ADDITION
+HANDOFF PROMPT
+============================================================
+VERSION: 1.0
+CREATED: 2026-04-22 (Session 109)
+SESSION TYPE: Voice Reference teaching addition.
+             Spec-adjacent work. Minimum pipeline
+             processing. Maximum care on teaching quality.
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION
+============================================================
+
+Read CLAUDE.md in the project root. Pay particular
+attention to:
+  - Session 109 header (Template 2 threshold finding)
+  - Session 108 entry (Voice Quality Comparison Analysis
+    + Appendix A setup of the monitoring protocol)
+  - Session 102 entry (the Pairs 9-11 design precedent —
+    this is the closest prior work to what you're doing)
+  - Sessions 96-101 entries (Voice Reference build arc —
+    quality framework context)
+
+Then read this handoff prompt in full before beginning.
+
+
+============================================================
+2. PURPOSE
+============================================================
+
+The v2.3/V5 validation process surfaced an emergent template
+pattern at the DD opening level: the "This [is/was] the [X]
+week" construction appears at 75% frequency across 4 DDs in
+the validation corpus (3 of 4: Angelo Wk8, Tucker Wk8,
+Angelo Wk9 — Grace Wk11 broke the pattern).
+
+75% crosses the 70% monitoring threshold established in
+Appendix A Section 9. Per the protocol, this is the signal
+to act — not through a new generation rule or Criterion 14
+fail condition, but through Voice Reference teaching.
+
+The work of this session: add 2-3 new exemplars to the Voice
+Reference that teach alternative DD opening approaches,
+breaking the default "This [is/was] the [X] week" pattern
+without replacing it with a new template.
+
+This is narrow, high-stakes work. The Voice Reference is the
+primary voice authority for Stage 3. Any exemplar added must
+meet the existing quality bar (see Session 102 Pairs 9-11
+precedent). A sloppy exemplar addition degrades the teaching
+document more than it helps.
+
+
+============================================================
+3. CONTEXT — WHY NOW, WHY THIS WAY
+============================================================
+
+WHY NOW:
+Session 108's validation work established a monitoring
+protocol: flag emergent templates at 70%+ frequency across
+the v2.3 corpus. Session 109's Appendix B confirmed Template
+2 crossed that threshold. Acting now is the protocol working
+as designed, not a reactive patch.
+
+WHY VOICE REFERENCE (NOT GENERATION RULES):
+The v2.3 architecture explicitly chose teaching over
+prohibition. Prior versions (v2.1) added rules to Section 35
+and found that prohibition produces workaround behavior
+(telegraphing survived v2.1's explicit no-telegraphing rule;
+only v2.3's exemplar teaching eliminated it). Adding a new
+Criterion 14 fail condition or a new Section 35 rule would
+repeat the v2.1 mistake.
+
+Voice Reference additions are the designed intervention path
+for emergent patterns. The architecture was built for
+exactly this: surface a pattern through validation, add a
+teaching exemplar, rely on the model to generalize from the
+exemplar rather than comply with a rule.
+
+WHY DD-SPECIFIC:
+The existing 18 annotated exemplars (Section 3) and 11
+before/after pairs (Section 4) are all CM-oriented. None
+demonstrate DD opening approaches. This is a known gap
+flagged in Session 108 Section 8 (Remaining Gaps) and
+Session 109 Appendix B Section 4. The absence of DD-opening
+exemplars is the structural reason the model converges on
+a single default approach for DD openings.
+
+WHY 2-3 EXEMPLARS (NOT ONE):
+The "Best Not Better" principle (Session 92 locked decision)
+applies. One new exemplar teaches one new approach —
+sufficient to break the current template but insufficient
+to expand range. The model needs to see multiple alternative
+DD opening approaches to develop an instinct for variation
+rather than settling on whichever exemplar you add as the
+new default.
+
+WHY CAREFUL QUALITY MATTERS:
+If a new exemplar has its own template-adjacent structure,
+the fix becomes the new problem. Session 101 spent
+significant effort on vocabulary tracking (no pedagogical
+verb exceeding 2 uses across 8 blocks), instinct-first
+framing, and review-process jargon elimination. Those
+constraints apply here too.
+
+
+============================================================
+4. LOCKED DESIGN DECISIONS
+============================================================
+
+1. ADDITION GOES INTO VOICE REFERENCE.
+   Not generation rules (Section 35). Not Criterion 14.
+   Not a framework update. The Voice Reference is the
+   designed intervention path.
+
+2. FORMAT = VOICE REFERENCE SECTION 4 BEFORE/AFTER PAIRS.
+   Section 4 is the template-retirement mechanism. Before =
+   the pattern being retired. After = the alternative that
+   expands the range. This matches the precedent set by
+   Pairs 6 (triple-negative), 7 (version of X), 8 ("Here is
+   what" announcements). Section 4 is the right home for
+   template-break work.
+   (Rationale: Category A exemplars in Section 3 teach
+   general coaching approaches. Section 4 pairs teach
+   specific pattern retirements. This work is the latter.)
+
+3. BEFORE EXAMPLES WILL USE REAL PRODUCTION OUTPUT.
+   Pair 6 (triple-negative) used Grace Wk10 DD's actual
+   opening as the Before example. Same logic applies here:
+   the Before example needs to BE the template being
+   retired. Angelo Wk8 DD ("This was the first week in your
+   program where things didn't go the way you planned"),
+   Tucker Wk8 DD, and Angelo Wk9 DD all provide candidate
+   Before examples.
+
+4. AFTER EXAMPLES WILL BE FRESHLY WRITTEN.
+   Not adapted from existing production output. Grace Wk11
+   DD's "Something shifted this week, Grace, and it shifted
+   quietly" can serve as a REFERENCE for one acceptable
+   alternative approach, but the AFTER examples in the new
+   pairs should be written fresh against real athlete data
+   (same approach as Session 102 Pairs 9-11).
+
+5. 2-3 PAIRS ADDED. NOT ONE, NOT FIVE.
+   Two pairs minimum. Three maximum. More than three and
+   you're padding. Fewer than two and the teaching lands
+   on a single alternative, risking new template emergence.
+
+6. EACH AFTER EXAMPLE MUST DEMONSTRATE A DISTINCT OPENING
+   APPROACH.
+   The three candidate approaches to choose among:
+   (a) "Something shifted" style — opens with state-change
+       recognition before naming specifics
+   (b) Athlete-quote opening applied to DD — mirrors what
+       CM openings do best, opens with the athlete's own
+       language and pivots to interpretation
+   (c) Single specific moment opening applied to DD —
+       opens with one event and lets meaning emerge
+   (d) Direct observation — opens with the coach's
+       diagnostic read ("The through-line this week was X")
+   (e) Other approaches surfaced during collaborative
+       design
+   Pick 2-3 approaches that are maximally distinct from
+   each other AND from the "This [is/was] the [X] week"
+   construction being retired.
+
+7. QUALITY CONSTRAINTS (INHERITED FROM SESSION 101/102):
+   - Deliberate vocabulary tracking — no pedagogical verb
+     exceeding 2 uses across the new pairs
+   - Instinct-first framing in WHAT CHANGED blocks (every
+     opening sentence names the coaching reason before
+     describing the rhetorical structure)
+   - Explicit Voice Principle reference in each pair (which
+     principle the After example embodies)
+   - Zero em dashes
+   - Zero review-process jargon ("load-bearing," "contrast-
+     reframe," etc.)
+   - Zero retired C3 constructions in After examples (the
+     retired pattern list from v2.3 Section 35 C3)
+
+8. USER COLLABORATION EXPECTED.
+   Session 102 precedent: candidate approaches surfaced,
+   user shaped decisions on which to write, drafts reviewed,
+   specific refinements applied. Same model here.
+
+
+============================================================
+5. OPEN DESIGN DECISIONS (RESOLVE IN SESSION)
+============================================================
+
+DQ1: WHICH 2-3 APPROACHES TO TEACH?
+Candidate list in Locked Decision 6. Propose 2-3 during
+Phase 2 based on analysis of the 4 current v2.3 DD openings
+and what variation is most needed. User confirms selection.
+
+DQ2: WHICH ATHLETE DATA FOR AFTER EXAMPLES?
+Session 102 used fabricated athlete data to avoid sampling
+bias. For template-retirement pairs, the Before uses real
+production output, but the After has options:
+  (a) Same-athlete rewrite — take Angelo Wk8 DD's actual
+      week data and write an alternative opening that
+      uses a different approach
+  (b) Different real athlete — use a week from another
+      athlete that naturally called for a different opening
+  (c) Fabricated athlete — same as Session 102 Pairs 9-11
+Recommendation: (a) is cleanest for template-break work —
+it shows "here's the same coaching situation opened
+differently." But user decides.
+
+DQ3: WHERE IN SECTION 4 DO THE NEW PAIRS GO?
+Section 4 currently has 11 pairs (1-11). New pairs would
+be 12-13 or 12-14. Numbering is sequential; no reordering
+needed. Just append.
+
+DQ4: ANY CROSS-REFERENCES TO ADD?
+The Voice Reference Section 5 safety net appendix and the
+Coaching Output Instructions v2.3 Section 35 C3 may need
+minor updates to reference the new pairs. Likely no change
+needed, but verify.
+
+
+============================================================
+6. EXECUTION PHASES
+============================================================
+
+PHASE 1: LOAD CONTEXT (HIGH EFFORT)
+Duration: 30-45 min reading, full comprehension required.
+  - Read VF_Coach_Arron_Voice_Reference.txt in full
+    (1790 lines). Specific attention to Section 4 pairs 1-11
+    to load the quality bar and format.
+  - Read v2.3 Section 35 (SOP_Coaching_Output_Instructions_
+    v2.3.txt, Section 35) — specifically C3 retired list.
+    The After examples must not contain retired
+    constructions.
+  - Read Criterion 14 (SOP_Editorial_Audit_Project_
+    Instructions_v1.6.txt, Section 14) — for reference,
+    not for rule-writing. You're not adding a new criterion.
+  - Read Appendix B Section 4 of the Voice Quality
+    Comparison Analysis for the Template 2 finding details.
+  - Scan the 4 current v2.3 DD openings:
+      Angelo Wk8, Tucker Wk8, Grace Wk11, Angelo Wk9
+    Map what each attempts, what works, what doesn't.
+
+PHASE 2: DESIGN (HIGH EFFORT, COLLABORATIVE)
+Duration: 30-60 min, back-and-forth with user.
+  - Propose 2-3 candidate DD opening approaches from the
+    menu in Locked Decision 6 (or surface new candidates).
+  - For each, explain what the approach teaches the model
+    that the existing 18 exemplars + 11 pairs don't.
+  - User confirms or redirects.
+  - Resolve DQ1, DQ2.
+
+PHASE 3: DRAFT (HIGH EFFORT)
+Duration: 60-90 min writing + revision.
+  - For each confirmed approach, draft:
+      * Before example (real production DD opening)
+      * After example (freshly written alternative)
+      * WHAT CHANGED analytical block (follow the Pair 9-11
+        template: instinct-first, Voice Principle named,
+        5-10 sentences)
+  - Apply vocabulary tracking across the new pairs (no
+    pedagogical verb over 2 uses).
+  - Apply em dash scrub (zero tolerance).
+  - Apply C3 retired construction scan (zero tolerance).
+
+PHASE 4: REVIEW (HIGH EFFORT, COLLABORATIVE)
+Duration: 30-45 min, user review + targeted revisions.
+  - Present drafts to user for review.
+  - User flags any issues (Session 102 precedent: user
+    caught dead connector sentences, hollow assertions,
+    cap-dodge phrasing, grammar issues).
+  - Apply targeted revisions.
+  - Second pass if needed.
+
+PHASE 5: APPLY AND VERIFY (MEDIUM EFFORT)
+Duration: 30 min.
+  - Edit VF_Coach_Arron_Voice_Reference.txt to add new
+    pairs to Section 4.
+  - Mechanical verification: zero em dashes across the
+    entire file, zero retired constructions in After
+    examples, sequential pair numbering.
+  - Cross-reference check: does Section 5 or v2.3 Section
+    35 need updating to reference new pairs? Apply
+    minimally if so.
+  - Final clean-context read of the new pairs in situ to
+    confirm they fit the surrounding document.
+
+PHASE 6: COMMIT (LOW EFFORT)
+Duration: 5 min.
+  - Git commit with descriptive message.
+  - Update CLAUDE.md with a new session entry noting the
+    new pairs added and their teaching targets.
+  - Second commit for CLAUDE.md if needed.
+
+
+============================================================
+7. EFFORT GUIDANCE BY PHASE
+============================================================
+
+  Phase 1 (Load Context): HIGH
+    Full-document reading of Voice Reference. Pattern
+    recognition across existing exemplars.
+
+  Phase 2 (Design): HIGH
+    Creative + analytical. Generating candidate approaches
+    + defending selection with user.
+
+  Phase 3 (Draft): HIGH
+    Writing gold-standard coaching prose. This is the most
+    effort-sensitive phase.
+
+  Phase 4 (Review): HIGH
+    Quality-gate work. Catching hollow sentences, template
+    echoes, vocabulary issues.
+
+  Phase 5 (Apply and Verify): MEDIUM
+    Mechanical application + verification. Lower creative
+    load but high attention-to-detail load.
+
+  Phase 6 (Commit): LOW
+    Straightforward git + documentation.
+
+If context load becomes heavy between phases, propose a
+session break before Phase 3 or Phase 4. Don't push through
+with degraded quality.
+
+
+============================================================
+8. CRITICAL OPERATING RULES
+============================================================
+
+1. QUALITY OVER SPEED.
+   Session 101 precedent: user explicitly said "saving time
+   at the expense of quality is a non starter." Same rule
+   applies. If a draft isn't at the Section 4 Pair 6-8
+   quality bar, revise until it is.
+
+2. DO NOT CREATE NEW TEMPLATES.
+   The fix must expand expressive range. If the 2-3 new
+   exemplars share structural features (e.g., all open with
+   a pronoun + verb + descriptor), you've taught the model
+   a new template. Each After example must be structurally
+   distinct from the others AND from the Before pattern
+   being retired.
+
+3. DO NOT USE RETIRED CONSTRUCTIONS IN AFTER EXAMPLES.
+   Cross-reference v2.3 Section 35 C3 list before
+   finalizing. Retired constructions: "Here is what [I
+   want you to see]," "The version of you that," "I also
+   want to name/acknowledge," "[N] weeks into this program"
+   (as DD trendline opener), "The question is [whether],"
+   "Not X. Y." / "not X, but Y," "The athletes who [X]
+   are the ones who [Y]."
+
+4. DO NOT MODIFY EXISTING PAIRS.
+   You are adding new pairs, not revising existing ones.
+   Pairs 1-11 are sealed. If you discover an issue with an
+   existing pair during this session, flag it and defer to
+   a future session.
+
+5. DO NOT ADD RULES TO SECTION 35 OR CRITERION 14.
+   This work is exemplar addition. Any instinct to write
+   "and add a rule prohibiting X" should be redirected to
+   "what exemplar teaches the model to avoid X."
+
+6. EM DASH BAN IS ABSOLUTE.
+   Zero em dashes in new content. Verify with grep after
+   editing.
+
+7. USE COMMAS AND PERIODS, NOT EM DASHES.
+   Specific replacement rules from v2.3 Section 35 C1:
+   parenthetical → comma; reframe → period or comma + but;
+   pivot → colon; dramatic pause → period.
+
+8. PRESERVE USER COLLABORATION RHYTHM.
+   This is not a solo build. Surface decisions, propose
+   options, wait for confirmation. Session 102 took four
+   rounds of revision on Pairs 9-11. Expect similar.
+
+
+============================================================
+9. REFERENCE FILES BY PRIORITY
+============================================================
+
+TIER 1 — REQUIRED READING (read in full):
+  1. VF_Coach_Arron_Voice_Reference.txt
+     (Agents - Generators\Coaching Output\Source FIles\)
+     Primary target of modification. Full read required.
+  2. Validation Reports\Voice_Quality_Comparison_Analysis.txt
+     Specifically Appendix B Section 4 (Template 2 finding).
+  3. CLAUDE.md Session 102 entry
+     Pair 9-11 design precedent. Most relevant prior work.
+
+TIER 2 — REQUIRED REFERENCE (read relevant sections):
+  4. SOP_Coaching_Output_Instructions_v2.3.txt, Section 35
+     (Agents - Generators\Coaching Output\)
+     C3 retired construction list. C1-C4 mechanical rules.
+  5. The 4 current v2.3 DD openings:
+       a. Athlete Data\Angelo Allen\Coaching and Deep Dive\
+          Deep Dive\Angelo_Allen_2026-04-06to2026-04-12_
+          VF_DeepDive.txt (Wk8)
+       b. Athlete Data\Tucker Lloyd\Coaching and Deep Dive\
+          Deep Dive\Tucker_Lloyd_2026-04-13to2026-04-19_
+          VF_DeepDive.txt (Wk8)
+       c. Athlete Data\Grace Kindel\Coaching and Deep Dive\
+          Deep Dive\Grace_Kindel_2026-04-13to2026-04-19_
+          VF_DeepDive.txt (Wk11 — pattern breaker, reference
+          for alternative approach)
+       d. Athlete Data\Angelo Allen\Coaching and Deep Dive\
+          Deep Dive\Angelo_Allen_2026-04-13to2026-04-19_
+          VF_DeepDive.txt (Wk9)
+     Read each DD's Mindset Summary opening paragraph only.
+     Sufficient for mapping the current landscape.
+
+TIER 3 — BACKGROUND CONTEXT (scan as needed):
+  6. CLAUDE.md Sessions 96-101 entries
+     Voice Reference build arc for quality framework.
+  7. SOP_Editorial_Audit_Project_Instructions_v1.6.txt,
+     Section 14 (Criterion 14)
+     Reference only. Not modifying.
+  8. VF_Coaching_Output_Voice_Foundations.txt
+     Stage 3 brand stance. Reference for tone calibration
+     in After examples.
+
+
+============================================================
+10. SUCCESS CRITERIA
+============================================================
+
+The session is successful if:
+
+  [ ] 2-3 new pairs added to Voice Reference Section 4.
+  [ ] Each pair has a Before (real production DD opening
+      using the "This [is/was] the [X] week" pattern),
+      an After (freshly written alternative opening), and
+      a WHAT CHANGED analytical block.
+  [ ] Each After example opens with a structurally distinct
+      approach from the others and from the retired pattern.
+  [ ] Zero em dashes in the new content.
+  [ ] Zero retired C3 constructions in After examples.
+  [ ] Vocabulary tracking: no pedagogical verb exceeds 2
+      uses across the new pairs.
+  [ ] Each WHAT CHANGED block references one of the 6 Voice
+      Principles explicitly.
+  [ ] Each WHAT CHANGED block opens with the coaching
+      reason, not the rhetorical structure.
+  [ ] User approval on all new content.
+  [ ] File changes committed with descriptive message.
+  [ ] CLAUDE.md updated with new session entry.
+
+The session is NOT successful if:
+
+  [ ] A new template emerges across the 2-3 After examples.
+  [ ] WHAT CHANGED blocks read as review-process jargon
+      rather than teaching.
+  [ ] Retired C3 constructions appear in any new content.
+  [ ] An em dash slips in anywhere.
+  [ ] Existing pairs (1-11) or other Voice Reference
+      sections are modified without explicit need.
+  [ ] New rules or criteria are added to Section 35 or
+      Criterion 14.
+
+
+============================================================
+11. WHAT NOT TO DO
+============================================================
+
+1. DO NOT SKIP THE FULL VOICE REFERENCE READ.
+   The quality bar is embedded in the existing pairs. You
+   cannot match it without reading the source.
+
+2. DO NOT USE PRIOR VALIDATION ANALYSIS PROSE AS EXEMPLAR
+   MATERIAL.
+   Appendix A and Appendix B of the Voice Quality Analysis
+   are analytical documents. Their voice does not belong
+   in athlete-facing exemplars.
+
+3. DO NOT OPEN ANY AFTER EXAMPLE WITH "THIS [IS/WAS] THE
+   [X] WEEK" OR CLOSE STRUCTURAL VARIANTS.
+   That's the pattern being retired.
+
+4. DO NOT WRITE THE AFTER EXAMPLES TO BE SHORTER OR EASIER
+   THAN THE BEFORE.
+   Match the length and analytical depth. The problem isn't
+   that DD openings are too long. It's that they converge
+   on one approach.
+
+5. DO NOT ADD COMMENTARY OR META-NOTES TO THE VOICE
+   REFERENCE.
+   The pairs speak for themselves. Don't add "Note: this
+   was added in Session 110 because..."
+
+6. DO NOT TREAT THIS AS A ONE-ROUND BUILD.
+   Session 101 took multiple rounds of revision on 8
+   Section 4 WHAT CHANGED blocks. Expect similar rhythm
+   for this smaller additive work.
+
+
+============================================================
+12. HANDOFF CLOSING NOTES
+============================================================
+
+This is the first spec-adjacent action taken based on the
+v2.3 validation monitoring protocol. The protocol surfaced
+a pattern, an appendix confirmed the pattern crossed the
+70% threshold, and this session acts on it via the designed
+intervention path (Voice Reference teaching).
+
+If the session produces strong exemplars, the monitoring
+protocol is validated end-to-end: detection → confirmation
+→ targeted fix → re-entry to production. That's the
+sustainable maintenance cadence the architecture was built
+for.
+
+If the session produces weak exemplars, the lesson is that
+exemplar addition deserves its own dedicated session time
+and quality bar, not treated as a rapid patch in response
+to validation findings.
+
+Either way, the result informs the architecture's
+maturation.
+
+Good luck.
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
