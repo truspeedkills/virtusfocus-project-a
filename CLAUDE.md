@@ -758,6 +758,22 @@ Before finishing ANY session — whether the user asks or not — you MUST:
 
 This rule exists because prior sessions have ended with uncommitted work and stale CLAUDE.md entries, creating confusion in subsequent sessions. The hooks in `.claude/settings.json` will remind you, but you should proactively check even without being reminded.
 
+### Session Number Convention (NON-NEGOTIABLE)
+
+**Session numbers live only in CLAUDE.md. Nowhere else.**
+
+Artifacts (handoff prompts, validation reports, analyses, audit summaries, commit messages, etc.) must reference each other by **filename + section**, never by session number. When narrative context is needed in an artifact, use the date or a descriptive label, not the session number.
+
+This rule exists because sessions sometimes run concurrently or in rapid succession, and session numbers are assigned at CLAUDE.md update time by whoever gets there first. If session numbers leak into other artifacts before CLAUDE.md is updated, the numbers can become wrong when another session updates CLAUDE.md with a colliding claim. Keeping session numbers inside CLAUDE.md eliminates the failure mode entirely.
+
+**In practice:**
+- Handoff prompts: "read the Voice Quality Comparison Analysis Appendix B Section 4" — not "read Session 110's analysis"
+- Validation reports and analyses: title by content and date ("Voice Quality Comparison Analysis — 2026-04-16"), not by session number
+- Commit messages: describe the work, not the session it happened in
+- Cross-artifact references: use filename + section, e.g. "see VF_Coach_Arron_Voice_Reference.txt Section 4 Pair 9"
+
+**The one exception:** CLAUDE.md referencing its own prior sessions is fine — that's internal to the narrative index and benefits from the sequential structure. Session entries in CLAUDE.md's numbered history can and should use session numbers freely.
+
 ### Commit Message Format
 One sentence describing the *what*. One sentence describing the *why*.
 Example: `"Generated Grace Kindel Week 5 Coaching Message and Deep Dive. First full v1.2/V3 coaching output run."`

@@ -3,7 +3,7 @@ VOICE REFERENCE DD OPENING EXEMPLAR ADDITION
 HANDOFF PROMPT
 ============================================================
 VERSION: 1.0
-CREATED: 2026-04-22 (Session 110)
+CREATED: 2026-04-22
 SESSION TYPE: Voice Reference teaching addition.
              Spec-adjacent work. Minimum pipeline
              processing. Maximum care on teaching quality.
@@ -15,19 +15,20 @@ SESSION TYPE: Voice Reference teaching addition.
 ============================================================
 
 Read CLAUDE.md in the project root. Pay particular
-attention to:
-  - Session 110 header and entry (Template 2 threshold
-    finding + Appendix B analysis — the work that triggered
-    this handoff)
-  - Session 109 entry (Angelo Week 9 pipeline processing —
-    Angelo Wk9 is one of the 4 DD openings in the template
-    data)
-  - Session 108 entry (Voice Quality Comparison Analysis
-    + Appendix A setup of the monitoring protocol)
-  - Session 102 entry (the Pairs 9-11 design precedent —
-    this is the closest prior work to what you're doing)
-  - Sessions 96-101 entries (Voice Reference build arc —
-    quality framework context)
+attention to the most recent entries in the session
+history that describe:
+  - The Template 2 threshold finding and Appendix B
+    analysis (the work that triggered this handoff —
+    most recent entry at the top)
+  - The Angelo Week 9 pipeline processing entry (Angelo
+    Wk9 is one of the 4 DD openings in the template data)
+  - The Voice Quality Comparison Analysis + Appendix A
+    entry (setup of the monitoring protocol)
+  - The entry documenting the addition of Pairs 9-11 to
+    Voice Reference Section 4 (closest prior work to what
+    you're doing — design precedent)
+  - The Voice Reference build arc (spans multiple earlier
+    entries for quality framework context)
 
 Then read this handoff prompt in full before beginning.
 
@@ -59,7 +60,8 @@ without replacing it with a new template.
 
 This is narrow, high-stakes work. The Voice Reference is the
 primary voice authority for Stage 3. Any exemplar added must
-meet the existing quality bar (see Session 102 Pairs 9-11
+meet the existing quality bar (see VF_Coach_Arron_Voice_
+Reference.txt Section 4 Pairs 9-11 as the closest design
 precedent). A sloppy exemplar addition degrades the teaching
 document more than it helps.
 
@@ -69,11 +71,12 @@ document more than it helps.
 ============================================================
 
 WHY NOW:
-Session 108's validation work established a monitoring
-protocol: flag emergent templates at 70%+ frequency across
-the v2.3 corpus. Session 110's Appendix B confirmed Template
-2 crossed that threshold. Acting now is the protocol working
-as designed, not a reactive patch.
+The Voice Quality Comparison Analysis established a
+monitoring protocol: flag emergent templates at 70%+
+frequency across the v2.3 corpus. Appendix B of that same
+analysis confirmed Template 2 crossed that threshold.
+Acting now is the protocol working as designed, not a
+reactive patch.
 
 WHY VOICE REFERENCE (NOT GENERATION RULES):
 The v2.3 architecture explicitly chose teaching over
@@ -94,14 +97,16 @@ WHY DD-SPECIFIC:
 The existing 18 annotated exemplars (Section 3) and 11
 before/after pairs (Section 4) are all CM-oriented. None
 demonstrate DD opening approaches. This is a known gap
-flagged in Session 108 Section 8 (Remaining Gaps) and
-Session 110 Appendix B Section 4. The absence of DD-opening
+flagged in the Voice Quality Comparison Analysis Section 8
+(Remaining Gaps) and Appendix B Section 4. The absence of
+DD-opening
 exemplars is the structural reason the model converges on
 a single default approach for DD openings.
 
 WHY 2-3 EXEMPLARS (NOT ONE):
-The "Best Not Better" principle (Session 92 locked decision)
-applies. One new exemplar teaches one new approach —
+The "Best Not Better" principle (locked during prior voice
+quality improvement work) applies. One new exemplar teaches
+one new approach —
 sufficient to break the current template but insufficient
 to expand range. The model needs to see multiple alternative
 DD opening approaches to develop an instinct for variation
@@ -110,7 +115,8 @@ new default.
 
 WHY CAREFUL QUALITY MATTERS:
 If a new exemplar has its own template-adjacent structure,
-the fix becomes the new problem. Session 101 spent
+the fix becomes the new problem. The prior Voice Reference
+Section 4 WHAT CHANGED second-pass rewrite work spent
 significant effort on vocabulary tracking (no pedagogical
 verb exceeding 2 uses across 8 blocks), instinct-first
 framing, and review-process jargon elimination. Those
@@ -152,7 +158,8 @@ constraints apply here too.
    quietly" can serve as a REFERENCE for one acceptable
    alternative approach, but the AFTER examples in the new
    pairs should be written fresh against real athlete data
-   (same approach as Session 102 Pairs 9-11).
+   (same approach as the Voice Reference Section 4 Pairs
+   9-11 design work).
 
 5. 2-3 PAIRS ADDED. NOT ONE, NOT FIVE.
    Two pairs minimum. Three maximum. More than three and
@@ -192,9 +199,10 @@ constraints apply here too.
      retired pattern list from v2.3 Section 35 C3)
 
 8. USER COLLABORATION EXPECTED.
-   Session 102 precedent: candidate approaches surfaced,
-   user shaped decisions on which to write, drafts reviewed,
-   specific refinements applied. Same model here.
+   Voice Reference Section 4 Pairs 9-11 design precedent:
+   candidate approaches surfaced, user shaped decisions on
+   which to write, drafts reviewed, specific refinements
+   applied. Same model here.
 
 
 ============================================================
@@ -207,15 +215,17 @@ Phase 2 based on analysis of the 4 current v2.3 DD openings
 and what variation is most needed. User confirms selection.
 
 DQ2: WHICH ATHLETE DATA FOR AFTER EXAMPLES?
-Session 102 used fabricated athlete data to avoid sampling
-bias. For template-retirement pairs, the Before uses real
-production output, but the After has options:
+The prior Voice Reference Pairs 9-11 design work used
+fabricated athlete data to avoid sampling bias. For
+template-retirement pairs, the Before uses real production
+output, but the After has options:
   (a) Same-athlete rewrite — take Angelo Wk8 DD's actual
       week data and write an alternative opening that
       uses a different approach
   (b) Different real athlete — use a week from another
       athlete that naturally called for a different opening
-  (c) Fabricated athlete — same as Session 102 Pairs 9-11
+  (c) Fabricated athlete — same approach as the existing
+      Pairs 9-11
 Recommendation: (a) is cleanest for template-break work —
 it shows "here's the same coaching situation opened
 differently." But user decides.
@@ -279,9 +289,9 @@ Duration: 60-90 min writing + revision.
 PHASE 4: REVIEW (HIGH EFFORT, COLLABORATIVE)
 Duration: 30-45 min, user review + targeted revisions.
   - Present drafts to user for review.
-  - User flags any issues (Session 102 precedent: user
-    caught dead connector sentences, hollow assertions,
-    cap-dodge phrasing, grammar issues).
+  - User flags any issues (the Pairs 9-11 design precedent
+    showed: user caught dead connector sentences, hollow
+    assertions, cap-dodge phrasing, grammar issues).
   - Apply targeted revisions.
   - Second pass if needed.
 
@@ -343,10 +353,11 @@ with degraded quality.
 ============================================================
 
 1. QUALITY OVER SPEED.
-   Session 101 precedent: user explicitly said "saving time
-   at the expense of quality is a non starter." Same rule
-   applies. If a draft isn't at the Section 4 Pair 6-8
-   quality bar, revise until it is.
+   Prior Voice Reference build work established: user
+   explicitly said "saving time at the expense of quality
+   is a non starter." Same rule applies. If a draft isn't
+   at the Section 4 Pair 6-8 quality bar, revise until
+   it is.
 
 2. DO NOT CREATE NEW TEMPLATES.
    The fix must expand expressive range. If the 2-3 new
@@ -387,8 +398,8 @@ with degraded quality.
 
 8. PRESERVE USER COLLABORATION RHYTHM.
    This is not a solo build. Surface decisions, propose
-   options, wait for confirmation. Session 102 took four
-   rounds of revision on Pairs 9-11. Expect similar.
+   options, wait for confirmation. The Pairs 9-11 design
+   work took four rounds of revision. Expect similar.
 
 
 ============================================================
@@ -401,8 +412,12 @@ TIER 1 — REQUIRED READING (read in full):
      Primary target of modification. Full read required.
   2. Validation Reports\Voice_Quality_Comparison_Analysis.txt
      Specifically Appendix B Section 4 (Template 2 finding).
-  3. CLAUDE.md Session 102 entry
-     Pair 9-11 design precedent. Most relevant prior work.
+  3. CLAUDE.md session history entry documenting the
+     addition of Pairs 9-11 to Voice Reference Section 4
+     (Pair 9-11 design precedent — most relevant prior
+     work). Also the session entry documenting the Voice
+     Reference Section 4 WHAT CHANGED second-pass rewrite
+     (quality constraints precedent).
 
 TIER 2 — REQUIRED REFERENCE (read relevant sections):
   4. SOP_Coaching_Output_Instructions_v2.3.txt, Section 35
@@ -426,8 +441,12 @@ TIER 2 — REQUIRED REFERENCE (read relevant sections):
      Sufficient for mapping the current landscape.
 
 TIER 3 — BACKGROUND CONTEXT (scan as needed):
-  6. CLAUDE.md Sessions 96-101 entries
-     Voice Reference build arc for quality framework.
+  6. CLAUDE.md session history entries for the Voice
+     Reference build arc (multiple earlier entries covering
+     initial build, exemplar library curation, Section 3
+     WHY THIS WORKS rewrite, Section 4 WHAT CHANGED
+     second-pass rewrite). Read for quality framework
+     context — not all entries equally important.
   7. SOP_Editorial_Audit_Project_Instructions_v1.6.txt,
      Section 14 (Criterion 14)
      Reference only. Not modifying.
@@ -501,12 +520,12 @@ The session is NOT successful if:
 5. DO NOT ADD COMMENTARY OR META-NOTES TO THE VOICE
    REFERENCE.
    The pairs speak for themselves. Don't add "Note: this
-   was added in Session 110 because..."
+   pair was added to address a monitoring finding..."
 
 6. DO NOT TREAT THIS AS A ONE-ROUND BUILD.
-   Session 101 took multiple rounds of revision on 8
-   Section 4 WHAT CHANGED blocks. Expect similar rhythm
-   for this smaller additive work.
+   The Voice Reference Section 4 WHAT CHANGED second-pass
+   rewrite took multiple rounds of revision on 8 blocks.
+   Expect similar rhythm for this smaller additive work.
 
 
 ============================================================
