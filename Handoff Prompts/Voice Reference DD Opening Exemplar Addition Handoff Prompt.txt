@@ -3,7 +3,7 @@ VOICE REFERENCE DD OPENING EXEMPLAR ADDITION
 HANDOFF PROMPT
 ============================================================
 VERSION: 1.0
-CREATED: 2026-04-22 (Session 109)
+CREATED: 2026-04-22 (Session 110)
 SESSION TYPE: Voice Reference teaching addition.
              Spec-adjacent work. Minimum pipeline
              processing. Maximum care on teaching quality.
@@ -16,7 +16,12 @@ SESSION TYPE: Voice Reference teaching addition.
 
 Read CLAUDE.md in the project root. Pay particular
 attention to:
-  - Session 109 header (Template 2 threshold finding)
+  - Session 110 header and entry (Template 2 threshold
+    finding + Appendix B analysis — the work that triggered
+    this handoff)
+  - Session 109 entry (Angelo Week 9 pipeline processing —
+    Angelo Wk9 is one of the 4 DD openings in the template
+    data)
   - Session 108 entry (Voice Quality Comparison Analysis
     + Appendix A setup of the monitoring protocol)
   - Session 102 entry (the Pairs 9-11 design precedent —
@@ -25,6 +30,11 @@ attention to:
     quality framework context)
 
 Then read this handoff prompt in full before beginning.
+
+After the handoff prompt, read the Voice Quality Comparison
+Analysis file (Validation Reports\Voice_Quality_Comparison_
+Analysis.txt) Appendix B Section 4 specifically — that is
+where the Template 2 finding data lives in detail.
 
 
 ============================================================
@@ -61,7 +71,7 @@ document more than it helps.
 WHY NOW:
 Session 108's validation work established a monitoring
 protocol: flag emergent templates at 70%+ frequency across
-the v2.3 corpus. Session 109's Appendix B confirmed Template
+the v2.3 corpus. Session 110's Appendix B confirmed Template
 2 crossed that threshold. Acting now is the protocol working
 as designed, not a reactive patch.
 
@@ -85,7 +95,7 @@ The existing 18 annotated exemplars (Section 3) and 11
 before/after pairs (Section 4) are all CM-oriented. None
 demonstrate DD opening approaches. This is a known gap
 flagged in Session 108 Section 8 (Remaining Gaps) and
-Session 109 Appendix B Section 4. The absence of DD-opening
+Session 110 Appendix B Section 4. The absence of DD-opening
 exemplars is the structural reason the model converges on
 a single default approach for DD openings.
 
