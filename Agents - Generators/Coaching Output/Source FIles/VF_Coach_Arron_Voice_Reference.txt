@@ -1674,6 +1674,54 @@ would say. This is Earn Every Sentence applied to
 recognition: if the description carries the judgment, the
 stamp is volume, not weight.
 
+------------------------------------------------------------
+PAIR 12: Specific moment DD opening
+------------------------------------------------------------
+
+BEFORE (Tucker Wk8 DD opening):
+"This is the first week your behavioral execution and your reflective engagement went in opposite directions at the same time. Six straight days of engagement, a gym session for the first time in a month, and a Saturday that turned into the most active single day this program has seen all arrived together. Your Bullseye was blank."
+
+THE PROBLEM:
+The opening sentence labels the week as a category ("the first week where X and Y went opposite directions") before placing the reader inside anything concrete. "Behavioral execution" and "reflective engagement" are pipeline-adjacent abstractions. Tucker does not live in those words. He lives in the blank rings and the missing goal and the three-word recap sentences. The reader has to wait until the second sentence for material that connects to the actual week, and by then the thesis is already in place.
+
+AFTER (Tucker Wk8 DD opening, rewritten):
+"Your Bullseye this week was blank. Three rings, zero items, first time in eight weeks. The same week, you stacked six straight days of engagement, got back to the gym after a month away, and turned Saturday into the most active day this program has seen. Those two facts came together, and that's the story of the week."
+
+WHAT CHANGED:
+A week that produced the highest physical execution Tucker has built in the program and the blankest Bullseye he has submitted is the paradox the DD exists to unpack. The BEFORE opens with the paradox as a category label: "the first week your behavioral execution and your reflective engagement went in opposite directions." That labeling is accurate, but it is also backward. Tucker does not live in the words "behavioral execution" or "reflective engagement." He lives in the blank rings and the missing goal word and the three-word recap entries. The AFTER opens with the concrete material Tucker would recognize on sight: the blank Bullseye, the number he has not seen before, the stacked physical days, the Saturday. The interpretive claim lands last, "that's the story of the week," where it can rest on evidence the reader has already seen rather than evidence the reader is waiting to see. This is React Don't Compose applied to openings. The coach does not come to the page with a thesis about the week. He starts with what Tucker put in front of him and lets the coaching interpretation surface once the reader can feel what the coach is looking at.
+
+------------------------------------------------------------
+PAIR 13: Longitudinal distance DD opening
+------------------------------------------------------------
+
+BEFORE (Angelo Wk9 DD opening):
+"This was the week your program moved from lesson to system. You've been building toward this since the outdoor opener at Shippensburg, and you got there this week. The specific move is that preparation quality, which you first identified as a causal factor after PSAC and validated at Shippensburg, held up under conditions Shippensburg didn't face."
+
+THE PROBLEM:
+Four weeks stand between the Shippensburg opener and the Slippery Rock school record, and those two meets are the actual structure of the week's meaning. The opening installs the thesis ("moved from lesson to system") as a category before either meet appears. By the time Shippensburg shows up in sentence two, it is backfill to a conclusion already stated. The reader never gets to build the arc themselves because the coach hands them the conclusion first.
+
+AFTER (Angelo Wk9 DD opening, rewritten):
+"At Shippensburg four weeks ago, you wrote the lesson: 'properly planned, not spontaneous.' At Slippery Rock this week, you lived that lesson. A school record in shot put, a discus PR, a hammer improvement over Mt Union. This time, the preparation held up while the practice facility was still lost, the borrowed fields were still chaotic, and your week was short one lift session. The distance between those two meets is what the week is about."
+
+WHAT CHANGED:
+Four weeks stand between the opener at Shippensburg and the school record at Slippery Rock, and the coaching move this week is to place the two meets beside each other and let the distance between them carry the week's meaning. The BEFORE does that work in the second sentence, not the first. The opening sentence states the thesis as a category ("moved from lesson to system") before the reader has seen either meet. By the time Shippensburg appears in sentence two, it is backfill to a conclusion already stated. The AFTER inverts the order. Shippensburg and Slippery Rock are the first two sentences, stated as facts with time stamps, and the lesson Angelo wrote ("properly planned, not spontaneous") sits between them in his own words. The school record and the adjacent conditions fill the third and fourth sentences. The claim enters last, where the reader has already built the shape the claim is naming. This is Spend Your Words Unevenly at the longitudinal scale, the DD version of what F2 (Mergim Wk19 CM) does at the season-end scale. Four weeks and three meets compress into a two-meet bookend, and the twenty-one Win days and six Mixed days between them stay implicit.
+
+------------------------------------------------------------
+PAIR 14: Athlete sentence as DD thesis
+------------------------------------------------------------
+
+BEFORE (Angelo Wk8 DD opening):
+"This was the first week in your program where things didn't go the way you planned. Eight weeks of steady building, seven consecutive strong weeks, two Gold Streaks, and then a week that pushed back. The practice facility is gone. The borrowed fields brought scheduling chaos."
+
+THE PROBLEM:
+Angelo wrote one sentence in his own recap that carries the week's coaching story: "regardless of what the weather report says, I will take all the right clothes anyway just in case." The opening paragraph does not quote him at all. Instead, it describes the week in external terms (building counts, Gold Streaks, facility conditions). Every fact is accurate and none of them are what Angelo actually gave the coach.
+
+AFTER (Angelo Wk8 DD opening, rewritten):
+"You wrote, 'regardless of what the weather report says, I will take all the right clothes anyway just in case.' Before Friday, you would not have written that sentence. The marks at Mt Union came in below your range, the weather had been harsher than anything you had faced outdoors, and the practice facility had been gone for weeks. By the time you wrote those words, the correction was already built. The rest of the week orbits that one sentence."
+
+WHAT CHANGED:
+Angelo wrote the coaching story of his own week in a single sentence about weather clothes, and a coach who has read the week carefully can open the DD by doing nothing more than putting that sentence on the page first. The BEFORE does not quote Angelo at all in the opening paragraph. The week is described in external terms: "the first week where things didn't go the way you planned," building counts, weather conditions, mark ranges. Every fact is accurate and none of them are what Angelo actually gave the coach. The AFTER begins with his exact words and uses the opening paragraph to stage what those words mean against the twenty-four hours that produced them. The CM version of this move would be to quote and pivot in two sentences. The DD has more room, and that room gets used to place the sentence inside its full context: what Friday looked like, what the facility situation looked like, what Saturday proved. The payoff sentence comes near the end, not at the top: "The rest of the week orbits that one sentence." This is Talk Like You've Been in the Room applied to the DD opening. The coach was there when Angelo wrote the line. The opening paragraph does not need to explain it. It just needs to let it speak.
+
 ============================================================
 SECTION 5: COMPACT SAFETY NET APPENDIX
 ============================================================
