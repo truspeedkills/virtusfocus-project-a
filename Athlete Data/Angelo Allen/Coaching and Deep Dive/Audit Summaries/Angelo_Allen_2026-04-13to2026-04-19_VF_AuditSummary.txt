@@ -229,6 +229,61 @@ pattern). All applied via in-place edit to CM and DD files.
 No regeneration required.
 
 ============================================================
+POST-AUDIT USER EDITS (logged, not audit-triggered)
+============================================================
+
+Four user-applied edits after the audit-pass output was
+produced:
+
+1. CM opening scope tightening (data fidelity refinement):
+   "Slippery Rock isn't a better result because the conditions
+    were better. The conditions were not better."
+   →
+   "Slippery Rock isn't a better result because anything around
+    you got easier."
+   Rationale: original "conditions" wording was ambiguous and
+   could be read as meet-day weather (not in recap). Tightened
+   to scope the claim to the practice/training environment the
+   body paragraph details.
+
+2. CM P2 grammar polish:
+   "when lift wasn't available" → "when a lift wasn't available"
+
+3. CM P2 semantic strengthening:
+   "None of that happened to you. You decided it."
+   →
+   "None of that happened by accident. You decided it."
+   "By accident" pairs more tightly with "You decided it" than
+   "to you" does.
+
+4. DD Mindset Summary verb choice:
+   "the outdoor shot put school record over 16m came"
+   →
+   "the outdoor shot put school record fell"
+   Tighter phrasing; "the record fell" is the idiomatic verb
+   for a record broken.
+
+5. DD Strength Signal 3 quote normalization:
+   "the meet on thursday" → "the meet on Thursday"
+   Capitalization fix in reproduced athlete quote (editorial
+   normalization of weekday proper noun).
+
+6. CM separator bar length (spec change applied):
+   All three separator bars in the CM shortened from ~72
+   characters to exactly 40 characters per updated
+   VF_Coaching_Message_Framework.txt OUTPUT FORMAT spec.
+   Rationale: the 72-character heavy box-drawing bars
+   rendered as disproportionately long lines when pasted
+   into HTML email clients (Gmail). 40 characters accommodates
+   the longest current heading ("YOUR ACTION: BEFORE SATURDAY
+   AT JUNIATA" = 39 chars) while rendering cleanly in both
+   monospace text and proportional email rendering.
+
+None of the above edits are audit-triggered corrections. They
+are post-audit refinements applied by the user directly. The
+audit pass stands. Logging them here for the record.
+
+============================================================
 NOTES
 ============================================================
 

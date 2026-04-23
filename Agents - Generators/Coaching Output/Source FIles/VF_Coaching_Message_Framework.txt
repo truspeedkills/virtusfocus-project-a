@@ -79,11 +79,11 @@ OUTPUT FORMAT:
 Header:
 VIRTUSFOCUS: ATHLETE COACHING MESSAGE
 [Athlete First Name] [Athlete Last Name] | Week [#] | [Date Range]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 - Clean header only. Two lines: document title + athlete name/week/date.
 - No pipeline metadata (no schema version, no Emotional Intensity label, no Weekly Tier classification, no "Generated from" filename).
-- Full-width ━━━ separator bar after the header.
+- Compact ━━━ separator bar after the header.
 
 Salutation:
 [Athlete First Name],
@@ -96,11 +96,11 @@ Body:
 - Word target: 250-450 words (body only, excluding action section and focus question).
 
 Action Section:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 YOUR ACTION: [CONTEXT]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-- Full-width ━━━ separator bars above and below the section header.
+- Compact ━━━ separator bars above and below the section header.
 - "YOUR ACTION" in ALL CAPS followed by a colon and contextual subtitle in ALL CAPS.
 - Context changes per week based on the micro_commitment timing/context (e.g., THIS WEEK, BEFORE THE NEXT GAME, DURING SPRING BREAK, BEFORE SATURDAY’S COMPETITION).
 - Content: the micro-commitment itself, made simple and measurable.
@@ -108,19 +108,21 @@ YOUR ACTION: [CONTEXT]
 - Signature: "Coach Arron" on its own line after the closing phrase.
 
 Focus Question Section:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 NEXT WEEK FOCUS QUESTION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-- Full-width ━━━ separator bars above and below the section header.
+- Compact ━━━ separator bars above and below the section header.
 - "NEXT WEEK FOCUS QUESTION" in ALL CAPS.
 - Content: pulled from the next_week_focus_question field in the Interpretation JSON.
 - This section appears AFTER the signature. It is a reflective prompt the athlete carries into the following week.
 - The focus question is the final element of the document.
 
 Separator Bar Specification:
-- Use full-width ━━━ bars (heavy box-drawing character, U+2501).
-- Approximately 73 characters wide.
+- Use ━━━ bars (heavy box-drawing character, U+2501).
+- Exactly 40 characters wide.
+- Rationale: 40 characters renders as a compact, visually balanced divider in both monospace text and HTML email clients (Gmail, Outlook). Longer bars (60-80 characters) render as disproportionately long lines in proportional-width email rendering and push beyond the natural width of athlete-facing text.
+- 40 characters accommodates the longest typical section heading ("YOUR ACTION: BEFORE SATURDAY AT JUNIATA" = 39 chars) with one character of margin. If a specific YOUR ACTION context pushes the heading longer than 40 characters, the separator bar may extend to match the heading width but should not exceed it by more than 2-3 characters.
 - Used in three locations only: (1) after header, (2) around YOUR ACTION label, (3) around NEXT WEEK FOCUS QUESTION label.
 - Do NOT use separators within the body narrative.
 
