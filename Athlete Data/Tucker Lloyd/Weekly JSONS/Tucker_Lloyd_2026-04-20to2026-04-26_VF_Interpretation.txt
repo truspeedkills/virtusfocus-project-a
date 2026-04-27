@@ -1,0 +1,138 @@
+{
+  "athlete_name": "Tucker Lloyd",
+  "week_period": "2026-04-20 to 2026-04-26",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Developing into a better person and coach within the football environment",
+    "baseline_hinge_habit": "Consistent gym attendance and personal discipline routines",
+    "baseline_primary_derailer": "Pre-performance focus on what could go wrong",
+    "baseline_why_it_matters": "Strengthening habits and confidence supports both academic stability and long-term coaching development",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Partially Aligned",
+    "alignment_notes": "Tucker's first Reset tier week in 9 recorded weeks arrived during finals preparation. All 7 days self-scored Neutral/Partial Win (0 Wins, 7 Neutrals, 0 Missed). The weekday Win pattern that has anchored every prior week collapsed into uniform Neutral execution under finals load. Simultaneously, three preserving signals held: zero Missed days (no behavioral disengagement), Saturday gym session at Virtus Barbell (second consecutive week of gym attendance, the longest gym streak of the program), and a substantive weekly goal entry ('Go to the gym and complete all of my work,' a recovery from Week 8's 'Forgot' floor). The prior commitment was Not Attempted by strict measurement: the Bullseye section was left blank for the second consecutive week (target 1 failed), and physical activity was confirmed only on Saturday plus a possible Friday fishing day (target 2 met 1-2 days against a 3-day target). Tucker's achievement statement explicitly named the trade-off: 'hard to get wins when busy preparing for finals.' This is the most candid acknowledgment in the program of how he experiences the WTD scoring under elevated demand. The hinge habit (gym attendance) is now sustaining for a second week, directly addressing the baseline. The reflective layer (Bullseye, mindset challenge favorite, recap detail) deepened its compression. The defining alignment question is whether the 0-Win pattern reverses out of finals or whether finals revealed a structural ceiling Tucker has been masking with weekday school structure."
+  },
+
+  "athlete_state": "First Reset tier week in 9 recorded weeks during finals preparation. Zero Win days, seven Neutral days, zero Missed days. Every day self-scored 2-3 points. The weekday execution pattern that anchored Weeks 1-8 (school + work + ab circuits producing Win days) compressed into school-only attendance scoring as Neutral. Recap entries were the briefest of the program: each weekday is 4-7 words ('Went to ECON, completed a bunch of homework,' 'Went to econ and finance class'). Friday: 'fished all day.' Saturday: 'Went to Virtus Barbell and hungout with friends' (second consecutive week of gym attendance). Sunday: 'did schoolwork all day.' Bullseye section left blank across all three rings for the second consecutive week. The mindset challenge favorite field was left blank for the first time in the program. The weekly goal recovered from Week 8's 'Forgot' to a substantive statement. Ab circuits not mentioned anywhere in the recap.",
+
+  "core_pattern": "Reset tier under finals load with the gym session preserved as the only sustaining behavioral signal. The execution breakthrough of Week 8 (6 Wins, first Growth tier, gym return) reversed in the opposite direction within seven days: 0 Wins, first Reset tier, but the gym session held. The Sunday Missed day from Week 8 also reversed (zero Missed days this week). What looked like a uniform decline is actually two-track: the weekday Win pattern collapsed entirely under finals demand, but the Saturday gym session that returned in Week 8 sustained for a second consecutive week. Tucker did not disengage. He stayed in attendance every day, completed his coursework, fished Friday, lifted Saturday, did schoolwork Sunday. The Reset tier is what the WTD scoring registers when each day contains one structured activity instead of the multi-domain stacking (class + work + circuit + activity) that has historically produced Tucker's Wins. The achievement statement is the clearest articulation in the program of how Tucker experiences this dynamic: 'hard to get wins when busy preparing for finals.' He sees the trade-off and named it.",
+
+  "behavioral_root_cause": "Tucker's Win pattern across Weeks 1-8 has been structurally dependent on stacking activities within a single day. Strong weekdays in prior weeks routinely combined classes plus work plus ab circuits; strong Saturdays in Week 8 stacked gym plus work plus social engagement. Finals week stripped that stacking down to one dominant activity per day (schoolwork for Mon-Thu, leisure Fri, gym Sat, schoolwork Sun). With no co-occurring activity layer, no day reached the 4-5 point threshold that produces a Win. This is not behavioral disengagement, the opposite. Tucker is concentrating maximal attention on the academic finals he stated as his explicit goal entering this week. The Bullseye blank persisting for a second consecutive week is harder to attribute to finals alone. Week 7 he completed Bullseye under elevated school load. Week 8's blank could be explained by execution-focus without reflective bandwidth. Week 9's blank is the second instance of the same omission and now constitutes a pattern, not an artifact. The reflective layer of the program has decoupled from the behavioral layer: Tucker is showing up to the things he explicitly committed to and dropping the meta-tracking that would let him see what he is building. The Saturday gym session sustaining without external prompting (no Penguins game this week, no anchored social plan beyond friends) suggests the gym thread may now be self-generating rather than dependent on co-occurring obligations.",
+
+  "prior_commitment_result": {
+    "prior_action": "Two targets this week. First: complete your Bullseye before you write your recap. One item in each ring is enough. Even one word per ring is enough. Do not leave it blank. Second: during finals prep, do your ab circuit or a gym session on at least three days this week. Any combination. Three days of physical activity across the week.",
+    "execution_status": "Not Attempted",
+    "execution_notes": "Strict measurement: target 1 (Bullseye completed with one item per ring) was not met, the Bullseye section was left blank across all three rings for the second consecutive week. Target 2 (3+ days of physical activity, circuit or gym in any combination) was not met against the explicit threshold: Saturday Virtus Barbell session is one confirmed physical activity day, Friday 'fished all day' may count as semi-active outdoor engagement but is not circuit or gym, and ab circuits are not mentioned anywhere in the recap. By the prior commitment's stated criteria ('If both met: fully executed. If one met: partial. If neither met: not attempted.'), neither target was clearly met, so execution_status = Not Attempted. However, the Saturday gym session sustaining for a second consecutive week preserves the most important behavioral thread inside the broader miss. This is the third consecutive Partial-or-below execution on commitments that included a structural target alongside a gym component. The pattern of agreeing to the structural target (Bullseye, circuit count) and dropping it while preserving the gym element is now a 3-week trend.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Go to the gym and complete all of my work",
+    "achievement_statement": "Getting a lot of school work done, hard to get wins when busy preparing for finals",
+    "key_phrase": "hard to get wins when busy preparing for finals",
+    "mindset_resonance": "insufficient data"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "0",
+      "neutral_days": "7",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Reset",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "insufficient data. The Bullseye section was submitted blank across all three rings for the second consecutive week. No center-ring entry was named. Each ring contains a single dash, indicating no submission. This is the second consecutive blank Bullseye in the program; combined with Week 8, it is now a 2-week pattern rather than a single-week omission.",
+    "influence_quality": "insufficient data. No influence-ring items were submitted.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "insufficient data"
+  },
+
+  "reflection_quality_score": "1",
+
+  "growth_phase": "Developing",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Declining",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Declining",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "8",
+    "rolling_win_rate_4wk": "0.429",
+    "rolling_missed_rate_4wk": "0.036",
+    "volatility_index_4wk": "High",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Moderate"
+  },
+
+  "emotional_intensity": "Low",
+
+  "narrative_arc": {
+    "arc_summary": "Across nine weeks Tucker has held Mixed tier in 7 of 9 weeks, crossed into Growth once (Week 8), and now into Reset for the first time (Week 9). Win days by week: 4, 4, 3, 3, 5, 3, 3, 6, 0. Missed days by week: 0, 1, 1, 1, 2, 0, 0, 1, 0. The eight-week trajectory through Week 8 moved from structural divergence (weekday-weekend gap widening) through weekend reversal and sustainability confirmation (zero Missed days returning) to execution breakthrough with reflection collapse (Week 8 Growth tier with blank Bullseye). Week 9 is a new chapter: a Reset tier produced not by disengagement but by finals-load compression, where every day held at Neutral instead of variance between Win and Missed. The gym thread is the longitudinal counter-signal: absent Weeks 4 through 7, returned Week 8 (Virtus Barbell with the Penguins game as anchor), and now sustained Week 9 without external anchor. Two consecutive gym sessions is the longest gym streak of the program. Goal-setting recovered from Week 8's 'Forgot' floor to a substantive statement, but Bullseye engagement deepened its blank pattern into a 2-week trend. The 'doing more than saying' dynamic that emerged in Weeks 6-7 has now bifurcated further: the saying (Bullseye, recap detail, mindset challenge favorite) is at program floor, the gym is at program ceiling, and the WTD scoring layer registered the compression as Reset.",
+    "milestone_this_week": "First Reset tier week in 9 recorded weeks. Second consecutive week of gym attendance (longest gym streak of the program). Second consecutive blank Bullseye, establishing the pattern as a sustained reflective omission rather than a single-week artifact. First completely uniform daily-score week (every day Neutral, zero variance). Zero Missed days, breaking the Week 8 single-Missed-day pattern in the opposite direction from execution breakthrough. pattern_shift_detected = Yes: weekly_tier moved from Growth (Week 8) directly to Reset (Week 9), a 2-tier swing.",
+    "open_thread": "The Reset tier and the sustained gym session pull in opposite developmental directions. Whether finals week's WTD compression reverses out the week after finals (May 4 forward) or whether it has revealed that Tucker's Win pattern has been structurally dependent on multi-domain stacking that finals exposed is the primary monitoring question. The Bullseye 2-week blank pattern is now the most concerning reflective signal in the program; left unaddressed it normalizes the omission and removes the most important self-tracking surface in the system. The gym session sustaining without external anchor (no Penguins game this week, no specific event drawing Tucker out beyond friends) suggests the gym thread may finally be becoming self-generating, the open question Week 8 raised is partially answered. The achievement statement ('hard to get wins when busy preparing for finals') is the most candid articulation Tucker has produced about his own scoring under elevated demand; whether next week's commitment can leverage that self-awareness or whether it slips out of view post-finals is the secondary thread. The Coach Bradley career-development conversation thread from Week 6 has now been silent for three consecutive weeks. The ab circuit pattern that ran 2-3 days per week through Weeks 6-8 was absent this week, raising the question of whether circuits are seasonal (school-year structure dependent) or whether the gym session is now substituting for circuits as Tucker's primary physical activity modality."
+  },
+
+  "most_important_controllable": "Restoring minimum reflective engagement (Bullseye completion before recap submission) post-finals while preserving the gym session pattern that just sustained for a second consecutive week. Tucker has demonstrated his execution can compress under load without disengaging behaviorally; the development edge is keeping the meta-tracking surface alive even when the week's primary attention is academic.",
+
+  "micro_commitment": {
+    "action": "One target this week. Before you submit next Sunday's recap, fill out your Bullseye with one specific thing in each ring. Center: one thing you actually controlled this week, the smallest version is fine ('I went to the gym Saturday' or 'I finished my finance homework' counts). Influence: one thing you affected partially. Outer ring: one thing you can't control that's been on your mind. Three lines. Three rings. Done before the recap.",
+    "when": "Sunday May 3, before you submit the weekly recap.",
+    "measurement": "At the end of the week, Tucker should have a Bullseye with at least one specific entry in each of the three rings. If all three rings have an entry: fully executed. If one or two rings have entries: partial. If the Bullseye is blank for a third consecutive week: not attempted."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "insufficient data",
+    "anticipated_stressor": "Finals week (the academic week Tucker named entering this period). Tucker's stated next-week goal is 'Do good on my finals,' indicating finals are still ahead or in progress next week. Academic load remains elevated. Whether this is the trailing edge of the finals stretch or a continuation depends on the academic calendar specifics. The behavioral question is whether the WTD compression Tucker just experienced reverses out as finals end or whether it persists into a post-finals week, which would suggest the pattern is independent of the immediate academic peak.",
+    "athlete_stated_next_goal": "Do good on my finals"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "0/7 Win days, 7 Neutral days, 0 Missed days. First Reset tier in 9 recorded weeks. Every day self-scored 2-3 points (Neutral/Partial Win). Weekday recap entries are the briefest of the program (4-7 words each), all academic-attendance-only. Friday: fishing. Saturday: Virtus Barbell gym session plus social time with friends (second consecutive week of gym attendance). Sunday: schoolwork. Bullseye section left blank across all three rings for the second consecutive week. Mindset challenge favorite field left blank for the first time. Ab circuits not mentioned anywhere. Weekly goal recovered from Week 8's 'Forgot' to 'Go to the gym and complete all of my work.' Achievement statement: 'Getting a lot of school work done, hard to get wins when busy preparing for finals.'",
+    "key_habit_signal": "The two-track divergence is the core read. On the behavioral track: zero Missed days, second consecutive gym session (longest gym streak of the program), academic attendance held every day, no behavioral disengagement. On the reflective and scoring track: first Reset tier of the program, second consecutive blank Bullseye, mindset challenge favorite blank for the first time, briefest weekday recaps of the program. The gym sustaining without an external anchor (no special event this week beyond friends) is the most important positive signal, the hinge habit that has been absent for most of the program is now a 2-week pattern. The Bullseye blank pattern is the most important warning signal, two consecutive weeks crosses from artifact to trend.",
+    "coach_reinforcement_cue": "Lead with the gym session sustaining for a second consecutive week without external anchor. This is the longest gym streak of the program and directly addresses the baseline hinge habit. Recognize that Tucker stayed engaged behaviorally every day during finals (zero Missed) without the score reflecting it, and that he named the trade-off himself ('hard to get wins when busy preparing for finals'). Acknowledge the goal-setting recovery from Week 8's 'Forgot' to a substantive statement.",
+    "coach_avoidance_note": "Do not moralize the Reset tier. It is a scoring artifact of finals-load single-domain days, not behavioral disengagement. Do not frame the week as a fall from Week 8's Growth tier, the Growth tier was a single data point, not a stable platform. Do not over-press on the Bullseye blank pattern during finals, but name it directly, the pattern is now 2 consecutive weeks and silence on it normalizes the omission. Do not stack micro-commitment targets, last week's two-target structure produced Not Attempted on both, the design question is whether a single tighter target produces better follow-through than a paired target. Do not push hard on circuits or gym frequency post-finals; the gym is sustaining and that thread should not be disturbed."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Tucker's recap language remains task-oriented and matter-of-fact throughout. The achievement statement is candid acknowledgment of finals trade-off, not distress signal. Friday fishing and Saturday social engagement indicate continued active engagement with discretionary time. The Bullseye and mindset challenge favorite blanks are reflective engagement signals, not emotional distress signals. The uniform Neutral pattern is finals-load compression, not affective flattening. Standard coaching scope."
+  },
+
+  "next_week_focus_question": "You stayed in it every day this week without the score showing it, and you got back to the gym for the second week in a row. The Bullseye has been blank for two weeks now. What's the smallest version of the Bullseye you can complete before next Sunday that you would actually do?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  },
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+  "current_season_phase": "not available — Core Foundation athlete",
+  "forward_anchor": "not available — Core Foundation athlete",
+  "longitudinal_ppd": "not available — Core Foundation athlete"
+}
