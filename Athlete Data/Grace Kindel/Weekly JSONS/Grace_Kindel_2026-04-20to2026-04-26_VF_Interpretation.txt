@@ -1,0 +1,221 @@
+{
+  "athlete_name": "Grace Kindel",
+  "week_period": "2026-04-20 to 2026-04-26",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to stay confident in her ability during competition",
+    "baseline_hinge_habit": "Immediate reset and refocus after mistakes",
+    "baseline_primary_derailer": "Loss of confidence following errors or perceived failure",
+    "baseline_why_it_matters": "Stable confidence supports consistent performance and increases her ability to earn and maintain a strong team role",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Twelfth consecutive Growth week. The baseline identity claim ('stay confident in her ability during competition') is the central thesis of this week, expressed in its strongest form to date: Wednesday's performance recognition is unprompted and self-authored ('fast asf today tbh, got all my mf bunts down'), Grace explicitly names that coaches saw it, and she sustains composed direction through the final two days when the recognition does not translate to playing time ('I did so good, and it still just like doesnt matter. but i cant say it doesnt matter because like it does, its just annoying but once again oh well'). Confidence in her own ability is maintained without outcome-dependence. The baseline derailer (loss of confidence after errors or perceived failure) was not tested in a competitive failure context this week because no competitive opportunities occurred (no playing time across three game days). The hinge habit (reset after mistakes) was not activated because there were no in-game competitive moments to reset from. Multiple aligned behaviors confirm the alignment classification: (1) the prior week's stated metacognitive goal ('sit down longer and sit with the mindset goals before the day starts') became this week's stated weekly goal ('sit with the mindset emails each day') and was executed across all seven days, (2) the prior week's micro-commitment (name a specific thing before each day starts) was executed in spirit on every day with specific physical or behavioral targets paired to each mindset prompt, (3) Wednesday's recognition of her own bunts and out-of-the-box speed, paired with the calm continuation through Thursday/Friday despite no playing time, demonstrates confidence anchored to preparation rather than outcome (the Section 5 Confidence Pattern direction the snapshot identified at intake)."
+  },
+
+  "athlete_state": "Recovered daily execution paired with the most articulate performance recognition and the most candid playing-time paradox of the program. Grace returned to full 7/7 Win days after Week 11's first Neutrals, executed her stated weekly goal ('sit with the mindset emails each day') across every day, and paired each mindset prompt with specific physical or behavioral work named in the recap (Monday hitting/no-popups, Tuesday warmup throws to chest, Wednesday bunts on first pitch, Thursday calf stretching and slowed warmup arm, Friday academic focus on travel, Saturday gym/treadmill productivity, Sunday rehab and listening posture). Wednesday produced the most articulate performance recognition of the program: she named her own speed ('fast asf today tbh') and bunt execution ('got all my mf bunts down'), named that coaches were watching ('I know for a damn fact this woman cannot be so blind to not notice me today'), and stayed composed about it ('I'm chilling tbh, showing up, working hard, doing my thing'). Friday's gameday confirmed the pattern that has held since Week 6: warmups good, coaches saw, still no playing time. Sunday introduced a new self-protective social posture (deliberate non-participation in team drama, 'just listening around me, trying to stay with the fact no one is shit talking me') and a new minor physical thread (foot rehab, 'lowkey been acting up again'). End-of-week goal request ('idk at this point give me something') is the first time the athlete has asked the coaching layer for direction rather than naming her own. Two final games coming.",
+
+  "core_pattern": "The week's center is the paradox Grace articulated explicitly for the first time: she did the work, the work was visible, and the outcome did not change. The Competition section recap holds the cleanest version of this: 'Wednesday pissed me off because I did so good, and it still just like doesnt matter. but i cant say it doesnt matter because like it does, its just annoying but once again oh well.' This sentence captures what the prior weeks have been building toward and what no prior week stated outright: the recognition that effort and visible execution are not producing the playing-time outcome, the simultaneous acknowledgment that it does matter even though she is choosing to act like it does not, and the composed continuation through the rest of the week. Daily execution recovered fully (7/7 Wins after Week 11's 5/2/0). Reflective engagement returned to every day (executing Week 11's stated next-week goal). The Wednesday performance breakthrough is the visible product of the running-technique work Grace named on Wednesday of Week 11 (the first absorption of the Week 9 coach speed feedback). Sunday's social withdrawal is a new self-protective layer in the same acceptance posture: not just protecting her own agency from the playing-time situation, but now protecting herself from the team drama around it. The 'idk at this point give me something' end-of-week goal request signals fatigue with self-direction at the end of a long arc and a willingness to receive direction.",
+
+  "behavioral_root_cause": "Grace is operating at the most mature version of the position-frustration arc to date. The progression has been: complaint (Week 6), charged frustration (Week 7), self-directed solution (Week 8: Kabine on Sunday), direct advocacy (Week 9: speaking to coach), composed acceptance (Week 10), re-engagement with specific development targets (Week 11), and now visible performance with composed paradox naming (Week 12). What is new this week is the articulation: Grace can now hold all parts of the situation at once. She can name that she did well, name that the coaches saw, name that it does not change the outcome, name that this matters even though she is acting like it does not, and continue executing without it derailing her. This is what the baseline identity claim looks like fully expressed: confidence in her own ability that does not require external validation to remain stable. The Wednesday performance breakthrough is the first time Grace has produced visible practice-level execution AND named it herself unprompted; the prior weeks named the work she was doing (extra hitting sessions, running technique, defensive practice with Kabine), but never paired it with a self-recognition of execution quality. Three secondary developments accompany this: (1) Sunday's social withdrawal is a new self-protective adjustment in the acceptance posture, not a regression but an extension, (2) the foot rehab is a new minor physical thread that may resolve quickly or develop into something more, (3) the goal-request at the end of the recap is the first explicit handoff to the coaching layer and may indicate end-of-arc fatigue with self-direction or a deliberate invitation for specific direction at the close of the season.",
+
+  "prior_commitment_result": {
+    "prior_action": "Name one specific thing she's working on before each day starts this week. The mindset challenge prompt is the structure. Whatever the day's prompt is (Willpower, Determined, Purpose, etc.), sit with it long enough to write down one specific thing, not an attitude, that she's going to work on that day. Something she can actually do: run on her toes through a specific drill, rep a specific throw, name one teammate she's going to actively reinforce. The Sunday 'chill day' counts: even a rest day has a specific thing worth naming (recovery, sleep, tomorrow's prep). Seven days, seven specific things, written down before the day starts.",
+    "execution_status": "Completed",
+    "execution_notes": "Every day has the mindset prompt engaged AND a specific action named, paired together. Monday paired 'measured' with hitting and no-popups. Tuesday paired 'Hunger' with warmup throws to chest. Wednesday paired 'Sharp' with bunts on first pitch (the strongest pairing of the week, with both prompt and action delivered visibly in practice). Thursday paired 'fearsome' with calf stretching and slowed warmup arm. Friday paired 'Backbone' with academic focus on the long travel. Saturday paired 'Tireless' with gym and treadmill productivity. Sunday paired 'Instinct' with foot rehab and a listening posture (deliberate non-participation in team drama). The stated weekly goal for the week ('sit with the mindset emails each day') is the same metacognitive goal Grace identified as her next-week target at the close of Week 11, executed directly. No day was left blank. No day defaulted to an attitude word in place of an action. The 'before the day starts' timing element cannot be verified from the recap (the recap is end-of-week prose), but the weekly goal directly names the daily-engagement structure and the prompt-plus-action pairing is consistent across every day. Strong execution. Carry-forward is appropriate because Wednesday's visible performance and the paradox that followed open new ground for the next commitment.",
+    "carry_forward": "Yes"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "sit with the mindset emails each day",
+    "achievement_statement": "I did well, held myself to standards and goals, accomplished something each day",
+    "key_phrase": "Wednesday pissed me off because I did so good, and it still just like doesnt matter. but i cant say it doesnt matter because like it does, its just annoying but once again oh well",
+    "mindset_resonance": "Wednesday"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Win",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Win",
+      "sunday": "Win"
+    },
+    "win_days": 7,
+    "neutral_days": 0,
+    "missed_days": 0,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Gold Streak",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "'The work that I decide each day to put in.' Single item, action-oriented, broad. Returns to action framing without the situation-specific qualifier Week 11 carried ('how well I warm up and show what I can do even here'). The Wednesday recap line ('showing up, working hard, doing my thing') functions as the lived expression of this center-ring statement. Less specific than Week 11 in framing but consistent with the daily execution evidence: every recap day named a specific piece of work she put in. Center-ring still about preparation and effort under her control.",
+    "influence_quality": "'The effort and attitude I portray to how other might.' Partial sentence (likely truncated to '...how others might [perceive me]'). Captures that effort and attitude are the visible signals others receive. Consistent with the Wednesday recap recognition that coaches were watching ('I know for a damn fact this woman cannot be so blind to not notice me today') and the Friday gameday line that her warmups were good and coaches saw. Influence framing now explicitly tied to perception by others, a logical expansion given the playing-time paradox the week articulates.",
+    "noise_fixation_present": "No",
+    "noise_content": "'What other around me say and how coach writes the lineup.' Outer ring expanded beyond the coach-decision sovereignty Grace has named composed for five consecutive weeks. The new addition is 'what others around me say,' which connects to Sunday's deliberate listening posture without participation in team drama ('I am just going to listen to everyone talking about softball and drama, not really add input because I don't want to be involved'). The expansion is composed (no charged language, no naming, no fixation), and the additions track with the actual landscape of the week (peer chatter became a thing to manage Sunday). Sixth consecutive week of composed outer-ring framing. The expansion is a refinement of self-protective placement, not a regression to fixation.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 2,
+
+  "growth_phase": "Consistent",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Stable",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 11,
+    "rolling_win_rate_4wk": 0.929,
+    "rolling_missed_rate_4wk": 0.0,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "Shifting",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Twelve-week progression from preparation-driven confidence (Wks 1-2) through emotional adversity (Wk 3: High EI) to action-quality philosophy (Wk 4) to identity-embedded composure (Wk 5: Consistent phase) to competition-validated performance (Wk 6: first hit, first start) to failure-resilient confidence (Wk 7: strikeout processed in 48 hours) to agency-driven composure (Wk 8: Kabine defensive work) to advocacy-active confidence (Wk 9: spoke to coach, goal-setting improved) to [1-week gap: PSACs] to acceptance-oriented composure (Wk 10: zero playing time, protective detachment, Moderate EI) to re-engaged specificity inside acceptance (Wk 11: Tuesday earned-identity anchor, Wednesday running-technique target, first Neutrals in program-history Saturday/Sunday tied to challenge non-completion) to articulated-paradox composure (Wk 12: Wednesday performance breakthrough recognized in own words, coaches saw, no playing time, named the paradox directly). The position frustration arc that ran Weeks 6-11 has now moved into a new register: not complaint, not advocacy, not acceptance, not re-engagement, but the explicit articulation that the work is being done visibly and the outcome is not changing AND the simultaneous acknowledgment that this matters even though she is choosing to keep going. Wednesday is the most articulate performance recognition of the program. The Friday gameday confirmation (warmups good, coaches saw, still no playing time) is the cleanest single demonstration of the playing-time pattern. The Sunday social withdrawal is a new self-protective layer. The 'idk at this point give me something' end-of-week goal request is the first explicit handoff to the coaching layer.",
+    "milestone_this_week": "First explicit articulation of the playing-time paradox in the athlete's own words, paired with the most articulate self-recognition of practice-level performance to date. Wednesday's 'fast asf today tbh, got all my mf bunts down' is the first time Grace has named her own performance quality unprompted in the program. The Competition section recap ('I did so good, and it still just like doesnt matter. but i cant say it doesnt matter because like it does, its just annoying but once again oh well') is the first time the athlete has held all parts of the playing-time situation in a single articulation: she did well, it does not matter, it actually does matter, she is choosing to act like it does not. This articulation, combined with the full recovery from Week 11's first Neutrals (returning to 7/7 Wins) and the executed prior commitment (specific work named on every day), defines the week as the most mature version of the baseline identity claim in the program. Two secondary milestones: the first time the athlete has explicitly asked the coaching layer for direction ('idk at this point give me something'), and the first appearance of a new minor physical thread (foot rehab, 'lowkey been acting up again').",
+    "open_thread": "(1) Final-two-games handover: 2 games next week (Friday, Saturday) likely close the regular-season schedule. The Wednesday performance standard, set visibly in practice, has not yet been tested against in-game opportunity. The micro-commitment for next week needs to give Grace a frame for what to do with the standard whether or not she plays. (2) The goal-request response: Grace asked the coaching layer for direction directly ('idk at this point give me something'). Whether this is fatigue with self-direction or a deliberate handoff at the close of the program-long arc determines how the response should land. The micro-commitment is the answer-shaped response the request implicitly invites. (3) Foot rehab development: 'lowkey been acting up again' is the first appearance of this thread. Whether the foot becomes a minor self-managed item (treated and resolved with Sunday rehab) or develops into a competitive constraint in the final two games is the monitoring question. (4) RQS held at 2 for third consecutive week. The reflection compression that began in Week 10 has not deepened, but Wednesday's recap is the strongest single reflective entry since Week 9. The Wednesday quality may be a one-week peak or the start of recovery. (5) Outer-ring expansion to peer chatter: the addition of 'what others around me say' to the outer ring, paired with Sunday's deliberate listening posture, is a new dimension of self-protective placement. Composed, not fixation, but worth tracking through the final games. (6) Twelfth Growth week and 82/84 Win days. The daily standard has held at the highest sustained level the program has produced."
+  },
+
+  "most_important_controllable": "Carrying the Wednesday standard through the final two games regardless of playing time. Grace produced visible practice-level execution this week and named it herself for the first time. The two final games will not change the playing-time pattern that has held since Week 6, and Grace has now articulated that explicitly. What is in her control is whether the same Wednesday standard (specific physical work, named beforehand, executed visibly through warmup) shows up in the last two games as it did this week. Whether she plays or not, those reps are hers, and the final two games are the last opportunity in this season to run that standard with the work she has been building. The end-of-week goal request makes this the moment for the coaching layer to give her a specific frame, which she is asking for directly.",
+
+  "micro_commitment": {
+    "action": "For each of the two games next week, before warmup begins, write down one specific physical thing she is going to execute during pre-game. One cue per game. Examples: a hitting cue (out-of-the-box speed like Wednesday, or a specific bunt setup), a throwing target (chest height like Tuesday's warmup work), a footwork drill (running on toes from the Week 11 thread). Run that cue through warmup at full intent. After the game, regardless of whether she plays, write one sentence on how the cue went. Two games, two cues, two sentences. The cue is the standard she set Wednesday. The two games are where she carries it.",
+    "when": "Before warmup begins on Friday and Saturday. The cue gets written before the day's first physical work, not in the morning generally and not after the game.",
+    "measurement": "By Sunday, she should have two cues written, each naming a specific physical action (not an attitude word, not a feeling word), and two post-game sentences naming how the cue showed up. Strong execution: both games have a cue written beforehand with a specific physical action, both games have a post-game sentence that ties back to the cue with a concrete observation about whether it landed. Partial: one game has the cue and post-game sentence, the other has either the cue or the sentence but not both. Anything less than that, or substituting attitude words ('be positive,' 'bring energy') for specific physical actions, is not executed."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "Two more games this coming week (Friday, Saturday). Likely the final two games of the regular-season schedule.",
+    "anticipated_stressor": "End-of-season frame entering the final two games. Playing time trajectory unchanged from Weeks 6-11 (no playing time, warmup access referenced but no in-game opportunity). Whether the Wednesday-level practice standard transfers to the final two games regardless of playing-time outcome is the central monitoring question. Foot rehab thread is new minor monitoring point. Goal-request signal ('idk at this point give me something') indicates Grace is open to direction at the close of the program-long arc, which sets the tone for how the micro-commitment should be framed (specific, answer-shaped, not deflective).",
+    "athlete_stated_next_goal": "idk at this point give me something"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "Seven Win days, zero Neutral, zero Missed. 82 Win days across 84 program days. Returns to full daily-standard execution after the prior week's two Neutrals. Stated weekly goal ('sit with the mindset emails each day') executed across all seven days, paired with specific physical or behavioral work named per day. Three game days (Tuesday, Friday, Saturday context implied as travel/practice days; primary game days appear to have been Thursday and Friday based on Wednesday's 'two games the next two days' and Friday's recap). Wednesday produced internal performance recognition ('fast asf today tbh, got all my mf bunts down'). No playing time across game opportunities. Foot rehab introduced Sunday as a minor self-managed thread.",
+    "key_habit_signal": "Two parallel signals this week. First, the prior week's Neutrals did not extend; daily execution recovered to full 7/7 Wins, the prior week's stated metacognitive goal became this week's executed weekly goal, and the prior week's micro-commitment was completed in spirit on every day (specific work named per mindset prompt). Second, Wednesday produced the most articulate performance recognition of the program ('fast asf today tbh, got all my mf bunts down') paired with the most candid articulation of the playing-time mismatch in the Competition section ('I did so good, and it still just like doesnt matter. but i cant say it doesnt matter because like it does, its just annoying but once again oh well'). The athlete is now holding all parts of the situation in a single articulation: doing the work, being seen doing it, the outcome not changing, the matter mattering even when she is choosing to act like it does not. The end-of-week goal request ('idk at this point give me something') is the first explicit invitation for direction from the coaching layer.",
+    "coach_reinforcement_cue": "Recognize Wednesday as the breakthrough. Grace named her own performance unprompted, named that coaches saw it, and stayed composed through Thursday and Friday when the recognition did not translate to playing time. Connect this to the Week 9 coach speed conversation Grace has been quietly absorbing, Wednesday's bunts-down and out-of-the-box speed are the visible execution of that work. Honor the goal-request directly with a specific, answer-shaped frame for the final two games. Use the micro-commitment as that answer, not as a continuation of the same self-direction Grace has been doing for weeks. Sit with the paradox the way Grace is sitting with it: name that doing the work and not seeing the outcome does not have to derail her, and that the final two games are the last opportunity to run the Wednesday standard before the season closes. Do not over-resolve the playing-time situation, the closing two games will not change the pattern, and Grace has named that already.",
+    "coach_avoidance_note": "Do not minimize the Wednesday recognition by treating it as 'just another practice day.' This is the first time Grace has named her own practice-level execution unprompted. Do not turn the goal-request ('idk at this point give me something') into a meta-moment about the coaching relationship ('you're letting me set the goal now'). Just answer it. The micro-commitment is the answer. Do not introduce the foot injury as a major thread, Grace named it once with a one-day rehab response, no further development. Do not name the Sunday social withdrawal as a regression or as a new pattern of concern, it is a self-protective adjustment in a low-stakes context (Senior Day weekend ended, post-graduation chatter from teammates), not a development. Do not return to the Week 10 acceptance frame as the week's center, that posture is still present but the foreground this week is the Wednesday recognition and the candid articulation of the paradox. Do not over-promise that the final two games will play differently than the prior weeks. Do not surface the Week 9 coach speed conversation directly, Grace is absorbing it organically and naming it directly would disrupt the integration. Do not use the phrase 'Senior Day' (it was last week, not this week, and the dad visit context belongs to Week 11)."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators. Wednesday's frustration is named and contained ('I'm chilling tbh, showing up, working hard, doing my thing'). The Competition section paradox articulation is composed self-reflection, not distress. The foot rehab thread is named once with a one-day rehab response and minimal language ('lowkey been acting up again'). The Sunday social withdrawal is described as deliberate self-protection in a known team-drama context, not isolation. The 'idk at this point give me something' end-of-week goal request is fatigue-toned but not breakdown-toned. No homesickness, no identity-level crisis, no breakdown language anywhere in the recap. All content within performance and behavioral coaching scope."
+  },
+
+  "next_week_focus_question": "Wednesday you did the work and the people who needed to see it did. The result still didn't change. What's the part of that work that's still worth running through the final two games?",
+
+  "current_season_phase": "not available",
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available — Core Foundation athlete",
+    "focus_consistency": "not available — Core Foundation athlete",
+    "forward_anchor_alignment": "not available — Core Foundation athlete"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}
