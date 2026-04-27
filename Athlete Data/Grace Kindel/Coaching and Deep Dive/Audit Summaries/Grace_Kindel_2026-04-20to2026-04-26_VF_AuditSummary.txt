@@ -111,3 +111,11 @@ The "idk at this point give me something" goal-request is treated as the answer-
 The end-of-season frame is implicit in the two-games-left framing without being overstated. The micro-commitment is calibrated to the final-two-games window.
 
 Composite Readiness moves from → Steady (Yellow) in Week 11 to ↑ Positive (Green) in Week 12 reflecting full daily-standard execution recovery, sustained low stress-load, and forward-aligned alignment status.
+
+============================================================
+POST-AUDIT USER EDIT
+============================================================
+
+DD Identity Thread paragraph 2 opener: "Twelve weeks later, the way you carry confidence looks different." → "Twelve weeks into this year, the way you carry confidence looks different."
+
+The edit replaces a relative-time phrasing ("Twelve weeks later") with an in-this-year framing ("Twelve weeks into this year"). The construction is distinct from the v2.3 Section 35 C3 retired DD trendline opener "[N] weeks into this program..." — different position (Identity Thread paragraph 2, not trendline opener) and different framing ("this year" vs "this program"). No retired construction triggered. Edit logged for transparency.
