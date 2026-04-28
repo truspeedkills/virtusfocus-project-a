@@ -1,0 +1,138 @@
+{
+  "athlete_name": "Mergim Bushati",
+  "week_period": "2026-04-20 to 2026-04-26",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to become a national champion by learning to believe in himself and get out of his own head",
+    "baseline_hinge_habit": "Consistent training and preparation routines maintained regardless of competitive outcomes or confidence state",
+    "baseline_primary_derailer": "Overthinking and self-doubt before and during competitive moments, anchored in avoidance-framed pre-performance thinking",
+    "baseline_why_it_matters": "Building execution-based confidence through consistent controllable action supports both competitive performance and the identity transformation Mergim explicitly seeks",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "First weekly recap submitted following an approximately 14-week absence from program participation. The prior season ended in mid-January with a collaborative coach-athlete decision to prioritize shoulder rehabilitation over continued competition. The shoulder rehabilitation succeeded, the athlete has returned to strength training, and Monday of this week marked his first wrestling practice in approximately two months. Lift attendance held at 3 of 3 scheduled days (Mon/Tue/Thu). Wrestling practice attended Mon and Thu (the two days the team practiced this week). Two scheduled rest days (Wed/Fri) executed without drift. Saturday traveled to Cleveland to support cousin's professional MMA fight (cousin won, athlete reported it 'reaffirmed me wanted to become a professional fighter'). Sunday used for academic catch-up and week-ahead preparation. The Bullseye structure produced this week is the most direct articulation of the baseline derailer the athlete has yet recorded: the cannot-control ring contains four entries, all naming the past (past thoughts, past results, past failures, past mistakes). Naming what must be released as cannot-control is itself a baseline-aligned move. Per the user's framing, this week is treated as Week 1 of a new arc; the 14 weeks between Wk19 (Jan 12-18) and this submission are characterized as missed entries during the offseason rehabilitation period and do not contribute to longitudinal trend computations in the new arc."
+  },
+
+  "athlete_state": "First week of program return after an approximately 14-week absence for shoulder rehabilitation. Three lift days (Mon, Tue, Thu) at 100 percent of scheduled lifts. One wrestling practice Monday explicitly named as the first in approximately two months ('First wrestling practice back in about 2 months. Felt good being back'). A second wrestling practice Thursday. Two scheduled rest days (Wed, Fri) executed without spillover. Saturday Cleveland trip for cousin's professional MMA fight (cousin won, treated by the athlete as identity-aspirational reinforcement). Sunday academic catch-up plus work plus week-ahead preparation. Daily entries are sparse and routine in form (wake time, classes, gym, practice, work) without reflective unpacking, but the next-week goal field carries the only depth in the recap: 'Figure out what I want to do with my life. Get better. Enjoy the little things more. Be appreciative of the opportunities I have.' Mindset challenge favorite: 'Identify one goal you've been coasting on and attack it with fresh urgency today.'",
+
+  "core_pattern": "Re-establishment of training rhythm after extended absence. Lift cadence held at full attendance (3 of 3). Wrestling practice attended on both days the team practiced (Mon and Thu). Rest days executed as scheduled rather than as drift. The week's character is maintenance-and-rebuild rather than progression: each day contains a single dominant activity (lift or practice or work or rest or travel) rather than the multi-domain stacking that produces Win days under the WTD scoring rubric. The Bullseye outer-ring composition is the week's most coaching-significant signal: four entries, all naming the past (past thoughts, past results, past failures, past mistakes). The athlete has placed his baseline derailer entirely inside the cannot-control ring, which is the structural precondition for releasing it.",
+
+  "behavioral_root_cause": "After a season-ending decision in Wk19 driven by shoulder injury and a successful 14-week rehabilitation period, the athlete is back in the room. The first week's structure reflects appropriate caution: full lift attendance (rebuilding strength), wrestling practice on the two days it was offered (re-engaging the sport), two rest days (allowing recovery), no attempt to overload the schedule. The Reset of WTD scoring relative to prior peak weeks is a structural artifact of single-domain days during a rebuild week, not a behavioral disengagement signal. The Bullseye outer ring composition (four past-naming entries) shows that the athlete has internalized the Wk19 lesson ('all of this is a process') and is applying it to what he must release in order to re-engage cleanly. The Saturday MMA event provided identity-level reinforcement that re-anchored the long-term competitive aspiration.",
+
+  "prior_commitment_result": {
+    "prior_action": "Per user direction: this week is treated as Week 1 of a new arc following an approximately 14-week offseason absence. The Wk19 micro-commitment (complete every scheduled shoulder rehab session and add 10 minutes of mindset journaling after each) was issued 14 weeks ago and is not evaluable from this week's recap.",
+    "execution_status": "No Prior Week",
+    "execution_notes": "First week of new arc. The prior season ended Wk19 (Jan 12-18) with a collaborative season-ending decision for shoulder rehabilitation. The 14-week gap between Wk19 and this submission is characterized as missed entries during the offseason. The athlete confirms via the recap content that the shoulder rehabilitation succeeded ('First wrestling practice back in about 2 months. Felt good being back') and that strength training has resumed (lift attendance Mon/Tue/Thu). The substantive evaluation of execution begins with the Wk2 micro-commitment.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "To get better. Get back to wrestling.",
+    "achievement_statement": "Got back to wrestling",
+    "key_phrase": "First wrestling practice back in about 2 months. Felt good being back",
+    "mindset_resonance": "Identify one goal you've been coasting on and attack it with fresh urgency today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "3 (Monday, Tuesday, Thursday)",
+      "neutral_days": "4 (Wednesday, Friday, Saturday, Sunday)",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Singular: 'My effort.' One center-ring entry. Effort is the simplest and most foundational controllable an athlete can name in a return week and is appropriate to where the athlete is in the program (week one of rebuild after extended absence).",
+    "influence_quality": "Dual: 'My attitude. My choices.' Two influence-ring entries. Both internal-disposition focused rather than external-relationship focused. Stable and appropriate to the week.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "1",
+
+  "growth_phase": "Developing",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "1",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "insufficient data"
+  },
+
+  "emotional_intensity": "Low",
+
+  "narrative_arc": {
+    "arc_summary": "Week 1 of a new arc following an approximately 14-week offseason absence for shoulder rehabilitation. The prior season was 19 weeks long and ended in mid-January with a collaborative coach-athlete decision to prioritize rehabilitation over continued competition. That season produced a documented practice-level derailer override and within-tournament approach recovery, but did not resolve the practice-to-competition transfer gap and ended with shoulder re-injury at Fairmont State. The 14-week gap between then and now is characterized as missed entries during the offseason rehabilitation period. Trajectory and trend computations begin from this week.",
+    "milestone_this_week": "Return to wrestling practice for the first time in approximately two months. Lift cadence held at 3 of 3 scheduled days. Bullseye structure submitted with all three rings populated, with the cannot-control ring containing the most direct naming of the baseline derailer the athlete has produced: four entries, all referencing the past (past thoughts, past results, past failures, past mistakes). Saturday Cleveland trip for cousin's professional MMA fight reaffirmed identity-level competitive aspiration.",
+    "open_thread": "Whether the training rhythm sustains into Week 2 without the novelty of first-week return propelling it. Whether wrestling practice attendance scales as the team's practice frequency permits. Whether the 'past' framing in the Bullseye outer ring becomes a sustained operating posture or a one-week articulation. The shoulder remains the long-term referent. Re-injury risk is highest in the first weeks back. End-of-semester academic load is approaching. The next-week goal field contains the first appearance of life-direction language in the athlete's recorded program ('Figure out what I want to do with my life'), which is worth tracking in subsequent weeks as either healthy senior-year reflection or drift signal."
+  },
+
+  "most_important_controllable": "Sustaining the training rhythm into Week 2. The first week back showed full lift attendance and both available wrestling practices completed. Confirming that pattern across a second week is what would convert first-week momentum into the start of a durable cadence.",
+
+  "micro_commitment": {
+    "action": "Hit every scheduled lift this week and attend every wrestling practice the team holds. The same standard you set this week, repeated. If the team holds three practices, attend three. If two, attend two. No skipped lifts.",
+    "when": "Across all training days Mon-Sun, Apr 27 through May 3.",
+    "measurement": "At week's end: zero missed lifts (out of scheduled), and wrestling practice attendance equals the number of practices the team held that week. If both met: fully executed. If one met: partial. If neither met: not attempted."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None",
+    "anticipated_stressor": "End-of-semester academic load building. The shoulder remains the long-term referent and re-injury risk is highest in the first weeks back to wrestling. Sustaining the training rhythm without first-week novelty propelling it. The 'Figure out what I want to do with my life' line in the next-week goal field signals either healthy senior-year reflection or directional drift, worth monitoring without intervening at this stage.",
+    "athlete_stated_next_goal": "Figure out what I want to do with my life. Get better. Enjoy the little things more. Be appreciative of the opportunities I have."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "3 Win days (Mon, Tue, Thu), 4 Neutral days (Wed, Fri, Sat, Sun), 0 Missed days. First week back after approximately 14-week absence. Lift attendance: 3 of 3 scheduled (Mon, Tue, Thu). Wrestling practice: Mon (first in approximately 2 months) and Thu (the two days the team practiced this week). Two scheduled rest days (Wed, Fri). Saturday: Cleveland trip to support cousin's professional MMA fight (cousin won). Sunday: academic catch-up, work, week-ahead preparation. Bullseye submitted with content in all three rings; outer ring contains four past-referencing entries (past thoughts, past results, past failures, past mistakes).",
+    "key_habit_signal": "Two signals matter most. First, lift attendance held at 100 percent of scheduled days, confirming that the strength training the user reports has resumed is operating at full cadence in the first week back. Second, the Bullseye outer ring composition. Four entries, all naming the past, is the most direct structural articulation of the baseline derailer the athlete has produced in his recorded history. Naming what must be released in the cannot-control ring is the precondition for actually releasing it. The first-week return absent any external pressure is the optimal moment for that naming to take root.",
+    "coach_reinforcement_cue": "Reinforce the rhythm without pushing for execution intensity. First weeks back are maintenance, not progression. Maintain emphasis on the lift consistency as the foundation. Maintain emphasis on the cannot-control naming as awareness, the first developmental requirement for the season ahead. Monitor wrestling practice attendance scaling as the team's schedule permits.",
+    "coach_avoidance_note": "Do not push for high-execution intensity in Week 2. The shoulder remains the long-term referent, and re-injury risk is highest in the first weeks back. Do not interpret the sparse daily entries as disengagement, the entries are brief but the structural execution is present and the next-week goal field carries reflective depth. Monitor the 'Figure out what I want to do with my life' line as either healthy senior-year reflection or drift signal, but do not surface it directly to the athlete at this stage. Do not pressure additional wrestling practices beyond what the team schedules."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "First week back from approximately 14-week absence for shoulder rehabilitation. Daily entries are sparse (RQS 1) but task-oriented and matter-of-fact throughout. No clinical indicators present. The next-week goal field contains the first appearance of life-direction language in the athlete's recorded program ('Figure out what I want to do with my life'). Worth monitoring for context without surfacing directly. Could indicate healthy senior-year reflection or directional drift. Standard coaching scope. The shoulder is the long-term referent and re-injury risk monitoring applies as wrestling load increases."
+  },
+
+  "next_week_focus_question": "First week back, you held the lift schedule and got to both wrestling practices the team had. What does the second week of being back need to look like for you to know it wasn't just first-week momentum?",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  },
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+  "current_season_phase": "not available — Core Foundation athlete",
+  "forward_anchor": "not available — Core Foundation athlete",
+  "longitudinal_ppd": "not available — Core Foundation athlete"
+}
