@@ -13,10 +13,12 @@
 # These must never be committed to version control.
 **/Weekly Reviews/
 
-# Intake PDFs contain original athlete intake forms with
+# Intake forms contain original athlete intake content with
 # personal information (name, school, contact, self-assessments).
-# Pattern covers all athlete intake PDFs across all sport types.
+# Patterns cover all athlete intake forms across file formats
+# and sport types.
 Athlete Data/**/*.pdf
+Athlete Data/**/*ntake*.txt
 
 # ----------------------------------------------------------
 # CLAUDE CODE LOCAL SETTINGS
