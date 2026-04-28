@@ -1,0 +1,649 @@
+============================================================
+NEW ATHLETE INTAKE HANDOFF TEMPLATE
+============================================================
+VERSION: 1.0
+LAST UPDATED: 2026-04-28
+SCOPE: Stage 1 only (Athlete Snapshot Generator).
+       Stages 2-5 do NOT run in this session. Those start the
+       first week the athlete submits a weekly recap; for that,
+       use the Weekly Processing Handoff Template instead.
+============================================================
+
+
+------------------------------------------------------------
+FILL IN THESE FIELDS BEFORE STARTING THE SESSION
+------------------------------------------------------------
+
+ATHLETE FULL NAME:
+  (Use the form the athlete uses themselves. First Last is
+   standard. Avoid nicknames unless the athlete uses them
+   exclusively. This becomes the folder name.)
+
+INTAKE FORM FILE PATH:
+  (Absolute or project-relative path to the intake form file.
+   Accepted formats: .pdf, .txt, .docx. Place the file inside
+   the new athlete's directory before running this session.
+   Example: Athlete Data\Sam Rivera\Sam_Rivera_Intake_Form.pdf)
+
+INTAKE FORM TYPE (OPTIONAL — agent will auto-detect if blank):
+  [ ] Core Foundation (22-question original form)
+  [ ] App (29-question new form with 1-5 scales for ABI and
+      multi-select Performance Friction for PPD)
+  [ ] Unknown — let the agent detect from form structure
+
+ATHLETE'S SPORT (OPTIONAL — for sanity check only):
+  (Will be in the intake form. Note here only if you want to
+   confirm the agent extracted it correctly.)
+
+ANY KNOWN CONTEXT THE INTAKE FORM DOES NOT CAPTURE:
+  (Optional. Examples: athlete is mid-season, athlete is
+   returning from injury, athlete was recommended by a specific
+   coach, athlete has a sibling already in the program. Add only
+   what is materially useful for shaping the snapshot. Leave
+   blank if nothing applies.)
+
+
+============================================================
+1. FIRST INSTRUCTION — READ BEFORE ANYTHING ELSE
+============================================================
+
+Read CLAUDE.md in the project root directory. It is the master
+context document for the entire pipeline. Read it completely.
+Do not skim.
+
+From CLAUDE.md, extract and internalize:
+
+  A. PIPELINE ARCHITECTURE
+     - The 7-stage pipeline (you are running Stage 1)
+     - Where Stage 1 sits in the dual-mode (App vs Core
+       Foundation) architecture
+     - The Snapshot Builder's role: produce the baseline profile
+       all downstream stages read on every weekly run
+
+  B. STAGE 1 ACTIVE SPECIFICATION
+     - Spec version (Snapshot Builder v2.0 is current as of
+       this template's last-updated date)
+     - File paths for the spec, the App intake form spec, the
+       App athlete snapshot fields spec, and the PPD/ABI
+       scoring logic specs
+
+  C. EXISTING ATHLETE SNAPSHOTS (as exemplars only)
+     - File paths to the snapshots already on disk (Grace
+       Kindel, Tucker Lloyd, Mergim Bushati, Aidan Burkardt,
+       Angelo Allen, Jasmine Jones, John Tastinger)
+     - Read them for FORMAT REFERENCE only (CF v1.0 produces
+       the 9-section narrative all existing athletes use). Do
+       NOT borrow content, baseline anchors, or anchor language
+       from another athlete. Each athlete's snapshot is theirs
+       alone.
+
+  D. COMPLIANCE RULES
+     - Non-clinical language is non-negotiable
+     - The baseline anchors (identity claim, hinge habit,
+       primary derailer, why it matters, exact phrase, growth
+       phase) are LOCKED at intake and consumed by every
+       downstream stage on every weekly run
+     - The structural data block (App athletes only) feeds
+       PPD/ABI/ecosystem fields into Stage 2's
+       baseline_intake_profile block
+
+If any required information is missing from CLAUDE.md (e.g.,
+the Snapshot Builder spec version is unclear, or the file
+paths in the Key File Locations section have moved), STOP and
+inform the user before proceeding. Do not guess paths.
+
+
+============================================================
+2. CONTEXT GATHERING PROTOCOL
+============================================================
+
+After reading CLAUDE.md, execute these steps IN ORDER. Do not
+skip any. Do not begin Stage 1 generation until all steps are
+complete.
+
+STEP 1 — VERIFY THE NEW ATHLETE DIRECTORY STRUCTURE
+The athlete's directory should already exist at:
+  Athlete Data\[Athlete Full Name]\
+
+Required subdirectories (create any that are missing):
+  Athlete Data\[Athlete Full Name]\Weekly Reviews\
+  Athlete Data\[Athlete Full Name]\Weekly JSONS\
+  Athlete Data\[Athlete Full Name]\Coaching and Deep Dive\
+    Athlete Data\[Athlete Full Name]\Coaching and Deep Dive\Coaching Message\
+    Athlete Data\[Athlete Full Name]\Coaching and Deep Dive\Deep Dive\
+    Athlete Data\[Athlete Full Name]\Coaching and Deep Dive\Audit Summaries\
+  Athlete Data\[Athlete Full Name]\Coach Insights\
+
+Optional (create only if the athlete is App-Premium-with-Parent
+or D2C-Premium-with-Parent — for first-time intake this is
+typically deferred until tier is confirmed):
+  Athlete Data\[Athlete Full Name]\Parent Output\
+
+If the directory does not exist or is missing required
+subdirectories, create them. Do NOT delete or overwrite an
+existing directory or any files in it. If a directory with the
+same athlete name already exists and contains files, STOP and
+ask the user whether this is the same athlete (re-intake or
+update) or a different athlete with a similar name.
+
+STEP 2 — VERIFY THE INTAKE FORM FILE EXISTS
+Confirm the intake form file specified in the handoff fields is
+present at the stated path. If the file does not exist, STOP
+and ask the user to provide the correct path. Do NOT proceed
+with a partial path or a guessed location.
+
+STEP 3 — READ THE INTAKE FORM IN FULL
+Read every question and every answer the athlete provided. Do
+not summarize, paraphrase, or interpret yet. The goal of this
+step is verbatim absorption of the athlete's own words. Note
+specifically:
+  - Free-text answers (identity sentence, pressure thought,
+    competitor aspiration, success vision) — these become
+    direct anchor inputs and should be preserved verbatim where
+    quoted.
+  - Multi-select answers (mental struggles, performance
+    friction, trigger context, etc.) — these feed downstream
+    routing.
+  - Scale answers (1-5 or 1-10) — these feed ABI pillar
+    calculations (App form) or inform self-assessment context
+    (CF form).
+  - Administrative fields (name, contact, sport, position,
+    competitive level, season phase) — these populate the
+    snapshot header.
+  - Any blank or partial answers — note these. Do not
+    extrapolate. Use "insufficient data" or omit per the
+    Snapshot Builder spec's rules for missing fields.
+
+STEP 4 — DETECT INTAKE FORM TYPE (DUAL-MODE DETECTION)
+If the user did not specify the form type in the handoff
+fields, run the dual-mode detection per the Snapshot Builder
+spec. The 3 structural signals:
+  (1) Q7-Q14 are integer 1-5 scale answers (App)
+  (2) Q15 is a multi-select Performance Friction question (App)
+  (3) Q16 is a multi-select Trigger Context question (App)
+
+If all 3 signals present → App intake. Run App path.
+If 0 of 3 signals present → Core Foundation intake. Run CF path.
+If ambiguous (1-2 signals present, or unclear) → default to
+Core Foundation per the spec's "ambiguous defaults to CF" rule.
+
+If the user specified the form type in the handoff fields, use
+the specified type but log a note in the snapshot or session
+report if structural detection contradicts the user's
+specification.
+
+STEP 5 — READ THE STAGE 1 SPECIFICATION FILES
+Read in full:
+
+  Primary spec (mandatory):
+    Agents - Generators\Athlete Snapshot Generator\
+      SOP_Snapshot_Builder_Project_Instructions_v2.0.txt
+
+  Intake form definitions (mandatory — read the one matching
+  the detected/specified form type):
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_App_Intake_Form_Specification.txt           (App path)
+    Agents - Generators\Athlete Snapshot Generator\
+      Potential Additions and Improvements\
+      Core Foundation Intake Form.txt                (CF path)
+
+  Output structure spec (mandatory for App, reference for CF):
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_App_Athlete_Snapshot_Fields.txt
+
+  Scoring logic specs (mandatory for App path, skip for CF):
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_PPD_Scoring_Logic.txt
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_ABI_Scoring_Logic.txt
+
+  Downstream awareness (mandatory — informs how anchors will
+  be consumed by Stages 2-5):
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_Interpretation_Engine_Snapshot_Integration_Assessment.txt
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_Downstream_Stage_Impact_Assessment.txt
+
+The Snapshot Builder spec is self-contained (1800+ lines) and
+includes embedded PPD logic, embedded ABI logic, all narrative
+section writing rules, baseline anchor derivation rules with
+guardrails, compliance guardrails, validation checklist, and a
+Grace Kindel hypothetical worked example. Read it. Do not rely
+on summaries.
+
+STEP 6 — READ ONE EXISTING SNAPSHOT FOR FORMAT REFERENCE ONLY
+For format reference (NOT for content borrowing), read one
+existing CF snapshot to see the rendered output:
+  Athlete Data\Mergim Bushati\mergim_bushati_athlete_snapshot.txt
+or
+  Athlete Data\Tucker Lloyd\tucker_lloyd_snapshot.txt
+
+For App format (NOT YET PRODUCED IN PRODUCTION — only the
+hypothetical Grace Kindel worked example exists inside the spec
+itself), refer to the Snapshot Builder spec's Section 15
+worked example.
+
+CRITICAL: Read these for format only. Do NOT copy baseline
+anchors, identity claims, derailer language, or any content
+from another athlete's snapshot. Every athlete's snapshot is
+theirs alone, derived from their own intake answers.
+
+
+============================================================
+3. SESSION CONTEXT
+============================================================
+
+SESSION TYPE: New Athlete Intake (Stage 1 only)
+
+ATHLETE STATUS:
+  - First time entering the pipeline
+  - No baseline snapshot exists yet
+  - No prior week JSONs exist
+  - No prior coaching output exists
+  - The intake form is the only input
+
+GOAL:
+  - Produce ONE deliverable: the athlete's baseline snapshot
+  - Save snapshot to disk
+  - Update CLAUDE.md with the new athlete's section
+  - Commit all work
+  - Leave the athlete ready for Stages 2-5 processing the first
+    week they submit a weekly recap
+
+WHAT THIS SESSION DOES NOT DO:
+  - Does NOT generate any Coaching Message
+  - Does NOT generate any Deep Dive
+  - Does NOT generate any Coach Insights report
+  - Does NOT run any audit
+  - Does NOT process any weekly recap (none exist yet)
+  - Does NOT create a Daily Snippet (Stage 6 is daily, not
+    intake-triggered)
+  - Does NOT create a Daily Coach Signal (Stage 7 is
+    daily-triggered and requires Mini-JSON input)
+
+
+============================================================
+4. SPECIFICATION FILES — REFERENCE LIST
+============================================================
+
+These were already specified in Section 2 Step 5. Re-listed
+here for quick reference during execution. Read them before
+generating the snapshot.
+
+STAGE 1 — ATHLETE SNAPSHOT GENERATOR:
+
+  Primary spec (ACTIVE):
+    Agents - Generators\Athlete Snapshot Generator\
+      SOP_Snapshot_Builder_Project_Instructions_v2.0.txt
+
+  Legacy spec (CF v1.0 — read only if v2.0 spec is unavailable
+  for some reason; v2.0 preserves CF path internally):
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_Intake_Snapshot_Builder_Project_Instructions.txt
+
+  App intake form definition:
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_App_Intake_Form_Specification.txt
+
+  CF intake form (for reference if processing a CF athlete):
+    Agents - Generators\Athlete Snapshot Generator\
+      Potential Additions and Improvements\
+      Core Foundation Intake Form.txt
+
+  Output structure (App athletes):
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_App_Athlete_Snapshot_Fields.txt
+
+  PPD scoring logic (App path):
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_PPD_Scoring_Logic.txt
+
+  ABI scoring logic (App path):
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_ABI_Scoring_Logic.txt
+
+  Downstream consumption awareness:
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_Interpretation_Engine_Snapshot_Integration_Assessment.txt
+    Agents - Generators\Athlete Snapshot Generator\
+      VF_Downstream_Stage_Impact_Assessment.txt
+
+
+============================================================
+5. PROCESSING ORDER
+============================================================
+
+This session runs Stage 1 only. There is no Stage 2-5
+processing. Follow these steps in order.
+
+------------------------------------------------------------
+STEP A: GENERATE THE SNAPSHOT
+------------------------------------------------------------
+
+Apply the Snapshot Builder spec to the intake form data:
+
+For Core Foundation athletes (CF path):
+  - Produce a 9-section narrative snapshot
+  - Word target: 300-500 words total
+  - 5 locked baseline anchors (identity claim, hinge habit,
+    primary derailer, why it matters, exact phrase) at the end
+  - Initial growth phase classification
+  - Output format identical to v1.0 (preserved exactly inside
+    v2.0 spec)
+  - No structured data block, no PPD scoring, no ABI scoring
+
+For App athletes (App path):
+  - Produce the hybrid format snapshot:
+    - Structured header (12 fields including INPUT_SOURCE,
+      COMPETITIVE_LEVEL, SEASON_PHASE, COMMITMENT_LEVEL)
+    - 6 structured data sub-blocks (PPD_SCORES, ABI_SCORES,
+      ABI_RAW_INPUTS, ECOSYSTEM, BEHAVIORAL_PATTERNS,
+      LONGITUDINAL_BASELINES)
+    - 10 narrative sections
+  - Word target: 400-650 words for narrative (structured data
+    block does NOT count toward word total)
+  - 5 locked baseline anchors plus initial growth phase
+  - Compute PPD scores (4-layer deterministic process: selection
+    weight, amplifiers, tie-breaker, ranking) per the embedded
+    spec rules
+  - Compute ABI scores (formula: pillar_score = round((Q_a + Q_b)
+    / 2 * 2), range 2-10 per pillar, 8-40 total) per the
+    embedded spec rules
+  - Apply baseline anchor derivation guardrails:
+    - Identity claim grounded in Q17 (athlete's own identity
+      sentence) for App, Q15-Q17 free-text for CF
+    - Primary derailer backed by PPD ranking (App) or by
+      mental-struggle multi-select Q12 (CF). Agent cannot
+      override the deterministic ranking.
+    - Hinge habit constrained to ABI emphasis pillar (App) or
+      to behavioral self-report (CF)
+    - Exact phrase pulled verbatim from a free-text answer
+    - Growth phase: deterministic for App per ABI bands;
+      judgment call for CF per spec rules
+
+------------------------------------------------------------
+STEP B: SELF-VALIDATE AGAINST THE SPEC CHECKLIST
+------------------------------------------------------------
+
+The Snapshot Builder spec includes a 12-point validation
+checklist (Section 14 of v2.0). Run it. Verify:
+
+  1. All required sections present (9 for CF, 10 for App)
+  2. Word count within target range
+  3. 5 baseline anchors present and grounded in intake answers
+  4. Initial growth phase classified per spec rules
+  5. No clinical language (replacement table in spec Section 12
+     applies)
+  6. No speculation beyond intake content
+  7. Ecosystem section factual, not interpretive (App only)
+  8. Structured data block matches narrative content (App only)
+  9. PPD bucket priority correct on ties (App only)
+  10. ABI primary emphasis follows within-2-points rule (App
+      only)
+  11. Baseline anchor traceable language present
+  12. Header fields populated (App only — CF uses simpler
+      header)
+
+If any check fails: revise the snapshot, then re-validate. Do
+not produce a snapshot that fails any checklist item.
+
+------------------------------------------------------------
+STEP C: SAVE THE SNAPSHOT
+------------------------------------------------------------
+
+Save to:
+  Athlete Data\[Athlete Full Name]\[firstname_lastname]_athlete_snapshot.txt
+
+Filename convention:
+  - All lowercase
+  - First name + underscore + last name
+  - Suffix: _athlete_snapshot.txt
+  - Example: sam_rivera_athlete_snapshot.txt
+
+If the file already exists at this path, STOP. Do NOT overwrite.
+Ask the user whether this is a re-intake (in which case the
+prior snapshot should be archived first) or a name collision
+(in which case the new athlete needs a different folder name).
+
+------------------------------------------------------------
+STEP D: UPDATE CLAUDE.md WITH THE NEW ATHLETE SECTION
+------------------------------------------------------------
+
+Add a new athlete section to CLAUDE.md under the "Athlete Data
+Status" area, modeled on existing athlete sections (Mergim
+Bushati, Grace Kindel, etc.). The new section should contain:
+
+  - Athlete name as a level-3 heading
+  - Baseline Snapshot path
+  - Four baseline anchor lines (identity claim, hinge habit,
+    primary derailer, growth phase)
+  - Empty Interpretation JSONs table with header row only and a
+    note: "Awaiting first weekly recap submission."
+  - Empty Coaching Output table with header row only and the
+    same awaiting note
+  - Empty Coach Insights table with header row only and the
+    same awaiting note
+  - For App athletes: brief note of detected competitive_level,
+    PPD primary_problem, ABI primary_emphasis, and baseline
+    season_phase (so downstream sessions can see these without
+    re-reading the snapshot)
+
+Also update:
+  - "Last Updated" date at top of CLAUDE.md
+  - Session Notes header (this becomes the new current session)
+  - "Previous session" line (move the prior current session
+    down one slot)
+  - Numbered session history list (add a new entry at the next
+    available number)
+
+------------------------------------------------------------
+STEP E: COMMIT TO GIT
+------------------------------------------------------------
+
+Stage and commit:
+  - The new snapshot file
+  - The new directory structure (any new empty subdirectories
+    git tracks via .gitkeep or similar — only commit folders
+    that were created this session)
+  - CLAUDE.md
+
+Commit message format (per CLAUDE.md commit conventions):
+  "Onboard new athlete [Full Name] through Stage 1.
+
+   [One sentence describing what was produced — CF snapshot or
+    App snapshot, baseline anchors locked, ready for first
+    weekly recap.]
+
+   Co-Authored-By: ..."
+
+Verify clean working tree with final git status.
+
+
+============================================================
+6. DELIVERABLES
+============================================================
+
+TOTAL OUTPUTS: 1 file
+  1 baseline snapshot (CF or App format)
+
+PLUS:
+  - CLAUDE.md updated with new athlete section
+  - Git commit capturing all changes
+  - Final git status confirming clean working tree
+
+AFTER ALL DELIVERABLES ARE PRODUCED:
+
+Provide a brief summary to the user covering:
+
+  1. Detected intake form type (App or CF) and the 3 structural
+     signal results
+  2. The 5 locked baseline anchors (identity claim, hinge
+     habit, primary derailer, why it matters, exact phrase)
+  3. Initial growth phase classification and the reasoning
+  4. For App athletes: PPD primary_problem (top bucket) plus
+     PPD top 3 ranked, ABI primary_emphasis pillars and total
+     score, ecosystem alignment classification
+  5. Any intake-form gaps or ambiguities you noted while
+     reading (e.g., blank questions, contradictory answers)
+  6. What the athlete is ready for next: first weekly recap
+     submission triggers Stages 2-5 via the Weekly Processing
+     Handoff Template
+
+Keep the summary focused. The user can read the full snapshot
+on disk. The summary is for confirming intake decisions.
+
+
+============================================================
+7. CRITICAL OPERATING RULES
+============================================================
+
+These are defined in detail in CLAUDE.md and the Snapshot
+Builder spec. Repeated here because violations directly affect
+every downstream weekly run for the rest of the athlete's time
+in the program.
+
+STRUCTURAL RULES:
+
+  - Do NOT modify any specification files.
+  - Do NOT borrow content, baseline anchors, derailer language,
+    or identity language from another athlete's snapshot. Each
+    snapshot is generated from that athlete's own intake.
+  - Do NOT extrapolate beyond intake answers. If the athlete
+    did not provide an answer, use "insufficient data" or omit
+    per the spec.
+  - Do NOT pre-write a snapshot template and fill it in. The
+    spec's section structure is required, but the content of
+    each section must derive from the athlete's specific
+    intake answers.
+  - Do NOT skip the dual-mode detection step.
+  - Do NOT skip the validation checklist.
+  - Do NOT skip the CLAUDE.md update.
+
+CONTENT RULES:
+
+  - No clinical, therapeutic, or mental-health framing in any
+    section. Replacement table in Snapshot Builder spec Section
+    12 applies.
+  - No surveillance-style framing or pipeline-internal
+    terminology in any narrative section.
+  - Athlete's first name used naturally in the snapshot
+    (matches downstream coaching voice register).
+  - Baseline anchors are LOCKED by this snapshot and consumed
+    by every downstream weekly stage. Get them right.
+  - Exact phrase must be a verbatim quote from the athlete's
+    intake answers. Do not paraphrase.
+
+DUAL-MODE RULES:
+
+  - App snapshots include the structured data block. CF
+    snapshots do NOT.
+  - PPD scoring runs ONLY for App snapshots. CF snapshots do
+    not have PPD bucket scores.
+  - ABI scoring runs ONLY for App snapshots. CF snapshots do
+    not have pillar scores.
+  - Ecosystem section (App only) is factual not interpretive
+    (Q22-Q25 routing per spec).
+  - Word target differs by mode: 300-500 (CF), 400-650 (App
+    narrative only).
+
+RE-INTAKE RULES:
+
+  - If a snapshot already exists for the athlete name and the
+    user has confirmed this is a deliberate re-intake (e.g.,
+    athlete switched from CF to App, or a year has passed and
+    new baseline is appropriate), archive the prior snapshot
+    to:
+      Athlete Data\[Athlete Full Name]\Archived\[original_filename]_[date].txt
+    before writing the new one. Do not silently overwrite.
+
+
+============================================================
+8. WHAT TO DO IF THINGS GO WRONG
+============================================================
+
+INTAKE FORM IS UNREADABLE OR ILLEGIBLE:
+  - If PDF is image-only (scanned handwritten form), inform the
+    user and ask them to provide a text transcription or a
+    machine-readable PDF.
+  - If specific questions are unreadable but most form is
+    legible, proceed with what is legible and document the
+    unreadable fields as "insufficient data" in the snapshot.
+    Inform the user in the post-session summary.
+
+INTAKE FORM IS INCOMPLETE:
+  - If a free-text identity/derailer/aspiration question is
+    blank, the corresponding baseline anchor cannot be derived
+    cleanly. STOP and ask the user how to proceed:
+    (a) Use "insufficient data" placeholder anchor and note
+        that the next weekly recap will need to fill it in,
+    (b) Have the athlete complete the missing field first.
+  - If multi-select scoring inputs (App Q15, Q16) are blank,
+    PPD scoring cannot run. Inform the user and either request
+    completion or fall back to CF treatment.
+  - If ABI scale inputs (App Q7-Q14) are partially blank,
+    affected pillar scores fall back to "insufficient data"
+    and the snapshot notes which pillars are computable.
+
+ATHLETE NAME COLLISION:
+  - If a directory at Athlete Data\[Athlete Full Name]\
+    already exists with files in it, STOP. Confirm with the
+    user before proceeding.
+
+USER-SPECIFIED FORM TYPE CONFLICTS WITH STRUCTURAL DETECTION:
+  - Use the user's specification but log the discrepancy in the
+    snapshot footer and in the session summary. Do not silently
+    override either.
+
+INTAKE ANSWERS APPEAR CONTRADICTORY:
+  - Capture the contradiction in the snapshot's narrative (the
+    spec permits this). Do not "resolve" it by picking one side.
+    Contradictions in self-perception are themselves data points
+    for downstream coaching.
+
+
+============================================================
+9. WHAT THIS SESSION ENABLES (DOWNSTREAM)
+============================================================
+
+Once Stage 1 is complete and the snapshot is on disk, the
+athlete is ready for Stages 2-5 the first week they submit a
+weekly recap. That session uses the Weekly Processing Handoff
+Template, NOT this template.
+
+The snapshot's baseline anchors (identity claim, hinge habit,
+primary derailer, growth phase) are read by every downstream
+stage on every weekly run for as long as the athlete is in the
+program. They are LOCKED by this session.
+
+For App athletes, the structured data block (PPD scores, ABI
+scores, ecosystem, behavioral patterns) is also read by Stage 2
+on every weekly run via the baseline_intake_profile pass-through
+mechanism.
+
+For Premium-with-Parent athletes (App), the snapshot's parent_
+involvement and ecosystem fields gate parent output generation
+in Stages 3 and 4. (For first-time intake, parent output is
+typically deferred until the first weekly recap and after tier
+confirmation.)
+
+
+============================================================
+END OF TEMPLATE
+============================================================
+
+When you have read CLAUDE.md, completed the Context Gathering
+Protocol (Section 2), and read all specification files (Section
+4) — start with Step A in Section 5 and proceed through Step E
+in order. Produce the snapshot, validate, save, update
+CLAUDE.md, commit.
+
+Do not ask for permission to proceed mid-execution. Do not ask
+clarifying questions about the pipeline. The specifications and
+CLAUDE.md contain everything you need. The only stop conditions
+are the ones explicitly listed in Section 8 (intake unreadable,
+intake incomplete in a blocking way, name collision, form-type
+conflict).
+
+Process the new athlete and produce the snapshot.
+
+============================================================
