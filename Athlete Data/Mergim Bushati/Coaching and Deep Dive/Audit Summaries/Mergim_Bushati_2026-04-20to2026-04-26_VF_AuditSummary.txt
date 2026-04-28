@@ -128,7 +128,28 @@ Rationale: the 14-week absence was not driven solely by shoulder rehabilitation.
 
 Audit lesson: Distinguish between (a) the Wk19 season-ending decision (shoulder-driven per JSON) and (b) the 14-week check-in absence that followed (multi-factor: shoulder rehabilitation plus illness plus going home plus other personal factors). Future return-week processing should not collapse the two into a single rehabilitation narrative when other contributing factors are present.
 
-Open question for downstream review: three other passages in the CM and DD carry the same shoulder-only framing of the absence that the user-edited DD opener removed (DD line 18 second sentence "the fourteen weeks between then and now were the work that had to happen for this Monday to be possible"; DD line 49 second half "you spent fourteen weeks doing what the body needed before the next chapter could begin"; CM line 11 "The shoulder did what it needed to do over the offseason"). These have been surfaced to the user for a directional decision on whether to apply parallel broadening. CM line 15 ("with a healthy shoulder and a clean read on what has to stay behind you") reads as factual current-state language, not as cause-of-absence framing, and was not flagged.
+Parallel broadening applied per user direction to three additional passages that carried the same shoulder-only framing of the absence:
+
+  DD Weekly Trendline (line 18 second half):
+    BEFORE: "The fourteen weeks between then and now were the work that had to happen for this Monday to be possible."
+    AFTER:  "The fourteen weeks between then and now were what had to happen for this Monday to be possible."
+    (Removed "the work" to avoid framing the 14 weeks as labor-only when the period included illness, going home, and other personal factors.)
+
+  DD Identity Thread (line 49 second half):
+    BEFORE: "you spent fourteen weeks doing what the body needed before the next chapter could begin."
+    AFTER:  "you spent fourteen weeks doing what you needed to do before the next chapter could begin."
+    (Replaced "what the body needed" with "what you needed to do" to encompass physical recovery plus the other contributing factors.)
+
+  CM body paragraph 3 (line 11):
+    BEFORE: "The shoulder did what it needed to do over the offseason, and you came back into the room with the rhythm intact."
+    AFTER:  "You took the offseason for what it had to be, and you came back into the room with the rhythm intact."
+    (Replaced shoulder-only attribution with athlete-centered framing that holds the multi-factor character of the offseason.)
+
+CM line 15 ("with a healthy shoulder and a clean read on what has to stay behind you") was retained as-is. It reads as factual current-state language about the shoulder being healed now, not as cause-of-absence framing, and was not flagged in the original surfacing.
+
+Wk19 references throughout the DD Weekly Trendline ("The shoulder came first, the season closed, you committed to rehabilitation") and Identity Thread ("your shoulder needed time") remain unchanged. These describe the prior season's collaborative season-ending decision, which was correctly shoulder-attributed per the Wk19 JSON record. The distinction between (a) the Wk19 decision (shoulder-driven, factual) and (b) the 14-week check-in absence that followed (multi-factor) is preserved in the corrected text.
+
+JSON narrative_arc.arc_summary still references the absence as "approximately 14-week offseason absence for shoulder rehabilitation" and was not touched. The JSON is internal pipeline data; the user-broadened framing belongs in the athlete-facing coaching prose. Future return-week JSON generation should consider broader phrasing when other contributing factors to a check-in absence are present.
 
 ============================================================
 NOTES
