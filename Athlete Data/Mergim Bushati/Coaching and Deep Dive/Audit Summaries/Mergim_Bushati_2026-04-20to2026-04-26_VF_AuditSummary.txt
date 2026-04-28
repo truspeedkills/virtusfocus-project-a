@@ -77,7 +77,7 @@ TIER 2 RESULTS
     Single behavioral target appropriate to a Week 1 return after extended absence. Modality is Behavioral (matches sparse RQS=1 and rebuild week character). Target does not push for additional volume beyond what the team schedules, which is appropriate to first-week re-engagement risk profile.
 
 14. Voice Quality Regression: PASS
-    14.1 Reusable Opening Test: CM opens with "Look at the bottom ring of your Bullseye this week. Past thoughts. Past results. Past failures. Past mistakes." The opening is specific to this week's Bullseye composition and cannot be reused next week by changing only a number or date. PASS.
+    14.1 Reusable Opening Test: CM opens with "Look at the outer ring of your Bullseye this week. Past thoughts. Past results. Past failures. Past mistakes." The opening is specific to this week's Bullseye composition and cannot be reused next week by changing only a number or date. PASS.
     14.2 Telegraphing: No "Now I'm going to," "Here's what I want to push you on," "Let me tell you," or "What I see is" patterns. PASS.
     14.3 Untraceable Paragraph: Every paragraph in CM and DD traceable to a specific JSON field, recap content, or snapshot field. PASS.
     14.4 Category Coverage Over Response: Five CM paragraphs each carry a distinct response to the week's content. DD sections are weighted unevenly per the week's actual character (3 strength signals, 1 growth area, brief trendline appropriate to Week 1 of new arc). PASS.
@@ -106,7 +106,19 @@ CORRECTIONS APPLIED
 
 1. Coach Insights line 15: replaced inline em dash with comma (institutional voice standard, ancillary to Stage 5 formal scope).
 
-No corrections applied to Coaching Message, Deep Dive, or Interpretation JSON.
+No corrections applied to Coaching Message, Deep Dive, or Interpretation JSON during the audit pass.
+
+============================================================
+POST-AUDIT USER EDIT
+============================================================
+
+Coaching Message line 7 opening sentence: user-corrected terminology error.
+  BEFORE: "Look at the bottom ring of your Bullseye this week."
+  AFTER:  "Look at the outer ring of your Bullseye this week."
+
+Rationale: "Outer ring" is the correct VirtusFocus Bullseye terminology for the cannot-control ring. "Bottom ring" was a positional misnomer introduced during generation and not caught at audit. The corrected term aligns with the Bullseye Method spec (Center Ring = Control / Middle Ring = Influence / Outer Ring = Cannot Control) and with prior CM/DD usage across the program.
+
+Audit lesson: Bullseye spatial labels (top/bottom/left/right) are not interchangeable with the spec's named-ring labels (center/middle/outer). Future generation should use spec-aligned ring names. The criterion 14.1 quote above has been updated to reflect the corrected wording.
 
 ============================================================
 NOTES
