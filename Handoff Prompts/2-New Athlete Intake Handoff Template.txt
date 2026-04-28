@@ -15,15 +15,10 @@ FILL IN THESE FIELDS BEFORE STARTING THE SESSION
 ------------------------------------------------------------
 
 ATHLETE FULL NAME:
-  (Use the form the athlete uses themselves. First Last is
-   standard. Avoid nicknames unless the athlete uses them
-   exclusively. This becomes the folder name.)
+  
 
 INTAKE FORM FILE PATH:
-  (Absolute or project-relative path to the intake form file.
-   Accepted formats: .pdf, .txt, .docx. Place the file inside
-   the new athlete's directory before running this session.
-   Example: Athlete Data\Sam Rivera\Sam_Rivera_Intake_Form.pdf)
+  
 
 INTAKE FORM TYPE (OPTIONAL — agent will auto-detect if blank):
   [ ] Core Foundation (22-question original form)
@@ -32,15 +27,9 @@ INTAKE FORM TYPE (OPTIONAL — agent will auto-detect if blank):
   [ ] Unknown — let the agent detect from form structure
 
 ATHLETE'S SPORT (OPTIONAL — for sanity check only):
-  (Will be in the intake form. Note here only if you want to
-   confirm the agent extracted it correctly.)
+  
 
 ANY KNOWN CONTEXT THE INTAKE FORM DOES NOT CAPTURE:
-  (Optional. Examples: athlete is mid-season, athlete is
-   returning from injury, athlete was recommended by a specific
-   coach, athlete has a sibling already in the program. Add only
-   what is materially useful for shaping the snapshot. Leave
-   blank if nothing applies.)
 
 
 ============================================================
