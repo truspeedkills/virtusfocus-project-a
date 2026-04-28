@@ -1,0 +1,141 @@
+{
+  "athlete_name": "Hunter Snyder",
+  "week_period": "2026-04-20 to 2026-04-26",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to be a wrestler who performs at his best under pressure, anchored in belief and confidence",
+    "baseline_hinge_habit": "Pre-performance anchoring to accumulated preparation rather than outcome focus",
+    "baseline_primary_derailer": "Pressure response activated by fear-of-loss thinking in high-stakes competitive moments",
+    "baseline_why_it_matters": "The shift from work-anchored confidence to outcome-fear is the exact gap between the competitor Hunter wants to become and the pressure response that currently shows up in big moments",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "First reporting week for Hunter, returning to the program after several weeks away during active recovery from a season-ending PCL/LCL knee injury sustained in the Pennsylvania State Semi-Finals. The week's character is recovery cadence with one identity-anchoring milestone on Sunday: receipt of the Wrestler of the Year award at the wrestling banquet. Across all seven days Hunter executed some component of the rehab routine (PT, compression sleeves, leg extension, sunlight, stretching) without skip days and without breakdown language. The stated weekly goal ('get 1% better everyday with the intention of healing as best as possible') is process-anchored and matches what the daily entries show: consistent recovery work without outcome pressure. The Bullseye is well-formed with a controllable center ('the recovery and mindset journals'), an influence ring ('friends family and mindset'), and a named outer ring acknowledging things outside his circle. The achievement statement (Wrestler of the Year award) is external recognition of the season that ended at sixth in the state, and it arrived during the rehab period rather than after a return to competition. The primary alignment signal this week is that the work-anchored hinge habit named at intake ('Think about the amount of work I put in leading up to the moment') has translated, in his own words, into the recovery context as 1% better daily — same anchor, different application. The misalignment risk lies in the fact that the rehab phase produces zero competitive moments where the baseline derailer (pressure response in high-stakes competition) can be tested, and the WTD scoring registers all seven days at Neutral because rehab cadence is a single-domain day rather than the multi-domain stacking that produces Win-tier daily scores. This is a structural artifact of the season phase, not an engagement signal. Hunter is returning from injury, and his first reporting week reads as someone re-establishing the daily reflective surface during the rehab phase."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": "not available — Core Foundation athlete",
+
+  "athlete_state": "First reporting week for Hunter in the current arc, in active rehab from a knee injury sustained in the Pennsylvania State Semi-Finals. All seven days executed some recovery component (Monday PT plus compression, Tuesday Mr Tokyo lunch with grandma plus compression, Wednesday rest plus sunlight plus leg extension work, Thursday compression plus family meal, Friday park visit plus morning compression sleeves, Saturday rest plus stretching for healing and extension, Sunday wrestling banquet plus supporting a friend at a soccer game). Hunter scored every day at Neutral/Partial Win (2-3 points) with zero Wins and zero Missed days. He explicitly recorded zero Wins on the scorecard. Sunday delivered the week's most coaching-significant event: receipt of the Wrestler of the Year award at the team banquet, the external validation of the season that ended at sixth in the state. Hunter named explicit progress in his rehab ('Saw a lot of improvement in my leg with pain and swelling'). The Bullseye was completed across all three rings. Recap entries average 1-2 sentences per day, descriptive in tone, factual in content.",
+
+  "core_pattern": "Recovery-cadence consistency held across all seven days during the rehab phase, with one identity-anchoring milestone on Sunday and one named progress signal in the leg. The week's two primary structural facts are (1) seven consecutive Neutral days because the rehab phase produces single-domain days that do not reach the multi-domain stacking threshold for Win-tier scoring, and (2) the wrestling banquet on Sunday delivered external recognition of the prior season's competitive standing during the recovery period. Hunter's weekly goal ('1% better everyday with the intention of healing as best as possible') translates the baseline hinge habit (work-anchored pre-performance thinking) from competitive prep to recovery prep, same anchor applied to a different domain. The Bullseye named the recovery and mindset journals as the center-ring controllable, which is a returning-from-injury athlete identifying the right surface to invest in given the season phase. The recap entries are brief and descriptive without introspective layering, which is consistent with someone re-establishing the daily reflective habit after time away from the program. There is no derailer activation visible in the recap because the rehab phase produces no high-stakes competitive moments where pressure response could fire. The work-anchored side of the approach-vs-avoidance tension named at baseline is the side that is operationally active this week.",
+
+  "behavioral_root_cause": "Hunter's first reporting week sits in the gap between past competitive identity (state-level finalist, Wrestler of the Year) and present rehabilitation reality (PCL/LCL surgery recovery, no current competitive context). The week's structure reflects that gap. Rehab work happens daily because it has to, the recovery and mindset journals are named as the center-ring controllable because they are what an athlete actually has in this phase, and the WTD scoring registers Neutral because the rehab phase doesn't generate the volume of structured activity that produces a Win day. The Wrestler of the Year award arrived externally on Sunday at exactly the moment Hunter is navigating that gap. He did not write much about what receiving it meant beyond noting it as an achievement, but the achievement statement is the pivot point of the week: external validation of a competitive identity that is currently inaccessible because of injury. The brief, descriptive nature of the daily entries is consistent with a returning athlete who has been away from the program and is rebuilding the reflective habit. The well-formed Bullseye and the process-anchored weekly goal both indicate that the system itself is loading correctly for this athlete during the rehab phase. The one secondary thread to monitor is the outer ring language ('things that I can't control as far as anxiety increasers'), which is athlete-vocabulary acknowledgment rather than fixation but uses 'anxiety' colloquially to describe pressure-related distractions. Coaching language should not echo this term but should respect that Hunter is naming the right category of noise as outside his circle.",
+
+  "prior_commitment_result": {
+    "prior_action": "No prior week.",
+    "execution_status": "No Prior Week",
+    "execution_notes": "First reporting week of the current arc. No prior micro-commitment to evaluate.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "get 1% better everyday with the intention of healing as best as possible",
+    "achievement_statement": "Wrestler of the year award",
+    "key_phrase": "1% better everyday with the intention of healing as best as possible",
+    "mindset_resonance": "Trust your gut"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "0",
+      "neutral_days": "7",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Mixed",
+    "consistency_profile": "Mixed Pattern",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Center ring contains one item: 'the recovery and mindset journals.' This is exactly the right controllable surface for an athlete in active rehab with no current competitive context. The recovery work is what Hunter has direct agency over this week, and naming the mindset journals points to the daily reflective habit as a controllable in itself. Singular center-ring item this week is appropriate to the season phase, not a compression signal.",
+    "influence_quality": "Influence ring contains 'Friends family and mindset.' Friends and family are valid influence-ring entries (Hunter can affect their support but does not control it). 'Mindset' appearing here in addition to the center-ring 'mindset journals' is a minor overlap. Coaching read: the athlete is distinguishing the journaling practice (controllable) from his moment-to-moment mental state (influenced by what surrounds him), which is a reasonable distinction even if the same word labels both.",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "1",
+
+  "growth_phase": "Developing",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "insufficient data",
+    "growth_phase_movement": "insufficient data",
+    "consistency_trend": "insufficient data",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "insufficient data"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "0",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "emotional_intensity": "Low",
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "First reporting week of the current arc. Wrestler of the Year award received Sunday at the wrestling banquet, external recognition of the prior season's state-level competitive finish during active rehab from PCL/LCL surgery. Daily rehab cadence held across all seven days without skip or break.",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Daily rehab cadence consistency, paired with the daily reflective surface (the mindset journals Hunter named as the center-ring controllable). These are the two surfaces where Hunter has direct agency during the rehab phase and where the work-anchored hinge habit can operate without a competitive context.",
+
+  "micro_commitment": {
+    "action": "One target this week. At the end of each day during the rehab routine (after PT, compression, leg extension, or whatever the day's work was), write down one specific thing that day's recovery work added to your return readiness. One sentence per day. The point is to build the evidence: every day you do the work, your body adds something to what's coming back. The Wrestler of the Year award showed up Sunday because of work that already happened. The next return-to-competition moment will show up the same way. Build the record.",
+    "when": "Each day after the day's rehab work, before going to bed. Sunday May 3, before submitting the next weekly recap.",
+    "measurement": "At the end of the week, Hunter should have at least 5 of 7 daily entries naming one specific thing that day's recovery work added to return readiness. If 5+ days have entries: fully executed. If 3-4 days have entries: partial. If fewer than 3 days have entries: not attempted."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None scheduled",
+    "anticipated_stressor": "Continued rehab progression. No external competition pressure during this period. The primary anticipated stressor is the gap between past competitive identity and present recovery phase, with the wrestling banquet milestone now behind him. Whether end-of-school-year academic pressure or rehab milestone testing surfaces in the next reporting week is unknown from this single recap.",
+    "athlete_stated_next_goal": "Keep trying and getting better. Enjoy the recovery and time spent in the moment"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "0/7 Win days, 7/7 Neutral days, 0/7 Missed days. Mixed weekly tier. All seven days included a rehab component (PT, compression sleeves, leg extension, sunlight, stretching, or some combination). Sunday: wrestling banquet, received Wrestler of the Year award, plus attended a friend's soccer game in the evening. Bullseye fully completed across all three rings. Weekly goal: process-anchored ('1% better everyday'). Achievement statement: Wrestler of the Year award. No competition this week. No competition scheduled next week. Self-reported leg improvement ('saw a lot of improvement with pain and swelling').",
+    "key_habit_signal": "Recovery cadence is the dominant behavioral signal this week. Hunter held the daily rehab routine across all seven days without skip days, without breakdown language, and without outcome-fixated framing. The process-anchored weekly goal ('1% better everyday with the intention of healing as best as possible') is a direct translation of the baseline hinge habit (work-anchored pre-performance thinking) into the recovery context. The Bullseye named the recovery and mindset journals as the center-ring controllable, which is the right surface to invest in during the rehab phase. The Wrestler of the Year award arriving on Sunday is the week's identity-anchoring milestone: external recognition of past competitive identity during the recovery gap. RQS=1 reflects that recap entries are brief and descriptive, consistent with a returning athlete re-establishing the daily reflective habit after time away from the program.",
+    "coach_reinforcement_cue": "Lead with the Sunday banquet and the work-anchored weekly goal. Recognize that Hunter held the rehab routine across all seven days without skip days and that the '1% better everyday' frame is the right translation of his baseline hinge habit into the rehab phase. Acknowledge the Wrestler of the Year recognition without overweighting it: it is a meaningful identity moment but it is also what the prior season earned, not what this week earned. The development edge is keeping the work-anchored thought pattern operationally connected to the rehab work that is happening now.",
+    "coach_avoidance_note": "Do not echo the athlete's outer-ring word 'anxiety' in any athlete-facing output. Use 'noise,' 'distractions,' or 'pressure' to describe the same category. Do not moralize the 0/7 Win pattern: it is a structural artifact of the rehab phase (single-domain days do not reach Win-tier thresholds), not an engagement issue. Do not over-press on the brief recap entries: RQS=1 in week one of a returning athlete's arc is a baseline-establishing data point, not a regression. Do not push Hunter toward a competitive return timeline: the rehab phase is the present, and the work-anchored hinge habit operates in this phase if it is named as such. Do not stack multiple targets in this week's micro-commitment: a returning athlete needs one clean thread to build, not three to manage."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present in athlete-facing scope. Hunter's recap language is calm, task-oriented, and matter-of-fact across all seven days. The use of 'anxiety' in the outer-ring Bullseye text is colloquial athlete-vocabulary describing pressure-related distractions outside his control, not a clinical signal; coaching language should not echo it but no escalation is warranted. The injury context (PCL/LCL surgery recovery) is documented in the baseline snapshot and is being managed through PT outside the coaching scope. The wrestling banquet identity recognition is positive context, not stressor. Standard coaching scope."
+  },
+
+  "next_week_focus_question": "The Wrestler of the Year award showed up Sunday because of work that already happened. The work that's happening right now is what builds the next return-to-competition moment. What does one day of that work look like when you're paying attention to what it adds, not just doing it?",
+
+  "longitudinal_ppd": "not available — Core Foundation athlete",
+
+  "baseline_intake_profile": "not available — Core Foundation athlete",
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  }
+}

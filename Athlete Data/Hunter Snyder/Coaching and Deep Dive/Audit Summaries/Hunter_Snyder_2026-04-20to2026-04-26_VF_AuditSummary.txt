@@ -1,0 +1,275 @@
+VIRTUSFOCUS — EDITORIAL AUDIT SUMMARY
+
+Athlete: Hunter Snyder
+Week: 2026-04-20 to 2026-04-26
+Audit Date: 2026-04-28
+Audit Spec: Editorial Audit v1.6 (14 Criteria)
+Inputs Audited: Interpretation JSON + Coaching Message + Deep Dive
+
+============================================================
+RESULT: AUTO-CORRECTED PASS
+============================================================
+
+All 14 criteria PASS. Two Criterion 14 (Voice Quality
+Regression, Tier 2) auto-corrections applied in-place via
+Edit tool. No regeneration required. CM and DD on disk now
+reflect the corrected versions.
+
+------------------------------------------------------------
+PRE-CRITERIA MECHANICAL CHECKS
+------------------------------------------------------------
+
+EM DASH SCAN (CM + DD):
+  Coaching Message: 0 occurrences (PASS)
+  Deep Dive: 0 occurrences (PASS)
+
+------------------------------------------------------------
+TIER 1 CRITERIA (1-4, 13) — MUST PASS
+------------------------------------------------------------
+
+CRITERION 1: Emotional Intensity Calibration
+  PASS
+  emotional_intensity = "Low" → standard coaching tone, no
+  emotional preamble required. CM opens with meaning and the
+  athlete's own goal-line, appropriate to a Low EI Mixed-tier
+  recovery week.
+
+CRITERION 2: Clinical Language Compliance
+  PASS
+  Zero clinical terms in CM or DD. The athlete's outer-ring
+  Bullseye text uses "anxiety" colloquially in his own
+  vocabulary (recap line: "things that I can't control as
+  far as anxiety increasers"). Coaching output does not echo
+  this term. CM uses "noise"; DD uses "pressure response"
+  (baseline anchor language) and "the outcome of maybe
+  losing" (athlete's own intake words). No diagnostic,
+  treatment, or pathologizing language detected.
+
+CRITERION 3: Data Fidelity
+  PASS
+  All factual claims trace to JSON or snapshot:
+  - "1% better everyday with the intention of healing as best
+    as possible" → athlete_voice.weekly_goal_stated (verbatim)
+  - "Wrestler of the Year award" → athlete_voice.achievement_
+    statement and recap (verbatim)
+  - "sixth in the state" → snapshot Section 1 (verbatim)
+  - "PCL/LCL surgery" → snapshot Section 1
+  - "Think about the amount of work I put in leading up to the
+    moment" → baseline_profile context (snapshot exact phrase)
+  - "the outcome of maybe losing" → snapshot Section 4
+    (verbatim)
+  - "saw a lot of improvement in pain and swelling" → recap
+    (close paraphrase of athlete's exact wording)
+  - "8 out of 10 mental game" → snapshot Section 1
+  - "ten years of competitive wrestling" → snapshot Section 1
+  - Recovery routine activities (PT, compression sleeves, leg
+    extension, sunlight, stretching, rest) → recap daily entries
+  - "seven days of it" / "no skip days" → JSON win_the_day
+    distribution (0W/7N/0M, all 7 days included recovery
+    component per athlete_state)
+
+CRITERION 4: Structural Compliance
+  PASS
+  CM contains all 5 mandatory elements (Recognition, Strength
+  Signals, Drift Identification, Identity Anchor, ONE Action)
+  woven as continuous narrative. DD contains all 5 mandatory
+  sections (MINDSET SUMMARY, WEEKLY TRENDLINE, STRENGTH
+  SIGNALS, GROWTH AREAS, IDENTITY THREAD) with appropriate
+  ALL CAPS section headers and item headlines, dash
+  separators between sections, no Coach Arron signature on
+  DD. Header on CM uses correct format (title + name/week/
+  date + 40-char ━ separator).
+
+CRITERION 13: Pipeline Data Leakage Compliance
+  PASS
+  No raw composite scores, coach flag IDs, or self-ratings
+  alignment labels surfaced (CF athlete; none exist in JSON
+  to leak). No PPD bucket names, ABI pillar labels, or
+  baseline_intake_profile terminology surfaced (CF athlete;
+  baseline_intake_profile = not available). No forward anchor
+  classifications surfaced (CF athlete; forward_anchor = not
+  available). No longitudinal_ppd terminology surfaced (CF
+  athlete; longitudinal_ppd = not available).
+
+  Pipeline classification language scan (Categories A-D + E
+  + F + G + H): "Win days" / "Growth tier" / "Mixed tier" /
+  "Reset tier" / "consistency profile" / "growth phase" /
+  "approach-framed" / "Stable Positive" / "Partially Aligned"
+  / "pattern shift detected" / "center-ring dominant" /
+  "outer-ring dominant" / "trigger context" — none present
+  in CM or DD.
+
+  "Developing" appears in Coach Insights output (Section 7,
+  permitted institutional context). Does not appear in
+  athlete-facing CM or DD.
+
+------------------------------------------------------------
+TIER 2 CRITERIA (5-10, 14) — AUTO-CORRECT IF POSSIBLE
+------------------------------------------------------------
+
+CRITERION 5: Voice & Tone (Coach Arron persona)
+  PASS
+  Second person throughout both CM and DD. Hunter's first
+  name used naturally (twice in CM, once in DD). Contractions
+  default register held (you're, don't, it's, that's, isn't,
+  haven't, didn't). Calm, direct, identity-focused. No fluff.
+
+CRITERION 6: Word Count
+  PASS
+  CM body: ~390 words (target 250-450). DD: ~970 words
+  (target 850-1200, simple Low-EI Week 1 sits at lower end).
+
+CRITERION 7: Athlete-Facing Frame (DD)
+  PASS
+  DD addressed directly to Hunter throughout. No coach-
+  facing sections. No Coach Reinforcement / Coach Avoidance
+  / Risk and Compliance Note. No Coaching Focus Areas
+  (belongs in CM per v1.3+).
+
+CRITERION 8: Prior Commitment Bridge
+  PASS (N/A)
+  prior_commitment_result.execution_status = "No Prior Week"
+  (Week 1 of current arc). No prior commitment to bridge to.
+
+CRITERION 9: Athlete Voice Mirror
+  PASS
+  key_phrase ("1% better everyday with the intention of
+  healing as best as possible") used verbatim in CM opening
+  paragraph and DD Mindset Summary paragraph 2. Mindset
+  challenge favorite ("Trust your gut") used as the athlete-
+  specific closing phrase in CM ("Build the evidence, and
+  trust your gut.").
+
+CRITERION 10: Micro-Commitment Realism
+  PASS
+  Single-target written commitment (one sentence per day
+  naming what the day's recovery added to return readiness).
+  Modality: Written, matches athlete's existing recap
+  submission pattern. Realistic for Week 1 returning-from-
+  injury context. Measurable (5 of 7 daily entries threshold
+  for full execution). Does not stack multiple targets,
+  appropriate for first-week scope per coach_avoidance_note
+  guidance.
+
+CRITERION 11: Tone Consistency
+  PASS
+  CM and DD both reflect the Mixed-tier-with-aligned-recovery
+  character of the week. No tonal discordance. Empathy-and-
+  identity-recognition register held throughout.
+
+CRITERION 12: Identity Thread Consistency (DD)
+  PASS
+  DD Identity Thread connects current week to baseline_
+  identity_claim ("wrestler who performs at his best under
+  pressure, anchored in belief and confidence"), baseline_
+  primary_derailer ("the outcome of maybe losing"), and the
+  intake-named friction layer (gap between past competitive
+  identity and present rehabilitation reality).
+
+CRITERION 14: Voice Quality Regression (Tier 2)
+  AUTO-CORRECTED PASS
+  2 fail conditions detected and corrected in-place via
+  Edit tool. No regeneration required.
+
+  14.2 TELEGRAPHING (CM):
+    Original text contained the announcement-style phrase
+    "The one thing I want to sharpen for you:" preceding
+    the actual coaching point.
+    Correction: Deleted the telegraphing phrase. Paragraph
+    now opens with the coaching point directly ("The work
+    you're doing right now is building something specific,
+    even if you can't see it accumulating yet."), per Voice
+    Reference Principle 4 (Earn Every Sentence): the
+    strongest coaching does not need an introduction, it
+    just lands.
+
+  14.9 "VERSION OF [X]" CONSTRUCTION (DD):
+    Original Identity Thread paragraph 2 contained "the
+    present-day version of you is still in compression
+    sleeves."
+    Correction: Replaced "the present-day version of you"
+    with "you're" ("even while you're still in compression
+    sleeves"). Also replaced "the external version of the
+    same thing" with "the external counterpart of the same
+    thing" earlier in the same sentence to avoid the
+    "version of [X]" construction in both instances of the
+    paragraph. Per Voice Reference Section 4 retired
+    constructions list (v2.3 Section 35 C3).
+
+  Other Criterion 14 fail conditions scanned:
+    14.1 Reusable Opening Test → PASS (CM opens with
+      Hunter's specific verbatim weekly goal as anchor;
+      could not be reused next week by changing only a
+      number or date)
+    14.3 Untraceable Paragraph → PASS (every paragraph
+      traces to specific JSON or recap content)
+    14.4 Category Coverage Over Response → PASS (response-
+      driven, focused on banquet milestone + work-anchor
+      translation as the two things that defined the week)
+    14.5 Brand Copy Close → PASS (closing phrase "Build the
+      evidence, and trust your gut" is athlete-specific:
+      ties to action commitment + athlete's named mindset
+      challenge favorite)
+    14.6 Same Construction 3-Week Window → N/A (Week 1)
+    14.7 DD as Expanded CM → PASS (DD Trendline + Strength
+      Signals + Growth Areas + Identity Thread cover
+      content the CM does not address; DD provides
+      analytical depth, CM is the highlight reel)
+    14.8 "That is [Noun]." Standalone Overuse → PASS (3
+      instances of "That [verb]" / "That's [X]" patterns
+      in DD, none are pure noun-stamping declaratives;
+      uses are directional/explanatory, not category labels)
+    14.10 Triple-Negative Setup → PASS (none detected)
+    14.11 Trendline Arc Recitation → PASS (Week 1, no arc
+      to recite, brief forward-focused note per DD
+      Framework Week-1 guidance)
+    14.12 Pipeline-Adjacent Vocabulary → PASS (no
+      "Developing phase" / "Win days" / "Growth tier" /
+      "approach-framed" / "the system" in CM or DD)
+
+------------------------------------------------------------
+TIER 3 CRITERIA — QUALITY NOTES
+------------------------------------------------------------
+
+  No Tier 3 quality notes raised.
+
+------------------------------------------------------------
+DECISION TREE OUTCOME
+------------------------------------------------------------
+
+  Tier 1 (1-4, 13): All PASS.
+  Tier 2 (5-12, 14): All PASS, 2 auto-corrections applied
+                     to Criterion 14 (within auto-correctable
+                     limit of <3 fail conditions).
+  Tier 3: No notes.
+
+  Final Result: AUTO-CORRECTED PASS
+
+------------------------------------------------------------
+FILES MODIFIED DURING AUDIT
+------------------------------------------------------------
+
+  Coaching Message: edited in place (14.2 telegraphing
+                    correction, 1 line removed)
+  Deep Dive: edited in place (14.9 "version of [X]"
+             corrections, 2 in-line phrase replacements)
+  JSON: not modified
+  Coach Insights: not modified
+
+------------------------------------------------------------
+COMPLEXITY NOTE
+------------------------------------------------------------
+
+  Low complexity. Week 1 of returning-athlete arc, Mixed
+  tier, Low EI, Aligned, no derailer activation, no
+  competition, no clinical-risk content, returning athlete
+  re-establishing daily reflective surface. Voice quality
+  corrections were specific isolated patterns in
+  rhetorically-loaded sentences, not systemic voice
+  drift. CM and DD demonstrate Voice Reference application
+  on a quiet recovery week (Voice Reference Pair A2 Angelo
+  Wk7 quiet-recovery + internal-achievement structure
+  informed CM opening with athlete's own goal-line as
+  anchor).
+
+End of Audit Summary
