@@ -1,0 +1,224 @@
+{
+  "athlete_name": "Angelo Allen",
+  "week_period": "2026-04-20 to 2026-04-26",
+  "input_source": "core_foundation",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Becoming a more goal-oriented, resilient, tenacious, and sharp human being across sport and life",
+    "baseline_hinge_habit": "Approach-framed pre-performance activation and daily training consistency maintained through multi-domain demands",
+    "baseline_primary_derailer": "Consistency disruption when school, work, and sport demands compete for time and energy",
+    "baseline_why_it_matters": "Angelo's multi-domain load is permanent. He will always be balancing sport, academics, work, and relationships. Building consistency systems that hold under pressure is the lever that unlocks his competitive ceiling.",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Angelo's stated weekly goal ('Build off of what was learned last week') was met behaviorally and competitively. Behavioral execution held at 5W/2N/0M (Gold Streak per athlete's self-scorecard, the second consecutive Gold Streak after Slippery Rock). Saturday's last-chance meet produced wins in both shot put and discus, with a deliberate mid-competition strategic decision to scratch hammer for injury prevention and PSAC preservation. The decision-making system that was demonstrated retrospectively at Slippery Rock (Week 9) is now operating in real-time during competition: Angelo named two strategic decisions explicitly in this week's recap (the choice to attend a non-essential last-chance meet for team support and competition readiness, and the choice to scratch hammer mid-competition). The achievement statement ('I built off of the week prior and kept my competition readiness up for championships next week') confirms direct execution of the stated weekly goal and its connection to the upcoming PSAC final. Practice access remained unstable ('More messy practice schedules, terrible weather') and Angelo named consistency-under-adversity directly ('consistency on my training on my part despite it all'). The next-week goal field introduces career-closure framing for the first time in his recorded program, anchoring the PSAC championship in process-language ('humility, preparation, determination, and readiness... gratitude, reverence, and peace... give each day its own individual intention and attention'). Aligned because: stated weekly goal was met explicitly with named evidence, two real-time strategic decisions executed and articulated, sustained execution under continued structural disruption, second consecutive Gold Streak, and forward-orientation toward the season-end target."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Final program week before the PSAC championship at Shippensburg, the last meet of Angelo's collegiate career after 16 years in Track and Field. Monday: solid school and home, no practice (all facilities taken by other events). Tuesday: good work day, conversations with professors he had been meaning to reach, no practice. Wednesday: solid practice after about a week of limited access, school and home both good. Thursday: 'Awesome day at work,' no practice. Friday: good day at work, good practice with the caveat that hammer practice was unavailable. Saturday: last-chance meet under rainy, wet, muddy conditions. Athlete reported he 'didn't need to be there' but chose to compete to support his team and to keep competition readiness up for PSAC championships. Won shot put and discus. Chose to scratch hammer due to slippery ring conditions, citing injury prevention and PSAC preservation as the explicit reasons. Sunday: rest day. WTD distribution 5W/2N/0M, self-scored as Gold Streak per athlete's scorecard. Bullseye center ring at six items for the fourth consecutive week (Myself, dedication, tenacity, willpower, time management, study habits). Influence ring identical to recent weeks (My home, My friends). Noise ring identical to recent weeks (Getting ill, Other people, The weather). Achievement statement: 'I built off of the week prior and kept my competition readiness up for championships next week.' Mindset challenge engaged: 'Keep going for five minutes past the point where you wanted to stop.' Direct meta-reflection on the week: 'More messy practice schedules, terrible weather, but consistency on my training on my part despite it all.' Next-week goal: 'To go and compete at the PSAC championship with humility, preparation, determination, and readiness. To leave colligate sports with gratitude, reverence, and peace. After 16 years of being in Track and Field. To do good, despite placements, to end up giving 100%, and leaving it all out on the field and giving each day its own individual intention and attention.' PSAC championship Thursday (hammer), Friday (discus), Saturday (shot put). Final meet of his collegiate career; senior, retiring after.",
+
+  "core_pattern": "Strategic decision-making operating at compounded complexity, with the preparation-quality system now visible in real-time during competition rather than retrospectively after it. Two distinct strategic decisions appear in Angelo's recap, each named explicitly in his own voice. The first is the meta-decision to compete in a non-essential last-chance meet ('I didn't need to be there but I chose to to support my team and to keep my competition readiness up'). That choice converts a low-stakes meet into deliberate readiness preparation for the PSAC championship one week later. The second is the in-competition decision to scratch hammer mid-meet ('I won shot and discus, but chose to scratch hammer due to the slippery ring possibly leading to injury and to save myself for PSAC championship next week'). That choice trades short-term competition completion for medium-term championship readiness, made under conditions where the slippery ring presented an injury risk. Week 5 Shippensburg established the preparation principle. Week 9 Slippery Rock validated it under adverse practice conditions. Week 10 takes the principle to a new operating level: in-competition strategic decision-making, articulated in the recap without prompting. Paired with this, the next-week goal field introduces career-closure framing for the first time, locating the PSAC championship inside a 16-year arc that closes there. The preparation system and the closure frame arrive together in the same recap.",
+
+  "behavioral_root_cause": "Angelo's execution quality continues to track with deliberateness of intention rather than with volume or external structure, and Week 10 extends that pattern into a new domain: strategic decision-making during competition. Across the program, the preparation principle has now operated at three levels of complexity. Level one was retrospective lesson extraction (Week 4 PSAC disappointment, processed during the 2.5-week gap and articulated in Week 4's return recap). Level two was prospective preparation design (Week 5 Shippensburg preparation built on the PSAC lesson, Week 9 Slippery Rock preparation built on the Mt Union disruption). Level three is in-competition real-time decision-making (Week 10 last-chance meet attendance choice, Week 10 mid-competition hammer scratch). At each level, the pattern is the same: identify what the situation actually requires, choose deliberately, accept short-term costs for the longer-term outcome. The Week 10 hammer scratch is the most demanding instance to date. It required Angelo to override the default of completing all three events in a meet he was already attending, and the override was made on a real-time injury-and-strategic-readiness assessment under live competition pressure. The career-closure framing in the next-week goal field is a parallel development: Angelo is articulating the meaning of the PSAC final before competing in it, which is the same articulate-then-execute pattern operating at the season-end timescale.",
+
+  "prior_commitment_result": {
+    "prior_action": "Before Saturday at Juniata, write down the three specific preparation decisions from the Slippery Rock week that Angelo believes produced the school record. Be concrete: not 'I prepared well,' but the actual choices (e.g., 'prioritized recovery over lift when the schedule forced a choice,' 'focused Wednesday practice on technique instead of volume,' 'listened to my body on Tuesday rest decision'). Then pick the two most important of the three and apply them to the Juniata week deliberately. Report back what the three were, which two he carried forward, and whether the application felt different from the intuitive version.",
+    "execution_status": "Partial",
+    "execution_notes": "The principle behind the commitment was clearly executed: Angelo's achievement statement explicitly states 'I built off of the week prior and kept my competition readiness up,' and the recap names two real-time strategic decisions from this week (the choice to attend the non-essential meet, the mid-competition hammer scratch). Both decisions are articulated in concrete, causal language rather than as 'I prepared well' generalities. The meta-reflection 'consistency on my training on my part despite it all' confirms Angelo is now naming his own decision-making explicitly. However, the specific commitment mechanic (write down three Slippery Rock decisions, pick two to carry forward to this week deliberately, report back which two and whether explicit application felt different from intuitive application) is not directly documented in the recap. The recap contains the output of the principle in operation but does not contain the explicit written exercise the commitment requested. Note: the meet attended this week was a last-chance meet, not Juniata College as the prior commitment anticipated. The competition context shifted, but the preparation-system thread carried through to a different specific event.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "Build off of what was learned last week.",
+    "achievement_statement": "I built off of the week prior and kept my competition readiness up for championships next week.",
+    "key_phrase": "I won shot and discus, but chose to scratch hammer due to the slippery ring possibly leading to injury and to save myself for PSAC championship next week",
+    "mindset_resonance": "Keep going for five minutes past the point where you wanted to stop"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "monday": "Neutral",
+      "tuesday": "Win",
+      "wednesday": "Win",
+      "thursday": "Win",
+      "friday": "Win",
+      "saturday": "Neutral",
+      "sunday": "Win"
+    },
+    "win_days": 5,
+    "neutral_days": 2,
+    "missed_days": 0,
+    "weekly_tier": "Growth",
+    "weekly_scorecard": "Gold Streak",
+    "scoring_note": "Self-scored 5 Wins / 2 Neutrals / 0 Missed by athlete. Monday Neutral reflects no-practice-access day with no scoring conflict from athlete (school and home both good, but practice unavailable due to facility conflicts). Saturday Neutral reflects competition day at last-chance meet (athlete scored 2-3 points despite winning shot put and discus, which is consistent with the decision to scratch hammer mid-competition rather than complete the full slate). The 5-Win/2-Neutral/0-Missed distribution lands at the floor of Gold Streak per athlete's self-scorecard. 5W/2N/0M = Growth tier (28 minimum points = Growth threshold). Second consecutive Gold Streak (after Week 9 7/7 Win Gold Streak) for the first time in the program. Fourth Gold Streak overall (Weeks 3, 7, 9, 10).",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Maintained at full depth. Six items: 'Myself,' 'my dedication,' 'my tenacity,' 'my willpower,' 'my time management,' 'my study habits.' Identical content for the fourth consecutive week (Weeks 7, 8, 9, 10). The center ring has now held this depth across a recovery week (Week 7), a disruption week (Week 8), a peak performance week (Week 9), and a back-to-back competition consolidation week (Week 10). The four-week consistency at six self-trait items confirms the depth restoration from Week 7 is structural, not situational.",
+    "influence_quality": "Stable. Two items: 'My home' and 'My friends.' Fifth consecutive week at this framing (Weeks 6, 7, 8, 9, 10). Consistent non-sport influence identification.",
+    "noise_fixation_present": "No",
+    "noise_content": "Three items: 'Getting ill,' 'Other people,' 'The weather.' Identical to Weeks 6, 7, 8, 9. Appropriate acknowledgment of uncontrollables without fixation. Notable: 'The weather' has been listed as noise across five consecutive weeks during which weather has been a recurring practical factor (Mt Union severe weather Week 8, last-chance meet rain/wet/mud this week). Angelo continues to name weather as cannot-control while his preparation decisions now explicitly account for weather contingencies.",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": 3,
+
+  "growth_phase": "Consistent",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Sustaining. Eight Growth tier weeks across ten recorded weeks. Back-to-back Gold Streaks (Week 9 7/7, Week 10 5/7) for the first time in the program. Wins in shot put and discus at the last-chance meet extend the consecutive-event win pattern from Slippery Rock.",
+    "growth_phase_movement": "Advancing. Developing to Consistent. Phase advancement criteria met for the first time: rolling 4-week win rate at 0.857 (above 0.85 threshold), second consecutive week of Aligned + Stable Positive + RQS 3 (Week 9 was the first), 10 weeks of dwell time in Developing satisfies the 2-week minimum. Advancement occurs in the final program week before Angelo's last collegiate meet, after 16 years of competing in Track and Field.",
+    "consistency_trend": "Sustaining. Stable Positive for the second consecutive week post-Week 8 disruption. Rolling 4-week win rate at 0.857 (window: Weeks 7-10), the highest sustained rate in the program. Volatility low across the consolidation period.",
+    "recommitment_trend": "Pattern holds. Not Applicable this week (no Missed days). Cross-week recovery from Week 8 fully sustained across Weeks 9 and 10. The recommitment_rate_4wk window now contains exactly one Missed event (Week 8 Friday illness/weather), recovered within 2 days.",
+    "pattern_shift_detected": "Yes. Three pattern shifts detected: (1) Phase advancement to Consistent. The criteria are met deterministically by the data, and the advancement occurs in Angelo's final program week. (2) Strategic decision-making operating at the in-competition real-time level, articulated explicitly in the recap. The mid-competition hammer scratch is the first instance in Angelo's program record of an in-competition strategic decision named in causal language. (3) Career-closure framing introduced. The next-week goal field carries process-anchored, gratitude-oriented retirement language ('humility, preparation, determination, and readiness... gratitude, reverence, and peace... give each day its own individual intention and attention') that is distinct from any prior week's language register and locates the upcoming PSAC championship inside a 16-year arc that ends there."
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": 9,
+    "rolling_win_rate_4wk": 0.857,
+    "rolling_missed_rate_4wk": 0.036,
+    "volatility_index_4wk": "Low",
+    "recommitment_rate_4wk": "1.00 — single Missed event (Week 8 Friday) in the 4-week window recovered within 2 days",
+    "controllable_stability_4wk": "Stable. Six-item self-trait center ring maintained for 4 consecutive weeks (Weeks 7, 8, 9, 10). Content identical across all four weeks. Depth restoration from Week 7 has now held through recovery, disruption, peak performance, and consolidation contexts.",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "Ten-week progression: Illness recovery with approach-framed re-engagement (Wk1) → High-level competition composure as solo competitor, near-PR (Wk2) → Peak performance with strategic preparation and identity-level achievement (Wk3) → [2.5-week gap: PSAC championship disappointment + emotional processing + Spring Break] → Outdoor season reset with mature retrospective processing (Wk4) → Championship lesson applied: structured preparation producing best-ever outdoor opener (Wk5) → Disrupted week: illness forces first Missed day, CMU cancelled (Wk6) → Easter break recovery executed with deliberate intention: 7/7 Wins, Bullseye depth restored, identity-level internal achievement (Wk7) → Comeback meet under compounding disruption: practice facility lost, weather conditions severe, marks below standard, composure maintained, immediate self-correction (Wk8) → Program-best outdoor performance: outdoor shot put school record, discus PR, hammer improvement, delivered under continued practice instability and without a lift week, driven by self-directed preparation built on body-awareness and recovery prioritization (Wk9) → Consolidation week before the season-end target: back-to-back Gold Streaks for the first time in the program, two real-time strategic decisions named explicitly (last-chance meet attendance choice, mid-competition hammer scratch for PSAC preservation), wins in shot put and discus at the last-chance meet, phase advancement to Consistent earned at the final program week, career-closure framing introduced in the next-week goal field (Wk10). The arc now contains the complete preparation-quality system across three operating levels: retrospective lesson extraction (Wk4), prospective preparation design (Wks 5, 9), and in-competition real-time decision-making (Wk10). Plus a season-end frame that locates the upcoming PSAC final inside a 16-year career arc closing at the same venue where the Wk4 disappointment occurred.",
+    "milestone_this_week": "Two paired milestones in the same recap. First: phase advancement to Consistent. Rolling 4-week win rate 0.857 clears the 0.85 threshold for the first time, paired with the second consecutive Aligned + Stable Positive + RQS 3 week, satisfying the advancement criteria. Advancement occurs in Angelo's final program week, with the PSAC championship as the only remaining competition. Second: in-competition strategic decision-making appears explicitly for the first time in the program record. Angelo named two strategic decisions in this week's recap: choosing to attend the non-essential last-chance meet for team support and competition readiness, and choosing to scratch hammer mid-meet under slippery ring conditions to preserve PSAC readiness. The Slippery Rock pattern (preparation-quality drives performance) was retrospective and pre-meet-prepared. The Week 10 pattern is in-competition and real-time. Paired with these is the first appearance of career-closure language in Angelo's program record: the next-week goal field anchors the PSAC final in process-oriented retirement framing ('leave colligate sports with gratitude, reverence, and peace... give each day its own individual intention and attention').",
+    "open_thread": "(1) PSAC championship Thursday/Friday/Saturday at Shippensburg University. The same venue where the Week 4 PSAC disappointment occurred and where the entire preparation-system arc was triggered. The bookend is structurally locked. Whether the preparation-quality principle, now demonstrated across three operating levels, holds at the championship-level competition that previously produced multi-domain overload is the final test. (2) Angelo's career-closure framing introduced this week is process-anchored, gratitude-oriented, and explicitly retirement-aware ('leave colligate sports with gratitude, reverence, and peace'). Whether that frame holds across three days of competition or shifts under championship-level pressure is the second monitoring thread. (3) Phase advancement to Consistent occurs in the final program week. There is no Week 11 to test sustainability of the new phase classification. The advancement is based on data through this week and reflects Angelo's standing at the close of his collegiate career, not a provisional designation pending future weeks. (4) Practice facility instability and weather-related event-day disruption have now persisted as background conditions across Weeks 8, 9, and 10. PSAC may or may not face the same conditions, but the preparation system has now demonstrated it produces competition results regardless. (5) Hammer is the event Angelo scratched mid-competition this week and is the first event scheduled at PSACs (Thursday). Whether the scratch decision was preservation that pays off Thursday or recovery that creates a delayed effect is the technical thread. The athlete's framing ('save myself for PSAC') treats the scratch as preservation."
+  },
+
+  "most_important_controllable": "Carrying his own season-ending intention into each of the three PSAC events. Angelo wrote his next-week goal in language that already names what he wants the championship to be: 'compete with humility, preparation, determination, and readiness. To leave colligate sports with gratitude, reverence, and peace. After 16 years of being in Track and Field. To do good, despite placements, to end up giving 100%, and leaving it all out on the field and giving each day its own individual intention and attention.' The most important controllable for the championship is treating each of the three events as a distinct day with a distinct intention, sourced from his own goal language, rather than as a three-event aggregate or a placement target. The Week 9 micro-commitment asked Angelo to articulate three preparation decisions explicitly. This week's recap shows him doing it for two strategic decisions in his own voice. The next move is using his own season-ending language as a daily anchor across the three championship days.",
+
+  "micro_commitment": {
+    "action": "For each of the three PSAC competition days (Thursday hammer, Friday discus, Saturday shot put), name the day's individual intention before warmup. One sentence per day, in Angelo's own voice. Source the intention from his own next-week goal language ('humility, preparation, determination, and readiness... gratitude, reverence, and peace... give each day its own individual intention and attention'). The intention is not a distance target or a placement goal. It is what Angelo wants to bring to that specific day. Three days, three intentions, written or said aloud before each event's warmup.",
+    "when": "Before the warmup of each event: Thursday before the hammer warmup, Friday before the discus warmup, Saturday before the shot put warmup. Sourced from the next-week goal Angelo wrote himself.",
+    "measurement": "Did Angelo name a distinct intention for each of the three events before warmup? Were the three intentions sourced from Angelo's own season-ending goal language? Report the three intentions, whether each was named in the moment before warmup, and whether the intentions changed Angelo's pre-event preparation feel from prior meets."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "PSAC Championship at Shippensburg University. Three-day meet. Thursday: hammer throw. Friday: discus throw. Saturday: shot put. Final meet of Angelo's collegiate career; senior, retiring after 16 years of Track and Field.",
+    "anticipated_stressor": "Highest of the program. Three contributing factors. First, this is the final meet of Angelo's collegiate career, which carries the full weight of a 16-year arc closing. Second, the venue is Shippensburg University, the same site as the Week 4 PSAC disappointment that triggered the preparation-system arc. The bookend is structurally and emotionally loaded. Third, championship-level competition is itself a higher stress context than the regular-season and last-chance meets that have produced the preparation-quality validations. Practice facility instability persists. Hammer is Thursday, the same event Angelo scratched mid-competition this week, which adds technical readiness uncertainty to the first day. Counterbalancing these stressors: Angelo enters with two consecutive Gold Streaks, a strategic decision-making system now operating at the in-competition real-time level, a process-anchored career-closure frame already articulated in his own voice, and the phase advancement to Consistent earned by the data through this week. Approach-framed orientation is the strongest in the program record going into the most demanding event of his career.",
+    "athlete_stated_next_goal": "To go and compete at the PSAC championship with humility, preparation, determination, and readiness. To leave colligate sports with gratitude, reverence, and peace. After 16 years of being in Track and Field. To do good, despite placements, to end up giving 100%, and leaving it all out on the field and giving each day its own individual intention and attention."
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "5 Win, 2 Neutral, 0 Missed. Growth tier. Gold Streak at the floor of the threshold (5 Wins). Second consecutive Gold Streak after Week 9. Last-chance meet Saturday produced wins in shot put and discus and a deliberate mid-competition hammer scratch under slippery ring conditions. Athlete cited injury prevention and PSAC preservation as explicit reasons for the scratch. Practice access remained limited Monday through most of the week (facility conflicts), with only Wednesday and Friday providing solid practice (Friday hammer practice unavailable). Bullseye center ring sustained at 6 self-trait items for the fourth consecutive week. Achievement statement and next-week goal both anchored in process language; next-week goal carries career-closure framing locating the PSAC championship inside a 16-year arc. Mindset challenge engaged: 'Keep going for five minutes past the point where you wanted to stop.' Prior commitment (write three Slippery Rock preparation decisions, apply two deliberately to the Juniata week) status Partial: the principle was executed and demonstrated through two real-time strategic decisions named in this week's recap, but the specific written exercise was not documented. PSAC championship at Shippensburg next week (Thursday hammer, Friday discus, Saturday shot put). Final meet of athlete's collegiate career.",
+    "key_habit_signal": "Strategic decision-making at the in-competition real-time level, articulated explicitly. The Week 9 Slippery Rock pattern was preparation-quality at the prospective level (decide the preparation that suits the meet, execute it, perform). The Week 10 pattern is preparation-quality at the in-the-moment level (assess conditions during competition, decide whether to compete the next event or preserve, accept short-term incompleteness for medium-term readiness). Angelo named two strategic decisions in this week's recap without prompting: the choice to attend a non-essential last-chance meet for team support and competition readiness, and the mid-competition decision to scratch hammer for PSAC preservation. Both decisions are articulated in causal, concrete language. The same decision system now operates across three timescales in Angelo's program: retrospective (Week 4 lesson extraction), prospective (Weeks 5, 9 preparation design), and real-time (Week 10 in-competition decisions). The pattern is repeatable and the articulation is becoming explicit.",
+    "coach_reinforcement_cue": "The phase advancement deserves explicit naming as a developmental marker, but the deeper reinforcement is what produced it: the strategic decision-making system now operating in real-time, in Angelo's own voice, without prompting. The Week 10 mid-competition hammer scratch is the most demanding instance of the preparation-quality principle in Angelo's program record because it required overriding the default behavior of completing all three events in a meet already attended, under live competition pressure. Reinforcement-worthy at the decision-making level, not the outcome level. Also reinforcement-worthy: the career-closure framing in the next-week goal. Angelo is articulating the meaning of his final meet before competing in it, in process-anchored language ('humility, preparation, determination, and readiness... gratitude, reverence, and peace'). That articulation is the same articulate-then-execute pattern operating at the season-end timescale and aligns with the developmental progression that produced the phase advancement.",
+    "coach_avoidance_note": "Do not name the phase advancement as 'Developing to Consistent' classification language in athlete-facing output. The advancement is real and reflected in the data, but the appropriate coaching frame is what the athlete built across ten weeks, not the pipeline classification label. Do not frame the PSAC championship as a redemption arc closing the Week 4 disappointment. The bookend is structurally there, but Angelo has already framed his own goal in process and gratitude language; redemption framing would override his framing with a coach-imposed narrative arc. Do not coach away from the career-closure language. Angelo named gratitude, reverence, and peace himself; the coaching response should hold that frame, not redirect it toward competitive striving language. Do not add competitive intensity to the goal Angelo already wrote in retirement-aware language. Do not list every preparation decision Angelo has named across the program. The week has two specific strategic decisions to recognize, and the next-week goal language to reinforce. The advancement and the closure can both stand without arc enumeration. Do not treat the hammer scratch as a withdrawal or hesitation. Angelo named it as preservation; the coaching response should reinforce the strategic-decision frame, not re-litigate the technical readiness question.",
+    "_advancement_routing_note": "Phase advancement to Consistent: athlete-facing coaching output may reference sustained behavior across ten weeks ('this is what ten weeks built') without naming the phase transition. Stage 4 Coach Insights may reference the phase classification directly per institutional output rules."
+  },
+
+  "risk_flags": "No clinical indicators. Language throughout is composed, forward-directed, and process-oriented. The career-closure framing in the next-week goal field is reflective and anchored in gratitude-and-presence terms, not loss or grief language. References to 'horrible circumstances' from prior weeks are not repeated in this recap; this week's structural disruption language is bounded ('More messy practice schedules, terrible weather') and immediately reframed by the athlete's consistency claim ('but consistency on my training on my part despite it all'). All content within performance and behavioral coaching scope.",
+
+  "next_week_focus_question": "You wrote what you want PSACs to be in your own words: humility, preparation, determination, readiness, gratitude, reverence, peace. Of those seven, which one do you most want to carry into Thursday's hammer warmup?",
+
+  "baseline_intake_profile": {
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": {
+      "days_completed": "not available — weekly recap input only",
+      "days_missed": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_count": "not available — weekly recap input only",
+      "timeliness_profile": "not available — weekly recap input only",
+      "mindset_challenge_accepted_count": "not available — weekly recap input only",
+      "mindset_challenge_completed_count": "not available — weekly recap input only",
+      "mindset_challenge_follow_through_rate": "not available — weekly recap input only",
+      "current_streak": "not available — weekly recap input only",
+      "longest_streak": "not available — weekly recap input only"
+    },
+    "evening_review": {
+      "full_completion_count": "not available — weekly recap input only",
+      "partial_completion_count": "not available — weekly recap input only",
+      "missed_count": "not available — weekly recap input only",
+      "completion_rate": "not available — weekly recap input only",
+      "on_time_count": "not available — weekly recap input only",
+      "late_submission_count": "not available — weekly recap input only",
+      "backfill_count": "not available — weekly recap input only",
+      "reminder_dependent_count": "not available — weekly recap input only",
+      "self_initiated_count": "not available — weekly recap input only",
+      "sequence_integrity": "not available — weekly recap input only",
+      "component_completion": {
+        "wtd_completed_count": "not available — weekly recap input only",
+        "journaling_completed_count": "not available — weekly recap input only",
+        "bullseye_completed_count": "not available — weekly recap input only"
+      }
+    },
+    "wtd_question_patterns": {
+      "q1_intention_yes_rate": "not available — weekly recap input only",
+      "q2_challenge_yes_rate": "not available — weekly recap input only",
+      "q3_adversity_yes_rate": "not available — weekly recap input only",
+      "q4_progress_yes_rate": "not available — weekly recap input only",
+      "q5_gratitude_yes_rate": "not available — weekly recap input only",
+      "weakest_question": "not available — weekly recap input only",
+      "strongest_question": "not available — weekly recap input only",
+      "intraweek_volatility": "not available — weekly recap input only",
+      "recovery_speed_days": "not available — weekly recap input only",
+      "cross_week_recovery": {
+        "prior_week_unresolved_miss": "not available — weekly recap input only",
+        "recovery_days": "not available — weekly recap input only"
+      }
+    },
+    "journaling_behavior": {
+      "depth_profile": "not available — weekly recap input only",
+      "compression_detected": "not available — weekly recap input only",
+      "domain_omission_pattern": "not available — weekly recap input only"
+    },
+    "bullseye_behavior": {
+      "completion_reliability": "not available — weekly recap input only",
+      "center_ring_dominant_rate": "not available — weekly recap input only",
+      "outer_ring_dominant_rate": "not available — weekly recap input only",
+      "ring_balance": "not available — weekly recap input only",
+      "contradiction_detected": "not available — weekly recap input only"
+    },
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available"
+  },
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  }
+}
