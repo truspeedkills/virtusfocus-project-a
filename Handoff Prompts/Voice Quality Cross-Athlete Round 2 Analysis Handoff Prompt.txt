@@ -1,0 +1,784 @@
+============================================================
+VOICE QUALITY CROSS-ATHLETE ROUND 2 ANALYSIS
+HANDOFF PROMPT
+============================================================
+CREATED: 2026-04-29
+SESSION TYPE: Read-only analytical session.
+             No spec files modified.
+             No pipeline processing.
+             No new athlete output.
+             Output: Appendix C added to Voice Quality
+             Comparison Analysis.
+============================================================
+
+
+============================================================
+1. FIRST INSTRUCTION
+============================================================
+
+Read CLAUDE.md in the project root. Pay particular attention
+to the most recent entries in the session history that
+describe:
+  - The Template 2 threshold finding and Appendix B analysis
+    (the work that established the monitoring protocol's
+    first action signal)
+  - The Voice Quality Comparison Analysis + Appendix A
+    (the original validation work and cross-athlete
+    replication test)
+  - The original Angelo Weeks 3/5/7/8 analysis (the framework
+    you'll be applying)
+  - Recent pipeline-processing entries for Mergim, Hunter,
+    Grace, Tucker, and Angelo (week of 2026-04-20 to
+    2026-04-26 specifically) — these document the athlete-
+    specific context for each new output
+
+Then read the Voice Quality Comparison Analysis file in
+full: Validation Reports\Voice_Quality_Comparison_Analysis.txt
+This contains the original analysis + Appendix A (Tucker/
+Grace cross-athlete validation) + Appendix B (Angelo Wk9
+same-athlete back-to-back). Your work extends this with
+Appendix C.
+
+Then read this handoff prompt in full before beginning.
+
+
+============================================================
+2. PURPOSE
+============================================================
+
+Five new v2.3/V5 outputs are available for analysis (week
+of 2026-04-20 to 2026-04-26):
+  - Mergim Bushati (first weekly recap since 2026-01-18 —
+    a ~14-week gap; treated as Return Arc Week 1)
+  - Hunter Snyder (brand-new athlete — first weekly recap
+    in the program, first v2.3/V5 output for this athlete)
+  - Grace Kindel (Week 12 — continuing from Wk11 which was
+    her first v2.3/V5 output)
+  - Tucker Lloyd (Week 9 — continuing from Wk8 which was
+    his first v2.3/V5 output)
+  - Angelo Allen (Week 10 — continuing from Wk9, his third
+    consecutive v2.3/V5 week)
+
+This expands the v2.3/V5 validation corpus from 6 files
+(3 athletes) to 16 files (5+ athletes — including a brand
+new athlete and a long-gap returner). Proportionally, this
+is the largest single expansion of the validation corpus
+the project has performed.
+
+The analysis serves three goals:
+
+  1. QUALITY TRAJECTORY: Determine whether voice quality
+     is holding, improving, or regressing across the
+     expanded corpus.
+
+  2. PATTERN STABILITY: Confirm or revise the three
+     emergent templates flagged in prior analyses (Template
+     1: "I'm not going to [X]"; Template 2: "This [is/was]
+     the [X] week" DD opener; Template 3: "[N] moments
+     matter" trendline opener).
+
+  3. NEW PATTERN SURFACE: Detect any new patterns emerging
+     at the larger sample size that weren't visible at n=6.
+     This is the most important goal because pattern
+     detection at small samples has confirmation bias —
+     the analyst checks known templates and misses
+     emergent ones.
+
+Output: Appendix C added to Voice_Quality_Comparison_
+Analysis.txt. Roughly 800-1200 lines. Mirrors Appendix B
+depth per athlete plus cross-athlete synthesis.
+
+Downstream consequence: this analysis directly informs the
+DD Opening Exemplar Addition work (Voice Reference DD
+Opening Exemplar Addition Handoff Prompt.txt) which is
+queued for the session after this one. If new patterns
+surface that should be addressed in the same Voice
+Reference update, that handoff's scope may expand.
+
+
+============================================================
+3. CONTEXT — WHY THIS IS THE BEST SAMPLE WE'VE HAD
+============================================================
+
+The 5 new outputs aren't just additional data points. The
+specific structural diversity of this batch enables tests
+that smaller samples couldn't perform:
+
+  - HUNTER (BRAND NEW ATHLETE): Tests whether v2.3/V5
+    voice quality holds for a first-time athlete with no
+    prior coaching output to anchor the model on. The cold-
+    start case.
+
+  - MERGIM (RETURN ARC): Tests how v2.3/V5 handles a
+    ~14-week gap. The athlete has 19 prior weeks of v1.4
+    output but no v2.3 output. The Return Arc Week 1
+    framing means trend_analysis and longitudinal_metrics
+    are reset to "insufficient data," so the coaching
+    output operates without longitudinal calibration.
+
+  - GRACE WK11→WK12: Same-athlete back-to-back v2.3
+    consistency test. Wk11 was her first v2.3 output and
+    she broke Template 2 with "Something shifted this week,
+    Grace, and it shifted quietly." Does Wk12 sustain her
+    pattern-breaking, or does she converge on the templated
+    DD opening?
+
+  - TUCKER WK8→WK9: Same-athlete back-to-back v2.3
+    consistency test. Wk8 used Template 2 ("This is the
+    first week your behavioral execution and your reflective
+    engagement went in opposite directions"). Wk9 outcome
+    will indicate whether the template persists for Tucker.
+
+  - ANGELO WK9→WK10: Third consecutive v2.3 week for
+    Angelo. Wk9 used Template 2 ("This was the week your
+    program moved from lesson to system"). Wk10 is the
+    third-week test — do all three of Angelo's v2.3 DDs
+    use Template 2?
+
+Combined, this corpus tests:
+  - Cold-start voice quality (Hunter)
+  - Long-gap return voice quality (Mergim)
+  - Multi-week same-athlete drift (Angelo, three weeks)
+  - Single-step back-to-back drift (Grace, Tucker)
+  - Cross-athlete pattern persistence (5 athletes, varied
+    profiles)
+
+Per the project philosophy: "Best AI Coaching pipeline,
+not better." Continuous analysis is the lever that produces
+great output. This is the analysis round most likely to
+yield actionable findings.
+
+
+============================================================
+4. THE 5 ATHLETES IN SCOPE
+============================================================
+
+For each athlete, you will read the current week's CM, DD,
+audit summary, AND the prior week's CM and DD (where
+available) for back-to-back comparison.
+
+ATHLETE 1: MERGIM BUSHATI
+  Current week: 2026-04-20 to 2026-04-26 (Return Arc Wk 1)
+  Prior week: 2026-01-12 to 2026-01-18 (Wk 19, v1.4 spec)
+  Files:
+    Athlete Data\Mergim Bushati\Coaching and Deep Dive\
+      Coaching Message\Mergim_Bushati_2026-04-20to2026-04-
+      26_VF_CoachingMessage.txt
+    Athlete Data\Mergim Bushati\Coaching and Deep Dive\
+      Deep Dive\Mergim_Bushati_2026-04-20to2026-04-26_VF_
+      DeepDive.txt
+    Athlete Data\Mergim Bushati\Coaching and Deep Dive\
+      Audit Summaries\Mergim_Bushati_2026-04-20to2026-04-
+      26_VF_AuditSummary.txt
+  Comparison context: Wk 19 was generated under v1.4 (the
+    pre-voice-quality-improvement spec). The v2.3 vs v1.4
+    transition is roughly comparable to the original
+    Angelo Wk5 (v1.8) → Wk8 (v2.3) transition. Larger
+    expected delta than back-to-back v2.3.
+
+ATHLETE 2: HUNTER SNYDER
+  Current week: 2026-04-20 to 2026-04-26 (first weekly
+    recap in program — brand new athlete)
+  Prior week: NONE (no comparison available)
+  Files:
+    Athlete Data\Hunter Snyder\Coaching and Deep Dive\
+      Coaching Message\Hunter_Snyder_2026-04-20to2026-04-
+      26_VF_CoachingMessage.txt
+    Athlete Data\Hunter Snyder\Coaching and Deep Dive\
+      Deep Dive\Hunter_Snyder_2026-04-20to2026-04-26_VF_
+      DeepDive.txt
+    Athlete Data\Hunter Snyder\Coaching and Deep Dive\
+      Audit Summaries\Hunter_Snyder_2026-04-20to2026-04-
+      26_VF_AuditSummary.txt
+  Also read: Athlete Data\Hunter Snyder\hunter_snyder_
+    athlete_snapshot.txt (baseline anchors for context)
+  Comparison context: First v2.3 output for a brand-new
+    athlete. No same-athlete prior week. The reference
+    point is the corpus-wide v2.3 quality bar (Angelo,
+    Tucker, Grace baseline). Particularly diagnostic for
+    Phase 3 (new pattern surface check) because cold-start
+    output reveals what the model defaults to when it has
+    minimal athlete-specific anchors.
+
+ATHLETE 3: GRACE KINDEL
+  Current week: 2026-04-20 to 2026-04-26 (Wk 12)
+  Prior week: 2026-04-13 to 2026-04-19 (Wk 11, v2.3/V5)
+  Files:
+    Current: Athlete Data\Grace Kindel\Coaching and Deep
+      Dive\... (CM, DD, Audit Summary for 2026-04-20 to
+      2026-04-26)
+    Prior: Same directory, dated 2026-04-13 to 2026-04-19
+  Comparison context: Wk11 broke Template 2 with "Something
+    shifted this week, Grace, and it shifted quietly." Wk12
+    tests whether Grace sustains her pattern-breaking or
+    converges on the templated approach.
+
+ATHLETE 4: TUCKER LLOYD
+  Current week: 2026-04-20 to 2026-04-26 (Wk 9)
+  Prior week: 2026-04-13 to 2026-04-19 (Wk 8, v2.3/V5)
+  Files:
+    Current: Athlete Data\Tucker Lloyd\Coaching and Deep
+      Dive\... (CM, DD, Audit Summary for 2026-04-20 to
+      2026-04-26)
+    Prior: Same directory, dated 2026-04-13 to 2026-04-19
+  Comparison context: Wk8 used Template 2 in DD opening
+    and three Criterion 14 corrections were applied at
+    audit. Wk9 indicates whether the template persists
+    and whether the audit-correction rate holds, drops,
+    or rises.
+
+ATHLETE 5: ANGELO ALLEN
+  Current week: 2026-04-20 to 2026-04-26 (Wk 10)
+  Prior week: 2026-04-13 to 2026-04-19 (Wk 9, v2.3/V5)
+  Files:
+    Current: Athlete Data\Angelo Allen\Coaching and Deep
+      Dive\... (CM, DD, Audit Summary for 2026-04-20 to
+      2026-04-26)
+    Prior: Same directory, dated 2026-04-13 to 2026-04-19
+  Comparison context: Wk10 is Angelo's THIRD consecutive
+    v2.3 week. Wk8 and Wk9 both used Template 2. Wk9 had
+    5 audit corrections (parallel-sentence reframe attempts)
+    and the first appearance of "Developing phase" as
+    named state. Most diagnostic file in the round for
+    template persistence and quality drift.
+
+
+============================================================
+5. LOCKED DESIGN DECISIONS
+============================================================
+
+1. APPENDIX C IS THE OUTPUT FORMAT.
+   Add a new appendix to the existing Voice Quality
+   Comparison Analysis file. Do not create a new file.
+   Maintain longitudinal comparability with Appendices A
+   and B.
+
+2. ANALYSIS DEPTH: PROPORTIONAL FULL ANALYSIS PER ATHLETE.
+   Each athlete gets a sized-down version of the 9-section
+   original analysis, similar to Appendix B's structure
+   for Angelo Wk9. Not a quick scan. Not a full original-
+   analysis-length per athlete (that would be 4000+ lines).
+   Target: ~150-200 lines per athlete.
+
+3. THE 5-DIMENSION FRAMEWORK IS LOCKED.
+   Do not redesign the analysis framework. Apply the same
+   5 dimensions used in the original analysis and Appendix
+   B (see Section 7 below for the explicit framework).
+   Longitudinal comparability requires consistent framing.
+
+4. AUDIT SUMMARY REVIEW IS REQUIRED.
+   Each audit summary captures editorial judgment that's
+   diagnostic. Read the Criterion 14 section of each audit
+   summary to understand what was caught, what was
+   corrected, and what was judged borderline-acceptable.
+   Auto-correction frequency by category is a tracked
+   metric.
+
+5. PHASE 3 (NEW PATTERN SURFACE CHECK) IS NON-NEGOTIABLE.
+   This phase scans the new outputs for unnamed patterns
+   without anchoring on the existing watchlist. It must
+   be done with explicit fresh-eyes intent. See Section
+   8 Phase 3 for the protocol.
+
+6. TEMPLATE FREQUENCY UPDATE EXTENDS THE EXISTING TABLE.
+   Update Appendix B Section 9's frequency tracking with
+   the new corpus data. Do not redo from scratch. Confirm
+   or revise each template's status.
+
+7. SESSION NUMBER CONVENTION (FROM CLAUDE.md OPERATING
+   RULES).
+   Session numbers live only in CLAUDE.md. The new appendix
+   references prior work by filename and section, not by
+   session number. When you update CLAUDE.md at session
+   end, the session number is assigned at update time, not
+   referenced in the appendix.
+
+8. NO SPEC CHANGES IN THIS SESSION.
+   This is read-only analysis. Recommendations may be
+   captured at the end of Appendix C, but spec changes
+   happen in subsequent sessions (notably the DD Opening
+   Exemplar Addition session). Any temptation to "just
+   fix this one thing" should be redirected to "add this
+   to Appendix C recommendations."
+
+
+============================================================
+6. OPEN DESIGN DECISIONS (RESOLVE IN SESSION)
+============================================================
+
+DQ1: HUNTER COLD-START CALIBRATION QUESTION
+Hunter has no prior coaching output to compare against.
+For all other athletes, the analysis is a transition test
+(Wk N-1 → Wk N). For Hunter, the analysis is a quality
+floor test (does the v2.3 output hold without same-athlete
+history). Decide in session: how to structure Hunter's
+section so it's analytically useful without the
+comparison axis. Recommendation: substitute "first-time
+v2.3 quality bar test" using the corpus-wide v2.3 standard
+as the implicit comparison.
+
+DQ2: MERGIM v1.4 → v2.3 SPEC TRANSITION
+Mergim's prior week was v1.4 spec, not v2.3. The
+comparison is more like the original Angelo Wk5 → Wk8
+transition (cross-spec) than the Tucker Wk8 → Wk9 same-
+spec transition. Decide in session: do you treat Mergim's
+analysis as an extension of Appendix A's cross-athlete
+v2.1→v2.3 work (with the caveat that Mergim's prior is
+v1.4, an older spec)? Or do you frame it as "first v2.3
+output for a returning athlete after long absence"?
+Recommendation: frame as the latter, with a note that the
+spec-version delta is larger than other transitions.
+
+DQ3: HOW MANY NEW TEMPLATES TO FORMALLY NAME
+If Phase 3 surfaces multiple candidate new patterns, decide
+which to formally add to the watchlist. Threshold: if a
+pattern appears in 3+ of the 10 new files (CMs + DDs
+combined), it's worth flagging. Below 3, note as "early
+observation, monitor."
+
+DQ4: APPENDIX C INTERNAL STRUCTURE
+The exact section structure within Appendix C is open.
+Recommended structure (modeled on Appendix B):
+  Section 1: Why Round 2 Matters
+  Section 2: Audit Disposition Summary (across 5 athletes)
+  Section 3-7: Per-Athlete Analysis (one section each)
+  Section 8: Cross-Corpus Template Frequency Update
+  Section 9: New Pattern Surface Check (Phase 3 output)
+  Section 10: Quality Trajectory Assessment
+  Section 11: Recommendations (including DD Exemplar
+              Addition scope updates)
+But user may want a different breakdown. Confirm in
+session.
+
+
+============================================================
+7. THE 5-DIMENSION ANALYSIS FRAMEWORK (EXPLICIT)
+============================================================
+
+Apply this framework to each athlete's current-week output.
+For athletes with prior-week comparison (all except Hunter),
+apply it to the prior week as well and compare.
+
+DIMENSION 1: CRITERION 14 PATTERN PRESENCE
+Scan against all 12 fail conditions in
+SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+Section 14. Note instances or "clean" for each condition.
+
+  14.1  Reusable Opening (could work next week with
+        surface edits)
+  14.2  Telegraphing ("I'm going to be direct," etc.)
+  14.3  Untraceable Paragraph (no specific athlete
+        evidence)
+  14.4  Category Coverage Over Response (template feel)
+  14.5  Brand Copy Close (generic motivational ending)
+  14.6  Same Construction 3-Week Window (cross-week
+        repetition for the same athlete)
+  14.7  DD as Expanded CM (DD reads like longer CM)
+  14.8  "That is [Noun]." Standalone Overuse
+  14.9  "Version of [X]" Construction
+  14.10 Triple-Negative Setup ("Not X, not Y, not Z")
+  14.11 Trendline Arc Recitation (full program history)
+  14.12 Pipeline-Adjacent Vocabulary ("Growth weeks,"
+        "Win days," etc. as named categories)
+
+For each instance found, quote the specific sentence.
+
+DIMENSION 2: VOICE PRINCIPLE ALIGNMENT
+Assess against the 6 principles from VF_Coach_Arron_Voice_
+Reference.txt:
+
+  P0 Service First (does each sentence serve the athlete's
+     specific need)
+  P1 Start with Meaning, Not Description (lead with why
+     it matters)
+  P2 Spend Your Words Unevenly (proportional attention)
+  P3 Talk Like You've Been in the Room (specific
+     behavioral knowledge)
+  P4 Earn Every Sentence (no filler)
+  P5 React, Don't Compose (responds to the week, not a
+     template)
+
+Rate each as STRONG / ADEQUATE / WEAK with a quoted
+example demonstrating the rating.
+
+DIMENSION 3: MECHANICAL COMPLIANCE
+Binary checks per file (verify with grep where possible):
+  - Em dashes: count (target zero in body text)
+  - Retired C3 constructions: presence
+    ("Here is what," "The version of you," "I also want
+    to name," "[N] weeks into this program," "The question
+    is [whether]," "Not X. Y." / "not X, but Y," "The
+    athletes who [X] are the ones who [Y]")
+  - Pipeline classification language: count
+    ("Growth weeks," "Win days" as categories, "Gold
+    Streak" as label, "Developing phase" as classification,
+    etc.)
+  - "That is [Noun]." standalone count
+  - Contraction register check (formal vs natural)
+
+DIMENSION 4: COACHING AUTHENTICITY (QUALITATIVE)
+Rate each CM and DD: STRONG / ADEQUATE / WEAK on:
+  A. Does it sound like a real coach who knows this athlete,
+     or like an AI processing a JSON?
+  B. Is the opening grounded in a specific moment from
+     this week, or could it work for any athlete?
+  C. Does the coaching move feel reactive to what happened,
+     or constructed around the data?
+  D. Does the DD add genuine analytical depth beyond the
+     CM, or read as expanded version?
+  E. Could you identify the athlete and week from the
+     output alone?
+
+Quote the strongest passage and the weakest passage in
+each file.
+
+DIMENSION 5: EXPRESSIVE RANGE
+Note opening approach, sentence rhythm, recognition moves,
+and closing moves used. Compare to the prior week (where
+applicable) and to the corpus-wide patterns flagged in
+prior analyses. Flag any new expressive moves that
+weren't present in earlier v2.3 output.
+
+
+============================================================
+8. EXECUTION PHASES
+============================================================
+
+PHASE 1: LOAD CONTEXT AND READ ALL ATHLETE FILES (HIGH)
+Duration: 60-90 min reading + note-taking.
+  - Read CLAUDE.md most recent entries (per Section 1)
+  - Read Voice Quality Comparison Analysis in full
+    (original + Appendices A and B, ~2,075 lines)
+  - Read v2.3 Section 35 (4 mechanical rules) for
+    reference
+  - Read Criterion 14 (12 fail conditions) for reference
+  - Read all 15 athlete files (5 athletes × CM + DD +
+    Audit Summary)
+  - For Hunter: read the snapshot for baseline context
+  - For 4 athletes with prior weeks: read prior CM + DD
+    (no need to re-read prior audits unless useful)
+  - Take structured notes: per-athlete observations,
+    cross-athlete patterns noticed, audit dispositions
+
+PHASE 2: PER-ATHLETE ANALYSIS (HIGH)
+Duration: 90-120 min.
+  Apply the 5-dimension framework to each of the 5
+  athletes. Generate per-athlete sections of Appendix C
+  (~150-200 lines each).
+
+  Sequence recommendation:
+    1. Hunter first (cold-start case, no comparison axis,
+       cleanest analytical scope)
+    2. Mergim second (return arc, large-delta comparison)
+    3. Grace third (Wk11→12 same-athlete v2.3 transition,
+       her Wk11 pattern-breaking is the question)
+    4. Tucker fourth (Wk8→9 same-athlete v2.3 transition)
+    5. Angelo last (Wk9→10, third consecutive week, most
+       diagnostic for template persistence)
+
+PHASE 3: NEW PATTERN SURFACE CHECK (HIGH — PROTOCOL CRITICAL)
+Duration: 45-60 min.
+  THIS IS THE PHASE THAT MATTERS MOST.
+
+  Protocol:
+    1. Set aside the existing template watchlist mentally.
+       Do not check for "I'm not going to," "This was the
+       [X] week," or "[N] moments matter." You'll check
+       those in Phase 4.
+    2. Re-read the 10 new files (CMs + DDs) with one
+       question only: WHAT REPEATS THAT I HAVEN'T NAMED?
+    3. Look at:
+       - Sentence rhythms (long-short-long patterns)
+       - Transition mechanisms (how paragraphs connect)
+       - Recognition moves (how the coach calls out
+         something the athlete did)
+       - Closing structures (last 1-2 sentences of CM
+         or DD)
+       - Specific word/phrase patterns
+       - Structural moves (refute-and-pivot, parallel-
+         affirmative, athlete-quote-as-thesis, etc.)
+    4. Note any pattern that appears in 3+ of the 10 files.
+       Note any pattern that appears in 2 of 10 if it's
+       structurally distinctive enough to be flagged.
+    5. For each candidate, write a short description and
+       a count.
+
+  This is the analytical lever that prevents template
+  buildup. Do not skip or shortcut.
+
+PHASE 4: TEMPLATE PERSISTENCE CHECK (MEDIUM-HIGH)
+Duration: 30-45 min.
+  Now check the existing watchlist:
+    - Template 1: "I'm not going to [X]" — current rate
+      across the new corpus
+    - Template 2: "This [is/was] the [X] week" DD opener
+      — confirm or revise threshold status
+    - Template 3: "[N] moments/threads from [period]
+      matter" trendline opener
+    - Patterns flagged in Appendix B that hadn't been
+      monitored long: parallel-affirmative, refute-false-
+      framing, "[Principle]. [Directive]." closing
+  Update the cross-corpus frequency table from Appendix B
+  Section 9 with the expanded data.
+
+PHASE 5: CROSS-ATHLETE SYNTHESIS (HIGH)
+Duration: 30-45 min.
+  - Quality trajectory assessment: holding, improving,
+    or regressing
+  - Athlete profile observations: does Mixed tier produce
+    different gaps than Growth tier? Does Hunter (cold
+    start) show different patterns than continuing
+    athletes?
+  - Audit correction rate by category over time: are the
+    same patterns being auto-corrected repeatedly?
+  - Updated quality estimate: does the 92-95% range still
+    hold?
+
+PHASE 6: WRITE APPENDIX C (HIGH)
+Duration: 90-120 min writing.
+  Generate Appendix C following the structure agreed in
+  DQ4 resolution. Mirror Appendix B depth per athlete.
+  Cross-athlete sections after per-athlete.
+
+PHASE 7: USER REVIEW + REVISIONS (MEDIUM)
+Duration: 30-45 min.
+  Present Appendix C to user for review. Apply any
+  targeted revisions. Quality bar should match Appendices
+  A and B.
+
+PHASE 8: APPLY AND COMMIT (LOW-MEDIUM)
+Duration: 15-30 min.
+  - Append Appendix C to Voice Quality Comparison Analysis
+    file
+  - Update CLAUDE.md with a new session entry summarizing
+    findings
+  - Note: per the Session Number Convention, do NOT
+    reference session numbers within Appendix C itself.
+    Reference the new appendix as "Appendix C" and prior
+    work by filename + section.
+  - Commit
+
+
+============================================================
+9. EFFORT GUIDANCE PER PHASE
+============================================================
+
+  Phase 1 (Load Context and Read): HIGH
+    Substantial reading load. Take structured notes.
+    Don't shortcut.
+  Phase 2 (Per-Athlete Analysis): HIGH
+    Pattern detection + voice principle judgment.
+  Phase 3 (New Pattern Surface): HIGH — PROTOCOL CRITICAL
+    Fresh-eyes scan. Most important phase.
+  Phase 4 (Template Persistence): MEDIUM-HIGH
+    Frequency counting + threshold judgment.
+  Phase 5 (Cross-Athlete Synthesis): HIGH
+    Cross-cutting analytical work.
+  Phase 6 (Write Appendix C): HIGH
+    Quality bar matches Appendix B.
+  Phase 7 (User Review): MEDIUM
+    Targeted revisions.
+  Phase 8 (Apply and Commit): LOW-MEDIUM
+    Mechanical work.
+
+If context load becomes heavy after Phase 3 or Phase 5,
+propose a session break before continuing. Do not push
+through with degraded quality. The analysis is a multi-
+hour effort; quality matters more than completing in
+one sitting.
+
+
+============================================================
+10. CRITICAL OPERATING RULES
+============================================================
+
+1. PHASE 3 MUST BE EXECUTED WITH FRESH-EYES INTENT.
+   The protocol explicitly forbids checking the existing
+   watchlist during Phase 3. The whole point of Phase 3
+   is to catch what the existing watchlist misses. If you
+   bleed through and check known templates during Phase 3,
+   the phase fails its purpose.
+
+2. NO SOFTENING FINDINGS.
+   Quality is the goal, not validation of prior work.
+   If voice quality has regressed in any athlete, name
+   it. If the architectural ceiling estimate (~97%) needs
+   revising, revise it. If a previously cleared template
+   now shows up at higher frequency, surface it.
+
+3. EVERY OBSERVATION MUST BE QUOTED.
+   No claim like "Tucker's voice held" without a quoted
+   example. No claim like "Mergim regressed" without a
+   quoted instance. Specificity is the analysis discipline.
+
+4. AUDIT SUMMARIES ARE PRIMARY DATA, NOT BACKGROUND.
+   The audit summaries capture editorial judgment that's
+   directly diagnostic. Read the Criterion 14 sections
+   carefully. Auto-corrections applied are signal, not
+   noise.
+
+5. CROSS-REFERENCE WITH PRIOR APPENDICES.
+   When writing Appendix C, reference Appendix A or B
+   findings explicitly when relevant. Longitudinal
+   comparability is the analytical advantage.
+
+6. SESSION NUMBER CONVENTION APPLIES.
+   No session numbers in Appendix C or in any artifact
+   you produce. Filename + section references only.
+
+7. NO SPEC CHANGES IN THIS SESSION.
+   Recommendations only. Spec changes happen in
+   subsequent sessions.
+
+8. QUALITY OVER SPEED.
+   This is a 3-4 hour fresh session at minimum. If it
+   takes longer, that's correct. If it gets shortcut to
+   2 hours, the quality bar slips.
+
+
+============================================================
+11. REFERENCE FILES BY PRIORITY
+============================================================
+
+TIER 1 — REQUIRED READING (read in full):
+  1. CLAUDE.md (most recent session entries)
+  2. Validation Reports\Voice_Quality_Comparison_
+     Analysis.txt (original + Appendix A + Appendix B)
+  3. The 15 athlete files (5 athletes × CM + DD + Audit
+     Summary for current week)
+  4. The 8 prior-week files for comparison (4 athletes ×
+     CM + DD; Hunter has no prior)
+
+TIER 2 — REQUIRED REFERENCE (read relevant sections):
+  5. SOP_Coaching_Output_Instructions_v2.3.txt, Section 35
+     (C1-C4 mechanical rules — em dash ban, contractions,
+     C3 retired list, pipeline classification prohibition)
+  6. SOP_Editorial_Audit_Project_Instructions_v1.6.txt,
+     Section 14 (Criterion 14 — 12 fail conditions)
+  7. VF_Coach_Arron_Voice_Reference.txt (6 voice
+     principles — Section 2; exemplar library — Section
+     3; before/after pairs — Section 4; mechanical safety
+     net — Section 5)
+
+TIER 3 — BACKGROUND CONTEXT (scan as needed):
+  8. Hunter Snyder snapshot (Athlete Data\Hunter Snyder\
+     hunter_snyder_athlete_snapshot.txt) — required for
+     Hunter's baseline context
+  9. Mergim Bushati snapshot — required for Return Arc
+     framing
+  10. Recent CLAUDE.md athlete data tables for each
+     athlete — context on each athlete's program arc
+
+
+============================================================
+12. SUCCESS CRITERIA
+============================================================
+
+The session is successful if:
+
+  [ ] Appendix C added to Voice Quality Comparison
+      Analysis (~800-1200 lines).
+  [ ] Per-athlete sections for all 5 athletes, each
+      applying the 5-dimension framework.
+  [ ] Phase 3 (New Pattern Surface Check) executed with
+      explicit fresh-eyes protocol — patterns detected
+      independent of existing watchlist.
+  [ ] Cross-corpus template frequency table updated with
+      the expanded sample.
+  [ ] Quality trajectory assessment delivered (holding,
+      improving, or regressing) with quoted evidence.
+  [ ] Recommendations section explicitly addresses whether
+      the DD Opening Exemplar Addition scope should expand
+      based on findings.
+  [ ] All findings include quoted examples.
+  [ ] Zero em dashes in the new appendix content.
+  [ ] No session numbers in Appendix C.
+  [ ] CLAUDE.md updated with a new session entry capturing
+      key findings.
+  [ ] Commit applied.
+
+The session is NOT successful if:
+
+  [ ] Phase 3 protocol violated (existing watchlist
+      checked during the new-pattern surface phase).
+  [ ] Findings stated without quoted evidence.
+  [ ] Hunter's section omitted because "no comparison
+      axis available" — the cold-start case is
+      analytically valuable on its own.
+  [ ] Audit summaries treated as background rather than
+      primary data.
+  [ ] Spec changes attempted in this session.
+  [ ] Voice quality findings softened to validate prior
+      work.
+  [ ] Session numbers leak into Appendix C.
+
+
+============================================================
+13. WHAT NOT TO DO
+============================================================
+
+1. DO NOT REDESIGN THE FRAMEWORK.
+   The 5-dimension framework is locked. Apply it as
+   specified.
+
+2. DO NOT SKIP PHASE 3.
+   The new pattern surface check is the most important
+   phase. Skipping or shortcutting it defeats the purpose
+   of the larger sample size.
+
+3. DO NOT WRITE THE APPENDIX BEFORE THE ANALYSIS IS DONE.
+   Phases 2-5 are analysis. Phase 6 is writing. Don't
+   start drafting Appendix C until you have the findings.
+
+4. DO NOT REFERENCE SESSION NUMBERS IN APPENDIX C.
+   Per the convention. Filename + section + descriptive
+   labels only.
+
+5. DO NOT MAKE SPEC CHANGES.
+   Recommendations only. The DD Exemplar Addition handoff
+   already exists and runs after this session.
+
+6. DO NOT SOFTEN FINDINGS.
+   If voice quality regressed, name it. If a template
+   crossed threshold, name it. If the architectural
+   ceiling estimate was wrong, revise it.
+
+7. DO NOT SKIP READING PRIOR APPENDICES.
+   Longitudinal comparability is the analytical
+   advantage. Reading Appendix A and B is required, not
+   optional.
+
+8. DO NOT TREAT HUNTER'S COLD-START CASE AS LESSER.
+   No prior comparison doesn't mean less analytical
+   value. Cold start is uniquely diagnostic for what the
+   model defaults to without same-athlete history. The
+   richest Phase 3 data may come from Hunter.
+
+
+============================================================
+14. CLOSING NOTES
+============================================================
+
+This is the largest single expansion of the v2.3 validation
+corpus. The structural diversity (cold start, return arc,
+multi-week back-to-back) is the richest test bench
+available. The fresh-eyes Phase 3 scan on this corpus is
+the single highest-value analytical action available right
+now.
+
+The DD Opening Exemplar Addition handoff is queued for the
+session after this. If Appendix C surfaces additional
+templates that should be addressed in the same Voice
+Reference update, the recommendations section should say
+so explicitly. The exemplar work will be informed by the
+best available data, not the smallest.
+
+The project philosophy: Best, not better. This analysis is
+a Best move. Take the time it deserves.
+
+Good luck.
+
+
+============================================================
+END OF HANDOFF PROMPT
+============================================================
