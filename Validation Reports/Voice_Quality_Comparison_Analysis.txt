@@ -10,6 +10,33 @@ FILES ANALYZED: 8 (4 Coaching Messages + 4 Deep Dives)
 
 
 ============================================================
+DOCUMENT STATUS AND READER NAVIGATION
+============================================================
+This document evolves across multiple analysis rounds. The
+original analysis (Sections 1-9 below) covers Angelo Allen
+only at n=1. The corpus has since expanded.
+
+For current hypothesis status and active recommendations,
+read the most recent appendix first, then work backward as
+needed:
+
+  - APPENDIX C (2026-04-29): Mergim Return Arc Wk1, Hunter
+    Wk1, Grace Wk12, Tucker Wk9, Angelo Wk10. 5 athletes,
+    10 files added. Pair 12-14 intervention validated.
+  - APPENDIX B (2026-04-22): Angelo Wk9. First same-athlete
+    back-to-back v2.3 test. Template 2 threshold finding.
+  - APPENDIX A (2026-04-21): Tucker Wk7-Wk8 + Grace
+    Wk10-Wk11. First cross-athlete validation.
+  - ORIGINAL ANALYSIS (2026-04-16): Angelo Weeks 3/5/7/8.
+    n=1 hypothesis formation.
+
+Current corpus: 18 v2.3 files across 6 athletes. Hypothesis
+status: CONFIRMED. See most recent appendix Section on
+hypothesis status for the current standing.
+============================================================
+
+
+============================================================
 SECTION 1: EXECUTIVE SUMMARY
 ============================================================
 
@@ -714,7 +741,29 @@ SECTION 8: REMAINING GAPS
 SECTION 9: RECOMMENDATIONS
 ============================================================
 
+------------------------------------------------------------
+NOTE ON CURRENT STATUS:
+The recommendations below reflect the n=1 state at this
+analysis date (2026-04-16, Angelo Allen Weeks 3/5/7/8 only).
+The corpus has expanded substantially since. For the current
+hypothesis status and active recommendations, see:
+  - Appendix A Section 8 (added Tucker Wk7-Wk8 + Grace
+    Wk10-Wk11, 2026-04-21)
+  - Appendix B Section 10 (added Angelo Wk9, 2026-04-22)
+  - Appendix C Section 11 (added Mergim Return Arc Wk1,
+    Hunter Wk1, Grace Wk12, Tucker Wk9, Angelo Wk10,
+    2026-04-29)
+The current corpus is 18 v2.3 files across 6 athletes.
+Recommendation #1 below has been carried out.
+------------------------------------------------------------
+
 1. EXPAND SAMPLE SIZE BEFORE DRAWING CONCLUSIONS
+   [STATUS: SUPERSEDED. Sample expanded via Appendices A,
+   B, and C. Current hypothesis status: CONFIRMED across
+   5 athletes / 18 v2.3 files / zero quality regressions
+   in final output / one validated intervention measurement
+   (Pair 12-14). See Appendix C Section 10.]
+
    This analysis covers one athlete across 4 weeks. The
    hypothesis (teaching > prohibition) is supported but not
    confirmed by a single data point. As more athletes submit
@@ -1824,4 +1873,1770 @@ APPENDIX B SECTION 10: RECOMMENDATIONS
 
 ============================================================
 END OF APPENDIX B
+============================================================
+
+
+
+============================================================
+============================================================
+APPENDIX C: VALIDATION CORPUS ROUND 2 EXPANSION
+Mergim Bushati Return Arc Wk1 + Hunter Snyder Wk1 +
+Grace Kindel Wk12 + Tucker Lloyd Wk9 + Angelo Allen Wk10
+============================================================
+DATE: 2026-04-29
+SCOPE: Five new v2.3/V5 athlete weeks (Apr 20-26, 2026)
+       added to validation corpus. Largest single expansion
+       of the v2.3 corpus since the architecture went into
+       production. Includes one cold-start case (Hunter,
+       brand new athlete), one long-gap return (Mergim,
+       approximately 14 weeks since last submission), two
+       same-athlete back-to-back cases (Grace Wk11 to Wk12,
+       Tucker Wk8 to Wk9), and one third-consecutive same-
+       athlete week (Angelo Wk9 to Wk10). Also delivers the
+       first measurement of the Pair 12-14 Voice Reference
+       addition.
+FILES ANALYZED: 10 (5 CMs + 5 DDs) plus 5 audit summaries
+                plus 8 prior-week comparison files (4 CMs +
+                4 DDs) for the 4 athletes with prior output.
+                Snapshot read for Hunter.
+============================================================
+
+
+============================================================
+APPENDIX C SECTION 1: WHY ROUND 2 MATTERS
+============================================================
+
+The expansion is the largest single addition to the v2.3
+validation corpus since the architecture entered production.
+The pre-Round-2 corpus contained 8 v2.3 files across 3
+athletes. Round 2 adds 10 files across 5 athletes (3
+continuing, 2 new). The corpus more than doubles in a
+single round.
+
+Three structural features make this round more diagnostic
+than any prior expansion:
+
+(1) COLD-START CASE
+    Hunter Snyder is a brand-new athlete with no prior
+    coaching output to anchor on. His CM and DD test whether
+    v2.3 voice quality holds without same-athlete history.
+    The model has only the snapshot's baseline anchors (five
+    anchor lines plus nine narrative sections) and one
+    weekly recap to work from. If voice quality drops in
+    the cold-start case, the architecture's robustness is
+    constrained.
+
+(2) LONG-GAP RETURN ACROSS SPEC VERSIONS
+    Mergim Bushati's prior coaching output was generated
+    under v1.4 spec on 2026-01-18. The Return Arc Wk1 output
+    is generated under v2.3/V5 fourteen weeks later. The
+    cross-spec delta is the largest of any transition in the
+    validation corpus. The Appendix A transitions were v2.1
+    to v2.3 across one week. Mergim's transition crosses
+    three spec versions and a substantial reporting gap.
+
+(3) SAME-ATHLETE PERSISTENCE TESTS
+    Grace Wk11 to Wk12, Tucker Wk8 to Wk9, Angelo Wk9 to
+    Wk10. Three cases of consecutive same-athlete v2.3
+    output. Angelo's third consecutive v2.3 week is the
+    longest same-athlete v2.3 run in the corpus. These
+    cases test whether voice drifts, holds, or evolves
+    week-to-week within a single athlete's frame.
+
+The round also delivers the first measurement of the Pair
+12-14 Voice Reference addition. Five DDs in this round are
+the first sample to test whether the targeted exemplar
+intervention reduced Template 2 frequency below its pre-
+intervention 75% rate. Section 8 reports the result.
+
+Round 2 is also the first round where the audit layer
+caught Criterion 14 violations at significant volume (13+
+corrections across 5 files, an average of 2.6 per file).
+Section 10 examines whether this signals initial-generation
+regression or whether the post-generation correction layer
+is doing its job at higher load.
+
+
+============================================================
+APPENDIX C SECTION 2: AUDIT DISPOSITION SUMMARY
+============================================================
+
+------------------------------------------------------------
+ATHLETE / WEEK         | RESULT          | CM | DD | OTHER
+------------------------------------------------------------
+Mergim RA-Wk1          | PASS            |  0 |  0 | CI:1*
+Hunter Wk1             | AUTO-CORR PASS  |  1 |  1**|  -
+Grace Wk12             | AUTO-CORR PASS  |  0 |  4 |  -
+Tucker Wk9             | AUTO-CORR PASS  |  0 |  1 | CI:1
+Angelo Wk10            | AUTO-CORR PASS  |  1 |  3 |  -
+------------------------------------------------------------
+ROUND 2 TOTAL          | 4/5 AUTO-CORR   |  2 |  9 |  2
+------------------------------------------------------------
+
+*  Coach Insights line 15 inline em dash, ancillary cleanup.
+   No CM or DD corrections applied at audit. Five user
+   post-audit edits were applied separately to broaden
+   shoulder-only absence framing across CM and DD (multi-
+   factor reframe), and one terminology correction
+   ("bottom ring" to "outer ring") was applied per Bullseye
+   spec naming.
+** DD had two instances of the "version of [X]" pattern in
+   one paragraph, both corrected via single Edit operation.
+
+CRITERION 14 FAIL CONDITIONS CAUGHT IN ROUND 2:
+
+  14.2  Telegraphing            : 3 (Hunter CM, Tucker DD,
+                                     Angelo DD)
+  14.9  "Version of [X]"        : 1 (Hunter DD, 2 instances)
+  14.10 Triple-negative / not-X : 1 (Grace DD)
+  14.11 Trendline arc recitation: 1 (Grace DD, six weeks
+                                     reduced to three
+                                     inflection points)
+  14.12 Pipeline-adjacent vocab : 7+ (Grace DD x3, Angelo
+                                     CM x1, Angelo DD x3,
+                                     Tucker CI x1)
+
+  TOTAL ROUND 2 CORRECTIONS: 13+
+
+PRE-FINALIZATION REVISIONS (caught during draft, before
+audit pass):
+
+  Mergim DD draft contained "the right version of a return
+    week" (Pair 7 retired construction) and "You're still in
+    the Developing phase" + "Mixed tier scoring" (C4 named
+    classification). All revised before audit.
+
+USER POST-AUDIT EDITS (not corrections, factual or
+terminological):
+
+  Mergim CM/DD: 5 edits broadening shoulder-only attribution
+    of the 14-week absence to multi-factor framing
+    (rehabilitation plus illness plus going home plus other
+    personal factors). 1 terminology fix (Bullseye "bottom
+    ring" to "outer ring").
+  Grace DD: 1 edit changing "Twelve weeks later" to "Twelve
+    weeks into this year" (in-this-year framing rather than
+    relative-time phrasing).
+
+CORRECTION CATEGORY DISTRIBUTION:
+  14.12 (pipeline-adjacent vocabulary) is the dominant
+  category at 7+ instances out of 13+ total. This category
+  also dominated Appendix A's cross-athlete findings (Grace
+  Wk10 alone had 4+ instances). The pattern persists into
+  Round 2 at the initial-generation layer.
+
+  14.2 (telegraphing) is second at 3 instances. Two of the
+  three are nearly identical telegraphed trendline openers
+  (see Section 9, P3-NEW-1).
+
+  14.9, 14.10, 14.11 each appear once. Each is a residual
+  v2.1-era pattern caught at audit and corrected in-place.
+
+
+============================================================
+APPENDIX C SECTION 3: MERGIM BUSHATI (RETURN ARC WK1)
+============================================================
+
+CONTEXT
+Return Arc Week 1 following an approximately 14-week gap.
+Prior coaching output was Wk19 (2026-01-12 to 2026-01-18),
+generated under v1.4 spec. Per user direction, the gap
+period is treated as missed entries during offseason; this
+week is processed as Week 1 of a new arc with all
+trend_analysis and longitudinal_metrics fields set to
+"insufficient data." Mixed tier (3W/4N/0M), Low EI, Aligned,
+Steady (Yellow) Composite Readiness.
+
+D1: CRITERION 14 FINAL-OUTPUT SCAN
+
+  All 12 fail conditions: clean. Zero violations in CM or
+  DD final output. The audit applied no corrections to
+  CM or DD during the formal pass; one ancillary em dash
+  cleanup was applied to the Coach Insights document
+  outside formal Stage 5 scope.
+
+  Two patterns were caught and revised pre-finalization
+  during draft generation (before audit):
+    (a) "the right version of a return week" -> "what a
+        return week should look like" (Pair 7 retired
+        "version of [X]" construction)
+    (b) "You're still in the Developing phase" + "Mixed
+        tier scoring" -> revised to non-classification
+        language (C4 named-phase / tier classification)
+
+D2: VOICE PRINCIPLE ALIGNMENT
+
+  P0 Service First         : STRONG
+  P1 Start with Meaning    : STRONG
+  P2 Spend Words Unevenly  : STRONG
+  P3 Talk Like You've Been : STRONG
+     in the Room
+  P4 Earn Every Sentence   : STRONG
+  P5 React, Don't Compose  : STRONG
+
+  6 of 6 STRONG.
+
+  Strongest demonstration of P3: "You've never written your
+  old derailer down that directly before." This sentence
+  cannot be said by a coach without longitudinal knowledge
+  of the athlete's prior recap content. The model is
+  drawing on the Wk19 JSON record and the snapshot intake
+  derailer language to make a comparative claim across
+  twenty weeks of program history.
+
+D3: MECHANICAL COMPLIANCE
+
+  Em dashes (CM + DD)             : 0
+  Retired C3 constructions        : 0 in final
+  Pipeline classification language: 0 in final
+  "That is [Noun]." standalones   : 0
+  Contraction register            : natural
+
+D4: COACHING AUTHENTICITY
+
+  Rating: STRONG across CM and DD.
+
+  STRONGEST PASSAGE (CM lines 7-9):
+    "Look at the outer ring of your Bullseye this week.
+    Past thoughts. Past results. Past failures. Past
+    mistakes. Four entries, all naming the same thing:
+    what you can't go back and change. You've never
+    written your old derailer down that directly before.
+    The thing that used to live in your head before
+    competition is now placed exactly where it belongs,
+    in the ring of things you can't control."
+
+    This is a Pair 12 specific-moment opening at the CM
+    layer. The imperative ("Look at the outer ring of your
+    Bullseye this week") invites engagement, the four
+    fragmented quotes from the athlete's actual Bullseye
+    follow as evidence, and the interpretive claim arrives
+    only after the moment is in the reader's view. The
+    second paragraph extends the recognition with a been-
+    in-the-room comparative ("never written your old
+    derailer down that directly before").
+
+  WEAKEST PASSAGE (DD Trendline lines 19-20):
+    "There's no comparison week yet. There's a starting
+    point."
+
+    Functional but generic. Could appear at the trendline
+    of any first-reporting-week athlete. The surrounding
+    paragraph anchors itself in Mergim-specific cadence
+    facts (three lifts, both practices, no missed days),
+    but the closing two-sentence beat is interchangeable.
+
+D5: EXPRESSIVE RANGE
+
+  CM opening approach     : imperative + observation +
+                            four-fragment list of athlete's
+                            Bullseye items (Pair 12 applied
+                            at CM layer)
+  DD opening approach     : longitudinal-distance + athlete
+                            quote ("Fourteen weeks since
+                            the last check-in") - Pair 13
+                            applied at DD layer
+  Recognition moves       : "you wrote..." x6, "you named..."
+                            x3 - strong P3 application
+  CM closing form         : "Past thoughts stay in the past
+                            ring. The work is in front of
+                            you." - two-sentence parallel
+                            declarative, athlete-specific
+
+  NEW MOVES OBSERVED:
+    "First wrestling practice in about two months. You
+    wrote it felt good being back." - embedded athlete
+    quote in continuous prose flow rather than block
+    quotation.
+
+    "None of that happened by accident." - parallel-
+    affirmative construction. Same construction appeared
+    in Angelo Wk9 ("None of that happened by accident.
+    You decided it"). Two instances across two athletes
+    in the v2.3 corpus.
+
+    "First weeks back aren't supposed to be." - declarative
+    reframe answering implied expectation without
+    telegraphing.
+
+CROSS-SPEC TRANSITION (V1.4 -> V2.3)
+
+  Wk19 (v1.4 spec) baseline patterns:
+    - Em dashes throughout body text and salutation
+      ("Mergim --" / "-- Coach Arron" / multiple body
+      em dashes)
+    - Template 2 strict in DD opening: "This was the week
+      you closed a chapter -- and the way you closed it
+      says more about your growth than any single match
+      result ever could"
+    - "Here is what nineteen weeks built" (retired C3)
+    - "You are still in the Developing phase, but..."
+      (named-phase classification)
+    - "This is the beginning." (generic close)
+
+  Return Arc Wk1 (v2.3) output:
+    - Zero em dashes anywhere
+    - DD opens with longitudinal-distance + athlete quote
+      structure (no Template 2)
+    - No retired C3 constructions in final output
+    - No "Developing phase" naming in final output
+    - "Past thoughts stay in the past ring. The work is in
+      front of you." (athlete-specific close tied directly
+      to the CM opening Bullseye observation)
+
+  The cross-spec delta is the largest in the validation
+  corpus. Every pattern flagged in the original Angelo
+  analysis (Sections 7 and 8) was present in the v1.4
+  baseline and is clean in the v2.3 output. The
+  architecture handled the long-gap return cleanly.
+
+
+============================================================
+APPENDIX C SECTION 4: HUNTER SNYDER (WK1, COLD START)
+============================================================
+
+CONTEXT
+First weekly recap in the program. No prior coaching output
+exists. Hunter is a Beta-tester athlete returning to the
+program after several weeks away during recovery from a
+season-ending PCL/LCL knee injury. Mixed tier (0W/7N/0M),
+Low EI, Aligned, Steady (Yellow) Composite Readiness. The
+model has only the snapshot (nine narrative sections plus
+five locked baseline anchors) and one weekly recap to work
+from.
+
+D1: CRITERION 14 FINAL-OUTPUT SCAN
+
+  After auto-corrections applied at audit:
+    14.1  : clean
+    14.2  : AUTO-CORRECTED CM. Original contained "The one
+            thing I want to sharpen for you:" preceding
+            the actual coaching point. Phrase deleted; the
+            paragraph now opens directly with the coaching
+            point.
+    14.3  : clean
+    14.4  : clean
+    14.5  : clean ("Build the evidence, and trust your
+            gut" - athlete-specific, ties to action plus
+            named mindset challenge favorite "Trust your
+            gut")
+    14.6  : N/A (Wk1, no prior weeks in current arc)
+    14.7  : clean
+    14.8  : clean (3 "That [verb]" patterns, none standalone
+            noun-stamping)
+    14.9  : AUTO-CORRECTED DD. Original Identity Thread P2
+            contained "the present-day version of you" and
+            "the external version of the same thing" in
+            one sentence. Both replaced ("you're" and
+            "external counterpart of the same thing").
+    14.10 : clean
+    14.11 : clean
+    14.12 : clean
+
+  Total auto-corrections: 2 (1 CM, 1 DD with 2 instances).
+
+D2: VOICE PRINCIPLE ALIGNMENT
+
+  P0 Service First         : STRONG (the micro-commitment
+                            directly addresses the snapshot
+                            Section 8 coaching priority #3:
+                            "build belief through evidence
+                            collection")
+  P1 Start with Meaning    : STRONG
+  P2 Spend Words Unevenly  : STRONG
+  P3 Talk Like You've Been : STRONG with cold-start caveat
+     in the Room              (the model has snapshot
+                            knowledge but no prior week to
+                            reference; references to intake
+                            language and 8/10 self-rating
+                            and 10 years competitive
+                            experience all derive from the
+                            snapshot rather than from a
+                            prior coaching arc)
+  P4 Earn Every Sentence   : STRONG
+  P5 React, Don't Compose  : STRONG
+
+  6 of 6 STRONG (with P3 noted as cold-start variant).
+
+D3: MECHANICAL COMPLIANCE
+
+  Em dashes (CM + DD)             : 0
+  Retired C3 constructions        : 0 (after 14.9
+                                      corrections)
+  Pipeline classification language: 0
+  "That is [Noun]." standalones   : 0
+  Contraction register            : natural
+
+D4: COACHING AUTHENTICITY
+
+  Rating: STRONG across CM and DD.
+
+  STRONGEST PASSAGE (DD Identity Thread P3):
+    "The next time you're in a high-stakes match and the
+    pressure response wants to turn into 'the outcome of
+    maybe losing,' you'll have something to anchor against:
+    weeks of rehab work, done without being told to. That
+    work is what's getting built right now."
+
+    This passage executes three voice principles
+    simultaneously. P1 (Start with Meaning): the future
+    high-stakes match is named as the meaning of present
+    rehab work. P3 (Been in the Room): the verbatim intake
+    holding-back language ("the outcome of maybe losing")
+    is quoted from the snapshot, demonstrating shared
+    knowledge that did not require a prior coaching week.
+    P4 (Earn Every Sentence): each sentence carries
+    specific information. The passage demonstrates that
+    cold-start P3 alignment is achievable when the
+    snapshot is rich enough to ground the recognition.
+
+  WEAKEST PASSAGE (DD Trendline P2):
+    "From here, the weeks will start building their own
+    picture, but for week one there's no trend to read.
+    The job is to get the surface working again."
+
+    Functional first-week trendline language but generic.
+    Comparable to Mergim's "There's a starting point" close
+    in the same structural position. Both are first-week
+    trendline closures and both default to similar generic
+    framing.
+
+D5: EXPRESSIVE RANGE
+
+  CM opening approach     : athlete sentence as thesis
+                            (Pair 14 applied at CM layer,
+                            mirroring A1 Grace Wk3
+                            exemplar structure)
+  DD opening approach     : short declarative thesis
+                            ("This first reporting week is
+                            a setup, not a verdict") -
+                            "This [N] [reporting week] is"
+                            structure, NOT "This [is/was]
+                            the [X] week" form
+  Recognition moves       : "You named the goal. You did
+                            the work. Sunday delivered the
+                            receipt." - three-beat parallel
+                            in Identity Thread close
+  CM closing form         : "Build the evidence, and trust
+                            your gut." - single sentence
+                            with two-clause directive
+
+  NEW MOVES OBSERVED:
+    "Sunday delivered something the work doesn't usually
+    give back this fast." - interpretive opening of a
+    body paragraph, sets up the banquet-recognition frame.
+
+    "That recognition arrived during the part of your year
+    you might have expected silence in." - identity-aware
+    framing that names what didn't happen as part of
+    naming what did.
+
+    "Same anchor, different application." / "Same instinct,
+    different room." - "Same X, different Y" parallel-
+    comparison construct, used twice in the DD strength
+    signal section. New construct in v2.3 corpus.
+
+COLD-START ASSESSMENT
+
+  Hunter's CM and DD demonstrate that v2.3 voice quality
+  holds without same-athlete history. Three observations
+  ground the assessment:
+
+  (1) The output is identifiable to Hunter in isolation.
+      The wrestling references, the knee injury context,
+      the PCL/LCL terminology, the "1% better everyday"
+      verbatim quote, the Wrestler of the Year award, the
+      "the outcome of maybe losing" intake language - all
+      ground the output in Hunter-specific facts.
+
+  (2) The snapshot's locked anchors are doing the work
+      that prior coaching weeks would otherwise carry.
+      The hinge habit ("Pre-performance anchoring to
+      accumulated preparation rather than outcome focus")
+      becomes the central coaching observation: the
+      athlete translated this hinge habit into a recovery
+      context without prompting. The primary derailer
+      ("Pressure response activated by fear-of-loss
+      thinking") is referenced by quoting Hunter's own
+      intake holding-back language.
+
+  (3) The voice does not default to generic-coaching
+      language to fill the gap. Sentences carry specific
+      information about Hunter's specific week (banquet
+      Sunday, seven-day rehab cadence, Bullseye center
+      ring naming).
+
+  Cold-start finding: v2.3 voice quality does not require
+  same-athlete coaching history if the snapshot is rich
+  enough. The Athlete Snapshot Generator (Stage 1) is
+  doing measurable work in supporting v2.3 voice quality
+  for first-week athletes.
+
+
+============================================================
+APPENDIX C SECTION 5: GRACE KINDEL (WK12, SECOND CONSECUTIVE
+V2.3 SAME-ATHLETE)
+============================================================
+
+CONTEXT
+Twelfth Growth week. Wednesday delivered the most
+articulate self-authored execution-quality statement in
+program history. Sunday delivered the most candid playing-
+time articulation in program history. 7/7 Wins recovered
+after Wk11's first Neutrals. Aligned, Low EI, Positive
+(Green) Composite Readiness. Second consecutive v2.3 output
+for Grace.
+
+D1: CRITERION 14 FINAL-OUTPUT SCAN
+
+  After auto-corrections applied at audit:
+    14.1  : clean ("Wednesday is the week" defining
+            moment, not reusable)
+    14.2  : clean
+    14.3  : clean
+    14.4  : clean
+    14.5  : clean ("The work is yours, Grace. Run the last
+            two with it." - named address plus directive)
+    14.6  : clean per audit judgment (see CRITICAL
+            FINDING below)
+    14.7  : clean
+    14.8  : clean
+    14.9  : clean
+    14.10 : AUTO-CORRECTED DD. Foot growth area opener
+            "Not a major thread yet, but the kind of thing
+            worth monitoring on Friday and Saturday" was
+            replaced with "Worth monitoring on Friday and
+            Saturday. Nothing major yet."
+    14.11 : AUTO-CORRECTED DD. Trendline enumerated six
+            weeks (Wk6 through Wk11). Reduced to three key
+            inflection points (Wk8 Kabine, Wk9
+            conversation, Wk10 acceptance) per DD Framework
+            guidance for Week 4+ trendlines.
+    14.12 : AUTO-CORRECTED DD (3 instances). "Win days"
+            and "Neutrals" replaced with athlete-language
+            equivalents in Mindset Summary and DAILY
+            EXECUTION FULL RECOVERY. "at intake" replaced
+            with "when you started" in Identity Thread.
+
+  Total auto-corrections: 4 in DD only. CM passed
+  Criterion 14 without correction.
+
+  CRITICAL FINDING (Template 2):
+
+    Grace Wk12 DD opens: "This was the week your work
+    showed up where it had to and you named it yourself."
+
+    This construction is structurally identical to the
+    Template 2 strict pattern flagged in Appendix B:
+    "This [is/was] the [characterizing clause] week."
+    Compare:
+      - Angelo Wk8 DD: "This was the first week in your
+        program where things didn't go the way you
+        planned" (flagged as Template 2)
+      - Tucker Wk8 DD: "This is the first week your
+        behavioral execution and your reflective
+        engagement went in opposite directions at the
+        same time" (flagged as Template 2)
+      - Angelo Wk9 DD: "This was the week your program
+        moved from lesson to system" (flagged as
+        Template 2)
+      - Grace Wk12 DD: "This was the week your work
+        showed up where it had to and you named it
+        yourself"
+
+    The Grace Wk12 audit summary's Criterion 14.6 result
+    notes: "defining-moment opening structurally distinct
+    from prior weeks." This judgment treats the opener as
+    a Pair 12 specific-moment application rather than a
+    Template 2 instance.
+
+    The Angelo Wk10 audit summary, written one day later,
+    contains a cross-monitoring claim: "Fifth consecutive
+    instance of Template 2 ('This [is/was] the [X] week'
+    DD opener) NOT appearing in v2.3 output post-Pair-12-
+    14 addition." The claim is incorrect. Grace Wk12 is a
+    Template 2 instance by the structural definition
+    Appendix B established.
+
+    This appendix classifies Grace Wk12 as a Template 2
+    final-output instance. Section 8 reports the updated
+    frequency including this instance.
+
+D2: VOICE PRINCIPLE ALIGNMENT
+
+  P0 Service First         : STRONG (Grace's "idk give me
+                            something" goal-request handed
+                            direction to coach; CM and DD
+                            both respond directly with
+                            answer-shaped material)
+  P1 Start with Meaning    : STRONG ("Wednesday is the
+                            week" names the meaning first)
+  P2 Spend Words Unevenly  : STRONG (Wednesday gets
+                            dominant CM space)
+  P3 Talk Like You've Been : STRONG (Week 6 / Week 8 /
+     in the Room              Week 9 / Week 10 references
+                            anchor in shared coaching
+                            history)
+  P4 Earn Every Sentence   : STRONG
+  P5 React, Don't Compose  : STRONG (structure follows
+                            what Grace authored herself
+                            this week)
+
+  6 of 6 STRONG.
+
+D3: MECHANICAL COMPLIANCE
+
+  Em dashes (CM + DD)             : 0
+  Retired C3 constructions        : 0 (after corrections)
+  Pipeline classification language: 0 in final (after
+                                    corrections)
+  "That is [Noun]." standalones   : 0
+  Contraction register            : natural
+
+D4: COACHING AUTHENTICITY
+
+  Rating: STRONGEST across the round.
+
+  STRONGEST PASSAGE (CM P3):
+    "When you walked in here, the goal you wrote for
+    yourself was staying confident in your ability during
+    competition. Back then, confidence came from being on
+    the field. This week it came from naming your own
+    work, hearing the silence after, and continuing
+    anyway. That's confidence that doesn't need the field
+    to confirm it, Grace."
+
+    This passage names the entire twelve-week confidence
+    arc in four sentences. P1 (Start with Meaning): the
+    intake confidence claim is named as the reference
+    point. P3 (Been in the Room): "Back then" presupposes
+    a coaching history. P4 (Earn Every Sentence): each
+    sentence carries specific information about a different
+    timeframe (intake, then, this week, recognition).
+    The named address "Grace" lands at the end of the
+    paragraph as the recognition is sealed.
+
+  WEAKEST PASSAGE (none significantly weak after audit
+  corrections). The pre-correction DD trendline P1 was the
+  weakest pre-correction passage; the auto-correction
+  reduced six-week enumeration to three inflection points,
+  bringing the trendline within DD Framework guidance.
+
+D5: EXPRESSIVE RANGE
+
+  CM opening approach     : defining moment + athlete
+                            quote (Pair 12 application)
+  DD opening approach     : Template 2 strict (regression
+                            from Wk11's "Something shifted
+                            this week, Grace, and it
+                            shifted quietly")
+  Recognition moves       : "You named it before I could"
+                            (Wk11 echo - same construction
+                            recurred as "named your own
+                            work this way without anyone
+                            asking")
+  CM closing form         : "The work is yours, Grace.
+                            Run the last two with it." -
+                            terse possession close + named
+                            address + directive
+
+  NEW MOVES OBSERVED:
+    "That sentence holds the last six weeks in one place."
+    - "That sentence [does X]" recognition move tracing
+    interpretation backward to a specific athlete
+    utterance. (See Section 9, P3-NEW-3.)
+
+    "Fair. Two games left." - terse acknowledgment of
+    Grace's "idk give me something" handoff. New move:
+    coach receives goal-request and answers in three
+    words, then transitions immediately to micro-
+    commitment. Sets up the action section.
+
+WK11 TO WK12 SAME-ATHLETE COMPARISON
+
+  Wk11 DD opening: "Something shifted this week, Grace,
+    and it shifted quietly. The acceptance frame from last
+    week is still here, but it's no longer doing all the
+    work."
+
+  Wk12 DD opening: "This was the week your work showed up
+    where it had to and you named it yourself."
+
+  Wk11 trendline opening: "Two threads from the last few
+    weeks matter for reading this one."
+
+  Wk12 trendline opening: "The position-frustration arc
+    since Week 6 has carried different shapes."
+
+  PATTERN TRADE: Grace Wk11 broke Template 2 in DD opening
+  but used Template 3 strict in trendline opening. Grace
+  Wk12 used Template 2 strict in DD opening but broke
+  Template 3 in trendline opening. The two templates
+  appear to have traded across consecutive weeks rather
+  than both holding clean.
+
+  CM OPENING CONSISTENCY:
+    Wk11 CM: "You wrote one sentence Wednesday that
+      changed the shape of this week. 'Try to focus
+      running on my toes and not the backs of my feet.'"
+      (Pair 14 athlete-quote thesis)
+    Wk12 CM: "Wednesday is the week. You wrote, 'fast asf
+      today tbh, got all my mf bunts down.' That's the
+      first time in this program you've named your own
+      work that way without me asking the question first."
+      (Pair 12 specific-moment with extended quote)
+
+  Both Wk11 and Wk12 CMs open with a Wednesday athlete
+  quote, but the structural approach differs (athlete
+  sentence as thesis vs. defining moment scaffold).
+  CM voice consistency strong; DD voice traded one
+  template for another.
+
+
+============================================================
+APPENDIX C SECTION 6: TUCKER LLOYD (WK9, SECOND CONSECUTIVE
+V2.3 SAME-ATHLETE)
+============================================================
+
+CONTEXT
+First Reset tier in 9 recorded weeks under finals load.
+0W/7N/0M, every day Neutral/Partial Win, zero Missed days.
+Saturday gym session sustained for second consecutive week
+without external anchor. Second consecutive blank Bullseye.
+Goal recovered from "Forgot" to substantive entry.
+Achievement statement names trade-off directly. Aligned,
+Low EI, Attention (Orange) Composite Readiness. Second
+consecutive v2.3 output for Tucker.
+
+D1: CRITERION 14 FINAL-OUTPUT SCAN
+
+  After auto-corrections applied at audit:
+    14.1  : clean
+    14.2  : AUTO-CORRECTED DD. Trendline section opened
+            "Three moments are relevant for understanding
+            where this week sits." Sentence deleted; the
+            trendline now opens directly with "Week 5 was
+            the structural divergence peak..."
+    14.3  : clean
+    14.4  : clean
+    14.5  : clean ("Build the structure yourself.")
+    14.6  : clean (CM opening structurally distinct from
+            prior CMs)
+    14.7  : clean
+    14.8  : clean
+    14.9  : clean
+    14.10 : clean
+    14.11 : clean
+    14.12 : clean in CM/DD; AUTO-CORRECTED 1 instance in
+            Coach Insights ("Win-and-Neutral mix" replaced
+            with "mixed scoring distribution")
+
+  Total auto-corrections: 1 in DD, 1 in Coach Insights.
+  CM passed Criterion 14 without correction.
+
+  NOTABLE PHASE NAMING IN FINAL OUTPUT:
+    DD MINDSET SUMMARY P2: "You're still in the Developing
+    phase, and what happened this week is what Developing
+    looks like under load."
+
+    This is the second v2.3 instance of "Developing phase"
+    naming in final output, following Angelo Wk9. The
+    audit judged PASS under DD Framework permitted
+    phrasing. The construction "You're still in the
+    Developing phase, and..." is structurally identical
+    across both instances. (See Section 8, "Developing
+    phase" frequency tracking.)
+
+D2: VOICE PRINCIPLE ALIGNMENT
+
+  P0 Service First         : STRONG
+  P1 Start with Meaning    : STRONG (DD opens with athlete
+                            sentence as thesis - Pair 14
+                            application)
+  P2 Spend Words Unevenly  : STRONG
+  P3 Talk Like You've Been : STRONG (multi-week pattern
+     in the Room              references in trendline:
+                            Wk5 / Wk8 / Wk9)
+  P4 Earn Every Sentence   : STRONG
+  P5 React, Don't Compose  : STRONG (Reset tier coexisting
+                            with sustained engagement is
+                            a novel coaching frame; output
+                            explicitly addresses "two
+                            stories at once")
+
+  6 of 6 STRONG.
+
+D3: MECHANICAL COMPLIANCE
+
+  Em dashes (CM + DD)             : 0
+  Retired C3 constructions        : 0
+  Pipeline classification language: 0 in CM/DD final;
+                                    1 corrected in CI
+  "That is [Noun]." standalones   : 0
+  Contraction register            : natural
+
+D4: COACHING AUTHENTICITY
+
+  Rating: STRONG.
+
+  STRONGEST PASSAGE (DD GOAL RECOVERY signal):
+    "Last week's goal field said 'Forgot.' This week you
+    wrote 'Go to the gym and complete all of my work.'
+    Then you wrote one of the most candid achievement
+    lines of the program: 'hard to get wins when busy
+    preparing for finals.' Two recoveries in one week.
+    The goal got named back, and the self-awareness about
+    your own scoring got articulated for the first time
+    directly. You wrote it before I could name it."
+
+    Three quoted athlete sentences in five sentences of
+    coaching. The recognition arc is structural: goal
+    field recovery (specific quote), achievement framing
+    (specific quote), interpretive synthesis ("Two
+    recoveries in one week"), and the recognition close
+    ("You wrote it before I could name it"). P3 working
+    at full strength.
+
+  WEAKEST PASSAGE (DD Weekly Trendline P2):
+    "The longitudinal pattern tells two stories at once.
+    The scoring is going through its widest swing of the
+    program: from 6 strong days last week to 0 this week."
+
+    "Longitudinal pattern" reads slightly pipeline-
+    adjacent. Borderline but passed audit.
+
+D5: EXPRESSIVE RANGE
+
+  CM opening approach     : "[Activity] held for [N]
+                            [period]" specific-moment
+                            observation (Pair 12 style,
+                            structurally similar to Wk8
+                            CM opener "Saturday is the
+                            day that pulled this week out
+                            of the pattern")
+  DD opening approach     : athlete sentence as thesis
+                            (Pair 14 application,
+                            structurally distinct from
+                            Wk8's Template 2 strict
+                            opener)
+  Recognition moves       : "You wrote it before I could
+                            name it." - new explicit
+                            naming of the athlete-anticipates-
+                            coach dynamic
+  CM closing form         : "Build the structure yourself."
+                            - single directive (Tucker-
+                            specific Coach Arron close per
+                            CM Framework example)
+
+  NEW MOVES OBSERVED:
+    "The longitudinal pattern tells two stories at once."
+    - "Two [X]" analytical framing. (See Section 9,
+    P3-NEW-3.)
+
+    "That's the gym becoming self-generating." - "That's
+    the [definitive noun phrase]" italicized capper.
+    Borderline 14.8 territory but in flowing context.
+
+WK8 TO WK9 SAME-ATHLETE COMPARISON
+
+  Wk8 DD opening: "This is the first week your behavioral
+    execution and your reflective engagement went in
+    opposite directions at the same time." (Template 2
+    strict)
+
+  Wk9 DD opening: "You wrote a sentence in the recap this
+    week that holds the whole story in one line." (Pair
+    14 application, broke Template 2)
+
+  Wk8 trendline opening: "Week 5 was your hardest week in
+    this program..." (direct enumeration)
+
+  Wk9 trendline opening (after audit deletion of "Three
+    moments are relevant for understanding where this
+    week sits."): "Week 5 was the structural divergence
+    peak..." (direct enumeration, same approach as Wk8)
+
+  Wk8 CM opening: "Saturday is the day that pulled this
+    week out of the pattern." (Pair 12 specific-moment)
+
+  Wk9 CM opening: "The gym held for a second week." (Pair
+    12 specific-moment)
+
+  Tucker BROKE Template 2 in Wk9. CM opening style is
+  consistent week-to-week (Pair 12). Trendline approach
+  is consistent (direct week enumeration). Tucker's voice
+  is the most consistent week-to-week of the same-athlete
+  cases in this round.
+
+  TEMPLATE 1 CHANGE:
+    Wk8 had "I'm not going to pretend finals prep isn't
+    the reason, because it is." (Template 1 strict)
+    Wk9 has no "I'm not going to" construction in any
+    grammatical form. Tucker broke Template 1 in Wk9.
+
+
+============================================================
+APPENDIX C SECTION 7: ANGELO ALLEN (WK10, THIRD CONSECUTIVE
+V2.3 SAME-ATHLETE)
+============================================================
+
+CONTEXT
+Final program week before PSAC championship (last meet of
+athlete's 16-year collegiate career). 5W/2N/0M, second
+consecutive Gold Streak. Saturday last-chance meet attended
+by athlete's choice; won shot put and discus; deliberate
+mid-competition decision to scratch hammer for injury
+prevention and PSAC preservation. Two strategic decisions
+named explicitly in athlete's own voice. Phase advancement
+Developing to Consistent (in JSON, not surfaced in CM/DD).
+Aligned, Low EI, Positive (Green) Composite Readiness.
+Third consecutive v2.3 output for Angelo.
+
+D1: CRITERION 14 FINAL-OUTPUT SCAN
+
+  After auto-corrections applied at audit:
+    14.1  : clean (Saturday hammer-scratch specific moment
+            opening; cannot be reused next week)
+    14.2  : AUTO-CORRECTED DD. Trendline opener "Three
+            meets matter for understanding where you are
+            this week." was deleted. The trendline now
+            opens directly with "The Shippensburg outdoor
+            opener in late March was the first time you
+            applied the PSAC lesson directly..."
+    14.3  : clean
+    14.4  : clean
+    14.5  : clean ("Sixteen years. Three intentions.
+            Throw them the way you wrote them." - 16-year
+            T&F career anchor + 3 PSAC days + athlete's
+            own goal-writing as source)
+    14.6  : clean (Wk9 DD used longitudinal-distance
+            bookend per Pair 13; Wk10 DD uses 10-week
+            question/answer thesis structure - different
+            constructions in same 3-week window)
+    14.7  : clean
+    14.8  : borderline ("That's a continuity statement."
+            single use within 14.8 allowance; CM contains
+            zero standalone "That is [Noun]." stamps)
+    14.9  : clean (DD uses "the third version" referring
+            to coaching principle's operating timescales,
+            not the prohibited "version of [you/your
+            trait]" construction)
+    14.10 : clean
+    14.11 : clean (3 inflection points, no hyphenated arc
+            labels)
+    14.12 : AUTO-CORRECTED 4 instances. (a) DD MINDSET
+            SUMMARY: "Two things arrived in the same
+            recap" -> "Two things arrived together this
+            week"; (b) DD STRENGTH SIGNAL: "And then you
+            wrote the reasoning in your recap without
+            prompting" -> "And then you named the
+            reasoning explicitly without prompting"; (c)
+            DD STRENGTH SIGNAL: "You wrote it down in
+            causal terms, on your own, in the recap" ->
+            "You wrote it down in causal terms, on your
+            own"; (d) CM: "You wrote in your recap exactly
+            why" -> "You wrote exactly why".
+
+  Total auto-corrections: 1 CM, 3 DD. Highest correction
+  count this round.
+
+  PATTERN OBSERVATION: All 4 Criterion 14.12 corrections in
+  Angelo Wk10 share the same underlying pattern: references
+  to "the recap" / "in your recap" as an external system.
+  When said by a coach to an athlete, "the recap" reads as
+  pipeline-adjacent (the recap is the data input the
+  pipeline consumes). Replacing with direct verbs ("you
+  wrote," "you named") or natural temporal phrases ("this
+  week") eliminates the pipeline-adjacent register without
+  changing meaning. This is a single pattern surfaced
+  across multiple sentences.
+
+D2: VOICE PRINCIPLE ALIGNMENT
+
+  P0 Service First         : STRONG (CM and DD both built
+                            around helping Angelo close out
+                            his collegiate career with the
+                            preparation system he has
+                            built)
+  P1 Start with Meaning    : STRONG (CM opens with specific
+                            Saturday hammer-scratch sequence
+                            plus the athlete-quote claim)
+  P2 Spend Words Unevenly  : STRONG (strategic-decision
+                            system plus closure-frame
+                            pairing dominates word count)
+  P3 Talk Like You've Been : STRONG
+     in the Room
+  P4 Earn Every Sentence   : STRONG
+  P5 React, Don't Compose  : STRONG (10-week thesis
+                            structure responds to actual
+                            culmination event of Angelo's
+                            arc)
+
+  6 of 6 STRONG.
+
+D3: MECHANICAL COMPLIANCE
+
+  Em dashes (CM + DD)             : 0
+  Retired C3 constructions        : 0
+  Pipeline classification language: 0 in final (after
+                                    corrections)
+  "That is [Noun]." standalones   : 0 (1 borderline single
+                                    use within allowance)
+  Contraction register            : natural
+
+D4: COACHING AUTHENTICITY
+
+  Rating: STRONG.
+
+  STRONGEST PASSAGE (DD MINDSET SUMMARY P1):
+    "You walked into this program ten weeks ago with a
+    question about what preparation actually means. By the
+    end of Saturday, you had answered it three different
+    ways. Before a meet, when the conditions force a trade.
+    After a meet, in retrospect about what produced it.
+    And inside a meet, in real time, when the next event's
+    ring is slippery and the championship is one week out.
+    The hammer scratch on Saturday was the third version.
+    It's the one you hadn't shown me yet."
+
+    The 10-week thesis structure is a new DD opening
+    approach in the v2.3 corpus. P1 (Start with Meaning):
+    the meaning of the entire 10-week arc is named first,
+    then the three answers are enumerated as the
+    structural payoff. P3 (Been in the Room): "It's the
+    one you hadn't shown me yet" presupposes 10 weeks of
+    coaching context. P4 (Earn Every Sentence): each
+    sentence carries specific information about a
+    different timeframe or operational level.
+
+  WEAKEST PASSAGE (after audit corrections, no
+  significantly weak passage remains).
+
+D5: EXPRESSIVE RANGE
+
+  CM opening approach     : scene-setting + specific
+                            moment + athlete quote (Pair
+                            12 with extended scene)
+  DD opening approach     : 10-week question/answer thesis
+                            structure - NEW structural
+                            approach in v2.3 corpus (broke
+                            Template 2)
+  Recognition moves       : "That's the sentence that
+                            earned my attention this week."
+                            - "That's the sentence [does
+                            X]" recognition move tracing
+                            interpretation to a specific
+                            athlete utterance
+  CM closing form         : "Sixteen years. Three
+                            intentions. Throw them the way
+                            you wrote them." - three-
+                            fragment + directive
+
+WK9 TO WK10 SAME-ATHLETE COMPARISON
+
+  Wk9 DD opening: "This was the week your program moved
+    from lesson to system." (Template 2 strict)
+
+  Wk10 DD opening: "You walked into this program ten
+    weeks ago with a question about what preparation
+    actually means..." (broke Template 2, NEW thesis
+    structure)
+
+  Wk9 trendline opening: "The arc right now is simpler
+    than it's been in weeks. Three moments matter for
+    understanding where you are." (Template 3 broader
+    in final output)
+
+  Wk10 trendline opening (after audit deletion of "Three
+    meets matter for understanding where you are this
+    week."): "The Shippensburg outdoor opener in late
+    March was the first time you applied the PSAC lesson
+    directly..." (broke Template 3 broader in final
+    output; initial generation had it)
+
+  Wk9 phase naming: 2 instances ("You're still in the
+    Developing phase" / "The Developing phase is where
+    you're building")
+
+  Wk10 phase naming: 0 instances
+
+  Wk9 CM opening: "Slippery Rock isn't a better result
+    because anything around you got easier." (refute-
+    false-framing - new move tracked in Appendix B)
+
+  Wk10 CM opening: "Saturday at the last-chance meet,
+    you'd already won shot put and discus..." (Pair 12
+    specific moment with extended scene)
+
+  Wk9 closing CM: "The preparation is the system now.
+    Build it in on purpose."
+
+  Wk10 closing CM: "Sixteen years. Three intentions.
+    Throw them the way you wrote them."
+
+  Angelo broke Template 2, broke Template 3 broader in
+  final output, broke phase-naming, in just one week.
+  Strong improvement trajectory across consecutive same-
+  spec weeks.
+
+THIRD CONSECUTIVE V2.3 WEEK ASSESSMENT
+
+  Angelo's voice has held and expanded across three weeks
+  of v2.3 output. Each week opens with a different CM
+  approach: Pair 12 specific moment (Wk8), refute-false-
+  framing (Wk9), Pair 12 specific moment with extended
+  scene (Wk10). Each week opens with a different DD
+  approach: Template 2 (Wk8), Template 2 (Wk9), 10-week
+  thesis structure (Wk10). Closing forms vary: "Prepared
+  for anything. That's the standard you're building."
+  (Wk8) / "The preparation is the system now. Build it in
+  on purpose." (Wk9) / "Sixteen years. Three intentions.
+  Throw them the way you wrote them." (Wk10).
+
+  The expressive range continues to widen. The third week
+  introduces a new DD opening structure (10-week thesis
+  with three-part answer enumeration) that was not
+  present in Wk8 or Wk9.
+
+
+============================================================
+APPENDIX C SECTION 8: CROSS-CORPUS TEMPLATE FREQUENCY
+UPDATE
+============================================================
+
+V2.3 corpus before Round 2: 8 files (4 CMs + 4 DDs across
+Angelo Wk8, Tucker Wk8, Grace Wk11, Angelo Wk9).
+
+V2.3 corpus after Round 2: 18 files (9 CMs + 9 DDs across
+6 athletes including Mergim, Hunter, Grace Wk11+12, Tucker
+Wk8+9, Angelo Wk8+9+10).
+
+------------------------------------------------------------
+TEMPLATE 1 STRICT: "I'M NOT GOING TO [X]" CONSTRUCTION
+------------------------------------------------------------
+  Pre-Round-2 frequency  : 3 of 8 files (37.5%)
+  Round 2 frequency      : 0 of 10 files
+  Combined v2.3 frequency: 3 of 18 files (17%)
+  Pre-Round-2 status     : monitoring
+  Updated status         : REGRESSION OF PATTERN
+
+  The strict construction did not appear in any Round 2
+  output. Post-Pair-12-14 frequency (Round 2 alone) is 0.
+  Combined v2.3 corpus rate has dropped from 37.5% to 17%.
+  Pattern is no longer at concern level.
+
+------------------------------------------------------------
+TEMPLATE 1 BROADER: "COACH REFUSES BAD MOVE"
+------------------------------------------------------------
+  Pre-Round-2 frequency  : 4 of 8 files (50%)
+  Round 2 frequency      : 0 of 10 files
+  Combined v2.3 frequency: 4 of 18 files (22%)
+  Updated status         : REGRESSION OF PATTERN
+
+  The broader construction did not appear in any Round 2
+  output in any grammatical form. Combined v2.3 rate has
+  dropped from 50% to 22%. The "refuse the bad move"
+  coaching gesture is still available as a tool but is
+  not appearing universally.
+
+------------------------------------------------------------
+TEMPLATE 2: "THIS [IS/WAS] THE [X] WEEK" DD OPENER
+------------------------------------------------------------
+  Pre-Pair-12-14 (4 DDs)  : 3 of 4 (75%) - ABOVE THRESHOLD
+  Post-Pair-12-14 (5 DDs) : 1 of 5 (20%) - Grace Wk12 only
+  Combined v2.3 (9 DDs)   : 4 of 9 (44%)
+  Pre-Round-2 status      : ABOVE 70% MONITORING THRESHOLD
+                          (action triggered Session 111)
+  Updated status          : INTERVENTION VALIDATED.
+                          Reduction of 55 percentage points
+                          post-Pair-12-14 addition. Below
+                          70% threshold.
+
+  CRITICAL FINDING: The Angelo Wk10 audit summary's cross-
+  monitoring claim of "Fifth consecutive instance of
+  Template 2 NOT appearing in v2.3 output post-Pair-12-14
+  addition" is incorrect. Grace Wk12 DD opens with
+  Template 2 strict structure ("This was the week your
+  work showed up where it had to and you named it
+  yourself"). The audit either applied a more restrictive
+  Template 2 definition or missed the instance. Worth
+  noting for audit-process rigor.
+
+  EVEN COUNTING THE GRACE WK12 INSTANCE, the Pair 12-14
+  intervention reduced Template 2 frequency from 75% to
+  20% in DD openings. The intervention worked
+  substantially but did not eliminate the pattern.
+  Single residual instances post-intervention are
+  expected.
+
+------------------------------------------------------------
+TEMPLATE 3 STRICT: "TWO [X] FROM [Y] MATTER / ARE DIRECTLY
+RELEVANT"
+------------------------------------------------------------
+  Pre-Round-2 frequency  : 2 of 4 DDs (50%)
+  Round 2 frequency      : 0 of 5 DDs in final output
+  Combined v2.3 frequency: 2 of 9 DDs (22%)
+  Updated status         : REGRESSION
+
+  The strict construction did not appear in Round 2 final
+  output. The Wk11 to Wk12 Grace transition is the
+  strongest piece of evidence: Wk11 used Template 3
+  strict ("Two threads from the last few weeks matter for
+  reading this one"), Wk12 broke it.
+
+------------------------------------------------------------
+TEMPLATE 3 BROADER: "[N] MOMENTS / MEETS / THINGS MATTER"
+------------------------------------------------------------
+  Pre-Round-2 (final)    : 3 of 4 DDs (75%) - included
+                          Angelo Wk9 variant
+  Round 2 INITIAL gen    : 2 of 5 (40%) - Tucker, Angelo
+  Round 2 FINAL output   : 0 of 5 (0%) - both auto-deleted
+  Combined v2.3 final    : 3 of 9 (33%)
+  Combined v2.3 initial  : 5 of 9 (56%)
+  Updated status         : SPLIT - FINAL OUTPUT BELOW
+                          THRESHOLD; INITIAL GENERATION
+                          NEAR THRESHOLD
+
+  This is the closest pattern to threshold in the round.
+  Final output frequency is well below 70% (architecture
+  catching it). Initial-generation frequency is 40% in
+  this round and 56% in the combined v2.3 corpus
+  (architecture not catching it at the generation step).
+
+  Both Tucker Wk9 and Angelo Wk10 produced near-identical
+  telegraphed trendline openers in initial generation:
+    Tucker: "Three moments are relevant for understanding
+            where this week sits."
+    Angelo: "Three meets matter for understanding where
+            you are this week."
+
+  Both auto-deleted at audit under Criterion 14.2
+  (Telegraphing). The shared structural pattern "[N]
+  [moments/meets] [matter/are relevant] for understanding
+  [where this week sits / where you are this week]" is
+  the most concrete initial-generation template signal in
+  the round.
+
+  Recommendation: Monitor for one more round. If initial-
+  generation rate stays at 40%+, consider adding a
+  trendline-specific exemplar to Voice Reference Section 4
+  (similar mechanism to how Pair 12-14 addressed DD
+  openings).
+
+------------------------------------------------------------
+"DEVELOPING PHASE" NAMING IN FINAL DD OUTPUT
+------------------------------------------------------------
+  Pre-Round-2 frequency  : 1 of 4 DDs (25%) - Angelo Wk9
+  Round 2 frequency      : 1 of 5 DDs (20%) - Tucker Wk9
+  Combined v2.3 frequency: 2 of 9 DDs (22%)
+  Pre-Round-2 status     : monitoring (50% action threshold
+                          set in Appendix B Section 5)
+  Updated status         : MONITORING (below 50% action
+                          threshold)
+
+  Both instances use the structurally identical
+  construction "You're still in the Developing phase, and
+  [follow-on coaching content]." The construction has
+  appeared in two athletes (Angelo, Tucker) one week
+  apart. This may signal an emerging stable Coach Arron
+  technique rather than a leaking template, but the
+  identical-construction match suggests at least some
+  structural reuse.
+
+  Mergim's draft contained the same construction
+  ("You're still in the Developing phase") but it was
+  revised pre-finalization. If the draft instance had
+  reached the audit, the round rate would be 2 of 5
+  (40%) in final output and the combined rate would be
+  3 of 9 (33%).
+
+  Recommendation: Continue monitoring. Action threshold
+  remains at 50% per Appendix B Section 5.
+
+------------------------------------------------------------
+"[PRINCIPLE]. [DIRECTIVE]." CM CLOSING FORM
+------------------------------------------------------------
+  Pre-Round-2 strict     : Angelo's 3 weeks all matched
+                          this form (3 of 4 v2.3 CMs);
+                          Tucker Wk8 and Grace Wk11 used
+                          declarative + directive variants
+  Round 2 strict         : 1 of 5 (20%) - Grace only
+  Combined v2.3 strict   : 4 of 9 (44%)
+  Round 2 broader (multi-
+    beat parallel close) : 5 of 5 (100%)
+  Combined v2.3 broader  : 9 of 9 (100%)
+
+  Status: STRUCTURAL-TEMPLATE-ONLY, NOT CONTENT-TEMPLATE.
+
+  The strict "[Principle]. [Directive]." form has dropped
+  from Angelo's 3 of 3 to 1 of 5 in Round 2. Variation has
+  emerged across closing forms (single directive, two-
+  declarative parallel, three-fragment + directive,
+  declarative + directive in single sentence).
+
+  The broader "multi-beat parallel close" is at 100%
+  across the v2.3 corpus, but each closing is athlete-
+  specific in content. The structural-template character
+  is consistent with Voice Reference P4 (Earn Every
+  Sentence) and the natural Coach Arron close pattern.
+  Not a template concern as long as content stays athlete-
+  specific.
+
+
+============================================================
+APPENDIX C SECTION 9: NEW PATTERN SURFACE CHECK (PHASE 3
+PROTOCOL)
+============================================================
+
+This section reports patterns surfaced during a fresh-eyes
+scan of the 10 new files (5 CMs + 5 DDs). The scan was
+conducted independent of the existing template watchlist
+per the Phase 3 protocol established in the handoff prompt.
+Patterns are reported with frequency and tentative status.
+
+------------------------------------------------------------
+P3-NEW-1: TELEGRAPHED TRENDLINE OPENER
+"[N] [MOMENTS/MEETS/THINGS] [MATTER/ARE RELEVANT] FOR
+UNDERSTANDING [WHERE THIS WEEK SITS / WHERE YOU ARE]"
+------------------------------------------------------------
+  Round 2 INITIAL generation: 2 of 5 DDs (40%)
+    Tucker Wk9 initial: "Three moments are relevant for
+                       understanding where this week sits."
+    Angelo Wk10 initial: "Three meets matter for
+                       understanding where you are this
+                       week."
+  Round 2 FINAL output      : 0 of 5 DDs (both auto-deleted
+                            at audit under 14.2)
+
+  Status: INITIAL-GENERATION PATTERN PERSISTS.
+
+  This is the only pattern in the round at clear initial-
+  generation template threshold. Two athletes produced
+  near-identical telegraphed trendline openers in initial
+  generation, both caught and deleted at audit. The
+  structural template is "[N] [unit] [predicate]
+  understanding [temporal locator]." Both instances appear
+  to be the model's default trendline opening when the
+  trendline references multiple inflection points.
+
+  This pattern is a variant of Template 3 broader (see
+  Section 8). Whether it is its own pattern or a sub-
+  pattern of Template 3 is a definitional question. Either
+  way, the underlying behavior is the same: the model is
+  defaulting to a "[N] X matter / are relevant for
+  understanding [Y]" scaffold when constructing the
+  trendline opening.
+
+  Recommendation: monitor across next 3 athlete weeks. If
+  initial-generation rate stays at 40%+, add trendline-
+  specific exemplars to Voice Reference Section 4 (similar
+  mechanism to Pair 12-14 for DD openings).
+
+------------------------------------------------------------
+P3-NEW-2: "THAT SENTENCE [DOES X]" / "THAT'S [RECOGNITION]"
+RECOGNITION MOVE
+------------------------------------------------------------
+  Round 2 frequency      : 5 of 5 outputs (universal)
+  Combined v2.3 corpus   : approximately 85% to 100%
+
+  Examples in Round 2:
+    Mergim DD: "That sentence is doing more than it looks
+              like at first read."
+    Hunter DD (italicized capper): "That sentence is the
+              work-anchored frame you named at intake..."
+    Grace CM: "That sentence holds the last six weeks in
+              one place."
+    Grace CM: "That's confidence that doesn't need the
+              field to confirm it, Grace."
+    Tucker CM: "That matters more than what the score did
+              this week."
+    Tucker DD: "That's the gym becoming self-generating."
+    Angelo CM: "That's the sentence that earned my
+              attention this week."
+    Angelo DD: "That's the upgrade." / "That sentence is
+              the upgrade."
+
+  Status: AT SATURATION. Pair 14 (athlete sentence as DD
+  thesis) is working as designed but at universal
+  frequency. The "That sentence [does X]" recognition
+  move is structurally similar enough across all 5 outputs
+  to read as a stable Coach Arron technique.
+
+  Whether the universal frequency is a concern depends on
+  the grammatical variation across instances. The
+  examples above show meaningful syntactic range: "That
+  sentence is [X]" / "That's [X]" / "That [X]" / "That
+  matters [comparative]." Each is structurally available,
+  not just one form.
+
+  Recommendation: Monitor whether grammatical variation
+  holds across rounds. If every output across the next
+  three rounds uses identical "That sentence [verb]"
+  syntax, consider adding rotation guidance to Voice
+  Reference. For now, classify as Pair 14 working as
+  designed.
+
+------------------------------------------------------------
+P3-NEW-3: TERSE POSSESSION CLOSE ("[THING] IS YOURS" / "IT'S
+YOURS")
+------------------------------------------------------------
+  Round 2 frequency      : 4 of 10 files (40%)
+    Grace CM: "The work is yours, Grace. Run the last two
+              with it."
+    Grace DD: "That part is still yours."
+    Angelo DD: "It's yours." (final closing line)
+    Tucker CM: "Build the structure yourself." (variant
+              form, possession through "yourself")
+
+  Combined v2.3 frequency: approximately 30% across the
+                          full corpus when including
+                          variants
+
+  Status: BELOW 70% THRESHOLD. RECURRING.
+
+  The pattern is functionally a closure-of-ownership move:
+  the coach hands the work back to the athlete by
+  asserting possession. Variant forms include "[Thing] is
+  yours" (declarative) and "Build [the X] yourself"
+  (imperative through "yourself"). Both forms operate at
+  the closing position.
+
+  This is not yet at template threshold, but is worth
+  tracking. If the pattern stabilizes at a single
+  syntactic form across multiple athletes, it becomes a
+  closing-form template comparable to "[Principle].
+  [Directive]." in Angelo's earlier arc.
+
+  Recommendation: monitor. No action needed at current
+  frequency.
+
+------------------------------------------------------------
+P3-NEW-4: "TWO [X]" ANALYTICAL FRAMING
+------------------------------------------------------------
+  Round 2 frequency      : 2 of 10 files (20%)
+    Tucker DD: "The longitudinal pattern tells two stories
+              at once."
+    Angelo DD: "Two things arrived together this week."
+  Combined v2.3 frequency: 3 of 18 files (17%) - including
+                          Grace Wk11 trendline ("Two
+                          threads from the last few weeks
+                          matter for reading this one")
+
+  Status: BELOW THRESHOLD. WATCHING.
+
+  The "Two [X]" framing organizes the analysis around two
+  parallel threads or stories. The construction is
+  structurally similar to Template 3 strict but operates
+  at the analytical-framing level rather than the
+  trendline-opening level.
+
+  Recommendation: monitor. No action needed.
+
+------------------------------------------------------------
+P3-NEW-5: ENUMERATED-LIST + SUMMATIVE DECLARATIVE
+------------------------------------------------------------
+  Round 2 frequency      : 3 of 10 files (30%)
+    Mergim CM: "Three lifts. Two practices. Two rest days
+              actually used as rest days. The week did the
+              job it needed to do."
+    Hunter DD: long enumeration of seven-day rehab cadence
+              followed by "There were no skip days."
+    Angelo DD: "yourself, dedication, tenacity, willpower,
+              time management, study habits. Same content
+              across recovery, disruption, peak
+              performance, and now consolidation contexts."
+
+  Status: BELOW THRESHOLD. WATCHING.
+
+  The pattern is structurally an enumeration of specific
+  facts followed by a brief declarative claim about what
+  the enumeration means. This is a Voice Reference P4
+  (Earn Every Sentence) application: the enumeration earns
+  the summary declaration.
+
+  Recommendation: no action. Pattern is voice-principle-
+  aligned.
+
+------------------------------------------------------------
+P3-NEW-6: "[ACTIVITY] HELD / HAS HELD" CONSTRUCTION
+------------------------------------------------------------
+  Round 2 frequency      : 3 of 10 files (30%)
+    Tucker Wk9 CM opener: "The gym held for a second
+                         week."
+    Mergim DD: "The cadence held."
+    Angelo DD strength: "Your center ring landed at six
+                       self-trait items for the fourth
+                       straight week."
+
+  Status: BELOW THRESHOLD. WATCHING.
+
+  The pattern is a recognition-of-sustained-behavior
+  move. "[Behavior] held" or "[Behavior] has held [for N
+  period]" names continuity. Variant forms include "[X]
+  has been [stable across period]" and "[N units] for the
+  [Nth] straight week."
+
+  Recommendation: monitor. No action.
+
+------------------------------------------------------------
+P3-NEW-7: NUMERICAL ANCHOR PARAGRAPH OPENING
+------------------------------------------------------------
+  Round 2 frequency      : 5 of 5 DDs (universal)
+    Mergim: "Fourteen weeks since the last check-in."
+    Hunter: "Across all seven days, some component of the
+            recovery routine showed up..."
+    Grace: "Eighty-two days into the program."
+    Tucker: "Six straight days... Monday through Saturday
+            all scored on the positive side, a program
+            high."
+    Angelo: "Your center ring landed at six self-trait
+            items for the fourth straight week..."
+
+  Status: APPROPRIATE TO COACHING SPECIFICITY. NOT A
+          TEMPLATE CONCERN.
+
+  Numerical anchors are a P4 (Earn Every Sentence)
+  application: specific numbers carry specific
+  information. Universal application is appropriate when
+  the week's data warrants numerical specificity. Not
+  flagged as a template.
+
+
+============================================================
+APPENDIX C SECTION 10: QUALITY TRAJECTORY ASSESSMENT
+============================================================
+
+NET ASSESSMENT: VOICE QUALITY HOLDING AT 93-95%.
+
+Five files in Round 2 plus eight prior v2.3 files now
+total eighteen files across six athletes. Across this
+expanded corpus:
+
+  - Final-output Criterion 14 violations: 1 (Grace Wk12
+    Template 2 instance, judged PASS by audit).
+  - Em dash violations: 0 across all 18 files in CM/DD
+    body text.
+  - Retired C3 constructions in final output: 0.
+  - Pipeline classification language in final output: 0
+    (after corrections).
+  - Voice principle alignment: 6 of 6 STRONG across all
+    5 Round 2 outputs.
+  - Coaching authenticity rating: STRONG across all 5
+    Round 2 outputs.
+
+The voice quality estimate from Appendix B (92-95%) holds.
+The architectural ceiling estimate (~97% without
+underlying model advances) holds. No regression detected.
+
+ARCHITECTURAL ATTRIBUTION OF ROUND 2 FINDINGS:
+
+  (1) PAIR 12-14 INTERVENTION VALIDATED
+      Template 2 frequency dropped from 75% (3 of 4 DDs
+      pre-intervention) to 20% (1 of 5 DDs post-
+      intervention). Reduction of 55 percentage points.
+      This is the first concrete validation of the v2.3
+      monitoring protocol's full cycle: detection
+      (Session 108 Appendix A) -> confirmation at
+      threshold (Session 110 Appendix B Section 4) ->
+      targeted exemplar fix (Session 111 Pair 12-14
+      addition) -> measurement (Round 2 / this appendix).
+      The protocol works end-to-end.
+
+  (2) COLD-START CASE HOLDS QUALITY
+      Hunter Snyder's first-week output demonstrates
+      that v2.3 voice quality does not require same-
+      athlete coaching history if the snapshot is rich
+      enough. The Athlete Snapshot Generator (Stage 1)
+      is doing measurable work in supporting v2.3 voice
+      quality for first-week athletes. Specific
+      observation: Hunter's CM and DD draw on baseline
+      anchors (hinge habit, primary derailer, exact
+      phrase) and intake content (8/10 self-rating,
+      "the outcome of maybe losing") rather than
+      defaulting to generic-coaching language.
+
+  (3) LONG-GAP RETURN HANDLED CLEANLY
+      Mergim's Wk19 (v1.4) to Return Arc Wk1 (v2.3)
+      transition crosses the largest spec delta in the
+      corpus. Every v2.3-specific improvement attributed
+      in the Angelo and Appendix A analyses is present
+      in Mergim's v2.3 output. No v1.4 patterns leaked
+      forward.
+
+  (4) SAME-ATHLETE PERSISTENCE: VARIED OUTCOMES
+      - Angelo (third consecutive v2.3 week): voice
+        held and expanded; new DD opening structure
+        introduced (10-week thesis); broke Template 2,
+        Template 3, and "Developing phase" naming all in
+        one week.
+      - Tucker (second consecutive v2.3 week): voice
+        most consistent week-to-week; same Pair 12 CM
+        opening style across both weeks; same direct
+        enumeration trendline approach; broke Template 2.
+      - Grace (second consecutive v2.3 week): voice
+        traded one template for another (Wk11 used
+        Template 3, broke Template 2; Wk12 used Template
+        2, broke Template 3). Strongest CM in the round
+        despite the DD opening regression.
+
+  (5) AUDIT LAYER LOAD INCREASE
+      Round 2 had 13+ Criterion 14 corrections across 5
+      files (2.6 per file average). Pre-Round-2 average
+      was approximately 1.0 per file. The increase is
+      driven primarily by 14.12 (pipeline-adjacent
+      vocabulary, 7+ instances) and 14.2 (telegraphing,
+      3 instances). Final output is clean. The
+      architecture is working as designed: post-
+      generation correction layer catching v2.1-era
+      patterns the initial-generation layer is still
+      producing.
+
+UPDATED HYPOTHESIS STATUS:
+
+  Pre-Round-2 (Appendix A): "CONFIRMED for production use
+  across 3 athletes / 6 post-v2.3 files / zero
+  regressions."
+
+  Round 2 (this appendix): "CONFIRMED across 5 athletes /
+  10 post-v2.3 files this round + 8 prior = 18 v2.3
+  files / zero quality regressions in final output / Pair
+  12-14 intervention validated end-to-end."
+
+  The hypothesis is now confirmed at expanded sample
+  size with one validated intervention measurement. No
+  further n=1 validations are needed before continuing
+  athlete processing.
+
+INITIAL-GENERATION VS FINAL-OUTPUT GAP:
+
+  Round 2 initial-generation produced (and audit caught):
+    - 2 telegraphed trendline openers ("[N] moments
+      matter")
+    - 2 "version of [X]" instances (Hunter)
+    - 4 "the recap" pipeline-adjacent references (Angelo)
+    - 1 "Not X, but Y" parallel-clause (Grace)
+    - Multiple 14.12 instances across athletes
+
+  Pre-finalization revisions (caught during draft):
+    - Mergim "the right version of a return week"
+    - Mergim "Developing phase" + "Mixed tier scoring"
+
+  Total initial-generation pattern instances: approximately
+  15+ across Round 2.
+
+  Total final-output pattern instances: 1 (Grace Wk12
+  Template 2) plus 2 (Tucker / Angelo prior phase naming
+  judged PASS).
+
+  Architecture working: the dual-layer correction system
+  (pre-finalization revision + post-generation audit) is
+  catching initial-generation residual patterns. Final
+  output remains clean. The underlying generation layer
+  is still pattern-susceptible at the level of v2.1-era
+  constructions, but the correction layers are absorbing
+  the work.
+
+
+============================================================
+APPENDIX C SECTION 11: RECOMMENDATIONS
+============================================================
+
+(1) NO IMMEDIATE SPEC CHANGES.
+    Quality is holding. No new template has crossed 70%
+    threshold in final output. Auto-correction is
+    functioning. The Pair 12-14 intervention worked. No
+    architectural changes warranted.
+
+(2) MONITOR INITIAL-GENERATION "[N] MOMENTS MATTER"
+    TRENDLINE OPENER (P3-NEW-1).
+    Round 2 had 40% initial-generation rate (Tucker +
+    Angelo). Both auto-deleted at audit under 14.2. If
+    initial-generation rate stays at 40%+ across the next
+    sample, consider adding a trendline-specific exemplar
+    pair to Voice Reference Section 4. The mechanism
+    would mirror the Pair 12-14 addition for DD openings:
+    teach alternative trendline opening approaches via
+    exemplars rather than prohibiting through rules.
+
+    Candidate trendline opening alternatives if Voice
+    Reference work is needed:
+      (a) Direct week enumeration ("Week 5 was the
+          structural divergence peak") - already
+          demonstrated by Tucker's final output.
+      (b) Single-moment trendline opening that begins
+          with the most relevant inflection point and
+          works backward.
+      (c) Athlete-statement-as-trendline-anchor opening.
+      (d) Question-based trendline opening that names
+          what the trendline is testing.
+
+(3) MONITOR "DEVELOPING PHASE" NAMING.
+    Combined v2.3 frequency at 22%. Below 50% action
+    threshold from Appendix B Section 5. Two structurally
+    identical instances (Angelo Wk9, Tucker Wk9, both
+    "You're still in the Developing phase, and...").
+    Track whether this is becoming a stable Coach Arron
+    technique or a leaking template. If frequency reaches
+    50%, tighten 14.12 interpretation to exclude phase
+    names in all contexts.
+
+(4) WATCH "THAT SENTENCE [DOES X]" RECOGNITION MOVE
+    (P3-NEW-2).
+    At 100% in Round 2. Working as designed (Pair 14
+    application) but at saturation. Monitor for
+    grammatical variation across the next three rounds.
+    If every output uses "That sentence [verb]" in
+    identical syntax, consider adding rotation guidance
+    to Voice Reference. For now, classify as voice-
+    principle-aligned.
+
+(5) NO ACTION NEEDED ON GRACE WK12 TEMPLATE 2 INSTANCE.
+    Single instance post-Pair-12-14 intervention is
+    within expected residual variance. The intervention
+    reduced rate from 75% to 20%, not to 0%. Monitor
+    whether Grace Wk13 (if generated) reverts again or
+    breaks Template 2 cleanly.
+
+(6) AUDIT CROSS-MONITORING RIGOR OPPORTUNITY.
+    The Angelo Wk10 audit summary's claim of "5
+    consecutive breaks of Template 2 post-Pair-12-14"
+    missed the Grace Wk12 instance. This is not a Round
+    2 spec finding. It is worth noting for audit-process
+    improvement: cross-week template tracking across
+    athletes should reference all prior post-intervention
+    DDs, not just the auditor's current-athlete arc. A
+    standardized cross-monitoring checklist could prevent
+    similar misses.
+
+(7) NO DD OPENING EXEMPLAR ADDITION SCOPE EXPANSION
+    NEEDED.
+    The DD Opening Exemplar Addition handoff (Pair 12-14
+    addition, executed Session 111) is the intervention
+    being measured here. Round 2 results validate the
+    intervention. No expansion of that specific scope is
+    needed based on Round 2 findings. If the trendline-
+    telegraph pattern (P3-NEW-1) crosses threshold in a
+    future round, that would be a separate Voice
+    Reference work item, not an expansion of the DD
+    opening exemplar addition.
+
+(8) CONTINUE STANDARD VALIDATION CADENCE.
+    Process the next 3 to 5 athlete weeks under v2.3 and
+    re-measure at the same diagnostic depth. Particular
+    items worth re-testing:
+      (a) Whether Template 2 strict regression is
+          contained at single-instance variance or whether
+          subsequent rounds produce additional Template 2
+          instances.
+      (b) Whether the initial-generation trendline-
+          telegraph pattern persists at 40%+ rate.
+      (c) Whether "Developing phase" naming frequency
+          rises toward 50% threshold.
+      (d) Whether new pattern P3-NEW-3 (terse possession
+          close) stabilizes at single syntactic form or
+          remains varied.
+
+
+============================================================
+END OF APPENDIX C
 ============================================================
