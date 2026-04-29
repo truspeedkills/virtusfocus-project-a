@@ -272,4 +272,197 @@ COMPLEXITY NOTE
   informed CM opening with athlete's own goal-line as
   anchor).
 
+============================================================
+PARENT CM ADDENDUM (added post-initial-audit)
+============================================================
+
+A Parent Coaching Message was generated subsequent to the
+initial 4-output audit. Stage 5 audit scope extended to
+include the Parent CM as a 4th input document per Section 31
+of the Coaching Output Instructions v2.3.
+
+Note on activation: Hunter is a Core Foundation athlete and
+the Parent CM activation rule normally requires D2C Premium
++ parent_inclusion = true (App intake Q24). This Parent CM
+was generated as a validation-override under the same
+precedent established in Session 75 for Grace Kindel /
+Tucker Lloyd / Jasmine Jones parent-output validation. CF
+fallback applied to Section 4 ecosystem calibration (Q22-Q25
+not available in CF intake form).
+
+------------------------------------------------------------
+PRE-CRITERIA MECHANICAL CHECKS (PARENT CM)
+------------------------------------------------------------
+
+EM DASH SCAN: 0 occurrences (PASS)
+
+------------------------------------------------------------
+PARENT CM AUDIT RESULTS
+------------------------------------------------------------
+
+CRITERION 1 (EI Calibration): PASS
+  emotional_intensity = "Low" → standard tone. No emotional
+  warmth modifier applied to Section 4 (per Section 29
+  rule: warmth modifier only at High EI). All 4 sections
+  informational.
+
+CRITERION 2 (Clinical Language): PASS
+  Zero clinical terms. "Physical therapy," "recovery," and
+  "compression work" are sport-rehabilitation context, not
+  clinical mental-health terminology. No diagnostic or
+  treatment framing.
+
+CRITERION 3 (Data Fidelity): PASS
+  All factual claims trace to JSON or snapshot:
+  - "Wrestler of the Year award" → athlete_voice.achievement_
+    statement (verbatim)
+  - "1% better everyday with the intention of healing as best
+    as possible" → athlete_voice.weekly_goal_stated (verbatim)
+  - "consistent across all seven days with physical therapy,
+    compression work, and stretching routine" → JSON
+    athlete_state and recap daily entries
+  - "wrestling banquet on Sunday" → recap Sunday entry
+  - "no competition on the schedule" → upcoming_context.
+    scheduled_competition = "None scheduled"
+  - "back in the program after time away during recovery" →
+    snapshot Section 1 + Session 115 onboarding context
+
+CRITERION 4 (Structural Compliance): PASS
+  All 4 mandatory sections present (Weekly Context, What
+  Stood Out, What's Ahead, How You Can Support). Each
+  section within 35-65 word target. Total 210 words within
+  150-250 spec range. Header format correct (title + name/
+  week/date + ━ separator). Signed "Coach Arron" on its
+  own line. No "Generated from:" / "Schema:" metadata in
+  header (cleaner format matching prior validated Parent CMs
+  for Grace/Tucker/Jasmine).
+
+CRITERION 5 (Voice & Tone): PASS
+  Third person throughout. Hunter's first name used in each
+  section. Never "you" referring to Hunter (only used in
+  the section header "HOW YOU CAN SUPPORT" addressing the
+  parent). Coach Arron persona: calm, informational,
+  supportive without coddling. Contractions present
+  ("he's," "isn't" — actually no, let me re-check).
+
+  Contraction scan: "he's" used once. Clean register
+  appropriate to High School competitive level (per
+  Section 30 calibration table).
+
+CRITERION 6 (Word Count): PASS
+  Total ~210 words within 150-250 target. Each section
+  within 35-65 word range:
+  - Weekly Context: ~50 words
+  - What Stood Out: ~60 words
+  - What's Ahead: ~50 words
+  - How You Can Support: ~55 words
+
+CRITERION 7 (Audience Appropriateness): PASS
+  Parent-facing register held throughout. No accountability
+  language directed at parent ("Make sure...", "Watch
+  for...", "Check that..." patterns absent). No coaching
+  the parent. Parent positioned as supporter, not monitor.
+
+CRITERION 8 (Prior Commitment Bridge): PASS (N/A)
+  Week 1 of current arc, no prior commitment to bridge.
+  Parent CM does not reference prior commitment results
+  per Section 31 prohibition.
+
+CRITERION 9 (Athlete Voice Mirror): PASS
+  athlete_voice.weekly_goal_stated quoted verbatim ("1%
+  better everyday with the intention of healing as best as
+  possible") in What Stood Out section, providing the
+  parent direct access to the athlete's own framing.
+
+CRITERION 10 (Micro-Commitment Realism): PASS (N/A)
+  Parent CM does not contain micro-commitment per Section
+  31 prohibition. Thematic reference appropriate: "what
+  each day adds to his return readiness" reflects the
+  coaching direction without quoting the action, when, or
+  measurement of the micro-commitment.
+
+CRITERION 11 (Tone Consistency): PASS
+  Tone aligns with Mixed-tier-recovery character of the
+  week. No tonal discordance with athlete-facing CM/DD.
+  Recovery framing held throughout.
+
+CRITERION 12 (Identity Thread Consistency): PASS (N/A)
+  Identity Thread is a DD-only structural section. Parent
+  CM identity work is implicit through the Wrestler of
+  the Year recognition framing in What Stood Out and the
+  return-readiness framing in What's Ahead.
+
+CRITERION 13 (Pipeline Data Leakage): PASS
+  No framework terminology (Bullseye, center ring, Win the
+  Day, WTD). No weekly tier named (Mixed). No growth phase
+  named (Developing). No baseline_intake_profile data (CF
+  athlete; none exists). No execution metrics. No coach
+  flag IDs. No self-ratings labels. No PPD/ABI/adversity
+  classifications. No surveillance framing.
+
+CRITERION 14 (Voice Quality Regression): PASS
+  All 12 fail conditions scanned:
+  - 14.1 Reusable Opening Test: PASS (opens with Hunter's
+    specific return-from-injury context, not a reusable
+    template phrase)
+  - 14.2 Telegraphing: PASS (no announcement-style sentences)
+  - 14.3 Untraceable Paragraph: PASS (each section traces to
+    specific JSON content)
+  - 14.4 Category Coverage Over Response: PASS (each section
+    response-driven, not coverage-driven)
+  - 14.5 Brand Copy Close: PASS (closing line is specific to
+    the wrestler-of-the-year milestone framing, not generic
+    inspirational language)
+  - 14.6 Same Construction 3-Week Window: N/A (Week 1)
+  - 14.7 DD as Expanded CM: N/A (Parent CM is its own format)
+  - 14.8 "That is [Noun]" Standalone: PASS (one use of "That
+    mindset is the right fit..." which is "That [Noun] is
+    [X]" continuation, not noun-stamping standalone)
+  - 14.9 "Version of [X]" Construction: PASS (none detected)
+  - 14.10 Triple-Negative Setup: PASS (none detected)
+  - 14.11 Trendline Arc Recitation: N/A (no trendline section
+    in Parent CM)
+  - 14.12 Pipeline-Adjacent Vocabulary: PASS (none detected)
+
+------------------------------------------------------------
+PARENT CM DECISION TREE OUTCOME
+------------------------------------------------------------
+
+  Tier 1 (1-4, 13): All PASS.
+  Tier 2 (5-12, 14): All PASS, no corrections needed.
+  Tier 3: No notes.
+
+  Final Result: PASS (no corrections required)
+
+------------------------------------------------------------
+PARENT CM SCOPE NOTES
+------------------------------------------------------------
+
+  CF Fallback Applied (Section 28):
+    Section 4 ("How You Can Support") used the default CF
+    supportive guidance ("Encouraging the process and being
+    available if Hunter wants to talk about how the recovery
+    is going is the most helpful support right now") because
+    Q22-Q25 ecosystem fields are not available in the CF
+    intake form. This produces generic-supportive framing
+    rather than home-conversation-pattern-calibrated
+    framing. Hunter's intake captured high parent involvement
+    qualitatively (snapshot Section 1: "Family support is
+    high"), but the App-only Q23/Q25 calibration inputs
+    cannot be derived. Calibration gap is real but does not
+    impair compliance. Future App-mode re-intake would
+    enable full Section 4 calibration.
+
+  Competitive Level Calibration (Section 30):
+    High School calibration applied. Vocabulary direct and
+    sport-aware. Concept depth moderate. The wrestler-of-
+    the-year recognition framing assumes the parent
+    understands competitive context.
+
+  Files added during this audit pass:
+    Parent CM created: Athlete Data\Hunter Snyder\Parent
+    Output\Hunter_Snyder_2026-04-20to2026-04-26_VF_ParentMessage.txt
+    No edits required.
+    No regeneration required.
+
 End of Audit Summary
