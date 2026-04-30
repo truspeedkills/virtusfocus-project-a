@@ -854,6 +854,7 @@ Before finishing ANY session — whether the user asks or not — you MUST:
    - Session history needs a new entry
 4. **Commit the CLAUDE.md update** as a separate commit if other work was already committed
 5. **Verify clean working tree** with a final `git status`
+6. **Push to GitHub remote** with `git push` so the off-machine backup at `github.com/truspeedkills/virtusfocus-project-a` reflects the session's work. Verify push succeeded with `git status` showing "Your branch is up to date with 'origin/master'." A `Stop` hook in `.claude/settings.json` also runs `git push` automatically as a safety net, but Claude should still execute step 6 explicitly so the result is visible in the session output.
 
 This rule exists because prior sessions have ended with uncommitted work and stale CLAUDE.md entries, creating confusion in subsequent sessions. The hooks in `.claude/settings.json` will remind you, but you should proactively check even without being reminded.
 
