@@ -1,0 +1,150 @@
+FOCUS GROUP SESSION PICKUP NOTE
+================================
+Created: 2026-04-30
+Event Date: 2026-05-09 (9 days out at time of writing)
+
+
+PURPOSE OF THIS DOCUMENT
+========================
+Pickup note for the May 9, 2026 private focus group session. Captures
+where Arron and Claude left off mid-planning so the work can resume
+from any machine, even if local conversation context is lost during
+travel, sleep, or shutdown.
+
+
+EVENT BASICS
+============
+Date: May 9, 2026
+Venue: Hampton Inn, 1000 Towne Square Dr
+Time: Noon-3pm (11am setup, room reserved all day)
+Format: Private focus group (NOT a pitch)
+NDA: QR code at door, set up
+Source canvases in Slack #focus-group:
+  - Presentation Outline (canvas F0ALDMZHQDC)
+  - Event Prep (canvas F0AMA0QD1K2)
+  - Attendees (canvas F0AKXLJ8LR0)
+
+
+LOCKED DECISIONS
+================
+1. Format = focus group, not pitch. Session must be ~50% present /
+   50% extract feedback. Original outline reads pitch-shaped and
+   needs restructuring.
+
+2. Proposed agenda shape (3 hours):
+   12:00-12:15  Welcome, NDA reminder, why-you-are-here
+   12:15-12:45  Compressed pitch (problem -> built -> demo)
+   12:45-1:15   Mockup walkthrough + live reactions captured
+   1:15-1:30    Lunch
+   1:30-2:15    Segmented breakouts (3 groups, 4-5 each)
+   2:15-2:45    Pricing + deployment models (white-label etc.)
+   2:45-3:00    Cross-room synthesis + "what we missed"
+
+3. Three breakout segments:
+   - Institutional (collegiate coaches, ADs, HS coaches)
+   - D2C / Athlete-as-User (former high-level athletes, parent proxies)
+   - GTM (sales execs, content, marketing)
+
+4. Featured artifact athlete = Grace Kindel (recommended, awaiting
+   Arron's confirmation). 12-week confidence arc is the strongest
+   single narrative in the corpus. Suggested anonymization:
+   "Athlete A - D2 softball, infielder."
+
+5. The "how does this make me win more?" framing came from a real D1
+   coach. Valid intel for institutional-segment thinking. Use as ONE
+   question among several, paired with a problem-extraction question.
+   Do not let it dominate the institutional bank.
+
+
+CONFIRMED ATTENDEES (~12)
+=========================
+From Slack RSVP screenshot (10):
+  Jon Reese, Rick Klimchock, Ron Oswald, Noele Creamer,
+  Jennifer Altimore, Bret Colbert, Bob Colbert, Tom Panigall,
+  Liz Marcheleovich, Alex Bohince
+From canvas (additional 2):
+  Tamara Mahady, Curt Smith
+
+Several more "unsures" still pending. Final list and attendee
+backgrounds will be provided by Arron once RSVPs finalize.
+
+
+NEXT-STEP SEQUENCE (LEVERAGE-ORDERED)
+=====================================
+1. *** START HERE *** Lock breakout question banks
+   Three segments x 4-5 questions each. Highest leverage; blocks
+   worksheet, capture plan, and breakout flow.
+   Claude can draft v1; needs Arron's greenlight to begin.
+
+2. Curate artifact packet
+   Athlete snapshot + selected CMs/DDs + Coach Insight + Team
+   Snapshot + app mockups + 12-week progression visual.
+   Decisions needed: athlete (Grace recommended), anonymization
+   level, parent output inclusion y/n.
+
+3. Design worksheet/packet (one sheet per attendee per breakout)
+   Claude can draft layouts once questions are locked.
+
+4. Compressed 30-min pitch script
+   Distill from Comprehensive Pipeline Briefing v2.0.
+   Claude can draft outline + talking points.
+
+5. Capture protocol
+   3 note-takers, audio recording (NDA covers), synthesis plan.
+   Decisions needed: who facilitates, who note-takes per breakout.
+
+6. Welcome + NDA-at-door flow
+   Check-in 11:30-12:00, color-coded name tags by segment,
+   10-min welcome script.
+
+7. Print deadline: May 6 (Tuesday)
+   All printed materials must lock by this date.
+
+
+WAITING ON ARRON
+================
+1. Greenlight to draft question banks (highest priority)
+2. Non-pipeline app context (anything beyond CLAUDE.md that should
+   inform pitch or questions)
+3. Featured athlete confirmation (Grace, or alternative)
+4. Final attendee list + backgrounds when RSVPs lock
+
+
+FASTEST RESTART
+===============
+When resuming, paste any of these to Claude:
+
+  - "Go on the question banks"
+    -> Claude drafts v1 of 3 segments x 5 questions for review
+
+  - "Here's the non-pipeline app context: [...]"
+
+  - "Featured athlete is [Grace / Mergim / Angelo / other]"
+
+  - "Here are the attendee backgrounds: [...]"
+
+Recommended first move: "Go on the question banks" - longest-pole
+item, runs in parallel with the other inputs.
+
+
+CLAUDE.md REFERENCE
+===================
+Full pipeline context (7 stages, 4 product tiers, 6 athletes worth
+of real output, compliance framework, behavioral system, athlete
+arcs) is in CLAUDE.md and loads automatically as project instructions
+for Claude. No re-read needed at resume.
+
+Comprehensive Pipeline Briefing v2.0.docx is the source for the
+30-min pitch distillation.
+
+
+NOTES FOR FUTURE CLAUDE.md SESSION ENTRY
+========================================
+This session was planning-only. Read 3 Slack canvases (Presentation
+Outline, Event Prep, Attendees). Discussed focus group strategy,
+proposed 3-hour agenda with segmented breakouts, identified 7
+next-step deliverables, locked focus-group format and 3-segment
+breakout structure, recommended Grace Kindel as featured artifact
+athlete. No specification files modified. No pipeline processing.
+No new athlete output generated. Single artifact created: this
+pickup note.
