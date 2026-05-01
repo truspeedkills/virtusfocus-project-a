@@ -331,7 +331,7 @@ def add_tier_strip(doc, weeks, colors, label="WEEKLY TIER"):
 # ============================================================================
 
 def add_worksheet_cover(doc, segment_label, segment_color, why_text, format_text):
-    add_centered_heading(doc, "VIRTUSFOCUS FOCUS GROUP", size_pt=20)
+    add_centered_heading(doc, '"VirtusFocus" Focus Group', size_pt=20)
     add_centered_heading(doc, "May 9, 2026", size_pt=14, bold=False, color="555555")
     doc.add_paragraph()
     add_colored_band(doc, f"{segment_label} BREAKOUT PACKET", segment_color)
@@ -810,7 +810,7 @@ def make_angelo_progression():
 # ============================================================================
 
 def add_cover_header(doc, segment_label, segment_color):
-    add_centered_heading(doc, "VIRTUSFOCUS FOCUS GROUP", size_pt=20)
+    add_centered_heading(doc, '"VirtusFocus" Focus Group', size_pt=20)
     add_centered_heading(doc, "May 9, 2026", size_pt=14, bold=False, color="555555")
     doc.add_paragraph()
     add_colored_band(doc, f"{segment_label} ARTIFACT PACKET", segment_color)
@@ -1001,7 +1001,7 @@ def make_gtm_cover():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("VIRTUSFOCUS FOCUS GROUP — DOCX GENERATOR")
+    print('"VirtusFocus" Focus Group — DOCX GENERATOR')
     print("=" * 60)
 
     os.makedirs(os.path.join(FOCUS_DIR, "Worksheets"), exist_ok=True)
