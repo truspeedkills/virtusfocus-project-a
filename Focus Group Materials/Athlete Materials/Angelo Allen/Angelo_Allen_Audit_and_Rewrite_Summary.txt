@@ -1,0 +1,400 @@
+ANGELO ALLEN WEEK 5 AUDIT AND REWRITE SUMMARY
+================================================================
+Athlete: Angelo Allen
+Week: 2026-03-16 to 2026-03-22 (Week 5)
+Original spec version: Stage 3 v2.1 / Stage 4 v1.5 (CM/DD generated 2026-03-26 audit)
+Current spec applied: Stage 3 v2.3 / V5 + Voice Reference v1.0 + Stage 4 v1.9 (Voice Standards) + Stage 5 v1.6 (Criterion 14)
+Reason for rewrite: Focus Group materials demonstration of current-spec voice quality
+
+ORIGINALS PRESERVED at:
+  Athlete Data\Angelo Allen\Coaching and Deep Dive\Coaching Message\
+  Athlete Data\Angelo Allen\Coaching and Deep Dive\Deep Dive\
+  Athlete Data\Angelo Allen\Coach Insights\
+NEW FILES SAVED to:
+  Focus Group Materials\Athlete Materials\Angelo Allen\
+
+================================================================
+PHASE 1: AUDIT FINDINGS
+================================================================
+
+------------------------------------------------------------
+COACHING MESSAGE
+------------------------------------------------------------
+
+C1 EM DASH BAN: 9 instances found.
+  Line 1: "VIRTUSFOCUS - ATHLETE COACHING MESSAGE" (header)
+  Line 5: "Angelo -" (salutation)
+  Line 7: "...about it - quote..."
+  Line 11: "...apply one - you rebuilt..."
+  Line 11: "...described at intake - applied..."
+  Line 15: "...accurate - but when..."
+  Line 20: "YOUR ACTION - BEFORE..." (heading)
+  Line 23: "...CMU meet - Thursday and Friday - write..."
+  Line 30: "- Coach Arron" (signature)
+  Line 36: "...not spontaneous - what specifically..."
+
+C3 RETIRED PHRASES: 2 instances found.
+  Line 15: "Here is what needs attention." (Voice Reference Section 5
+           retired list: "Here is what [needs attention]...")
+  Line 17: "Now the question is whether that preparation system
+           holds across a two-day meet at CMU." (Voice Reference
+           Section 5 retired list: "The question is [whether]...")
+
+CRITERION 14.2 TELEGRAPHING: 1 instance.
+  Line 13: "Wednesday deserves its own recognition." (announces
+           coaching move instead of making it)
+
+CRITERION 14.4 / REACT-DON'T-COMPOSE: 1 instance.
+  Line 13: "That initiative is what separates athletes who wait
+           for development from athletes who build it." (textbook
+           generalization that could appear in any coaching
+           treatise; not Angelo-specific)
+
+OPENING (14.1): "Best outdoor season opener of your career."
+  PASS. Stat-led but qualifies under the milestone exception
+  (record/first/career-best).
+
+THAT IS [NOUN] STANDALONE (14.8): No standalone single-noun
+  stamps found. Two "That is [extended noun phrase]" instances
+  with qualifiers ("That sentence is a coaching philosophy",
+  "That is the sharpness you described at intake, applied to
+  your own preparation"). Within tolerance.
+
+------------------------------------------------------------
+DEEP DIVE
+------------------------------------------------------------
+
+C1 EM DASH BAN: 21 instances found across:
+  Mindset Summary (1), Weekly Trendline (3), Strength Signals
+  (10 across 4 signals), Growth Areas (3), Identity Thread (4).
+  Includes 4 heading em dashes (PREPARATION SYSTEM REBUILT,
+  SELF-DIRECTED DISCUS PRACTICE, BULLSEYE DEPTH, FIRST PERFECT
+  WIN WEEK).
+
+C4 PIPELINE CLASSIFICATION LANGUAGE: Heavy concentration in
+  Mindset Summary line 10 and Trendline line 20.
+  Mindset Summary leakage: "Developing phase maintained through
+    your fifth consecutive Growth week. Emotional intensity
+    returned to Low after Week 4's Moderate elevation.
+    Alignment fully restored."
+  Trendline leakage: "Two consecutive Growth weeks from a
+    Variable state. Your rolling win rate across the last four
+    weeks is 89 percent. ... One more sustained Growth week and
+    the consistency indicators re-enter the positive band."
+  Strength Signal heading "FIRST PERFECT WIN WEEK" uses "Win
+    week" as named category.
+
+C3 RETIRED PHRASES:
+  Line 36 (italic capper, Self-Directed Discus Practice): "The
+    athletes who create their own development moments are the
+    ones who get ahead of their competition calendar."
+    (Voice Reference Section 5 retired list: "The athletes who
+    [X] are the ones who [Y]")
+  Line 51 (Multi-Day Competition Management): "The question is
+    whether that structure holds when you add a second day of
+    competition..." (retired pattern)
+  Line 62 (Identity Thread): TWO instances of "The question is
+    whether" / "The question going forward is not whether..."
+
+CRITERION 14.1 REUSABLE OPENING: Mindset Summary opener.
+  Original: "Five weeks into this program, and this was the week
+    that showed what happens when your preparation matches your
+    ability."
+  "[N] weeks into this program" appears on Voice Reference
+  Section 5 retired list as DD opener.
+
+CRITERION 14.11 TRENDLINE ARC RECITATION: PASS.
+  Three inflection points (Wks 1-3 / championship gap / this
+  week) in plain language, no hyphenated compound-adjective arc
+  labels. Within spec.
+
+CRITERION 14.7 DD AS EXPANDED CM: PASS.
+  DD adds new angles (5-week arc, longitudinal trend, two-day
+  competition test) that the CM does not cover.
+
+THAT IS [NOUN] STANDALONE (14.8): No canonical standalone
+  single-noun stamps. Six "That [is/has]..." sentences with
+  extended predicates. Within tolerance per definition (cap
+  applies to single-noun stamp form, e.g. "That is ownership.").
+
+------------------------------------------------------------
+COACH INSIGHTS (Stage 4 institutional, governed by
+VF_Coach_Insights_Output_Voice_Standards.txt)
+------------------------------------------------------------
+
+V1 EM DASH BAN: 6 instances found.
+  Line 18: "First 7/7 Win week in the program - all prior weeks"
+  Line 41: "the compressed level for the second consecutive week -"
+  Line 95: "consistency - currently at Emerging Positive."
+  Line 107: "distractions - a direct reversal of conditions observed"
+  Line 118: "Recognize the preparation structure validation - competition"
+  Line 127: "CMU represents the next developmental test - multi-day"
+
+V2 PIPELINE-INTERNAL CLASSIFICATIONS: PASS.
+  No raw JSON field names surfaced (no emotional_intensity,
+  pattern_shift_detected, approach-framed, Stable Positive,
+  Partially Aligned). Designed Stage 4 output labels are
+  permitted and used correctly (Growth, Stable, Center-Dominant,
+  Emerging Positive, Building, Low, Developing, Composite
+  Readiness Positive (Green)). Per Voice Standards Section 4,
+  these designed labels ARE the institutional translation
+  layer.
+
+V3 TELEGRAPHING: PASS. Section blurbs are direct.
+
+================================================================
+PHASE 2: REWRITES APPLIED
+================================================================
+
+------------------------------------------------------------
+COACHING MESSAGE
+------------------------------------------------------------
+
+1. Header: "VIRTUSFOCUS - ATHLETE COACHING MESSAGE"
+   -> "VIRTUSFOCUS | ATHLETE COACHING MESSAGE" (em dash to pipe)
+2. Salutation: "Angelo -" -> "Angelo,"
+3. Body em dashes: replaced with periods, commas, or colons
+   per Voice Reference Section 5 replacement rules
+4. "Here is what needs attention." retired phrase deleted.
+   Paragraph rewritten with direct opener:
+   "The thing worth sharpening is your Bullseye."
+5. "Wednesday deserves its own recognition." (telegraphing)
+   deleted. Paragraph opens directly with the moment:
+   "Team practice was canceled Wednesday."
+6. Generalization "That initiative is what separates athletes
+   who wait for development from athletes who build it." removed.
+   Paragraph closes on the specific behavior: "You decided a
+   canceled team session was an opportunity, not a day off."
+7. "Now the question is whether that preparation system holds
+   across a two-day meet at CMU." retired phrase replaced with:
+   "The next test is whether that preparation system holds
+   across a two-day meet at CMU."
+8. YOUR ACTION heading em dash -> colon
+9. Signature: "- Coach Arron" -> "Coach Arron"
+10. Next Week Focus Question em dash -> period
+
+------------------------------------------------------------
+DEEP DIVE
+------------------------------------------------------------
+
+1. Mindset Summary opener "Five weeks into this program, and
+   this was the week that showed..." rewritten to ground in
+   Angelo's specific week:
+   "This was the week your preparation finally matched what
+   you can do."
+2. Mindset Summary line 10 pipeline classification leakage
+   ("Developing phase maintained through your fifth consecutive
+   Growth week. Emotional intensity returned to Low after
+   Week 4's Moderate elevation. Alignment fully restored.")
+   replaced with behavioral description:
+   "The consistency you said you wanted from the beginning
+   showed up in its most complete form. The week did not carry
+   the heaviness Week 4 did. You came back fully steady this
+   time."
+3. Trendline line 20 pipeline classification leakage
+   ("Two consecutive Growth weeks from a Variable state. Your
+   rolling win rate across the last four weeks is 89 percent.
+   ... consistency indicators re-enter the positive band.")
+   replaced with:
+   "The consistency trend is improving. Two steady weeks back-
+   to-back after the gap. The momentum is back. One more week
+   like this one and you are past the disruption entirely."
+4. Section headings em dashes:
+   "PREPARATION SYSTEM REBUILT - CHAMPIONSHIP LESSON APPLIED"
+     -> "PREPARATION SYSTEM REBUILT, CHAMPIONSHIP LESSON APPLIED"
+   "SELF-DIRECTED DISCUS PRACTICE - WEDNESDAY"
+     -> "SELF-DIRECTED DISCUS PRACTICE, WEDNESDAY"
+   "BULLSEYE DEPTH - SECOND CONSECUTIVE COMPRESSED WEEK"
+     -> "BULLSEYE DEPTH, SECOND CONSECUTIVE COMPRESSED WEEK"
+   "FIRST PERFECT WIN WEEK"
+     -> "FIRST 7/7 WEEK OF THE PROGRAM" (also resolves "Win
+        week" as named category concern under 14.12)
+5. Italic capper line 36 retired generalization ("The athletes
+   who create their own development moments are the ones who
+   get ahead of their competition calendar.") deleted. Italic
+   reduced to Angelo-specific observation:
+   "Wednesday's Discus breakthroughs did not happen because
+   practice was canceled. They happened because you showed up
+   anyway."
+6. Italic capper line 32 retired generalization ("Process-
+   focused athletes do not need the perfect day to perform
+   well. They need the preparation they planned and the targets
+   they set.") rewritten as direct second-person to Angelo:
+   "You did not need the perfect day to perform this week. You
+   needed the preparation you planned and the targets you set.
+   You had both."
+7. "The question is whether..." (line 51) replaced with:
+   "What CMU will reveal is whether..."
+8. "The question going forward is not whether..." / "The
+   question is whether..." (line 62, two instances) replaced
+   with: "Going forward, the unknown is not whether..." /
+   "What still has to be answered is whether..."
+9. All remaining em dashes (21 total across DD) replaced per
+   Voice Reference Section 5 replacement rules.
+
+------------------------------------------------------------
+COACH INSIGHTS
+------------------------------------------------------------
+
+1. Line 18: "Win week in the program - all prior weeks"
+   -> "Win week in the program. All prior weeks"
+2. Line 41: "consecutive week -"
+   -> "consecutive week, with"
+3. Line 95: "consistency - currently at Emerging Positive."
+   -> "consistency. Currently at Emerging Positive."
+4. Line 107: "distractions - a direct reversal"
+   -> "distractions, a direct reversal"
+5. Line 118: "preparation structure validation - competition"
+   -> "preparation structure validation: competition"
+6. Line 127: "developmental test - multi-day"
+   -> "developmental test. Multi-day"
+
+Institutional voice, status-plus-blurb format, designed Stage 4
+output labels (Growth, Stable, Building, Center-Dominant,
+Emerging Positive, Composite Readiness Positive (Green)) all
+preserved per VF_Coach_Insights_Output_Voice_Standards.txt
+Section 4. Coaching content unchanged.
+
+================================================================
+PHASE 4: VALIDATION RESULTS
+================================================================
+
+Mechanical scans on rewritten files (CM, DD, Coach Insight):
+
+  Em dashes (grep for em dash character): 0 found across all 3 files
+  Retired phrases (grep "Here is what|the question is whether|
+    version of [you/confidence]|athletes who...are the ones
+    who|N weeks into this program"): 0 found across all 3 files
+  Pipeline classification leakage in athlete-facing files
+    ("Developing phase maintained", "Emotional intensity
+    [Low/Moderate/High]", "Alignment fully restored",
+    "approach-framed", "pattern_shift_detected"): 0 found in CM
+    or DD
+
+Criterion 14 spot-check on rewritten CM and DD:
+
+  14.1  Reusable opening              PASS
+  14.2  Telegraphing                  PASS (deleted)
+  14.3  Untraceable paragraph         PASS (every paragraph
+                                            traceable to JSON
+                                            data)
+  14.4  Category coverage over response PASS (uneven coverage:
+                                              preparation system
+                                              rebuild + Wednesday
+                                              moment carry the
+                                              weight)
+  14.5  Brand copy close              PASS ("Keep building"
+                                            connects to Angelo's
+                                            preparation-system
+                                            building this week
+                                            and to identity claim)
+  14.6  Same construction 3-week     N/A (Wk 5 is in mid-program
+        window                              cross-week analysis;
+                                            spot-check against
+                                            adjacent Wk 4/Wk 6
+                                            outputs would require
+                                            those files; not in
+                                            scope of this audit)
+  14.7  DD as expanded CM            PASS (DD covers 5-week arc,
+                                           longitudinal trend,
+                                           multi-day competition
+                                           test - angles CM does
+                                           not hold)
+  14.8  "That is [Noun]." standalone PASS (no canonical single-
+        overuse                              noun stamps)
+  14.9  "version of [X]" construction PASS (none present)
+  14.10 Triple-negative setup        PASS (none present)
+  14.11 Trendline arc recitation     PASS (three inflection
+                                           points, plain language)
+  14.12 Pipeline-adjacent vocabulary PASS (all leakage cleaned;
+                                           "Win column"/"Win" used
+                                           descriptively for the
+                                           competition day, not
+                                           as a named category;
+                                           "Neutral day" used
+                                           descriptively in
+                                           historical context)
+
+Coaching content preservation check:
+  All coaching observations from original CM/DD preserved:
+    preparation system rebuild as direct championship-lesson
+    response, process-focused goal reframing as philosophy
+    shift, Wednesday self-directed Discus practice as initiative
+    pattern, first 7/7 week, Bullseye compression growth area,
+    multi-day competition management growth area, identity
+    thread tying intake aspiration words (goal-oriented,
+    resilient, tenacious, sharp) to weekly evidence,
+    micro-commitment for CMU two-day meet (target + reflection
+    per day).
+  All athlete-specific quotes preserved verbatim:
+    "It wasn't about hitting my furthest marks, just hitting
+    the marks I aimed for, while also setting myself up for a
+    good start." - "properly planned, not spontaneous, and had
+    great work put behind it without distractions." - "The most
+    promising start to an outdoor season ever." - "Only up from
+    here." - "My work ethic." - "My consistency."
+  All identity-claim and intake anchor language preserved:
+    "more goal-oriented, resilient, tenacious, and sharp."
+
+Voice Reference exemplar application logged:
+  CM opening (Best outdoor season opener of career +
+  achievement-quote bridge): aligned with Voice Reference
+  Category A pattern (lead with the week's defining moment +
+  athlete's own interpretive sentence).
+  DD opening ("This was the week your preparation finally
+  matched what you can do."): meaning-first interpretive
+  opener per Voice Reference Principle 1 (Start With Meaning,
+  Not Description).
+  DD trendline (3 inflection points, plain language): aligned
+  with Pair 4 fix pattern (no enumerated week-by-week
+  progression, no hyphenated compound-adjective arc labels).
+  DD italic cappers rewritten to Angelo-specific behavior per
+  Principle 5 (React, Don't Compose) - removed textbook
+  generalizations about "athletes who" and "process-focused
+  athletes" categories.
+
+================================================================
+NOTES FOR FUTURE WORK
+================================================================
+
+1. The original Stage 5 audit on this week passed all 13
+   criteria under spec v1.4 Editorial Audit (Criterion 14 was
+   added in v1.5/v1.6). Under current Criterion 14, the
+   original would auto-correct on 14.2 telegraphing, 14.12
+   pipeline-adjacent vocabulary, plus C1 mechanical em dash and
+   C3 retired-phrase systemic rejection (3+ retired phrase
+   instances across CM and DD).
+
+2. "The question is whether" pattern crossed retired-phrase
+   threshold across multiple files in this week (1 in CM, 3 in
+   DD). Cross-week monitoring opportunity: scan adjacent Angelo
+   weeks (Wks 4, 6, 7, 8) for same retired phrase frequency.
+
+3. Audit Summary file at original path NOT modified per
+   handoff rule (originals are sacred). Audit summary in this
+   folder reflects current-spec rewrite work only.
+
+4. Coach Insight Original passed audit cleanly under Stage 4
+   v1.5 institutional voice standards. Em dash cleanup is the
+   only material change applied. Designed Stage 4 output labels
+   (Growth, Stable, Building, Emerging Positive, Composite
+   Readiness Positive Green) preserved as institutional product
+   language per Voice Standards Section 4.
+
+================================================================
+FINAL STATUS
+================================================================
+
+CM:           CURRENT-SPEC PASS (all 12 Criterion 14 fail
+              conditions PASS, mechanical scan PASS, retired
+              phrases PASS)
+DD:           CURRENT-SPEC PASS (all 12 Criterion 14 fail
+              conditions PASS, mechanical scan PASS, retired
+              phrases PASS)
+Coach Insight: CURRENT-SPEC PASS (em dash cleanup applied,
+              institutional voice and designed labels preserved
+              per Voice Standards)
+
+Originals at Athlete Data\Angelo Allen\... unchanged.
+Rewritten files at Focus Group Materials\Athlete Materials\
+Angelo Allen\ ready for May 9 focus group artifact packet.
