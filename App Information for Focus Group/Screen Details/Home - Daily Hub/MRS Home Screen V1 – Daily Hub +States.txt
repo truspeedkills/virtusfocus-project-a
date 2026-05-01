@@ -1,0 +1,202 @@
+# Home Screen v1 - Daily Hub (Mermaid-Ready Specification)
+
+## Purpose
+
+Guide the athlete to **the single correct action for this moment of the day**.
+
+If the Home Screen does more than this → it's wrong.
+
+## Core Design Rules (Applies to All States)
+
+**Structural Rules** - One dominant action per state - Dominant action always appears first in vertical flow - Secondary elements are informational, not decision-driving - No branching choices at the Home level
+
+**Behavioral Rules** - Athlete never chooses _what_ to do - only _when_ to do it - State is determined by system time/day, not athlete preference - Same screen architecture across states → only copy + CTA change
+
+**Mermaid Translation Note** Each state below can be represented as: - One parent node (Home Screen - State) - Linear child nodes from top → bottom - No conditional forks inside a state
+
+# STATE 1 - MORNING HOME SCREEN
+
+## State Trigger
+
+- Time-based (Morning window)
+- Daily default Monday-Sunday
+
+## Primary Objective
+
+Complete **Morning Mindset Tune-Up**
+
+## Screen Flow (Top → Bottom)
+
+### 1\. Header Section
+
+- Logo (static)
+- Profile Icon (top-right)
+
+**Greeting Copy** - Primary: Good morning, \[Name\] - Subtext: Win today by controlling what's yours.
+
+### 2\. Primary Action Card (Dominant)
+
+**Label**: TODAY'S ACTION
+
+**Card Title**: MINDSET TUNE-UP
+
+**Focus Word** - Example: STALWART
+
+**Support Line** - Short coaching phrase - Example: Stand Firm. Show Strength.
+
+**Primary CTA** - Button: START
+
+**Constraints** - No scrolling required to reach CTA - This card visually outweighs all others
+
+### 3\. Progress Strip (V2 Elements - Passive)
+
+**Row Content (left → right)** - Streaks (V2) - Weekly Score Tally (V2) - Wins (V2)
+
+**Rules** - No taps required - No charts - No color pressure - Informational only
+
+### 4\. Bullseye Status Card
+
+**Label**: YOUR BULLSEYE TODAY
+
+**Status Indicator** - Dot icon + text - Example: CENTER RING FOCUS
+
+**Support Line** - Example: You've been aligned with attitude + effort
+
+**CTA** - Button: LOG YOUR FOCUS
+
+### 5\. Coaching Feedback Preview
+
+**Label**: COACHING FEEDBACK
+
+**Preview Text** - Short excerpt (1-2 lines)
+
+**CTA** - Button: OPEN MESSAGE
+
+### 6\. Bottom Navigation
+
+Icons: - Inbox - Morning (Sun icon highlighted) - Home - Targets - Journal
+
+## Morning State Hard Rules
+
+- ❌ No evening language
+- ❌ No recap prompts
+- ❌ No progress graphs
+- ❌ No motivational hype
+
+# STATE 2 - EVENING HOME SCREEN
+
+## State Trigger
+
+- Time-based (Evening window)
+- Daily default Monday-Sunday
+
+## Primary Objective
+
+Complete **Win the Day Review**
+
+## Screen Flow Differences (Only What Changes)
+
+### Header Section
+
+**Greeting Copy** - Primary: Good evening, \[Name\] - Subtext: Reflect on how you led yourself today.
+
+### Primary Action Card (Dominant)
+
+**Label**: TODAY'S ACTION
+
+**Card Title**: WIN THE DAY REVIEW
+
+**Support Copy** - Track your momentum. - Score your 5 habits.
+
+**Primary CTA** - Button: REFLECT · 1-2 MIN
+
+## Elements That Stay Identical
+
+- Progress Strip (V2)
+- Bullseye Status Card
+- Coaching Feedback Preview
+- Bottom Navigation (Moon icon highlighted)
+
+## Evening State Hard Rules
+
+- No Morning Tune-Up access
+- No Weekly Recap access
+- Same visual hierarchy as Morning
+
+# STATE 3 - SUNDAY WEEKLY RECAP HOME SCREEN
+
+## State Trigger
+
+- Day-based (Sunday after WTD review only)
+
+## Primary Objective
+
+Submit **Weekly Mindset Recap**
+
+## Override Rule (Critical)
+
+Weekly Recap **replaces** all daily actions on Sunday.
+
+There are **no competing CTAs**. (unless your Tune-up and WTD recap have not been done)
+
+## Screen Flow (Top → Bottom)
+
+### 1\. Header Section
+
+**Greeting Copy** - Primary: Good evening, \[Name\] - Subtext: Reflect on how you led yourself this week.
+
+### 2\. Primary Action Card (Dominant)
+
+**Label**: TODAY'S ACTION
+
+**Card Title**: WEEKLY MINDSET RECAP
+
+**Support Copy** - Unlock your weekly coaching. - Log your motivation.
+
+**Primary CTA** - Button: RECAP · 1-2 MIN
+
+### 3\. Progress Strip (V2)
+
+- Same passive row as other states
+- Visible but visually de-emphasized
+
+### 4\. Bullseye Status Card
+
+- Same structure as daily states
+- Reinforces continuity
+
+### 5\. Coaching Feedback Preview
+
+- Most recent message preview
+- CTA: OPEN MESSAGE
+
+### 6\. Bottom Navigation
+
+- Same icon set
+- Neutral highlight (Home)
+
+## Sunday PM State Hard Rules
+
+- ❌ No Morning Tune-Up CTA (must be completed earlier)
+- ❌ No Evening Review CTA (must be completed prior to week recap)
+- ❌ No optional daily actions
+
+## Mermaid Diagram Readiness Notes
+
+Each state can be diagrammed as:
+
+\[Home Screen - State\]  
+↓  
+\[Header\]  
+↓  
+\[Primary Action Card\]  
+↓  
+\[Progress Strip\]  
+↓  
+\[Bullseye Status\]  
+↓  
+\[Coaching Feedback\]  
+↓  
+\[Bottom Nav\]
+
+State switching logic exists **outside** the screen diagram and should be handled as: - Time-based condition (Morning / Evening) - Day-based override (Sunday)

@@ -1,0 +1,166 @@
+# Sunday Weekly Recap Screen v1 - Mermaid-Ready Specification
+
+## Purpose
+
+This screen is **reflection + transition**, not therapy.
+
+It exists to help the athlete: - Close the week - Surface patterns (lightly) - Set **one clean direction forward**
+
+By the time the athlete exits, they should feel: > "Last week is closed. I know what I'm carrying into next week."
+
+This document translates **Sunday Weekly Recap Screen (v1)** into a **single-scroll, no-branch specification** designed explicitly for **Mermaid diagram generation**.
+
+## Global Screen Rules
+
+**Structural Rules** - Single vertical scroll - No branching paths - No mid-flow exits - One submission endpoint
+
+**Behavioral Rules** - Pattern awareness without over-analysis - Ownership without pressure - Calm pacing appropriate for weekly reflection
+
+**Mermaid Translation Note** This screen should be diagrammed as a **linear chain** with a single required completion event.
+
+# SCREEN FLOW - TOP → BOTTOM (SINGLE SCROLL)
+
+## SECTION 1 - Quick Ratings (Low Friction)
+
+### Purpose
+
+Capture high-level self-awareness **without cognitive load**.
+
+These sliders provide signal, not judgment.
+
+### Inputs
+
+Three sliders (1-5 internally): - Confidence - Habit consistency - Goal progress
+
+### UI Rules
+
+- No numeric values shown
+- Visual anchors only: Low → High
+- All sliders required to proceed
+
+### Interaction
+
+- Tap or drag
+- Immediate visual confirmation
+- No commentary
+
+### Hard Rules
+
+- ❌ No labels like "bad / good"
+- ❌ No color-coded success/failure
+- ❌ No comparison to previous weeks
+
+## SECTION 2 - Weekly Reflection (Short Answer)
+
+### Purpose
+
+Surface context and patterns **in the athlete's own words**.
+
+### Prompts (Fixed Order)
+
+- What did you achieve this week?
+- Favorite mindset challenge?
+- Anything relevant we should know?
+- Upcoming competitions?
+- What matters most next week?
+
+### Input Rules
+
+- Short visible field height
+- Expands only if athlete types
+- No required minimum length
+
+### Behavioral Rule
+
+- Encourage clarity
+- Do not invite rumination
+
+### Hard Rules
+
+- ❌ No repeated "why" prompts
+- ❌ No multi-part questions
+- ❌ No sentiment scoring
+
+## SECTION 3 - Forward Anchor (Required)
+
+### Purpose
+
+Create **directional clarity** going into the next week.
+
+This is the most important coaching input on the screen.
+
+### Prompt (Required)
+
+One controllable focus for next week.
+
+### Input Rules
+
+- One line max
+- Must be controllable
+- Required to submit
+
+### Examples (Implicit, Not Shown)
+
+- "Respond calmly to mistakes."
+- "Complete my morning challenge."
+- "Bring energy to practice."
+
+### Hard Rules
+
+- ❌ No outcome goals
+- ❌ No long explanations
+- ❌ No optional skip
+
+## SECTION 4 - Submit & Closure
+
+### Purpose
+
+Psychologically close the week and create space for coaching.
+
+### CTA
+
+- Button: Submit Weekly Recap
+
+### Interaction
+
+- Disabled until all required inputs are complete
+
+On tap: - Save recap - Trigger coaching workflow - Transition to confirmation state
+
+### Confirmation State
+
+Copy: > Week closed. Coaching in progress.
+
+Behavior: - No instant feedback - No score display - Auto-return to Home after short delay
+
+### Hard Rules
+
+- ❌ No immediate AI message
+- ❌ No motivational copy
+- ❌ No previews of coaching output
+
+## Mermaid Diagram Readiness
+
+This screen maps cleanly to:
+
+\[Weekly Recap Start\]  
+↓  
+\[Quick Ratings (3 Sliders)\]  
+↓  
+\[Weekly Reflection Prompts\]  
+↓  
+\[Forward Anchor (Required)\]  
+↓  
+\[Submit CTA\]  
+↓  
+\[Confirmation State\]  
+↓  
+\[Return to Home\]
+
+No forks. No pagination. No side exits.
+
+## Why This Screen Works
+
+This screen: - Closes the mental loop of the week - Gives coaches high-quality pattern data - Avoids therapy-style over-processing - Sets a clean directional anchor - Builds anticipation for coaching instead of dependency
+
+It feels like: > A calm Sunday reset - not an evaluation.

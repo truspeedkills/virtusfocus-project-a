@@ -1,0 +1,237 @@
+# Mindset Tune-Up Screen v1 - Mermaid-Ready Specification
+
+## Purpose
+
+Help the athlete mentally **step into the day with intention** and make **one clear commitment** before external demands take over.
+
+This screen is **not motivation**. It is **identity priming + ownership**.
+
+By the time the athlete exits this screen, they should feel: > "I know how I want to show up today - and I've committed to it."
+
+This document translates **Mindset_Tune-Up Screen (v1)** and the rough visual draft into a **precise, linear specification** designed to be converted directly into **Mermaid diagrams**.
+
+## Global Screen Rules
+
+**Structural Rules** - Single vertical flow - No branching paths - No optional exits - One completion outcome
+
+**Behavioral Rules** - Athlete makes commitments, not selections - Progression is earned through acknowledgment - Calm, coach-led pacing
+
+**Mermaid Translation Note** This screen should be diagrammed as a **single linear chain of nodes** with gated progression before completion.
+
+# SCREEN FLOW - TOP → BOTTOM
+
+## 1\. Mindset Statement (Anchor)
+
+### Purpose
+
+Set emotional tone and steady the nervous system.
+
+### UI Rules
+
+- Largest text on screen
+- 1-2 short sentences
+- Neutral, grounded, coach-like
+- No interaction
+
+### Example Copy
+
+"Stay grounded in tough moments. Your steadiness becomes your edge."
+
+### Hard Rules
+
+- ❌ No quotes here
+- ❌ No explanations
+- ❌ No hype language
+
+## 2\. Focus Word + Quote (Daily Lens)
+
+### Purpose
+
+Give the athlete **one mental filter** for the entire day.
+
+This is a **lens**, not content.
+
+### Layout
+
+- Label: FOCUS WORD
+- Focus word in ALL CAPS
+- Subtle supporting icon
+- Quote beneath in lighter weight
+
+### Interaction
+
+- No action required
+- Optional micro-interaction: tap to visually re-highlight focus word (pulse only)
+
+### Example
+
+FOCUS WORD: **STALWART**
+
+"Be sure you put your feet in the right place, then stand firm." - Abraham Lincoln
+
+### Hard Rules
+
+- ❌ Only one focus word
+- ❌ No definitions
+- ❌ No scrolling quotes
+
+## 3\. Mindset Challenge (Commitment Point)
+
+### Purpose
+
+Convert intention → **action commitment**.
+
+This is the **first active choice of the day** and feeds directly into the Evening Review.
+
+### UI Treatment
+
+- Section label: MINDSET CHALLENGE
+- One sentence only
+- Specific, actionable behavior
+
+### Interaction
+
+- Single checkbox / toggle
+- Required to proceed
+
+**On Tap Behavior** - Subtle check animation - Text weight darkens slightly (affirmed state)
+
+### Example
+
+☐ Hold your composure during one stressful moment today - no reaction.
+
+### Hard Rules
+
+- ❌ Cannot be auto-checked
+- ❌ No multiple challenges
+- ❌ No vague language ("try", "be better")
+
+## 4\. Quick Wins (Micro-Agreements)
+
+### Purpose
+
+Lower resistance while reinforcing identity reps.
+
+These are **acknowledgments**, not tasks.
+
+### UI Treatment
+
+- Header: QUICK WINS
+- Exactly three items
+- Each with its own checkbox
+
+### Interaction
+
+- All three must be acknowledged to proceed
+- Order does not matter
+- Calm visual feedback only (checkmark)
+
+### Example
+
+☐ One deep breath before every drill or moment. ☐ One positive phrase when doubt creeps in. ☐ One decision today that favors growth over comfort.
+
+### Hard Rules
+
+- ❌ No counters
+- ❌ No journaling here
+- ❌ Not optional
+
+## 5\. Closing Statement (Identity Reinforcement)
+
+### Purpose
+
+Shift the athlete from **doing → being**.
+
+This is emotional glue.
+
+### UI Rules
+
+- Smaller than headline, larger than body text
+- 1-2 sentences max
+- Identity-based language
+- No interaction
+
+### Example
+
+"You don't need to be perfect - you just need to keep showing up like someone who refuses to quit."
+
+### Hard Rules
+
+- ❌ No performance metrics
+- ❌ No score language
+- ❌ No comparison framing
+
+## 6\. Finish Tune-Up Button (Closure)
+
+### Purpose
+
+Provide psychological closure and mark the rep as complete.
+
+### Button Rules
+
+- Single dominant CTA
+- Calm, coach-like language
+- Disabled until all required acknowledgments are complete
+
+### Recommended Labels
+
+- Finish Tune-Up (default)
+- Lock It In
+- I'm Ready
+
+### Interaction
+
+Button becomes enabled only when: - Mindset Challenge is accepted - All Quick Wins are acknowledged
+
+On tap: - Transition to completion state (not directly to Home)
+
+## 7\. Completion State (Micro-Confirmation)
+
+### Purpose
+
+Reinforce: > "You showed up. That counts."
+
+### Behavior
+
+- Brief confirmation message
+- Auto-return to Home after 1-2 seconds
+
+### Example
+
+Tune-Up Complete. "Lead with intention today."
+
+### Hard Rules
+
+- ❌ No streak language
+- ❌ No score reveal
+- ❌ No celebration animation
+
+## Mermaid Diagram Readiness
+
+This screen should map cleanly to:
+
+\[Mindset Tune-Up Start\]  
+↓  
+\[Mindset Statement\]  
+↓  
+\[Focus Word + Quote\]  
+↓  
+\[Mindset Challenge (Required)\]  
+↓  
+\[Quick Wins (3 Required)\]  
+↓  
+\[Closing Statement\]  
+↓  
+\[Finish Tune-Up CTA\]  
+↓  
+\[Completion State\]  
+↓  
+\[Return to Home\]
+
+No forks. No loops. No optional exits.
+
+## Why This Screen Works
+
+This screen: - Primes identity - Asks for commitment - Lowers resistance - Creates ownership - Ends calmly
+
+It feels like: > A coach checking in before the day starts - not an app assigning work.

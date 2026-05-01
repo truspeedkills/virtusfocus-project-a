@@ -1,0 +1,198 @@
+# Evening Review Screen v1 - Mermaid-Ready Specification
+
+## Purpose
+
+Help the athlete **close the day with ownership, not overthinking**.
+
+This is the **most behavior-shaping screen in the app**.
+
+The goal is not insight for insight's sake - it is: - honest self-assessment - emotional regulation - clean closure
+
+By the end, the athlete should feel: > "I looked at today clearly. I'm complete. Tomorrow resets."
+
+This document translates **Evening Review Screen (v1)** into a **progressive, state-aware specification** built explicitly for **Mermaid diagram generation**.
+
+## Global Screen Rules
+
+**Structural Rules** - One directional flow - Progressive reveal (not all sections visible at once) - No branching exits - One completion endpoint
+
+**Behavioral Rules** - Reflection without rumination - Choice over explanation - Data capture without emotional charge
+
+**Mermaid Translation Note** This screen should be modeled as a **linear progression with gated sections**, not parallel modules.
+
+# SCREEN FLOW - PROGRESSIVE SECTIONS
+
+## SECTION 1 - Win the Day Review (Core Action)
+
+### Purpose
+
+Create a fast, honest snapshot of how the athlete led themselves today.
+
+This is the **primary action** of the Evening Review.
+
+### Layout
+
+- Five stacked Yes / No cards
+- One question per card
+- Full-width tap targets
+
+### Questions (Fixed Order)
+
+- Did I act with intention?
+- Did I pursue progress over perfection?
+- Did I respond well to adversity?
+- Did I accomplish my Mindset Challenge?
+- Did I end with gratitude?
+
+### Interaction
+
+- Tap = Yes or No
+- Immediate visual confirmation
+- Yes = 1 point
+- No = 0 points
+
+### Rules
+
+- No explanations
+- No modals
+- No tooltips
+
+Once all five cards are answered → advance automatically.
+
+### Hard Rules
+
+- ❌ No skipping questions
+- ❌ No rewording per day
+- ❌ No emotional language tied to score
+
+## SECTION 2 - Bullseye Method (Contextual, Lightweight)
+
+### Purpose
+
+Help the athlete re-center focus **without forcing emotional excavation**.
+
+This section adapts based on earlier usage.
+
+### Entry Logic
+
+**If Bullseye was NOT used earlier today:** Prompt: > "Tap to log what you focused on today."
+
+**If Bullseye WAS used earlier today:** Prompt: > "Want to add anything else?"
+
+### Layout Options
+
+- Three columns or rings:
+  - Control
+  - Influence
+  - Can't Control
+
+### Interaction
+
+- Tap-based input only
+- 1-3 taps total max
+- Short text per tap (phrase-level)
+
+### Rules
+
+- No essays
+- No required balance across rings
+- Athlete may skip if emotionally spent
+
+### Hard Rules
+
+- ❌ Do not force Bullseye depth
+- ❌ No coaching feedback here
+- ❌ No corrective language
+
+## SECTION 3 - Short Journal (Optional Depth)
+
+### Purpose
+
+Allow reflection **without pressure**.
+
+This is optional depth - not required labor.
+
+### Entry Logic
+
+**If no journal entry exists today:** Prompt: > "Anything you want to note about today?"
+
+**If journal entry exists already:** Prompt: > "Anything you want to add?"
+
+### Text Box Rules
+
+- 2-3 visible lines max
+- Expands only if athlete types
+- No minimum length
+
+### Behavioral Rule
+
+- Encourage depth
+- Never demand it
+
+### Hard Rules
+
+- ❌ No required word count
+- ❌ No emotional grading
+- ❌ No auto-prompts mid-entry
+
+## SECTION 4 - Completion & Closure
+
+### Purpose
+
+End the day cleanly.
+
+No motivation. No judgment. No carryover.
+
+### Score Reveal
+
+- Shown neutrally
+
+Example: > Win the Day: 4 / 5
+
+No color-coding. No interpretation.
+
+### Closing Copy
+
+"Logged. Reset. Complete."
+
+### CTA
+
+- Button: Done
+
+On tap: - Save entry - Return to Home
+
+### Hard Rules
+
+- ❌ No streak language
+- ❌ No encouragement clichés
+- ❌ No tomorrow planning here
+
+## Mermaid Diagram Readiness
+
+This screen maps cleanly to:
+
+\[Evening Review Start\]  
+↓  
+\[Win the Day - 5 Yes/No Cards\]  
+↓  
+\[Bullseye Method (Conditional Prompt)\]  
+↓  
+\[Short Journal (Optional)\]  
+↓  
+\[Score Reveal\]  
+↓  
+\[Completion CTA\]  
+↓  
+\[Return to Home\]
+
+Progression is **linear and gated** - not modular.
+
+## Why This Screen Works
+
+This screen: - Forces honesty without shame - Captures behavior data fast - Allows emotional processing without overload - Teaches reset as a skill - Ends the day psychologically closed
+
+It feels like: > A coach saying, "We looked at it. You're done. Get rest."
+
+## Source Reference
+
+- Evening Review Screen (v1)
