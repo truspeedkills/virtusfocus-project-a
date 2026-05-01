@@ -1,0 +1,376 @@
+FOCUS GROUP AUDIT AND REWRITE SUMMARY
+Athlete: Grace Kindel
+Weeks audited: Week 1 (Jan 12-18, 2026) and Week 7 (Mar 9-15, 2026)
+Fresh generation: Week 12 (Apr 20-26, 2026) Parent CM + Parent Insight
+Date: 2026-05-01
+Spec target: SOP_Coaching_Output_Instructions_v2.3 + Editorial Audit v1.6
+              + Voice Reference v1.0 + Parent CM/Insight v1.5/v1.9
+
+
+PURPOSE
+
+Bring legacy Grace Kindel coaching output (Wk1 generated under v1.3,
+Wk7 generated under v1.4 ruleset) up to current v2.3/V5 voice
+quality and Criterion 14 standard for use as focus group exemplar
+material on May 9, 2026. Originals at Athlete Data/Grace Kindel/
+preserved untouched. Rewrites saved to Focus Group Materials/
+Athlete Materials/Grace Kindel/.
+
+
+FILES PROCESSED
+
+  Audited and rewritten:
+    Grace_Kindel_2026-01-12to2026-01-18_VF_CoachingMessage.txt
+    Grace_Kindel_2026-01-12to2026-01-18_VF_DeepDive.txt
+    Grace_Kindel_2026-03-09to2026-03-15_VF_CoachingMessage.txt
+    Grace_Kindel_2026-03-09to2026-03-15_VF_DeepDive.txt
+
+  Audited and PASS (no rewrite, reference originals):
+    Grace_Kindel_2026-01-12to2026-01-18_VF_WeeklyInsight.txt
+    Grace_Kindel_2026-03-09to2026-03-15_VF_WeeklyInsight.txt
+
+  Fresh generation (Wk12 parent output):
+    Grace_Kindel_2026-04-20to2026-04-26_VF_ParentMessage.txt
+    Grace_Kindel_2026-04-20to2026-04-26_VF_ParentInsight.txt
+
+
+WEEK 1 CM AUDIT FINDINGS (PRE-REWRITE)
+
+Original file: Athlete Data/Grace Kindel/Coaching and Deep Dive/
+              Coaching Message/Grace_Kindel_2026-01-12to2026-01-18_
+              VF_CoachingMessage.txt (rewritten under v1.3)
+
+VIOLATIONS:
+  14.1  Reusable opening: "Seven days. First hell week of preseason.
+        Full execution every single day." Could be reused next week
+        by changing the count.
+  14.9  "Version of [X]" construction: "That's the version we're
+        building." (line 22)
+  14.8  Borderline "That is/That's [Noun]." overuse: "That's your
+        reset pattern activating," "That's what preparation-based
+        confidence looks like," "That's the version we're building"
+        within 4 lines.
+
+REWRITE STRATEGY:
+  Lead with Thursday front toss as defining moment (Voice Reference
+  Pair 12 specific-moment opening). Replace stat-led opener with
+  the actual coaching observation. Drop "version we're building"
+  and rewrite closing with athlete-specific anchor. Identity Anchor
+  paragraph reframes intake claim around Thursday's specific behavior
+  rather than abstract "what we're building" formulation.
+
+
+WEEK 1 DD AUDIT FINDINGS (PRE-REWRITE)
+
+Original file: Athlete Data/Grace Kindel/Coaching and Deep Dive/
+              Deep Dive/Grace_Kindel_2026-01-12to2026-01-18_VF_
+              DeepDive.txt (older format, generated under v1.2/v1.3)
+
+VIOLATIONS:
+  C4    Pipeline metadata header: "Schema: v9.3 | Reflection
+        Quality: 3 | Growth Phase: Developing | Emotional
+        Intensity: Low | Weekly Tier: Growth | Consistency: Stable
+        Positive" (line 4-5).
+  Format Wrong section names: "STRENGTHS AND WINS,"
+        "OPPORTUNITIES AND GROWTH AREAS," "COACHING FOCUS AREAS,"
+        "BASELINE ALIGNMENT NOTE." Current spec requires: Mindset
+        Summary, Weekly Trendline, Strength Signals, Growth Areas,
+        Identity Thread.
+  Format DD includes action items and micro-commitment text
+        ("MICRO-COMMITMENT: Reset cue applied immediately after
+        every error..."). DD Framework explicitly prohibits these
+        in DD; they belong in CM only.
+  C4    "Baseline Alignment Note" section uses pipeline
+        classification language ("Alignment Status: Aligned").
+  Voice "Behavioral Evidence:" / "Coach Insight:" / "Pattern:" /
+        "Coaching Cue:" subsection labels read as analytical
+        report structure rather than coaching prose.
+  14.12 Pipeline-adjacent vocabulary: "highest-attrition point,"
+        "preparation-anchored confidence framing."
+  Voice Third-person register in places ("Grace fell below her
+        own standard"). DD must be second-person throughout.
+
+REWRITE STRATEGY:
+  Full structural rebuild. Clean header with no pipeline metadata.
+  Five-section structure (Mindset Summary / Weekly Trendline /
+  Strength Signals / Growth Areas / Identity Thread). Action items
+  and micro-commitment removed. Section names corrected. Coaching
+  voice (second person, conversational) throughout, with
+  italicized observations where Coach Arron has something to add
+  beyond the evidence. Tuesday mindset resonance and earned-
+  belonging thread integrated for additional depth (originally
+  unused in v1.3 output).
+
+
+WEEK 7 CM AUDIT FINDINGS (PRE-REWRITE)
+
+Original file: Athlete Data/Grace Kindel/Coaching and Deep Dive/
+              Coaching Message/Grace_Kindel_2026-03-09to2026-03-15_
+              VF_CoachingMessage.txt (generated under v1.4)
+
+VIOLATIONS:
+  14.1  Stat-led reusable opening: "Forty-nine straight Win days.
+        Seven consecutive Growth weeks." Pair 1 BEFORE pattern
+        exact match.
+  14.6  Cross-week construction repetition: Wk5 opened with "Seven
+        days of full execution," Wk6 opened with "Forty-two
+        straight Win days. Six consecutive Growth weeks." Wk7
+        repeating stat-led pattern is third consecutive failure
+        within the 3-week window.
+  14.2  Telegraphing: "Here is what earned recognition this week."
+        and "Here is what needs attention." Both retired
+        constructions (C3) and active telegraphing.
+  14.9  "The version of you that can handle anything the season
+        throws at you."
+  14.8  "That is [Noun]." overuse: "That is your hinge habit,"
+        "That is a choice," "That is you naming your own
+        controllable," "That is what keeps you in position," "That
+        is not something most people do." Five instances in one
+        message.
+  14.12 Pipeline-adjacent vocabulary: "Forty-nine straight Win
+        days," "Seven consecutive Growth weeks" used as classified
+        named categories.
+
+REWRITE STRATEGY:
+  Lead with the Monday-to-Wednesday recovery sequence as the
+  defining moment of the week (Voice Reference Pair 14 athlete-
+  sentence-as-thesis approach using "I just need to reset and I'll
+  be fine"). Drop both "Here is what" announcements; recognitions
+  and challenges open directly. Trim "That is [Noun]" usage to
+  one well-placed instance. Drop "version of you" entirely.
+  Strip Win days / Growth weeks classification language. Athlete-
+  specific close.
+
+
+WEEK 7 DD AUDIT FINDINGS (PRE-REWRITE)
+
+Original file: Athlete Data/Grace Kindel/Coaching and Deep Dive/
+              Deep Dive/Grace_Kindel_2026-03-09to2026-03-15_VF_
+              DeepDive.txt (generated under v1.4)
+
+VIOLATIONS:
+  14.1  Stat-led reusable opening: "Seven weeks. Forty-nine out
+        of forty-nine Win days. And this was the week your
+        confidence got its real exam."
+  14.11 Trendline arc recitation: full 7-week arc with hyphenated-
+        compound labels ("preparation-driven," "structure-
+        sustained," "action-quality philosophy"). Spec says
+        reference 2-3 inflection points after Week 4.
+  C3    Retired construction: "The athletes who eventually earn
+        more playing time are the ones coaching staffs see
+        preparing and engaging on the days they do not play."
+  14.8  "That is [Noun]." overuse: "That is the hinge habit,"
+        "That is your hinge habit," "That is a controllable
+        choice."
+  14.9  "That is the version of you that handles failure the way
+        she handles success."
+  14.5  Brand copy close: "That is who you are building yourself
+        to be, and this week proved you are becoming her."
+  14.2  Telegraphing-adjacent italicized capper: "*That dual
+        framing demonstrates a level of composure...*"
+  14.6  Cross-week stat-led pattern repetition (third week in
+        a row).
+
+REWRITE STRATEGY:
+  Lead with Monday/Wednesday sequence as concrete moment (Pair
+  12). Trendline trimmed from 7-week recitation to 3 inflection
+  points (Wk3 NC trip, Wk6 first hit, Wk7 first failure) without
+  compound-adjective arc labels. Drop "The athletes who" retired
+  construction. Cap "That is/That's [Noun]" usage at one. Replace
+  brand-copy close with athlete-specific close grounded in the
+  Wk1 front toss callback. Italicized cappers retained but varied
+  in form (question, callback, observation) per DD Framework
+  guidance.
+
+
+COACH INSIGHT AUDIT FINDINGS
+
+Originals reviewed:
+  Athlete Data/Grace Kindel/Coach Insights/Grace_Kindel_2026-01-12
+                to2026-01-18_VF_WeeklyInsight.txt
+  Athlete Data/Grace Kindel/Coach Insights/Grace_Kindel_2026-03-09
+                to2026-03-15_VF_WeeklyInsight.txt
+
+ASSESSMENT: PASS (no rewrite required).
+
+Coach Insights are coach-facing institutional reports governed
+by VF_Coach_Insights_Output_Voice_Standards.txt (executive
+register, contractions permitted but not default, structured
+notation acceptable). Both files pass current spec:
+  - Mandatory disclaimer present
+  - Institutional executive voice register (no athlete-facing
+    prose, no Coach Arron persona)
+  - No surveillance framing
+  - No clinical language
+  - No raw execution metrics or PPD/ABI terminology
+  - Named composite signals (Composite Readiness, KPS) used as
+    designed Stage 4 institutional outputs, not pipeline jargon
+    leakage
+  - Em dash check: 0 instances in either file
+  - Section structure matches Stage 4 v1.9 spec (10 sections)
+
+Action: Originals at Athlete Data/Grace Kindel/Coach Insights/
+remain authoritative. Reference these directly from the focus
+group artifact packet. Do NOT duplicate to Focus Group Materials/.
+
+
+WEEK 12 PARENT OUTPUT GENERATION (FRESH)
+
+Generated for first time. Wk12 was the user-flagged exemplar for
+Wk12 fresh Parent CM + Parent Insight under current Stage 3 v2.3
++ Stage 4 v1.9 specs.
+
+Parent CM file:
+  Grace_Kindel_2026-04-20to2026-04-26_VF_ParentMessage.txt
+  4 sections (Weekly Context / What Stood Out / What's Ahead /
+  How You Can Support), 244 words total (within 150-250 spec
+  target), 51/59/47/60 words per section (within 35-65 each),
+  third-person Coach Arron voice, College competitive level
+  calibration (default), CF fallback applied to Section 4
+  ecosystem calibration (Q22-Q25 not available in CF intake;
+  generic-supportive guidance per Section 28 CF rule). No
+  reference to Athlete CM content. No micro-commitment quoted.
+  Thematically aligned with Wk12 athlete CM's Wednesday-
+  recognition + composed-paradox theme without referencing it
+  directly.
+
+Parent Insight file:
+  Grace_Kindel_2026-04-20to2026-04-26_VF_ParentInsight.txt
+  9 sections, scan-first format (categorical indicator + blurb
+  per section), 368 words total. Indicator determinations per
+  v1.9 Section 21 rules:
+    Sec 1 Strong Week (Growth tier)
+    Sec 2 "Recognizing her own work" (agent-generated)
+    Sec 3 Building (Confidence Building + no alignment data, CF)
+    Sec 4 Light (emotional_intensity = Low)
+    Sec 5 Growing (Confidence momentum Building)
+    Sec 6 "Focused on what she controls" (agent-generated, Bullseye
+          center-dominant translated)
+    Sec 7 Something to Note (pattern_shift_detected = Yes triggers
+          per spec rule, framed warmly around end-of-season
+          context)
+    Sec 8 Getting Consistent (growth_phase = Consistent, stable)
+    Sec 9 Good Week (Green) (Composite Readiness ↑ Positive)
+  No framework terminology, no arrow notation, no institutional
+  language, no scoring/numeric data. Third-person throughout.
+  Signed "- Coach Arron."
+
+
+VALIDATION RESULTS (POST-REWRITE)
+
+Mechanical scan across all 4 rewritten + 2 fresh-generated files:
+  Em dashes: 0 instances (pass)
+  Retired C3 patterns ("the version of," "here is what,"
+    "the question is whether," "the athletes who...are the ones,"
+    "I also want to name/acknowledge," "[N] weeks into this
+    program," "Not X. Y." parallel-sentence): 0 instances (pass)
+  Pipeline classification language (phase names as labels, tier
+    names as labels, "Win days" / "Growth weeks" as named
+    categories, "approach-framed," "Stable Positive," "Partially
+    Aligned," "RQS"): 0 instances in athlete-facing or parent-
+    facing output (pass)
+  Parent output framework terminology check (Bullseye, center
+    ring, outer ring, Win the Day, WTD, reflection quality):
+    0 instances in Parent CM or Parent Insight (pass)
+  Parent output institutional language check (signal, indicator
+    in blurb content, trend direction, arrow notation): 0
+    instances in blurb content; section header "OVERALL SIGNAL"
+    is structural per v1.9 spec (acceptable, not voice).
+
+Word counts (target compliance):
+  Wk1 CM: 375 total (~305 body) - within 250-450 body target
+  Wk1 DD: 947 - within 850-1200 target
+  Wk7 CM: 490 total (~410 body) - within 250-450 body target
+  Wk7 DD: 1226 (body ~1175) - within 850-1200 body target
+  Wk12 Parent CM: 244 - within 150-250 target
+  Wk12 Parent Insight: 368 - no spec word target (scan-first
+    dashboard format)
+
+Criterion 14 spot-check across all 12 fail conditions:
+  14.1  Reusable opening:        PASS (all openings specific)
+  14.2  Telegraphing:            PASS (no announcing sentences)
+  14.3  Untraceable paragraph:   PASS (every paragraph grounded)
+  14.4  Category coverage over response: PASS (proportional)
+  14.5  Brand copy close:        PASS (athlete-specific closes)
+  14.6  3-week construction window: PASS (Wk7 broke stat-led
+        pattern from Wk5/Wk6)
+  14.7  DD as expanded CM:       PASS (CM + DD complementary)
+  14.8  "That is [Noun]" overuse: PASS (capped at 0-1 per file)
+  14.9  "Version of [X]":        PASS (zero instances)
+  14.10 Triple-negative setup:   PASS (replaced with positive
+        framing)
+  14.11 Trendline arc recitation: PASS (Wk7 reduced to 3
+        inflection points)
+  14.12 Pipeline-adjacent vocab: PASS (replaced)
+
+
+VOICE REFERENCE EXEMPLAR APPLICATION
+
+Wk1 CM: Pair 12 (Specific moment opening). Thursday front toss
+  as opening event before any interpretation.
+Wk1 DD: Category A1/A2 calibration (opening with meaning).
+  Identity Thread leans on Pair 7 alternative (avoids "version
+  of" while keeping arc claim grounded in specific behavior).
+Wk7 CM: Pair 14 (Athlete sentence as thesis). Opens with the
+  Monday-to-Wednesday quote sequence as the week's coaching
+  story.
+Wk7 DD: Pair 12 (Specific moment) for opening + Pair 4
+  (Trendline arc trimming). Three inflection points instead of
+  seven-week recitation.
+Wk12 Parent CM: Section 28 CF fallback for Q23/Q25, Section 30
+  College calibration default, Section 27 third-person Coach
+  Arron voice.
+Wk12 Parent Insight: Section 21 indicator determination rules
+  applied verbatim. Blurbs in Coach Arron warm-but-not-soft
+  parent voice per Section 22.
+
+
+ORIGINALS PRESERVATION VERIFICATION
+
+git status check confirms zero modifications to files in
+Athlete Data/Grace Kindel/. The original v1.3 Wk1 CM/DD,
+v1.4 Wk7 CM/DD, and Wk1/Wk7 Coach Insights remain untouched
+on disk and in version control history. Only new files in
+Focus Group Materials/Athlete Materials/Grace Kindel/ are
+introduced.
+
+
+AUDIT LESSONS (CARRIED FORWARD)
+
+1. Self-audit catch during Wk1 DD draft: "version of confidence"
+   appeared 4 times in first draft despite explicit awareness of
+   Pair 7 retirement. The construction is sticky because it reads
+   as natural English when describing developmental forms of a
+   trait. Mitigation: substitute "kind of [X]" or anchor to
+   specific behavior.
+
+2. Self-audit catch during Wk7 CM draft: "Not X. Not Y. Not Z."
+   appeared in YOUR ACTION instructions section as a directive
+   list of exclusions. Different function from rhetorical opening
+   pattern but still triggers 14.10 detection. Mitigation: replace
+   with single-sentence list using commas.
+
+3. Self-audit catch during Wk7 DD draft: "Coaches notice the
+   athletes who [X]" reads as a softened version of the retired
+   "The athletes who [X] are the ones who [Y]." Even softened
+   formulations should redirect to specific-athlete framing.
+
+4. Wk1 DD initial draft sat below the 850-word floor at ~740.
+   First-week DDs with no prior data are naturally thinner because
+   the trendline section has no longitudinal material to draw on.
+   Resolved by adding depth via unutilized JSON data (Tuesday
+   mindset_resonance and athlete_voice.achievement_statement
+   "earned-belonging" thread).
+
+5. Wk7 DD initial draft exceeded 1200-word cap at 1273. Trimmed
+   primarily from Growth Areas section by removing scaffolding
+   sentences without losing analytical depth.
+
+6. Coach Insights v1.5/v1.9 institutional voice has held quality
+   standards across versions. No rewrites needed for either week.
+   This suggests Stage 4 voice authority migration completed in
+   Session 104 (purpose-built VF_Coach_Insights_Output_Voice_
+   Standards.txt) is producing stable institutional output.
+
+
+END OF AUDIT SUMMARY
