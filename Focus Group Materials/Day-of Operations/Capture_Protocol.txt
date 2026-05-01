@@ -1,0 +1,314 @@
+"VIRTUSFOCUS" FOCUS GROUP: CAPTURE PROTOCOL
+============================================
+Event:        May 9, 2026 (Saturday), 12:00-3:00 PM
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+Last updated: 2026-05-01
+Owner:        Arron + Nicole
+
+
+PURPOSE
+=======
+Defines the day-of capture, recording, and post-session
+synthesis plan for the focus group. The point is to make
+sure the value extracted from this room (which we cannot
+get anywhere else) is preserved cleanly and synthesized
+into actionable findings within seven days.
+
+There are three capture surfaces: written worksheets,
+audio recording, and live note-taking. Each captures a
+different layer. All three feed into a single Synthesis
+Report.
+
+
+THREE CAPTURE SURFACES
+======================
+
+1. WRITTEN WORKSHEETS (athlete-filled)
+   - One per attendee per segment
+   - 7 pages: cover + 5 segment-specific questions + 1
+     free-form page
+   - Filled in real-time during the 1:30-2:15 breakout block
+   - NAME field on cover is OPTIONAL (anonymous responses
+     allowed; segment is what matters)
+   - Collected by note-taker at the END of breakout, before
+     the room reconvenes for pricing/deployment block
+   - Storage: physical originals in labeled segment folder,
+     scanned to PDF same evening for synthesis
+
+2. AUDIO RECORDING (verbal discussion)
+   - One device per breakout room
+   - Recommended: dedicated voice recorder (better fidelity
+     than phone) or two phones running simultaneously as
+     backup
+   - Recording confirmed VERBALLY at start of session
+     (covered by NDA; legally required to confirm regardless)
+   - Welcome script Section 4 includes the recording
+     announcement (see Welcome_and_NDA_Flow.txt)
+   - Files transferred to secure storage same evening,
+     transcribed within 48 hours via Otter or comparable
+     transcription service
+
+3. NOTE-TAKER OBSERVATIONS (sentiment + themes)
+   - One note-taker per breakout
+   - Captures what the audio cannot: body language,
+     engagement level, who deferred to whom, when the
+     room agreed without saying so, when somebody pushed
+     back politely on a question that should be reopened
+   - Uses the shorthand convention below
+   - Notes feed into synthesis as the interpretive layer
+     on top of the audio transcript
+
+
+BREAKOUT FACILITATOR + NOTE-TAKER ASSIGNMENTS
+==============================================
+Three breakouts run simultaneously 1:30-2:15. Each needs
+one facilitator and one note-taker (separate people).
+
+Confirmed:
+  Arron + Nicole are co-founders, both facilitating.
+
+Recommended assignments (USER CONFIRM OR ASSIGN):
+
+  INSTITUTIONAL BREAKOUT (Rick, Bret, Bob)
+    Facilitator:  Arron
+    Note-taker:   [TBD: needs assigned name]
+    Rationale:    Arron leads on coaching framing and
+                  compliance, which is where this segment
+                  will press hardest.
+
+  D2C / ATHLETE BREAKOUT (Ron, Liz, Alex, Tamara)
+    Facilitator:  Nicole
+    Note-taker:   [TBD: needs assigned name]
+    Rationale:    Nicole's voice on parent layer,
+                  authenticity, and price-point is the
+                  strongest match for this segment.
+
+  GTM BREAKOUT (Jon, Noele, Jennifer, Tom)
+    Facilitator:  [TBD: Arron or Nicole rotates over]
+    Note-taker:   [TBD: needs assigned name]
+    Rationale:    Both co-founders bring relevant lens.
+                  Nicole leans market positioning, Arron
+                  leans system depth. Could either swap a
+                  facilitator over after Institutional and
+                  D2C settle into discussion (~15 min in),
+                  OR designate a third facilitator with
+                  business / strategic credibility.
+
+OPEN QUESTIONS FOR ARRON + NICOLE TO RESOLVE PRE-EVENT:
+  - Who is the third facilitator for GTM? (Or are
+    Arron/Nicole rotating?)
+  - Who are the three note-takers? Three options:
+      a) Three trusted observers with NDA signed
+         (recommended; lets co-founders facilitate cleanly)
+      b) One operational lead floats between rooms
+         (insufficient; misses too much)
+      c) Note-takers drawn from attendees (NOT recommended;
+         compromises their participation)
+  - If using approach (a): names + NDA confirmation needed
+    before May 6.
+
+
+NOTE-TAKER SHORTHAND CONVENTION
+================================
+Note-takers use a single notebook or laptop with this
+template per page:
+
+  ----------------------------------------------------------
+  SEGMENT:        [Institutional | D2C | GTM]
+  BREAKOUT TIME:  [start - end, e.g., 1:30-2:15]
+  NOTE-TAKER:     [Name]
+  ATTENDEES:      [First names, e.g., Rick, Bret, Bob]
+  ----------------------------------------------------------
+
+  Q1: [Question text or short ref, e.g., "Compliance balk?"]
+  ----------------------------------------------------------
+  [TIMESTAMP] [INITIALS] [SENTIMENT-CODE] [verbatim or paraphrase]
+  ----------------------------------------------------------
+
+SENTIMENT CODES (single letter):
+  P  = Positive / agreement / engaged
+  N  = Negative / disagreement / pushback
+  M  = Mixed / middle / "yes but"
+  Q  = Question raised by attendee (worth following up)
+  *  = Cross-lens insight (attendee bringing secondary
+       perspective into a primary-segment question)
+
+VERBATIM CAPTURE RULES:
+  - Use double quotes for exact words: "We would never
+    deploy this without legal review."
+  - Use parens for paraphrase: (paraphrased: legal review
+    is the gate)
+  - Mark unclear or partially-heard with [unclear]:
+    "We would [unclear] without legal."
+  - Always include attendee initials so synthesis can
+    attribute correctly
+
+EXAMPLES:
+
+  1:42  RK  N  "Position coaches won't read it. They'll
+              skim the color and move on."
+
+  1:45  BR  *  Brings in his Saint Vincent rebuilding
+              experience. Says: (paraphrased: institutional
+              adoption depends on whether the dashboard
+              shows what the head coach asked them to
+              measure, not what we think matters)
+
+  1:47  BC  P  "The clinical line in the language is
+              exactly right."
+
+  1:52  RK  Q  Asks whether parent layer is on or off by
+              default. Worth following up in synthesis.
+
+
+WORKSHEET COLLECTION
+====================
+1. At ~2:10 (5 min before block ends), note-taker reminds
+   attendees: "Wrap up your worksheets in the next five
+   minutes."
+2. At 2:15, note-taker collects worksheets as attendees
+   stand. Worksheets go into a labeled folder
+   (Institutional / D2C / GTM).
+3. NAME field is optional; do not pressure attendees who
+   left it blank.
+4. Worksheets stay with the note-taker until end of day.
+5. Same evening: photograph or scan all worksheets into
+   secure shared storage. Originals to a sealed envelope
+   (one per segment) and into Arron + Nicole custody.
+
+
+AUDIO RECORDING DETAILS
+========================
+Equipment:
+  - Primary: dedicated voice recorder per breakout (3 total)
+  - Backup: phone recorder per breakout (3 total)
+  - Battery + memory check the morning of event
+
+Verbal recording confirmation (handled by Arron in
+the welcome block at 12:00-12:15):
+
+  "Just to confirm, we'll be recording today's breakouts
+   for our internal synthesis. The audio stays internal,
+   it's covered by your NDA, and we'll never share
+   identified clips externally without explicit permission.
+   By participating in the breakouts, you're consenting to
+   the recording. If anybody has a concern about that,
+   please flag it now or pull either of us aside before
+   the breakouts start at 1:30."
+
+File handling:
+  - Files named: VF_FocusGroup_2026-05-09_[Segment].mp3
+    (or comparable format)
+  - Transferred to secure shared storage same evening
+  - Submitted to transcription service within 48 hours
+  - Transcripts reviewed by Arron + Nicole within 7 days
+  - Audio retained internally for one year, then deleted
+    per data minimization principle
+
+
+POST-SESSION SYNTHESIS PLAN
+============================
+TIMELINE:
+  Event date:     May 9, 2026 (Saturday)
+  Audio captured: same day, transferred same evening
+  Transcripts:    by May 11 (~48 hours)
+  Worksheet scan: same evening
+  Synthesis Report v1: by May 16 (one week post-event)
+  Distribution:   May 16-17 to internal team and advisors
+
+OWNERS:
+  Synthesis Lead:    [TBD: Arron, Nicole, or split]
+  Transcription:     external service
+  Review:            Arron + Nicole jointly
+
+WHAT THE SYNTHESIS REPORT CONTAINS:
+  Section 1: Executive Summary
+    - 3-5 bullet headline findings
+    - Action items with owners and dates
+  Section 2: Per-Segment Findings
+    - Institutional: themes, quotes, action items
+    - D2C / Athlete: themes, quotes, action items
+    - GTM: themes, quotes, action items
+  Section 3: Cross-Segment Patterns
+    - Where segments agreed
+    - Where segments conflicted
+    - Cross-lens insights from attendees with secondary
+      perspectives (Ron, Liz, Noele, Jennifer, Tom, Bob)
+  Section 4: Open Questions and Follow-up Calls
+    - Attendees we want to circle back with for deeper
+      one-on-one conversations
+    - Specific questions raised that we couldn't resolve
+      in the room
+  Section 5: Decisions
+    - What this focus group changed about our plan
+    - What this focus group confirmed
+    - What this focus group failed to resolve
+
+FORMAT:
+  - Word document (.docx) for primary distribution
+  - Internal-only initially
+  - Sanitized 2-page executive summary may be shared with
+    advisory board members on request
+
+DECISION GATE:
+  Within 14 days of synthesis distribution (by May 30),
+  Arron + Nicole make explicit go/no-go decisions on:
+  - Pricing direction (D2C-Premium price point)
+  - Institutional GTM strategy (single-app vs white-label)
+  - Sequencing (D2C-first vs institutional-first)
+  - Parent layer scope adjustments
+  - Any compliance positioning changes
+
+
+CONTINGENCY: ATTENDEE OBJECTS TO RECORDING
+============================================
+If an attendee objects to recording in the welcome block
+(unlikely given NDA, but possible):
+  - Acknowledge the concern: "Understood, that's fair."
+  - Offer two options:
+    a) Their breakout uses note-taker only (no audio)
+    b) Their specific responses are flagged and excluded
+       from any clip-sharing or transcript distribution
+  - Note-taker for that breakout switches to detailed
+    verbatim mode to compensate for missing audio
+  - Document the objection in synthesis report ops notes
+
+
+CONTINGENCY: NOTE-TAKER UNAVAILABLE
+====================================
+If a designated note-taker can't make it:
+  - Facilitator note-takes during slow moments
+  - Backup recorder runs continuously to catch what
+    facilitator misses
+  - Synthesis weighs that breakout's findings slightly
+    lower in cross-segment confidence scoring
+
+
+CONTINGENCY: TWO ROOMS NOT ENOUGH
+==================================
+The Hampton Inn room is reserved all day. If breakouts
+need physical separation (audio bleed risk):
+  - Confirm with venue ahead of time about partition or
+    secondary space access
+  - Worst case: stagger breakouts (one at a time) but
+    this triples the time, not viable
+  - Best case: Hampton has flexible event space, all
+    three breakouts in same room with chair-grouping
+    separation. Audio bleed is acceptable for this
+    purpose.
+
+
+PRE-EVENT CHECKLIST (May 8, day before)
+========================================
+[ ] Three voice recorders charged and tested
+[ ] Three backup phones with recording app installed
+[ ] Memory cards / phone storage adequate
+[ ] Three labeled worksheet folders prepped
+[ ] Three labeled note-taker notebooks or laptops prepped
+[ ] Note-takers briefed on shorthand convention (this doc)
+[ ] Note-takers have NDAs signed
+[ ] Synthesis lead designated and aware of timeline
+[ ] Transcription service account confirmed and ready
+[ ] Secure storage location confirmed (Drive, OneDrive, etc.)
+[ ] Welcome block verbal confirmation script reviewed (see
+    Welcome_and_NDA_Flow.txt)

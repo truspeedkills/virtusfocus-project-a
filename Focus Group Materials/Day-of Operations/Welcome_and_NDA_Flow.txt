@@ -1,0 +1,380 @@
+"VIRTUSFOCUS" FOCUS GROUP: WELCOME SCRIPT + NDA-AT-DOOR FLOW
+=============================================================
+Event:        May 9, 2026 (Saturday)
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+Schedule:     11:30-12:00 check-in window | 12:00-12:15 welcome
+Last updated: 2026-05-01
+Owners:       Arron (welcome lead) + Nicole (operational support)
+
+
+PURPOSE
+=======
+Two deliverables in one document:
+
+1. WELCOME SCRIPT (12:00-12:15, Arron-led)
+   The 15-minute block before the pitch. Sets the tone,
+   confirms recording consent, frames why this room is
+   here, and hands cleanly to Nicole at 12:15.
+
+2. NDA-AT-DOOR FLOW (11:30-12:00 check-in window)
+   How attendees actually get in the door. Covers QR
+   code primary path, printed fallback for less-tech
+   attendees, sign-in roster, and the check-in lead role.
+
+
+====================================================
+PART 1: WELCOME SCRIPT
+====================================================
+Speaker:  Arron
+Slot:     12:00-12:15 (15 minutes)
+Hand-off: To Nicole at 12:15 for pitch Section 0
+
+
+STRUCTURE
+=========
+1. Opening greeting + hosts intro    (~2 min)
+2. NDA + recording confirmation      (~2 min)
+3. Why this room                     (~3 min)
+4. Today's goal: extract, not validate (~2 min)
+5. How today flows                   (~3 min)
+6. Quick logistics                   (~1 min)
+7. Hand-off to Nicole                (~1 min)
+
+OPTIONAL go-around for name introductions can be inserted
+between Step 2 and Step 3, but with 11-12 attendees plus
+hosts, that adds 5-7 minutes. RECOMMENDED: skip the
+go-around. Attendees have name tags (color-coded by
+segment per pickup notes) and can introduce themselves
+at lunch. Spend the time on substantive welcome instead.
+
+
+====================================================
+SCRIPT (Arron, ~700 words / ~10 min spoken)
+====================================================
+
+[ARRON STEPS UP. WAIT FOR ROOM TO SETTLE.]
+
+1. OPENING GREETING + HOSTS INTRO
+
+Hi everyone. Thanks for being here on a Saturday
+afternoon. Some of you traveled to get here. All of
+you signed an NDA on the way in. We do not take that
+lightly.
+
+I'm Arron. For those who do not know me, I have spent
+the last decade plus running a strength and conditioning
+business and coaching mental performance. This is the
+project I've been quietly working on for over a year
+that pulls those two threads together.
+
+[GESTURE TO NICOLE]
+
+This is Nicole. My partner in life and in this. We are
+co-founding "VirtusFocus" together. Nicole is going to
+take over the front of the room at 12:15 to walk you
+through the pitch portion of today, and you'll hear from
+her again at the end.
+
+2. NDA + RECORDING CONFIRMATION
+
+[PACE SHIFTS - DELIBERATE FOR THIS BLOCK]
+
+Quick thing I need to land before we start. You all
+signed an NDA at the door. That covers everything you
+see, hear, and read in this room over the next three
+hours. The product, the system, the mockups, the athlete
+materials, the pricing direction, the strategic
+questions we are asking you. It all stays in this room
+until we say otherwise.
+
+We will also be recording the breakouts after lunch.
+Audio only, internal use only, covered by the NDA you
+signed. We will never share identified clips externally
+without explicit permission. The recording is so we can
+synthesize what you tell us properly. By participating
+in the breakouts, you're consenting to the recording.
+
+[PAUSE, SCAN ROOM]
+
+If anybody has a concern about that, please flag it now
+or pull either of us aside before the breakouts start
+at 1:30. We can accommodate.
+
+3. WHY THIS ROOM
+
+[PACE LIFTS, WARMER TONE]
+
+The reason you specifically are here. We had to be very
+deliberate about who we put in this room. Every one of
+you was selected because you bring a perspective we
+need and could not buy or replicate.
+
+We've put you into three rough groups for the breakouts
+later. Coaches and program-builders on one side. Parents,
+athletes, and youth-program operators on another. Market
+and strategy people on the third. The packets in front
+of you indicate which group you're in.
+
+But several of you bring more than one perspective into
+your seat, and we are going to ask about both. We will
+get specific about that in the breakouts.
+
+For now, just know that we did not invite anybody who
+does not have something specific to teach us today.
+
+4. TODAY'S GOAL: EXTRACT, NOT VALIDATE
+
+This is the part where I want to be clear and direct.
+
+This is a focus group. It is not a pitch. We are not
+trying to convince you of anything. We are about to put
+a real product, a real system, and the real shape of
+our business in front of you, and we are going to ask
+you to find the cracks.
+
+If you walk out of here later today telling us
+everything was great and we should ship it tomorrow,
+we have failed. The most useful thing you can do for us
+in the next three hours is push back, tell us what is
+wrong, name what would not work in your world, and
+explain why.
+
+Don't be polite. Be specific. Nicole will repeat that
+in different words at the end of her pitch, and we will
+say it again before the breakouts start. We mean it.
+
+5. HOW TODAY FLOWS
+
+Here is how the next three hours go.
+
+Right now and for the next fifteen minutes, this. Then
+Nicole and I are going to do a thirty-minute pitch
+together. We split it. She opens, I take the middle, she
+closes. You'll see how it works.
+
+After the pitch, I'll walk you through the app mockups
+for thirty minutes so you can see what an athlete and a
+parent and a coach would actually see. The mockups are
+in active design, not final, but they are far enough
+along that they're useful for what we're going to ask
+you in the breakouts.
+
+Then we eat. Lunch is right here in the room.
+
+After lunch, you'll split into your three groups for
+forty-five minutes of breakout work. Each group has a
+worksheet packet. Each group has a facilitator and a
+note-taker.
+
+Then we come back together for a thirty-minute
+conversation about pricing and deployment. That one we
+do as a single room. You can press hard there.
+
+Last fifteen minutes is cross-room synthesis. You hear
+what came out of the other groups, we react in real
+time, and we close.
+
+Three hours, no breaks longer than the lunch transition.
+If you need to step out at any point, just step out.
+Don't ask permission.
+
+6. QUICK LOGISTICS
+
+Bathrooms are just outside the door to the right.
+Coffee, water, and light snacks are on the side table.
+Help yourself anytime. WiFi password is on the cards in
+front of you if you need it. We're asking you to put
+phones away during the pitch and the mockups, but use
+them as you need to during the rest of the day.
+
+7. HAND-OFF TO NICOLE
+
+Last thing before I hand it over. Some of you know each
+other already, some of you don't. Don't worry about
+introducing yourselves to the whole room right now. Use
+lunch for that. Sit with people in your breakout group
+when we eat so you can get to know them before you
+have to argue with them productively at 1:30.
+
+[BEAT]
+
+Ok. Nicole is going to take it from here.
+
+[ARRON STEPS BACK. NICOLE STEPS UP.
+PITCH BEGINS AT 12:15.]
+
+
+====================================================
+PART 2: NDA-AT-DOOR FLOW
+====================================================
+Window:        11:30 AM - 12:00 PM (30 minutes)
+Lead:          [TBD: someone non-presenting]
+Backup:        Nicole if needed (Arron preparing for welcome)
+
+
+CHECK-IN LEAD ROLE
+==================
+The check-in lead is the first face attendees see. They
+own the door from 11:30 until 12:00 sharp. Their job is
+to:
+
+1. Greet each attendee warmly by name as they arrive
+2. Confirm NDA signature (QR primary, printed fallback)
+3. Mark them on the sign-in roster
+4. Hand them a name tag (color-coded by segment)
+5. Direct them to coffee, snacks, and seating
+6. Flag any unsure attendee or unexpected guest to
+   Arron or Nicole
+
+The check-in lead does NOT need to be Arron or Nicole.
+In fact, it should not be. Arron is preparing for the
+welcome block. Nicole is preparing for the pitch.
+
+OPEN QUESTIONS TO RESOLVE PRE-EVENT:
+  - Who is the check-in lead? Same person as a
+    note-taker, or different?
+  - Backup if check-in lead is delayed?
+
+REQUIREMENTS FOR THE CHECK-IN LEAD:
+  - Trusted (handles NDA-signed material)
+  - Has signed an NDA themselves
+  - Knows the attendee list and faces (or has a printed
+    sheet with photos)
+  - Can stay calm under last-minute logistical churn
+  - Available 11:15-12:15 (arrive early, stay for
+    welcome block)
+
+
+NDA SIGNING - THREE PATHS
+==========================
+
+PATH A: QR CODE (PRIMARY, ~80% of attendees)
+--------------------------------------------
+- QR code printed and posted at the entry table
+- QR code already configured in Slack canvas (per pickup)
+- Attendee scans, signs digitally on phone, takes ~60
+  seconds
+- Confirmation goes to Arron / Nicole shared email
+- Check-in lead verifies confirmation came through
+  before letting attendee in
+
+PATH B: PRINTED COPY (FALLBACK, ~20% of attendees)
+--------------------------------------------------
+- Stack of printed NDA copies at entry table
+  (recommended: 6-8 copies, covers ~50% of attendees
+  even if QR fails entirely)
+- Attendee signs in pen, hands signed copy to check-in
+  lead
+- Check-in lead initials and dates the back of each
+  signed copy
+- Signed copies stored in a sealed folder in
+  Arron + Nicole custody at end of event
+
+PATH C: PRE-SIGNED (SOME ATTENDEES, OPTIONAL)
+---------------------------------------------
+- For attendees who signed NDAs in advance through
+  Slack: confirm in the system, mark them on the roster,
+  proceed to name tag step
+- This is the fastest path if implemented for confirmed
+  attendees ahead of time
+
+
+SIGN-IN ROSTER
+==============
+A printed sheet at the entry table with this format:
+
+  ----------------------------------------------------------
+  ATTENDEE         | ARRIVED | NDA  | NAME TAG | SEGMENT
+  ----------------------------------------------------------
+  Rick Klimchock   |         |      |          | Inst
+  Bret Colbert     |         |      |          | Inst
+  Bob Colbert      |         |      |          | Inst
+  Ron Oswald       |         |      |          | D2C
+  Liz Marcheleovich|         |      |          | D2C
+  Alex Bohince     |         |      |          | D2C
+  Tamara Mahady    |         |      |          | D2C
+  Jon Reese        |         |      |          | GTM
+  Noele Creamer    |         |      |          | GTM
+  Jennifer Altimore|         |      |          | GTM
+  Tom Panigall     |         |      |          | GTM
+  Curt Smith       |         |      |          | TBD
+  [Other unsures]  |         |      |          | TBD
+  ----------------------------------------------------------
+
+Check-in lead initials each cell as completed:
+  ARRIVED: timestamp (e.g., 11:42)
+  NDA:     "QR" or "PRINT" or "PRE"
+  NAMETAG: check mark
+  SEGMENT: confirmed segment
+
+
+NAME TAGS
+=========
+Color-coded by segment for easy visual sorting in
+breakouts:
+  - Institutional: blue (matches packet cover color)
+  - D2C / Athlete: green (matches packet cover color)
+  - GTM:           amber (matches packet cover color)
+
+NOTE: Per Session 119/120 design notes, packet cover
+stock is already segment-color-differentiated. Name tag
+matching reinforces visual sorting at lunch and during
+breakouts.
+
+If colored name tags not feasible:
+  - Use plain name tags + segment letter sticker (I/D/G)
+  - Or rely entirely on packet cover stock for sorting
+
+
+CONTINGENCIES
+=============
+
+UNEXPECTED ATTENDEE (someone who didn't RSVP shows up):
+  - Check-in lead pulls Arron or Nicole quietly
+  - Decision case-by-case
+  - If admitted: NDA signed on the spot (printed copy),
+    name tag created if possible, segment assigned
+    based on best fit
+  - Likely candidates: Curt Smith finally confirms,
+    spouse of confirmed attendee, etc.
+
+UNSURE ATTENDEE NO-SHOWS:
+  - Mark roster as "no-show"
+  - Their packet stays in the segment pile (someone may
+    take an extra for review post-event)
+  - Synthesis report notes who attended vs RSVP'd
+
+LATE ARRIVAL (attendee shows after 12:00):
+  - Check-in lead processes them quietly during the
+    welcome block
+  - They slip into the back, get oriented during the
+    natural transition between welcome and pitch
+  - Welcome content can be summarized for them at lunch
+
+TECH FAILURE (QR doesn't work):
+  - Pivot 100% to printed NDA copies
+  - Have at least 6-8 printed copies on hand for this
+  - Keep a paper backup of the sign-in roster regardless
+
+
+PRE-EVENT CHECKLIST (May 8, day before)
+========================================
+[ ] QR code tested end-to-end (test attendee scans,
+    signs, confirmation arrives)
+[ ] 8 printed NDA copies stacked and ready
+[ ] Sign-in roster printed (2 copies; backup)
+[ ] Name tags prepared (color-coded by segment)
+[ ] Color-coded packet stacks ready (Institutional,
+    D2C, GTM, plus extras)
+[ ] Check-in lead briefed and confirmed available
+[ ] Check-in lead has NDA signed
+[ ] Check-in lead has roster + photo sheet (if
+    available) for face recognition
+[ ] Coffee + water + snacks confirmed delivered to
+    venue by 11:00
+[ ] WiFi password card at every seat
+[ ] Voice recorders + backup phones charged
+    (per Capture_Protocol.txt)
+[ ] AV setup confirmed at venue (laptop, projector or
+    TV, cables, sound check)
+[ ] Catering confirmed for 1:15 PM lunch service

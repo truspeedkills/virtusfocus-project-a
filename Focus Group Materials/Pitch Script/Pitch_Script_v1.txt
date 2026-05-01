@@ -1,0 +1,624 @@
+"VIRTUSFOCUS" FOCUS GROUP: COMPRESSED PITCH SCRIPT
+====================================================
+Event:        May 9, 2026 (Saturday)
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+Slot:         12:15-12:45 (between welcome and mockup walkthrough)
+Duration:     ~30 minutes spoken / ~2,895 words
+Speakers:     Nicole (opens + closes) + Arron (vision + proof)
+Format:       Tag-team, two clean hand-off seams, no mid-section tag-offs
+Last updated: 2026-05-01
+Version:      v1
+
+
+SPEAKER NOTES KEY
+=================
+[BRACKETS]   = stage direction (pause, pace, hand-off, gesture)
+"quotes"     = exact verbatim athlete language; read as written, even
+               if grammar/spelling looks wrong (it is the athlete's
+               own writing and the credibility is in the verbatim)
+
+
+CRITICAL DELIVERY NOTES
+=======================
+- ZERO em dashes anywhere in this script (project convention).
+  Use period, comma, or colon. Never substitute em dash on the fly.
+- "VirtusFocus" appears in straight quotes the first time only
+  (Section 1, Nicole). Plain VirtusFocus thereafter.
+- Athletes are anonymized as Athlete A / B / C with sport + level
+  disclosed. Do NOT use real names from the stage. Materials in
+  attendees' hands carry the same anonymization.
+- The Sunday Wk12 paradox quote (Section 3) and Hunter's "1%
+  better everyday" line (Section 3) are load-bearing. Read the
+  Sunday quote exactly as written (typos and all). The credibility
+  of the moment is in the verbatim.
+- Section 4 calls out attendees by first name. Look at each
+  named person when you say their name. Don't read names off
+  the page mechanically.
+
+
+====================================================
+SECTION 0: OPENING TRANSITION
+Speaker: Nicole | ~85 words | ~50 seconds
+====================================================
+
+[NICOLE STEPS TO PRESENTING POSITION. ARRON STEPS BACK.]
+
+Ok, let me get us going. Arron just walked you through how
+today is going to flow. The next thirty minutes is going to
+be the two of us. I'm going to set the table for you. Then
+Arron is going to take you inside the system and the work
+he's been doing. And I'll come back at the end to tell you
+exactly what we need from you in the breakouts after lunch.
+
+Then we eat.
+
+[BEAT]
+
+Then we put you to work.
+
+
+====================================================
+SECTION 1: THE PROBLEM
+Speaker: Nicole | ~395 words | ~4 minutes
+====================================================
+
+Mental performance is a gap that everybody knows about and
+nobody knows how to close at scale.
+
+Every coach in this room knows the gap. Rick, Bret, and Bob
+have coached at high levels for decades between them.
+
+[LOOK AT EACH AS NAMED]
+
+You have watched athletes whose mental game was the limiting
+factor, not their physical capability. The athletes who
+understood themselves were the ones who got the most out of
+themselves.
+
+The way mental coaching currently works is one of two ways.
+One: a one-on-one relationship with a sport psychologist.
+That works, when it works, but it is slow, expensive,
+reactive, and usually only the most resourced athletes get
+to access it. Two: a generic team meeting once a quarter
+with a deck and a guest speaker, no follow-through, no
+individual signal, no durability beyond the room.
+
+Neither of those scales. Neither of those is durable.
+Neither of those gives a coach insight into how an athlete
+is actually carrying their week.
+
+[PAUSE. TONE SHIFT TO DELIBERATE]
+
+I want to draw a line right here, because if I don't,
+somebody in this room is going to wonder about it for the
+next three hours. There is mental performance work, and
+there is mental health care.
+
+[PAUSE]
+
+They are not the same thing.
+
+Mental health is clinical. Anxiety, depression, diagnosis,
+treatment. It belongs to licensed professionals. It is
+provided by campus counseling, by clinicians, by mental
+health services. It is confidential clinical care.
+
+Mental performance is another thing entirely. Focus under
+pressure. Consistency. Confidence stability. How an athlete
+responds after a mistake. Self-regulation. Leadership and
+accountability. That is what "VirtusFocus" is. It is not
+therapy and we are not pretending to be. When clinical care
+is needed, it is handled by licensed professionals, exactly
+as it should be.
+
+We bake that distinction into every layer of what we built.
+It matters for compliance coordinators. It matters for
+legal teams. It matters for ADs. And it matters for parents.
+We take it seriously, and we built the system around the
+Performance vs Health distinction from the start.
+
+[PACE PICKS BACK UP. TRANSITION INTO HAND-OFF]
+
+Which gets us to what Arron has actually developed to close
+that gap, while staying inside that line.
+
+[TURN TO ARRON]
+
+Arron.
+
+[HAND-OFF #1. NICOLE STEPS BACK. ARRON STEPS TO PRESENTING
+POSITION.]
+
+
+====================================================
+SECTION 2: THE VISION
+Speaker: Arron | ~720 words | ~7 minutes
+====================================================
+
+Thanks Nicole.
+
+[BEAT]
+
+Ok.
+
+What we built is an athlete-led coaching system. The app is
+the surface, the part you'll see in twenty minutes when I
+walk you through the mockups. The system underneath the app
+is where the actual work happens.
+
+Here's what an athlete does daily. About five minutes,
+total. In the morning they do something we call a Morning
+Tune-Up. It's brief, it's structured, it sets an intention
+for the day. In the evening they do a Review. Five
+yes-or-no questions, brief journaling across three life
+domains, and a Bullseye exercise that maps what they can
+control, what they can influence, and what they can't.
+
+Five minutes a day. Once a week, they do an eight to
+twelve-minute weekly recap that goes deeper.
+
+What that produces over the course of a week are hundreds
+of signals that we can use to write a coaching message for
+that athlete that lands like I have been with them every
+day.
+
+[PAUSE]
+
+That's the bar.
+
+For each athlete, every week, the system produces four
+layers of output.
+
+First, for the athlete: a coaching message and a Deep Dive
+analysis. The message is direct, in my voice, about that
+athlete specifically. The Deep Dive goes alongside it for
+athletes who want to read deeper into their week.
+
+Second, for the parents, in the D2C-Premium tier: a
+parent-facing summary and parent-facing analytics that
+respect the athlete's privacy. Parents see what they need
+to support their kid. They do not see their kid's journal
+entries, they do not see the raw daily inputs, they do not
+get surveillance of the athlete. The athlete's reflective
+space stays private.
+
+Third, for institutional coaching staff: a weekly
+performance dashboard for each athlete on the roster, plus
+a team-level snapshot with athlete and team analytics
+aggregated. Position coaches see what they need. Head
+coaches see what they need. ADs see what they need. The
+clinical line is held inside that dashboard the same way
+it's held everywhere else: no clinical content, no
+surveillance framing, no language that anybody on the staff
+would have to redact.
+
+Fourth, the daily layer that connects the other three. A
+short morning coaching snippet that goes to the athlete
+alongside their Morning Tune-Up. A daily coaching signal
+that goes to the institutional coaching staff alongside
+their dashboard. Daily cadence, kept short, kept on the
+coaching side of the line.
+
+Every layer is non-clinical. Every layer is rooted in the
+athlete's own words.
+
+[PACE SHIFTS. MORE DELIBERATE FOR THE NEXT BLOCK]
+
+The hard part of building this, the thing nobody talks
+about when they say "AI coaching," is that AI by default
+produces generic output. Patterns leak in. Telegraphed
+language. Phrases that sound like a coach who has not been
+in the room. The voice flattens out and you end up with
+something that reads more like a performance review than a
+coaching conversation.
+
+We built an audit layer behind every output that catches
+and corrects those failure modes before anything reaches
+the athlete. Every week, every athlete, every output gets
+audited against fourteen specific criteria for voice
+quality, clinical compliance, framework integrity, and
+pipeline data leakage. If it fails, it gets corrected or
+regenerated. The audit log is separate from the coaching
+content. The athlete never sees the failures, they see the
+corrected output.
+
+The voice that comes out the other end is mine. The system
+has spent about a hundred and twenty working sessions
+teaching itself my voice, from real coaching transcripts
+and athlete-by-athlete production output that I review and
+revise. We monitor for drift weekly. When the voice slips,
+we catch it and rebuild from real exemplars.
+
+[PAUSE]
+
+It is not chasing perfection. It is protecting the human
+signal.
+
+[PACE LIFTS. TRANSITION INTO PROOF]
+
+In about eight minutes, when we move to the mockup
+walkthrough, you'll see what this looks like as an app.
+But before we get there I want to ground all of this in
+three real athletes, because the whole point of the system
+is the athletes who are using it. Three athletes I've
+coached personally in Strength & Conditioning for over 5
+years and over the last twelve weeks in this program.
+
+Three completely different sports. Three completely
+different stories. Same coach, same voice, different work.
+
+[BEAT]
+
+Athlete A first.
+
+
+====================================================
+SECTION 3: PROOF (THREE ANCHOR STORIES)
+Speaker: Arron | ~1,055 words | ~10 minutes
+====================================================
+
+Athlete A is a Division-Two women's softball player.
+Outfielder. She's been in the program for twelve weeks now.
+Her packet is in your materials and the twelve-week visual
+is one of the artifacts in front of you, anonymized.
+
+When she came into the program, the goal she wrote on her
+own intake form was that she wanted to stay confident in
+her ability during competition. She wrote that her
+confidence depended on whether she got on the field. If
+she played, she felt good. If she didn't, she felt
+invisible.
+
+She's an underclassman in a deep program. Playing time is
+scarce. Her coach hasn't told her she's first off the
+bench in weeks. Most athletes in her shoes either check
+out or pretend it doesn't hurt. She did neither.
+
+Twelve weeks in, her last full week, two things happened
+that I want to read to you from her own writing.
+
+[PACE SLOWS. THIS IS THE LOAD-BEARING BLOCK]
+
+On Wednesday this past week, after practice, she wrote in
+her recap:
+
+[READ AS WRITTEN]
+
+"fast asf today tbh, got all my mf bunts down."
+
+[PAUSE]
+
+That sentence.
+
+[PAUSE]
+
+That was the first time in twelve weeks she had named the
+quality of her own work, in real time, without me asking
+the question. The whole program has been teaching her to
+do that. To stop waiting for the field to confirm her, and
+to recognize what she's actually doing while she's doing
+it. Twelve weeks of work to produce that one sentence. It
+showed up Wednesday.
+
+Then on Sunday, the same week, she wrote this. And I'm
+going to read it exactly the way she wrote it.
+
+[READ EXACTLY AS WRITTEN. DO NOT CORRECT GRAMMAR OR
+SPELLING. THE CREDIBILITY IS IN THE VERBATIM.]
+
+"I did so good, and it still just like doesnt matter. but i
+cant say it doesnt matter because like it does, its just
+annoying but once again oh well."
+
+[LONG PAUSE]
+
+That one sentence holds the entire week in one place. The
+work was visible to her. She named it. The coaching staff
+saw it. The outcome did not change. She did not get
+playing time. And she kept going anyway.
+
+That last part, kept going anyway, is what twelve weeks of
+program have been building toward. When she walked in, her
+confidence depended on the field. By Sunday of week
+twelve, her confidence had moved out of needing the field
+to confirm it. That is outcome-independent confidence, and
+it is exactly what this program was built to produce.
+
+[PAUSE. DELIBERATE EMPHASIS]
+
+I did not write that for her. The system did not produce
+that. She produced that, and the system caught it and
+named it back to her at the right moment.
+
+[PAUSE]
+
+Her packet, with the twelve-week arc, is in your
+materials.
+
+[PACE LIFTS. TRANSITION TO ATHLETE B]
+
+Athlete B is different. Division-Two men's track and
+field. Throws. Shot put, discus, hammer. Senior, last year
+of his collegiate career. Ten weeks in the program with
+us.
+
+Week four of his program, he competed at his conference
+championship. He had a bad meet. He went home and
+processed it. The next competitive week, week five, he
+competed at the same events at a different meet, and he
+broke his school record in shot put. Outdoor, school
+record, the outdoor conference opener.
+
+In his own words, after that meet:
+
+[READ AS WRITTEN]
+
+"It wasn't about hitting my furthest marks, just hitting
+the marks I aimed for, while also setting myself up for a
+good start."
+
+That is a coaching philosophy in a single sentence,
+written by the athlete. He stopped chasing outcomes and
+started executing targets.
+
+The why he gave for it was: "properly planned, not
+spontaneous." That was his diagnosis of what went wrong at
+the championship two weeks earlier, and what he had fixed
+in the days between meets.
+
+Then over the next five weeks, that preparation principle
+expanded across three different timescales. Week four was
+retrospective: looking backward at what failed and
+extracting the lesson. Weeks five and nine were
+prospective: planning forward into the next meet with
+deliberate intention. Week nine, by the way, he broke the
+school record again, this time at a different venue, while
+his team had no consistent practice access and he had
+skipped his usual lift schedule. The preparation system
+held under worse conditions than the first time it had
+worked.
+
+And then week ten, the last regular season meet of his
+collegiate career, the principle showed up at a third
+timescale. Mid-competition. He was at a non-essential meet
+on a wet day, the hammer ring was slippery, and he made a
+real-time strategic decision to scratch the hammer event
+to preserve himself for the conference championship the
+following week. That decision was not spontaneous either.
+He named it explicitly in his recap, the same way he had
+named the lesson at week five.
+
+[PAUSE]
+
+A preparation principle that operates retrospectively,
+prospectively, and in-the-moment. By his last week of his
+collegiate career.
+
+He advanced to the next program phase that week, his final
+week. The system caught the advancement. He earned it.
+
+[PACE LIFTS. TRANSITION TO ATHLETE C]
+
+Athlete C is a high school wrestler. Brand new athlete,
+first week back in the program after a season-ending knee
+injury sustained in the state semifinals. Forfeited his
+remaining matches, finished sixth in the state, surgery,
+rehabilitation. He's still in an immobilizer and using
+crutches.
+
+Same week he started in our program, his team held its
+end-of-season banquet. He won his school's Wrestler of
+the Year award.
+
+His first week back. His own weekly goal, written by him:
+
+[READ AS WRITTEN]
+
+"1% better everyday with the intention of healing as best
+as possible."
+
+The hard part of coaching a recovering athlete is that
+there is no competition to anchor pre-performance routines
+to. He's not training or wrestling. He's doing PT,
+compression therapy, leg extensions, sunlight, family
+meals, the rest days that are actually rest. There's no
+opponent. There's no outcome to score against.
+
+What he did, on his own, in week one, was take the
+work-anchored thinking he had named on his intake form,
+the kind of thinking that competitive athletes use before
+high-stakes moments, and translate it directly into
+recovery. Same hinge habit, different room. The system
+noticed it and built the next coaching message on top of
+it.
+
+[PAUSE. WRAP THE THREE STORIES]
+
+Three athletes. Three sports. Three completely different
+weeks. Same coach. Same voice. Different work.
+
+[PAUSE]
+
+That is what scale looks like when the human signal stays
+intact.
+
+[TURN TO NICOLE]
+
+And so this is where we are, and what we need from this
+room.
+
+[BEAT]
+
+Nicole.
+
+[HAND-OFF #2. ARRON STEPS BACK. NICOLE STEPS TO
+PRESENTING POSITION.]
+
+
+====================================================
+SECTION 4: WHERE WE ARE / WHAT WE NEED
+Speaker: Nicole | ~640 words | ~5 minutes
+====================================================
+
+Thanks Arron.
+
+Quick recap on where we are, then I want to spend most of
+this section on what we need from you.
+
+Where we are. The system is specification-complete. The
+coaching pipeline runs end-to-end. We have validated it
+across groups of athletes including the three Arron just
+walked you through. The app is in active design with our
+development partner. From here, the work is standard
+launch-curve work: backend development, live daily
+validation when pilot program athletes start using the
+prototype app at scale, continuing to refine the system.
+
+[BEAT]
+
+Nothing exotic.
+
+[PACE SHIFTS. DELIBERATE FOR THE ASK]
+
+What we need from you, and this is the most important part
+of what we are going to do today.
+
+You have all signed an NDA. We are about to put a real
+product, a real system, and the real shape of our business
+in front of you in the next two and a half hours. We are
+not asking you to validate it.
+
+[PAUSE]
+
+We are asking you to find the cracks.
+
+That is the difference between a focus group and a pitch,
+and that is why you were invited into this room.
+
+We will split you into three breakout segments after
+lunch, each with worksheets that are in the packets in
+front of you. Each segment is asked five questions plus a
+free-form page.
+
+[SEGMENT-SPECIFIC ASKS. LOOK AT EACH NAMED PERSON AS YOU
+SAY THEIR NAME]
+
+For our institutional coaches in the room. Rick, Bret,
+Bob. If we dropped this in your program tomorrow, what
+would actually break? Where would your compliance
+department balk? Which staff members at which levels would
+not adopt it? What would the coaching staff want different
+from what we have designed? You have run programs. You
+know what does not survive contact with a real season.
+
+For our D2C and athlete-side perspective. Ron, Liz, Alex,
+Tamara. Would your athletes use this for around twenty
+dollars a month? Would your kids? Would the parents in
+your wrestling clubs and youth strength programs and
+softball communities pay for the parent layer? Where would
+the parent layer get it wrong? What about the system would
+feel less authentic to an athlete than a human coach?
+Press hard on that one.
+
+For our GTM and market perspective. Jon, Noele, Jennifer,
+Tom. How do we tell this story? What in our current
+positioning is wrong, or off, or working against itself?
+Should the institutional product be a single VirtusFocus
+app or a white-labeled version per institution? Should we
+lead D2C or institutional in market? What competitor or
+category are we underestimating?
+
+[PACE PICKS UP SLIGHTLY. CROSS-ROOM]
+
+There are cross-room dynamics in your packets too. Several
+of you bring more than one perspective into your seat.
+Ron, you have been a collegiate athlete and you run a
+youth wrestling club. Liz, you have taught early-childhood
+ed, and currently teach life skills, you also run youth
+fitness programs. Noele, you write professionally and you
+parent collegiate athletes. Jennifer, your hypnotherapy
+practice puts you adjacent to our category in a way nobody
+else in the room is. Tom, Thirty+ years of consumer-brand
+marketing and sales at companies our size and bigger. Bob,
+you have built a program from the ground up.
+
+We are going to ask you about your secondary perspectives
+in your breakouts. Bring both.
+
+The packets in front of you have everything you need. The
+worksheets you will fill in during your breakout. The
+artifact packets so you can see what we actually produce.
+The progression visuals for two of the athletes Arron just
+told you about.
+
+[PACE SHIFTS. DIRECT, EYE CONTACT WITH ROOM]
+
+Don't be polite. Be specific. The breakout questions are
+designed to get sharp, but the value of this room is the
+unfiltered read.
+
+[PAUSE]
+
+We can't get this anywhere else.
+
+[PACE LIFTS. CLOSING TRANSITION]
+
+Arron is going to walk you through the mockups next.
+
+Then we eat.
+
+Then we get to work.
+
+[PAUSE]
+
+Thank you for being here.
+
+[NICOLE STEPS BACK. ARRON STEPS FORWARD FOR MOCKUP
+WALKTHROUGH BLOCK 12:45-1:15.]
+
+
+====================================================
+END OF PITCH SCRIPT
+====================================================
+
+
+CONTINGENCY NOTES
+=================
+
+If running long (over 30 min):
+  Trim Section 4 cross-room dynamics paragraph. The
+  segment-specific asks are non-negotiable; the cross-room
+  recognition is a nice-to-have that can compress to one
+  sentence ("Several of you bring more than one
+  perspective into your seat. We will ask about both in
+  your breakouts.") if needed.
+
+If running short (under 27 min):
+  Add ~30-60 seconds to Athlete C (Hunter) by extending
+  the work-anchored translation paragraph. Specifically,
+  the moment where he translated competitive
+  pre-performance thinking into recovery is the strongest
+  beat in that story and can hold more weight.
+
+If a savvy attendee asks "but who actually wrote the
+coaching message, was it AI or you?" during Q&A
+(after pitch, during breakouts, or at synthesis):
+  Suggested answer for Arron: "I built the system. The
+  system wrote the message. The athlete wrote the moment
+  that produced both. The coaching signal is hers. The
+  voice is mine. The audit layer makes sure the voice
+  stays mine and the coaching stays clean."
+
+If asked about pricing specifics in front of GTM segment:
+  "Around twenty dollars a month for D2C-Premium" is what
+  is committed in this script. Institutional pricing not
+  named here intentionally; that comes up in the
+  pricing/deployment block at 2:15-2:45.
+
+If asked about clinical-vs-performance line in front of
+institutional segment:
+  Reinforce Section 1 framing. Mental health = clinical,
+  licensed professionals. Mental performance = VirtusFocus,
+  non-clinical, performance language only. Distinction is
+  baked into every pipeline layer with explicit Stage 5
+  audit criteria for clinical language detection.

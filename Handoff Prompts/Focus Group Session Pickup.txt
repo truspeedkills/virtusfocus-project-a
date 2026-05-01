@@ -1,6 +1,6 @@
 FOCUS GROUP SESSION PICKUP NOTE
 ================================
-Updated: 2026-05-01 (end of Session 120)
+Updated: 2026-05-01 (end of Session 121)
 Event Date: 2026-05-09 (8 days out)
 Print Deadline: 2026-05-06 (5 days out)
 
@@ -107,16 +107,35 @@ Proposed segment mapping:
 
 PENDING WORK FOR MAY 9
 ======================
-Substantive (next session):
-  (a) Compressed 30-min pitch script outline -- LARGEST REMAINING
-      ITEM. Handoff prompt prepared (see "Pitch Script Handoff
-      Prompt.txt" in Handoff Prompts/).
-  (b) Capture protocol with note-taker assignments and recording
-      confirmation.
-  (c) Welcome script + NDA-at-door flow (with printed NDA copies
-      for less-tech attendees).
+Substantive (DONE in Session 121):
+  (a) DONE. Compressed 30-min pitch script saved to
+      Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
+      Tag-team Option B: Arron welcomes / Nicole opens
+      pitch / Arron vision+proof / Nicole closes / Arron
+      mockup walkthrough.
+  (b) DONE. Capture protocol saved to
+      Focus Group Materials/Day-of Operations/Capture_Protocol.txt
+      Three capture surfaces, sentiment-code shorthand,
+      7-day synthesis plan with May 30 decision gate.
+  (c) DONE. Welcome script + NDA-at-door flow saved to
+      Focus Group Materials/Day-of Operations/Welcome_and_NDA_Flow.txt
+      Arron-led 15-min welcome, verbal recording confirmation
+      embedded, NDA QR + printed fallback + sign-in roster.
 
-Logistics:
+Pre-event open structural assignments (FLAGGED, need user
+resolution before May 8):
+  (g) GTM breakout facilitator. Two co-founders for three
+      breakouts. Either Arron/Nicole rotate through GTM
+      after Institutional and D2C settle into discussion,
+      or designate a third facilitator. Decide pre-event.
+  (h) Three note-takers (one per breakout). Recommended
+      approach: NDA-signed trusted observers, separate
+      from facilitators. Names + NDA confirmation by May 8.
+  (i) Check-in lead for 11:30-12:00 window. Non-presenting
+      person, NDA-signed, available 11:15-12:15. Name
+      confirmed by May 8.
+
+Logistics (still pending):
   (d) Print run finalization by May 6 deadline. PDFs are
       print-vendor-ready in Focus Group Materials/.
   (e) Backgrounds for remaining "unsure" attendees (Curt Smith
@@ -124,32 +143,37 @@ Logistics:
   (f) Catering finalized + payment.
 
 No-action / awaiting-event:
-  - Attendee name tags color-coded by segment (or accept that
-    cover stock differentiation is sufficient).
-  - Check-in lead identified for 11:30-12:00 window.
+  - Attendee name tags color-coded by segment (Capture and
+    Welcome docs both reference; cover stock matches).
   - AV setup confirmed at venue.
 
 
 NEXT SESSION KICKOFF
 ====================
-The pitch script is the priority for the next fresh session. A
-comprehensive handoff prompt has been written:
+The pitch script + Day-of Operations work is DONE (Session 121).
+All three deliverables are committed and pushed:
 
-  Handoff Prompts/Pitch Script Handoff Prompt.txt
+  Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
+  Focus Group Materials/Day-of Operations/Capture_Protocol.txt
+  Focus Group Materials/Day-of Operations/Welcome_and_NDA_Flow.txt
 
-Open a fresh session and paste:
+Remaining pre-event work is mostly logistics (d/e/f) plus
+three structural assignments (g/h/i). No fresh session needed
+unless one of those triggers substantive new work.
 
-  "Read Handoff Prompts/Pitch Script Handoff Prompt.txt and
-   execute it."
+If any of the following come up before May 9, they may
+warrant a session:
+  - Pitch script revisions after Arron + Nicole rehearse
+  - New attendee confirmed (background + segment placement)
+  - Compliance question requires clarification document
+  - Pricing/deployment block content needs drafting
+    (currently planned to be free-form discussion led by
+    Arron + Nicole at 2:15-2:45)
 
-The handoff prompt covers:
-  - Pitch script (primary)
-  - Capture protocol (secondary)
-  - Welcome + NDA-at-door flow (secondary)
-
-It instructs the fresh session on full context loading, locked
-decisions, reference files, execution phases, success criteria,
-and what NOT to do.
+Otherwise the next planned session is post-event synthesis,
+beginning May 10 (day after) with audio transcripts in hand
+and worksheet scans available. Synthesis Report v1 target:
+May 16 (one week post-event).
 
 
 KEY FILE PATHS
