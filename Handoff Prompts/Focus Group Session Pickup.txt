@@ -121,6 +121,40 @@ HS coach view in addition to former-athlete lens.
 
 PENDING WORK FOR MAY 9
 ======================
+Substantive content updates (NEXT SESSION):
+  (j) Integrate Gio Vonne Sanders into focus group materials.
+      Late RSVP confirmed 2026-05-01 in adjacent session
+      after Pitch Script + Capture Protocol + Welcome+NDA
+      Flow were already finalized and rendered to .docx +
+      .pdf. Cross-references in three places:
+
+      1. Pitch_Script_v1.txt — Section 4 (Nicole closing)
+         currently calls out "Rick, Bret, Bob" for the
+         Institutional segment. Add Gio. Decide whether to
+         keep 3-name call-out or expand cross-lens probe
+         (NCAA Transfer Portal experience, dual-sport
+         skill transfer) into the spoken Section 4 ask.
+
+      2. Capture_Protocol.txt — Institutional breakout
+         assignment block currently lists 3 attendees
+         (Rick, Bret, Bob). Add Gio Vonne Sanders. Note
+         the now-balanced 4-4-4 segment count and any
+         shorthand-convention examples that reference
+         attendee initials should consider his initials
+         (GV or GS). Update facilitator/note-taker capacity
+         expectations for the larger institutional breakout.
+
+      3. Welcome_and_NDA_Flow.txt — Sign-in roster table
+         needs Gio Vonne Sanders added to the Institutional
+         segment row. NDA-at-door process applies same as
+         other attendees. Cross-lens flag (institutional
+         breakout secondary perspective probe) also worth
+         a brief mention if the welcome script is touched.
+
+      After .txt updates, regenerate .docx + .pdf via
+      `python make_reference_docs.py` and commit all
+      three deliverable pairs in one push.
+
 Substantive (DONE in Session 121):
   (a) DONE. Compressed 30-min pitch script saved to
       Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
