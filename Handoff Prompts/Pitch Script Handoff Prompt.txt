@@ -1,0 +1,462 @@
+PITCH SCRIPT + DAY-OF OPERATIONS HANDOFF PROMPT
+================================================
+Created: 2026-05-01 (Session 120 close-out)
+For: May 9, 2026 Focus Group Event
+Print Deadline: May 6, 2026
+
+This handoff scopes a fresh session to produce the compressed
+30-minute pitch script for the May 9 focus group, plus two
+secondary day-of operational deliverables (capture protocol +
+welcome / NDA-at-door flow). Modeled on the audit-and-rewrite
+handoff template that worked well in prior fresh sessions.
+
+
+=====================================================
+SECTION 1 — FIRST INSTRUCTION
+=====================================================
+
+Read this entire handoff prompt before taking any action.
+
+Then load context in this order:
+  1. CLAUDE.md (full)
+  2. Handoff Prompts/Focus Group Session Pickup.txt
+     (current state at end of Session 120)
+  3. Specific reference files per priority tiers below
+
+Do not begin drafting until context is loaded.
+
+
+=====================================================
+SECTION 2 — PURPOSE
+=====================================================
+
+Primary deliverable: a compressed 30-minute pitch script for
+the May 9 focus group, occupying the 12:15-12:45 block of the
+locked agenda. Frame: problem -> what we built -> where we are
+now -> what we need from this room. Less tech/architecture up
+front; more anchor stories from real athletes.
+
+The pitch is followed by a separate 30-minute mockup walkthrough
+block (12:45-1:15). The pitch script does NOT need to do the
+mockup tour — that is the next block. The pitch should reference
+the mockups briefly to set up the walkthrough but not perform it.
+
+Secondary deliverables (smaller, operational, do after pitch):
+  - Capture protocol (note-taker assignments, recording
+    confirmation, post-session synthesis plan)
+  - Welcome script + NDA-at-door flow (10-min welcome, check-in
+    process, printed NDA fallback for less-tech attendees)
+
+All three deliverables must be done before May 6 print deadline
+where applicable. Pitch script and welcome script are not printed
+materials but they are needed for May 9 readiness.
+
+
+=====================================================
+SECTION 3 — LOCKED DECISIONS (DO NOT REOPEN)
+=====================================================
+
+Format and agenda (locked Session 119, do not redesign):
+  - Focus group, not pitch (~50% present / 50% extract feedback)
+  - 3-hour total: Welcome 12:00-12:15 -> Pitch 12:15-12:45 ->
+    Mockup walkthrough 12:45-1:15 -> Lunch 1:15-1:30 -> Breakouts
+    1:30-2:15 -> Pricing/deployment 2:15-2:45 -> Synthesis
+    2:45-3:00.
+  - Three breakout segments: Institutional / D2C-Athlete / GTM.
+  - Featured athletes: Grace Kindel + Angelo Allen.
+
+Brand-name treatment (locked Session 120):
+  - Use "VirtusFocus" (proper CamelCase, in straight quotes the
+    first time it appears, signaling internal codename not trade
+    name).
+  - Per user explicit reasoning: "our tradename will be something
+    completely different."
+  - Do NOT use VIRTUSFOCUS in all caps for the brand. Section
+    labels like INSTITUTIONAL or CONTENTS in materials are fine
+    in all caps — those are not brand-name treatments.
+
+NDA framing (locked Session 120):
+  - Printed copies are collected at end of session.
+  - Digital copies available on request, delivered as personalized
+    watermarked PDFs.
+  - Watermarking enables leak attribution if any post-event leaks
+    occur.
+
+Anonymization (locked Session 119/120):
+  - Athlete A = Grace Kindel (D2 women's softball, infielder)
+  - Athlete B = Angelo Allen (D2 men's track and field throws)
+  - Athlete C = Hunter Snyder (HS wrestling, return arc post-injury)
+  - Sport + competitive level disclosed; names not.
+
+Scope boundaries:
+  - Do NOT redesign the agenda.
+  - Do NOT make the pitch longer than 30 minutes.
+  - Do NOT include the mockup demo in the pitch (it has its own
+    block).
+  - Do NOT use em dashes anywhere in the pitch script (project
+    convention).
+
+
+=====================================================
+SECTION 4 — PITCH SCRIPT DESIGN PARAMETERS
+=====================================================
+
+Length:
+  - 30 minutes spoken
+  - ~3,000 words target (assumes ~100 words/minute spoken pace
+    with pauses, slide transitions, demo gestures)
+  - Hard ceiling: 3,500 words. Anything beyond runs over.
+
+Frame (in order):
+  - Hook / problem (3-5 minutes)
+  - The vision / what we're building (8-10 minutes)
+  - Proof / what's already produced (8-10 minutes)
+  - Where we are / what we need from this room (4-7 minutes)
+
+Voice and tone:
+  - Coach Arron speaking in first person
+  - Less tech/architecture up front (per user direction Session 120)
+  - More emotional anchor on coach/athlete stories
+  - Reference real athletes by anonymized labels (Athlete A, B, C)
+    with sport + level
+  - Calm authority, not hype
+  - Allow for natural pauses; speakers reading scripts often
+    underestimate this
+
+Anchor stories to consider weaving in:
+  - Grace's 12-week confidence arc (outcome-dependent intake ->
+    outcome-INDEPENDENT self-recognition at Wk12; the "I did so
+    good, and it still just like doesnt matter. but i cant say it
+    doesnt matter because like it does..." paradox quote is the
+    keystone)
+  - Angelo's preparation-system arc demonstrated across three
+    timescales (retrospective Wk4, prospective Wks 5/9,
+    in-competition Wk10) culminating in phase advancement at the
+    final week of his collegiate career
+  - Hunter's first-week return after season-ending injury (work-
+    anchored "1% better everyday" goal translation, Wrestler of the
+    Year award context)
+  - The "preparation-quality drives performance" principle
+    validated twice (Shippensburg Wk5, Slippery Rock school record
+    Wk9) under increasingly constrained conditions
+
+What the room needs to walk away with:
+  - The problem is real and they know it (mental performance gap
+    in athlete development; current solutions don't translate)
+  - The system is real and produces real output (not vaporware)
+  - There is a coherent path from athlete intake to multi-audience
+    output (athlete CM/DD, parent CM/Insight, coach Insights/Team
+    Snapshot)
+  - The work being asked of the room in the breakouts is
+    specific, valuable, and structured — they are not
+    rubber-stamping
+  - Compliance and clinical-vs-performance line is taken seriously
+
+
+=====================================================
+SECTION 5 — REFERENCE FILES (PRIORITY ORDER)
+=====================================================
+
+TIER 1 (READ IN FULL):
+  1. CLAUDE.md - full project context
+  2. Handoff Prompts/Focus Group Session Pickup.txt - state
+     at session end
+  3. VirtusFocus_Pipeline_Comprehensive_Briefing v2.0.docx -
+     30-page comprehensive briefing covering full 7-stage pipeline,
+     intake (PPD/ABI), execution signals, forward anchor, 4 product
+     tiers, compliance, parent output, athlete validation. PRIMARY
+     SOURCE for pitch content; distill from this.
+
+TIER 2 (READ FOR SPECIFIC CONTENT):
+  4. App Information for Focus Group/Scott mockindex.html -
+     annotated design mockup gallery with session notes / design
+     notes / source / status sections per screen. Use to
+     understand which app screens carry the most positioning
+     weight, what's locked vs in-flight. Reference briefly in
+     pitch to set up the mockup walkthrough block.
+
+  5. App Information for Focus Group/mockindex.html - original
+     mockup. Companion reference.
+
+  6. App Information for Focus Group/Mental Health vs Mental
+     Performance Explainer Slide.docx - positioning artifact.
+     Important for the institutional segment AND general framing
+     (the non-clinical line is a foundational distinction). Read
+     to ensure the pitch does not blur this line.
+
+  7. App Information for Focus Group/NCAA Compliance/ - 3 docs
+     covering compliance positioning. Read to know what the
+     compliance answer is when an attendee asks (not for the
+     pitch directly, but for confidence in the framing).
+
+  8. Athlete arc summaries in CLAUDE.md - Grace, Angelo, Hunter
+     sections. Use to write anchor stories with concrete athlete
+     language and specific weekly inflection points.
+
+TIER 3 (CONSULT AS NEEDED):
+  9. Focus Group Materials/Athlete Materials/Grace Kindel/
+     - rewritten coaching outputs to verify quote accuracy
+     - audit-and-rewrite summary documents what changed in the
+       rewrites
+  10. Focus Group Materials/Athlete Materials/Angelo Allen/ - same
+  11. Focus Group Materials/Worksheets/*.txt - the question banks
+      attendees will respond to. Pitch should NOT preview these
+      questions (surprise factor preserves first-take honesty per
+      Session 119 worksheet design).
+  12. Focus Group Materials/Artifact Packets/*.txt - the cover
+      page TOCs. Tells you what's in each segment's packet.
+
+DO NOT READ unless specifically needed:
+  - Existing pipeline output for athletes (athlete CM/DD/Coach
+    Insight files in Athlete Data/) - these are background
+    context already captured in CLAUDE.md arc summaries
+  - Spec files in Agents - Generators/ - irrelevant to pitch
+
+
+=====================================================
+SECTION 6 — EXECUTION PHASES
+=====================================================
+
+PHASE 1: Outline structure (HIGH effort, ~30-45 min)
+  - Read Tier 1 references
+  - Spot-check Tier 2 (Mental Health vs Mental Performance
+    explainer is mandatory; mockup gallery skim)
+  - Draft top-level outline:
+      * Section name
+      * Time target (in minutes)
+      * Theme / what this section accomplishes
+      * Key anchor (story, quote, mockup reference, etc.)
+  - Total time targets must sum to 28-30 minutes (leave buffer)
+  - Stop. Present outline to user. Wait for go.
+
+PHASE 2: Draft section content (HIGH effort, 60-90 min)
+  - For each outlined section, draft full talking points
+    paragraph by paragraph
+  - Include athlete-language quotes where they land (verify
+    quotes against athlete material rewrites in Focus Group
+    Materials/Athlete Materials/)
+  - Mark any reference to mockup / artifact / breakout question
+    explicitly (e.g., "[reference Athlete A 12-week visual]")
+  - Word count check at end of phase: target ~3,000, ceiling 3,500
+  - No em dashes anywhere (use period, comma, or colon as
+    appropriate)
+  - Stop. Present full draft to user. Wait for revisions.
+
+PHASE 3: User review + revisions (collaborative, 30-60 min)
+  - User marks up sections that don't land or feel off
+  - Iterate on specific sections rather than full rewrites
+  - Time-box each revision pass (don't rabbit-hole on a single
+    paragraph)
+  - Flag if any revision pushes word count over 3,500
+
+PHASE 4: Final pass + speaker annotations (MEDIUM effort, 20-30 min)
+  - Read aloud and time it (or estimate at ~100 words/min)
+  - Add speaker notes inline where helpful (pauses, transitions
+    to mockups, emotional beats)
+  - Save final pitch script to disk:
+      Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
+      (create the Pitch Script subfolder if not present)
+  - Optional: also generate a .docx via the same generator
+    pattern (extend make_focus_group_docx.py if Arron wants a
+    formatted version for printing speaker copy)
+
+PHASE 5: Capture protocol (MEDIUM effort, 20-30 min)
+  - Define:
+      * 3 note-takers (one per breakout) — propose names; user
+        confirms or assigns
+      * Audio recording (NDA covers; confirm verbally at start)
+      * Note-taker shorthand convention (capture verbatim quotes,
+        mark which question, mark sentiment)
+      * Post-session synthesis plan (who reviews, by when, what
+        they produce)
+      * Worksheet collection process (collect at end of breakout,
+        attendee NAME field optional so respect anonymity)
+  - Save to:
+      Focus Group Materials/Day-of Operations/Capture_Protocol.txt
+  - Create the Day-of Operations subfolder if not present.
+
+PHASE 6: Welcome + NDA-at-door flow (MEDIUM effort, 20-30 min)
+  - 10-minute welcome script (covered by the 12:00-12:15 block):
+      * Greet, name introductions (consider quick go-around)
+      * NDA reminder (signed at door, but reinforce confidentiality)
+      * Why this group specifically (1-2 sentences per segment
+        purpose)
+      * Today's goal (NOT to validate; to extract what we're
+        missing)
+      * Format walk-through (briefly: pitch -> mockups -> lunch
+        -> breakouts -> pricing -> synthesis)
+  - NDA-at-door flow:
+      * Check-in lead (someone non-presenting, available
+        11:30-12:00)
+      * QR code primary path (already set up in Slack canvas)
+      * Printed NDA copies for less-tech attendees (need print
+        run estimate; ~5 copies should be plenty)
+      * Sign-in roster (track who attended for follow-up)
+  - Save to:
+      Focus Group Materials/Day-of Operations/Welcome_and_NDA_Flow.txt
+
+PHASE 7: Commit + push + close (LOW effort, 5-10 min)
+  - git status to confirm new files
+  - git add all new files
+  - git commit with descriptive message naming the deliverables
+  - git push origin HEAD:master
+  - Update Slack Focus Group Presentation canvas to mark
+    completed items
+  - Update CLAUDE.md if pitch script generation introduced new
+    spec considerations (probably not, but check)
+
+
+=====================================================
+SECTION 7 — CRITICAL OPERATING RULES
+=====================================================
+
+1. NO EM DASHES anywhere in the pitch script or supporting docs.
+   Project convention. Use period, comma, or colon as appropriate.
+
+2. ANONYMIZATION PRESERVED. Athlete A / Athlete B / Athlete C
+   in the script. Real names only if user explicitly asks.
+
+3. BRAND NAME: '"VirtusFocus"' with quotes the first time, then
+   VirtusFocus thereafter. Never VIRTUSFOCUS as the brand.
+
+4. NO RESCOPING. Don't redesign the agenda or extend the pitch
+   beyond 30 minutes. If you find more content than fits, cut
+   rather than expand.
+
+5. VOICE QUALITY. The pitch is Coach Arron speaking. Use his
+   voice as established in Voice Reference + Voice Foundations.
+   Calm authority, no hype, no marketing-flavored close, no
+   "transformative platform" language.
+
+6. CLINICAL LINE. The Mental Health vs Mental Performance
+   distinction is foundational. Pitch must not blur it. If a
+   passage uses clinical language (anxiety, trauma, clinical),
+   rewrite to performance language (pressure response, friction,
+   non-clinical).
+
+7. TIME-BOX REVISIONS. Don't rabbit-hole on a single paragraph.
+   If a paragraph isn't landing after 2 revision passes, move on
+   and come back.
+
+8. SAVE FREQUENTLY. After each phase, save what you have so far
+   even if not yet polished. The pitch script is creative work
+   and recovering a lost draft is expensive.
+
+
+=====================================================
+SECTION 8 — DELIVERABLES
+=====================================================
+
+Required files written to disk:
+  1. Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
+     (~3,000 words, full script with speaker notes)
+
+  2. Focus Group Materials/Day-of Operations/Capture_Protocol.txt
+     (~500-800 words, structured by note-taker / recording /
+     synthesis plan)
+
+  3. Focus Group Materials/Day-of Operations/
+     Welcome_and_NDA_Flow.txt
+     (~500-800 words, structured by welcome script + NDA flow +
+     check-in process)
+
+Optional:
+  4. Updated make_focus_group_docx.py if user wants a formatted
+     .docx for the pitch script (speaker copy)
+
+Required actions:
+  - Single commit with all deliverables
+  - Push to origin/master
+  - Update Slack Focus Group Presentation canvas
+  - Update CLAUDE.md Session Notes with brief Session 121
+    summary (single line is fine; this is operational, not
+    pipeline-changing)
+
+
+=====================================================
+SECTION 9 — SUCCESS CRITERIA
+=====================================================
+
+Pitch script:
+  - Reads as Coach Arron, not as a marketing brochure
+  - Lands the problem in 3-5 minutes without feeling rushed
+  - Includes at least 2 athlete-anchor stories with verbatim
+    journal quotes
+  - References mockups briefly to set up the walkthrough block
+  - Closes with what we want from the room (not what we want
+    them to think of us)
+  - Word count 2,800-3,200 (target 3,000); ceiling 3,500
+  - Zero em dashes
+  - Zero clinical language
+  - Anonymization holds throughout
+
+Capture protocol:
+  - 3 specific note-taker roles defined (names or
+    placeholders for user to fill)
+  - Recording method specified
+  - Worksheet collection process clear
+  - Post-session synthesis owner and deadline named
+
+Welcome + NDA flow:
+  - 10-min welcome script reads conversationally, not stiffly
+  - Check-in window covered
+  - Printed NDA fallback specified
+  - Sign-in roster purpose explained
+
+
+=====================================================
+SECTION 10 — FAILURE MODES (HANDLE THESE)
+=====================================================
+
+If pitch goes long after Phase 2 draft:
+  - First cut: tighten transitions and remove redundant framing
+    sentences
+  - Second cut: drop one anchor story (keep the strongest)
+  - Third cut: tighten the "problem" section (it tends to
+    overrun)
+  - Do NOT cut "what we need from this room" — that's the most
+    important closer
+
+If a section doesn't land after 2 revision passes:
+  - Document what's not working
+  - Move on; come back at end of Phase 4
+  - Fresh eyes after working on later sections often reveals the
+    fix
+
+If user wants to reopen a locked decision:
+  - Pause and confirm. Locked decisions from Session 119/120
+    drove a lot of downstream work (worksheets, packets, brand-
+    name treatment). Reopening one ripples.
+
+If you find missing context (something the pitch needs that's
+not in any reference file):
+  - Stop. Ask user. Don't fabricate.
+
+If a quote you want to use doesn't appear verbatim in the
+rewritten athlete materials:
+  - Verify against the original (preserved at Athlete Data/...)
+  - If discrepancy, use the original verbatim (athlete language
+    doesn't change in audit-and-rewrite — only coach prose does)
+
+
+=====================================================
+SECTION 11 — POST-EXECUTION CHECKLIST
+=====================================================
+
+Before declaring done:
+  [ ] Pitch script reads aloud in ~30 minutes (or estimated)
+  [ ] All three deliverable files saved to disk
+  [ ] Files committed and pushed to origin/master
+  [ ] Slack canvas updated with completion status
+  [ ] CLAUDE.md updated (single-line Session Notes flag is fine)
+  [ ] Working tree clean (git status)
+  [ ] User has read the pitch script at least once and
+      confirmed it lands
+
+After done:
+  - Print run for May 6 deadline can begin (PDFs already
+    vendor-ready from Session 120)
+  - Capture and welcome scripts go to whoever is running the
+    operational side of the day
+  - Remaining attendee backgrounds can be added to the segment
+    mapping if/when they confirm

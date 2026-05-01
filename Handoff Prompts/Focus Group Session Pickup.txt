@@ -1,59 +1,89 @@
 FOCUS GROUP SESSION PICKUP NOTE
 ================================
-Created: 2026-04-30
-Event Date: 2026-05-09 (9 days out at time of writing)
+Updated: 2026-05-01 (end of Session 120)
+Event Date: 2026-05-09 (8 days out)
+Print Deadline: 2026-05-06 (5 days out)
 
 
 PURPOSE OF THIS DOCUMENT
 ========================
 Pickup note for the May 9, 2026 private focus group session. Captures
-where Arron and Claude left off mid-planning so the work can resume
-from any machine, even if local conversation context is lost during
-travel, sleep, or shutdown.
+where Arron and Claude left off so the work can resume from any
+machine, even if local conversation context is lost.
+
+Replaces the original Session 119 pickup note. Reflects all work
+completed through Session 120 (focus group print materials production).
 
 
 EVENT BASICS
 ============
-Date: May 9, 2026
-Venue: Hampton Inn, 1000 Towne Square Dr
-Time: Noon-3pm (11am setup, room reserved all day)
-Format: Private focus group (NOT a pitch)
-NDA: QR code at door, set up
+Date:    May 9, 2026
+Venue:   Hampton Inn, 1000 Towne Square Dr, Greensburg
+Time:    Noon-3pm (11am setup, room reserved all day)
+Format:  Private focus group (NOT a pitch)
+NDA:     QR code at door + printed copies for less-tech attendees
 Source canvases in Slack #focus-group:
-  - Presentation Outline (canvas F0ALDMZHQDC)
-  - Event Prep (canvas F0AMA0QD1K2)
-  - Attendees (canvas F0AKXLJ8LR0)
+  - Presentation Outline canvas (F0ALDMZHQDC)
+  - Event Prep canvas (F0AMA0QD1K2)
+  - Attendees canvas (F0AKXLJ8LR0)
+  - Focus Group Presentation status canvas (F0B152E5K7W)
+
+
+WHAT'S DONE
+===========
+Print materials (all in Focus Group Materials/ tree, .docx + .pdf):
+  - 3 worksheet packets: Institutional / D2C-Athlete / GTM (7 pages
+    each: cover + 5 question pages + free-form)
+  - 2 athlete progression visuals: Grace 12-week, Angelo 10-week
+    (single-page each, gradient tier strips, athlete-quote callouts)
+  - 3 artifact packet covers: one per segment (single-page each,
+    segment-coded colored header band, TOC of contents)
+
+Athlete material rewrites (audit-and-rewrite, originals preserved):
+  - Grace Kindel: Wk1 + Wk7 CM/DD rewrites + Wk12 Parent CM +
+    Parent Insight (fresh generation under current spec) + audit
+    summary
+  - Angelo Allen: Wk5 CM/DD/Coach Insight rewrites + audit summary
+  - Hunter Snyder: Wk1 Parent CM already current spec (no work
+    needed, used as HS-context exemplar)
+
+Other:
+  - App Information for Focus Group folder under version control
+    (mockups, screen designs, NCAA compliance, IP inventory)
+  - Scott mockindex.html annotated design mockup gallery added
+  - Brand-name treatment locked: '"VirtusFocus" Focus Group'
+    (proper CamelCase + quotes signaling internal codename, not
+    trade name)
+  - NDA framing locked: collect printed at session, deliver digital
+    on request as personalized watermarked PDFs
+  - Slack canvases up to date
+
+Generator script:
+  - make_focus_group_docx.py at project root produces all 8 .docx
+    + 8 PDFs in one run. Rerun to regenerate everything from the
+    locked source content.
 
 
 LOCKED DECISIONS
 ================
-1. Format = focus group, not pitch. Session must be ~50% present /
-   50% extract feedback. Original outline reads pitch-shaped and
-   needs restructuring.
-
-2. Proposed agenda shape (3 hours):
-   12:00-12:15  Welcome, NDA reminder, why-you-are-here
-   12:15-12:45  Compressed pitch (problem -> built -> demo)
-   12:45-1:15   Mockup walkthrough + live reactions captured
-   1:15-1:30    Lunch
-   1:30-2:15    Segmented breakouts (3 groups, 4-5 each)
-   2:15-2:45    Pricing + deployment models (white-label etc.)
-   2:45-3:00    Cross-room synthesis + "what we missed"
-
-3. Three breakout segments:
-   - Institutional (collegiate coaches, ADs, HS coaches)
-   - D2C / Athlete-as-User (former high-level athletes, parent proxies)
-   - GTM (sales execs, content, marketing)
-
-4. Featured artifact athlete = Grace Kindel (recommended, awaiting
-   Arron's confirmation). 12-week confidence arc is the strongest
-   single narrative in the corpus. Suggested anonymization:
-   "Athlete A - D2 softball, infielder."
-
-5. The "how does this make me win more?" framing came from a real D1
-   coach. Valid intel for institutional-segment thinking. Use as ONE
-   question among several, paired with a problem-extraction question.
-   Do not let it dominate the institutional bank.
+1. Format = focus group, not pitch. ~50% present / 50% extract.
+2. 3-hour agenda: Welcome (12:00-12:15) -> Pitch (12:15-12:45) ->
+   Mockup walkthrough (12:45-1:15) -> Lunch (1:15-1:30) ->
+   Segmented breakouts (1:30-2:15) -> Pricing/deployment (2:15-2:45)
+   -> Cross-room synthesis (2:45-3:00).
+3. Three breakout segments: Institutional / D2C-Athlete / GTM.
+4. Featured athletes: Grace Kindel + Angelo Allen.
+5. Anonymized as Athlete A (Grace) and Athlete B (Angelo) plus
+   Athlete C (Hunter Snyder, HS wrestling) in D2C and GTM packets.
+6. Worksheet packet format: cover + 5 questions + free-form = 7 pages.
+7. Folder architecture: top-level Focus Group Materials/ separate
+   from Athlete Data/.
+8. Audit-and-rewrite preserves originals at Athlete Data/...; new
+   files in Focus Group Materials/Athlete Materials/[Athlete]/.
+9. Single fresh session per athlete for audit-and-rewrite work.
+10. Brand-name treatment: '"VirtusFocus" Focus Group' (proper case).
+11. NDA framing: collect printed copies, deliver digital watermarked
+    PDFs on request.
 
 
 CONFIRMED ATTENDEES (~12)
@@ -62,89 +92,128 @@ From Slack RSVP screenshot (10):
   Jon Reese, Rick Klimchock, Ron Oswald, Noele Creamer,
   Jennifer Altimore, Bret Colbert, Bob Colbert, Tom Panigall,
   Liz Marcheleovich, Alex Bohince
-From canvas (additional 2):
-  Tamara Mahady, Curt Smith
+From canvas (additional):
+  Tamara Mahady (confirmed), Curt Smith (still pending)
 
-Several more "unsures" still pending. Final list and attendee
-backgrounds will be provided by Arron once RSVPs finalize.
+Several "unsures" still pending. Final list and any new attendee
+backgrounds to be provided by Arron once RSVPs finalize.
 
-
-NEXT-STEP SEQUENCE (LEVERAGE-ORDERED)
-=====================================
-1. *** START HERE *** Lock breakout question banks
-   Three segments x 4-5 questions each. Highest leverage; blocks
-   worksheet, capture plan, and breakout flow.
-   Claude can draft v1; needs Arron's greenlight to begin.
-
-2. Curate artifact packet
-   Athlete snapshot + selected CMs/DDs + Coach Insight + Team
-   Snapshot + app mockups + 12-week progression visual.
-   Decisions needed: athlete (Grace recommended), anonymization
-   level, parent output inclusion y/n.
-
-3. Design worksheet/packet (one sheet per attendee per breakout)
-   Claude can draft layouts once questions are locked.
-
-4. Compressed 30-min pitch script
-   Distill from Comprehensive Pipeline Briefing v2.0.
-   Claude can draft outline + talking points.
-
-5. Capture protocol
-   3 note-takers, audio recording (NDA covers), synthesis plan.
-   Decisions needed: who facilitates, who note-takes per breakout.
-
-6. Welcome + NDA-at-door flow
-   Check-in 11:30-12:00, color-coded name tags by segment,
-   10-min welcome script.
-
-7. Print deadline: May 6 (Tuesday)
-   All printed materials must lock by this date.
+Proposed segment mapping:
+  - Institutional (3): Rick Klimchock, Bret Colbert, Bob Colbert
+  - D2C / Athlete (4): Ron Oswald, Liz Marcheleovich, Alex Bohince,
+    Tamara Mahady
+  - GTM (4): Jon Reese, Noele Creamer, Jennifer Altimore, Tom Panigall
 
 
-WAITING ON ARRON
-================
-1. Greenlight to draft question banks (highest priority)
-2. Non-pipeline app context (anything beyond CLAUDE.md that should
-   inform pitch or questions)
-3. Featured athlete confirmation (Grace, or alternative)
-4. Final attendee list + backgrounds when RSVPs lock
+PENDING WORK FOR MAY 9
+======================
+Substantive (next session):
+  (a) Compressed 30-min pitch script outline -- LARGEST REMAINING
+      ITEM. Handoff prompt prepared (see "Pitch Script Handoff
+      Prompt.txt" in Handoff Prompts/).
+  (b) Capture protocol with note-taker assignments and recording
+      confirmation.
+  (c) Welcome script + NDA-at-door flow (with printed NDA copies
+      for less-tech attendees).
+
+Logistics:
+  (d) Print run finalization by May 6 deadline. PDFs are
+      print-vendor-ready in Focus Group Materials/.
+  (e) Backgrounds for remaining "unsure" attendees (Curt Smith
+      and others) as RSVPs finalize.
+  (f) Catering finalized + payment.
+
+No-action / awaiting-event:
+  - Attendee name tags color-coded by segment (or accept that
+    cover stock differentiation is sufficient).
+  - Check-in lead identified for 11:30-12:00 window.
+  - AV setup confirmed at venue.
 
 
-FASTEST RESTART
-===============
-When resuming, paste any of these to Claude:
+NEXT SESSION KICKOFF
+====================
+The pitch script is the priority for the next fresh session. A
+comprehensive handoff prompt has been written:
 
-  - "Go on the question banks"
-    -> Claude drafts v1 of 3 segments x 5 questions for review
+  Handoff Prompts/Pitch Script Handoff Prompt.txt
 
-  - "Here's the non-pipeline app context: [...]"
+Open a fresh session and paste:
 
-  - "Featured athlete is [Grace / Mergim / Angelo / other]"
+  "Read Handoff Prompts/Pitch Script Handoff Prompt.txt and
+   execute it."
 
-  - "Here are the attendee backgrounds: [...]"
+The handoff prompt covers:
+  - Pitch script (primary)
+  - Capture protocol (secondary)
+  - Welcome + NDA-at-door flow (secondary)
 
-Recommended first move: "Go on the question banks" - longest-pole
-item, runs in parallel with the other inputs.
-
-
-CLAUDE.md REFERENCE
-===================
-Full pipeline context (7 stages, 4 product tiers, 6 athletes worth
-of real output, compliance framework, behavioral system, athlete
-arcs) is in CLAUDE.md and loads automatically as project instructions
-for Claude. No re-read needed at resume.
-
-Comprehensive Pipeline Briefing v2.0.docx is the source for the
-30-min pitch distillation.
+It instructs the fresh session on full context loading, locked
+decisions, reference files, execution phases, success criteria,
+and what NOT to do.
 
 
-NOTES FOR FUTURE CLAUDE.md SESSION ENTRY
-========================================
-This session was planning-only. Read 3 Slack canvases (Presentation
-Outline, Event Prep, Attendees). Discussed focus group strategy,
-proposed 3-hour agenda with segmented breakouts, identified 7
-next-step deliverables, locked focus-group format and 3-segment
-breakout structure, recommended Grace Kindel as featured artifact
-athlete. No specification files modified. No pipeline processing.
-No new athlete output generated. Single artifact created: this
-pickup note.
+KEY FILE PATHS
+==============
+Root:                D:/OneDrive/Documents/(TEST) Project A/
+
+Focus Group Materials/
+  Worksheets/                  -> 3 worksheet docx + pdf
+  Artifact Packets/            -> 3 cover docx + pdf
+  Athlete Materials/
+    Grace Kindel/              -> rewrites + Wk12 parent + visual
+    Angelo Allen/              -> rewrites + visual
+
+App Information for Focus Group/  -> mockups, screen design docs,
+                                     NCAA compliance, IP inventory
+  Scott mockindex.html         -> annotated design mockup gallery
+  mockindex.html               -> original mockup
+  Screen Details/              -> 11 per-screen design folders
+  NCAA Compliance/             -> 3 compliance docs
+
+Handoff Prompts/
+  Focus Group Session Pickup.txt                   <- THIS FILE
+  Focus Group Audit and Rewrite Handoff Prompt.txt -> for any
+                                     future audit-and-rewrite work
+  Pitch Script Handoff Prompt.txt                  <- NEXT SESSION
+
+CLAUDE.md                       -> full project context, all session
+                                   history including Sessions 119
+                                   and 120 details
+
+make_focus_group_docx.py        -> regenerates all 8 .docx + .pdf
+
+VirtusFocus_Pipeline_Comprehensive_Briefing v2.0.docx
+                                -> 30-page briefing doc, source
+                                   for compressed pitch script
+
+
+GIT STATE AT SESSION END
+========================
+Both worktrees synced and pushed to origin/master.
+Working tree clean across the board.
+
+Recent commits (newest first):
+  fb52a7d  Add Scott mockindex.html design mockup gallery
+  ff0cdb0  Add automatic PDF generation alongside .docx
+  d2a6d8a  Brand-name update: VIRTUSFOCUS -> "VirtusFocus"
+  edbc262  Generate 8 print-ready .docx files
+  398ca8a  Angelo Allen Wk5 audit-and-rewrite (separate session)
+  7b0704b  Add progression visuals + 3 segment cover pages
+  94e208d  Grace Kindel Wk1+Wk7 audit-and-rewrite (separate session)
+  9be7b4f  Write 3 segment worksheet packets to disk
+  29277d2  Add App Information for Focus Group folder to git
+
+
+NOTES FOR FUTURE CLAUDE
+=======================
+- Context window at end of Session 120: 73% used, 24% free.
+  Pitch script work was deferred to fresh session for context
+  headroom and quality of the creative work.
+- LibreOffice is installed locally; PDF generation works via
+  C:\Program Files\LibreOffice\program\soffice.exe headless.
+- python-docx 1.2.0 + pypdfium2 + Pillow are all installed.
+- Worktree pattern: Claude Code session work happens in
+  .claude/worktrees/affectionate-hugle-6ef001/ on the
+  claude/affectionate-hugle-6ef001 branch. Pushes to origin/master
+  via "git push origin HEAD:master". Main folder syncs via
+  git pull from origin/master.
