@@ -22,6 +22,10 @@ from docx.enum.table import WD_ALIGN_VERTICAL, WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 import os
+import subprocess
+
+# LibreOffice path on Windows; used to convert .docx -> .pdf for the print vendor.
+SOFFICE = r"C:\Program Files\LibreOffice\program\soffice.exe"
 
 
 # ============================================================================
@@ -1020,15 +1024,47 @@ if __name__ == "__main__":
         ("GTM Cover",                make_gtm_cover),
     ]
 
+    docx_paths = []
     for name, fn in builders:
         try:
             path = fn()
             size = os.path.getsize(path)
             rel = os.path.relpath(path, ROOT)
             print(f"  OK   {name:34s}  {size:>6,d} bytes   {rel}")
+            docx_paths.append(path)
         except Exception as e:
             print(f"  FAIL {name}: {e}")
             raise
 
+    # Convert all .docx to PDF for the print vendor.
+    # Group by output directory so LibreOffice can batch each directory in one call.
     print()
-    print(f"Done. {len(builders)} documents generated.")
+    print("=" * 60)
+    print("Converting .docx to .pdf via LibreOffice...")
+    print("=" * 60)
+
+    if not os.path.exists(SOFFICE):
+        print(f"  WARNING: LibreOffice not found at {SOFFICE}")
+        print(f"  Skipping PDF conversion. Install LibreOffice to enable.")
+    else:
+        by_dir = {}
+        for p in docx_paths:
+            by_dir.setdefault(os.path.dirname(p), []).append(p)
+
+        for out_dir, files in by_dir.items():
+            cmd = [SOFFICE, "--headless", "--convert-to", "pdf",
+                   "--outdir", out_dir] + files
+            subprocess.run(cmd, capture_output=True, text=True)
+
+        # Verify PDFs were created
+        for docx_path in docx_paths:
+            pdf_path = docx_path.replace(".docx", ".pdf")
+            if os.path.exists(pdf_path):
+                size = os.path.getsize(pdf_path)
+                rel = os.path.relpath(pdf_path, ROOT)
+                print(f"  PDF  {os.path.basename(pdf_path):44s}  {size:>7,d} bytes   {rel}")
+            else:
+                print(f"  FAIL PDF not created for {docx_path}")
+
+    print()
+    print(f"Done. {len(builders)} .docx + matching .pdf files generated.")
