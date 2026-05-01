@@ -1,0 +1,295 @@
+FOCUS GROUP AUDIT-AND-REWRITE HANDOFF PROMPT
+=============================================
+Created: 2026-04-30
+Single fresh session per athlete (do NOT run Grace + Angelo in
+the same session). Modeled on the Weekly Processing Handoff
+Template pattern, scoped to audit-and-rewrite only.
+
+
+USER FILLS IN
+=============
+Athlete name:                   [Grace Kindel | Angelo Allen]
+Weeks to audit and rewrite:     [list — see proposed sets below]
+Generate fresh parent output:   [yes — Grace Wk12 only | no]
+
+Proposed sets (use as-is unless overridden):
+  - Grace Kindel: Wk 1, Wk 7. (Wk 11, Wk 12 already current
+    spec — no audit/rewrite needed. Wk 12 parent output is
+    fresh generation only.)
+  - Angelo Allen: Wk 5. (Wk 8, Wk 9, Wk 10 already current
+    spec — no work.)
+
+
+FIRST INSTRUCTION
+=================
+Read this entire handoff prompt before taking any action. Then
+read CLAUDE.md in full for project context.
+
+
+PURPOSE
+=======
+The May 9, 2026 focus group needs to demonstrate current-spec
+quality output as part of attendees' evaluation. Some weeks
+selected for the featured athletes were generated under older
+spec versions (v1.3, v1.4, v1.8/V4, v2.1) and contain voice
+quality issues that have been retired in v2.3/V5:
+  - em dashes
+  - retired phrase constructions ("the version of X", "Here's
+    what I want you to...", "Not X. Y." parallel-clause refute,
+    "The question is whether...", etc.)
+  - telegraphing ("Now here's what I want to push you on...")
+  - "That is [Noun]." standalone overuse
+  - pipeline classification language ("Win days", "Growth
+    weeks", named phase classifications, "the recap")
+  - Other Criterion 14 fail conditions (12 total)
+
+This session AUDITS the existing CM, DD, and Coach Insight
+files for the specified weeks against current spec, and
+REWRITES them to current spec. The underlying JSON
+interpretations are NOT regenerated. Originals are preserved.
+New files go to a separate folder so the original generation
+history stays intact for future voice quality comparison work.
+
+
+CRITICAL DISTINCTION FROM PIPELINE PROCESSING
+==============================================
+This is NOT pipeline processing. We do NOT:
+  - Re-read the weekly recap PDF
+  - Regenerate the JSON
+  - Re-interpret the data
+  - Change the coaching conclusions or analysis
+  - Modify Audit Summary files
+
+We DO:
+  - Read the existing JSON (data source remains valid)
+  - Read the existing CM, DD, Coach Insight
+  - Audit each against current spec for voice quality issues
+  - Rewrite each to current spec, preserving athlete-specific
+    voice and content while fixing voice quality issues
+  - Save new files to Focus Group Materials\Athlete Materials\
+  - For Grace Wk12 only: generate fresh Parent CM + Parent
+    Insight via current Stage 3 + Stage 4 specs
+
+
+CONTEXT GATHERING (READ BEFORE STARTING)
+========================================
+1. CLAUDE.md (full)
+2. Athlete snapshot:
+   Athlete Data\[Athlete]\[athlete]_athlete_snapshot[...]txt
+3. All prior week JSONs for the athlete (cross-week awareness)
+4. Existing CM, DD, Coach Insight for the weeks being rewritten:
+   Athlete Data\[Athlete]\Coaching and Deep Dive\
+   Athlete Data\[Athlete]\Coach Insights\
+5. Voice authority documents (PRIMARY):
+   - Agents - Generators\Coaching Output\Source FIles\
+     VF_Coach_Arron_Voice_Reference.txt   (FULL READ REQUIRED)
+   - Agents - Generators\Coaching Output\Source FIles\
+     VF_Coaching_Output_Voice_Foundations.txt
+   - Agents - Generators\Coach Insights Engine\Source Files\
+     VF_Coach_Insights_Output_Voice_Standards.txt
+6. Current spec rules:
+   - SOP_Coaching_Output_Instructions_v2.3.txt
+       Section 35 (mechanical rules C1-C4)
+       Section 36 (uneven coverage)
+       Section 37 (exemplar matching)
+   - SOP_Editorial_Audit_Project_Instructions_v1.6.txt
+       Section 14 (Criterion 14 — 12 voice quality fail
+       conditions)
+7. Frameworks:
+   - VF_Coaching_Message_Framework.txt
+   - VF_Deep_Dive_Coaching_Analysis_Framework.txt
+
+
+EXECUTION PHASES
+================
+
+PHASE 1: AUDIT
+--------------
+For each file (CM, DD, Coach Insight) for each week:
+
+  1.1 Read the file in full.
+
+  1.2 Mechanical scan:
+        - C1 Em dashes: zero tolerance, must be removed
+        - C2 Contractions: present where natural? Default
+          register
+        - C3 Retired phrases (full retired list in v2.3
+          Section 35 C3)
+        - C4 Pipeline classification language
+
+  1.3 Criterion 14 scan (12 fail conditions, v1.6 Section 14):
+        14.1   Reusable opening
+        14.2   Telegraphing
+        14.3   Untraceable paragraph
+        14.4   Category coverage over response
+        14.5   Brand copy close
+        14.6   Same construction in 3-week window
+        14.7   DD reads as expanded CM
+        14.8   "That is [Noun]." standalone overuse
+               (cap: 1/CM, 1/DD)
+        14.9   "version of [X]" construction
+        14.10  Triple-negative setup
+        14.11  Trendline arc recitation
+        14.12  Pipeline-adjacent vocabulary
+
+  1.4 Document findings per file:
+        - List specific violations with line numbers
+        - Note mechanical fixes vs surrounding-sentence rewrites
+        - Note passages that pass current spec — preserve
+          verbatim
+
+
+PHASE 2: REWRITE
+----------------
+  2.1 For each violation, determine the natural rewrite:
+        - Consult Voice Reference exemplars (Sections 3-4)
+          for guidance on the coaching move involved
+        - Preserve athlete-specific content, phrases, moments
+        - Preserve coaching arc and conclusions
+        - Fix only what fails audit — don't rewrite what passes
+
+  2.2 Apply rewrites in working copy.
+
+  2.3 Re-run mechanical and Criterion 14 scans on the rewritten
+      version. Iterate until clean.
+
+
+PHASE 3: SAVE
+-------------
+  3.1 Write rewritten file to:
+        Focus Group Materials\Athlete Materials\[Athlete]\
+        [original filename, unchanged]
+
+  3.2 Originals at Athlete Data\[Athlete]\... remain UNCHANGED.
+
+  3.3 For Grace Wk12 Parent CM + Parent Insight (if flagged):
+      Generate per current Stage 3 (Master Prompt V5 + v2.3
+      Instructions) and Stage 4 (Master Prompt v1.5 + v1.9
+      Instructions) specs. CF fallback applied where
+      ecosystem fields not available. Save to:
+        Focus Group Materials\Athlete Materials\Grace Kindel\
+
+
+PHASE 4: VALIDATION
+-------------------
+  4.1 Mechanical pass on rewritten files:
+        - Zero em dashes (grep)
+        - Zero retired phrases (manual against C3 list)
+        - Zero pipeline classification language (C4)
+        - All 12 Criterion 14 fail conditions PASS
+
+  4.2 Spot-check one rewritten file for:
+        - Athlete-specific voice still recognizable
+        - No content lost from original
+        - No content added beyond original interpretation
+        - Reads natural, not over-edited
+
+  4.3 Brief audit summary saved to:
+        Focus Group Materials\Athlete Materials\[Athlete]\
+        [Athlete]_Audit_and_Rewrite_Summary.txt
+      Contents:
+        - Files audited
+        - Violations found per file (with line numbers)
+        - Rewrites applied
+        - Final spec status PASS confirmation
+
+
+PHASE 5: COMMIT
+---------------
+  5.1 git status to confirm new files appear (originals
+      should not show as modified)
+  5.2 git add the Focus Group Materials\Athlete Materials\
+      [athlete]\ files
+  5.3 git commit with descriptive message naming the athlete
+      and week scope
+  5.4 git push origin HEAD:master
+
+
+DELIVERABLES
+============
+- Rewritten CM, DD, Coach Insight files for specified weeks at
+  Focus Group Materials\Athlete Materials\[Athlete]\
+- Optional: Fresh Grace Wk12 Parent CM + Parent Insight (same
+  folder)
+- Audit summary text file (same folder)
+- Single commit + push to GitHub remote
+
+
+CRITICAL OPERATING RULES
+========================
+1. ORIGINALS ARE SACRED. Never overwrite originals at
+   Athlete Data\[Athlete]\... — those preserve the historical
+   record referenced by Validation Reports and CLAUDE.md
+   athlete arcs.
+
+2. NO CONTENT CHANGES BEYOND VOICE QUALITY FIXES. The coaching
+   conclusions, micro-commitments, identity threads, and overall
+   structure stay the same. We are correcting how things are
+   said, not what is said.
+
+3. ATHLETE VOICE PRESERVATION. Each athlete has a distinct
+   voice. When rewriting, refer to the athlete's snapshot and
+   adjacent weeks to ensure the rewrite still sounds like
+   Coach Arron coaching THIS specific athlete.
+
+4. NO CLAUDE.md SESSION ENTRY. Audit-and-rewrite is
+   documentation maintenance for focus group purposes — flag
+   the work as a single line in the Session Notes area but do
+   NOT add a full session paragraph. Exception: if Grace Wk12
+   parent output is generated, mention it briefly as new
+   content.
+
+5. SINGLE ATHLETE PER SESSION. Do not run Grace + Angelo in
+   the same session. Voice contamination risk is real.
+
+6. NO EM DASHES. Anywhere. Including in the audit summary.
+
+
+FAILURE-MODE HANDLING
+=====================
+- Existing JSON missing fields required by current spec: do
+  not regenerate. Note the schema gap, proceed with available
+  data, flag in audit summary. Schema gaps don't affect coaching
+  output rewrite.
+
+- Passage genuinely cannot be rewritten without losing the
+  coaching point: preserve it and flag for user review before
+  final save.
+
+- Athlete voice cannot be preserved cleanly through the
+  rewrite: stop, document the issue, and ask user before
+  proceeding.
+
+- Coach Insight file passes audit cleanly with no issues:
+  document as PASS in summary, no rewrite needed, do not
+  duplicate the file to the new folder. The original at
+  Athlete Data\[Athlete]\Coach Insights\ is the version of
+  record. Reference it from the focus group artifact packet.
+
+
+REFERENCE FILES (PRIORITY ORDER)
+================================
+TIER 1 (must read in full):
+  1. Voice Reference
+  2. Voice Foundations
+  3. v2.3 Section 35 (mechanical rules)
+  4. Editorial Audit v1.6 Section 14 (Criterion 14)
+
+TIER 2 (read sections relevant to your weeks):
+  5. CM Framework
+  6. DD Framework
+  7. Athlete snapshot
+
+TIER 3 (consult as needed):
+  8. Adjacent week JSONs for cross-week awareness
+  9. Existing files being audited (the actual rewrite targets)
+
+
+POST-SESSION
+============
+After the work completes:
+  - Update Focus Group Session Pickup note (Handoff Prompts\)
+    to reflect rewritten files completed for this athlete
+  - Notify user the work is complete
+  - Confirm originals untouched (git diff against originals
+    should show no changes)
