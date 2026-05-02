@@ -279,30 +279,73 @@ No-action / awaiting-event:
 
 NEXT SESSION KICKOFF
 ====================
-The pitch script + Day-of Operations work is DONE (Session 121).
-All three deliverables are committed and pushed:
 
-  Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
-  Focus Group Materials/Day-of Operations/Capture_Protocol.txt
-  Focus Group Materials/Day-of Operations/Welcome_and_NDA_Flow.txt
+FIRST INSTRUCTION (paste this verbatim into a fresh
+session):
 
-Remaining pre-event work is mostly logistics (d/e/f) plus
-three structural assignments (g/h/i). No fresh session needed
-unless one of those triggers substantive new work.
+  "Read CLAUDE.md and Handoff Prompts/Focus Group
+   Session Pickup.txt, then execute item (j): the
+   content integration of three late-RSVP attendees
+   (Gio Vonne Sanders, Buck Larry, Chris Russell)
+   into Pitch_Script_v1.txt Section 4 and
+   Welcome_and_NDA_Flow.txt sign-in roster."
 
-If any of the following come up before May 9, they may
-warrant a session:
-  - Pitch script revisions after Arron + Nicole rehearse
-  - New attendee confirmed (background + segment placement)
-  - Compliance question requires clarification document
-  - Pricing/deployment block content needs drafting
-    (currently planned to be free-form discussion led by
+WHY READ CLAUDE.md FIRST
+  CLAUDE.md is the master project context. It contains
+  the Late RSVP blocks for all three new attendees at
+  the top of the file with full backgrounds, cross-lens
+  flags, and the Path 2 soft-split decision. It also
+  contains the complete pipeline architecture, project
+  state, and session history. Reading CLAUDE.md first
+  ensures full project context before diving into the
+  focus group specifics.
+
+WHY READ THIS PICKUP FILE NEXT
+  This pickup file has the focus-group-specific
+  operational state: confirmed attendees with segment
+  mapping (6-4-4), Institutional soft-split (Path 2)
+  facilitator structure, cross-lens flags by attendee,
+  pending work item (j) detail, and structural
+  assignments still open (g/h/i).
+
+WHAT THE NEXT SESSION DOES (item j detail above in
+PENDING WORK section):
+
+  1. Pitch_Script_v1.txt Section 4 (Nicole closing)
+     currently calls out "Rick, Bret, Bob" for
+     Institutional. Add Gio + Buck + Chris. Decide on
+     6-name compression vs alternatives (see (j)
+     options a/b/c above).
+  2. Welcome_and_NDA_Flow.txt sign-in roster: add the
+     three new rows.
+  3. Regenerate: `python make_reference_docs.py`
+  4. Restore unchanged binaries (only changed .txt
+     should produce new .docx + .pdf). Commit, push,
+     sync.
+
+NOTE: Capture_Protocol.txt and Breakout_Facilitation_Guide.txt
+already include the soft-split structure and 6-attendee
+Institutional layout. Only Pitch and Welcome need
+attendee-name updates this session.
+
+OTHER WORK THAT MAY WARRANT A SESSION BEFORE MAY 9:
+  - Pitch script revisions after Arron + Nicole
+    rehearse (likely surfaces; budget a session)
+  - New attendees confirmed (Curt Smith and other
+    unsures pending; backgrounds + segment placement)
+  - Pre-event briefing materials for facilitators or
+    note-takers if a third facilitator gets named
+  - Pricing/deployment block content if it needs
+    drafting (currently planned free-form, led by
     Arron + Nicole at 2:15-2:45)
 
-Otherwise the next planned session is post-event synthesis,
-beginning May 10 (day after) with audio transcripts in hand
-and worksheet scans available. Synthesis Report v1 target:
-May 16 (one week post-event).
+POST-EVENT SESSION (May 10+):
+  Synthesis. Audio transcripts in hand, worksheet
+  scans available. Synthesis Report v1 target May 16
+  (one week post-event). Go/no-go decision gate at
+  May 30 covering pricing direction, institutional
+  GTM strategy, D2C-vs-institutional sequencing,
+  parent layer scope, and compliance positioning.
 
 
 KEY FILE PATHS
