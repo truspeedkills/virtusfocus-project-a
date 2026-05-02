@@ -48,6 +48,7 @@ INPUTS = [
     os.path.join(FOCUS_DIR, "Day-of Operations", "Capture_Protocol.txt"),
     os.path.join(FOCUS_DIR, "Day-of Operations", "Welcome_and_NDA_Flow.txt"),
     os.path.join(FOCUS_DIR, "Day-of Operations", "Breakout_Facilitation_Guide.txt"),
+    os.path.join(FOCUS_DIR, "Day-of Operations", "Note_Taker_Briefing.txt"),
 ]
 
 

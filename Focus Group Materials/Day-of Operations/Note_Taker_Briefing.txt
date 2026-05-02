@@ -1,0 +1,508 @@
+"VIRTUSFOCUS" FOCUS GROUP: NOTE-TAKER BRIEFING
+================================================
+Event:        May 9, 2026 (Saturday)
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+Your block:   1:30-2:15 PM (45-minute breakout) + brief
+              participation through 3:00 PM
+Last updated: 2026-05-02
+Owners:       Arron + Nicole
+
+This document is your complete prep packet. Read it once
+ahead of time, then bring the printed copy with you on
+the day. The QUICK REFERENCE CARD at the end is what
+you will actually glance at during the breakout.
+
+
+====================================================
+WELCOME, AND THANK YOU
+====================================================
+
+Note-takers are the most important under-celebrated role
+in the room.
+
+The audio recording will catch every word. The worksheets
+will capture each attendee's private written answers. But
+neither of those captures the read of the room. Who
+deferred to whom. Who visibly disagreed but did not say
+anything. When the room agreed without saying so. When
+somebody pushed back politely on a question that should
+be reopened.
+
+That is what you capture, and there is no other way to
+get it.
+
+You signed an NDA. You are a trusted observer. You are
+not asked to be a researcher or a transcriptionist. You
+are asked to read the room with attention and write down
+what you notice in a simple shorthand we will teach you
+in this document.
+
+
+====================================================
+YOUR ROLE IN ONE PARAGRAPH
+====================================================
+
+You sit slightly off to the side of one of three breakout
+groups during the 1:30-2:15 PM block. You do not speak.
+You write down what people say (or paraphrase it), tag
+each entry with a sentiment code, and capture the body-
+language signals the audio cannot pick up. You collect
+the worksheets at the end of the breakout. You then join
+the rest of the room as a participant for the remaining
+45 minutes (2:15-3:00 PM). After the event, you hand
+your notes to Arron or Nicole.
+
+
+====================================================
+THE FULL DAY AT A GLANCE
+====================================================
+
+  11:30 - 12:00  Arrive. Get oriented with Arron and
+                 Nicole. Confirm your assigned breakout
+                 segment. Check your notebook or laptop
+                 plus voice recorder.
+
+  12:00 - 12:15  Welcome block (Arron). Sit and listen.
+                 Verbal recording confirmation happens
+                 here.
+
+  12:15 - 12:45  Pitch (Nicole and Arron). Sit and listen.
+                 The athlete stories you hear (Athlete A,
+                 B, C) are the anonymized versions of
+                 what is in the artifact packets.
+
+  12:45 - 1:15   Mockup walkthrough (Arron). Sit and
+                 listen. Useful context for what the
+                 attendees will be reacting to.
+
+  1:15 - 1:30    Lunch in the room. You can mingle but
+                 stay segment-aware. If you are the
+                 Institutional note-taker, sitting near
+                 your six attendees during lunch helps
+                 you put names to faces.
+
+  1:30 - 2:15    YOUR BREAKOUT BLOCK. This is when you
+                 do your actual job. See sections below.
+
+  2:15 - 2:45    Pricing and deployment block. You join
+                 the full-room discussion as a participant.
+                 You do NOT note-take this block.
+                 The audio recording covers it.
+
+  2:45 - 3:00    Cross-room synthesis. Full room. Arron
+                 asks each breakout to share one or two
+                 top findings. You can chime in if you
+                 want, otherwise listen.
+
+  3:00 onward    Hand your notes to Arron or Nicole
+                 before you leave. Or scan / photograph
+                 them and send same evening. Originals
+                 stay with Arron and Nicole.
+
+
+====================================================
+YOUR ASSIGNED SEGMENT
+====================================================
+
+Three breakouts, one note-taker each. Confirm with Arron
+or Nicole which segment you have.
+
+  ----------------------------------------------------
+  INSTITUTIONAL  (6 attendees)  Arron facilitates
+  ----------------------------------------------------
+  This is the most complex breakout. It uses a SOFT-SPLIT
+  structure where high school coaches answer each question
+  first, then college coaches answer with a possible
+  reframe. You tag every note with an HS or COL tier
+  prefix to keep the answers separable at synthesis time.
+
+  Attendees:
+    Rick Klimchock      HS      RK
+    Gio Vonne Sanders   HS      GS
+    Buck Larry          HS      BL
+    Bret Colbert        COL     BR
+    Bob Colbert         COL     BO
+    Chris Russell       COL     CR
+
+  Note on initials: Bret and Bob are both Colberts.
+  We use first-name initials BR and BO to avoid the
+  BC / BC collision.
+
+  ----------------------------------------------------
+  D2C / ATHLETE  (4 attendees)  Nicole facilitates
+  ----------------------------------------------------
+  Standard breakout structure. No tier prefix. You tag
+  notes with attendee initials only.
+
+  Attendees:
+    Ron Oswald          RO
+    Liz Marcheleovich   LM
+    Alex Bohince        AB
+    Tamara Mahady       TM
+
+  ----------------------------------------------------
+  GTM  (4 attendees)  Facilitator TBD
+  ----------------------------------------------------
+  Standard breakout structure. No tier prefix. You tag
+  notes with attendee initials only.
+
+  Attendees:
+    Jon Reese           JR
+    Noele Creamer       NC
+    Jennifer Altimore   JA
+    Tom Panigall        TP
+
+
+====================================================
+THE SHORTHAND CONVENTION
+====================================================
+
+Every entry in your notebook follows this format:
+
+  [TIME]  [TIER]  [INITIALS]  [CODE]  [content]
+
+TIME
+  Hour and minute, e.g., 1:42. Aim for a timestamp at
+  the start of every meaningful entry. Helps synthesis
+  align your notes with the audio transcript.
+
+TIER  (Institutional only; D2C and GTM leave this blank)
+  HS   = High school coach is answering
+  COL  = College coach is answering
+
+INITIALS
+  Two letters, see your segment's attendee table above.
+
+CODE  (single letter; the most important part)
+  P  = Positive / agreement / engaged
+  N  = Negative / disagreement / pushback
+  M  = Mixed / "yes but" / middle
+  Q  = Question raised by attendee, worth following up
+  *  = Cross-lens insight (attendee bringing their
+       secondary perspective into the discussion)
+
+CONTENT
+  Verbatim quote in double quotes for exact words:
+    "We would never deploy this without legal review."
+
+  Paraphrase in parens when you cannot capture verbatim:
+    (paraphrased: legal review is the gate)
+
+  Body language and structural notes go in plain text:
+    Rick visibly disagreed but did not say anything.
+    Room went quiet for several seconds after this.
+
+  Mark uncertain hearing with [unclear]:
+    "We would [unclear] without legal."
+
+
+====================================================
+EXAMPLES OF GOOD ENTRIES
+====================================================
+
+INSTITUTIONAL (note tier prefix):
+
+  1:42  HS   RK  N  "Position coaches won't read it.
+                    They'll skim the color and move on."
+
+  1:45  COL  BR  *  Brings in his Saint Vincent
+                    rebuilding experience.
+                    (paraphrased: institutional adoption
+                    depends on whether the dashboard shows
+                    what the head coach asked them to
+                    measure, not what we think matters)
+
+  1:47  COL  BO  P  "The clinical line in the language
+                    is exactly right."
+
+  1:52  HS   RK  Q  Asks whether parent layer is on or
+                    off by default.
+
+  1:55  HS   BL  *  Father-son coaching dynamic surfaces.
+                    (paraphrased: as a coach working
+                    under his son, sees parent layer
+                    differently)
+
+  2:01  COL  CR  N  "We use a film breakdown tool
+                    already. Standalone is dead on
+                    arrival."
+
+D2C and GTM (no tier prefix):
+
+  1:42  RO  P  "My athletes would use this for the
+              daily tune-up alone, twenty bucks a
+              month easy."
+
+  1:50  JR  M  "Story is clear but the GTM split needs
+              a sharper why-now argument."
+
+
+====================================================
+WHAT YOU LISTEN FOR (CROSS-LENS FLAGS)
+====================================================
+
+Several attendees have a SECONDARY perspective they
+bring beyond their assigned segment. These moments are
+gold. Tag them with the asterisk code (*).
+
+INSTITUTIONAL:
+
+  Rick Klimchock — 40-year HS basketball coach with
+    long WPIAL tenure. Pressure-cooker experience at
+    high-stakes games.
+
+  Gio Vonne Sanders — Former D1 dual-sport athlete
+    (football and wrestling), current HS wrestling head
+    coach. Lens to watch for: NCAA Transfer Portal
+    recruitment-pipeline experience firsthand, dual-
+    sport skill-transfer perspective, faith-based
+    mentorship framing.
+
+  Buck Larry — Long-tenured WPIAL basketball assistant
+    with 2009 state championship experience. Currently
+    works UNDER his son as head coach. Lens to watch
+    for: father-son coaching dynamic (parent-layer
+    perspective from a coach seat); old-school plus
+    modern chemistry blend (tests whether VirtusFocus
+    reads as modern enough for younger coaches AND
+    rigorous enough for veterans).
+
+  Bret Colbert — Collegiate WR coach with offensive-
+    coordinator experience. Lens to watch for:
+    institutional coaching-staff adoption dynamics.
+
+  Bob Colbert — NFL veteran defensive assistant plus
+    Saint Vincent program-builder. Lens to watch for:
+    AD-level adoption strategy; rebuilding-from-zero
+    perspective.
+
+  Chris Russell — Offensive Line Coach plus Video
+    Coordinator at Seton Hill. Returning from FBS
+    Power Four (Pitt under Narduzzi). Engineering
+    education background. Lens to watch for: FBS-vs-
+    D2 contrast (relevant to white-label vs single-app
+    architecture); analytical-coaching specialty
+    (closest match in the room to the Coach Insights
+    dashboard's target user); engineering-education
+    technical-mindset (demands system rigor and data
+    integrity).
+
+D2C / ATHLETE:
+
+  Ron Oswald — 4x Academic All-American wrestler plus
+    Swampfox wrestling club founder. Lens to watch for:
+    youth-program operator perspective.
+
+  Liz Marcheleovich — Early-childhood ed teacher,
+    PowerKidz / Tots / Sproutz strength programs at
+    Virtus Barbell. Lens to watch for: youth-coaching
+    operator perspective.
+
+  Alex Bohince — Father of two, husband of co-founder
+    Nicole. Lens to watch for: parent perspective from
+    a D2C seat.
+
+  Tamara Mahady — Magisterial District Judge plus
+    former collegiate softball player. Lens to watch
+    for: legal-system framing on compliance and
+    privacy issues.
+
+GTM:
+
+  Jon Reese — President of Sales at Overly Door,
+    GCDC President, civic leader.
+
+  Noele Creamer — Pittsburgh writer with PR / exec
+    comms / freelance background. Parent of collegiate
+    athletes. Lens to watch for: D2C parent perspective
+    in a GTM seat.
+
+  Jennifer Altimore — Board-Certified Clinical
+    Hypnotherapist plus marketing leader plus best-
+    selling author. Lens to watch for: competitive-
+    space-adjacent expertise (hypnotherapy is mental-
+    performance adjacency); her category-and-
+    competition response will be uniquely sharp.
+
+  Tom Panigall — 20-year senior leadership at Pepsi
+    and Red Bull plus Brooklyn Healthy. Lens to watch
+    for: consumer-brand-marketing strategic depth at
+    company sizes both above and below ours.
+
+
+====================================================
+WHAT TO CAPTURE
+====================================================
+
+  Verbatim quotes when something quotable lands.
+    Examples of quotable: a sharp turn of phrase, a
+    pointed criticism, a vivid analogy, a reframe of
+    the question.
+
+  Sentiment shifts. When the energy in the group
+    pivots, write it down: Room agreed without saying
+    so. Or: Quiet pause after Tom's pushback.
+
+  Cross-lens moments (asterisk code). When somebody
+    brings their secondary perspective. These are
+    the highest-value entries because the audio plus
+    transcript may not flag them automatically.
+
+  Disagreements that go unsaid. When one attendee
+    visibly reacts to another but does not speak.
+    Audio cannot catch that. You can.
+
+  Questions the room raised that deserve follow-up.
+    Q-coded entries become the open-questions section
+    of the synthesis report.
+
+
+====================================================
+WHAT NOT TO CAPTURE (AND WHY)
+====================================================
+
+  Do NOT try to transcribe word-for-word. The audio
+    recording handles that. You handle SENTIMENT and
+    STRUCTURE.
+
+  Do NOT summarize in real time. Capture moments,
+    not summaries. Synthesis builds the summary from
+    your moments plus the transcript.
+
+  Do NOT editorialize in your notes. "I think Tom is
+    right" has no place in your notebook. Your job is
+    to capture what they said and how they said it,
+    not what you thought of it.
+
+  Do NOT participate in the discussion. If your
+    facilitator asks you something, you can answer
+    briefly, then go back to taking notes. Otherwise
+    you stay quiet.
+
+  Do NOT make eye contact with attendees in a way
+    that invites being addressed. Sit slightly off
+    to the side, neutral expression.
+
+  Do NOT use real names of athletes if they come up
+    in discussion. Athletes are anonymized as
+    Athlete A, Athlete B, Athlete C in all materials.
+    If an attendee guesses or names a real athlete,
+    capture that they did so but do not reproduce
+    the name in your notes.
+
+
+====================================================
+WORKSHEET COLLECTION (END OF YOUR BREAKOUT)
+====================================================
+
+At about 2:10 (five minutes before the block ends),
+remind attendees: "Wrap up your worksheets in the next
+five minutes."
+
+At 2:15:
+  1. Collect worksheets as attendees stand.
+  2. Place all worksheets in your labeled segment
+     folder (Institutional / D2C / GTM).
+  3. NAME field on the cover is OPTIONAL. Do not
+     pressure anyone who left it blank.
+  4. Keep the folder with you for the rest of the day.
+  5. Hand the folder to Arron or Nicole at the end of
+     the event.
+
+
+====================================================
+COMPLIANCE REMINDERS
+====================================================
+
+  You signed an NDA. Everything in the room stays in
+    the room until Arron or Nicole say otherwise.
+
+  Do not photograph or share materials, mockups, or
+    athlete artifacts.
+
+  Do not name real athletes in your notes. Use
+    Athlete A / B / C if context is needed.
+
+  Do not discuss attendee identities or quotes
+    outside the synthesis team.
+
+  Audio recordings, your notes, and the worksheets
+    are all confidential. Treat the folder you carry
+    around as sensitive material.
+
+
+====================================================
+PRE-EVENT CHECKLIST
+====================================================
+
+By May 8 (the day before):
+
+  [ ] You have read this document end to end
+  [ ] You know which breakout segment you are
+      assigned to
+  [ ] You know the attendee initials for your segment
+  [ ] You have notebook OR laptop loaded and ready
+  [ ] You have a backup pen
+  [ ] You have a printed copy of the QUICK REFERENCE
+      CARD (next page)
+  [ ] You have confirmed your NDA is on file
+  [ ] You know your arrival time (11:30 AM at the
+      Hampton Inn)
+
+If you have any questions, contact Arron or Nicole
+before May 9. Do not show up with unresolved
+questions.
+
+
+====================================================
+QUICK REFERENCE CARD  (TEAR OFF OR TAB MARK)
+====================================================
+
+ENTRY FORMAT
+  [TIME]  [TIER]  [INIT]  [CODE]  [content]
+
+  Example: 1:42  HS  RK  N  "Position coaches won't
+                            read it."
+
+SENTIMENT CODES
+  P  Positive / agreement / engaged
+  N  Negative / disagreement / pushback
+  M  Mixed / "yes but" / middle
+  Q  Question worth following up
+  *  Cross-lens insight (secondary perspective)
+
+TIER  (Institutional only)
+  HS   High school coach
+  COL  College coach
+
+ATTENDEE INITIALS
+
+  INSTITUTIONAL          D2C                  GTM
+  RK  Rick Klimchock     RO  Ron Oswald       JR  Jon Reese
+  GS  Gio Sanders        LM  Liz Marche.      NC  Noele Creamer
+  BL  Buck Larry         AB  Alex Bohince     JA  Jennifer Altimore
+  BR  Bret Colbert       TM  Tamara Mahady    TP  Tom Panigall
+  BO  Bob Colbert
+  CR  Chris Russell
+
+VERBATIM RULES
+  "exact words"           use double quotes
+  (paraphrased: gist)     use parens
+  [unclear]               for partial hearing
+  plain text              for body language and
+                          structural notes
+
+YOU DO                    YOU DO NOT
+  Capture moments           Transcribe verbatim
+  Tag sentiment             Summarize in real time
+  Note body language        Editorialize
+  Stay quiet                Participate
+  Collect worksheets        Make eye contact
+
+TIME ANCHORS
+  1:30  Breakout starts
+  1:32  Q1 begins (after facilitator intro)
+  2:10  Worksheet wrap-up reminder
+  2:15  Worksheets collected, room reconvenes
+  2:15  You become a participant for pricing block
+  3:00  Hand folder to Arron or Nicole. You're done.
