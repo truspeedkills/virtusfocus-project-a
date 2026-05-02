@@ -1,0 +1,413 @@
+"VIRTUSFOCUS" FOCUS GROUP: BREAKOUT FACILITATION GUIDE
+=======================================================
+Event:        May 9, 2026 (Saturday), 1:30-2:15 PM block
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+Last updated: 2026-05-02
+Owners:       Arron + Nicole (co-facilitators)
+
+
+PURPOSE
+=======
+Operational walkthrough for how the three parallel breakout
+groups actually run on May 9. Written for facilitators and
+note-takers who have not run formal focus group breakouts
+before.
+
+Read alongside:
+  Capture_Protocol.txt    - shorthand convention, sentiment
+                            codes, soft-split structure
+  Welcome_and_NDA_Flow.txt - check-in + NDA + welcome script
+  Pitch_Script_v1.txt     - what happens before breakouts
+                            (12:00-1:30) and after (2:15-3:00)
+
+
+====================================================
+WHAT A BREAKOUT IS
+====================================================
+
+A breakout is when the full room splits into smaller
+discussion groups (3-6 people each) running simultaneously
+in parallel for a fixed time window. Three breakouts at
+this event run at the same time during the 1:30-2:15
+block:
+
+  INSTITUTIONAL    6 attendees   Arron facilitates
+  D2C / ATHLETE    4 attendees   Nicole facilitates
+  GTM              4 attendees   [TBD facilitator]
+
+Each breakout group sits at its own table or section of
+the room, has its own facilitator, has its own note-taker,
+and discusses its own segment-specific worksheet questions
+for 45 minutes.
+
+Three parallel discussions, three separate signal streams,
+all captured for synthesis later.
+
+
+====================================================
+WHY BREAKOUTS WORK BETTER THAN ONE BIG-ROOM DISCUSSION
+====================================================
+
+If we did all 14 attendees in one room for 45 minutes,
+two things would happen.
+
+First, the loudest 3 to 4 voices would dominate.
+Quieter participants would defer to whoever spoke first.
+
+Second, the questions would be too generic to extract
+segment-specific signal. Institutional coaches and
+parents press hard on different things. Splitting into
+segments lets each room go deep on what matters to it.
+
+The synthesis benefit: at the end, we get three distinct
+segment reads we can compare side-by-side, instead of one
+homogenized full-room discussion.
+
+
+====================================================
+PHYSICAL SETUP
+====================================================
+
+Hampton Inn room is reserved all day. The three breakouts
+likely share the same physical room with chairs grouped
+into three clusters. Audio bleed between clusters is
+acceptable for this purpose because each breakout records
+audio separately. If a sub-group needs more separation,
+the venue probably has secondary space available.
+
+Each breakout cluster should have:
+
+  Round-table or tight-circle seating for 4 to 6 people
+  One designated facilitator chair (slightly more visible)
+  One designated note-taker chair (corner, less visible)
+  Voice recorder placed centrally on the table
+  Worksheets in front of each attendee
+  Pen or pencil for each attendee
+
+
+====================================================
+THE FACILITATOR'S ROLE
+====================================================
+
+Three things the facilitator does, in order of importance.
+
+1. ASKS THE WORKSHEET QUESTIONS IN SEQUENCE AND MANAGES
+   DISCUSSION TIME
+
+Each segment has 5 questions plus a free-form page,
+which works out to roughly 7 to 8 minutes per question
+across 45 minutes (with a small buffer). Facilitator
+opens with Q1, hears responses, moves to Q2 when
+discussion is wrapping or when about 8 minutes have
+passed. They are the time-keeper for the room.
+
+2. DRAWS OUT QUIETER VOICES AND PREVENTS ONE PERSON
+   DOMINATING
+
+If three of four attendees have weighed in and one has
+not, facilitator says: "Tom, you have been quiet on
+this. What is your read?"
+
+If one person is monologuing, facilitator says: "Hold
+that thought for a second. Liz, you reacted to that.
+What is your push-back?"
+
+3. PROBES CROSS-LENS SECONDARY PERSPECTIVES AT THE
+   RIGHT MOMENT
+
+The cross-lens flags in the pickup file (Buck's
+father-son dynamic, Chris's FBS-vs-D2 contrast, Liz's
+youth-coaching lens, etc.) are deliberate probe-points.
+Facilitator listens for the natural moment to ask:
+"Buck, given that you work under your son as head coach,
+how does the parent-facing layer read to you specifically?"
+
+
+WHAT THE FACILITATOR DOES NOT DO
+
+  Take notes (the note-taker does that)
+  Defend the product (this is a focus group, let
+    attendees criticize)
+  Answer technical questions in detail (defer to
+    "great question, hold for the synthesis room")
+  Spend more than 30 seconds explaining anything
+    (every minute facilitator talks is a minute
+    attendees are not talking)
+
+
+====================================================
+THE NOTE-TAKER'S ROLE
+====================================================
+
+Note-taker observes, captures, and stays out of the
+conversation.
+
+WHAT THEY CAPTURE
+
+  Verbatim quotes when something quotable lands.
+    Example: "Position coaches will not read it. They
+    will skim the color and move on."
+
+  Sentiment codes (P / N / M / Q / *) defined in
+    Capture_Protocol.txt SENTIMENT CODES section.
+
+  For the Institutional breakout only: HS or COL
+    tier prefix on every entry, defined in the
+    Capture_Protocol.txt TIER PREFIX section.
+
+  Body-language signals the audio will not catch.
+    Example: "Rick visibly disagreed but did not say
+    anything."
+
+  Cross-lens moments when an attendee brings their
+    secondary perspective into a primary-segment
+    question. Mark with the asterisk sentiment code.
+
+  Time stamps every 5 minutes for synchronization.
+
+WHAT THE NOTE-TAKER DOES NOT DO
+
+  Participate in discussion
+  Defend or explain the product
+  Try to capture every word (the audio recording
+    handles verbatim, the note-taker handles SENTIMENT
+    and STRUCTURE)
+  Make eye contact in a way that invites being
+    addressed (sit slightly off to the side)
+
+The reason note-takers are non-participants: their
+job is to read the room interpretively, not to add
+another voice. If your note-taker also wants to be in
+the discussion, they are a participant in the wrong
+seat.
+
+
+====================================================
+TIME MECHANICS ACROSS THE 45-MINUTE WINDOW
+====================================================
+
+  0:00 to 0:02
+    Facilitator does a 30-second intro:
+    "We are the [Institutional / D2C / GTM] breakout.
+    Here is how it works: I will ask each question, you
+    discuss, we move on when it is wrapping. The
+    worksheets in front of you are for your own private
+    answers. Write whatever you want, do not worry about
+    agreeing with the group. We collect them at the end.
+    Everything you say is on the audio, covered by your
+    NDA. Let's go."
+
+  0:02 to 0:42
+    Five questions, roughly 7 to 8 minutes each.
+    Facilitator manages time. Note-taker captures.
+
+  0:42 to 0:45
+    Wrap. Facilitator says: "Couple minutes. Finish your
+    worksheets, take any free-form notes you did not get
+    to."
+    Note-taker collects worksheets as people stand.
+
+  0:45
+    Room reconvenes for the pricing and deployment block
+    at 2:15 to 2:45.
+
+
+====================================================
+THE INSTITUTIONAL SOFT-SPLIT (PATH 2)
+====================================================
+
+This applies ONLY to Arron's 6-person Institutional
+breakout. D2C and GTM run standard structure (above).
+
+For each of the 5 questions, Arron does this:
+
+  1. Reads the question.
+  2. Says: "Let's start with the HS lens. Rick, want to
+     lead off?"
+  3. Hears 3 responses (Rick, Gio, Buck) in roughly 3 to
+     4 minutes.
+  4. Says: "Now college lens. Same question, possibly
+     different answer. Bret?"
+  5. Hears 3 responses (Bret, Bob, Chris) in roughly 3
+     to 4 minutes.
+  6. If time allows: "Quick cross-tier. Does the HS-vs-
+     college divide here change anything you would add?"
+     Roughly 1 to 2 minutes.
+  7. Moves to the next question.
+
+The note-taker tags every entry with HS or COL prefix.
+Synthesis later separates the tier reads cleanly.
+
+
+====================================================
+WHAT THE ATTENDEES DO
+====================================================
+
+Each attendee gets a 7-page worksheet (cover plus 5
+question pages plus 1 free-form). They:
+
+  Write their own answers privately on the worksheet
+    while or after discussion. Not required to match
+    group consensus.
+  Speak when called on or when they have something
+    to add.
+  Can leave the NAME field blank if they want
+    anonymity (segment is what matters).
+  Hand the worksheet to the note-taker at end of
+    breakout.
+
+
+====================================================
+WHAT HAPPENS AFTER BREAKOUTS (2:15 ONWARD)
+====================================================
+
+  2:15 to 2:45  PRICING AND DEPLOYMENT BLOCK
+    Full room reconvenes. Arron and Nicole co-lead a
+    free-form discussion on pricing direction and
+    institutional GTM strategy. This is where attendees
+    press hardest. Note-takers from breakouts join the
+    discussion now (they do not note-take this block,
+    they participate).
+
+  2:45 to 3:00  CROSS-ROOM SYNTHESIS
+    Full room. Arron asks each breakout to share one or
+    two top findings: "Rick, what was your loudest take
+    from your room?"
+    Attendees hear what came out of OTHER groups and
+    react in real time. Powerful end note.
+
+
+====================================================
+PRE-EVENT PREP
+====================================================
+
+Before May 9, three things must happen.
+
+1. BRIEF FACILITATORS
+
+Arron knows his Institutional room and the soft-split.
+
+Nicole knows her D2C room. She should review the D2C
+worksheet questions and the cross-lens flags for Ron,
+Liz, Alex, Tamara before the event.
+
+Whoever takes GTM needs roughly 30 minutes of pre-event
+briefing on the GTM worksheet questions and the cross-
+lens flags for Jon, Noele, Jennifer, Tom.
+
+2. BRIEF NOTE-TAKERS
+
+All three NDA-signed observers need to read
+Capture_Protocol.txt sections on the shorthand
+convention. Specifically:
+
+  SENTIMENT CODES section
+  VERBATIM CAPTURE RULES section
+  EXAMPLES section
+
+Allow 20 minutes for this read plus a quick walkthrough.
+
+The Institutional note-taker also needs to know the
+HS / COL tier-prefix rule, in the same Capture_Protocol.txt
+TIER PREFIX section.
+
+3. EQUIPMENT CHECK
+
+  Voice recorders charged
+  Memory cards adequate
+  Backup phones with recording app installed
+  Worksheets stacked by segment with extras
+  Sentiment-code reference card printed for note-takers
+
+
+====================================================
+PRE-EVENT BRIEFING CHECKLIST (May 8, day before)
+====================================================
+
+[ ] Arron has re-read this guide and Capture_Protocol
+[ ] Nicole has re-read this guide and the D2C cross-lens
+    flags
+[ ] GTM facilitator identified, briefed, has read this
+    guide
+[ ] Three note-takers identified and NDA-signed
+[ ] Three note-takers briefed on shorthand convention
+    (20-minute walkthrough each)
+[ ] Institutional note-taker briefed specifically on
+    HS / COL tier prefix
+[ ] Voice recorders charged and tested
+[ ] Memory cards or phone storage adequate
+[ ] Worksheets stacked by segment (5 institutional, 4
+    D2C, 4 GTM, plus extras)
+[ ] Sentiment-code reference cards printed for all three
+    note-takers
+[ ] Pens or pencils for every attendee
+[ ] Three table or seating clusters arranged at venue
+
+
+====================================================
+DAY-OF FACILITATOR CHECKLIST
+====================================================
+
+Before 1:30 PM breakout start:
+
+[ ] Confirm voice recorder is recording (visible light,
+    test playback if possible)
+[ ] Confirm worksheets are at every seat
+[ ] Confirm note-taker is in position with notebook or
+    laptop ready
+[ ] Confirm WiFi password card is at every seat (in case
+    of need)
+
+During breakout:
+
+[ ] Open with the 30-second intro
+[ ] Watch the time, move questions on schedule
+[ ] Draw out quiet voices once per question minimum
+[ ] Probe cross-lens flags when natural moments arise
+[ ] Do not defend the product, do not answer technical
+    questions in detail
+
+At wrap (2:10-2:15):
+
+[ ] Worksheets collected by note-taker
+[ ] Voice recorder stopped and labeled
+    (e.g., VF_FocusGroup_2026-05-09_Institutional.mp3)
+[ ] Attendees walked to the main room for pricing and
+    deployment block
+
+
+====================================================
+CONTINGENCIES
+====================================================
+
+ATTENDEE GOES SILENT FOR ENTIRE BREAKOUT
+  Facilitator addresses directly twice. If still silent,
+  let it go. Note-taker captures the silence as an
+  observation.
+
+DISCUSSION RUNS HOT (PEOPLE TALKING OVER EACH OTHER)
+  Facilitator says: "Hold up, one at a time. [Name],
+  finish your point. [Other name], you are next."
+
+ATTENDEE WANTS TO TALK ABOUT SOMETHING NOT IN THE
+WORKSHEET
+  Facilitator says: "Hold that for the free-form page,
+  or the synthesis block at the end. Right now we are
+  on Q2." This protects the time budget.
+
+ATTENDEE ASKS A POINTED PRODUCT QUESTION (e.g., "What
+exactly does your audit layer detect?")
+  Facilitator says: "Great question, hold it for the
+  pricing and deployment block at 2:15. We will get to
+  it then." This avoids facilitator defending the
+  product mid-breakout.
+
+VOICE RECORDER FAILS
+  Note-taker switches to detailed verbatim mode. Backup
+  phone recorder activates if available.
+  Synthesis weighs that breakout's findings slightly
+  lower in cross-segment confidence.
+
+SOMEONE WANTS TO LEAVE EARLY
+  Let them. Note in the roster. Synthesis will reflect
+  partial participation.
