@@ -86,7 +86,7 @@ LOCKED DECISIONS
     PDFs on request.
 
 
-CONFIRMED ATTENDEES (~12)
+CONFIRMED ATTENDEES (~14)
 =========================
 From Slack RSVP screenshot (10):
   Jon Reese, Rick Klimchock, Ron Oswald, Noele Creamer,
@@ -103,57 +103,138 @@ Late RSVP (post-Session 121, 2026-05-01):
   Draft prospect background. Faith-based mentorship lens. Mapped
   to Institutional segment.
 
+Late RSVPs (post-Session 121, 2026-05-02):
+  Buck Larry (confirmed) - Assistant Varsity Boys Basketball
+  Coach at Elizabeth Forward HS, working under his son head
+  coach Nolan Larry. Veteran WPIAL basketball, long-tenured
+  assistant at Greensburg Salem under Paul Sapotichne including
+  2009 state championship appearance. Old-school fundamentals
+  bridged with modern team chemistry. Mapped to Institutional
+  segment (HS sub-group).
+
+  Chris Russell (confirmed) - Offensive Line Coach + Video
+  Coordinator at Seton Hill University. Returning second stint
+  after 2-year tenure as Offensive Assistant at Pitt under Pat
+  Narduzzi (2023-2024 Power Four FBS). Previously at Seton Hill
+  mentored 2021 PSAC leading rusher. B.S. Biological Engineering
+  Penn State, M.Ed. Seton Hill, played collegiate RB at Marietta.
+  Mapped to Institutional segment (College sub-group).
+
 Several "unsures" still pending. Final list and any new attendee
 backgrounds to be provided by Arron once RSVPs finalize.
 
-Proposed segment mapping (now balanced 4-4-4):
-  - Institutional (4): Rick Klimchock, Bret Colbert, Bob Colbert,
-    Gio Vonne Sanders
+Proposed segment mapping (6-4-4):
+  - Institutional (6): Rick Klimchock, Bret Colbert, Bob Colbert,
+    Gio Vonne Sanders, Buck Larry, Chris Russell
   - D2C / Athlete (4): Ron Oswald, Liz Marcheleovich, Alex Bohince,
     Tamara Mahady
   - GTM (4): Jon Reese, Noele Creamer, Jennifer Altimore, Tom Panigall
 
-Cross-lens flag for Gio Vonne: probe in institutional breakout
-for NCAA Transfer Portal recruitment-pipeline experience
-(firsthand), dual-sport skill-transfer perspective, and active
-HS coach view in addition to former-athlete lens.
+INSTITUTIONAL SOFT-SPLIT (Path 2 — locked 2026-05-02):
+Rather than splitting Institutional into a 4th breakout (which
+would require a 4th facilitator + 4th note-taker we don't have
+committed), Arron runs a single 6-person Institutional breakout
+with structured discussion ordering. For each of the 5 worksheet
+questions:
+
+  1. HS coaches answer first (Rick, Gio, Buck) — answers
+     reflect HS-context (no NCAA compliance department, state
+     association rules, athletic-director-and-school-board
+     reporting hierarchy, parent expectations, no scholarship
+     dynamics, no transfer portal pressure).
+  2. College coaches answer second with reframe specific to
+     college context if needed (Bret, Bob, Chris) — answers
+     reflect college-context (NCAA compliance, scholarship
+     and transfer portal dynamics, AD reporting structures,
+     and FBS vs D2 vs D3 tier differences).
+
+This captures most differentiation benefit (HS-take and
+College-take as separable signal at synthesis) without
+splitting physically. Note-taker tags entries HS or COL prefix
+in shorthand for trivial synthesis-time separation.
+
+Cross-lens flags by attendee (probe in institutional breakout):
+
+  Gio Vonne Sanders: NCAA Transfer Portal recruitment-pipeline
+    experience firsthand, dual-sport skill-transfer perspective,
+    active HS coach view in addition to former-athlete lens.
+
+  Buck Larry: father-son coaching dynamic (works under his son
+    Nolan as head coach — useful for parent-layer probing from
+    a coach seat), 2009 state championship pressure-cooker
+    experience, old-school + modern chemistry blend (tests
+    whether VirtusFocus reads as modern enough for younger
+    coaches AND rigorous enough for veterans).
+
+  Chris Russell: FBS Power Four vs D2 contrast (highly relevant
+    to GTM Q3 white-label vs single-app architecture and whether
+    institutional product needs to scale across NCAA divisions),
+    Video Coordinator analytical-coaching specialty (closest
+    match in the room to Coach Insights dashboard target user,
+    will press hardest on whether dashboard delivers what
+    data-minded position coaches actually need), engineering-
+    education technical-mindset (demands system rigor and data
+    integrity), Seton Hill insider familiarity with Angelo Allen
+    + Ron Oswald athletic-department ecosystem (anonymized
+    Athlete B and D2C Ron may be 0-1 degrees from him).
 
 
 PENDING WORK FOR MAY 9
 ======================
 Substantive content updates (NEXT SESSION):
-  (j) Integrate Gio Vonne Sanders into focus group materials.
-      Late RSVP confirmed 2026-05-01 in adjacent session
-      after Pitch Script + Capture Protocol + Welcome+NDA
-      Flow were already finalized and rendered to .docx +
-      .pdf. Cross-references in three places:
+  (j) Integrate three late-RSVP attendees into focus group
+      materials. Late RSVPs confirmed across 2026-05-01
+      (Gio Vonne Sanders) and 2026-05-02 (Buck Larry +
+      Chris Russell) in adjacent sessions, all after Pitch
+      Script + Capture Protocol + Welcome+NDA Flow were
+      finalized and rendered to .docx + .pdf. Three new
+      attendees, all Institutional segment. Cross-references
+      in three places:
 
       1. Pitch_Script_v1.txt — Section 4 (Nicole closing)
          currently calls out "Rick, Bret, Bob" for the
-         Institutional segment. Add Gio. Decide whether to
-         keep 3-name call-out or expand cross-lens probe
-         (NCAA Transfer Portal experience, dual-sport
-         skill transfer) into the spoken Section 4 ask.
+         Institutional segment. Add Gio + Buck + Chris.
+         With 6 names in one segment-specific ask, consider
+         either:
+           (a) Compress to "our institutional coaches" and
+               drop individual name call-outs for that
+               segment only (keep names for D2C and GTM),
+           (b) Keep all 6 names called out with eye-contact
+               instruction acknowledging the larger group,
+           (c) Expand with cross-lens probe specifically
+               for the segment (NCAA Transfer Portal +
+               FBS-vs-D2 architecture + parent-layer-from-
+               coach-seat angles).
 
       2. Capture_Protocol.txt — Institutional breakout
          assignment block currently lists 3 attendees
-         (Rick, Bret, Bob). Add Gio Vonne Sanders. Note
-         the now-balanced 4-4-4 segment count and any
-         shorthand-convention examples that reference
-         attendee initials should consider his initials
-         (GV or GS). Update facilitator/note-taker capacity
-         expectations for the larger institutional breakout.
+         (Rick, Bret, Bob). Update to all 6 (add Gio,
+         Buck, Chris). Document the Path 2 soft-split
+         structure (HS coaches answer first per question,
+         then College coaches with reframe if needed).
+         Note-taker shorthand convention should include
+         HS or COL prefix tagging for synthesis-time
+         separation. Update facilitator capacity note for
+         the 6-person breakout, and update Pre-Event
+         Checklist if needed.
 
       3. Welcome_and_NDA_Flow.txt — Sign-in roster table
-         needs Gio Vonne Sanders added to the Institutional
-         segment row. NDA-at-door process applies same as
-         other attendees. Cross-lens flag (institutional
-         breakout secondary perspective probe) also worth
-         a brief mention if the welcome script is touched.
+         needs three new rows added to Institutional
+         segment (Gio Vonne Sanders, Buck Larry, Chris
+         Russell). NDA-at-door process applies same as
+         other attendees. If the welcome script is touched,
+         worth briefly acknowledging the 14-attendee final
+         count and the now-larger Institutional segment.
 
       After .txt updates, regenerate .docx + .pdf via
       `python make_reference_docs.py` and commit all
       three deliverable pairs in one push.
+
+      NOTE: Capture_Protocol.txt already updated with the
+      Path 2 soft-split facilitator structure in this
+      session (2026-05-02). Tomorrow's content-integration
+      session only needs the attendee-name additions and
+      the pitch+welcome cross-references.
 
 Substantive (DONE in Session 121):
   (a) DONE. Compressed 30-min pitch script saved to

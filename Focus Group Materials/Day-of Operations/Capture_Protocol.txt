@@ -69,12 +69,54 @@ Confirmed:
 
 Recommended assignments (USER CONFIRM OR ASSIGN):
 
-  INSTITUTIONAL BREAKOUT (Rick, Bret, Bob)
+  INSTITUTIONAL BREAKOUT (6 attendees, soft-split HS/College)
     Facilitator:  Arron
     Note-taker:   [TBD: needs assigned name]
+    HS sub-group: Rick Klimchock, Gio Vonne Sanders, Buck Larry
+    College sub-group: Bret Colbert, Bob Colbert, Chris Russell
     Rationale:    Arron leads on coaching framing and
                   compliance, which is where this segment
-                  will press hardest.
+                  will press hardest. The 6-person room
+                  runs with structured discussion ordering
+                  (see SOFT-SPLIT STRUCTURE below) so each
+                  worksheet question surfaces both HS and
+                  College answers as separable signal.
+
+  SOFT-SPLIT STRUCTURE (Institutional only):
+    For each of the 5 worksheet questions, Arron opens
+    discussion in this order:
+
+      1. HS coaches answer first (~3-4 min)
+         Rick + Gio + Buck. Arron prompts: "Let's start
+         with the HS lens. [Question]. Rick, want to lead
+         off?" Answers reflect HS-context: state athletic
+         association rules, AD + principal + school board
+         + parent expectations, no NCAA compliance
+         department, no scholarship dynamics, no transfer
+         portal pressure.
+
+      2. College coaches answer second (~3-4 min)
+         Bret + Bob + Chris. Arron transitions: "Now
+         college lens. Same question, possibly different
+         answer." Reframe specific to college if needed.
+         Answers reflect college-context: NCAA compliance,
+         scholarship and transfer portal dynamics, AD
+         reporting structures, FBS vs D2 vs D3 tier
+         differences, recruitment pipeline.
+
+      3. Cross-tier reaction (~1-2 min if time allows)
+         Brief synthesis or contrast moment if a HS
+         answer surfaces something college coaches want
+         to react to (or vice versa). Skip if running
+         tight on time.
+
+    Total per question: ~7-10 min. Across 5 questions
+    plus brief intro/wrap, fits in 45-min breakout
+    window with discipline.
+
+    Note-taker tags every entry with "HS" or "COL" prefix
+    in shorthand for trivial synthesis-time separation
+    (see updated SENTIMENT CODES below).
 
   D2C / ATHLETE BREAKOUT (Ron, Liz, Alex, Tamara)
     Facilitator:  Nicole
@@ -117,13 +159,19 @@ template per page:
   SEGMENT:        [Institutional | D2C | GTM]
   BREAKOUT TIME:  [start - end, e.g., 1:30-2:15]
   NOTE-TAKER:     [Name]
-  ATTENDEES:      [First names, e.g., Rick, Bret, Bob]
+  ATTENDEES:      [First names, e.g., Rick, Bret, Bob, Gio,
+                  Buck, Chris]
   ----------------------------------------------------------
 
   Q1: [Question text or short ref, e.g., "Compliance balk?"]
   ----------------------------------------------------------
-  [TIMESTAMP] [INITIALS] [SENTIMENT-CODE] [verbatim or paraphrase]
+  [TIMESTAMP] [TIER] [INITIALS] [SENTIMENT-CODE] [verbatim or paraphrase]
   ----------------------------------------------------------
+
+TIER PREFIX (Institutional breakout only — soft-split):
+  HS   = High school coach answering (Rick, Gio, Buck)
+  COL  = College coach answering (Bret, Bob, Chris)
+  blank = D2C and GTM breakouts do not use tier prefix
 
 SENTIMENT CODES (single letter):
   P  = Positive / agreement / engaged
@@ -143,22 +191,44 @@ VERBATIM CAPTURE RULES:
   - Always include attendee initials so synthesis can
     attribute correctly
 
-EXAMPLES:
+EXAMPLES (Institutional breakout — note tier prefix on each entry):
 
-  1:42  RK  N  "Position coaches won't read it. They'll
-              skim the color and move on."
+  1:42  HS   RK  N  "Position coaches won't read it. They'll
+                    skim the color and move on."
 
-  1:45  BR  *  Brings in his Saint Vincent rebuilding
-              experience. Says: (paraphrased: institutional
-              adoption depends on whether the dashboard
-              shows what the head coach asked them to
-              measure, not what we think matters)
+  1:45  COL  BR  *  Brings in his Saint Vincent rebuilding
+                    experience. Says: (paraphrased:
+                    institutional adoption depends on
+                    whether the dashboard shows what the
+                    head coach asked them to measure, not
+                    what we think matters)
 
-  1:47  BC  P  "The clinical line in the language is
-              exactly right."
+  1:47  COL  BC  P  "The clinical line in the language is
+                    exactly right."
 
-  1:52  RK  Q  Asks whether parent layer is on or off by
-              default. Worth following up in synthesis.
+  1:52  HS   RK  Q  Asks whether parent layer is on or off
+                    by default. Worth following up in
+                    synthesis.
+
+  1:55  HS   BL  *  Father-son coaching dynamic surfaces.
+                    (paraphrased: as a coach working under
+                    his son, sees parent layer differently —
+                    parents-as-supporters not parents-as-
+                    monitors framing matches his read)
+
+  2:01  COL  CR  N  "We use a film breakdown tool already.
+                    The dashboard would need to integrate
+                    or we'd ignore it. Standalone is dead
+                    on arrival."
+
+EXAMPLES (D2C and GTM breakouts — no tier prefix):
+
+  1:42  RO  P  "My athletes would use this for the daily
+              tune-up alone, twenty bucks a month easy."
+
+  1:50  JR  M  "Story is clear but the GTM split between
+              D2C and institutional needs a sharper why-
+              now argument before sales hits it."
 
 
 WORKSHEET COLLECTION
