@@ -3,7 +3,7 @@
 Event:        May 9, 2026 (Saturday)
 Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
 Schedule:     11:30-12:00 check-in window | 12:00-12:15 welcome
-Last updated: 2026-05-01
+Last updated: 2026-05-02
 Owners:       Arron (welcome lead) + Nicole (operational support)
 
 
@@ -41,8 +41,8 @@ STRUCTURE
 7. Hand-off to Nicole                (~1 min)
 
 OPTIONAL go-around for name introductions can be inserted
-between Step 2 and Step 3, but with 11-12 attendees plus
-hosts, that adds 5-7 minutes. RECOMMENDED: skip the
+between Step 2 and Step 3, but with 14 attendees plus
+hosts, that adds 7-10 minutes. RECOMMENDED: skip the
 go-around. Attendees have name tags (color-coded by
 segment per pickup notes) and can introduce themselves
 at lunch. Spend the time on substantive welcome instead.
@@ -289,6 +289,9 @@ A printed sheet at the entry table with this format:
   Rick Klimchock   |         |      |          | Inst
   Bret Colbert     |         |      |          | Inst
   Bob Colbert      |         |      |          | Inst
+  Gio Vonne Sanders|         |      |          | Inst
+  Buck Larry       |         |      |          | Inst
+  Chris Russell    |         |      |          | Inst
   Ron Oswald       |         |      |          | D2C
   Liz Marcheleovich|         |      |          | D2C
   Alex Bohince     |         |      |          | D2C
