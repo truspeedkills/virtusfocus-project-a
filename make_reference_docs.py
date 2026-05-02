@@ -107,7 +107,7 @@ def setup_styles(doc):
     title.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 
-def set_page_margins(doc, inches=0.9):
+def set_page_margins(doc, inches=0.5):
     for section in doc.sections:
         section.top_margin = Inches(inches)
         section.bottom_margin = Inches(inches)
@@ -497,7 +497,7 @@ def convert_one(txt_path):
 
     doc = Document()
     setup_styles(doc)
-    set_page_margins(doc, 0.9)
+    set_page_margins(doc)  # uses function default; change in set_page_margins() to apply globally
 
     mode = "pitch" if "Pitch_Script" in os.path.basename(txt_path) else "generic"
     parse_and_render(text, doc, mode=mode)

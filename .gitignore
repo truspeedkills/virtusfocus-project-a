@@ -44,6 +44,13 @@ desktop.ini
 *.log
 
 # ----------------------------------------------------------
+# PYTHON BYTECODE / CACHE
+# ----------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+
+# ----------------------------------------------------------
 # NOTE: The following ARE tracked (not ignored):
 # - Athlete snapshots (processed/structured pipeline data)
 # - Interpretation JSONs (pipeline output)
