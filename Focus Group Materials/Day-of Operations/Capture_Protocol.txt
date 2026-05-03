@@ -67,11 +67,12 @@ one facilitator and one note-taker (separate people).
 Confirmed:
   Arron + Nicole are co-founders, both facilitating.
 
-Recommended assignments (USER CONFIRM OR ASSIGN):
+Confirmed assignments:
 
   INSTITUTIONAL BREAKOUT (6 attendees, soft-split HS/College)
     Facilitator:  Arron
-    Note-taker:   [TBD: needs assigned name]
+    Note-taker:   Tucker Lloyd (program athlete; coach-track college student;
+                  brings near-coach observation lens to synthesis)
     HS sub-group: Rick Klimchock, Gio Vonne Sanders, Buck Larry
     College sub-group: Bret Colbert, Bob Colbert, Chris Russell
     Rationale:    Arron leads on coaching framing and
@@ -120,34 +121,35 @@ Recommended assignments (USER CONFIRM OR ASSIGN):
 
   D2C / ATHLETE BREAKOUT (Ron, Liz, Alex, Tamara)
     Facilitator:  Nicole
-    Note-taker:   [TBD: needs assigned name]
+    Note-taker:   Kellie Lynch (clean external observer; no athlete or
+                  coaching affiliation, so notes carry no insider bias on
+                  the breakout discussing athlete experience)
     Rationale:    Nicole's voice on parent layer,
                   authenticity, and price-point is the
                   strongest match for this segment.
 
   GTM BREAKOUT (Jon, Noele, Jennifer, Tom)
-    Facilitator:  [TBD: Arron or Nicole rotates over]
-    Note-taker:   [TBD: needs assigned name]
-    Rationale:    Both co-founders bring relevant lens.
-                  Nicole leans market positioning, Arron
-                  leans system depth. Could either swap a
-                  facilitator over after Institutional and
-                  D2C settle into discussion (~15 min in),
-                  OR designate a third facilitator with
-                  business / strategic credibility.
+    Facilitator:  Michele Cribbs (also serving as check-in lead 11:30-12:00;
+                  see Welcome_and_NDA_Flow.txt; needs ~30-min pre-event
+                  briefing on GTM worksheet questions and cross-lens flags
+                  for Jon, Noele, Jennifer, Tom)
+    Note-taker:   Aidan Burkardt (program athlete; D1 sprinter at Pitt;
+                  placed in GTM rather than D2C/Institutional to minimize
+                  personal-overlap awkwardness; analytical strength fits
+                  observing strategic positioning discussion)
+    Rationale:    Michele brings business/strategic facilitation lens
+                  for the segment that presses hardest on positioning,
+                  pricing, and category questions. Two of the three
+                  note-takers (Tucker, Aidan) are program athletes; this
+                  is captured as a synthesis caveat (their notes carry
+                  an insider lens valuable but distinct from external-
+                  observer signal).
 
-OPEN QUESTIONS FOR ARRON + NICOLE TO RESOLVE PRE-EVENT:
-  - Who is the third facilitator for GTM? (Or are
-    Arron/Nicole rotating?)
-  - Who are the three note-takers? Three options:
-      a) Three trusted observers with NDA signed
-         (recommended; lets co-founders facilitate cleanly)
-      b) One operational lead floats between rooms
-         (insufficient; misses too much)
-      c) Note-takers drawn from attendees (NOT recommended;
-         compromises their participation)
-  - If using approach (a): names + NDA confirmation needed
-    before May 6.
+PRE-EVENT NOTES:
+  - All three note-takers' NDAs completed and Note_Taker_Briefing
+    distributed (per user confirmation 2026-05-03).
+  - Michele Cribbs's NDA + facilitator briefing scheduled for
+    pre-event week.
 
 
 NOTE-TAKER SHORTHAND CONVENTION

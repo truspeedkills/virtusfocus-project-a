@@ -208,7 +208,10 @@ PITCH BEGINS AT 12:15.]
 PART 2: NDA-AT-DOOR FLOW
 ====================================================
 Window:        11:30 AM - 12:00 PM (30 minutes)
-Lead:          [TBD: someone non-presenting]
+Lead:          Michele Cribbs (also serving as GTM breakout
+               facilitator at 1:30-2:15; see
+               Capture_Protocol.txt and
+               Breakout_Facilitation_Guide.txt)
 Backup:        Nicole if needed (Arron preparing for welcome)
 
 
@@ -230,10 +233,17 @@ The check-in lead does NOT need to be Arron or Nicole.
 In fact, it should not be. Arron is preparing for the
 welcome block. Nicole is preparing for the pitch.
 
-OPEN QUESTIONS TO RESOLVE PRE-EVENT:
-  - Who is the check-in lead? Same person as a
-    note-taker, or different?
-  - Backup if check-in lead is delayed?
+PRE-EVENT NOTES:
+  - Michele Cribbs's NDA + check-in-lead briefing
+    scheduled for pre-event week. Michele also
+    facilitates GTM breakout 1:30-2:15, so 90-minute
+    role-cooling gap (12:00-1:30) is built in.
+  - Backup if Michele is delayed: Nicole steps in
+    until Michele arrives, then hands over.
+  - As check-in lead, Michele is the first face
+    attendees see, including her four GTM attendees
+    (Jon, Noele, Jennifer, Tom). Builds rapport
+    before she facilitates them at 1:30.
 
 REQUIREMENTS FOR THE CHECK-IN LEAD:
   - Trusted (handles NDA-signed material)

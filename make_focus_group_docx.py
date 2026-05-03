@@ -655,7 +655,7 @@ def make_grace_progression():
     configure_footer(section, "ATHLETE A", 1)
 
     add_visual_header(doc,
-        "Athlete A — D2 women's softball, infielder",
+        "Athlete A — D2 women's softball, outfielder",
         "12-Week Coaching Arc",
         "Athlete A — Progression Visual",
         "Jan 12 – Apr 26, 2026")
@@ -897,7 +897,7 @@ def make_institutional_cover():
     ])
 
     add_cover_athletes(doc, [
-        ("Athlete A", "D2 women's softball, infielder. 12-week coaching arc."),
+        ("Athlete A", "D2 women's softball, outfielder. 12-week coaching arc."),
         ("Athlete B", "D2 men's track and field, throws. 10-week coaching arc, retiring after PSAC championship."),
     ])
 
@@ -933,7 +933,7 @@ def make_d2c_cover():
     ])
 
     add_cover_athletes(doc, [
-        ("Athlete A", "D2 women's softball, infielder. 12-week coaching arc."),
+        ("Athlete A", "D2 women's softball, outfielder. 12-week coaching arc."),
         ("Athlete B", "D2 men's track and field, throws. 10-week coaching arc, retiring after PSAC championship."),
         ("Athlete C", "High school wrestling. Week 1 of return arc following season-ending knee injury."),
     ])
@@ -974,7 +974,7 @@ def make_gtm_cover():
     ])
 
     add_cover_athletes(doc, [
-        ("Athlete A", "D2 women's softball, infielder. 12-week coaching arc (depth case)."),
+        ("Athlete A", "D2 women's softball, outfielder. 12-week coaching arc (depth case)."),
         ("Athlete B", "D2 men's track and field, throws. 10-week coaching arc, retiring after PSAC championship."),
         ("Athlete C", "High school wrestling. Week 1 of return arc post-injury (HS-context parent exemplar)."),
     ])

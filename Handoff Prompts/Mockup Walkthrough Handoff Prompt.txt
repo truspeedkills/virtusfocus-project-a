@@ -1,0 +1,457 @@
+MOCKUP WALKTHROUGH HANDOFF PROMPT
+==================================
+Created:  2026-05-03
+Event:    May 9, 2026 (Saturday), 12:45-1:15 PM block
+Venue:    Hampton Inn, 1000 Towne Square Dr, Greensburg
+Owners:   Arron (lead) + Nicole (co-walks)
+
+
+FIRST INSTRUCTION (paste verbatim into a fresh session)
+=========================================================
+"Read CLAUDE.md and Handoff Prompts/Mockup Walkthrough
+Handoff Prompt.txt in full, then begin Phase 1 (Load
+Context). Stop after Phase 1 to confirm initial screen-
+selection thinking with me before drafting."
+
+
+PURPOSE
+=======
+Build the 30-minute mockup walkthrough block (12:45-1:15)
+that sits between the pitch (12:15-12:45) and lunch
+(1:15-1:30) at the May 9 focus group. This is the
+substantive "show what the app actually looks like"
+moment of the event.
+
+Two deliverables come out of this session:
+
+  1. Mockup_Walkthrough_Script.txt + .docx + .pdf
+     The spoken script for Arron + Nicole, formatted
+     like Pitch_Script_v1.txt with stage directions and
+     speaker tags. ~3,000 words / ~30 min spoken.
+
+  2. Selected_App_Mockup_Printouts.pdf (4-5 pages)
+     The GTM artifact packet currently includes a
+     placeholder for "Selected App Mockup Printouts
+     (Home / Tune-Up / Weekly Recap / Inbox)" per
+     GTM_Cover.txt. This deliverable creates that file
+     as a compiled annotated screenshot bundle, one
+     screen per page, for inclusion in the GTM packet.
+
+
+CONTEXT
+=======
+The pitch script (Sections 2-3) describes the system at
+a high level and grounds it in three athlete stories. The
+mockup walkthrough is where the system becomes visible.
+Attendees just heard the system described. Now they see
+it.
+
+What's available visually (per user 2026-05-03):
+
+  - ATHLETE-SIDE SCREENS: complete in mockindex.html and
+    Scott mockindex.html. Multiple screens covering Home,
+    Morning Tune-Up, Weekly Recap, Inbox, Bullseye flows,
+    journaling, daily snippet receipt, athlete coaching
+    message view, etc.
+
+  - COACH / PARENT DASHBOARDS: NO visuals exist. The
+    output content does exist (the Coach Insight files
+    and Parent CM/Insight files generated in the pipeline)
+    but no rendered dashboard mockup. The walkthrough has
+    to handle this honestly: show the OUTPUT (the actual
+    file content) as proxy for "this is what the system
+    PRODUCES for coaches and parents," and frame the
+    visual layer as still-in-design.
+
+  - BACKEND / AUDIT LAYERS: NO visuals. The audit summary
+    .txt files exist and prove the QC layer is real, but
+    there is nothing visual to show. Acknowledge briefly,
+    don't walkthrough.
+
+This means the walkthrough is honest about what's
+complete, doesn't pretend to have full app coverage, and
+sets the right expectation with attendees that the
+institutional and parent visualization tier is still
+being designed.
+
+
+LOCKED DESIGN DECISIONS
+========================
+These are settled. Do not relitigate.
+
+1. Tag-team structure: Arron leads, Nicole co-walks.
+   Same convention as the pitch script. Arron drives
+   the screen-by-screen narrative. Nicole interjects
+   connective commentary linking screens back to athlete
+   experience or business model.
+
+2. Length: 30 minutes spoken / ~3,000 words / fits in
+   the 12:45-1:15 slot without bleeding into lunch.
+
+3. Order is fixed: athlete-side flow first (the bulk of
+   what attendees will see) followed by a brief view of
+   what coaches and parents receive (output-based, not
+   visual) and a one-sentence acknowledgment of the
+   backend audit layer at the close.
+
+4. Athletes shown in any mockup data on screen are
+   anonymized as Athlete A / B / C the same way they are
+   in the pitch and packets. If mockindex.html mockups
+   show specific named athletes, the walkthrough script
+   directs Arron to refer to them as "this athlete"
+   without using their real names from the stage.
+
+5. Question handling: hold-for-breakouts unless someone
+   asks a one-sentence clarifying question. Same
+   convention as the pitch and welcome blocks. Arron
+   says: "Great question, hold it for the synthesis room."
+
+6. Voice + format conventions inherited from pitch script:
+   zero em dashes anywhere in script (use period, comma,
+   or colon). Contractions are default. Stage directions
+   in [BRACKETS]. Speaker tags **[NICOLE]** or **[ARRON]**
+   at handoff seams. Conversational, not corporate.
+
+7. The 4 GTM-required screens (Home / Tune-Up / Weekly
+   Recap / Inbox per GTM_Cover.txt CONTENTS item 10) MUST
+   be in the walkthrough. They are the screens GTM
+   attendees will hold in their hands during the breakout.
+
+8. Compliance rules from the rest of the event apply:
+   no clinical language, no surveillance framing, no
+   pipeline-classification jargon visible to attendees,
+   "Mental Performance not Mental Health" line held.
+
+9. Margin 0.5in for all printable outputs (uses
+   make_reference_docs.py convert_one() and the corrected
+   call-site default established in Session 123).
+
+10. Brand-name treatment: '"VirtusFocus"' in straight
+    quotes appears at first mention only (already used
+    in pitch Section 1, may not need repeating here).
+    Plain VirtusFocus thereafter.
+
+
+OPEN DESIGN DECISIONS TO RESOLVE IN SESSION
+=============================================
+These need user input. Bring them up at Phase 2.
+
+a. SPECIFIC SCREEN SELECTION FROM MOCKINDEX.HTML
+   Must include the 4 GTM-required screens. Beyond those,
+   how many additional screens? Likely 2-4 more athlete-
+   side screens (Bullseye, journaling, daily snippet
+   receipt, athlete coaching message view) for a total
+   of 6-8 screens covered in 30 min.
+   Per-screen budget: 30 min / 6-8 screens = ~3-5 min
+   per screen including handoffs and connective
+   commentary.
+
+b. ORDER WITHIN ATHLETE-SIDE FLOW
+   Logical flow options:
+     - Daily-rhythm-first: Home -> Tune-Up -> (during day) ->
+       Weekly Recap -> Inbox -> Coaching Message view
+     - System-flow-first: Inbox -> Coaching Message view ->
+       Home -> Tune-Up -> Weekly Recap (mirror athlete's
+       arrival into the system)
+     - Output-flow-first: Coaching Message view (the
+       payoff) -> Home -> Tune-Up -> Weekly Recap (the
+       work that produces the payoff)
+   Decide which order best supports the pitch's emotional
+   arc and the breakout questions to follow.
+
+c. PER-SCREEN TALKING POINTS
+   For each selected screen, draft:
+     - One-sentence frame ("This is what the athlete sees
+       first thing in the morning")
+     - One-sentence what's-on-screen ("Yesterday's
+       snippet, today's Tune-Up prompt, the Bullseye
+       reminder")
+     - One coaching-meaning beat ("Notice the snippet
+       was rendered overnight from yesterday's data, so
+       the athlete walks into today already inside the
+       coaching layer")
+     - One reaction-invitation ("If you have parents in
+       your program who would push back on this, hold
+       that for the breakout")
+
+d. TAG-TEAM HANDOFF SEAMS
+   How many handoffs across 30 min? Default is two clean
+   seams at section boundaries (Arron opens athlete-side,
+   Nicole walks 1-2 specific screens with parent or
+   business framing, Arron closes with coach/parent
+   output and audit acknowledgment). Decide where Nicole
+   speaks vs interjects.
+
+e. COACH / PARENT DASHBOARD TREATMENT
+   Without visuals, options:
+     - Hold up the printed Coach Insight PDFs from the
+       packet ("This is what an institutional coaching
+       staff actually receives") and walk one section
+     - Project a sample Coach Insight on screen as text
+     - Describe verbally without artifact ("The coach
+       layer mirrors the athlete layer with appropriate
+       compliance filtering")
+   The first option is strongest because it grounds the
+   walkthrough in real artifacts attendees can flip to in
+   their packets, but it depends on whether Arron is
+   comfortable picking up the printed packet mid-talk.
+
+f. BACKEND / AUDIT ACKNOWLEDGMENT LENGTH
+   30 sec? 1 min? Just one sentence at the close?
+   Recommend: one sentence pointing at the audit summary
+   files behind every output, used as a credibility
+   point ("Every output you just saw passes a 14-criterion
+   editorial audit before the athlete sees it. The
+   audit log lives behind the scenes and never reaches
+   the athlete or the coach. The pitch system catches
+   what AI does badly before it can land."). One
+   sentence. No more.
+
+g. APP MOCKUP PRINTOUTS DELIVERABLE
+   The GTM artifact packet needs a 4-5 page PDF compiling
+   the 4 walkthrough screens (Home / Tune-Up / Weekly
+   Recap / Inbox) as full-page printouts with brief
+   annotation. Per-page format options:
+     - Screen full-bleed at top half, annotation block
+       below: what attendees should notice, what to react
+       to in the breakout
+     - Screen + caption only (cleaner)
+     - Screen + 3-5 numbered call-outs pointing at
+       specific UI elements (most teaching value but
+       most visual prep)
+   Decide based on what mockindex.html provides as
+   extractable image assets and how much annotation
+   bandwidth the GTM segment warrants.
+
+
+DELIVERABLES
+=============
+
+1. Mockup_Walkthrough_Script.txt
+   Path: Focus Group Materials/Mockup Walkthrough/
+   Format: same convention as Pitch_Script_v1.txt
+   Sections: opening transition / athlete-side flow /
+   coach + parent dashboards (output-based) / backend
+   audit acknowledgment / closing transition into lunch
+
+2. Mockup_Walkthrough_Script.docx + .pdf
+   Generated via convert_one() from make_reference_docs.py.
+   0.5in margins. Ready for Arron + Nicole rehearsal.
+
+3. Selected_App_Mockup_Printouts.pdf
+   Path: Focus Group Materials/Artifact Packets/
+   4-5 pages: one screen per page (Home / Tune-Up /
+   Weekly Recap / Inbox), annotation per design decision (g).
+   Goes inside the GTM artifact packet per GTM_Cover.txt
+   CONTENTS item 10.
+
+4. Update GTM_Cover.txt CONTENTS item 10 reference to
+   point at the actual Selected_App_Mockup_Printouts.pdf
+   filename if it differs from the cover label.
+
+5. Update CLAUDE.md with new session entry capturing the
+   work and decisions.
+
+
+EXECUTION PHASES
+=================
+
+Phase 1: LOAD CONTEXT  (effort: MEDIUM)
+  Read in this order:
+    - This handoff prompt
+    - Pitch_Script_v1.txt Sections 2 (Vision) and 4
+      (Where We Are) for tone and tag-team convention
+    - GTM_Cover.txt CONTENTS section to confirm the 4
+      required screens
+    - Scott mockindex.html (190KB, 3,476 lines) selective
+      read of athlete-side screens. Skim non-athlete
+      content. Identify which 6-8 screens to feature.
+    - mockindex.html (companion gallery) if Scott's
+      version misses any athlete-side screen
+    - Capture_Protocol.txt and Note_Taker_Briefing.txt
+      sections about the walkthrough block (note-takers
+      are NOT note-taking the walkthrough; they're in
+      the audience listening) so the script is calibrated
+      to attendee mental load not note-taker mental load
+    - The 4 segment artifact packets to confirm what
+      attendees have in their hands
+  Stop after Phase 1 to confirm initial screen-selection
+  thinking with the user before drafting.
+
+Phase 2: SCREEN SELECTION + ORDER  (effort: HIGH)
+  Collaborative decision. Resolve open decisions (a) and
+  (b). Land on a numbered list of 6-8 screens with order
+  locked.
+
+Phase 3: PER-SCREEN TALKING POINTS  (effort: HIGH)
+  Resolve open decision (c). For each selected screen,
+  draft one-sentence frame + one-sentence on-screen +
+  one coaching-meaning beat + one reaction-invitation.
+  This is the most creative phase.
+
+Phase 4: TAG-TEAM HANDOFFS + STAGE DIRECTIONS  (effort: MEDIUM)
+  Resolve open decision (d). Add [BRACKETS] for pace,
+  pause, eye contact, physical position. Add **[NICOLE]**
+  / **[ARRON]** speaker tags at handoff seams. Match the
+  pitch script's rhythm.
+
+Phase 5: COACH + PARENT + AUDIT TREATMENT  (effort: MEDIUM)
+  Resolve open decisions (e) and (f). Draft the closing
+  third of the walkthrough (output-based proxy + audit
+  acknowledgment) without visuals.
+
+Phase 6: SCRIPT FINALIZATION + CONVERT  (effort: LOW)
+  Format pass: zero em dashes, header + datestamp,
+  speaker word counts, total word count target ~3,000.
+  Convert .txt to .docx + .pdf via make_reference_docs.py
+  convert_one().
+
+Phase 7: APP MOCKUP PRINTOUTS DELIVERABLE  (effort: MEDIUM)
+  Resolve open decision (g). Extract 4 screens from
+  mockindex.html as images, annotate per chosen format,
+  compile to a 4-5 page PDF. May require additional
+  Python tooling (Pillow, pypdfium2) already installed
+  per CLAUDE.md.
+  Path: Focus Group Materials/Artifact Packets/
+  Selected_App_Mockup_Printouts.pdf
+
+Phase 8: COMMIT + PUSH + CLAUDE.md UPDATE  (effort: LOW)
+  Standard end-of-session housekeeping per CLAUDE.md
+  rules.
+
+
+CRITICAL OPERATING RULES
+=========================
+
+  Athletes anonymized as A / B / C even when mockup
+    data on screen shows real names. The script directs
+    "this athlete" not real names from the stage.
+
+  Zero em dashes file-wide. Period, comma, or colon.
+
+  Voice consistent with pitch script: conversational,
+    contractions default, no corporate-speak.
+
+  Honest about what's not visualized. Do not pretend the
+    coach / parent dashboards are designed when they are
+    not. The walkthrough is stronger for being honest
+    about scope.
+
+  Hold-for-breakouts default for clarifying questions.
+
+  No clinical language. No surveillance framing. No
+    pipeline classification jargon ("Composite Readiness
+    Signal", "Drift Score", etc. stay backend-only).
+
+  Stage directions match the pitch script's calibration:
+    pace shifts, beats, pauses, eye contact, physical
+    position transitions between speakers.
+
+  Compliance line ("not therapy, not pretending to be")
+    already drawn in the pitch. Don't redraw it. Reference
+    if needed.
+
+  Margin 0.5in for all printable outputs.
+
+  Don't lengthen the walkthrough beyond 30 min. The
+    schedule is built around 12:45-1:15. Lunch starts at
+    1:15.
+
+
+REFERENCE FILES BY PRIORITY
+=============================
+
+Tier 1 (must read fully):
+  - This handoff prompt
+  - Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
+    (Sections 2-4)
+  - Focus Group Materials/Artifact Packets/GTM_Cover.txt
+    (for the App Mockup Printouts requirement)
+  - App Information for Focus Group/Scott mockindex.html
+    (selective read, athlete-side screens primary)
+  - App Information for Focus Group/mockindex.html
+    (companion gallery, fill any athlete-side gaps)
+
+Tier 2 (read as needed):
+  - Focus Group Materials/Day-of Operations/
+      Capture_Protocol.txt
+      Welcome_and_NDA_Flow.txt
+      Breakout_Facilitation_Guide.txt
+      Note_Taker_Briefing.txt
+  - Focus Group Materials/Artifact Packets/
+      Institutional_Cover.txt
+      D2C_Athlete_Cover.txt
+
+Tier 3 (context):
+  - CLAUDE.md (preamble + Session 123 entry for current
+    state, attendee profiles for cross-lens flags)
+  - VirtusFocus_Pipeline_Comprehensive_Briefing v2.0.docx
+    (full pipeline architecture)
+  - App Information for Focus Group/Screen Details/
+    (per-screen design folders if Scott mockindex.html
+    references them)
+
+
+SUCCESS CRITERIA
+=================
+
+  1. 30-min spoken script ready for Arron + Nicole to
+     rehearse, with stage directions and speaker tags.
+  2. Screen selection covers the 4 GTM-required screens
+     (Home / Tune-Up / Weekly Recap / Inbox) plus 2-4
+     additional athlete-side screens.
+  3. Coach / parent / audit layers handled honestly
+     (output-based, not pretend visuals).
+  4. Selected_App_Mockup_Printouts.pdf ready for inclusion
+     in GTM artifact packet, 4-5 pages.
+  5. All compliance rules respected (anonymization, no
+     clinical language, no surveillance framing).
+  6. Zero em dashes file-wide.
+  7. Tag-team structure clear with explicit handoff seams
+     matching pitch script convention.
+  8. CLAUDE.md updated with session entry.
+  9. Committed and pushed to origin/master.
+
+
+WHAT NOT TO DO
+===============
+
+  Do NOT pretend coach / parent dashboards have visuals
+    when they do not. Be honest about scope.
+
+  Do NOT skip the 4 GTM-required screens. They are
+    locked.
+
+  Do NOT exceed 30 min runtime. Lunch starts at 1:15.
+
+  Do NOT use real athlete names from the stage even if
+    mockup data shows them.
+
+  Do NOT introduce em dashes (project convention).
+
+  Do NOT use clinical, surveillance, or pipeline-
+    classification language.
+
+  Do NOT redraw the Mental Performance vs Mental Health
+    line. Pitch handles that.
+
+  Do NOT generate the App Mockup Printouts before screen
+    selection is finalized in Phase 2. Phase 7 depends
+    on Phase 2's output.
+
+  Do NOT skip the user-confirmation pause after Phase 1.
+    Screen selection should be collaborative.
+
+
+CLOSING NOTE
+=============
+The walkthrough is the substantive "show, don't tell"
+moment of the event. It is also the last 30 min of
+content before lunch and breakouts. Attendees who are
+going to react during the breakouts will form their first
+visceral reaction here, looking at actual screens. Voice
+and pace matter as much as content.
+
+Plan for Arron + Nicole to rehearse twice before May 9.
+The script should be confident enough to deliver from the
+page on first read but rich enough to reward rehearsal.

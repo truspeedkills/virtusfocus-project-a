@@ -33,7 +33,7 @@ block:
 
   INSTITUTIONAL    6 attendees   Arron facilitates
   D2C / ATHLETE    4 attendees   Nicole facilitates
-  GTM              4 attendees   [TBD facilitator]
+  GTM              4 attendees   Michele Cribbs facilitates
 
 Each breakout group sits at its own table or section of
 the room, has its own facilitator, has its own note-taker,
