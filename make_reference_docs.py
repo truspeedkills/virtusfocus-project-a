@@ -45,6 +45,7 @@ FOCUS_DIR = os.path.join(ROOT, "Focus Group Materials")
 
 INPUTS = [
     os.path.join(FOCUS_DIR, "Pitch Script", "Pitch_Script_v1.txt"),
+    os.path.join(FOCUS_DIR, "Mockup Walkthrough", "Mockup_Walkthrough_Script_v1.txt"),
     os.path.join(FOCUS_DIR, "Day-of Operations", "Capture_Protocol.txt"),
     os.path.join(FOCUS_DIR, "Day-of Operations", "Welcome_and_NDA_Flow.txt"),
     os.path.join(FOCUS_DIR, "Day-of Operations", "Breakout_Facilitation_Guide.txt"),

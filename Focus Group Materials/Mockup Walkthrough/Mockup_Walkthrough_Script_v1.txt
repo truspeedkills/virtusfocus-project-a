@@ -1,0 +1,612 @@
+"VIRTUSFOCUS" FOCUS GROUP: MOCKUP WALKTHROUGH SCRIPT
+=====================================================
+Event:        May 9, 2026 (Saturday)
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+Slot:         12:45-1:15 (between pitch and lunch)
+Duration:     ~30 minutes spoken / ~2,290 words
+Speakers:     Arron (athlete-side, 9 screens) + Nicole (coach,
+              parent, snapshot, team, audit close)
+Format:       Tag-team. Single hand-off seam after Inbox (Feed).
+Last updated: 2026-05-03
+Version:      v1
+
+
+SPEAKER NOTES KEY
+=================
+[BRACKETS]   = stage direction (pause, pace, hand-off, gesture,
+               click, physical action)
+"quotes"     = exact phrasing to read or call out
+
+
+CRITICAL DELIVERY NOTES
+=======================
+- ZERO em dashes anywhere in this script (project convention).
+  Use period, comma, or colon. Never substitute em dash on the fly.
+- "VirtusFocus" already established in pitch Section 1. Plain
+  VirtusFocus throughout this script.
+- Athletes are anonymized as Athlete A / B / C from the stage,
+  even when on-screen mockup data shows real names. The Inbox
+  (Feed) screen contains real Wk12 content from Athlete A's
+  actual program with her name visible in the rendering. Refer
+  to her as "Athlete A" or "this athlete" from the stage.
+- Tag-team structure: Arron drives screens 1 through 9
+  (athlete-side flow). Single hand-off seam after Inbox (Feed)
+  to Nicole, who closes with snapshot, coach, parent, team,
+  audit, and the lunch transition.
+- Smart-board sequence: 9 screens from the filtered
+  Mockup_Walkthrough_Gallery.html, then 4 reader pages in this
+  order: Snapshot Reader, Coach Reader, Parent Reader, Team
+  Snapshot Reader.
+- Each segment's printed packet contains the artifact Nicole
+  holds up for that subsection. After Phase 7 packet
+  symmetrization, Coach Insight, Parent CM, Team Snapshot, and
+  Athlete A snapshot are in every packet.
+
+
+=====================================================
+SECTION 0: OPENING TRANSITION
+Speaker: Arron | ~85 words | ~30 seconds
+=====================================================
+
+[NICOLE STEPS BACK. ARRON STEPS TO PRESENTING POSITION.]
+
+Thanks Nicole.
+
+[BEAT]
+
+Quick context before we start clicking through. What you
+heard earlier was the system. What I want to show you for
+the next thirty minutes is how it actually shows up on an
+athlete's phone. We'll walk through one day in the life of
+an athlete. Then the weekly cadence. Then what the system
+sends back to the athlete. After that I'll hand it over to
+Nicole for what coaches and parents see, and we'll close
+with the audit layer.
+
+[BEAT]
+
+Let's start at the beginning of the day.
+
+[CLICK TO SCREEN 1: HOME (MORNING). PAUSE FOR ATTENDEES TO
+LOOK UP.]
+
+
+=====================================================
+SECTION 1: SCREEN 1 - HOME (MORNING)
+Speaker: Arron | ~155 words | ~1.5 minutes
+=====================================================
+
+This is what the athlete sees first thing in the morning.
+The entire daily surface lives here.
+
+[GESTURE TO SCREEN]
+
+Greeting at the top. The big amber card in the middle is
+today's Mindset Tune-Up. The most important current task
+always rises to the top of the feed. The focus word is
+already on the card, pre-rendered. Below the Tune-Up card,
+the Bullseye and the Coaching Feedback Preview, both always
+present.
+
+[BEAT]
+
+Tuesday through Sunday, there's also a yesterday-to-today
+coaching snippet sitting on that Coaching Feedback card.
+Scroll down to read it. One or two sentences, written
+overnight to bridge yesterday into today.
+
+[PACE SHIFTS. DELIBERATE.]
+
+Notice what's not here. No score. No streak. No leaderboard.
+No number telling them how they're doing. The morning is
+for setting intention, not for being graded on yesterday.
+
+[BEAT]
+
+If anyone in this room expected gamification on a coaching
+app, hold that thought for the breakout.
+
+
+=====================================================
+SECTION 2: SCREEN 2 - TUNE-UP (ACTIVE)
+Speaker: Arron | ~215 words | ~2.5 minutes
+=====================================================
+
+[CLICK TO SCREEN 2: TUNE-UP (ACTIVE).]
+
+When the athlete taps Start, this is the Morning Tune-Up.
+About one to three minutes for the athlete to interact with.
+
+[GESTURE TO SCREEN]
+
+Single scrollable screen. Mindset Statement at the top in
+my coaching voice. Focus Word in amber with a connected
+quote underneath. A Mindset Challenge to accept for that
+day. Three Quick Wins, the daily ritual. A closing statement
+at the bottom. Finish button.
+
+[PACE SHIFTS. DELIBERATE.]
+
+The Mindset Statement and the closing line are both in my
+coaching voice, written for that day. The system did the
+writing, in my voice, before the athlete walked into the
+day. The Morning Tune-Up is them participating in a coaching
+moment, not filling out a form.
+
+[BEAT]
+
+One more thing on this screen worth flagging. The Mindset
+Challenge they accept here, the system pulls it back into
+the evening review later tonight. One of the five questions
+they answer at end of day asks whether they followed
+through on it. That's the daily loop. Accepted in the
+morning, closed in the evening. Both ends in their hands.
+
+[BEAT]
+
+If your athletes would push back on a challenge they didn't
+choose for themselves, that's a breakout question.
+
+
+=====================================================
+SECTION 3: SCREEN 3 - BULLSEYE (MID-ENTRY)
+Speaker: Arron | ~225 words | ~2.5 minutes
+=====================================================
+
+[CLICK TO SCREEN 3: BULLSEYE (MID-ENTRY).]
+
+This is the Bullseye method. The athlete uses this any time
+something happens during the day they want to sort. It's
+also part of the end-of-day review, but it stands alone
+here.
+
+[GESTURE TO SCREEN]
+
+Three labels on screen. Can Control. Can Influence. Can't
+Control. They correspond to the rings of a bullseye. The
+athlete writes what happened at the top, then categorizes
+pieces of it into the right ring. We let them tag the
+event. In this case, Practice slash Training is selected.
+Earlier moments from this same day are saved as cards
+below.
+
+[PACE SHIFTS. DELIBERATE.]
+
+This is where the pipeline reads what the athlete is
+focusing on versus what they're owning. If the Can't Control
+ring is filling up faster than the Can Control ring across
+a week, that's a coaching signal. If the athlete is properly
+categorizing the controllable, recognizing what they
+actually can act on versus what is noise, that's also a
+coaching signal. The system reads both directions. The
+athlete never sees the signal. The system uses it, along
+with hundreds of other signals, to write the next coaching
+message and deep dive.
+
+[PAUSE]
+
+If you're a parent in this room reading those ring labels
+and feeling protective, hold that feeling. The parent layer
+never sees this content directly. The coaching staff never
+sees this content directly. The athlete's privacy is
+non-negotiable for us. We'll come back to that.
+
+
+=====================================================
+SECTION 4: SCREEN 4 - JOURNAL (ACTIVE)
+Speaker: Arron | ~250 words | ~2.5 minutes
+=====================================================
+
+[CLICK TO SCREEN 4: JOURNAL (ACTIVE).]
+
+Journaling. Three life domains. Used during the day in the
+moment or as part of the evening review.
+
+[GESTURE TO SCREEN]
+
+School slash Work. Sport. Homelife. All on one scrolling
+screen. School slash Work has one locked entry from earlier
+this morning. A sport entry is being written right now.
+Homelife is empty. Journal entries auto-save and lock after
+a five-minute edit window.
+
+[PACE SHIFTS. DELIBERATE.]
+
+Three separate domains, not one. The athlete sees today as
+a whole person, not just as a sport athlete in isolation.
+The pipeline reads across all three. If sport is going well
+and homelife or social life shifts, even slightly, that's
+caught and named. If homelife is calm and sport is the
+source of real friction, that's caught too. The system
+reads small ripples and real friction as coaching signal.
+This isn't a system that only works when things are Great
+or Terrible. It works in real life.
+
+[PAUSE. EYE CONTACT WITH THE ROOM.]
+
+This is one of many input layers this app is built around
+protecting. Athlete input has to be private or the
+journaling won't be honest. Parents never see this. Coaches
+never see this. This app is not surveillance. If your
+instinct is wanting to read a kid's journal, hold it.
+
+
+=====================================================
+SECTION 5: SCREEN 5 - HOME (EVENING)
+Speaker: Arron | ~100 words | ~1 minute
+=====================================================
+
+[CLICK TO SCREEN 5: HOME (EVENING).]
+
+Same Home hub. Evening prompt now. The app moved with the
+athlete.
+
+[GESTURE TO SCREEN]
+
+Greeting shifts to Good evening. Primary card is now Win the
+Day Review with a Reflect button. Moon icon replaces the
+sun in the bottom nav. Same Bullseye and Coaching cards
+underneath, always present.
+
+[BEAT]
+
+One surface, three moments in the day and week. Morning,
+evening, Sunday recap. The athlete never has to choose what
+to do next. The app meets them at the right prompt for the
+moment.
+
+[BEAT]
+
+Watch what shifts in the next two screens, not just on this
+one.
+
+
+=====================================================
+SECTION 6: SCREEN 6 - EVENING REVIEW (WTD)
+Speaker: Arron | ~170 words | ~2 minutes
+=====================================================
+
+[CLICK TO SCREEN 6: EVENING REVIEW (WTD).]
+
+Tap Reflect and you land here. Step one of the evening
+review.
+
+[GESTURE TO SCREEN]
+
+Five Yes-or-No questions. Three answered, two remaining.
+Question two on the screen references the Mindset Challenge
+the athlete accepted this morning. That's the daily loop
+closing. Notice what's not on the screen anywhere. No score.
+The score lives in the backend as signal. It never reaches
+the athlete.
+
+[PACE SHIFTS. DELIBERATE.]
+
+The athlete's job is the honest answer. The pipeline's job
+is what the answers add up to. If we showed the score,
+athletes would learn to game the system. We don't. The
+signal stays clean because the only thing on screen is the
+question.
+
+[PAUSE]
+
+If you've ever watched an athlete learn to game a wearable
+score, this is the design choice that prevents it. Hold
+that thought for the breakout.
+
+
+=====================================================
+SECTION 7: SCREEN 7 - HOME (SUNDAY RECAP)
+Speaker: Arron | ~120 words | ~1 minute
+=====================================================
+
+[CLICK TO SCREEN 7: HOME (SUNDAY RECAP).]
+
+Sunday evening. The athlete just finished the evening
+review. Now the weekly recap comes to the top of the feed.
+
+[GESTURE TO SCREEN]
+
+Same Home hub. Same evening greeting. Primary card flips to
+Weekly Recap with the clipboard icon. Support copy reads,
+Unlock your weekly coaching, log your motivation.
+
+[BEAT]
+
+Sunday is the only day this card appears. The system holds
+the weekly recap until the daily work is done. The athlete
+walks into the deeper reflection on top of seven days of
+data they themselves provided.
+
+[BEAT]
+
+If you have parents who'd push back on a weekly cadence as
+too much, hold that. If you have coaches who'd push back on
+it as too little, hold that too.
+
+
+=====================================================
+SECTION 8: SCREEN 8 - WEEKLY RECAP (ACTIVE)
+Speaker: Arron | ~165 words | ~2 minutes
+=====================================================
+
+[CLICK TO SCREEN 8: WEEKLY RECAP (ACTIVE).]
+
+This is the weekly recap. Five to eight minutes.
+
+[GESTURE TO SCREEN]
+
+Single scrolling screen. Six sections. Weekly Summary with
+completion notes, no scores or ranking. Season Context,
+In-Season selected. Three tap-selector ratings. Five
+reflection questions, two of them required. Forward Anchor
+at the bottom. One thing you can control for the coming
+week. Submit button gated until everything required is
+filled.
+
+[PACE SHIFTS. DELIBERATE.]
+
+Forward Anchor is the most important field on this screen.
+One sentence about a controllable for the coming week,
+written by the athlete. The pipeline reads it against next
+Sunday's recap and the weekly input and asks: "Did the
+athlete move toward what they named?" The system measures
+follow-through against the athlete's own intention, not
+against an external metric.
+
+[BEAT]
+
+If the Forward Anchor field feels too prescriptive or too
+loose for your athletes, that's a breakout question.
+
+
+=====================================================
+SECTION 9: SCREEN 9 - INBOX (FEED)
+Speaker: Arron | ~250 words | ~3 minutes
+=====================================================
+
+[CLICK TO SCREEN 9: INBOX (FEED).]
+
+Sunday submission triggers the pipeline. By Monday morning,
+this is what the athlete walks into. They get to it through
+the Coaching Feedback card on the Home screen. Same card I
+pointed at on Screen one.
+
+[GESTURE TO SCREEN]
+
+Single scrolling feed. The newest message at the top is the
+daily snippet, one or two sentences. Above it, a longer
+card with an amber left border, the Weekly Coaching Message,
+in my voice, around four hundred words. Above that, the
+Deep Dive preview card with a Read Full Analysis button.
+Three weeks of history scrolling below.
+
+[PACE SHIFTS. DELIBERATE.]
+
+Four output layers in one frame. The daily snippet keeps
+the coaching moment alive through the week. The Coaching
+Message lands at the start of the week. The Deep Dive is
+the longer read for the athlete who wants to go further.
+Same voice across all three. The athlete picks the depth
+they want.
+
+[PAUSE. PHYSICAL: GESTURE TOWARD ATTENDEES' PACKETS.]
+
+The Coaching Message you're seeing in this feed is
+anonymized as Athlete A's Week 12. The same content is in
+your packet. Exact same words. Different format. Find the
+Coaching Message page when you're ready.
+
+[ALLOW BEAT FOR ATTENDEES TO LOOK DOWN. THEN BACK UP.]
+
+That's the athlete-side. One day, one week, one delivery
+back to her hand on Monday morning.
+
+[TURN TO NICOLE]
+
+Nicole, you want to take coaches and parents.
+
+[HAND-OFF SEAM. ARRON STEPS BACK. NICOLE STEPS TO
+PRESENTING POSITION.]
+
+
+=====================================================
+SECTION 10: COACHES, PARENTS, AUDIT
+Speaker: Nicole | ~605 words | ~6 minutes
+=====================================================
+
+Thanks Arron.
+
+[BEAT]
+
+The athlete-side of the app is fully designed. The coach
+and parent visualization layer is still in active creation
+with our development partner. What you'll see on the screen
+is the real coaching content the system produces. The
+dashboard layer that will surround it in the final app is
+deliberately not on screen today. We would rather show you
+real content than mock chrome we have not completed yet.
+
+[BEAT]
+
+What's on the screen and in your packet right now is real.
+
+[CLICK TO SNAPSHOT READER]
+
+
+----- 10A: WHERE THE SYSTEM STARTED -----
+
+[GESTURE TO SCREEN]
+
+This is where the system started for Athlete A. Day one.
+Five baseline anchors, developed from her intake answers.
+Identity claim. Hinge habit. Primary derailer. Why it
+matters. The exact phrase she used about herself.
+
+[BEAT]
+
+These five anchors stay locked across all twelve weeks.
+Every coaching message, every deep dive, every coach
+insight can be traced through them.
+
+[PAUSE]
+
+The coaching system is not a black box. It has a defined
+starting point, in her own words. Athlete A's snapshot is
+the first artifact in every packet in the room.
+
+
+----- 10B: WHAT COACHES ACTUALLY RECEIVE -----
+
+[CLICK TO COACH READER]
+
+Same athlete. Twelve weeks later. This is what an
+institutional coaching staff actually receives. Position
+coach, head coach, athletic director. Same output.
+Compliance-safe at every layer. No clinical language. No
+raw data. No surveillance language anywhere.
+
+[GESTURE TO SECTION 5 OF READER]
+
+Watch for the phrase "outcome-independent" in section five.
+That phrase traces back to her baseline anchor about staying
+confident during competition. The system caught the moment
+in her recap, traced it back to day one, and named the
+connection in language coaches can actually use.
+
+[PHYSICAL: HOLD UP COACH INSIGHT FROM PACKET]
+
+Coach Insight in every packet.
+
+
+----- 10C: WHAT PARENTS ACTUALLY RECEIVE -----
+
+[CLICK TO PARENT READER]
+
+Parents next. This is the D2C parent layer, available when
+the parent portion is subscribed to. Same week. Coach
+Arron's voice in third person. About one hundred seventy
+words. Four sections. What the week was like. What stood
+out. What's ahead. How the parent can support without
+monitoring.
+
+[BEAT]
+
+The more the athlete uses the App day in and day out, the
+more signal the system reads, and the more specific the
+parent layer gets about how to support their athlete's
+mental performance.
+
+[PAUSE]
+
+Parents do not see her journal. Parents do not see her
+Bullseye input. Parents do not see her daily WTD answers.
+Coaches do not see this content either. The privacy layer
+is built around protecting the athlete's reflective space.
+Parents and coaches both get enough to support. Neither
+gets surveillance.
+
+[PHYSICAL: HOLD UP PARENT CM FROM PACKET]
+
+Parent Coaching Message in every packet.
+
+
+----- 10D: TEAM SNAPSHOT -----
+
+[CLICK TO TEAM SNAPSHOT READER]
+
+For institutional clients, the system also produces a
+team-level snapshot every week. Aggregate signal across
+the roster as a whole, or by position group. Running backs.
+Run game. Offense as a whole. Whatever the staff configures.
+No individual athlete input data exposed in the team view.
+The coaches see where the group sits collectively heading
+into the week.
+
+[PHYSICAL: HOLD UP TEAM SNAPSHOT FROM PACKET]
+
+Sample team snapshot in the institutional, D2C, and GTM
+packets.
+
+
+----- 10E: THE AUDIT LAYER -----
+
+[PACE SHIFTS. DELIBERATE.]
+
+One small note on the audit, because you don't need to know
+the boring technology on the back end. Every output you
+just saw passes a fourteen-criterion editorial audit before
+it reaches anyone. This generation and audit process is a
+living entity, as we build on it each time we generate
+coaching output. The audit catches what the AI may not do
+well before it can land.
+
+
+----- CLOSING -----
+
+[BEAT]
+
+That's the system. Athlete-side. Coach-side. Parent-side.
+Team-side. Audit-side.
+
+[PACE LIFTS]
+
+Lunch is right now. Let's take a few minutes. Eat. Talk to
+each other.
+
+[BEAT]
+
+When we come back at one-thirty, we put you to work.
+
+[NICOLE AND ARRON BOTH HOST LUNCH.]
+
+
+=====================================================
+END OF MOCKUP WALKTHROUGH SCRIPT
+=====================================================
+
+
+CONTINGENCY NOTES
+=================
+
+If running long (over 30 min):
+  Trim Section 7 (Home Sunday Recap) to a single beat.
+  "Sunday evening. Same hub. The weekly recap card just
+  lit up. Sunday is the only day this card appears."
+  That's ~25 words / 15 sec. Saves ~45 sec on the floor.
+
+If running short (under 27 min):
+  Add ~30-60 seconds to Screen 9 (Inbox Feed) by walking
+  the Deep Dive preview card more deliberately. Note the
+  Read Full Analysis CTA, mention the long-form reader is
+  the only full-screen reader pattern in the entire app
+  (deliberate design choice for the depth moment).
+
+If a savvy attendee asks during the walkthrough "what
+happens if the audit catches a problem?" or "what does
+regeneration look like?":
+  Suggested answer for Arron: "Hold that for the breakout
+  or for synthesis. Short answer: the audit either auto-
+  corrects or rejects and regenerates. The athlete never
+  sees the failure. The pipeline log catches it for our QA
+  monitoring." Then redirect.
+
+If a parent in the room asks during 10C "but what if I
+just want to know how my kid is doing?":
+  Suggested answer for Nicole: "That is exactly what the
+  Parent Coaching Message gives you. How the week was, what
+  stood out, how to support. What it does not give you is
+  surveillance of the journal. We made that choice on
+  purpose. We will get into the why in your breakout."
+  Then redirect.
+
+If asked about pricing during the walkthrough:
+  Hold for the pricing and deployment block at 2:15-2:45.
+  "Pricing comes up after the breakouts. We'll put it all
+  on the table then."
+
+If the smart-board fails or a screen does not load:
+  Pivot to the printed packet immediately. "Open your
+  packet to the Coach Insight" or equivalent. The packet
+  is the redundancy layer. Keep talking, do not call
+  attention to the tech failure.
