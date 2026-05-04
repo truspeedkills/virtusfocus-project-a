@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VirtusFocus Pitch · May 9 2026</title>
+  <style>
+    /* ============================================================
+       RESET + BASE
+       ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    body {
+      background: #09090b;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
+      cursor: default;
+    }
+
+    /* ============================================================
+       CORNER BADGE (persistent wayfinding)
+       ============================================================ */
+    .corner-badge {
+      position: fixed;
+      bottom: 22px;
+      right: 28px;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: #71717a;
+      z-index: 100;
+      text-transform: uppercase;
+    }
+    .corner-badge .brand {
+      color: #f59e0b;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+
+    /* ============================================================
+       SCREEN CONTAINER
+       Each .screen fills the viewport. Only .active is visible.
+       Instant cut transition (no animation, per design lock).
+       ============================================================ */
+    .screen {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 5vh 6vw;
+    }
+    .screen.active {
+      display: flex;
+    }
+    .screen-content {
+      width: 100%;
+      max-width: 1280px;
+    }
+
+    /* ============================================================
+       SCREEN 1: HOOK QUOTE (pre-pitch, opens before Section 0)
+       ============================================================ */
+    .hook-screen-content {
+      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hook-quote {
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 400;
+      color: #f3f4f6;
+      line-height: 1.45;
+      letter-spacing: -0.015em;
+      margin-bottom: 40px;
+    }
+    .hook-quote-line {
+      display: block;
+    }
+    .hook-quote-divider {
+      display: block;
+      width: clamp(240px, 28vw, 380px);
+      height: 1.5px;
+      background: #f59e0b;
+      margin: 28px auto;
+      opacity: 0.8;
+    }
+    .hook-attribution {
+      font-size: clamp(13px, 1.2vw, 16px);
+      color: #71717a;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       SCREEN 2: TITLE
+       ============================================================ */
+    .title-screen-content {
+      text-align: center;
+    }
+    .title-brand {
+      font-size: clamp(64px, 9vw, 112px);
+      font-weight: 700;
+      color: #f59e0b;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 28px;
+    }
+    .title-event {
+      font-size: clamp(22px, 2.4vw, 32px);
+      color: #e4e4e7;
+      font-weight: 500;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .title-date {
+      font-size: clamp(15px, 1.4vw, 18px);
+      color: #a1a1aa;
+      font-weight: 400;
+      margin-bottom: 56px;
+      letter-spacing: 0.02em;
+    }
+    .title-divider {
+      width: 56px;
+      height: 1px;
+      background: #f59e0b;
+      margin: 0 auto 28px;
+      opacity: 0.6;
+    }
+    .title-tagline {
+      font-size: clamp(13px, 1.1vw, 15px);
+      color: #71717a;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       SCREEN 2: PROBLEM (MP vs MH comparison)
+       ============================================================ */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 56px;
+      align-items: stretch;
+    }
+    .compare-column {
+      padding: 8px;
+    }
+    .compare-divider {
+      background: #27272a;
+      width: 1px;
+    }
+    .compare-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #71717a;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .compare-heading {
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 600;
+      margin-bottom: 28px;
+      color: #e4e4e7;
+      letter-spacing: -0.01em;
+    }
+    .compare-heading.accent {
+      color: #f59e0b;
+    }
+    .compare-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .compare-list li {
+      font-size: clamp(15px, 1.3vw, 18px);
+      color: #d4d4d8;
+      padding: 7px 0;
+      line-height: 1.5;
+    }
+    .compare-provider {
+      font-size: 12px;
+      color: #71717a;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid #27272a;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .compare-provider strong {
+      display: block;
+      color: #a1a1aa;
+      font-weight: 500;
+      margin-top: 6px;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .compare-tagline {
+      text-align: center;
+      margin-top: 48px;
+      font-size: clamp(15px, 1.4vw, 18px);
+      color: #a1a1aa;
+      font-style: italic;
+    }
+
+    /* ============================================================
+       SCREEN 3: VISION (4-layer architecture)
+       ============================================================ */
+    .vision-content {
+      text-align: center;
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #71717a;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .section-headline {
+      font-size: clamp(28px, 3.2vw, 42px);
+      font-weight: 600;
+      color: #e4e4e7;
+      letter-spacing: -0.01em;
+      margin-bottom: 56px;
+    }
+    .section-headline .accent {
+      color: #f59e0b;
+    }
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .vision-card {
+      background: rgba(245, 158, 11, 0.04);
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: left;
+      min-height: 130px;
+      display: flex;
+      flex-direction: column;
+    }
+    .vision-card-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .vision-card-content {
+      font-size: clamp(14px, 1.15vw, 16px);
+      color: #d4d4d8;
+      line-height: 1.5;
+    }
+    .vision-foundation {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .vision-foundation-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .vision-foundation-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #71717a;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .vision-foundation-content {
+      font-size: clamp(13px, 1.1vw, 15px);
+      color: #a1a1aa;
+      letter-spacing: 0.02em;
+    }
+
+    /* ============================================================
+       SCREEN 4: PROOF (3 athletes, rotation)
+       ============================================================ */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .athlete-card {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid #27272a;
+      border-radius: 14px;
+      padding: 32px 26px;
+      opacity: 0.32;
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+    }
+    .athlete-card.active {
+      opacity: 1;
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.04);
+    }
+    .athlete-label {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .athlete-sport {
+      font-size: clamp(14px, 1.2vw, 16px);
+      color: #e4e4e7;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .athlete-tenure {
+      font-size: 11px;
+      color: #71717a;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .athlete-quote {
+      font-size: clamp(15px, 1.3vw, 18px);
+      color: #f3f4f6;
+      font-style: italic;
+      line-height: 1.55;
+      margin-bottom: 20px;
+      padding-left: 16px;
+      border-left: 2px solid #3f3f46;
+      flex: 1;
+    }
+    .athlete-card.active .athlete-quote {
+      border-left-color: #f59e0b;
+    }
+    .athlete-anchor {
+      font-size: clamp(13px, 1.1vw, 15px);
+      color: #a1a1aa;
+      line-height: 1.5;
+      padding-top: 14px;
+      border-top: 1px solid #27272a;
+    }
+    .athlete-card.active .athlete-anchor {
+      color: #d4d4d8;
+    }
+
+    /* ============================================================
+       SCREEN 5: WHAT WE NEED (3 segments)
+       ============================================================ */
+    .need-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 48px;
+    }
+    .segment-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid #27272a;
+      border-radius: 14px;
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      min-height: 240px;
+    }
+    .segment-label {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .segment-question {
+      font-size: clamp(15px, 1.35vw, 18px);
+      color: #f3f4f6;
+      line-height: 1.55;
+      font-weight: 500;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .segment-scope {
+      font-size: 13px;
+      color: #71717a;
+      line-height: 1.5;
+      padding-top: 14px;
+      border-top: 1px solid #27272a;
+    }
+    .need-tagline {
+      text-align: center;
+      font-size: clamp(18px, 1.8vw, 24px);
+      color: #f59e0b;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       PERSISTENT CORNER BADGE
+       ============================================================ -->
+  <div class="corner-badge">
+    <span class="brand">VirtusFocus</span> · Focus Group · May 9 2026
+  </div>
+
+  <!-- ============================================================
+       SCREEN 1: HOOK QUOTE (pre-pitch, opens before Section 0)
+       ============================================================ -->
+  <section class="screen active" data-screen="1">
+    <div class="screen-content hook-screen-content">
+      <div class="hook-quote">
+        <span class="hook-quote-line">"Baseball is 90 percent mental.</span>
+        <span class="hook-quote-divider" aria-hidden="true"></span>
+        <span class="hook-quote-line">The other half is physical."</span>
+      </div>
+      <div class="hook-attribution">Yogi Berra</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 2: TITLE (Section 0, Nicole opens)
+       ============================================================ -->
+  <section class="screen" data-screen="2">
+    <div class="screen-content title-screen-content">
+      <div class="title-brand">"VirtusFocus"</div>
+      <div class="title-event">Focus Group</div>
+      <div class="title-date">May 9, 2026</div>
+      <div class="title-divider"></div>
+      <div class="title-tagline">An athlete-led coaching system</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 2: THE PROBLEM (Section 1, MP vs MH)
+       ============================================================ -->
+  <section class="screen" data-screen="2">
+    <div class="screen-content">
+      <div class="compare">
+        <div class="compare-column">
+          <div class="compare-label">Clinical Care</div>
+          <div class="compare-heading">Mental Health</div>
+          <ul class="compare-list">
+            <li>Emotional well-being</li>
+            <li>Stress, anxiety, depression</li>
+            <li>Personal or psychological challenges</li>
+            <li>Diagnosis and treatment</li>
+            <li>Confidential clinical care</li>
+          </ul>
+          <div class="compare-provider">
+            Provided by
+            <strong>Licensed professionals. Campus counseling and mental health services.</strong>
+          </div>
+        </div>
+        <div class="compare-divider"></div>
+        <div class="compare-column">
+          <div class="compare-label">Performance Structure</div>
+          <div class="compare-heading accent">Mental Performance</div>
+          <ul class="compare-list">
+            <li>Focus under pressure</li>
+            <li>Consistency and habits</li>
+            <li>Confidence stability</li>
+            <li>Response after mistakes</li>
+            <li>Self-regulation, leadership, accountability</li>
+          </ul>
+          <div class="compare-provider">
+            Provided by
+            <strong>VirtusFocus performance system.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="compare-tagline">Different roles. Same goal: supporting the athlete.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 3: THE VISION (Section 2, 4-layer system)
+       ============================================================ -->
+  <section class="screen" data-screen="3">
+    <div class="screen-content vision-content">
+      <div class="section-eyebrow">The System</div>
+      <div class="section-headline">An <span class="accent">athlete-led coaching</span> system</div>
+      <div class="vision-grid">
+        <div class="vision-card">
+          <div class="vision-card-label">Athlete</div>
+          <div class="vision-card-content">Coaching Message and Deep Dive analysis</div>
+        </div>
+        <div class="vision-card">
+          <div class="vision-card-label">Parent</div>
+          <div class="vision-card-content">Parent Coaching Message and Parent Insights</div>
+        </div>
+        <div class="vision-card">
+          <div class="vision-card-label">Coach</div>
+          <div class="vision-card-content">Performance Insights and Team Snapshot</div>
+        </div>
+        <div class="vision-card">
+          <div class="vision-card-label">Daily</div>
+          <div class="vision-card-content">Morning Snippet and Daily Coaching Signal</div>
+        </div>
+      </div>
+      <div class="vision-foundation">
+        <div class="vision-foundation-row">
+          <span class="vision-foundation-label">Audit Layer</span>
+          <span class="vision-foundation-content">Voice quality. Clinical compliance. Framework integrity. Pipeline data leakage.</span>
+        </div>
+        <div class="vision-foundation-row">
+          <span class="vision-foundation-label">Athlete-Led Daily Inputs</span>
+          <span class="vision-foundation-content">Morning Tune-Up. Win the Day Review. Bullseye. Journaling. Weekly Recap.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 4: PROOF (Section 3, 3 athletes, rotation)
+       ============================================================ -->
+  <section class="screen" data-screen="4">
+    <div class="screen-content">
+      <div style="text-align: center;">
+        <div class="section-eyebrow">Proof</div>
+        <div class="section-headline">Three athletes. Same coach. Different work.</div>
+      </div>
+      <div class="proof-grid">
+        <div class="athlete-card active" data-athlete="0">
+          <div class="athlete-label">Athlete A</div>
+          <div class="athlete-sport">Division-Two Women's Softball</div>
+          <div class="athlete-tenure">Outfielder · Week 12</div>
+          <div class="athlete-quote">"fast asf today tbh, got all my mf bunts down."</div>
+          <div class="athlete-anchor">Outcome-independent confidence by week twelve.</div>
+        </div>
+        <div class="athlete-card" data-athlete="1">
+          <div class="athlete-label">Athlete B</div>
+          <div class="athlete-sport">Division-Two Men's Track and Field</div>
+          <div class="athlete-tenure">Throws · Week 10 · Senior</div>
+          <div class="athlete-quote">"properly planned, not spontaneous."</div>
+          <div class="athlete-anchor">A preparation principle that works retrospectively, prospectively, and in the moment.</div>
+        </div>
+        <div class="athlete-card" data-athlete="2">
+          <div class="athlete-label">Athlete C</div>
+          <div class="athlete-sport">High School Wrestling</div>
+          <div class="athlete-tenure">Week 1 · Post-Injury Return</div>
+          <div class="athlete-quote">"1% better everyday with the intention of healing as best as possible."</div>
+          <div class="athlete-anchor">Same hinge habit. Different room.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 5: WHAT WE NEED (Section 4, 3 segments)
+       ============================================================ -->
+  <section class="screen" data-screen="5">
+    <div class="screen-content">
+      <div style="text-align: center;">
+        <div class="section-eyebrow">What we need</div>
+        <div class="section-headline">Find the <span class="accent">cracks</span>.</div>
+      </div>
+      <div class="need-grid">
+        <div class="segment-card">
+          <div class="segment-label">Institutional Coaches</div>
+          <div class="segment-question">If we dropped this in your program tomorrow, what would actually break?</div>
+          <div class="segment-scope">High school and college. Head coach to assistant. Program builder to position coach.</div>
+        </div>
+        <div class="segment-card">
+          <div class="segment-label">D2C and Athlete</div>
+          <div class="segment-question">Would your athletes use this? Would parents pay for the parent layer? What feels less authentic than a human coach?</div>
+          <div class="segment-scope">Athletes, parents, and youth program operators.</div>
+        </div>
+        <div class="segment-card">
+          <div class="segment-label">GTM</div>
+          <div class="segment-question">How do we tell this story? What in our positioning is wrong, off, or working against itself?</div>
+          <div class="segment-scope">Strategy, positioning, and market perspective.</div>
+        </div>
+      </div>
+      <div class="need-tagline">Don't be polite. Be specific.</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NAVIGATION SCRIPT
+       Forward: spacebar, right arrow, page down, enter, click anywhere
+       Backward: left arrow, page up, backspace
+       Screen 4 has 3 sub-states (athletes A, B, C). Sub-clicks rotate
+       the highlighted card before advancing to Screen 5.
+       ============================================================ -->
+  <script>
+    (function() {
+      var screens = document.querySelectorAll('.screen');
+      var TOTAL_MAIN = screens.length;       // 5
+      var PROOF_SCREEN_INDEX = 4;             // 0-indexed: Proof is now index 4 (Hook=0, Title=1, Problem=2, Vision=3, Proof=4, What We Need=5)
+      var TOTAL_ATHLETES = 3;
+
+      var mainIndex = 0;
+      var subIndex = 0;
+
+      function showScreen() {
+        for (var i = 0; i < screens.length; i++) {
+          if (i === mainIndex) {
+            screens[i].classList.add('active');
+          } else {
+            screens[i].classList.remove('active');
+          }
+        }
+        if (mainIndex === PROOF_SCREEN_INDEX) {
+          updateAthleteHighlight();
+        }
+      }
+
+      function updateAthleteHighlight() {
+        var cards = screens[PROOF_SCREEN_INDEX].querySelectorAll('.athlete-card');
+        for (var i = 0; i < cards.length; i++) {
+          if (i === subIndex) {
+            cards[i].classList.add('active');
+          } else {
+            cards[i].classList.remove('active');
+          }
+        }
+      }
+
+      function advance() {
+        // On Screen 4, advance through athlete sub-states first
+        if (mainIndex === PROOF_SCREEN_INDEX && subIndex < TOTAL_ATHLETES - 1) {
+          subIndex++;
+          updateAthleteHighlight();
+          return;
+        }
+        // Otherwise, advance to next main screen
+        if (mainIndex < TOTAL_MAIN - 1) {
+          mainIndex++;
+          subIndex = 0;
+          showScreen();
+        }
+      }
+
+      function retreat() {
+        // On Screen 4, retreat through athlete sub-states first
+        if (mainIndex === PROOF_SCREEN_INDEX && subIndex > 0) {
+          subIndex--;
+          updateAthleteHighlight();
+          return;
+        }
+        // Otherwise, retreat to previous main screen
+        if (mainIndex > 0) {
+          mainIndex--;
+          // Entering Screen 4 backwards: land on the last athlete (C)
+          if (mainIndex === PROOF_SCREEN_INDEX) {
+            subIndex = TOTAL_ATHLETES - 1;
+          } else {
+            subIndex = 0;
+          }
+          showScreen();
+        }
+      }
+
+      // Keyboard controls
+      document.addEventListener('keydown', function(e) {
+        if (e.key === ' ' || e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === 'Enter') {
+          e.preventDefault();
+          advance();
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') {
+          e.preventDefault();
+          retreat();
+        }
+      });
+
+      // Click anywhere advances
+      document.addEventListener('click', function() {
+        advance();
+      });
+
+      // Initial render
+      showScreen();
+    })();
+  </script>
+
+</body>
+</html>
