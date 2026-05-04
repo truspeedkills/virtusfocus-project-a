@@ -5,7 +5,7 @@ PRINTER INSTRUCTIONS
 OVERVIEW
 
 Three PDF files, one per attendee segment, in this folder.
-Total print run: 14 attendee packets, 398 total pages.
+Total print run: 14 attendee packets, 394 total pages.
 
 Each segment has its own segment color (deep blue, forest green,
 amber) used on the artifact packet cover page to enable visual
@@ -41,9 +41,9 @@ Binding:             Stapled top-left corner OR paperclip
 == GTM PACKET ==
 
 File:                GTM_Packet.pdf
-Total pages:         36
+Total pages:         35
 Quantity needed:     4 copies
-Cover stock pages:   Pages 8-9 (2 pages on segment-colored cover stock)
+Cover stock pages:   Page 8 (1 page on segment-colored cover stock)
 Cover stock color:   Amber / burnt orange (strategy / commerce tone)
 Cover stock weight:  60-80 lb
 Body paper:          Standard 20-24 lb white
