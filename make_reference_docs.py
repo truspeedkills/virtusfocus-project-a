@@ -50,6 +50,9 @@ INPUTS = [
     os.path.join(FOCUS_DIR, "Day-of Operations", "Welcome_and_NDA_Flow.txt"),
     os.path.join(FOCUS_DIR, "Day-of Operations", "Breakout_Facilitation_Guide.txt"),
     os.path.join(FOCUS_DIR, "Day-of Operations", "Note_Taker_Briefing.txt"),
+    os.path.join(FOCUS_DIR, "Day-of Operations", "Institutional_Facilitator_Packet.txt"),
+    os.path.join(FOCUS_DIR, "Day-of Operations", "D2C_Athlete_Facilitator_Packet.txt"),
+    os.path.join(FOCUS_DIR, "Day-of Operations", "GTM_Facilitator_Packet.txt"),
 ]
 
 
@@ -67,6 +70,9 @@ def setup_styles(doc):
     body.font.size = Pt(11)
     body.paragraph_format.space_after = Pt(6)
     body.paragraph_format.line_spacing = 1.15
+    # Prevent single-line widows/orphans (last line alone at top of next page,
+    # first line alone at bottom of current page).
+    body.paragraph_format.widow_control = True
 
     # Heading 1 - main section dividers
     h1 = styles["Heading 1"]
@@ -172,6 +178,9 @@ def add_quote_block(doc, text):
 def add_monospace(doc, text):
     """Indented monospace paragraph for ASCII tables / code blocks."""
     p = doc.add_paragraph()
+    # Keep the whole block on one page when possible. Avoids 1-2-line orphans
+    # at the top of the next page when a block doesn't quite fit.
+    p.paragraph_format.keep_together = True
     p.paragraph_format.left_indent = Inches(0.2)
     p.paragraph_format.space_before = Pt(0)
     p.paragraph_format.space_after = Pt(0)

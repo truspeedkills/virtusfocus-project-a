@@ -1,0 +1,455 @@
+"VIRTUSFOCUS" FOCUS GROUP: D2C / ATHLETE FACILITATOR PACKET
+
+Event:        May 9, 2026 (Saturday)
+
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+
+Your role:    D2C / Athlete Breakout Facilitator (1:30-2:15 PM)
+
+Last updated: 2026-05-04
+
+For:          Nicole Beckes
+
+
+====================================================
+YOUR ROLE AND YOUR DAY
+====================================================
+
+WHY THIS PACKET EXISTS
+
+You are facilitating the D2C / Athlete breakout. Four attendees with deep athlete-experience perspectives: a 4x Academic All-American wrestler turned youth program operator, an early-childhood ed teacher running youth strength programs, a former HS baseball player and current parent, and a Magisterial District Judge with collegiate softball background. Their honest read on whether athletes would actually use this and what they would pay for it shapes the D2C pricing and channel strategy.
+
+This packet is the segment-specific operational layer for your breakout. Read alongside the universal Breakout_Facilitation_Guide for facilitation skills and Capture_Protocol for the shorthand convention the note-taker is using (Kellie Lynch is your note-taker, no tier prefix).
+
+
+YOUR JOB IN ONE PARAGRAPH
+
+Run the D2C breakout 1:30 to 2:15 PM with four attendees. Read each question, give them quiet time to write, then open discussion. Keep airtime balanced. Stay neutral. Capture the honest "would my kid actually use this" read. Watch your time. Hand the room back to the full group at 2:15 sharp.
+
+
+THE FULL DAY AT A GLANCE
+
+  11:30 AM-12:00 PM  Check-in. Michele leads. You can be in
+                     the main room finalizing your segment
+                     prep.
+
+  12:00-12:15 PM     Welcome block, Arron leads. Sit with
+                     attendees. Verbal recording confirmation
+                     happens here.
+
+  12:15-12:45 PM     Pitch, you and Arron. You open with
+                     Sections 0 and 1.
+
+  12:45-1:15 PM      Mockup walkthrough, Arron and you. You
+                     co-walk and close with the coach/parent/
+                     snapshot/team/audit segment (Phase 5).
+
+  1:15-1:30 PM       Lunch and transition. Sit at or near the
+                     D2C table. Re-read the four attendee
+                     profiles, particularly the Q4 "less
+                     authentic" framing.
+
+  1:30-2:15 PM       D2C breakout, you facilitate.
+
+  2:15-2:30 PM       Pricing and deployment block. Full-room.
+
+  2:30-3:00 PM       Cross-room synthesis. Arron leads as
+                     host. You contribute D2C findings.
+
+
+====================================================
+YOUR SEGMENT AT A GLANCE
+====================================================
+
+WHAT D2C PROBES
+
+The D2C worksheet asks five questions designed to surface what these attendees actually needed (and didn't get) during their own competitive years, what they would have used as athletes, what they have observed in their kids and their networks, and what they would pay for it.
+
+  Q1  Memory anchor. What your coaches and program never
+      gave you on the mental side.
+  Q2  Adoption-barrier extraction. Would you actually use it.
+  Q3  Stress-test our assumption that today's athletes are
+      either getting nothing structured or getting talks
+      that don't stick.
+  Q4  React to Grace's arc. The strongest part. The part
+      that would feel less authentic.
+  Q5  Killer test. Monthly price ceiling and the one thing
+      that would make you cancel.
+
+
+WHAT SIGNAL MATTERS MOST
+
+Three things you are most listening for, in priority order.
+
+1. THE MEMORY ANCHOR (Q1). What they actually needed and didn't get is the most honest pulse on what the product should solve. Capture verbatim.
+
+2. THE LESS-AUTHENTIC PART (Q4). The framing is intentional. We did not ask "what feels off or invasive". We asked "what feels less authentic". That is a higher bar. The answer surfaces where AI-coaching authenticity breaks down, not where it feels creepy.
+
+3. THE PRICE CEILING + CANCEL TRIGGER (Q5). Both numbers and reasons. Capture the exact dollar amount each attendee writes, and the exact cancel trigger.
+
+
+====================================================
+YOUR ATTENDEES
+====================================================
+
+Four attendees, all with athlete-experience perspectives. Two have direct youth-program operator experience (cross-lens probes for institutional signal coming from a D2C seat).
+
+
+RON OSWALD (RO)
+
+  Background:    4x Academic All-American wrestler at Seton
+                 Hill. Founder of Swampfox wrestling club.
+
+  Lens:          Youth-program operator. He runs his own
+                 wrestling club today, which gives him a
+                 dual perspective: his own competitive
+                 athlete experience plus his current view
+                 of what younger athletes need.
+
+  Listen for:    Q1 memory-anchor answer pulls from his
+                 own collegiate years. Q3 "what have you
+                 actually seen" pulls from his current
+                 youth-program work. The cross-lens probe
+                 is whether his Swampfox-coaching answer
+                 differs from his Seton-Hill-athlete answer.
+
+  Do not expect: Pricing depth. He will react to substance,
+                 not commerce.
+
+  Note:          He may know Athlete B (Angelo Allen) from
+                 the Seton Hill ecosystem. Anonymization
+                 is intentional but if Ron makes the
+                 connection, do not correct. NDA covers it.
+
+
+LIZ MARCHELEOVICH (LM)
+
+  Background:    Early-childhood education teacher in
+                 Jeannette. Runs PowerKidz, PowerTots, and
+                 Sproutz strength programs at Virtus
+                 Barbell.
+
+  Lens:          Youth-coaching practitioner. Direct
+                 observation of how young athletes actually
+                 take to structured mental performance work.
+                 She is not in the demographic herself, but
+                 she works with the demographic daily.
+
+  Listen for:    Her Q3 "what have you actually seen"
+                 answer is the freshest direct-observation
+                 data in the room. Her Q4 "less authentic"
+                 read may pull from how youth athletes
+                 actually receive vs. reject structured
+                 coaching messaging.
+
+  Do not expect: First-person athlete reflection. She is
+                 viewing through the youth-coach lens, not
+                 her own competitive history.
+
+
+ALEX BOHINCE (AB)
+
+  Background:    Former HS baseball. Father of two. Husband
+                 of co-founder Nicole.
+
+  Lens:          Parent-of-young-athletes plus former HS
+                 athlete plus VirtusFocus insider through
+                 his marriage. He knows the system at a
+                 depth no other attendee does.
+
+  Listen for:    His insider knowledge means he will likely
+                 frame his answers as "what would have
+                 worked for me as a HS athlete" or "what I
+                 would want my kids to use". The HS-self
+                 answer is direct D2C signal. The kids-of-
+                 his-own answer is parent-channel signal.
+
+  Do not expect: Outsider naive reaction. He has seen this
+                 system being built. His feedback is more
+                 like a beta-tester critique than first-
+                 contact reaction.
+
+  Note for you:  Alex is your husband. Let him be a regular
+                 attendee in this room, not a co-host. The
+                 other three should not feel that Alex is
+                 the in-house referee. If he is too
+                 reticent, draw him out. If he is too
+                 dominant, move on with "good, who else?"
+
+
+TAMARA MAHADY (TM)
+
+  Background:    Magisterial District Judge. Former
+                 collegiate softball player at Seton Hill.
+
+  Lens:          Collegiate-athlete background plus
+                 professional weight (Judge). She brings a
+                 disciplined-evaluator framing to the
+                 questions.
+
+  Listen for:    Her Q1 memory-anchor answer pulls from
+                 collegiate softball at Seton Hill, which
+                 is the same competitive level as Athlete A
+                 (Grace). Her Q4 reaction to Grace's arc
+                 may produce the closest first-person
+                 alignment of the day. Her Q5 price
+                 ceiling answer carries weight because she
+                 has decision authority in her professional
+                 life.
+
+  Do not expect: Athlete-development domain depth. She is
+                 a former player and a professional, not a
+                 coach.
+
+
+====================================================
+YOUR FIVE QUESTIONS
+====================================================
+
+Read each question to the room verbatim. Give 60 to 90 seconds of quiet for written answers. Then open discussion. Roughly 8 to 9 minutes per question. The breakout is 45 minutes total.
+
+
+QUESTION 1: MEMORY ANCHOR (~9 MIN)
+
+Verbatim prompt: "Think back to your competitive years, collegiate or high school. What's the thing your coaches and your program never gave you on the mental side that you needed? Confidence stuff, pressure stuff, recovery from mistakes, identity stuff, the quiet stuff. What you needed. What got in the way of you getting it."
+
+What it probes: The honest gap between what they needed as athletes and what their coaching environment delivered. The unsentimental retrospective is the most direct read on what the product should provide.
+
+Follow-ups (use only if discussion stalls):
+
+- "When you say you needed X, can you remember a specific moment where the gap mattered?"
+- "What did you do instead, given the gap?"
+- "What would have made the difference, if anything was offered?"
+
+Trap to avoid: Letting attendees frame the gap as "well, that's just sports". Push past the resignation. The gap is the product.
+
+Watch for: Tamara's Seton Hill softball answer is the closest first-person alignment to Athlete A. Ron's Seton Hill wrestling answer plus his current Swampfox youth-program work creates a then-vs-now read. Liz's youth-coaching observation is not her own memory but observation of the same gap in current youth athletes.
+
+
+QUESTION 2: ADOPTION-BARRIER EXTRACTION (~9 MIN)
+
+Verbatim prompt: "If a tool like this had existed during your career, daily mindset prompts, weekly coaching created from your own data, parent or coach integration where your data and input stays private, would you have actually used it? Honestly. Yes, no, or depends. Why? What would have made it sticky? What would have made it just another thing on your phone you ignore?"
+
+What it probes: Whether they would actually have used this. The "stays private" privacy guarantee is in the prompt because we suspected privacy would be the adoption barrier; the answers tell us whether that guarantee actually moves the needle.
+
+Follow-ups:
+
+- "When you say 'depends', depends on what specifically?"
+- "What is the moment in your day this would have to fit into for you to use it?"
+- "What is the one thing your other apps do that we would have to do too?"
+
+Trap to avoid: Letting "stays private" be assumed. Probe it. Ask "did the privacy line in the question matter to your answer? If so, how?"
+
+Watch for: Alex's answer reflects his beta-tester lens. Take it at face value. Ron's answer pulls from athlete-self plus current athletes he sees. The age-of-athlete dimension shows up here: what works for a 14-year-old wrestler does not work for a 21-year-old softball player.
+
+
+QUESTION 3: STRESS-TEST OUR ASSUMPTION (~8 MIN)
+
+Verbatim prompt: "Our working assumption: today's athletes are either getting nothing structured around mental performance, or they're getting talks and meetings that don't stick. True, untrue, or partially true? From your kids, your athletes, your network, what have you actually seen?"
+
+What it probes: Whether our central market read is correct. The follow-up is where the real depth lives. We get four direct-observation accounts from four different athletic ecosystems.
+
+Follow-ups:
+
+- "Whose program is doing it best, by name?"
+- "What specifically did they do that worked, even partially?"
+- "What's the most common thing programs do that doesn't work?"
+
+Trap to avoid: Letting the checkbox answer carry the weight. The checkbox is weak signal. The "what have you actually seen" prose is where the value is.
+
+Watch for: Liz's youth-program direct observation is the most current. Ron's Swampfox observation plus his Seton Hill comparison is the most longitudinal. Tamara's network observation may pull from the legal community, which is a different kind of signal.
+
+
+QUESTION 4: REACT TO GRACE'S ARC (~9 MIN)
+
+Verbatim prompt: "You've reviewed Grace's coaching arc, the messages and deep dives she received over twelve weeks. If this were your daughter, your athlete, your younger self, would you want this? What's the strongest part? What's the part that would feel less authentic?"
+
+What it probes: First-person and proxy reactions to the actual coaching output. The "less authentic" framing is intentional: we did not ask "what feels off or invasive". We asked "what feels less authentic". That is a higher bar that probes AI-coaching authenticity, not creepiness.
+
+Follow-ups:
+
+- "When you read the Wk7 failure-recovery message, what landed and what didn't?"
+- "If your kid showed you this, what's the first question you would ask them?"
+- "Where does it sound like Coach Arron, and where does it sound like a system pretending?"
+
+Trap to avoid: Defending the coaching voice. If someone says a passage feels less authentic, do not explain why it was written that way. Capture the exact passage they flagged.
+
+Watch for: Tamara's Seton-Hill-softball alignment makes her "if this were my younger self" answer the highest-fidelity capture. Liz's youth-coaching lens may surface a "less authentic" read specific to younger athletes that older readers would miss. Alex's beta-tester insider depth means he will critique craft, not concept.
+
+
+QUESTION 5: KILLER TEST (~8 MIN)
+
+Verbatim prompt: "If you paid for this directly, what's the monthly price ceiling? Where does it stop being worth it? Dollars per month. Why. What's the one thing that would make you cancel inside of a month?"
+
+What it probes: Direct pricing read and the most acute cancel trigger. The dollar figure is the headline number, but the "why" and the cancel trigger are where the value is.
+
+Follow-ups:
+
+- "If we charged $5 less, would you commit longer?"
+- "If you cancelled, would you tell other parents and athletes why? What would you say?"
+- "What's the threshold where you would pay double if it delivered double?"
+
+Trap to avoid: Letting the room converge on a single number. Each attendee should write their own price ceiling. Capture each verbatim. Convergence is signal, but divergence is more useful.
+
+Watch for: Tamara's price-ceiling answer carries weight because she has professional decision authority. Liz's price-ceiling answer reflects youth-program parent psychology (what parents pay for kids' programs). Ron's reflects athlete-direct purchase or athlete-with-parent-paying dynamics. Alex's reflects insider economics.
+
+
+====================================================
+SEGMENT-SPECIFIC DYNAMICS
+====================================================
+
+THE PRIVACY GUARANTEE IN Q2 IS DELIBERATE
+
+The Q2 prompt includes "your data and input stays private". This was added at Arron's direction because we suspected the privacy concern was the largest unspoken adoption barrier. If attendees do not engage with the privacy line in their answer, probe it directly: "Did the privacy guarantee matter to your answer?" The answer (yes, no, or "I didn't notice it") is signal.
+
+
+THE LESS-AUTHENTIC FRAMING IN Q4
+
+We deliberately did not ask "what would feel off or invasive". We asked "what would feel less authentic". This is a higher bar. "Off or invasive" probes creepiness; "less authentic" probes whether AI-coaching can feel like real coaching. Hold the framing if attendees drift to creepiness. Redirect: "Less authentic isn't quite the same as creepy. Where does it stop sounding like a coach who gets it?"
+
+
+THE Q5 DOLLAR-AMOUNT FIELD
+
+The worksheet has an explicit dollar field. Make sure each attendee writes a number. If anyone hesitates, say "even an estimate, just write what comes to mind first." The number is the headline; the discussion gives it context.
+
+
+THE INSIDER LENS WITH ALEX
+
+Alex is your husband and a VirtusFocus insider. The room may default to letting Alex carry weight or, conversely, may discount him. Neither is useful. Treat him as a regular attendee. If he pulls weight, redirect with "good, who else has a take here?" If he is too quiet, draw him out specifically by name on the questions where his HS-self or his parent-of-his-kids lens is the freshest signal (Q1 and Q4 specifically).
+
+You do not need to flag the relationship to the room. The other attendees know. It is fine for the dynamic to be present and unstated.
+
+
+THE YOUTH-PROGRAM CROSS-LENS
+
+Ron and Liz both run youth programs (Swampfox wrestling and PowerKidz/PowerTots/Sproutz strength programs at Virtus Barbell). Their answers may surface signal more relevant to a future Institutional youth-program offering than to D2C pricing directly. That is fine. Tag those moments in your notes for synthesis. Do not interrupt the discussion to redirect.
+
+
+THE SETON HILL ECOSYSTEM RISK
+
+Ron Oswald may recognize Athlete B (Angelo Allen) from the Seton Hill wrestling/track ecosystem. Anonymization is intentional. If Ron connects the dots, do not correct. NDA covers it. The connection actually gives him useful Athlete-B-specific context for synthesis.
+
+Tamara was a Seton Hill softball player. She may also recognize Athlete A (Grace Kindel) by description. Same handling: do not correct, NDA covers it.
+
+
+WHAT IF THE BREAKOUT RUNS OUT OF TIME
+
+Forty-five minutes for five questions across four attendees is comfortable. If you fall behind, compress in this priority:
+
+  Compress first:    Q3 (the checkbox stress-test reads
+                     itself; the "what have you seen"
+                     prose is where the depth lives)
+  Compress second:   Q1 (the memory-anchor written answers
+                     capture the gap even if discussion
+                     is short)
+  Do NOT compress:   Q2 (the privacy guarantee probe)
+  Do NOT compress:   Q4 (the "less authentic" answer is
+                     the AI-authenticity north star)
+  Do NOT compress:   Q5 (every attendee must write a
+                     dollar number)
+
+
+====================================================
+DURING AND AFTER THE BREAKOUT
+====================================================
+
+WORKSHEET COLLECTION
+
+At 2:10 PM, ask attendees to put pens down and pass their worksheets to the center of the table. Walk the worksheets to Arron at the front before the 2:15 block starts.
+
+If anyone wants to add more notes after the breakout, let them keep the worksheet through lunch and turn it in during the 2:30 to 3:00 cross-room synthesis.
+
+
+COMPLIANCE REMINDERS DURING THE BREAKOUT
+
+No clinical language. If anyone uses "anxiety", "depression", "trauma", or "trigger" in the clinical sense, do not echo. Take the substance and re-frame in performance language.
+
+Athletes are A, B, C from the front of the room. In the artifact packets and on the screen mockup, real names appear (Grace, Angelo, Hunter). Attendees may use real names because they read them in the packet. Do not correct.
+
+NDA applies to everything said in the room. Program names, individual athlete names, all confidential.
+
+
+PRE-EVENT CHECKLIST (May 8, day before)
+
+- Re-read this packet and the universal Breakout_Facilitation_Guide
+- Re-read the four attendee profiles
+- Re-read the D2C / Athlete Worksheet you will hand to attendees
+- Re-read the Q4 "less authentic" framing rationale (above)
+- Confirm Kellie has read Capture_Protocol shorthand convention
+- Confirm the D2C / Athlete artifact packet is the one your attendees will reference at Q4 (13 items, 26 pages)
+- Phone fully charged (your phone is the backup voice recorder)
+
+
+DAY-OF FACILITATOR CHECKLIST (before 1:30 PM)
+
+- Confirm voice recorder is recording (visible light, test playback if possible)
+- Confirm worksheets are at every D2C seat
+- Confirm Kellie is in position with notebook or laptop ready
+- Confirm artifact packets are at every D2C seat
+- Confirm pens are at every seat
+- Phone within reach as recorder backup
+
+
+====================================================
+QUICK REFERENCE CARD (TEAR THIS OFF FOR YOUR TABLE)
+====================================================
+
+
+YOUR FOUR D2C ATTENDEES
+
+  RO  Ron Oswald          Seton Hill 4x AAA + Swampfox youth
+  LM  Liz Marcheleovich   Youth strength coach, Virtus Barbell
+  AB  Alex Bohince        Former HS baseball, parent, insider
+  TM  Tamara Mahady       Magisterial Judge + Seton Hill softball
+
+
+YOUR FIVE QUESTIONS (~9 MIN EACH, 45 MIN TOTAL)
+
+  Q1  Memory anchor             9 min  (the honest gap)
+  Q2  Adoption-barrier          9 min  (probe the privacy line)
+  Q3  Stress-test assumption    8 min  ("what have you seen")
+  Q4  React to Grace's arc      9 min  ("less authentic" framing)
+  Q5  Killer test               8 min  (every attendee writes $)
+
+
+WATCH-OUT TRIGGERS
+
+  Privacy line ignored ->  "Did the privacy line matter to you?"
+  "Off or invasive"    ->  Redirect to "less authentic"
+  Skipped dollar field ->  "Even an estimate, what comes to mind?"
+  Insider lens (Alex)  ->  Treat as regular attendee
+  Real-name slips      ->  Do not correct. Recording is fine.
+  Defending the voice  ->  You do not. Capture the rejection.
+
+
+SIGNAL PRIORITY
+
+  1)  MEMORY ANCHOR   Q1, what they needed and didn't get
+  2)  LESS AUTHENTIC  Q4, where AI-coaching authenticity breaks
+  3)  PRICE + CANCEL  Q5, every dollar amount + cancel trigger
+
+
+TIME ANCHORS
+
+  1:30 PM      Read Q1, give 90 sec write time
+  ~1:39 PM     Move to Q2
+  ~1:48 PM     Move to Q3
+  ~1:56 PM     Move to Q4
+  ~2:05 PM     Move to Q5
+  2:10 PM      Stop discussion. Collect worksheets.
+  2:15 PM      Hand the room back for the pricing +
+               deployment block.
+
+
+YOU DO                            YOU DO NOT
+
+  Read questions verbatim         Defend the coaching voice
+  Probe the privacy line          Let "stays private" be assumed
+  Hold "less authentic" framing   Drift to "off or invasive"
+  Make every attendee write $     Skip the dollar field
+  Stay neutral                    Endorse program names
+  Re-frame clinical language      Echo clinical language
+  Hand over at 2:15 sharp         Run over
+
+
+END OF PACKET

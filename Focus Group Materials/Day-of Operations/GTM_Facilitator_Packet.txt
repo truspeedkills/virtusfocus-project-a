@@ -1,0 +1,461 @@
+"VIRTUSFOCUS" FOCUS GROUP: GTM FACILITATOR PACKET
+
+Event:        May 9, 2026 (Saturday)
+
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+
+Your role:    GTM Breakout Facilitator (1:30-2:15 PM) plus Check-In Lead (11:30 AM-12:00 PM)
+
+Last updated: 2026-05-04
+
+For:          Michele Cribbs
+
+
+====================================================
+YOUR ROLE AND YOUR DAY
+====================================================
+
+WHY THIS PACKET EXISTS
+
+You are facilitating the GTM breakout group, which is the strategic-advice room. Your four attendees are senior operators with specific lenses on positioning, pricing, category, and channel. Your job is to extract their honest read of what we are building. The signals they give in this room shape the go-to-market decisions Arron and Nicole make in the weeks after the event.
+
+This packet gives you everything you need to run that 45 minutes well. Read alongside the universal Breakout_Facilitation_Guide for facilitation skills, contingencies, and what to do or not do. Read Capture_Protocol if you want context on the shorthand convention the note-taker is using; helpful but not required.
+
+You should also have read the Pitch_Script_v1 and the Mockup_Walkthrough_Script_v1 at least once. The attendees will reference the pitch and the walkthrough in their answers, so you should have heard them.
+
+
+YOUR JOB IN ONE PARAGRAPH
+
+Run the GTM breakout 1:30 to 2:15 PM with four attendees. Read each question, give them quiet time to write, then open discussion. Keep airtime balanced. Stay neutral. Do not defend the product, do not endorse opinions, do not fill silences quickly. Capture surprise. Watch your time. Hand the room back to the full group at 2:15 sharp.
+
+
+THE FULL DAY AT A GLANCE
+
+  11:30 AM-12:00 PM  Check-in lead. You greet attendees at
+                     the door, mark them on the sign-in roster,
+                     confirm their NDA is signed, hand them a
+                     colored name tag matching their segment,
+                     and direct them to the main room. Backup
+                     chain if you are pulled away: Nicole,
+                     then Arron. Path B printed NDAs are at
+                     the table, 6-8 copies pre-printed.
+
+  12:00-12:15 PM     Welcome block, Arron leads. Sit with
+                     attendees. Verbal recording confirmation
+                     happens here. Watch for any attendee who
+                     hesitates on the recording question.
+
+  12:15-12:45 PM     Pitch, Nicole and Arron. The story your
+                     attendees will react to in your breakout.
+                     Listen as a facilitator, not a participant.
+                     Note any visible reaction from your four
+                     GTM attendees during the pitch.
+
+  12:45-1:15 PM      Mockup walkthrough, Arron and Nicole.
+                     Athletes A, B, C are anonymized in the
+                     script. Real names appear only on the
+                     screen mockup. Your attendees may
+                     reference "Grace" because they see her
+                     name on the Inbox screen, even though
+                     Arron refers to her as "Athlete A" from
+                     the front of the room. This is fine.
+                     Do not correct.
+
+  1:15-1:30 PM       Lunch and transition. The 90-minute
+                     role-cooling gap from your check-in role
+                     to your facilitator role is intentional.
+                     Use it. Sit at or near the GTM table.
+                     Eat. Re-read your five questions and your
+                     four attendee profiles.
+
+  1:30-2:15 PM       GTM breakout, you facilitate. This packet
+                     covers what happens here in detail. See
+                     sections below.
+
+  2:15-2:30 PM       Pricing and deployment block. Full-room
+                     discussion. You sit with your group.
+                     Listen. Note signals.
+
+  2:30-3:00 PM       Cross-room synthesis. Each breakout
+                     shares one or two top findings. You may
+                     share GTM findings if you want, otherwise
+                     let attendees speak first.
+
+
+====================================================
+YOUR SEGMENT AT A GLANCE
+====================================================
+
+WHAT GTM PROBES
+
+The GTM worksheet asks five questions designed to stress-test the go-to-market story. Your attendees are not here to learn about VirtusFocus. They are here to find what is wrong with the positioning, the category, the channel choice, and the pricing.
+
+  Q1  Pitch stress-test. Where the story lands and stumbles.
+  Q2  Category and competition. Who do we compete with.
+  Q3  Single app vs. white-label architecture.
+  Q4  React to the artifact. What sells, what proof is missing.
+  Q5  Killer test. Path, first $1M, what NOT to do.
+
+
+WHAT SIGNAL MATTERS MOST
+
+Three things you are most listening for, in priority order.
+
+1. SURPRISE. The thing they noticed that the pitch did not address. The objection we did not anticipate.
+
+2. DIVERGENCE. When two attendees disagree on something fundamental (single app vs. white-label, D2C vs. institutional first). Capture both sides verbatim.
+
+3. SPECIFICITY. "I would not market it like that" is good. "I would market it like THIS instead" is better. Push for the second when you can without being leading.
+
+
+====================================================
+YOUR ATTENDEES
+====================================================
+
+Four GTM attendees, all senior operators. You recommended all four to this room, so you know them already. The profiles below are organized for quick scan during the breakout: who they are, the lens they bring, what to listen for from them, what NOT to expect.
+
+
+JON REESE (JR)
+
+  Background:    President of Sales at Overly Door,
+                 President of Greensburg Community
+                 Development Corporation, civic leader
+                 in the Greensburg ecosystem.
+
+  Lens:          B2B sales, civic adoption, regional
+                 brand-building. Thinks in pipelines,
+                 stakeholders, and long sales cycles.
+
+  Listen for:    Whether the institutional pitch sounds
+                 like something he could actually take to
+                 a school board or athletic director. His
+                 objections to channel and pricing are
+                 highest-quality.
+
+  Do not expect: Detailed mental performance domain
+                 expertise. He is reacting to the commerce,
+                 not the content.
+
+
+NOELE CREAMER (NC)
+
+  Background:    Pittsburgh writer. PR, executive
+                 communications, freelance writer
+                 background. Parent of collegiate athletes.
+
+  Lens:          Communications, story craft, AND
+                 parent-of-collegiate-athletes.
+
+  Listen for:    Two perspectives at once. (1) How the
+                 story actually reads to a non-insider.
+                 (2) What a parent of a collegiate athlete
+                 would feel using the parent dashboard.
+                 The parent angle is a cross-lens probe;
+                 her direct reaction to the parent material
+                 may produce D2C-grade signal in this GTM
+                 seat.
+
+  Do not expect: Pricing or B2B-sales-cycle detail. She
+                 will go deep on language, story, and
+                 emotional resonance.
+
+
+JENNIFER ALTIMORE (JA)
+
+  Background:    Board-Certified Clinical Hypnotherapist,
+                 marketing leader, International Best-
+                 Selling Author. Operates in the mental
+                 performance adjacent space.
+
+  Lens:          Competitive-space-adjacent. She sells
+                 mental-state work to clients today. Her
+                 read on category-and-competition is the
+                 sharpest in the room.
+
+  Listen for:    Q2 specifically. When she names what
+                 category we compete in and who she sees
+                 as a competitor, capture verbatim. She
+                 has the most accurate read on the
+                 competitive landscape because she is in
+                 an adjacent slice of it.
+
+  Do not expect: Direct athletic-program experience. She
+                 is not here as a coach.
+
+  Compliance:    Hypnotherapy is clinical-adjacent. If
+                 she frames any answer in clinical
+                 language, do not echo or endorse. The
+                 Mental Performance vs. Mental Health
+                 line we drew in the pitch is the one we
+                 hold here.
+
+
+TOM PANIGALL (TP)
+
+  Background:    20-year senior leadership at Pepsi and
+                 Red Bull. Brooklyn Healthy. Deep
+                 consumer-brand and channel marketing
+                 experience.
+
+  Lens:          Consumer-brand strategy. Channel.
+                 Distribution. Category-creation
+                 dynamics.
+
+  Listen for:    His read on Q1 (pitch stress-test) and
+                 Q3 (architecture). He has built brands
+                 from category-creation positioning. If
+                 he says the pitch "lands like a
+                 supplement", that is a directional
+                 problem we need to hear.
+
+  Do not expect: Athletic-program institutional adoption
+                 detail. He thinks consumer-shelf, not
+                 athletic-department-procurement.
+
+
+====================================================
+YOUR FIVE QUESTIONS
+====================================================
+
+Read each question to the room verbatim. Give 60 to 90 seconds of quiet for written answers. Then open discussion. Watch your time. Roughly 8 to 9 minutes per question including write time and discussion. The breakout is 45 minutes total.
+
+
+QUESTION 1: PITCH STRESS-TEST (~8 MIN)
+
+Verbatim prompt: "Forget what we've shown you. In one sentence, how would you describe VirtusFocus to someone who's never heard of it? Where does the story land? Where does it stumble?"
+
+What it probes: The pitch's actual reading at first contact. We will hear our own language echoed back, and we will hear where it does not translate.
+
+Follow-ups (use only if discussion stalls):
+
+- "When you say it 'lands', land for whom?"
+- "When it 'stumbles', what part are you mentally editing as you describe it?"
+- "What word are you replacing in your sentence that we used in ours?"
+
+Trap to avoid: Defending the pitch. If someone says "the part about mental performance vs. mental health is confusing," do not explain it. Note the signal. Move on.
+
+Watch for: JR likely answers in B2B language. TP likely answers in consumer-shelf language. NC likely answers in parent-emotional language. JA likely answers in competitive-category language. The four sentences they produce are four different positioning targets. All four are signal.
+
+
+QUESTION 2: CATEGORY AND COMPETITION (~9 MIN)
+
+Verbatim prompt: "What category does this compete in, in your head? Who are we up against? How do we differentiate fast, in one line a parent or coach would actually repeat?"
+
+What it probes: Where attendees mentally file VirtusFocus. The category we think we are in may not be the category they put us in. Differentiation language testing.
+
+Follow-ups:
+
+- "Why that category and not the other one named above?"
+- "Who is the most direct competitor, by name?"
+- "If you had to repeat that one-line differentiator to your spouse tonight, would you remember it tomorrow?"
+
+Trap to avoid: Naming competitors yourself. Let the attendees name them. If no one says a competitor name in the first three minutes, ask "who specifically?" but do not seed.
+
+Watch for: JA's answer here is the highest-priority capture of the entire breakout. She knows the competitive landscape because she sells in an adjacent space. If TP says "this competes with energy drinks for athletic mindshare", that is a category insight we have not considered. Capture verbatim.
+
+
+QUESTION 3: SINGLE APP vs WHITE-LABEL (~10 MIN)
+
+Verbatim prompt: "We're betting both channels are viable. Institutional AND D2C. Two architectures: the same app serves both, or we build a white-label version institutions can skin with their own brand. Ohio State gets 'Ohio State Mental Performance' with their colors. Which is right? Why? What does each cost us that we're not seeing?"
+
+What it probes: This is the most strategically loaded question in the worksheet. The decision here determines product roadmap, engineering investment, and pricing structure for the next two years. The answer we get here directly informs the May 30 go/no-go gate.
+
+Follow-ups:
+
+- "If both, who pays for the second engineering track?"
+- "What does Ohio State actually want with their skin? Logo? Colors? Their own coaching content? Their own roster?"
+- "What is the hidden cost of the same-app approach when we land Ohio State?"
+
+Trap to avoid: Letting the room drift to checkbox voting before discussion. Open the discussion before referencing the checkboxes on the worksheet. The reasoning matters more than the checkbox.
+
+Watch for: JR will think about institutional-sales mechanics. His answer to "what does each cost us" is concrete. TP will think about brand dilution risk if we white-label. Capture the brand-dilution language verbatim. Divergence here between attendees is signal. Do not push for consensus. Capture the disagreement.
+
+
+QUESTION 4: REACT TO THE ARTIFACT (~9 MIN)
+
+Verbatim prompt: "You've reviewed Grace's coaching output and the dashboard mockups. If you were marketing this tomorrow, what's the headline asset? What story actually sells it? What proof are we missing?"
+
+What it probes: Marketing-asset prioritization. Which artifact in the GTM packet is the strongest selling tool. What proof is missing from the current set.
+
+Follow-ups:
+
+- "Which artifact would you put on the homepage?"
+- "What story do you tell the parent first, before showing any artifact?"
+- "What proof point is missing: outcome data, endorsement, athlete testimonial?"
+
+Trap to avoid: Defending why the current artifact set is what it is. If they say "I would never lead with the Coach Insight", do not explain why we lead with it. Capture the rejection.
+
+Watch for: NC will likely respond to the Parent CM viscerally. If she says something like "this is what I wish I had when my kid was a freshman", capture verbatim. That is the D2C parent-channel north star line. TP will likely respond to whichever artifact has the strongest visual hook. He thinks in shelf appeal.
+
+
+QUESTION 5: KILLER TEST (~8 MIN)
+
+Verbatim prompt: "You're advising us on GTM strategy. Which path? D2C first, institutional first, independent paths, or simultaneously? What does the first $1M of revenue look like? What would you absolutely NOT do?"
+
+What it probes: Path priority and explicit stop-doing items. The "what would you NOT do" prompt often produces the most directional signal because it reveals where attendees see real failure modes.
+
+Follow-ups:
+
+- "What does the first $1M look like in months, not dollars? Who buys, in what order?"
+- "Of the things you would NOT do, which one are we most at risk of doing anyway?"
+- "Would you change your answer if I told you we are bootstrapping vs. raising?" (only ask if discussion is light)
+
+Trap to avoid: Letting the discussion turn into consensus-building. Capture each attendee's individual path choice (the checkbox AND the reasoning) before you let them argue with each other. Divergence between four senior operators is the most valuable signal of the day.
+
+Watch for: All four "would NOT do" answers are gold. Capture each one verbatim. If two attendees independently name the same NOT-do item, that is a stop-doing decision the founders make at the May 30 gate.
+
+
+====================================================
+SEGMENT-SPECIFIC DYNAMICS
+====================================================
+
+YOUR ATTENDEES KNOW EACH OTHER
+
+You recommended all four to this room. They likely know each other socially or professionally. Watch for two risks specific to a known-relationships breakout.
+
+1. PILE-ON. One attendee makes a strong claim and the others nod or agree without independently answering. Counter by going around the table: "I want to hear each of you answer this one individually before we discuss."
+
+2. COURTESY DEFLECTION. Attendees soften criticism because they know each other. Counter by saying "We are looking for what would NOT work. Be direct. We will not be in the room when you are direct, only the recording."
+
+
+THE Q3 ARCHITECTURE QUESTION IS THE STRATEGIC PEAK
+
+If you have to compress any question, do not compress Q3. The white-label vs. single-app decision is the single most expensive product-roadmap call we make in the next 90 days. If discussion is rich at Q3, give it 12 minutes and pull from Q4 or Q5.
+
+
+THE PARENT CROSS-LENS WITH NOELE
+
+NC wears two hats in this room. She is a GTM advisor AND a parent of collegiate athletes. Her reaction to the Parent CM and Parent Insight will be different from her reaction to the institutional pitch. Make space for both reads. If she says "as a parent" or "speaking as a mom", capture that as a tag in your notes. That content is D2C-grade signal coming from a GTM seat.
+
+
+THE COMPETITIVE-CATEGORY ANSWER FROM JENNIFER
+
+Jennifer Altimore's response to Q2 is the most strategic single piece of signal in your entire breakout. She operates in mental-performance-adjacent space professionally. When she names the competitor or category, it is informed by direct selling experience, not abstract market analysis. Slow the room down when she answers. Make sure the note-taker captures her exact words.
+
+
+CLINICAL LANGUAGE FROM JENNIFER (COMPLIANCE)
+
+Hypnotherapy is clinical-adjacent. If JA frames an answer in clinical language, like "we help athletes with anxiety" or "we treat performance issues", do not echo, endorse, or build on the framing. Take the substance of her answer and respond in mental-performance language. The Mental Performance vs. Mental Health line we drew in the pitch is the line we hold here.
+
+If she explicitly invokes hypnotherapy as a comparison ("VirtusFocus is like hypnotherapy in that..."), let it sit. Capture verbatim. Do not validate or refute. We will analyze in synthesis.
+
+
+WHAT IF THE BREAKOUT RUNS OUT OF TIME
+
+Forty-five minutes is short for five rich questions with four senior advisors. Compress in this priority if you must:
+
+  Compress first:    Q5 (the "anything else" page captures
+                     stop-doing signal too)
+  Compress second:   Q1 (the pitch reads itself; their
+                     written one-sentence answers are
+                     captured even if discussion is short)
+  Do NOT compress:   Q2 (Jennifer's competitive read)
+  Do NOT compress:   Q3 (the architecture decision)
+  Do NOT compress:   Q4 (the artifact reactions are
+                     concrete and actionable)
+
+
+====================================================
+DURING AND AFTER THE BREAKOUT
+====================================================
+
+WORKSHEET COLLECTION
+
+At 2:10 PM, ask attendees to put pens down and pass their worksheets to the center of the table. The pricing + deployment block at 2:15 does not need them to be holding the worksheets. Collect physically before the transition. Walk the worksheets to Arron or Nicole at the front before the 2:15 block starts.
+
+If anyone wants to add more notes after the breakout, let them keep the worksheet through lunch and turn it in during the 2:30 to 3:00 cross-room synthesis.
+
+
+COMPLIANCE REMINDERS DURING THE BREAKOUT
+
+No clinical language. If anyone uses "anxiety", "depression", "trauma", or "trigger" in the clinical sense, do not echo. Take the substance of what they said and re-frame in performance language.
+
+Athletes are A, B, C from the front of the room. In the artifact packets and on the screen mockup, real names appear (Grace, Angelo, Hunter). This is intended. Attendees may use real names because they read them in the packet. Do not correct them. Real names stay inside the breakout room and the recording.
+
+NDA applies to everything said in the room. If anyone references a competitor by name, that is on the recording and confidential.
+
+
+PRE-EVENT CHECKLIST (May 8, day before)
+
+- Re-read this packet and the universal Breakout_Facilitation_Guide
+- Re-read the four GTM attendee profiles in this packet
+- Re-read the GTM Worksheet you will hand to attendees
+- Confirm the GTM artifact packet is the one your attendees will reference at Q4 (15 items, 35 pages)
+- Phone fully charged (your phone is the backup voice recorder)
+- Plan to arrive at venue by 11:15 AM
+
+
+DAY-OF FACILITATOR CHECKLIST (before 1:30 PM)
+
+- Confirm voice recorder is recording (visible light, test playback if possible)
+- Confirm worksheets are at every GTM seat
+- Confirm note-taker (Aidan Burkardt) is in position with notebook or laptop ready
+- Confirm artifact packets are at every GTM seat
+- Confirm pens are at every seat
+- Phone within reach as recorder backup
+
+
+====================================================
+QUICK REFERENCE CARD (TEAR THIS OFF FOR YOUR TABLE)
+====================================================
+
+
+YOUR FOUR GTM ATTENDEES
+
+  JR  Jon Reese            B2B sales / civic adoption
+  NC  Noele Creamer        story plus parent cross-lens
+  JA  Jennifer Altimore    competitive-category sharp
+  TP  Tom Panigall         consumer brand strategy
+
+
+YOUR FIVE QUESTIONS (~9 MIN EACH, 45 MIN TOTAL)
+
+  Q1  Pitch stress-test         8 min
+  Q2  Category and competition  9 min  (JA's answer = gold)
+  Q3  Single app vs white-label 10 min (most strategic)
+  Q4  React to the artifact     9 min  (NC's parent read)
+  Q5  Killer test               8 min  (NOT-do answers = gold)
+
+
+WATCH-OUT TRIGGERS
+
+  Pile-on agreement   ->  "I want each of you to answer first"
+  Courtesy deflection ->  "Be direct. Recording is confidential"
+  Clinical language   ->  Re-frame in performance language
+  Real-name slips     ->  Do not correct. Recording is fine.
+  Defending the pitch ->  You do not. Capture the signal.
+
+
+SIGNAL PRIORITY
+
+  1)  SURPRISE       The thing the pitch did not address
+  2)  DIVERGENCE     Attendees disagreeing fundamentally
+  3)  SPECIFICITY    "I would do THIS instead" beats
+                     "I would not do that"
+
+
+TIME ANCHORS
+
+  1:30 PM      Read Q1, give 90 sec write time
+  ~1:38 PM     Move to Q2
+  ~1:47 PM     Move to Q3
+  ~1:57 PM     Move to Q4
+  ~2:06 PM     Move to Q5
+  2:10 PM      Stop discussion. Collect worksheets.
+  2:15 PM      Hand the room back to Arron + Nicole for
+               the pricing + deployment block.
+
+
+YOU DO                            YOU DO NOT
+
+  Read questions verbatim         Defend the product
+  Give quiet time first           Endorse opinions
+  Open discussion after writing   Fill silences quickly
+  Stay neutral                    Lead toward an answer
+  Capture surprise + divergence   Push for consensus
+  Watch your time                 Run over 2:15
+  Re-frame clinical language      Echo clinical language
+  Hand over at 2:15 sharp         Carry over into pricing
+
+
+END OF PACKET
