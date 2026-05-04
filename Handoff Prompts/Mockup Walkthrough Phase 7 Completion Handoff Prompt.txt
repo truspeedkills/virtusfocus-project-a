@@ -1,0 +1,416 @@
+MOCKUP WALKTHROUGH PHASE 7 COMPLETION HANDOFF PROMPT
+======================================================
+Created:  2026-05-03 (end of working session)
+Event:    May 9, 2026 (Saturday), 12:45-1:15 PM
+Print:    May 6, 2026 deadline for printable artifacts
+Owners:   Arron (lead) + Nicole (co-walks)
+
+
+FIRST INSTRUCTION (paste verbatim into a fresh session)
+=========================================================
+"Read CLAUDE.md, then read Handoff Prompts/Mockup Walkthrough
+Phase 7 Completion Handoff Prompt.txt in full, then begin
+Chunk D (filtered Mockup Walkthrough Gallery + real Wk12
+Inbox content). Stop after the gallery file is built and
+working but BEFORE Inbox content replacement to confirm
+visual approach with me."
+
+
+WHERE WE ARE
+============
+Phase 7 (printable + smart-board deliverables) is partially
+complete from the prior session. Specific status:
+
+DONE (committed at be71c32, pushed to origin/master, main
+folder synced):
+  Chunk A — Cover edits + regenerations
+    - Institutional_Cover (1 page, +Snapshot/Coaching Message/Parent CM)
+    - D2C_Athlete_Cover (1 page, 10pt fonts, +Coach Insight/Team Snapshot/Snapshot)
+    - GTM_Cover (2 pages, +Snapshots B & C, +App Mockup Printouts placeholder)
+    - All 3 .docx + .pdf regenerated via make_focus_group_docx.py main()
+
+  Chunk B — Snapshot printable artifacts
+    - Athlete A (Grace) - 3 pages, in all 3 packets
+    - Athlete B (Angelo) - 4 pages, GTM packet only
+    - Athlete C (Hunter) - 3 pages, GTM packet only
+    - All anonymized to Athlete A/B/C from the stage-perspective
+    - .txt + .docx + .pdf at 0.5" margins via convert_one()
+
+  Chunk C — Smart-board reader pages (4 of 4)
+    - Snapshot_Reader.html (Athlete A baseline profile)
+    - Coach_Reader.html (Athlete A Wk12 Coach Insight)
+    - Parent_Reader.html (Athlete A Wk12 Parent CM)
+    - Team_Snapshot_Reader.html (Sample Team Snapshot)
+    - All 4 use shared dark-theme app visual language
+    - Saved to Focus Group Materials/Mockup Walkthrough/
+
+  Compliance Cleanup
+    - Stage 4 spec gap discovered mid-session (live pipeline
+      Coach Insights surfaced direct athlete quotes, recap
+      entry references, reflection-depth surveillance,
+      playing-time articulation, and undisclosed health/medical
+      content into coach-facing output)
+    - 3 Coach Insights cleaned: Grace Wk7, Grace Wk12, Angelo Wk10
+    - 1 Parent CM cleaned: Hunter Wk1 (verbatim goal quote
+      paraphrased)
+    - All 4 .docx + .pdf regenerated to match cleaned .txt
+    - Source pipeline files in Athlete Data/ preserved
+      untouched as evidence
+    - Stage 4 + Stage 5 spec-fix proposal documented at
+      Pipeline Enhancement Proposals/Stage_4_Athlete_Input_Surveillance_Spec_Gap.md
+      for post-event resolution
+
+REMAINING for THIS fresh session:
+  Chunk D — Filtered Mockup Walkthrough Gallery + real Wk12
+            Inbox content (HEAVY context - this is the
+            biggest remaining task)
+  Chunk E — Selected_App_Mockup_Printouts.pdf for GTM packet
+            (medium context)
+  Final     CLAUDE.md update covering ALL Mockup Walkthrough
+            work from prior session + this session + commit
+            + push
+
+
+CHUNK D: FILTERED MOCKUP WALKTHROUGH GALLERY + REAL WK12 INBOX CONTENT
+======================================================================
+
+Goal: produce Focus Group Materials/Mockup Walkthrough/
+Mockup_Walkthrough_Gallery.html, a self-contained HTML file
+that:
+  1. Contains ONLY the 9 walkthrough screens from Scott
+     mockindex.html (filter out intake, profile, settings,
+     onboarding, etc.)
+  2. Strips the right-pane panels (Session Notes, Status,
+     Source Doc) - these are distracting on a smart-board
+  3. Replaces the placeholder content in the Inbox (Feed)
+     screen with real Athlete A Wk12 content (Coaching
+     Message + Deep Dive preview + a representative daily
+     snippet)
+
+The 9 walkthrough screens (in order, per locked Phase 4
+script):
+  1. Home (Morning)
+  2. Tune-Up (Active)
+  3. Bullseye (Mid-Entry)
+  4. Journal (Active)
+  5. Home (Evening)
+  6. Evening Review (WTD)
+  7. Home (Sunday Recap)
+  8. Weekly Recap (Active)
+  9. Inbox (Feed)
+
+Source: App Information for Focus Group/Scott mockindex.html
+(190KB, 3,476 lines).
+
+
+APPROACH (RECOMMENDED, DISCUSS WITH USER FIRST)
+
+Read Scott mockindex.html in chunks to understand the
+JavaScript structure. The screens array (around line 163)
+contains all screen objects. Each has id, label,
+sourceDoc, status, notes, render properties. The render
+property points to a renderXxx function defined later in
+the file.
+
+To filter to only 9 screens:
+  Option 1 (cleanest): Copy mockindex.html to
+    Mockup_Walkthrough_Gallery.html. In the copy, edit
+    the screens array to only include the 9 needed objects
+    (in walkthrough order). Strip the right-pane HTML
+    block. All renderXxx functions stay intact.
+  Option 2: Comment out non-walkthrough screen entries.
+    Less clean but lower risk.
+
+Pause after the gallery file is built and working but
+BEFORE Inbox content replacement so the user can confirm
+the visual approach.
+
+
+INBOX CONTENT REPLACEMENT (after user confirms gallery)
+
+The renderInboxFeed function in Scott mockindex.html
+(approximately line 755+ for the screen object, render
+function defined later in the file) generates the feed
+content. Currently uses placeholder text.
+
+Replace with real Athlete A Wk12 content:
+
+Daily snippet at top (~30-60 words, 1-2 sentences):
+  - Write a representative Tue-Sun daily snippet anchored
+    to Grace's Wk12 data
+  - Coach Arron voice in compressed daily form
+  - Bridge yesterday-to-today framing
+  - Sample anchor: Wednesday's practice recognition
+    (Grace's "fast asf" practice quality moment) or
+    Sunday's composed-paradox sentence
+  - Sign-off "Coach Arron"
+  - Marked clearly as a representative example since no
+    live Stage 6 daily snippet exists for Grace yet
+  - Per locked decision in Mockup Walkthrough Handoff:
+    "(a) write one in Coach Arron voice anchored to her
+    Wk12 data, marked clearly as a representative example"
+
+Weekly Coaching Message (the elevated card with amber left
+border):
+  - Use the actual Athlete A Wk12 Coaching Message verbatim
+  - Source: Focus Group Materials/Athlete Materials/
+    Grace Kindel/Grace_Kindel_2026-04-20to2026-04-26_VF_CoachingMessage.txt
+  - Real name "Grace" appears in the rendered card (per
+    locked decision in handoff prompt: real names CAN
+    appear on screen, Arron refers to "Athlete A" from
+    the stage)
+  - Approximately 400 words
+
+Deep Dive preview card:
+  - First paragraph or section of the actual Athlete A
+    Wk12 Deep Dive
+  - Source: Focus Group Materials/Athlete Materials/
+    Grace Kindel/Grace_Kindel_2026-04-20to2026-04-26_VF_DeepDive.txt
+  - Include "Read Full Analysis" CTA per existing design
+  - Approximately 100-150 words preview
+
+Why this matters for Phase 5: the script line "What's on
+the screen is what's in your hands" lands literally true
+when the Inbox content matches the printed Coaching
+Message in attendees' packets. Phase 5 also references
+"the Coaching Message in this feed is anonymized as Athlete
+A's Week 12 in your packets" - this only works if the feed
+actually shows that content.
+
+CRITICAL COMPLIANCE NOTE FOR CHUNK D:
+The Athlete A Wk12 Coaching Message is athlete-facing
+output. Different rules than Coach Insight. CMs use direct-
+address ("you/your") and CAN reference the athlete's own
+inputs because the athlete is the recipient. The CM in the
+focus group materials is the cleaned/regenerated version
+already validated as good per the user's note about CMs
+and DDs being current with the newest pipeline. Use as-is.
+
+Do NOT confuse CM compliance rules (athlete-facing,
+permissive) with Coach Insight rules (coach-facing, strict).
+The recent compliance cleanup work targeted Coach Insights
+and one Parent CM (Hunter), not the athlete-facing CMs.
+
+
+CHUNK E: SELECTED_APP_MOCKUP_PRINTOUTS.PDF FOR GTM PACKET
+=========================================================
+
+Goal: produce Focus Group Materials/Artifact Packets/
+Selected_App_Mockup_Printouts.pdf, a 4-5 page PDF with one
+mockup screen per page, for inclusion in the GTM artifact
+packet (item #13 per the GTM cover).
+
+The 4 GTM-required screens:
+  1. Home (Morning)
+  2. Tune-Up (Active)
+  3. Weekly Recap (Active)
+  4. Inbox (Feed)
+
+Approach options:
+  Option 1: Browser screenshot via Playwright/Puppeteer
+    if available in env. Each screen rendered at high
+    resolution, captured as image, compiled to PDF via
+    Pillow + img2pdf or reportlab.
+  Option 2: Build standalone HTML pages for each of the 4
+    screens (extract the render functions from Scott
+    mockindex.html), then use LibreOffice CLI or Chromium
+    headless to print each to PDF, then combine PDFs via
+    pypdf or pdfunite.
+  Option 3: Use the Mockup_Walkthrough_Gallery.html built
+    in Chunk D, navigate to each of the 4 screens
+    programmatically, screenshot each.
+
+Per-page format (per Mockup Walkthrough Handoff decision g):
+  - Screen full-bleed at top (~70% of page height)
+  - Annotation block below (~30%): what attendees should
+    notice on the screen, and what to react to in the
+    breakout
+  - 0.5 inch margins
+  - One page per screen = 4 pages minimum, possibly 5 if
+    cover page added
+
+Also consider: a brief title page or contents page may make
+the printout feel more deliberate than just 4 raw screens.
+Discuss with user.
+
+
+FINAL CLAUDE.MD UPDATE
+======================
+
+After D + E commit, update CLAUDE.md with a single
+Session entry covering the entire Mockup Walkthrough work
+arc:
+
+Required content for the session entry:
+  - Phases 1 through 8 of mockup walkthrough script
+    development (all done)
+  - Pitch script Section 2 weekly recap timing reconciled
+    (8-12 min to 5-8 min)
+  - Mockup_Walkthrough_Script_v1.txt + .docx + .pdf (~30
+    min spoken, tag-team Arron + Nicole, 9 athlete-side
+    screens + Nicole's coach/parent/snapshot/team/audit
+    close + lunch transition)
+  - Phase 7 Chunk A: 3 cover updates with packet
+    symmetrization rationale
+  - Phase 7 Chunk B: 3 athlete snapshot printables
+  - Phase 7 Chunk C: 4 smart-board reader pages
+  - Phase 7 Compliance Cleanup: spec gap discovery, 4
+    artifacts cleaned (Grace Wk7 + Wk12 Coach Insights,
+    Angelo Wk10 Coach Insight, Hunter Wk1 Parent CM)
+  - Phase 7 Chunk D: filtered gallery + Inbox real content
+  - Phase 7 Chunk E: GTM mockup printouts PDF
+  - Resolution 2 spec-fix proposal documented for
+    post-event work
+  - Files modified count and commit hashes (f137c04 for
+    script, be71c32 for Phase 7 partial, [next] for D+E
+    finish)
+  - Print deadline May 6 status: ALL print-critical
+    deliverables ready (artifact packet covers, athlete
+    snapshots, cleaned Coach Insights, App Mockup
+    Printouts PDF for GTM)
+
+Update the "Pending May 9 lockdown work" section to mark
+items DONE.
+
+Per CLAUDE.md "Session Number Convention" rule, the
+session number is assigned at CLAUDE.md update time. Use
+the next sequential number after Session 124.
+
+Per CLAUDE.md "End-of-Session Rule" - commit + push +
+verify clean tree + sync main folder via git pull.
+
+
+REFERENCE FILES BY PRIORITY
+============================
+
+Tier 1 (must read fully):
+  - This handoff prompt
+  - CLAUDE.md (current state, prior session entries)
+  - Focus Group Materials/Mockup Walkthrough/
+      Mockup_Walkthrough_Script_v1.txt (script that
+      references the gallery + readers - confirms what
+      visual deliverables need to exist for Phase 5)
+  - Focus Group Materials/Artifact Packets/GTM_Cover.txt
+      (confirms App Mockup Printouts requirement, page 13)
+  - Pipeline Enhancement Proposals/
+      Stage_4_Athlete_Input_Surveillance_Spec_Gap.md
+      (compliance context if any new content gets surfaced
+      from athlete inputs)
+
+Tier 2 (read selectively as needed):
+  - App Information for Focus Group/Scott mockindex.html
+      (selective read - filter logic + renderInboxFeed
+      function)
+  - App Information for Focus Group/mockindex.html
+      (companion gallery, fallback if Scott's is missing
+      anything)
+  - Focus Group Materials/Athlete Materials/Grace Kindel/
+      Grace_Kindel_2026-04-20to2026-04-26_VF_CoachingMessage.txt
+      (real CM content for Inbox replacement)
+  - Focus Group Materials/Athlete Materials/Grace Kindel/
+      Grace_Kindel_2026-04-20to2026-04-26_VF_DeepDive.txt
+      (real DD content for Inbox preview replacement)
+  - Focus Group Materials/Mockup Walkthrough/Coach_Reader.html
+      (visual style reference for any HTML work)
+  - Handoff Prompts/Mockup Walkthrough Handoff Prompt.txt
+      (original locked decisions for the walkthrough)
+
+
+CRITICAL OPERATING RULES
+=========================
+
+Athletes anonymized as A/B/C from the stage. Real names CAN
+appear in mockup data on screen and in packet artifacts (per
+locked decision). The Inbox feed will show "Grace" because
+that's what parents/athletes see in production.
+
+Zero em dashes file-wide in any new content. Period, comma,
+or colon.
+
+Voice consistent with pitch + walkthrough script:
+conversational, contractions default, no corporate-speak.
+
+Compliance rules from focus group: no clinical language,
+no surveillance framing, no pipeline-classification jargon
+visible to attendees. Mental Performance vs Mental Health
+distinction held.
+
+Smart-board readers + Inbox real content all use the
+existing dark-theme visual language (zinc-950 bg, amber
+accents, system font stack). See existing reader files.
+
+The Coaching Message and Deep Dive in the focus group
+materials are athlete-facing output and clean per current
+spec - safe to use as-is. Do NOT apply Coach Insight
+cleanup rules to athlete-facing content.
+
+Daily snippet for Inbox is REPRESENTATIVE example since
+no live Stage 6 snippet exists for Grace yet. Mark as such
+in code comments. Voice should match Coach Arron's daily
+form (compressed, ~30-60 words, 1-2 sentences, bridge
+yesterday-to-today).
+
+Pause after building the gallery (before Inbox content
+replacement) for visual confirmation. Pause again before
+the Inbox content goes in for content confirmation.
+
+
+WHAT NOT TO DO
+===============
+
+Do NOT regenerate any of the cleaned Coach Insights from
+the prior session. They are in their final state for May 9.
+
+Do NOT modify the Stage 4 or Stage 5 specs in this session.
+Resolution 2 is post-event work.
+
+Do NOT modify the source pipeline files in Athlete Data/.
+Those are preserved as evidence for the spec-fix work.
+
+Do NOT change packet contents lists or covers. Those are
+locked at be71c32.
+
+Do NOT skip the user-confirmation pauses in Chunk D.
+Visual decisions on the gallery and content decisions on
+the Inbox replacement should be collaborative.
+
+Do NOT exceed reasonable scope. If Chunk D or E needs more
+than ~80k context, propose splitting again rather than
+risking compaction.
+
+Do NOT forget the final CLAUDE.md update + commit + push +
+main folder sync. End-of-session housekeeping per CLAUDE.md.
+
+
+SUCCESS CRITERIA
+=================
+
+  1. Mockup_Walkthrough_Gallery.html loads in browser,
+     shows only 9 walkthrough screens in correct order,
+     no right-pane Session Notes/Status/Source Doc panels.
+  2. Inbox (Feed) screen in the gallery shows real Athlete
+     A Wk12 Coaching Message (with Grace's name visible),
+     Deep Dive preview, and representative daily snippet.
+  3. Selected_App_Mockup_Printouts.pdf is 4-5 pages,
+     0.5 inch margins, one screen per page (Home / Tune-Up
+     / Weekly Recap / Inbox), with annotation per page.
+  4. CLAUDE.md updated with the full Mockup Walkthrough
+     session entry, all pending items marked DONE.
+  5. Working tree clean. Pushed to origin/master. Main
+     folder synced via git pull.
+  6. Print deadline May 6 status: ready for print run.
+
+
+CLOSING NOTE
+=============
+
+The mockup walkthrough is the substantive show-don't-tell
+moment of the May 9 event. Phase 7 finishes the visual
+infrastructure that makes the script land. The compliance
+cleanup work in the prior session was unexpected but the
+right kind of unexpected - exactly what focus group prep is
+supposed to surface before real coaches read real reports.
+
+The print deadline is May 6. As of be71c32, all printable
+artifacts except Selected_App_Mockup_Printouts.pdf are
+ready. Chunk E completes the print-ready set.
