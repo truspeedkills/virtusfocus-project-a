@@ -1,0 +1,88 @@
+PRINTER INSTRUCTIONS
+"VirtusFocus" Focus Group, May 9, 2026
+============================================================
+
+OVERVIEW
+
+Three PDF files, one per attendee segment, in this folder.
+Total print run: 14 attendee packets, 398 total pages.
+
+Each segment has its own segment color (deep blue, forest green,
+amber) used on the artifact packet cover page to enable visual
+sorting during the focus group breakout.
+
+
+== INSTITUTIONAL PACKET ==
+
+File:                Institutional_Packet.pdf
+Total pages:         25
+Quantity needed:     6 copies
+Cover stock pages:   Page 8 (1 page on segment-colored cover stock)
+Cover stock color:   Deep blue (corporate / institutional tone)
+Cover stock weight:  60-80 lb
+Body paper:          Standard 20-24 lb white
+Color printing:      Required for entire packet
+Binding:             Stapled top-left corner OR paperclip
+
+
+== D2C / ATHLETE PACKET ==
+
+File:                D2C_Athlete_Packet.pdf
+Total pages:         26
+Quantity needed:     4 copies
+Cover stock pages:   Page 8 (1 page on segment-colored cover stock)
+Cover stock color:   Forest green (athletic / growth tone)
+Cover stock weight:  60-80 lb
+Body paper:          Standard 20-24 lb white
+Color printing:      Required for entire packet
+Binding:             Stapled top-left corner OR paperclip
+
+
+== GTM PACKET ==
+
+File:                GTM_Packet.pdf
+Total pages:         36
+Quantity needed:     4 copies
+Cover stock pages:   Pages 8-9 (2 pages on segment-colored cover stock)
+Cover stock color:   Amber / burnt orange (strategy / commerce tone)
+Cover stock weight:  60-80 lb
+Body paper:          Standard 20-24 lb white
+Color printing:      Required for entire packet
+Binding:             Stapled top-left corner OR paperclip
+
+
+NOTES ON COVER STOCK
+
+Cover stock pages are the artifact packet cover pages within
+each combined packet. They are intended to print on segment-
+colored cover stock to provide a visual divider between the
+worksheet and the artifact contents, and to support at-a-
+glance segment sorting during the breakout transition.
+
+Worksheet pages (pages 1 through 7 of each packet) print on
+standard white paper. The worksheet design has segment-colored
+header bands baked into the layout, so colored paper stock is
+not required for those pages.
+
+All artifact pages after the cover (athlete snapshots, coaching
+messages, deep dives, coach insights, parent materials, team
+snapshot, mockup printouts) print on standard white paper.
+
+
+COLOR REQUIREMENTS
+
+Color printing is required for the entire packet. Several pages
+contain colored elements that lose meaning if printed in
+grayscale: gradient progression bars on the athlete progression
+visuals, amber-bordered callout boxes on coaching message
+cards, traffic-light color bands on the team snapshot, and
+header bands on every worksheet page. Standard CMYK four-
+color process is sufficient.
+
+
+CONFIDENTIALITY
+
+All material is confidential under NDA. Please do not retain
+digital file copies or sample prints after delivery. Contact
+Arron Beckes if any pages render unclearly or any colored
+elements look off before running the full print job.
