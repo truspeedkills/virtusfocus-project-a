@@ -1,0 +1,426 @@
+PRICING + DEPLOYMENT BLOCK SCRIPT + CROSS-ROOM SYNTHESIS SCRIPT
+================================================================
+Created:  2026-05-04 (end of working session)
+Event:    May 9, 2026 (Saturday)
+Print:    Distributed to Arron + Nicole + 3 facilitators day-of
+Owners:   Arron (lead) + Nicole (supports)
+
+
+FIRST INSTRUCTION (paste verbatim into a fresh session)
+=========================================================
+"Read CLAUDE.md, then read Handoff Prompts/Pricing and
+Cross-Room Synthesis Scripts Handoff Prompt.txt in full.
+Begin Phase 1 (load context). Pause after Phase 1 to
+confirm structural understanding with me before drafting."
+
+
+WHY THESE TWO SCRIPTS NEED TO EXIST
+=====================================
+
+The May 9 event has two blocks at the end of the day that
+are currently un-scripted:
+
+  2:15-2:30 PM   Pricing + Deployment Block (15 min, full-room)
+  2:30-3:00 PM   Cross-Room Synthesis (30 min, full-room)
+
+Both are signal-dense. Pricing + Deployment is the focused
+full-room read on subscription tiers, institutional contract
+structure, and white-label-vs-single-app architecture. Cross-
+Room Synthesis is the only structured moment when each segment
+shares findings to the full room AND the "what we missed"
+prompt opens the floor.
+
+Without scripts these blocks default to Arron's improvisation.
+That works because he knows the territory, but it puts the
+most strategic 45 minutes of the day on freestyle. Note-takers
+don't know what to capture without anchored prompts. Timing
+slips when there's no enforced structure (a 5-minute report
+becomes 12 minutes).
+
+Both scripts are lighter than the Pitch Script. Closer in
+shape to Welcome_and_NDA_Flow.txt: structured outline, key
+spoken language, prompts, stage directions in [BRACKETS],
+contingency notes.
+
+
+DELIVERABLES
+============
+
+DELIVERABLE 1: Pricing_and_Deployment_Block.txt + .docx + .pdf
+
+  Length:    ~300-500 words spoken / 1-2 pages PDF
+  Time:      15 minutes spoken (2:15-2:30 PM)
+  Format:    Stage directions in [BRACKETS], speaker tags
+             as needed (Arron leads, Nicole supports)
+  Save to:   Focus Group Materials/Day-of Operations/
+  Add to:    make_reference_docs.py INPUTS list
+  Render:    convert_one() (preserves 0.5" margin standard)
+
+
+DELIVERABLE 2: Cross_Room_Synthesis.txt + .docx + .pdf
+
+  Length:    ~600-900 words spoken / 2-3 pages PDF
+  Time:      30 minutes spoken (2:30-3:00 PM)
+  Format:    Same as above
+  Save to:   Focus Group Materials/Day-of Operations/
+  Add to:    make_reference_docs.py INPUTS list
+  Render:    convert_one()
+
+
+LOCKED DESIGN DECISIONS
+========================
+
+These are decided. Do not re-litigate during the fresh session.
+
+1.  TONE AND STYLE.
+    Match Welcome_and_NDA_Flow.txt's register. Operational
+    outline + key spoken language + transition cues + stage
+    directions. NOT full prose with every word scripted (that's
+    the Pitch Script style; too heavy for these closing blocks).
+
+2.  ARRON LEADS.
+    Both blocks led by Arron. Nicole supports as needed (chime
+    in on Pricing+Deployment when D2C-specific data points
+    surface; chime in on Cross-Room Synthesis if D2C breakout
+    findings need supplementing).
+
+3.  STAGE DIRECTION CONVENTION.
+    Inline [BRACKETED] stage directions matching Pitch Script
+    convention: [BEAT], [PAUSE], [GESTURE TO ROOM], [CLICK TO
+    SCREEN], [LOOK AT EACH BREAKOUT FACILITATOR AS NAMED].
+
+4.  ZERO EM DASHES.
+    Project-wide convention. Period, comma, colon, or
+    semicolon as replacements. Verify before .docx render.
+
+5.  ATHLETES ANONYMIZED.
+    Athletes are A/B/C from the stage. Real names (Grace,
+    Angelo, Hunter) appear ONLY on the screen mockup and in
+    artifact packets. Spoken script must use A/B/C.
+
+6.  NDA CARRIES POST-EVENT.
+    Closing remarks must reference that NDA continues to
+    apply after the event. Attendees can reach out for
+    digital copies of artifact packets (delivered as
+    personalized watermarked PDFs per cover language).
+
+7.  POST-EVENT TIMELINE TOUCHPOINT.
+    Cross-Room Synthesis closing should reference what
+    happens next. Per Capture_Protocol: Synthesis Report v1
+    by May 16 (7 days post-event). May 30 go/no-go decision
+    gate. Mention these so attendees know their input lands
+    somewhere concrete.
+
+8.  USE THE PARSER PAGINATION FIXES.
+    make_reference_docs.py now has widow_control on body
+    style and keep_together on monospace blocks. Use the
+    same .txt formatting conventions documented in the
+    facilitator packets (lowercase prose at column 0,
+    indented monospace for tabular content, blank lines
+    between Key:Value pairs in title block).
+
+
+OPEN DESIGN DECISIONS (RESOLVE IN SESSION)
+============================================
+
+These need user collaboration. Pause for each.
+
+
+OPEN 1: PRICING + DEPLOYMENT BLOCK STRUCTURE
+
+How to structure the 15-min block? Options:
+
+  (a) Three sequential prompts, each ~4-5 min:
+      P1: D2C subscription pricing read
+      P2: Institutional contract structure read
+      P3: White-label vs single-app architecture read
+      No room for follow-up Q&A within the block.
+
+  (b) One framing question + open discussion:
+      "We need your honest read on three things: monthly
+      D2C price ceiling, what an institutional contract
+      should look like, and white-label vs single-app.
+      What do you want to push back on first?"
+      More organic but harder to control timing.
+
+  (c) Hybrid:
+      Arron names the three questions up front. Attendees
+      pick which one they want to react to first. ~5 min
+      per topic but order is attendee-driven.
+
+  RECOMMEND option (c). Names all three so the room knows
+  what's on the table; lets the room choose where to engage
+  first; keeps timing tight.
+
+
+OPEN 2: CROSS-ROOM SYNTHESIS STRUCTURE
+
+30 minutes, full room, three breakouts to report. Options:
+
+  (a) Round-robin segment reports:
+      Each facilitator (Arron, Nicole, Michele) gives 5-min
+      report from their breakout. 15 min total. Then 10 min
+      open Q&A from the full room. Then 5 min "what we
+      missed" prompt.
+
+  (b) Theme-based synthesis:
+      Arron names 3-4 themes that surfaced across rooms.
+      Each facilitator chimes in on their room's read on
+      each theme. ~6 min per theme. Skip individual room
+      reports.
+
+  (c) Quick reports + extended "what we missed":
+      3 facilitators give 3-min reports each (9 min). Then
+      Arron opens "what we missed" for 18 min. The "what we
+      missed" prompt becomes the headline.
+
+  RECOMMEND option (a). Each room gets full airtime. The
+  open Q&A handles cross-room dynamics. The "what we
+  missed" prompt closes the day with the highest-leverage
+  unanswered question.
+
+
+OPEN 3: "WHAT WE MISSED" FRAMING
+
+Two phrasings worth considering:
+
+  (a) "What did we not ask that we should have?"
+      This is what the worksheets ended with. Repeating it
+      on stage reinforces the question and gives attendees
+      who answered it on paper a chance to surface it
+      verbally.
+
+  (b) "What are we wrong about?"
+      Bolder framing. Pushes for direct contradiction
+      rather than additive feedback. Higher signal but
+      harder to get attendees to answer publicly.
+
+  RECOMMEND (a). It matches the worksheets, gives a
+  natural bridge from written answers to spoken
+  surfacing, and is the lower-friction question to
+  answer in front of the room.
+
+
+OPEN 4: CLOSING REMARKS SCOPE
+
+Cross-Room Synthesis closes the day. What should the
+final 2-3 minutes cover? Candidates:
+
+  - Thank-you (mandatory)
+  - NDA continues to apply (mandatory)
+  - Synthesis Report v1 timeline (May 16, 7 days post-
+    event)
+  - May 30 go/no-go decision gate (optional, may be too
+    inside-baseball)
+  - Digital artifact copies available on request as
+    personalized watermarked PDFs (per cover language)
+  - Hand-off to lunch / next steps / room logistics
+
+  RECOMMEND: thank-you + NDA reminder + Synthesis Report
+  v1 mention + digital copies note. Skip the May 30 gate
+  reference (inside-baseball, not relevant to attendees).
+
+
+EXECUTION PHASES
+==================
+
+PHASE 1: LOAD CONTEXT  (effort: MEDIUM)
+
+  Read Capture_Protocol.txt (post-session synthesis plan,
+  what gets captured during these blocks)
+  Read Welcome_and_NDA_Flow.txt (closest format reference
+  in tone, length, and operational outline structure)
+  Read Pitch_Script_v1.txt Section 4 (the close, transitions
+  in to the breakout block; sets tone for what comes after)
+  Skim 3 Facilitator Packets (segment-specific dynamics that
+  inform what each room reports back during synthesis)
+  Skim 3 Worksheets (the questions attendees just answered;
+  any "what we missed" surfaced on paper)
+  Confirm structural understanding with user. Pause.
+
+PHASE 2: RESOLVE OPEN DESIGN DECISIONS  (effort: HIGH)
+
+  Walk through the 4 open design decisions with the user.
+  Lock each before moving to drafting.
+
+PHASE 3: DRAFT PRICING + DEPLOYMENT BLOCK  (effort: HIGH)
+
+  Write Pricing_and_Deployment_Block.txt per the locked
+  decisions and structure.
+  Save to Focus Group Materials/Day-of Operations/
+  Stop. User reviews.
+
+PHASE 4: DRAFT CROSS-ROOM SYNTHESIS  (effort: HIGH)
+
+  Write Cross_Room_Synthesis.txt per the locked decisions
+  and structure.
+  Save to Focus Group Materials/Day-of Operations/
+  Stop. User reviews.
+
+PHASE 5: RENDER + ADD TO INPUTS  (effort: LOW)
+
+  convert_one() both .txt files. Verify .docx + .pdf
+  rendered cleanly. Add both to make_reference_docs.py
+  INPUTS list.
+  Spot-check the rendered PDFs for em dashes and
+  paragraph orphans.
+
+PHASE 6: COMMIT + PUSH + SYNC  (effort: LOW)
+
+  git add the 6 new files (.txt + .docx + .pdf for each)
+  + make_reference_docs.py change.
+  Single commit covering both scripts + INPUTS update.
+  Push from worktree.
+  Pull into main folder.
+  Verify clean trees.
+
+
+REFERENCE FILES BY PRIORITY
+=============================
+
+TIER 1 (must read fully):
+
+  Handoff Prompts/Pricing and Cross-Room Synthesis Scripts
+    Handoff Prompt.txt (this file)
+  CLAUDE.md (current project state, agenda, May 30 gate
+    reference, attendee profiles)
+  Focus Group Materials/Day-of Operations/Welcome_and_NDA_
+    Flow.txt (closest format reference)
+  Focus Group Materials/Day-of Operations/Capture_Protocol
+    .txt (capture mechanics for these blocks + post-event
+    synthesis plan)
+  Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
+    Section 4 (the close, voice tone reference)
+
+
+TIER 2 (skim selectively):
+
+  Focus Group Materials/Day-of Operations/Institutional_
+    Facilitator_Packet.txt (Section: SIGNAL PRIORITY,
+    SEGMENT-SPECIFIC DYNAMICS — informs what Arron's room
+    reports back)
+  Focus Group Materials/Day-of Operations/D2C_Athlete_
+    Facilitator_Packet.txt (same sections — informs
+    Nicole's room report)
+  Focus Group Materials/Day-of Operations/GTM_Facilitator_
+    Packet.txt (same sections — informs Michele's room
+    report; note Q3 white-label as the strategic peak)
+  Focus Group Materials/Worksheets/GTM_Worksheet.txt
+    (Q5 path + first $1M language — directly relevant
+    to Pricing+Deployment block)
+  Focus Group Materials/Worksheets/D2C_Athlete_Worksheet
+    .txt (Q5 dollar field + cancel trigger — directly
+    relevant)
+  Focus Group Materials/Worksheets/Institutional_Worksheet
+    .txt (Q5 AD-approval undeniable — directly relevant)
+
+
+TIER 3 (reference if needed):
+
+  Focus Group Materials/Mockup Walkthrough/Mockup_
+    Walkthrough_Script_v1.txt (voice consistency check)
+  Focus Group Materials/Day-of Operations/Note_Taker_
+    Briefing.txt (what note-takers are capturing during
+    these blocks)
+  Focus Group Materials/Day-of Operations/Breakout_
+    Facilitation_Guide.txt (universal facilitation skills
+    for cross-reference)
+
+
+CRITICAL OPERATING RULES
+==========================
+
+1.  ZERO EM DASHES (file-wide). Period, comma, colon,
+    semicolon as replacements. Verify before render.
+
+2.  NO CLINICAL LANGUAGE. "Anxiety", "depression",
+    "trauma", "trigger" in the clinical sense are
+    prohibited. Mental Performance vs. Mental Health
+    distinction held.
+
+3.  ATHLETES STAY A/B/C IN SPOKEN SCRIPT. Real names only
+    appear on screen mockup and in printed artifact packets.
+
+4.  NDA CARRIES POST-EVENT. Closing remarks must include
+    NDA continuance reminder.
+
+5.  TIMING IS NON-NEGOTIABLE. Pricing+Deployment is 15 min.
+    Cross-Room Synthesis is 30 min. Total day ends at 3:00 PM.
+    Do not write content that pushes the day past 3:00 PM.
+
+6.  PARSER FORMATTING AWARENESS. The .txt sources will be
+    rendered through make_reference_docs.py with widow_control
+    and keep_together. Use the formatting conventions documented
+    in the facilitator packets (lowercase prose at column 0;
+    indented monospace for tabular content; blank lines between
+    Key:Value pairs in title block; sentence-case schedule
+    labels; "1)" style for non-list-rendered numbers).
+
+7.  PAUSE FOR USER CONFIRMATION at end of Phase 1, after
+    each open decision in Phase 2, after Phase 3 draft,
+    after Phase 4 draft. Do not drive through to commit
+    without checkpoints.
+
+
+SUCCESS CRITERIA
+==================
+
+1.  Two .txt source files written, rendered to .docx and
+    .pdf via convert_one(), at 0.5" margins.
+2.  Em-dash-clean across both files (mechanical verification).
+3.  Pricing+Deployment block fits 15 minutes spoken delivery.
+4.  Cross-Room Synthesis block fits 30 minutes spoken delivery.
+5.  Both scripts have inline [BRACKETED] stage directions
+    matching Pitch Script convention.
+6.  NDA continuance reminder in Cross-Room Synthesis closing.
+7.  Synthesis Report v1 timeline (May 16) referenced in close.
+8.  Both files added to make_reference_docs.py INPUTS list.
+9.  Single commit covering both scripts. Pushed to origin/master.
+10. Main folder synced via git pull.
+11. Both worktree and main folder have clean working trees.
+
+
+WHAT NOT TO DO
+===============
+
+Do NOT script this as full prose with every word scripted.
+That's Pitch Script style. These blocks are operational
+outlines with key spoken language, not theatrical performances.
+
+Do NOT extend the day past 3:00 PM. The two blocks together
+are 45 minutes. Total event window is 12:00 PM to 3:00 PM
+(180 min). Add no content that breaks this window.
+
+Do NOT include the May 30 go/no-go gate in closing remarks.
+That's inside-baseball for the founders, not relevant to
+attendees.
+
+Do NOT use real athlete names in spoken script. Athletes are
+A/B/C from the stage. Names appear in artifact packets and
+on the screen mockup, both of which the attendees can see;
+they do not need to be repeated in spoken language.
+
+Do NOT skip the user-collaboration pauses in Phase 2 (open
+design decisions). Each of the four open decisions affects
+the structure of the script. Locking them collaboratively
+is the de-risking step.
+
+Do NOT add this work to CLAUDE.md as a session entry until
+the user explicitly asks for a session-history update.
+
+
+CLOSING NOTE
+=============
+
+These two scripts are the last substantive operational content
+needed for May 9. Once they're written and rendered, the event
+is fully scripted from check-in through close. Print run can
+include them in the staff-only print bundle (alongside Pitch
+Script, Mockup Walkthrough Script, Capture Protocol, Welcome+
+NDA Flow, 3 Facilitator Packets, Note Taker Briefing).
+
+After this work, the next item in the punch list is execution-
+not-authoring: NDA distribution, AV testing, name tags,
+sign-in roster, room setup, day-of execution.
+
+End of handoff.
