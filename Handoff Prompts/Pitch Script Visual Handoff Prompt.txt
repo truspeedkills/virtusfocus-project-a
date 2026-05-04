@@ -1,0 +1,469 @@
+PITCH SCRIPT VISUAL (HTML CLICK-THROUGH SCREEN)
+================================================
+Created:  2026-05-04 (end of working session)
+Event:    May 9, 2026 (Saturday)
+Slot:     12:15-12:45 (Pitch Script block)
+Display:  Smart-board / large monitor at front of room
+Owners:   Arron (clicks through during pitch) + Nicole (co-presenter)
+
+
+FIRST INSTRUCTION (paste verbatim into a fresh session)
+=========================================================
+"Read CLAUDE.md, then read Handoff Prompts/Pitch Script
+Visual Handoff Prompt.txt in full. Begin Phase 1 (load
+context). Pause after Phase 1 to confirm structural
+understanding with me before drafting."
+
+
+WHY THIS VISUAL NEEDS TO EXIST
+================================
+
+The Pitch Script is locked and rehearsed. Arron and Nicole
+deliver a 30-min tag-team pitch from 12:15 to 12:45.
+Currently nothing on the screen during that block. The room
+is staring at the speakers for thirty minutes with no visual
+anchor.
+
+A simple click-through HTML visual gives attendees a
+structural anchor for each pitch section without competing
+with the spoken delivery. One slide per section. Arron or
+Nicole clicks once at each hand-off seam.
+
+The visual is a presence cue, not a content dump. The
+spoken script carries the substance. The visual carries
+the frame.
+
+This is scope-adjacent to the Pricing+Deployment and
+Cross-Room Synthesis scripts that were authored in the
+preceding working session. Those were written first because
+they were higher-risk for the day-of operation (un-scripted
+30 minutes vs scripted 30 minutes). The pitch visual is
+additive enrichment to an already-scripted block.
+
+
+DELIVERABLE
+============
+
+Pitch_Script_Visual.html
+
+  Format:   Self-contained single HTML file with embedded
+            CSS and any inline SVG. Same architectural
+            pattern as Mockup_Walkthrough_Gallery.html.
+            Opens in any browser. No external dependencies.
+
+  Length:   5 click-through screens matching pitch sections:
+              Screen 1 - Title (Section 0)
+              Screen 2 - The Problem (Section 1, MP vs MH)
+              Screen 3 - The Vision (Section 2, 4-layer
+                         architecture)
+              Screen 4 - Proof (Section 3, 3 anonymized
+                         athletes A/B/C with sport+level)
+              Screen 5 - What We Need (Section 4, 3 breakout
+                         segments)
+
+  Save to:  Focus Group Materials/Pitch Script/
+
+  Render:   Open in browser to verify. No PDF render.
+            HTML is the deliverable.
+
+  Launch:   Smart-board browser (matches gallery launch
+            pattern). Local launch.json config can be
+            added if desired.
+
+
+LOCKED DESIGN DECISIONS
+========================
+
+These were resolved during the preceding working session.
+Do not re-litigate.
+
+1.  FORMAT: HTML CLICK-THROUGH.
+    Self-contained single HTML file matching
+    Mockup_Walkthrough_Gallery.html pattern. Embedded CSS,
+    inline SVG, no external dependencies. Smart-board
+    compatible.
+
+2.  STRUCTURE: 5 SCREENS, ONE PER PITCH SECTION.
+    Click-through navigation. Arron or Nicole clicks once
+    at each hand-off seam in the script. Mapping:
+      Screen 1 -> Section 0 (Nicole opens)
+      Screen 2 -> Section 1 (Nicole, the problem)
+      Screen 3 -> Section 2 (Arron, the vision)
+      Screen 4 -> Section 3 (Arron, proof)
+      Screen 5 -> Section 4 (Nicole, what we need)
+
+3.  ATHLETES ANONYMIZED.
+    Athletes A/B/C only on Screen 4. Sport + competitive
+    level only. NO real names. NO Grace, NO Angelo, NO
+    Hunter. Real names appear only in the printed artifact
+    packets and on the Mockup Walkthrough Gallery during
+    the 12:45-1:15 block.
+
+4.  CONTENT SOURCED FROM EXISTING DOCS.
+    Mental Performance vs Mental Health distinction sourced
+    from "App Information for Focus Group/Mental Health vs
+    Mental Performance Explainer Slide.docx". Note the
+    source is a Word document, not a slide. Read it for
+    substantive content, then author the visual fresh in
+    HTML.
+
+5.  ZERO EM DASHES.
+    Project-wide convention. Period, comma, colon, or
+    semicolon as replacements. Verify before browser test.
+
+6.  PRESENCE NOT CONTENT.
+    The visual is a structural anchor, not a content dump.
+    Each screen carries minimal text and high visual
+    clarity. The spoken script carries the substance.
+    Resist the impulse to put paragraphs on screen.
+
+7.  VIRTUSFOCUS BRAND TREATMENT.
+    "VirtusFocus" in straight quotes only on Screen 1
+    (matches script convention). Plain VirtusFocus on
+    subsequent screens.
+
+8.  COMPLIANCE BOUNDARY.
+    No clinical language anywhere. No execution signal
+    terminology. No coaching framework jargon. Same
+    boundary held throughout the rest of the project.
+
+
+OPEN DESIGN DECISIONS (RESOLVE IN SESSION)
+============================================
+
+These need user collaboration. Pause for each.
+
+
+OPEN 1: VISUAL STYLE + COLOR PALETTE
+
+Two anchor options:
+
+  (a) MATCH MOCKUP WALKTHROUGH GALLERY AESTHETIC.
+      Dark theme (zinc-950 background, amber accents,
+      system font stack). Matches the look attendees see
+      during the mockup walkthrough block 30 min later.
+      Visual continuity across the pitch and walkthrough
+      blocks.
+
+  (b) LIGHT THEME WITH SEGMENT-CODED ACCENTS.
+      White or off-white background. Segment-coded color
+      accents on Screen 5 matching the packet covers
+      (deep blue institutional, forest green D2C, amber
+      GTM). Distinct visual identity from the walkthrough
+      block.
+
+  RECOMMEND (a). Visual continuity across pitch +
+  walkthrough is more important than distinct identity for
+  the pitch alone. Attendees see the same dark-theme
+  aesthetic for an hour, which reads more like one
+  cohesive product than two separate stylings.
+
+
+OPEN 2: SCREEN 4 (PROOF) LAYOUT
+
+Three athletes to show (A/B/C). Options:
+
+  (a) THREE COLUMNS SIDE BY SIDE.
+      All three athletes visible at once. Sport, level,
+      one-line description per column. Dense but
+      compresses the proof story to a single screen.
+
+  (b) ONE AT A TIME, SUB-CLICKS.
+      Screen 4 has three sub-states. Arron clicks through
+      A then B then C as he tells each story. Sub-clicks
+      sync to the spoken hand-offs in Section 3.
+
+  (c) HYBRID: ALL THREE VISIBLE, HIGHLIGHTED ROTATION.
+      Three columns visible. Active column highlighted
+      with brighter color or border. Sub-clicks rotate the
+      highlight. Attendees can see all three but visual
+      focus follows the spoken story.
+
+  RECOMMEND (c). Keeps the proof landscape visible (good
+  for slow processors who want to scan ahead) while
+  reinforcing the spoken narrative with active highlighting.
+  Sub-click rotation is light implementation lift.
+
+
+OPEN 3: TRANSITION STYLE
+
+Click-through transitions between the 5 main screens:
+
+  (a) INSTANT CUT.
+      Click and the next screen appears immediately. Zero
+      animation. Lowest risk on day-of (no animation glitch
+      can derail the pitch).
+
+  (b) FADE TRANSITION.
+      Brief 150-200ms fade between screens. Smoother feel.
+      Slight risk if browser performance is degraded.
+
+  (c) SLIDE TRANSITION.
+      Screens slide in from the right. More cinematic but
+      higher implementation cost and animation risk.
+
+  RECOMMEND (a). Smart-board environment is unpredictable
+  (different browsers, different hardware, different
+  resolutions). Instant cut is the most reliable choice.
+
+
+OPEN 4: KEYBOARD / CLICK CONTROLS
+
+How does Arron or Nicole advance the screen during the
+pitch:
+
+  (a) SPACEBAR / RIGHT ARROW = NEXT.
+      Standard presentation control. Wireless clicker
+      compatible. Familiar to anyone who has ever used
+      Keynote or PowerPoint.
+
+  (b) CLICK ANYWHERE = NEXT.
+      Click on the smart-board surface anywhere advances
+      the screen. Touch-friendly. No keyboard required.
+
+  (c) BOTH.
+      Spacebar / right arrow OR click anywhere both
+      advance.
+
+  RECOMMEND (c). Lowest risk, most flexibility. Arron can
+  use a wireless clicker if he has one. Or click the
+  smart-board if he is standing near it. Either works.
+
+
+OPEN 5: FOOTER / HEADER TREATMENT
+
+Persistent visual chrome on every screen:
+
+  (a) MINIMAL CHROME.
+      Just the screen content. No header, no footer, no
+      slide numbers. Maximum content area.
+
+  (b) CORNER BADGE ONLY.
+      Small "VirtusFocus - Focus Group - May 9 2026" badge
+      in one corner. No slide numbers, no progress bar.
+
+  (c) FULL CHROME.
+      Header with the badge plus slide number ("2 of 5")
+      and a thin progress bar. Standard presentation
+      conventions.
+
+  RECOMMEND (b). The corner badge is a subtle wayfinding
+  cue without competing with the screen content. Slide
+  numbers are not useful for attendees and can read as
+  performative.
+
+
+PHASES
+========
+
+
+PHASE 1: LOAD CONTEXT  (effort: MEDIUM)
+
+  Read Pitch_Script_v1.txt (the script the visual
+  supports; 5 sections, 30 min, tag-team)
+  Read App Information for Focus Group/Mental Health vs
+  Mental Performance Explainer Slide.docx (substantive
+  content for Screen 2)
+  Read Mockup_Walkthrough_Gallery.html (architectural
+  pattern reference, visual aesthetic baseline)
+  Skim CLAUDE.md (project state, athlete A/B/C
+  conventions, brand treatment)
+  Confirm structural understanding with user. Pause.
+
+
+PHASE 2: RESOLVE OPEN DESIGN DECISIONS  (effort: HIGH)
+
+  Walk through the 5 open design decisions with the user.
+  Lock each before moving to drafting. Particularly Open
+  1 (style/palette) and Open 2 (Screen 4 layout) which
+  determine implementation complexity.
+
+
+PHASE 3: DRAFT THE HTML  (effort: HIGH)
+
+  Build Pitch_Script_Visual.html per the locked decisions.
+  Single self-contained file. Embedded CSS. Inline SVG
+  if used. Click handlers for navigation. Keyboard
+  bindings.
+
+  Per-screen content (in spoken order):
+    Screen 1: Title block. "VirtusFocus" in straight quotes,
+              "Focus Group", "May 9 2026", subtle subtitle.
+    Screen 2: Mental Performance vs Mental Health. Two
+              columns or two-side comparison. Source the
+              substantive content from the Explainer
+              Slide docx.
+    Screen 3: Vision. 4-layer output diagram (athlete CM
+              + DD, parent CM + Insights, coach Insights
+              + Team, daily snippet + signal). Show the
+              athlete-led system underneath.
+    Screen 4: Proof. Athletes A/B/C with sport + level
+              only. Per Open 2 layout decision.
+    Screen 5: What We Need. 3 breakout segments
+              (Institutional, D2C/Athlete, GTM) with
+              one-line descriptors per segment.
+
+  Stop. User reviews in browser.
+
+
+PHASE 4: SPOT-CHECK + REFINE  (effort: MEDIUM)
+
+  Open the file in browser. Click through all 5 screens.
+  Verify:
+    - Click and keyboard controls work
+    - Sub-click rotation on Screen 4 syncs as expected
+    - Em-dash-clean (mechanical scan)
+    - Athletes A/B/C only on Screen 4
+    - "VirtusFocus" in straight quotes only on Screen 1
+    - No overflow or rendering issues at smart-board
+      resolution
+    - Browser tab title matches event branding
+  Refine based on user feedback.
+
+
+PHASE 5: COMMIT + PUSH + SYNC  (effort: LOW)
+
+  git add the new HTML file.
+  Single commit covering the visual.
+  Push from worktree (origin HEAD:master).
+  Pull into main folder.
+  Verify clean trees.
+
+
+REFERENCE FILES BY PRIORITY
+=============================
+
+
+TIER 1 (must read fully):
+
+  Handoff Prompts/Pitch Script Visual Handoff Prompt.txt
+    (this file)
+  CLAUDE.md (project state, athlete A/B/C conventions,
+    brand treatment, Mockup Walkthrough Gallery
+    architectural pattern reference)
+  Focus Group Materials/Pitch Script/Pitch_Script_v1.txt
+    (the script this visual supports; particularly
+    Section 1 MP vs MH framing and Section 4 segment
+    descriptors)
+  App Information for Focus Group/Mental Health vs
+    Mental Performance Explainer Slide.docx (substantive
+    Screen 2 content)
+
+
+TIER 2 (skim selectively):
+
+  Focus Group Materials/Mockup Walkthrough/Mockup_
+    Walkthrough_Gallery.html (architectural pattern,
+    visual aesthetic, dark theme baseline, smart-board
+    compatibility verified)
+  Focus Group Materials/Day-of Operations/Welcome_and_NDA
+    _Flow.txt (event flow context, what happens before
+    the pitch)
+
+
+TIER 3 (reference if needed):
+
+  Focus Group Materials/Day-of Operations/Pricing_and_
+    Deployment_Block.txt and Cross_Room_Synthesis.txt
+    (closing-block scripts; voice consistency check)
+  scripts/build_walkthrough_gallery.py (reference for
+    HTML build patterns if needed)
+
+
+CRITICAL OPERATING RULES
+==========================
+
+1.  ZERO EM DASHES (file-wide). Period, comma, colon,
+    semicolon as replacements. Verify in HTML before
+    browser test.
+
+2.  ATHLETES ARE A/B/C IN VISUAL CONTENT. Real names
+    (Grace, Angelo, Hunter) do NOT appear on any pitch
+    visual screen. They appear in printed packets and on
+    the Mockup Walkthrough Gallery only.
+
+3.  NO CLINICAL LANGUAGE. "Anxiety", "depression",
+    "trauma", "trigger" in clinical sense are
+    prohibited.
+
+4.  PRESENCE NOT CONTENT. The visual is a structural
+    anchor. Resist paragraph-on-screen impulse. The
+    spoken script carries the substance.
+
+5.  SELF-CONTAINED SINGLE FILE. Embedded CSS, inline
+    SVG, no external dependencies. The smart-board
+    must be able to open the file with zero network
+    requirements.
+
+6.  COMPLIANCE WITH OVERALL BRAND. "VirtusFocus" in
+    straight quotes only on Screen 1. Plain VirtusFocus
+    elsewhere.
+
+7.  PAUSE FOR USER CONFIRMATION at end of Phase 1, after
+    each open decision in Phase 2, after Phase 3 draft.
+    Browser-based review is the strongest signal for
+    visual work.
+
+
+SUCCESS CRITERIA
+==================
+
+1.  Single HTML file in Focus Group Materials/Pitch
+    Script/, opens cleanly in browser, no external
+    dependencies.
+
+2.  5 screens advance via click and keyboard
+    (per Open 4).
+
+3.  Em-dash-clean (mechanical verification).
+
+4.  Athletes A/B/C only. No real names.
+
+5.  Smart-board renders cleanly at presentation
+    resolution.
+
+6.  Click-through navigation feels solid (no animation
+    glitches, no ghost states).
+
+7.  Single commit covering the visual. Pushed to
+    origin/master. Main folder synced.
+
+8.  Worktree and main folder both clean.
+
+
+WHAT NOT TO DO
+===============
+
+Do NOT add slide-deck conventions that compete with the
+spoken script. No bullet point cascades. No paragraphs
+of body text. No reading-from-the-screen.
+
+Do NOT add real athlete names. Anonymization rule
+applies file-wide.
+
+Do NOT use animations or transitions that introduce
+day-of risk. Smart-board environments are unpredictable.
+
+Do NOT add this work to CLAUDE.md as a session entry
+until the user explicitly asks for a session-history
+update.
+
+Do NOT introduce external dependencies (CDN scripts,
+font services, image hosts). The HTML must run with
+zero network access.
+
+
+CLOSING NOTE
+=============
+
+This visual is the last operational additive piece for
+May 9. After it is built, the visual surface for the
+event is complete: pitch visual, mockup walkthrough
+gallery, mockup printouts PDF, and the printable
+artifact packets attendees hold in their hands.
+
+After this work, what remains is execution-not-authoring:
+print run start (May 6), AV testing, name tags, day-of
+setup, day-of execution.
+
+End of handoff.
