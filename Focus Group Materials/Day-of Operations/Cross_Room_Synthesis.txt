@@ -1,0 +1,560 @@
+"VIRTUSFOCUS" FOCUS GROUP: CROSS-ROOM SYNTHESIS SCRIPT
+=======================================================
+
+Event:        May 9, 2026 (Saturday)
+
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+
+Slot:         2:30-3:00 PM (30 min, full-room, closing block)
+
+Host:         Arron Panigall
+
+Reporters:    Arron (Institutional breakout),
+              Nicole Bohince (D2C / Athlete breakout),
+              Michele Cribbs (GTM breakout)
+
+Last updated: 2026-05-04
+
+
+====================================================
+PURPOSE
+====================================================
+
+The closing block of the day. Two functions in one slot.
+
+  1) Each segment shares what came out of its breakout to
+     the full room, so attendees who were in one room hear
+     what was named in the other two.
+
+  2) The "what we missed" prompt that was on the back page
+     of every worksheet gets surfaced verbally, giving
+     attendees who answered it on paper the chance to put
+     it in front of everyone.
+
+Round-robin format. Three five-minute facilitator reports.
+Ten minutes of open Q&A across the full room. Five-minute
+"what we missed" prompt. Closing remarks.
+
+This is the only structured moment all day where signals
+travel across rooms. It is also the last chance for any
+attendee to surface anything before the day closes.
+
+
+====================================================
+STRUCTURE
+====================================================
+
+  1)  Reconvene and frame the close          ~1 min
+      (Arron names what's about to happen)
+
+  2)  Institutional breakout report          ~5 min
+      (Arron, host's own room)
+
+  3)  D2C / Athlete breakout report          ~5 min
+      (Nicole)
+
+  4)  GTM breakout report                    ~5 min
+      (Michele)
+
+  5)  Open Q&A across the full room         ~10 min
+      (Arron facilitates)
+
+  6)  "What we missed" prompt                ~3 min
+      (Arron poses the worksheet's
+      final-page question to the full room)
+
+  7)  Closing remarks                        ~1 min
+      (Arron, ~150-180 spoken words)
+
+
+====================================================
+SCRIPT
+====================================================
+
+
+1. RECONVENE AND FRAME THE CLOSE (Arron, ~1 min)
+
+[ROOM SETTLES AFTER THE PRICING+DEPLOYMENT BLOCK.
+ARRON STAYS UP. NICOLE AND MICHELE ARE NEAR THE FRONT.]
+
+Last block of the day. Thirty minutes.
+
+Here's how it goes. Each of us is going to take five minutes
+and walk you through what came out of our breakout room. I'll
+go first because my room had six coaches and the most ground
+to cover. Then Nicole. Then Michele.
+
+After all three rooms have shared, we open it up to everybody.
+Push back, follow up, call out a contradiction, ask a question.
+Whatever you didn't get to say in your own breakout, this is
+the time.
+
+[BEAT]
+
+Then I'm going to ask you the question that was on the back
+page of every worksheet, the one we titled "what we missed."
+That's the headline of this block.
+
+[GESTURE TO ROOM]
+
+Then we close.
+
+[ARRON STAYS UP, MOVES INTO REPORT.]
+
+
+2. INSTITUTIONAL BREAKOUT REPORT (Arron, ~5 min)
+
+[ARRON REPORTS FROM HIS OWN ROOM. SIX COACHES, HS+COL
+SOFT-SPLIT, FIVE QUESTIONS. TUCKER'S NOTES IN HAND.]
+
+REPORT TEMPLATE (not scripted, populated day-of from notes):
+
+  OPENING LINE:
+  "Six coaches. Three high school, three college. We ran a
+  structured order so we got both reads on every question."
+
+  COVER ALL FIVE QUESTIONS BRIEFLY:
+    1) Past state. What programs were doing.
+    2) Failure moment. The story the toolkit ran out on.
+    3) Stress-test. What programs the coaches respect.
+    4) Athlete A reaction. What Coach Insights actually
+       gave them and what was missing.
+    5) Killer test. The AD-approval undeniable.
+
+  PER-QUESTION REPORT SHAPE:
+    "On question N, [HS read]. [COL read]. [Where they
+    diverged or converged]."
+
+  WHAT TO LEAD WITH:
+    - The biggest tier divergence between HS and COL
+      across the five questions.
+    - The most-named "program we respect" if any name
+      came up across both tiers.
+    - Bob's AD-approval undeniable answer if it landed
+      cleanly. (That answer is the marketing brief.)
+    - Chris Russell's Coach Insights critique if he
+      pressed on rigor or operationalization.
+
+  WHAT NOT TO DO:
+    - Do not summarize each individual coach's answer.
+      Five minutes is for patterns, not roll-call.
+    - Do not soften failure-moment specifics. Honest
+      gaps are the product opportunity.
+    - Do not name competitor programs by name. The
+      coaches may have named names; for the full room
+      and the recording, paraphrase ("a Power Four
+      program in the Big Ten").
+
+  VERBATIM QUOTES (1-2 max):
+    Pull the most concrete sentence a coach said,
+    especially on Q2 (failure moment) or Q5b (AD
+    approval). Read as written.
+
+  CLOSING LINE:
+    "That's the institutional read. Nicole, D2C."
+
+[HAND-OFF #1. ARRON STAYS NEAR FRONT. NICOLE STEPS UP.]
+
+
+3. D2C / ATHLETE BREAKOUT REPORT (Nicole, ~5 min)
+
+[FOUR ATTENDEES. KELLIE'S NOTES IN HAND.]
+
+REPORT TEMPLATE:
+
+  OPENING LINE:
+  "Four attendees. Two run youth programs, one is a
+  current parent, one is a former collegiate athlete and
+  a sitting judge. All four have lived inside competitive
+  athletic environments."
+
+  COVER ALL FIVE QUESTIONS BRIEFLY:
+    1) Memory anchor. What their coaches never gave them.
+    2) Adoption barrier. Would they have used it.
+    3) Stress-test. What they have actually seen.
+    4) Reaction to Athlete A's arc. Strongest part.
+       Less-authentic part.
+    5) Killer test. Price ceiling. Cancel trigger.
+
+  PER-QUESTION REPORT SHAPE:
+    "On question N, the room landed on [pattern]. [Where
+    individual answers diverged]."
+
+  WHAT TO LEAD WITH:
+    - The most concrete "what we needed and didn't get"
+      story from Q1.
+    - Whether the privacy guarantee in Q2 actually moved
+      the answer or whether attendees ignored it.
+    - The most specific "less authentic" passage anyone
+      flagged from Athlete A's arc.
+    - The price-ceiling range across the four attendees,
+      with the lowest and highest numbers, plus the
+      cancel triggers.
+
+  CROSS-LENS CALLOUTS:
+    - Tamara's collegiate softball alignment with Athlete
+      A. If she had a "this is what I needed at her age"
+      moment, name it.
+    - Ron's then-vs-now read (his Seton Hill years vs his
+      current Swampfox youth program).
+    - Liz's youth-coaching observations as direct present-
+      day data.
+
+  WHAT NOT TO DO:
+    - Do not sanitize less-authentic critiques. The
+      whole point was to surface them.
+    - Do not name Alex's relationship to me. The room
+      knows. Just report his answer like any other
+      attendee's.
+
+  VERBATIM QUOTES (1-2 max):
+    The strongest "less authentic" passage anyone called
+    out, or the most concrete dollar-and-why answer.
+
+  CLOSING LINE:
+    "That's the D2C read. Michele, GTM."
+
+[HAND-OFF #2. NICOLE STAYS NEAR FRONT. MICHELE STEPS UP.]
+
+
+4. GTM BREAKOUT REPORT (Michele, ~5 min)
+
+[FOUR ATTENDEES. AIDAN'S NOTES IN HAND.]
+
+REPORT TEMPLATE:
+
+  OPENING LINE:
+  "Four advisors. B2B sales, communications and parent-
+  of-collegiate, competitive-category-adjacent, and
+  consumer-brand strategy. Different lenses on the same
+  story."
+
+  COVER ALL FIVE QUESTIONS BRIEFLY:
+    1) Pitch stress-test. How they described it back.
+    2) Category and competition. Where they file us
+       and who they put us up against.
+    3) Single app vs white-label. The architecture call.
+    4) Headline asset and missing proof.
+    5) Killer test. Path. First $1M. What NOT to do.
+
+  PER-QUESTION REPORT SHAPE:
+    "On question N, [advisor] said [signal]. [Other
+    advisors] either backed it or pushed against it."
+
+  WHAT TO LEAD WITH:
+    - Jennifer's competitive-category answer. The
+      single most strategic signal of the breakout.
+      What category did she file us in. Who did she
+      name as a direct competitor.
+    - The white-label vs single-app result. Which way
+      the room broke. Where attendees disagreed
+      fundamentally.
+    - The "what would you NOT do" answers from all
+      four advisors. Each one verbatim if possible.
+    - Noele's parent-cross-lens reaction if she had
+      a "this is what I wish I had" moment on the
+      Parent material.
+
+  WHAT NOT TO DO:
+    - Do not push for consensus on the white-label
+      question. Disagreement between four senior
+      operators is the most valuable signal of the
+      breakout. Report the disagreement as the signal.
+    - Do not echo any clinical-language framing if
+      Jennifer used it.
+    - Do not name competitor brand names if attendees
+      named them. Paraphrase ("a major fitness app
+      brand").
+
+  VERBATIM QUOTES (1-2 max):
+    Jennifer's category answer if it was specific, or
+    the strongest "would NOT do" line from Tom or Jon.
+
+  CLOSING LINE:
+    "That's the GTM read. Arron, back to you."
+
+[HAND-OFF #3. MICHELE STEPS BACK. ARRON STEPS BACK UP TO
+FACILITATE OPEN Q&A.]
+
+
+5. OPEN Q&A ACROSS THE FULL ROOM (Arron facilitates, ~10 min)
+
+[ARRON MOVES INTO Q&A. ROOM HAS NOW HEARD ALL THREE
+REPORTS. THE NEXT TEN MINUTES IS FOR ANYONE IN ANY SEAT
+TO PUSH ON ANYTHING THEY HEARD.]
+
+ARRON'S OPEN PROMPT:
+
+  "Three rooms reported. You heard things in the other
+  two rooms you didn't hear in your own. Push back on
+  anything. Follow up on anything. Call out a
+  contradiction. Ask a question across rooms.
+
+  Anything anyone wants to put in front of the full
+  group, this is the moment."
+
+[OPEN HANDS, PAUSE FOR 5-7 SECONDS. LET ATTENDEES PICK UP
+THE INVITATION.]
+
+WHAT ARRON IS LISTENING FOR:
+
+  1)  Cross-room contradictions. When an institutional
+      answer conflicts with a D2C answer or a GTM answer.
+      Capture both.
+
+  2)  An attendee in one segment reacting to a finding
+      from another segment they were not in. ("As a
+      parent, hearing what the institutional coaches
+      said about parent layer, I want to push back...")
+
+  3)  A signal that one room missed because it wasn't
+      asked. Sometimes the cross-room block surfaces a
+      question the worksheet did not contain.
+
+  4)  Cross-lens activation. Attendees with secondary
+      perspectives now have permission to bring the
+      second hat in. Watch for it.
+
+IF DISCUSSION IS THIN:
+
+  Arron seeds with one cross-room question:
+
+  "I'll start one. Coaches, you heard the GTM read on
+  white-label vs single-app. If we white-labeled it as
+  'Pitt Mental Performance' or 'Seton Hill Mental
+  Performance,' would your AD's answer change?"
+
+  Or:
+
+  "D2C side, you heard the institutional coaches talk
+  about what would have to be undeniable to take this
+  to their AD. As parents and former athletes, what
+  would have to be undeniable for you to put your
+  twenty bucks down a month?"
+
+WATCH-OUTS:
+
+  - Do not let one attendee dominate. If one voice has
+    been on the floor twice, redirect: "Anyone who hasn't
+    spoken yet, what's your read?"
+
+  - Do not defend any of the breakout findings. Capture
+    pushback, do not refute it.
+
+  - Hold the time. Q&A is ten minutes. At minute eight
+    of Q&A, signal the transition: "One more, then we
+    move to the closer."
+
+
+6. "WHAT WE MISSED" PROMPT (Arron, ~3 min)
+
+[AT 2:55 OR THEREABOUTS. ARRON SHIFTS TONE. SLOWER PACE.
+DELIBERATE.]
+
+ARRON'S PROMPT:
+
+  "One last question. The same one we asked you on the
+  back page of every worksheet. Some of you wrote an
+  answer there.
+
+  [BEAT]
+
+  What did we not ask that we should have?
+
+  [PAUSE. LONGER THAN COMFORTABLE. LET THE ROOM SIT WITH IT.]
+
+  Anybody. Any segment. Any seat in the room."
+
+[OPEN HANDS, INVITE ROOM. WAIT.]
+
+WHAT ARRON IS LISTENING FOR:
+
+  1)  Worksheet answers being read back verbatim. If an
+      attendee wrote an answer on Q-Anything-Else, the
+      verbal version is the strongest version. Capture.
+
+  2)  Questions we did not put in any worksheet. The
+      gap-question is sometimes more useful than any
+      worksheet question.
+
+  3)  Compliance-adjacent questions that the segments
+      were too polite to raise. Mental health framing,
+      legal exposure, athlete privacy edge cases. If any
+      surface, they are gold.
+
+IF NO ONE ANSWERS:
+
+  Arron waits. The pause is the prompt. If thirty
+  seconds passes with no one speaking, Arron offers:
+
+  "Even one word. The thing you wished we'd asked."
+
+  If still nothing after another fifteen seconds, Arron
+  closes the prompt with:
+
+  "Worksheets had it covered. That's a result too.
+  We'll read every back page in synthesis."
+
+  Move to closing remarks.
+
+
+7. CLOSING REMARKS (Arron, ~1 min, ~150-180 spoken words)
+
+[ARRON SHIFTS POSTURE. WARMER. SCAN ROOM SLOWLY.]
+
+Thank you.
+
+[BEAT]
+
+Genuinely. You came in on a Saturday afternoon, you sat with
+material we asked you to challenge, and you did it. Some of
+you traveled to get here. All of you signed an NDA at the
+door, and that NDA stays in effect after you walk out today.
+Everything you saw, everything you heard, everything in your
+packets, all of it stays inside the people who were in this
+room.
+
+[PAUSE]
+
+What happens next. We synthesize what you gave us. You'll
+hear from us within seven days, May 16, with a written
+summary of what came out of the room and what we are doing
+with it. That report goes to internal team and advisors.
+Anybody in this room can request a copy. We deliver digital
+copies of your artifact packets as personalized watermarked
+PDFs if you want them on hand for review.
+
+[BEAT]
+
+The thing you gave us today, we cannot get anywhere else.
+Thank you for that.
+
+[PAUSE]
+
+Drive safe. Talk to you soon.
+
+[ARRON STEPS BACK. END OF EVENT AT 3:00 PM.]
+
+
+====================================================
+CONTINGENCIES
+====================================================
+
+IF A FACILITATOR REPORT RUNS LONG (OVER 6 MIN):
+
+  Arron signals at minute 5: "One more pattern, then
+  we move." If still going at minute 6, Arron breaks
+  in: "Hold that thread for the open Q&A. Next room."
+
+IF A FACILITATOR REPORT RUNS SHORT (UNDER 4 MIN):
+
+  Arron asks one follow-up: "Anything from the room
+  that surprised you that hasn't been said?" or
+  "Anything that contradicts what one of the other
+  rooms might say?"
+
+IF THE Q&A GOES SILENT EARLY:
+
+  Arron seeds the cross-room question (see Section 5
+  above). If still silent after the seed, Arron uses
+  the second seed. If still silent, transition to
+  "what we missed" early; that block can absorb the
+  extra time.
+
+IF THE Q&A RUNS HOT AND TIME IS TIGHT:
+
+  Hold the time. At minute 8 of Q&A: "One more, then
+  we close on the worksheet question." At minute 10
+  exactly: "Hold that. Worksheet question now."
+
+IF AN ATTENDEE NAMES A COMPETITOR OR PROGRAM BY NAME
+DURING Q&A:
+
+  Note-takers capture verbatim. NDA covers it. Do not
+  redact, do not echo, do not endorse.
+
+IF A CLINICAL-LANGUAGE SLIP HAPPENS:
+
+  Standard rule. Do not echo. Re-frame in performance
+  language and move on.
+
+IF AN ATTENDEE ASKS WHEN THEY WILL HEAR FROM US:
+
+  Suggested answer: "Synthesis report by May 16, seven
+  days from now. We'll send it to anyone who wants it.
+  Just flag us before you leave or follow up by email."
+
+IF AN ATTENDEE ASKS WHAT WE ARE GOING TO DO WITH THEIR
+INPUT:
+
+  Suggested answer: "It directly informs decisions we
+  are making in the next two to three weeks on pricing,
+  on architecture, on which channel we lead with. Your
+  input shapes those decisions. That's what this room
+  was for."
+
+IF AN ATTENDEE ASKS A QUESTION WE CANNOT ANSWER ON THE
+SPOT:
+
+  Suggested answer: "Honest answer, I don't have a clean
+  read on that today. I'd rather follow up with you
+  individually than make something up. Can I email you
+  next week?"
+
+IF THE BLOCK ENDS BEFORE 3:00 PM:
+
+  Arron closes early. Do not extend. Attendees know the
+  day was scheduled to 3:00 PM, and ending at 2:55 with
+  a clean close is better than padding.
+
+IF THE BLOCK RUNS PAST 3:00 PM:
+
+  Hard cut at 3:05 PM at the latest. Closing remarks
+  compress to "Thank you. NDA stays in effect.
+  Synthesis report by May 16. Drive safe." That gets it
+  done in twenty seconds.
+
+
+====================================================
+CRITICAL DELIVERY NOTES
+====================================================
+
+  1)  ZERO em dashes anywhere in this script. Period,
+      comma, colon, semicolon as replacements.
+
+  2)  Athletes are A, B, C from the front of the room.
+      Real names appear only on the screen mockup and
+      in printed packets. Facilitators reporting from
+      their breakouts use A, B, C in spoken language
+      even if attendees in their rooms used real names.
+
+  3)  NDA reminder is mandatory in closing remarks.
+      Do not skip.
+
+  4)  Synthesis Report v1 timeline (May 16) is mandatory
+      in closing remarks. Attendees need to know their
+      input lands somewhere concrete.
+
+  5)  Digital copies of artifact packets as personalized
+      watermarked PDFs is the offered post-event
+      delivery. Mention in closing.
+
+  6)  Do NOT mention the May 30 go/no-go gate. That is
+      internal founder cadence and not relevant to
+      attendees.
+
+  7)  Total runtime is thirty minutes. Soft cut at 3:00
+      PM, hard cut at 3:05 PM. Day ends.
+
+  8)  Capture divergence over consensus throughout. The
+      cross-room block surfaces contradictions across
+      segments. Disagreement is the most valuable
+      signal.
+
+  9)  Verbatim quotes in facilitator reports should be
+      read as written. Even if grammar or phrasing is
+      rough. The credibility of the moment is in the
+      verbatim.
+
+
+END OF CROSS-ROOM SYNTHESIS SCRIPT

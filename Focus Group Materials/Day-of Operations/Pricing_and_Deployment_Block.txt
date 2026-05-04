@@ -1,0 +1,351 @@
+"VIRTUSFOCUS" FOCUS GROUP: PRICING + DEPLOYMENT BLOCK SCRIPT
+=============================================================
+
+Event:        May 9, 2026 (Saturday)
+
+Venue:        Hampton Inn, 1000 Towne Square Dr, Greensburg
+
+Slot:         2:15-2:30 PM (15 min, full-room)
+
+Lead:         Arron Panigall
+
+Support:      Nicole Bohince (chimes in on D2C topic),
+              Michele Cribbs (chimes in on white-label topic)
+
+Last updated: 2026-05-04
+
+
+====================================================
+PURPOSE
+====================================================
+
+The first focused full-room read on three signal-dense topics
+that the breakouts already touched but cannot resolve in
+isolation. The room hears each segment's read in real time
+and reacts.
+
+Three topics on the table:
+
+  1) D2C subscription pricing. Where is the ceiling. What
+     would make somebody cancel.
+  2) Institutional contract structure. What does a contract
+     have to look like for an AD or a principal to say yes.
+  3) White-label versus single-app architecture. Same app
+     for every institution, or skinned versions per program.
+
+The block is hybrid in structure. Arron names all three
+questions up front. Attendees pick which one to push back
+on first. Roughly five minutes per topic. Order is
+attendee-driven.
+
+
+====================================================
+STRUCTURE
+====================================================
+
+  1)  Reconvene and framing                ~2 min
+      (Arron names the three questions
+      and invites the room to pick first)
+
+  2)  Topic block 1 (attendee-chosen)      ~5 min
+
+  3)  Transition                           ~30 sec
+
+  4)  Topic block 2 (attendee-chosen)      ~5 min
+
+  5)  Transition                           ~30 sec
+
+  6)  Topic block 3 (by elimination)       ~2 min
+
+  7)  Hand-off to cross-room synthesis     ~30 sec
+
+
+====================================================
+SCRIPT
+====================================================
+
+
+1. RECONVENE AND FRAMING (Arron, ~2 min spoken)
+
+[ROOM RECONVENES FROM BREAKOUTS. NOTE-TAKERS WALK WORKSHEETS
+TO THE FRONT AND HAND THEM TO ARRON. ATTENDEES SETTLE.]
+
+[ARRON STEPS UP. WAIT FOR ROOM TO QUIET.]
+
+Welcome back. Worksheets are in. Thank you, note-takers.
+
+[BEAT]
+
+The next fifteen minutes is the only block today where we
+hear from the full room together before the close. Three
+things on the table.
+
+[GESTURE TO ROOM. PACE DELIBERATE]
+
+One. Pricing on the D2C side. The number we floated in the
+pitch was around twenty dollars a month. Where is the
+ceiling. Where does it stop being worth it for the athlete
+or the parent paying out of pocket.
+
+Two. Institutional contract structure. If we walk into a
+school, a college, or an athletic department, what does the
+contract have to look like. Annual or multi-year. Per-athlete
+or per-team or per-program. What does the budget conversation
+actually require for an AD or a principal to sign.
+
+Three. White-label versus single-app architecture. One option
+is the same VirtusFocus app for everyone, every institution.
+The other option is institutions get a skinned version with
+their own brand, their own colors, their own logo. Ohio State
+gets "Ohio State Mental Performance." Pitt gets "Pitt Mental
+Performance." Same engine underneath. Different face. The GTM
+breakout heard this question already. The rest of you are
+hearing it for the first time.
+
+[BEAT]
+
+Three questions. About five minutes each. Order is yours.
+
+[OPEN HANDS, INVITE ROOM]
+
+Which one do you want to push back on first?
+
+[PAUSE. ATTENDEE PICKS A TOPIC. ARRON PROCEEDS TO WHICHEVER
+TOPIC IS NAMED FIRST. THE THREE TOPIC BLOCKS BELOW ARE
+MODULAR. ANY ORDER. ANY DURATION WITHIN THE 5-MIN BUDGET.]
+
+
+2. TOPIC BLOCK: D2C PRICING (~5 min)
+
+[NICOLE CAN CHIME IN HERE. HER D2C BREAKOUT JUST CLOSED ON
+THIS QUESTION. SHE HAS THE FRESHEST DATA.]
+
+ARRON ANCHOR PROMPT:
+
+  "D2C breakout just closed on this question. Nicole,
+  give us the headline from your room. Then we open it
+  to everyone."
+
+[NICOLE: 30-45 SEC HEADLINE FROM D2C BREAKOUT. SPECIFIC
+DOLLAR CEILINGS WRITTEN ON Q5. SPECIFIC CANCEL TRIGGERS.
+THEN ARRON OPENS TO ROOM.]
+
+LISTENING FOR:
+
+  1)  Specific dollar ceilings (athletes vs parents)
+  2)  Cancel triggers (Q5b answers)
+  3)  Cross-segment reaction. Coaches and GTM advisors
+      pushing in on whether the price feels right
+  4)  Difference between athlete-direct purchase and
+      parent-paying-for-kid economics
+
+IF DISCUSSION STALLS, ARRON PROMPTS:
+
+  "What's the price where you say yes without thinking
+  about it."
+
+  "What's the price where you walk away."
+
+  "If we charged five dollars less, would you commit
+  longer."
+
+WATCH-OUT:
+
+  Do not let the room converge on a single number too
+  fast. Each attendee's number is signal. Convergence is
+  signal, divergence is more useful.
+
+
+3. TOPIC BLOCK: INSTITUTIONAL CONTRACT STRUCTURE (~5 min)
+
+ARRON ANCHOR PROMPT:
+
+  "Institutional coaches in the room. Rick, Bret, Bob,
+  Gio, Buck, Chris. If you took this to your AD or your
+  principal tomorrow, what is the contract structure that
+  makes them say yes. Annual. Multi-year. Per-athlete.
+  Per-team. Site license. What do they need to see."
+
+[LOOK AT EACH NAMED COACH AS YOU NAME THEM.]
+
+LISTENING FOR:
+
+  1)  Pricing units (per-athlete, per-team, per-program,
+      flat fee, site license)
+  2)  Term length expectations (annual vs multi-year)
+  3)  Budget cycles (when does AD budget close)
+  4)  HS-context vs college-context divergence
+      (HS principal + AD + state association vs college
+      AD + compliance + procurement)
+  5)  Bob and Rick on AD-budget mechanics specifically.
+      Bob built a program from zero, Rick ran one for
+      forty years. Their numbers are not abstract.
+
+IF GTM ADVISORS PUSH IN, ARRON MAKES SPACE:
+
+  "GTM, what does the contract have to look like for the
+  institutional sales motion to actually work. Jon, you've
+  sold B2B. What's the term and structure that closes."
+
+WATCH-OUT:
+
+  Do not let coaches default to "whatever the AD wants."
+  Push for the structure they think actually fits a
+  coaching tool, not the structure they assume the AD
+  will demand.
+
+
+4. TOPIC BLOCK: WHITE-LABEL VS SINGLE-APP (~5 min)
+
+[MICHELE CAN CHIME IN HERE. HER GTM BREAKOUT WORKED THIS
+QUESTION FOR ABOUT TEN MINUTES.]
+
+ARRON ANCHOR PROMPT:
+
+  "GTM heard this in the breakout already. Michele, give
+  us the GTM headline. Then I want coaches and D2C to
+  weigh in, because both groups have a stake in the answer
+  that GTM does not."
+
+[MICHELE: 30-45 SEC HEADLINE FROM GTM BREAKOUT. WHAT THE
+ROOM ARGUED FOR. WHERE THEY DIVERGED. THEN ARRON OPENS TO
+ROOM.]
+
+WHY COACHES MATTER ON THIS QUESTION:
+
+  Whether "Ohio State Mental Performance" carries more
+  institutional credibility than "VirtusFocus at Ohio
+  State" for the AD pitch and for athlete adoption inside
+  the program.
+
+WHY D2C MATTERS ON THIS QUESTION:
+
+  Whether brand recognition matters at all for athletes
+  or parents paying directly. If parents shop on the
+  consumer side and see VirtusFocus, that is the brand.
+  If institutions can skin it, the consumer brand is
+  effectively invisible inside every institution that
+  uses it.
+
+IF DISCUSSION STALLS, ARRON PROMPTS:
+
+  "What does VirtusFocus lose if every institution gets
+  to skin it."
+
+  "What does VirtusFocus lose if no institution can skin
+  it."
+
+  "If you were Ohio State, would you take the brand or
+  the skin."
+
+WATCH-OUT:
+
+  This is the highest-stakes question on the table. The
+  answer informs the May 16 synthesis report and the
+  product roadmap. Slow the room down. Capture divergence
+  verbatim, not consensus.
+
+
+5. TRANSITION TO CROSS-ROOM SYNTHESIS (Arron, ~30 sec)
+
+[ARRON CHECKS THE CLOCK. AT 2:28, START THE TRANSITION
+REGARDLESS OF WHERE THE THIRD TOPIC IS. HARD CUT AT 2:30.]
+
+That's the table.
+
+[BEAT]
+
+Last block of the day. Each breakout shares what came out of
+the room. We open it to the full group. Then we close on the
+question that's on the back page of every worksheet.
+
+[GESTURE TO NICOLE AND MICHELE]
+
+Nicole and Michele are going to report alongside me.
+
+[STAY UP. NICOLE AND MICHELE COME FORWARD FOR CROSS-ROOM
+SYNTHESIS BLOCK AT 2:30.]
+
+
+====================================================
+CONTINGENCIES
+====================================================
+
+IF ONLY TWO OF THE THREE TOPICS GET COVERED:
+
+  The third folds into the cross-room synthesis. Arron
+  pulls the question into the open Q&A or into the "what
+  we missed" block. Note-takers tag worksheets for the
+  uncovered topic so synthesis can lean on the written
+  answers.
+
+IF ONE TOPIC DOMINATES THE FULL FIFTEEN MINUTES:
+
+  Acceptable. The signal is in the depth, not the
+  coverage. The cross-room synthesis can pull the
+  under-covered topic forward.
+
+IF AN ATTENDEE NAMES A COMPETITOR OR PROGRAM BY NAME:
+
+  Note-takers capture verbatim. NDA covers it. Do not
+  redact, do not echo, do not endorse.
+
+IF A CLINICAL-LANGUAGE SLIP HAPPENS IN DISCUSSION:
+
+  Standard rule. Do not echo. Re-frame the substance in
+  performance language and move on.
+
+IF RUNNING SHORT (BLOCK CLOSES BEFORE 2:30):
+
+  Do not extend. Hand to cross-room synthesis early. The
+  cross-room block can absorb extra time without damage.
+
+IF RUNNING LONG (STILL IN PRICING+DEPLOYMENT AT 2:30):
+
+  Hard cut. Transition to cross-room synthesis. Topics
+  mid-discussion get picked up in the cross-room block
+  or in the synthesis report.
+
+IF AN ATTENDEE PRESSES FOR A SPECIFIC PRICE OR CONTRACT
+NUMBER FROM US:
+
+  Suggested response: "We're not anchoring you to a
+  number today. The number we put in the pitch was a
+  starting point so you had something to react to. The
+  ceiling is what we want from this room."
+
+IF AN ATTENDEE ASKS WHAT WE WILL DO WITH THEIR ANSWERS:
+
+  Suggested response: "Synthesis report goes to internal
+  team and advisors within seven days. Decisions land
+  shortly after. Your input lands somewhere concrete."
+
+
+====================================================
+CRITICAL DELIVERY NOTES
+====================================================
+
+  1)  ZERO em dashes anywhere in this script. Period,
+      comma, colon, semicolon as replacements.
+
+  2)  Athletes are A, B, C from the front of the room.
+      Real names appear only on the screen mockup and in
+      printed packets.
+
+  3)  NDA is in effect throughout. Recording is running.
+      Do not redact in response to anything attendees say.
+
+  4)  Arron leads. Nicole supports the D2C topic. Michele
+      supports the white-label topic. Neither steps up
+      front for more than 30-45 seconds.
+
+  5)  Total runtime is fifteen minutes. Hard cut at 2:30
+      PM. The cross-room synthesis at 2:30 is the closing
+      block of the day, do not push into it.
+
+  6)  Capture divergence over consensus. Disagreement
+      between segments is the most valuable signal of the
+      block.
+
+
+END OF PRICING + DEPLOYMENT BLOCK SCRIPT

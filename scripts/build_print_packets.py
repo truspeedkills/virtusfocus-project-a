@@ -216,7 +216,7 @@ def build_printer_instructions(page_counts):
     lines.append('')
     lines.append('All material is confidential under NDA. Please do not retain')
     lines.append('digital file copies or sample prints after delivery. Contact')
-    lines.append('Arron Beckes if any pages render unclearly or any colored')
+    lines.append('Arron Panigall if any pages render unclearly or any colored')
     lines.append('elements look off before running the full print job.')
     lines.append('')
 
