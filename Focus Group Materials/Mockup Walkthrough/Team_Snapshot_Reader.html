@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VirtusFocus — Sample Team Snapshot Reader</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #09090b;
+    color: #d4d4d8;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 60px 48px; }
+  .doc-header {
+    border-bottom: 1px solid #27272a;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+  }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    color: #f59e0b;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fafafa;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: #a1a1aa;
+    font-size: 15px;
+  }
+  .compliance-note {
+    background: rgba(63, 63, 70, 0.4);
+    border: 1px solid #3f3f46;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 24px 0 40px 0;
+    font-size: 13px;
+    color: #a1a1aa;
+    font-style: italic;
+  }
+  .compliance-note .cn-label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: #71717a;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #fafafa;
+    margin-top: 36px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #27272a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .stat-grid.four-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-cell {
+    background: rgba(39, 39, 42, 0.5);
+    border: 1px solid #27272a;
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .stat-cell .stat-label {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 10px;
+    color: #71717a;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .stat-cell .stat-value {
+    color: #fafafa;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .stat-cell .stat-pct {
+    color: #a1a1aa;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .stat-cell.green .stat-value { color: #4ade80; }
+  .stat-cell.amber .stat-value { color: #f59e0b; }
+  .stat-cell.zero .stat-value { color: #52525b; }
+  .signal-line {
+    margin: 10px 0 14px 0;
+    font-size: 13px;
+    color: #a1a1aa;
+  }
+  .signal-line strong { color: #fafafa; font-weight: 600; }
+  p { color: #d4d4d8; font-size: 15px; margin-bottom: 12px; }
+  .footer {
+    border-top: 1px solid #27272a;
+    padding-top: 24px;
+    margin-top: 60px;
+    font-size: 11px;
+    color: #52525b;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="doc-header">
+    <div class="label">Weekly Team Snapshot</div>
+    <h1>VirtusFocus Validation Program</h1>
+    <div class="subtitle">Cross-Temporal Validation &middot; 6 Athletes Included</div>
+  </div>
+
+  <div class="compliance-note">
+    <div class="cn-label">Classification: Informational Only</div>
+    "These indicators are informational only and may not be used as a basis for participation, selection, or disciplinary decisions."
+  </div>
+
+  <h2>T1. Performance Distribution</h2>
+  <div class="stat-grid">
+    <div class="stat-cell green">
+      <div class="stat-label">Growth</div>
+      <div class="stat-value">3 / 6</div>
+      <div class="stat-pct">50%</div>
+    </div>
+    <div class="stat-cell amber">
+      <div class="stat-label">Mixed</div>
+      <div class="stat-value">3 / 6</div>
+      <div class="stat-pct">50%</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Reset</div>
+      <div class="stat-value">0 / 6</div>
+      <div class="stat-pct">0%</div>
+    </div>
+  </div>
+  <div class="signal-line">Directional Momentum: <strong>&rarr; Stable</strong></div>
+  <p>The roster is evenly split between Growth-tier and Mixed-tier performance this period, with no athletes in Reset. All six athletes show stable directional momentum in their weekly tier trends, indicating a steady performance foundation across the program.</p>
+
+  <h2>T2. Team Consistency Signal</h2>
+  <div class="signal-line">Overall Status: <strong style="color:#f59e0b">Transitional Variability</strong></div>
+  <div class="stat-grid">
+    <div class="stat-cell green">
+      <div class="stat-label">Stable</div>
+      <div class="stat-value">2 / 6</div>
+      <div class="stat-pct">33%</div>
+    </div>
+    <div class="stat-cell amber">
+      <div class="stat-label">Variable</div>
+      <div class="stat-value">4 / 6</div>
+      <div class="stat-pct">67%</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Volatile</div>
+      <div class="stat-value">0 / 6</div>
+      <div class="stat-pct">0%</div>
+    </div>
+  </div>
+  <p>Two-thirds of athletes show variable consistency patterns this period, while one-third demonstrate stable positive consistency. Variability is context-driven across competitive transitions and structural changes. No athletes show volatile or deteriorating consistency signals.</p>
+
+  <h2>T3. Team Focus Distribution</h2>
+  <div class="stat-grid">
+    <div class="stat-cell green">
+      <div class="stat-label">Center-Dominant</div>
+      <div class="stat-value">6 / 6</div>
+      <div class="stat-pct">100%</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Mixed Focus</div>
+      <div class="stat-value">0 / 6</div>
+      <div class="stat-pct">0%</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Outer Drift</div>
+      <div class="stat-value">0 / 6</div>
+      <div class="stat-pct">0%</div>
+    </div>
+  </div>
+  <p>All six athletes demonstrate center-dominant controllable alignment, directing attention toward preparation, effort, and response patterns rather than external factors. Strong collective focus on elements within individual control across the entire roster.</p>
+
+  <h2>T4. Team Recommitment Trend</h2>
+  <div class="stat-grid four-col">
+    <div class="stat-cell zero">
+      <div class="stat-label">Strong</div>
+      <div class="stat-value">0 / 6</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Moderate</div>
+      <div class="stat-value">0 / 6</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Low</div>
+      <div class="stat-value">0 / 6</div>
+    </div>
+    <div class="stat-cell green">
+      <div class="stat-label">Not Applicable</div>
+      <div class="stat-value">6 / 6</div>
+    </div>
+  </div>
+  <p>The majority of athletes did not experience adverse execution events requiring recovery this period. A 100% Not Applicable rate indicates that the roster maintained sufficient daily engagement to avoid triggering recommitment assessment. Reflects stable behavioral patterns rather than a data gap.</p>
+
+  <h2>T5. Team Confidence Direction</h2>
+  <div class="stat-grid">
+    <div class="stat-cell amber">
+      <div class="stat-label">Building</div>
+      <div class="stat-value">1 / 6</div>
+      <div class="stat-pct">17%</div>
+    </div>
+    <div class="stat-cell green">
+      <div class="stat-label">Stable</div>
+      <div class="stat-value">4 / 6</div>
+      <div class="stat-pct">67%</div>
+    </div>
+    <div class="stat-cell amber">
+      <div class="stat-label">Rebuilding</div>
+      <div class="stat-value">1 / 6</div>
+      <div class="stat-pct">17%</div>
+    </div>
+  </div>
+  <div class="signal-line">Overall Trend: <strong>&rarr; Stable</strong></div>
+  <p>The majority of athletes show stable confidence trajectories linked to consistent preparation patterns. One athlete demonstrates building confidence through successful preparation-to-performance transfer. One is in a rebuilding phase following a competitive transition period. No athletes show declining or variable confidence signals.</p>
+
+  <h2>T6. Team Stress Load Distribution</h2>
+  <div class="stat-grid">
+    <div class="stat-cell green">
+      <div class="stat-label">Low</div>
+      <div class="stat-value">3 / 6</div>
+      <div class="stat-pct">50%</div>
+    </div>
+    <div class="stat-cell amber">
+      <div class="stat-label">Moderate</div>
+      <div class="stat-value">3 / 6</div>
+      <div class="stat-pct">50%</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Elevated</div>
+      <div class="stat-value">0 / 6</div>
+      <div class="stat-pct">0%</div>
+    </div>
+  </div>
+  <p>The roster is evenly split between low and moderate stress loads, with no athletes at elevated levels. Moderate stress indicators reflect competitive schedules and developmental transitions rather than acute distress. The absence of elevated stress across the program suggests a manageable collective load.</p>
+
+  <h2>T7. Team Developmental Distribution</h2>
+  <div class="stat-grid four-col">
+    <div class="stat-cell zero">
+      <div class="stat-label">Emerging</div>
+      <div class="stat-value">0 / 6</div>
+    </div>
+    <div class="stat-cell green">
+      <div class="stat-label">Developing</div>
+      <div class="stat-value">5 / 6</div>
+      <div class="stat-pct">83%</div>
+    </div>
+    <div class="stat-cell amber">
+      <div class="stat-label">Consistent</div>
+      <div class="stat-value">1 / 6</div>
+      <div class="stat-pct">17%</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Leadership</div>
+      <div class="stat-value">0 / 6</div>
+    </div>
+  </div>
+  <div class="signal-line" style="margin-top:18px"><strong>Team Composite Readiness:</strong></div>
+  <div class="stat-grid">
+    <div class="stat-cell zero">
+      <div class="stat-label">Positive (Green)</div>
+      <div class="stat-value">0 / 6</div>
+    </div>
+    <div class="stat-cell amber">
+      <div class="stat-label">Steady (Yellow)</div>
+      <div class="stat-value">6 / 6</div>
+      <div class="stat-pct">100%</div>
+    </div>
+    <div class="stat-cell zero">
+      <div class="stat-label">Attention (Orange)</div>
+      <div class="stat-value">0 / 6</div>
+    </div>
+  </div>
+  <p>The program is predominantly in the Developing phase, with one athlete advanced to the Consistent phase. Distribution expected for a cohort in an active growth cycle. All six athletes show Steady readiness indicators, reflecting a stable foundation without athletes requiring immediate attention.</p>
+
+  <div class="footer">VirtusFocus &middot; Confidential Under NDA &middot; Focus Group May 9, 2026</div>
+
+</div>
+</body>
+</html>

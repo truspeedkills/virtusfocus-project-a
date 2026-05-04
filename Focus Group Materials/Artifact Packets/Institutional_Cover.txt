@@ -25,9 +25,11 @@ Status:  APPROVED v1 — ready for print prep
       WHAT'S IN THIS PACKET
 
       Real coaching-staff output from two anonymized athletes,
-      plus a sample institutional team-level dashboard. These
-      are not mockups — this is what a coaching staff actually
-      receives in real deployment.
+      the system's baseline snapshot showing one athlete's
+      Day 1 starting point, and a sample institutional
+      team-level dashboard. These are not mockups. This is
+      what a coaching staff actually receives in real
+      deployment.
 
       Reference these during Question 4 of your breakout.
 
@@ -35,10 +37,10 @@ Status:  APPROVED v1 — ready for print prep
 
       ATHLETES FEATURED
 
-      Athlete A — D2 women's softball, outfielder
+      Athlete A - D2 women's softball, outfielder
                   12-week coaching arc
 
-      Athlete B — D2 men's track and field, throws
+      Athlete B - D2 men's track and field, throws
                   10-week coaching arc, retiring after
                   PSAC championship
 
@@ -46,15 +48,21 @@ Status:  APPROVED v1 — ready for print prep
 
       CONTENTS
 
-      1.  Athlete A — 12-week progression visual
-      2.  Athlete A — Week 7 Coach Insight
+      1.  Athlete A - Baseline Snapshot
+                      (Day 1 starting point)
+      2.  Athlete A - 12-week progression visual
+      3.  Athlete A - Week 7 Coach Insight
                       (first competitive failure week)
-      3.  Athlete A — Week 12 Coach Insight
+      4.  Athlete A - Week 12 Coach Insight
                       (peak / phase-sustained)
-      4.  Athlete B — 10-week progression visual
-      5.  Athlete B — Week 10 Coach Insight
+      5.  Athlete A - Week 12 Coaching Message
+                      (athlete-facing cross-audience reference)
+      6.  Athlete A - Week 12 Parent Coaching Message
+                      (parent-facing cross-audience reference)
+      7.  Athlete B - 10-week progression visual
+      8.  Athlete B - Week 10 Coach Insight
                       (final week + phase advancement)
-      6.  Sample Team Snapshot
+      9.  Sample Team Snapshot
                       (institutional aggregate dashboard)
 
 

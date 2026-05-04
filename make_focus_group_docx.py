@@ -890,9 +890,10 @@ def make_institutional_cover():
     add_cover_header(doc, "INSTITUTIONAL", SEGMENT_COLORS["INSTITUTIONAL"])
 
     add_cover_section(doc, "WHAT'S IN THIS PACKET", [
-        "Real coaching-staff output from two anonymized athletes, plus a sample "
-        "institutional team-level dashboard. These are not mockups — this is what "
-        "a coaching staff actually receives in real deployment.",
+        "Real coaching-staff output from two anonymized athletes, the system's "
+        "baseline snapshot showing one athlete's Day 1 starting point, and a "
+        "sample institutional team-level dashboard. These are not mockups. This "
+        "is what a coaching staff actually receives in real deployment.",
         "Reference these during Question 4 of your breakout."
     ])
 
@@ -902,9 +903,12 @@ def make_institutional_cover():
     ])
 
     add_cover_contents(doc, [
+        ("Athlete A — Baseline Snapshot", "Day 1 starting point"),
         ("Athlete A — 12-week progression visual", None),
         ("Athlete A — Week 7 Coach Insight", "first competitive failure week"),
         ("Athlete A — Week 12 Coach Insight", "peak / phase-sustained"),
+        ("Athlete A — Week 12 Coaching Message", "athlete-facing cross-audience reference"),
+        ("Athlete A — Week 12 Parent Coaching Message", "parent-facing cross-audience reference"),
         ("Athlete B — 10-week progression visual", None),
         ("Athlete B — Week 10 Coach Insight", "final week + phase advancement"),
         ("Sample Team Snapshot", "institutional aggregate dashboard"),
@@ -926,9 +930,11 @@ def make_d2c_cover():
     add_cover_header(doc, "D2C / ATHLETE", SEGMENT_COLORS["D2C / ATHLETE"])
 
     add_cover_section(doc, "WHAT'S IN THIS PACKET", [
-        "Real athlete-facing coaching output from three anonymized athletes. "
-        "These are the messages, deep dives, and parent-facing notes the program "
-        "actually delivers — not mockups, not summaries.",
+        "Real athlete-facing coaching output from three anonymized athletes, "
+        "plus the system's baseline snapshot for one athlete (Day 1 starting "
+        "point) and a sample team dashboard. These are the messages, deep dives, "
+        "and parent-facing notes the program actually delivers. Not mockups, "
+        "not summaries.",
         "Reference these during Question 4 of your breakout."
     ])
 
@@ -939,15 +945,18 @@ def make_d2c_cover():
     ])
 
     add_cover_contents(doc, [
+        ("Athlete A — Baseline Snapshot", "Day 1 starting point"),
         ("Athlete A — 12-week progression visual", None),
         ("Athlete A — Week 7 Coaching Message", "first competitive failure"),
         ("Athlete A — Week 12 Coaching Message", "peak moment"),
         ("Athlete A — Week 12 Deep Dive", "full analytical depth example"),
+        ("Athlete A — Week 12 Coach Insight", "coach-facing cross-audience reference"),
         ("Athlete A — Week 12 Parent Coaching Message", "parent-facing perspective"),
         ("Athlete B — 10-week progression visual", None),
         ("Athlete B — Week 10 Coaching Message", "final week + phase advancement"),
         ("Athlete C — Week 1 Parent Coaching Message", "HS-context parent exemplar"),
-    ])
+        ("Sample Team Snapshot", "institutional aggregate dashboard"),
+    ], item_size_pt=10, sub_size_pt=9)
 
     add_cover_nda_closing(doc)
 
@@ -965,9 +974,10 @@ def make_gtm_cover():
     add_cover_header(doc, "GTM", SEGMENT_COLORS["GTM"])
 
     add_cover_section(doc, "WHAT'S IN THIS PACKET", [
-        "The full product picture. Every audience layer represented — what the "
+        "The full product picture. Every audience layer represented. What the "
         "athlete reads, what the coach reads, what the parent reads, what the "
-        "coaching staff receives at the team level, plus selected app mockup "
+        "coaching staff receives at the team level. Includes baseline snapshots "
+        "for all three athletes (Day 1 starting points) and selected app mockup "
         "printouts.",
         "Use these to react to category, story, channel, and architecture during "
         "Question 4 of your breakout."
@@ -980,13 +990,16 @@ def make_gtm_cover():
     ])
 
     add_cover_contents(doc, [
+        ("Athlete A — Baseline Snapshot", "Day 1 starting point"),
         ("Athlete A — 12-week progression visual", None),
         ("Athlete A — Week 12 Coaching Message", "athlete-facing example"),
         ("Athlete A — Week 12 Coach Insight", "coach-facing example"),
         ("Athlete A — Week 12 Parent Coaching Message", "parent-facing example"),
         ("Athlete A — Week 12 Parent Insight", "parent dashboard sample"),
+        ("Athlete B — Baseline Snapshot", "Day 1 starting point"),
         ("Athlete B — 10-week progression visual", None),
         ("Athlete B — Week 10 Coaching Message", "second athlete example"),
+        ("Athlete C — Baseline Snapshot", "Day 1 starting point"),
         ("Athlete C — Week 1 Parent Coaching Message", "HS-context exemplar"),
         ("Sample Team Snapshot", "institutional aggregate dashboard"),
         ("Selected App Mockup Printouts", "Home / Tune-Up / Weekly Recap / Inbox"),

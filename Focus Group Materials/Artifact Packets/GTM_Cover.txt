@@ -25,10 +25,11 @@ Status:  APPROVED v1 — ready for print prep
       WHAT'S IN THIS PACKET
 
       The full product picture. Every audience layer
-      represented — what the athlete reads, what the coach
+      represented. What the athlete reads, what the coach
       reads, what the parent reads, what the coaching staff
-      receives at the team level, plus selected app mockup
-      printouts.
+      receives at the team level. Includes baseline snapshots
+      for all three athletes (Day 1 starting points) and
+      selected app mockup printouts.
 
       Use these to react to category, story, channel, and
       architecture during Question 4 of your breakout.
@@ -37,14 +38,14 @@ Status:  APPROVED v1 — ready for print prep
 
       ATHLETES FEATURED
 
-      Athlete A — D2 women's softball, outfielder
+      Athlete A - D2 women's softball, outfielder
                   12-week coaching arc (depth case)
 
-      Athlete B — D2 men's track and field, throws
+      Athlete B - D2 men's track and field, throws
                   10-week coaching arc, retiring after
                   PSAC championship
 
-      Athlete C — High school wrestling
+      Athlete C - High school wrestling
                   Week 1 of return arc post-injury
                   (HS-context parent exemplar)
 
@@ -52,23 +53,29 @@ Status:  APPROVED v1 — ready for print prep
 
       CONTENTS
 
-      1.  Athlete A — 12-week progression visual
-      2.  Athlete A — Week 12 Coaching Message
+      1.  Athlete A - Baseline Snapshot
+                      (Day 1 starting point)
+      2.  Athlete A - 12-week progression visual
+      3.  Athlete A - Week 12 Coaching Message
                       (athlete-facing example)
-      3.  Athlete A — Week 12 Coach Insight
+      4.  Athlete A - Week 12 Coach Insight
                       (coach-facing example)
-      4.  Athlete A — Week 12 Parent Coaching Message
+      5.  Athlete A - Week 12 Parent Coaching Message
                       (parent-facing example)
-      5.  Athlete A — Week 12 Parent Insight
+      6.  Athlete A - Week 12 Parent Insight
                       (parent dashboard sample)
-      6.  Athlete B — 10-week progression visual
-      7.  Athlete B — Week 10 Coaching Message
+      7.  Athlete B - Baseline Snapshot
+                      (Day 1 starting point)
+      8.  Athlete B - 10-week progression visual
+      9.  Athlete B - Week 10 Coaching Message
                       (second athlete example)
-      8.  Athlete C — Week 1 Parent Coaching Message
+      10. Athlete C - Baseline Snapshot
+                      (Day 1 starting point)
+      11. Athlete C - Week 1 Parent Coaching Message
                       (HS-context exemplar)
-      9.  Sample Team Snapshot
+      12. Sample Team Snapshot
                       (institutional aggregate dashboard)
-      10. Selected App Mockup Printouts
+      13. Selected App Mockup Printouts
                       (Home / Tune-Up / Weekly Recap / Inbox)
 
 

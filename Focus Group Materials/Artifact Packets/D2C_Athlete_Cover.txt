@@ -25,9 +25,11 @@ Status:  APPROVED v1 — ready for print prep
       WHAT'S IN THIS PACKET
 
       Real athlete-facing coaching output from three
-      anonymized athletes. These are the messages, deep
+      anonymized athletes, plus the system's baseline
+      snapshot for one athlete (Day 1 starting point) and a
+      sample team dashboard. These are the messages, deep
       dives, and parent-facing notes the program actually
-      delivers — not mockups, not summaries.
+      delivers. Not mockups, not summaries.
 
       Reference these during Question 4 of your breakout.
 
@@ -35,14 +37,14 @@ Status:  APPROVED v1 — ready for print prep
 
       ATHLETES FEATURED
 
-      Athlete A — D2 women's softball, outfielder
+      Athlete A - D2 women's softball, outfielder
                   12-week coaching arc
 
-      Athlete B — D2 men's track and field, throws
+      Athlete B - D2 men's track and field, throws
                   10-week coaching arc, retiring after
                   PSAC championship
 
-      Athlete C — High school wrestling
+      Athlete C - High school wrestling
                   Week 1 of return arc following
                   season-ending knee injury
 
@@ -50,20 +52,26 @@ Status:  APPROVED v1 — ready for print prep
 
       CONTENTS
 
-      1.  Athlete A — 12-week progression visual
-      2.  Athlete A — Week 7 Coaching Message
+      1.  Athlete A - Baseline Snapshot
+                      (Day 1 starting point)
+      2.  Athlete A - 12-week progression visual
+      3.  Athlete A - Week 7 Coaching Message
                       (first competitive failure)
-      3.  Athlete A — Week 12 Coaching Message
+      4.  Athlete A - Week 12 Coaching Message
                       (peak moment)
-      4.  Athlete A — Week 12 Deep Dive
+      5.  Athlete A - Week 12 Deep Dive
                       (full analytical depth example)
-      5.  Athlete A — Week 12 Parent Coaching Message
+      6.  Athlete A - Week 12 Coach Insight
+                      (coach-facing cross-audience reference)
+      7.  Athlete A - Week 12 Parent Coaching Message
                       (parent-facing perspective)
-      6.  Athlete B — 10-week progression visual
-      7.  Athlete B — Week 10 Coaching Message
+      8.  Athlete B - 10-week progression visual
+      9.  Athlete B - Week 10 Coaching Message
                       (final week + phase advancement)
-      8.  Athlete C — Week 1 Parent Coaching Message
+      10. Athlete C - Week 1 Parent Coaching Message
                       (HS-context parent exemplar)
+      11. Sample Team Snapshot
+                      (institutional aggregate dashboard)
 
 
 
