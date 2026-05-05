@@ -1,0 +1,164 @@
+{
+  "athlete_name": "Hunter Snyder",
+  "week_period": "2026-04-27 to 2026-05-03",
+
+  "baseline_profile": {
+    "baseline_identity_claim": "Wants to be a wrestler who performs at his best under pressure, anchored in belief and confidence",
+    "baseline_hinge_habit": "Pre-performance anchoring to accumulated preparation rather than outcome focus",
+    "baseline_primary_derailer": "Pressure response activated by fear-of-loss thinking in high-stakes competitive moments",
+    "baseline_why_it_matters": "The shift from work-anchored confidence to outcome-fear is the exact gap between the competitor Hunter wants to become and the pressure response that currently shows up in big moments",
+    "baseline_growth_phase": "Developing"
+  },
+
+  "baseline_intake_profile": {
+    "input_source": "core_foundation",
+    "competitive_level": "not available — core foundation intake",
+    "baseline_season_phase": "not available — core foundation intake",
+    "ppd_primary_problem": "not available — core foundation intake",
+    "ppd_tie_breaker_classification": "not available — core foundation intake",
+    "ppd_top_3": "not available — core foundation intake",
+    "abi_primary_emphasis": "not available — core foundation intake",
+    "adversity_response_pattern": "not available — core foundation intake"
+  },
+
+  "baseline_alignment": {
+    "alignment_status": "Aligned",
+    "alignment_notes": "Hunter's second week shows strong alignment with the baseline hinge habit. The work-anchored pre-performance thought pattern from intake ('Think about the amount of work I put in leading up to the moment') is operationally active in three concrete ways this week: Monday's hydration moment, where Hunter noticed his weight drop, named the cause, and set a forward action ('water bottle with me'); Tuesday's training intensity entry, where he wrote 'dripping sweat at the end of the workout knowing I got one percent better'; and the Bullseye center-ring placement of 'my work ethic' as the named controllable. The shift from Wk1's rehab cadence (zero Wins, single-domain days, 'the recovery and mindset journals' as center) to Wk2's training cadence (six Wins, multi-domain days with workout intensity, family time, and planned rest) represents the work-anchored hinge habit re-establishing itself in its native domain. Weekly goal phrasing — 'get one percent better even with the small setback pushing each limit that I have for myself with is getting better mentally physically and spiritually' — is process-anchored and identity-aligned rather than outcome-attached. Achievement statement names sustained execution ('Pushing myself every day this week knowing I won each day'). The baseline derailer (pressure response in high-stakes competitive moments) remains untested because the week contains no competitive context. The 'small setback' referenced in Hunter's weekly goal is unspecified in the recap and surfaces as athlete-acknowledged friction without elaboration; it does not register as misalignment. The Bullseye is more compressed across all three rings than Wk1, but ring placement is correct: work ethic in center, friends and family in influence, distractions and negative talk in outer."
+  },
+
+  "current_season_phase": "not available",
+
+  "forward_anchor": {
+    "text": null,
+    "submitted": false,
+    "controllability_classification": "not available",
+    "prior_forward_anchor": {
+      "prior_text": null,
+      "alignment_status": "not available",
+      "alignment_notes": "not available — core foundation athlete"
+    },
+    "focus_consistency": "not available"
+  },
+
+  "athlete_state": "Hunter's second week reflects a clear return to active training cadence after Wk1's rehab-phase reporting. WTD distribution is 6 Wins / 1 Neutral / 0 Missed, with the Saturday Neutral tied to a family/leisure day (girlfriend and family meal at a restaurant) rather than behavioral disengagement. Training days are Monday (hydration awareness, noticed weight drop), Tuesday ('dripping sweat at the end of the workout knowing I got one percent better'), and Thursday ('tough upper day with a great chest pump'). Friday was a planned rest day with journaling focus. Wednesday was a family-anchored day for the grandfather's birthday at a restaurant. Saturday and Sunday were family- and girlfriend-anchored leisure days (Sunday included a family fishing derby, where Hunter caught a trout). Bullseye center-ring contains a single item, 'My work ethic,' a meaningful shift from Wk1's 'the recovery and mindset journals.' Weekly goal is process-anchored: 'get one percent better even with the small setback pushing each limit that I have for myself with is getting better mentally physically and spiritually.' Self-reported scorecard registers as Gold Streak (5-7 Wins), which matches the actual 6-Win distribution. Achievement statement names sustained execution. Mindset Challenge favorite is 'Bring the fire today.' No competition this week or next. The 'small setback' Hunter references in the weekly goal is not specified in the recap.",
+
+  "core_pattern": "Active-training-phase engagement with the work-anchored thought pattern operational. The week's center of gravity is Monday's hydration moment, which is a small but textbook execution of the baseline hinge habit: notice the body's signal, name the cause, set a forward action ('I'm going to make sure I have a water bottle with me'). Tuesday's 'knowing I got one percent better' line executes the same anchor at the training-volume level. The Bullseye shift from 'the recovery and mindset journals' (Wk1) to 'my work ethic' (Wk2) tracks the season-phase shift from rehab to active training and returns Hunter to his native developmental surface. Multi-domain days (training + family + reflection + leisure) replace Wk1's single-domain rehab cadence. Saturday's Neutral sits naturally within the week as a family/leisure day, not against it. Daily takeaway framing operates intermittently: Monday and Tuesday are the strongest, Wednesday's takeaway pivots to family value, Thursday through Sunday are descriptive without explicit takeaway language. The Wrestler of the Year identity anchor from Wk1 has receded; the week's identity language is execution-focused. Bullseye entries are more compressed across all three rings than Wk1, but the placement is correct in each ring.",
+
+  "behavioral_root_cause": "The core shift this week is the return of training cadence as the dominant engagement mode after Wk1's rehab-phase character. The work-anchored thought pattern from baseline ('Think about the amount of work I put in leading up to the moment') is operationally active in the new training context: hydration noticed and corrected, plateaus pushed, sweat earned, work ethic named as the controllable surface. Hunter has translated the '1% better' frame from rehab progression to training progression with the same anchor, which is a clean continuation of the principle established in Wk1's weekly goal. The Bullseye compression across all three rings (down from Wk1's longer outer ring) reads less as disengagement and more as the recap-form attention shifting toward training rather than reflective elaboration. The 'small setback' referenced in the weekly goal is the only unspecified friction point in the recap; Hunter acknowledges it without naming it, and the recap shows the goal-frame absorbing it rather than the setback dominating. The strongest cross-week structural fact is the center-ring move from 'the recovery and mindset journals' to 'my work ethic,' which is the most direct evidence in the program record that Hunter is back in his native training environment.",
+
+  "prior_commitment_result": {
+    "prior_action": "At the end of each day during the rehab routine, write down one specific thing that day's recovery work added to your return readiness. One sentence per day.",
+    "execution_status": "Partial",
+    "execution_notes": "Three of seven days (Monday, Tuesday, Wednesday) carry explicit takeaway framing. Monday names hydration as a controllable correction with a forward action ('water bottle with me'). Tuesday names the 1% better frame ('dripping sweat at the end of the workout knowing I got one percent better'). Wednesday names family value as the takeaway, which pivots away from the training/return-readiness axis the commitment specified. Thursday through Sunday are descriptive without takeaway framing: Thursday a workout summary, Friday a rest-and-journaling note, Saturday and Sunday family/leisure activities. The week's training-phase character likely shifted Hunter's framing away from 'recovery work added to return readiness' and toward training takeaways generally, which is why two of the three takeaway days connect cleanly to the spirit of the commitment and the other four days do not. Per the measurement threshold (5+ days = fully executed; 3-4 days = Partial; <3 = Not Attempted), this registers as Partial.",
+    "carry_forward": "No"
+  },
+
+  "athlete_voice": {
+    "weekly_goal_stated": "get one percent better even with the small setback pushing each limit that I have for myself with is getting better mentally physically and spiritually",
+    "achievement_statement": "Pushing myself every day this week knowing I won each day",
+    "key_phrase": "knowing I got one percent better",
+    "mindset_resonance": "Bring the fire today"
+  },
+
+  "win_the_day": {
+    "daily_distribution": {
+      "win_days": "6",
+      "neutral_days": "1",
+      "missed_days": "0"
+    },
+    "weekly_tier": "Growth",
+    "consistency_profile": "Stable Positive",
+    "recommitment_signal": "Not Applicable"
+  },
+
+  "bullseye_analysis": {
+    "control_quality": "Center ring contains one item: 'My work ethic.' This is the right controllable surface for an athlete in active training and a meaningful shift from Wk1's 'the recovery and mindset journals.' Singular center-ring entry remains compressed but is well-named and traces directly to the baseline hinge habit. The center-ring move from rehab journaling to work ethic tracks the season-phase shift from rehab to active training and re-anchors Hunter on the work-anchored side of the approach-vs-avoidance tension named at intake.",
+    "influence_quality": "Influence ring contains 'Friends and family.' Same general framing as Wk1 ('Friends family and mindset') but cleaner this week without the 'mindset' overlap that produced a minor double-listing across rings last week. Friends and family are valid influence-ring entries (Hunter can affect their support but does not control it).",
+    "noise_fixation_present": "No",
+    "primary_focus_ring": "Control"
+  },
+
+  "reflection_quality_score": "2",
+
+  "growth_phase": "Developing",
+
+  "emotional_intensity": "Low",
+
+  "trend_analysis": {
+    "weekly_tier_trend": "Improving",
+    "growth_phase_movement": "Stable",
+    "consistency_trend": "Strengthening",
+    "recommitment_trend": "insufficient data",
+    "pattern_shift_detected": "Yes"
+  },
+
+  "longitudinal_metrics": {
+    "weeks_available": "1",
+    "rolling_win_rate_4wk": "insufficient data",
+    "rolling_missed_rate_4wk": "insufficient data",
+    "volatility_index_4wk": "insufficient data",
+    "recommitment_rate_4wk": "insufficient data",
+    "controllable_stability_4wk": "insufficient data",
+    "fatigue_load_indicator": "Low"
+  },
+
+  "narrative_arc": {
+    "arc_summary": "insufficient data",
+    "milestone_this_week": "First Growth tier week of the current arc. Multi-domain training cadence returns after Wk1's single-domain rehab phase. Bullseye center-ring shifts from 'the recovery and mindset journals' to 'my work ethic,' the cleanest cross-week marker that Hunter is back in his native training environment. Monday's hydration moment (notice weight drop, name cause, set forward action) is the first textbook in-week execution of the baseline hinge habit recorded in Hunter's program.",
+    "open_thread": "insufficient data"
+  },
+
+  "most_important_controllable": "Daily training cadence and the work-anchored thought pattern, anchored most cleanly in Monday's hydration moment and Tuesday's 1% better entry. The Bullseye center-ring placement of 'my work ethic' names the right surface to invest in. The daily takeaway practice carries forward from Wk1 in spirit but needs to operate consistently across training days rather than only on the days when the takeaway feels easiest to write.",
+
+  "micro_commitment": {
+    "action": "After each training day this week (gym, conditioning, or skills work), write one sentence naming what that day added to your readiness. Treat training takeaways the way you treated the rehab work in Wk1: specific, named, accumulated. Monday's hydration moment is the model. You noticed something your body told you, you named it, and you set a forward action with the water bottle. Apply that same pattern to every training day this week.",
+    "when": "After each training day, before going to bed. Sunday May 10, before submitting next weekly recap.",
+    "measurement": "At the end of the week, Hunter should have at least 4 of 7 daily entries naming a specific thing that day's training added to readiness, with at least one entry containing a noticed-and-named-and-acted forward action like Monday's water bottle commitment. 4+ entries with at least 1 forward action: fully executed. 4+ entries without any forward action, OR 2-3 entries with at least 1 forward action: Partial. Fewer than 2 entries: not attempted."
+  },
+
+  "upcoming_context": {
+    "scheduled_competition": "None scheduled",
+    "anticipated_stressor": "Continued training progression. The 'small setback' Hunter referenced in his weekly goal is unspecified in the recap and may surface in next week's reporting if it is ongoing. End-of-school-year academic load may approach but is not currently visible in the recap. No external competitive pressure during this period.",
+    "athlete_stated_next_goal": "Consistency. Win each day getting better mentally physically and spiritually"
+  },
+
+  "coach_insights": {
+    "routine_execution_summary": "6/7 Win days, 1/7 Neutral day (Saturday), 0/7 Missed days. Growth weekly tier. First Growth-tier week of the current arc (Wk1 was Mixed). Multi-domain engagement returns: training (Mon/Tue/Thu), planned rest with journaling (Fri), and family-anchored leisure (Sat/Sun). Wednesday was grandfather's birthday at a restaurant. Bullseye fully completed across three rings, more compressed than Wk1 across all rings but with correct ring placement. Center ring shifts from 'the recovery and mindset journals' (Wk1) to 'my work ethic' (Wk2). Weekly goal process-anchored ('1% better even with the small setback'). Achievement statement names sustained daily Wins. Mindset Challenge favorite 'Bring the fire today.' No competition this week or next.",
+    "key_habit_signal": "Daily takeaway practice is operating intermittently with the strongest instances directly executing the baseline hinge habit. Monday's hydration moment (noticed weight drop, named cause, set forward action with water bottle) is the cleanest in-week execution of the work-anchored thought pattern recorded in Hunter's program record. Tuesday's 'dripping sweat at the end of the workout knowing I got one percent better' line executes the same anchor at the training-volume level. The Bullseye center-ring move from 'the recovery and mindset journals' (Wk1) to 'my work ethic' (Wk2) tracks the season-phase shift from rehab to active training and re-anchors Hunter on the work-anchored side of the approach-vs-avoidance tension named at intake. The principal development edge entering next week is sustaining the noticed-and-named-and-acted pattern across more training days, not only the days when it shows up organically.",
+    "coach_reinforcement_cue": "Lead with Monday's hydration moment as a concrete example of the work-anchored pattern in motion: noticing, naming, and setting a forward action are the three components Hunter executed in real time. Recognize the shift back to multi-domain training cadence after Wk1's single-domain rehab phase. Acknowledge the Bullseye center-ring move (recovery journals to work ethic) as a meaningful re-anchoring on the baseline hinge habit. Tuesday's 1% better execution is direct evidence the process-anchored frame is durable across season phases. Saturday Neutral is contextual, not a concern: a family/leisure day fits naturally within the week.",
+    "coach_avoidance_note": "Do not over-engineer the takeaway practice into a formal protocol that crowds out Hunter's natural cadence. The strongest entries this week were organic, not forced; the goal is to widen the pattern's reach, not to systematize it into rigidity. Do not push a return-to-competition timeline; Hunter has not surfaced one in his recap. The 'small setback' referenced in the weekly goal is unspecified in the recap and should not be guessed at or surfaced as a coaching topic. Saturday Neutral is structurally fine; do not moralize the single non-Win day. The Wrestler of the Year identity anchor from Wk1 has receded; do not press on it again unless Hunter brings it back. Continue not echoing colloquial 'anxiety' language (does not appear in Wk2 outer ring; principle holds across the program)."
+  },
+
+  "risk_flags": {
+    "compliance_safe_note": "No clinical indicators present. Hunter's recap language is task-oriented and composed across all seven days. Training intensity language ('dripping sweat,' 'tough upper day,' 'push past limits') is normal athletic vocabulary, not strain or breakdown signal. Family and leisure days (grandfather's birthday Wednesday, girlfriend and family Saturday and Sunday including a fishing derby) are positive context. No emotional escalation. The 'small setback' referenced in the weekly goal is athlete-acknowledged friction without elaboration and does not require escalation. Knee injury context (PCL/LCL recovery from baseline) is not referenced in the recap, suggesting it has receded to baseline status and is being managed outside the coaching scope. Standard coaching scope."
+  },
+
+  "next_week_focus_question": "Monday you noticed something your body told you, named it, and set a forward action with the water bottle. Where else does that pattern want to show up this week?",
+
+  "longitudinal_ppd": {
+    "status": "insufficient data",
+    "weeks_accumulated": 0,
+    "core_foundation_fallback": true
+  },
+
+  "execution_behavior_signals": {
+    "input_source": "core_foundation",
+    "morning_tune_up": "not available — weekly recap input only",
+    "evening_review": "not available — weekly recap input only",
+    "wtd_question_patterns": "not available — weekly recap input only",
+    "journaling_behavior": "not available — weekly recap input only",
+    "bullseye_behavior": "not available — weekly recap input only",
+    "composite_scores": {
+      "ownership_index": { "score": "insufficient data", "band": "insufficient data" },
+      "rhythm_score": { "score": "insufficient data", "band": "insufficient data" },
+      "follow_through_score": { "score": "insufficient data", "band": "insufficient data" },
+      "review_quality_score": { "score": "insufficient data", "band": "insufficient data" },
+      "recovery_score": { "score": "insufficient data", "band": "insufficient data" },
+      "reactivity_risk_score": { "score": "insufficient data", "band": "insufficient data" },
+      "drift_score": { "score": "insufficient data", "band": "insufficient data" }
+    },
+    "coach_flags": [],
+    "execution_pattern_summary": "Core Foundation input — execution behavior signals not available",
+    "self_ratings_alignment": "not available — weekly recap input only"
+  }
+}

@@ -1,0 +1,355 @@
+VIRTUSFOCUS — EDITORIAL AUDIT SUMMARY
+
+Athlete: Hunter Snyder
+Week: 2026-04-27 to 2026-05-03
+Audit Date: 2026-05-05
+Audit Spec: Editorial Audit v1.6 (14 Criteria)
+Inputs Audited: Interpretation JSON + Coaching Message + Deep Dive
+
+============================================================
+RESULT: AUTO-CORRECTED PASS
+============================================================
+
+All 14 criteria PASS. One Criterion 8 (Prior Commitment Bridge,
+Tier 2) auto-correction applied in-place via Edit tool. No
+regeneration required. CM on disk now reflects the corrected
+version.
+
+------------------------------------------------------------
+PRE-CRITERIA MECHANICAL CHECKS
+------------------------------------------------------------
+
+EM DASH SCAN (CM + DD):
+  Coaching Message: 0 occurrences (PASS)
+  Deep Dive: 0 occurrences (PASS)
+  Interpretation JSON: 0 occurrences (PASS)
+  Coach Insight: 1 occurrence in title only (matches Wk1
+    institutional title convention; not subject to athlete-
+    facing em dash ban which scopes to CM/DD/Parent CM)
+
+------------------------------------------------------------
+TIER 1 CRITERIA (1-4, 13) — MUST PASS
+------------------------------------------------------------
+
+CRITERION 1: Emotional Intensity Calibration
+  PASS
+  emotional_intensity = "Low" → standard coaching tone, no
+  emotional preamble required. CM opens with the concrete
+  Monday hydration moment. DD opens with the same. Appropriate
+  to a Low EI Growth-tier active-training week.
+
+CRITERION 2: Clinical Language Compliance
+  PASS
+  Zero clinical terms in CM or DD. Athlete's outer-ring
+  Bullseye text this week ("Distractions and negative talk")
+  contains no clinical language; coaching output mirrors
+  appropriately. The Wk1 colloquial "anxiety" reference
+  receded from the recap and is not echoed in coaching output.
+  Knee injury context (PCL/LCL recovery from baseline) is not
+  referenced in CM or DD; managed outside the coaching scope.
+  Recovery context language ("knee that's still earning its
+  way back") is descriptive, not clinical. Training intensity
+  language ("dripping sweat," "tough upper day," "push past
+  limits") is normal athletic vocabulary.
+
+CRITERION 3: Data Fidelity
+  PASS
+  All factual claims in CM and DD trace to JSON, snapshot, or
+  recap:
+  - "stepped on the scale, saw your weight had dropped, traced
+    it back to not staying replenished, and decided right then
+    that you'd carry a water bottle the rest of the week"
+    → recap Monday entry (close paraphrase, source verbatim
+    "Monday my takeaway was that I have to stay hydrated
+    because due to not being replenished I saw my weight drop.
+    This up in coming week I'm going to make sure I have a
+    water bottle with me")
+  - "dripping sweat at the end of the workout knowing I got
+    one percent better" → recap Tuesday entry (verbatim)
+  - "my work ethic" → recap Bullseye center ring (verbatim)
+  - "Distractions and negative talk" / "Friends and family"
+    → recap Bullseye outer/influence rings (verbatim)
+  - "the recovery and mindset journals" → Wk1 JSON
+    bullseye_analysis.control_quality (verbatim Wk1 center
+    ring)
+  - "tough upper day with a great chest pump" → recap Thursday
+    (verbatim)
+  - "1% better everyday with the intention of healing as best
+    as possible" → Wk1 JSON athlete_voice.weekly_goal_stated
+    (verbatim)
+  - "get one percent better even with the small setback
+    pushing each limit that I have for myself with is getting
+    better mentally physically and spiritually" → recap
+    Wk2 weekly goal (verbatim)
+  - "Wrestler of the Year award from last Sunday's banquet"
+    → Wk1 JSON achievement_statement
+  - Saturday family meal at restaurant, Sunday family fishing
+    derby with trout, Wednesday grandfather's birthday → recap
+    daily entries
+  - "work-anchored thinking from your intake" → snapshot
+    baseline_hinge_habit + exact_phrase
+  - "competitor he wants to be" / "high schooler with a knee
+    that's still earning its way back" → snapshot Sections 1, 6
+  - "Bring the fire today." → recap mindset_resonance favorite
+  - Three-of-seven days takeaway count (Monday, Tuesday,
+    Wednesday) → recap entries with explicit "takeaway was..."
+    framing
+
+CRITERION 4: Structural Compliance
+  PASS
+  CM contains all 5 mandatory elements (Recognition with the
+  Monday moment opening, Strength Signals tied to Monday and
+  Tuesday execution, Drift Identification via the takeaway-
+  pattern widening note, Identity Anchor via the work-anchored
+  thinking returning to native domain, ONE Action via the new
+  micro-commitment) woven as continuous narrative. DD contains
+  all 5 mandatory sections (MINDSET SUMMARY, WEEKLY TRENDLINE,
+  STRENGTH SIGNALS, GROWTH AREAS, IDENTITY THREAD) with
+  appropriate ALL CAPS section headers and item headlines,
+  dash separators between sections, no Coach Arron signature
+  on DD. Header on CM uses correct format (title + name/week/
+  date + 40-char ━ separator). YOUR ACTION: THIS WEEK section
+  includes context label, action content, closing phrase, and
+  Coach Arron signature. NEXT WEEK FOCUS QUESTION section
+  follows after signature with separator bars.
+
+CRITERION 13: Pipeline Data Leakage Compliance
+  PASS
+  No raw composite scores, coach flag IDs, or self-ratings
+  alignment labels surfaced (CF athlete; none exist in JSON
+  to leak). No PPD bucket names, ABI pillar labels, or
+  baseline_intake_profile terminology surfaced (CF athlete;
+  baseline_intake_profile = not available). No forward anchor
+  classifications surfaced (CF athlete; forward_anchor = not
+  available). No longitudinal_ppd terminology surfaced (CF
+  athlete; longitudinal_ppd status = insufficient data with
+  weeks_accumulated = 0).
+
+  Pipeline classification language scan (Categories A-D + E
+  + F + G + H): "Win days" / "Growth tier" / "Mixed tier" /
+  "Reset tier" / "consistency profile" / "growth phase" /
+  "approach-framed" / "Stable Positive" / "Partially Aligned"
+  / "Aligned" (as label) / "pattern shift detected" / "center-
+  ring dominant" / "outer-ring dominant" / "Emotional
+  intensity Low" — none present in CM or DD.
+
+  "Bullseye" used in CM and DD as framework reference per
+  framework guidance (acceptable in coaching language; not a
+  pipeline classification). "Center ring" / "outer ring" used
+  as Bullseye structural references, not pipeline
+  classifications. "rehab-phase" / "training-phase" used as
+  season phase descriptors, not Stage 2 pipeline phase
+  labels. "Developing" appears only in Coach Insights output
+  (Section 7, permitted institutional context) and does not
+  appear in CM or DD.
+
+------------------------------------------------------------
+TIER 2 CRITERIA (5-10, 14) — AUTO-CORRECT IF POSSIBLE
+------------------------------------------------------------
+
+CRITERION 5: Voice & Tone (Coach Arron persona)
+  PASS
+  Second person throughout both CM and DD. Hunter's first
+  name used naturally in CM salutation. Contractions default
+  register held throughout (you'd, you've, that's, it's,
+  they're, didn't, wasn't, isn't). Calm, direct, identity-
+  focused tone. Empathy without coddling. No fluff.
+
+CRITERION 6: Word Count
+  PASS
+  CM body: 295 words (target 250-450). DD: 1012 total words
+  including section headers (~990 prose words; target body
+  850-1200, simple Low-EI Growth-tier week sits comfortably
+  in middle range).
+
+CRITERION 7: Athlete-Facing Frame (DD)
+  PASS
+  DD addressed directly to Hunter throughout. No coach-facing
+  sections. No Coach Reinforcement / Coach Avoidance / Risk
+  and Compliance Note. No Coaching Focus Areas (belongs in
+  CM per v1.3+).
+
+CRITERION 8: Prior Commitment Bridge
+  AUTO-CORRECTED
+  prior_commitment_result.execution_status = "Partial". Original
+  CM did not contain an explicit bridge to last week's
+  commitment ("write down one specific thing that day's
+  recovery work added to your return readiness, one sentence
+  per day"). Auto-correction applied to CM body paragraph 4:
+  inserted bridge sentences naming the prior ask and the
+  three-day execution pattern, then transitioning to current-
+  week development edge.
+
+  Inserted text: "Last week's ask was to name what each rehab
+  day added to your return readiness, one sentence per day.
+  You hit that on three days, with Monday's hydration line
+  and Tuesday's '1% better' the cleanest of them."
+
+  The new commitment is then framed as a phase-appropriate
+  continuation of the same takeaway practice, applied to
+  training days rather than rehab days.
+
+CRITERION 9: Athlete Voice Mirror
+  PASS
+  Athlete-language verbatim quotations appear in both CM and
+  DD: "dripping sweat at the end of the workout knowing I got
+  one percent better" (Tuesday recap line), "my work ethic"
+  (Bullseye center ring), "the recovery and mindset journals"
+  (Wk1 Bullseye, cross-week reference), "1% better everyday
+  with the intention of healing as best as possible" (Wk1
+  weekly goal, DD only), full Wk2 weekly goal verbatim (DD
+  only). Mindset Challenge favorite ("Bring the fire today.")
+  used as athlete-specific closing phrase in CM. The Voice
+  Reference Pair 14 pattern (athlete sentence as DD thesis)
+  is partially executed via the Tuesday quote functioning as
+  internal evidence within the MINDSET SUMMARY rather than
+  the opening sentence; the DD opening is moment-led per
+  Pair 12 (specific moment opening) instead, which is
+  appropriate to the week's defining moment being a discrete
+  action (Monday hydration).
+
+CRITERION 10: Micro-Commitment Realism
+  PASS
+  Single-target written commitment with embedded structural
+  variant (4 of 7 entries with at least 1 noticed-named-acted
+  forward action). Modality: Written, matches athlete's
+  existing recap submission pattern. Realistic for Wk2
+  active-training context where training is happening but not
+  daily (gym, conditioning, or skills work as eligible day
+  types). The 4-of-7 threshold is more lenient than Wk1's
+  5-of-7, reflecting that not every day this week was a
+  training day. Builds directly on Wk1's commitment with
+  phase-appropriate adjustment (rehab day → training day).
+  Does not stack multiple targets.
+
+CRITERION 14: Voice Quality Regression
+  PASS
+  Twelve fail conditions evaluated:
+  14.1 Reusable Opening: PASS. CM opening drops into the
+       specific Monday hydration moment with three-step action
+       sequence ("Notice, name, act"). Could not apply to any
+       other athlete. DD opening reproduces the same moment
+       in DD-appropriate detail.
+  14.2 Telegraphing: PASS. No "Now here's where I want to push
+       you" or equivalent announcement constructions detected.
+       "The piece worth getting sharper on this week is X" is
+       interpretive claim form, not telegraph form.
+  14.3 Untraceable Paragraph: PASS. Every paragraph traces to
+       specific recap content, JSON fields, or snapshot context.
+  14.4 Category Coverage Over Response: PASS. CM and DD are
+       response-driven, not template-coverage-driven. The four
+       Strength Signals in DD each tie to discrete Wk2
+       evidence; the single Growth Area is the actual
+       development edge.
+  14.5 Brand Copy Close: PASS. CM closing phrase "Bring the
+       fire today." is athlete-specific (Wk2 mindset_resonance
+       favorite). DD closing "That's what the next big match
+       will draw on when it shows up" references Hunter's
+       wrestling competitive context.
+  14.6 Same Construction 3-Week Window: PASS (insufficient
+       data for full 3-week check; only 2 weeks available).
+       Wk1 vs Wk2 closings, openings, and recognition
+       constructions are structurally distinct.
+  14.7 DD as Expanded CM: PASS. DD adds depth the CM cannot
+       hold: longitudinal Bullseye-center cross-week
+       comparison (rehab-and-mindset journals → my work
+       ethic), four discrete Strength Signals each tied to
+       different evidence, friction-layer narrative in
+       Identity Thread.
+  14.8 "That is [Noun]." Standalone Overuse: PASS. Zero
+       standalone "That is [Noun]." constructions in CM or DD.
+       "Notice, name, act." is fragment-form, not retired
+       pattern.
+  14.9 "Version of [X]" Construction: PASS. Zero retired
+       "version of you" constructions. CM uses "the clearest
+       in-week example" and DD uses "small-scale rep" /
+       "model" instead.
+  14.10 Triple-Negative Setup: PASS. No "Not X, not Y, not Z"
+        triple-negative constructions detected.
+  14.11 Trendline Arc Recitation: PASS. WEEKLY TRENDLINE
+        compares only the immediate prior week (Wk1) to
+        current week (Wk2), no week-by-week arc recitation.
+  14.12 Pipeline-Adjacent Vocabulary: PASS. Zero "Growth
+        weeks" / "Win days" as named categories, zero
+        "approach-framed," zero "the system," zero "Stable
+        Positive" or other pipeline classification names in
+        CM or DD.
+
+------------------------------------------------------------
+TIER 3 CRITERIA (11-12) — AUTO-CORRECT SILENTLY
+------------------------------------------------------------
+
+CRITERION 11: Brand Voice Tonal Scan
+  PASS
+  Calm, direct, identity-focused, supportive but firm, no
+  fluff. Coach Arron persona consistent across CM and DD.
+
+CRITERION 12: Outer-Ring Language Discipline
+  PASS
+  Hunter's Wk2 outer ring ("Distractions and negative talk")
+  is brief and non-fixated. CM acknowledges family days as
+  "what they were and what they should be" without echoing
+  outer-ring framing. DD identity thread ties outer ring
+  back to baseline derailer language ("the outcome of maybe
+  losing") only by implication (not surfacing the term);
+  no outer-ring fixation introduced. The Wk1 colloquial
+  "anxiety" reference receded from this week's recap and
+  is correctly not echoed in coaching output (avoidance
+  note from Wk1 carries forward).
+
+============================================================
+CORRECTIONS APPLIED
+============================================================
+
+1. CM body paragraph 4: Inserted Prior Commitment Bridge
+   sentences (Criterion 8 auto-correction). Original paragraph
+   opened "The piece worth getting sharper on this week is
+   widening that Monday pattern across more training days."
+   Corrected paragraph now opens "Last week's ask was to name
+   what each rehab day added to your return readiness, one
+   sentence per day. You hit that on three days, with Monday's
+   hydration line and Tuesday's '1% better' the cleanest of
+   them. The piece worth getting sharper on this week is
+   widening that pattern across the training days that didn't
+   pick it up." Word count change: +35 words (CM body 260 →
+   295, still well within 250-450 target).
+
+============================================================
+NOTES
+============================================================
+
+Voice Reference application: CM opens with a specific moment
+opener (Pair 12, Tucker Wk8 specific moment opening style),
+adapted to Hunter Wk2 hydration moment. DD also opens with
+the specific moment, then layers longitudinal context (Pair 13
+longitudinal distance opening style) by comparing Wk1 vs Wk2
+Bullseye center ring as the cleanest cross-week marker.
+
+Cross-monitoring observation: This is the second processed
+week for Hunter, the second post-Pair-12-14 generation in his
+arc, and the second time the v2.3/V5 architecture has avoided
+the retired "This [is/was] the [X] week" DD opener template
+for this athlete. Voice Reference Section 4 Pairs 12-14
+continue to provide structural diversity for DD openings
+without separate prompting.
+
+Phase consideration: With only one prior reporting period
+available, growth phase advancement criteria (Section 4C-1)
+cannot yet be evaluated. Phase classification carries forward
+from baseline (Developing). The Wk2 behavioral indicators
+(Aligned, Stable Positive, Low EI, RQS=2) are consistent with
+continued progression within the Developing range. Earliest
+Wk3 data point would not trigger phase advancement under
+2-week minimum dwell time and consecutive-week criteria;
+advancement evaluation activates at Wk4 at earliest.
+
+CF athlete validation override: Hunter remains a Core
+Foundation athlete (no PPD/ABI/intake profile, no current
+season phase, no forward anchor, no execution behavior
+signals). All v9.7 schema fields populate with CF fallback
+values per Section 6 of Interpretation Engine v9.7
+specification. JSON syntactically validated (json.load PASS).
+
+============================================================
+End of Report
+============================================================
